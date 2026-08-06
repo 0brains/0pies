@@ -1,0 +1,227 @@
+{
+ "id": "foundry-traps",
+ "runner": "pairs",
+ "title": "The Planted Answer",
+ "blurb": "The wrong answers Microsoft planted for Domain 2 — twin scenarios that differ by the exact fact the exam flips.",
+ "source": "histack.net traps 1–7",
+ "asOf": "2026-07",
+ "area": "microsoft-foundry",
+ "pairs": [
+  {
+   "id": "ft-01",
+   "dimension": "governance container vs the workspace where you build",
+   "buckets": [
+    "Hub",
+    "Project"
+   ],
+   "a": {
+    "text": "The platform team needs one place to manage shared security, connections, compute and quota for all AI teams.",
+    "answer": "Hub",
+    "why": "The hub is the top-level collaboration and governance container with shared resources — histack trap #3."
+   },
+   "b": {
+    "text": "A product team needs the place where their deployments, agents, data and evaluations actually live.",
+    "answer": "Project",
+    "why": "A project lives inside a hub and is where you actually build — deployments, agents, data, evaluations."
+   }
+  },
+  {
+   "id": "ft-02",
+   "dimension": "the name your code calls vs the base model family",
+   "buckets": [
+    "Deployment name",
+    "Model name"
+   ],
+   "a": {
+    "text": "Your code passes 'chat-app-prod' — the custom name chosen at deploy time — as the model argument in chat.completions.create.",
+    "answer": "Deployment name",
+    "why": "The deployment name — not the base model name — is what your code calls (histack's exact trap; corpus pair #19)."
+   },
+   "b": {
+    "text": "The Foundry catalog lists gpt-4o with its benchmark scores before anything is deployed.",
+    "answer": "Model name",
+    "why": "gpt-4o is the base model id in the catalog; it becomes callable only through a named deployment."
+   }
+  },
+  {
+   "id": "ft-03",
+   "dimension": "the resource address you connect to vs the secret that authenticates the call",
+   "buckets": [
+    "Endpoint",
+    "API key"
+   ],
+   "a": {
+    "text": "A developer configures the client with the Foundry resource's HTTPS address, read from an environment variable, so every request knows which resource on Azure to reach.",
+    "answer": "Endpoint",
+    "why": "The endpoint (azure_endpoint) is the resource address the SDK targets — it identifies where the call is sent, not who is allowed to send it."
+   },
+   "b": {
+    "text": "A developer moves a secret out of the source file into a separate environment variable, so the credential that proves the caller's identity is never hard-coded.",
+    "answer": "API key",
+    "why": "The credential is passed as api_key (os.getenv('AZURE_OPENAI_KEY')) and authenticates the caller — a privacy-and-security habit distinct from routing."
+   }
+  },
+  {
+   "id": "ft-04",
+   "dimension": "a stateful, tool-using resource vs a single stateless completion request",
+   "buckets": [
+    "Agent",
+    "Chat call"
+   ],
+   "a": {
+    "text": "A Foundry resource is created once with a name, instructions and attached tools, then referenced across many later turns by follow-up requests using the same conversation.",
+    "answer": "Agent",
+    "why": "An agent is a persistent, named resource — created via PromptAgentDefinition with instructions and tools, then invoked repeatedly."
+   },
+   "b": {
+    "text": "A script sends messages=[{'role': 'user', 'content': 'Summarize this case.'}] and gets one reply back from a plain completions request, with nothing saved on the server and no thread or tools involved.",
+    "answer": "Chat call",
+    "why": "A bare chat.completions.create is a single stateless request — no persisted instructions, tools or identity survive between calls."
+   }
+  },
+  {
+   "id": "ft-05",
+   "dimension": "where behavioral rules belong in the message stack",
+   "buckets": [
+    "System prompt",
+    "User prompt"
+   ],
+   "a": {
+    "text": "'Always return customer details in a fixed JSON shape and only answer HR-policy questions' — a persistent rule for every turn.",
+    "answer": "System prompt",
+    "why": "Persona, tone, rules and guardrails belong in the system prompt — histack's 'single most-tested distinction'; the planted wrong answer puts behavior in the user prompt or deployment settings."
+   },
+   "b": {
+    "text": "'Summarize this quarter's absence report for me' — one request, this turn only.",
+    "answer": "User prompt",
+    "why": "The user prompt carries this turn's request; prior model replies replayed for memory are assistant messages."
+   }
+  },
+  {
+   "id": "ft-06",
+   "dimension": "testing in the portal with no code vs the programmatic path your app ships with",
+   "buckets": [
+    "Playground",
+    "SDK code"
+   ],
+   "a": {
+    "text": "After deploying a model, a developer types a prompt directly into the Foundry portal and reads the reply on screen without writing a single line of Python.",
+    "answer": "Playground",
+    "why": "The playground is Foundry's on-demand, no-code environment for rapid prototyping and validation before any production code exists."
+   },
+   "b": {
+    "text": "The same developer copies the Code tab's snippet, which constructs an AzureOpenAI client and calls chat.completions.create from a Python file the app will actually run.",
+    "answer": "SDK code",
+    "why": "The Code tab hands you the programmatic access pattern — the SDK call is what ships, not the portal session that validated it."
+   }
+  },
+  {
+   "id": "ft-07",
+   "dimension": "the behavioral rules an agent follows vs the capabilities it can invoke",
+   "buckets": [
+    "Agent instructions",
+    "Tools"
+   ],
+   "a": {
+    "text": "A prompt agent is configured so it always responds in a formal tone and refuses to discuss competitor pricing, no matter what the user asks.",
+    "answer": "Agent instructions",
+    "why": "Persona and behavioral rules supplied to PromptAgentDefinition are instructions — they shape how the agent responds, not what it can do."
+   },
+   "b": {
+    "text": "The same agent is given web search and file search so it can look up live information instead of relying only on what it already knows.",
+    "answer": "Tools",
+    "why": "Web search and file search are attached from the Build > Tools catalog — capabilities the agent can invoke, separate from its instructions."
+   }
+  },
+  {
+   "id": "ft-08",
+   "dimension": "changing model weights vs injecting current data at inference",
+   "buckets": [
+    "Fine-tuning",
+    "RAG / grounding"
+   ],
+   "a": {
+    "text": "The model must always answer in your firm's house style, learned from 5,000 past examples.",
+    "answer": "Fine-tuning",
+    "why": "Fine-tuning retrains weights on examples — the tool for durable style/behavior change."
+   },
+   "b": {
+    "text": "The model must answer from this month's price list, which changes weekly, without retraining.",
+    "answer": "RAG / grounding",
+    "why": "RAG injects retrieved current org data at inference — 'feeding the model your own data so answers stay accurate'."
+   }
+  },
+  {
+   "id": "ft-09",
+   "dimension": "reserved hourly capacity vs pay-per-token elastic pricing",
+   "buckets": [
+    "Provisioned throughput (PTU)",
+    "Standard deployment"
+   ],
+   "a": {
+    "text": "A batch workload needs a predictable, guaranteed processing rate at a fixed hourly cost, reserved in advance regardless of how many tokens are actually sent.",
+    "answer": "Provisioned throughput (PTU)",
+    "why": "PTU reserves dedicated hourly capacity for predictable, high-volume throughput — you pay for the reservation, not per token."
+   },
+   "b": {
+    "text": "An interactive chat app has unpredictable traffic and needs pay-per-token billing with regional, data zone, or global processing options, rather than hourly reserved capacity.",
+    "answer": "Standard deployment",
+    "why": "Standard deployment is the preferred option offering the widest range of capabilities and elastic pay-per-token pricing — the exam's most-tested deployment contrast (pair #27)."
+   }
+  },
+  {
+   "id": "ft-10",
+   "dimension": "defining the analyzer vs running it",
+   "buckets": [
+    "begin_create_analyzer",
+    "begin_analyze"
+   ],
+   "a": {
+    "text": "You have written a custom field schema for supplier contracts and must register it before any document is processed.",
+    "answer": "begin_create_analyzer",
+    "why": "Creating/defining the analyzer from a field schema is setup, not execution."
+   },
+   "b": {
+    "text": "The analyzer already exists; the code runs it against a contract URL and polls for the structured result.",
+    "answer": "begin_analyze",
+    "why": "Execution is begin_analyze(analyzer_id=…, inputs=[AnalysisInput(url=…)]) — the close-method-name swap the corpus documents (pair #26)."
+   }
+  },
+  {
+   "id": "ft-11",
+   "dimension": "multimodal LLM-reasoned extraction vs deterministic known-form extraction",
+   "buckets": [
+    "Content Understanding",
+    "Document Intelligence"
+   ],
+   "a": {
+    "text": "Describe the fields you want in natural language and extract them from a mix of PDFs, images and meeting audio into structured JSON.",
+    "answer": "Content Understanding",
+    "why": "CU lets you describe fields in natural language while an LLM reasons over multimodal input — histack's cue: 'free-form or non-document input'."
+   },
+   "b": {
+    "text": "Extract totals from a high volume of standard invoices and receipts using a ready-made model.",
+    "answer": "Document Intelligence",
+    "why": "Deterministic extraction from known form types — invoices, receipts, IDs, business cards. 'The extraction trap', histack's favorite."
+   }
+  },
+  {
+   "id": "ft-12",
+   "dimension": "pulling structured fields out of raw content vs indexing content for later retrieval",
+   "buckets": [
+    "Content Understanding",
+    "Azure AI Search"
+   ],
+   "a": {
+    "text": "A retail team sends shelf photos in and gets back structured product fields such as name, price and quantity, defined by their own schema.",
+    "answer": "Content Understanding",
+    "why": "Content Understanding turns raw, unstructured or multimodal input into the specific structured output a schema asks for."
+   },
+   "b": {
+    "text": "A RAG chatbot needs a knowledge base it can query by semantic similarity so a chat model can ground its answers in the retrieved passages.",
+    "answer": "Azure AI Search",
+    "why": "Azure AI Search indexes content — often via embeddings — and retrieves it at query time; RAG patterns pair a chat model with AI Search for grounding, a different job from extracting fields from a document."
+   }
+  }
+ ]
+}

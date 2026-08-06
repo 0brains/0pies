@@ -1,0 +1,177 @@
+{
+ "id": "cu-modality-grid",
+ "runner": "board",
+ "title": "Right Analyzer, Right Modality",
+ "blurb": "Documents, images, audio, video — drop each extraction job on the modality Content Understanding runs it against.",
+ "source": "AI-901 study guide Task 2.4",
+ "asOf": "2026-07",
+ "area": "microsoft-foundry",
+ "hint": "Ask what the source file actually is, then check the sub line for the exact prebuilt-* analyzer id — the id itself names its modality (document/image/audio/video), and Search-suffixed ids prep output for indexing rather than change the modality.",
+ "note": "Content Understanding always extracts — it never generates or indexes. Extraction into Azure AI Search is a downstream step, not something CU does itself.",
+ "traps": [
+  "Treating Content Understanding as another name for Document Intelligence is the classic trap — Document Intelligence is the older Forms Recognizer-lineage service; Content Understanding is the newer multimodal one spanning documents, images, audio and video.",
+  "Content Understanding extracts structured content; it doesn't index it for search — that's Azure AI Search's job once CU's markdown and fields are the input."
+ ],
+ "zones": [
+  {
+   "key": "Documents & forms",
+   "name": "Documents & forms",
+   "def": "PDFs, invoices, contracts and freeform paperwork Content Understanding turns into structured fields, tables and text."
+  },
+  {
+   "key": "Images",
+   "name": "Images",
+   "def": "Photos, screenshots and charts Content Understanding turns into structured fields, descriptions and detected objects."
+  },
+  {
+   "key": "Audio",
+   "name": "Audio",
+   "def": "Recorded speech — calls, podcasts and voicemails — Content Understanding turns into transcripts, summaries and speaker labels."
+  },
+  {
+   "key": "Video",
+   "name": "Video",
+   "def": "Recorded footage Content Understanding segments, transcribes and prepares for search."
+  }
+ ],
+ "items": [
+  {
+   "id": "cu-001",
+   "label": "Analyze an invoice PDF and read the extracted vendor, total and due-date fields",
+   "sub": "prebuilt-invoice",
+   "answer": "Documents & forms",
+   "why": "prebuilt-invoice extracts structured fields from invoice documents — the exam's most-tested prebuilt analyzer (7 mentions)."
+  },
+  {
+   "id": "cu-002",
+   "label": "Define your own field schema in natural language and extract those fields from contracts",
+   "sub": "custom analyzer via begin_create_analyzer",
+   "answer": "Documents & forms",
+   "why": "Custom analyzers are built from a field schema you describe — CU's plain-language field description is what separates it from Document Intelligence prebuilts."
+  },
+  {
+   "id": "cu-006",
+   "label": "Return text, tables, and selection marks with document structure — no field semantics",
+   "sub": "prebuilt-layout",
+   "answer": "Documents & forms",
+   "why": "Layout extracts text, tables, selection marks and structure; Read-style OCR is text only — histack's CU Read-vs-Layout distinction."
+  },
+  {
+   "id": "cu-007",
+   "label": "A mixed batch of vendor forms needs their loose key-value pairs pulled out without starting from a predefined field schema",
+   "sub": "prebuilt-documentFields",
+   "answer": "Documents & forms",
+   "why": "prebuilt-documentFields extracts general key-value pairs from documents with no domain-specific schema required — unlike prebuilt-invoice's fixed invoice fields."
+  },
+  {
+   "id": "cu-008",
+   "label": "Before building a custom analyzer for a brand-new form type, ask Content Understanding to propose the field schema, then base the new analyzer on the general document analyzer",
+   "sub": "prebuilt-documentFieldSchema → prebuilt-document",
+   "answer": "Documents & forms",
+   "why": "prebuilt-documentFieldSchema proposes fields for a document type you haven't schema'd yet; prebuilt-document is the base_analyzer_id used when defining a new custom document analyzer — two distinct ids in the same custom-build workflow."
+  },
+  {
+   "id": "cu-003",
+   "label": "Extract text and identified objects from photographed equipment labels",
+   "sub": "prebuilt-image",
+   "answer": "Images",
+   "why": "prebuilt-image extracts text and objects from still images through the same analyzer workflow as every other modality."
+  },
+  {
+   "id": "cu-009",
+   "label": "Run the Python quickstart against a product photo and read the generated description back from the result's Summary field",
+   "sub": "prebuilt-imageSearch",
+   "answer": "Images",
+   "why": "prebuilt-imageSearch is the quickstart analyzer for descriptive image output — its result exposes a Summary field holding the natural-language description."
+  },
+  {
+   "id": "cu-010",
+   "label": "Build a custom analyzer that pulls a chart's Title and ChartType fields out of a batch of dashboard screenshots",
+   "sub": "custom analyzer via base_analyzer_id=\"prebuilt-image\"",
+   "answer": "Images",
+   "why": "Custom image analyzers set base_analyzer_id to prebuilt-image before layering a field schema — the documented pattern for chart and screenshot extraction."
+  },
+  {
+   "id": "cu-011",
+   "label": "Analyze shelf photos from a retail audit and return structured fields for product count, brand presence, and out-of-stock indicators",
+   "sub": "prebuilt-image",
+   "answer": "Images",
+   "why": "Content Understanding's image analyzer returns schema-defined structured fields straight from photos — the retail shelf-audit scenario the exam tests directly."
+  },
+  {
+   "id": "cu-012",
+   "label": "Wire a Python client that calls begin_analyze with analyzer_id=\"prebuilt-image\" against a photo URL, then read back the detected objects from the result",
+   "sub": "prebuilt-image",
+   "answer": "Images",
+   "why": "The begin_analyze(analyzer_id=..., inputs=[AnalysisInput(url=...)]) call pattern is identical across modalities — only the analyzer id changes, and prebuilt-image is the direct (non-search) image analyzer."
+  },
+  {
+   "id": "cu-004",
+   "label": "Get a transcript plus summary and speaker breakdown from recorded support calls",
+   "sub": "prebuilt-audio",
+   "answer": "Audio",
+   "why": "CU's audio analyzers return transcripts, summaries and speakers — extraction, never speech synthesis."
+  },
+  {
+   "id": "cu-013",
+   "label": "Wire a lightweight Python client that calls begin_analyze with a call-recording URL to pull back a transcript and summary ready for a retrieval index",
+   "sub": "prebuilt-audioSearch",
+   "answer": "Audio",
+   "why": "prebuilt-audioSearch is the documented analyzer id in the SDK's quickstart snippet — the *Search suffix marks output prepped for indexing/RAG retrieval, unlike prebuilt-audio's direct extraction with no retrieval prep."
+  },
+  {
+   "id": "cu-014",
+   "label": "Pull speaker-labeled, precisely timed transcript phrases out of a batch of podcast episodes",
+   "sub": "transcriptPhrases",
+   "answer": "Audio",
+   "why": "transcriptPhrases is the output field carrying speaker identification and timing information — a direct audio-extraction output, distinct from the analyzer id itself."
+  },
+  {
+   "id": "cu-015",
+   "label": "Recognize that submitting a podcast MP3 to Content Understanding sets the contents object's kind to the same value used for video inputs",
+   "sub": "kind: \"audioVisual\"",
+   "answer": "Audio",
+   "why": "Audio-only and video inputs both use kind: \"audioVisual\" in the contents schema — a shared value that trips up anyone expecting a distinct 'audio' kind."
+  },
+  {
+   "id": "cu-016",
+   "label": "Confirm that pulling a structured transcript out of a voicemail inbox is speech captured into text, never text turned into speech",
+   "answer": "Audio",
+   "why": "CU's audio analyzers transcribe existing speech into structured output — they never synthesize new spoken output; that job belongs to Azure AI Speech, not Content Understanding."
+  },
+  {
+   "id": "cu-005",
+   "label": "Segment recorded training sessions and index their transcripts and visual events for search",
+   "sub": "prebuilt-videoSearch",
+   "answer": "Video",
+   "why": "Video analyzers return segments, transcripts and visual events; the *Search variants prepare content for retrieval — Azure AI Search indexes what CU extracts."
+  },
+  {
+   "id": "cu-017",
+   "label": "Divide an uploaded recorded product demo into logical scene segments before any downstream processing runs",
+   "sub": "enableSegment",
+   "answer": "Video",
+   "why": "enableSegment is the analyzer schema property that splits footage into logical segments such as scenes — a video-analyzer control, not an audio or document one."
+  },
+  {
+   "id": "cu-018",
+   "label": "After analyzing a marketing clip, read back a structured markdown summary of its transcript and visual content",
+   "sub": "prebuilt-videoSearch",
+   "answer": "Video",
+   "why": "prebuilt-videoSearch results expose a markdown field summarizing transcript and visual content per segment — the SDK's documented read-back field for video."
+  },
+  {
+   "id": "cu-019",
+   "label": "Confirm that extracting keyframes and visual events from an uploaded recording works on footage that already exists, rather than generating new frames",
+   "answer": "Video",
+   "why": "CU's analyzers extract keyframes, transcripts and visual events from footage that already exists — they don't generate synthetic frames; that's a different category of AI service entirely."
+  },
+  {
+   "id": "cu-020",
+   "label": "Wire a Python client that calls begin_analyze with analyzer_id=\"prebuilt-videoSearch\" against an uploaded MP4 URL",
+   "sub": "prebuilt-videoSearch",
+   "answer": "Video",
+   "why": "The begin_analyze(analyzer_id=\"prebuilt-videoSearch\", inputs=[AnalysisInput(url=...)]) call is the documented SDK pattern for kicking off video extraction."
+  }
+ ]
+}

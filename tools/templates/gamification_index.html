@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Certification Game Labs</title>
+<style>
+:root{
+  --bg:#0d1016; --panel:#151a22; --panel2:#1c222c; --line:#2a323e;
+  --ink:#e9eef5; --dim:#96a3b5; --accent:#5b9dff; --radius:16px;
+  --aws:#ff9900; --aigp:#8b7cff; --concepts:#3fb27f;
+}
+@media (prefers-color-scheme: light){
+  :root{ --bg:#f4f6fa; --panel:#fff; --panel2:#eef2f7; --line:#dde4ed;
+         --ink:#111820; --dim:#5c6a7c; }
+}
+:root[data-theme=light]{ --bg:#f4f6fa; --panel:#fff; --panel2:#eef2f7; --line:#dde4ed;
+  --ink:#111820; --dim:#5c6a7c; }
+:root[data-theme=dark]{ --bg:#0d1016; --panel:#151a22; --panel2:#1c222c; --line:#2a323e;
+  --ink:#e9eef5; --dim:#96a3b5; }
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,sans-serif;
+  -webkit-font-smoothing:antialiased}
+.wrap{max-width:960px;margin:0 auto;padding:56px 20px 80px}
+header.hero{margin-bottom:40px}
+.eyebrow{font-size:12px;letter-spacing:1.4px;text-transform:uppercase;color:var(--dim);
+  margin:0 0 10px}
+h1{font-size:clamp(28px,5vw,40px);line-height:1.15;margin:0 0 12px;letter-spacing:-.5px}
+.lede{font-size:17px;color:var(--dim);margin:0;max-width:56ch}
+.cards{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+  margin:36px 0 44px}
+.app{display:flex;flex-direction:column;background:var(--panel);border:1px solid var(--line);
+  border-radius:var(--radius);padding:24px;text-decoration:none;color:inherit;
+  position:relative;overflow:hidden;transition:border-color .15s,transform .15s}
+.app::before{content:"";position:absolute;inset:0 0 auto 0;height:3px;background:var(--tone)}
+.app:hover{border-color:var(--tone);transform:translateY(-2px)}
+.app:focus-visible{outline:2px solid var(--tone);outline-offset:3px}
+.code{font:600 12px/1 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:1px;
+  color:var(--tone);margin:4px 0 10px}
+.app h2{font-size:21px;margin:0 0 8px;letter-spacing:-.2px}
+.app p{margin:0 0 18px;color:var(--dim);font-size:14.5px;flex:1}
+.stats{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px}
+.stat{background:var(--panel2);border:1px solid var(--line);border-radius:999px;
+  padding:4px 11px;font-size:12px;color:var(--dim);white-space:nowrap}
+.stat b{color:var(--ink);font-weight:600}
+.go{display:inline-flex;align-items:center;gap:7px;font-weight:600;font-size:14.5px;
+  color:var(--tone)}
+.status{position:absolute;top:20px;right:20px;font-size:11px;padding:3px 9px;
+  border-radius:999px;background:var(--panel2);border:1px solid var(--line);color:var(--dim)}
+.how{border-top:1px solid var(--line);padding-top:32px}
+.how h3{font-size:13px;text-transform:uppercase;letter-spacing:1.2px;color:var(--dim);
+  margin:0 0 18px;font-weight:600}
+.how-grid{display:grid;gap:22px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.how-grid h4{margin:0 0 5px;font-size:15px}
+.how-grid p{margin:0;color:var(--dim);font-size:14px}
+footer{margin-top:52px;padding-top:22px;border-top:1px solid var(--line);
+  color:var(--dim);font-size:12.5px}
+footer p{margin:0 0 6px}
+footer a{color:var(--dim)}
+@media (max-width:600px){ .wrap{padding:36px 16px 60px} }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="hero">
+    <p class="eyebrow">Study labs</p>
+    <h1>Certification Game Labs</h1>
+    <p class="lede">Board games for exam material that resists memorising. Pick a certification.</p>
+  </header>
+
+  <div class="cards"><!--__CARDS__--></div>
+
+  <section class="how">
+    <h3>How these work</h3>
+    <div class="how-grid">
+      <div>
+        <h4>Boards, not quizzes</h4>
+        <p>Sort a whole bank of cards into place, then score the board. Question-and-answer
+           practice lives in the exam app, not here.</p>
+      </div>
+      <div>
+        <h4>Confident misses come back first</h4>
+        <p>Progress is kept per item. The cards you were sure about and still got wrong
+           resurface soonest, because those are the ones that fail you.</p>
+      </div>
+      <div>
+        <h4>Every reveal goes deeper</h4>
+        <p>Hand any board to Claude, ChatGPT or Perplexity — with what you missed, or the
+           whole concept when you got it right.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <!--__FOOTER__-->
+  </footer>
+</div>
+</body>
+</html>

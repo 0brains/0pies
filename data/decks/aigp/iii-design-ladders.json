@@ -1,0 +1,106 @@
+{
+ "id": "iii-design-ladders",
+ "runner": "ladders",
+ "title": "Design-Gate Sequences",
+ "blurb": "Three sequences a system passes through before it ever touches a real user — put each one in order.",
+ "source": "AIGP BOK III.A · AIGP Study Guide (SG) §Domain III.A · scored backup in G10 (The Development Desk) and the risk-treatment/risk-controls/risk-hierarchy-pairs decks",
+ "asOf": "2026-08",
+ "area": "III.A",
+ "ladders": [
+  {
+   "id": "iii-dl-01",
+   "title": "Idea → Pilot",
+   "prompt": "Order the gates a new AI system passes through from first business case to shadow-mode readiness evidence.",
+   "citation": "SG-C08-Q009",
+   "asOf": "2026-08",
+   "steps": [
+    {
+     "label": "Business case & objectives",
+     "detail": "Define why AI at all: the cost-benefit case, including societal impacts, comes first. Nothing downstream can be evaluated without a stated objective to measure it against."
+    },
+    {
+     "label": "Use case + impact assessment (leveraged from a PIA)",
+     "detail": "Scope the specific use case and run an impact assessment to anticipate and manage the harms it could cause. The best existing template to adapt is a privacy impact assessment (PIA/DPIA) — governance doesn't invent this from scratch."
+    },
+    {
+     "label": "Design — risk-impact estimation & architecture",
+     "detail": "Design work includes estimating risk impact and choosing architecture. This is the first gate where architecture is actually decided; planning explicitly excludes it — planning sets objectives and governance approach, design picks how the system is built (; planning excludes architecture, )."
+    },
+    {
+     "label": "Build",
+     "detail": "Construct the system against the design's risk-impact estimate and chosen architecture."
+    },
+    {
+     "label": "Benchmark vs human experts in the same decision context",
+     "detail": "Before piloting, compare the system's performance against human expert performance in the same domain — this is the most valuable governance benchmark, not an abstract accuracy target."
+    },
+    {
+     "label": "Pilot — validate fairness + accuracy at controlled scale",
+     "detail": "Run a pre-deployment pilot whose primary purpose is validating fairness and accuracy on real-world data at a controlled, limited scale before full rollout."
+    },
+    {
+     "label": "Shadow-mode run as documented readiness evidence",
+     "detail": "Run the system in parallel with the live process (shadow mode) and document the outcomes. This documented evidence — not a verbal sign-off — is what demonstrates deployment readiness (SG-C08-Q009)."
+    }
+   ]
+  },
+  {
+   "id": "iii-dl-02",
+   "title": "Mitigation hierarchy",
+   "prompt": "Order the risk-mitigation hierarchy from the most durable fix to the last resort.",
+   "citation": "Transparency zone backs Warn-and-train), risk-treatment.json (Accept zone backs Accept-with-monitoring), G14 Post-market monitoring zone (audit-log/post-market-review half of the final tier), risk-hierarchy-pairs.json.",
+   "asOf": "2026-08",
+   "steps": [
+    {
+     "label": "Eliminate the risk",
+     "detail": "Remove the risky feature or use case entirely — don't use AI in the high-risk context at all, the way a recruitment algorithm that keeps producing biased outcomes gets retired rather than endlessly patched. In the exam's parallel vocabulary this same top tier is called 'Avoid': stop undertaking the activity so the exposure goes to zero. Same concept, different label — defuse the vocabulary clash, don't pick a side."
+    },
+    {
+     "label": "Substitute with a lower-risk design",
+     "detail": "If elimination isn't feasible, swap in a simpler, more interpretable model or a lower-risk dataset that achieves the same purpose — an opaque model for an interpretable one, a noisier dataset for one collected under stricter quality controls. Exam phrasing sometimes folds this into 'Mitigate' (act on likelihood or impact while the activity continues) — again, the same design move under a different word."
+    },
+    {
+     "label": "Engineer safeguards",
+     "detail": "Build safeguards into the system itself: confidence thresholds, robustness testing, bias audits, explainability tools — and human-in-the-loop controls, which sit here as one example technique among several, not as a separate last-resort tier of their own. This is where most technical controls live, and where the exam's 'Mitigate/Reduce' bucket lands too."
+    },
+    {
+     "label": "Warn and train users",
+     "detail": "Once the system itself is as safe as engineering can make it, the next line of defense is telling people: interpretability dashboards, plain-language warnings, and user training so people interacting with the system understand its limits. This is a distinct tier from engineering controls — it changes what the human knows, not what the system does."
+    },
+    {
+     "label": "Accept with monitoring",
+     "detail": "Whatever risk remains after the four tiers above is knowingly accepted and watched — audit logs and post-market review, not silent tolerance. The exam's final tier, 'Accept', maps cleanly onto this one: a recorded decision, owned at the right level of authority, backed by ongoing monitoring rather than a one-time sign-off. Some frameworks insert Administrative controls as a distinct tier — the NIOSH-style hierarchy taught in Hierarchy of Controls — same idea, different slicing."
+    }
+   ]
+  },
+  {
+   "id": "iii-dl-03",
+   "title": "Harms-matrix workflow",
+   "prompt": "Order the steps for running a probability × severity harms matrix during design.",
+   "citation": "SG-C08-Q006",
+   "asOf": "2026-08",
+   "steps": [
+    {
+     "label": "Enumerate harms per stakeholder",
+     "detail": "List the ways the system could go wrong for each affected group — end users, downstream subjects, operators — before scoring anything. Stakeholder mapping widens the lens beyond the development team so no group's exposure is missed."
+    },
+    {
+     "label": "Score probability × severity",
+     "detail": "Rate each enumerated harm on likelihood and impact using pre-defined scales. This scoring is applied throughout design and testing, not as a one-off exercise, so new findings can move items on the grid (SG-C08-Q006)."
+    },
+    {
+     "label": "Prioritize — catastrophic overrides score",
+     "detail": "Rank by the plotted score, but let a catastrophic-impact item override a merely-average priority ranking: a low-likelihood, high-severity failure in an autonomous system still triggers a hard gate even if its raw score wouldn't top the list."
+    },
+    {
+     "label": "Apply the mitigation hierarchy at the design source",
+     "detail": "Fix the highest-priority harms at the design/source level rather than bolting on disclaimers or monitoring after the fact — e.g. designing a chatbot's dialogue for crisis scenarios instead of relying on a disclaimer, or designing a model to exclude financially vulnerable customers from a harmful offer rather than flagging them after the fact."
+    },
+    {
+     "label": "Document residual risk & owner",
+     "detail": "Record what risk remains after mitigation, at what score, and who is accountable for accepting it. An unrecorded residual risk is indistinguishable from an unmanaged one."
+    }
+   ]
+  }
+ ]
+}

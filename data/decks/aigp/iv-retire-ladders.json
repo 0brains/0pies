@@ -1,0 +1,102 @@
+{
+ "id": "iv-retire-ladders",
+ "runner": "ladders",
+ "title": "Wind-Down Drills",
+ "blurb": "Three sequences for taking a live system offline — safely, legally, and only for as long as it needs to stay down.",
+ "source": "AIGP BOK IV.C · AIGP Study Guide (SG) §Domain IV.C · scored backup in G14 (Live-System Duty Roster) and G16 (The Recall)",
+ "asOf": "2026-08",
+ "area": "IV.C",
+ "ladders": [
+  {
+   "id": "iv-rl-01",
+   "title": "Retiring a system",
+   "prompt": "Order the steps for responsibly retiring a live AI system.",
+   "citation": "SG-C12-Q008; SG-AT-Q034; SG-C12-Q007; SG",
+   "asOf": "2026-08",
+   "steps": [
+    {
+     "label": "Assess dependencies + fallback options",
+     "detail": "Before touching anything live, map what depends on the system — upstream data feeds, downstream processes, other teams' workflows — and confirm a fallback exists so retirement doesn't create an outage (SG-C12-Q008)."
+    },
+    {
+     "label": "Notify stakeholders + plan controlled deactivation",
+     "detail": "The first step in a driven retirement is telling the people affected and building a deactivation plan, not simply flipping a switch (SG-AT-Q034)."
+    },
+    {
+     "label": "Graduated deactivation with human backup",
+     "detail": "For critical infrastructure, wind down in stages rather than all at once, with a human-run fallback covering the gap — the same discipline used for critical systems generally."
+    },
+    {
+     "label": "Archive, don't delete, for legal/audit",
+     "detail": "Preserve the retired system's data, models, and logs rather than deleting them — regulators and auditors may need to reconstruct what the system did and why, long after it stops running (SG-C12-Q007)."
+    },
+    {
+     "label": "Record like a black-box investigation, with named decision-makers",
+     "detail": "Log the exact trigger, who authorized the shutdown, and the retirement rationale in the same evidentiary style as an incident investigation — a single auditable source of truth naming who had the authority to act (SG)."
+    }
+   ]
+  },
+  {
+   "id": "iv-rl-02",
+   "title": "Incident lifecycle",
+   "prompt": "Order the response to a live AI incident from first detection to closing the loop.",
+   "citation": "SG (GDPR 72-hour rule); SG (Five Whys/fault tree)",
+   "asOf": "2026-08",
+   "steps": [
+    {
+     "label": "Detect",
+     "detail": "An alert, a monitoring signal, or a complaint surfaces that something is wrong — this starts the clock on everything that follows."
+    },
+    {
+     "label": "Contain / quarantine first",
+     "detail": "Before investigating causes or drafting communications, stop the harm from spreading: quarantine the model and notify legal/compliance immediately. Containment beats investigation, recovery, or communication as the very next move — jumping straight to root-cause analysis while the system keeps causing harm is the recorded exam trap."
+    },
+    {
+     "label": "Notify legal/compliance (+72-hour breach clock where personal data)",
+     "detail": "Where the incident involves personal data, a GDPR controller must notify the supervisory authority within 72 hours of becoming aware of the breach — incident response and notification procedures must be built to hit that deadline, not treated as a technical afterthought (SG)."
+    },
+    {
+     "label": "Root-cause (Five Whys / fault tree)",
+     "detail": "Use a formal analysis framework — the 'Five Whys' method or fault-tree analysis — to drill down to the underlying cause instead of stopping at the surface-level symptom (SG)."
+    },
+    {
+     "label": "CAPA",
+     "detail": "Record corrective and preventive actions in a central system with assigned owners, deadlines, and verification steps, so the root cause is actually closed out, not just diagnosed."
+    },
+    {
+     "label": "Blameless retrospective + proactive disclosure with lessons learned",
+     "detail": "Run a cross-functional, blameless review of what happened and why, and proactively disclose technical details and lessons learned rather than waiting to be asked — this is what turns a patched symptom into a documented, defensible improvement."
+    }
+   ]
+  },
+  {
+   "id": "iv-rl-03",
+   "title": "Restart after the switch",
+   "prompt": "Order the steps for safely bringing a deactivated system back online.",
+   "citation": "SG; SG (canary/blue-green)",
+   "asOf": "2026-08",
+   "steps": [
+    {
+     "label": "Verify the fix",
+     "detail": "Confirm the specific defect that triggered deactivation has actually been corrected before anything else moves forward — resumption depends on fixes being verified, not merely attempted (SG)."
+    },
+    {
+     "label": "Re-test with first-release rigor",
+     "detail": "Put the fixed system through the same full testing it faced before its original launch — performance, robustness, security, fairness — retesting confirms safety and compliance from scratch, it doesn't get a shortcut because the system has run before (SG)."
+    },
+    {
+     "label": "Cross-functional approval",
+     "detail": "The system resumes only once cross-functional teams — not a single engineer or team lead — approve the restart, closing the loop that started with named decision-makers authorizing the shutdown."
+    },
+    {
+     "label": "Staged canary/blue-green re-rollout behind feature flags",
+     "detail": "Bring the system back gradually — a canary release or blue-green deployment gated by feature flags — so exposure can be dialed back instantly if the problem resurfaces, rather than flipping every user back on at once (SG)."
+    },
+    {
+     "label": "Heightened monitoring window",
+     "detail": "Watch the restarted system more closely than steady-state operation for a defined window afterward, so a recurrence is caught immediately rather than at the next scheduled review."
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,50 @@
+{
+  "id": "rag-pipeline",
+  "runner": "ladders",
+  "title": "RAG Builder",
+  "blurb": "Assemble a retrieval-augmented generation pipeline.",
+  "source": "AWS Certified AI Practitioner (AIF-C01) exam guide · Domain 3",
+  "asOf": "2026-07",
+  "area": "genai",
+  "ladders": [
+    {
+      "id": "rag-pipeline",
+      "title": "RAG Builder",
+      "prompt": "Order the stages from ingestion to a grounded, cited answer.",
+      "steps": [
+        {
+          "label": "Ingest Trusted Source Documents",
+          "detail": "Retrieval can only ever surface what was ingested. Source selection is a governance decision, not a plumbing one."
+        },
+        {
+          "label": "Clean, Split, and Attach Metadata",
+          "detail": "Chunking decides what a retrievable unit is; metadata is what later makes filtering and attribution possible."
+        },
+        {
+          "label": "Create Embeddings for Each Chunk",
+          "detail": "Text becomes vectors. The embedding model chosen here constrains everything the retriever can distinguish."
+        },
+        {
+          "label": "Store Chunks and Vectors in an Index",
+          "detail": "The index makes similarity search tractable. Access controls belong here, not only at the answer."
+        },
+        {
+          "label": "Embed and Interpret the User Query",
+          "detail": "The query is embedded by the same model as the chunks, or the two live in incomparable spaces."
+        },
+        {
+          "label": "Retrieve, Filter, and Rerank Evidence",
+          "detail": "Recall decides whether the right passage is available at all; ranking decides whether it survives the context budget."
+        },
+        {
+          "label": "Build a Prompt with Evidence and Instructions",
+          "detail": "The retrieved evidence is placed in the prompt with instructions on how to use it and when to refuse."
+        },
+        {
+          "label": "Generate, Validate, and Cite the Grounded Answer",
+          "detail": "The model answers from the supplied evidence and cites it, so a reader can check rather than trust."
+        }
+      ]
+    }
+  ]
+}

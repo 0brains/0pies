@@ -1,0 +1,304 @@
+{
+ "id": "sdk-wiring",
+ "runner": "board",
+ "title": "Read the Snippet",
+ "blurb": "What does this line do, and which identifier does it — with the close-name impostor sitting right next to it?",
+ "source": "histack.net SDK-snippet pattern",
+ "asOf": "2026-07",
+ "area": "microsoft-foundry",
+ "zoneMode": "options",
+ "traps": [
+  "SpeechConfig holds credentials and voice settings; AudioConfig picks the input/output device; neither one recognizes or synthesizes on its own.",
+  "AIProjectClient.get_openai_client() is a method call on an instance, not a class-level call — the exam's documented trap.",
+  "input_audio is a message content part for spoken INPUT; modalities+audio is a request-level setting for spoken OUTPUT — they are opposite directions on the same call.",
+  "A multimodal chat deployment reads image content parts as input; ImageAnalysisClient is a separate Vision SDK with its own endpoint and fixed feature set — different services entirely."
+ ],
+ "items": [
+  {
+   "id": "sw-001",
+   "label": "Connects your code to a Foundry project using an endpoint and credential (package azure-ai-projects)",
+   "answer": "AIProjectClient",
+   "options": [
+    "AIProjectClient",
+    "get_openai_client",
+    "DefaultAzureCredential"
+   ],
+   "why": "AIProjectClient(endpoint, credential) is the project entry point; get_openai_client() hangs off it — remove auth and this is the line that breaks."
+  },
+  {
+   "id": "sw-002",
+   "label": "Sends the messages list to a deployed model and returns choices[0].message.content",
+   "answer": "chat.completions.create",
+   "options": [
+    "chat.completions.create",
+    "openai.responses.create",
+    "get_openai_client"
+   ],
+   "why": "chat.completions.create(model=DEPLOYMENT_NAME, messages=[…]) is the chat call — and model= takes the deployment name, not the base model name (histack trap #5)."
+  },
+  {
+   "id": "sw-003",
+   "label": "Holds your Speech resource key and region, and the synthesis voice name",
+   "answer": "SpeechConfig",
+   "options": [
+    "SpeechConfig",
+    "AudioConfig",
+    "SpeechSynthesizer"
+   ],
+   "why": "SpeechConfig(key, region) is configured first (e.g. speech_synthesis_voice_name='en-US-Ava:DragonHDLatestNeural'); AudioConfig handles devices, not credentials."
+  },
+  {
+   "id": "sw-004",
+   "label": "Send the user's spoken question as inline audio data inside the message content",
+   "answer": "input_audio part",
+   "options": [
+    "input_audio part",
+    "modalities+audio",
+    "SpeechRecognizer"
+   ],
+   "why": "Spoken INPUT goes in message content parts as input_audio; the response-settings twin is the documented trap."
+  },
+  {
+   "id": "sw-005",
+   "label": "Ask the model to answer with spoken audio: voice \"alloy\", format \"wav\"",
+   "answer": "modalities+audio",
+   "options": [
+    "modalities+audio",
+    "input_audio part",
+    "SpeechSynthesizer"
+   ],
+   "why": "Spoken OUTPUT is requested via modalities=[\"text\",\"audio\"] plus audio={\"voice\":\"alloy\",\"format\":\"wav\"} on the multimodal call — the exam's exact payload."
+  },
+  {
+   "id": "sw-006",
+   "label": "Include a photo (URL or base64) in a chat message so the deployed gpt-4o can describe it",
+   "answer": "image content part",
+   "options": [
+    "image content part",
+    "ImageAnalysisClient",
+    "gpt-image-1 call"
+   ],
+   "why": "Visual input travels as image_url / base64 content parts to a multimodal deployment — not through the Vision SDK, which is a different service and endpoint (pair #23)."
+  },
+  {
+   "id": "sw-007",
+   "label": "Bridges an existing project client to the OpenAI-compatible client used for Responses and Conversations calls",
+   "answer": "get_openai_client",
+   "options": [
+    "get_openai_client",
+    "AIProjectClient",
+    "chat.completions.create"
+   ],
+   "why": "project.get_openai_client() is an instance method called on the project object; the exam's trap is calling it on the class itself instead."
+  },
+  {
+   "id": "sw-008",
+   "label": "Called once, right after the project client is built, before the first Responses or Conversations request goes out",
+   "answer": "get_openai_client",
+   "options": [
+    "get_openai_client",
+    "DefaultAzureCredential",
+    "AIProjectClient"
+   ],
+   "why": "It is the runtime bridge that hands back the OpenAI-shaped client; the credential object only authenticates the project client, it never returns a chat client."
+  },
+  {
+   "id": "sw-009",
+   "label": "Passed with zero arguments as the credential= value so the app authenticates via signed-in Azure identity, no key typed anywhere",
+   "answer": "DefaultAzureCredential",
+   "options": [
+    "DefaultAzureCredential",
+    "AIProjectClient",
+    "azure-ai-projects"
+   ],
+   "why": "DefaultAzureCredential() is the keyless Entra ID credential object; AIProjectClient is what consumes it, and azure-ai-projects is only the package name, not a runtime object."
+  },
+  {
+   "id": "sw-010",
+   "label": "The object az login sets up for: the client resolves your signed-in identity from it automatically at call time, no environment API key needed",
+   "answer": "DefaultAzureCredential",
+   "options": [
+    "DefaultAzureCredential",
+    "get_openai_client",
+    "AIProjectClient"
+   ],
+   "why": "The quickstart pairs az login with this credential object; get_openai_client only returns a chat client and has nothing to do with authentication."
+  },
+  {
+   "id": "sw-011",
+   "label": "The pip package you install before writing any Foundry project client code, per the quickstart's very first setup command",
+   "answer": "azure-ai-projects",
+   "options": [
+    "azure-ai-projects",
+    "azure-ai-search",
+    "azure-ai-language"
+   ],
+   "why": "\"Which package should you install for the project client?\" is a classic exam stem — the answer is azure-ai-projects, not the search or language SDKs."
+  },
+  {
+   "id": "sw-012",
+   "label": "Listed alongside az login in the quickstart setup steps, pinned to a minimum version (>=2.0.0) before any client code runs",
+   "answer": "azure-ai-projects",
+   "options": [
+    "azure-ai-projects",
+    "azure-ai-vision",
+    "azure-ai-search"
+   ],
+   "why": "The documented quickstart guidance installs azure-ai-projects>=2.0.0 and runs az login — the Vision and Search packages are unrelated to the project client."
+  },
+  {
+   "id": "sw-013",
+   "label": "Constructed with an endpoint and an AzureKeyCredential before any key-phrase or sentiment call can run against plain text",
+   "answer": "TextAnalyticsClient",
+   "options": [
+    "TextAnalyticsClient",
+    "ContentUnderstandingClient",
+    "ImageAnalysisClient"
+   ],
+   "why": "TextAnalyticsClient(endpoint, credential) exposes.extract_key_phrases()/.analyze_sentiment() on raw text; the other two clients target multimodal documents and images at different endpoints entirely."
+  },
+  {
+   "id": "sw-014",
+   "label": "Whichever client type exposes analyze_sentiment(documents) so each document's overall sentiment gets printed back",
+   "answer": "TextAnalyticsClient",
+   "options": [
+    "TextAnalyticsClient",
+    "ContentUnderstandingClient",
+    "SpeechRecognizer"
+   ],
+   "why": "Sentiment and key-phrase extraction are AI Language text-analytics methods on this client; the other two operate on multimodal documents or live audio, not plain text."
+  },
+  {
+   "id": "sw-015",
+   "label": "Set to listen from the computer's default microphone instead of a saved file, then handed to the recognizer as its audio source",
+   "answer": "AudioConfig",
+   "options": [
+    "AudioConfig",
+    "SpeechConfig",
+    "SpeechRecognizer"
+   ],
+   "why": "AudioConfig(use_default_microphone=True) picks the input device; SpeechConfig instead holds the subscription key/region, and SpeechRecognizer is the class this object gets passed into, not the device selector itself."
+  },
+  {
+   "id": "sw-016",
+   "label": "Built from a saved filename so a recognizer reads speech from a test WAV file instead of a live microphone",
+   "answer": "AudioConfig",
+   "options": [
+    "AudioConfig",
+    "SpeechConfig",
+    "SpeechSynthesizer"
+   ],
+   "why": "AudioConfig(filename=…) is the file-backed device source; SpeechConfig carries credentials and voice name, and SpeechSynthesizer plays audio out rather than reading it in."
+  },
+  {
+   "id": "sw-017",
+   "label": "Given both a speech config and an audio config, then called to capture exactly one short spoken utterance and stop",
+   "answer": "SpeechRecognizer",
+   "options": [
+    "SpeechRecognizer",
+    "SpeechSynthesizer",
+    "AudioConfig"
+   ],
+   "why": "This is the class whose recognize_once_async() captures a single utterance; SpeechSynthesizer instead speaks text out, and AudioConfig only wires up the input device."
+  },
+  {
+   "id": "sw-018",
+   "label": "Its single-utterance async call returns a result object whose.text holds the transcript of what the microphone just heard",
+   "answer": "SpeechRecognizer",
+   "options": [
+    "SpeechRecognizer",
+    "SpeechSynthesizer",
+    "TextAnalyticsClient"
+   ],
+   "why": "The speech-to-text class returns result.text from recognizing live audio; the synthesizer speaks instead of listens, and the Language client only ever works on text that's already been transcribed."
+  },
+  {
+   "id": "sw-019",
+   "label": "Takes a speech config with the voice name already set, then turns a text string into spoken output through the speaker",
+   "answer": "SpeechSynthesizer",
+   "options": [
+    "SpeechSynthesizer",
+    "SpeechRecognizer",
+    "AudioConfig"
+   ],
+   "why": "This class's speak_text_async() plays a string aloud using the configured voice; the recognizer instead converts speech to text, and AudioConfig only selects a device."
+  },
+  {
+   "id": "sw-020",
+   "label": "After a recognizer produces a text transcript, this second object reads that same string back out loud with its own async speak call",
+   "answer": "SpeechSynthesizer",
+   "options": [
+    "SpeechSynthesizer",
+    "SpeechRecognizer",
+    "SpeechConfig"
+   ],
+   "why": "Text-to-speech playback of the recognized reply is this class's job; the recognizer already produced the text, and SpeechConfig only stores credentials and the voice name it uses."
+  },
+  {
+   "id": "sw-021",
+   "label": "Constructed with an endpoint and key, then its single call analyzes an image URL for the READ visual feature to pull text off a photo",
+   "answer": "ImageAnalysisClient",
+   "options": [
+    "ImageAnalysisClient",
+    "ContentUnderstandingClient",
+    "TextAnalyticsClient"
+   ],
+   "why": "This Vision client's.analyze(image_url=…, visual_features=[…]) call runs OCR on general images; ContentUnderstandingClient instead returns a poller from a very different, asynchronous call shape."
+  },
+  {
+   "id": "sw-022",
+   "label": "Its captioning-plus-OCR call takes the image by URL rather than raw bytes, requesting both CAPTION and READ features in one pass",
+   "answer": "ImageAnalysisClient",
+   "options": [
+    "ImageAnalysisClient",
+    "ContentUnderstandingClient",
+    "SpeechRecognizer"
+   ],
+   "why": "This Vision client's by-URL analysis method returns fixed prebuilt features like caption and read; it has no polling step and no relation to speech capture at all."
+  },
+  {
+   "id": "sw-023",
+   "label": "The client an app creates first when it will send document URLs off for extraction and read structured results back",
+   "answer": "ContentUnderstandingClient",
+   "options": [
+    "ContentUnderstandingClient",
+    "TextAnalyticsClient",
+    "ImageAnalysisClient"
+   ],
+   "why": "\"Which client should the app create first?\" for a Content Understanding app is this class — the other two are separate services with separate endpoints for plain text and general images respectively."
+  },
+  {
+   "id": "sw-024",
+   "label": "Its long-running analyze call returns a poller; calling.result() on that poller is how the app waits for the final extracted output",
+   "answer": "ContentUnderstandingClient",
+   "options": [
+    "ContentUnderstandingClient",
+    "ImageAnalysisClient",
+    "TextAnalyticsClient"
+   ],
+   "why": "begin_analyze() plus poller.result() is this client's asynchronous polling pattern; the Vision client's analyze() is synchronous, and the Language client's methods take documents directly with no polling."
+  },
+  {
+   "id": "sw-025",
+   "label": "The image-generation request whose response field b64_json holds the actual pixel data you decode, not a url field",
+   "answer": "gpt-image-1 call",
+   "options": [
+    "gpt-image-1 call",
+    "chat.completions.create",
+    "ImageAnalysisClient"
+   ],
+   "why": "A GPT-image-1 deployment returns generated image bytes in response.data[0].b64_json; a completions call returns text choices, and the Vision client only analyzes an image that already exists."
+  },
+  {
+   "id": "sw-026",
+   "label": "Set background to transparent and request PNG output on this text-to-image request to get a see-through background",
+   "answer": "gpt-image-1 call",
+   "options": [
+    "gpt-image-1 call",
+    "ImageAnalysisClient",
+    "chat.completions.create"
+   ],
+   "why": "Transparent background plus PNG output are GPT-image-1-series generation parameters; nothing in the Vision analysis or chat-completion calls accepts them."
+  }
+ ]
+}

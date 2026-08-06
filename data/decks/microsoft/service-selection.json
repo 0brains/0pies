@@ -1,0 +1,306 @@
+{
+ "id": "service-selection",
+ "runner": "board",
+ "title": "One Call to Make",
+ "blurb": "Read the scenario, pick the service — or the model family — the exam wants, past the near-miss planted beside it.",
+ "source": "histack.net decision list; AI-901 study guide Tasks 1.2/2.2–2.4",
+ "asOf": "2026-07",
+ "area": "microsoft-foundry",
+ "zoneMode": "options",
+ "icons": "azure-service",
+ "hint": "Two questions decide it: what does the input look like (text, form, image, audio, video, or vectors), and does the job extract/analyze, translate, search/index, or generate? The planted option is almost always the neighbor that shares the input but does the other job.",
+ "traps": [
+  "Content Understanding extracts with a plain-language field schema over multimodal input; Document Intelligence extracts with deterministic prebuilts over documents only.",
+  "Translator is text-to-text; Azure AI Speech carries audio in or out, including speech translation.",
+  "Extraction and retrieval are different services — Content Understanding/Document Intelligence extract, Azure AI Search indexes and retrieves.",
+  "Embeddings models produce vectors; Azure AI Search stores and queries them. Neither one generates new content."
+ ],
+ "items": [
+  {
+   "id": "ss-001",
+   "label": "Describe invoice fields in plain language and extract them from PDFs, photos, and call recordings into structured JSON",
+   "answer": "Azure Content Understanding",
+   "options": [
+    "Azure Content Understanding",
+    "Azure AI Document Intelligence",
+    "Azure AI Language"
+   ],
+   "why": "Natural-language field description over multimodal input → structured JSON is Content Understanding; Document Intelligence prebuilts are deterministic and document-only."
+  },
+  {
+   "id": "ss-002",
+   "label": "High-volume deterministic extraction from standard receipts and ID cards with a prebuilt model",
+   "answer": "Azure AI Document Intelligence",
+   "options": [
+    "Azure AI Document Intelligence",
+    "Azure Content Understanding",
+    "Azure AI Vision"
+   ],
+   "why": "Known form types — invoices, receipts, IDs, business cards — are Document Intelligence prebuilt territory."
+  },
+  {
+   "id": "ss-003",
+   "label": "Translate written product manuals from English text into Japanese text",
+   "answer": "Azure AI Translator",
+   "options": [
+    "Azure AI Translator",
+    "Azure AI Speech",
+    "Azure AI Language"
+   ],
+   "why": "Translator is text-to-text; Azure Speech handles audio in/out including speech translation — a 6-count corpus confusion (pair #29)."
+  },
+  {
+   "id": "ss-004",
+   "label": "Index the extracted invoice data so downstream apps can search and retrieve it",
+   "answer": "Azure AI Search",
+   "options": [
+    "Azure AI Search",
+    "Azure Content Understanding",
+    "Azure AI Document Intelligence"
+   ],
+   "why": "CU extracts; AI Search indexes and retrieves downstream (indexer, skillset, knowledge store) — extraction and retrieval are different services (pair #22)."
+  },
+  {
+   "id": "ss-005",
+   "label": "Search product descriptions by semantic similarity instead of exact keyword matching",
+   "answer": "Embeddings models",
+   "options": [
+    "Embeddings models",
+    "Chat/completion model deployment",
+    "DALL-E image generation"
+   ],
+   "why": "Embeddings convert text into vectors for semantic comparison (text-embedding-3-large) — they retrieve and compare, they never create content (pair #18)."
+  },
+  {
+   "id": "ss-006",
+   "label": "Answer free-form questions about a photo the user attaches to their chat message",
+   "answer": "Multimodal model",
+   "options": [
+    "Multimodal model",
+    "DALL-E image generation",
+    "Azure AI Vision"
+   ],
+   "why": "Image-as-input needs a deployed multimodal model reading image content parts; image generation goes the other direction, and ImageAnalysisClient/Vision returns fixed features — a different API and endpoint (pair #23)."
+  },
+  {
+   "id": "ss-007",
+   "label": "Read printed text off a photographed street sign so the app can show it back as plain text",
+   "answer": "Azure AI Vision",
+   "options": [
+    "Azure AI Vision",
+    "Azure AI Document Intelligence",
+    "Azure Content Understanding"
+   ],
+   "why": "OCR/Read is a core Vision capability over general images; Document Intelligence targets structured form layouts, not incidental street-scene text."
+  },
+  {
+   "id": "ss-008",
+   "label": "Automatically detect the source language of incoming text before translating it into English, in the same call",
+   "answer": "Azure AI Translator",
+   "options": [
+    "Azure AI Translator",
+    "Azure AI Language",
+    "Azure AI Speech"
+   ],
+   "why": "Translator's language auto-detection runs inline as part of the translation pipeline; AI Language's Language Detection is a standalone text-analytics feature used outside a translation call."
+  },
+  {
+   "id": "ss-009",
+   "label": "Train a model on your own labeled photos to tell defective parts from acceptable ones on a production line",
+   "answer": "Azure AI Custom Vision",
+   "options": [
+    "Azure AI Custom Vision",
+    "Azure AI Vision",
+    "Azure Machine Learning"
+   ],
+   "why": "Custom Vision purpose-builds classification/detection from your own labeled images with a managed training loop; general Vision only returns its fixed prebuilt features and can't be retrained on your data."
+  },
+  {
+   "id": "ss-010",
+   "label": "Match a badge-scanner photo against a roster of employee photos to confirm the person's identity",
+   "answer": "Azure AI Face",
+   "options": [
+    "Azure AI Face",
+    "Azure AI Vision",
+    "Azure AI Custom Vision"
+   ],
+   "why": "1:1 verification and 1:N identification against enrolled faces is Face's dedicated capability; general Vision analysis has no identity-matching feature."
+  },
+  {
+   "id": "ss-011",
+   "label": "Persist key phrases, sentiment, and entities pulled from a document pipeline into a store downstream apps can search",
+   "answer": "Azure AI Search",
+   "options": [
+    "Azure AI Search",
+    "Azure AI Language",
+    "Azure Content Understanding"
+   ],
+   "why": "A skillset can call AI Language to enrich each document, but the persisted, queryable knowledge store belongs to AI Search — enrichment and retrieval are separate pipeline stages."
+  },
+  {
+   "id": "ss-012",
+   "label": "Pull sentiment, key phrases, and named entities directly out of raw support-ticket text",
+   "answer": "Azure AI Language",
+   "options": [
+    "Azure AI Language",
+    "Azure AI Search",
+    "Azure Content Understanding"
+   ],
+   "why": "Sentiment, key phrase extraction, and NER are AI Language text-analytics features; AI Search only consumes that output as an enrichment step, it doesn't produce it."
+  },
+  {
+   "id": "ss-013",
+   "label": "Flag an unusual spike in a factory sensor's vibration readings as they stream in over time",
+   "answer": "Azure AI Anomaly Detector",
+   "options": [
+    "Azure AI Anomaly Detector",
+    "Azure Machine Learning",
+    "Azure AI Search"
+   ],
+   "why": "Purpose-built univariate/multivariate anomaly detection over time-series data is Anomaly Detector's job; a general ML workspace would require you to design, train, and manage that model yourself."
+  },
+  {
+   "id": "ss-014",
+   "label": "Get a transcript with timestamped speaker turns from a recorded two-person support call",
+   "answer": "Azure AI Speech",
+   "options": [
+    "Azure AI Speech",
+    "Azure AI Language",
+    "Azure Content Understanding"
+   ],
+   "why": "Speech-to-text with speaker diarization runs directly on raw audio as a Speech capability; AI Language only works on text that's already been transcribed."
+  },
+  {
+   "id": "ss-015",
+   "label": "Turn a block of written English marketing copy into narrated audio for a video voiceover",
+   "answer": "Azure AI Speech",
+   "options": [
+    "Azure AI Speech",
+    "Azure OpenAI Service",
+    "Azure AI Translator"
+   ],
+   "why": "Neural text-to-speech synthesis is a native Speech capability; producing spoken audio from Azure OpenAI needs a separate multimodal/realtime deployment, and Translator never touches audio at all."
+  },
+  {
+   "id": "ss-016",
+   "label": "Flag violent or hateful language in user-submitted chat messages before they ever reach the model",
+   "answer": "Azure AI Content Safety",
+   "options": [
+    "Azure AI Content Safety",
+    "Azure AI Language",
+    "Azure OpenAI Service"
+   ],
+   "why": "Prompt Shields and moderation categories are Content Safety's job, applied to input and output alike; AI Language's PII detection is a privacy feature, not a harmful-content classifier."
+  },
+  {
+   "id": "ss-017",
+   "label": "Blur or redact a customer's phone number and email address before a chat transcript is stored",
+   "answer": "Azure AI Language",
+   "options": [
+    "Azure AI Language",
+    "Azure AI Content Safety",
+    "Azure Content Understanding"
+   ],
+   "why": "PII Detection and Redaction is a dedicated AI Language feature for spotting and masking personal data; Content Safety instead classifies harmful-content categories — a privacy concern, not a safety one."
+  },
+  {
+   "id": "ss-018",
+   "label": "Store and query millions of already-computed embedding vectors so nearest-neighbor lookups return in milliseconds",
+   "answer": "Azure AI Search",
+   "options": [
+    "Azure AI Search",
+    "Embeddings models",
+    "Azure AI Language"
+   ],
+   "why": "Vector search and storage at query time is AI Search's job; Embeddings models only produce the vectors in the first place, they don't index or retrieve them."
+  },
+  {
+   "id": "ss-019",
+   "label": "Route a running agent's tool call out to a live weather API and feed the result back into the same conversation",
+   "answer": "Microsoft Foundry Agent Service",
+   "options": [
+    "Microsoft Foundry Agent Service",
+    "Azure OpenAI Service",
+    "Azure AI Search"
+   ],
+   "why": "Invoking a function/custom tool mid-run against a live external API is the Agent Service's orchestration layer; a bare chat completion call has no built-in tool-invocation loop of its own."
+  },
+  {
+   "id": "ss-020",
+   "label": "Attach an existing search index to a Foundry agent so its answers ground in and cite your indexed documents",
+   "answer": "Microsoft Foundry Agent Service",
+   "options": [
+    "Microsoft Foundry Agent Service",
+    "Azure AI Search",
+    "Azure OpenAI Service"
+   ],
+   "why": "Wiring a knowledge source into an agent's grounding/citation behavior is configured on the Agent Service; the index itself just serves queries, it doesn't own the agent's persona, tools, or knowledge wiring."
+  },
+  {
+   "id": "ss-021",
+   "label": "Generate a photorealistic product mockup image from a plain-English description, with no starting photo",
+   "answer": "DALL-E image generation",
+   "options": [
+    "DALL-E image generation",
+    "Multimodal model",
+    "Azure AI Vision"
+   ],
+   "why": "Text-to-image generation is DALL-E's job; a multimodal chat model reads images as input but doesn't paint new ones, and Vision only analyzes images that already exist."
+  },
+  {
+   "id": "ss-022",
+   "label": "Run a cost-sensitive assistant on a budget deployment that only ever handles short, simple requests",
+   "answer": "Small language model (Phi)",
+   "options": [
+    "Small language model (Phi)",
+    "Multimodal model",
+    "Azure OpenAI Service"
+   ],
+   "why": "A Phi-class small language model trades some capability for a much smaller footprint and lower cost, which fits lightweight, budget-constrained requests; deploying a full frontier model for simple text is the classic over-provisioning trap."
+  },
+  {
+   "id": "ss-023",
+   "label": "Let a user speak a question and hear a spoken answer back in the same low-latency turn, with no separate recognizer/synthesizer calls to wire up",
+   "answer": "Voice Live / gpt-realtime",
+   "options": [
+    "Voice Live / gpt-realtime",
+    "Azure AI Speech",
+    "Multimodal model"
+   ],
+   "why": "gpt-realtime / Voice Live is the single low-latency speech-in, speech-out session; the Azure AI Speech distractor means wiring up the manual SpeechRecognizer→process→SpeechSynthesizer pipeline yourself, which loses on latency and integration — exactly what the realtime API replaces."
+  },
+  {
+   "id": "ss-024",
+   "label": "Get the deployed model's reply back as well-formed JSON matching a schema you supply, with no extra prose around it",
+   "answer": "Chat/completion model deployment",
+   "options": [
+    "Chat/completion model deployment",
+    "Fine-tuning",
+    "Multimodal model"
+   ],
+   "why": "Structured output is a per-call parameter on a deployed chat/completion model; fine-tuning permanently changes model weights and is unnecessary just to shape one response's format."
+  },
+  {
+   "id": "ss-025",
+   "label": "Bake a company's writing style into every future response using hundreds of labeled example transcripts, so it never has to be re-prompted",
+   "answer": "Fine-tuning",
+   "options": [
+    "Fine-tuning",
+    "Chat/completion model deployment",
+    "Multimodal model"
+   ],
+   "why": "Fine-tuning is the training pass that bakes demonstrated behavior into new weights so it persists across calls; a stock chat/completion deployment only reflects what's resent in that call's prompt, and a multimodal model changes what input types are accepted, not whether style persists without re-prompting."
+  },
+  {
+   "id": "ss-026",
+   "label": "Test spoken prompts against a deployed audio-capable model directly in the Foundry chat playground, without writing any SDK code",
+   "answer": "Multimodal model",
+   "options": [
+    "Multimodal model",
+    "Voice Live / gpt-realtime",
+    "Azure AI Speech"
+   ],
+   "why": "An audio-capable multimodal deployment can be exercised straight in the chat playground; Voice Live/gpt-realtime is the dedicated low-latency realtime session API, a separate deployment path built for continuous conversational voice."
+  }
+ ]
+}

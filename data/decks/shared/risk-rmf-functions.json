@@ -1,0 +1,35 @@
+{
+  "id": "risk-rmf-functions",
+  "runner": "board",
+  "title": "NIST AI RMF — Four Functions",
+  "blurb": "Govern, Map, Measure, Manage. Sort each activity into the function it belongs to.",
+  "source": "NIST AI Risk Management Framework 1.0 (AI 100-1), January 2023",
+  "asOf": "2026-07",
+  "area": "risk",
+  "hint": "Drag each activity onto its function. Govern runs across all of them; Map establishes context, Measure quantifies, Manage acts.",
+  "note": "Govern is not a phase that finishes. If an activity sets the conditions under which the other three happen — culture, accountability, policy — it is Govern, whenever it occurs.",
+  "zones": [
+    {"key": "Govern", "name": "Govern", "def": "Cultivate a culture of risk management: policies, accountability structures, roles, workforce capability, third-party oversight. Cuts across the other three."},
+    {"key": "Map", "name": "Map", "def": "Establish context and frame risks: purpose, setting, actors, impacted people, capabilities and limitations, interdependencies."},
+    {"key": "Measure", "name": "Measure", "def": "Analyse, assess, benchmark and monitor using quantitative and qualitative methods, including the trustworthiness characteristics."},
+    {"key": "Manage", "name": "Manage", "def": "Allocate resources to mapped and measured risks: prioritise, respond, recover, communicate, and act on third-party and residual risk."}
+  ],
+  "items": [
+    {"id": "rmf-01", "label": "The organisation documents who is accountable for AI risk decisions and at what level each class of decision may be taken.", "answer": "Govern", "why": "Accountability structures are the archetypal GOVERN activity. Without them the other three functions have no one to report to and no one to escalate to."},
+    {"id": "rmf-02", "label": "An AI policy is approved, aligned to legal requirements, and its exceptions process is defined.", "answer": "Govern", "why": "Policy and its exception route set the conditions under which every other activity happens. GOVERN is cross-cutting, not sequential."},
+    {"id": "rmf-03", "label": "Staff working on AI systems are given role-specific training and their competence is tracked.", "answer": "Govern", "why": "Workforce capability sits squarely in GOVERN. A measurement regime nobody is competent to run produces numbers without assurance."},
+    {"id": "rmf-04", "label": "Processes are established for overseeing third-party models and data, including what must be obtained from suppliers.", "answer": "Govern", "why": "GOVERN explicitly covers third-party oversight policy. Applying it to a specific vendor's risk on a specific system is MANAGE."},
+    {"id": "rmf-05", "label": "The team documents the system's intended purpose, deployment setting, and the categories of people it will affect.", "answer": "Map", "why": "Framing context is the whole point of MAP. Skipping it is how a system is later measured accurately against the wrong objective."},
+    {"id": "rmf-06", "label": "Known capabilities, limitations and assumptions of the system are catalogued, including where it should not be used.", "answer": "Map", "why": "MAP establishes what the system is and is not for. The out-of-scope statement authored here is what later evaluation and monitoring are judged against."},
+    {"id": "rmf-07", "label": "Internal and external stakeholders, including affected communities, are identified along with the benefits and potential harms to each.", "answer": "Map", "why": "Identifying impacted parties and framing potential impacts is MAP. Quantifying those impacts is MEASURE."},
+    {"id": "rmf-08", "label": "Interdependencies with other systems and the consequences of the AI component failing are traced.", "answer": "Map", "why": "MAP covers the system in its wider context, including what else breaks when it does. A component viewed in isolation is a mapped risk missed."},
+    {"id": "rmf-09", "label": "The system is benchmarked against defined metrics for validity, reliability and robustness before release.", "answer": "Measure", "why": "MEASURE covers assessment against the trustworthiness characteristics using repeatable methods."},
+    {"id": "rmf-10", "label": "Performance is evaluated separately for each demographic subgroup and the disparity is quantified.", "answer": "Measure", "why": "Analysing harmful bias with quantitative methods is MEASURE. Deciding what to do about the disparity is MANAGE."},
+    {"id": "rmf-11", "label": "Ongoing monitoring instruments the deployed system for input drift and quality degradation.", "answer": "Measure", "why": "MEASURE includes continuous monitoring after deployment, not only pre-release testing. Drift detection lives here."},
+    {"id": "rmf-12", "label": "Test, evaluation, verification and validation methods are chosen, documented, and their own limitations recorded.", "answer": "Measure", "why": "MEASURE requires that the measurement approach itself be assessed. A metric with unexamined blind spots is a false assurance."},
+    {"id": "rmf-13", "label": "Risks are prioritised against impact and resources are allocated to the highest first.", "answer": "Manage", "why": "Prioritisation and resource allocation across mapped and measured risks is the definition of MANAGE."},
+    {"id": "rmf-14", "label": "A response plan is put in place covering incident containment, recovery and communication for a model failure.", "answer": "Manage", "why": "MANAGE covers responding to, recovering from and communicating about incidents. Writing the plan is MANAGE; rehearsing capability is GOVERN."},
+    {"id": "rmf-15", "label": "Residual risk after mitigation is documented and communicated to the deployer of the system.", "answer": "Manage", "why": "MANAGE explicitly addresses residual risk, including telling downstream users what remains. Undocumented residual risk is transferred by accident."},
+    {"id": "rmf-16", "label": "A decision is taken to decommission a deployed model whose risk can no longer be brought within tolerance.", "answer": "Manage", "why": "Superseding or decommissioning a system is a MANAGE response. Having a defined route to retirement is what makes it possible."}
+  ]
+}

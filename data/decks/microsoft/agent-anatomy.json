@@ -1,0 +1,157 @@
+{
+ "id": "agent-anatomy",
+ "runner": "board",
+ "title": "Anatomy of an Agent",
+ "blurb": "Instructions, model, tools, knowledge, thread, run — drop each job on the agent component that does it.",
+ "source": "AI-901 study guide Task 2.1",
+ "asOf": "2026-07",
+ "area": "microsoft-foundry",
+ "hint": "Ask which layer the job belongs to: fixed at creation (instructions), the reasoning engine itself (model), an action beyond text (tools), attached data to ground answers (knowledge), one conversation's accumulating state (thread), or the single call that produces output (run).",
+ "note": "Instructions and tools both get configured at design time — the tie-break is whether the card is a behavior rule (instructions) or an external capability the agent calls (tools). Thread and run both live at runtime — the tie-break is whether the card is the container holding messages (thread) or the invocation that produces the next message (run).",
+ "traps": [
+  "`{\"deployment\":{\"model\":AGENT_NAME}}` is the canonical wrong answer — deployments host models, agents are model + instructions + tools",
+  "Unsaved agent changes are lost on leaving the portal — save / create_version."
+ ],
+ "zones": [
+  {
+   "key": "Instructions",
+   "name": "Instructions",
+   "def": "The persistent behavior, persona, and rules set when the agent is defined — not chosen per conversation."
+  },
+  {
+   "key": "Model",
+   "name": "Model",
+   "def": "The deployed model — referenced by deployment name — that the agent reasons with."
+  },
+  {
+   "key": "Tools",
+   "name": "Tools",
+   "def": "Functions, APIs, and other actions the agent can call beyond generating text."
+  },
+  {
+   "key": "Knowledge",
+   "name": "Knowledge",
+   "def": "Files, indexes, and other data sources the agent can search to ground its answers."
+  },
+  {
+   "key": "Thread",
+   "name": "Thread",
+   "def": "One ongoing conversation's runtime message history, created per session."
+  },
+  {
+   "key": "Run",
+   "name": "Run",
+   "def": "The invocation that executes the agent against a thread and produces its next output."
+  }
+ ],
+ "items": [
+  {
+   "id": "ag-001",
+   "label": "\"You are a courteous support agent; escalate anything involving refunds\" — set once when the agent is created",
+   "answer": "Instructions",
+   "why": "The instructions field defines persistent behavior at creation time — the study material's most-emphasised agent concept, distinct from runtime chat state."
+  },
+  {
+   "id": "ag-007",
+   "label": "The natural-language persona text supplied inside PromptAgentDefinition alongside the model name, when the agent is first defined in code",
+   "answer": "Instructions",
+   "why": "PromptAgentDefinition(model=MODEL_NAME, instructions=...) sets both fields at definition time, but only the persona text shapes how the agent behaves — the model name beside it is a separate component."
+  },
+  {
+   "id": "ag-008",
+   "label": "Format every response as a numbered list capped at five items — fixed when the agent is authored, not chosen per question",
+   "answer": "Instructions",
+   "why": "A standing formatting rule baked in at authoring time is behavior, not an external action — it doesn't call anything beyond text, which is what separates it from Tools."
+  },
+  {
+   "id": "ag-003",
+   "label": "The deployed gpt-4o the agent reasons with — referenced by its deployment name",
+   "answer": "Model",
+   "why": "An agent = model + instructions + tools; the model is a deployment, and {\"deployment\":{\"model\":AGENT_NAME}} is the canonical wrong answer."
+  },
+  {
+   "id": "ag-009",
+   "label": "Swapping the reasoning engine from gpt-4o-mini to gpt-5-mini without touching the agent's persona or its attached tools",
+   "answer": "Model",
+   "why": "Only the deployed reasoning engine changes here; persona and tool wiring stay fixed — a clean test of whether the deployment is a separate layer from the agent's other components."
+  },
+  {
+   "id": "ag-010",
+   "label": "The deployment identifier passed inside PromptAgentDefinition alongside the persona text, when the agent is first defined in code",
+   "answer": "Model",
+   "why": "Same PromptAgentDefinition() call as the persona text, but this parameter names which deployed engine the agent calls — a deployment reference, not the behavior itself."
+  },
+  {
+   "id": "ag-002",
+   "label": "Allow the agent to call external functions or APIs to take actions",
+   "answer": "Tools",
+   "why": "Function calling / tools let the model act beyond text — the capability that separates an agent from a plain chat call."
+  },
+  {
+   "id": "ag-011",
+   "label": "Turn on live web search so the agent can pull current information beyond what's in its training data",
+   "answer": "Tools",
+   "why": "Web search is opened from the Foundry portal's tool catalog (Build > Tools) alongside code interpreter and file search — a live external capability, not attached static content."
+  },
+  {
+   "id": "ag-012",
+   "label": "Let the agent run generated code to compute a result instead of just describing the calculation steps",
+   "answer": "Tools",
+   "why": "Code execution is one of the catalog capabilities, alongside web search and file search, that lets the agent act beyond producing text — the reasoning engine itself never executes code directly."
+  },
+  {
+   "id": "ag-004",
+   "label": "Grounding files and data sources the agent can search to answer from your content",
+   "answer": "Knowledge",
+   "why": "Knowledge attaches your data to the agent so answers ground in it — part of the agent anatomy the study guide names for Task 2.1."
+  },
+  {
+   "id": "ag-013",
+   "label": "Connect an existing Azure AI Search index so the agent's answers cite your indexed content instead of guessing",
+   "answer": "Knowledge",
+   "why": "An attached search index is static content the agent retrieves from to ground its answers — distinct from a tool like web search, which reaches out to a live external capability instead of your own data."
+  },
+  {
+   "id": "ag-014",
+   "label": "Add company policy documents for the agent to search over — configured in the Agents playground alongside its persona text and attached tools — before testing multi-turn behavior",
+   "answer": "Knowledge",
+   "why": "The Agents playground configures three distinct surfaces side by side — persona, tools, and attached documents — and this card is the attached-content one: data the agent grounds answers in, not an action it takes."
+  },
+  {
+   "id": "ag-005",
+   "label": "Carries one ongoing conversation's user and assistant messages at runtime",
+   "answer": "Thread",
+   "why": "Threads/conversations hold runtime chat state — created per session by the client app, not at agent-definition time."
+  },
+  {
+   "id": "ag-015",
+   "label": "openai.conversations.create() called by the client app before the first turn is sent to the agent",
+   "answer": "Thread",
+   "why": "Creating the conversation object happens before any message is sent — it opens the runtime container that later turns write into, distinct from the call that actually produces a reply."
+  },
+  {
+   "id": "ag-016",
+   "label": "The single unbroken timeline of turns that lets the agent reference something the user said three questions ago, without those messages being resent by hand every time",
+   "answer": "Thread",
+   "why": "Accumulated runtime chat history is session state, not agent behavior — it grows per conversation, unlike the persona rules fixed once at definition time."
+  },
+  {
+   "id": "ag-006",
+   "label": "The invocation that processes the conversation and produces the agent's next output",
+   "answer": "Run",
+   "why": "A run (openai.responses.create / create run) executes the agent against the thread — the third distinct layer: definition vs session vs invocation."
+  },
+  {
+   "id": "ag-017",
+   "label": "openai.responses.create() is the call that actually sends the user's latest message and returns the agent's reply",
+   "answer": "Run",
+   "why": "This is the invocation step — it's what actually processes the conversation and produces output, distinct from openai.conversations.create(), which only opens the container the messages live in."
+  },
+  {
+   "id": "ag-018",
+   "label": "The extra_body={\"agent_reference\": {...}} parameter inside that same call, telling the system which agent definition to execute against the conversation",
+   "answer": "Run",
+   "why": "agent_reference is per-invocation metadata on the responses.create() call, not a fixed agent property — the exam draws this distinction explicitly against the deployment name baked into the agent's own definition."
+  }
+ ]
+}

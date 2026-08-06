@@ -1,0 +1,109 @@
+{
+  "id": "model-decisions",
+  "runner": "board",
+  "title": "Model Decision Lab",
+  "blurb": "Choose the move that addresses the actual cause.",
+  "source": "AWS Certified AI Practitioner (AIF-C01) exam guide · Domain 3",
+  "asOf": "2026-07",
+  "area": "genai",
+  "zoneMode": "options",
+  "hint": "Drag each situation onto the response it calls for. Some responses on the board are there to tempt you.",
+  "items": [
+    {
+      "id": "model-decisions-01",
+      "label": "An assistant must answer from private policies that change every week and cite the current source.",
+      "sub": "Frequently Changing Policies",
+      "options": [
+        "Retrieval-Augmented Generation",
+        "Fine-Tuning",
+        "Longer System Prompt"
+      ],
+      "answer": "Retrieval-Augmented Generation",
+      "why": "RAG retrieves current private evidence at request time and supports citations. Trade-off: Fine-tuning can adapt behavior, but it is a poor mechanism for frequently changing facts."
+    },
+    {
+      "id": "model-decisions-02",
+      "label": "Thousands of examples demonstrate a stable report style that the base model fails to reproduce consistently.",
+      "sub": "Stable Specialist Format",
+      "options": [
+        "Fine-Tuning",
+        "RAG",
+        "Increase Temperature"
+      ],
+      "answer": "Fine-Tuning",
+      "why": "Fine-tuning is appropriate for recurring behavior demonstrated by a curated example set. Trade-off: Few-shot prompting should still be tried first when it meets quality requirements at lower complexity."
+    },
+    {
+      "id": "model-decisions-03",
+      "label": "A capable model must extract five fields into a validated JSON object; no new knowledge is required.",
+      "sub": "Strict JSON Extraction",
+      "options": [
+        "Prompt with Structured Output",
+        "Continued Pretraining",
+        "Vector Search"
+      ],
+      "answer": "Prompt with Structured Output",
+      "why": "Clear instructions, examples, a schema, and validation address formatting without changing model weights. Trade-off: Fine-tuning becomes reasonable only if prompt-based extraction repeatedly fails at the required scale and quality."
+    },
+    {
+      "id": "model-decisions-04",
+      "label": "A model must internalize specialized terminology from a very large unlabeled scientific corpus.",
+      "sub": "Domain Language at Scale",
+      "options": [
+        "Continued Pretraining",
+        "RAG Only",
+        "Higher Top-p"
+      ],
+      "answer": "Continued Pretraining",
+      "why": "Continued pretraining adapts the model's language representations using large quantities of domain text. Trade-off: RAG remains preferable when the need is access to changing facts rather than deeper domain-language adaptation."
+    },
+    {
+      "id": "model-decisions-05",
+      "label": "The system must inspect an order, request approval, call a refund API, and report the result.",
+      "sub": "Action-Taking Assistant",
+      "options": [
+        "Agent with Constrained Tools",
+        "Text Generation Only",
+        "Embedding Model"
+      ],
+      "answer": "Agent with Constrained Tools",
+      "why": "A tool-using agent can orchestrate steps, but each tool needs narrow permissions, validation, and approval gates. Trade-off: A deterministic workflow is safer when the sequence is fixed and does not require model-directed planning."
+    },
+    {
+      "id": "model-decisions-06",
+      "label": "A claims system must reason over a damage photograph together with the written incident description.",
+      "sub": "Image and Text Inspection",
+      "options": [
+        "Multimodal Foundation Model",
+        "Text Embedding Model",
+        "Keyword Search"
+      ],
+      "answer": "Multimodal Foundation Model",
+      "why": "A multimodal model can jointly interpret visual and textual inputs. Trade-off: Separate specialist vision and text models may win when independent outputs, control, or lower cost matter more."
+    },
+    {
+      "id": "model-decisions-07",
+      "label": "Ten million short records must be classified nightly under a tight budget after labels are available.",
+      "sub": "High-Volume Simple Classification",
+      "options": [
+        "Small Task-Specific Model",
+        "Largest Available Foundation Model",
+        "Real-Time Agent"
+      ],
+      "answer": "Small Task-Specific Model",
+      "why": "A smaller evaluated classifier can deliver adequate quality with much lower batch-inference cost. Trade-off: A foundation model may accelerate prototyping or create labels, but should earn its production cost through measured quality."
+    },
+    {
+      "id": "model-decisions-08",
+      "label": "Published rules completely determine eligibility and every decision must be reproducible and auditable.",
+      "sub": "Exact Eligibility Policy",
+      "options": [
+        "Deterministic Rules",
+        "Fine-Tuned LLM",
+        "Autonomous Agent"
+      ],
+      "answer": "Deterministic Rules",
+      "why": "Exact, complete rules should be implemented directly rather than approximated by a probabilistic model. Trade-off: AI can assist document intake or explanation without owning the authoritative decision."
+    }
+  ]
+}

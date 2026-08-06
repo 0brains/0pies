@@ -1,0 +1,132 @@
+{
+  "id": "responsible",
+  "runner": "board",
+  "title": "Responsible AI",
+  "blurb": "Fairness, transparency, explainability, safety and their measures.",
+  "source": "AWS Certified AI Practitioner (AIF-C01) exam guide · Domain 4",
+  "asOf": "2026-07",
+  "area": "risk",
+  "hint": "Identify the source of harm and the matching control; documenting a risk, preventing it, detecting it, and requiring human approval are distinct safeguards.",
+  "items": [
+    {
+      "id": "responsible-01",
+      "label": "Existing social or institutional inequality is reflected in the data used to build the system.",
+      "answer": "Historical Bias",
+      "why": "Existing social or institutional inequality is reflected in the data used to build the system."
+    },
+    {
+      "id": "responsible-02",
+      "label": "Some people, conditions, languages, or cases are underrepresented in the dataset.",
+      "answer": "Representation Bias",
+      "why": "Some people, conditions, languages, or cases are underrepresented in the dataset."
+    },
+    {
+      "id": "responsible-03",
+      "label": "The chosen feature or label is an imperfect and systematically distorted proxy for the real concept.",
+      "answer": "Measurement Bias",
+      "why": "The chosen feature or label is an imperfect and systematically distorted proxy for the real concept."
+    },
+    {
+      "id": "responsible-04",
+      "label": "Evaluates whether system quality and harms are acceptably distributed across relevant groups.",
+      "answer": "Fairness",
+      "why": "Evaluates whether system quality and harms are acceptably distributed across relevant groups."
+    },
+    {
+      "id": "responsible-05",
+      "label": "Helps people understand the factors or evidence contributing to a model output.",
+      "answer": "Explainability",
+      "why": "Helps people understand the factors or evidence contributing to a model output."
+    },
+    {
+      "id": "responsible-06",
+      "label": "Communicates that AI is being used, its intended purpose, limitations, and accountable owner.",
+      "answer": "Transparency",
+      "why": "Communicates that AI is being used, its intended purpose, limitations, and accountable owner."
+    },
+    {
+      "id": "responsible-07",
+      "label": "Places qualified people in review or approval paths for uncertain, sensitive, or consequential cases.",
+      "answer": "Human Oversight",
+      "why": "Places qualified people in review or approval paths for uncertain, sensitive, or consequential cases."
+    },
+    {
+      "id": "responsible-08",
+      "label": "Records where content came from and whether it was generated or modified by AI.",
+      "answer": "Content Provenance",
+      "why": "Records where content came from and whether it was generated or modified by AI."
+    },
+    {
+      "id": "responsible-09",
+      "label": "Detects and removes personal data before it reaches a model, log, or unauthorized recipient.",
+      "answer": "PII Redaction",
+      "why": "Detects and removes personal data before it reaches a model, log, or unauthorized recipient."
+    },
+    {
+      "id": "responsible-10",
+      "label": "Gives a model, agent, or tool only the permissions required for its specific task.",
+      "answer": "Least Privilege",
+      "why": "Gives a model, agent, or tool only the permissions required for its specific task."
+    },
+    {
+      "id": "responsible-11",
+      "label": "Untrusted instructions in user input or retrieved content attempt to redirect model behavior.",
+      "answer": "Prompt Injection",
+      "why": "Untrusted instructions in user input or retrieved content attempt to redirect model behavior."
+    },
+    {
+      "id": "responsible-12",
+      "label": "Malicious instructions hidden in external content are retrieved or read by an AI system.",
+      "answer": "Indirect Prompt Injection",
+      "why": "Malicious instructions hidden in external content are retrieved or read by an AI system."
+    },
+    {
+      "id": "responsible-13",
+      "label": "Input is crafted to evade behavioral safeguards and elicit prohibited output.",
+      "answer": "Jailbreaking",
+      "why": "Input is crafted to evade behavioral safeguards and elicit prohibited output."
+    },
+    {
+      "id": "responsible-14",
+      "label": "Manipulated training examples introduce attacker-chosen behavior or systematic errors.",
+      "answer": "Training-Data Poisoning",
+      "why": "Manipulated training examples introduce attacker-chosen behavior or systematic errors."
+    },
+    {
+      "id": "responsible-15",
+      "label": "Malicious or misleading documents are inserted into a knowledge source to corrupt grounded answers.",
+      "answer": "Retrieval Poisoning",
+      "why": "Malicious or misleading documents are inserted into a knowledge source to corrupt grounded answers."
+    },
+    {
+      "id": "responsible-16",
+      "label": "The system reveals confidential information through output, logs, memory, or tool results.",
+      "answer": "Sensitive-Data Disclosure",
+      "why": "The system reveals confidential information through output, logs, memory, or tool results."
+    },
+    {
+      "id": "responsible-17",
+      "label": "An agent can take consequential actions without adequate scope limits, confirmation, or supervision.",
+      "answer": "Excessive Agency",
+      "why": "An agent can take consequential actions without adequate scope limits, confirmation, or supervision."
+    },
+    {
+      "id": "responsible-18",
+      "label": "Abusive requests trigger excessive model or tool consumption and create avoidable cost.",
+      "answer": "Denial of Wallet",
+      "why": "Abusive requests trigger excessive model or tool consumption and create avoidable cost."
+    },
+    {
+      "id": "responsible-19",
+      "label": "Documents intended use, evaluation results, limitations, risks, and other facts about a model.",
+      "answer": "Model Card",
+      "why": "Documents intended use, evaluation results, limitations, risks, and other facts about a model."
+    },
+    {
+      "id": "responsible-20",
+      "label": "Records prompts, model versions, retrieved evidence, tool actions, approvals, and outcomes for accountability.",
+      "answer": "Audit Trail",
+      "why": "Records prompts, model versions, retrieved evidence, tool actions, approvals, and outcomes for accountability."
+    }
+  ]
+}

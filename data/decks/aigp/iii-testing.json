@@ -1,0 +1,175 @@
+{
+ "id": "iii-testing",
+ "runner": "board",
+ "title": "Name That Test",
+ "blurb": "Six testing disciplines a model runs through before it ships. Sort each scene into the discipline it's exercising.",
+ "source": "AIGP BOK III.B · AIGP Study Guide (SG) §Domain III.B (Plan and Perform Training & Testing)",
+ "asOf": "2026-08",
+ "area": "III.B",
+ "hint": "Ask what the scene is checking for, not just what data it uses. Validation here means one thing only: does the model generalize beyond what it trained on. The dataset that supplies a model's final, unbiased error estimate is a different concept entirely, tested head-on in Pipeline Twins.",
+ "note": "These are development-time and pre-release checks. What happens after a system goes live and stays live is a different board.",
+ "traps": [
+  "Scoring an issue by probability times severity is a risk-management prioritization tool, not a performance test — the planted wrong answer for 'which of these does NOT evaluate performance'.",
+  "Minimizing human involvement when testing a model against live personal data is never a best practice — oversight has to stay in the loop even during testing, alongside anonymizing the data and scoping tests to intended uses."
+ ],
+ "zones": [
+  {
+   "key": "Unit",
+   "name": "Unit",
+   "def": "Checking one component of the pipeline by itself — a tokenizer, a normalization function, a scoring routine — before it is ever wired into anything else. Catches errors while they are cheapest to fix."
+  },
+  {
+   "key": "Integration",
+   "name": "Integration",
+   "def": "Exercising components together end-to-end, watching for failures that only emerge once pieces are combined — mismatches, bottlenecks, or bias that no individual component showed on its own."
+  },
+  {
+   "key": "Validation testing (generalization)",
+   "name": "Validation testing (generalization)",
+   "def": "Checking whether the trained model generalizes beyond the data it trained on: the gap between training-set behavior and behavior on data it has never seen. A development-time check against overfitting — not the model's last word on performance."
+  },
+  {
+   "key": "Performance",
+   "name": "Performance",
+   "def": "Measuring the system against the specific, pre-defined metrics — accuracy, reliability, fairness thresholds — that translate the project's business, ethical and regulatory goals into numbers everyone signed off on."
+  },
+  {
+   "key": "Security",
+   "name": "Security",
+   "def": "Probing whether the model can be attacked: weights stolen, training data reconstructed, outputs manipulated by crafted inputs. Resilience against deliberate or accidental compromise."
+  },
+  {
+   "key": "Bias & interpretability",
+   "name": "Bias & interpretability",
+   "def": "Checking whether outcomes are fair across protected groups, and whether a decision can be explained in terms meaningful to the people who have to rely on it."
+  }
+ ],
+ "items": [
+  {
+   "id": "iii-tb-01",
+   "label": "The tokenizer alone is checked for crash-free handling of emoji input.",
+   "answer": "Unit",
+   "why": "Single-component isolation is this discipline's whole job — the tokenizer either handles the input or it doesn't, independent of anything downstream.",
+   "citation": "AIGP Body of Knowledge v2.1"
+  },
+  {
+   "id": "iii-tb-02",
+   "label": "A function that standardizes how different data points are represented is checked entirely on its own, before it's wired into anything downstream.",
+   "answer": "Unit",
+   "why": "Isolating one building block catches errors while they're cheapest to fix, before a subtle flaw scales across millions of records and quietly skews results — the discipline stays here even though the function will later run as part of a larger pipeline.",
+   "citation": "SG"
+  },
+  {
+   "id": "iii-tb-03",
+   "label": "A custom scoring routine buried in the pipeline is run against a handful of known inputs and checked line-by-line for the right output, before the rest of the system even exists to call it.",
+   "answer": "Unit",
+   "why": "Checking one routine's output against known-correct values, before the rest of the system exists, is the narrowest and earliest gate — distinct from the next discipline, which only starts once multiple pieces are wired together.",
+   "citation": "SG"
+  },
+  {
+   "id": "iii-tb-04",
+   "label": "Retriever, model and UI are exercised together end-to-end; emergent failures appear only at this level.",
+   "answer": "Integration",
+   "why": "Failures that only appear once components run together are this discipline's signature — no single-component check would have caught them.",
+   "citation": "SG-C09-Q008"
+  },
+  {
+   "id": "iii-tb-05",
+   "label": "An inventory system's pieces pass cleanly on their own, then the whole thing starts over-ordering products tied to certain demographic groups once every component runs together.",
+   "answer": "Integration",
+   "why": "The problem only surfaces once the full system is combined, so the fix has to be applied at the combined level too — a component-by-component review would have missed it entirely.",
+   "citation": "AIGP Body of Knowledge v2.1"
+  },
+  {
+   "id": "iii-tb-06",
+   "label": "A loan-approval model returns different results on different hardware, because of floating-point precision differences that only show up once the full system runs end to end.",
+   "answer": "Integration",
+   "why": "The discrepancy is a byproduct of combining components on real hardware — governance response is to document the variance range and set acceptable decision boundaries, not to chase it out of any one piece in isolation.",
+   "citation": "AIGP Body of Knowledge v2.1"
+  },
+  {
+   "id": "iii-tb-07",
+   "label": "Great accuracy on the data it trained on, poor on records it has never seen.",
+   "answer": "Validation testing (generalization)",
+   "why": "This is the generalization check — the gap between training and unseen-data behavior — distinct from the test/holdout set, which stays untouched until tuning is finished and then supplies the model's final, unbiased error estimate.",
+   "citation": "SG"
+  },
+  {
+   "id": "iii-tb-08",
+   "label": "A model hits near-perfect accuracy on its training set, then performs inconsistently once new patient groups outside that set are run through it.",
+   "answer": "Validation testing (generalization)",
+   "why": "The training-to-unseen-data gap is exactly what this discipline exists to catch; a fairness metric would instead compare error rates across protected groups on the same dataset, which this scenario never does.",
+   "citation": "AIGP Body of Knowledge v2.1"
+  },
+  {
+   "id": "iii-tb-09",
+   "label": "One model's predictions swing wildly depending on which slice of the training data it sees; another barely moves off the average no matter what's fed in.",
+   "answer": "Validation testing (generalization)",
+   "why": "Wide swings across training slices versus flat indifference to the data are the two failure signatures this discipline watches for during development, well before anyone talks about a final performance number.",
+   "citation": "AIGP Body of Knowledge v2.1"
+  },
+  {
+   "id": "iii-tb-10",
+   "label": "Response-time disparity is measured across user regions under load.",
+   "answer": "Performance",
+   "why": "Processing-time equity turns a business/fairness requirement into a measurable, pre-defined metric — distinct from a protected-attribute-flip check, which watches output content, not latency.",
+   "citation": "AIGP Body of Knowledge v2.1"
+  },
+  {
+   "id": "iii-tb-11",
+   "label": "Statistical sampling and decision-analysis checks are run against the system's outputs to confirm they meet the accuracy and reliability targets set at the start of the project.",
+   "answer": "Performance",
+   "why": "Statistical sampling and decision analysis are recognized ways to test whether a responsible AI system meets its targets; scoring an issue by probability times severity is a risk-management prioritization tool, not a way of testing the system itself.",
+   "citation": "AIGP Body of Knowledge v2.1"
+  },
+  {
+   "id": "iii-tb-12",
+   "label": "The fairness and reliability numbers a project signed off on months ago get checked against what the system is actually producing today, using the same metrics everyone agreed to.",
+   "answer": "Performance",
+   "why": "Holding results to the metrics agreed on up front, not whichever number happens to look best, is what keeps this discipline honest and prevents teams from quietly swapping in a flattering measure.",
+   "citation": "SG"
+  },
+  {
+   "id": "iii-tb-13",
+   "label": "An outsider probes whether a specific patient's record was in the training set.",
+   "answer": "Security",
+   "why": "An outsider learning whether a specific record was in the training set is a security-testing failure — distinct from the generalization check, which only cares about accuracy on unseen data, not who was in the training set.",
+   "citation": "AIGP Body of Knowledge v2.1"
+  },
+  {
+   "id": "iii-tb-14",
+   "label": "Penetration-style checks look for ways an attacker could steal the model's weights or reconstruct pieces of the training data.",
+   "answer": "Security",
+   "why": "Targeting weight theft and training-data reconstruction is an attacker's-eye view, distinct from a generalization check, which never considers whether anyone is trying to extract anything from the model.",
+   "citation": "AIGP Body of Knowledge v2.1"
+  },
+  {
+   "id": "iii-tb-15",
+   "label": "Penetration testers find that carefully crafted inputs can flip an already-accurate model's diagnosis in roughly one case out of eight.",
+   "answer": "Security",
+   "why": "Crafted adversarial inputs causing misclassification is a security-testing finding; governance response is to document it as a known limitation and add input validation and anomaly detection, not to wave it off because clinical accuracy still meets target.",
+   "citation": "AIGP Body of Knowledge v2.1"
+  },
+  {
+   "id": "iii-tb-16",
+   "label": "Protected attribute flipped, everything else held constant, output watched.",
+   "answer": "Bias & interpretability",
+   "why": "Watching whether flipping a protected attribute alone changes the output is a counterfactual-fairness check — distinct from a membership-inference probe, which asks whether a record was in the training set at all.",
+   "citation": "SG-C09-Q007"
+  },
+  {
+   "id": "iii-tb-17",
+   "label": "A hospital's compliance file shows fairness checks were run and logged, plus a record that decisions could be explained to reviewers — evidence the organization met its duty of care.",
+   "answer": "Bias & interpretability",
+   "why": "Logging that fairness and explanation checks actually ran is what turns them into defensible regulatory evidence — distinct from a security audit trail, which documents attack resistance, not fairness or explanation quality.",
+   "citation": "AIGP Body of Knowledge v2.1"
+  },
+  {
+   "id": "iii-tb-18",
+   "label": "A model's decision gets translated into terms a clinician can actually act on, not just a probability score.",
+   "answer": "Bias & interpretability",
+   "why": "Translating a decision into terms a stakeholder can use, rather than leaving it as a bare probability score, is the half of this zone a black-box model can still fail even after passing every accuracy and fairness number.",
+   "citation": "SG"
+  }
+ ]
+}

@@ -1,0 +1,343 @@
+{
+  "id": "features",
+  "runner": "board",
+  "title": "Feature to Function",
+  "blurb": "Match each job to the capability that does it.",
+  "source": "Microsoft AI-901 (Azure AI Fundamentals) skills-measured guide · in-scope Azure AI services",
+  "asOf": "2026-07",
+  "area": "microsoft-services",
+  "hint": "Drag each job onto the capability that performs it. The reveal names the service it belongs to.",
+  "icons": "azure-service",
+  "groupByService": true,
+  "items": [
+    {
+      "id": "feat-000-00",
+      "label": "Pull machine-readable text out of a photo of a whiteboard or street sign.",
+      "answer": "OCR / Read API",
+      "why": "Azure AI Vision's Read API applies OCR to extract printed and handwritten text from images, unlike Image Analysis's captioning and tagging.",
+      "service": "Azure AI Vision"
+    },
+    {
+      "id": "feat-000-01",
+      "label": "Identify and place bounding boxes around individual objects in a photo.",
+      "answer": "Object Detection",
+      "why": "Azure AI Vision's Object Detection returns bounding boxes and labels for individual objects found in an image.",
+      "service": "Azure AI Vision"
+    },
+    {
+      "id": "feat-000-02",
+      "label": "Generate a natural-language caption describing what's happening in an image.",
+      "answer": "Image Captioning",
+      "why": "Azure AI Vision's Image Analysis captioning feature generates a natural-language description of an image's content.",
+      "service": "Azure AI Vision"
+    },
+    {
+      "id": "feat-001-00",
+      "label": "Convert a live microphone feed into streaming text in real time.",
+      "answer": "Speech-to-text (speech recognition)",
+      "why": "Azure AI Speech's speech-to-text recognition transcribes streaming or batch audio into text in real time.",
+      "service": "Azure AI Speech"
+    },
+    {
+      "id": "feat-001-01",
+      "label": "Produce natural-sounding spoken audio from written text for a voice assistant.",
+      "answer": "Text-to-speech (speech synthesis)",
+      "why": "Azure AI Speech's text-to-speech synthesis converts written text into natural-sounding spoken audio.",
+      "service": "Azure AI Speech"
+    },
+    {
+      "id": "feat-001-02",
+      "label": "Translate spoken French audio into spoken or written English in real time.",
+      "answer": "Speech Translation",
+      "why": "Azure AI Speech's Speech Translation feature translates spoken audio into another language's text or speech in real time, combining recognition and translation in one call.",
+      "service": "Azure AI Speech"
+    },
+    {
+      "id": "feat-002-00",
+      "label": "Pull out people, places, organizations, and dates named in a block of text.",
+      "answer": "Named Entity Recognition (NER)",
+      "why": "Azure AI Language's Named Entity Recognition identifies and categorizes people, places, organizations, and dates mentioned in text.",
+      "service": "Azure AI Language"
+    },
+    {
+      "id": "feat-002-01",
+      "label": "Automatically find and redact credit-card numbers and phone numbers found in support transcripts.",
+      "answer": "PII Detection and Redaction",
+      "why": "Azure AI Language's PII detection feature finds and can redact sensitive personal data like phone numbers and card numbers in text.",
+      "service": "Azure AI Language"
+    },
+    {
+      "id": "feat-002-02",
+      "label": "Condense a long article down to its most important sentences.",
+      "answer": "Text Summarization",
+      "why": "Azure AI Language's summarization feature condenses long text into its most salient sentences or a short abstract.",
+      "service": "Azure AI Language"
+    },
+    {
+      "id": "feat-002-03",
+      "label": "Detect which of dozens of languages a piece of incoming text is written in.",
+      "answer": "Language Detection",
+      "why": "Azure AI Language's language detection feature identifies which of dozens of languages a piece of text is written in.",
+      "service": "Azure AI Language"
+    },
+    {
+      "id": "feat-002-04",
+      "label": "Build a chatbot that recognizes a user's intent, such as 'book a flight,' and pulls out key entities from their message.",
+      "answer": "Conversational Language Understanding (CLU)",
+      "why": "Azure AI Language's Conversational Language Understanding trains a model to recognize a user's intent and extract entities from conversational input.",
+      "service": "Azure AI Language"
+    },
+    {
+      "id": "feat-003-00",
+      "label": "Instantly translate a chat message typed in Spanish into German.",
+      "answer": "Text Translation",
+      "why": "Azure AI Translator's text translation feature converts text between languages in real time via a single API call.",
+      "service": "Azure AI Translator"
+    },
+    {
+      "id": "feat-003-01",
+      "label": "Translate an entire Word document while preserving its original layout and formatting.",
+      "answer": "Document Translation",
+      "why": "Azure AI Translator's Document Translation feature translates whole documents asynchronously while preserving their original formatting and layout.",
+      "service": "Azure AI Translator"
+    },
+    {
+      "id": "feat-004-00",
+      "label": "Extract vendor, total, and line items from a receipt using a ready-made model, with no training required.",
+      "answer": "Prebuilt models",
+      "why": "Azure AI Document Intelligence's prebuilt models extract known fields from standard form types like invoices and receipts with no training required.",
+      "service": "Azure AI Document Intelligence"
+    },
+    {
+      "id": "feat-004-01",
+      "label": "Train a model on your own custom form layout that no prebuilt model covers.",
+      "answer": "Custom models",
+      "why": "Azure AI Document Intelligence's custom models are trained on your own labeled form layouts that no prebuilt model covers.",
+      "service": "Azure AI Document Intelligence"
+    },
+    {
+      "id": "feat-004-02",
+      "label": "Pull raw text, tables, and selection marks out of a scanned document's structure.",
+      "answer": "Layout model",
+      "why": "Azure AI Document Intelligence's Layout model extracts raw text, tables, and selection marks along with a document's structure.",
+      "service": "Azure AI Document Intelligence"
+    },
+    {
+      "id": "feat-005-00",
+      "label": "Pull invoice numbers, totals, and line items out of scanned PDF forms and photographed receipts into structured JSON fields you named yourself.",
+      "answer": "Document field extraction",
+      "why": "Azure Content Understanding's document field extraction applies a custom analyzer schema to PDFs, scanned forms, and images to return the specific structured fields you defined, not just a fixed prebuilt layout.",
+      "service": "Azure Content Understanding"
+    },
+    {
+      "id": "feat-005-01",
+      "label": "Get a call recording transcribed and its sentiment and key talking points summarized, or pull spoken dialogue and on-screen text out of a training video.",
+      "answer": "Audio and video content analysis",
+      "why": "Azure Content Understanding's audio and video analysis transcribes and reasons over call recordings and video content, extracting fields such as speaker sentiment, summaries, and dialogue that don't exist in a static document.",
+      "service": "Azure Content Understanding"
+    },
+    {
+      "id": "feat-006-00",
+      "label": "Train a model to sort your own product photos into categories you define.",
+      "answer": "Custom image classification",
+      "why": "Azure AI Custom Vision's image classification trains a model on your own labeled photos to sort images into categories you define.",
+      "service": "Azure AI Custom Vision"
+    },
+    {
+      "id": "feat-006-01",
+      "label": "Train a model to locate and draw a box around a specific defect type in your own images.",
+      "answer": "Custom object detection",
+      "why": "Azure AI Custom Vision's object detection trains a model on your own labeled images to locate and box a specific object or defect.",
+      "service": "Azure AI Custom Vision"
+    },
+    {
+      "id": "feat-007-00",
+      "label": "Find the location of every face present in a group photo.",
+      "answer": "Face Detection",
+      "why": "Azure AI Face's face detection locates the position of every face present in an image.",
+      "service": "Azure AI Face"
+    },
+    {
+      "id": "feat-007-01",
+      "label": "Confirm that two photos show the same specific person.",
+      "answer": "Face Verification (1:1 matching)",
+      "why": "Azure AI Face's verification (1:1 matching) confirms whether two face images belong to the same person.",
+      "service": "Azure AI Face"
+    },
+    {
+      "id": "feat-007-02",
+      "label": "Search a large gallery of enrolled faces to identify who appears in a new photo.",
+      "answer": "Face Identification (1:N matching)",
+      "why": "Azure AI Face's identification (1:N matching) searches a gallery of enrolled faces to find a match for a new photo.",
+      "service": "Azure AI Face"
+    },
+    {
+      "id": "feat-008-00",
+      "label": "Score a chat message for hate, violence, sexual, or self-harm content severity.",
+      "answer": "Text moderation categories",
+      "why": "Azure AI Content Safety's text moderation scores text for hate, violence, sexual, and self-harm content severity.",
+      "service": "Azure AI Content Safety"
+    },
+    {
+      "id": "feat-008-01",
+      "label": "Detect an attempt to jailbreak a chatbot or hide malicious instructions inside a document a model will read.",
+      "answer": "Prompt Shields",
+      "why": "Azure AI Content Safety's Prompt Shields detects jailbreak attempts and indirect prompt injection hidden in content a model will process.",
+      "service": "Azure AI Content Safety"
+    },
+    {
+      "id": "feat-008-02",
+      "label": "Flag an uploaded image for graphic or violent visual content.",
+      "answer": "Image moderation categories",
+      "why": "Azure AI Content Safety's image moderation scores uploaded images for the same harmful-content categories applied to text.",
+      "service": "Azure AI Content Safety"
+    },
+    {
+      "id": "feat-009-00",
+      "label": "Flag an unusual spike in a single sensor's reading over time.",
+      "answer": "Univariate anomaly detection",
+      "why": "Azure AI Anomaly Detector's univariate detection flags unexpected spikes or dips in a single time-series stream.",
+      "service": "Azure AI Anomaly Detector"
+    },
+    {
+      "id": "feat-009-01",
+      "label": "Detect an unusual combined pattern across dozens of correlated sensor streams at once.",
+      "answer": "Multivariate anomaly detection",
+      "why": "Azure AI Anomaly Detector's multivariate detection flags anomalous combined patterns across many correlated time-series signals at once.",
+      "service": "Azure AI Anomaly Detector"
+    },
+    {
+      "id": "feat-010-00",
+      "label": "Retrieve documents by the closeness of their meaning rather than exact keyword match.",
+      "answer": "Vector search",
+      "why": "Azure AI Search's vector search retrieves documents by the closeness of their meaning rather than exact keyword overlap.",
+      "service": "Azure AI Search"
+    },
+    {
+      "id": "feat-010-01",
+      "label": "Run an AI enrichment pipeline that extracts entities, key phrases, and image text from raw content before indexing.",
+      "answer": "Skillsets (AI enrichment)",
+      "why": "Azure AI Search's skillsets run an AI enrichment pipeline that extracts entities, key phrases, and image text from raw content before it's indexed.",
+      "service": "Azure AI Search"
+    },
+    {
+      "id": "feat-010-02",
+      "label": "Re-rank keyword search results using a language model to push the most relevant hits to the top.",
+      "answer": "Semantic ranking",
+      "why": "Azure AI Search's semantic ranking reorders keyword search results using a language model to surface the most relevant matches first.",
+      "service": "Azure AI Search"
+    },
+    {
+      "id": "feat-011-00",
+      "label": "Identify and label the same person's face wherever they reappear across a video.",
+      "answer": "Face detection and tracking",
+      "why": "Azure AI Video Indexer's face detection identifies and tracks the same person's face as they reappear across a video.",
+      "service": "Azure AI Video Indexer"
+    },
+    {
+      "id": "feat-011-01",
+      "label": "Produce a searchable transcript labeled by which speaker said each line.",
+      "answer": "Transcription with speaker diarization",
+      "why": "Azure AI Video Indexer's transcription feature produces a searchable transcript labeled by which speaker said each line.",
+      "service": "Azure AI Video Indexer"
+    },
+    {
+      "id": "feat-011-02",
+      "label": "Automatically detect scene and shot boundaries in an uploaded video.",
+      "answer": "Scene and shot detection",
+      "why": "Azure AI Video Indexer's scene and shot detection automatically marks scene and shot boundaries in an uploaded video.",
+      "service": "Azure AI Video Indexer"
+    },
+    {
+      "id": "feat-012-00",
+      "label": "Deploy GPT-4o for enterprise chat completions with your own quota and content filters.",
+      "answer": "Chat/completion model deployment",
+      "why": "Azure OpenAI Service deploys chat and completion models like GPT-4o as an enterprise resource with your own quota and content filters.",
+      "service": "Azure OpenAI Service"
+    },
+    {
+      "id": "feat-012-01",
+      "label": "Generate a set of unique product images from a text description.",
+      "answer": "DALL-E image generation",
+      "why": "Azure OpenAI Service's DALL-E deployment generates new images from a text description.",
+      "service": "Azure OpenAI Service"
+    },
+    {
+      "id": "feat-012-02",
+      "label": "Convert a batch of documents into numeric vectors for similarity search.",
+      "answer": "Embeddings models",
+      "why": "Azure OpenAI Service's embeddings models convert text into numeric vectors for similarity search and retrieval.",
+      "service": "Azure OpenAI Service"
+    },
+    {
+      "id": "feat-012-03",
+      "label": "Adapt a base model's tone and style using your own labeled examples.",
+      "answer": "Fine-tuning",
+      "why": "Azure OpenAI Service's fine-tuning adapts a deployed model's tone and behavior using your own labeled examples.",
+      "service": "Azure OpenAI Service"
+    },
+    {
+      "id": "feat-013-00",
+      "label": "Browse and compare foundation models from multiple providers in one catalog before deploying.",
+      "answer": "Model catalog",
+      "why": "Microsoft Foundry's model catalog lets you browse and compare foundation models from multiple providers before deploying one.",
+      "service": "Microsoft Foundry"
+    },
+    {
+      "id": "feat-013-01",
+      "label": "Trace, test, and score prompt variants against evaluation datasets before shipping.",
+      "answer": "Prompt flow and evaluation",
+      "why": "Microsoft Foundry's prompt flow and evaluation tools trace, test, and score prompt variants against datasets before shipping.",
+      "service": "Microsoft Foundry"
+    },
+    {
+      "id": "feat-013-02",
+      "label": "Call into a Foundry project programmatically from Python to manage models and agents.",
+      "answer": "Foundry SDK (AIProjectClient)",
+      "why": "Microsoft Foundry's SDK exposes an AIProjectClient so code can connect to a Foundry project and manage models and agents programmatically.",
+      "service": "Microsoft Foundry"
+    },
+    {
+      "id": "feat-014-00",
+      "label": "Let an agent search and cite your own uploaded files when answering a question.",
+      "answer": "File search tool",
+      "why": "Microsoft Foundry Agent Service's file search tool lets an agent search and cite your own uploaded files when answering.",
+      "service": "Microsoft Foundry Agent Service"
+    },
+    {
+      "id": "feat-014-01",
+      "label": "Let an agent write and run code in a sandbox mid-conversation to solve a data or math problem.",
+      "answer": "Code interpreter tool",
+      "why": "Microsoft Foundry Agent Service's code interpreter tool lets an agent write and run code in a sandbox mid-conversation to solve a problem.",
+      "service": "Microsoft Foundry Agent Service"
+    },
+    {
+      "id": "feat-014-02",
+      "label": "Give an agent the ability to call your own external APIs or functions as part of its reasoning.",
+      "answer": "Function calling / custom tools",
+      "why": "Microsoft Foundry Agent Service's function calling lets an agent invoke your own external APIs or functions as part of its reasoning.",
+      "service": "Microsoft Foundry Agent Service"
+    },
+    {
+      "id": "feat-015-00",
+      "label": "Automatically try multiple algorithms and hyperparameters to find the best-performing model for your dataset.",
+      "answer": "Automated ML (AutoML)",
+      "why": "Azure Machine Learning's Automated ML tries multiple algorithms and hyperparameters to find the best-performing model for your dataset.",
+      "service": "Azure Machine Learning"
+    },
+    {
+      "id": "feat-015-01",
+      "label": "Build a training pipeline visually by dragging and connecting modules, with no code required.",
+      "answer": "Designer (drag-and-drop pipelines)",
+      "why": "Azure Machine Learning's Designer builds a training pipeline visually by dragging and connecting modules, with no code required.",
+      "service": "Azure Machine Learning"
+    },
+    {
+      "id": "feat-015-02",
+      "label": "Track experiment runs, register models, and manage deployment through a governed MLOps pipeline.",
+      "answer": "MLOps / pipelines and model registry",
+      "why": "Azure Machine Learning's pipelines and model registry track experiment runs, register models, and manage governed deployment.",
+      "service": "Azure Machine Learning"
+    }
+  ]
+}

@@ -1,0 +1,2457 @@
+{
+  "id": "features",
+  "runner": "board",
+  "title": "Feature to Function",
+  "blurb": "Match each job to the capability that does it.",
+  "source": "AWS Certified AI Practitioner (AIF-C01) exam guide · in-scope AWS services",
+  "asOf": "2026-07",
+  "area": "aws",
+  "hint": "Drag each job onto the capability that performs it. The reveal names the service it belongs to.",
+  "icons": "aws-service",
+  "groupByService": true,
+  "items": [
+    {
+      "id": "feat-000-00",
+      "label": "Compare and choose foundation models from multiple providers through one managed service.",
+      "answer": "Multi-provider model catalogue",
+      "why": "Multi-provider model catalogue belongs to Amazon Bedrock, and enables this job: Compare and choose foundation models from multiple providers through one managed service.",
+      "service": "Amazon Bedrock"
+    },
+    {
+      "id": "feat-000-01",
+      "label": "Use AWS-developed foundation-model families for generation, embeddings, and multimodal workloads.",
+      "answer": "Amazon Titan and Amazon Nova models",
+      "why": "Amazon Titan and Amazon Nova models belongs to Amazon Bedrock, and enables this job: Use AWS-developed foundation-model families for generation, embeddings, and multimodal workloads.",
+      "service": "Amazon Bedrock"
+    },
+    {
+      "id": "feat-000-02",
+      "label": "Run model requests without provisioning or managing the underlying inference infrastructure.",
+      "answer": "serverless managed inference",
+      "why": "serverless managed inference belongs to Amazon Bedrock, and enables this job: Run model requests without provisioning or managing the underlying inference infrastructure.",
+      "service": "Amazon Bedrock"
+    },
+    {
+      "id": "feat-000-03",
+      "label": "Compare candidate foundation models against quality, safety, and task-specific criteria before adoption.",
+      "answer": "model evaluation",
+      "why": "model evaluation belongs to Amazon Bedrock, and enables this job: Compare candidate foundation models against quality, safety, and task-specific criteria before adoption.",
+      "service": "Amazon Bedrock"
+    },
+    {
+      "id": "feat-000-04",
+      "label": "Adapt a foundation model's behavior with organization-specific examples and requirements.",
+      "answer": "fine-tuning and customization",
+      "why": "fine-tuning and customization belongs to Amazon Bedrock, and enables this job: Adapt a foundation model's behavior with organization-specific examples and requirements.",
+      "service": "Amazon Bedrock"
+    },
+    {
+      "id": "feat-000-05",
+      "label": "Ground generated responses in retrieved enterprise information without retraining the model.",
+      "answer": "Knowledge Bases for RAG",
+      "why": "Knowledge Bases for RAG belongs to Amazon Bedrock, and enables this job: Ground generated responses in retrieved enterprise information without retraining the model.",
+      "service": "Amazon Bedrock"
+    },
+    {
+      "id": "feat-000-06",
+      "label": "Orchestrate multistep tasks that reason over instructions and invoke actions or data sources.",
+      "answer": "Agents for Amazon Bedrock",
+      "why": "Agents for Amazon Bedrock belongs to Amazon Bedrock, and enables this job: Orchestrate multistep tasks that reason over instructions and invoke actions or data sources.",
+      "service": "Amazon Bedrock"
+    },
+    {
+      "id": "feat-000-07",
+      "label": "Apply centrally managed safety policies and content controls to model inputs and outputs.",
+      "answer": "Guardrails for Amazon Bedrock",
+      "why": "Guardrails for Amazon Bedrock belongs to Amazon Bedrock, and enables this job: Apply centrally managed safety policies and content controls to model inputs and outputs.",
+      "service": "Amazon Bedrock"
+    },
+    {
+      "id": "feat-000-08",
+      "label": "Keep sensitive prompts and customer information isolated from model-provider training.",
+      "answer": "private data protection",
+      "why": "private data protection belongs to Amazon Bedrock, and enables this job: Keep sensitive prompts and customer information isolated from model-provider training.",
+      "service": "Amazon Bedrock"
+    },
+    {
+      "id": "feat-000-09",
+      "label": "Connect foundation-model capabilities to applications through programmatic service calls.",
+      "answer": "API-based integration",
+      "why": "API-based integration belongs to Amazon Bedrock, and enables this job: Connect foundation-model capabilities to applications through programmatic service calls.",
+      "service": "Amazon Bedrock"
+    },
+    {
+      "id": "feat-000-10",
+      "label": "Transfer behavior from a larger teacher into a smaller model to reduce serving cost and latency.",
+      "answer": "model distillation",
+      "why": "model distillation belongs to Amazon Bedrock, and enables this job: Transfer behavior from a larger teacher into a smaller model to reduce serving cost and latency.",
+      "service": "Amazon Bedrock"
+    },
+    {
+      "id": "feat-000-11",
+      "label": "Create reusable instruction templates, test variants, and track versions centrally.",
+      "answer": "Prompt Management",
+      "why": "Prompt Management belongs to Amazon Bedrock, and enables this job: Create reusable instruction templates, test variants, and track versions centrally.",
+      "service": "Amazon Bedrock"
+    },
+    {
+      "id": "feat-000-12",
+      "label": "Visually connect prompts, models, data, and application logic into a multistep generative workflow.",
+      "answer": "Bedrock Flows",
+      "why": "Bedrock Flows belongs to Amazon Bedrock, and enables this job: Visually connect prompts, models, data, and application logic into a multistep generative workflow.",
+      "service": "Amazon Bedrock"
+    },
+    {
+      "id": "feat-000-13",
+      "label": "Turn documents, images, audio, and video into structured insights with managed multimodal processing.",
+      "answer": "Bedrock Data Automation",
+      "why": "Bedrock Data Automation belongs to Amazon Bedrock, and enables this job: Turn documents, images, audio, and video into structured insights with managed multimodal processing.",
+      "service": "Amazon Bedrock"
+    },
+    {
+      "id": "feat-000-14",
+      "label": "Discover and deploy eligible third-party models through the managed foundation-model platform.",
+      "answer": "Bedrock Marketplace",
+      "why": "Bedrock Marketplace belongs to Amazon Bedrock, and enables this job: Discover and deploy eligible third-party models through the managed foundation-model platform.",
+      "service": "Amazon Bedrock"
+    },
+    {
+      "id": "feat-000-15",
+      "label": "Bring a supported externally customized foundation model into managed inference.",
+      "answer": "Custom Model Import",
+      "why": "Custom Model Import belongs to Amazon Bedrock, and enables this job: Bring a supported externally customized foundation model into managed inference.",
+      "service": "Amazon Bedrock"
+    },
+    {
+      "id": "feat-000-16",
+      "label": "Extend a model's domain knowledge using a large body of unlabeled proprietary text.",
+      "answer": "continued pre-training",
+      "why": "continued pre-training belongs to Amazon Bedrock, and enables this job: Extend a model's domain knowledge using a large body of unlabeled proprietary text.",
+      "service": "Amazon Bedrock"
+    },
+    {
+      "id": "feat-000-17",
+      "label": "Capture request payloads, responses, and invocation metadata for audit and debugging.",
+      "answer": "model invocation logging",
+      "why": "model invocation logging belongs to Amazon Bedrock, and enables this job: Capture request payloads, responses, and invocation metadata for audit and debugging.",
+      "service": "Amazon Bedrock"
+    },
+    {
+      "id": "feat-001-00",
+      "label": "Define and invoke a managed agent loop with a model, system prompt, and tools in one API call.",
+      "answer": "Harness",
+      "why": "Harness belongs to Amazon Bedrock AgentCore, and enables this job: Define and invoke a managed agent loop with a model, system prompt, and tools in one API call.",
+      "service": "Amazon Bedrock AgentCore"
+    },
+    {
+      "id": "feat-001-01",
+      "label": "Deploy dynamic agents in isolated sessions with serverless scaling and asynchronous execution support.",
+      "answer": "Runtime",
+      "why": "Runtime belongs to Amazon Bedrock AgentCore, and enables this job: Deploy dynamic agents in isolated sessions with serverless scaling and asynchronous execution support.",
+      "service": "Amazon Bedrock AgentCore"
+    },
+    {
+      "id": "feat-001-02",
+      "label": "Retain short-term conversation context and long-term knowledge that persists across sessions.",
+      "answer": "Memory",
+      "why": "Memory belongs to Amazon Bedrock AgentCore, and enables this job: Retain short-term conversation context and long-term knowledge that persists across sessions.",
+      "service": "Amazon Bedrock AgentCore"
+    },
+    {
+      "id": "feat-001-03",
+      "label": "Convert APIs, Lambda functions, and services into governed MCP-compatible tools.",
+      "answer": "Gateway",
+      "why": "Gateway belongs to Amazon Bedrock AgentCore, and enables this job: Convert APIs, Lambda functions, and services into governed MCP-compatible tools.",
+      "service": "Amazon Bedrock AgentCore"
+    },
+    {
+      "id": "feat-001-04",
+      "label": "Connect agents to existing authentication providers and manage access without migrating users.",
+      "answer": "Identity",
+      "why": "Identity belongs to Amazon Bedrock AgentCore, and enables this job: Connect agents to existing authentication providers and manage access without migrating users.",
+      "service": "Amazon Bedrock AgentCore"
+    },
+    {
+      "id": "feat-001-05",
+      "label": "Execute Python, JavaScript, or TypeScript inside an isolated sandbox.",
+      "answer": "Code Interpreter",
+      "why": "Code Interpreter belongs to Amazon Bedrock AgentCore, and enables this job: Execute Python, JavaScript, or TypeScript inside an isolated sandbox.",
+      "service": "Amazon Bedrock AgentCore"
+    },
+    {
+      "id": "feat-001-06",
+      "label": "Interact with web applications in a secure managed environment using automation frameworks.",
+      "answer": "Browser",
+      "why": "Browser belongs to Amazon Bedrock AgentCore, and enables this job: Interact with web applications in a secure managed environment using automation frameworks.",
+      "service": "Amazon Bedrock AgentCore"
+    },
+    {
+      "id": "feat-001-07",
+      "label": "Trace execution paths, inspect intermediate outputs, and debug agent performance in production.",
+      "answer": "Observability",
+      "why": "Observability belongs to Amazon Bedrock AgentCore, and enables this job: Trace execution paths, inspect intermediate outputs, and debug agent performance in production.",
+      "service": "Amazon Bedrock AgentCore"
+    },
+    {
+      "id": "feat-001-08",
+      "label": "Enable agent microtransactions for paid APIs, MCP servers, and content using the x402 protocol.",
+      "answer": "Payments",
+      "why": "Payments belongs to Amazon Bedrock AgentCore, and enables this job: Enable agent microtransactions for paid APIs, MCP servers, and content using the x402 protocol.",
+      "service": "Amazon Bedrock AgentCore"
+    },
+    {
+      "id": "feat-001-09",
+      "label": "Measure how reliably agents and tools complete tasks across sessions, traces, and spans.",
+      "answer": "Evaluations",
+      "why": "Evaluations belongs to Amazon Bedrock AgentCore, and enables this job: Measure how reliably agents and tools complete tasks across sessions, traces, and spans.",
+      "service": "Amazon Bedrock AgentCore"
+    },
+    {
+      "id": "feat-001-10",
+      "label": "Generate and test versioned configuration improvements using controlled traffic experiments.",
+      "answer": "Optimization",
+      "why": "Optimization belongs to Amazon Bedrock AgentCore, and enables this job: Generate and test versioned configuration improvements using controlled traffic experiments.",
+      "service": "Amazon Bedrock AgentCore"
+    },
+    {
+      "id": "feat-001-11",
+      "label": "Enforce deterministic boundaries on tool calls with natural-language or Cedar rules.",
+      "answer": "Policy",
+      "why": "Policy belongs to Amazon Bedrock AgentCore, and enables this job: Enforce deterministic boundaries on tool calls with natural-language or Cedar rules.",
+      "service": "Amazon Bedrock AgentCore"
+    },
+    {
+      "id": "feat-001-12",
+      "label": "Publish, review, approve, and discover agents, MCP servers, tools, and skills in a central catalog.",
+      "answer": "Registry",
+      "why": "Registry belongs to Amazon Bedrock AgentCore, and enables this job: Publish, review, approve, and discover agents, MCP servers, tools, and skills in a central catalog.",
+      "service": "Amazon Bedrock AgentCore"
+    },
+    {
+      "id": "feat-002-00",
+      "label": "Let the model choose and sequence actions from instructions instead of hard-coding every path.",
+      "answer": "Model-driven agent development",
+      "why": "Model-driven agent development belongs to Strands Agents, and enables this job: Let the model choose and sequence actions from instructions instead of hard-coding every path.",
+      "service": "Strands Agents"
+    },
+    {
+      "id": "feat-002-01",
+      "label": "Build agent applications in either of two widely used programming ecosystems.",
+      "answer": "Python and TypeScript SDKs",
+      "why": "Python and TypeScript SDKs belongs to Strands Agents, and enables this job: Build agent applications in either of two widely used programming ecosystems.",
+      "service": "Strands Agents"
+    },
+    {
+      "id": "feat-002-02",
+      "label": "Give an agent controlled access to external functions, services, and data.",
+      "answer": "tool integration",
+      "why": "tool integration belongs to Strands Agents, and enables this job: Give an agent controlled access to external functions, services, and data.",
+      "service": "Strands Agents"
+    },
+    {
+      "id": "feat-002-03",
+      "label": "Coordinate specialized agents that collaborate or hand work to one another.",
+      "answer": "multi-agent patterns",
+      "why": "multi-agent patterns belongs to Strands Agents, and enables this job: Coordinate specialized agents that collaborate or hand work to one another.",
+      "service": "Strands Agents"
+    },
+    {
+      "id": "feat-002-04",
+      "label": "Change model providers without redesigning the surrounding agent application.",
+      "answer": "provider-independent model support",
+      "why": "provider-independent model support belongs to Strands Agents, and enables this job: Change model providers without redesigning the surrounding agent application.",
+      "service": "Strands Agents"
+    },
+    {
+      "id": "feat-003-00",
+      "label": "Reason over written prompts and visual inputs using AWS foundation models.",
+      "answer": "Nova text and multimodal models",
+      "why": "Nova text and multimodal models belongs to Amazon Nova, and enables this job: Reason over written prompts and visual inputs using AWS foundation models.",
+      "service": "Amazon Nova"
+    },
+    {
+      "id": "feat-003-01",
+      "label": "Create new visual assets and moving media from natural-language instructions.",
+      "answer": "image and video generation",
+      "why": "image and video generation belongs to Amazon Nova, and enables this job: Create new visual assets and moving media from natural-language instructions.",
+      "service": "Amazon Nova"
+    },
+    {
+      "id": "feat-003-02",
+      "label": "Build voice experiences that understand or produce spoken language.",
+      "answer": "speech models",
+      "why": "speech models belongs to Amazon Nova, and enables this job: Build voice experiences that understand or produce spoken language.",
+      "service": "Amazon Nova"
+    },
+    {
+      "id": "feat-003-03",
+      "label": "Adapt a general model to specialized behavior, terminology, or organizational examples.",
+      "answer": "model customization",
+      "why": "model customization belongs to Amazon Nova, and enables this job: Adapt a general model to specialized behavior, terminology, or organizational examples.",
+      "service": "Amazon Nova"
+    },
+    {
+      "id": "feat-003-04",
+      "label": "Access this AWS model family through managed foundation-model APIs and tooling.",
+      "answer": "Amazon Bedrock integration",
+      "why": "Amazon Bedrock integration belongs to Amazon Nova, and enables this job: Access this AWS model family through managed foundation-model APIs and tooling.",
+      "service": "Amazon Nova"
+    },
+    {
+      "id": "feat-004-00",
+      "label": "Bring team files, dashboards, data sources, and context into collaborative work areas.",
+      "answer": "Spaces",
+      "why": "Spaces belongs to Amazon Quick, and enables this job: Bring team files, dashboards, data sources, and context into collaborative work areas.",
+      "service": "Amazon Quick"
+    },
+    {
+      "id": "feat-004-01",
+      "label": "Create specialized teammates with defined expertise, tone, and toolsets that work proactively.",
+      "answer": "Agents",
+      "why": "Agents belongs to Amazon Quick, and enables this job: Create specialized teammates with defined expertise, tone, and toolsets that work proactively.",
+      "service": "Amazon Quick"
+    },
+    {
+      "id": "feat-004-02",
+      "label": "Synthesize business data, public internet sources, and third-party datasets into professional reports.",
+      "answer": "Research",
+      "why": "Research belongs to Amazon Quick, and enables this job: Synthesize business data, public internet sources, and third-party datasets into professional reports.",
+      "service": "Amazon Quick"
+    },
+    {
+      "id": "feat-004-03",
+      "label": "Turn questions into interactive dashboards, charts, forecasts, and data exploration.",
+      "answer": "Business Intelligence",
+      "why": "Business Intelligence belongs to Amazon Quick, and enables this job: Turn questions into interactive dashboards, charts, forecasts, and data exploration.",
+      "service": "Amazon Quick"
+    },
+    {
+      "id": "feat-004-04",
+      "label": "Build simple or multistep workflows connected to everyday applications.",
+      "answer": "Automate",
+      "why": "Automate belongs to Amazon Quick, and enables this job: Build simple or multistep workflows connected to everyday applications.",
+      "service": "Amazon Quick"
+    },
+    {
+      "id": "feat-004-05",
+      "label": "Create and share interactive tools without writing code or filing an IT request.",
+      "answer": "Build custom apps",
+      "why": "Build custom apps belongs to Amazon Quick, and enables this job: Create and share interactive tools without writing code or filing an IT request.",
+      "service": "Amazon Quick"
+    },
+    {
+      "id": "feat-004-06",
+      "label": "Produce finished documents, presentations, spreadsheets, or images within a conversation.",
+      "answer": "Create polished deliverables",
+      "why": "Create polished deliverables belongs to Amazon Quick, and enables this job: Produce finished documents, presentations, spreadsheets, or images within a conversation.",
+      "service": "Amazon Quick"
+    },
+    {
+      "id": "feat-005-00",
+      "label": "Retrieve organizational information and synthesize workplace responses from connected sources.",
+      "answer": "Enterprise search and answers",
+      "why": "Enterprise search and answers belongs to Amazon Q Business, and enables this job: Retrieve organizational information and synthesize workplace responses from connected sources.",
+      "service": "Amazon Q Business"
+    },
+    {
+      "id": "feat-005-01",
+      "label": "Respect source-system access rights when deciding what information an employee may see.",
+      "answer": "permissions-aware responses",
+      "why": "permissions-aware responses belongs to Amazon Q Business, and enables this job: Respect source-system access rights when deciding what information an employee may see.",
+      "service": "Amazon Q Business"
+    },
+    {
+      "id": "feat-005-02",
+      "label": "Let a workplace assistant perform approved operations in connected business systems.",
+      "answer": "actions through plugins",
+      "why": "actions through plugins belongs to Amazon Q Business, and enables this job: Let a workplace assistant perform approved operations in connected business systems.",
+      "service": "Amazon Q Business"
+    },
+    {
+      "id": "feat-006-00",
+      "label": "Create new source code and help developers understand unfamiliar implementations.",
+      "answer": "Code generation and explanation",
+      "why": "Code generation and explanation belongs to Amazon Q Developer, and enables this job: Create new source code and help developers understand unfamiliar implementations.",
+      "service": "Amazon Q Developer"
+    },
+    {
+      "id": "feat-006-01",
+      "label": "Delegate multistep implementation work that can plan, edit, test, and iterate.",
+      "answer": "agentic software development",
+      "why": "agentic software development belongs to Amazon Q Developer, and enables this job: Delegate multistep implementation work that can plan, edit, test, and iterate.",
+      "service": "Amazon Q Developer"
+    },
+    {
+      "id": "feat-006-02",
+      "label": "Inspect changes for maintainability defects and potential vulnerabilities before release.",
+      "answer": "code reviews and security scanning",
+      "why": "code reviews and security scanning belongs to Amazon Q Developer, and enables this job: Inspect changes for maintainability defects and potential vulnerabilities before release.",
+      "service": "Amazon Q Developer"
+    },
+    {
+      "id": "feat-006-03",
+      "label": "Accelerate large-scale upgrades or migrations of existing software.",
+      "answer": "application transformation",
+      "why": "application transformation belongs to Amazon Q Developer, and enables this job: Accelerate large-scale upgrades or migrations of existing software.",
+      "service": "Amazon Q Developer"
+    },
+    {
+      "id": "feat-006-04",
+      "label": "Recommend cloud-service configurations and implementation approaches during development.",
+      "answer": "AWS resource guidance",
+      "why": "AWS resource guidance belongs to Amazon Q Developer, and enables this job: Recommend cloud-service configurations and implementation approaches during development.",
+      "service": "Amazon Q Developer"
+    },
+    {
+      "id": "feat-006-05",
+      "label": "Investigate cloud failures and suggest corrective actions using system context.",
+      "answer": "operational troubleshooting",
+      "why": "operational troubleshooting belongs to Amazon Q Developer, and enables this job: Investigate cloud failures and suggest corrective actions using system context.",
+      "service": "Amazon Q Developer"
+    },
+    {
+      "id": "feat-007-00",
+      "label": "Upgrade older Microsoft application stacks and frameworks with automated analysis and changes.",
+      "answer": ".NET modernization",
+      "why": ".NET modernization belongs to AWS Transform, and enables this job: Upgrade older Microsoft application stacks and frameworks with automated analysis and changes.",
+      "service": "AWS Transform"
+    },
+    {
+      "id": "feat-007-01",
+      "label": "Analyze and transform legacy host workloads into maintainable modern architectures.",
+      "answer": "mainframe modernization",
+      "why": "mainframe modernization belongs to AWS Transform, and enables this job: Analyze and transform legacy host workloads into maintainable modern architectures.",
+      "service": "AWS Transform"
+    },
+    {
+      "id": "feat-007-02",
+      "label": "Plan and execute migration away from virtualized data-center application estates.",
+      "answer": "VMware workload transformation",
+      "why": "VMware workload transformation belongs to AWS Transform, and enables this job: Plan and execute migration away from virtualized data-center application estates.",
+      "service": "AWS Transform"
+    },
+    {
+      "id": "feat-007-03",
+      "label": "Inspect a legacy codebase and produce an evidence-based transformation plan before editing.",
+      "answer": "code analysis and planning",
+      "why": "code analysis and planning belongs to AWS Transform, and enables this job: Inspect a legacy codebase and produce an evidence-based transformation plan before editing.",
+      "service": "AWS Transform"
+    },
+    {
+      "id": "feat-007-04",
+      "label": "Apply repeatable source changes across a large application rather than editing each file manually.",
+      "answer": "automated refactoring",
+      "why": "automated refactoring belongs to AWS Transform, and enables this job: Apply repeatable source changes across a large application rather than editing each file manually.",
+      "service": "AWS Transform"
+    },
+    {
+      "id": "feat-007-05",
+      "label": "Verify generated transformations and retain expert approval over consequential changes.",
+      "answer": "validation and human oversight",
+      "why": "validation and human oversight belongs to AWS Transform, and enables this job: Verify generated transformations and retain expert approval over consequential changes.",
+      "service": "AWS Transform"
+    },
+    {
+      "id": "feat-008-00",
+      "label": "Transform high-level ideas into structured requirements, designs, and executable tasks.",
+      "answer": "Specs",
+      "why": "Specs belongs to Kiro, and enables this job: Transform high-level ideas into structured requirements, designs, and executable tasks.",
+      "service": "Kiro"
+    },
+    {
+      "id": "feat-008-01",
+      "label": "Plan new application capabilities through requirements-first or design-first workflows.",
+      "answer": "Feature Specs",
+      "why": "Feature Specs belongs to Kiro, and enables this job: Plan new application capabilities through requirements-first or design-first workflows.",
+      "service": "Kiro"
+    },
+    {
+      "id": "feat-008-02",
+      "label": "Diagnose root causes, design targeted corrections, and guard against regressions.",
+      "answer": "Bugfix Specs",
+      "why": "Bugfix Specs belongs to Kiro, and enables this job: Diagnose root causes, design targeted corrections, and guard against regressions.",
+      "service": "Kiro"
+    },
+    {
+      "id": "feat-008-03",
+      "label": "Delegate specialized tasks into parallel isolated context windows.",
+      "answer": "Subagents",
+      "why": "Subagents belongs to Kiro, and enables this job: Delegate specialized tasks into parallel isolated context windows.",
+      "service": "Kiro"
+    },
+    {
+      "id": "feat-008-04",
+      "label": "Run prompts or shell commands automatically when defined development events occur.",
+      "answer": "Agent hooks",
+      "why": "Agent hooks belongs to Kiro, and enables this job: Run prompts or shell commands automatically when defined development events occur.",
+      "service": "Kiro"
+    },
+    {
+      "id": "feat-008-05",
+      "label": "Use the coding assistant from a terminal for chat, automation, and headless workflows.",
+      "answer": "Kiro CLI",
+      "why": "Kiro CLI belongs to Kiro, and enables this job: Use the coding assistant from a terminal for chat, automation, and headless workflows.",
+      "service": "Kiro"
+    },
+    {
+      "id": "feat-009-00",
+      "label": "Continue bounded development work asynchronously while the developer focuses elsewhere.",
+      "answer": "Background task execution",
+      "why": "Background task execution belongs to Kiro autonomous agent, and enables this job: Continue bounded development work asynchronously while the developer focuses elsewhere.",
+      "service": "Kiro autonomous agent"
+    },
+    {
+      "id": "feat-009-01",
+      "label": "Use project code and instructions as context when making a software change.",
+      "answer": "repository-aware implementation",
+      "why": "repository-aware implementation belongs to Kiro autonomous agent, and enables this job: Use project code and instructions as context when making a software change.",
+      "service": "Kiro autonomous agent"
+    },
+    {
+      "id": "feat-009-02",
+      "label": "Return completed background work as a reviewable source-control change.",
+      "answer": "pull-request delivery",
+      "why": "pull-request delivery belongs to Kiro autonomous agent, and enables this job: Return completed background work as a reviewable source-control change.",
+      "service": "Kiro autonomous agent"
+    },
+    {
+      "id": "feat-010-00",
+      "label": "Start from reviewed pretrained models and reference solutions instead of building from scratch.",
+      "answer": "Curated model and solution catalogue",
+      "why": "Curated model and solution catalogue belongs to Amazon SageMaker AI JumpStart, and enables this job: Start from reviewed pretrained models and reference solutions instead of building from scratch.",
+      "service": "Amazon SageMaker AI JumpStart"
+    },
+    {
+      "id": "feat-010-01",
+      "label": "Publish a selected model behind managed infrastructure so applications can invoke it.",
+      "answer": "model deployment",
+      "why": "model deployment belongs to Amazon SageMaker AI JumpStart, and enables this job: Publish a selected model behind managed infrastructure so applications can invoke it.",
+      "service": "Amazon SageMaker AI JumpStart"
+    },
+    {
+      "id": "feat-010-02",
+      "label": "Guide adaptation of a pretrained model with task-specific data and settings.",
+      "answer": "customization workflows",
+      "why": "customization workflows belongs to Amazon SageMaker AI JumpStart, and enables this job: Guide adaptation of a pretrained model with task-specific data and settings.",
+      "service": "Amazon SageMaker AI JumpStart"
+    },
+    {
+      "id": "feat-010-03",
+      "label": "Deploy pretrained community and openly distributed generative models within managed ML workflows.",
+      "answer": "Foundation models",
+      "why": "Foundation models belongs to Amazon SageMaker AI JumpStart, and enables this job: Deploy pretrained community and openly distributed generative models within managed ML workflows.",
+      "service": "Amazon SageMaker AI JumpStart"
+    },
+    {
+      "id": "feat-011-00",
+      "label": "Create or transform natural-language content from an instruction or context.",
+      "answer": "Text generation",
+      "why": "Text generation belongs to Amazon Titan, and enables this job: Create or transform natural-language content from an instruction or context.",
+      "service": "Amazon Titan"
+    },
+    {
+      "id": "feat-011-01",
+      "label": "Convert content into numeric vectors for semantic retrieval, clustering, or similarity comparison.",
+      "answer": "embeddings",
+      "why": "embeddings belongs to Amazon Titan, and enables this job: Convert content into numeric vectors for semantic retrieval, clustering, or similarity comparison.",
+      "service": "Amazon Titan"
+    },
+    {
+      "id": "feat-011-02",
+      "label": "Produce new visual content when the chosen member of the model family supports that modality.",
+      "answer": "image generation depending on model selected",
+      "why": "image generation depending on model selected belongs to Amazon Titan, and enables this job: Produce new visual content when the chosen member of the model family supports that modality.",
+      "service": "Amazon Titan"
+    },
+    {
+      "id": "feat-012-00",
+      "label": "Manage the complete custom-model lifecycle from experimentation through controlled production operation.",
+      "answer": "Amazon SageMaker AI",
+      "why": "Amazon SageMaker AI belongs to Amazon SageMaker AI, and enables this job: Manage the complete custom-model lifecycle from experimentation through controlled production operation.",
+      "service": "Amazon SageMaker AI"
+    },
+    {
+      "id": "feat-012-01",
+      "label": "Serve trained models without administering the underlying application servers.",
+      "answer": "managed hosting",
+      "why": "managed hosting belongs to Amazon SageMaker AI, and enables this job: Serve trained models without administering the underlying application servers.",
+      "service": "Amazon SageMaker AI"
+    },
+    {
+      "id": "feat-012-02",
+      "label": "Choose immediate per-request predictions or scheduled high-volume scoring for stored records.",
+      "answer": "real-time and batch inference",
+      "why": "real-time and batch inference belongs to Amazon SageMaker AI, and enables this job: Choose immediate per-request predictions or scheduled high-volume scoring for stored records.",
+      "service": "Amazon SageMaker AI"
+    },
+    {
+      "id": "feat-012-03",
+      "label": "Train large models across multiple accelerators or machines to reduce elapsed time.",
+      "answer": "distributed training",
+      "why": "distributed training belongs to Amazon SageMaker AI, and enables this job: Train large models across multiple accelerators or machines to reduce elapsed time.",
+      "service": "Amazon SageMaker AI"
+    },
+    {
+      "id": "feat-012-04",
+      "label": "Connect data preparation, training, evaluation, approval, and deployment into repeatable pipelines.",
+      "answer": "workflow integration",
+      "why": "workflow integration belongs to Amazon SageMaker AI, and enables this job: Connect data preparation, training, evaluation, approval, and deployment into repeatable pipelines.",
+      "service": "Amazon SageMaker AI"
+    },
+    {
+      "id": "feat-012-05",
+      "label": "Automatically explore data, select algorithms, tune candidates, and produce explainable model artifacts.",
+      "answer": "SageMaker Autopilot",
+      "why": "SageMaker Autopilot belongs to Amazon SageMaker AI, and enables this job: Automatically explore data, select algorithms, tune candidates, and produce explainable model artifacts.",
+      "service": "Amazon SageMaker AI"
+    },
+    {
+      "id": "feat-012-06",
+      "label": "Import, profile, clean, and transform model data through a visual preparation workflow.",
+      "answer": "SageMaker Data Wrangler",
+      "why": "SageMaker Data Wrangler belongs to Amazon SageMaker AI, and enables this job: Import, profile, clean, and transform model data through a visual preparation workflow.",
+      "service": "Amazon SageMaker AI"
+    },
+    {
+      "id": "feat-012-07",
+      "label": "Keep reusable model inputs consistent between training and low-latency online prediction.",
+      "answer": "SageMaker Feature Store",
+      "why": "SageMaker Feature Store belongs to Amazon SageMaker AI, and enables this job: Keep reusable model inputs consistent between training and low-latency online prediction.",
+      "service": "Amazon SageMaker AI"
+    },
+    {
+      "id": "feat-012-08",
+      "label": "Measure bias in datasets or predictions and explain which inputs influenced an output.",
+      "answer": "SageMaker Clarify",
+      "why": "SageMaker Clarify belongs to Amazon SageMaker AI, and enables this job: Measure bias in datasets or predictions and explain which inputs influenced an output.",
+      "service": "Amazon SageMaker AI"
+    },
+    {
+      "id": "feat-012-09",
+      "label": "Detect production data drift, quality changes, bias drift, and feature-attribution drift.",
+      "answer": "SageMaker Model Monitor",
+      "why": "SageMaker Model Monitor belongs to Amazon SageMaker AI, and enables this job: Detect production data drift, quality changes, bias drift, and feature-attribution drift.",
+      "service": "Amazon SageMaker AI"
+    },
+    {
+      "id": "feat-012-10",
+      "label": "Define repeatable model-building workflows with processing, training, evaluation, and approval steps.",
+      "answer": "SageMaker Pipelines",
+      "why": "SageMaker Pipelines belongs to Amazon SageMaker AI, and enables this job: Define repeatable model-building workflows with processing, training, evaluation, and approval steps.",
+      "service": "Amazon SageMaker AI"
+    },
+    {
+      "id": "feat-012-11",
+      "label": "Record and compare training runs, parameters, datasets, and resulting metrics.",
+      "answer": "SageMaker Experiments",
+      "why": "SageMaker Experiments belongs to Amazon SageMaker AI, and enables this job: Record and compare training runs, parameters, datasets, and resulting metrics.",
+      "service": "Amazon SageMaker AI"
+    },
+    {
+      "id": "feat-012-12",
+      "label": "Version model packages, track approval state, and control promotion toward deployment.",
+      "answer": "SageMaker Model Registry",
+      "why": "SageMaker Model Registry belongs to Amazon SageMaker AI, and enables this job: Version model packages, track approval state, and control promotion toward deployment.",
+      "service": "Amazon SageMaker AI"
+    },
+    {
+      "id": "feat-012-13",
+      "label": "Choose managed prediction modes for intermittent requests, queued payloads, or offline datasets.",
+      "answer": "serverless asynchronous and batch inference",
+      "why": "serverless asynchronous and batch inference belongs to Amazon SageMaker AI, and enables this job: Choose managed prediction modes for intermittent requests, queued payloads, or offline datasets.",
+      "service": "Amazon SageMaker AI"
+    },
+    {
+      "id": "feat-012-14",
+      "label": "Unify access to data across analytical stores for analytics and model-development workloads.",
+      "answer": "SageMaker Lakehouse",
+      "why": "SageMaker Lakehouse belongs to Amazon SageMaker AI, and enables this job: Unify access to data across analytical stores for analytics and model-development workloads.",
+      "service": "Amazon SageMaker AI"
+    },
+    {
+      "id": "feat-012-15",
+      "label": "Give data, analytics, and AI teams one governed development and collaboration environment.",
+      "answer": "SageMaker Unified Studio",
+      "why": "SageMaker Unified Studio belongs to Amazon SageMaker AI, and enables this job: Give data, analytics, and AI teams one governed development and collaboration environment.",
+      "service": "Amazon SageMaker AI"
+    },
+    {
+      "id": "feat-013-00",
+      "label": "Give ML teams one managed place to explore, transform, and prepare datasets.",
+      "answer": "Central workspace for data preparation",
+      "why": "Central workspace for data preparation belongs to Amazon SageMaker AI Studio, and enables this job: Give ML teams one managed place to explore, transform, and prepare datasets.",
+      "service": "Amazon SageMaker AI Studio"
+    },
+    {
+      "id": "feat-013-01",
+      "label": "Develop interactively with notebooks or source files in browser-based tools.",
+      "answer": "JupyterLab and Code Editor",
+      "why": "JupyterLab and Code Editor belongs to Amazon SageMaker AI Studio, and enables this job: Develop interactively with notebooks or source files in browser-based tools.",
+      "service": "Amazon SageMaker AI Studio"
+    },
+    {
+      "id": "feat-013-02",
+      "label": "Run jobs that learn model parameters from prepared examples.",
+      "answer": "model training",
+      "why": "model training belongs to Amazon SageMaker AI Studio, and enables this job: Run jobs that learn model parameters from prepared examples.",
+      "service": "Amazon SageMaker AI Studio"
+    },
+    {
+      "id": "feat-013-03",
+      "label": "Move a developed model into an environment where consumers can request predictions.",
+      "answer": "deployment",
+      "why": "deployment belongs to Amazon SageMaker AI Studio, and enables this job: Move a developed model into an environment where consumers can request predictions.",
+      "service": "Amazon SageMaker AI Studio"
+    },
+    {
+      "id": "feat-013-04",
+      "label": "Coordinate and manage repeatable machine-learning lifecycle activities from one workspace.",
+      "answer": "ML workflow operations",
+      "why": "ML workflow operations belongs to Amazon SageMaker AI Studio, and enables this job: Coordinate and manage repeatable machine-learning lifecycle activities from one workspace.",
+      "service": "Amazon SageMaker AI Studio"
+    },
+    {
+      "id": "feat-014-00",
+      "label": "Create predictive models through a graphical workflow rather than writing training code.",
+      "answer": "Visual model building",
+      "why": "Visual model building belongs to Amazon SageMaker AI Canvas, and enables this job: Create predictive models through a graphical workflow rather than writing training code.",
+      "service": "Amazon SageMaker AI Canvas"
+    },
+    {
+      "id": "feat-014-01",
+      "label": "Clean, combine, and transform raw information into model-ready inputs.",
+      "answer": "data preparation",
+      "why": "data preparation belongs to Amazon SageMaker AI Canvas, and enables this job: Clean, combine, and transform raw information into model-ready inputs.",
+      "service": "Amazon SageMaker AI Canvas"
+    },
+    {
+      "id": "feat-014-02",
+      "label": "Apply a trained model to new records through a guided no-code process.",
+      "answer": "prediction workflows",
+      "why": "prediction workflows belongs to Amazon SageMaker AI Canvas, and enables this job: Apply a trained model to new records through a guided no-code process.",
+      "service": "Amazon SageMaker AI Canvas"
+    },
+    {
+      "id": "feat-014-03",
+      "label": "Experiment with generative capabilities through a visual interface for business users.",
+      "answer": "foundation-model access without writing ML code",
+      "why": "foundation-model access without writing ML code belongs to Amazon SageMaker AI Canvas, and enables this job: Experiment with generative capabilities through a visual interface for business users.",
+      "service": "Amazon SageMaker AI Canvas"
+    },
+    {
+      "id": "feat-015-00",
+      "label": "Experiment with machine learning in a ready-to-use web workspace without local setup.",
+      "answer": "JupyterLab",
+      "why": "JupyterLab belongs to Amazon SageMaker AI Studio Lab, and enables this job: Experiment with machine learning in a ready-to-use web workspace without local setup.",
+      "service": "Amazon SageMaker AI Studio Lab"
+    },
+    {
+      "id": "feat-016-00",
+      "label": "Coordinate people, instructions, and quality controls to annotate training examples.",
+      "answer": "Managed human labeling workflows",
+      "why": "Managed human labeling workflows belongs to Amazon SageMaker AI Ground Truth, and enables this job: Coordinate people, instructions, and quality controls to annotate training examples.",
+      "service": "Amazon SageMaker AI Ground Truth"
+    },
+    {
+      "id": "feat-016-01",
+      "label": "Prioritize uncertain examples for annotation so human effort improves the model efficiently.",
+      "answer": "active-learning options",
+      "why": "active-learning options belongs to Amazon SageMaker AI Ground Truth, and enables this job: Prioritize uncertain examples for annotation so human effort improves the model efficiently.",
+      "service": "Amazon SageMaker AI Ground Truth"
+    },
+    {
+      "id": "feat-016-02",
+      "label": "Produce ground-truth examples needed to learn supervised tasks and measure performance.",
+      "answer": "labeled datasets for training and evaluation",
+      "why": "labeled datasets for training and evaluation belongs to Amazon SageMaker AI Ground Truth, and enables this job: Produce ground-truth examples needed to learn supervised tasks and measure performance.",
+      "service": "Amazon SageMaker AI Ground Truth"
+    },
+    {
+      "id": "feat-017-00",
+      "label": "Provide resilient managed compute fleets for demanding foundation-model training jobs.",
+      "answer": "Purpose-built clusters for training large models",
+      "why": "Purpose-built clusters for training large models belongs to Amazon SageMaker AI HyperPod, and enables this job: Provide resilient managed compute fleets for demanding foundation-model training jobs.",
+      "service": "Amazon SageMaker AI HyperPod"
+    },
+    {
+      "id": "feat-017-01",
+      "label": "Improve accelerator utilization and recovery for computationally intensive training.",
+      "answer": "infrastructure optimized for large-scale ML workloads",
+      "why": "infrastructure optimized for large-scale ML workloads belongs to Amazon SageMaker AI HyperPod, and enables this job: Improve accelerator utilization and recovery for computationally intensive training.",
+      "service": "Amazon SageMaker AI HyperPod"
+    },
+    {
+      "id": "feat-018-00",
+      "label": "Escalate uncertain or consequential AI outputs for a person's decision.",
+      "answer": "Human loops",
+      "why": "Human loops belongs to Amazon Augmented AI (A2I), and enables this job: Escalate uncertain or consequential AI outputs for a person's decision.",
+      "service": "Amazon Augmented AI (A2I)"
+    },
+    {
+      "id": "feat-018-01",
+      "label": "Embed human approval and correction into both generative and predictive applications.",
+      "answer": "Human review workflows",
+      "why": "Human review workflows belongs to Amazon Augmented AI (A2I), and enables this job: Embed human approval and correction into both generative and predictive applications.",
+      "service": "Amazon Augmented AI (A2I)"
+    },
+    {
+      "id": "feat-019-00",
+      "label": "Distribute small annotation, validation, or collection jobs to an on-demand workforce.",
+      "answer": "Crowdsourced human tasks",
+      "why": "Crowdsourced human tasks belongs to Amazon Mechanical Turk, and enables this job: Distribute small annotation, validation, or collection jobs to an on-demand workforce.",
+      "service": "Amazon Mechanical Turk"
+    },
+    {
+      "id": "feat-019-01",
+      "label": "Restrict a human task to people who meet defined skills or approval criteria.",
+      "answer": "custom worker qualifications",
+      "why": "custom worker qualifications belongs to Amazon Mechanical Turk, and enables this job: Restrict a human task to people who meet defined skills or approval criteria.",
+      "service": "Amazon Mechanical Turk"
+    },
+    {
+      "id": "feat-019-02",
+      "label": "Use consensus, review, and acceptance rules to improve reliability of submitted human work.",
+      "answer": "result quality controls",
+      "why": "result quality controls belongs to Amazon Mechanical Turk, and enables this job: Use consensus, review, and acceptance rules to improve reliability of submitted human work.",
+      "service": "Amazon Mechanical Turk"
+    },
+    {
+      "id": "feat-020-00",
+      "label": "Determine when differently written records refer to the same real-world person or organization.",
+      "answer": "Entity matching and resolution",
+      "why": "Entity matching and resolution belongs to AWS Entity Resolution, and enables this job: Determine when differently written records refer to the same real-world person or organization.",
+      "service": "AWS Entity Resolution"
+    },
+    {
+      "id": "feat-020-01",
+      "label": "Combine duplicate identities across sources into a consolidated profile.",
+      "answer": "Machine learning-based matching",
+      "why": "Machine learning-based matching belongs to AWS Entity Resolution, and enables this job: Combine duplicate identities across sources into a consolidated profile.",
+      "service": "AWS Entity Resolution"
+    },
+    {
+      "id": "feat-021-00",
+      "label": "Browse externally produced datasets that can augment an organization's own information.",
+      "answer": "Third-party data catalogue",
+      "why": "Third-party data catalogue belongs to AWS Data Exchange, and enables this job: Browse externally produced datasets that can augment an organization's own information.",
+      "service": "AWS Data Exchange"
+    },
+    {
+      "id": "feat-021-01",
+      "label": "Acquire ongoing rights to use a provider's dataset through a cloud marketplace workflow.",
+      "answer": "subscription-based data access",
+      "why": "subscription-based data access belongs to AWS Data Exchange, and enables this job: Acquire ongoing rights to use a provider's dataset through a cloud marketplace workflow.",
+      "service": "AWS Data Exchange"
+    },
+    {
+      "id": "feat-021-02",
+      "label": "Make subscribed information available to storage and analytics tools without a separate transfer process.",
+      "answer": "delivery to AWS data services",
+      "why": "delivery to AWS data services belongs to AWS Data Exchange, and enables this job: Make subscribed information available to storage and analytics tools without a separate transfer process.",
+      "service": "AWS Data Exchange"
+    },
+    {
+      "id": "feat-022-00",
+      "label": "Process large datasets with popular distributed open-source analytics frameworks.",
+      "answer": "Apache Spark and Hadoop workloads",
+      "why": "Apache Spark and Hadoop workloads belongs to Amazon EMR, and enables this job: Process large datasets with popular distributed open-source analytics frameworks.",
+      "service": "Amazon EMR"
+    },
+    {
+      "id": "feat-022-01",
+      "label": "Choose provisioned big-data fleets or on-demand execution without managing clusters.",
+      "answer": "cluster and serverless deployment options",
+      "why": "cluster and serverless deployment options belongs to Amazon EMR, and enables this job: Choose provisioned big-data fleets or on-demand execution without managing clusters.",
+      "service": "Amazon EMR"
+    },
+    {
+      "id": "feat-022-02",
+      "label": "Run distributed transformations directly against objects in a cloud data lake.",
+      "answer": "processing data in Amazon S3",
+      "why": "processing data in Amazon S3 belongs to Amazon EMR, and enables this job: Run distributed transformations directly against objects in a cloud data lake.",
+      "service": "Amazon EMR"
+    },
+    {
+      "id": "feat-023-00",
+      "label": "Prepare and combine information from multiple sources without provisioning data-processing servers.",
+      "answer": "Serverless data integration",
+      "why": "Serverless data integration belongs to AWS Glue, and enables this job: Prepare and combine information from multiple sources without provisioning data-processing servers.",
+      "service": "AWS Glue"
+    },
+    {
+      "id": "feat-023-01",
+      "label": "Read source records, reshape them, and write the results to a target system.",
+      "answer": "AWS Glue ETL jobs",
+      "why": "AWS Glue ETL jobs belongs to AWS Glue, and enables this job: Read source records, reshape them, and write the results to a target system.",
+      "service": "AWS Glue"
+    },
+    {
+      "id": "feat-023-02",
+      "label": "Maintain centralized technical metadata so analytics and ML tools can find and understand datasets.",
+      "answer": "AWS Glue Data Catalog",
+      "why": "AWS Glue Data Catalog belongs to AWS Glue, and enables this job: Maintain centralized technical metadata so analytics and ML tools can find and understand datasets.",
+      "service": "AWS Glue"
+    },
+    {
+      "id": "feat-023-03",
+      "label": "Scan data stores automatically to infer structure and register tables and partitions.",
+      "answer": "crawlers for schema discovery",
+      "why": "crawlers for schema discovery belongs to AWS Glue, and enables this job: Scan data stores automatically to infer structure and register tables and partitions.",
+      "service": "AWS Glue"
+    },
+    {
+      "id": "feat-023-04",
+      "label": "Define expectations for datasets and detect records or pipelines that violate them.",
+      "answer": "data quality rules and monitoring",
+      "why": "data quality rules and monitoring belongs to AWS Glue, and enables this job: Define expectations for datasets and detect records or pipelines that violate them.",
+      "service": "AWS Glue"
+    },
+    {
+      "id": "feat-024-00",
+      "label": "Clean and reshape source records through a visual interface instead of programming transformations.",
+      "answer": "No-code data preparation",
+      "why": "No-code data preparation belongs to AWS Glue DataBrew, and enables this job: Clean and reshape source records through a visual interface instead of programming transformations.",
+      "service": "AWS Glue DataBrew"
+    },
+    {
+      "id": "feat-024-01",
+      "label": "Calculate distributions, missing values, and anomalies to understand a dataset before modeling.",
+      "answer": "data profiling",
+      "why": "data profiling belongs to AWS Glue DataBrew, and enables this job: Calculate distributions, missing values, and anomalies to understand a dataset before modeling.",
+      "service": "AWS Glue DataBrew"
+    },
+    {
+      "id": "feat-024-02",
+      "label": "Save an ordered set of cleaning steps and apply it consistently to later datasets.",
+      "answer": "reusable transformation recipes",
+      "why": "reusable transformation recipes belongs to AWS Glue DataBrew, and enables this job: Save an ordered set of cleaning steps and apply it consistently to later datasets.",
+      "service": "AWS Glue DataBrew"
+    },
+    {
+      "id": "feat-025-00",
+      "label": "Administer access to governed analytical data from one control plane.",
+      "answer": "Centralized data-lake permissions",
+      "why": "Centralized data-lake permissions belongs to AWS Lake Formation, and enables this job: Administer access to governed analytical data from one control plane.",
+      "service": "AWS Lake Formation"
+    },
+    {
+      "id": "feat-025-01",
+      "label": "Grant access at database, table, column, row, or cell level rather than exposing an entire dataset.",
+      "answer": "fine-grained access control",
+      "why": "fine-grained access control belongs to AWS Lake Formation, and enables this job: Grant access at database, table, column, row, or cell level rather than exposing an entire dataset.",
+      "service": "AWS Lake Formation"
+    },
+    {
+      "id": "feat-025-02",
+      "label": "Provide controlled cross-team or cross-account access to registered analytical tables.",
+      "answer": "governed table sharing",
+      "why": "governed table sharing belongs to AWS Lake Formation, and enables this job: Provide controlled cross-team or cross-account access to registered analytical tables.",
+      "service": "AWS Lake Formation"
+    },
+    {
+      "id": "feat-026-00",
+      "label": "Index documents and operational events for fast querying without operating the search cluster software.",
+      "answer": "Managed search and log analytics",
+      "why": "Managed search and log analytics belongs to Amazon OpenSearch Service, and enables this job: Index documents and operational events for fast querying without operating the search cluster software.",
+      "service": "Amazon OpenSearch Service"
+    },
+    {
+      "id": "feat-026-01",
+      "label": "Retrieve semantically similar items by comparing numeric representations of their meaning.",
+      "answer": "vector search",
+      "why": "vector search belongs to Amazon OpenSearch Service, and enables this job: Retrieve semantically similar items by comparing numeric representations of their meaning.",
+      "service": "Amazon OpenSearch Service"
+    },
+    {
+      "id": "feat-026-02",
+      "label": "Explore indexed operational information through visualizations and monitoring views.",
+      "answer": "dashboards and observability",
+      "why": "dashboards and observability belongs to Amazon OpenSearch Service, and enables this job: Explore indexed operational information through visualizations and monitoring views.",
+      "service": "Amazon OpenSearch Service"
+    },
+    {
+      "id": "feat-026-03",
+      "label": "Combine keyword retrieval with low-latency similarity queries over large content indexes.",
+      "answer": "full-text plus high-throughput semantic search",
+      "why": "full-text plus high-throughput semantic search belongs to Amazon OpenSearch Service, and enables this job: Combine keyword retrieval with low-latency similarity queries over large content indexes.",
+      "service": "Amazon OpenSearch Service"
+    },
+    {
+      "id": "feat-026-04",
+      "label": "Ground generated answers when fast ranking across a large searchable corpus is the dominant requirement.",
+      "answer": "search-heavy RAG retrieval",
+      "why": "search-heavy RAG retrieval belongs to Amazon OpenSearch Service, and enables this job: Ground generated answers when fast ranking across a large searchable corpus is the dominant requirement.",
+      "service": "Amazon OpenSearch Service"
+    },
+    {
+      "id": "feat-027-00",
+      "label": "Store values by column to make large analytical aggregations efficient.",
+      "answer": "Columnar data warehousing",
+      "why": "Columnar data warehousing belongs to Amazon Redshift, and enables this job: Store values by column to make large analytical aggregations efficient.",
+      "service": "Amazon Redshift"
+    },
+    {
+      "id": "feat-027-01",
+      "label": "Query large structured datasets with familiar relational syntax.",
+      "answer": "SQL analytics at scale",
+      "why": "SQL analytics at scale belongs to Amazon Redshift, and enables this job: Query large structured datasets with familiar relational syntax.",
+      "service": "Amazon Redshift"
+    },
+    {
+      "id": "feat-027-02",
+      "label": "Run warehouse queries with capacity managed automatically rather than maintaining provisioned clusters.",
+      "answer": "serverless analytics",
+      "why": "serverless analytics belongs to Amazon Redshift, and enables this job: Run warehouse queries with capacity managed automatically rather than maintaining provisioned clusters.",
+      "service": "Amazon Redshift"
+    },
+    {
+      "id": "feat-028-00",
+      "label": "Define expected spending or consumption limits for an account, service, or project.",
+      "answer": "Custom cost and usage budgets",
+      "why": "Custom cost and usage budgets belongs to AWS Budgets, and enables this job: Define expected spending or consumption limits for an account, service, or project.",
+      "service": "AWS Budgets"
+    },
+    {
+      "id": "feat-028-01",
+      "label": "Notify stakeholders when actual or forecast consumption crosses a chosen percentage or amount.",
+      "answer": "threshold alerts",
+      "why": "threshold alerts belongs to AWS Budgets, and enables this job: Notify stakeholders when actual or forecast consumption crosses a chosen percentage or amount.",
+      "service": "AWS Budgets"
+    },
+    {
+      "id": "feat-028-02",
+      "label": "Warn before overspend occurs by comparing predicted month-end charges with a target.",
+      "answer": "forecast-based notifications",
+      "why": "forecast-based notifications belongs to AWS Budgets, and enables this job: Warn before overspend occurs by comparing predicted month-end charges with a target.",
+      "service": "AWS Budgets"
+    },
+    {
+      "id": "feat-029-00",
+      "label": "Break charges down by service, account, Region, tag, or other billing dimension.",
+      "answer": "Cost and usage filtering",
+      "why": "Cost and usage filtering belongs to AWS Cost Explorer, and enables this job: Break charges down by service, account, Region, tag, or other billing dimension.",
+      "service": "AWS Cost Explorer"
+    },
+    {
+      "id": "feat-029-01",
+      "label": "Inspect how cloud expenditure changed over prior days or months.",
+      "answer": "historical trend visualization",
+      "why": "historical trend visualization belongs to AWS Cost Explorer, and enables this job: Inspect how cloud expenditure changed over prior days or months.",
+      "service": "AWS Cost Explorer"
+    },
+    {
+      "id": "feat-029-02",
+      "label": "Estimate future charges from recent usage patterns.",
+      "answer": "cost forecasting",
+      "why": "cost forecasting belongs to AWS Cost Explorer, and enables this job: Estimate future charges from recent usage patterns.",
+      "service": "AWS Cost Explorer"
+    },
+    {
+      "id": "feat-030-00",
+      "label": "Select virtual-machine CPU, memory, storage, and networking proportions for a workload.",
+      "answer": "Configurable instance types",
+      "why": "Configurable instance types belongs to Amazon EC2, and enables this job: Select virtual-machine CPU, memory, storage, and networking proportions for a workload.",
+      "service": "Amazon EC2"
+    },
+    {
+      "id": "feat-030-01",
+      "label": "Provision specialized hardware for model training or inference.",
+      "answer": "GPU and ML accelerator instances",
+      "why": "GPU and ML accelerator instances belongs to Amazon EC2, and enables this job: Provision specialized hardware for model training or inference.",
+      "service": "Amazon EC2"
+    },
+    {
+      "id": "feat-030-02",
+      "label": "Choose the operating system, networking, storage, and installed software for a virtual server.",
+      "answer": "Amazon EC2 instance types",
+      "why": "Amazon EC2 instance types belongs to Amazon EC2, and enables this job: Choose the operating system, networking, storage, and installed software for a virtual server.",
+      "service": "Amazon EC2"
+    },
+    {
+      "id": "feat-031-00",
+      "label": "Execute code in response to uploads, API calls, schedules, or messages.",
+      "answer": "Event-triggered functions",
+      "why": "Event-triggered functions belongs to AWS Lambda, and enables this job: Execute code in response to uploads, API calls, schedules, or messages.",
+      "service": "AWS Lambda"
+    },
+    {
+      "id": "feat-031-01",
+      "label": "Increase or decrease concurrent execution capacity as events arrive.",
+      "answer": "automatic scaling",
+      "why": "automatic scaling belongs to AWS Lambda, and enables this job: Increase or decrease concurrent execution capacity as events arrive.",
+      "service": "AWS Lambda"
+    },
+    {
+      "id": "feat-031-02",
+      "label": "Charge for requests and compute duration instead of continuously running a server.",
+      "answer": "pay-per-use execution",
+      "why": "pay-per-use execution belongs to AWS Lambda, and enables this job: Charge for requests and compute duration instead of continuously running a server.",
+      "service": "AWS Lambda"
+    },
+    {
+      "id": "feat-032-00",
+      "label": "Schedule and operate packaged application tasks across a fleet through an AWS-native control plane.",
+      "answer": "Managed container orchestration",
+      "why": "Managed container orchestration belongs to Amazon Elastic Container Service (Amazon ECS), and enables this job: Schedule and operate packaged application tasks across a fleet through an AWS-native control plane.",
+      "service": "Amazon Elastic Container Service (Amazon ECS)"
+    },
+    {
+      "id": "feat-032-01",
+      "label": "Run packaged workloads without selecting or administering the underlying hosts.",
+      "answer": "AWS Fargate serverless containers",
+      "why": "AWS Fargate serverless containers belongs to Amazon Elastic Container Service (Amazon ECS), and enables this job: Run packaged workloads without selecting or administering the underlying hosts.",
+      "service": "Amazon Elastic Container Service (Amazon ECS)"
+    },
+    {
+      "id": "feat-032-02",
+      "label": "Place container tasks on customer-controlled virtual-machine capacity.",
+      "answer": "Amazon EC2 launch option",
+      "why": "Amazon EC2 launch option belongs to Amazon Elastic Container Service (Amazon ECS), and enables this job: Place container tasks on customer-controlled virtual-machine capacity.",
+      "service": "Amazon Elastic Container Service (Amazon ECS)"
+    },
+    {
+      "id": "feat-033-00",
+      "label": "Use the standard container-cluster API while AWS operates its core coordination components.",
+      "answer": "Managed Kubernetes control plane",
+      "why": "Managed Kubernetes control plane belongs to Amazon Elastic Kubernetes Service (Amazon EKS), and enables this job: Use the standard container-cluster API while AWS operates its core coordination components.",
+      "service": "Amazon Elastic Kubernetes Service (Amazon EKS)"
+    },
+    {
+      "id": "feat-033-01",
+      "label": "Run ecosystem tools and manifests that target the common open-source orchestration interface.",
+      "answer": "Kubernetes API compatibility",
+      "why": "Kubernetes API compatibility belongs to Amazon Elastic Kubernetes Service (Amazon EKS), and enables this job: Run ecosystem tools and manifests that target the common open-source orchestration interface.",
+      "service": "Amazon Elastic Kubernetes Service (Amazon EKS)"
+    },
+    {
+      "id": "feat-033-02",
+      "label": "Connect container clusters with cloud-native access, network, and monitoring controls.",
+      "answer": "AWS identity networking and observability integration",
+      "why": "AWS identity networking and observability integration belongs to Amazon Elastic Kubernetes Service (Amazon EKS), and enables this job: Connect container clusters with cloud-native access, network, and monitoring controls.",
+      "service": "Amazon Elastic Kubernetes Service (Amazon EKS)"
+    },
+    {
+      "id": "feat-034-00",
+      "label": "Use familiar open-source relational drivers and tools with an AWS-built database engine.",
+      "answer": "MySQL and PostgreSQL compatibility",
+      "why": "MySQL and PostgreSQL compatibility belongs to Amazon Aurora, and enables this job: Use familiar open-source relational drivers and tools with an AWS-built database engine.",
+      "service": "Amazon Aurora"
+    },
+    {
+      "id": "feat-034-01",
+      "label": "Replicate relational data across failure zones while separating storage from compute.",
+      "answer": "distributed fault-tolerant storage",
+      "why": "distributed fault-tolerant storage belongs to Amazon Aurora, and enables this job: Replicate relational data across failure zones while separating storage from compute.",
+      "service": "Amazon Aurora"
+    },
+    {
+      "id": "feat-034-02",
+      "label": "Adjust relational database compute automatically for variable demand.",
+      "answer": "Aurora Serverless capacity",
+      "why": "Aurora Serverless capacity belongs to Amazon Aurora, and enables this job: Adjust relational database compute automatically for variable demand.",
+      "service": "Amazon Aurora"
+    },
+    {
+      "id": "feat-034-03",
+      "label": "Use a PostgreSQL extension to store embeddings in AWS's high-performance relational engine.",
+      "answer": "Aurora PostgreSQL with pgvector",
+      "why": "Aurora PostgreSQL with pgvector belongs to Amazon Aurora, and enables this job: Use a PostgreSQL extension to store embeddings in AWS's high-performance relational engine.",
+      "service": "Amazon Aurora"
+    },
+    {
+      "id": "feat-034-04",
+      "label": "Keep transactions and structured application records beside semantic-nearest-neighbor queries.",
+      "answer": "pgvector",
+      "why": "pgvector belongs to Amazon Aurora, and enables this job: Keep transactions and structured application records beside semantic-nearest-neighbor queries.",
+      "service": "Amazon Aurora"
+    },
+    {
+      "id": "feat-035-00",
+      "label": "Represent records as flexible nested objects instead of fixed relational rows.",
+      "answer": "Document-oriented data model",
+      "why": "Document-oriented data model belongs to Amazon DocumentDB (with MongoDB compatibility), and enables this job: Represent records as flexible nested objects instead of fixed relational rows.",
+      "service": "Amazon DocumentDB (with MongoDB compatibility)"
+    },
+    {
+      "id": "feat-035-01",
+      "label": "Use common document-database APIs and drivers when moving an existing application.",
+      "answer": "MongoDB workload compatibility",
+      "why": "MongoDB workload compatibility belongs to Amazon DocumentDB (with MongoDB compatibility), and enables this job: Use common document-database APIs and drivers when moving an existing application.",
+      "service": "Amazon DocumentDB (with MongoDB compatibility)"
+    },
+    {
+      "id": "feat-035-02",
+      "label": "Let AWS maintain redundant copies and recovery points for a document database.",
+      "answer": "managed replication and backups",
+      "why": "managed replication and backups belongs to Amazon DocumentDB (with MongoDB compatibility), and enables this job: Let AWS maintain redundant copies and recovery points for a document database.",
+      "service": "Amazon DocumentDB (with MongoDB compatibility)"
+    },
+    {
+      "id": "feat-035-03",
+      "label": "Store embeddings beside flexible records such as medical histories or knowledge articles and query their similarity.",
+      "answer": "native vector search for JSON documents",
+      "why": "native vector search for JSON documents belongs to Amazon DocumentDB (with MongoDB compatibility), and enables this job: Store embeddings beside flexible records such as medical histories or knowledge articles and query their similarity.",
+      "service": "Amazon DocumentDB (with MongoDB compatibility)"
+    },
+    {
+      "id": "feat-035-04",
+      "label": "Filter nested records with familiar document operations while also retrieving conceptually related content.",
+      "answer": "$vectorSearch operator",
+      "why": "$vectorSearch operator belongs to Amazon DocumentDB (with MongoDB compatibility), and enables this job: Filter nested records with familiar document operations while also retrieving conceptually related content.",
+      "service": "Amazon DocumentDB (with MongoDB compatibility)"
+    },
+    {
+      "id": "feat-036-00",
+      "label": "Retrieve flexible records efficiently by primary key without relational joins.",
+      "answer": "Key-value and document model",
+      "why": "Key-value and document model belongs to Amazon DynamoDB, and enables this job: Retrieve flexible records efficiently by primary key without relational joins.",
+      "service": "Amazon DynamoDB"
+    },
+    {
+      "id": "feat-036-01",
+      "label": "Distribute serverless database traffic and storage as demand grows.",
+      "answer": "automatic horizontal scaling",
+      "why": "automatic horizontal scaling belongs to Amazon DynamoDB, and enables this job: Distribute serverless database traffic and storage as demand grows.",
+      "service": "Amazon DynamoDB"
+    },
+    {
+      "id": "feat-036-02",
+      "label": "Capture an ordered record of item changes to trigger downstream processing.",
+      "answer": "DynamoDB Streams",
+      "why": "DynamoDB Streams belongs to Amazon DynamoDB, and enables this job: Capture an ordered record of item changes to trigger downstream processing.",
+      "service": "Amazon DynamoDB"
+    },
+    {
+      "id": "feat-037-00",
+      "label": "Use widely adopted in-memory data structures and clients in a managed cache.",
+      "answer": "Valkey and Redis OSS compatibility",
+      "why": "Valkey and Redis OSS compatibility belongs to Amazon ElastiCache, and enables this job: Use widely adopted in-memory data structures and clients in a managed cache.",
+      "service": "Amazon ElastiCache"
+    },
+    {
+      "id": "feat-037-01",
+      "label": "Serve frequently requested values from memory to avoid slower database work.",
+      "answer": "microsecond-latency caching",
+      "why": "microsecond-latency caching belongs to Amazon ElastiCache, and enables this job: Serve frequently requested values from memory to avoid slower database work.",
+      "service": "Amazon ElastiCache"
+    },
+    {
+      "id": "feat-037-02",
+      "label": "Reuse transient application state or model responses to reduce latency and cost.",
+      "answer": "session and inference-result caching",
+      "why": "session and inference-result caching belongs to Amazon ElastiCache, and enables this job: Reuse transient application state or model responses to reduce latency and cost.",
+      "service": "Amazon ElastiCache"
+    },
+    {
+      "id": "feat-038-00",
+      "label": "Model connected data with either labeled relationships or semantic triples.",
+      "answer": "Property graph and RDF support",
+      "why": "Property graph and RDF support belongs to Amazon Neptune, and enables this job: Model connected data with either labeled relationships or semantic triples.",
+      "service": "Amazon Neptune"
+    },
+    {
+      "id": "feat-038-01",
+      "label": "Follow multiple links between entities efficiently without expensive relational joins.",
+      "answer": "relationship traversal",
+      "why": "relationship traversal belongs to Amazon Neptune, and enables this job: Follow multiple links between entities efficiently without expensive relational joins.",
+      "service": "Amazon Neptune"
+    },
+    {
+      "id": "feat-038-02",
+      "label": "Represent facts and their connections for semantic search, recommendations, or grounding.",
+      "answer": "knowledge graph workloads",
+      "why": "knowledge graph workloads belongs to Amazon Neptune, and enables this job: Represent facts and their connections for semantic search, recommendations, or grounding.",
+      "service": "Amazon Neptune"
+    },
+    {
+      "id": "feat-038-03",
+      "label": "Combine embedding similarity with algorithms over a highly connected analytical graph.",
+      "answer": "Neptune Analytics vector search",
+      "why": "Neptune Analytics vector search belongs to Amazon Neptune, and enables this job: Combine embedding similarity with algorithms over a highly connected analytical graph.",
+      "service": "Amazon Neptune"
+    },
+    {
+      "id": "feat-038-04",
+      "label": "Ground a generated answer using both semantic matches and explainable paths between entities.",
+      "answer": "GraphRAG relationship context",
+      "why": "GraphRAG relationship context belongs to Amazon Neptune, and enables this job: Ground a generated answer using both semantic matches and explainable paths between entities.",
+      "service": "Amazon Neptune"
+    },
+    {
+      "id": "feat-039-00",
+      "label": "Choose among familiar commercial and open-source SQL technologies in a managed service.",
+      "answer": "Multiple relational database engines",
+      "why": "Multiple relational database engines belongs to Amazon Relational Database Service (Amazon RDS), and enables this job: Choose among familiar commercial and open-source SQL technologies in a managed service.",
+      "service": "Amazon Relational Database Service (Amazon RDS)"
+    },
+    {
+      "id": "feat-039-01",
+      "label": "Delegate routine relational database maintenance and recovery-point creation to AWS.",
+      "answer": "automated backups and patching",
+      "why": "automated backups and patching belongs to Amazon Relational Database Service (Amazon RDS), and enables this job: Delegate routine relational database maintenance and recovery-point creation to AWS.",
+      "service": "Amazon Relational Database Service (Amazon RDS)"
+    },
+    {
+      "id": "feat-039-02",
+      "label": "Maintain a synchronized standby in another failure zone for resilient database operation.",
+      "answer": "Multi-AZ high availability",
+      "why": "Multi-AZ high availability belongs to Amazon Relational Database Service (Amazon RDS), and enables this job: Maintain a synchronized standby in another failure zone for resilient database operation.",
+      "service": "Amazon Relational Database Service (Amazon RDS)"
+    },
+    {
+      "id": "feat-039-03",
+      "label": "Add embedding storage and nearest-neighbor queries to a conventional managed PostgreSQL application.",
+      "answer": "RDS for PostgreSQL with pgvector",
+      "why": "RDS for PostgreSQL with pgvector belongs to Amazon Relational Database Service (Amazon RDS), and enables this job: Add embedding storage and nearest-neighbor queries to a conventional managed PostgreSQL application.",
+      "service": "Amazon Relational Database Service (Amazon RDS)"
+    },
+    {
+      "id": "feat-039-04",
+      "label": "Keep semantic vectors beside established tables and transactions without adopting a separate search store.",
+      "answer": "RDS for PostgreSQL",
+      "why": "RDS for PostgreSQL belongs to Amazon Relational Database Service (Amazon RDS), and enables this job: Keep semantic vectors beside established tables and transactions without adopting a separate search store.",
+      "service": "Amazon Relational Database Service (Amazon RDS)"
+    },
+    {
+      "id": "feat-040-00",
+      "label": "Generate workplace responses only from information the requesting identity is authorized to see.",
+      "answer": "Permissions-aware enterprise answers",
+      "why": "Permissions-aware enterprise answers belongs to Amazon Q, and enables this job: Generate workplace responses only from information the requesting identity is authorized to see.",
+      "service": "Amazon Q"
+    },
+    {
+      "id": "feat-040-01",
+      "label": "Apply a family of generative helpers to organizational knowledge and software-delivery tasks.",
+      "answer": "business and developer assistants",
+      "why": "business and developer assistants belongs to Amazon Q, and enables this job: Apply a family of generative helpers to organizational knowledge and software-delivery tasks.",
+      "service": "Amazon Q"
+    },
+    {
+      "id": "feat-040-02",
+      "label": "Ground assistant responses in approved company repositories and applications.",
+      "answer": "connections to organizational data",
+      "why": "connections to organizational data belongs to Amazon Q, and enables this job: Ground assistant responses in approved company repositories and applications.",
+      "service": "Amazon Q"
+    },
+    {
+      "id": "feat-041-00",
+      "label": "Extract common linguistic signals and structure from general unstructured text.",
+      "answer": "Amazon Comprehend insights",
+      "why": "Amazon Comprehend insights belongs to Amazon Comprehend, and enables this job: Extract common linguistic signals and structure from general unstructured text.",
+      "service": "Amazon Comprehend"
+    },
+    {
+      "id": "feat-041-01",
+      "label": "Train text analysis for organization-specific labels and terminology.",
+      "answer": "custom NLP models for domain-specific extraction/classification",
+      "why": "custom NLP models for domain-specific extraction/classification belongs to Amazon Comprehend, and enables this job: Train text analysis for organization-specific labels and terminology.",
+      "service": "Amazon Comprehend"
+    },
+    {
+      "id": "feat-042-00",
+      "label": "Identify conditions, medications, tests, and their relationships in healthcare narratives.",
+      "answer": "DetectEntitiesV2",
+      "why": "DetectEntitiesV2 belongs to Amazon Comprehend Medical, and enables this job: Identify conditions, medications, tests, and their relationships in healthcare narratives.",
+      "service": "Amazon Comprehend Medical"
+    },
+    {
+      "id": "feat-043-00",
+      "label": "Create chat and telephone experiences that interact through natural language.",
+      "answer": "Automatic speech recognition (ASR)",
+      "why": "Automatic speech recognition (ASR) belongs to Amazon Lex, and enables this job: Create chat and telephone experiences that interact through natural language.",
+      "service": "Amazon Lex"
+    },
+    {
+      "id": "feat-043-01",
+      "label": "Infer what a user is trying to accomplish from an utterance.",
+      "answer": "intent recognition",
+      "why": "intent recognition belongs to Amazon Lex, and enables this job: Infer what a user is trying to accomplish from an utterance.",
+      "service": "Amazon Lex"
+    },
+    {
+      "id": "feat-043-02",
+      "label": "Track conversational state and collect the information needed to complete a request.",
+      "answer": "dialogue management",
+      "why": "dialogue management belongs to Amazon Lex, and enables this job: Track conversational state and collect the information needed to complete a request.",
+      "service": "Amazon Lex"
+    },
+    {
+      "id": "feat-043-03",
+      "label": "Connect a conversational interface to backend business logic and fulfillment systems.",
+      "answer": "application integration",
+      "why": "application integration belongs to Amazon Lex, and enables this job: Connect a conversational interface to backend business logic and fulfillment systems.",
+      "service": "Amazon Lex"
+    },
+    {
+      "id": "feat-044-00",
+      "label": "Turn written content into natural-sounding audio for applications and accessibility.",
+      "answer": "Neural text-to-speech (NTTS)",
+      "why": "Neural text-to-speech (NTTS) belongs to Amazon Polly, and enables this job: Turn written content into natural-sounding audio for applications and accessibility.",
+      "service": "Amazon Polly"
+    },
+    {
+      "id": "feat-045-00",
+      "label": "Convert prerecorded or streaming speech into written text.",
+      "answer": "Batch transcription",
+      "why": "Batch transcription belongs to Amazon Transcribe, and enables this job: Convert prerecorded or streaming speech into written text.",
+      "service": "Amazon Transcribe"
+    },
+    {
+      "id": "feat-045-01",
+      "label": "Feed spoken content into search, analytics, captions, or downstream automation.",
+      "answer": "Streaming transcription",
+      "why": "Streaming transcription belongs to Amazon Transcribe, and enables this job: Feed spoken content into search, analytics, captions, or downstream automation.",
+      "service": "Amazon Transcribe"
+    },
+    {
+      "id": "feat-046-00",
+      "label": "Convert written content between languages while preserving meaning.",
+      "answer": "Real-time translation",
+      "why": "Real-time translation belongs to Amazon Translate, and enables this job: Convert written content between languages while preserving meaning.",
+      "service": "Amazon Translate"
+    },
+    {
+      "id": "feat-047-00",
+      "label": "Read both words and key-value structure from scanned or digital files.",
+      "answer": "Document Analysis API",
+      "why": "Document Analysis API belongs to Amazon Textract, and enables this job: Read both words and key-value structure from scanned or digital files.",
+      "service": "Amazon Textract"
+    },
+    {
+      "id": "feat-047-01",
+      "label": "Automate intake where layouts, fields, and tabular values must become usable records.",
+      "answer": "AnalyzeExpense API",
+      "why": "AnalyzeExpense API belongs to Amazon Textract, and enables this job: Automate intake where layouts, fields, and tabular values must become usable records.",
+      "service": "Amazon Textract"
+    },
+    {
+      "id": "feat-048-00",
+      "label": "Let employees or customers ask questions over documents using ordinary language.",
+      "answer": "Natural-language search across unstructured enterprise content",
+      "why": "Natural-language search across unstructured enterprise content belongs to Amazon Kendra, and enables this job: Let employees or customers ask questions over documents using ordinary language.",
+      "service": "Amazon Kendra"
+    },
+    {
+      "id": "feat-048-01",
+      "label": "Rank relevant organizational information for workplace or support discovery.",
+      "answer": "Intelligent search",
+      "why": "Intelligent search belongs to Amazon Kendra, and enables this job: Rank relevant organizational information for workplace or support discovery.",
+      "service": "Amazon Kendra"
+    },
+    {
+      "id": "feat-049-00",
+      "label": "Analyze images or video to identify visual entities, environments, and people.",
+      "answer": "Label detection",
+      "why": "Label detection belongs to Amazon Rekognition, and enables this job: Analyze images or video to identify visual entities, environments, and people.",
+      "service": "Amazon Rekognition"
+    },
+    {
+      "id": "feat-049-01",
+      "label": "Teach image recognition for organization-specific objects using labeled examples.",
+      "answer": "Custom Labels",
+      "why": "Custom Labels belongs to Amazon Rekognition, and enables this job: Teach image recognition for organization-specific objects using labeled examples.",
+      "service": "Amazon Rekognition"
+    },
+    {
+      "id": "feat-050-00",
+      "label": "Rank items for each user from their behavior and preferences while they interact.",
+      "answer": "Real-time recommendations",
+      "why": "Real-time recommendations belongs to Amazon Personalize, and enables this job: Rank items for each user from their behavior and preferences while they interact.",
+      "service": "Amazon Personalize"
+    },
+    {
+      "id": "feat-051-00",
+      "label": "Select and train forecasting algorithms from historical observations without requiring ML expertise.",
+      "answer": "Automated time-series machine learning",
+      "why": "Automated time-series machine learning belongs to Amazon Forecast, and enables this job: Select and train forecasting algorithms from historical observations without requiring ML expertise.",
+      "service": "Amazon Forecast"
+    },
+    {
+      "id": "feat-051-01",
+      "label": "Estimate a range of possible future values at chosen confidence levels instead of returning only one number.",
+      "answer": "probabilistic forecasts and prediction intervals",
+      "why": "probabilistic forecasts and prediction intervals belongs to Amazon Forecast, and enables this job: Estimate a range of possible future values at chosen confidence levels instead of returning only one number.",
+      "service": "Amazon Forecast"
+    },
+    {
+      "id": "feat-051-02",
+      "label": "Improve future estimates with changing signals and descriptive attributes beyond the target history.",
+      "answer": "related time-series and item metadata",
+      "why": "related time-series and item metadata belongs to Amazon Forecast, and enables this job: Improve future estimates with changing signals and descriptive attributes beyond the target history.",
+      "service": "Amazon Forecast"
+    },
+    {
+      "id": "feat-052-00",
+      "label": "Learn organization-specific patterns of suspicious behavior from labeled historical events.",
+      "answer": "Custom fraud models",
+      "why": "Custom fraud models belongs to Amazon Fraud Detector, and enables this job: Learn organization-specific patterns of suspicious behavior from labeled historical events.",
+      "service": "Amazon Fraud Detector"
+    },
+    {
+      "id": "feat-052-01",
+      "label": "Assign a numeric likelihood of fraud to a transaction or account activity.",
+      "answer": "event risk scores",
+      "why": "event risk scores belongs to Amazon Fraud Detector, and enables this job: Assign a numeric likelihood of fraud to a transaction or account activity.",
+      "service": "Amazon Fraud Detector"
+    },
+    {
+      "id": "feat-052-02",
+      "label": "Translate model results and business conditions into actions such as approve, block, or review.",
+      "answer": "rules and outcomes",
+      "why": "rules and outcomes belongs to Amazon Fraud Detector, and enables this job: Translate model results and business conditions into actions such as approve, block, or review.",
+      "service": "Amazon Fraud Detector"
+    },
+    {
+      "id": "feat-053-00",
+      "label": "Learn the appearance of acceptable products and flag images containing unusual defects.",
+      "answer": "Visual anomaly detection",
+      "why": "Visual anomaly detection belongs to Amazon Lookout for Vision, and enables this job: Learn the appearance of acceptable products and flag images containing unusual defects.",
+      "service": "Amazon Lookout for Vision"
+    },
+    {
+      "id": "feat-053-01",
+      "label": "Build an industrial inspection model from examples of acceptable and faulty output.",
+      "answer": "normal and defective image training",
+      "why": "normal and defective image training belongs to Amazon Lookout for Vision, and enables this job: Build an industrial inspection model from examples of acceptable and faulty output.",
+      "service": "Amazon Lookout for Vision"
+    },
+    {
+      "id": "feat-053-02",
+      "label": "Run a trained visual quality inspection close to factory equipment.",
+      "answer": "edge-device model deployment",
+      "why": "edge-device model deployment belongs to Amazon Lookout for Vision, and enables this job: Run a trained visual quality inspection close to factory equipment.",
+      "service": "Amazon Lookout for Vision"
+    },
+    {
+      "id": "feat-054-00",
+      "label": "Learn normal business-measure behavior and surface unexpected changes without fixed thresholds.",
+      "answer": "Automatic metric anomaly detection",
+      "why": "Automatic metric anomaly detection belongs to Amazon Lookout for Metrics, and enables this job: Learn normal business-measure behavior and surface unexpected changes without fixed thresholds.",
+      "service": "Amazon Lookout for Metrics"
+    },
+    {
+      "id": "feat-054-01",
+      "label": "Combine simultaneous unusual signals that may share one underlying incident.",
+      "answer": "related-event grouping",
+      "why": "related-event grouping belongs to Amazon Lookout for Metrics, and enables this job: Combine simultaneous unusual signals that may share one underlying incident.",
+      "service": "Amazon Lookout for Metrics"
+    },
+    {
+      "id": "feat-054-02",
+      "label": "Rank dimensions that most strongly explain a detected change in a business measure.",
+      "answer": "root-cause contribution analysis",
+      "why": "root-cause contribution analysis belongs to Amazon Lookout for Metrics, and enables this job: Rank dimensions that most strongly explain a detected change in a business measure.",
+      "service": "Amazon Lookout for Metrics"
+    },
+    {
+      "id": "feat-055-00",
+      "label": "Find unusual application behavior and explain likely reliability impact.",
+      "answer": "Reactive insights",
+      "why": "Reactive insights belongs to Amazon DevOps Guru, and enables this job: Find unusual application behavior and explain likely reliability impact.",
+      "service": "Amazon DevOps Guru"
+    },
+    {
+      "id": "feat-056-00",
+      "label": "Inspect proposed source changes and recommend maintainability improvements before merge.",
+      "answer": "Automated code reviews",
+      "why": "Automated code reviews belongs to Amazon CodeGuru Reviewer, and enables this job: Inspect proposed source changes and recommend maintainability improvements before merge.",
+      "service": "Amazon CodeGuru Reviewer"
+    },
+    {
+      "id": "feat-056-01",
+      "label": "Apply learned and rule-based checks for common software vulnerabilities and unsafe practices.",
+      "answer": "security detector library",
+      "why": "security detector library belongs to Amazon CodeGuru Reviewer, and enables this job: Apply learned and rule-based checks for common software vulnerabilities and unsafe practices.",
+      "service": "Amazon CodeGuru Reviewer"
+    },
+    {
+      "id": "feat-056-02",
+      "label": "Run analysis against supported source-control projects as code changes are submitted.",
+      "answer": "repository integration",
+      "why": "repository integration belongs to Amazon CodeGuru Reviewer, and enables this job: Run analysis against supported source-control projects as code changes are submitted.",
+      "service": "Amazon CodeGuru Reviewer"
+    },
+    {
+      "id": "feat-057-00",
+      "label": "Profile executing code to locate expensive methods and reduce compute waste.",
+      "answer": "Continuous profiling",
+      "why": "Continuous profiling belongs to Amazon CodeGuru Profiler, and enables this job: Profile executing code to locate expensive methods and reduce compute waste.",
+      "service": "Amazon CodeGuru Profiler"
+    },
+    {
+      "id": "feat-058-00",
+      "label": "Resolve customer needs through automated voice or chat interactions before an agent is required.",
+      "answer": "Conversational self-service",
+      "why": "Conversational self-service belongs to Amazon Connect, and enables this job: Resolve customer needs through automated voice or chat interactions before an agent is required.",
+      "service": "Amazon Connect"
+    },
+    {
+      "id": "feat-058-01",
+      "label": "Surface guidance and relevant information to contact-center staff during a live conversation.",
+      "answer": "real-time agent assistance",
+      "why": "real-time agent assistance belongs to Amazon Connect, and enables this job: Surface guidance and relevant information to contact-center staff during a live conversation.",
+      "service": "Amazon Connect"
+    },
+    {
+      "id": "feat-058-02",
+      "label": "Analyze interactions for sentiment, topics, compliance, and service-quality trends.",
+      "answer": "contact analytics",
+      "why": "contact analytics belongs to Amazon Connect, and enables this job: Analyze interactions for sentiment, topics, compliance, and service-quality trends.",
+      "service": "Amazon Connect"
+    },
+    {
+      "id": "feat-058-03",
+      "label": "Predict contact demand and align workforce coverage with expected volume.",
+      "answer": "forecasting and scheduling",
+      "why": "forecasting and scheduling belongs to Amazon Connect, and enables this job: Predict contact demand and align workforce coverage with expected volume.",
+      "service": "Amazon Connect"
+    },
+    {
+      "id": "feat-058-04",
+      "label": "Manage customer conversations consistently across voice and digital channels.",
+      "answer": "omnichannel customer interactions",
+      "why": "omnichannel customer interactions belongs to Amazon Connect, and enables this job: Manage customer conversations consistently across voice and digital channels.",
+      "service": "Amazon Connect"
+    },
+    {
+      "id": "feat-059-00",
+      "label": "Use historical orders and signals to estimate future product requirements.",
+      "answer": "Demand planning",
+      "why": "Demand planning belongs to AWS Supply Chain, and enables this job: Use historical orders and signals to estimate future product requirements.",
+      "service": "AWS Supply Chain"
+    },
+    {
+      "id": "feat-059-01",
+      "label": "Identify stock risks and imbalances across facilities and partners.",
+      "answer": "inventory visibility and insights",
+      "why": "inventory visibility and insights belongs to AWS Supply Chain, and enables this job: Identify stock risks and imbalances across facilities and partners.",
+      "service": "AWS Supply Chain"
+    },
+    {
+      "id": "feat-059-02",
+      "label": "Unify operational records from enterprise systems for planning and analysis.",
+      "answer": "supply-chain data lake",
+      "why": "supply-chain data lake belongs to AWS Supply Chain, and enables this job: Unify operational records from enterprise systems for planning and analysis.",
+      "service": "AWS Supply Chain"
+    },
+    {
+      "id": "feat-060-00",
+      "label": "Publish discoverable organizational data products with business descriptions and ownership.",
+      "answer": "Business data catalogue",
+      "why": "Business data catalogue belongs to Amazon DataZone, and enables this job: Publish discoverable organizational data products with business descriptions and ownership.",
+      "service": "Amazon DataZone"
+    },
+    {
+      "id": "feat-060-01",
+      "label": "Request, approve, and audit access to shared datasets through a managed workflow.",
+      "answer": "governed data subscriptions",
+      "why": "governed data subscriptions belongs to Amazon DataZone, and enables this job: Request, approve, and audit access to shared datasets through a managed workflow.",
+      "service": "Amazon DataZone"
+    },
+    {
+      "id": "feat-060-02",
+      "label": "Generate useful catalogue context from technical schema information to improve discovery.",
+      "answer": "AI-assisted metadata descriptions",
+      "why": "AI-assisted metadata descriptions belongs to Amazon DataZone, and enables this job: Generate useful catalogue context from technical schema information to improve discovery.",
+      "service": "Amazon DataZone"
+    },
+    {
+      "id": "feat-061-00",
+      "label": "Assess architecture documents against organizational requirements before code is written.",
+      "answer": "Design security review",
+      "why": "Design security review belongs to AWS Security Agent, and enables this job: Assess architecture documents against organizational requirements before code is written.",
+      "service": "AWS Security Agent"
+    },
+    {
+      "id": "feat-061-01",
+      "label": "Analyze pull requests for common vulnerabilities and organization-specific requirements.",
+      "answer": "Code security review",
+      "why": "Code security review belongs to AWS Security Agent, and enables this job: Analyze pull requests for common vulnerabilities and organization-specific requirements.",
+      "service": "AWS Security Agent"
+    },
+    {
+      "id": "feat-061-02",
+      "label": "Use specialized agents to execute multistep attack scenarios against web applications and APIs.",
+      "answer": "On-demand penetration testing",
+      "why": "On-demand penetration testing belongs to AWS Security Agent, and enables this job: Use specialized agents to execute multistep attack scenarios against web applications and APIs.",
+      "service": "AWS Security Agent"
+    },
+    {
+      "id": "feat-061-03",
+      "label": "Deploy an application in a sandbox to confirm whether a discovered weakness is exploitable.",
+      "answer": "Simulated validation",
+      "why": "Simulated validation belongs to AWS Security Agent, and enables this job: Deploy an application in a sandbox to confirm whether a discovered weakness is exploitable.",
+      "service": "AWS Security Agent"
+    },
+    {
+      "id": "feat-061-04",
+      "label": "Return reproducible exploit paths, impact analysis, and ready-to-implement corrections.",
+      "answer": "Actionable fixes for confirmed vulnerabilities",
+      "why": "Actionable fixes for confirmed vulnerabilities belongs to AWS Security Agent, and enables this job: Return reproducible exploit paths, impact analysis, and ready-to-implement corrections.",
+      "service": "AWS Security Agent"
+    },
+    {
+      "id": "feat-062-00",
+      "label": "Launch incident analysis automatically from ticketing and alarming systems.",
+      "answer": "Automated investigations",
+      "why": "Automated investigations belongs to AWS DevOps Agent, and enables this job: Launch incident analysis automatically from ticketing and alarming systems.",
+      "service": "AWS DevOps Agent"
+    },
+    {
+      "id": "feat-062-01",
+      "label": "Correlate telemetry, code, and deployment data to identify why a production failure occurred.",
+      "answer": "Root cause analysis",
+      "why": "Root cause analysis belongs to AWS DevOps Agent, and enables this job: Correlate telemetry, code, and deployment data to identify why a production failure occurred.",
+      "service": "AWS DevOps Agent"
+    },
+    {
+      "id": "feat-062-02",
+      "label": "Provide resolution, validation, and rollback actions after identifying the cause of an incident.",
+      "answer": "Detailed mitigation plans",
+      "why": "Detailed mitigation plans belongs to AWS DevOps Agent, and enables this job: Provide resolution, validation, and rollback actions after identifying the cause of an incident.",
+      "service": "AWS DevOps Agent"
+    },
+    {
+      "id": "feat-062-03",
+      "label": "Discover services and resources and maintain a dynamic topology of their relationships.",
+      "answer": "Application Mapping",
+      "why": "Application Mapping belongs to AWS DevOps Agent, and enables this job: Discover services and resources and maintain a dynamic topology of their relationships.",
+      "service": "AWS DevOps Agent"
+    },
+    {
+      "id": "feat-062-04",
+      "label": "Use feedback and past investigations to refine future operational recommendations.",
+      "answer": "Continuous learning",
+      "why": "Continuous learning belongs to AWS DevOps Agent, and enables this job: Use feedback and past investigations to refine future operational recommendations.",
+      "service": "AWS DevOps Agent"
+    },
+    {
+      "id": "feat-063-00",
+      "label": "Record who performed a cloud control-plane action, when it happened, and from where.",
+      "answer": "API and user activity history",
+      "why": "API and user activity history belongs to AWS CloudTrail, and enables this job: Record who performed a cloud control-plane action, when it happened, and from where.",
+      "service": "AWS CloudTrail"
+    },
+    {
+      "id": "feat-063-01",
+      "label": "Deliver account activity from every enabled geographic area to a central destination.",
+      "answer": "multi-Region trails",
+      "why": "multi-Region trails belongs to AWS CloudTrail, and enables this job: Deliver account activity from every enabled geographic area to a central destination.",
+      "service": "AWS CloudTrail"
+    },
+    {
+      "id": "feat-063-02",
+      "label": "Retain tamper-resistant activity records for investigations and compliance reviews.",
+      "answer": "immutable audit evidence",
+      "why": "immutable audit evidence belongs to AWS CloudTrail, and enables this job: Retain tamper-resistant activity records for investigations and compliance reviews.",
+      "service": "AWS CloudTrail"
+    },
+    {
+      "id": "feat-064-00",
+      "label": "Collect numerical measurements, event records, and request paths in one monitoring service.",
+      "answer": "Metrics logs and traces",
+      "why": "Metrics logs and traces belongs to Amazon CloudWatch, and enables this job: Collect numerical measurements, event records, and request paths in one monitoring service.",
+      "service": "Amazon CloudWatch"
+    },
+    {
+      "id": "feat-064-01",
+      "label": "Respond when an operational measurement crosses a threshold or detects anomalous behavior.",
+      "answer": "alarms and automated actions",
+      "why": "alarms and automated actions belongs to Amazon CloudWatch, and enables this job: Respond when an operational measurement crosses a threshold or detects anomalous behavior.",
+      "service": "Amazon CloudWatch"
+    },
+    {
+      "id": "feat-064-02",
+      "label": "Visualize system health and model behavior for ongoing production oversight.",
+      "answer": "dashboards and model observability",
+      "why": "dashboards and model observability belongs to Amazon CloudWatch, and enables this job: Visualize system health and model behavior for ongoing production oversight.",
+      "service": "Amazon CloudWatch"
+    },
+    {
+      "id": "feat-065-00",
+      "label": "See how a cloud resource's settings changed over time.",
+      "answer": "Configuration history",
+      "why": "Configuration history belongs to AWS Config, and enables this job: See how a cloud resource's settings changed over time.",
+      "service": "AWS Config"
+    },
+    {
+      "id": "feat-065-01",
+      "label": "Evaluate resource settings continuously against required organizational conditions.",
+      "answer": "compliance rules",
+      "why": "compliance rules belongs to AWS Config, and enables this job: Evaluate resource settings continuously against required organizational conditions.",
+      "service": "AWS Config"
+    },
+    {
+      "id": "feat-065-02",
+      "label": "Discover cloud assets and understand how their configurations depend on one another.",
+      "answer": "resource relationship inventory",
+      "why": "resource relationship inventory belongs to AWS Config, and enables this job: Discover cloud assets and understand how their configurations depend on one another.",
+      "service": "AWS Config"
+    },
+    {
+      "id": "feat-066-00",
+      "label": "Receive best-practice findings across major operational quality categories.",
+      "answer": "Cost security performance and resilience recommendations",
+      "why": "Cost security performance and resilience recommendations belongs to AWS Trusted Advisor, and enables this job: Receive best-practice findings across major operational quality categories.",
+      "service": "AWS Trusted Advisor"
+    },
+    {
+      "id": "feat-066-01",
+      "label": "Focus remediation on recommendations ranked by their potential account impact.",
+      "answer": "prioritized checks",
+      "why": "prioritized checks belongs to AWS Trusted Advisor, and enables this job: Focus remediation on recommendations ranked by their potential account impact.",
+      "service": "AWS Trusted Advisor"
+    },
+    {
+      "id": "feat-066-02",
+      "label": "Review cloud-environment improvements using account metadata and service configuration.",
+      "answer": "account-level guidance",
+      "why": "account-level guidance belongs to AWS Trusted Advisor, and enables this job: Review cloud-environment improvements using account metadata and service configuration.",
+      "service": "AWS Trusted Advisor"
+    },
+    {
+      "id": "feat-067-00",
+      "label": "Assess an architecture across operational excellence, security, reliability, performance, cost, and sustainability.",
+      "answer": "Six-pillar workload reviews",
+      "why": "Six-pillar workload reviews belongs to AWS Well-Architected Tool, and enables this job: Assess an architecture across operational excellence, security, reliability, performance, cost, and sustainability.",
+      "service": "AWS Well-Architected Tool"
+    },
+    {
+      "id": "feat-067-01",
+      "label": "Record where a workload does not yet meet recommended architectural practices.",
+      "answer": "documented risks",
+      "why": "documented risks belongs to AWS Well-Architected Tool, and enables this job: Record where a workload does not yet meet recommended architectural practices.",
+      "service": "AWS Well-Architected Tool"
+    },
+    {
+      "id": "feat-067-02",
+      "label": "Turn review findings into an ordered set of architecture remediation actions.",
+      "answer": "improvement plans",
+      "why": "improvement plans belongs to AWS Well-Architected Tool, and enables this job: Turn review findings into an ordered set of architecture remediation actions.",
+      "service": "AWS Well-Architected Tool"
+    },
+    {
+      "id": "feat-068-00",
+      "label": "Serve repeated requests from locations near users instead of returning to the origin each time.",
+      "answer": "Global edge caching",
+      "why": "Global edge caching belongs to Amazon CloudFront, and enables this job: Serve repeated requests from locations near users instead of returning to the origin each time.",
+      "service": "Amazon CloudFront"
+    },
+    {
+      "id": "feat-068-01",
+      "label": "Reduce direct load and exposure of the application or storage system that owns the content.",
+      "answer": "origin protection",
+      "why": "origin protection belongs to Amazon CloudFront, and enables this job: Reduce direct load and exposure of the application or storage system that owns the content.",
+      "service": "Amazon CloudFront"
+    },
+    {
+      "id": "feat-068-02",
+      "label": "Distribute web assets over encrypted connections through a global network.",
+      "answer": "HTTPS content delivery",
+      "why": "HTTPS content delivery belongs to Amazon CloudFront, and enables this job: Distribute web assets over encrypted connections through a global network.",
+      "service": "Amazon CloudFront"
+    },
+    {
+      "id": "feat-069-00",
+      "label": "Divide an isolated cloud network and control where its traffic can travel.",
+      "answer": "Subnets and route tables",
+      "why": "Subnets and route tables belongs to Amazon Virtual Private Cloud (Amazon VPC), and enables this job: Divide an isolated cloud network and control where its traffic can travel.",
+      "service": "Amazon Virtual Private Cloud (Amazon VPC)"
+    },
+    {
+      "id": "feat-069-01",
+      "label": "Filter resource and subnet traffic with stateful and stateless network rules.",
+      "answer": "security groups and network ACLs",
+      "why": "security groups and network ACLs belongs to Amazon Virtual Private Cloud (Amazon VPC), and enables this job: Filter resource and subnet traffic with stateful and stateless network rules.",
+      "service": "Amazon Virtual Private Cloud (Amazon VPC)"
+    },
+    {
+      "id": "feat-069-02",
+      "label": "Reach supported cloud services privately without sending traffic through the public internet.",
+      "answer": "VPC endpoints and AWS PrivateLink",
+      "why": "VPC endpoints and AWS PrivateLink belongs to Amazon Virtual Private Cloud (Amazon VPC), and enables this job: Reach supported cloud services privately without sending traffic through the public internet.",
+      "service": "Amazon Virtual Private Cloud (Amazon VPC)"
+    },
+    {
+      "id": "feat-070-00",
+      "label": "Download AWS certifications and reports when auditors or customers request assurance evidence.",
+      "answer": "On-demand compliance documents",
+      "why": "On-demand compliance documents belongs to AWS Artifact, and enables this job: Download AWS certifications and reports when auditors or customers request assurance evidence.",
+      "service": "AWS Artifact"
+    },
+    {
+      "id": "feat-070-01",
+      "label": "Review independent assessments of AWS controls and operating effectiveness.",
+      "answer": "third-party audit reports",
+      "why": "third-party audit reports belongs to AWS Artifact, and enables this job: Review independent assessments of AWS controls and operating effectiveness.",
+      "service": "AWS Artifact"
+    },
+    {
+      "id": "feat-070-02",
+      "label": "Accept and track selected cloud compliance agreements through a self-service portal.",
+      "answer": "agreement management",
+      "why": "agreement management belongs to AWS Artifact, and enables this job: Accept and track selected cloud compliance agreements through a self-service portal.",
+      "service": "AWS Artifact"
+    },
+    {
+      "id": "feat-071-00",
+      "label": "Gather mapped resource and activity records continuously instead of assembling audit proof manually.",
+      "answer": "Automated evidence collection",
+      "why": "Automated evidence collection belongs to AWS Audit Manager, and enables this job: Gather mapped resource and activity records continuously instead of assembling audit proof manually.",
+      "service": "AWS Audit Manager"
+    },
+    {
+      "id": "feat-071-01",
+      "label": "Start an assessment from control sets aligned to common standards and regulations.",
+      "answer": "prebuilt compliance frameworks",
+      "why": "prebuilt compliance frameworks belongs to AWS Audit Manager, and enables this job: Start an assessment from control sets aligned to common standards and regulations.",
+      "service": "AWS Audit Manager"
+    },
+    {
+      "id": "feat-071-02",
+      "label": "Compile control status and supporting evidence into an auditor-ready package.",
+      "answer": "assessment reports",
+      "why": "assessment reports belongs to AWS Audit Manager, and enables this job: Compile control status and supporting evidence into an auditor-ready package.",
+      "service": "AWS Audit Manager"
+    },
+    {
+      "id": "feat-072-00",
+      "label": "Represent identities and attach documents that allow or deny cloud actions.",
+      "answer": "Users roles and policies",
+      "why": "Users roles and policies belongs to AWS Identity and Access Management (IAM), and enables this job: Represent identities and attach documents that allow or deny cloud actions.",
+      "service": "AWS Identity and Access Management (IAM)"
+    },
+    {
+      "id": "feat-072-01",
+      "label": "Grant only the actions and resources required for a person's or workload's task.",
+      "answer": "least-privilege permissions",
+      "why": "least-privilege permissions belongs to AWS Identity and Access Management (IAM), and enables this job: Grant only the actions and resources required for a person's or workload's task.",
+      "service": "AWS Identity and Access Management (IAM)"
+    },
+    {
+      "id": "feat-072-02",
+      "label": "Use short-lived access for applications and federated identities instead of permanent keys.",
+      "answer": "temporary role credentials",
+      "why": "temporary role credentials belongs to AWS Identity and Access Management (IAM), and enables this job: Use short-lived access for applications and federated identities instead of permanent keys.",
+      "service": "AWS Identity and Access Management (IAM)"
+    },
+    {
+      "id": "feat-073-00",
+      "label": "Check virtual machines and packaged software artifacts for known vulnerabilities.",
+      "answer": "Amazon EC2 and container image scanning",
+      "why": "Amazon EC2 and container image scanning belongs to Amazon Inspector, and enables this job: Check virtual machines and packaged software artifacts for known vulnerabilities.",
+      "service": "Amazon Inspector"
+    },
+    {
+      "id": "feat-073-01",
+      "label": "Assess serverless function code packages and dependencies for security weaknesses.",
+      "answer": "AWS Lambda vulnerability scanning",
+      "why": "AWS Lambda vulnerability scanning belongs to Amazon Inspector, and enables this job: Assess serverless function code packages and dependencies for security weaknesses.",
+      "service": "Amazon Inspector"
+    },
+    {
+      "id": "feat-073-02",
+      "label": "Prioritize a vulnerability using exploitability and resource exposure context.",
+      "answer": "risk-based findings",
+      "why": "risk-based findings belongs to Amazon Inspector, and enables this job: Prioritize a vulnerability using exploitability and resource exposure context.",
+      "service": "Amazon Inspector"
+    },
+    {
+      "id": "feat-074-00",
+      "label": "Create encryption keys whose policies, lifecycle, and use are controlled by the organization.",
+      "answer": "Customer managed keys",
+      "why": "Customer managed keys belongs to AWS Key Management Service (AWS KMS), and enables this job: Create encryption keys whose policies, lifecycle, and use are controlled by the organization.",
+      "service": "AWS Key Management Service (AWS KMS)"
+    },
+    {
+      "id": "feat-074-01",
+      "label": "Protect data with a data key and then encrypt that key under a longer-lived root key.",
+      "answer": "envelope encryption",
+      "why": "envelope encryption belongs to AWS Key Management Service (AWS KMS), and enables this job: Protect data with a data key and then encrypt that key under a longer-lived root key.",
+      "service": "AWS Key Management Service (AWS KMS)"
+    },
+    {
+      "id": "feat-074-02",
+      "label": "Control who may use cryptographic material and replace it on a managed schedule.",
+      "answer": "key policies and automatic rotation",
+      "why": "key policies and automatic rotation belongs to AWS Key Management Service (AWS KMS), and enables this job: Control who may use cryptographic material and replace it on a managed schedule.",
+      "service": "AWS Key Management Service (AWS KMS)"
+    },
+    {
+      "id": "feat-075-00",
+      "label": "Classify object content to locate personal, financial, credential, or regulated information.",
+      "answer": "Machine-learning sensitive-data discovery",
+      "why": "Machine-learning sensitive-data discovery belongs to Amazon Macie, and enables this job: Classify object content to locate personal, financial, credential, or regulated information.",
+      "service": "Amazon Macie"
+    },
+    {
+      "id": "feat-075-01",
+      "label": "Assess object-storage buckets for public access, encryption, and sharing risks.",
+      "answer": "S3 security posture evaluation",
+      "why": "S3 security posture evaluation belongs to Amazon Macie, and enables this job: Assess object-storage buckets for public access, encryption, and sharing risks.",
+      "service": "Amazon Macie"
+    },
+    {
+      "id": "feat-075-02",
+      "label": "Surface actionable alerts when sensitive objects or unsafe storage settings are detected.",
+      "answer": "findings for exposed data",
+      "why": "findings for exposed data belongs to Amazon Macie, and enables this job: Surface actionable alerts when sensitive objects or unsafe storage settings are detected.",
+      "service": "Amazon Macie"
+    },
+    {
+      "id": "feat-076-00",
+      "label": "Keep passwords, tokens, and API credentials out of source code and plaintext configuration.",
+      "answer": "Encrypted secret storage",
+      "why": "Encrypted secret storage belongs to AWS Secrets Manager, and enables this job: Keep passwords, tokens, and API credentials out of source code and plaintext configuration.",
+      "service": "AWS Secrets Manager"
+    },
+    {
+      "id": "feat-076-01",
+      "label": "Replace supported database or application passwords on a schedule with no manual update.",
+      "answer": "automatic credential rotation",
+      "why": "automatic credential rotation belongs to AWS Secrets Manager, and enables this job: Replace supported database or application passwords on a schedule with no manual update.",
+      "service": "AWS Secrets Manager"
+    },
+    {
+      "id": "feat-076-02",
+      "label": "Restrict retrieval of each credential to explicitly authorized identities.",
+      "answer": "fine-grained secret access",
+      "why": "fine-grained secret access belongs to AWS Secrets Manager, and enables this job: Restrict retrieval of each credential to explicitly authorized identities.",
+      "service": "AWS Secrets Manager"
+    },
+    {
+      "id": "feat-077-00",
+      "label": "Persist files, datasets, and artifacts redundantly for long-term cloud access.",
+      "answer": "Highly durable object storage",
+      "why": "Highly durable object storage belongs to Amazon Simple Storage Service (Amazon S3), and enables this job: Persist files, datasets, and artifacts redundantly for long-term cloud access.",
+      "service": "Amazon Simple Storage Service (Amazon S3)"
+    },
+    {
+      "id": "feat-077-01",
+      "label": "Protect object history and confidentiality while controlling which identities may retrieve it.",
+      "answer": "versioning encryption and access policies",
+      "why": "versioning encryption and access policies belongs to Amazon Simple Storage Service (Amazon S3), and enables this job: Protect object history and confidentiality while controlling which identities may retrieve it.",
+      "service": "Amazon Simple Storage Service (Amazon S3)"
+    },
+    {
+      "id": "feat-077-02",
+      "label": "Transition or expire objects automatically as their age and access needs change.",
+      "answer": "lifecycle management",
+      "why": "lifecycle management belongs to Amazon Simple Storage Service (Amazon S3), and enables this job: Transition or expire objects automatically as their age and access needs change.",
+      "service": "Amazon Simple Storage Service (Amazon S3)"
+    },
+    {
+      "id": "feat-077-03",
+      "label": "Create vector buckets and indexes in object storage for serverless similarity queries at massive scale.",
+      "answer": "Amazon S3 Vectors",
+      "why": "Amazon S3 Vectors belongs to Amazon Simple Storage Service (Amazon S3), and enables this job: Create vector buckets and indexes in object storage for serverless similarity queries at massive scale.",
+      "service": "Amazon Simple Storage Service (Amazon S3)"
+    },
+    {
+      "id": "feat-077-04",
+      "label": "Prioritize storage economics for very large embedding collections that do not require ultra-low latency.",
+      "answer": "cost-optimized billion-scale vector storage",
+      "why": "cost-optimized billion-scale vector storage belongs to Amazon Simple Storage Service (Amazon S3), and enables this job: Prioritize storage economics for very large embedding collections that do not require ultra-low latency.",
+      "service": "Amazon Simple Storage Service (Amazon S3)"
+    },
+    {
+      "id": "feat-078-00",
+      "label": "Retain infrequently accessed records at lower cost than active object storage.",
+      "answer": "Long-term archival storage classes",
+      "why": "Long-term archival storage classes belongs to Amazon S3 Glacier, and enables this job: Retain infrequently accessed records at lower cost than active object storage.",
+      "service": "Amazon S3 Glacier"
+    },
+    {
+      "id": "feat-078-01",
+      "label": "Trade retrieval speed against price when restoring archived objects.",
+      "answer": "expedited to bulk retrieval options",
+      "why": "expedited to bulk retrieval options belongs to Amazon S3 Glacier, and enables this job: Trade retrieval speed against price when restoring archived objects.",
+      "service": "Amazon S3 Glacier"
+    },
+    {
+      "id": "feat-078-02",
+      "label": "Meet long preservation periods economically when immediate access is unnecessary.",
+      "answer": "retention-focused cost optimization",
+      "why": "retention-focused cost optimization belongs to Amazon S3 Glacier, and enables this job: Meet long preservation periods economically when immediate access is unnecessary.",
+      "service": "Amazon S3 Glacier"
+    },
+    {
+      "id": "feat-079-00",
+      "label": "Persist healthcare records in an interoperable format designed for clinical exchange.",
+      "answer": "FHIR-enabled patient-data store",
+      "why": "FHIR-enabled patient-data store belongs to AWS HealthLake, and enables this job: Persist healthcare records in an interoperable format designed for clinical exchange.",
+      "service": "AWS HealthLake"
+    },
+    {
+      "id": "feat-079-01",
+      "label": "Normalize fragmented healthcare information into a common modern schema.",
+      "answer": "FHIR R4",
+      "why": "FHIR R4 belongs to AWS HealthLake, and enables this job: Normalize fragmented healthcare information into a common modern schema.",
+      "service": "AWS HealthLake"
+    },
+    {
+      "id": "feat-080-00",
+      "label": "Transcribe clinical conversations with vocabulary tuned for healthcare.",
+      "answer": "Medical speech recognition",
+      "why": "Medical speech recognition belongs to AWS HealthScribe, and enables this job: Transcribe clinical conversations with vocabulary tuned for healthcare.",
+      "service": "AWS HealthScribe"
+    },
+    {
+      "id": "feat-080-01",
+      "label": "Distinguish clinician and patient contributions in a recorded encounter.",
+      "answer": "speaker role identification",
+      "why": "speaker role identification belongs to AWS HealthScribe, and enables this job: Distinguish clinician and patient contributions in a recorded encounter.",
+      "service": "AWS HealthScribe"
+    },
+    {
+      "id": "feat-080-02",
+      "label": "Identify medically meaningful concepts from a patient-clinician conversation.",
+      "answer": "clinical term extraction",
+      "why": "clinical term extraction belongs to AWS HealthScribe, and enables this job: Identify medically meaningful concepts from a patient-clinician conversation.",
+      "service": "AWS HealthScribe"
+    },
+    {
+      "id": "feat-080-03",
+      "label": "Draft structured encounter documentation for professional review.",
+      "answer": "preliminary clinical notes",
+      "why": "preliminary clinical notes belongs to AWS HealthScribe, and enables this job: Draft structured encounter documentation for professional review.",
+      "service": "AWS HealthScribe"
+    },
+    {
+      "id": "feat-080-04",
+      "label": "Support regulated healthcare workloads when configured under the required compliance controls.",
+      "answer": "HIPAA-eligible processing",
+      "why": "HIPAA-eligible processing belongs to AWS HealthScribe, and enables this job: Support regulated healthcare workloads when configured under the required compliance controls.",
+      "service": "AWS HealthScribe"
+    },
+    {
+      "id": "feat-081-00",
+      "label": "Use purpose-built AWS silicon to reduce the cost and time of learning model parameters.",
+      "answer": "AWS Trainium",
+      "why": "AWS Trainium belongs to AWS Trainium, and enables this job: Use purpose-built AWS silicon to reduce the cost and time of learning model parameters.",
+      "service": "AWS Trainium"
+    },
+    {
+      "id": "feat-082-00",
+      "label": "Serve trained neural networks on AWS silicon optimized for prediction economics.",
+      "answer": "Cost/performance-focused deep-learning and generative-AI inference",
+      "why": "Cost/performance-focused deep-learning and generative-AI inference belongs to AWS Inferentia / Inferentia2, and enables this job: Serve trained neural networks on AWS silicon optimized for prediction economics.",
+      "service": "AWS Inferentia / Inferentia2"
+    },
+    {
+      "id": "feat-082-01",
+      "label": "Provision the instance family that exposes second-generation AWS inference accelerators.",
+      "answer": "Amazon EC2 Inf2 instances",
+      "why": "Amazon EC2 Inf2 instances belongs to AWS Inferentia / Inferentia2, and enables this job: Provision the instance family that exposes second-generation AWS inference accelerators.",
+      "service": "AWS Inferentia / Inferentia2"
+    },
+    {
+      "id": "feat-083-00",
+      "label": "Translate trained neural-network graphs into optimized instructions for AWS machine-learning accelerators.",
+      "answer": "Model compilation",
+      "why": "Model compilation belongs to AWS Neuron SDK, and enables this job: Translate trained neural-network graphs into optimized instructions for AWS machine-learning accelerators.",
+      "service": "AWS Neuron SDK"
+    },
+    {
+      "id": "feat-083-01",
+      "label": "Use common model-development libraries with purpose-built AWS training and inference chips.",
+      "answer": "framework integrations",
+      "why": "framework integrations belongs to AWS Neuron SDK, and enables this job: Use common model-development libraries with purpose-built AWS training and inference chips.",
+      "service": "AWS Neuron SDK"
+    },
+    {
+      "id": "feat-083-02",
+      "label": "Inspect accelerator utilization and execution behavior to improve performance.",
+      "answer": "profiling and debugging tools",
+      "why": "profiling and debugging tools belongs to AWS Neuron SDK, and enables this job: Inspect accelerator utilization and execution behavior to improve performance.",
+      "service": "AWS Neuron SDK"
+    },
+    {
+      "id": "feat-084-00",
+      "label": "Choose AWS accelerator generations for cost-efficient model learning at different scales.",
+      "answer": "First- and second-generation Trainium",
+      "why": "First- and second-generation Trainium belongs to Amazon EC2 Trn1 / Trn2 instances, and enables this job: Choose AWS accelerator generations for cost-efficient model learning at different scales.",
+      "service": "Amazon EC2 Trn1 / Trn2 instances"
+    },
+    {
+      "id": "feat-084-01",
+      "label": "Compile and optimize training workloads for purpose-built AWS silicon.",
+      "answer": "Neuron SDK support",
+      "why": "Neuron SDK support belongs to Amazon EC2 Trn1 / Trn2 instances, and enables this job: Compile and optimize training workloads for purpose-built AWS silicon.",
+      "service": "Amazon EC2 Trn1 / Trn2 instances"
+    },
+    {
+      "id": "feat-084-02",
+      "label": "Connect accelerator instances with low-latency networking for large synchronized learning jobs.",
+      "answer": "distributed training with EFA",
+      "why": "distributed training with EFA belongs to Amazon EC2 Trn1 / Trn2 instances, and enables this job: Connect accelerator instances with low-latency networking for large synchronized learning jobs.",
+      "service": "Amazon EC2 Trn1 / Trn2 instances"
+    },
+    {
+      "id": "feat-085-00",
+      "label": "Choose AWS accelerator generations designed specifically for neural-network prediction.",
+      "answer": "First- and second-generation Inferentia",
+      "why": "First- and second-generation Inferentia belongs to Amazon EC2 Inf1 / Inf2 instances, and enables this job: Choose AWS accelerator generations designed specifically for neural-network prediction.",
+      "service": "Amazon EC2 Inf1 / Inf2 instances"
+    },
+    {
+      "id": "feat-085-01",
+      "label": "Reduce the price of production predictions using purpose-built inference silicon.",
+      "answer": "cost-efficient model serving",
+      "why": "cost-efficient model serving belongs to Amazon EC2 Inf1 / Inf2 instances, and enables this job: Reduce the price of production predictions using purpose-built inference silicon.",
+      "service": "Amazon EC2 Inf1 / Inf2 instances"
+    },
+    {
+      "id": "feat-085-02",
+      "label": "Compile and tune trained models for AWS prediction accelerators.",
+      "answer": "Neuron SDK support for inference",
+      "why": "Neuron SDK support for inference belongs to Amazon EC2 Inf1 / Inf2 instances, and enables this job: Compile and tune trained models for AWS prediction accelerators.",
+      "service": "Amazon EC2 Inf1 / Inf2 instances"
+    },
+    {
+      "id": "feat-086-00",
+      "label": "Use high-end accelerators for the most demanding large-model training and serving workloads.",
+      "answer": "NVIDIA H100 Tensor Core GPUs",
+      "why": "NVIDIA H100 Tensor Core GPUs belongs to Amazon EC2 P5 instances, and enables this job: Use high-end accelerators for the most demanding large-model training and serving workloads.",
+      "service": "Amazon EC2 P5 instances"
+    },
+    {
+      "id": "feat-087-00",
+      "label": "Use a current high-end accelerator architecture for demanding large-model training and inference.",
+      "answer": "NVIDIA Blackwell GPUs",
+      "why": "NVIDIA Blackwell GPUs belongs to Amazon EC2 P6 instances and UltraServers, and enables this job: Use a current high-end accelerator architecture for demanding large-model training and inference.",
+      "service": "Amazon EC2 P6 instances and UltraServers"
+    },
+    {
+      "id": "feat-087-01",
+      "label": "Combine multiple GPU hosts into a tightly connected system for models that exceed one server.",
+      "answer": "EC2 UltraServer scale-up systems",
+      "why": "EC2 UltraServer scale-up systems belongs to Amazon EC2 P6 instances and UltraServers, and enables this job: Combine multiple GPU hosts into a tightly connected system for models that exceed one server.",
+      "service": "Amazon EC2 P6 instances and UltraServers"
+    },
+    {
+      "id": "feat-087-02",
+      "label": "Move distributed accelerator traffic with low latency and high throughput between compute nodes.",
+      "answer": "high-bandwidth EFA networking",
+      "why": "high-bandwidth EFA networking belongs to Amazon EC2 P6 instances and UltraServers, and enables this job: Move distributed accelerator traffic with low latency and high throughput between compute nodes.",
+      "service": "Amazon EC2 P6 instances and UltraServers"
+    },
+    {
+      "id": "feat-088-00",
+      "label": "Use cost-conscious graphics accelerators for general ML inference and visual workloads.",
+      "answer": "NVIDIA A10G GPUs on G5 instances",
+      "why": "NVIDIA A10G GPUs on G5 instances belongs to Amazon EC2 G5 / G6 instances, and enables this job: Use cost-conscious graphics accelerators for general ML inference and visual workloads.",
+      "service": "Amazon EC2 G5 / G6 instances"
+    },
+    {
+      "id": "feat-088-01",
+      "label": "Use newer efficient accelerators for graphics, media, and model-serving workloads.",
+      "answer": "NVIDIA L4 GPUs on G6 instances",
+      "why": "NVIDIA L4 GPUs on G6 instances belongs to Amazon EC2 G5 / G6 instances, and enables this job: Use newer efficient accelerators for graphics, media, and model-serving workloads.",
+      "service": "Amazon EC2 G5 / G6 instances"
+    },
+    {
+      "id": "feat-088-02",
+      "label": "Run visual applications and moderately sized production predictions on flexible GPU instances.",
+      "answer": "graphics and ML inference workloads",
+      "why": "graphics and ML inference workloads belongs to Amazon EC2 G5 / G6 instances, and enables this job: Run visual applications and moderately sized production predictions on flexible GPU instances.",
+      "service": "Amazon EC2 G5 / G6 instances"
+    },
+    {
+      "id": "feat-089-00",
+      "label": "Use dedicated deep-learning processors as an alternative to conventional GPU training.",
+      "answer": "Habana Gaudi accelerators",
+      "why": "Habana Gaudi accelerators belongs to Amazon EC2 DL1 instances, and enables this job: Use dedicated deep-learning processors as an alternative to conventional GPU training.",
+      "service": "Amazon EC2 DL1 instances"
+    },
+    {
+      "id": "feat-089-01",
+      "label": "Coordinate model learning across multiple specialized compute nodes.",
+      "answer": "distributed deep-learning training",
+      "why": "distributed deep-learning training belongs to Amazon EC2 DL1 instances, and enables this job: Coordinate model learning across multiple specialized compute nodes.",
+      "service": "Amazon EC2 DL1 instances"
+    },
+    {
+      "id": "feat-089-02",
+      "label": "Develop and optimize workloads with the libraries and tools for Gaudi processors.",
+      "answer": "SynapseAI software stack",
+      "why": "SynapseAI software stack belongs to Amazon EC2 DL1 instances, and enables this job: Develop and optimize workloads with the libraries and tools for Gaudi processors.",
+      "service": "Amazon EC2 DL1 instances"
+    },
+    {
+      "id": "feat-090-00",
+      "label": "Define and reproduce an elastic scientific-computing environment from configuration.",
+      "answer": "Infrastructure-as-code cluster creation",
+      "why": "Infrastructure-as-code cluster creation belongs to AWS ParallelCluster, and enables this job: Define and reproduce an elastic scientific-computing environment from configuration.",
+      "service": "AWS ParallelCluster"
+    },
+    {
+      "id": "feat-090-01",
+      "label": "Queue and allocate distributed work through familiar HPC scheduling software.",
+      "answer": "job scheduler integration",
+      "why": "job scheduler integration belongs to AWS ParallelCluster, and enables this job: Queue and allocate distributed work through familiar HPC scheduling software.",
+      "service": "AWS ParallelCluster"
+    },
+    {
+      "id": "feat-090-02",
+      "label": "Add worker nodes for queued jobs and remove idle capacity when demand falls.",
+      "answer": "automatic compute scaling",
+      "why": "automatic compute scaling belongs to AWS ParallelCluster, and enables this job: Add worker nodes for queued jobs and remove idle capacity when demand falls.",
+      "service": "AWS ParallelCluster"
+    },
+    {
+      "id": "feat-091-00",
+      "label": "Let distributed applications communicate directly with network hardware to reduce latency.",
+      "answer": "Operating-system bypass",
+      "why": "Operating-system bypass belongs to Elastic Fabric Adapter, and enables this job: Let distributed applications communicate directly with network hardware to reduce latency.",
+      "service": "Elastic Fabric Adapter"
+    },
+    {
+      "id": "feat-091-01",
+      "label": "Accelerate common message-passing and collective libraries used by HPC and model training.",
+      "answer": "MPI and NCCL communication",
+      "why": "MPI and NCCL communication belongs to Elastic Fabric Adapter, and enables this job: Accelerate common message-passing and collective libraries used by HPC and model training.",
+      "service": "Elastic Fabric Adapter"
+    },
+    {
+      "id": "feat-091-02",
+      "label": "Synchronize gradients efficiently when one learning job spans many machines.",
+      "answer": "tightly coupled distributed training",
+      "why": "tightly coupled distributed training belongs to Elastic Fabric Adapter, and enables this job: Synchronize gradients efficiently when one learning job spans many machines.",
+      "service": "Elastic Fabric Adapter"
+    },
+    {
+      "id": "feat-092-00",
+      "label": "Prioritize and hold offline compute work until suitable capacity is available.",
+      "answer": "Managed job queues",
+      "why": "Managed job queues belongs to AWS Batch, and enables this job: Prioritize and hold offline compute work until suitable capacity is available.",
+      "service": "AWS Batch"
+    },
+    {
+      "id": "feat-092-01",
+      "label": "Provision and scale the instance capacity needed by queued processing jobs.",
+      "answer": "dynamic compute environments",
+      "why": "dynamic compute environments belongs to AWS Batch, and enables this job: Provision and scale the instance capacity needed by queued processing jobs.",
+      "service": "AWS Batch"
+    },
+    {
+      "id": "feat-092-02",
+      "label": "Express ordered pipelines or many parallel variations of the same batch task.",
+      "answer": "job dependencies and array jobs",
+      "why": "job dependencies and array jobs belongs to AWS Batch, and enables this job: Express ordered pipelines or many parallel variations of the same batch task.",
+      "service": "AWS Batch"
+    },
+    {
+      "id": "feat-093-00",
+      "label": "Launch virtual machines with common frameworks and drivers already configured.",
+      "answer": "Deep Learning AMI (DLAMI)",
+      "why": "Deep Learning AMI (DLAMI) belongs to AWS Deep Learning AMIs, and enables this job: Launch virtual machines with common frameworks and drivers already configured.",
+      "service": "AWS Deep Learning AMIs"
+    },
+    {
+      "id": "feat-094-00",
+      "label": "Run framework-ready, reproducible containers for model learning and prediction.",
+      "answer": "Deep Learning Containers (DLCs)",
+      "why": "Deep Learning Containers (DLCs) belongs to AWS Deep Learning Containers, and enables this job: Run framework-ready, reproducible containers for model learning and prediction.",
+      "service": "AWS Deep Learning Containers"
+    },
+    {
+      "id": "feat-094-01",
+      "label": "Use the same ML container artifacts across managed ML, Kubernetes, containers, or virtual machines.",
+      "answer": "Amazon EKS deployment",
+      "why": "Amazon EKS deployment belongs to AWS Deep Learning Containers, and enables this job: Use the same ML container artifacts across managed ML, Kubernetes, containers, or virtual machines.",
+      "service": "AWS Deep Learning Containers"
+    },
+    {
+      "id": "feat-095-00",
+      "label": "Develop and operate workloads based on the popular dynamic deep-learning framework.",
+      "answer": "PyTorch on AWS",
+      "why": "PyTorch on AWS belongs to PyTorch on AWS, and enables this job: Develop and operate workloads based on the popular dynamic deep-learning framework.",
+      "service": "PyTorch on AWS"
+    },
+    {
+      "id": "feat-096-00",
+      "label": "Develop and operate workloads based on Google's machine-learning framework.",
+      "answer": "TensorFlow on AWS",
+      "why": "TensorFlow on AWS belongs to TensorFlow on AWS, and enables this job: Develop and operate workloads based on Google's machine-learning framework.",
+      "service": "TensorFlow on AWS"
+    },
+    {
+      "id": "feat-097-00",
+      "label": "Use an open-model ecosystem together with managed training and cloud compute.",
+      "answer": "Hugging Face Deep Learning Containers",
+      "why": "Hugging Face Deep Learning Containers belongs to Hugging Face on Amazon SageMaker, and enables this job: Use an open-model ecosystem together with managed training and cloud compute.",
+      "service": "Hugging Face on Amazon SageMaker"
+    },
+    {
+      "id": "feat-098-00",
+      "label": "Launch collaborative interactive computing without maintaining notebook servers manually.",
+      "answer": "Managed notebook environments",
+      "why": "Managed notebook environments belongs to Jupyter on AWS, and enables this job: Launch collaborative interactive computing without maintaining notebook servers manually.",
+      "service": "Jupyter on AWS"
+    },
+    {
+      "id": "feat-098-01",
+      "label": "Explore data, visualize results, and iterate on model code in executable documents.",
+      "answer": "interactive data science",
+      "why": "interactive data science belongs to Jupyter on AWS, and enables this job: Explore data, visualize results, and iterate on model code in executable documents.",
+      "service": "Jupyter on AWS"
+    },
+    {
+      "id": "feat-098-02",
+      "label": "Access cloud datasets, training jobs, and deployment tools from a notebook workflow.",
+      "answer": "Amazon SageMaker notebook instances",
+      "why": "Amazon SageMaker notebook instances belongs to Jupyter on AWS, and enables this job: Access cloud datasets, training jobs, and deployment tools from a notebook workflow.",
+      "service": "Jupyter on AWS"
+    },
+    {
+      "id": "feat-099-00",
+      "label": "Document the scenarios for which a managed AI capability was designed and evaluated.",
+      "answer": "Intended use cases",
+      "why": "Intended use cases belongs to AWS AI Service Cards, and enables this job: Document the scenarios for which a managed AI capability was designed and evaluated.",
+      "service": "AWS AI Service Cards"
+    },
+    {
+      "id": "feat-099-01",
+      "label": "Explain known constraints and conditions that can change a service's output quality.",
+      "answer": "limitations and performance factors",
+      "why": "limitations and performance factors belongs to AWS AI Service Cards, and enables this job: Explain known constraints and conditions that can change a service's output quality.",
+      "service": "AWS AI Service Cards"
+    },
+    {
+      "id": "feat-099-02",
+      "label": "Provide transparency and safer-use considerations for teams adopting a managed AI capability.",
+      "answer": "responsible AI design guidance",
+      "why": "responsible AI design guidance belongs to AWS AI Service Cards, and enables this job: Provide transparency and safer-use considerations for teams adopting a managed AI capability.",
+      "service": "AWS AI Service Cards"
+    },
+    {
+      "id": "feat-100-00",
+      "label": "Create a generative application by describing behavior and connecting prompt-driven components.",
+      "answer": "Prompt-based app building",
+      "why": "Prompt-based app building belongs to Amazon PartyRock, and enables this job: Create a generative application by describing behavior and connecting prompt-driven components.",
+      "service": "Amazon PartyRock"
+    },
+    {
+      "id": "feat-100-01",
+      "label": "Power a no-code learning application with managed generative models from AWS.",
+      "answer": "Amazon Bedrock foundation models",
+      "why": "Amazon Bedrock foundation models belongs to Amazon PartyRock, and enables this job: Power a no-code learning application with managed generative models from AWS.",
+      "service": "Amazon PartyRock"
+    },
+    {
+      "id": "feat-100-02",
+      "label": "Publish an interactive prototype so other people can try it.",
+      "answer": "shareable applications",
+      "why": "shareable applications belongs to Amazon PartyRock, and enables this job: Publish an interactive prototype so other people can try it.",
+      "service": "Amazon PartyRock"
+    },
+    {
+      "id": "feat-100-03",
+      "label": "Learn how instruction wording and context change model output through experimentation.",
+      "answer": "hands-on prompt engineering",
+      "why": "hands-on prompt engineering belongs to Amazon PartyRock, and enables this job: Learn how instruction wording and context change model output through experimentation.",
+      "service": "Amazon PartyRock"
+    }
+  ]
+}

@@ -1,0 +1,84 @@
+{
+  "id": "rag",
+  "runner": "board",
+  "title": "RAG",
+  "blurb": "Retrieval-augmented generation, part by part.",
+  "source": "AWS Certified AI Practitioner (AIF-C01) exam guide · Domain 3",
+  "asOf": "2026-07",
+  "area": "genai",
+  "hint": "Place it in the retrieval path: preparing knowledge, finding candidates, improving their relevance, or ensuring the generated answer remains supported and traceable.",
+  "items": [
+    {
+      "id": "rag-01",
+      "label": "A numeric vector representing semantic characteristics so related content can be compared mathematically.",
+      "answer": "Embedding",
+      "why": "A numeric vector representing semantic characteristics so related content can be compared mathematically."
+    },
+    {
+      "id": "rag-02",
+      "label": "Splits source documents into retrievable passages sized to preserve meaning without wasting context.",
+      "answer": "Chunking",
+      "why": "Splits source documents into retrievable passages sized to preserve meaning without wasting context."
+    },
+    {
+      "id": "rag-03",
+      "label": "Stores embeddings and supports efficient nearest-neighbor similarity search.",
+      "answer": "Vector Index",
+      "why": "Stores embeddings and supports efficient nearest-neighbor similarity search."
+    },
+    {
+      "id": "rag-04",
+      "label": "Retrieves content by meaning rather than requiring exact keyword overlap.",
+      "answer": "Semantic Search",
+      "why": "Retrieves content by meaning rather than requiring exact keyword overlap."
+    },
+    {
+      "id": "rag-05",
+      "label": "Retrieves content using lexical term matches and remains useful for names, codes, and exact phrases.",
+      "answer": "Keyword Search",
+      "why": "Retrieves content using lexical term matches and remains useful for names, codes, and exact phrases."
+    },
+    {
+      "id": "rag-06",
+      "label": "Combines semantic and keyword retrieval to benefit from meaning and exact-term matching.",
+      "answer": "Hybrid Search",
+      "why": "Combines semantic and keyword retrieval to benefit from meaning and exact-term matching."
+    },
+    {
+      "id": "rag-07",
+      "label": "Restricts retrieval by attributes such as tenant, date, document type, or access level.",
+      "answer": "Metadata Filter",
+      "why": "Restricts retrieval by attributes such as tenant, date, document type, or access level."
+    },
+    {
+      "id": "rag-08",
+      "label": "Re-scores retrieved candidates to place the passages most relevant to the full query first.",
+      "answer": "Reranker",
+      "why": "Re-scores retrieved candidates to place the passages most relevant to the full query first."
+    },
+    {
+      "id": "rag-09",
+      "label": "Constrains generation to supplied evidence so claims can be supported and traced.",
+      "answer": "Grounding",
+      "why": "Constrains generation to supplied evidence so claims can be supported and traced."
+    },
+    {
+      "id": "rag-10",
+      "label": "Links an answer claim back to the source passage that supports it.",
+      "answer": "Citation",
+      "why": "Links an answer claim back to the source passage that supports it."
+    },
+    {
+      "id": "rag-11",
+      "label": "Indicates whether the retrieval stage finds the evidence needed to answer a question.",
+      "answer": "Retrieval Recall",
+      "why": "If 100 questions require a known evidence passage and the retriever returns it for 85, retrieval recall is 85%. Low retrieval recall points to chunking, embeddings, filters, query rewriting, or candidate-count problems that generation cannot repair."
+    },
+    {
+      "id": "rag-12",
+      "label": "Indicates how much of the retrieved context is relevant rather than distracting noise.",
+      "answer": "Retrieval Precision",
+      "why": "Indicates how much of the retrieved context is relevant rather than distracting noise."
+    }
+  ]
+}

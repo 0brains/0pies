@@ -1,0 +1,60 @@
+{
+  "id": "inference",
+  "runner": "board",
+  "title": "Inference",
+  "blurb": "Batch, real-time, streaming, and the knobs that shape a generation.",
+  "source": "AWS Certified AI Practitioner (AIF-C01) exam guide · Domain 1",
+  "asOf": "2026-07",
+  "area": "foundations",
+  "hint": "Look for the operational requirement: response time, request volume, device location, hosted access, or change between training and production.",
+  "items": [
+    {
+      "id": "inference-01",
+      "label": "Returns a prediction immediately for an interactive request where low latency matters.",
+      "answer": "Real-Time Inference",
+      "why": "Returns a prediction immediately for an interactive request where low latency matters."
+    },
+    {
+      "id": "inference-02",
+      "label": "Processes many stored records together when an immediate response is unnecessary.",
+      "answer": "Batch Inference",
+      "why": "Processes many stored records together when an immediate response is unnecessary."
+    },
+    {
+      "id": "inference-03",
+      "label": "Runs the model near the data source or device to reduce latency, bandwidth use, or connectivity dependence.",
+      "answer": "Edge Inference",
+      "why": "Runs the model near the data source or device to reduce latency, bandwidth use, or connectivity dependence."
+    },
+    {
+      "id": "inference-04",
+      "label": "A hosted interface through which applications send inputs and receive model outputs.",
+      "answer": "Model Endpoint",
+      "why": "A hosted interface through which applications send inputs and receive model outputs."
+    },
+    {
+      "id": "inference-05",
+      "label": "The time between submitting an inference request and receiving its result.",
+      "answer": "Latency",
+      "why": "The time between submitting an inference request and receiving its result."
+    },
+    {
+      "id": "inference-06",
+      "label": "The number of inference requests or records processed in a period of time.",
+      "answer": "Throughput",
+      "why": "The number of inference requests or records processed in a period of time."
+    },
+    {
+      "id": "inference-07",
+      "label": "The distribution of production inputs changes from the data used during training.",
+      "answer": "Data Drift",
+      "why": "The distribution of production inputs changes from the data used during training."
+    },
+    {
+      "id": "inference-08",
+      "label": "The relationship between inputs and the correct output changes over time.",
+      "answer": "Concept Drift",
+      "why": "The relationship between inputs and the correct output changes over time."
+    }
+  ]
+}

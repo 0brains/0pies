@@ -1,0 +1,265 @@
+{
+ "id": "iv-deploy",
+ "runner": "board",
+ "title": "Right Model, Right Place",
+ "blurb": "Eighteen deployment scenarios. Pick the model, adaptation, or infrastructure choice each one actually calls for.",
+ "source": "AIGP Study Guide (SG) §Domain IV.A",
+ "asOf": "2026-08",
+ "area": "IV.A",
+ "zoneMode": "options",
+ "hint": "Drag each scenario onto the choice it calls for. The board holds decoys drawn from every axis — model type, infrastructure, and adaptation — so read for the actual constraint, not just familiar vocabulary.",
+ "items": [
+  {
+   "id": "iv-dm-01",
+   "label": "Real-time translation on handsets with intermittent connectivity.",
+   "sub": "Latency-Bound, Offline-Capable",
+   "options": [
+    "Small language model on-device",
+    "Large foundation model via cloud API",
+    "Expert system",
+    "Classic regression model"
+   ],
+   "answer": "Small language model on-device",
+   "why": "Latency and offline resilience beat raw capability here — a compact model that runs locally out-translates a bigger model that needs a live connection. \"Large models are always required for real-time\" is a recorded false distractor: capability doesn't guarantee low latency once the network drops.",
+   "citation": "AIGP Body of Knowledge v2.1"
+  },
+  {
+   "id": "iv-dm-02",
+   "label": "Answers must reflect this month's clinical guidelines at the moment a clinician asks — not last quarter's training snapshot.",
+   "sub": "Freshness at Query Time",
+   "options": [
+    "Retrieval over a maintained knowledge base",
+    "Annual fine-tune",
+    "Deploy vendor model as-is",
+    "Rule-based system"
+   ],
+   "answer": "Retrieval over a maintained knowledge base",
+   "why": "Freshness lives outside the weights: connecting the model to a current, curated source at query time keeps answers current without retraining. It doesn't eliminate hallucination — the model can still misread what it retrieved — and it trades training cost for a new ops burden: the corpus needs continuous re-indexing to stay current.",
+   "citation": "AIGP Body of Knowledge v2.1"
+  },
+  {
+   "id": "iv-dm-03",
+   "label": "Loan offers must be identical for identical inputs and must follow only the written credit-policy rules — no case may be decided any other way.",
+   "sub": "Reproducible by Rule",
+   "options": [
+    "Expert system",
+    "Generative model",
+    "RAG assistant",
+    "Fine-tuned LLM"
+   ],
+   "answer": "Expert system",
+   "why": "When outcomes must be perfectly reproducible and traceable to codified rules, an if-then rules engine — not a probabilistic model — is the right fit; a rules engine can't drift or hallucinate its way to a different answer for the same inputs.",
+   "citation": "AIGP Body of Knowledge v2.1"
+  },
+  {
+   "id": "iv-dm-04",
+   "label": "A strict residency mandate requires the regulator to have full infrastructure visibility over sensitive financial records.",
+   "sub": "Regulator-Visible Control",
+   "options": [
+    "On-premises",
+    "Public cloud",
+    "Edge devices",
+    "Hybrid burst"
+   ],
+   "answer": "On-premises",
+   "why": "Keeping the model and data inside the organization's own environment maximizes control and sidesteps cross-border transfer questions a regulator would otherwise have to chase through a vendor's infrastructure — the trade-off is heavier in-house staffing and audit burden. On a latency-vs-oversight ranking, on-premises still beats edge whenever centralized regulator visibility matters more than proximity to the data source.",
+   "citation": "SG-AT-Q030"
+  },
+  {
+   "id": "iv-dm-05",
+   "label": "Leadership wants a managed service to scale image analysis quickly without building a data center, and assumes the provider now owns all the security risk.",
+   "sub": "Elastic, But Whose Risk?",
+   "options": [
+    "Public cloud",
+    "On-premises",
+    "Edge devices",
+    "Hybrid burst"
+   ],
+   "answer": "Public cloud",
+   "why": "Cloud is the right call for scale without infrastructure ownership — but \"the provider owns security now\" is the trap: under the shared-responsibility model, the deploying organization still answers for its own data, and a single misconfiguration on the customer's side can still cause a breach.",
+   "citation": "AIGP Body of Knowledge v2.1"
+  },
+  {
+   "id": "iv-dm-06",
+   "label": "Multilingual chat kiosks at border checkpoints have limited connectivity and limited power, and responses must stay near-instant.",
+   "sub": "No Server, No Wait",
+   "options": [
+    "Edge devices",
+    "Public cloud",
+    "On-premises",
+    "Hybrid burst"
+   ],
+   "answer": "Edge devices",
+   "why": "Running the model on the device itself removes the dependency on an external connection these checkpoints can't reliably guarantee. What that choice costs you: pushing inference to the edge trades away centralized drift-detection tooling, so a fleet of devices can quietly drift out of spec with no single dashboard to catch it.",
+   "citation": "AIGP Body of Knowledge v2.1"
+  },
+  {
+   "id": "iv-dm-07",
+   "label": "A small proprietary model retrains continuously on a live content stream and must keep scoring photos locally across thousands of storefronts, with no network round-trip.",
+   "sub": "Local-First at Fleet Scale",
+   "options": [
+    "Edge devices",
+    "Public cloud",
+    "On-premises",
+    "Hybrid burst"
+   ],
+   "answer": "Edge devices",
+   "why": "Local, offline scoring needs the model on the device. What that choice costs you: monitoring and auditing performance consistently becomes far harder once decisions are spread across a vast, physically dispersed fleet instead of one centralized service.",
+   "citation": "AIGP Body of Knowledge v2.1"
+  },
+  {
+   "id": "iv-dm-08",
+   "label": "A logistics firm optimizing its supply chain wants to inspect, modify and redistribute the model's own weights rather than depend on one vendor's roadmap.",
+   "sub": "Inspect It Yourself",
+   "options": [
+    "Open-source model",
+    "Proprietary model",
+    "RAG assistant",
+    "Fine-tuned LLM"
+   ],
+   "answer": "Open-source model",
+   "why": "Open weights buy transparency, flexibility and freedom from a single vendor's release schedule — at the cost of taking on internal license review, provenance checks and your own security testing that a vendor would otherwise carry.",
+   "citation": "AIGP Body of Knowledge v2.1"
+  },
+  {
+   "id": "iv-dm-09",
+   "label": "A media company automating video summaries wants a vendor's SLAs, incident response, and IP indemnities backing whatever model it ships with.",
+   "sub": "Contract-Backed, Not Inspectable",
+   "options": [
+    "Proprietary model",
+    "Open-source model",
+    "RAG assistant",
+    "Expert system"
+   ],
+   "answer": "Proprietary model",
+   "why": "Contract-backed support and guarantees are the whole point of going proprietary — but that convenience has a named strategic cost: switching away later is harder once workflows, prompts and integrations are built around one vendor's API, and vendor lock-in is recorded as the top strategic risk of this path.",
+   "citation": "AIGP Body of Knowledge v2.1"
+  },
+  {
+   "id": "iv-dm-10",
+   "label": "A bank has thousands of labeled historical decisions demonstrating a stable, specialist scoring behavior the general-purpose model doesn't reproduce on its own.",
+   "sub": "Demonstrated, Not Described",
+   "options": [
+    "Fine-tuned model",
+    "RAG assistant",
+    "Deploy vendor model as-is",
+    "Expert system"
+   ],
+   "answer": "Fine-tuned model",
+   "why": "This is the right tool for a stable, demonstrated behavior baked into weights via curated examples. It isn't a free upgrade: governance now treats the result as a new system needing its own fairness and robustness re-testing, and it carries increased legal liability compared with using a third-party prebuilt model as-is.",
+   "citation": "increased liability)"
+  },
+  {
+   "id": "iv-dm-11",
+   "label": "A synthetic-data generator is trained further on a slice of production records so its test output feels realistic enough for QA to trust.",
+   "sub": "Realism Borrowed From the Real Thing",
+   "options": [
+    "Fine-tuned model",
+    "RAG assistant",
+    "Deploy vendor model as-is",
+    "Open-source model"
+   ],
+   "answer": "Fine-tuned model",
+   "why": "Adapting the base model further on the organization's own data is fine-tuning by definition. The risk that follows is specific to this path: the generated synthetic output can still carry traces of the original sensitive production records even after anonymization, because the information is now baked into the weights, not sitting in an inspectable database.",
+   "citation": "AIGP Body of Knowledge v2.1"
+  },
+  {
+   "id": "iv-dm-12",
+   "label": "A resume-screening pilot needs to launch this quarter; there's no time or budget yet for retraining, only for validating the licensed model against real hiring outcomes.",
+   "sub": "Fast, Unproven Fit",
+   "options": [
+    "Deploy vendor model as-is",
+    "Fine-tuned model",
+    "Retrieval over a maintained knowledge base",
+    "Expert system"
+   ],
+   "answer": "Deploy vendor model as-is",
+   "why": "Out-of-the-box is the fastest path to a pilot and avoids retraining cost — but governance has to treat it as high-risk until proven otherwise: the vendor's training data or decision boundaries may not fit this domain, so validation against this organization's own performance and fairness standards, plus compensating controls like human review, is not optional.",
+   "citation": "SG (As-Is Deployment)"
+  },
+  {
+   "id": "iv-dm-13",
+   "label": "A fraud-detection system classifies structured transaction records; its main risks are bias against certain groups and accuracy that quietly degrades as spending patterns shift.",
+   "sub": "Structured Input, Familiar Failure",
+   "options": [
+    "Classic model",
+    "Generative model",
+    "Multimodal model",
+    "Fine-tuned model"
+   ],
+   "answer": "Classic model",
+   "why": "Predicting or classifying a known category from structured features is the classic failure profile — familiar bias and drift risks that fairness testing and monitoring are built to catch, distinct from a generative system's failure mode of confidently inventing wrong content.",
+   "citation": "SG (classic vs. generative failure modes)"
+  },
+  {
+   "id": "iv-dm-14",
+   "label": "Marketing needs a tool that drafts new ad copy and campaign images from a short prompt, not one that classifies or scores anything that already exists.",
+   "sub": "New Content, Not a Verdict",
+   "options": [
+    "Generative model",
+    "Classic model",
+    "Expert system",
+    "RAG assistant"
+   ],
+   "answer": "Generative model",
+   "why": "Creating new content — text, images, code — is the generative benefit-and-risk profile: convincingly wrong output, IP and provenance questions, and a need for content-safety guardrails, distinct from a classic model's structured-prediction failure modes.",
+   "citation": "SG (classic vs. generative failure modes)"
+  },
+  {
+   "id": "iv-dm-15",
+   "label": "A claims reviewer needs the system to weigh a damage photograph together with the written incident description before flagging a claim.",
+   "sub": "Two Channels, One Judgment",
+   "options": [
+    "Multimodal model",
+    "Language model",
+    "Classic model",
+    "RAG assistant"
+   ],
+   "answer": "Multimodal model",
+   "why": "Jointly interpreting an image and text together — and being able to explain which input drove the output — is the multimodal risk-and-capability profile; a text-only system simply has no channel for the photograph.",
+   "citation": "SG (multimodal risk profile)"
+  },
+  {
+   "id": "iv-dm-16",
+   "label": "A text-only support chatbot answers customer questions and must disclose it's AI, cite sources, and escalate sensitive cases to a human.",
+   "sub": "One Channel, Disclosed",
+   "options": [
+    "Language model",
+    "Multimodal model",
+    "Expert system",
+    "Fine-tuned model"
+   ],
+   "answer": "Language model",
+   "why": "Text-in, text-out with disclosure, citation and human-escalation controls is the language-model governance profile — there's no second input channel to reason over, which is what would push this toward the multimodal profile instead.",
+   "citation": "SG (language vs. multimodal risk profile)"
+  },
+  {
+   "id": "iv-dm-17",
+   "label": "Two million short, structured records must be scored nightly under a tight compute budget, using a handful of already-labeled features.",
+   "sub": "Narrow Task, Tight Budget",
+   "options": [
+    "Small task-specific model",
+    "Large foundation model",
+    "RAG assistant",
+    "Multimodal model"
+   ],
+   "answer": "Small task-specific model",
+   "why": "A narrow, low-compute model is easier to explain, retrain quickly and run cheaply at this batch scale — the trade-off is that it can struggle once the environment gets more complex or variable than what it was built for.",
+   "citation": "SG (small vs. large models)"
+  },
+  {
+   "id": "iv-dm-18",
+   "label": "The system must generalize across many unfamiliar domains from day one, with no time to build or label a per-domain dataset first.",
+   "sub": "Breadth Bought Through Scale",
+   "options": [
+    "Large foundation model",
+    "Small task-specific model",
+    "Expert system",
+    "Fine-tuned model"
+   ],
+   "answer": "Large foundation model",
+   "why": "Broad pretraining is what buys zero- and few-shot generalization across domains nobody has labeled data for yet — the cost is a bigger, less transparent system that needs its own compute governance, safety evaluation and drift monitoring.",
+   "citation": "SG (small vs. large models)"
+  }
+ ]
+}

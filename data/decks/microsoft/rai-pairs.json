@@ -1,0 +1,155 @@
+{
+ "id": "rai-pairs",
+ "runner": "pairs",
+ "title": "Principle Splitters",
+ "blurb": "Two near-identical situations, one flipped fact — name the principle each one illustrates.",
+ "source": "histack.net principle table",
+ "asOf": "2026-07",
+ "area": "microsoft-rai",
+ "pairs": [
+  {
+   "id": "rp-01",
+   "dimension": "whether the harm is biased outcomes or blocked access",
+   "buckets": [
+    "Fairness",
+    "Inclusiveness"
+   ],
+   "a": {
+    "text": "A hiring model shortlists far fewer candidates from one demographic group despite equal qualifications.",
+    "answer": "Fairness",
+    "why": "Unequal outcomes across groups is fairness — fixed with balanced training data and fairness assessments."
+   },
+   "b": {
+    "text": "The same hiring portal's AI screening works only by voice, so deaf candidates cannot complete it at all.",
+    "answer": "Inclusiveness",
+    "why": "Nobody is scored unfairly — some users are locked out. Multiple interaction methods and accessibility are inclusiveness."
+   }
+  },
+  {
+   "id": "rp-02",
+   "dimension": "whether the gap traces to underrepresented training data or to a single required interaction method",
+   "buckets": [
+    "Fairness",
+    "Inclusiveness"
+   ],
+   "a": {
+    "text": "A retailer's shoplifting-detection camera system, trained mostly on images of one demographic group, flags people from other groups at a much higher rate.",
+    "answer": "Fairness",
+    "why": "An accuracy gap traceable to underrepresented training data across demographic groups is fairness — representative, balanced training data is the fix."
+   },
+   "b": {
+    "text": "The same retailer's self-checkout assistant accepts only spoken commands, so customers who cannot speak or hear clearly cannot use it at all.",
+    "answer": "Inclusiveness",
+    "why": "No group is scored worse here — an entire set of users is shut out by relying on one interaction method. That access gap is inclusiveness, not a scoring problem."
+   }
+  },
+  {
+   "id": "rp-03",
+   "dimension": "disclosing how the system works vs owning its outcomes",
+   "buckets": [
+    "Transparency",
+    "Accountability"
+   ],
+   "a": {
+    "text": "The bank publishes a model card explaining the credit model's capabilities and known limitations.",
+    "answer": "Transparency",
+    "why": "Communicating capabilities AND limitations — model cards, transparency notes — is transparency."
+   },
+   "b": {
+    "text": "The bank keeps audit logs of every AI credit decision and names the officer who signs off on overrides.",
+    "answer": "Accountability",
+    "why": "Human oversight, governance and a reviewable record of who is answerable is accountability."
+   }
+  },
+  {
+   "id": "rp-04",
+   "dimension": "explaining one already-made decision vs assigning who owns it if it goes wrong",
+   "buckets": [
+    "Transparency",
+    "Accountability"
+   ],
+   "a": {
+    "text": "When a patient's insurance claim is denied by a triage model, the care team can point to the specific factors that drove that particular denial.",
+    "answer": "Transparency",
+    "why": "Explaining the specific reasons behind one already-made decision, to the person it affected, is transparency."
+   },
+   "b": {
+    "text": "The hospital defines who is responsible for reviewing a denial and escalating it if the triage model's decision turns out to be wrong.",
+    "answer": "Accountability",
+    "why": "Assigning ownership and an escalation path for when things go wrong is accountability — who answers for the outcome, not what gets disclosed."
+   }
+  },
+  {
+   "id": "rp-05",
+   "dimension": "protecting the data vs disclosing the behavior",
+   "buckets": [
+    "Privacy & security",
+    "Transparency"
+   ],
+   "a": {
+    "text": "The support bot is configured so customer PII never appears in responses or logs.",
+    "answer": "Privacy & security",
+    "why": "PII governance, data protection and access control map to privacy & security."
+   },
+   "b": {
+    "text": "The support bot opens every session stating it is an AI and listing what it can and cannot help with.",
+    "answer": "Transparency",
+    "why": "Disclosing what the system is and its limits is transparency — a different obligation from protecting data."
+   }
+  },
+  {
+   "id": "rp-06",
+   "dimension": "communicating limitations vs behaving safely under adverse input",
+   "buckets": [
+    "Transparency",
+    "Reliability & safety"
+   ],
+   "a": {
+    "text": "Release notes state the summarizer performs poorly on legal documents so users can judge when to trust it.",
+    "answer": "Transparency",
+    "why": "Stating limitations up front is transparency, even though it feels safety-adjacent."
+   },
+   "b": {
+    "text": "The summarizer is stress-tested with adversarial prompts and refuses to produce harmful content under them.",
+    "answer": "Reliability & safety",
+    "why": "Consistent, tested, safe behavior under risky prompts — content filters and model evaluation — is reliability & safety."
+   }
+  },
+  {
+   "id": "rp-07",
+   "dimension": "whether the risk is harmful output behavior or exposure of personal data",
+   "buckets": [
+    "Reliability & safety",
+    "Privacy & security"
+   ],
+   "a": {
+    "text": "A content-moderation service must resist adversarial prompts that try to make it generate violent instructions.",
+    "answer": "Reliability & safety",
+    "why": "Resisting adversarial prompts to keep output from turning harmful is tested, consistent system behavior — reliability & safety."
+   },
+   "b": {
+    "text": "The same service must keep customer phone numbers typed into chat messages from ever appearing in stored logs.",
+    "answer": "Privacy & security",
+    "why": "Keeping personal data out of storage and logs is data protection — a different concern from how the model behaves under attack."
+   }
+  },
+  {
+   "id": "rp-08",
+   "dimension": "whether the gap is about who can use the system or what users are told about it",
+   "buckets": [
+    "Inclusiveness",
+    "Transparency"
+   ],
+   "a": {
+    "text": "A financial-advice chatbot adds screen-reader-compatible output and keyboard-only navigation so people with visual or motor impairments can complete a session end to end.",
+    "answer": "Inclusiveness",
+    "why": "Removing barriers so people with different abilities can use the product at all is inclusiveness."
+   },
+   "b": {
+    "text": "The same chatbot opens every session stating it is an automated assistant and listing the topics it is not qualified to advise on.",
+    "answer": "Transparency",
+    "why": "Disclosing that the system is AI and stating its limits is a different obligation from making the interface usable to everyone."
+   }
+  }
+ ]
+}

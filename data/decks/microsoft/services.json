@@ -1,0 +1,109 @@
+{
+  "id": "services",
+  "runner": "board",
+  "title": "Service to Purpose",
+  "blurb": "Match each purpose to the Azure service built for it.",
+  "source": "Microsoft AI-901 (Azure AI Fundamentals) skills-measured guide · in-scope Azure AI services",
+  "asOf": "2026-07",
+  "area": "microsoft-services",
+  "hint": "Drag each purpose onto the service that exists to do it.",
+  "icons": "azure-service",
+  "items": [
+    {
+      "id": "svc-001",
+      "label": "Auto-generate a caption and tags for an uploaded product photo",
+      "answer": "Azure AI Vision",
+      "why": "Azure AI Vision's Image Analysis feature extracts captions, tags, and objects directly from images."
+    },
+    {
+      "id": "svc-002",
+      "label": "Turn a recorded customer-support call into a written transcript",
+      "answer": "Azure AI Speech",
+      "why": "Azure AI Speech's speech-to-text recognition converts spoken audio into text."
+    },
+    {
+      "id": "svc-003",
+      "label": "Decide whether hundreds of product reviews are positive or negative",
+      "answer": "Azure AI Language",
+      "why": "Azure AI Language's sentiment analysis scores text as positive, negative, neutral, or mixed."
+    },
+    {
+      "id": "svc-004",
+      "label": "Translate an incoming support ticket from Japanese into English",
+      "answer": "Azure AI Translator",
+      "why": "Azure AI Translator performs text translation across dozens of languages in real time."
+    },
+    {
+      "id": "svc-005",
+      "label": "Pull the vendor name, invoice number, and total from a scanned invoice",
+      "answer": "Azure AI Document Intelligence",
+      "why": "Its prebuilt invoice model deterministically extracts known fields from standard form types like invoices and receipts."
+    },
+    {
+      "id": "svc-006",
+      "label": "Describe the fields you want in plain language and get structured JSON back from a mix of documents, photos, and call recordings",
+      "answer": "Azure Content Understanding",
+      "why": "Content Understanding lets you define an analyzer in natural language and reasons over multimodal input to return structured JSON, unlike Document Intelligence's fixed prebuilt forms."
+    },
+    {
+      "id": "svc-007",
+      "label": "Train a model to spot one specific defect on your factory's assembly-line images",
+      "answer": "Azure AI Custom Vision",
+      "why": "Custom Vision lets you train an image classifier or object detector on your own labeled images for a narrow, custom task."
+    },
+    {
+      "id": "svc-008",
+      "label": "Verify a person's identity by comparing a selfie against their ID photo",
+      "answer": "Azure AI Face",
+      "why": "Azure AI Face provides face detection, verification, and liveness-check capabilities for identity scenarios."
+    },
+    {
+      "id": "svc-009",
+      "label": "Automatically block hateful or violent text before it reaches app users",
+      "answer": "Azure AI Content Safety",
+      "why": "Content Safety analyzes text and images for harmful-content categories and severity, then flags or blocks it."
+    },
+    {
+      "id": "svc-010",
+      "label": "Spot an unusual spike in a sensor's time-series readings",
+      "answer": "Azure AI Anomaly Detector",
+      "why": "Anomaly Detector applies time-series analysis to flag data points that deviate from expected patterns."
+    },
+    {
+      "id": "svc-011",
+      "label": "Let employees run natural-language search across thousands of internal documents",
+      "answer": "Azure AI Search",
+      "why": "Azure AI Search indexes and enriches content so users can query it with keyword and semantic search."
+    },
+    {
+      "id": "svc-012",
+      "label": "Extract keywords, faces, and scene changes from an uploaded training video",
+      "answer": "Azure AI Video Indexer",
+      "why": "Video Indexer analyzes recorded video and audio to surface faces, keywords, topics, and scenes."
+    },
+    {
+      "id": "svc-013",
+      "label": "Deploy GPT-4o inside your own Azure tenant to draft customer-support replies",
+      "answer": "Azure OpenAI Service",
+      "why": "Azure OpenAI Service hosts OpenAI's models, like GPT-4o, as an enterprise Azure resource with your own deployment, quota, and content filters."
+    },
+    {
+      "id": "svc-014",
+      "label": "One place to deploy a model, build an agent, and evaluate it before shipping",
+      "answer": "Microsoft Foundry",
+      "why": "Microsoft Foundry is the unified platform combining the model catalog, portal, SDK, and Agent Service for building and deploying AI solutions."
+    },
+    {
+      "id": "svc-015",
+      "label": "Give a model file search, code interpreter, and function-calling tools so it can act across multiple turns",
+      "answer": "Microsoft Foundry Agent Service",
+      "why": "Foundry Agent Service builds persistent agents combining a model, instructions, tools, and threads for multi-step, stateful tasks, not a single stateless chat call."
+    },
+    {
+      "id": "svc-016",
+      "label": "Train, track, and manage a classic ML model through a full experiment pipeline",
+      "answer": "Azure Machine Learning",
+      "why": "Azure Machine Learning is Microsoft's dedicated platform for traditional ML model training, tracking, and MLOps, distinct from Foundry's generative-AI focus."
+    }
+  ]
+}

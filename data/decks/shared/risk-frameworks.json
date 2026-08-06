@@ -1,0 +1,35 @@
+{
+  "id": "risk-frameworks",
+  "runner": "board",
+  "title": "Which Framework Is This?",
+  "blurb": "Four documents people cite interchangeably and shouldn't. Sort each statement onto the one it comes from.",
+  "source": "ISO 31000:2018 · ISO/IEC 23894:2023 · ISO/IEC 42001:2023 · NIST AI RMF 1.0 (AI 100-1)",
+  "asOf": "2026-07",
+  "area": "risk",
+  "hint": "Drag each description onto the framework it belongs to. Ask what kind of document it is: generic risk, AI-specific risk guidance, a certifiable management system, or a voluntary framework.",
+  "note": "Only one of these four is certifiable. Only one is US federal and voluntary. Confusing 'we follow the NIST AI RMF' with 'we are certified' is the mistake this board exists to prevent.",
+  "zones": [
+    {"key": "ISO 31000", "name": "ISO 31000:2018", "def": "Generic risk management principles, framework and process. Not AI-specific and not certifiable."},
+    {"key": "ISO/IEC 23894", "name": "ISO/IEC 23894:2023", "def": "Guidance applying ISO 31000 to AI. Advisory: it tells you how AI risk differs, not what to certify."},
+    {"key": "ISO/IEC 42001", "name": "ISO/IEC 42001:2023", "def": "AI management system standard. Requirements plus Annex A controls, and the one an organisation can be certified against."},
+    {"key": "NIST AI RMF", "name": "NIST AI RMF 1.0", "def": "Voluntary US framework: four functions, seven trustworthiness characteristics, no certification."}
+  ],
+  "items": [
+    {"id": "rf-01", "label": "Sets out the risk process as: establish scope and context, identify, analyse, evaluate, treat, with monitoring and communication throughout.", "answer": "ISO 31000", "why": "This is the generic risk process every other risk document builds on. Its vocabulary — likelihood, consequence, treatment, residual risk — is what the AI-specific documents inherit."},
+    {"id": "rf-02", "label": "Defines risk as the effect of uncertainty on objectives, which may be positive as well as negative.", "answer": "ISO 31000", "why": "The upside-inclusive definition of risk is ISO 31000's, and it is why the standard talks about objectives rather than harms."},
+    {"id": "rf-03", "label": "Is deliberately sector-agnostic and technology-agnostic; it says nothing about models, data or training.", "answer": "ISO 31000", "why": "Its generality is the point and also its limit — it is why 23894 exists to say what AI changes."},
+    {"id": "rf-04", "label": "Frames risk management as principles, a framework, and a process, with leadership commitment as the first requirement of the framework.", "answer": "ISO 31000", "why": "The three-part structure is ISO 31000's organising idea. AI-specific documents adopt it rather than replacing it."},
+    {"id": "rf-05", "label": "Provides guidance on applying a generic risk process specifically to artificial intelligence, including AI-specific risk sources.", "answer": "ISO/IEC 23894", "why": "23894 is the bridge document: ISO 31000's process, with AI's particular risk sources and lifecycle attached. It is guidance, not requirements."},
+    {"id": "rf-06", "label": "Describes how risk management activities map onto the AI system lifecycle, from inception through retirement.", "answer": "ISO/IEC 23894", "why": "Lifecycle-mapped AI risk guidance is 23894's contribution. Being guidance, it cannot be audited against, which is where 42001 comes in."},
+    {"id": "rf-07", "label": "Offers illustrative AI risk sources — data quality, opacity, automation bias, unintended use — as an aid rather than a mandatory list.", "answer": "ISO/IEC 23894", "why": "The catalogue of AI risk sources is advisory. Treating it as a compliance checklist misreads the document's status."},
+    {"id": "rf-08", "label": "Is the AI-specific companion that explains what changes when the thing you are managing risk about learns from data.", "answer": "ISO/IEC 23894", "why": "This is the document's whole purpose: 31000 for AI. If a statement is about applying risk method to AI without imposing requirements, it is 23894."},
+    {"id": "rf-09", "label": "Specifies requirements for establishing, implementing, maintaining and continually improving a management system for AI.", "answer": "ISO/IEC 42001", "why": "'Requirements for a management system' is management-system-standard language: this is the certifiable one, structured like ISO 27001."},
+    {"id": "rf-10", "label": "An organisation can be audited by a certification body and issued a certificate against it.", "answer": "ISO/IEC 42001", "why": "Certifiability is the single cleanest discriminator among these four. Neither NIST's framework nor ISO's guidance documents can be certified against."},
+    {"id": "rf-11", "label": "Carries an Annex A of controls and requires a statement of applicability explaining which are implemented.", "answer": "ISO/IEC 42001", "why": "Annex A plus a statement of applicability is the management-system pattern. It is what an auditor actually walks through."},
+    {"id": "rf-12", "label": "Requires an AI policy, defined roles, objectives, internal audit and management review on a continual improvement cycle.", "answer": "ISO/IEC 42001", "why": "Internal audit and management review are management-system obligations. Guidance documents recommend; only the management system standard requires."},
+    {"id": "rf-13", "label": "Organises risk work into four functions: Govern, Map, Measure and Manage.", "answer": "NIST AI RMF", "why": "The four functions are the RMF's signature structure, with Govern cutting across the other three rather than preceding them."},
+    {"id": "rf-14", "label": "Names seven characteristics of trustworthy AI, including valid and reliable, safe, secure and resilient, and accountable and transparent.", "answer": "NIST AI RMF", "why": "The seven trustworthiness characteristics are NIST's framing. ISO documents speak of objectives and controls instead."},
+    {"id": "rf-15", "label": "Is explicitly voluntary, developed by a US federal agency under a statutory direction, and is accompanied by a companion playbook.", "answer": "NIST AI RMF", "why": "Voluntary, US federal, with a playbook and profiles — none of which describes an ISO standard."},
+    {"id": "rf-16", "label": "Supports use profiles that tailor the framework to a particular sector or use case.", "answer": "NIST AI RMF", "why": "Profiles are how the RMF is adapted without being certified. They are the answer to 'how do we apply this to us' in a voluntary framework."}
+  ]
+}

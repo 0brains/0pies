@@ -1,0 +1,216 @@
+{
+ "id": "iv-adaptation-pairs",
+ "runner": "pairs",
+ "title": "Weights or Wires",
+ "blurb": "Ten near-identical model-and-adaptation choices. One fact tells them apart every time — including the lab's only agentic AI content.",
+ "source": "AIGP Study Guide (SG) §Domain IV.A",
+ "asOf": "2026-08",
+ "area": "IV.A",
+ "pairs": [
+  {
+   "id": "iv-ap-01",
+   "dimension": "where the domain knowledge ends up",
+   "buckets": [
+    "Fine-tuning",
+    "RAG (Retrieval-Augmented Generation)"
+   ],
+   "a": {
+    "text": "The organization's proprietary knowledge is trained directly into the model's weights through additional training rounds, becoming a permanent part of what the model \"knows.\"",
+    "answer": "Fine-tuning",
+    "why": "Baking domain data into the weights means the model inherits whatever memorization or leakage risk that data carries — a synthetic-data generator adapted this way on production records can still leak traces of the originals even after anonymization, and using student-specific data the same way creates its own breach exposure.",
+    "citation": "AIGP Body of Knowledge v2.1"
+   },
+   "b": {
+    "text": "The organization's proprietary knowledge stays in an external, separately maintained store and is pulled in only at the moment each question is asked.",
+    "answer": "RAG (Retrieval-Augmented Generation)",
+    "why": "Nothing about this knowledge is learned by the model itself — it's fetched fresh per query, which is exactly why it can reflect this month's guidance without a single retraining run. The adaptation choice made here is what determines the assurance burden the team ends up owning.",
+    "citation": "SG"
+   }
+  },
+  {
+   "id": "iv-ap-02",
+   "dimension": "retrieve vs act",
+   "buckets": [
+    "RAG (Retrieval-Augmented Generation)",
+    "Agentic AI"
+   ],
+   "a": {
+    "text": "Fetches the current policy documents to ground a single answer, which a human then reads and acts on.",
+    "answer": "RAG (Retrieval-Augmented Generation)",
+    "why": "The system's job stops at producing a well-grounded answer; every consequential action downstream is still a human's to take.",
+    "citation": "AIGP Body of Knowledge v2.1"
+   },
+   "b": {
+    "text": "Plans a multi-step task on its own and executes actions across booking and payment tools, with minimal human review at each step.",
+    "answer": "Agentic AI",
+    "why": "Autonomy of action, not just autonomy of answer, is the new governance surface here: when a deployer lets a system act rather than merely inform, direct accountability for harmful or deceptive agent behavior falls on the deployer — this calls for action scoping, human-in-the-loop thresholds, and full action logs, none of which a purely retrieval-grounded assistant needs.",
+    "citation": "verified 2026-08-02 — NIST \"AI Agent Standards Initiative\" (nist.gov/artificial-intelligence/ai-agent-standards-initiative; announced 2026-02-17, CAISI) covers agent security, authentication and secure-by-design oversight controls at varying autonomy levels; EU AI Act Art. 14 (Regulation (EU) 2024/1689) requires human-oversight measures for high-risk AI systems that are 'appropriate to be implemented by the deployer,' commensurate with the system's level of autonomy",
+    "externalSource": true,
+    "asOf": "2026-08"
+   },
+   "citation": "external-sourced — agentic AI has near-zero study-guide coverage; verified 2026-08-02 against NIST AI Agent Standards Initiative (nist.gov) and EU AI Act Art. 14 (Regulation (EU) 2024/1689, artificialintelligenceact.eu/article/14)",
+   "asOf": "2026-08",
+   "externalSource": true
+  },
+  {
+   "id": "iv-ap-03",
+   "dimension": "what you may inspect",
+   "buckets": [
+    "Open-source model",
+    "Proprietary model"
+   ],
+   "a": {
+    "text": "The organization can read, modify and redistribute the model's own weights and code, and run it entirely on infrastructure it controls.",
+    "answer": "Open-source model",
+    "why": "Inspectability is the whole trade: you get to audit the algorithm yourself and avoid depending on one vendor's roadmap, but you also inherit the internal burden of checking licenses, training-data provenance and your own security testing.",
+    "citation": "AIGP Body of Knowledge v2.1"
+   },
+   "b": {
+    "text": "The organization can only call the model through an API and never sees the weights, but the vendor backs it with support contracts, incident response and indemnities.",
+    "answer": "Proprietary model",
+    "why": "You trade inspection rights for contract-backed guarantees — and the strategic cost of that trade is recorded as the top risk of this path: once workflows are built around one vendor's API, switching away later gets expensive.",
+    "citation": "AIGP Body of Knowledge v2.1"
+   }
+  },
+  {
+   "id": "iv-ap-04",
+   "dimension": "shrunk artifact vs unchanged artifact",
+   "buckets": [
+    "Efficiency techniques (LoRA, distillation, quantization)",
+    "As-is deployment"
+   ],
+   "a": {
+    "text": "The base model is compressed and reshaped — parameters pruned, precision reduced, a lightweight adapter layered on — to cut cost and latency for edge or high-volume use.",
+    "answer": "Efficiency techniques (LoRA, distillation, quantization)",
+    "why": "Shrinking or reshaping the artifact this way can quietly move its decision boundaries and reduce interpretability, so accuracy, fairness and robustness all need to be re-checked after every such change, not assumed to carry over unchanged.",
+    "citation": "SG"
+   },
+   "b": {
+    "text": "The vendor's model runs unmodified, exactly as shipped, backed only by human review and other controls layered on around it.",
+    "answer": "As-is deployment",
+    "why": "Nothing about the artifact itself has changed, so governance leans on the vendor's own documentation and on compensating controls like human review rather than on re-validating the model's internals.",
+    "citation": "SG (As-Is Deployment)"
+   }
+  },
+  {
+   "id": "iv-ap-05",
+   "dimension": "failure modes",
+   "buckets": [
+    "Classic model",
+    "Generative model"
+   ],
+   "a": {
+    "text": "A credit-scoring system predicts or classifies from structured inputs; its risks are bias against certain groups and accuracy that quietly degrades as the underlying data drifts.",
+    "answer": "Classic model",
+    "why": "Predicting or classifying a known category from structured features is this profile's failure mode — familiar bias and drift risks that fairness testing and monitoring are built to catch.",
+    "citation": "SG"
+   },
+   "b": {
+    "text": "A drafting assistant produces brand-new text, images or code from a prompt; its risks are hallucination, copyright exposure and convincingly wrong output.",
+    "answer": "Generative model",
+    "why": "Creating content that didn't exist before opens a different risk surface entirely — hallucination and provenance, not the bias-and-drift profile that governs a prediction-only system.",
+    "citation": "SG"
+   }
+  },
+  {
+   "id": "iv-ap-06",
+   "dimension": "assurance burden",
+   "buckets": [
+    "As-is deployment",
+    "Fine-tuning"
+   ],
+   "a": {
+    "text": "A vendor's model is used exactly as delivered; the team's job is to validate it against its own performance and fairness standards and document any gaps.",
+    "answer": "As-is deployment",
+    "why": "Governance here leans almost entirely on vendor transparency plus compensating controls — the team never touches the model's internals, so its obligations stop at validation and documentation.",
+    "citation": "SG"
+   },
+   "b": {
+    "text": "A general-purpose model is retrained on the organization's own labeled data until it reproduces a specific, desired behavior.",
+    "answer": "Fine-tuning",
+    "why": "The moment an organization retrains the model, governance treats the result as a new system: fairness and robustness testing must be repeated from scratch, and — compared with using a vendor's model as delivered — the organization now carries increased legal liability of its own.",
+    "citation": "SG"
+   }
+  },
+  {
+   "id": "iv-ap-07",
+   "dimension": "risk profile",
+   "buckets": [
+    "Language model",
+    "Multimodal model"
+   ],
+   "a": {
+    "text": "A support chatbot takes in written questions and produces written answers only, with no other input channel to reason over.",
+    "answer": "Language model",
+    "why": "Text-only in, text-only out — the governance concerns here are hallucination, biased phrasing and jailbreak-style prompt attacks, none of which involve a second modality.",
+    "citation": "SG"
+   },
+   "b": {
+    "text": "A claims tool weighs a damage photograph together with the adjuster's written notes before producing a single combined judgment.",
+    "answer": "Multimodal model",
+    "why": "Combining channels adds a risk a text-only system never faces: false correlations between an image and the text next to it, and the need to show which input actually drove the output.",
+    "citation": "SG"
+   }
+  },
+  {
+   "id": "iv-ap-08",
+   "dimension": "footprint",
+   "buckets": [
+    "Small model",
+    "Large model"
+   ],
+   "a": {
+    "text": "A narrow classifier handles one task on a tight compute budget, retrains quickly, and traces its outputs back to inputs with little effort.",
+    "answer": "Small model",
+    "why": "A compact, narrow system is cheap to re-test and easy to explain — the cost is that it can underperform once the environment gets more variable than what it was built for.",
+    "citation": "SG"
+   },
+   "b": {
+    "text": "A broad foundation system generalizes across many tasks it was never specifically trained for, at the cost of heavier compute governance and a bigger attack surface.",
+    "answer": "Large model",
+    "why": "Breadth bought through scale means the system can tackle unfamiliar domains zero-shot, but it also needs compute quotas, red-teaming and drift monitoring that a narrow system doesn't.",
+    "citation": "SG"
+   }
+  },
+  {
+   "id": "iv-ap-09",
+   "dimension": "who governs the data pipeline vs who governs nothing new",
+   "buckets": [
+    "RAG (Retrieval-Augmented Generation)",
+    "As-is deployment"
+   ],
+   "a": {
+    "text": "Every source the model drew on during a session gets logged for audit, and any personal data passing through the connected corpus must be redacted before it's ever shown to the model.",
+    "answer": "RAG (Retrieval-Augmented Generation)",
+    "why": "Audit logging and PII redaction across an external corpus are governance obligations that simply don't exist for a model with no live data pipeline attached — this path's assurance burden lives in the plumbing, not the weights.",
+    "citation": "SG (audit trail; PII redaction)"
+   },
+   "b": {
+    "text": "The vendor's model is used exactly as delivered, and the fastest path to a working pilot is chosen precisely because no new training data or pipeline needs to be built first.",
+    "answer": "As-is deployment",
+    "why": "Speed is the entire appeal here — no retraining, no new data plumbing — but governance treats that speed as a debt: the model is presumed high-risk until validated against this organization's own performance and fairness standards, since nothing about it was built with this deployment in mind.",
+    "citation": "SG (fastest way to get started; presumed high-risk)"
+   }
+  },
+  {
+   "id": "iv-ap-10",
+   "dimension": "changes the model's shape vs changes what it knows",
+   "buckets": [
+    "Efficiency techniques (LoRA, distillation, quantization)",
+    "Fine-tuning"
+   ],
+   "a": {
+    "text": "The same base model comes out smaller and cheaper to run after compression, without a single new fact having been added to it.",
+    "answer": "Efficiency techniques (LoRA, distillation, quantization)",
+    "why": "This path targets footprint, not knowledge — but shrinking or reshaping the artifact can still move its decision boundaries, so accuracy and fairness need re-checking even though nothing \"new\" was taught.",
+    "citation": "SG"
+   },
+   "b": {
+    "text": "The same base model comes out the same size, but now reliably reproduces a specialist behavior it never had access to before, learned from curated examples.",
+    "answer": "Fine-tuning",
+    "why": "This path targets behavior and knowledge, not footprint — and because that new behavior was learned from the organization's own data, governance now treats the result as a new system requiring its own testing, not a resized copy of the old one.",
+    "citation": "SG"
+   }
+  }
+ ]
+}

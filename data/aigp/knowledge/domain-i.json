@@ -1,0 +1,309 @@
+{
+ "cases": [
+  {
+   "id": "d1-case-charter",
+   "areas": [
+    "I.B"
+   ],
+   "asOf": "2026-08",
+   "status": "stable",
+   "brief": "Solvix Underwriting is a small predictive-analytics startup that scores agricultural-lending risk for regional banks. Governance so far has been whatever the two founders agreed over coffee. A large reinsurance partner is about to sign a multi-year data-sharing deal but its diligence team wants to see 'a real governance program' before ink hits paper. You are brought in to build it — and, eighteen months later, to keep it working after Solvix's underwriting engine gets licensed to credit-risk teams at banks across the EU, North America and Southeast Asia.",
+   "citation": "SG Ch2 §Establishing and Communicating Organizational Expectations for AI Governance (I.B) — Program Foundations, Governance Structures, Training and Awareness",
+   "steps": [
+    {
+     "q": "Before anything else gets written down, what is the most critical first step for building a program that will actually be effective and aligned with Solvix's risk tolerance?",
+     "options": [
+      "Hire a Chief AI Officer to lead the initiative and assign roles across the company",
+      "Conduct a thorough inventory of existing and planned AI systems, categorized by risk level, business function and data source",
+      "Launch a company-wide training program on AI literacy and ethical principles",
+      "Immediately draft a comprehensive governance policy covering privacy, ethics and security"
+     ],
+     "answer": "Conduct a thorough inventory of existing and planned AI systems, categorized by risk level, business function and data source",
+     "why": "You cannot govern what you have not counted: an AI inventory is the factual baseline that tells you what needs governing before you can decide who governs it, train anyone on it, or write a policy about it. Hiring a CAIO or training staff without that baseline puts people in motion with nothing concrete to act on, and drafting a policy first produces a document tailored to guesswork rather than Solvix's actual AI footprint."
+    },
+    {
+     "q": "The reinsurer's diligence team doesn't want verbal founder commitments — they want a documented structure. What's the most suitable, scalable way for a company this size to formalize governance without smothering the speed that got it this far?",
+     "options": [
+      "Hire a full-time, dedicated Chief AI Governance Officer",
+      "Codify the founders' existing values into a simple, principle-based charter with a clear risk-assessment step for new projects",
+      "Outsource all governance responsibilities to a third-party audit firm",
+      "Adopt a full-fledged, multi-layered framework matching the reinsurer's own enterprise program"
+     ],
+     "answer": "Codify the founders' existing values into a simple, principle-based charter with a clear risk-assessment step for new projects",
+     "why": "A lightweight, principle-based charter is proportional governance in action — it turns what the founders already believe into something documented and repeatable without adding a layer of bureaucracy Solvix doesn't yet need. A full CAGO hire is premature spend, outsourcing surrenders institutional knowledge the founders should be building, and copying the reinsurer's enterprise-scale ERM framework would bury a small team in process built for a company ten times its size."
+    },
+    {
+     "q": "Two years later, Solvix's credit-risk model is licensed to banks across the EU, North America and Southeast Asia, each facing different regulatory expectations. What governance structure is now the most effective and defensible?",
+     "options": [
+      "A matrix approach where technical teams and business units co-own governance, with each project owner ultimately accountable",
+      "A centralized AI governance office with global authority enforcing one uniform policy everywhere",
+      "A federated model where a central committee sets core principles and regional subcommittees adapt them into local policies",
+      "A fully decentralized model where each regional office builds and manages its own governance framework independently"
+     ],
+     "answer": "A federated model where a central committee sets core principles and regional subcommittees adapt them into local policies",
+     "why": "Federation is the structure built for exactly this tension: one consistent set of principles from the center, with room for each region to adapt specifics to its own regulatory and cultural landscape. A single global policy is too rigid to flex for local law, full regional autonomy loses the central oversight that keeps the whole program coherent, and a matrix of shared project ownership blurs exactly the accountability a credit-risk model needs when a regulator comes asking who signed off."
+    },
+    {
+     "q": "The training committee drafts four ways to build AI literacy across legal, engineering, marketing and customer-support staff as headcount grows. Which one should governance reject as impractical?",
+     "options": [
+      "Retooling every engineer into a full AI/ML developer so all technical staff can participate in building models",
+      "Role-specific training scoped to how each function actually touches AI, aligned to Solvix's federated governance model",
+      "Ethics and responsible-AI training calibrated to how strongly Solvix wants to promote a responsible-AI culture",
+      "Plain-language education for the banks' loan officers so they understand what the underwriting model can and can't do"
+     ],
+     "answer": "Retooling every engineer into a full AI/ML developer so all technical staff can participate in building models",
+     "why": "Expecting every technical employee to retool as a model builder is not role-specific training, it's a headcount fantasy — most technical staff touch the AI system without ever needing to build one, and training should match that reality. The other three are legitimate, complementary pieces of a real program: training scoped to actual role and governance structure, a culture-building ethics track, and end-user education for the people relying on the model's outputs."
+    }
+   ]
+  },
+  {
+   "id": "d1-case-policies",
+   "areas": [
+    "I.C"
+   ],
+   "asOf": "2026-08",
+   "status": "stable",
+   "brief": "Verdant Health Analytics has run a mature privacy compliance program for years — breach protocols, a standing PIA process, vendor contracts — all built around its original SaaS product, which only ever stored and processed the health records customers gave it directly. Verdant is now embedding a generative-AI clinical-documentation assistant into that same product, and the compliance team wants to reuse as much of the existing stack as it can rather than build a parallel one from scratch. Engineering, meanwhile, is already fielding requests from clinicians who want to paste patient notes into public chatbots to save time.",
+   "citation": "SG Ch3 §Establish AI-Specific Policies and Procedures — Privacy Policy Updates, Third-Party Risk (I.C); SG (Dynamic Risks), l.841 (Retention and Deletion), l.1161 (re-identification via cross-referencing), l.861 (Integration with Broader Governance)",
+   "steps": [
+    {
+     "q": "Compliance wants to reuse an existing control, rather than build something new, to start surfacing this AI system's specific risks. Which control in Verdant's current stack is most easily adapted for that job?",
+     "options": [
+      "General privacy-awareness training for staff",
+      "Penetration testing of the production environment",
+      "Transfer risk assessments for cross-border data flows",
+      "Privacy impact assessments (PIAs/DPIAs)"
+     ],
+     "answer": "Privacy impact assessments (PIAs/DPIAs)",
+     "why": "A PIA is already built to ask exactly the questions an AI system raises — what data goes in, what happens to individuals as a result — so extending it to cover training, fairness and explainability is a natural fit, not a rebuild. Penetration testing checks technical intrusion resistance, not algorithmic bias or legality; transfer assessments answer a narrower cross-border question; and staff training builds awareness but surfaces no system-specific risk at all."
+    },
+    {
+     "q": "Compliance flags that Verdant's current privacy policy governs only the data the company directly collects and stores. What's the specific gap that leaves once an AI model sits on top of that data?",
+     "options": [
+      "It has no retention or deletion rules for the model's own derived outputs and inferences — which can re-identify people even when the source data was anonymized",
+      "It doesn't require a signed data-processing agreement with Verdant's cloud host",
+      "It fails to name a data protection officer accountable for privacy matters",
+      "It sets no breach-notification deadline for security incidents"
+     ],
+     "answer": "It has no retention or deletion rules for the model's own derived outputs and inferences — which can re-identify people even when the source data was anonymized",
+     "why": "A legacy policy is written for static, direct data flows — what's collected, where it's stored — and never anticipated that a model's own outputs and inferences are a second, derived dataset that can be cross-referenced back to re-identify someone whose raw record was properly anonymized. A DPA, a named DPO and a breach-notification clock are all generic privacy-program hygiene any IT system needs; none of them is the AI-specific hole this scenario is pointing at."
+    },
+    {
+     "q": "Pending a formal AI acceptable-use policy, compliance wants to temporarily block clinicians from pasting patient notes into public chatbots. What's the best justification for a blanket prohibition rather than waiting for guidance?",
+     "options": [
+      "To avoid adopting technology that can't be monetized",
+      "To avoid the cost of hiring staff qualified to manage the tool",
+      "To avoid the time it would take to train clinicians on acceptable use",
+      "To avoid accidental disclosure of confidential and proprietary information"
+     ],
+     "answer": "To avoid accidental disclosure of confidential and proprietary information",
+     "why": "Every minute clinicians paste patient notes into a public tool, that text can leave Verdant's control entirely — used for the vendor's own training, logged, or exposed — which is the concrete harm a prohibition is actually preventing. Monetization strategy and hiring costs aren't privacy risks at all, and 'no time to train yet' describes a temporary resourcing gap, not a reason a leak of PHI is dangerous enough to justify blocking the tool outright."
+    },
+    {
+     "q": "Verdant's risk officer wants the new AI rules folded into the existing privacy, security and ethics policies; the head of engineering wants a single, separate AI policy document instead. Which position is more defensible?",
+     "options": [
+      "A separate AI policy is better because it lets AI's unique risks be addressed in full detail without cluttering the existing policies",
+      "Integration is better because it keeps governance consistent across the organization and prevents policy fragmentation",
+      "Integration is better mainly because it signals to regulators that AI isn't treated as a siloed function",
+      "A separate policy is better because it can be updated quickly without triggering a full review of broader corporate policy"
+     ],
+     "answer": "Integration is better because it keeps governance consistent across the organization and prevents policy fragmentation",
+     "why": "Folding AI rules into the existing privacy, security and ethics policies keeps governance unified and prevents the organization from running two sets of standards that can quietly drift apart — regulators and auditors expect AI to sit under the same accountability structure as everything else. The regulator-signaling argument is true but too narrow to carry the case on its own, and both the detail and speed arguments for a standalone document trade long-term cohesion for short-term convenience, which is exactly what creates the silos integration is meant to avoid."
+    }
+   ]
+  },
+  {
+   "id": "d1-case-vendor-file",
+   "areas": [
+    "I.C"
+   ],
+   "asOf": "2026-08",
+   "status": "stable",
+   "brief": "Bramwell Mutual's claims division is evaluating third-party AI vendors to triage incoming insurance claims. Two finalists have made it to contract review, and a third vendor's model is already being eyed for the HR team's resume-screening pilot next quarter. Governance is asked to run the file: how much scrutiny each vendor actually needs, what to do when one won't show its work, what to do when the best model doesn't meet Bramwell's own security bar, and what belongs in the paperwork before any of them go live.",
+   "citation": "SG Ch3 §Third-Party Risk Policies — Procurement Policies, Vendor Due Diligence and Ongoing Monitoring (I.C)",
+   "steps": [
+    {
+     "q": "Before any vendor is scored, what should Bramwell's third-party AI policy require as its baseline approach to managing vendor risk?",
+     "options": [
+      "Focus primarily on the vendor's financial stability as the key risk indicator",
+      "Provide for a level of due diligence and ongoing monitoring that scales with the risk the vendor's AI system actually poses",
+      "Require every AI vendor to pass a full external cybersecurity audit every six months regardless of risk level",
+      "Focus on technical safeguards like data security, and address ethical risk through contract language alone"
+     ],
+     "answer": "Provide for a level of due diligence and ongoing monitoring that scales with the risk the vendor's AI system actually poses",
+     "why": "Third-party AI risk management works the same way internal risk management does: effort proportional to risk, checked on an ongoing basis rather than once at signing. A blanket biannual audit for every vendor is excessive and not scalable, financial stability alone ignores the actual harm an AI system can cause, and splitting technical risk from ethical risk (leaving the latter to contract text) treats two halves of the same evaluation as if they were unrelated."
+    },
+    {
+     "q": "The claims-triage finalist refuses to disclose its model's full architecture, citing IP protection — but Bramwell's policy mandates a pre-procurement risk assessment. What should the policy require Bramwell to do?",
+     "options": [
+      "Reject the vendor, because the refusal prevents completing the risk assessment the policy itself requires",
+      "Proceed with the vendor but add strict internal monitoring to compensate for the missing architectural detail",
+      "Amend the policy to carve out an exception for proprietary models that supply performance and fairness reports instead",
+      "Require a legal indemnification clause that shifts compliance risk back onto the vendor"
+     ],
+     "answer": "Reject the vendor, because the refusal prevents completing the risk assessment the policy itself requires",
+     "why": "If the policy says a risk assessment must happen before procurement and the vendor's refusal makes that assessment impossible, proceeding anyway breaks the organization's own governance framework — the defensible move is to walk away. Internal monitoring is a weak substitute for the assessment that never happened, carving out a policy exception undermines the policy for every future vendor, and an indemnification clause can shift financial liability but does nothing to fill the operational and ethical blind spot Bramwell is left with."
+    },
+    {
+     "q": "The other finalist's model is best-in-class on every accuracy benchmark, but the research lab behind it doesn't meet Bramwell's internal security standard. What should procurement policy require here?",
+     "options": [
+      "Waive the security requirement for this vendor given the model's exceptional performance",
+      "Amend the procurement policy to add a standing exception for 'reputable research organizations'",
+      "Require a secure sandbox environment that isolates the model and its data inputs as a compensating control",
+      "Block the model until the research organization can formally demonstrate full compliance with Bramwell's security standard"
+     ],
+     "answer": "Require a secure sandbox environment that isolates the model and its data inputs as a compensating control",
+     "why": "A sandbox is the compensating control built for precisely this situation — it lets Bramwell capture the model's performance while containing the exposure created by a vendor that can't meet the security bar directly. Waiving the requirement or writing a standing exception for 'reputable' vendors both erode the security standard for everyone else, while an outright block treats a workable containment problem as an unworkable one and may cost Bramwell a genuinely superior model for no defensible reason."
+    },
+    {
+     "q": "Governance drafts a template clause to add to every AI vendor contract going forward — including the HR team's upcoming resume-screening tool. What's the single most crucial addition given how AI risk actually behaves over time?",
+     "options": [
+      "A list of every open-source library and pre-trained model the vendor used, for IP-risk purposes",
+      "A clause granting Bramwell the vendor's full source code and training data for independent audits",
+      "A service-level agreement defining accuracy and latency targets, with penalties for missing them",
+      "Ongoing documentation of the model's performance, drift and fairness metrics, plus a contractual retirement plan"
+     ],
+     "answer": "Ongoing documentation of the model's performance, drift and fairness metrics, plus a contractual retirement plan",
+     "why": "AI risk doesn't sit still the way a one-time IP audit or a static SLA assumes — a resume-screening model can drift into biased outcomes months after signing, so the contract needs a standing obligation to keep documenting performance and a plan for winding the system down when it's no longer fit for purpose. The open-source inventory is a useful one-time IP check, source-code-and-training-data access is often a non-starter with vendors and unnecessary if monitoring is solid, and an SLA on accuracy and latency captures a snapshot, not the ongoing drift and fairness risk that actually accumulates over the life of the contract."
+    }
+   ]
+  }
+ ],
+ "roleMatrix": {
+  "id": "I-roles",
+  "title": "Role Matrix",
+  "asOf": "2026-08-02",
+  "prompt": "Assign each duty (or claimed duty) to the role it actually belongs to. Some belong to no one at all.",
+  "sets": [
+   {
+    "id": "roles-lifecycle",
+    "area": "I.B",
+    "title": "Who owns the AI lifecycle",
+    "citation": "Study Guide Ch2 §Defining Roles and Responsibilities for AI Governance Stakeholders",
+    "prompt": "Assign each duty (or claimed duty) to the role it actually belongs to. Some belong to no one at all.",
+    "buckets": [
+     "Developer",
+     "Deployer",
+     "User",
+     "Governance committee",
+     "Ethics board",
+     "Executive leadership",
+     "Nobody (governance myth)"
+    ],
+    "items": [
+     {
+      "id": "i-rl-01",
+      "text": "Selects the training data and runs pre-release bias tests, then documents how the system functions for the people who will operate it",
+      "answer": "Developer",
+      "why": "Build-stage duties — curating data, fairness testing before release, and documentation for operators — sit with whoever builds the system. This is distinct from the ongoing, in-context monitoring the operating organization runs once the system is live."
+     },
+     {
+      "id": "i-rl-02",
+      "text": "Embeds bias-testing tools and explainability features directly into the model while it is being trained, then chooses how to trade off accuracy against fairness",
+      "answer": "Developer",
+      "why": "Technical safeguards built into the model itself — 'governance by design' — are a build-time choice about architecture and training, made before the system ever reaches a live environment."
+     },
+     {
+      "id": "i-rl-03",
+      "text": "Records where the training data came from and explains why a particular model architecture was chosen over the alternatives",
+      "answer": "Developer",
+      "why": "Data lineage and design-rationale records are artifacts of the build process itself — they explain choices made before the system exists, not how it performs once running."
+     },
+     {
+      "id": "i-rl-04",
+      "text": "Monitors live performance and drift in its own operating context and audits accuracy on an ongoing basis",
+      "answer": "Deployer",
+      "why": "Operational integrity in a specific context is the distinguishing duty here — not the design choices behind the model, which belong to whoever built it before it ever reached this context."
+     },
+     {
+      "id": "i-rl-05",
+      "text": "Integrates the model into a production environment and sets up the monitoring that will watch it once it is running there",
+      "answer": "Deployer",
+      "why": "Standing the system up in production and instrumenting it is an operational act, separate from the training and testing that produced the model in the first place."
+     },
+     {
+      "id": "i-rl-06",
+      "text": "Carries the primary liability when an unvalidated third-party system is put into a hospital's care pathway without independent validation first",
+      "answer": "Deployer",
+      "why": "Liability follows the decision to put an unvalidated system into a live setting, which is the operating organization's call — the original builder is not the one who chose to skip validation before use."
+     },
+     {
+      "id": "i-rl-07",
+      "text": "Interacts with the AI system in real-world situations and is often the first to notice something has gone wrong",
+      "answer": "User",
+      "why": "Proximity to the live outcome — noticing bias, errors, or drift as it actually happens — is the front-line role, distinct from the organization that operates and monitors the system as a whole."
+     },
+     {
+      "id": "i-rl-08",
+      "text": "Interprets the system's recommendation and makes the final, informed decision based on it",
+      "answer": "User",
+      "why": "Applying judgment to a specific output and deciding what to do with it is a point-of-use act, not the operational monitoring or design work that happens elsewhere in the lifecycle."
+     },
+     {
+      "id": "i-rl-09",
+      "text": "Serves as the escalation point when one team wants to ship an AI feature quickly but another team raises regulatory concerns about it",
+      "answer": "Governance committee",
+      "why": "Reconciling competing functional interests day to day is an operational, cross-functional job — narrower in scope than the specialized moral-and-societal review of high-impact use cases, and it doesn't set enterprise risk appetite the way the top of the organization does."
+     },
+     {
+      "id": "i-rl-10",
+      "text": "Decides which of several competing AI proposals gets resourced first, weighing risk level against strategic priority and available resources",
+      "answer": "Governance committee",
+      "why": "Prioritizing use cases against risk and resources is a standing, cross-functional operating decision — distinct from the one-off moral review a specialized body gives a single high-impact case, and distinct from the top-level appetite-setting that funds the whole program."
+     },
+     {
+      "id": "i-rl-11",
+      "text": "Asks 'should we build this system at all?' rather than only 'can we build it?' for a proposed use case",
+      "answer": "Ethics board",
+      "why": "Weighing whether a use case is right, not just permissible, is the specialized moral-and-societal review — narrower and deeper than the operational prioritization a cross-functional body runs across all proposals."
+     },
+     {
+      "id": "i-rl-12",
+      "text": "Requires bias audits and corrective measures for a hiring tool before it is approved, weighing fairness against harm to particular groups",
+      "answer": "Ethics board",
+      "why": "Independent review of disproportionate harm to a protected population is the specialized ethical-review function — distinct from the cross-functional committee's broader operational sign-off."
+     },
+     {
+      "id": "i-rl-13",
+      "text": "Provides independent advice on whether a proposal fits the organization's stated values, even in cases where it is already technically legal",
+      "answer": "Ethics board",
+      "why": "Judging a gray area that clears the legal bar but still raises questions of public trust is exactly the reflective function a specialized moral body exists for, separate from legal or operational sign-off."
+     },
+     {
+      "id": "i-rl-14",
+      "text": "Sets the organization's AI risk appetite and decides whether the overall strategy favors innovation speed or strict compliance",
+      "answer": "Executive leadership",
+      "why": "Setting the tone and tolerance for risk across the whole organization sits above any single review body — committees and boards operate within the appetite that gets set here, not the other way around."
+     },
+     {
+      "id": "i-rl-15",
+      "text": "Approves the overall governance framework and allocates the budget that funds it",
+      "answer": "Executive leadership",
+      "why": "Approving and funding the framework itself is a top-of-organization act of legitimacy and resourcing, distinct from the day-to-day operation of that framework by the bodies it funds."
+     },
+     {
+      "id": "i-rl-16",
+      "text": "Confirms the AI strategy aligns with external expectations such as industry standards and regulatory requirements, not only with internal business goals",
+      "answer": "Executive leadership",
+      "why": "Aligning the organization's overall direction with the outside world is a strategic act at the top, distinct from the operational compliance-checking that legal and risk teams carry out underneath that direction."
+     },
+     {
+      "id": "i-rl-17",
+      "text": "Remains fully liable for a system's compliance with regulations even after it has been handed over to whoever runs it now",
+      "answer": "Nobody (governance myth)",
+      "why": "Documented false: the original builder does not remain fully liable once operation passes to another role. Liability is shared and tracks each role's actual responsibilities — the operating organization takes on the liability that comes with operating the system."
+     },
+     {
+      "id": "i-rl-18",
+      "text": "Sits inside the AI development lifecycle as a standing participant, approving each phase before the next one can proceed",
+      "answer": "Nobody (governance myth)",
+      "why": "Documented false: this describes external oversight bodies, and oversight/enforcement from outside is not the same as being an engaged participant inside the lifecycle stages themselves, alongside data architects, socio-cultural and technical experts, and legal/privacy specialists."
+     }
+    ],
+    "traps": [
+     "A hospital committee staffed only with doctors and engineers still has a critical gap: it is missing an independent voice — one specifically tasked with the moral and societal implications of the system, not just its clinical and technical soundness. Domain expertise on the committee does not substitute for that role."
+    ]
+   }
+  ]
+ }
+}

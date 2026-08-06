@@ -1,0 +1,208 @@
+{
+  "id": "solution-builder",
+  "runner": "board",
+  "title": "Solution Builder",
+  "blurb": "Pick the technique the problem actually calls for.",
+  "source": "AWS Certified AI Practitioner (AIF-C01) exam guide · Domain 1",
+  "asOf": "2026-07",
+  "area": "foundations",
+  "hint": "Read the data and the desired output, then drag each scenario onto its technique.",
+  "items": [
+    {
+      "id": "sol-01",
+      "label": "A supermarket wants to understand which products are frequently bought together.",
+      "sub": "Market Basket Analysis",
+      "answer": "Association Rules (Apriori)",
+      "why": "Association learning finds item combinations that occur together and measures their support, confidence, and lift. Place or promote associated products together to increase basket value."
+    },
+    {
+      "id": "sol-02",
+      "label": "A subscription business wants to identify customers likely to cancel next month.",
+      "sub": "Customer Churn",
+      "answer": "Binary Classification",
+      "why": "The target is a labeled category with two possible classes: churn or retain. Focus retention offers on customers with high churn probability."
+    },
+    {
+      "id": "sol-03",
+      "label": "A property platform wants to estimate the selling price of a new listing.",
+      "sub": "House Price Estimation",
+      "answer": "Regression",
+      "why": "Regression learns relationships between input features and a numeric target. Provide a data-informed price estimate for each property."
+    },
+    {
+      "id": "sol-04",
+      "label": "A retailer wants to discover natural customer groups without predefined labels.",
+      "sub": "Customer Segmentation",
+      "answer": "Clustering",
+      "why": "Clustering is unsupervised learning that groups records by similarity without labeled outcomes. Create tailored campaigns for distinct behavioral segments."
+    },
+    {
+      "id": "sol-05",
+      "label": "A factory wants to identify unusual machine behavior before a breakdown.",
+      "sub": "Equipment Failure Signals",
+      "answer": "Anomaly Detection",
+      "why": "Anomaly detection models normal behavior and flags observations that deviate from it. Investigate abnormal equipment early and reduce unplanned downtime."
+    },
+    {
+      "id": "sol-06",
+      "label": "A distributor needs weekly demand estimates for the next quarter.",
+      "sub": "Demand Planning",
+      "answer": "Time-Series Forecasting",
+      "why": "Forecasting explicitly models observations ordered over time, including trend and seasonality. Plan inventory and staffing around expected demand."
+    },
+    {
+      "id": "sol-07",
+      "label": "A streaming platform wants to suggest content each user is likely to enjoy.",
+      "sub": "Personalized Media",
+      "answer": "Recommendation System",
+      "why": "Recommendation systems learn affinity from user, item, and interaction patterns. Present a personalized ranked list that improves discovery and engagement."
+    },
+    {
+      "id": "sol-08",
+      "label": "A product team wants to track whether customer reviews are positive, neutral, or negative.",
+      "sub": "Review Sentiment",
+      "answer": "NLP Text Classification",
+      "why": "Text classification converts language into features and predicts a predefined label. Monitor sentiment trends and route negative feedback for attention."
+    },
+    {
+      "id": "sol-09",
+      "label": "A production line needs to decide whether each component image is acceptable or defective.",
+      "sub": "Visual Quality Control",
+      "answer": "Image Classification",
+      "why": "Image classification predicts a category for an entire image. Automatically separate likely defects for inspection."
+    },
+    {
+      "id": "sol-10",
+      "label": "A vehicle-assistance system must find every pedestrian visible in a camera frame.",
+      "sub": "Pedestrian Safety",
+      "answer": "Object Detection",
+      "why": "Object detection predicts what objects are present and where each one appears. Locate pedestrians so downstream safety systems can respond."
+    },
+    {
+      "id": "sol-11",
+      "label": "Employees need answers grounded in frequently changing internal policies with source references.",
+      "sub": "Current Policy Assistant",
+      "answer": "Retrieval-Augmented Generation",
+      "why": "RAG retrieves relevant external context at request time and supplies it to a generative model. Answer from current policies with traceable supporting sources."
+    },
+    {
+      "id": "sol-12",
+      "label": "A language model must consistently produce reports in a stable specialist format and tone.",
+      "sub": "Consistent Specialist Style",
+      "answer": "Fine-Tuning",
+      "why": "Fine-tuning updates model behavior from examples and is useful for stable style or task adaptation. Generate reports that consistently follow the specialist pattern."
+    },
+    {
+      "id": "sol-13",
+      "label": "A general language model must return names, dates, and totals as a strict JSON object.",
+      "sub": "Structured Extraction",
+      "answer": "Few-Shot Prompting",
+      "why": "Few-shot prompts demonstrate the expected task and format inside the model context. Produce consistently structured output with minimal setup."
+    },
+    {
+      "id": "sol-14",
+      "label": "A robot must learn efficient routes through a changing warehouse by trying actions.",
+      "sub": "Warehouse Navigation",
+      "answer": "Reinforcement Learning",
+      "why": "Reinforcement learning improves action choices through feedback expressed as rewards and penalties. Navigate dynamically while balancing speed and safety."
+    },
+    {
+      "id": "sol-15",
+      "label": "A marketing team wants to create new product images from written creative briefs.",
+      "sub": "Campaign Artwork",
+      "answer": "Diffusion Model",
+      "why": "Diffusion models generate images by learning to reverse a gradual noising process conditioned on a prompt. Create original campaign concepts from natural-language descriptions."
+    },
+    {
+      "id": "sol-16",
+      "label": "A public benefit must be approved only when a fixed set of legal conditions is met.",
+      "sub": "Statutory Eligibility",
+      "answer": "Deterministic Rules (No AI)",
+      "why": "A fixed rule engine is preferable when the required outcome is exact, explainable, and fully specified. Produce consistent decisions that can be traced directly to policy."
+    },
+    {
+      "id": "sol-17",
+      "label": "A team has one historical dataset and needs to develop a model without overstating its performance.",
+      "sub": "Honest Model Evaluation",
+      "answer": "Train / Validation / Test Split",
+      "why": "Training data learns parameters, validation data guides model and hyperparameter choices, and untouched test data estimates final generalization. Compare models during development while preserving an honest final evaluation."
+    },
+    {
+      "id": "sol-18",
+      "label": "A help desk wants to route new tickets into categories defined by its support team.",
+      "sub": "Known Ticket Categories",
+      "answer": "Supervised Learning",
+      "why": "Supervised learning uses labeled examples to learn how inputs relate to predefined answers. Automatically route new tickets to an appropriate support queue."
+    },
+    {
+      "id": "sol-19",
+      "label": "A music service wants to discover listener behavior types without deciding the groups in advance.",
+      "sub": "Unknown Listening Patterns",
+      "answer": "Unsupervised Learning",
+      "why": "Unsupervised learning discovers patterns in data that has no predefined label or numeric target. Reveal useful listener segments for product research and personalization."
+    },
+    {
+      "id": "sol-20",
+      "label": "A team has billions of sentences but very little manually labeled language data.",
+      "sub": "Learning Language at Scale",
+      "answer": "Self-Supervised Pretraining",
+      "why": "Self-supervised learning creates labels from the raw data, such as masking tokens and training the model to reconstruct them. Build general representations that can later be adapted with much less labeled data."
+    },
+    {
+      "id": "sol-21",
+      "label": "A language model is capable but often produces responses people judge as unhelpful or poorly aligned.",
+      "sub": "Aligning an Assistant",
+      "answer": "RLHF",
+      "why": "RLHF learns a reward model from human preferences and then optimizes model behavior toward that reward. Produce responses that better reflect human expectations and instructions."
+    },
+    {
+      "id": "sol-22",
+      "label": "A model reaches 99% training accuracy but only 68% validation accuracy.",
+      "sub": "Memorized Training Examples",
+      "answer": "Regularization & Early Stopping",
+      "why": "The gap signals overfitting and high variance; limiting complexity or stopping before memorization can improve unseen performance. Trade a little training performance for stronger validation and production performance."
+    },
+    {
+      "id": "sol-23",
+      "label": "A small model performs poorly on both its training data and validation data.",
+      "sub": "Model Too Simple",
+      "answer": "Increase Model Capacity",
+      "why": "Poor performance even on training data indicates underfitting and high bias; richer features, greater capacity, or longer training may help. Learn a model complex enough to represent the useful signal."
+    },
+    {
+      "id": "sol-24",
+      "label": "A team must select learning rate, batch size, tree depth, and regularization strength.",
+      "sub": "Choosing Training Settings",
+      "answer": "Hyperparameter Optimization",
+      "why": "Hyperparameters are selected outside parameter learning and should be compared using validation data or cross-validation. Find a strong configuration while preserving the test set for final evaluation."
+    },
+    {
+      "id": "sol-25",
+      "label": "A lender recalculates risk for five million existing accounts every night.",
+      "sub": "Overnight Portfolio Scoring",
+      "answer": "Batch Inference",
+      "why": "Batch inference scores stored records together and is appropriate when results can be produced on a schedule. Generate updated portfolio risk scores before the next business day."
+    },
+    {
+      "id": "sol-26",
+      "label": "A payment platform must assess each transaction while the customer is waiting at checkout.",
+      "sub": "Payment Authorization",
+      "answer": "Real-Time Inference",
+      "why": "Real-time inference serves individual requests through a persistent endpoint when low latency is essential. Approve, decline, or review the transaction without disrupting checkout."
+    },
+    {
+      "id": "sol-27",
+      "label": "A screening model supports clinicians where missing a genuine case is much more harmful than reviewing a false alarm.",
+      "sub": "Rare Disease Screening",
+      "answer": "Recall-Focused Evaluation",
+      "why": "Recall measures the fraction of actual positives found; accuracy can look high on imbalanced data while missing rare cases. Select a threshold and model that minimizes dangerous false negatives."
+    },
+    {
+      "id": "sol-28",
+      "label": "A manager wants total sales by region and the percentage change from last month.",
+      "sub": "Monthly Sales Summary",
+      "answer": "Descriptive Analytics (No ML)",
+      "why": "Grouping, summing, and calculating percentage change are deterministic analytics tasks with no learning or prediction requirement. Produce an exact, auditable report with a database query or business-intelligence calculation."
+    }
+  ]
+}
