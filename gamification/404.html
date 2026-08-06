@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>404 — Page Not Found · 0pi.es</title>
+<meta name="description" content="This page has been amended, repealed, or never existed in this jurisdiction.">
+<meta name="robots" content="noindex">
+<link rel="stylesheet" href="/assets/fonts/fonts.css">
+<link rel="icon" type="image/svg+xml" href="/assets/misc/favicon.svg">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#f9f9f9" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#15161a" media="(prefers-color-scheme: dark)">
+<style>
+:root{
+  --bg:#f9f9f9; --panel:#ffffff; --panel2:#eeeeee; --edge:#111111;
+  --ink:#111111; --dim:#4d4632; --accent:#eec200;
+  --primary:#facc15; --secondary:#fd933d; --tertiary:#d1d1d1;
+  --radius:2px; --shadow:4px; --shadow-lg:8px;
+}
+@media (prefers-color-scheme: dark){
+  :root{ --bg:#15161a; --panel:#1c1e24; --panel2:#24262e; --edge:#f0f0f0;
+         --ink:#f0f0f0; --dim:#a9a9b2; }
+}
+:root[data-theme=light]{ --bg:#f9f9f9; --panel:#ffffff; --panel2:#eeeeee; --edge:#111111;
+  --ink:#111111; --dim:#4d4632; }
+:root[data-theme=dark]{ --bg:#15161a; --panel:#1c1e24; --panel2:#24262e; --edge:#f0f0f0;
+  --ink:#f0f0f0; --dim:#a9a9b2; }
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font:16px/1.6 "Space Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+  -webkit-font-smoothing:antialiased}
+.brutal{border:3px solid var(--edge)}
+.brutal-heavy{border:4px solid var(--edge)}
+.brutal-shadow{box-shadow:var(--shadow) var(--shadow) 0 0 var(--edge)}
+.brutal-shadow-lg{box-shadow:var(--shadow-lg) var(--shadow-lg) 0 0 var(--edge)}
+
+topbar{display:flex;justify-content:flex-end;align-items:center;position:sticky;top:0;
+  z-index:45;background:var(--bg);border-bottom:4px solid var(--edge);
+  padding:14px 20px;gap:16px;flex-wrap:wrap}
+.brand{font-weight:700;font-size:18px;letter-spacing:-.5px;text-transform:uppercase;
+  background:var(--primary);color:#1a1c1c;padding:6px 10px;white-space:nowrap;
+  position:absolute;left:50%;transform:translateX(-50%)}
+.topbar-right{display:flex;align-items:center;gap:18px}
+.nav{display:flex;gap:22px;align-items:center}
+.nav a{color:var(--dim);text-decoration:none;font-weight:700;font-size:13px;
+  text-transform:uppercase;letter-spacing:.4px;padding:4px 2px}
+.nav a:hover{color:var(--ink)}
+@media (max-width:760px){ .nav{display:none} }
+
+.coffee-btn{position:relative;display:inline-flex;align-items:center;gap:6px;
+  background:var(--primary);border:2px solid var(--edge);padding:6px 12px;
+  font-weight:700;font-size:11px;text-transform:uppercase;text-decoration:none;color:#1a1c1c;
+  white-space:nowrap;box-shadow:2px 2px 0 0 var(--edge);transition:transform .1s,box-shadow .1s}
+.coffee-btn:hover{transform:translate(2px,2px);box-shadow:0 0 0 0 var(--edge)}
+.coffee-btn .cup{position:relative;line-height:1}
+.coffee-btn .steam{position:absolute;top:-5px;left:50%;transform:translateX(-50%);
+  display:flex;gap:2px;pointer-events:none}
+.coffee-btn .steam i{display:block;width:2px;height:6px;border-radius:2px;
+  background:rgba(0,0,0,.35);font-style:normal;opacity:0;
+  animation:coffeeSteam 2.2s ease-in infinite}
+.coffee-btn .steam i:nth-child(2){animation-delay:.5s}
+.coffee-btn .steam i:nth-child(3){animation-delay:1s}
+@keyframes coffeeSteam{
+  0%{opacity:0;transform:translateY(0) scaleY(1)}
+  20%{opacity:.55}
+  100%{opacity:0;transform:translateY(-9px) scaleY(1.7)}
+}
+@media (max-width:520px){ .topbar-right .coffee-btn .label{display:none} }
+
+.wrap{max-width:1080px;margin:0 auto;padding:44px 20px 80px}
+.hero{margin-bottom:36px}
+.hero-row{display:grid;grid-template-columns:1fr;gap:24px}
+.hero-text{display:flex;flex-direction:column;gap:16px}
+.eyebrow{font-size:12px;letter-spacing:1.6px;text-transform:uppercase;font-weight:700;
+  color:var(--dim);margin:0}
+h1{font-size:clamp(30px,6vw,52px);line-height:1.1;letter-spacing:-1px;font-weight:700;
+  text-transform:uppercase;margin:0;padding:10px 14px;background:var(--secondary);
+  color:#1a1c1c;width:fit-content}
+.lede{font-size:18px;font-weight:700;margin:0;padding:10px 14px;background:var(--panel);
+  width:fit-content;max-width:56ch}
+.sub{font-size:15px;color:var(--dim);margin:0;max-width:56ch}
+
+.stat-card{background:var(--panel2);position:relative;overflow:hidden;padding:20px;
+  display:flex;flex-direction:column;justify-content:center;gap:16px;min-height:180px}
+.stat-card::before{content:"";position:absolute;inset:0;
+  background-image:radial-gradient(var(--edge) 1.5px, transparent 1.5px);
+  background-size:18px 18px;opacity:.12;pointer-events:none}
+.stat-card .eyebrow{position:relative;border-left:4px solid var(--edge);padding-left:8px}
+.stat-card .nums{position:relative;display:flex;gap:22px;flex-wrap:wrap;align-items:baseline}
+.stat-card .num-block{display:flex;flex-direction:column}
+.stat-card .num-block .n{font-size:34px;font-weight:700;line-height:1}
+.stat-card .num-block .l{font-size:11px;text-transform:uppercase;letter-spacing:1px;color:var(--dim)}
+@media (min-width:800px){ .hero-row{grid-template-columns:5fr 2fr;align-items:stretch} }
+
+.actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:8px}
+.actions a{display:inline-flex;align-items:center;gap:8px;border:2px solid var(--edge);
+  background:var(--panel2);color:var(--ink);font-weight:700;font-size:13px;
+  text-transform:uppercase;letter-spacing:.4px;text-decoration:none;padding:10px 16px;
+  box-shadow:3px 3px 0 0 var(--edge);transition:transform .1s,box-shadow .1s}
+.actions a.primary{background:var(--primary);color:#1a1c1c}
+.actions a:hover{transform:translate(3px,3px);box-shadow:0 0 0 0 var(--edge)}
+
+footer{margin-top:16px;padding-top:20px;border-top:4px solid var(--edge);
+  color:var(--dim);font-size:12px}
+footer p{margin:0 0 6px}
+footer a{color:var(--dim)}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;
+  gap:12px;margin-top:18px;padding-top:14px;border-top:2px solid var(--edge)}
+.footer-bottom .copy{font-weight:700;color:var(--ink)}
+.footer-bottom .copy b{background:var(--primary);color:#1a1c1c;padding:1px 6px}
+.footer-nav{display:flex;gap:16px}
+</style>
+</head>
+<body>
+<topbar>
+  <div class="brand">0pi.es</div>
+  <div class="topbar-right">
+    <nav class="nav">
+      <a href="/#labs">Labs</a>
+      <a href="/news.html">News</a>
+    </nav>
+    <a class="coffee-btn" href="https://buymeacoffee.com/g56dfvhynhh" target="_blank" rel="noopener noreferrer" title="Buy Dave a coffee" aria-label="Buy Dave a coffee">
+      <span class="cup">☕<span class="steam"><i></i><i></i><i></i></span></span><span class="label">Coffee</span>
+    </a>
+  </div>
+</topbar>
+
+<div class="wrap">
+  <header class="hero">
+    <div class="hero-row">
+      <div class="hero-text">
+        <p class="eyebrow">Error · HTTP 404</p>
+        <h1>Page Not Found.<br>Zero Results.</h1>
+        <p class="lede">The page you are looking for has been amended, repealed, or never existed in this jurisdiction.</p>
+        <p class="sub">Check the URL, or file a complaint with the supervisory authority (that's also Dave).</p>
+        <div class="actions">
+          <a class="primary" href="/">← Back to the Labs</a>
+          <a href="/news.html">Read the News</a>
+        </div>
+      </div>
+      <div class="stat-card brutal brutal-shadow-lg">
+        <p class="eyebrow">Search results</p>
+        <div class="nums">
+          <div class="num-block"><span class="n">404</span><span class="l">status</span></div>
+          <div class="num-block"><span class="n">sin(π)</span><span class="l">pages found</span></div>
+          <div class="num-block"><span class="n">0</span><span class="l">pies</span></div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <footer>
+    <div class="footer-bottom">
+      <p class="copy">© 2026 <b>0PI.ES</b> — NO COOKIES. NO TRACKING. NO PIES.</p>
+      <nav class="footer-nav">
+        <a href="https://github.com/0brains/0pies/issues" target="_blank" rel="noopener noreferrer" title="There's no support team, just Dave. But there is an issue tracker.">Support</a>
+        <a href="https://github.com/0brains/0pies" target="_blank" rel="noopener noreferrer">GitHub</a>
+      </nav>
+    </div>
+  </footer>
+</div>
+</body>
+</html>
