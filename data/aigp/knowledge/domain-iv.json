@@ -1,0 +1,305 @@
+{
+ "cases": [
+  {
+   "id": "d4-case-fraud-rfp",
+   "areas": [
+    "IV.B"
+   ],
+   "asOf": "2026-08",
+   "status": "stable",
+   "brief": "A mid-sized regional bank is procuring an AI-powered fraud-detection system from a U.S. SaaS vendor to screen real-time card transactions. The draft agreement gives the vendor sole ownership of the model's IP, bars the bank from modifying or retraining it, promises periodic performance reports, and excludes vendor liability for false positives and false negatives. Procurement has asked governance to red-line the contract before signature and confirm the deal gives the bank the oversight, IP protection, and open-source risk visibility it needs.",
+   "citation": "Ch12 §Assess AI Models — Vendor Contract Risk; SG §Account for Third-Party AI Component Risks — Vendor-Provided AI Systems, Open-Source AI Components",
+   "steps": [
+    {
+     "q": "Which clause in the draft agreement presents the highest governance risk for the bank?",
+     "options": [
+      "Liability exclusion for fraud-detection errors",
+      "Vendor IP ownership of the model",
+      "Prohibition on the bank modifying or retraining the model",
+      "Vendor-provided periodic performance reports"
+     ],
+     "answer": "Liability exclusion for fraud-detection errors",
+     "why": "Fraud-detection errors hit customers' money directly — a false negative lets a fraudulent charge through, a false positive blocks a legitimate one — so if the vendor carries no liability, the bank absorbs the full financial, regulatory and reputational exposure with no contractual recourse. IP ownership and the no-retrain clause limit flexibility but don't create that direct exposure, and performance reports are a transparency plus, not a risk."
+    },
+    {
+     "q": "Governance wants to add a clause that specifically protects the bank's ability to audit and oversee the system once it's live. What should that clause guarantee?",
+     "options": [
+      "Appropriate access to the vendor's data and models",
+      "A liability cap that names a dollar limit",
+      "Sole ownership of any data and outputs the system produces",
+      "Vendor responsibility for future improvements"
+     ],
+     "answer": "Appropriate access to the vendor's data and models",
+     "why": "Oversight and auditability depend on the bank actually being able to see into the system — its data, documentation and model internals — not on who is liable, who owns the outputs, or who ships upgrades; those matter for different disputes, not for whether the bank can audit and evaluate the system it's running."
+    },
+    {
+     "q": "The bank's legal team wants a clause that protects it if the vendor's model turns out to infringe someone else's IP. Which provision does that?",
+     "options": [
+      "The vendor will defend and indemnify the bank against infringement claims",
+      "The vendor will maintain insurance to cover potential claims",
+      "The vendor will warrant that the tool works as intended",
+      "The vendor will give a privacy notice before using personal data to train the tool"
+     ],
+     "answer": "The vendor will defend and indemnify the bank against infringement claims",
+     "why": "Indemnification is the mechanism that shifts an infringement claim's legal costs and damages onto the vendor. Insurance only pays out if the vendor's carrier honors the policy — it doesn't obligate the vendor to defend the bank; a performance warranty covers whether the tool works, not who owns the underlying IP; and a privacy notice governs personal-data use, not infringement risk."
+    },
+    {
+     "q": "Eighteen months later the bank expands the fraud-detection deployment into a country the original contract never mentioned. What happens to the vendor's indemnification protection?",
+     "options": [
+      "It no longer applies, because the deployment is outside the jurisdiction the agreement covers",
+      "It still applies in full, because indemnification isn't jurisdiction-limited",
+      "It doubles, because the vendor now has more exposure to manage",
+      "It transfers automatically to the new jurisdiction's local regulator"
+     ],
+     "answer": "It no longer applies, because the deployment is outside the jurisdiction the agreement covers",
+     "why": "Jurisdictional scope is one of the most common carve-outs in SaaS indemnification: the vendor never assessed or priced its exposure in a country it didn't agree to cover, so deploying there voids the protection precisely when the bank needs it most. Indemnification isn't unlimited, doesn't scale with exposure, and it's a contract term — not something a regulator inherits."
+    },
+    {
+     "q": "A security review of the vendor's stack turns up a component licensed under AGPL, embedded in the hosted service the bank connects to. Reviewed too late, what's the exposure?",
+     "options": [
+      "The bank could be required to disclose proprietary source code that touches the AGPL component",
+      "The model could fall short of its advertised accuracy benchmarks",
+      "Employees could reach the model through unauthorized APIs",
+      "The AGPL license would automatically convert to public domain"
+     ],
+     "answer": "The bank could be required to disclose proprietary source code that touches the AGPL component",
+     "why": "AGPL is the copyleft license that reaches even network-accessible use: anyone interacting with the service over a network can demand the corresponding source, which pulls in whatever proprietary code the bank wrapped around it. Missed accuracy benchmarks, API misuse and a slide into the public domain are all real vendor risks, but none is what an unreviewed AGPL dependency actually triggers."
+    }
+   ]
+  },
+  {
+   "id": "d4-case-ours-alone",
+   "areas": [
+    "IV.B"
+   ],
+   "asOf": "2026-08",
+   "status": "stable",
+   "brief": "A regional bank's data-science group has spent the past year building an in-house fraud-scoring model instead of buying one, training it entirely on the bank's own transaction history and validating it internally. The model launches this quarter. The board's risk committee wants to understand, before sign-off, how governing a proprietary build differs from governing a vendor tool — and what specifically the bank now owns that it wouldn't own with a bought system.",
+   "citation": "SG §Account for Proprietary-Model Deployment Issues — Increased Obligations, Higher Potential Liability, Key Governance Considerations",
+   "steps": [
+    {
+     "q": "Weighed against rising compute costs, tightening regulation, and the risk of the model becoming technically obsolete, what is the single greatest long-term strategic challenge of running this model in-house?",
+     "options": [
+      "Liability exposure for harm the model causes even while following current best practices",
+      "The escalating cost of keeping the model competitive with newer technology",
+      "The growing regulatory scrutiny and compliance burden on sensitive AI systems",
+      "The risk that a breakthrough elsewhere makes the model obsolete"
+     ],
+     "answer": "Liability exposure for harm the model causes even while following current best practices",
+     "why": "Liability is the one risk that doesn't go away with good behavior: a proprietary model can still cause harm through edge cases or unforeseen conditions after every current standard has been met, and there's no vendor to share the resulting damages, lawsuits or reputational fallout with. Cost, compliance burden and obsolescence are all manageable through budgeting and monitoring; liability persists regardless."
+    },
+    {
+     "q": "Because there's no vendor sharing the risk, what obligation falls on the bank that it wouldn't have to carry the same way with a bought system?",
+     "options": [
+      "Establishing comprehensive documentation and audit trails across development, deployment and outcomes",
+      "Negotiating a liability cap with the model's original vendor",
+      "Sharing accountability across multiple model providers",
+      "Relying on regulatory approvals another company already obtained"
+     ],
+     "answer": "Establishing comprehensive documentation and audit trails across development, deployment and outcomes",
+     "why": "With no vendor's documentation to point to, the bank's own paper trail — training data, testing, model cards, decision logs — is the only evidence it has for compliance and defense. There's no vendor to negotiate a cap with, no second provider to share blame with, and no external approval to lean on; the obligation is squarely the bank's own record-keeping."
+    },
+    {
+     "q": "The risk committee asks which of the model's exposures is actually unique to building in-house rather than buying. Which of these is NOT unique to a proprietary build?",
+     "options": [
+      "The potential for the model to be biased",
+      "The acquisition of lawful training data",
+      "The necessity of running conformity assessments",
+      "The cost of the compute the model runs on"
+     ],
+     "answer": "The potential for the model to be biased",
+     "why": "Bias is a risk in every model regardless of who built it — a bought system needs the same fairness testing a homegrown one does. Sourcing your own training data, running your own conformity assessment, and carrying your own compute costs, by contrast, are burdens a vendor purchase would have absorbed or shared."
+    },
+    {
+     "q": "Elsewhere in the bank, a different team deployed a purchased diagnostic-style tool whose contract states validation is the bank's responsibility, and the tool later produces bad output. Who bears primary liability?",
+     "options": [
+      "The bank, for failing to validate the tool before relying on it",
+      "The vendor, for selling an opaque tool",
+      "The individual employee who used the tool's output",
+      "The customer, for having agreed to use the service"
+     ],
+     "answer": "The bank, for failing to validate the tool before relying on it",
+     "why": "A vendor disclaimer shifts the paperwork, not the deployer's underlying duty of due diligence — governance holds the organization that put the tool into production accountable for validating it, disclaimer or not. The vendor and the employee share some blame at most, and blaming the customer isn't a defense at all; the primary duty sits with the deployer."
+    },
+    {
+     "q": "As part of sign-off, the risk committee also reviews the bank's technology errors-and-omissions insurance for the new model. What specific gap must that review check for?",
+     "options": [
+      "Whether the policy's exclusions carve out automated-decision-making and discrimination claims",
+      "Whether the policy's per-incident coverage cap is at least $10 million",
+      "Whether the policy covers physical outages at the data center",
+      "Whether the broker offers a multi-year pricing discount"
+     ],
+     "answer": "Whether the policy's exclusions carve out automated-decision-making and discrimination claims",
+     "why": "Standard tech E&O wording predates algorithmic decisioning and routinely excludes exactly the claims an AI system generates, so that's the specific gap a proprietary-model review has to close — not the size of the cap, physical-outage terms, or pricing, which are generic policy mechanics unrelated to what makes this system's risk different."
+    }
+   ]
+  },
+  {
+   "id": "d4-case-bidder-questions",
+   "areas": [
+    "IV.B"
+   ],
+   "asOf": "2026-08",
+   "status": "stable",
+   "brief": "A city police department is procuring a predictive risk-scoring tool and has brought in an outside consultant to run the bidder evaluation. Two vendors reach the final round. Each supplies its accuracy rates, a description of its training-data diversity, and an explanation of how its model works; the consultant recommends the vendor with the higher accuracy rate, and the department signs. Before the contract is finalized, governance is asked to check the evaluation itself: what those three categories of questions actually covered, what they left open, and what else still needs to be settled before deployment.",
+   "citation": "Ch12 §Assess AI Models — Vendor/Procurement Risk Assessment; AIGP BoK §Ethical AI and Fairness",
+   "steps": [
+    {
+     "q": "Reviewing what the consultant actually asked for — accuracy rates, training-data diversity, and how the system works — which risk category would this evaluation NOT have surfaced?",
+     "options": [
+      "Security",
+      "Accuracy",
+      "Explainability",
+      "Discrimination"
+     ],
+     "answer": "Security",
+     "why": "None of the three requested categories touches cybersecurity, resilience or vulnerability to attack — accuracy rates cover validity, 'how it works' covers explainability, and training-data diversity covers fairness/discrimination, but nothing in the request asks about the system's technical robustness or its exposure to unauthorized access, which matters even more given the sensitivity of the data involved."
+    },
+    {
+     "q": "Why did the consultant specifically ask each vendor about the diversity of its training data?",
+     "options": [
+      "To assist the fairness of the AI system",
+      "To comply with a specific applicable law",
+      "To evaluate the system's overall reliability",
+      "To determine the system's explainability"
+     ],
+     "answer": "To assist the fairness of the AI system",
+     "why": "Diverse training data is the standard governance lever for catching disparate performance across demographic groups before deployment, which is a fairness question — not a stand-alone legal mandate, a reliability metric (that's what accuracy rates cover), or an explainability question (that's what 'how it works' covers)."
+    },
+    {
+     "q": "Before go-live, governance wants one vendor-provided document that best tells them what the tool can and can't be used for on an ongoing basis. Which document is that?",
+     "options": [
+      "The vendor's acceptable use policy",
+      "The vendor's privacy policy",
+      "The vendor's security policy",
+      "The vendor's code of conduct policy"
+     ],
+     "answer": "The vendor's acceptable use policy",
+     "why": "The AUP is the document that actually sets the terms of use — permitted purposes, prohibited uses, operational limits — which is exactly what's needed to police ongoing operations. The privacy, security and code-of-conduct policies each cover a narrower slice (data handling, technical safeguards, internal ethics) but none defines what the tool may and may not be used for."
+    },
+    {
+     "q": "Before the department finalizes the contract, which pre-deployment check matters more: assessing the tool's effects on the people it will be used against, or assessing the likelihood and severity of the tool's technical failures?",
+     "options": [
+      "The effects on people and society matter more — that's the impact assessment, and it should come first",
+      "The likelihood and severity of failure matters more — that's the risk assessment, and it should come first",
+      "They're the same assessment under different names, so order doesn't matter",
+      "Whichever is legally mandated matters more; the other is only best practice"
+     ],
+     "answer": "The effects on people and society matter more — that's the impact assessment, and it should come first",
+     "why": "An impact assessment asks whether deploying the tool at all is defensible for the people it affects — for a public risk-scoring tool, that's the threshold question, and it has to be settled before a purely technical risk assessment (probability and severity of failure) can even be meaningful. They are genuinely different assessments, not two names for the same thing, and neither is 'only best practice' — both are expected, but impact comes first."
+    },
+    {
+     "q": "One of the two finalists is a proprietary, closed-source model that outperforms the open alternative on every benchmark. If the department picks it purely for that performance edge, what's the most significant strategic risk it's taking on?",
+     "options": [
+      "Vendor lock-in that limits the department's ability to switch providers or adapt later",
+      "The ethical risk that the model produces biased or inappropriate output",
+      "The operational risk that the model fails to integrate with existing case-management systems",
+      "The financial risk that subscription costs outpace the value the tool delivers"
+     ],
+     "answer": "Vendor lock-in that limits the department's ability to switch providers or adapt later",
+     "why": "A closed, proprietary system creates a long-term dependency — pricing, roadmap and portability are all in the vendor's hands, and switching later gets harder the longer the department stays. Biased output is a real risk but applies just as much to the open alternative, integration problems are a near-term engineering fix rather than a strategic one, and subscription cost is a budgeting question, not what limits future choices."
+    }
+   ]
+  }
+ ],
+ "briefs": [
+  {
+   "id": "d4-brief-silent-update",
+   "area": "IV.C",
+   "capstone": true,
+   "asOf": "2026-08",
+   "status": "stable",
+   "title": "The Silent Update",
+   "scenario": "Larkspur Talent licenses ScreenWise, a hiring copilot built by vendor Aptivus AI, to score resumes and shortlist candidates for its client Marlowe Foods. The contract with Aptivus is silent on advance notice for model changes and gives Marlowe no audit rights over training data or evaluation reports. Three weeks ago, Aptivus pushed a model update, v4.2, to all customers with no notification and no changelog. On Monday, Marlowe's People Analytics lead, Priya Shah, ran the quarterly fairness check and found that the passthrough rate for female-coded resumes in engineering roles had fallen from 34% to 27.6% since the update landed — a gap under the company's 2% flat escalation trigger for average score drift, but one that lands squarely on a protected class. ScreenWise is still live and still screening today's applicants. General counsel has not yet been briefed, no public statement exists, and a labor-rights nonprofit has already emailed asking whether Marlowe is aware of \"reports of bias\" in its hiring tools. You are the governance lead. Priya wants a decision before end of day.",
+   "fields": [
+    {
+     "key": "containment",
+     "prompt": "State your containment decision for ScreenWise and justify it against the alternative of leaving it live while you investigate."
+    },
+    {
+     "key": "monitoring",
+     "prompt": "Redesign the post-market monitoring plan so the next vendor-side model change is caught before candidates are harmed."
+    },
+    {
+     "key": "comms",
+     "prompt": "Draft the scope of your external communications response to the nonprofit's inquiry — what you disclose, and what you withhold."
+    },
+    {
+     "key": "restart",
+     "prompt": "Set the deactivation triggers and the restart criteria that must be met before ScreenWise goes back into production for Marlowe."
+    }
+   ],
+   "rubric": [
+    {
+     "criterion": "Contains first — isolates or shuts down ScreenWise immediately, ahead of root-cause investigation",
+     "citation": "AIGP Body of Knowledge v2.1"
+    },
+    {
+     "criterion": "Escalates the disparity despite it sitting under the flat numeric threshold, because a protected class is affected",
+     "citation": "AIGP Body of Knowledge v2.1"
+    },
+    {
+     "criterion": "Treats the unannounced v4.2 update as a contract failure and demands change-notice and audit-rights clauses going forward",
+     "citation": "AIGP Body of Knowledge v2.1"
+    },
+    {
+     "criterion": "Scopes the external disclosure to purpose, capabilities and limitations — not Aptivus's proprietary model methodology",
+     "citation": "AIGP Body of Knowledge v2.1"
+    },
+    {
+     "criterion": "Restarts ScreenWise only after a verified fix, retesting confirms fairness, and cross-functional approval is documented",
+     "citation": "SG"
+    }
+   ]
+  },
+  {
+   "id": "d4-brief-borrowed-brain",
+   "area": "IV.C",
+   "capstone": true,
+   "asOf": "2026-08",
+   "status": "stable",
+   "title": "Borrowed Brain",
+   "scenario": "Solant Capital, a boutique SEC-registered investment adviser, wants to ship PortfolioSense, an assistant that drafts personalized investment recommendations for client meetings. Engineering lead Dan Okafor's team downloaded Kestrel-13B, an open-weights foundation model, and fine-tuned it for six weeks on Solant's internal research notes, prior client correspondence, and portfolio commentary going back to 2019. Kestrel-13B ships under a permissive base license, but Dan's team also pulled in a fine-tuning toolkit whose dependency chain carries a copyleft, share-alike clause neither engineering nor legal has reviewed. Dan wants to launch before the Q3 rebalancing cycle, three weeks away, and is treating the fine-tune as a minor customization of a model Solant never has to re-certify. Compliance officer Renata Voss has flagged that there is no AI bill of materials, no license review, no updated impact assessment, and no forecast of what happens if PortfolioSense's advice reaches a client Solant never intended it for. As a fiduciary, Solant answers to the SEC for every recommendation this tool produces. You are asked to write the governance position before engineering merges to the release branch.",
+   "fields": [
+    {
+     "key": "liability",
+     "prompt": "How does fine-tuning Kestrel-13B change Solant's liability and assurance posture compared to using it as-is?"
+    },
+    {
+     "key": "licence",
+     "prompt": "What does the license review of the fine-tuning toolkit's dependency chain need to check, and what is the single greatest long-term risk in it?"
+    },
+    {
+     "key": "downstream",
+     "prompt": "What downstream or secondary-use harms should Solant forecast before shipping PortfolioSense, and by what method?"
+    },
+    {
+     "key": "documentation",
+     "prompt": "What documentation and inventory must exist before Dan's team merges to the release branch?"
+    }
+   ],
+   "rubric": [
+    {
+     "criterion": "Treats the fine-tuned model as a new system requiring full re-testing, refreshed risk files, and an updated impact assessment — not a minor customization",
+     "citation": "SG"
+    },
+    {
+     "criterion": "Names fine-tuning's increased legal liability and governance obligations compared with deploying a third-party prebuilt model as-is",
+     "citation": "AIGP Body of Knowledge v2.1"
+    },
+    {
+     "criterion": "Flags the copyleft, share-alike dependency as the greatest long-term governance risk in the license review, not the permissive base license",
+     "citation": "AIGP Body of Knowledge v2.1"
+    },
+    {
+     "criterion": "Uses a structured second-order-thinking framework to forecast secondary-use and downstream harms, rather than relying on monitoring or red-teaming alone",
+     "citation": "AIGP Body of Knowledge v2.1"
+    },
+    {
+     "criterion": "Requires a complete AI bill of materials and documentation (licenses, versions, approvals, exit plan) before go-live",
+     "citation": "SG"
+    }
+   ]
+  }
+ ]
+}

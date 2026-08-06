@@ -1,0 +1,38 @@
+{
+  "id": "risk-analysis",
+  "runner": "board",
+  "title": "Risk Analysis Techniques",
+  "blurb": "Six ways to reason about a risk. Sort each description onto the technique it describes.",
+  "source": "ISO 31000:2018 §6.4 · IEC 31010:2019 risk assessment techniques · NIST AI RMF 1.0 MAP 5, MEASURE 2",
+  "asOf": "2026-07",
+  "area": "risk",
+  "hint": "Drag each description onto its technique. Ask what the method is actually built to reveal — a ranking, a causal path, a failure mode, or a measurement.",
+  "zones": [
+    {"key": "Likelihood × impact", "name": "Likelihood × impact matrix", "def": "Rate probability and consequence, plot on a grid, use it to prioritise. Fast, coarse, and the default in most registers."},
+    {"key": "Bowtie", "name": "Bowtie analysis", "def": "One event in the middle; causes and preventive barriers on the left, consequences and mitigating barriers on the right."},
+    {"key": "FMEA", "name": "FMEA", "def": "Work bottom-up from each component's failure modes to their effects, scoring severity, occurrence and detectability."},
+    {"key": "Swiss cheese", "name": "Swiss cheese model", "def": "Harm occurs when holes in successive layers of defence line up. Explains why single-cause explanations of incidents are usually wrong."},
+    {"key": "Harm taxonomy", "name": "Harm taxonomy", "def": "Enumerate categories of harm — allocative, representational, quality-of-service, dignitary, societal — so that assessment is not limited to what is easy to measure."},
+    {"key": "Inherent vs residual", "name": "Inherent vs residual", "def": "Assess risk before controls and again after them. The gap is what the controls are actually buying."}
+  ],
+  "items": [
+    {"id": "ra-01", "label": "Each risk is scored 1–5 for probability and 1–5 for consequence, and the product decides where it sits in the register.", "answer": "Likelihood × impact", "why": "The scoring grid is the standard prioritisation device. Its weakness is that it flattens a rare catastrophic risk and a frequent trivial one into the same cell."},
+    {"id": "ra-02", "label": "Risks are plotted on a red/amber/green grid so the committee can see at a glance which need attention first.", "answer": "Likelihood × impact", "why": "The heat map is a communication tool built on the same two axes. It is for triage, not for understanding causation."},
+    {"id": "ra-03", "label": "The method is criticised for implying precision it does not have when the underlying probabilities are guesses.", "answer": "Likelihood × impact", "why": "Ordinal scores multiplied together produce numbers that look quantitative and are not. Knowing this is what stops a 12 being treated as twice a 6."},
+    {"id": "ra-04", "label": "A single top event is placed in the centre, with threat paths and preventive barriers drawn to its left and consequence paths with mitigating barriers to its right.", "answer": "Bowtie", "why": "The left/right split around one event is the diagram's defining shape, and it makes the preventive/mitigating distinction visible rather than assumed."},
+    {"id": "ra-05", "label": "The analysis makes it obvious that three of the four barriers on the left are the same control counted three times.", "answer": "Bowtie", "why": "Exposing common-mode barriers is exactly what the diagram is good for. A register of controls listed as text hides that dependency."},
+    {"id": "ra-06", "label": "Escalation factors are drawn against each barrier, showing the conditions under which that barrier stops working.", "answer": "Bowtie", "why": "Escalation factors and their own controls are part of the bowtie method. They are how the diagram avoids assuming barriers are always effective."},
+    {"id": "ra-07", "label": "Each component is examined in turn for the ways it can fail, and each failure is scored for severity, likelihood of occurrence and likelihood of detection.", "answer": "FMEA", "why": "The three-factor score producing a risk priority number is FMEA's signature. It is bottom-up, from component to effect."},
+    {"id": "ra-08", "label": "A failure that is severe but reliably detected before it reaches a user scores lower than one that is silent.", "answer": "FMEA", "why": "Detectability as an explicit third axis is unique to FMEA among these techniques, and it is why silent failures rank so highly — which suits ML failure modes well."},
+    {"id": "ra-09", "label": "The analysis is criticised for handling combinations of simultaneous failures poorly, since it considers each failure mode on its own.", "answer": "FMEA", "why": "Single-point-of-failure orientation is FMEA's known limitation. Use it with a technique that models combinations, not instead of one."},
+    {"id": "ra-10", "label": "An incident review concludes that no single defence failed catastrophically; four partial weaknesses happened to align on the day.", "answer": "Swiss cheese", "why": "Alignment of holes across layers is the model's core claim, and it is why 'who made the mistake' is usually the wrong first question."},
+    {"id": "ra-11", "label": "The model distinguishes active failures at the sharp end from latent conditions created much earlier by design and management decisions.", "answer": "Swiss cheese", "why": "The active/latent distinction is Reason's, and it is what directs attention to the decisions that pre-loaded the failure."},
+    {"id": "ra-12", "label": "The framing warns that adding another layer of defence gives less protection than expected if the new layer's holes are in the same place.", "answer": "Swiss cheese", "why": "Correlated defences are the trap. Two reviewers using the same flawed checklist are one layer, not two."},
+    {"id": "ra-13", "label": "The assessment separates harms of allocation, where opportunities or resources are withheld, from harms of representation, where a group is demeaned or erased.", "answer": "Harm taxonomy", "why": "The allocative/representational split is foundational, and representational harm is the one that slips through assessments driven by accuracy metrics."},
+    {"id": "ra-14", "label": "The assessment records that a system works measurably worse for one group even though no decision is being denied to them.", "answer": "Harm taxonomy", "why": "Quality-of-service harm is a distinct category. Without a taxonomy naming it, this finding tends to be filed as an accuracy issue and deprioritised."},
+    {"id": "ra-15", "label": "The method exists to stop the assessment covering only the harms that happen to have a metric attached.", "answer": "Harm taxonomy", "why": "Enumerating categories first, then seeking measurement, is what keeps dignitary and societal harms in scope rather than out of it."},
+    {"id": "ra-16", "label": "The risk is assessed twice: once as if no controls existed, and once with the controls operating as designed.", "answer": "Inherent vs residual", "why": "The before-and-after pairing is the whole technique. The difference is the evidence base for whether a control is worth its cost."},
+    {"id": "ra-17", "label": "A control is found to reduce the score by almost nothing, which becomes the argument for removing it and spending the effort elsewhere.", "answer": "Inherent vs residual", "why": "Comparing the two assessments is how controls that exist only to be listed get identified. A control with no delta is theatre."},
+    {"id": "ra-18", "label": "The register records the level remaining after treatment, and it is this level that must sit within appetite before sign-off.", "answer": "Inherent vs residual", "why": "Residual risk is what is accepted; inherent risk is only ever context. Accepting against the inherent figure is a category error."}
+  ]
+}

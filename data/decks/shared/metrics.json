@@ -1,0 +1,114 @@
+{
+  "id": "metrics",
+  "runner": "board",
+  "title": "Testing Metrics",
+  "blurb": "Precision, recall, F1, AUC and friends — and when each one lies.",
+  "source": "AWS Certified AI Practitioner (AIF-C01) exam guide · Domain 1",
+  "asOf": "2026-07",
+  "area": "foundations",
+  "hint": "Choose a metric from the type and cost of error, not from convenience; classification, regression, retrieval, generation, safety, and human judgment answer different quality questions.",
+  "items": [
+    {
+      "id": "metrics-01",
+      "label": "The fraction of all predictions that are correct; most useful when classes and error costs are balanced.",
+      "answer": "Accuracy",
+      "why": "For 90 correct predictions out of 100, accuracy is 90%. It can be deceptive with imbalanced classes: a model that predicts every rare-disease case as negative may appear highly accurate while finding no patients who need help."
+    },
+    {
+      "id": "metrics-02",
+      "label": "Of all predicted positives, the fraction that are actually positive.",
+      "answer": "Precision",
+      "why": "Use precision when false positives are costly. If 100 transactions are flagged as fraud and only 80 are fraudulent, precision is 80%; the remaining 20 create unnecessary investigations or blocked purchases."
+    },
+    {
+      "id": "metrics-03",
+      "label": "Of all actual positives, the fraction the model successfully finds.",
+      "answer": "Recall",
+      "why": "Use recall when missing a true positive is costly. If 100 fraudulent transactions occur and the model catches 90, recall is 90%; the other 10 are false negatives that escaped detection."
+    },
+    {
+      "id": "metrics-04",
+      "label": "The harmonic mean of precision and recall, balancing both in one value.",
+      "answer": "F1 Score",
+      "why": "F1 becomes high only when both precision and recall are high, so it is useful for imbalanced classification when both false alarms and missed positives matter. It does not include true negatives and can hide which of precision or recall is weaker."
+    },
+    {
+      "id": "metrics-05",
+      "label": "Counts true positives, true negatives, false positives, and false negatives.",
+      "answer": "Confusion Matrix",
+      "why": "This table exposes the exact error types hidden by one summary score. Read its four cells to see whether the model creates false alarms, misses real positives, or handles each class correctly before choosing precision, recall, or another metric."
+    },
+    {
+      "id": "metrics-06",
+      "label": "Measures how well a classifier ranks positives above negatives across thresholds.",
+      "answer": "AUC-ROC",
+      "why": "AUC-ROC evaluates ranking quality without committing to one classification threshold: 1.0 is perfect ranking and about 0.5 is random. For highly imbalanced data, also inspect precision-recall behavior because ROC results can look optimistic when negatives dominate."
+    },
+    {
+      "id": "metrics-07",
+      "label": "The average squared difference between predicted and actual values; lower is better.",
+      "answer": "MSE",
+      "why": "Squaring each residual makes large mistakes contribute disproportionately. Errors of 2 and 10 contribute 4 and 100, so MSE strongly penalizes outliers; its squared units make it less intuitive to explain directly."
+    },
+    {
+      "id": "metrics-08",
+      "label": "The square root of MSE, expressing error in the same unit as the predicted values.",
+      "answer": "RMSE",
+      "why": "RMSE preserves MSE's extra penalty for large errors but converts the result back to the target's unit. An RMSE of $5,000 on house prices means the typical error scale is expressed in dollars, though large misses still influence it heavily."
+    },
+    {
+      "id": "metrics-09",
+      "label": "The average absolute difference between predicted and actual numeric values.",
+      "answer": "MAE",
+      "why": "MAE treats error magnitude linearly: misses of 2 and 10 contribute 2 and 10. It is easier to interpret and less sensitive to outliers than MSE or RMSE, making it useful when every unit of error has roughly the same cost."
+    },
+    {
+      "id": "metrics-10",
+      "label": "Measures how well a model predicts the likelihood of the next token or word.",
+      "answer": "Perplexity",
+      "why": "Lower perplexity means the language model is less surprised by the evaluation text and assigns higher probability to its tokens. It measures next-token prediction, not whether an answer is factual, safe, helpful, or grounded."
+    },
+    {
+      "id": "metrics-11",
+      "label": "Measures overlap between generated and reference text and is commonly used for summaries.",
+      "answer": "ROUGE",
+      "why": "ROUGE commonly measures how much reference wording a generated summary recovers, often through matching words, n-grams, or sequences. A high score can still miss meaning or reward copied wording, so semantic and human evaluation may also be needed."
+    },
+    {
+      "id": "metrics-12",
+      "label": "Evaluates translation by comparing n-grams in generated and reference text.",
+      "answer": "BLEU",
+      "why": "BLEU rewards n-gram overlap with one or more reference translations and applies a penalty to outputs that are too short. Valid translations can use different wording, so BLEU is most useful for aggregate comparison and not as proof that one sentence is correct."
+    },
+    {
+      "id": "metrics-13",
+      "label": "Checks whether generated claims are supported by the context or sources supplied to the model.",
+      "answer": "Groundedness",
+      "why": "For a RAG answer, inspect whether each claim follows from the retrieved passages supplied to the model. A statement may be generally true but still be ungrounded if the provided evidence does not support it; citations help make this check traceable."
+    },
+    {
+      "id": "metrics-14",
+      "label": "Checks claims against trusted facts rather than only measuring textual similarity.",
+      "answer": "Factual Correctness",
+      "why": "This asks whether claims agree with trusted reality, even when no supporting passage was supplied in the prompt. It differs from groundedness: an answer can be factually correct but unsupported by its cited context, or grounded in a source that is itself wrong."
+    },
+    {
+      "id": "metrics-15",
+      "label": "Measures how often the retriever includes the relevant evidence among the returned passages.",
+      "answer": "Retrieval Recall",
+      "why": "If 100 questions require a known evidence passage and the retriever returns it for 85, retrieval recall is 85%. Low retrieval recall points to chunking, embeddings, filters, query rewriting, or candidate-count problems that generation cannot repair."
+    },
+    {
+      "id": "metrics-16",
+      "label": "Uses people and a defined rubric to judge qualities that automated metrics may miss.",
+      "answer": "Human Evaluation",
+      "why": "People can score usefulness, tone, reasoning, cultural fit, and nuanced correctness against a consistent rubric. Use representative samples, multiple trained reviewers, and agreement checks because human judgments can be subjective, slow, and expensive."
+    },
+    {
+      "id": "metrics-17",
+      "label": "Tests outputs for harmful content, privacy leakage, policy violations, and adversarial behavior.",
+      "answer": "Safety Evaluation",
+      "why": "Test both ordinary and adversarial prompts for harmful output, jailbreak success, sensitive-data exposure, bias, and unsafe tool actions. Report results by risk category and user group; one average quality score cannot demonstrate that a system is safe."
+    }
+  ]
+}

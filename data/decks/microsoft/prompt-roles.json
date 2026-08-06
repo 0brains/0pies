@@ -1,0 +1,123 @@
+{
+ "id": "prompt-roles",
+ "runner": "board",
+ "title": "Sorting the Mail",
+ "blurb": "Every message in a chat belongs to exactly one role — misfile one and the exam's favourite trap gets you.",
+ "source": "histack.net trap #7",
+ "asOf": "2026-07",
+ "area": "microsoft-foundry",
+ "hint": "Ask two questions: does this apply to every turn or just this one (persistent vs one-off)? And who is speaking — the developer setting up the assistant, the person typing right now, or the model's own prior reply being resent for memory?",
+ "note": "Instruction-shaped wording is not proof of a system prompt — a one-off task can sound like a command and still be a user message. Persistence across turns is the real test.",
+ "traps": [
+  "Behavioral instructions placed in the user prompt or deployment settings are the planted wrong answer — rules belong in the system prompt."
+ ],
+ "zones": [
+  {
+   "key": "System prompt",
+   "name": "System prompt",
+   "def": "Persona, tone, rules and guardrails — persistent across every turn"
+  },
+  {
+   "key": "User prompt",
+   "name": "User prompt",
+   "def": "This turn's actual request"
+  },
+  {
+   "key": "Assistant message",
+   "name": "Assistant message",
+   "def": "Prior model replies replayed for conversational memory"
+  }
+ ],
+ "items": [
+  {
+   "id": "pr-001",
+   "label": "\"You are a formal HR assistant. Only answer questions about HR policy.\"",
+   "answer": "System prompt",
+   "why": "Persona plus scope guardrails — histack's verbatim example of system-prompt content."
+  },
+  {
+   "id": "pr-002",
+   "label": "\"Always return customer details in a fixed JSON shape.\"",
+   "answer": "System prompt",
+   "why": "Output-format rules persist across turns — the exam material states verbatim that JSON-shape instructions belong in the system prompt."
+  },
+  {
+   "id": "pr-003",
+   "label": "\"How many vacation days do I have left this year?\"",
+   "answer": "User prompt",
+   "why": "This turn's actual request — no rules, no persona, just the ask."
+  },
+  {
+   "id": "pr-004",
+   "label": "\"You have 12 vacation days remaining.\" — replayed into the next request for context",
+   "answer": "Assistant message",
+   "why": "Prior model replies are resent as assistant messages so the model has conversational memory; they are never user content."
+  },
+  {
+   "id": "pr-005",
+   "label": "\"Summarize the attached meeting notes in three bullet points.\"",
+   "answer": "User prompt",
+   "why": "A one-off task for this turn — it sounds like an instruction, but it is not a persistent rule, so it is user, not system."
+  },
+  {
+   "id": "pr-006",
+   "label": "\"If a request falls outside HR policy, say so instead of guessing.\"",
+   "answer": "System prompt",
+   "why": "A fallback rule for handling out-of-scope requests, applied every turn — the exam's verbatim 'good addition to the system prompt' pattern, distinct from pr-001's persona/scope pair."
+  },
+  {
+   "id": "pr-007",
+   "label": "\"Keep replies to two sentences unless the customer asks for more detail.\"",
+   "answer": "System prompt",
+   "why": "A tone/length rule that applies to the whole conversation is a system-prompt signal distinct from a format rule (pr-002) or a scope rule (pr-001) — this one governs verbosity."
+  },
+  {
+   "id": "pr-008",
+   "label": "\"Refuse to discuss competitor pricing, even if the customer insists.\"",
+   "answer": "System prompt",
+   "why": "A safety/topic-restriction guardrail meant to survive user pushback for every turn — the exam notes system messages carry app-specific restrictions beyond platform content filters."
+  },
+  {
+   "id": "pr-009",
+   "label": "\"Cancel my 3pm meeting and let the team know.\"",
+   "answer": "User prompt",
+   "why": "Reads as a command, but it is a single request scoped to right now — the trap is mistaking instruction-shaped phrasing for a persistent rule."
+  },
+  {
+   "id": "pr-010",
+   "label": "\"From now on, always answer in French.\" — typed by the customer mid-chat",
+   "answer": "User prompt",
+   "why": "'From now on' sounds persistent, but who is speaking still decides the role: a request typed into the chat by the customer is a user message, even one asking for standing behavior — persistence lives in the system prompt, not in user wording."
+  },
+  {
+   "id": "pr-011",
+   "label": "\"Compare these two contract clauses and flag any conflicts.\"",
+   "answer": "User prompt",
+   "why": "A specific analytical task submitted for this exchange — no persona or app-wide rule is being set, so it is this turn's request."
+  },
+  {
+   "id": "pr-012",
+   "label": "\"Based on your account, your subscription renews on the 14th.\" — sent back on the next turn so the model remembers what it already told the customer",
+   "answer": "Assistant message",
+   "why": "Model-generated output resent to preserve context is an assistant message, not the customer's words — the trap is mistaking replayed model output for something the user said."
+  },
+  {
+   "id": "pr-013",
+   "label": "\"{\\\"status\\\": \\\"resolved\\\", \\\"ticket_id\\\": \\\"48213\\\"}\" — the model's structured reply from the previous turn, carried forward as history",
+   "answer": "Assistant message",
+   "why": "JSON-shaped content looks like the format rule from pr-002, but a rule and an instance of the model's own output are different roles — this is the model's answer being replayed, not a standing instruction."
+  },
+  {
+   "id": "pr-014",
+   "label": "\"Would you like me to also check flights for the return leg?\" — the model's own follow-up question from the previous turn, kept in context",
+   "answer": "Assistant message",
+   "why": "Question-shaped text can be mistaken for the user speaking, but this question was generated by the model itself and is resent so it remembers having asked it — the discriminator is who originated the words, not their grammatical form."
+  },
+  {
+   "id": "pr-015",
+   "label": "\"Step 1: Restart the router. Step 2: Reconnect to Wi-Fi.\" — the model's troubleshooting steps from an earlier turn, replayed so it remembers what it already told the customer",
+   "answer": "Assistant message",
+   "why": "Numbered instructions look rule-like, tempting a mix-up with the system prompt, but these are the model's own prior output being carried forward for memory, not a persistent guardrail set by the developer."
+  }
+ ]
+}

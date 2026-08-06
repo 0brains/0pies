@@ -1,0 +1,58 @@
+{
+  "id": "ml-lifecycle",
+  "runner": "ladders",
+  "title": "ML Lifecycle",
+  "blurb": "Put the machine-learning lifecycle in order.",
+  "source": "AWS Certified AI Practitioner (AIF-C01) exam guide · Domain 1",
+  "asOf": "2026-07",
+  "area": "foundations",
+  "ladders": [
+    {
+      "id": "ml-lifecycle",
+      "title": "ML Lifecycle",
+      "prompt": "Order the lifecycle from business goal to production monitoring.",
+      "steps": [
+        {
+          "label": "Business Goal Identification",
+          "detail": "Everything downstream inherits this. Without a business goal there is no way to say whether the model is any good."
+        },
+        {
+          "label": "ML Problem Framing",
+          "detail": "Translate the goal into a learnable task: what is predicted, from what, and what counts as success."
+        },
+        {
+          "label": "Data Collection",
+          "detail": "Assemble the raw material, and establish its provenance and permitted use before it is relied on."
+        },
+        {
+          "label": "Data Preprocessing",
+          "detail": "Clean, join, de-duplicate and handle missing values, so the model learns signal rather than artefacts."
+        },
+        {
+          "label": "Feature Engineering",
+          "detail": "Shape inputs into representations the algorithm can use. Often the largest single lever on accuracy."
+        },
+        {
+          "label": "Model Training",
+          "detail": "Fit parameters on the training split. Cheap to repeat, so it comes after the expensive data work, not before."
+        },
+        {
+          "label": "Hyperparameter Tuning",
+          "detail": "Search the settings the model cannot learn for itself, evaluated on validation data rather than test."
+        },
+        {
+          "label": "Model Evaluation",
+          "detail": "Measure against held-out data and the business metric. This is the gate, not a formality."
+        },
+        {
+          "label": "Model Deployment (Inference and Prediction)",
+          "detail": "Serve predictions for real requests, with the same preprocessing as training or the results will not match."
+        },
+        {
+          "label": "Model Monitoring",
+          "detail": "Watch inputs, outputs and quality in production. This is where drift surfaces, and it never ends."
+        }
+      ]
+    }
+  ]
+}

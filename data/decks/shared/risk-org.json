@@ -1,0 +1,35 @@
+{
+  "id": "risk-org",
+  "runner": "board",
+  "title": "Who Owns This Risk?",
+  "blurb": "Three lines of defence, plus the body that carries ultimate accountability. Sort each activity onto its owner.",
+  "source": "IIA Three Lines Model (2020) · ISO/IEC 42001:2023 §5 (leadership) · NIST AI RMF 1.0 GOVERN 2",
+  "asOf": "2026-07",
+  "area": "risk",
+  "hint": "Drag each activity onto the line that should perform it. The test is independence: who can mark their own homework, and who cannot.",
+  "note": "The lines are about independence, not seniority or headcount. A second-line function that reports to the team it oversees is a first-line function wearing a different badge.",
+  "zones": [
+    {"key": "First line", "name": "First line", "def": "Owns and manages the risk day to day: the teams that build, deploy and operate the system."},
+    {"key": "Second line", "name": "Second line", "def": "Sets policy, advises, challenges and monitors — risk, compliance, legal, an AI governance function. Independent of delivery, not of management."},
+    {"key": "Third line", "name": "Third line", "def": "Internal audit. Independent assurance to the board on whether the first two lines actually work."},
+    {"key": "Board", "name": "Board / accountable executive", "def": "Sets appetite, holds ultimate accountability, and is the only body that can accept risk beyond delegated limits."}
+  ],
+  "items": [
+    {"id": "ro-01", "label": "The engineering team runs the fairness evaluation suite before promoting a model to production.", "answer": "First line", "why": "Executing controls inside the delivery process is first-line work. Doing it well does not make it assurance, because the team is assessing its own output."},
+    {"id": "ro-02", "label": "The product owner records a new risk in the register and proposes a treatment.", "answer": "First line", "why": "Risk identification and day-to-day management sit with the people closest to the activity. The register is theirs to populate, not the risk function's."},
+    {"id": "ro-03", "label": "The operations team monitors production drift dashboards and raises an incident when thresholds are breached.", "answer": "First line", "why": "Operating a control, including a detective one, is first-line. Second line asks whether the threshold is right; first line acts when it trips."},
+    {"id": "ro-04", "label": "The data science team documents model limitations and intended use in the model card.", "answer": "First line", "why": "Producing the documentation is a build activity. Reviewing whether it meets policy is a different line's job."},
+    {"id": "ro-05", "label": "The AI governance function writes the policy defining which use cases require an impact assessment.", "answer": "Second line", "why": "Setting the framework and standards the first line must work within is the defining second-line activity."},
+    {"id": "ro-06", "label": "Compliance reviews a completed impact assessment and challenges the team's residual risk rating.", "answer": "Second line", "why": "Independent challenge of first-line judgement is second line. It is advisory and monitoring, and it is not assurance to the board."},
+    {"id": "ro-07", "label": "Legal advises that a proposed deployment falls within an Annex III area and therefore attracts high-risk obligations.", "answer": "Second line", "why": "Specialist advice that constrains what the first line may do is second-line. The decision to proceed remains the first line's, within policy."},
+    {"id": "ro-08", "label": "The risk function maintains the enterprise register and reports aggregate AI risk exposure to the executive.", "answer": "Second line", "why": "Aggregation, oversight and reporting across the first line is second-line monitoring. It relies on first-line data, which is precisely why third line exists."},
+    {"id": "ro-09", "label": "Internal audit examines whether the model approval process was followed for every release in the last year.", "answer": "Third line", "why": "Testing whether the controls operated as designed, after the fact and independently, is internal audit's remit."},
+    {"id": "ro-10", "label": "An independent review reports to the audit committee that the second line's challenge process is not evidenced.", "answer": "Third line", "why": "Third line audits the second line as well as the first, and reports to the board rather than to management — that reporting line is what makes it independent."},
+    {"id": "ro-11", "label": "Assurance work is planned on a risk-based cycle and its scope is agreed with the audit committee, not with the teams being audited.", "answer": "Third line", "why": "Scope set outside management is the structural feature that separates audit from a second-line review."},
+    {"id": "ro-12", "label": "A review concludes that a control is documented but has never actually been performed, and reports it upward.", "answer": "Third line", "why": "Finding the gap between documented and operating effectiveness is the value audit adds. Neither of the first two lines is positioned to report it against itself."},
+    {"id": "ro-13", "label": "Risk appetite for automated decision-making is set and published.", "answer": "Board", "why": "Appetite is a board-level statement of how much risk the organisation will take. Everything below is calibration against it."},
+    {"id": "ro-14", "label": "A residual risk exceeding the delegated limit is escalated and formally accepted at the top of the organisation.", "answer": "Board", "why": "Only the body holding the authority may accept beyond delegated limits. Acceptance elsewhere is not acceptance; it is an unrecorded exposure."},
+    {"id": "ro-15", "label": "An accountable executive is named for the AI management system, with the authority and resources to make it work.", "answer": "Board", "why": "Management-system standards require named leadership accountability. A governance function with no executive owner has responsibility without authority."},
+    {"id": "ro-16", "label": "The decision is taken to withdraw a deployed system after assurance reports that its risk cannot be brought within appetite.", "answer": "Board", "why": "Withdrawal against commercial interest is a decision only the accountable level can take, which is why the escalation route has to exist before it is needed."}
+  ]
+}

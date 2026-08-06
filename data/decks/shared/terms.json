@@ -1,0 +1,84 @@
+{
+  "id": "terms",
+  "runner": "board",
+  "title": "AI Foundations",
+  "blurb": "Match each definition to the term it defines.",
+  "source": "AWS Certified AI Practitioner (AIF-C01) exam guide · Domain 1",
+  "asOf": "2026-07",
+  "area": "foundations",
+  "hint": "Drag each definition onto the term it defines.",
+  "items": [
+    {
+      "id": "terms-01",
+      "label": "The broad field of building systems that perform tasks associated with human intelligence.",
+      "answer": "Artificial Intelligence",
+      "why": "AI is the umbrella field: rule-based expert systems, computer vision, robotics, machine learning, and generative models can all be AI. Machine learning is one way to build AI, not a synonym for the whole field."
+    },
+    {
+      "id": "terms-02",
+      "label": "A subset of AI in which systems learn patterns from data instead of relying only on explicit rules.",
+      "answer": "Machine Learning",
+      "why": "For example, a spam filter can infer patterns from labeled messages rather than requiring a developer to enumerate every spam rule. The key exam cue is improvement from data or experience."
+    },
+    {
+      "id": "terms-03",
+      "label": "A subset of ML that uses multi-layer neural networks to learn complex representations.",
+      "answer": "Deep Learning",
+      "why": "A vision model may learn edges in early layers, shapes in middle layers, and objects in later layers. It is distinguished from broader machine learning by its use of deep neural networks and typically larger data and compute needs."
+    },
+    {
+      "id": "terms-04",
+      "label": "AI that creates new content such as text, images, audio, video, or code.",
+      "answer": "Generative AI",
+      "why": "A text model drafting an email and a diffusion model creating an image are generative because they synthesize new output. Predicting whether an existing email is spam is discriminative classification instead."
+    },
+    {
+      "id": "terms-05",
+      "label": "The learned representation that maps inputs to predictions or generated outputs.",
+      "answer": "Model",
+      "why": "After training, the model is the artifact used for inference. For example, a house-price model applies learned relationships to a new property's features to estimate its price."
+    },
+    {
+      "id": "terms-06",
+      "label": "The procedure used to learn patterns, optimize a model, or perform a computation.",
+      "answer": "Algorithm",
+      "why": "Gradient descent is a learning algorithm, while the trained network it produces is the model. The distinction is process versus learned artifact."
+    },
+    {
+      "id": "terms-07",
+      "label": "An input variable or measurable attribute supplied to a model.",
+      "answer": "Feature",
+      "why": "For a house-price model, floor area, postcode, and bedroom count are features because they enter the model as evidence. The sale price is the label to predict, while parameters are internal values the model learns during training."
+    },
+    {
+      "id": "terms-08",
+      "label": "The known target or desired answer attached to a supervised training example.",
+      "answer": "Label",
+      "why": "In spam detection, each training email's spam or not-spam answer is its label. A label is the target the model learns to predict; features are the evidence used to make that prediction."
+    },
+    {
+      "id": "terms-09",
+      "label": "A value, such as a neural-network weight, learned from training data.",
+      "answer": "Parameter",
+      "why": "A neural-network weight is adjusted automatically as training minimizes error. Parameters are learned by the model, unlike hyperparameters such as learning rate that practitioners choose before or around training."
+    },
+    {
+      "id": "terms-10",
+      "label": "A training or model setting chosen outside the learning process, such as learning rate or tree depth.",
+      "answer": "Hyperparameter",
+      "why": "Examples include learning rate, batch size, tree depth, and regularization strength. These settings control training or model structure and are usually selected with validation data rather than learned as model weights."
+    },
+    {
+      "id": "terms-11",
+      "label": "The process of adjusting model parameters to reduce error on examples.",
+      "answer": "Training",
+      "why": "During training, the system compares outputs with a learning signal, calculates error, and updates parameters. This is the learning phase; inference uses the resulting fixed model on new inputs."
+    },
+    {
+      "id": "terms-12",
+      "label": "Using a trained model to produce a prediction, decision, embedding, or generated result.",
+      "answer": "Inference",
+      "why": "A deployed fraud model scoring a new card transaction is performing inference. No model learning is required for that request; the trained model is being applied to previously unseen input."
+    }
+  ]
+}

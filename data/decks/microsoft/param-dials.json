@@ -1,0 +1,302 @@
+{
+ "id": "param-dials",
+ "runner": "board",
+ "title": "Turn the Right Dial",
+ "blurb": "Text dials, image dials, deployment dials — match each symptom to the parameter that fixes it, past the near-miss the exam planted.",
+ "source": "AI-901 study guide Task 1.2; histack.net",
+ "asOf": "2026-07",
+ "area": "microsoft-models",
+ "zoneMode": "options",
+ "traps": [
+  "Tune temperature OR top_p — not both",
+  "max_tokens caps length, never randomness"
+ ],
+ "items": [
+  {
+   "id": "pd-001",
+   "label": "You need consistent, repeatable output from the same prompt every run",
+   "answer": "Temperature",
+   "options": [
+    "Temperature",
+    "top_p",
+    "max_tokens"
+   ],
+   "why": "histack's exact exam cue: 'consistent, repeatable output' → low temperature. It rescales the whole probability distribution; tune it or top_p, not both."
+  },
+  {
+   "id": "pd-002",
+   "label": "Restrict sampling to the smallest set of tokens whose cumulative probability reaches a set threshold",
+   "answer": "top_p",
+   "options": [
+    "top_p",
+    "Temperature",
+    "Presence penalty"
+   ],
+   "why": "Nucleus sampling — top_p truncates the candidate set, while temperature reshapes the whole distribution (corpus confused-pair #5)."
+  },
+  {
+   "id": "pd-003",
+   "label": "Responses keep cutting off mid-sentence — you need complete answers",
+   "answer": "max_tokens",
+   "options": [
+    "max_tokens",
+    "Temperature",
+    "Stop sequence"
+   ],
+   "why": "max_tokens caps output length only — the exam's most frequent parameter trap is offering it as a randomness control (pair #4)."
+  },
+  {
+   "id": "pd-004",
+   "label": "The model keeps repeating one phrase; penalize tokens in proportion to how often they've appeared",
+   "answer": "Frequency penalty",
+   "options": [
+    "Frequency penalty",
+    "Presence penalty",
+    "top_p"
+   ],
+   "why": "Frequency penalty scales with repeat count (repetition); presence penalty fires once a token has appeared at all (topic novelty) — corpus pair #6."
+  },
+  {
+   "id": "pd-005",
+   "label": "Generated marketing images look rough — request the higher render fidelity tier",
+   "answer": "quality",
+   "options": [
+    "quality",
+    "size",
+    "n"
+   ],
+   "why": "gpt-image-1's payload takes prompt, size, quality (including the 'high' trap value) and n — quality controls fidelity, size controls dimensions."
+  },
+  {
+   "id": "pd-006",
+   "label": "See image progress sooner while a large generation renders",
+   "answer": "partial_images",
+   "options": [
+    "partial_images",
+    "n",
+    "quality"
+   ],
+   "why": "Streaming partial_images on the images/generations path returns progressive output — the exam's 'see image progress sooner' stem verbatim."
+  },
+  {
+   "id": "pd-007",
+   "label": "The randomness knob that reshapes the entire token probability distribution before sampling, not just the top slice",
+   "answer": "Temperature",
+   "options": [
+    "Temperature",
+    "top_p",
+    "Frequency penalty"
+   ],
+   "why": "Temperature scales logits across the whole distribution; top_p instead truncates by cumulative probability mass — same 'creativity' intuition, different mechanism."
+  },
+  {
+   "id": "pd-008",
+   "label": "The team wants the model to only ever consider the most probable slice of next-token candidates, cutting off the long tail",
+   "answer": "top_p",
+   "options": [
+    "top_p",
+    "Temperature",
+    "Presence penalty"
+   ],
+   "why": "Nucleus sampling (top_p) restricts candidates to a cumulative-probability slice; temperature reshapes probabilities but never removes candidates outright."
+  },
+  {
+   "id": "pd-009",
+   "label": "A hard ceiling on how many tokens a single response can generate, regardless of what it says",
+   "answer": "max_tokens",
+   "options": [
+    "max_tokens",
+    "Stop sequence",
+    "Temperature"
+   ],
+   "why": "max_tokens is a length ceiling enforced during generation; a stop sequence instead halts generation early only when a specific string appears — different trigger, same 'shorter output' goal."
+  },
+  {
+   "id": "pd-010",
+   "label": "Discourage the model from reusing the same word or phrase many times over — the more it repeats, the harder the pushback",
+   "answer": "Frequency penalty",
+   "options": [
+    "Frequency penalty",
+    "Presence penalty",
+    "top_p"
+   ],
+   "why": "Frequency penalty scales with how often a token has already appeared; presence penalty applies a flat penalty the moment a token appears even once — count-proportional vs binary."
+  },
+  {
+   "id": "pd-011",
+   "label": "The chat transcript never revisits earlier topics — the model always drifts onto new subject matter instead of returning to what it already covered",
+   "answer": "Presence penalty",
+   "options": [
+    "Presence penalty",
+    "Frequency penalty",
+    "top_p"
+   ],
+   "why": "A high presence penalty fires the instant a token has appeared once, pushing the model toward new topics; frequency penalty scales with repeat count and mainly curbs literal repetition, not topic drift."
+  },
+  {
+   "id": "pd-012",
+   "label": "Applies the same fixed penalty to any token that has shown up at all in the response so far, no matter how many times",
+   "answer": "Presence penalty",
+   "options": [
+    "Presence penalty",
+    "Frequency penalty",
+    "max_tokens"
+   ],
+   "why": "Presence penalty is binary per-token (appeared or not); frequency penalty instead grows with repeat count — the exam's confused-pair distinction between the two penalty parameters."
+  },
+  {
+   "id": "pd-013",
+   "label": "Generation should end the instant the model writes a specific marker string, without waiting to hit the length ceiling",
+   "answer": "Stop sequence",
+   "options": [
+    "Stop sequence",
+    "max_tokens",
+    "Temperature"
+   ],
+   "why": "A stop sequence is a literal string trigger that halts generation early; max_tokens only enforces a length ceiling and has no awareness of specific text."
+  },
+  {
+   "id": "pd-014",
+   "label": "A specific piece of text the model is told to treat as an ending marker, so output stops the moment that text is produced",
+   "answer": "Stop sequence",
+   "options": [
+    "Stop sequence",
+    "Frequency penalty",
+    "max_tokens"
+   ],
+   "why": "Stop sequences trigger on matching text content; neither max_tokens nor frequency penalty inspects the generated text itself — one counts tokens, the other counts repeats."
+  },
+  {
+   "id": "pd-015",
+   "label": "Latency must stay predictable at high, sustained request volume, and the team is fine paying reserved hourly cost to guarantee it",
+   "answer": "PTU deployment",
+   "options": [
+    "PTU deployment",
+    "Standard deployment",
+    "Capacity (TPM)"
+   ],
+   "why": "Provisioned throughput (PTU) reserves dedicated capacity for predictable latency at scale; Standard deployment is pay-per-token with variable throughput under load, and Capacity (TPM) is only the quota dial, not the deployment type itself."
+  },
+  {
+   "id": "pd-016",
+   "label": "Reserved, dedicated model capacity purchased ahead of time so throughput does not fluctuate with shared-tenant traffic",
+   "answer": "PTU deployment",
+   "options": [
+    "PTU deployment",
+    "Standard deployment",
+    "Capacity (TPM)"
+   ],
+   "why": "PTU is the reserved-capacity deployment model; Standard shares capacity and bills per token with variable throughput, while Capacity (TPM) merely sets the quota on whichever deployment type is chosen."
+  },
+  {
+   "id": "pd-017",
+   "label": "Traffic to the customer-support app is unpredictable and bursty, and the team wants pay-per-token billing instead of hourly reserved capacity",
+   "answer": "Standard deployment",
+   "options": [
+    "Standard deployment",
+    "PTU deployment",
+    "Capacity (TPM)"
+   ],
+   "why": "Pay-per-token pricing under variable load is Standard deployment (the exam's exact scenario); PTU instead bills hourly for reserved capacity regardless of actual usage."
+  },
+  {
+   "id": "pd-018",
+   "label": "Bills per token consumed rather than per hour of reserved compute, with throughput that can vary under shared load",
+   "answer": "Standard deployment",
+   "options": [
+    "Standard deployment",
+    "PTU deployment",
+    "Capacity (TPM)"
+   ],
+   "why": "Standard is consumption-based billing with variable throughput; PTU trades that variability for a fixed hourly reservation, and Capacity (TPM) is the quota setting layered on top of either model."
+  },
+  {
+   "id": "pd-019",
+   "label": "A deployment keeps hitting throttling under peak load, so the team shifts spare throughput quota over from another underused deployment",
+   "answer": "Capacity (TPM)",
+   "options": [
+    "Capacity (TPM)",
+    "PTU deployment",
+    "Standard deployment"
+   ],
+   "why": "The per-deployment throughput quota can be reallocated between deployments (the exam's documented scenario); PTU and Standard describe the deployment's billing/reservation model, not its quota dial."
+  },
+  {
+   "id": "pd-020",
+   "label": "The dial that sets an upper bound on total throughput a deployment can process each minute, independent of any single response's length",
+   "answer": "Capacity (TPM)",
+   "options": [
+    "Capacity (TPM)",
+    "max_tokens",
+    "PTU deployment"
+   ],
+   "why": "Capacity (TPM) throttles at the deployment level across all requests measured in tokens per minute; max_tokens instead caps the length of one response and has nothing to do with rate limiting."
+  },
+  {
+   "id": "pd-021",
+   "label": "The banner image request keeps returning a small square when the layout needs a wide rectangular canvas",
+   "answer": "size",
+   "options": [
+    "size",
+    "quality",
+    "n"
+   ],
+   "why": "size sets the pixel dimensions (e.g. a wide format instead of 1024x1024); quality controls rendering fidelity and n controls image count — neither changes the canvas shape."
+  },
+  {
+   "id": "pd-022",
+   "label": "The request field that sets the pixel dimensions of the generated image, such as 1024×1024",
+   "answer": "size",
+   "options": [
+    "size",
+    "quality",
+    "partial_images"
+   ],
+   "why": "size is the dimensions field in the images/generations payload; quality instead governs rendering fidelity, and partial_images controls progressive streaming, not the final canvas dimensions."
+  },
+  {
+   "id": "pd-023",
+   "label": "The field that accepts the 'high' fidelity tier so fine detail renders more crisply, separate from how big the image is",
+   "answer": "quality",
+   "options": [
+    "quality",
+    "size",
+    "n"
+   ],
+   "why": "quality (including the documented 'high' trap value) controls rendering fidelity; size controls dimensions and n controls how many images come back — three independent dials on the same request."
+  },
+  {
+   "id": "pd-024",
+   "label": "One prompt should return four separate image variations to choose between, in a single request",
+   "answer": "n",
+   "options": [
+    "n",
+    "size",
+    "quality"
+   ],
+   "why": "n sets how many images the request returns (e.g. n=4); size and quality shape each individual image but do not change how many come back."
+  },
+  {
+   "id": "pd-025",
+   "label": "The parameter that sets how many image variations a single images/generations call returns",
+   "answer": "n",
+   "options": [
+    "n",
+    "partial_images",
+    "size"
+   ],
+   "why": "n is the image-count field; partial_images instead streams progressive previews of a single image as it renders, and size only sets that image's dimensions."
+  },
+  {
+   "id": "pd-026",
+   "label": "Combined with streaming, this field sets how many progressive preview frames are sent before the final image completes",
+   "answer": "partial_images",
+   "options": [
+    "partial_images",
+    "n",
+    "quality"
+   ],
+   "why": "partial_images (used together with stream=True) sets the count of progressive preview frames during rendering; n instead sets how many separate final images are returned, and quality sets fidelity, not preview cadence."
+  }
+ ]
+}

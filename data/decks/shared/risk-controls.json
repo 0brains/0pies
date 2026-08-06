@@ -1,0 +1,40 @@
+{
+  "id": "risk-controls",
+  "runner": "board",
+  "title": "Hierarchy of Controls",
+  "blurb": "Five tiers, strongest first. Sort each mitigation into the tier that determines how much it is worth.",
+  "source": "Hierarchy of controls (NIOSH), applied to AI systems · NIST AI RMF 1.0 MANAGE 2 · ISO/IEC 42001:2023 Annex A controls",
+  "asOf": "2026-07",
+  "area": "risk",
+  "hint": "Drag each mitigation onto its tier. The question is how much the measure depends on a human doing the right thing — the more it does, the weaker the tier.",
+  "note": "The order matters more than the labels. A measure that depends on a person reading, remembering and complying is structurally weaker than one that makes the failure impossible, however diligently the first is written.",
+  "zones": [
+    {"key": "Eliminate", "name": "Eliminate", "def": "Remove the hazard. The failure mode cannot occur because the capability that produced it is gone."},
+    {"key": "Substitute", "name": "Substitute / redesign", "def": "Replace the hazardous element with a safer one that achieves the same purpose."},
+    {"key": "Engineering", "name": "Engineering / technical", "def": "Build the constraint into the system so that it holds without anyone choosing to comply."},
+    {"key": "Administrative", "name": "Administrative", "def": "Policies, training, review steps and procedures. Effective only to the extent people follow them."},
+    {"key": "Transparency", "name": "Transparency & warnings", "def": "Tell the user. The weakest tier: it moves responsibility to the person least able to change the outcome."}
+  ],
+  "items": [
+    {"id": "rc-01", "label": "The free-text field that allowed users to submit arbitrary prompts to the underlying model is removed; only a fixed set of actions remains.", "answer": "Eliminate", "why": "The injection surface is gone, not guarded. Elimination is recognisable because the mitigation removes a capability rather than constraining its use."},
+    {"id": "rc-02", "label": "The feature that inferred demographic attributes from user photos is deleted from the product.", "answer": "Eliminate", "why": "No inference means no inference error, no disparate accuracy and no lawful-basis question. The hazard is not managed; it no longer exists."},
+    {"id": "rc-03", "label": "A chatbot's ability to execute account changes is withdrawn entirely; it can now only read and explain.", "answer": "Eliminate", "why": "Removing the write capability eliminates the entire class of unauthorised-action harms. Everything downstream of it becomes unnecessary."},
+    {"id": "rc-04", "label": "Direct identifiers are dropped from the training corpus altogether rather than being protected within it.", "answer": "Eliminate", "why": "Data that was never collected cannot leak, be re-identified, or be subject to an access request. This is why minimisation outranks encryption."},
+    {"id": "rc-05", "label": "A generative model used for summarising medical notes is replaced with an extractive summariser that can only quote the source.", "answer": "Substitute", "why": "The purpose is preserved while the hazardous mechanism — free generation, and therefore fabrication — is swapped out for one that cannot fabricate."},
+    {"id": "rc-06", "label": "A black-box gradient-boosted model in a lending decision is replaced by a monotonic scorecard with comparable accuracy.", "answer": "Substitute", "why": "Redesigning for an inherently explainable model removes the explanation problem rather than bolting a post-hoc explainer onto it."},
+    {"id": "rc-07", "label": "Real customer records used in a test environment are replaced with synthetic data of the same statistical shape.", "answer": "Substitute", "why": "The activity continues with a materially safer input. Substitution sits below elimination because the replacement carries its own, smaller risks."},
+    {"id": "rc-08", "label": "A facial recognition step in an identity check is replaced with a document-plus-liveness check that does not build a face template.", "answer": "Substitute", "why": "Same assurance objective, different mechanism, far lower biometric exposure. The tell is that the function survives and the hazard is exchanged."},
+    {"id": "rc-09", "label": "Output filters block responses containing personal data patterns before they ever reach the user.", "answer": "Engineering", "why": "The constraint is enforced by the system on every request. Nobody has to remember it, which is what makes technical controls outrank procedural ones."},
+    {"id": "rc-10", "label": "Role-based access control prevents the retrieval layer from returning documents the requesting user is not entitled to see.", "answer": "Engineering", "why": "Authorisation is enforced at the point of retrieval rather than trusted to the prompt. A rule the system applies cannot be forgotten under pressure."},
+    {"id": "rc-11", "label": "A hard cap limits the number of tool calls an agent may make before it must stop and escalate.", "answer": "Engineering", "why": "A runtime bound holds regardless of what the model decides to do. Improving the tool description would be an administrative measure by comparison."},
+    {"id": "rc-12", "label": "Deployment is gated by an automated evaluation suite that fails the build if subgroup performance regresses beyond a threshold.", "answer": "Engineering", "why": "The gate is mechanical and cannot be skipped by a busy release manager, which is precisely why it beats a review checklist covering the same ground."},
+    {"id": "rc-13", "label": "An acceptable-use policy is published and all staff complete annual training on it.", "answer": "Administrative", "why": "Effectiveness depends entirely on people reading, remembering and applying it. Training is worth having and is routinely over-credited in risk assessments."},
+    {"id": "rc-14", "label": "A procedure requires a second reviewer to sign off on every high-impact model change.", "answer": "Administrative", "why": "A procedural gate can be bypassed under deadline pressure. Making the same check a required status in the pipeline would move it up a tier."},
+    {"id": "rc-15", "label": "Quarterly manual audits sample model decisions and check them against policy.", "answer": "Administrative", "why": "Detective, periodic and human. It finds problems after they occur, which is useful and is not prevention."},
+    {"id": "rc-16", "label": "An incident response runbook sets out who is called and in what order when a model misbehaves.", "answer": "Administrative", "why": "Procedural preparation reduces impact through faster response, but only if the procedure is followed and current."},
+    {"id": "rc-17", "label": "A banner tells users that responses are AI-generated and may be inaccurate.", "answer": "Transparency", "why": "A disclosure obligation may well be mandatory, but as mitigation it is the weakest tier: it transfers vigilance to the user, who cannot inspect the model."},
+    {"id": "rc-18", "label": "The interface warns users not to enter confidential information into the assistant.", "answer": "Transparency", "why": "The warning depends on the person least equipped to enforce it. Blocking sensitive patterns at input would be an engineering control for the same risk."},
+    {"id": "rc-19", "label": "Documentation states that the model was not validated for use on paediatric cases.", "answer": "Transparency", "why": "Stating a limitation informs the deployer without preventing the misuse. Refusing out-of-scope inputs at runtime would be materially stronger."},
+    {"id": "rc-20", "label": "Generated images carry a visible label and embedded provenance metadata identifying them as synthetic.", "answer": "Transparency", "why": "Provenance marking supports downstream judgement and is often legally required. It changes nothing about what the system will produce."}
+  ]
+}

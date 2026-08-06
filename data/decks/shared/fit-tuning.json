@@ -1,0 +1,72 @@
+{
+  "id": "fit-tuning",
+  "runner": "board",
+  "title": "Fit & Tuning",
+  "blurb": "Under- and overfitting, regularisation, and what actually moves them.",
+  "source": "AWS Certified AI Practitioner (AIF-C01) exam guide · Domain 1",
+  "asOf": "2026-07",
+  "area": "foundations",
+  "hint": "Compare training performance with validation or test performance: both poor suggests underfitting, while a large training-to-validation gap suggests overfitting.",
+  "items": [
+    {
+      "id": "fit-tuning-01",
+      "label": "The model captures useful patterns and performs similarly on training and unseen data.",
+      "answer": "Good Fit",
+      "why": "The model captures useful patterns and performs similarly on training and unseen data."
+    },
+    {
+      "id": "fit-tuning-02",
+      "label": "The model performs very well on training data but poorly on unseen data.",
+      "answer": "Overfitting",
+      "why": "The model performs very well on training data but poorly on unseen data."
+    },
+    {
+      "id": "fit-tuning-03",
+      "label": "The model is too simple or insufficiently trained and performs poorly even on training data.",
+      "answer": "Underfitting",
+      "why": "The model is too simple or insufficiently trained and performs poorly even on training data."
+    },
+    {
+      "id": "fit-tuning-04",
+      "label": "Systematic oversimplification causes consistent error and is commonly associated with underfitting.",
+      "answer": "High Bias",
+      "why": "Systematic oversimplification causes consistent error and is commonly associated with underfitting."
+    },
+    {
+      "id": "fit-tuning-05",
+      "label": "The model is overly sensitive to its training sample and is commonly associated with overfitting.",
+      "answer": "High Variance",
+      "why": "The model is overly sensitive to its training sample and is commonly associated with overfitting."
+    },
+    {
+      "id": "fit-tuning-06",
+      "label": "A constraint or penalty that discourages excessive complexity and can reduce overfitting.",
+      "answer": "Regularization",
+      "why": "A constraint or penalty that discourages excessive complexity and can reduce overfitting."
+    },
+    {
+      "id": "fit-tuning-07",
+      "label": "Repeated train-validation splits used to estimate how consistently a model generalizes.",
+      "answer": "Cross-Validation",
+      "why": "Repeated train-validation splits used to estimate how consistently a model generalizes."
+    },
+    {
+      "id": "fit-tuning-08",
+      "label": "A hyperparameter controlling the size of each optimization update.",
+      "answer": "Learning Rate",
+      "why": "A hyperparameter controlling the size of each optimization update."
+    },
+    {
+      "id": "fit-tuning-09",
+      "label": "One complete pass through the training dataset.",
+      "answer": "Epoch",
+      "why": "One complete pass through the training dataset."
+    },
+    {
+      "id": "fit-tuning-10",
+      "label": "The number of training examples used to calculate one parameter update.",
+      "answer": "Batch Size",
+      "why": "The number of training examples used to calculate one parameter update."
+    }
+  ]
+}

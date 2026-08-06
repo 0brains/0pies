@@ -1,0 +1,250 @@
+{
+ "cases": [
+  {
+   "id": "d3-case-precode",
+   "areas": [
+    "III.A"
+   ],
+   "asOf": "2026-08",
+   "status": "stable",
+   "brief": "Harborline Credit is a regional lender that wants to automate first-pass creditworthiness scoring for small-business loans. The idea has momentum — the CEO saw a competitor's press release and wants \"an AI thing\" running by next quarter. You are the AI governance lead brought in before a single model is trained, tasked with making sure the project starts from a defensible business case rather than a demo. Two junior architects have already sketched a neural-network design on a whiteboard; a data scientist is quietly assembling a training set from an old marketing database. Your job this week is to slow the room down enough to do planning in the right order — objective, context, governance approach and stakeholders first, technical choices after — before any of that whiteboard sketch becomes real spend.",
+   "citation": "AIGP Body of Knowledge v2.1",
+   "steps": [
+    {
+     "q": "Before Harborline writes a line of code, what is the most likely first action a developer takes to map, plan and scope this AI project?",
+     "options": [
+      "Define the business case and perform a cost-benefit analysis answering the question of why AI",
+      "Run a test, evaluation, verification and validation (TEVV) process on candidate models",
+      "Perform an algorithmic impact assessment leveraging existing privacy impact assessments",
+      "Determine the feasibility and availability of redress mechanisms for rejected applicants"
+     ],
+     "answer": "Define the business case and perform a cost-benefit analysis answering the question of why AI",
+     "why": "Planning opens with the business case: why AI, and why now, before any risk, redress or technical question can even be scoped sensibly. TEVV and impact assessments are real governance steps, but they evaluate a system that has already been defined; redress feasibility matters once you know the use case will proceed. Skipping straight to those questions without first justifying the project itself is planning out of order."
+    },
+    {
+     "q": "The CEO's cost-benefit pitch is pure ROI: faster approvals, lower staffing cost. What's missing that a properly scoped analysis needs to include?",
+     "options": [
+      "Estimating only the short-term financial gains from faster approvals",
+      "Including potential societal impacts — such as who gets excluded and why — in the evaluation",
+      "Focusing solely on operational costs of running the model in production",
+      "Ignoring external stakeholder input from the small businesses who will be scored"
+     ],
+     "answer": "Including potential societal impacts — such as who gets excluded and why — in the evaluation",
+     "why": "A comprehensive cost-benefit analysis has to weigh societal impacts alongside the balance sheet, or Harborline is optimizing for approval speed while blind to who the model systematically screens out. The other three options are exactly the narrow, ROI-only framing the CEO already brought in the door — restating them doesn't fix the gap, it names it."
+    },
+    {
+     "q": "The two junior architects want sign-off now on their neural-network sketch so they can start building. Where does that decision actually belong in the lifecycle?",
+     "options": [
+      "It belongs in planning — architecture is one of the core deliverables of the planning phase",
+      "It belongs in design and development, which comes after planning is complete",
+      "It belongs to the AI governance committee, who should select the architecture directly",
+      "It belongs to the cloud provider, since they will host whatever architecture is chosen"
+     ],
+     "answer": "It belongs in design and development, which comes after planning is complete",
+     "why": "Planning scopes objectives, assumptions, context and governance approach — not model architecture. Choice of architecture (neural network vs. decision tree vs. something else) is a design-phase decision made once planning has defined what the system needs to do. A near-identical practice item keys governance approach as the planning exclusion instead — that variant conflicts with the BoK's lifecycle module and is not followed here; 's architecture-is-excluded framing is the one this desk teaches."
+    },
+    {
+     "q": "Planning is done; Harborline moves into design. A stakeholder map lists the data science team, the AI governance committee, the cloud provider and small-business applicants. Whose perspective should weigh most heavily once the model's risk posture is being assessed?",
+     "options": [
+      "The technical development teams who best understand the model's capabilities and limitations",
+      "The end users — the small-business applicants directly affected by the model's approve/decline decisions",
+      "Regulatory bodies and compliance officers assessing legal and regulatory risk implications",
+      "Executive leadership, who hold ultimate responsibility for organizational risk tolerance"
+     ],
+     "answer": "The end users — the small-business applicants directly affected by the model's approve/decline decisions",
+     "why": "Stakeholder mapping exists to weight risk assessment toward whoever bears the AI system's consequences most directly — for Harborline, that's the applicants whose access to credit the model decides, not the teams who built it or the leadership who approved it. Technical, compliance and executive perspectives all matter and all have a seat, but none of them absorbs the direct impact the way an applicant who gets wrongly declined does."
+    },
+    {
+     "q": "Design is underway and it's time to pick the specific algorithm type for Harborline's credit-scoring model — logistic regression, gradient-boosted trees, a neural network. Who should actually make that call?",
+     "options": [
+      "Harborline's own data science team, who understand the data, the technical trade-offs and the performance requirements",
+      "The AI governance committee, since algorithm choice is a governance risk decision",
+      "The cloud provider hosting the workload, since they know which architectures run efficiently on their infrastructure",
+      "Whichever outside consulting firm Harborline retains to help build the model"
+     ],
+     "answer": "Harborline's own data science team, who understand the data, the technical trade-offs and the performance requirements",
+     "why": "Algorithm-type selection is a technical judgment call that belongs with the people who understand the data, the clinical or business context and the performance requirements in depth — Harborline's own data science team, not an outside vendor. The governance committee sets the risk envelope the algorithm has to operate within, but picking the specific technique is not a governance-committee function — don't confuse this with step 3's ruling that architecture belongs in design rather than planning; this step is about *who* makes a design-phase call, not *when* it's made. A cloud provider or consulting firm can advise, but the decision authority sits with Harborline's own team."
+    }
+   ]
+  },
+  {
+   "id": "d3-case-assessment",
+   "areas": [
+    "III.A"
+   ],
+   "asOf": "2026-08",
+   "status": "stable",
+   "brief": "Meridian Health Network is building a cancer-detection imaging model: an algorithm does an initial pass over scans and routes anything below a confidence threshold to a radiologist for secondary review. Meridian has already defined its AI ethics principles, stood up a governance committee, assembled a cross-functional team and written its standards, workflows and risk-threshold policies. It plans to use a cloud provider for hosting, a consulting firm for development, its own patient data, and de-identified imaging licensed from a clinical research partner. You are the AIGP tasked with scoping the impact assessment that has to happen before training and testing begin — and with explaining, precisely, what that assessment is for and what it is not.",
+   "citation": "FSG p.6/8 Q2",
+   "steps": [
+    {
+     "q": "A junior analyst on the team describes the impact assessment's job as \"measuring the benefits Meridian expects from the model.\" How should you correct that framing for what this assessment is built to manage?",
+     "options": [
+      "It exists to identify and measure the model's expected benefits to Meridian",
+      "It exists to anticipate and manage the model's potential risks and harms",
+      "It exists to define and document the roles and responsibilities of AI stakeholders",
+      "It exists to define and evaluate the legal risks associated with developing the model"
+     ],
+     "answer": "It exists to anticipate and manage the model's potential risks and harms",
+     "why": "As a management tool, the impact assessment's job is to surface and control what could go wrong — bias, unsafe misclassification, patient harm — not to tally the upside Meridian already believes in. That's a narrower claim than what the assessment covers, though: the official IAPP guidance frames the assessment's *purpose* more broadly, as building understanding of both potential benefits and harms (FSG p.6/8, Q2). Both are correct at different altitudes — this step is about what the assessment is built to manage day to day, not the full scope of what it is meant to help Meridian understand. Roles/responsibilities and legal-risk-only framings are real governance artifacts, but they're not what this particular document does."
+    },
+    {
+     "q": "Meridian's privacy office already runs privacy impact assessments (PIAs) on every clinical data project. Rather than build the AI impact assessment from a blank page, what should the team do?",
+     "options": [
+      "Leverage the existing privacy impact assessment as the base to adapt into the AI impact assessment",
+      "Leverage an existing safety impact assessment, since patient harm is the dominant concern",
+      "Leverage an existing security impact assessment, since the model touches PHI",
+      "Leverage an existing environmental impact assessment, since data centers have a carbon footprint"
+     ],
+     "answer": "Leverage the existing privacy impact assessment as the base to adapt into the AI impact assessment",
+     "why": "A privacy impact assessment is the best existing template to adapt because both instruments evaluate risk arising from how data is used — extending a PIA's methodology into ethical, social and legal AI-specific territory is more tractable than starting fresh. Safety and security assessments are narrower single-lens tools, and an environmental impact assessment addresses a question this document doesn't own at all."
+    },
+    {
+     "q": "Meridian's imaging model is a narrow, single-purpose classifier — not a general-purpose system. Which of the following is NOT required content for its impact assessment?",
+     "options": [
+      "The model's potential impact on patient privacy rights",
+      "The data sources used to train the model, including the licensed research-partner imaging",
+      "The potential bias in the model's outputs across patient demographics",
+      "The model's energy consumption during processing"
+     ],
+     "answer": "The model's energy consumption during processing",
+     "why": "Impact assessments center on risk to people, institutions and legal compliance — privacy, data provenance, bias — and for a narrow AI use case, energy consumption during processing sits outside that required core, even though it's a legitimate topic in broader AI-sustainability conversations. Privacy impact, data-source lawfulness and output bias are all standard, required content regardless of how narrow the system is."
+    },
+    {
+     "q": "Before Meridian's team trains and tests the model, what single step best mitigates the possibility that the model discriminates against patient subgroups?",
+     "options": [
+      "Procure more imaging data from the clinical research partner",
+      "Engage a third party to perform an independent audit of the finished model",
+      "Perform the impact assessment before training begins",
+      "Launch a bias bounty program once the model is in limited release"
+     ],
+     "answer": "Perform the impact assessment before training begins",
+     "why": "Performing the impact assessment pre-training surfaces discrimination risk while there is still time to change data sourcing, labeling or design — that's the whole point of doing it early rather than after the fact. More data doesn't fix a poorly scoped problem, a third-party audit and a bias bounty are both post-hoc detection mechanisms that assume the model already exists."
+    }
+   ]
+  },
+  {
+   "id": "d3-case-release",
+   "areas": [
+    "III.C"
+   ],
+   "asOf": "2026-08",
+   "status": "stable",
+   "brief": "GlobalCart is weeks from launching \"Echo,\" a proprietary large language model that will answer customer queries, process returns and handle simple escalations. Legal is worried about liability; PR is worried about brand damage if Echo says something biased or wrong. Before Echo goes live, your job is to determine whether it is actually ready — using shadow-mode results, the right documentation artifact for the right audience, and a clear line between what gets published to customers and what stays internal.",
+   "citation": "SG-C08-Q009 (shadow mode); SG (model card vs system dossier); SG (retrain = new release)",
+   "steps": [
+    {
+     "q": "Echo has been running in shadow mode for three weeks, silently processing live queries without affecting real customers. The results are documented. What does that best demonstrate?",
+     "options": [
+      "Readiness to deploy the model, since shadow mode simulates real-world conditions without user impact",
+      "That the model has a high-performing architecture, regardless of whether metrics were documented",
+      "That testing can be safely outsourced to a third party without internal review",
+      "That Echo is ready for a press release announcing the launch"
+     ],
+     "answer": "Readiness to deploy the model, since shadow mode simulates real-world conditions without user impact",
+     "why": "Shadow-mode testing with documented outcomes is release-readiness evidence precisely because it exposes the model to real traffic and real edge cases without the downside of a live failure — it's the AI-governance equivalent of parallel testing in disaster-recovery planning. A high-performing model with no documented metrics proves nothing to an auditor, outsourcing testing without internal review abdicates governance's own job, and a press release is a marketing act, not evidence of anything (SG-C08-Q009)."
+    },
+    {
+     "q": "GlobalCart's legal team pulls Echo's model card before sign-off. From a governance perspective, what's the single most crucial thing to find in it?",
+     "options": [
+      "The model's intended use cases and limitations, as defined by the developer",
+      "The model's performance metrics, such as accuracy, precision and recall",
+      "The details of the training data, including source, size and demographic composition",
+      "The model's carbon footprint and energy consumption"
+     ],
+     "answer": "The model's intended use cases and limitations, as defined by the developer",
+     "why": "Intended use and limitations define the boundary of where Echo can be responsibly deployed — deploying outside that boundary is one of the most common roots of governance failure and liability exposure, which is exactly what legal is worried about. Performance metrics and training-data details are real content in the same document but carry no governance weight if the model gets used outside its validated scope, and energy consumption is a sustainability concern, not the top release-readiness risk here."
+    },
+    {
+     "q": "An engineer asks why Echo needs both a model card and a separate technical documentation package (\"system dossier\") — isn't that redundant? What's the actual boundary between the two?",
+     "options": [
+      "The model card is the single-model-version \"nutrition label\" — purpose, data, metrics, limitations, human-oversight points — while the system dossier holds the end-to-end production context: architecture, enterprise data lineage, monitoring infrastructure and conformity evidence",
+      "The model card and system dossier cover identical content; GlobalCart should retire one to reduce duplication",
+      "The system dossier is a public-facing summary while the model card is strictly internal and never shared",
+      "The model card documents training data only, while the system dossier documents performance metrics only"
+     ],
+     "answer": "The model card is the single-model-version \"nutrition label\" — purpose, data, metrics, limitations, human-oversight points — while the system dossier holds the end-to-end production context: architecture, enterprise data lineage, monitoring infrastructure and conformity evidence",
+     "why": "The two artifacts are scoped differently on purpose: the model card is anchored to one specific model version and answers \"what is this model and how should it be used,\" while the system dossier answers \"how does this fit into the production system as a whole,\" including monitoring and conformity evidence the model card explicitly does not restate. Treating them as duplicates, splitting them by internal/public audience, or splitting them by metrics-vs-data all misdescribe the actual boundary (SG)."
+    },
+    {
+     "q": "Marketing drafts Echo's public disclosure for customers. Which of the following should NOT appear in it?",
+     "options": [
+      "The intended purpose of the model",
+      "Echo's proprietary prompting and fine-tuning methods",
+      "Compliance with applicable law",
+      "Acknowledgement of the model's known limitations"
+     ],
+     "answer": "Echo's proprietary prompting and fine-tuning methods",
+     "why": "Public disclosures owe customers purpose, legal compliance and honest limitations — not GlobalCart's trade secrets. Proprietary methods stay internal; disclosure requirements balance public understanding against the organization's legitimate interest in protecting its IP, so intended purpose, legal compliance and stated limitations are exactly what belongs in the disclosure while the underlying technique does not."
+    },
+    {
+     "q": "Echo ships. Three months later, monitoring shows enough behavioral shift that the team retrains it on fresh data. Once retraining is complete, what governance rigor does the retrained model owe before it goes back into production?",
+     "options": [
+      "The same first-release rigor as the original launch — fairness, robustness and accuracy re-validated against benchmarks, documentation brought current, and formal governance approval before deployment",
+      "A lighter internal-only sign-off, since retraining is routine maintenance rather than a new launch",
+      "No additional review is needed as long as the retrained model's accuracy is equal to or better than before",
+      "Only an engineering smoke test, since the model card from the original release still applies unchanged"
+     ],
+     "answer": "The same first-release rigor as the original launch — fairness, robustness and accuracy re-validated against benchmarks, documentation brought current, and formal governance approval before deployment",
+     "why": "Retraining resets how the model actually makes decisions, so governance treats the retrained model as a new release, not a patch — full re-validation, updated documentation and transparency artifacts, and formal sign-off before it touches production again. This is a different rule from Case D's containment-first sequencing: Case D says don't retrain (or do anything else) *before* a live incident is contained; this step says that once retraining does happen — incident-triggered or routine — it owes first-release rigor on the way back out, not a shortcut because the model already shipped once (SG)."
+    }
+   ]
+  },
+  {
+   "id": "d3-case-drift-alarm",
+   "areas": [
+    "III.C"
+   ],
+   "asOf": "2026-08",
+   "status": "stable",
+   "brief": "It's 4:50pm on a Friday. Finnovate's automated loan-underwriting model has been in production for six months, making thousands of decisions a day. A governance dashboard alert fires: F1 score has dropped sharply, and a statistical test shows the live input distribution has diverged from the training distribution. Buried in the same alert stream, a slower-burning signal has also been building for months: a demographic-bias check shows a 1.8% disparity in approval rates for a protected class — under Finnovate's 2% escalation threshold, but trending upward. You're the governance lead on call. What you do in the next hour, and the next month, is being logged.",
+   "citation": "SG",
+   "steps": [
+    {
+     "q": "The F1-drop-plus-input-drift alert just fired. What's the most appropriate immediate action?",
+     "options": [
+      "Isolate the model from production, revert to a manual underwriting process, and notify legal and compliance",
+      "Launch a root-cause analysis to determine whether the drift is genuine or a data-quality issue before acting",
+      "Initiate the automated retraining pipeline immediately using the new production data",
+      "Issue a public statement acknowledging a service issue and committing to a rapid investigation"
+     ],
+     "answer": "Isolate the model from production, revert to a manual underwriting process, and notify legal and compliance",
+     "why": "With a live, drifting model actively making loan decisions, the first move has to stop the bleeding — pull it from production and fall back to a manual process before anything else happens. Root-cause analysis is essential but not while the model is still deciding real applications; automated retraining on the same drifting data risks baking the problem in deeper; and a public statement before containment and investigation is premature and gets the sequence backwards."
+    },
+    {
+     "q": "Someone on the call argues for skipping straight to root-cause analysis, reasoning that you can't fix what you don't understand yet. Why is that the wrong order here?",
+     "options": [
+      "Because containment — isolating or shutting down the affected system to stop further erroneous decisions — has to come before investigation, since the top priority in incident response is stopping harm already in progress",
+      "Because investigation is always the correct first step in every AI incident, regardless of severity",
+      "Because customer communication should always precede any technical action",
+      "Because recovery to a prior known-good state is the only defensible first move in any incident"
+     ],
+     "answer": "Because containment — isolating or shutting down the affected system to stop further erroneous decisions — has to come before investigation, since the top priority in incident response is stopping harm already in progress",
+     "why": "Incident response sequencing puts containment first precisely because Finnovate's model is still actively harming applicants with every decision it makes — you stop the damage before you diagnose it. Investigation is necessary but second; leading with external communication or with recovery-to-prior-state without first stopping the live harm both skip the step that actually protects people right now."
+    },
+    {
+     "q": "While the F1/drift incident is being contained, someone flags the slower-burning bias signal: 1.8% disparity for a protected class, under the 2% incident-response threshold. What's the best approach?",
+     "options": [
+      "Initiate incident-response procedures despite being under the 2% threshold, because of the protected-class impact",
+      "Treat it as a near-threshold event, increase testing frequency, and prepare for escalation only if it persists or worsens",
+      "Flag it for review at the next governance forum and hold stakeholder consultations before any formal escalation",
+      "Implement temporary compensating controls quietly while preparing an escalation pathway in case investigations confirm systemic bias"
+     ],
+     "answer": "Initiate incident-response procedures despite being under the 2% threshold, because of the protected-class impact",
+     "why": "A numeric threshold is a floor for routine monitoring, not a ceiling on judgment — governance is expected to escalate protected-class impact even when the number technically falls short, because that's the more defensible posture if a regulator later asks why a known disparity sat unaddressed. Waiting for the number to cross 2%, waiting for a scheduled forum, or handling it quietly with compensating controls all treat the threshold as permission to wait, which is exactly the exposure this rule exists to close."
+    },
+    {
+     "q": "Both incidents are now contained and investigated. What's the correct order for closing them out?",
+     "options": [
+      "Log both incidents in the central AI incident management system first, then run the blameless retrospective and CAPA process once findings are recorded",
+      "Skip formal logging and move straight to a full-scale model retraining, since that's the real fix",
+      "Close the incidents once the dashboards return to green, without a formal retrospective",
+      "Notify cross-functional stakeholders only after CAPA is fully implemented, to avoid alarming them prematurely"
+     ],
+     "answer": "Log both incidents in the central AI incident management system first, then run the blameless retrospective and CAPA process once findings are recorded",
+     "why": "Formal logging is the immediate governance step that triggers everything downstream — investigation, stakeholder notification, corrective and preventive action — and a blameless retrospective that still assigns responsibility for fixes is how the findings turn into durable process change rather than a one-off patch. Jumping to retraining or closing the ticket once the dashboard looks fine skips the auditable record; delaying stakeholder notice until after CAPA reverses an order governance depends on (SG)."
+    }
+   ]
+  }
+ ]
+}

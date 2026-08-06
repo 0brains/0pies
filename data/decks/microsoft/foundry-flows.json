@@ -1,0 +1,177 @@
+{
+ "id": "foundry-flows",
+ "runner": "ladders",
+ "title": "Build Orders",
+ "blurb": "Six workflows the exam expects you to replay from memory — click each step into the only order that ships.",
+ "source": "AI-901 study guide Tasks 1.2/2.1/2.2/2.4",
+ "asOf": "2026-07",
+ "area": "microsoft-foundry",
+ "ladders": [
+  {
+   "id": "lad-genai",
+   "title": "How a generative model produces text",
+   "prompt": "Put the steps in the order a generative model turns your prompt into text.",
+   "steps": [
+    {
+     "label": "Tokenization",
+     "detail": "Input text is split into tokens — words or sub-words — each mapped to an id from the model's vocabulary; nothing downstream has meaning until this happens (Task 1.2)."
+    },
+    {
+     "label": "Embeddings",
+     "detail": "Each token id is converted into a numeric vector encoding meaning — the same vector space that makes semantic similarity computable as vector distance."
+    },
+    {
+     "label": "Transformer attention",
+     "detail": "Self-attention layers weigh every token against every other token in the sequence — the mechanic that 'powers most modern foundation models,' and it needs the embedding vectors to already exist."
+    },
+    {
+     "label": "Next-token prediction",
+     "detail": "The model outputs a probability distribution over the whole vocabulary for the single next token; temperature and top-p reshape this distribution before one token is sampled."
+    },
+    {
+     "label": "Detokenized output",
+     "detail": "The predicted token id is decoded back to text and the loop repeats one token at a time until a stop condition — perplexity measures how well this step's predictions matched held-out text."
+    }
+   ]
+  },
+  {
+   "id": "lad-chat",
+   "title": "Chat client with the Foundry SDK",
+   "prompt": "Put the code flow in the order it must run.",
+   "steps": [
+    {
+     "label": "Install azure-ai-projects",
+     "detail": "'Which package should you install for the project client?' is a classic exam stem — the answer is azure-ai-projects."
+    },
+    {
+     "label": "Create AIProjectClient(endpoint, DefaultAzureCredential())",
+     "detail": "Endpoint + credential must both exist before any call; keyless auth = Entra ID DefaultAzureCredential."
+    },
+    {
+     "label": "Call get_openai_client()",
+     "detail": "Bridges the project client to an OpenAI-compatible chat client — the line that breaks everything if removed."
+    },
+    {
+     "label": "Build the messages list (system prompt first, then user prompt)",
+     "detail": "Rules and guardrails in the system message; this turn's request in the user message."
+    },
+    {
+     "label": "Call chat.completions.create(model=DEPLOYMENT_NAME, messages=[...])",
+     "detail": "model= takes YOUR deployment name, never the base model name — the classic trap."
+    },
+    {
+     "label": "Read response.choices[0].message.content",
+     "detail": "The reply text lives on the first choice's message — corpus snippet questions end here."
+    }
+   ]
+  },
+  {
+   "id": "lad-agent",
+   "title": "Agent lifecycle",
+   "prompt": "Put the agent's lifecycle in the order it must happen.",
+   "steps": [
+    {
+     "label": "Define the agent: PromptAgentDefinition(model=MODEL_NAME, instructions=..., tools=[...])",
+     "detail": "Model + instructions + tools set at definition time — {\"deployment\":{\"model\":AGENT_NAME}} is the canonical wrong answer; deployments host models, agents are model + instructions + tools."
+    },
+    {
+     "label": "Test it in the Agents playground",
+     "detail": "The playground configures persona, tools, and attached knowledge side by side and lets you try multi-turn behavior before any client code calls the agent."
+    },
+    {
+     "label": "Save it: project.agents.create_version(agent_name=AGENT_NAME, definition=...)",
+     "detail": "Unsaved playground edits are lost on leaving the portal — create_version is what actually persists a definition, whether you built it in the portal or in code."
+    },
+    {
+     "label": "Create a thread: openai.conversations.create()",
+     "detail": "Opens the runtime container that later turns write into — called by the client app before the first message is sent, distinct from the agent's own definition."
+    },
+    {
+     "label": "Add the user's message to the thread",
+     "detail": "The turn's content is appended to the thread's accumulating message history — a run can't process a message that hasn't been added yet."
+    },
+    {
+     "label": "Create a run and read the output: openai.responses.create(..., extra_body={\"agent_reference\": {...}})",
+     "detail": "The invocation that actually processes the conversation and produces the agent's next output; agent_reference is per-call metadata pointing at the saved definition."
+    }
+   ]
+  },
+  {
+   "id": "lad-speech",
+   "title": "Speech SDK call order",
+   "prompt": "Put the Speech SDK calls in the order they must run.",
+   "steps": [
+    {
+     "label": "SpeechConfig(subscription=key, region=region)",
+     "detail": "Every Speech SDK flow starts here — the key/region (or endpoint) pair that authenticates every call that follows."
+    },
+    {
+     "label": "Set speech_config.speech_synthesis_voice_name = \"...\"",
+     "detail": "Voice selection is a property set directly on the config object — exam's DragonHD-voice snippet sets this line right after SpeechConfig, before any other object is built from it."
+    },
+    {
+     "label": "AudioConfig(...) — microphone, file, or default device",
+     "detail": "Built independently of the voice-name property, but quickstart snippets construct it only after config setup is finished, immediately before the recognizer/synthesizer that will consume both objects."
+    },
+    {
+     "label": "Create the Recognizer or Synthesizer: SpeechRecognizer(speech_config, audio_config) / SpeechSynthesizer(speech_config)",
+     "detail": "Both constructors take the already-built speech_config (the recognizer also takes audio_config) — nothing after this point can still inject the config."
+    },
+    {
+     "label": "Call recognize_once() / speak_text_async(text)",
+     "detail": "recognize_once() captures one short utterance (vs. continuous recognition); speak_text_async() actually plays the text — the async future/.get() pattern belongs here, last, once the object exists."
+    }
+   ]
+  },
+  {
+   "id": "lad-voice",
+   "title": "Classic voice pipeline",
+   "prompt": "Put the classic voice-agent pipeline in order.",
+   "steps": [
+    {
+     "label": "Speech-to-text: convert the caller's spoken audio into text",
+     "detail": "Pipeline step one — recognize_once() or continuous recognition turns audio into a transcript before any reasoning can happen on it."
+    },
+    {
+     "label": "Language / generative-AI processing: reason over the transcript and produce a text reply",
+     "detail": "A chat/agent call reasons over the transcript — the step a single multimodal model (e.g. audio-in/audio-out chat deployment) can collapse together with steps 1 and 3, and the one the Voice Live API is built to replace all three of at once with a single low-latency speech-to-speech interface."
+    },
+    {
+     "label": "Text-to-speech: synthesize the reply back to audio",
+     "detail": "speak_text_async() plays the generated reply — the classic pipeline's final step, also foldable into the single-multimodal-model or Voice Live alternative named in step 2's detail."
+    }
+   ]
+  },
+  {
+   "id": "lad-cu",
+   "title": "Content Understanding workflow",
+   "prompt": "Put the Content Understanding workflow in order.",
+   "steps": [
+    {
+     "label": "Choose or define an analyzer: describe the schema in natural language (ContentAnalyzer(base_analyzer_id=..., field_schema=...))",
+     "detail": "Prebuilt analyzer ids (prebuilt-invoice, prebuilt-audio,...) cover common domains; a custom ContentAnalyzer names the fields you want in plain language via field_schema — no code beyond describing what to extract."
+    },
+    {
+     "label": "Register it: client.begin_create_analyzer(...)",
+     "detail": "Provisions the analyzer definition as a long-running operation before it can be called against any content — a one-time setup step, not a per-document one."
+    },
+    {
+     "label": "Submit content: client.begin_analyze(analyzer_id=..., inputs=[AnalysisInput(url=file_url)])",
+     "detail": "Each document/image/audio/video file gets its own begin_analyze call against the already-registered analyzer — the per-document step, unlike step 2."
+    },
+    {
+     "label": "Poll the operation: poller.result()",
+     "detail": "begin_analyze returns a poller; call its.result() method to wait for the final analysis output — analysis is asynchronous, not a synchronous return (the exam calls it 'call the poller's ________ method')."
+    },
+    {
+     "label": "Read the structured JSON fields from the result",
+     "detail": "The extracted fields — vendor name, invoice date, invoice total, and the like — land in the poller's result payload; this is where Content Understanding's own job ends."
+    },
+    {
+     "label": "Hand off to Azure AI Search for indexing",
+     "detail": "Content Understanding only extracts — it never indexes or generates; Azure AI Search is the separate downstream service that indexes CU's structured output for retrieval/RAG."
+    }
+   ]
+  }
+ ]
+}

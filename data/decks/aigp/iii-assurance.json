@@ -1,0 +1,171 @@
+{
+ "id": "iii-assurance",
+ "runner": "board",
+ "title": "The Assurance Bench",
+ "blurb": "Six pre-release assurance disciplines that stand between a finished model and a launch decision. Sort each scene into the discipline it's exercising.",
+ "source": "AIGP BOK III.C · AIGP Study Guide (SG) §Domain III.C (Periodic Assurance; Incident/Issue/Risk Management)",
+ "asOf": "2026-08",
+ "area": "III.C",
+ "hint": "These are pre-release, development-cycle checks. Ask what stage the scene is in: a paper catalog before any test runs is threat modeling; a live attempt to break the system is red teaming; an independent reviewer checking the evidence trail is an audit.",
+ "note": "Everything on this board happens before or during the readiness decision. What a live system owes its operator after launch, on a recurring basis, is a different board.",
+ "zones": [
+  {
+   "key": "Audit",
+   "name": "Audit",
+   "def": "An independent reviewer, organizationally separate from the team that built the system, checks the technical file — data provenance, testing records, impact assessments — against a named standard or policy and produces a report of gaps with owners and deadlines. The evidence trail, not a live attack."
+  },
+  {
+   "key": "Red teaming",
+   "name": "Red teaming",
+   "def": "Specialists simulate a realistic adversary or misuse scenario end-to-end — jailbreaks, prompt injection, social engineering, edge-case abuse — to see how the whole system holds up under pressure, then feed what they found back into a remediation plan that gets re-tested."
+  },
+  {
+   "key": "Threat modeling",
+   "name": "Threat modeling",
+   "def": "A structured, paper-based exercise, done at design time before any test runs, that catalogs what needs protecting, who might attack it, and which abuse cases matter most — producing a list of risks and named mitigations, not a live attempt to exploit anything."
+  },
+  {
+   "key": "Security testing",
+   "name": "Security testing",
+   "def": "Hands-on probing of specific, already-identified components — the serving API, dependencies, the pipeline's code — to confirm a defense is actually present and correctly configured, distinct from a full-system adversarial simulation or a paper catalog of what could go wrong."
+  },
+  {
+   "key": "Post-market monitoring",
+   "name": "Post-market monitoring",
+   "def": "The technical cadence of checks — scheduled evaluations, tracked metrics, automated alerts — that gets built and rehearsed as the monitoring plan comes together. The dashboards and detectors themselves, not the standing legal duty to run them once the system is live."
+  },
+  {
+   "key": "Incident response",
+   "name": "Incident response",
+   "def": "The formal, time-boxed machinery — containment first, then root-cause analysis, then corrective action — that activates the moment a scene involves confirmed real-world harm, not a routine finding still being logged and watched."
+  }
+ ],
+ "items": [
+  {
+   "id": "iii-ab-01",
+   "label": "An independent reviewer, organizationally separate from the product team, checks fairness distributions and data-provenance records against ISO/IEC 42001 before sign-off.",
+   "answer": "Audit",
+   "why": "Independence from the build team plus a documented evidence trail is this discipline's signature — distinct from red teaming, where the same independence is used to attack the system rather than review its paperwork.",
+   "citation": "SG"
+  },
+  {
+   "id": "iii-ab-02",
+   "label": "The most crucial output isn't a benchmark score but a prioritized list of non-conformities, each with a named owner and a remediation deadline.",
+   "answer": "Audit",
+   "why": "An audit's deliverable is a gap-and-fix ledger against the paper trail — different from threat modeling's abuse-case catalog, which lists what could happen rather than what already went wrong.",
+   "citation": "AIGP Body of Knowledge v2.1"
+  },
+  {
+   "id": "iii-ab-03",
+   "label": "A week before scheduled launch, a final internal review of the technical file turns up a fairness gap that earlier uniform-sample testing had missed.",
+   "answer": "Audit",
+   "why": "Reviewing the record after the fact to catch what testing missed is this discipline's job — the earlier testing itself, and any red-team exercise that already ran and closed, belong to their own zones.",
+   "citation": "AIGP Body of Knowledge v2.1"
+  },
+  {
+   "id": "iii-ab-04",
+   "label": "Hired specialists chain jailbreak prompts to get past the guardrails before launch; findings feed the risk register and are re-tested once fixed.",
+   "answer": "Red teaming",
+   "why": "Simulating realistic misuse end-to-end is the discipline's job — a pen test only probes infrastructure, and an audit would review the resulting report, not go find the exploit itself.",
+   "citation": "SG"
+  },
+  {
+   "id": "iii-ab-05",
+   "label": "Testers push a customer-service chatbot through social-engineering framing, prompt injection and edge-case misuse scenarios that no ordinary QA script would try.",
+   "answer": "Red teaming",
+   "why": "Multi-perspective adversarial simulation combining technical attacks with misuse framing is the discipline's greatest governance value — a component-level probe of one API endpoint stays in the next zone instead.",
+   "citation": "AIGP Body of Knowledge v2.1"
+  },
+  {
+   "id": "iii-ab-06",
+   "label": "A rare-condition failure that only shows up under specific weather and lighting conditions surfaces during pre-launch adversarial testing; release is delayed until the scenario is fixed and revalidated, however rare the trigger.",
+   "answer": "Red teaming",
+   "why": "Live adversarial testing is what surfaced this failure in the first place — a threat-modeling exercise would only have flagged it as a hypothetical scenario on paper, never actually run it.",
+   "citation": "AIGP Body of Knowledge v2.1"
+  },
+  {
+   "id": "iii-ab-07",
+   "label": "Assets, trust boundaries and abuse cases are enumerated on the architecture diagram at design time, before any test runs.",
+   "answer": "Threat modeling",
+   "why": "Structured anticipation on paper, with no live attacking, is what makes this discipline preventive rather than diagnostic — the moment someone actually tries the jailbreak, the work has moved to red teaming.",
+   "citation": "AIGP Body of Knowledge v2.1"
+  },
+  {
+   "id": "iii-ab-08",
+   "label": "The design review lists possible adversaries, their goals and capabilities, alongside the safeguard each abuse case will need — no live attack attempted yet.",
+   "answer": "Threat modeling",
+   "why": "A named-owner, mitigation-linked catalog is the deliverable here — distinct from security testing, which only starts once a specific safeguard needs to be confirmed as actually working.",
+   "citation": "SG"
+  },
+  {
+   "id": "iii-ab-09",
+   "label": "The map catalogs which datasets, libraries and pre-trained weights could be tampered with along the supply chain, and names an owner for each safeguard — the exercise happens before the system ships.",
+   "answer": "Threat modeling",
+   "why": "Cataloging what could be tampered with is anticipation, not verification — confirming that a dependency scan actually caught a compromised library is a different, hands-on discipline.",
+   "citation": "SG"
+  },
+  {
+   "id": "iii-ab-10",
+   "label": "Pen testers hit the serving API and admin console for misconfigurations and weak authentication, a dependency scan flags outdated libraries, and rate limits are checked under simulated load.",
+   "answer": "Security testing",
+   "why": "Hands-on probing of specific, already-identified components confirms a defense actually works — threat modeling only mapped where these weak points might be, it never ran the check.",
+   "citation": "SG"
+  },
+  {
+   "id": "iii-ab-11",
+   "label": "A line-by-line review of the preprocessing pipeline checks for injection risks and exposed secrets, while an inventory tracks every library and dataset the release depends on.",
+   "answer": "Security testing",
+   "why": "Confirming that a specific, named component is hardened is narrower than red teaming's full-stack, end-to-end misuse simulation — this discipline stays inside one component at a time.",
+   "citation": "SG"
+  },
+  {
+   "id": "iii-ab-12",
+   "label": "The API pen-test and dependency-scan findings get logged with a severity, an owner and a re-test deadline, and the release can't sign off until they close.",
+   "answer": "Security testing",
+   "why": "Probe, patch, re-test is this discipline's operating loop against a defined component — an audit would instead review whether that loop happened at all, rather than run it.",
+   "citation": "SG"
+  },
+  {
+   "id": "iii-ab-13",
+   "label": "Weekly shadow evaluations replay recent traffic against a reference model, and monthly fairness checks run on the cadence the launch plan set out.",
+   "answer": "Post-market monitoring",
+   "why": "This is the technical cadence-and-dashboard side of the monitoring plan; the standing legal duty to run it at all, once the system is live, belongs to a different board entirely.",
+   "citation": "SG; SG-C12-Q002"
+  },
+  {
+   "id": "iii-ab-14",
+   "label": "The product team's own dashboard tracks calibration and latency against a validated baseline on a running weekly cadence, with fairness disparity ratios refreshing automatically alongside them.",
+   "answer": "Post-market monitoring",
+   "why": "A continuous, automated feed owned by the team that built the system is this zone's texture — the moment that same check is instead run by a reviewer organizationally separate from that team, on a scheduled visit rather than a live feed, it's an audit.",
+   "citation": "SG"
+  },
+  {
+   "id": "iii-ab-15",
+   "label": "Automated telemetry watches for anomalous traffic patterns and crafted inputs meant to confuse the model, and raises an alert when either crosses a threshold.",
+   "answer": "Post-market monitoring",
+   "why": "An automated, always-on watch is this zone's texture — a scheduled, hands-on probe of the same interfaces to confirm the defense holds is the pen-testing discipline instead.",
+   "citation": "SG"
+  },
+  {
+   "id": "iii-ab-16",
+   "label": "During a pre-launch pilot with a small group of real users, real-world harm is confirmed — the moment it is, containment begins immediately: isolate first, investigate second, with the GDPR 72-hour notification clock already running.",
+   "answer": "Incident response",
+   "why": "Confirmed harm is this discipline's trigger, whether the system is still in a gated pilot or fully live; a pattern of low-severity mispredictions still being logged and watched for a trend hasn't crossed that line yet, and stays in routine issue tracking.",
+   "citation": "SG"
+  },
+  {
+   "id": "iii-ab-17",
+   "label": "Mid-pilot, before general availability, a customer-service chatbot issues unsafe medical guidance to one of the trial users; the finding triggers a formal playbook — a severity tag, clear escalation roles, and a root-cause analysis that must finish before the case can close.",
+   "answer": "Incident response",
+   "why": "The formal, time-boxed machinery — severity, ownership, a defined close-out — spins up the moment harm actually lands on a real person, pilot or not, unlike an audit's scheduled review of records that may show nothing wrong at all.",
+   "citation": "SG"
+  },
+  {
+   "id": "iii-ab-18",
+   "label": "Before the pilot converts to general availability, a blameless retrospective on the confirmed-harm case still assigns concrete fixes — retraining on corrected data, tighter rate limits, an updated model card — with evidence preserved for forensics.",
+   "answer": "Incident response",
+   "why": "Turning a confirmed harm into durable fixes and a preserved evidence trail closes this discipline's loop, whether the harm surfaced in a gated pilot or full production — feeding a finding into the risk register without that harm having occurred yet is threat modeling's job instead.",
+   "citation": "SG"
+  }
+ ]
+}

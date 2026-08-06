@@ -1,0 +1,67 @@
+{
+  "id": "risk-hierarchy-pairs",
+  "runner": "pairs",
+  "title": "One Fact Changes Everything — Treatment vs Control",
+  "blurb": "The two hierarchies answer different questions. These pairs are where people conflate them.",
+  "source": "ISO 31000:2018 §6.5 · Hierarchy of controls (NIOSH), applied to AI systems",
+  "asOf": "2026-07",
+  "area": "risk",
+  "pairs": [
+    {
+      "id": "rhp-01",
+      "dimension": "whether the measure changes the hazard or only who pays for it",
+      "buckets": ["Reduce", "Transfer"],
+      "a": {"text": "The firm adds output validation and human review to a claims model, cutting the rate of wrong denials.", "answer": "Reduce", "why": "The probability of the harm actually falls. Reduction is the only treatment that makes the affected person better off."},
+      "b": {"text": "The firm buys an insurance policy covering the cost of wrongly denied claims, leaving the model unchanged.", "answer": "Transfer", "why": "The claimant is denied at exactly the same rate; only the firm's balance sheet is protected. Insurance is never a control."}
+    },
+    {
+      "id": "rhp-02",
+      "dimension": "whether the activity continues at all",
+      "buckets": ["Avoid", "Reduce"],
+      "a": {"text": "After assessment, the emotion-inference feature is cancelled and removed from the roadmap.", "answer": "Avoid", "why": "The activity stops, so the exposure goes to zero. Avoidance is the only treatment with no residual risk to record."},
+      "b": {"text": "After assessment, the emotion-inference feature ships with confidence thresholds, subgroup evaluation and human review of low-confidence cases.", "answer": "Reduce", "why": "The activity continues at lower likelihood of harm. Substantial mitigation is still reduction, and residual risk still needs an owner."}
+    },
+    {
+      "id": "rhp-03",
+      "dimension": "whether the constraint is enforced by the system or by a person",
+      "buckets": ["Engineering", "Administrative"],
+      "a": {"text": "The deployment pipeline refuses to promote a model whose fairness evaluation has regressed past a threshold.", "answer": "Engineering", "why": "The rule executes on every release without anyone choosing to apply it, so deadline pressure cannot erode it."},
+      "b": {"text": "The release checklist requires the release manager to confirm that the fairness evaluation has not regressed.", "answer": "Administrative", "why": "Identical intent, enforced by human diligence. This is the single most common over-crediting in AI risk assessments."}
+    },
+    {
+      "id": "rhp-04",
+      "dimension": "whether the hazardous capability still exists",
+      "buckets": ["Eliminate", "Engineering"],
+      "a": {"text": "The agent's ability to issue refunds is removed from its tool set entirely.", "answer": "Eliminate", "why": "No capability, no failure mode, and nothing left to monitor. Elimination is the top tier because it retires the whole branch of the risk tree."},
+      "b": {"text": "The agent keeps its refund tool, with a hard limit of one refund per session and an amount cap enforced by the tool.", "answer": "Engineering", "why": "A strong technical constraint that still leaves a bounded exposure — and leaves the cap itself as something that can be misconfigured."}
+    },
+    {
+      "id": "rhp-05",
+      "dimension": "who bears the residual burden of getting it right",
+      "buckets": ["Engineering", "Transparency"],
+      "a": {"text": "The assistant detects and blocks confidential-looking input before it is sent to the model.", "answer": "Engineering", "why": "The system prevents the disclosure regardless of what the user does. The burden sits with the party able to carry it."},
+      "b": {"text": "The assistant displays a notice asking users not to paste confidential information.", "answer": "Transparency", "why": "The same risk, with the burden moved to the user. Weakest tier, and frequently the only one implemented."}
+    },
+    {
+      "id": "rhp-06",
+      "dimension": "whether the risk was knowingly retained at the right authority",
+      "buckets": ["Accept", "Unmanaged risk"],
+      "a": {"text": "The risk committee records the residual risk, confirms it is within appetite, names an owner and sets a review date.", "answer": "Accept", "why": "Acceptance is an affirmative decision with authority, an owner and a review point. That record is what distinguishes it from neglect."},
+      "b": {"text": "The residual risk is known to the delivery team, is not in the risk register, and no one above the team has been told.", "answer": "Unmanaged risk", "why": "Silence is not acceptance. Without the right authority deciding, there is no treatment at all — only exposure nobody has owned."}
+    },
+    {
+      "id": "rhp-07",
+      "dimension": "whether the mechanism or only the setting changed",
+      "buckets": ["Substitute", "Reduce"],
+      "a": {"text": "A free-generation summariser over clinical notes is replaced with an extractive summariser that can only quote source text.", "answer": "Substitute", "why": "The fabrication mechanism is swapped out for one incapable of fabricating, while the purpose survives. Redesign beats tuning."},
+      "b": {"text": "The same free-generation summariser is kept, with temperature lowered and a grounding instruction added to the prompt.", "answer": "Reduce", "why": "The mechanism that can fabricate is intact and merely discouraged. Useful, and structurally weaker than removing the capability."}
+    },
+    {
+      "id": "rhp-08",
+      "dimension": "whether the measure prevents the harm or detects it afterwards",
+      "buckets": ["Preventive control", "Detective control"],
+      "a": {"text": "Retrieval enforces the requesting user's access rights, so unauthorised documents are never returned.", "answer": "Preventive control", "why": "The harm cannot occur. Prevention is what reduces likelihood; everything else reduces only duration or impact."},
+      "b": {"text": "A quarterly audit samples answers and reports any that cited documents the user should not have seen.", "answer": "Detective control", "why": "The disclosure already happened, up to three months ago. Detection limits impact and is routinely mistaken for prevention in control catalogues."}
+    }
+  ]
+}

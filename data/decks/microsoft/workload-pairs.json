@@ -1,0 +1,191 @@
+{
+ "id": "workload-pairs",
+ "runner": "pairs",
+ "title": "Separated at Birth",
+ "blurb": "Two capabilities that sound identical until one fact flips — learn to hear the difference the exam listens for.",
+ "source": "histack.net",
+ "asOf": "2026-07",
+ "area": "microsoft-workloads",
+ "pairs": [
+  {
+   "id": "wp-01",
+   "dimension": "identifying what is mentioned vs scoring the opinion about it",
+   "buckets": [
+    "Entity recognition",
+    "Sentiment analysis"
+   ],
+   "a": {
+    "text": "From support tickets, list every product name, person, and date mentioned.",
+    "answer": "Entity recognition",
+    "why": "Entities identify who/what is mentioned — people, dates, organizations (histack: 'categorizes specific things')."
+   },
+   "b": {
+    "text": "From the same tickets, determine whether customers feel positive, negative, or neutral.",
+    "answer": "Sentiment analysis",
+    "why": "Opinion polarity is sentiment — the exam's #1 confused pair (17 co-occurrences)."
+   }
+  },
+  {
+   "id": "wp-02",
+   "dimension": "which direction the audio conversion runs",
+   "buckets": [
+    "Speech recognition",
+    "Speech synthesis"
+   ],
+   "a": {
+    "text": "Transcribe a call-center recording so agents can search the conversation.",
+    "answer": "Speech recognition",
+    "why": "Audio in, text out — recognition. 'Transcribe' is the giveaway verb."
+   },
+   "b": {
+    "text": "A navigation app reads turn-by-turn directions aloud with the en-US-Ava neural voice.",
+    "answer": "Speech synthesis",
+    "why": "Text in, audio out — synthesis. SSML and voice names like en-US-Ava:DragonHDLatestNeural belong to synthesis only."
+   }
+  },
+  {
+   "id": "wp-03",
+   "dimension": "crossing languages vs staying in the same language",
+   "buckets": [
+    "Speech translation",
+    "Speech recognition"
+   ],
+   "a": {
+    "text": "A conference app listens to a French speaker and produces live English captions for the audience.",
+    "answer": "Speech translation",
+    "why": "Recognizing speech in one language and rendering it in another is translation — the exam's tell for this pair (audio-in, different-language-out)."
+   },
+   "b": {
+    "text": "The same app also produces same-language French captions for a hearing-impaired attendee in the front row.",
+    "answer": "Speech recognition",
+    "why": "Audio in, same-language text out is plain speech-to-text; no language crosses, so there is nothing to translate."
+   }
+  },
+  {
+   "id": "wp-04",
+   "dimension": "reading literal text vs describing the scene",
+   "buckets": [
+    "OCR",
+    "Image captioning"
+   ],
+   "a": {
+    "text": "Extract the serial number printed on a photographed equipment label.",
+    "answer": "OCR",
+    "why": "OCR/Read extracts the literal text present in the image — 'extract readable text from an image' is the exam stem."
+   },
+   "b": {
+    "text": "Generate a one-sentence natural-language description of what the photo shows.",
+    "answer": "Image captioning",
+    "why": "Captioning (VisualFeatures.CAPTION) describes the scene — it does not read text within it."
+   }
+  },
+  {
+   "id": "wp-05",
+   "dimension": "reading pixels into text vs turning a text prompt into pixels",
+   "buckets": [
+    "OCR",
+    "Image generation"
+   ],
+   "a": {
+    "text": "A scanning app reads the printed address block off a photographed envelope into structured text fields.",
+    "answer": "OCR",
+    "why": "OCR converts existing pixels into text — the input is an image, the output is text."
+   },
+   "b": {
+    "text": "A design tool takes the prompt 'a flat icon of a blue rocket' and produces a brand-new PNG that never existed before.",
+    "answer": "Image generation",
+    "why": "Image generation (client.images.generate with gpt-image-1 / DALL·E) runs the opposite direction — text prompt in, synthesized pixels out — the exam's direction-flip trap on this pair."
+   }
+  },
+  {
+   "id": "wp-06",
+   "dimension": "one label for the whole image vs a located box per object",
+   "buckets": [
+    "Image classification",
+    "Object detection"
+   ],
+   "a": {
+    "text": "Decide whether each uploaded photo is 'defective part' or 'good part'.",
+    "answer": "Image classification",
+    "why": "Classification assigns one label to the entire image."
+   },
+   "b": {
+    "text": "Mark where every part sits on the conveyor image with bounding boxes.",
+    "answer": "Object detection",
+    "why": "Bounding boxes per object is the exam's tell for detection — the classic vision confusion."
+   }
+  },
+  {
+   "id": "wp-07",
+   "dimension": "a list of terms vs new condensed sentences",
+   "buckets": [
+    "Key phrase extraction",
+    "Summarization"
+   ],
+   "a": {
+    "text": "Return ['pricing', 'battery life', 'customer support'] from a batch of reviews.",
+    "answer": "Key phrase extraction",
+    "why": "Key phrases return a list of important terms — no new prose is written."
+   },
+   "b": {
+    "text": "Condense the same reviews into three fresh sentences capturing the overall feedback.",
+    "answer": "Summarization",
+    "why": "Summarization writes new condensed sentences — the output-shape contrast the corpus tests (pair #14)."
+   }
+  },
+  {
+   "id": "wp-08",
+   "dimension": "a dedicated privacy filter vs general-purpose entity extraction",
+   "buckets": [
+    "PII detection",
+    "Entity recognition"
+   ],
+   "a": {
+    "text": "A lightweight app must find and redact every email address and phone number in customer messages before storing them.",
+    "answer": "PII detection",
+    "why": "PII detection is the dedicated capability that identifies and can redact sensitive personal data such as phone numbers and email addresses (the exam calls it 'the most direct privacy-focused capability')."
+   },
+   "b": {
+    "text": "The same app also tags every person, organization, and location mentioned in the messages for a searchable index.",
+    "answer": "Entity recognition",
+    "why": "Entity recognition is broader extraction across categories — people, places, organizations — not the dedicated redaction-focused feature PII detection is."
+   }
+  },
+  {
+   "id": "wp-09",
+   "dimension": "labeling who spoke vs producing spoken audio",
+   "buckets": [
+    "Speaker diarization",
+    "Speech synthesis"
+   ],
+   "a": {
+    "text": "A meeting transcript must attribute each section of the recorded audio to the correct participant.",
+    "answer": "Speaker diarization",
+    "why": "Diarization identifies and separates speakers within incoming audio, labeling who spoke each portion of the transcript (the exam calls it 'audio speaker attribution')."
+   },
+   "b": {
+    "text": "Once the transcript is finalized, a narrator voice reads the meeting summary aloud for a podcast feed.",
+    "answer": "Speech synthesis",
+    "why": "Synthesis converts text into human-like voice output — the opposite pipeline stage from diarizing existing audio."
+   }
+  },
+  {
+   "id": "wp-10",
+   "dimension": "converting speech within/into audio vs converting written text between languages",
+   "buckets": [
+    "Azure AI Speech",
+    "Azure AI Translator"
+   ],
+   "a": {
+    "text": "A developer needs live audio captioning of a video conference in real time, same language, for hearing-impaired participants.",
+    "answer": "Azure AI Speech",
+    "why": "Azure AI Speech provides the real-time speech-to-text pipeline for live audio — the standard service for captioning, distinct from cross-language text conversion."
+   },
+   "b": {
+    "text": "A retailer needs to convert written product descriptions from English into 20 other languages as text.",
+    "answer": "Azure AI Translator",
+    "why": "Azure AI Translator provides neural machine translation between languages for text — the exam's contrast is audio-pipeline service vs cross-language text service, not a workload overlap (pair #29)."
+   }
+  }
+ ]
+}

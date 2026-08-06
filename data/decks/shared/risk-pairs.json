@@ -1,0 +1,67 @@
+{
+  "id": "risk-pairs",
+  "runner": "pairs",
+  "title": "One Fact Changes Everything — Risk",
+  "blurb": "Eight vocabulary distinctions that decide who signs, what is measured, and whether the answer is defensible.",
+  "source": "ISO 31000:2018 · IIA Three Lines Model (2020) · NIST AI RMF 1.0",
+  "asOf": "2026-07",
+  "area": "risk",
+  "pairs": [
+    {
+      "id": "rp-01",
+      "dimension": "whether controls are assumed to be operating",
+      "buckets": ["Inherent risk", "Residual risk"],
+      "a": {"text": "The assessment rates the exposure from an automated decisioning model as if none of the review, threshold or appeal mechanisms existed.", "answer": "Inherent risk", "why": "Inherent risk is the gross position before controls. It exists to size the control effort, and it is never what gets accepted."},
+      "b": {"text": "The assessment rates the same model with review, thresholds and appeal operating as designed, and reports what remains.", "answer": "Residual risk", "why": "Residual risk is what sign-off is actually against. Accepting against the inherent figure over-states what the organisation has agreed to carry."}
+    },
+    {
+      "id": "rp-02",
+      "dimension": "whether the statement sets a strategic level or an operational limit",
+      "buckets": ["Risk appetite", "Risk tolerance"],
+      "a": {"text": "The board states that the organisation will not pursue AI applications that make consequential decisions about individuals without human review.", "answer": "Risk appetite", "why": "Appetite is the broad, forward-looking statement of what risk the organisation is willing to take in pursuit of its objectives."},
+      "b": {"text": "The policy states that a model may go live only if subgroup accuracy disparity is below four percentage points.", "answer": "Risk tolerance", "why": "Tolerance is the measurable boundary that operationalises appetite. Appetite without tolerance cannot be tested; tolerance without appetite is arbitrary."}
+    },
+    {
+      "id": "rp-03",
+      "dimension": "whether the thing named is the source or the effect",
+      "buckets": ["Hazard", "Risk"],
+      "a": {"text": "The model can produce fluent, confident text that is factually wrong.", "answer": "Hazard", "why": "A hazard is the intrinsic potential to cause harm. It is a property of the thing and does not depend on deployment."},
+      "b": {"text": "Because the model drafts patient discharge instructions read by non-specialists, confident errors may lead to incorrect medication use.", "answer": "Risk", "why": "Risk combines the hazard with exposure and consequence in a context. The same hazard is a different risk in a different deployment — which is why tiers attach to use."}
+    },
+    {
+      "id": "rp-04",
+      "dimension": "whether the measure stops the harm or finds it afterwards",
+      "buckets": ["Preventive", "Detective"],
+      "a": {"text": "Input validation rejects requests containing patterns that the system is not authorised to process.", "answer": "Preventive", "why": "Preventive controls act on likelihood, before the event. They are the only kind that can bring a probability meaningfully toward zero."},
+      "b": {"text": "A weekly report lists requests that were processed despite falling outside authorised categories.", "answer": "Detective", "why": "Detective controls act on duration and impact after the fact. A register listing detective controls as mitigation of likelihood over-states its position."}
+    },
+    {
+      "id": "rp-05",
+      "dimension": "whether the function can be independent of what it reviews",
+      "buckets": ["Second line", "Third line"],
+      "a": {"text": "The AI governance team reviews the delivery team's impact assessment and challenges its conclusions, reporting to the chief risk officer.", "answer": "Second line", "why": "Independent of delivery but still inside management. Second line advises, challenges and monitors; it cannot provide assurance on itself."},
+      "b": {"text": "A review function examines whether those governance reviews were carried out as policy requires, and reports to the audit committee.", "answer": "Third line", "why": "Reporting to the board rather than to management is the structural difference. Without it, assurance is self-assessment with a different letterhead."}
+    },
+    {
+      "id": "rp-06",
+      "dimension": "whether the response changes the risk or merely observes it",
+      "buckets": ["Reduce", "Accept"],
+      "a": {"text": "The team adds an automated evaluation gate that blocks releases failing the robustness threshold.", "answer": "Reduce", "why": "Likelihood falls because a failing release cannot ship. Something about the risk itself changed."},
+      "b": {"text": "The team adds a dashboard showing robustness scores, and agrees to review them monthly with no gating.", "answer": "Accept", "why": "Watching a risk is not treating it. Monitoring plus a decision not to gate is retention with better visibility — legitimate, provided it is recorded as acceptance."}
+    },
+    {
+      "id": "rp-07",
+      "dimension": "whether the assessment is about the model or about the deployment",
+      "buckets": ["Model-level obligation", "Use-based obligation"],
+      "a": {"text": "A general-purpose model exceeding the compute threshold must undergo adversarial testing and report serious incidents.", "answer": "Model-level obligation", "why": "Systemic-risk GPAI duties attach to the model regardless of any downstream use, which is why they sit outside the risk pyramid."},
+      "b": {"text": "A deployer using that same model to screen job applicants must meet high-risk obligations for the deployment.", "answer": "Use-based obligation", "why": "The tier follows the purpose. One model can simultaneously carry model-level duties and sit in several different use tiers."}
+    },
+    {
+      "id": "rp-08",
+      "dimension": "whether accountability moved with the work",
+      "buckets": ["Transfer of consequence", "Retained accountability"],
+      "a": {"text": "A contract makes the vendor liable for the cost of damages arising from defects in the model they supplied.", "answer": "Transfer of consequence", "why": "Financial consequence moves. This is a legitimate treatment and it changes nothing about the harm's likelihood."},
+      "b": {"text": "The regulator holds the deploying firm answerable for the outcomes of the decisions it makes with that vendor's model.", "answer": "Retained accountability", "why": "Regulatory accountability generally cannot be contracted away. Assuming an indemnity covers it is the most expensive version of this confusion."}
+    }
+  ]
+}

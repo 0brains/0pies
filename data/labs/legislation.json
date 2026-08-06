@@ -1,0 +1,135 @@
+{
+  "id": "legislation",
+  "title": "Legislation & Regulatory Lab",
+  "subtitle": "AI law, standards & frameworks · global tracker",
+  "output": "Legislation & Regulatory.html",
+  "storageKey": "legislation.progress.v1",
+  "allLabel": "Everything",
+  "studyContext": "I am building working knowledge of AI governance laws, standards and regulatory frameworks — not studying for a specific exam.",
+  "citeInstruction": "Cite the instrument and provision (for example \"EU AI Act Art. 6, Annex III\", \"GDPR Art. 22\", \"NIST AI RMF 1.0 MANAGE 1\").",
+  "examinerRole": "You are an AI governance and regulatory-compliance reviewer.",
+  "filters": [
+    { "id": "II.A", "label": "Existing data privacy laws" },
+    { "id": "II.B", "label": "Other existing laws" },
+    { "id": "II.C", "label": "AI-specific laws" },
+    { "id": "II.D", "label": "Industry standards and tools" }
+  ],
+  "games": [
+    {
+      "id": "tells",
+      "rung": "Learn",
+      "adapter": "aigpTells",
+      "data": "aigp/knowledge/domain-ii.json",
+      "title": "Tell Hunter",
+      "blurb": "Sort unattributed snippets onto the instrument they came from."
+    },
+    {
+      "id": "pairs",
+      "rung": "Contrast",
+      "runner": "pairs",
+      "adapter": "aigpPairs",
+      "data": "aigp/knowledge/domain-ii.json",
+      "title": "One Fact Changes Everything",
+      "blurb": "Two near-identical scenarios. Classify both, then see which fact moved."
+    },
+    {
+      "id": "amendments",
+      "rung": "Contrast",
+      "runner": "pairs",
+      "adapter": "aigpPairs",
+      "setId": "eu-amendments",
+      "data": "aigp/knowledge/domain-ii.json",
+      "title": "Original vs Amended — EU AI Act",
+      "blurb": "The Amendments Regulation moved the goalposts. Classify both versions, then see what changed."
+    },
+    {
+      "id": "amendments-grid",
+      "rung": "Contrast",
+      "runner": "grid3x3",
+      "adapter": "grid3x3",
+      "data": "aigp/knowledge/domain-ii.json",
+      "title": "Regulation Grid — EU AI Act Amendments",
+      "blurb": "Drag each Original and Updated fact onto its domain. 3 rounds, 9 domains, one shuffled pool."
+    },
+    {
+      "id": "roles-aiact",
+      "rung": "Apply",
+      "adapter": "aigpRoles",
+      "setId": "roles-aiact",
+      "data": "aigp/knowledge/domain-ii.json",
+      "title": "Role Matrix — EU AI Act",
+      "blurb": "Fill the matrix: which actor carries which obligation."
+    },
+    {
+      "id": "roles-gdpr",
+      "rung": "Apply",
+      "adapter": "aigpRoles",
+      "setId": "roles-gdpr",
+      "data": "aigp/knowledge/domain-ii.json",
+      "title": "Role Matrix — GDPR",
+      "blurb": "Controller, processor, joint controller, DPO, representative."
+    },
+    {
+      "id": "roles-overlap",
+      "rung": "Apply",
+      "adapter": "aigpRoles",
+      "setId": "roles-overlap",
+      "data": "aigp/knowledge/domain-ii.json",
+      "title": "AI Act × GDPR Overlap",
+      "blurb": "AI Act, GDPR, or both? The regimes stack — they do not nest."
+    },
+    {
+      "id": "timeline",
+      "rung": "Apply",
+      "adapter": "aigpTimeline",
+      "data": "aigp/knowledge/domain-ii.json",
+      "title": "Global Obligations Timeline",
+      "blurb": "32 milestones, 18 jurisdictions. Place them on the timeline."
+    },
+    {
+      "id": "risk",
+      "rung": "Apply",
+      "runner": "risk",
+      "adapter": "aigpRisk",
+      "data": "aigp/knowledge/domain-ii.json",
+      "title": "Regulatory Risk",
+      "blurb": "Expand your AI company across 22 verified regimes without running out of compliance capital."
+    },
+    {
+      "id": "map",
+      "rung": "Apply",
+      "runner": "map",
+      "adapter": "aigpMap",
+      "data": "aigp/knowledge/domain-ii.json",
+      "title": "Jurisdiction Map",
+      "blurb": "Drop each instrument onto the jurisdiction that enacted it."
+    },
+    {
+      "id": "desk",
+      "rung": "Apply",
+      "runner": "desk",
+      "adapter": "aigpCases",
+      "data": "aigp/knowledge/domain-ii.json",
+      "title": "The Compliance Desk",
+      "blurb": "Work a case file end to end, then submit it for scoring."
+    },
+    {
+      "id": "ladders",
+      "rung": "Apply",
+      "runner": "ladders",
+      "adapter": "aigpLadders",
+      "data": "aigp/knowledge/domain-ii.json",
+      "title": "Ladders",
+      "blurb": "Build the penalty bands and the AI Act phase-in, in order."
+    },
+    {
+      "id": "briefs",
+      "rung": "Brief",
+      "runner": "briefs",
+      "adapter": "aigpBriefs",
+      "data": "aigp/knowledge/domain-ii.json",
+      "title": "Governance Brief",
+      "blurb": "Write a full position, then have an AI examiner critique it."
+    }
+  ]
+}

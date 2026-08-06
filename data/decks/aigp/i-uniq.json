@@ -1,0 +1,228 @@
+{
+ "id": "i-uniq",
+ "runner": "board",
+ "title": "Governance Triggers",
+ "blurb": "Eight unique characteristics of AI that demand their own governance, beyond ordinary IT controls. Sort each scene into the trait actually driving the risk.",
+ "source": "AIGP BOK I.A · AIGP Study Guide (SG) §Domain I.A (Unique Characteristics of AI Requiring Governance)",
+ "asOf": "2026-08",
+ "area": "I.A",
+ "hint": "Ask what specifically is failing: can a human not see in (Opacity), or not follow the structure even with full access (Complexity)? Did the system act without being asked (Autonomy), or did a task a person used to do by hand simply disappear into the system (Automation)? Did the system change after learning more (Adaptability), or was the flaw baked into what it learned from in the first place (Data dependency)? Did the same input give a different answer (Probabilistic outputs), or did a small error spread faster than anyone could catch it (Speed & scale)?",
+ "note": "This is the exam's canonical eight-item roster. Eight fixed zones means most six-card deals leave one or two zones empty — expected, not a bug. Automation and Autonomy are the pair most worth slowing down on: Automation is about whose hands used to do the work (task replacement, over-reliance, workforce disruption); Autonomy is about who makes the call (independent decisions without human sign-off).",
+ "traps": [
+  "Superintelligence is not one of these eight — it is theoretical and never a valid zone here, no matter how the option is worded (; ; the multi-select variant at is internally inconsistent and is not used to key anything in this deck).",
+  "'Potential for harm or misuse' is a real governance concern in the Study Guide, but it sits outside that eight-item roster — it is never a zone here, only background for whys.",
+  "Catastrophic forgetting (a model losing prior skills after retraining) is Adaptability's risk-multiplier, not a zone of its own — it only ever appears inside a card's why."
+ ],
+ "zones": [
+  {
+   "key": "Opacity",
+   "name": "Opacity",
+   "def": "Internal logic that cannot be seen or explained, even by the people who built it — a visibility failure. Different from Complexity: opacity is about what is hidden from view, not about how intricate the structure is."
+  },
+  {
+   "key": "Autonomy",
+   "name": "Autonomy",
+   "def": "The system decides and acts on its own, without a human approving that specific action — an independence-of-action risk. Different from Automation: autonomy is about who makes the call, not whose hands used to do the work."
+  },
+  {
+   "key": "Adaptability",
+   "name": "Adaptability",
+   "def": "Continual learning and retraining can drift a system away from its original goals, or make it quietly lose capabilities it already had."
+  },
+  {
+   "key": "Automation",
+   "name": "Automation",
+   "def": "AI takes over tasks and decisions a person used to perform by hand, at a scale no human team could match — raising over-reliance and workforce-disruption risks distinct from the system's own independent judgment."
+  },
+  {
+   "key": "Data dependency",
+   "name": "Data dependency",
+   "def": "Performance is only as good as the training data behind it — brittle to gaps, shifts, and flaws inherited from what the system learned from."
+  },
+  {
+   "key": "Speed & scale",
+   "name": "Speed & scale",
+   "def": "AI acts far faster and across far more instances than humans can review in real time, so a small error can become a massive one before anyone notices."
+  },
+  {
+   "key": "Probabilistic outputs",
+   "name": "Probabilistic outputs",
+   "def": "Results are drawn from a distribution of possible answers rather than fixed rules, so the same input can yield a different output each time."
+  },
+  {
+   "key": "Complexity",
+   "name": "Complexity",
+   "def": "So many interacting layers and parameters that even developers cannot trace the decision path — a structural failure. Different from Opacity: complexity is about how intricate the structure is, not about what is hidden from view."
+  }
+ ],
+ "items": [
+  {
+   "id": "i-uq-01",
+   "label": "A bank cannot tell the regulator why its neural net declined this loan applicant.",
+   "answer": "Opacity",
+   "why": "No visibility into the model's internal logic — distinct from Complexity, which is structure too intricate to follow, not an inability to see in at all.",
+   "citation": "SG-Gregory-2026-C01-Q008"
+  },
+  {
+   "id": "i-uq-02",
+   "label": "A senior manager warns that if the warehouse-ordering model ever makes a costly mistake, nobody will be able to explain afterward why it happened.",
+   "answer": "Opacity",
+   "why": "The complaint is that the reasoning is hidden, not that the model is structurally intricate — the same black-box gap this zone tracks, not Complexity's structural one.",
+   "citation": "AIGP Body of Knowledge v2.1"
+  },
+  {
+   "id": "i-uq-03",
+   "label": "A content moderator removes a post under rules that were never published, and the poster has no way to find out which rule applied.",
+   "answer": "Opacity",
+   "why": "Rules that exist but are never surfaced to the people affected is the defining failure of this zone — hidden reasoning, not a structure too intricate to follow.",
+   "citation": "AIGP Body of Knowledge v2.1"
+  },
+  {
+   "id": "i-uq-04",
+   "label": "A self-driving car navigates dense downtown traffic and makes every steering, braking, and routing call itself, with no person ready to intervene.",
+   "answer": "Autonomy",
+   "why": "High independence of action paired with high potential harm is this zone's signature pairing — distinct from Automation, which is about whose hands used to do the work, not who is making the call.",
+   "citation": "AIGP Body of Knowledge v2.1"
+  },
+  {
+   "id": "i-uq-05",
+   "label": "A trading bot buys and sells shares in milliseconds; no person confirms any individual trade before it executes.",
+   "answer": "Autonomy",
+   "why": "Independence of action — deciding and acting without waiting for human approval — is what this zone tracks, whether or not the trade also happens quickly. Distinct from Automation, which is about whether a person used to place trades by hand at all, not about who signs off on each one.",
+   "citation": "SG"
+  },
+  {
+   "id": "i-uq-06",
+   "label": "A hiring tool screens résumés and moves candidates to interview or rejection without a recruiter ever reviewing the call.",
+   "answer": "Autonomy",
+   "why": "The concern is that a decision went out without human sign-off — a control-and-accountability gap, not the disappearance of a task a person used to do by hand (that's the Automation side of this pair).",
+   "citation": "SG"
+  },
+  {
+   "id": "i-uq-07",
+   "label": "After the recommender is retrained on the new product catalogue, it quietly loses skills it used to have, like flagging duplicate listings.",
+   "answer": "Adaptability",
+   "why": "This is catastrophic forgetting — the risk-multiplier version of a system drifting from its original capabilities every time it relearns from new data; a real risk, but never a zone of its own.",
+   "citation": "SG"
+  },
+  {
+   "id": "i-uq-08",
+   "label": "A bank's fraud-detection system retrains itself on recent transactions and starts blocking large numbers of legitimate purchases.",
+   "answer": "Adaptability",
+   "why": "Drift away from the original goal after retraining — the governance response is monitoring, pre-deployment testing of updates, and drift tracking, not a one-time launch review.",
+   "citation": "SG"
+  },
+  {
+   "id": "i-uq-09",
+   "label": "Six months after launch, a dosage-recommendation tool's suggestions have quietly shifted because it was retrained on hospital data containing labeling errors.",
+   "answer": "Adaptability",
+   "why": "Behavior changing after retraining or new-data exposure is this zone's tell; the fix is continuous monitoring, drift detection, and approval gates before an updated model goes live.",
+   "citation": "SG"
+  },
+  {
+   "id": "i-uq-10",
+   "label": "A call center's ticket triage, once handled by a person reading each request, is now resolved start-to-finish by the system without anyone touching the queue.",
+   "answer": "Automation",
+   "why": "This is the labor-replacement axis — a task a person used to execute by hand is now executed by the system at volume. Distinct from Autonomy, which is about who makes the call, not whose hands do the work.",
+   "citation": "AIGP Body of Knowledge v2.1"
+  },
+  {
+   "id": "i-uq-11",
+   "label": "Widespread rollout of a customer-service tool removes the need for most of a call center's staff, unsettling the local job market.",
+   "answer": "Automation",
+   "why": "Workforce and economic disruption from replacing human labor is this zone's societal cost — a different governance concern than Autonomy's control-and-accountability framing.",
+   "citation": "SG"
+  },
+  {
+   "id": "i-uq-12",
+   "label": "After the claims system correctly resolves thousands of cases in a row, adjusters stop double-checking its flagged denials and start approving whatever it recommends.",
+   "answer": "Automation",
+   "why": "Over-reliance on what the system produces — rubber-stamping instead of critically reviewing it — is the governance risk this zone exists to catch; it's a human response to task-replacement, not to the system's own independent decision-making, which is Autonomy's risk.",
+   "citation": "SG"
+  },
+  {
+   "id": "i-uq-13",
+   "label": "A sentiment model that predicted public opinion accurately during training goes wildly off once a major event happens that the training data never captured.",
+   "answer": "Data dependency",
+   "why": "Brittleness when the world shifts away from what the training data captured is this zone's core failure — the model is only as good as what it learned from.",
+   "citation": "AIGP Body of Knowledge v2.1"
+  },
+  {
+   "id": "i-uq-14",
+   "label": "A skin-type predictor learns mostly from lighter skin tones in its training photos and gives inaccurate advice to everyone else.",
+   "answer": "Data dependency",
+   "why": "The model performs only as well as the population represented in its training data — a gap in what it learned from, not a structural or visibility problem.",
+   "citation": "AIGP Body of Knowledge v2.1"
+  },
+  {
+   "id": "i-uq-15",
+   "label": "A credit-scoring model denies loans to immigrant applicants at a higher rate than others with identical financial profiles.",
+   "answer": "Data dependency",
+   "why": "The training data carried forward historical discrimination, and the model reproduced it — the most systemic failure mode in this zone, because fixing the model without fixing the data leaves the root cause untouched.",
+   "citation": "AIGP Body of Knowledge v2.1"
+  },
+  {
+   "id": "i-uq-16",
+   "label": "A mispricing error on one product listing replicates across millions of pages before any human notices.",
+   "answer": "Speed & scale",
+   "why": "A tiny error, multiplied at machine pace and volume, outpaces human review and regulatory response before anyone can step in — the signature failure of this zone.",
+   "citation": "AIGP Body of Knowledge v2.1"
+  },
+  {
+   "id": "i-uq-17",
+   "label": "Surveillance cameras process an entire city's real-time video feed instantly, flagging thousands of 'unusual activities' per minute.",
+   "answer": "Speed & scale",
+   "why": "Volume and pace beyond what any human reviewer could keep up with is what makes this zone's risk different from a system merely reasoning badly — the problem is throughput, not logic.",
+   "citation": "AIGP Body of Knowledge v2.1"
+  },
+  {
+   "id": "i-uq-18",
+   "label": "A hospital's patient-deterioration tool runs continuous, high-volume predictions across every ward, and a single miscalibration snowballs into a system-wide alarm storm within hours.",
+   "answer": "Speed & scale",
+   "why": "Rapid, high-volume output turns a minor miscalibration into a system-wide problem before staff can catch it — throughput is the risk multiplier here, not the underlying logic.",
+   "citation": "AIGP Body of Knowledge v2.1"
+  },
+  {
+   "id": "i-uq-19",
+   "label": "The same prompt gets a different investment recommendation on consecutive days, with nothing else about the request changed.",
+   "answer": "Probabilistic outputs",
+   "why": "Outputs sampled from a weighted spread of possible answers rather than one fixed rule complicate giving a definitive explanation for a specific result — but that does not mean audits are impossible, a recorded wrong answer.",
+   "citation": "AIGP Body of Knowledge v2.1"
+  },
+  {
+   "id": "i-uq-20",
+   "label": "One system on a checkout page always calculates the same sales tax for the same order; a second system on the same page suggests slightly different products every time the page reloads.",
+   "answer": "Probabilistic outputs",
+   "why": "The tax engine is deterministic — always the same output for the same input — while the recommender draws from a weighted spread of possible outputs each time; only the second behavior belongs to this zone.",
+   "citation": "SG"
+  },
+  {
+   "id": "i-uq-21",
+   "label": "A chatbot asked the same dessert question three separate times gives three different answers, each one drawn from a weighted list of plausible options rather than one fixed rule.",
+   "answer": "Probabilistic outputs",
+   "why": "Sampling from a weighted spread of possible answers instead of following one strict path is exactly what this zone governs — the fix is confidence calibration and setting expectations, not treating any one answer as the fixed truth.",
+   "citation": "SG"
+  },
+  {
+   "id": "i-uq-22",
+   "label": "Reviewers admit they can no longer trace which of the model's millions of interacting parameters actually drove a specific decision.",
+   "answer": "Complexity",
+   "why": "This is about internal structure — too many layers and parameters to follow — not about whether the reasoning is hidden from view; that's the boundary with Opacity, which is a visibility problem, not a structural one.",
+   "citation": "SG/266"
+  },
+  {
+   "id": "i-uq-23",
+   "label": "A contract-analysis model has to weigh legal language and requirements that differ across a dozen jurisdictions at once, and no single reviewer can hold the whole logic in their head.",
+   "answer": "Complexity",
+   "why": "Structural intricacy — too many interacting factors to trace end to end — is what defines this zone, distinct from a model that simply refuses to show its reasoning at all.",
+   "citation": "AIGP Body of Knowledge v2.1"
+  },
+  {
+   "id": "i-uq-24",
+   "label": "A delivery-routing model's optimization logic has grown so intricate that engineers can no longer troubleshoot why it chose one route over another.",
+   "answer": "Complexity",
+   "why": "Intricacy that defeats even the people who built it is the structural failure this zone tracks — the twin of Opacity's visibility failure, stated explicitly so the two are never confused.",
+   "citation": "AIGP Body of Knowledge v2.1"
+  }
+ ]
+}

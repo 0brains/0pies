@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>__CONTAINER_TITLE__ · 0pi.es</title>
+<link rel="stylesheet" href="assets/fonts/fonts.css">
+<link rel="icon" type="image/svg+xml" href="assets/misc/favicon.svg">
+<style>
+:root{
+  --bg:#f9f9f9; --panel:#ffffff; --panel2:#eeeeee; --edge:#111111;
+  --ink:#111111; --dim:#4d4632; --accent:#eec200;
+  --primary:#facc15; --secondary:#fd933d; --tertiary:#d1d1d1;
+  --aws:#fd933d; --aigp:#d1d1d1; --concepts:#facc15; --legislation:#a78bfa; --microsoft:#7cb9f0;
+  --radius:2px; --shadow:4px; --shadow-lg:8px;
+}
+@media (prefers-color-scheme: dark){
+  :root{ --bg:#15161a; --panel:#1c1e24; --panel2:#24262e; --edge:#f0f0f0;
+         --ink:#f0f0f0; --dim:#a9a9b2; }
+}
+:root[data-theme=light]{ --bg:#f9f9f9; --panel:#ffffff; --panel2:#eeeeee; --edge:#111111;
+  --ink:#111111; --dim:#4d4632; }
+:root[data-theme=dark]{ --bg:#15161a; --panel:#1c1e24; --panel2:#24262e; --edge:#f0f0f0;
+  --ink:#f0f0f0; --dim:#a9a9b2; }
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font:16px/1.6 "Space Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+  -webkit-font-smoothing:antialiased}
+.brutal{border:3px solid var(--edge)}
+.brutal-heavy{border:4px solid var(--edge)}
+.brutal-shadow-lg{box-shadow:var(--shadow-lg) var(--shadow-lg) 0 0 var(--edge)}
+.brutal-hover-lg{transition:transform .1s ease-out,box-shadow .1s ease-out}
+.brutal-hover-lg:hover{transform:translate(var(--shadow-lg),var(--shadow-lg));box-shadow:0 0 0 0 var(--edge)}
+topbar{display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;
+  z-index:45;background:var(--bg);border-bottom:4px solid var(--edge);padding:14px 20px}
+.brand{font-weight:700;font-size:18px;letter-spacing:-.5px;text-transform:uppercase;
+  background:var(--primary);color:#1a1c1c;padding:6px 10px}
+.back{color:var(--ink);text-decoration:none;font-weight:700;font-size:13px;
+  text-transform:uppercase;letter-spacing:.4px}
+.back:hover{color:var(--dim)}
+.topbar-right{display:flex;align-items:center;gap:14px}
+.topbar-social{display:inline-flex;align-items:center;color:var(--ink)}
+.topbar-social:hover{color:var(--dim)}
+.wrap{max-width:1080px;margin:0 auto;padding:44px 20px 80px}
+.hero{margin-bottom:36px}
+.eyebrow{font-size:12px;letter-spacing:1.6px;text-transform:uppercase;font-weight:700;color:var(--dim)}
+h1{font-size:34px;margin:8px 0 0;text-transform:uppercase;letter-spacing:-.5px}
+.cards{display:grid;gap:24px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));margin-bottom:16px}
+.app{display:flex;flex-direction:column;justify-content:space-between;background:var(--panel);
+  padding:22px;text-decoration:none;color:inherit;position:relative;overflow:hidden;height:100%}
+.app.soon{opacity:.55}
+.badge{position:absolute;top:0;right:0;background:var(--tone);border-bottom:3px solid var(--edge);
+  border-left:3px solid var(--edge);padding:4px 10px;font-size:11px;font-weight:700;
+  letter-spacing:.6px;text-transform:uppercase;color:#1a1c1c}
+.code{font-size:12px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;
+  color:var(--dim);margin:14px 0 8px}
+.app h2{font-size:21px;margin:0 0 10px;font-weight:700;text-transform:uppercase;letter-spacing:-.3px}
+.app p{margin:0 0 18px;color:var(--dim);font-size:14px;flex:1}
+.stats{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px}
+.stat{background:var(--panel2);border:2px solid var(--edge);padding:3px 9px;
+  font-size:11px;font-weight:700;white-space:nowrap}
+.stat.status{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.go{display:inline-flex;align-items:center;gap:7px;font-weight:700;font-size:14px;
+  text-transform:uppercase;letter-spacing:.4px}
+.go .arrow{background:var(--primary);border:2px solid var(--edge);border-radius:999px;
+  width:24px;height:24px;display:inline-flex;align-items:center;justify-content:center}
+.app:hover .go .arrow{background:var(--secondary)}
+.soon-note{font-size:12px;font-style:italic}
+.share-root{position:fixed;inset:0;z-index:70;display:none}
+.share-root.open{display:block}
+.share-backdrop{position:absolute;inset:0;background:rgba(0,0,0,.55)}
+.share-modal{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+  width:min(560px,calc(100vw - 32px));max-height:min(86vh,720px);overflow:auto;
+  background:var(--panel);border:4px solid var(--edge);box-shadow:8px 8px 0 0 var(--edge);
+  padding:22px}
+.share-modal h3{margin:0 0 4px;font-size:18px;text-transform:uppercase}
+.share-sub{color:var(--dim);font-size:13px;margin:0 0 12px}
+.share-close{position:absolute;top:10px;right:10px;border:2px solid var(--edge);
+  background:var(--panel2);color:var(--ink);font:inherit;font-size:16px;font-weight:700;
+  width:32px;height:32px;cursor:pointer;line-height:1}
+.share-close:hover{background:var(--secondary);color:#1a1c1c}
+.share-tones{display:flex;flex-direction:column;gap:8px;margin-bottom:14px}
+.share-tone{border:2px solid var(--edge);background:var(--panel2);color:var(--ink);
+  font:inherit;font-size:13px;font-weight:700;text-align:left;padding:9px 12px;cursor:pointer}
+.share-tone[aria-pressed="true"]{background:var(--primary);color:#1a1c1c;
+  box-shadow:3px 3px 0 0 var(--edge)}
+.share-tone .hint{display:block;font-weight:400;font-size:11px;opacity:.75}
+.share-preview{border:2px dashed var(--edge);background:var(--bg);padding:12px;
+  font-size:13px;line-height:1.55;margin:0 0 10px;white-space:pre-wrap;word-break:break-word}
+.share-reroll{border:2px solid var(--edge);background:var(--panel2);color:var(--ink);
+  font:inherit;font-size:12px;font-weight:700;padding:6px 12px;cursor:pointer;margin-bottom:14px}
+.share-reroll:hover{background:var(--primary);color:#1a1c1c}
+.share-nets{display:flex;flex-wrap:wrap;gap:8px}
+.share-nets a,.share-nets button{border:2px solid var(--edge);background:var(--panel2);
+  color:var(--ink);font:inherit;font-size:12px;font-weight:700;text-transform:uppercase;
+  letter-spacing:.4px;padding:8px 12px;cursor:pointer;text-decoration:none;
+  box-shadow:3px 3px 0 0 var(--edge);transition:transform .1s,box-shadow .1s}
+.share-nets a:hover,.share-nets button:hover{transform:translate(3px,3px);box-shadow:0 0 0 0 var(--edge)}
+.share-note{font-size:11px;color:var(--dim);margin:14px 0 0;border-top:2px solid var(--edge);
+  padding-top:10px;line-height:1.5}
+</style>
+</head>
+<body>
+<topbar>
+  <div class="brand">0pi.es</div>
+  <div class="topbar-right">
+    <a class="back" href="index.html">&larr; All labs</a>
+    <button class="back share-open" style="background:none;border:none;cursor:pointer;font:inherit;padding:0">↗ Share</button>
+    <a class="topbar-social" href="https://github.com/0brains/0pies" target="_blank" rel="noopener noreferrer" title="0pi.es on GitHub — fork it, it's yours" aria-label="0pi.es source code on GitHub">
+      <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+    </a>
+    <a class="topbar-social" href="https://www.reddit.com/r/0pi/" target="_blank" rel="noopener noreferrer" title="r/0pi — argue about AI regulation with us" aria-label="r/0pi on Reddit">
+      <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M22 11.06a2.4 2.4 0 0 0-4.07-1.72 11.8 11.8 0 0 0-6.02-1.9l1.02-3.22 2.78.62a1.73 1.73 0 1 0 .2-1.19l-3.2-.71a.6.6 0 0 0-.71.4l-1.27 4.04a11.8 11.8 0 0 0-6.36 1.94A2.4 2.4 0 1 0 2.5 13.4a4.3 4.3 0 0 0-.05.68c0 3.42 4.28 6.2 9.55 6.2s9.55-2.78 9.55-6.2c0-.22-.02-.44-.05-.65A2.4 2.4 0 0 0 22 11.06zM7.7 12.7a1.44 1.44 0 1 1 2.88 0 1.44 1.44 0 0 1-2.88 0zm8.13 4.2c-1 1-2.9 1.08-3.45 1.08-.56 0-2.46-.08-3.46-1.08a.38.38 0 0 1 .53-.53c.63.63 1.98.85 2.93.85.94 0 2.3-.22 2.93-.85a.38.38 0 0 1 .52.53zm-.27-2.76a1.44 1.44 0 1 1 0-2.88 1.44 1.44 0 0 1 0 2.88z"/></svg>
+    </a>
+  </div>
+</topbar>
+<div class="wrap">
+  <header class="hero">
+    <p class="eyebrow">__CONTAINER_SUBTITLE__</p>
+    <h1>__CONTAINER_TITLE__</h1>
+  </header>
+  <section class="cards">
+<!--__EXAM_CARDS__-->
+  </section>
+</div>
+<script>
+(function(){
+  // Site-level share. Same three voices as the game share, aimed at the page
+  // rather than one game. Plain intent links: nothing loads and nothing is
+  // called until a chip is clicked, and we never learn that it was.
+  const CTX = "__CONTAINER_TITLE__";
+  const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"}[c]));
+  const pageUrl = () => location.protocol === "file:"
+    ? "https://0pi.es/" + encodeURIComponent(decodeURIComponent(location.pathname.split("/").pop()))
+    : location.origin + location.pathname;
+  const TONES = [
+    {id:"learned", label:"Make me sound like I just learned something",
+     hint:"accidental expertise, mild smugness", variants:[
+      'TIL you can study {c} by playing games. Free ones. I have retained facts. On purpose.',
+      'An hour on 0pi.es and I can now drop {c} facts into conversation with terrifying confidence.',
+      'Studying {c} used to mean flashcards. Now it’s free browser games, and somehow it’s working.']},
+    {id:"amazing", label:"I just found this and it’s amazing",
+     hint:"breathless discovery, zero chill", variants:[
+      'Stop scrolling: free {c} study games. No ads, no signup, no tracking, zero pies.',
+      'Found the internet’s weirdest good study site: free {c} games, real citations, zero cookies.',
+      'Someone built free games for {c} and just… left them on the internet. Thank me later.']},
+    {id:"crap", label:"Look at this crap",
+     hint:"disgusted, yet somehow three hours in", variants:[
+      'Look at this crap: someone gamified {c}. Anyway, it’s late and I can’t stop playing.',
+      'This is the dumbest possible way to learn {c} and it is ABSOLUTELY working. Furious.',
+      'Games. About {c}. Who hurt these people. (Don’t click. You’ll lose your afternoon.)']},
+  ];
+  const NETS = [
+    {name:"X",        url:(t,u)=>`https://twitter.com/intent/tweet?text=${encodeURIComponent(t)}&url=${encodeURIComponent(u)}`},
+    {name:"LinkedIn", url:(t,u)=>`https://www.linkedin.com/feed/?shareActive=true&text=${encodeURIComponent(t+"\n\n"+u)}`},
+    {name:"Facebook", url:(t,u)=>`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(u)}&quote=${encodeURIComponent(t)}`},
+    {name:"Reddit",   url:(t,u)=>`https://www.reddit.com/submit?url=${encodeURIComponent(u)}&title=${encodeURIComponent(t)}`},
+    {name:"Bluesky",  url:(t,u)=>`https://bsky.app/intent/compose?text=${encodeURIComponent(t+"\n"+u)}`},
+    {name:"Threads",  url:(t,u)=>`https://www.threads.net/intent/post?text=${encodeURIComponent(t+"\n"+u)}`},
+    {name:"WhatsApp", url:(t,u)=>`https://wa.me/?text=${encodeURIComponent(t+"\n"+u)}`},
+    {name:"Telegram", url:(t,u)=>`https://t.me/share/url?url=${encodeURIComponent(u)}&text=${encodeURIComponent(t)}`},
+  ];
+  const st = {tone:"learned", variant:0};
+  const text = () => {
+    const tone = TONES.find(t => t.id === st.tone);
+    return tone.variants[st.variant % tone.variants.length].replace(/\{c\}/g, CTX);
+  };
+  function ensureRoot(){
+    let root = document.getElementById("share-root");
+    if(root) return root;
+    root = document.createElement("div");
+    root.id = "share-root"; root.className = "share-root";
+    root.innerHTML = `<div class="share-backdrop"></div>
+      <div class="share-modal" role="dialog" aria-modal="true" aria-label="Share this site">
+        <button class="share-close" aria-label="Close">×</button>
+        <h3>Share this</h3>
+        <p class="share-sub">Pick your energy:</p>
+        <div class="share-tones"></div>
+        <p class="share-preview" id="share-preview"></p>
+        <button class="share-reroll" id="share-reroll">↻ Another take</button>
+        <div class="share-nets" id="share-nets"></div>
+        <p class="share-note">To be expressly clear: we don’t track you when you share this —
+          or what you’re doing, buying, or watching in your mum’s basement. These buttons are
+          plain links. Nothing fires until you click one, and even then we never find out.</p>
+      </div>`;
+    document.body.appendChild(root);
+    root.querySelector(".share-backdrop").onclick = close;
+    root.querySelector(".share-close").onclick = close;
+    document.addEventListener("keydown", e => { if(e.key === "Escape") close(); });
+    return root;
+  }
+  function renderShare(){
+    const root = ensureRoot();
+    root.querySelector(".share-tones").innerHTML = TONES.map(t =>
+      `<button class="share-tone" data-tone="${t.id}" aria-pressed="${t.id===st.tone}">
+         ${esc(t.label)}<span class="hint">${esc(t.hint)}</span></button>`).join("");
+    root.querySelectorAll(".share-tone").forEach(b => b.onclick = () => {
+      st.tone = b.dataset.tone; st.variant = Math.floor(Math.random()*3); renderShare();
+    });
+    const t = text(), u = pageUrl();
+    document.getElementById("share-preview").textContent = t + "\n\n" + u;
+    document.getElementById("share-reroll").onclick = () => { st.variant++; renderShare(); };
+    const native = navigator.share ? `<button id="share-native">More…</button>` : "";
+    document.getElementById("share-nets").innerHTML = NETS.map(n =>
+      `<a href="${esc(n.url(t,u))}" target="_blank" rel="noopener noreferrer">${esc(n.name)}</a>`).join("")
+      + `<button id="share-copy">Copy</button>` + native;
+    const cp = document.getElementById("share-copy");
+    cp.onclick = () => {
+      const full = t + "\n" + u;
+      const done = () => { cp.textContent = "Copied!"; setTimeout(() => cp.textContent = "Copy", 1600); };
+      if(navigator.clipboard && navigator.clipboard.writeText)
+        navigator.clipboard.writeText(full).then(done).catch(done);
+      else done();
+    };
+    const nb = document.getElementById("share-native");
+    if(nb) nb.onclick = () => navigator.share({title: document.title, text: t, url: u}).catch(() => {});
+  }
+  function open(){ st.variant = Math.floor(Math.random()*3); renderShare();
+    document.getElementById("share-root").classList.add("open"); }
+  function close(){ const r = document.getElementById("share-root");
+    if(r) r.classList.remove("open"); }
+  document.querySelectorAll(".share-open").forEach(b => b.onclick = open);
+})();
+</script>
+</body>
+</html>

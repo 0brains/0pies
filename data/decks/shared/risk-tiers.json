@@ -1,0 +1,40 @@
+{
+  "id": "risk-tiers",
+  "runner": "board",
+  "title": "Regulatory Risk Tiers",
+  "blurb": "The EU AI Act's pyramid, plus the GPAI systemic-risk threshold. Sort each system into its tier.",
+  "source": "Regulation (EU) 2024/1689 (EU AI Act) Arts. 5, 6, 50, 51 and Annex III",
+  "asOf": "2026-07",
+  "area": "risk",
+  "hint": "Drag each system onto its risk tier. Tier follows purpose and context, not how sophisticated the model is.",
+  "note": "The tiers attach to the use, not the technology. The same model can be prohibited in one deployment, high-risk in another and minimal in a third.",
+  "zones": [
+    {"key": "Unacceptable", "name": "Unacceptable", "def": "Prohibited practices under Art. 5. Not a risk to be mitigated — the practice may not be placed on the market or used at all."},
+    {"key": "High", "name": "High risk", "def": "Art. 6 and Annex III, or a safety component of a regulated product. Permitted subject to substantial obligations before and after placing on the market."},
+    {"key": "Limited", "name": "Limited / transparency", "def": "Art. 50 transparency duties: tell people they are dealing with AI, or that content is synthetic."},
+    {"key": "Minimal", "name": "Minimal", "def": "Everything else. No obligations under the Act beyond those that apply to any software; voluntary codes may apply."},
+    {"key": "GPAI systemic", "name": "GPAI with systemic risk", "def": "General-purpose models meeting the Art. 51 threshold, with model-level obligations distinct from the use-based pyramid."}
+  ],
+  "items": [
+    {"id": "rt2-01", "label": "A government scheme scoring citizens' trustworthiness from unrelated social behaviour and using it to deny access to public services.", "answer": "Unacceptable", "why": "Social scoring by or on behalf of public authorities leading to detrimental treatment in unrelated contexts is prohibited outright under Art. 5."},
+    {"id": "rt2-02", "label": "A system inferring employees' emotions from facial expressions during their working day, outside any medical or safety purpose.", "answer": "Unacceptable", "why": "Emotion inference in the workplace and in education is prohibited, with narrow medical and safety exceptions. This is why the ban catches HR analytics products."},
+    {"id": "rt2-03", "label": "A tool that scrapes facial images from the internet and CCTV indiscriminately to build a facial recognition database.", "answer": "Unacceptable", "why": "Untargeted scraping to build facial recognition databases is expressly prohibited, regardless of the operator's purpose."},
+    {"id": "rt2-04", "label": "A system using subliminal techniques beyond a person's awareness to materially distort behaviour and cause significant harm.", "answer": "Unacceptable", "why": "Manipulative and exploitative techniques causing significant harm are prohibited. The test is material distortion of behaviour, not the technique's sophistication."},
+    {"id": "rt2-05", "label": "A CV-screening system that filters and ranks applicants for a role.", "answer": "High", "why": "Employment and worker management is an Annex III area. Recruitment screening is the canonical high-risk example and attracts the full obligation set."},
+    {"id": "rt2-06", "label": "A model used by a bank to evaluate the creditworthiness of natural persons.", "answer": "High", "why": "Creditworthiness assessment of natural persons is listed in Annex III, with a carve-out for detecting financial fraud."},
+    {"id": "rt2-07", "label": "An AI component that controls the safety function of a medical device already regulated under EU harmonisation law.", "answer": "High", "why": "This is the Art. 6(1) route: a safety component of a product covered by listed harmonisation legislation and requiring third-party conformity assessment."},
+    {"id": "rt2-08", "label": "A system used to determine access to, or assign people to, educational institutions.", "answer": "High", "why": "Education and vocational training decisions affecting a person's access are Annex III. The harm is to life chances, which is why the tier is high rather than limited."},
+    {"id": "rt2-09", "label": "A customer service chatbot that must make clear to the user that they are interacting with an AI system.", "answer": "Limited", "why": "Art. 50 transparency: a person must know they are dealing with a machine unless it is obvious. That disclosure is the whole obligation."},
+    {"id": "rt2-10", "label": "An image generator whose synthetic outputs must be marked in a machine-readable format as artificially generated.", "answer": "Limited", "why": "Marking synthetic content is an Art. 50 duty on providers of generative systems, independent of whatever tier the deployment sits in."},
+    {"id": "rt2-11", "label": "A deepfake published as part of a news item, which must be disclosed as artificially generated or manipulated.", "answer": "Limited", "why": "Deepfake disclosure is a transparency obligation on deployers, with adjustments for evidently artistic or satirical work."},
+    {"id": "rt2-12", "label": "An emotion recognition system used outside a prohibited context, whose subjects must be informed of its operation.", "answer": "Limited", "why": "Where emotion recognition is not banned outright, informing exposed people is an Art. 50 duty. The same technology sits in two different tiers depending on the setting."},
+    {"id": "rt2-13", "label": "A spam filter classifying inbound email for an enterprise mail service.", "answer": "Minimal", "why": "Spam filtering is the Act's own example of minimal risk. No obligations attach beyond general law."},
+    {"id": "rt2-14", "label": "An AI opponent controlling non-player characters in a video game.", "answer": "Minimal", "why": "Entertainment uses with no effect on rights, safety or access to services fall outside the tiers that carry duties."},
+    {"id": "rt2-15", "label": "An inventory forecasting model predicting warehouse stock levels with no effect on individuals.", "answer": "Minimal", "why": "No listed area, no safety component, no interaction with a person. Operational analytics is where most enterprise AI actually sits."},
+    {"id": "rt2-16", "label": "A model that optimises energy use in a data centre's cooling system.", "answer": "Minimal", "why": "Industrial optimisation touching no Annex III area and no person is minimal risk, however consequential it is commercially."},
+    {"id": "rt2-17", "label": "A general-purpose model presumed to carry systemic risk because its training compute exceeds the threshold set in the Act.", "answer": "GPAI systemic", "why": "Art. 51 sets a compute-based presumption. This is a model-level classification and sits outside the use-based pyramid entirely."},
+    {"id": "rt2-18", "label": "A general-purpose model designated by the Commission as having high-impact capabilities equivalent to the most advanced models.", "answer": "GPAI systemic", "why": "Designation is the second route into systemic risk, alongside the compute presumption. Either route triggers the same obligations."},
+    {"id": "rt2-19", "label": "A provider required to perform model evaluations, adversarial testing, and to track and report serious incidents at the model level.", "answer": "GPAI systemic", "why": "Evaluation, adversarial testing, systemic risk mitigation and incident reporting are the Art. 55 obligations that only systemic-risk GPAI carries."},
+    {"id": "rt2-20", "label": "A provider required to ensure an adequate level of cybersecurity protection for the model and its physical infrastructure.", "answer": "GPAI systemic", "why": "Model-level cybersecurity is a systemic-risk GPAI duty. Baseline GPAI obligations — documentation, copyright policy, training-data summary — apply without it."}
+  ]
+}

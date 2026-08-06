@@ -1,0 +1,211 @@
+{
+ "id": "iv-ops",
+ "runner": "board",
+ "title": "Live-System Duty Roster",
+ "blurb": "Seven standing duties a deployed AI system owes its operator, every day it stays live. Sort each scene into the duty it belongs to.",
+ "source": "AIGP BOK IV.C · AIGP Study Guide (SG) §Domain IV.C · IAPP AIGP Foundational Study Guide (FSG, effective Feb 2026) p.6/8",
+ "asOf": "2026-08",
+ "area": "IV.C",
+ "hint": "These are all deployment-time duties — the system is already live. Ask which standing obligation the scene is exercising, not whether something went wrong.",
+ "note": "Pre-release assurance (readiness reviews, testing before a system ever ships) belongs to a different game. Everything on this board happens after go-live, on a recurring or triggered basis.",
+ "zones": [
+  {
+   "key": "Post-market monitoring",
+   "name": "Post-market monitoring",
+   "def": "The named, ongoing legal duty to track a live system's performance, fairness and compliance against pre-set metrics and thresholds, with escalation rules for when results fall outside them. It is the monitoring plan itself — not the drift math behind any one metric, and not the independent check that later verifies the plan was actually followed."
+  },
+  {
+   "key": "Secondary-use control",
+   "name": "Secondary-use control",
+   "def": "Controls that stop a deployed system's outputs or capabilities being repurposed to a use, audience or population the original approval never covered — forecasting the repurposing and restricting it before it happens, not reacting once it is already public."
+  },
+  {
+   "key": "External communications",
+   "name": "External communications",
+   "def": "Pre-agreed content and channels for what the organization tells regulators, users and the public about a live system — proactive (transparency notices, system cards) and reactive (acknowledging a live problem) — distinct from the internal investigation the statements describe."
+  },
+  {
+   "key": "Deactivation & localization",
+   "name": "Deactivation & localization",
+   "def": "Pre-written authority, triggers and restart criteria for pulling a live system fully offline (deactivation) or restricting it to fewer regions or features (localization) — a stop-or-restrict decision with documented conditions to resume, not the technical fix that follows it."
+  },
+  {
+   "key": "User training",
+   "name": "User training",
+   "def": "Preparing the people who operate a live system or rely on its outputs — role-specific instruction, simulated practice and logged attestation — so they can catch a wrong output and know when to override it, renewed on a cadence rather than delivered once at launch."
+  },
+  {
+   "key": "Issue & incident management",
+   "name": "Issue & incident management",
+   "def": "Detecting, logging, triaging and closing live-system problems, sized by severity — from a minor logged complaint tracked for a pattern, through to a formal response with containment, root-cause analysis and corrective action."
+  },
+  {
+   "key": "Periodic audits & red teaming",
+   "name": "Periodic audits & red teaming",
+   "def": "Scheduled, independent verification that a live system's controls still hold — recurring compliance reviews and adversarial testing run after launch, on a cadence or tied to a major change — distinct from the one-time readiness assessment run before a system ever ships."
+  }
+ ],
+ "items": [
+  {
+   "id": "iv-ops-01",
+   "label": "A vendor quietly swaps in a new model version, with no notice to the team that deployed it.",
+   "answer": "Post-market monitoring",
+   "why": "Post-market monitoring is a standing legal duty to track a live system against its baseline; an unannounced version swap is a monitoring-plan failure, distinct from Issue & incident management, which only opens a file once someone has noticed the resulting harm.",
+   "citation": "AIGP Body of Knowledge v2.1"
+  },
+  {
+   "id": "iv-ops-02",
+   "label": "A quarterly review tracks feature-distribution drift, incoming-data quality problems, and latency/compute load — never the original training set the model shipped with.",
+   "answer": "Post-market monitoring",
+   "why": "Official calibration: production monitoring metrics are data drift, data quality and latency/computational signals — never historical training data. Setting what gets tracked is this zone's job; independently re-checking that the plan was actually followed is Periodic audits & red teaming's.",
+   "citation": "FSG p.6/8"
+  },
+  {
+   "id": "iv-ops-03",
+   "label": "Escalation rules route any metric that crosses its threshold straight to a named owner, who can order a rollback or a regulator notice.",
+   "answer": "Post-market monitoring",
+   "why": "The monitoring plan names who acts and what they do once a threshold is breached; Issue & incident management picks up only after that escalation fires, to record and triage the specific problem it names.",
+   "citation": "SG"
+  },
+  {
+   "id": "iv-ops-04",
+   "label": "A scheduling tool built to staff shifts quietly gets re-aimed at scoring individual employees' performance.",
+   "answer": "Secondary-use control",
+   "why": "Repurposing to an unapproved use needs consent protocols and use restrictions before it happens; the 'reasonably foreseeable misuse' duty binds providers and deployers alike, unlike Issue & incident management, which only engages once a complaint has already surfaced.",
+   "citation": "SG"
+  },
+  {
+   "id": "iv-ops-05",
+   "label": "Eighteen months into deployment, the team runs a scheduled second-order-thinking exercise as part of ongoing governance, mapping who else might now be plugging this system's output into their own workflow.",
+   "answer": "Secondary-use control",
+   "why": "Forecasting repurposing and knock-on effects is a recurring post-deployment governance activity, broader than a point-in-time impact assessment and different from Periodic audits & red teaming's adversarial testing, which probes for attack, not for lawful-looking reuse the original approval never covered.",
+   "citation": "AIGP Body of Knowledge v2.1"
+  },
+  {
+   "id": "iv-ops-06",
+   "label": "Every output leaving the API carries a model-version tag and a 'not validated for hiring or credit decisions' flag, and any new use case triggers a fresh review before reuse is allowed.",
+   "answer": "Secondary-use control",
+   "why": "Provenance markers plus a reuse-approval gate stop harm compounding through another team's workflow; the control lives in how outputs are allowed to travel, distinct from External communications, which is what gets said once a problem is already visible to outsiders.",
+   "citation": "SG"
+  },
+  {
+   "id": "iv-ops-07",
+   "label": "A complaint about a wrong automated decision goes viral overnight.",
+   "answer": "External communications",
+   "why": "Acknowledge publicly at once that the issue is known and under investigation; waiting for Issue & incident management's internal root-cause work to finish first only compounds the reputational damage.",
+   "citation": "AIGP Body of Knowledge v2.1"
+  },
+  {
+   "id": "iv-ops-08",
+   "label": "The public statement discloses the system's purpose and known limitations, and stops short of the method that produced the flagged decision.",
+   "answer": "External communications",
+   "why": "Disclosure covers intended purpose, capabilities and limitations, but proprietary methods stay out of any public statement — a scope boundary on what this zone says, distinct from the reuse-approval label that Secondary-use control stamps on an output before it ever travels.",
+   "citation": "AIGP Body of Knowledge v2.1"
+  },
+  {
+   "id": "iv-ops-09",
+   "label": "Regulators receive the full evidence pack — impact assessment, monitoring results, named corrective-action owners — while the public statement stays in plain language with no technical root cause yet.",
+   "answer": "External communications",
+   "why": "The same underlying record gets tailored per audience here: regulators get evidence, the public gets accountability and next steps — never the reverse, and never the raw findings a Periodic audits & red teaming exercise produced for internal use only.",
+   "citation": "SG"
+  },
+  {
+   "id": "iv-ops-10",
+   "label": "Pre-written thresholds name exactly who may pull a live system offline, and the criteria that must be met before it restarts.",
+   "answer": "Deactivation & localization",
+   "why": "This is the kill-switch protocol: pre-agreed authority and restart criteria, distinct from Issue & incident management's immediate containment move, which isolates a system mid-problem without needing this zone's documented sign-off to resume. Algorithmic methodology is the named non-factor in the decision.",
+   "citation": "SG"
+  },
+  {
+   "id": "iv-ops-11",
+   "label": "A new privacy law in one region means the system stops operating there while it keeps running everywhere else, under a pre-documented, reversible policy.",
+   "answer": "Deactivation & localization",
+   "why": "Selective, jurisdiction-scoped restriction is a different move from a full kill switch, but this zone owns both ends of the same control — total stop and regional restriction — rather than splitting them across separate games.",
+   "citation": "AIGP Body of Knowledge v2.1"
+  },
+  {
+   "id": "iv-ops-12",
+   "label": "A predictive-maintenance system serving critical infrastructure is phased out in stages, with a human backup running alongside it until the transition is complete.",
+   "answer": "Deactivation & localization",
+   "why": "Graduated wind-down with continuity planning belongs here because the trigger is a standing safety concern being managed on a schedule, unlike Issue & incident management, whose containment step responds to a single problem happening right now.",
+   "citation": "AIGP Body of Knowledge v2.1"
+  },
+  {
+   "id": "iv-ops-22",
+   "label": "Before a system is ever pulled offline, the team first maps every upstream feed and downstream process that relies on it, and confirms a fallback is ready to take over the gap.",
+   "answer": "Deactivation & localization",
+   "why": "This is the planning step that has to happen before a stop-or-restrict decision is executed — distinct from Issue & incident management's containment, which reacts to a problem already happening, and from Post-market monitoring's ongoing performance tracking, which assumes the system stays live.",
+   "citation": "SG-C12-Q008"
+  },
+  {
+   "id": "iv-ops-23",
+   "label": "Once a system is fully retired, its data, models and decision logs are preserved rather than deleted, so a regulator or auditor can reconstruct what it did years later.",
+   "answer": "Deactivation & localization",
+   "why": "Preservation is part of the shutdown record itself, owned by the same authority that pulled the system offline — unlike Issue & incident management's CAPA log, which tracks fixes to a specific problem, and unlike Post-market monitoring, which only tracks a system while it is still live.",
+   "citation": "SG-C12-Q007"
+  },
+  {
+   "id": "iv-ops-13",
+   "label": "Clinicians keep misreading the AI's confidence scores, so the team arranges simulation-based coaching with an ongoing mentor pairing.",
+   "answer": "User training",
+   "why": "Role-specific instruction with hands-on practice and continued support addresses a skills-and-confidence gap that a one-off certification exam would only test knowledge against, not build; this is a standing curriculum, not the confidence-score display itself, which is a product feature.",
+   "citation": "AIGP Body of Knowledge v2.1"
+  },
+  {
+   "id": "iv-ops-14",
+   "label": "Underwriters are told to apply their own judgment to the model's initial recommendation before it becomes final.",
+   "answer": "User training",
+   "why": "This is the human-oversight habit the curriculum is meant to instill; a right-to-appeal notice or a feedback survey are more passive and don't put a person's judgment ahead of the automated output the way this does.",
+   "citation": "AIGP Body of Knowledge v2.1"
+  },
+  {
+   "id": "iv-ops-15",
+   "label": "Before renewing system access, each reviewer completes a scenario drill and signs an attestation confirming they understand the tool's stated limits.",
+   "answer": "User training",
+   "why": "Mandatory, logged attestation tied to renewed access is what makes this an enforceable control rather than a one-time orientation — evidence an auditor can check, unlike Issue & incident management's reporting channels, which exist to surface a problem, not to certify readiness beforehand.",
+   "citation": "SG"
+  },
+  {
+   "id": "iv-ops-16",
+   "label": "Repeated low-severity mispredictions get logged and watched for a pattern before anyone escalates.",
+   "answer": "Issue & incident management",
+   "why": "This is the lower-severity track — logged, triaged and trended, escalating only if the pattern persists. The split from the higher-severity track turns on scale of harm and legal exposure, not on whether a mistake occurred at all; it stays here rather than moving to Periodic audits & red teaming, which verifies controls on a schedule, not on a per-mistake basis.",
+   "citation": "SG"
+  },
+  {
+   "id": "iv-ops-17",
+   "label": "Fraud detection is wildly over-flagging legitimate transactions; the very first move is to pull the system offline before anyone starts the root-cause work.",
+   "answer": "Issue & incident management",
+   "why": "Containment — immediately isolating the system — is this zone's first response step inside a live problem, distinct from Deactivation & localization, which owns the pre-agreed authority and documented restart criteria that make a shutdown lawful and reversible in the first place.",
+   "citation": "AIGP Body of Knowledge v2.1"
+  },
+  {
+   "id": "iv-ops-18",
+   "label": "A bias finding sits at 1.8%, just under the 2% escalation trigger — the team opens the formal response track anyway because the affected group is a protected class.",
+   "answer": "Issue & incident management",
+   "why": "Severity thresholds guide but don't override judgment when a protected group is affected: the finding gets the full formal-response track rather than being logged as a minor item and left to trend, which is the treatment a sub-threshold, non-protected-class finding would get.",
+   "citation": "AIGP Body of Knowledge v2.1"
+  },
+  {
+   "id": "iv-ops-19",
+   "label": "Twelve months after launch, an outside crew re-runs jailbreak attempts against the live assistant on a scheduled cadence.",
+   "answer": "Periodic audits & red teaming",
+   "why": "Recurring, scheduled adversarial testing after deployment is this zone's discipline; the pre-release version of the same technique — the readiness assessment run before a system ever ships — belongs to a different game entirely.",
+   "citation": "SG"
+  },
+  {
+   "id": "iv-ops-20",
+   "label": "An independent second-line team samples last quarter's automated decisions, re-runs the fairness checks by hand, and walks through how the last escalation actually played out.",
+   "answer": "Periodic audits & red teaming",
+   "why": "Independence from the product team plus re-performing checks rather than trusting the dashboard is what separates this from Post-market monitoring's own live review, which the product team runs and staffs itself.",
+   "citation": "SG"
+  },
+  {
+   "id": "iv-ops-21",
+   "label": "Regulators expect a foundation-model provider to document a fresh round of adversarial probing every time a major version ships, on top of whatever ran before the first launch.",
+   "answer": "Periodic audits & red teaming",
+   "why": "Recurring re-testing tied to a material change is a standing, deployment-time expectation for high-risk and general-purpose models — a repeated obligation, not the one-off gate crossed once at initial release.",
+   "citation": "SG"
+  }
+ ]
+}

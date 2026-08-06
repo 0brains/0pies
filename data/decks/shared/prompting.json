@@ -1,0 +1,90 @@
+{
+  "id": "prompting",
+  "runner": "board",
+  "title": "Prompting & Risks",
+  "blurb": "Prompt patterns and the attacks that exploit them.",
+  "source": "AWS Certified AI Practitioner (AIF-C01) exam guide · Domain 3",
+  "asOf": "2026-07",
+  "area": "genai",
+  "hint": "This concept changes instructions, context, sampling, output constraints, or attack resistance at request time without retraining the model unless the clue explicitly says otherwise.",
+  "items": [
+    {
+      "id": "prompting-01",
+      "label": "Breaks a complex task into explicit smaller steps whose outputs can be checked.",
+      "answer": "Structured Decomposition",
+      "why": "Breaks a complex task into explicit smaller steps whose outputs can be checked."
+    },
+    {
+      "id": "prompting-02",
+      "label": "Asks a model to perform a task without providing examples.",
+      "answer": "Zero-Shot",
+      "why": "Asks a model to perform a task without providing examples."
+    },
+    {
+      "id": "prompting-03",
+      "label": "Provides a small number of examples to guide behavior and output format.",
+      "answer": "Few-Shot",
+      "why": "Provides a small number of examples to guide behavior and output format."
+    },
+    {
+      "id": "prompting-04",
+      "label": "Defines high-priority application behavior, boundaries, role, and response requirements.",
+      "answer": "System Prompt",
+      "why": "Defines high-priority application behavior, boundaries, role, and response requirements."
+    },
+    {
+      "id": "prompting-05",
+      "label": "A unit of text processed by a language model; token counts affect context capacity, latency, and cost.",
+      "answer": "Token",
+      "why": "A unit of text processed by a language model; token counts affect context capacity, latency, and cost."
+    },
+    {
+      "id": "prompting-06",
+      "label": "The maximum combined amount of input and generated tokens a model can process in one request.",
+      "answer": "Context Window",
+      "why": "The maximum combined amount of input and generated tokens a model can process in one request."
+    },
+    {
+      "id": "prompting-07",
+      "label": "Controls sampling randomness; lower values favor more repeatable output and higher values increase variation.",
+      "answer": "Temperature",
+      "why": "Controls sampling randomness; lower values favor more repeatable output and higher values increase variation."
+    },
+    {
+      "id": "prompting-08",
+      "label": "Limits sampling to the smallest set of likely tokens whose cumulative probability reaches a threshold.",
+      "answer": "Top-p",
+      "why": "Limits sampling to the smallest set of likely tokens whose cumulative probability reaches a threshold."
+    },
+    {
+      "id": "prompting-09",
+      "label": "Caps response length to control truncation risk, latency, and spend.",
+      "answer": "Maximum Output Tokens",
+      "why": "Caps response length to control truncation risk, latency, and spend."
+    },
+    {
+      "id": "prompting-10",
+      "label": "Constrains a response to a schema such as JSON so downstream software can validate and consume it.",
+      "answer": "Structured Output",
+      "why": "Constrains a response to a schema such as JSON so downstream software can validate and consume it."
+    },
+    {
+      "id": "prompting-11",
+      "label": "Malicious input attempts to override instructions or manipulate a model and its connected tools.",
+      "answer": "Prompt Injection",
+      "why": "Malicious input attempts to override instructions or manipulate a model and its connected tools."
+    },
+    {
+      "id": "prompting-12",
+      "label": "Corrupted or adversarial training examples manipulate what a model learns.",
+      "answer": "Training-Data Poisoning",
+      "why": "Corrupted or adversarial training examples manipulate what a model learns."
+    },
+    {
+      "id": "prompting-13",
+      "label": "Attempts to bypass safety guardrails to generate restricted content.",
+      "answer": "Prompt Jailbreaking",
+      "why": "Attempts to bypass safety guardrails to generate restricted content."
+    }
+  ]
+}

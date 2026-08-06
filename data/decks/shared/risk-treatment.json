@@ -1,0 +1,35 @@
+{
+  "id": "risk-treatment",
+  "runner": "board",
+  "title": "Risk Treatment Hierarchy",
+  "blurb": "Avoid, reduce, transfer, accept. Sort each response into the treatment it actually is.",
+  "source": "ISO 31000:2018 §6.5 (risk treatment) · ISO/IEC 23894:2023 §6.5 · NIST AI RMF 1.0 MANAGE 1",
+  "asOf": "2026-07",
+  "area": "risk",
+  "hint": "Drag each decision onto the treatment option it represents. Ask what happened to the risk itself, not how much work the response took.",
+  "note": "Treatment answers 'what are we doing about this risk'. It is a different axis from control strength, which answers 'how effective is the reduction'. Buying insurance is a strong treatment decision and no control at all.",
+  "zones": [
+    {"key": "Avoid", "name": "Avoid", "def": "Do not undertake, or stop undertaking, the activity that gives rise to the risk. The exposure goes to zero because the activity goes to zero."},
+    {"key": "Reduce", "name": "Reduce", "def": "Keep the activity but act on likelihood or impact. Most controls live here, and residual risk always remains."},
+    {"key": "Transfer", "name": "Transfer", "def": "Move the financial or legal consequence to another party. The hazard is untouched; only who pays changes."},
+    {"key": "Accept", "name": "Accept", "def": "Retain the risk knowingly, at the level of authority entitled to accept it, and record the decision."}
+  ],
+  "items": [
+    {"id": "rt-01", "label": "After a risk assessment, the company cancels its planned emotion-recognition feature for workplace monitoring entirely.", "answer": "Avoid", "why": "The activity itself is abandoned, so the exposure disappears rather than being managed. Avoidance is the only treatment that removes a risk instead of shrinking it."},
+    {"id": "rt-02", "label": "A vendor's model would require processing biometric data the firm has no lawful basis for, so the firm withdraws from the procurement.", "answer": "Avoid", "why": "Declining to proceed is a treatment decision, not the absence of one. It is usually the right answer when the risk is unacceptable at any residual level."},
+    {"id": "rt-03", "label": "A bank decides not to deploy an automated decisioning model in the one jurisdiction where it could not meet the contestability requirement.", "answer": "Avoid", "why": "Scoping the activity out of a jurisdiction removes the exposure there. Partial avoidance by scope is still avoidance."},
+    {"id": "rt-04", "label": "A team drops a planned feature that would have inferred health status from purchase history, judging no mitigation sufficient.", "answer": "Avoid", "why": "When no control brings residual risk within tolerance, avoidance is the remaining option. The tell is that the activity stops, not that it is watched more closely."},
+    {"id": "rt-05", "label": "Confidence thresholds are introduced so that uncertain cases are routed to a trained reviewer instead of being auto-decided.", "answer": "Reduce", "why": "The activity continues with lower likelihood of an unreviewed wrong decision. Residual risk remains — reviewers are fallible — which is the signature of reduction."},
+    {"id": "rt-06", "label": "The training corpus is rebalanced and the model is re-evaluated by subgroup before release.", "answer": "Reduce", "why": "This lowers the probability of disparate performance without eliminating it. Measurable improvement with residual exposure is reduction, not avoidance."},
+    {"id": "rt-07", "label": "Rate limits, output filters and a kill switch are added to a customer-facing assistant.", "answer": "Reduce", "why": "Each measure attacks likelihood or impact while the service keeps running. Note that the kill switch reduces impact rather than likelihood — both count."},
+    {"id": "rt-08", "label": "Model cards, evaluation results and known limitations are published so deployers can use the system within its tested envelope.", "answer": "Reduce", "why": "Reducing misuse by informing the deployer is a genuine, if weak, reduction. Its weakness is a control-strength question, not a treatment classification one."},
+    {"id": "rt-09", "label": "The firm buys specific AI liability insurance covering claims arising from automated decisions.", "answer": "Transfer", "why": "The financial consequence moves to the insurer while the model behaves exactly as before. Insurance never reduces the probability of harm and is not a control."},
+    {"id": "rt-10", "label": "A contract makes the model vendor liable for damages caused by defects in the supplied system.", "answer": "Transfer", "why": "Contractual indemnity reallocates cost between parties. The affected individual is no better protected, which is why regulators do not treat it as mitigation."},
+    {"id": "rt-11", "label": "A high-risk processing activity is outsourced to a specialist provider under a contract making them responsible for compliance failures.", "answer": "Transfer", "why": "Outsourcing shifts operational and financial consequence, though rarely regulatory accountability — a distinction that catches people out."},
+    {"id": "rt-12", "label": "The deployer negotiates a warranty and a capped indemnity for third-party IP claims arising from generated output.", "answer": "Transfer", "why": "The exposure is priced and shifted rather than diminished. A cap means the transfer is partial, which is worth recording in the risk register."},
+    {"id": "rt-13", "label": "A small residual risk of a low-severity formatting error is documented, signed off by the product owner, and reviewed annually.", "answer": "Accept", "why": "Informed, authorised and recorded retention is acceptance. Acceptance is a decision with an owner and a review date, not silence."},
+    {"id": "rt-14", "label": "The risk committee records that the residual risk of the deployment is within stated appetite and no further action is required this cycle.", "answer": "Accept", "why": "Explicit retention at the authority entitled to retain it. If nobody at the right level said yes, the risk is not accepted — it is merely unmanaged."},
+    {"id": "rt-15", "label": "A known limitation with a documented workaround is scheduled for review at the next model refresh rather than being fixed now.", "answer": "Accept", "why": "Time-boxed retention with a review point is acceptance. The workaround does not make it reduction, because the risk itself is unchanged in the meantime."},
+    {"id": "rt-16", "label": "The board notes that the cost of further mitigation exceeds the expected loss and directs that the residual risk be retained and monitored.", "answer": "Accept", "why": "A cost-justified retention decision at board level, with monitoring attached. Monitoring is not a control here — it detects, it does not prevent."}
+  ]
+}

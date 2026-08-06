@@ -1,0 +1,121 @@
+{
+  "id": "genai-ops",
+  "runner": "board",
+  "title": "GenAI Evaluation & Ops",
+  "blurb": "Diagnose the failure, then pick the intervention that fits it.",
+  "source": "AWS Certified AI Practitioner (AIF-C01) exam guide · Domain 3",
+  "asOf": "2026-07",
+  "area": "ops",
+  "zoneMode": "options",
+  "hint": "Drag each situation onto the response it calls for. Some responses on the board are there to tempt you.",
+  "items": [
+    {
+      "id": "genai-ops-01",
+      "label": "Answers read well but include claims absent from the retrieved policy passages.",
+      "sub": "Unsupported Claims",
+      "options": [
+        "Measure Groundedness and Require Citations",
+        "Increase Temperature",
+        "Add More Agent Tools"
+      ],
+      "answer": "Measure Groundedness and Require Citations",
+      "why": "First determine whether claims are supported, then tighten evidence use, refusal behavior, and citation validation. Trade-off: A larger model may improve fluency without solving missing or ignored evidence."
+    },
+    {
+      "id": "genai-ops-02",
+      "label": "The answer generator cannot use the right fact because the relevant passage is absent from the retrieved set.",
+      "sub": "Correct Evidence Never Appears",
+      "options": [
+        "Measure Retrieval Recall",
+        "Fine-Tune Response Style",
+        "Lower Maximum Tokens"
+      ],
+      "answer": "Measure Retrieval Recall",
+      "why": "Retrieval recall isolates whether chunking, embeddings, filters, query rewriting, or candidate count misses needed evidence. Trade-off: Generation changes cannot recover evidence that never enters the context."
+    },
+    {
+      "id": "genai-ops-03",
+      "label": "The relevant passage is present, but it is buried among many distracting chunks.",
+      "sub": "Too Much Irrelevant Context",
+      "options": [
+        "Improve Retrieval Precision and Reranking",
+        "Add More Chunks",
+        "Raise Temperature"
+      ],
+      "answer": "Improve Retrieval Precision and Reranking",
+      "why": "Better filters, hybrid retrieval, and reranking reduce noise while preserving the best evidence. Trade-off: Increasing candidate count can improve recall but may worsen precision, latency, and token cost."
+    },
+    {
+      "id": "genai-ops-04",
+      "label": "A prompt change improved test examples but degraded several important customer workflows.",
+      "sub": "Quality Varies After Release",
+      "options": [
+        "Run a Golden-Set Regression Evaluation",
+        "Judge Five Handpicked Outputs",
+        "Deploy and Watch Complaints"
+      ],
+      "answer": "Run a Golden-Set Regression Evaluation",
+      "why": "A versioned representative evaluation set detects regressions across use cases before release. Trade-off: Human review remains valuable when guided by a rubric and sampled across the real distribution."
+    },
+    {
+      "id": "genai-ops-05",
+      "label": "An LLM judge consistently scores longer answers higher even when concise answers are correct.",
+      "sub": "Evaluator Prefers Verbose Answers",
+      "options": [
+        "Calibrate Against Human Ratings",
+        "Trust the Automated Score",
+        "Increase Every Output Length"
+      ],
+      "answer": "Calibrate Against Human Ratings",
+      "why": "LLM judges can have position, verbosity, and self-preference biases and must be calibrated with human judgments. Trade-off: Automated judging remains useful for scale after its rubric and bias are validated."
+    },
+    {
+      "id": "genai-ops-06",
+      "label": "Usage is steady, but average input context and output length have tripled.",
+      "sub": "Interactive Cost Spike",
+      "options": [
+        "Track Tokens, Trim Context, and Cap Output",
+        "Provision More GPUs Immediately",
+        "Increase Top-p"
+      ],
+      "answer": "Track Tokens, Trim Context, and Cap Output",
+      "why": "Token telemetry exposes the direct cost driver; retrieve less noise, summarize history, cache stable context, and cap output. Trade-off: Provisioned throughput helps predictable high utilization, not wasteful prompt growth by itself."
+    },
+    {
+      "id": "genai-ops-07",
+      "label": "Many users ask semantically equivalent questions about unchanged public information.",
+      "sub": "Slow but Repeated Answers",
+      "options": [
+        "Use Evaluated Semantic Caching",
+        "Fine-Tune Every Week",
+        "Disable Monitoring"
+      ],
+      "answer": "Use Evaluated Semantic Caching",
+      "why": "A carefully keyed cache can reduce latency and token spend for equivalent requests when freshness and access boundaries are respected. Trade-off: Do not cache sensitive, personalized, rapidly changing, or insufficiently isolated responses."
+    },
+    {
+      "id": "genai-ops-08",
+      "label": "A support agent calls the same failing API until its execution budget is exhausted.",
+      "sub": "Agent Repeats a Tool Call",
+      "options": [
+        "Add Call Limits, Error State, and Fallback",
+        "Give the Agent More Permissions",
+        "Hide Tool Errors"
+      ],
+      "answer": "Add Call Limits, Error State, and Fallback",
+      "why": "Bounded retries, explicit error handling, idempotency, observability, and human escalation prevent runaway loops. Trade-off: Improving tool descriptions helps selection but does not replace runtime limits and failure controls."
+    },
+    {
+      "id": "genai-ops-10",
+      "label": "A medical support model is uncertain and the cost of a wrong recommendation is severe.",
+      "sub": "High-Stakes Low Confidence",
+      "options": [
+        "Abstain and Route to Human Review",
+        "Force the Most Likely Answer",
+        "Raise Temperature"
+      ],
+      "answer": "Abstain and Route to Human Review",
+      "why": "Confidence thresholds, abstention, evidence display, and qualified human review are appropriate for consequential uncertainty. Trade-off: Human oversight needs clear responsibility, useful context, and measured review quality rather than ceremonial approval."
+    }
+  ]
+}

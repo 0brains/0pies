@@ -1,0 +1,67 @@
+{
+  "id": "drift-pairs",
+  "runner": "pairs",
+  "title": "One Fact Changes Everything — Drift",
+  "blurb": "Two near-identical incidents. One fact differs, and the diagnosis flips.",
+  "source": "Gama et al. (2014), A survey on concept drift adaptation · Moreno-Torres et al. (2012), A unifying view on dataset shift",
+  "asOf": "2026-07",
+  "area": "ops",
+  "pairs": [
+    {
+      "id": "dp-01",
+      "dimension": "whether the input-to-outcome relationship still holds",
+      "buckets": ["Covariate drift", "Concept drift"],
+      "a": {"text": "A credit model sees a wave of applicants from a new region. For any given income, employment and history profile, default rates are exactly what the model expects.", "answer": "Covariate drift", "why": "The inputs moved into new territory but the rule is intact. More representative training data fixes it; a new rule is not needed."},
+      "b": {"text": "A credit model sees the same wave of applicants from a new region. For an identical income, employment and history profile, default rates there are twice what the model expects.", "answer": "Concept drift", "why": "Identical inputs now produce different outcomes, so P(Y|X) has changed. No amount of rebalancing the input mix will fix a relationship that no longer holds."}
+    },
+    {
+      "id": "dp-02",
+      "dimension": "whether the change originates in the world or in the pipeline",
+      "buckets": ["Concept drift", "Upstream data break"],
+      "a": {"text": "A pricing model's error jumps on a Tuesday. Investigation finds a competitor launched an aggressive discount campaign that morning.", "answer": "Concept drift", "why": "A real change in the world altered the relationship the model encodes. Retraining on post-change data is the correct response."},
+      "b": {"text": "A pricing model's error jumps on a Tuesday. Investigation finds the overnight ETL job began writing list price into the field that previously held net price.", "answer": "Upstream data break", "why": "Nothing about pricing behaviour changed — the model is being fed a different quantity under the same name. Retraining here bakes the defect in and hides it."}
+    },
+    {
+      "id": "dp-03",
+      "dimension": "whether the old and new regimes coexist during the transition",
+      "buckets": ["Concept drift — gradual", "Concept drift — incremental"],
+      "a": {"text": "Over six months a fraud model degrades as an old attack pattern is progressively replaced by a new one. Throughout the period, both patterns arrive in volume.", "answer": "Concept drift — gradual", "why": "Two distinct concepts overlapping in time, with the mixture weight moving. An ensemble that keeps a model per concept handles this well."},
+      "b": {"text": "Over six months a fraud model degrades as attackers continuously adjust transaction sizes upward in small steps, with no distinct old and new pattern at any point.", "answer": "Concept drift — incremental", "why": "One concept moving smoothly through intermediate states. A rolling retraining window tracks it; concept-switching machinery has nothing to switch between."}
+    },
+    {
+      "id": "dp-04",
+      "dimension": "whether the shift is in the inputs or in the outcome mix",
+      "buckets": ["Covariate drift", "Label shift"],
+      "a": {"text": "A screening model is deployed at a new clinic. The patients are younger and fitter than the training population, and disease prevalence is unchanged.", "answer": "Covariate drift", "why": "The feature distribution moved while the outcome mix did not. The concern is extrapolation into thinly-covered input regions."},
+      "b": {"text": "A screening model is deployed at a new clinic. The patients look demographically identical to the training population, but disease prevalence is a quarter of what it was.", "answer": "Label shift", "why": "P(Y) moved with P(X|Y) intact, so the model's ranking still works but its probabilities are systematically too high. Prior correction, not retraining."}
+    },
+    {
+      "id": "dp-05",
+      "dimension": "whether ground-truth labels are available to confirm the degradation",
+      "buckets": ["Prediction drift", "Confirmed model decay"],
+      "a": {"text": "A collections model's share of high-risk scores rises from 12% to 25% in a month. Outcomes take ninety days to observe, so none are yet available for this cohort.", "answer": "Prediction drift", "why": "An output-distribution change with no labels is a signal to investigate, not a finding. It may be a correct response to a genuinely riskier population."},
+      "b": {"text": "A collections model's share of high-risk scores rises from 12% to 25% in a month, and the cohort from ninety days ago has now resolved with precision down 18 points.", "answer": "Confirmed model decay", "why": "Labels have arrived and quality has actually fallen. Only now is retraining justified on evidence rather than on the shape of a histogram."}
+    },
+    {
+      "id": "dp-06",
+      "dimension": "whether the prior regime returns",
+      "buckets": ["Concept drift — recurring", "Concept drift — sudden"],
+      "a": {"text": "A logistics model's accuracy collapses every year in the fortnight before Christmas and recovers immediately afterwards.", "answer": "Concept drift — recurring", "why": "A known concept that comes back on a cycle. Retire nothing: keep the seasonal model and select it by context."},
+      "b": {"text": "A logistics model's accuracy collapses in the fortnight after a permanent change to national delivery regulations, and never recovers.", "answer": "Concept drift — sudden", "why": "An abrupt, one-way change with no return. The pre-change model has no further use and the pre-change data has limited value for retraining."}
+    },
+    {
+      "id": "dp-07",
+      "dimension": "whether the target definition or the population changed",
+      "buckets": ["Concept drift", "Label shift"],
+      "a": {"text": "A moderation team rewrites its guidance so that a category of borderline content is now labelled 'violating' where it was previously 'acceptable'. The content arriving is unchanged.", "answer": "Concept drift", "why": "Same inputs, different labels: the mapping was redefined. Every historical label under the old guidance is now partly wrong for training purposes."},
+      "b": {"text": "A moderation team's guidance is unchanged, but a viral trend means genuinely violating content rises from 2% to 9% of the queue.", "answer": "Label shift", "why": "The rule is stable; the mix of outcomes moved. Thresholds and capacity planning need attention, not the model's learned boundary."}
+    },
+    {
+      "id": "dp-08",
+      "dimension": "whether the monitored change is in the model or in the data",
+      "buckets": ["Prediction drift", "Upstream data break"],
+      "a": {"text": "Scores shift the day a new model version is released. A fixed reference sample, replayed through both versions, reproduces the shift exactly.", "answer": "Prediction drift", "why": "Identical inputs producing different outputs isolates the change to the model. This is the expected use of a golden reference sample at release."},
+      "b": {"text": "Scores shift the day a new model version is released. The same fixed reference sample, replayed through both versions, produces identical outputs.", "answer": "Upstream data break", "why": "If the model is provably unchanged on fixed inputs, the live inputs must have changed — and a same-day coincidence points at the deploy's data-side changes, not at the world."}
+    }
+  ]
+}

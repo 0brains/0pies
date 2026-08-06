@@ -1,0 +1,82 @@
+{
+  "id": "industry-lifecycle",
+  "runner": "ladders",
+  "title": "Industry ML Pipeline",
+  "blurb": "The fuller lifecycle as it runs in practice.",
+  "source": "Industry ML delivery practice",
+  "asOf": "2026-07",
+  "area": "ops",
+  "ladders": [
+    {
+      "id": "industry-lifecycle",
+      "title": "Industry ML Pipeline",
+      "prompt": "Order the pipeline as it actually runs in an organisation.",
+      "steps": [
+        {
+          "label": "Understand the Business Problem and Stakeholders",
+          "detail": "Who is affected, who decides, and what a good outcome is for them. Skipping this is how technically sound models get built for the wrong problem."
+        },
+        {
+          "label": "Define the ML Task, Constraints, and Success Metrics",
+          "detail": "Fix the target, the latency and cost budget, and the metric before any data is touched, so success cannot be redefined after the fact."
+        },
+        {
+          "label": "Source Data and Establish Governance",
+          "detail": "Establish lawful basis, licence, consent and retention up front. Data acquired without them is a liability that no later step removes."
+        },
+        {
+          "label": "Ingest, Catalogue, and Version Data",
+          "detail": "Land the data with a catalogue entry and a version. Without versioning no result is reproducible and no regression is explainable."
+        },
+        {
+          "label": "Explore Data and Validate Quality",
+          "detail": "Profile distributions, nulls, duplicates and outliers before modelling, because every one of them shows up later as unexplained error."
+        },
+        {
+          "label": "Clean, Transform, and Label Data",
+          "detail": "Repair what can be repaired and label what needs labels, with the labelling guidance itself treated as a versioned artefact."
+        },
+        {
+          "label": "Engineer and Select Features",
+          "detail": "Build the representations the model will use, and drop the ones that leak the target or will not exist at inference time."
+        },
+        {
+          "label": "Create Training, Validation, and Test Splits",
+          "detail": "Split before fitting anything, respecting time and group boundaries. A split made after preprocessing has already leaked."
+        },
+        {
+          "label": "Build a Reproducible Baseline",
+          "detail": "A simple model that runs end to end. It sets the bar every later candidate must clear and proves the pipeline works."
+        },
+        {
+          "label": "Train Candidate Models and Track Experiments",
+          "detail": "Fit alternatives with their configuration, data version and results recorded, so the winner can be rebuilt months later."
+        },
+        {
+          "label": "Tune Hyperparameters with Validation Data",
+          "detail": "Search settings against validation data only. Tuning against test data turns the final number into self-assessment."
+        },
+        {
+          "label": "Evaluate Quality, Robustness, Fairness, and Security",
+          "detail": "Test held-out quality, behaviour under perturbation, performance by subgroup, and adversarial exposure. One aggregate accuracy number hides all three of the others."
+        },
+        {
+          "label": "Document, Approve, Package, and Register the Model",
+          "detail": "Record intended use, limits and evaluation results, get the accountable approval, and register the artefact. This is what makes deployment reviewable."
+        },
+        {
+          "label": "Deploy Gradually with Automated Tests and Rollback",
+          "detail": "Shadow, canary or staged rollout with a tested path back. Gradual exposure is what makes a bad release survivable."
+        },
+        {
+          "label": "Monitor Data, Model, System, and Business Performance",
+          "detail": "Watch all four layers. Inputs drift, quality decays, infrastructure fails and business value erodes — and they are not the same signal."
+        },
+        {
+          "label": "Collect Feedback, Retrain, Revalidate, or Retire",
+          "detail": "Feed production reality back in, and decide deliberately between retraining, revalidating and retirement. A model with no retirement criterion never gets retired."
+        }
+      ]
+    }
+  ]
+}

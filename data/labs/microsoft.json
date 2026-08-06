@@ -1,0 +1,131 @@
+{
+  "id": "microsoft",
+  "title": "Azure AI Fundamentals",
+  "subtitle": "AI-901 · AI concepts, Azure AI services, and Microsoft Foundry",
+  "output": "AI-901.html",
+  "storageKey": "microsoft.ai901.progress.v1",
+  "allLabel": "Everything",
+  "studyContext": "I am studying for the Microsoft Certified: Azure AI Fundamentals (AI-901) exam.",
+  "citeInstruction": "Cite the Microsoft Learn AI-901 skills-measured guide domain where relevant (for example \"Domain 2: Implement AI solutions by using Microsoft Foundry\"), and name the specific Azure service or Foundry capability.",
+  "filters": [
+    { "id": "microsoft-services", "label": "Azure services" },
+    { "id": "microsoft-rai", "label": "Responsible AI" },
+    { "id": "microsoft-workloads", "label": "AI workloads" },
+    { "id": "microsoft-models", "label": "Models & config" },
+    { "id": "microsoft-foundry", "label": "Foundry" }
+  ],
+  "games": [
+    {
+      "id": "services",
+      "rung": "Learn",
+      "runner": "board",
+      "deck": "decks/microsoft/services.json",
+      "title": "Service to Purpose",
+      "blurb": "Match each purpose to the Azure service built for it."
+    },
+    {
+      "id": "features",
+      "rung": "Learn",
+      "runner": "board",
+      "deck": "decks/microsoft/features.json",
+      "title": "Feature to Function",
+      "blurb": "Match each job to the capability that does it."
+    },
+    {
+      "id": "rai-principles",
+      "rung": "Learn",
+      "runner": "board",
+      "deck": "decks/microsoft/rai-principles.json",
+      "title": "Responsible AI: The Six Pillars",
+      "blurb": "Drag each situation — and each Azure safeguard — onto the responsible-AI principle it belongs to."
+    },
+    {
+      "id": "workload-sort",
+      "rung": "Learn",
+      "runner": "board",
+      "deck": "decks/microsoft/workload-sort.json",
+      "title": "The Intake Desk",
+      "blurb": "Every request that hits the desk goes to one of six AI workloads — triage fast, triage right."
+    },
+    {
+      "id": "param-dials",
+      "rung": "Learn",
+      "runner": "board",
+      "deck": "decks/microsoft/param-dials.json",
+      "title": "Turn the Right Dial",
+      "blurb": "Text dials, image dials, deployment dials — match each symptom to the parameter that fixes it, past the near-miss the exam planted."
+    },
+    {
+      "id": "rai-pairs",
+      "rung": "Contrast",
+      "runner": "pairs",
+      "deck": "decks/microsoft/rai-pairs.json",
+      "title": "Principle Splitters",
+      "blurb": "Two near-identical situations, one flipped fact — name the principle each one illustrates."
+    },
+    {
+      "id": "workload-pairs",
+      "rung": "Contrast",
+      "runner": "pairs",
+      "deck": "decks/microsoft/workload-pairs.json",
+      "title": "Separated at Birth",
+      "blurb": "Two capabilities that sound identical until one fact flips — learn to hear the difference the exam listens for."
+    },
+    {
+      "id": "foundry-traps",
+      "rung": "Contrast",
+      "runner": "pairs",
+      "deck": "decks/microsoft/foundry-traps.json",
+      "title": "The Planted Answer",
+      "blurb": "The wrong answers Microsoft planted for Domain 2 — twin scenarios that differ by the exact fact the exam flips."
+    },
+    {
+      "id": "prompt-roles",
+      "rung": "Apply",
+      "runner": "board",
+      "deck": "decks/microsoft/prompt-roles.json",
+      "title": "Sorting the Mail",
+      "blurb": "Every message in a chat belongs to exactly one role — misfile one and the exam's favourite trap gets you."
+    },
+    {
+      "id": "agent-anatomy",
+      "rung": "Apply",
+      "runner": "board",
+      "deck": "decks/microsoft/agent-anatomy.json",
+      "title": "Anatomy of an Agent",
+      "blurb": "Instructions, model, tools, knowledge, thread, run — drop each job on the agent component that does it."
+    },
+    {
+      "id": "service-selection",
+      "rung": "Apply",
+      "runner": "board",
+      "deck": "decks/microsoft/service-selection.json",
+      "title": "One Call to Make",
+      "blurb": "Read the scenario, pick the service — or the model family — the exam wants, past the near-miss planted beside it."
+    },
+    {
+      "id": "cu-modality-grid",
+      "rung": "Apply",
+      "runner": "board",
+      "deck": "decks/microsoft/cu-modality-grid.json",
+      "title": "Right Analyzer, Right Modality",
+      "blurb": "Documents, images, audio, video — drop each extraction job on the modality Content Understanding runs it against."
+    },
+    {
+      "id": "sdk-wiring",
+      "rung": "Apply",
+      "runner": "board",
+      "deck": "decks/microsoft/sdk-wiring.json",
+      "title": "Read the Snippet",
+      "blurb": "What does this line do, and which identifier does it — with the close-name impostor sitting right next to it?"
+    },
+    {
+      "id": "foundry-flows",
+      "rung": "Apply",
+      "runner": "ladders",
+      "deck": "decks/microsoft/foundry-flows.json",
+      "title": "Build Orders",
+      "blurb": "Six workflows the exam expects you to replay from memory — click each step into the only order that ships."
+    }
+  ]
+}

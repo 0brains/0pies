@@ -1,0 +1,60 @@
+{
+  "id": "learning-methods",
+  "runner": "board",
+  "title": "Learning Methods",
+  "blurb": "Supervised, unsupervised, self-supervised, reinforcement — and their relatives.",
+  "source": "AWS Certified AI Practitioner (AIF-C01) exam guide · Domain 1",
+  "asOf": "2026-07",
+  "area": "foundations",
+  "hint": "To identify the method, ask where its learning signal comes from: supplied answers, hidden structure in raw data, labels created from the data itself, or rewards from interaction.",
+  "items": [
+    {
+      "id": "learning-methods-01",
+      "label": "Learns from examples containing inputs paired with known labels or numeric targets.",
+      "answer": "Supervised Learning",
+      "why": "Learns from examples containing inputs paired with known labels or numeric targets."
+    },
+    {
+      "id": "learning-methods-02",
+      "label": "Finds structure in unlabeled data, such as groups, associations, or unusual patterns.",
+      "answer": "Unsupervised Learning",
+      "why": "Finds structure in unlabeled data, such as groups, associations, or unusual patterns."
+    },
+    {
+      "id": "learning-methods-03",
+      "label": "Creates supervisory signals from the data itself, such as predicting masked or missing content.",
+      "answer": "Self-Supervised Learning",
+      "why": "Creates supervisory signals from the data itself, such as predicting masked or missing content."
+    },
+    {
+      "id": "learning-methods-04",
+      "label": "Learns a policy by taking actions and receiving rewards or penalties from an environment.",
+      "answer": "Reinforcement Learning",
+      "why": "Learns a policy by taking actions and receiving rewards or penalties from an environment."
+    },
+    {
+      "id": "learning-methods-05",
+      "label": "Aligns model behavior using human preference comparisons that train a reward signal.",
+      "answer": "RLHF",
+      "why": "Aligns model behavior using human preference comparisons that train a reward signal."
+    },
+    {
+      "id": "learning-methods-06",
+      "label": "A supervised task that predicts a category or class.",
+      "answer": "Classification",
+      "why": "A supervised task that predicts a category or class."
+    },
+    {
+      "id": "learning-methods-07",
+      "label": "A supervised task that predicts a continuous numeric value.",
+      "answer": "Regression",
+      "why": "A supervised task that predicts a continuous numeric value."
+    },
+    {
+      "id": "learning-methods-08",
+      "label": "An unsupervised task that groups similar records without predefined labels.",
+      "answer": "Clustering",
+      "why": "An unsupervised task that groups similar records without predefined labels."
+    }
+  ]
+}
