@@ -288,6 +288,19 @@ body.kli-font [data-kli]{font-weight:700;letter-spacing:.3px}
   transition:transform .1s,box-shadow .1s}
 .filter-chip:hover{transform:translate(3px,3px);box-shadow:0 0 0 0 var(--edge)}
 .filter-chip[aria-pressed="true"]{background:var(--primary);color:#1a1c1c}
+/* Category colours reuse the site's lab palette (index :root variables). */
+.filter-chip::before{content:"";display:inline-block;width:10px;height:10px;
+  border:2px solid var(--edge);margin-right:7px;vertical-align:-1px;background:var(--cat, var(--primary))}
+.filter-chip[data-cat="all"]::before{display:none}
+.filter-chip[data-cat="regulation"],.news-item[data-cat="regulation"]{--cat:var(--legislation)}
+.filter-chip[data-cat="security"],.news-item[data-cat="security"]{--cat:var(--secondary)}
+.filter-chip[data-cat="research"],.news-item[data-cat="research"]{--cat:var(--microsoft)}
+.filter-chip[data-cat="labs-tools"],.news-item[data-cat="labs-tools"]{--cat:var(--aigp)}
+.filter-chip[data-cat="regulation"][aria-pressed="true"],
+.filter-chip[data-cat="security"][aria-pressed="true"],
+.filter-chip[data-cat="research"][aria-pressed="true"],
+.filter-chip[data-cat="labs-tools"][aria-pressed="true"]{background:var(--cat);color:#1a1c1c}
+.news-item .news-tag{background:var(--cat, var(--primary))}
 .news-item[hidden]{display:none}
 .explore-row{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin-top:10px;
   padding-top:10px;border-top:2px dashed var(--edge)}
