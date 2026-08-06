@@ -3,27 +3,24 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>The internet’s first AI governance gamification site. Probably. We didn’t check.</title>
-<meta name="description" content="Interactive AI governance study labs — games, briefs and card decks covering AIGP, AWS AI Practitioner, and vendor-neutral AI/ML concepts.">
-<link rel="canonical" href="https://0pi.es/">
+<title>0pi.es News — AI regulation &amp; critical AI headlines</title>
+<meta name="description" content="AI regulation and critical AI headlines. No cookies, no tracking, no pies.">
+<link rel="canonical" href="https://0pi.es/news.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="0pi.es">
-<meta property="og:url" content="https://0pi.es/">
-<meta property="og:title" content="The internet’s first AI governance gamification site. Probably. We didn’t check.">
-<meta property="og:description" content="Interactive AI governance study labs — games, briefs and card decks covering AIGP, AWS AI Practitioner, and vendor-neutral AI/ML concepts.">
+<meta property="og:url" content="https://0pi.es/news.html">
+<meta property="og:title" content="0pi.es News">
+<meta property="og:description" content="AI regulation and critical AI headlines. No cookies, no tracking, no pies.">
 <meta property="og:image" content="https://0pi.es/assets/social/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="The internet’s first AI governance gamification site. Probably. We didn’t check.">
-<meta name="twitter:description" content="Interactive AI governance study labs — games, briefs and card decks covering AIGP, AWS AI Practitioner, and vendor-neutral AI/ML concepts.">
+<meta name="twitter:title" content="0pi.es News">
+<meta name="twitter:description" content="AI regulation and critical AI headlines. No cookies, no tracking, no pies.">
 <meta name="twitter:image" content="https://0pi.es/assets/social/og-image.png">
 <link rel="stylesheet" href="assets/fonts/fonts.css">
 <link rel="alternate" type="application/atom+xml" title="0pi.es News" href="feed.xml">
 <link rel="icon" type="image/svg+xml" href="assets/misc/favicon.svg">
-<link rel="apple-touch-icon" href="apple-touch-icon.png">
-<meta name="theme-color" content="#f9f9f9" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#15161a" media="(prefers-color-scheme: dark)">
 <style>
 :root{
   --bg:#f9f9f9; --panel:#ffffff; --panel2:#eeeeee; --edge:#111111;
@@ -253,14 +250,38 @@ body.egy-font [data-egy]{font-family:"Noto Sans Egyptian Hieroglyphs",sans-serif
   letter-spacing:2px;line-height:1.9}
 body.kli-font [data-kli]{font-weight:700;letter-spacing:.3px}
 </style>
+<link rel="alternate" type="application/atom+xml" title="0pi.es News" href="feed.xml">
+<style id="news-styles">
+.news-list{display:flex;flex-direction:column;gap:18px;margin-top:28px}
+.news-item{background:var(--panel);padding:20px}
+.news-item .tagline{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:10px}
+.news-tag{background:var(--primary);color:#1a1c1c;border:2px solid var(--edge);
+  font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.6px;padding:3px 8px}
+.news-dates{font-size:12px;color:var(--dim)}
+.news-item h3{margin:0 0 8px;font-size:20px;line-height:1.3;text-transform:none}
+.news-item p{margin:0 0 12px;font-size:14px;color:var(--dim);max-width:70ch}
+.news-status{border:2px dashed var(--edge);background:var(--panel2);padding:8px 10px;
+  font-size:12px;margin:0 0 12px;max-width:70ch}
+.news-src{font-size:13px;font-weight:700}
+.news-src a{color:var(--ink);text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:4px}
+.subscribe-card{background:var(--panel2);padding:20px;display:flex;flex-direction:column;gap:10px}
+.subscribe-card .feed-url{display:flex;gap:8px;flex-wrap:wrap;align-items:stretch}
+.subscribe-card code{background:var(--bg);border:2px solid var(--edge);padding:8px 10px;
+  font-family:inherit;font-size:13px;user-select:all;overflow-wrap:anywhere}
+.copy-feed{background:var(--primary);border:2px solid var(--edge);padding:8px 14px;font:inherit;
+  font-size:12px;font-weight:700;text-transform:uppercase;cursor:pointer;color:#1a1c1c;
+  box-shadow:3px 3px 0 0 var(--edge);transition:transform .1s,box-shadow .1s}
+.copy-feed:hover{transform:translate(3px,3px);box-shadow:0 0 0 0 var(--edge)}
+</style>
 </head>
 <body>
 <topbar>
   <div class="brand">0pi.es</div>
   <div class="topbar-right">
     <nav class="nav">
-      <a class="active" href="#labs">Labs</a>
-      <a href="news.html">News</a>
+      <a href="./#labs">Labs</a>
+      <a class="active" href="news.html">News</a>
+      <a href="#" title="Arriving Tomorrow">Progress</a>
     </nav>
     <div class="lang-row" id="lang-row">
       <button class="lang-current" id="lang-current" aria-haspopup="true" aria-expanded="false" title="Language">
@@ -288,108 +309,82 @@ body.kli-font [data-kli]{font-weight:700;letter-spacing:.3px}
   <header class="hero">
     <div class="hero-row">
       <div class="hero-text">
-        <p class="eyebrow">The internet’s first AI governance gamification site. Probably. We didn’t check.</p>
-        <h1 data-egy="𓏤𓋴𓊪𓂧 𓎛𓏏𓊪 𓏏𓏛 𓎡𓄿𓏏" data-kli="Sertification Quj Ghommeyni'">Interactive AI Governance.<br>Zero Pies.</h1>
-        <p class="lede">AI governance is about accountability, and the acceptable number of lapses is sin(π)=0.</p>
+        <p class="eyebrow">AI regulation &amp; critical AI headlines</p>
+        <h1>News.<br>Zero Tracking.</h1>
+        <p class="lede">What moved in AI regulation, and the adjacent signals that matter. Updated as news lands.</p>
       </div>
-      <div class="stat-card brutal brutal-shadow-lg">
-        <p class="eyebrow">Study labs · July 2026</p>
-        <div class="nums">
-          <div class="num-block"><span class="n">86</span><span class="l">games</span></div>
-          <div class="num-block"><span class="n">1,738</span><span class="l">cards</span></div>
-          <div class="num-block"><span class="n">0</span><span class="l">pies</span></div>
+      <div class="subscribe-card brutal brutal-shadow-lg">
+        <p class="eyebrow">Subscribe — no email, no tracking</p>
+        <p style="margin:0;font-size:14px;color:var(--dim)">Paste this into any feed reader (RSS/Atom). We never know you subscribed.</p>
+        <div class="feed-url">
+          <code id="feed-url">https://0pi.es/feed.xml</code>
+          <button type="button" class="copy-feed" id="copy-feed">Copy</button>
         </div>
+        <p style="margin:0;font-size:13px"><a href="feed.xml" style="text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:4px">Or open the raw feed →</a></p>
       </div>
     </div>
   </header>
 
-  <section class="cards" id="labs">
-    <a class="app brutal-heavy brutal-shadow-lg brutal-hover-lg" style="--tone:var(--concepts)" href="AI Concepts.html">
-      <span class="badge">Foundation</span>
-      <div>
-        <p class="code" data-egy="𓈖 𓆳𓏏 𓎡𓄿𓏏" data-kli="Hoch tuqmey">Vendor-neutral</p>
-        <h2 data-egy="𓂀 𓅓𓈖 𓆓𓂧" data-kli="AI Qab yejHa'ghach">AI &amp; ML Concepts</h2>
-        <p data-egy="𓆳𓏏 𓈖 𓇋𓏏𓆓, 𓂋𓎡 𓎡𓄿𓏏 𓈖 𓆓𓂧. 𓊪𓂧 𓆳𓏏, 𓅓𓄿𓏏 𓎡𓄿𓏏, 𓊪𓂧𓏏 𓎡𓄿𓏏." data-kli="Ho'DoS, ghawran je' Doch'a'ghom Hutlh. mu'mey, ghojmoHmey, lupmey, je' Qujmoq law' HuchHom.">The foundations, without a cloud provider attached. Terms, learning methods, metrics, prompting and RAG — plus heavy coverage of AI risk and eight kinds of model drift.</p>
+  <section id="news" aria-label="News items">
+    <div class="news-list">
+    <article class="news-item brutal brutal-shadow">
+      <div class="tagline">
+        <span class="news-tag">US federal</span>
+        <span class="news-dates">2026-08-03 · as of 2026-08-06</span>
       </div>
-      <div>
-        <div class="stats"><span class="stat status">v1.0</span><span class="stat">27 GAMES</span><span class="stat">397 CARDS</span></div>
-        <span class="go">Open the lab <span class="arrow">→</span></span>
+      <h3>White House finalises a voluntary frontier-model review framework</h3>
+      <p>The administration says it met the deadline for a pre-release evaluation framework for advanced models, but details remain sparse. The key signal is that pre-launch government access has moved from concept toward process.</p>
+      <p class="news-src">Axios — <a href="https://www.axios.com/2026/08/03/white-house-ai-framework-frontier-models" target="_blank" rel="noopener noreferrer">Open source ↗</a></p>
+    </article>
+    <article class="news-item brutal brutal-shadow">
+      <div class="tagline">
+        <span class="news-tag">Frontier oversight</span>
+        <span class="news-dates">2026-08-03 · as of 2026-08-06</span>
       </div>
-    </a>
-    <a class="app brutal-heavy brutal-shadow-lg brutal-hover-lg" style="--tone:var(--legislation)" href="Legislation &amp; Regulatory.html">
-      <span class="badge">Regulatory</span>
-      <div>
-        <p class="code" data-egy="𓆳𓏏 𓎡𓄿𓏏 𓈖 𓆓𓂧" data-kli="chutmey Da'">Cross-cutting</p>
-        <h2 data-egy="𓆳𓏏 𓎡𓄿𓏏 𓊪𓂋𓄿𓎡𓏏𓄿" data-kli="Chutmey pIn">Legislation &amp; Regulatory</h2>
-        <p data-egy="𓆳𓏏 𓎡𓄿𓏏 𓈖 𓄿𓇋, 𓎡𓄿𓏏 𓆓𓂧𓎡𓄿𓏏 𓈖 𓆳𓏏. 𓊪𓂧𓏏 𓎡𓄿𓏏, 𓄿𓎡𓏏𓄿 𓆓𓂧, 𓎛𓎛𓎛 𓆳𓏏." data-kli="Hoch AI chutmey Daq. Amendments regulation, ta'ghach jurisdictions, poH tuqmey.">Every AI law and framework, all in one place. Track amendments as they land — including the EU AI Act's own Amendments Regulation — compare jurisdictions, and master who owes what obligation, when.</p>
+      <h3>US policymakers weigh a duty-of-care approach for frontier AI</h3>
+      <p>Senate discussions suggest a framework based on developer self-testing and clearer responsibility for frontier risk, adding legislative pressure beyond executive-order mechanisms.</p>
+      <p class="news-src">Platformer AI &amp; Tech Brief — <a href="https://www.platformer.news/ai-tech-brief-the-senates-frontier-ai-bill/" target="_blank" rel="noopener noreferrer">Open source ↗</a></p>
+    </article>
+    <article class="news-item brutal brutal-shadow">
+      <div class="tagline">
+        <span class="news-tag">California</span>
+        <span class="news-dates">2026-08-02 · as of 2026-08-06</span>
       </div>
-      <div>
-        <div class="stats"><span class="stat status">v0.4</span><span class="stat">13 GAMES</span><span class="stat">344 CARDS</span></div>
-        <span class="go">Open the lab <span class="arrow">→</span></span>
+      <h3>California transparency duties become an operative compliance milestone</h3>
+      <p>The amended AI Transparency Act now points providers toward detection tools, manifest-style disclosure, and latent disclosure features where technically feasible, strengthening the synthetic-content governance baseline.</p>
+      <p class="news-src">Vorp AI policy tracker — <a href="https://www.vorp.ai/blog/us-ai-policy-changes-august-2026-science-directives-colorado-california-eu-ai-act" target="_blank" rel="noopener noreferrer">Open source ↗</a></p>
+    </article>
+    <article class="news-item brutal brutal-shadow">
+      <div class="tagline">
+        <span class="news-tag">EU AI Act</span>
+        <span class="news-dates">2026-07-30 · as of 2026-08-06</span>
       </div>
-    </a>
-    <a class="app brutal-heavy brutal-shadow-lg brutal-hover-lg" style="--tone:var(--aigp)" href="2026 AIGP.html">
-      <span class="badge">Governance</span>
-      <div>
-        <p class="code" data-egy="𓇋𓄿𓊪𓊪 𓄿𓇋𓎡𓊪" data-kli="IAPP AIGP">IAPP AIGP</p>
-        <h2 data-egy="𓂀 𓎛𓂋𓎛 𓊪𓂋𓄿𓎡𓏏𓄿" data-kli="AI Ra'ghach SuvwI'">AI Governance Professional</h2>
-        <p data-egy="𓐍𓂋 𓊃𓊪𓂧, 𓐍𓂋𓊪 𓈖 𓆳𓏏 𓐍𓂋 𓂀. 𓊪𓂧𓏏 𓆓𓂧, 𓇋𓏏𓆓 𓎡𓄿𓏏, 𓎛𓎛𓎛𓎛 𓆳𓏏 𓆓𓂧𓎡𓄿𓏏." data-kli="chay' chutmey, ghelmeH ghomHommey je' AI Daghom. Se'raQ pIvmey, ta'ghach roles, GDPR tay', qaS'a' Doch, ghItlhmey lo' AI examiner — je' DaH loS AIGP woQmey Dalmoh, foundations vo' deployment Ra'ghach.">How laws, standards and frameworks apply to AI. Risk tiers, actor roles, the GDPR overlap, a global obligations timeline, long-form briefs marked by an AI examiner — now spanning all four AIGP domains, from foundations to deployment governance.</p>
+      <h3>EU transparency rules and enforcement powers live from 2 August</h3>
+      <p>Article 50 disclosure duties for chatbots, deepfake labelling, and synthetic-content marking are active, while the AI Office and national authorities begin enforcement. This is the practical shift from planning to operating controls.</p>
+      <p class="news-src">European Commission — <a href="https://digital-strategy.ec.europa.eu/en/news/commission-starts-enforcing-ai-act-rules-and-new-transparency-obligations" target="_blank" rel="noopener noreferrer">Open source ↗</a></p>
+    </article>
+    <article class="news-item brutal brutal-shadow">
+      <div class="tagline">
+        <span class="news-tag">EU frontier security</span>
+        <span class="news-dates">2026-07-27 · as of 2026-08-06</span>
       </div>
-      <div>
-        <div class="stats"><span class="stat status">v1.0</span><span class="stat">52 GAMES</span><span class="stat">762 CARDS</span><span class="stat">22 JURISDICTIONS</span><span class="stat">5 BRIEFS</span></div>
-        <span class="go">Open the lab <span class="arrow">→</span></span>
-      </div>
-    </a>
-    <a class="app brutal-heavy brutal-shadow-lg brutal-hover-lg" style="--tone:var(--aws)" href="AWS.html">
-      <span class="badge">Vendor</span>
-      <div>
-        <p class="code" data-egy="𓇋𓅱𓋴" data-kli="AWS">AWS</p>
-        <h2 data-egy="𓇋𓅱𓋴 𓂀 𓊪𓂋𓄿𓎡𓏏𓄿" data-kli="AWS SuvwI'">AWS Certifications</h2>
-        <p data-egy="𓇋𓅱𓋴 𓎡𓄿𓏏 𓈖 𓊪𓂧 𓎡𓄿𓏏 𓈖 𓄿𓛍, 𓂋𓎡 𓆳𓏏 𓎡𓄿𓏏 𓈖 𓆓𓂧 𓎡𓄿𓏏." data-kli="AWS Doch'a'ghom je' woQ Datlhap, ghawran je' yejHa'ghach Qujmey.">Amazon Web Services certification labs — starting with AI Practitioner (AIF-C01), more exams landing here over time.</p>
-      </div>
-      <div>
-        <div class="stats"><span class="stat status">1 exam</span></div>
-        <span class="go">Open the container <span class="arrow">→</span></span>
-      </div>
-    </a>
-    <a class="app brutal-heavy brutal-shadow-lg brutal-hover-lg" style="--tone:var(--microsoft)" href="Microsoft.html">
-      <span class="badge">Vendor</span>
-      <div>
-        <p class="code">Microsoft</p>
-        <h2>Microsoft Certifications</h2>
-        <p>Microsoft certification labs — starting with Azure AI Fundamentals (AI-901), more exams landing here over time.</p>
-      </div>
-      <div>
-        <div class="stats"><span class="stat status">1 exam</span></div>
-        <span class="go">Open the container <span class="arrow">→</span></span>
-      </div>
-    </a>
+      <h3>Brussels pairs AI Act enforcement with cyber-focused frontier evaluation plans</h3>
+      <p>Recent EU policy work includes structured access ideas for advanced AI capabilities in cybersecurity and a secure testing platform, showing a tighter link between regulation and operational security.</p>
+      <p class="news-src">CDT Europe — <a href="https://cdt.org/insights/cdt-europes-ai-bulletin-july-2026/" target="_blank" rel="noopener noreferrer">Open source ↗</a></p>
+    </article>
+    </div>
   </section>
 
-  <section class="how brutal-heavy brutal-shadow-lg">
-    <h3 data-egy="𓐍𓂋 𓊪𓅱 𓎡𓄿𓏏" data-kli="chay' Qujmey vum">How these work</h3>
-    <div class="how-grid">
-      <div>
-        <h4><span class="icon" aria-hidden="true">▦</span><span data-egy="𓎡𓄿𓏏, 𓈖 𓊪𓂧𓏏" data-kli="Ghommeyni', ghobe' So'mey">Boards, not quizzes</span></h4>
-        <p data-egy="𓊃𓊪𓂧 𓆳𓏏 𓎡𓄿𓏏 𓈖 𓎛𓎛, 𓂋𓎡 𓊪𓂧𓏏 𓎡𓄿𓏏. 𓊪𓂧𓏏𓆳𓏏 𓐍𓂋 𓊪𓂋𓄿𓎡𓏏𓄿 𓎡𓄿𓏏 𓈖 𓐍𓂋𓎡𓄿𓏏, 𓈖 𓎛𓐍𓂋." data-kli="yIchu' Hoch ghItlhmey, vaj Ghommeyni' yIje'. So' je' jang Qujmoq exam app Daq yIn, ghobe' naDev.">Sort a whole bank of cards into place, then score the board. Question-and-answer
-           practice lives in the exam app, not here.</p>
-      </div>
-      <div>
-        <h4><span class="icon" aria-hidden="true">↺</span><span data-egy="𓊃𓊪𓂧 𓆳𓏏 𓊪𓂧𓏏 𓎡𓄿𓏏 𓊃𓊪𓂧" data-kli="QaparHa' ghItlhmey cheghtaH poH wa'DIch">Confident misses come back first</span></h4>
-        <p data-egy="𓊪𓂋𓄿𓎡𓏏𓄿 𓎡𓄿𓏏 𓈖 𓊪𓂧𓏏𓆳𓏏. 𓎡𓄿𓏏 𓈖 𓊃𓊪𓂧 𓎡𓄿𓏏 𓈖 𓂋𓎡 𓐍𓂋 𓎡𓄿𓏏 𓆳𓏏 𓊪𓂋𓄿𓎡𓏏𓄿 𓎡𓄿𓏏, 𓂋𓎡 𓐍𓂋 𓎡𓄿𓏏 𓆳𓏏 𓎡𓄿𓏏 𓈖 𓐍𓂋 𓎡𓄿𓏏." data-kli="woQ chavtaH Hoch ghItlh. ghItlhmey QaparHa'taHvIS ret pIH cheghtaH wa'DIch, meqvam ghItlhmey lujmoHchu' SoH.">Progress is kept per item. The cards you were sure about and still got wrong
-           resurface soonest, because those are the ones that fail you.</p>
-      </div>
-      <div>
-        <h4><span class="icon" aria-hidden="true">🧠</span><span data-egy="𓊪𓂋𓄿𓎡𓏏𓄿 𓎡𓄿𓏏 𓆓𓄿𓏏 𓐍𓂋" data-kli="Hoch qonmoHghach 'ej chavlu'">Every reveal goes deeper</span></h4>
-        <p data-egy="𓎛𓄿𓄿 𓆳𓏏 𓎡𓄿𓏏 𓈖 𓂀, 𓆳𓏏𓎡𓄿𓏏 𓂋𓎡 𓊪𓂋𓄿𓎡𓏏𓄿 — 𓂋𓎡 𓊪𓂧𓏏 𓆳𓏏 𓎡𓄿𓏏 𓐍𓂋, 𓂋𓎡 𓆳𓏏 𓆓𓄿𓏏 𓎡𓄿𓏏 𓈖 𓎛𓎛 𓊪𓂧𓏏." data-kli="yIqem Ghommeyni' Claude, ChatGPT pagh Perplexity Daq — lujmoHghach yInmoHmey, pagh Hoch yejHa'ghach nISlu'DI'.">Hand any board to Claude, ChatGPT or Perplexity — with what you missed, or the
-           whole concept when you got it right.</p>
-      </div>
-    </div>
-    <div class="how-note">
-      <p>AIGP built against Body of Knowledge v2.1, effective 2 February 2026. All four domains — I through IV — are complete.</p>
-      <p>26 decks are shared: authored once, played in more than one lab, so drift and risk stay identical wherever you meet them.</p>
-    </div>
-  </section>
+  <script>
+  (() => {
+    const btn = document.getElementById("copy-feed");
+    btn.addEventListener("click", async () => {
+      try { await navigator.clipboard.writeText(document.getElementById("feed-url").textContent.trim()); }
+      catch { const r = document.createRange(); r.selectNodeContents(document.getElementById("feed-url")); const s = getSelection(); s.removeAllRanges(); s.addRange(r); document.execCommand("copy"); }
+      const old = btn.textContent; btn.textContent = "Copied"; setTimeout(() => btn.textContent = old, 1200);
+    });
+  })();
+  </script>
 
   <footer>
     <p>World map: “Simplified World Map” by Guilherme de Souza Vieira via Wikimedia Commons, <a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noopener noreferrer">CC BY-SA 3.0</a>, modified.</p>
@@ -398,10 +393,10 @@ body.kli-font [data-kli]{font-weight:700;letter-spacing:.3px}
       <p class="copy">© 2026 <b>0PI.ES</b> — NO COOKIES. NO TRACKING. NO PIES.</p>
       <nav class="footer-nav">
         <button type="button" class="share-open">Share</button>
-        <a href="https://github.com/0brains/0pies/issues" target="_blank" rel="noopener noreferrer" title="There's no support team, just Dave. But there is an issue tracker.">Support</a>
+        <button type="button" title="There's no support team, just Dave.">Support</button>
         <button type="button" id="privacy-link">Privacy</button>
         <button type="button" id="terms-link">Terms</button>
-        <a class="footer-social" href="https://github.com/0brains/0pies" target="_blank" rel="noopener noreferrer" title="0pi.es on GitHub — leave a star, it feeds the developer" aria-label="0pi.es source code on GitHub">
+        <a class="footer-social" href="https://github.com/0brains/0pies" target="_blank" rel="noopener noreferrer" title="0pi.es on GitHub — fork it, it's yours" aria-label="0pi.es source code on GitHub">
           <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
         </a>
         <a class="footer-social" href="https://www.reddit.com/r/0pi/" target="_blank" rel="noopener noreferrer" title="r/0pi — argue about AI regulation with us" aria-label="r/0pi on Reddit">
