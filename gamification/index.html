@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The internet’s first AI governance gamification site. Probably. We didn’t check.</title>
+<meta name="description" content="Interactive AI governance study labs — games, briefs and card decks covering AIGP, AWS AI Practitioner, and vendor-neutral AI/ML concepts.">
+<link rel="canonical" href="https://0pi.es/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="0pi.es">
+<meta property="og:url" content="https://0pi.es/">
+<meta property="og:title" content="The internet’s first AI governance gamification site. Probably. We didn’t check.">
+<meta property="og:description" content="Interactive AI governance study labs — games, briefs and card decks covering AIGP, AWS AI Practitioner, and vendor-neutral AI/ML concepts.">
+<meta property="og:image" content="https://0pi.es/assets/social/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The internet’s first AI governance gamification site. Probably. We didn’t check.">
+<meta name="twitter:description" content="Interactive AI governance study labs — games, briefs and card decks covering AIGP, AWS AI Practitioner, and vendor-neutral AI/ML concepts.">
+<meta name="twitter:image" content="https://0pi.es/assets/social/og-image.png">
+<link rel="stylesheet" href="assets/fonts/fonts.css">
+<link rel="icon" type="image/svg+xml" href="assets/misc/favicon.svg">
+<style>
+:root{
+  --bg:#f9f9f9; --panel:#ffffff; --panel2:#eeeeee; --edge:#111111;
+  --ink:#111111; --dim:#4d4632; --accent:#eec200;
+  --primary:#facc15; --secondary:#fd933d; --tertiary:#d1d1d1;
+  --aws:#fd933d; --aigp:#d1d1d1; --concepts:#facc15; --legislation:#a78bfa; --microsoft:#7cb9f0;
+  --radius:2px; --shadow:4px; --shadow-lg:8px;
+}
+@media (prefers-color-scheme: dark){
+  :root{ --bg:#15161a; --panel:#1c1e24; --panel2:#24262e; --edge:#f0f0f0;
+         --ink:#f0f0f0; --dim:#a9a9b2; }
+}
+:root[data-theme=light]{ --bg:#f9f9f9; --panel:#ffffff; --panel2:#eeeeee; --edge:#111111;
+  --ink:#111111; --dim:#4d4632; }
+:root[data-theme=dark]{ --bg:#15161a; --panel:#1c1e24; --panel2:#24262e; --edge:#f0f0f0;
+  --ink:#f0f0f0; --dim:#a9a9b2; }
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font:16px/1.6 "Space Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+  -webkit-font-smoothing:antialiased}
+.brutal{border:3px solid var(--edge)}
+.brutal-heavy{border:4px solid var(--edge)}
+.brutal-shadow{box-shadow:var(--shadow) var(--shadow) 0 0 var(--edge)}
+.brutal-shadow-lg{box-shadow:var(--shadow-lg) var(--shadow-lg) 0 0 var(--edge)}
+.brutal-hover{transition:transform .1s ease-out,box-shadow .1s ease-out}
+.brutal-hover:hover{transform:translate(var(--shadow),var(--shadow));box-shadow:0 0 0 0 var(--edge)}
+.brutal-hover-lg{transition:transform .1s ease-out,box-shadow .1s ease-out}
+.brutal-hover-lg:hover{transform:translate(var(--shadow-lg),var(--shadow-lg));box-shadow:0 0 0 0 var(--edge)}
+
+topbar{display:flex;justify-content:flex-end;align-items:center;position:sticky;top:0;
+  z-index:45;background:var(--bg);border-bottom:4px solid var(--edge);
+  padding:14px 20px;gap:16px;flex-wrap:wrap}
+.brand{font-weight:700;font-size:18px;letter-spacing:-.5px;text-transform:uppercase;
+  background:var(--primary);color:#1a1c1c;padding:6px 10px;white-space:nowrap;
+  position:absolute;left:50%;transform:translateX(-50%)}
+.topbar-right{display:flex;align-items:center;gap:18px}
+.nav{display:flex;gap:22px;align-items:center}
+.nav a{color:var(--dim);text-decoration:none;font-weight:700;font-size:13px;
+  text-transform:uppercase;letter-spacing:.4px;padding:4px 2px}
+.nav a.active{color:var(--ink);text-decoration:underline;text-decoration-thickness:3px;
+  text-underline-offset:6px}
+.nav a:hover{color:var(--ink)}
+.signin{background:var(--primary);border:2px solid var(--edge);padding:8px 16px;font-weight:700;
+  font-family:inherit;font-size:13px;text-transform:uppercase;cursor:pointer;
+  box-shadow:3px 3px 0 0 var(--edge);transition:transform .1s,box-shadow .1s;color:var(--ink)}
+.signin:hover{transform:translate(3px,3px);box-shadow:0 0 0 0 var(--edge)}
+@media (max-width:760px){ .nav{display:none} }
+.share-root{position:fixed;inset:0;z-index:70;display:none}
+.share-root.open{display:block}
+.share-backdrop{position:absolute;inset:0;background:rgba(0,0,0,.55)}
+.share-modal{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+  width:min(560px,calc(100vw - 32px));max-height:min(86vh,720px);overflow:auto;
+  background:var(--panel);border:4px solid var(--edge);box-shadow:8px 8px 0 0 var(--edge);
+  padding:22px}
+.share-modal h3{margin:0 0 4px;font-size:18px;text-transform:uppercase}
+.share-sub{color:var(--dim);font-size:13px;margin:0 0 12px}
+.share-close{position:absolute;top:10px;right:10px;border:2px solid var(--edge);
+  background:var(--panel2);color:var(--ink);font:inherit;font-size:16px;font-weight:700;
+  width:32px;height:32px;cursor:pointer;line-height:1}
+.share-close:hover{background:var(--secondary);color:#1a1c1c}
+.share-tones{display:flex;flex-direction:column;gap:8px;margin-bottom:14px}
+.share-tone{border:2px solid var(--edge);background:var(--panel2);color:var(--ink);
+  font:inherit;font-size:13px;font-weight:700;text-align:left;padding:9px 12px;cursor:pointer}
+.share-tone[aria-pressed="true"]{background:var(--primary);color:#1a1c1c;
+  box-shadow:3px 3px 0 0 var(--edge)}
+.share-tone .hint{display:block;font-weight:400;font-size:11px;opacity:.75}
+.share-preview{border:2px dashed var(--edge);background:var(--bg);padding:12px;
+  font-size:13px;line-height:1.55;margin:0 0 10px;white-space:pre-wrap;word-break:break-word}
+.share-reroll{border:2px solid var(--edge);background:var(--panel2);color:var(--ink);
+  font:inherit;font-size:12px;font-weight:700;padding:6px 12px;cursor:pointer;margin-bottom:14px}
+.share-reroll:hover{background:var(--primary);color:#1a1c1c}
+.share-nets{display:flex;flex-wrap:wrap;gap:8px}
+.share-nets a,.share-nets button{border:2px solid var(--edge);background:var(--panel2);
+  color:var(--ink);font:inherit;font-size:12px;font-weight:700;text-transform:uppercase;
+  letter-spacing:.4px;padding:8px 12px;cursor:pointer;text-decoration:none;
+  box-shadow:3px 3px 0 0 var(--edge);transition:transform .1s,box-shadow .1s}
+.share-nets a:hover,.share-nets button:hover{transform:translate(3px,3px);box-shadow:0 0 0 0 var(--edge)}
+.share-note{font-size:11px;color:var(--dim);margin:14px 0 0;border-top:2px solid var(--edge);
+  padding-top:10px;line-height:1.5}
+
+.wrap{max-width:1080px;margin:0 auto;padding:44px 20px 80px}
+.hero{margin-bottom:36px}
+.hero-row{display:grid;grid-template-columns:1fr;gap:24px}
+.hero-text{display:flex;flex-direction:column;gap:16px}
+.eyebrow{font-size:12px;letter-spacing:1.6px;text-transform:uppercase;font-weight:700;
+  color:var(--dim);margin:0}
+h1{font-size:clamp(30px,6vw,52px);line-height:1.1;letter-spacing:-1px;font-weight:700;
+  text-transform:uppercase;margin:0;padding:10px 14px;background:var(--secondary);
+  color:#1a1c1c;width:fit-content}
+.lede{font-size:18px;font-weight:700;margin:0;padding:10px 14px;background:var(--panel);
+  width:fit-content;max-width:56ch}
+.sub{font-size:15px;color:var(--dim);margin:0;max-width:56ch}
+
+.stat-card{background:var(--panel2);position:relative;overflow:hidden;padding:20px;
+  display:flex;flex-direction:column;justify-content:center;gap:16px;min-height:180px}
+.stat-card::before{content:"";position:absolute;inset:0;
+  background-image:radial-gradient(var(--edge) 1.5px, transparent 1.5px);
+  background-size:18px 18px;opacity:.12;pointer-events:none}
+.stat-card .eyebrow{position:relative;border-left:4px solid var(--edge);padding-left:8px}
+.stat-card .nums{position:relative;display:flex;gap:22px;flex-wrap:wrap}
+.stat-card .num-block{display:flex;flex-direction:column}
+.stat-card .num-block .n{font-size:34px;font-weight:700;line-height:1}
+.stat-card .num-block .l{font-size:11px;text-transform:uppercase;letter-spacing:1px;color:var(--dim)}
+@media (min-width:800px){ .hero-row{grid-template-columns:5fr 2fr;align-items:stretch} }
+
+.cards{display:grid;gap:24px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+  margin:40px 0 44px}
+.app{display:flex;flex-direction:column;justify-content:space-between;background:var(--panel);
+  padding:22px;text-decoration:none;color:inherit;position:relative;overflow:hidden;height:100%}
+.badge{position:absolute;top:0;right:0;background:var(--tone);border-bottom:3px solid var(--edge);
+  border-left:3px solid var(--edge);padding:4px 10px;font-size:11px;font-weight:700;
+  letter-spacing:.6px;text-transform:uppercase;color:#1a1c1c}
+.app.soon{opacity:.55}
+.soon-note{font-size:12px;font-style:italic;color:var(--dim);margin:0}
+.code{font-size:12px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;
+  color:var(--dim);margin:14px 0 8px}
+.app h2{font-size:21px;margin:0 0 10px;font-weight:700;text-transform:uppercase;letter-spacing:-.3px}
+.app p{margin:0 0 18px;color:var(--dim);font-size:14px;flex:1}
+.stats{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px}
+.stat{background:var(--panel2);border:2px solid var(--edge);padding:3px 9px;
+  font-size:11px;font-weight:700;white-space:nowrap}
+.stat.status{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.go{display:inline-flex;align-items:center;gap:7px;font-weight:700;font-size:14px;
+  text-transform:uppercase;letter-spacing:.4px}
+.go .arrow{background:var(--primary);border:2px solid var(--edge);border-radius:999px;
+  width:24px;height:24px;display:inline-flex;align-items:center;justify-content:center}
+.app:hover .go .arrow{background:var(--secondary)}
+
+.how{margin-top:16px;background:var(--panel);padding:28px}
+.how h3{font-size:22px;font-weight:700;text-transform:uppercase;margin:0 0 22px;
+  display:inline-block;background:var(--primary);color:#1a1c1c;padding:6px 12px}
+.how-grid{display:grid;gap:22px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.how-grid .icon{display:inline-flex;align-items:center;justify-content:center;
+  background:var(--ink);color:var(--bg);width:30px;height:30px;font-size:15px;margin-right:8px;
+  flex-shrink:0}
+.how-grid h4{margin:0 0 8px;font-size:15px;font-weight:700;display:flex;align-items:center;
+  text-transform:uppercase;letter-spacing:.2px}
+.how-grid p{margin:0;color:var(--dim);font-size:14px}
+.how-note{margin-top:24px;padding:14px;background:var(--panel2);border:2px dashed var(--edge);
+  font-size:12px}
+.how-note p{margin:0 0 6px}
+
+.coffee-btn{position:relative;display:inline-flex;align-items:center;gap:6px;
+  background:var(--primary);border:2px solid var(--edge);padding:6px 12px;
+  font-weight:700;font-size:11px;text-transform:uppercase;text-decoration:none;color:#1a1c1c;
+  white-space:nowrap;box-shadow:2px 2px 0 0 var(--edge);transition:transform .1s,box-shadow .1s}
+.coffee-btn:hover{transform:translate(2px,2px);box-shadow:0 0 0 0 var(--edge)}
+.coffee-btn .cup{position:relative;line-height:1}
+.coffee-btn .steam{position:absolute;top:-5px;left:50%;transform:translateX(-50%);
+  display:flex;gap:2px;pointer-events:none}
+.coffee-btn .steam i{display:block;width:2px;height:6px;border-radius:2px;
+  background:rgba(0,0,0,.35);font-style:normal;opacity:0;
+  animation:coffeeSteam 2.2s ease-in infinite}
+.coffee-btn .steam i:nth-child(2){animation-delay:.5s}
+.coffee-btn .steam i:nth-child(3){animation-delay:1s}
+@keyframes coffeeSteam{
+  0%{opacity:0;transform:translateY(0) scaleY(1)}
+  20%{opacity:.55}
+  100%{opacity:0;transform:translateY(-9px) scaleY(1.7)}
+}
+.topbar-right .coffee-btn{margin-left:2px}
+@media (max-width:520px){ .topbar-right .coffee-btn .label{display:none} }
+
+footer{margin-top:16px;padding-top:20px;border-top:4px solid var(--edge);
+  color:var(--dim);font-size:12px}
+footer p{margin:0 0 6px}
+footer a{color:var(--dim)}
+.visitor-line{text-align:center;margin-top:14px;font-weight:700}
+.visitor-line span:first-child{background:var(--primary);color:#1a1c1c;padding:2px 8px}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;
+  gap:12px;margin-top:18px;padding-top:14px;border-top:2px solid var(--edge)}
+.footer-bottom .copy{font-weight:700;color:var(--ink)}
+.footer-bottom .copy b{background:var(--primary);color:#1a1c1c;padding:1px 6px}
+.footer-nav{display:flex;gap:16px}
+.footer-nav a,.footer-nav button{color:var(--dim);text-decoration:none;font-weight:700;
+  text-transform:uppercase;font-size:11px;background:none;border:none;font-family:inherit;
+  cursor:pointer;padding:0}
+.footer-nav a:hover,.footer-nav button:hover{color:var(--ink)}
+.footer-social{display:inline-flex;align-items:center}
+@media (max-width:600px){ .wrap{padding:32px 16px 60px} topbar{padding:12px 16px} }
+
+.cookie-badge{position:fixed;bottom:20px;right:20px;width:56px;height:56px;border-radius:50%;
+  border:3px solid var(--edge);background:var(--panel);padding:0;cursor:pointer;overflow:hidden;
+  box-shadow:var(--shadow) var(--shadow) 0 0 var(--edge);z-index:40;transition:transform .1s}
+.cookie-badge:hover{transform:translate(var(--shadow),var(--shadow));box-shadow:0 0 0 0 var(--edge)}
+.cookie-badge img{width:100%;height:100%;object-fit:cover;display:block}
+.cookie-badge::after{content:"";position:absolute;inset:0;border-radius:50%;
+  border:6px solid #e0302d;box-sizing:border-box;pointer-events:none}
+.cookie-badge::before{content:"";position:absolute;top:50%;left:6%;width:88%;height:6px;
+  background:#e0302d;transform:translateY(-50%) rotate(-45deg);border-radius:3px;pointer-events:none}
+.cookie-overlay{position:fixed;inset:0;background:rgba(0,0,0,.6);display:none;
+  align-items:center;justify-content:center;z-index:50;padding:20px}
+.cookie-overlay.open{display:flex}
+.cookie-modal{background:var(--panel);border:4px solid var(--edge);
+  box-shadow:var(--shadow-lg) var(--shadow-lg) 0 0 var(--edge);
+  max-width:560px;width:100%;max-height:86vh;overflow-y:auto;padding:28px;position:relative}
+.cookie-modal h2{margin:0 0 14px;font-size:20px;text-transform:uppercase}
+.cookie-modal p{color:var(--dim);font-size:14px;line-height:1.65;margin:0 0 14px}
+.cookie-modal ul{margin:0 0 14px;padding-left:20px;color:var(--dim);font-size:14px;line-height:1.65}
+.cookie-modal li{margin-bottom:6px}
+.cookie-modal b,.cookie-modal strong{color:var(--ink)}
+.cookie-modal img.gif{width:100%;border:3px solid var(--edge);margin-top:6px;display:block}
+.cookie-close{position:absolute;top:14px;right:14px;background:var(--primary);
+  border:2px solid var(--edge);color:#1a1c1c;width:32px;height:32px;
+  cursor:pointer;font-size:16px;line-height:1;font-weight:700}
+.cookie-close:hover{background:var(--secondary)}
+
+#visitor-count{font-variant-numeric:tabular-nums}
+
+.lang-row{position:relative;margin:0}
+.lang-current{background:var(--panel);border:2px solid var(--edge);border-radius:0;
+  padding:4px;cursor:pointer;width:36px;height:26px;display:flex;align-items:center;
+  justify-content:center;overflow:hidden}
+.lang-current:hover{border-color:var(--secondary)}
+.lang-current img{width:100%;height:100%;object-fit:cover;display:block}
+.lang-menu{position:absolute;top:calc(100% + 6px);right:0;background:var(--panel);
+  border:2px solid var(--edge);box-shadow:var(--shadow) var(--shadow) 0 0 var(--edge);
+  padding:5px;display:none;flex-direction:column;gap:4px;z-index:60}
+.lang-menu.open{display:flex}
+.lang-flag{background:transparent;border:1px solid transparent;
+  padding:4px;cursor:pointer;width:36px;height:26px;display:flex;align-items:center;
+  justify-content:center;overflow:hidden}
+.lang-flag img{width:100%;height:100%;object-fit:cover;display:block}
+.lang-flag:hover{border-color:var(--secondary)}
+.lang-flag[aria-pressed=true]{border-color:var(--edge);box-shadow:2px 2px 0 0 var(--edge)}
+body.egy-font [data-egy]{font-family:"Noto Sans Egyptian Hieroglyphs",sans-serif;
+  letter-spacing:2px;line-height:1.9}
+body.kli-font [data-kli]{font-weight:700;letter-spacing:.3px}
+</style>
+</head>
+<body>
+<topbar>
+  <div class="brand">0pi.es</div>
+  <div class="topbar-right">
+    <nav class="nav">
+      <a class="active" href="#labs">Labs</a>
+      <a href="#" title="Arriving Tomorrow">Progress</a>
+    </nav>
+    <div class="lang-row" id="lang-row">
+      <button class="lang-current" id="lang-current" aria-haspopup="true" aria-expanded="false" title="Language">
+        <img src="assets/misc/flag-uk.svg" alt="Language" id="lang-current-img">
+      </button>
+      <div class="lang-menu" id="lang-menu" role="menu" aria-label="Language">
+        <button class="lang-flag" data-lang="en" aria-pressed="true" title="English">
+          <img src="assets/misc/flag-uk.svg" alt="English">
+        </button>
+        <button class="lang-flag" data-lang="egy" aria-pressed="false" title="Hieroglyphs (for fun, not scholarly)">
+          <img src="assets/misc/flag-egypt.svg" alt="Egyptian hieroglyphs">
+        </button>
+        <button class="lang-flag" data-lang="kli" aria-pressed="false" title="Klingon (tlhIngan Hol)">
+          <img src="assets/misc/klingon-empire-flag.svg" alt="Klingon">
+        </button>
+      </div>
+    </div>
+    <a class="coffee-btn" href="https://buymeacoffee.com/g56dfvhynhh" target="_blank" rel="noopener noreferrer" title="Buy Dave a coffee" aria-label="Buy Dave a coffee">
+      <span class="cup">☕<span class="steam"><i></i><i></i><i></i></span></span><span class="label">Coffee</span>
+    </a>
+  </div>
+</topbar>
+
+<div class="wrap">
+  <header class="hero">
+    <div class="hero-row">
+      <div class="hero-text">
+        <p class="eyebrow">The internet’s first AI governance gamification site. Probably. We didn’t check.</p>
+        <h1 data-egy="𓏤𓋴𓊪𓂧 𓎛𓏏𓊪 𓏏𓏛 𓎡𓄿𓏏" data-kli="Sertification Quj Ghommeyni'">Interactive AI Governance.<br>Zero Pies.</h1>
+        <p class="lede">AI governance is about accountability, and the acceptable number of lapses is sin(π)=0.</p>
+      </div>
+      <div class="stat-card brutal brutal-shadow-lg">
+        <p class="eyebrow">Study labs · July 2026</p>
+        <div class="nums">
+          <div class="num-block"><span class="n">86</span><span class="l">games</span></div>
+          <div class="num-block"><span class="n">1,738</span><span class="l">cards</span></div>
+          <div class="num-block"><span class="n">0</span><span class="l">pies</span></div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="cards" id="labs">
+    <a class="app brutal-heavy brutal-shadow-lg brutal-hover-lg" style="--tone:var(--concepts)" href="AI Concepts.html">
+      <span class="badge">Foundation</span>
+      <div>
+        <p class="code" data-egy="𓈖 𓆳𓏏 𓎡𓄿𓏏" data-kli="Hoch tuqmey">Vendor-neutral</p>
+        <h2 data-egy="𓂀 𓅓𓈖 𓆓𓂧" data-kli="AI Qab yejHa'ghach">AI &amp; ML Concepts</h2>
+        <p data-egy="𓆳𓏏 𓈖 𓇋𓏏𓆓, 𓂋𓎡 𓎡𓄿𓏏 𓈖 𓆓𓂧. 𓊪𓂧 𓆳𓏏, 𓅓𓄿𓏏 𓎡𓄿𓏏, 𓊪𓂧𓏏 𓎡𓄿𓏏." data-kli="Ho'DoS, ghawran je' Doch'a'ghom Hutlh. mu'mey, ghojmoHmey, lupmey, je' Qujmoq law' HuchHom.">The foundations, without a cloud provider attached. Terms, learning methods, metrics, prompting and RAG — plus heavy coverage of AI risk and eight kinds of model drift.</p>
+      </div>
+      <div>
+        <div class="stats"><span class="stat status">v1.0</span><span class="stat">27 GAMES</span><span class="stat">397 CARDS</span></div>
+        <span class="go">Open the lab <span class="arrow">→</span></span>
+      </div>
+    </a>
+    <a class="app brutal-heavy brutal-shadow-lg brutal-hover-lg" style="--tone:var(--legislation)" href="Legislation &amp; Regulatory.html">
+      <span class="badge">Regulatory</span>
+      <div>
+        <p class="code" data-egy="𓆳𓏏 𓎡𓄿𓏏 𓈖 𓆓𓂧" data-kli="chutmey Da'">Cross-cutting</p>
+        <h2 data-egy="𓆳𓏏 𓎡𓄿𓏏 𓊪𓂋𓄿𓎡𓏏𓄿" data-kli="Chutmey pIn">Legislation &amp; Regulatory</h2>
+        <p data-egy="𓆳𓏏 𓎡𓄿𓏏 𓈖 𓄿𓇋, 𓎡𓄿𓏏 𓆓𓂧𓎡𓄿𓏏 𓈖 𓆳𓏏. 𓊪𓂧𓏏 𓎡𓄿𓏏, 𓄿𓎡𓏏𓄿 𓆓𓂧, 𓎛𓎛𓎛 𓆳𓏏." data-kli="Hoch AI chutmey Daq. Amendments regulation, ta'ghach jurisdictions, poH tuqmey.">Every AI law and framework, all in one place. Track amendments as they land — including the EU AI Act's own Amendments Regulation — compare jurisdictions, and master who owes what obligation, when.</p>
+      </div>
+      <div>
+        <div class="stats"><span class="stat status">v0.4</span><span class="stat">13 GAMES</span><span class="stat">344 CARDS</span></div>
+        <span class="go">Open the lab <span class="arrow">→</span></span>
+      </div>
+    </a>
+    <a class="app brutal-heavy brutal-shadow-lg brutal-hover-lg" style="--tone:var(--aigp)" href="2026 AIGP.html">
+      <span class="badge">Governance</span>
+      <div>
+        <p class="code" data-egy="𓇋𓄿𓊪𓊪 𓄿𓇋𓎡𓊪" data-kli="IAPP AIGP">IAPP AIGP</p>
+        <h2 data-egy="𓂀 𓎛𓂋𓎛 𓊪𓂋𓄿𓎡𓏏𓄿" data-kli="AI Ra'ghach SuvwI'">AI Governance Professional</h2>
+        <p data-egy="𓐍𓂋 𓊃𓊪𓂧, 𓐍𓂋𓊪 𓈖 𓆳𓏏 𓐍𓂋 𓂀. 𓊪𓂧𓏏 𓆓𓂧, 𓇋𓏏𓆓 𓎡𓄿𓏏, 𓎛𓎛𓎛𓎛 𓆳𓏏 𓆓𓂧𓎡𓄿𓏏." data-kli="chay' chutmey, ghelmeH ghomHommey je' AI Daghom. Se'raQ pIvmey, ta'ghach roles, GDPR tay', qaS'a' Doch, ghItlhmey lo' AI examiner — je' DaH loS AIGP woQmey Dalmoh, foundations vo' deployment Ra'ghach.">How laws, standards and frameworks apply to AI. Risk tiers, actor roles, the GDPR overlap, a global obligations timeline, long-form briefs marked by an AI examiner — now spanning all four AIGP domains, from foundations to deployment governance.</p>
+      </div>
+      <div>
+        <div class="stats"><span class="stat status">v1.0</span><span class="stat">52 GAMES</span><span class="stat">762 CARDS</span><span class="stat">22 JURISDICTIONS</span><span class="stat">5 BRIEFS</span></div>
+        <span class="go">Open the lab <span class="arrow">→</span></span>
+      </div>
+    </a>
+    <a class="app brutal-heavy brutal-shadow-lg brutal-hover-lg" style="--tone:var(--aws)" href="AWS.html">
+      <span class="badge">Vendor</span>
+      <div>
+        <p class="code" data-egy="𓇋𓅱𓋴" data-kli="AWS">AWS</p>
+        <h2 data-egy="𓇋𓅱𓋴 𓂀 𓊪𓂋𓄿𓎡𓏏𓄿" data-kli="AWS SuvwI'">AWS Certifications</h2>
+        <p data-egy="𓇋𓅱𓋴 𓎡𓄿𓏏 𓈖 𓊪𓂧 𓎡𓄿𓏏 𓈖 𓄿𓛍, 𓂋𓎡 𓆳𓏏 𓎡𓄿𓏏 𓈖 𓆓𓂧 𓎡𓄿𓏏." data-kli="AWS Doch'a'ghom je' woQ Datlhap, ghawran je' yejHa'ghach Qujmey.">Amazon Web Services certification labs — starting with AI Practitioner (AIF-C01), more exams landing here over time.</p>
+      </div>
+      <div>
+        <div class="stats"><span class="stat status">1 exam</span></div>
+        <span class="go">Open the container <span class="arrow">→</span></span>
+      </div>
+    </a>
+    <a class="app brutal-heavy brutal-shadow-lg brutal-hover-lg" style="--tone:var(--microsoft)" href="Microsoft.html">
+      <span class="badge">Vendor</span>
+      <div>
+        <p class="code">Microsoft</p>
+        <h2>Microsoft Certifications</h2>
+        <p>Microsoft certification labs — starting with Azure AI Fundamentals (AI-901), more exams landing here over time.</p>
+      </div>
+      <div>
+        <div class="stats"><span class="stat status">1 exam</span></div>
+        <span class="go">Open the container <span class="arrow">→</span></span>
+      </div>
+    </a>
+  </section>
+
+  <section class="how brutal-heavy brutal-shadow-lg">
+    <h3 data-egy="𓐍𓂋 𓊪𓅱 𓎡𓄿𓏏" data-kli="chay' Qujmey vum">How these work</h3>
+    <div class="how-grid">
+      <div>
+        <h4><span class="icon" aria-hidden="true">▦</span><span data-egy="𓎡𓄿𓏏, 𓈖 𓊪𓂧𓏏" data-kli="Ghommeyni', ghobe' So'mey">Boards, not quizzes</span></h4>
+        <p data-egy="𓊃𓊪𓂧 𓆳𓏏 𓎡𓄿𓏏 𓈖 𓎛𓎛, 𓂋𓎡 𓊪𓂧𓏏 𓎡𓄿𓏏. 𓊪𓂧𓏏𓆳𓏏 𓐍𓂋 𓊪𓂋𓄿𓎡𓏏𓄿 𓎡𓄿𓏏 𓈖 𓐍𓂋𓎡𓄿𓏏, 𓈖 𓎛𓐍𓂋." data-kli="yIchu' Hoch ghItlhmey, vaj Ghommeyni' yIje'. So' je' jang Qujmoq exam app Daq yIn, ghobe' naDev.">Sort a whole bank of cards into place, then score the board. Question-and-answer
+           practice lives in the exam app, not here.</p>
+      </div>
+      <div>
+        <h4><span class="icon" aria-hidden="true">↺</span><span data-egy="𓊃𓊪𓂧 𓆳𓏏 𓊪𓂧𓏏 𓎡𓄿𓏏 𓊃𓊪𓂧" data-kli="QaparHa' ghItlhmey cheghtaH poH wa'DIch">Confident misses come back first</span></h4>
+        <p data-egy="𓊪𓂋𓄿𓎡𓏏𓄿 𓎡𓄿𓏏 𓈖 𓊪𓂧𓏏𓆳𓏏. 𓎡𓄿𓏏 𓈖 𓊃𓊪𓂧 𓎡𓄿𓏏 𓈖 𓂋𓎡 𓐍𓂋 𓎡𓄿𓏏 𓆳𓏏 𓊪𓂋𓄿𓎡𓏏𓄿 𓎡𓄿𓏏, 𓂋𓎡 𓐍𓂋 𓎡𓄿𓏏 𓆳𓏏 𓎡𓄿𓏏 𓈖 𓐍𓂋 𓎡𓄿𓏏." data-kli="woQ chavtaH Hoch ghItlh. ghItlhmey QaparHa'taHvIS ret pIH cheghtaH wa'DIch, meqvam ghItlhmey lujmoHchu' SoH.">Progress is kept per item. The cards you were sure about and still got wrong
+           resurface soonest, because those are the ones that fail you.</p>
+      </div>
+      <div>
+        <h4><span class="icon" aria-hidden="true">🧠</span><span data-egy="𓊪𓂋𓄿𓎡𓏏𓄿 𓎡𓄿𓏏 𓆓𓄿𓏏 𓐍𓂋" data-kli="Hoch qonmoHghach 'ej chavlu'">Every reveal goes deeper</span></h4>
+        <p data-egy="𓎛𓄿𓄿 𓆳𓏏 𓎡𓄿𓏏 𓈖 𓂀, 𓆳𓏏𓎡𓄿𓏏 𓂋𓎡 𓊪𓂋𓄿𓎡𓏏𓄿 — 𓂋𓎡 𓊪𓂧𓏏 𓆳𓏏 𓎡𓄿𓏏 𓐍𓂋, 𓂋𓎡 𓆳𓏏 𓆓𓄿𓏏 𓎡𓄿𓏏 𓈖 𓎛𓎛 𓊪𓂧𓏏." data-kli="yIqem Ghommeyni' Claude, ChatGPT pagh Perplexity Daq — lujmoHghach yInmoHmey, pagh Hoch yejHa'ghach nISlu'DI'.">Hand any board to Claude, ChatGPT or Perplexity — with what you missed, or the
+           whole concept when you got it right.</p>
+      </div>
+    </div>
+    <div class="how-note">
+      <p>AIGP built against Body of Knowledge v2.1, effective 2 February 2026. All four domains — I through IV — are complete.</p>
+      <p>26 decks are shared: authored once, played in more than one lab, so drift and risk stay identical wherever you meet them.</p>
+    </div>
+  </section>
+
+  <footer>
+    <p>World map: “Simplified World Map” by Guilherme de Souza Vieira via Wikimedia Commons, <a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noopener noreferrer">CC BY-SA 3.0</a>, modified.</p>
+    <p class="visitor-line"><span id="visitor-count">42,000,000</span> <span data-egy="𓎡𓄿𓏏 𓂋𓎡 𓐍𓂋 𓎡𓄿𓏏 𓈖 𓐍𓂋 𓆓𓄿𓏏𓆳𓏏 (𓂋𓎡 𓐍𓂋 𓎡𓄿𓏏, 𓈖 𓊪𓂧𓏏 𓎡𓄿𓏏)." data-kli="ghotpu' ghom naDev DaHjaj (may'be' maH lI'be' vay').">visitors to this site today (maybe we're not actually counting).</span></p>
+    <div class="footer-bottom">
+      <p class="copy">© 2026 <b>0PI.ES</b> — NO COOKIES. NO TRACKING. NO PIES.</p>
+      <nav class="footer-nav">
+        <button type="button" class="share-open">Share</button>
+        <button type="button" title="There's no support team, just Dave.">Support</button>
+        <button type="button" id="privacy-link">Privacy</button>
+        <button type="button" id="terms-link">Terms</button>
+        <a class="footer-social" href="https://github.com/0brains/0pies" target="_blank" rel="noopener noreferrer" title="0pi.es on GitHub — fork it, it's yours" aria-label="0pi.es source code on GitHub">
+          <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+        </a>
+        <a class="footer-social" href="https://www.reddit.com/r/0pi/" target="_blank" rel="noopener noreferrer" title="r/0pi — argue about AI regulation with us" aria-label="r/0pi on Reddit">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M22 11.06a2.4 2.4 0 0 0-4.07-1.72 11.8 11.8 0 0 0-6.02-1.9l1.02-3.22 2.78.62a1.73 1.73 0 1 0 .2-1.19l-3.2-.71a.6.6 0 0 0-.71.4l-1.27 4.04a11.8 11.8 0 0 0-6.36 1.94A2.4 2.4 0 1 0 2.5 13.4a4.3 4.3 0 0 0-.05.68c0 3.42 4.28 6.2 9.55 6.2s9.55-2.78 9.55-6.2c0-.22-.02-.44-.05-.65A2.4 2.4 0 0 0 22 11.06zM7.7 12.7a1.44 1.44 0 1 1 2.88 0 1.44 1.44 0 0 1-2.88 0zm8.13 4.2c-1 1-2.9 1.08-3.45 1.08-.56 0-2.46-.08-3.46-1.08a.38.38 0 0 1 .53-.53c.63.63 1.98.85 2.93.85.94 0 2.3-.22 2.93-.85a.38.38 0 0 1 .52.53zm-.27-2.76a1.44 1.44 0 1 1 0-2.88 1.44 1.44 0 0 1 0 2.88z"/></svg>
+        </a>
+        <a class="footer-social" href="https://www.linkedin.com/in/davidjonespmp/" target="_blank" rel="noopener noreferrer" title="Dave on LinkedIn" aria-label="Dave on LinkedIn">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.58c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.15 1.45-2.15 2.94v5.68H9.34V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.61 0 4.28 2.38 4.28 5.47v6.27zM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45z"/></svg>
+        </a>
+        <a class="coffee-btn" href="https://buymeacoffee.com/g56dfvhynhh" target="_blank" rel="noopener noreferrer" title="Buy Dave a coffee" aria-label="Buy Dave a coffee">
+          <span class="cup">☕<span class="steam"><i></i><i></i><i></i></span></span><span class="label">Coffee</span>
+        </a>
+      </nav>
+    </div>
+  </footer>
+</div>
+
+<button class="cookie-badge" id="cookie-badge" aria-label="Read our cookie policy">
+  <img src="assets/misc/cookie.svg" alt="A cookie">
+</button>
+
+<div class="cookie-overlay" id="cookie-overlay">
+  <div class="cookie-modal" role="dialog" aria-modal="true" aria-labelledby="cookie-title">
+    <button class="cookie-close" id="cookie-close" aria-label="Close">&times;</button>
+    <h2 id="cookie-title">🍪 The Anti-Cookie Policy 🍪</h2>
+    <p>Welcome to the internet, where every single website you visit instantly demands to know your location, your browsing habits, and your deepest, darkest psychological fears just so you can read a recipe for banana bread.</p>
+    <p>Well, not here!</p>
+    <p>Here is our official, legally binding, utterly revolutionary Cookie Policy:</p>
+    <ul>
+      <li><b>We are collecting absolutely none of your data.</b> Nothing. Zero.</li>
+      <li><b>We are retaining exactly none of your information.</b> If you dropped your digital wallet on this website, we wouldn't even pick it up to see who it belonged to.</li>
+      <li><b>We genuinely do not care who you are.</b> And I mean that in the most loving way possible! You could be a normal human being, or you could be three squirrels in a trench coat trying to learn how to aggressively day-trade. <i>We. Do. Not. Care.</i></li>
+    </ul>
+    <p>Our entire corporate ethos—our singular, driving mission—is simply that you have fun. That's it! No tracking pixels, no targeted ads for that dehumidifier you mentioned out loud near your phone one time, just unadulterated fun.</p>
+    <p>Now, because it frankly feels like a crime to talk this much about cookies and not actually deliver any, we have provided the only kind of cookie you should ever accept on the internet.</p>
+    <p>Please direct your attention to the majestic gif below.</p>
+    <img class="gif" src="assets/misc/cookie-monster.gif" alt="Cookie Monster gleefully eating a pile of cookies" loading="lazy">
+    <p style="margin-top:14px">Look at him. Look at the pure, unbridled, crumb-scattering joy. <i>That</i> is the energy we are bringing to this website. Enjoy the cookies, and please, for the love of everything, just go have some fun!</p>
+  </div>
+</div>
+
+<div class="cookie-overlay" id="terms-overlay">
+  <div class="cookie-modal" role="dialog" aria-modal="true" aria-labelledby="terms-title">
+    <button class="cookie-close" id="terms-close" aria-label="Close">&times;</button>
+    <h2 id="terms-title">📜 The Terms 📜</h2>
+    <p>There used to be a joke here saying there were no terms. There are now exactly two, and they are both good news.</p>
+    <p><b>One: it's yours.</b> Every game, every card deck and every line of the build pipeline is public at <a href="https://github.com/0brains/0pies" target="_blank" rel="noopener noreferrer">github.com/0brains/0pies</a>. Use it, study from it, fork it, rip it apart, wire it into your own study setup, run it offline on a laptop in a field. Schools, universities, charities, public research and government use are all explicitly fine.</p>
+    <p><b>Two: don't sell it.</b> That's the whole restriction. No reselling it, no paid course or subscription built on top of it, no quietly bundling it into a commercial product. It's licensed under <a href="https://polyformproject.org/licenses/noncommercial/1.0.0" target="_blank" rel="noopener noreferrer">PolyForm Noncommercial 1.0.0</a> — the full text ships in the repo as <a href="https://github.com/0brains/0pies/blob/master/LICENSE" target="_blank" rel="noopener noreferrer">LICENSE</a>.</p>
+    <p>Being honest about the label: that makes this <i>source-available</i> rather than open source in the strict OSI sense, because the OSI definition doesn't permit a no-commercial-use rule. Want a commercial licence? <a href="https://github.com/0brains/0pies/issues" target="_blank" rel="noopener noreferrer">Open an issue</a> and ask.</p>
+    <p><b>Bits that aren't ours to give away.</b> The AWS and Azure architecture icons stay under Amazon's and Microsoft's own terms (diagrams, training material and documentation only). Vendor names and logos are their trademarks. The world map is <a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noopener noreferrer">CC BY-SA 3.0</a> and share-alike, so it stays that way no matter what we say. It's all itemised in <a href="https://github.com/0brains/0pies/blob/master/NOTICE.md" target="_blank" rel="noopener noreferrer">NOTICE.md</a> — worth two minutes before you fork.</p>
+    <p><b>The boring-but-true bit.</b> This is independent study material, not affiliated with or endorsed by the IAPP, Amazon, Microsoft or anyone else whose exam name appears here. We try hard to be accurate and we cite our sources, but regulation moves faster than anyone's content pipeline. Cards carry <code>asOf</code> dates for exactly that reason. Don't file it as legal advice, and don't sit an exam on our say-so alone.</p>
+    <p>Found something wrong? <a href="https://github.com/0brains/0pies/issues" target="_blank" rel="noopener noreferrer">Tell us</a>, or come argue about it at <a href="https://www.reddit.com/r/0pi/" target="_blank" rel="noopener noreferrer">r/0pi</a>. Corrections with a citation are the best gift you can give this site.</p>
+    <p style="margin-top:14px">That's it. Go have fun. 🥧</p>
+  </div>
+</div>
+
+<script>
+(function(){
+  let visitors = 42000000;
+  const el = document.getElementById("visitor-count");
+  setInterval(() => {
+    visitors += 42;
+    el.textContent = visitors.toLocaleString("en-US");
+  }, 500);
+})();
+</script>
+
+<script>
+(function(){
+  const current = document.getElementById("lang-current");
+  const currentImg = document.getElementById("lang-current-img");
+  const menu = document.getElementById("lang-menu");
+  const buttons = Array.from(document.querySelectorAll(".lang-flag"));
+  const nodes = Array.from(document.querySelectorAll("[data-egy]"));
+  nodes.forEach(n => { n.dataset.enText = n.textContent; });
+
+  const closeMenu = () => { menu.classList.remove("open"); current.setAttribute("aria-expanded", "false"); };
+  current.onclick = () => {
+    const open = menu.classList.toggle("open");
+    current.setAttribute("aria-expanded", String(open));
+  };
+  document.addEventListener("click", e => {
+    if(!e.target.closest("#lang-row")) closeMenu();
+  });
+  document.addEventListener("keydown", e => { if(e.key === "Escape") closeMenu(); });
+
+  buttons.forEach(btn => btn.onclick = () => {
+    const lang = btn.dataset.lang;
+    buttons.forEach(b => b.setAttribute("aria-pressed", String(b === btn)));
+    currentImg.src = btn.querySelector("img").src;
+    currentImg.alt = btn.querySelector("img").alt;
+    nodes.forEach(n => n.textContent = lang === "en" ? n.dataset.enText : n.getAttribute("data-" + lang));
+    document.body.classList.toggle("egy-font", lang === "egy");
+    document.body.classList.toggle("kli-font", lang === "kli");
+    closeMenu();
+  });
+})();
+</script>
+
+<script>
+(function(){
+  const badge = document.getElementById("cookie-badge");
+  const overlay = document.getElementById("cookie-overlay");
+  const close = document.getElementById("cookie-close");
+  const privacyLink = document.getElementById("privacy-link");
+  const open = () => overlay.classList.add("open");
+  const shut = () => overlay.classList.remove("open");
+  badge.onclick = open;
+  close.onclick = shut;
+  privacyLink.onclick = open;
+  overlay.addEventListener("click", e => { if(e.target === overlay) shut(); });
+
+  const termsOverlay = document.getElementById("terms-overlay");
+  const termsClose = document.getElementById("terms-close");
+  const termsLink = document.getElementById("terms-link");
+  const openTerms = () => termsOverlay.classList.add("open");
+  const shutTerms = () => termsOverlay.classList.remove("open");
+  termsLink.onclick = openTerms;
+  termsClose.onclick = shutTerms;
+  termsOverlay.addEventListener("click", e => { if(e.target === termsOverlay) shutTerms(); });
+
+  document.addEventListener("keydown", e => { if(e.key === "Escape") { shut(); shutTerms(); } });
+})();
+</script>
+<script>
+(function(){
+  // Site-level share. Same three voices as the game share, aimed at the page
+  // rather than one game. Plain intent links: nothing loads and nothing is
+  // called until a chip is clicked, and we never learn that it was.
+  const CTX = "AI governance";
+  const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"}[c]));
+  const pageUrl = () => location.protocol === "file:"
+    ? "https://0pi.es/" + encodeURIComponent(decodeURIComponent(location.pathname.split("/").pop()))
+    : location.origin + location.pathname;
+  const TONES = [
+    {id:"learned", label:"Make me sound like I just learned something",
+     hint:"accidental expertise, mild smugness", variants:[
+      'TIL you can study {c} by playing games. Free ones. I have retained facts. On purpose.',
+      'An hour on 0pi.es and I can now drop {c} facts into conversation with terrifying confidence.',
+      'Studying {c} used to mean flashcards. Now it’s free browser games, and somehow it’s working.']},
+    {id:"amazing", label:"I just found this and it’s amazing",
+     hint:"breathless discovery, zero chill", variants:[
+      'Stop scrolling: free {c} study games. No ads, no signup, no tracking, zero pies.',
+      'Found the internet’s weirdest good study site: free {c} games, real citations, zero cookies.',
+      'Someone built free games for {c} and just… left them on the internet. Thank me later.']},
+    {id:"crap", label:"Look at this crap",
+     hint:"disgusted, yet somehow three hours in", variants:[
+      'Look at this crap: someone gamified {c}. Anyway, it’s late and I can’t stop playing.',
+      'This is the dumbest possible way to learn {c} and it is ABSOLUTELY working. Furious.',
+      'Games. About {c}. Who hurt these people. (Don’t click. You’ll lose your afternoon.)']},
+  ];
+  const NETS = [
+    {name:"X",        url:(t,u)=>`https://twitter.com/intent/tweet?text=${encodeURIComponent(t)}&url=${encodeURIComponent(u)}`},
+    {name:"LinkedIn", url:(t,u)=>`https://www.linkedin.com/feed/?shareActive=true&text=${encodeURIComponent(t+"\n\n"+u)}`},
+    {name:"Facebook", url:(t,u)=>`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(u)}&quote=${encodeURIComponent(t)}`},
+    {name:"Reddit",   url:(t,u)=>`https://www.reddit.com/submit?url=${encodeURIComponent(u)}&title=${encodeURIComponent(t)}`},
+    {name:"Bluesky",  url:(t,u)=>`https://bsky.app/intent/compose?text=${encodeURIComponent(t+"\n"+u)}`},
+    {name:"Threads",  url:(t,u)=>`https://www.threads.net/intent/post?text=${encodeURIComponent(t+"\n"+u)}`},
+    {name:"WhatsApp", url:(t,u)=>`https://wa.me/?text=${encodeURIComponent(t+"\n"+u)}`},
+    {name:"Telegram", url:(t,u)=>`https://t.me/share/url?url=${encodeURIComponent(u)}&text=${encodeURIComponent(t)}`},
+  ];
+  const st = {tone:"learned", variant:0};
+  const text = () => {
+    const tone = TONES.find(t => t.id === st.tone);
+    return tone.variants[st.variant % tone.variants.length].replace(/\{c\}/g, CTX);
+  };
+  function ensureRoot(){
+    let root = document.getElementById("share-root");
+    if(root) return root;
+    root = document.createElement("div");
+    root.id = "share-root"; root.className = "share-root";
+    root.innerHTML = `<div class="share-backdrop"></div>
+      <div class="share-modal" role="dialog" aria-modal="true" aria-label="Share this site">
+        <button class="share-close" aria-label="Close">×</button>
+        <h3>Share this</h3>
+        <p class="share-sub">Pick your energy:</p>
+        <div class="share-tones"></div>
+        <p class="share-preview" id="share-preview"></p>
+        <button class="share-reroll" id="share-reroll">↻ Another take</button>
+        <div class="share-nets" id="share-nets"></div>
+        <p class="share-note">To be expressly clear: we don’t track you when you share this —
+          or what you’re doing, buying, or watching in your mum’s basement. These buttons are
+          plain links. Nothing fires until you click one, and even then we never find out.</p>
+      </div>`;
+    document.body.appendChild(root);
+    root.querySelector(".share-backdrop").onclick = close;
+    root.querySelector(".share-close").onclick = close;
+    document.addEventListener("keydown", e => { if(e.key === "Escape") close(); });
+    return root;
+  }
+  function renderShare(){
+    const root = ensureRoot();
+    root.querySelector(".share-tones").innerHTML = TONES.map(t =>
+      `<button class="share-tone" data-tone="${t.id}" aria-pressed="${t.id===st.tone}">
+         ${esc(t.label)}<span class="hint">${esc(t.hint)}</span></button>`).join("");
+    root.querySelectorAll(".share-tone").forEach(b => b.onclick = () => {
+      st.tone = b.dataset.tone; st.variant = Math.floor(Math.random()*3); renderShare();
+    });
+    const t = text(), u = pageUrl();
+    document.getElementById("share-preview").textContent = t + "\n\n" + u;
+    document.getElementById("share-reroll").onclick = () => { st.variant++; renderShare(); };
+    const native = navigator.share ? `<button id="share-native">More…</button>` : "";
+    document.getElementById("share-nets").innerHTML = NETS.map(n =>
+      `<a href="${esc(n.url(t,u))}" target="_blank" rel="noopener noreferrer">${esc(n.name)}</a>`).join("")
+      + `<button id="share-copy">Copy</button>` + native;
+    const cp = document.getElementById("share-copy");
+    cp.onclick = () => {
+      const full = t + "\n" + u;
+      const done = () => { cp.textContent = "Copied!"; setTimeout(() => cp.textContent = "Copy", 1600); };
+      if(navigator.clipboard && navigator.clipboard.writeText)
+        navigator.clipboard.writeText(full).then(done).catch(done);
+      else done();
+    };
+    const nb = document.getElementById("share-native");
+    if(nb) nb.onclick = () => navigator.share({title: document.title, text: t, url: u}).catch(() => {});
+  }
+  function open(){ st.variant = Math.floor(Math.random()*3); renderShare();
+    document.getElementById("share-root").classList.add("open"); }
+  function close(){ const r = document.getElementById("share-root");
+    if(r) r.classList.remove("open"); }
+  document.querySelectorAll(".share-open").forEach(b => b.onclick = open);
+})();
+</script>
+</body>
+</html>
