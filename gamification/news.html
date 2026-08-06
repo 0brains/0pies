@@ -264,6 +264,15 @@ body.kli-font [data-kli]{font-weight:700;letter-spacing:.3px}
   font-size:12px;margin:0 0 12px;max-width:70ch}
 .news-src{font-size:13px;font-weight:700}
 .news-src a{color:var(--ink);text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:4px}
+.trending-box{background:var(--panel2);padding:16px 20px;margin-top:28px}
+.trending-box h2{margin:0 0 10px;font-size:15px;text-transform:uppercase;letter-spacing:.6px}
+.trending-list{display:flex;flex-direction:column;gap:8px;margin:0;padding:0;list-style:none}
+.trending-list li{display:flex;flex-wrap:wrap;gap:8px;align-items:baseline;font-size:13px}
+.trend-tag{background:var(--secondary);color:#1a1c1c;border:2px solid var(--edge);
+  font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;padding:2px 6px;white-space:nowrap}
+.trending-list a{color:var(--ink);font-weight:700;text-decoration:underline;
+  text-decoration-thickness:2px;text-underline-offset:3px}
+.trending-list .meta{color:var(--dim);font-size:12px}
 .subscribe-card{background:var(--panel2);padding:20px;display:flex;flex-direction:column;gap:10px}
 .subscribe-card .feed-url{display:flex;gap:8px;flex-wrap:wrap;align-items:stretch}
 .subscribe-card code{background:var(--bg);border:2px solid var(--edge);padding:8px 10px;
@@ -325,8 +334,109 @@ body.kli-font [data-kli]{font-weight:700;letter-spacing:.3px}
     </div>
   </header>
 
+  <section id="trending" class="trending-box brutal brutal-shadow" aria-label="Trending in AI">
+    <h2>Trending in AI right now</h2>
+    <ul class="trending-list">
+      <li><span class="trend-tag">Trending on HN</span><a href="https://news.ycombinator.com/item?id=49187061" target="_blank" rel="noopener noreferrer">Born Against, or why hobby programming communities are against LLM usage</a><span class="meta">On the Hacker News front page with 289 points.</span></li>
+      <li><span class="trend-tag">Trending on HN</span><a href="https://news.ycombinator.com/item?id=49186720" target="_blank" rel="noopener noreferrer">Sycophantic AI Decreases Prosocial Intentions and Promotes Dependence (2025)</a><span class="meta">On the Hacker News front page with 132 points.</span></li>
+      <li><span class="trend-tag">Trending on GitHub</span><a href="https://github.com/waiterve/wai-play" target="_blank" rel="noopener noreferrer">waiterve/wai-play — 97 stars</a><span class="meta">WAI Play - AI web game testing and quality evaluation platform</span></li>
+      <li><span class="trend-tag">Trending on GitHub</span><a href="https://github.com/HELPMEEADICE/TE-Speed-MiniMaxH3-OSS" target="_blank" rel="noopener noreferrer">HELPMEEADICE/TE-Speed-MiniMaxH3-OSS — 145 stars</a><span class="meta">MiniMax-H3超级缓存加速插件</span></li>
+      <li><span class="trend-tag">Trending on GitHub</span><a href="https://github.com/Hermes-brasil/hermes-brasil" target="_blank" rel="noopener noreferrer">Hermes-brasil/hermes-brasil — 105 stars</a><span class="meta">Comunidade brasileira de Hermes Agent (Nous Research) — skills, guias e integrações em português.</span></li>
+    </ul>
+  </section>
+
   <section id="news" aria-label="News items">
     <div class="news-list">
+    <article class="news-item brutal brutal-shadow">
+      <div class="tagline">
+        <span class="news-tag">Research</span>
+        <span class="news-dates">2026-08-06 · as of 2026-08-06</span>
+      </div>
+      <h3>Monte Carlo Tree Search for Table-to-Multimodal Report Generation</h3>
+      <p>arXiv:2608.04071v1 Announce Type: new Abstract: Automatically generating professional multimodal reports comprising both textual analysis and visual charts from structured tabular data is a critical challenge in data intelligence. Existing methods suffer from fixed linear pipelines and isolated subtask processing, which hinder joint optimization of factual accuracy, visual quality, and narrative…</p>
+      <p class="news-src">arXiv cs.AI — <a href="https://arxiv.org/abs/2608.04071" target="_blank" rel="noopener noreferrer">Open source ↗</a></p>
+    </article>
+    <article class="news-item brutal brutal-shadow">
+      <div class="tagline">
+        <span class="news-tag">Research</span>
+        <span class="news-dates">2026-08-06 · as of 2026-08-06</span>
+      </div>
+      <h3>The LLM Proposes, the Executive Disposes: A Self-Verifying Agent Instrument that Dissociates Commitment Drift from Binding Drift in Long-Horizon Agents</h3>
+      <p>arXiv:2608.04066v1 Announce Type: new Abstract: How do you verify a long-horizon agent when its own state and self-reports are exactly what you cannot trust? We present an agent instrument built so that verification is structural rather than post-hoc. A deterministic Executive owns all belief; a language model may only file typed proposals, and a claim is admitted only when a prediction…</p>
+      <p class="news-src">arXiv cs.AI — <a href="https://arxiv.org/abs/2608.04066" target="_blank" rel="noopener noreferrer">Open source ↗</a></p>
+    </article>
+    <article class="news-item brutal brutal-shadow">
+      <div class="tagline">
+        <span class="news-tag">Research</span>
+        <span class="news-dates">2026-08-06 · as of 2026-08-06</span>
+      </div>
+      <h3>A Long-Run Persistence Theory for AI Systems under the Redundancy-Adjusted Artificial Age Score (AAS)</h3>
+      <p>arXiv:2608.04012v1 Announce Type: new Abstract: Artificial intelligence systems are increasingly expected to operate over repeated cycles of interaction, adaptation, and update rather than through isolated one-shot outputs. This raises a fundamental theoretical question: can an AI system persist indefinitely without incurring unbounded structural aging? This paper develops a long-run persistence…</p>
+      <p class="news-src">arXiv cs.AI — <a href="https://arxiv.org/abs/2608.04012" target="_blank" rel="noopener noreferrer">Open source ↗</a></p>
+    </article>
+    <article class="news-item brutal brutal-shadow">
+      <div class="tagline">
+        <span class="news-tag">Policy analysis</span>
+        <span class="news-dates">2026-08-05 · as of 2026-08-06</span>
+      </div>
+      <h3>Can Generative Intermediaries Deliver When It Comes to Information Quality?</h3>
+      <p>The digital era has been defined by shifts in how people access information. Early search engines of the 1990s revolutionized how people navigate a complex web of online information; smartphones and social media platforms of the 2000s made that content more accessible than ever. So it’s no surprise that with generative AI products now in […] The post Can Generative Intermediaries Deliver When It…</p>
+      <p class="news-src">CDT — <a href="https://cdt.org/insights/can-generative-intermediaries-deliver-when-it-comes-to-information-quality/" target="_blank" rel="noopener noreferrer">Open source ↗</a></p>
+    </article>
+    <article class="news-item brutal brutal-shadow">
+      <div class="tagline">
+        <span class="news-tag">Cyber news</span>
+        <span class="news-dates">2026-08-05 · as of 2026-08-06</span>
+      </div>
+      <h3>How AI-powered phishing killed blocklists for good</h3>
+      <p>AI is helping attackers create disposable phishing infrastructure and rapidly evolving toolkits that blocklists cannot track fast enough. Push Security explains why browser-level, technique-based detection offers a more durable defense than relying on domains, signatures, and other known-bad indicators. [...]</p>
+      <p class="news-src">BleepingComputer — <a href="https://www.bleepingcomputer.com/news/security/how-ai-powered-phishing-killed-blocklists-for-good/" target="_blank" rel="noopener noreferrer">Open source ↗</a></p>
+    </article>
+    <article class="news-item brutal brutal-shadow">
+      <div class="tagline">
+        <span class="news-tag">Frontier labs</span>
+        <span class="news-dates">2026-08-04 · as of 2026-08-06</span>
+      </div>
+      <h3>Third-party cyber evaluations involving OpenAI models</h3>
+      <p>OpenAI explains recent third-party cybersecurity evaluation incidents and outlines new safeguards to strengthen AI model testing and evaluation.</p>
+      <p class="news-src">OpenAI — <a href="https://openai.com/index/third-party-cyber-evaluations-involving-openai-models" target="_blank" rel="noopener noreferrer">Open source ↗</a></p>
+    </article>
+    <article class="news-item brutal brutal-shadow">
+      <div class="tagline">
+        <span class="news-tag">US federal</span>
+        <span class="news-dates">2026-08-04 · as of 2026-08-06</span>
+      </div>
+      <h3>NIST Joins National Genesis Mission to Accelerate AI Innovation</h3>
+      <p>NIST will execute two of its efforts through its Centers for AI in Manufacturing and Critical Infrastructure.</p>
+      <p class="news-src">NIST — <a href="https://www.nist.gov/news-events/news/2026/08/nist-joins-national-genesis-mission-accelerate-ai-innovation" target="_blank" rel="noopener noreferrer">Open source ↗</a></p>
+    </article>
+    <article class="news-item brutal brutal-shadow">
+      <div class="tagline">
+        <span class="news-tag">UK NCSC</span>
+        <span class="news-dates">2026-08-04 · as of 2026-08-06</span>
+      </div>
+      <h3>NCSC statement in response to recent incidents resulting from frontier AI evaluations</h3>
+      <p>A statement from Ollie Whitehouse, Chief Technology Officer at the NCSC, on AI security following recent incidents.</p>
+      <p class="news-src">UK NCSC — <a href="https://www.ncsc.gov.uk/news/ncsc-statement-in-response-to-recent-incidents-resulting-from-frontier-ai-evaluations" target="_blank" rel="noopener noreferrer">Open source ↗</a></p>
+    </article>
+    <article class="news-item brutal brutal-shadow">
+      <div class="tagline">
+        <span class="news-tag">Cyber news</span>
+        <span class="news-dates">2026-08-04 · as of 2026-08-06</span>
+      </div>
+      <h3>Varonis Agent IBAC keeps AI agents within their intended boundaries</h3>
+      <p>AI agents need broad access to be useful, but traditional access controls cannot determine whether an action aligns with a user&#x27;s intent. Varonis explains how Agent IBAC detects intent drift and enforces real-time guardrails to keep agents within their intended boundaries. [...]</p>
+      <p class="news-src">BleepingComputer — <a href="https://www.bleepingcomputer.com/news/security/varonis-agent-ibac-keeps-ai-agents-within-their-intended-boundaries/" target="_blank" rel="noopener noreferrer">Open source ↗</a></p>
+    </article>
+    <article class="news-item brutal brutal-shadow">
+      <div class="tagline">
+        <span class="news-tag">Cyber news</span>
+        <span class="news-dates">2026-08-04 · as of 2026-08-06</span>
+      </div>
+      <h3>OpenAI, Anthropic AI agents targeted real people and systems in cyber tests</h3>
+      <p>OpenAI and Anthropic have confirmed that their AI models were involved in separate, newly disclosed third-party cybersecurity testing incidents that resulted in a real website being breached and social engineering attacks against people outside the intended testing boundaries. [...]</p>
+      <p class="news-src">BleepingComputer — <a href="https://www.bleepingcomputer.com/news/security/openai-anthropic-ai-agents-targeted-real-people-and-systems-in-cyber-tests/" target="_blank" rel="noopener noreferrer">Open source ↗</a></p>
+    </article>
     <article class="news-item brutal brutal-shadow">
       <div class="tagline">
         <span class="news-tag">US federal</span>
@@ -347,12 +457,66 @@ body.kli-font [data-kli]{font-weight:700;letter-spacing:.3px}
     </article>
     <article class="news-item brutal brutal-shadow">
       <div class="tagline">
+        <span class="news-tag">Frontier labs</span>
+        <span class="news-dates">2026-08-03 · as of 2026-08-06</span>
+      </div>
+      <h3>How we built a realtime system for responsive voice AI in six months</h3>
+      <p>GPT-Live enables continuous voice interaction with AI, using a turnless speech model and low-latency architecture for faster, more natural conversations.</p>
+      <p class="news-src">OpenAI — <a href="https://openai.com/index/continuous-voice-interaction-with-gpt-live" target="_blank" rel="noopener noreferrer">Open source ↗</a></p>
+    </article>
+    <article class="news-item brutal brutal-shadow">
+      <div class="tagline">
+        <span class="news-tag">Frontier labs</span>
+        <span class="news-dates">2026-08-03 · as of 2026-08-06</span>
+      </div>
+      <h3>Circles powers telco personalization with OpenAI technology</h3>
+      <p>Circles uses the OpenAI API and Codex to power AI-native telco experiences, increasing ARPU by 22%, reducing churn by 9%, and improving development efficiency.</p>
+      <p class="news-src">OpenAI — <a href="https://openai.com/index/circles" target="_blank" rel="noopener noreferrer">Open source ↗</a></p>
+    </article>
+    <article class="news-item brutal brutal-shadow">
+      <div class="tagline">
+        <span class="news-tag">Policy analysis</span>
+        <span class="news-dates">2026-08-03 · as of 2026-08-06</span>
+      </div>
+      <h3>How Policymakers Can Address AI Auditing and Assessment Requirements</h3>
+      <p>[ PDF version ] An increasing number of state policymakers are considering third-party AI auditing or assessment requirements. These policies face many challenges to effectiveness: there are an enormous range of AI models and use cases each presenting different types of risks; few clear existing technical standards for auditing and assessment; requirements must be effective […] The post How…</p>
+      <p class="news-src">CDT — <a href="https://cdt.org/insights/how-policymakers-can-address-ai-auditing-and-assessment-requirements/" target="_blank" rel="noopener noreferrer">Open source ↗</a></p>
+    </article>
+    <article class="news-item brutal brutal-shadow">
+      <div class="tagline">
+        <span class="news-tag">Policy analysis</span>
+        <span class="news-dates">2026-08-03 · as of 2026-08-06</span>
+      </div>
+      <h3>CDT Submits Comments Opposing FTC’s Misguided “Policy Statement Addressing AI Accuracy”</h3>
+      <p>The Center for Democracy &amp; Technology submitted comments urging the Federal Trade Commission (FTC) to withdraw its proposed policy statement regarding the “suppression of accuracy” in artificial intelligence systems. The FTC’s proposed framework wrongly treats standard technical steps that are needed to train AI models, and ensure they are accurate, reliable, fair, and safe, as […] The post CDT…</p>
+      <p class="news-src">CDT — <a href="https://cdt.org/insights/cdt-submits-comments-opposing-ftcs-misguided-policy-statement-addressing-ai-accuracy/" target="_blank" rel="noopener noreferrer">Open source ↗</a></p>
+    </article>
+    <article class="news-item brutal brutal-shadow">
+      <div class="tagline">
+        <span class="news-tag">Policy analysis</span>
+        <span class="news-dates">2026-08-03 · as of 2026-08-06</span>
+      </div>
+      <h3>CDT Issue Brief: Key Limits on Facial Recognition</h3>
+      <p>PDF version. Facial recognition is a powerful AI surveillance tool that is frequently used by law enforcement. But this technology comes with a range of risks: It is dangerous when it works poorly, and dangerous in an entirely different way when it works well. The accuracy of facial recognition matches varies significantly based on a […] The post CDT Issue Brief: Key Limits on Facial Recognition…</p>
+      <p class="news-src">CDT — <a href="https://cdt.org/insights/cdt-issue-brief-key-limits-on-facial-recognition/" target="_blank" rel="noopener noreferrer">Open source ↗</a></p>
+    </article>
+    <article class="news-item brutal brutal-shadow">
+      <div class="tagline">
         <span class="news-tag">California</span>
         <span class="news-dates">2026-08-02 · as of 2026-08-06</span>
       </div>
       <h3>California transparency duties become an operative compliance milestone</h3>
       <p>The amended AI Transparency Act now points providers toward detection tools, manifest-style disclosure, and latent disclosure features where technically feasible, strengthening the synthetic-content governance baseline.</p>
       <p class="news-src">Vorp AI policy tracker — <a href="https://www.vorp.ai/blog/us-ai-policy-changes-august-2026-science-directives-colorado-california-eu-ai-act" target="_blank" rel="noopener noreferrer">Open source ↗</a></p>
+    </article>
+    <article class="news-item brutal brutal-shadow">
+      <div class="tagline">
+        <span class="news-tag">EU AI Act</span>
+        <span class="news-dates">2026-07-31 · as of 2026-08-06</span>
+      </div>
+      <h3>Commission starts enforcing AI Act rules and new transparency requirements on 2 August</h3>
+      <p>Commission starts enforcing AI Act rules and new transparency requirements on 2 August Anonymous (not verified) Fri, 07/31/2026 - 09:00 From 2 August 2026, the European Commission’s AI Office, together with national authorities, will begin enforcing the Artificial Intelligence (AI) Act. On the same date, new transparency rules will start to apply, requiring certain AI systems to tell users when…</p>
+      <p class="news-src">European Commission — <a href="https://digital-strategy.ec.europa.eu/en/news/commission-starts-enforcing-ai-act-rules-and-new-transparency-requirements-2-august" target="_blank" rel="noopener noreferrer">Open source ↗</a></p>
     </article>
     <article class="news-item brutal brutal-shadow">
       <div class="tagline">
@@ -365,12 +529,93 @@ body.kli-font [data-kli]{font-weight:700;letter-spacing:.3px}
     </article>
     <article class="news-item brutal brutal-shadow">
       <div class="tagline">
+        <span class="news-tag">EU AI Act</span>
+        <span class="news-dates">2026-07-30 · as of 2026-08-06</span>
+      </div>
+      <h3>EU launches AI Gigafactories call to boost Europe&#x27;s computing capacity and unlock more than €30 billion in investment</h3>
+      <p>EU launches AI Gigafactories call to boost Europe&#x27;s computing capacity and unlock more than €30 billion in investment Anonymous (not verified) Thu, 07/30/2026 - 11:50 The EU has launched a call for tenders to establish up to seven AI Gigafactories across Europe, as part of its latest major push to accelerate Europe&#x27;s technological sovereignty and ambition of becoming the AI Continent. AdobeStock…</p>
+      <p class="news-src">European Commission — <a href="https://digital-strategy.ec.europa.eu/en/news/eu-launches-ai-gigafactories-call-boost-europes-computing-capacity-and-unlock-more-eu30-billion" target="_blank" rel="noopener noreferrer">Open source ↗</a></p>
+    </article>
+    <article class="news-item brutal brutal-shadow">
+      <div class="tagline">
+        <span class="news-tag">Tools &amp; code</span>
+        <span class="news-dates">2026-07-27 · as of 2026-08-06</span>
+      </div>
+      <h3>The harness is all you need (mostly)</h3>
+      <p>A practical GitHub Copilot workflow for prototyping, planning, implementing, and reviewing software without chasing every new AI tool. The post The harness is all you need (mostly) appeared first on The GitHub Blog .</p>
+      <p class="news-src">GitHub Blog — <a href="https://github.blog/ai-and-ml/github-copilot/the-harness-is-all-you-need-mostly/" target="_blank" rel="noopener noreferrer">Open source ↗</a></p>
+    </article>
+    <article class="news-item brutal brutal-shadow">
+      <div class="tagline">
+        <span class="news-tag">Tools &amp; code</span>
+        <span class="news-dates">2026-07-27 · as of 2026-08-06</span>
+      </div>
+      <h3>GitHub Copilot app for Beginners: Getting started</h3>
+      <p>New to the GitHub Copilot app? Learn how to start projects, work with AI agents, explore canvases, and streamline your development workflow. The post GitHub Copilot app for Beginners: Getting started appeared first on The GitHub Blog .</p>
+      <p class="news-src">GitHub Blog — <a href="https://github.blog/ai-and-ml/github-copilot/github-copilot-app-for-beginners-getting-started/" target="_blank" rel="noopener noreferrer">Open source ↗</a></p>
+    </article>
+    <article class="news-item brutal brutal-shadow">
+      <div class="tagline">
         <span class="news-tag">EU frontier security</span>
         <span class="news-dates">2026-07-27 · as of 2026-08-06</span>
       </div>
       <h3>Brussels pairs AI Act enforcement with cyber-focused frontier evaluation plans</h3>
       <p>Recent EU policy work includes structured access ideas for advanced AI capabilities in cybersecurity and a secure testing platform, showing a tighter link between regulation and operational security.</p>
       <p class="news-src">CDT Europe — <a href="https://cdt.org/insights/cdt-europes-ai-bulletin-july-2026/" target="_blank" rel="noopener noreferrer">Open source ↗</a></p>
+    </article>
+    <article class="news-item brutal brutal-shadow">
+      <div class="tagline">
+        <span class="news-tag">EU AI Act</span>
+        <span class="news-dates">2026-07-24 · as of 2026-08-06</span>
+      </div>
+      <h3>AI-powered robotics in Europe: Live demonstrations and strategic debate</h3>
+      <p>AI-powered robotics in Europe: Live demonstrations and strategic debate Anonymous (not verified) Fri, 07/24/2026 - 14:32 02 September 2026 The European Parliament will host a gathering of policymakers, industry leaders, researchers, alongside live demonstrations of cutting-edge robots, to set the course for the EU’s future in robotics. Europe is already a global leader in robotics research,…</p>
+      <p class="news-src">European Commission — <a href="https://digital-strategy.ec.europa.eu/en/events/ai-powered-robotics-europe-live-demonstrations-and-strategic-debate" target="_blank" rel="noopener noreferrer">Open source ↗</a></p>
+    </article>
+    <article class="news-item brutal brutal-shadow">
+      <div class="tagline">
+        <span class="news-tag">EU AI Act</span>
+        <span class="news-dates">2026-07-22 · as of 2026-08-06</span>
+      </div>
+      <h3>Kick-off of new GenAI pilots for public administration &amp; Apply AI stakeholder meeting</h3>
+      <p>Kick-off of new GenAI pilots for public administration &amp; Apply AI stakeholder meeting Anonymous (not verified) Wed, 07/22/2026 - 16:18 14 September 2026 This event showcases 3 European generative AI pilots, while bringing together the Apply AI community to share experiences and drive the adoption of trustworthy public sector solutions. GettyImages ©avgust01 The European Commission will host an…</p>
+      <p class="news-src">European Commission — <a href="https://digital-strategy.ec.europa.eu/en/events/kick-new-genai-pilots-public-administration-apply-ai-stakeholder-meeting" target="_blank" rel="noopener noreferrer">Open source ↗</a></p>
+    </article>
+    <article class="news-item brutal brutal-shadow">
+      <div class="tagline">
+        <span class="news-tag">Frontier labs</span>
+        <span class="news-dates">2026-07-22 · as of 2026-08-06</span>
+      </div>
+      <h3>Accelerating the frontiers of scientific discovery: Google’s $40M commitment to the Genesis Mission</h3>
+      <p>Google commits $40M in AI tokens and credits for the Genesis Mission</p>
+      <p class="news-src">Google DeepMind — <a href="https://deepmind.google/blog/accelerating-the-frontiers-of-scientific-discovery-googles-40m-commitment-to-the-genesis-mission/" target="_blank" rel="noopener noreferrer">Open source ↗</a></p>
+    </article>
+    <article class="news-item brutal brutal-shadow">
+      <div class="tagline">
+        <span class="news-tag">Tools &amp; code</span>
+        <span class="news-dates">2026-07-21 · as of 2026-08-06</span>
+      </div>
+      <h3>How to build interactive experiences with canvases</h3>
+      <p>Canvases turn AI into interactive workspaces where you can visualize information, explore workflows, and take action across complex tasks. The post How to build interactive experiences with canvases appeared first on The GitHub Blog .</p>
+      <p class="news-src">GitHub Blog — <a href="https://github.blog/ai-and-ml/github-copilot/how-to-build-interactive-experiences-with-canvases/" target="_blank" rel="noopener noreferrer">Open source ↗</a></p>
+    </article>
+    <article class="news-item brutal brutal-shadow">
+      <div class="tagline">
+        <span class="news-tag">EU AI Act</span>
+        <span class="news-dates">2026-07-20 · as of 2026-08-06</span>
+      </div>
+      <h3>Guidelines on transparency obligations for providers and deployers of AI systems</h3>
+      <p>Guidelines on transparency obligations for providers and deployers of AI systems Anonymous (not verified) Mon, 07/20/2026 - 08:58 These guidelines define the scope of transparency obligations for providers and deployers of AI systems under Article 50 of the AI Act. The AI Act follows a risk-based approach, classifying AI systems into four different risk categories, one of which is AI systems…</p>
+      <p class="news-src">European Commission — <a href="https://digital-strategy.ec.europa.eu/en/library/guidelines-transparency-obligations-providers-and-deployers-ai-systems" target="_blank" rel="noopener noreferrer">Open source ↗</a></p>
+    </article>
+    <article class="news-item brutal brutal-shadow">
+      <div class="tagline">
+        <span class="news-tag">EU AI Act</span>
+        <span class="news-dates">2026-07-20 · as of 2026-08-06</span>
+      </div>
+      <h3>Digital Talent EU Days 2026 in Dublin</h3>
+      <p>Digital Talent EU Days 2026 in Dublin Anonymous (not verified) Mon, 07/20/2026 - 15:02 15 October 2026 - 16 October 2026 Trinity Business School, Dublin, Ireland The Digital Talent EU Days will host a debate on Europe’s digital skills challenges and drive action on talent, competitiveness and inclusion. Digital Talent EU Days On 15 and 16 October, LEADSx2030 and Connecting Women in Digital , in…</p>
+      <p class="news-src">European Commission — <a href="https://digital-strategy.ec.europa.eu/en/events/digital-talent-eu-days-2026-dublin" target="_blank" rel="noopener noreferrer">Open source ↗</a></p>
     </article>
     </div>
   </section>
