@@ -7,8 +7,8 @@
 Live at **[0pi.es](https://0pi.es)** · Chat at **[r/0pi](https://www.reddit.com/r/0pi/)**
 
 Browser games for studying AI-governance and cloud-AI certifications — AIGP,
-AWS AI Practitioner, Microsoft AI-901, EU and global AI legislation, and
-vendor-neutral AI/ML concepts. **105 games, 2,101 scored cards.**
+CISSP, AWS AI Practitioner, Microsoft AI-901, EU and global AI legislation,
+and vendor-neutral AI/ML concepts. **154 games, 3,335 scored cards.**
 
 No cookies. No tracking. No pies.
 
