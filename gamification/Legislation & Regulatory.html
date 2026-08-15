@@ -3218,8 +3218,11 @@ function rrRenderAction(){
     const costLine = entryCost
       ? " " + rrT("stakes_cost_line", {tier:v.tier, entryCost, gateFailCost:cfg.gateFailCost})
       : "";
+    // `C` is a local in the other rr* renderers, never here — reading it threw
+    // ReferenceError on every expand and left "Take ticket" silently dead (#28).
+    const roles = rrData().campaign.roles;
     stakes = rrT("stakes_expand_gate", {gateSize:v.gateSize, role:camp.role,
-      roleName:(C.roles.find(r => r.id===camp.role) || {name:camp.role}).name}) + costLine + "\n      "
+      roleName:(roles.find(r => r.id===camp.role) || {name:camp.role}).name}) + costLine + "\n      "
       + rrT("stakes_first_miss", {gateFailCost:cfg.gateFailCost, noticeLine});
   }else if(a.type === "defend"){
     stakes = (notice.level >= 2
