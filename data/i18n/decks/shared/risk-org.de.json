@@ -1,0 +1,74 @@
+{
+ "risk-org": {
+  "hint": "Ziehe jede Aktivität auf die Linie, die sie ausführen sollte. Der Test ist Unabhängigkeit: Wer kann sich selbst kontrollieren, und wer nicht.",
+  "note": "Die Linien handeln von Unabhängigkeit, nicht von Seniorität oder Kopfzahl. Eine zweite Instanzfunktion, die dem Team berichtet, das sie überwacht, ist eine erste Instanzfunktion mit anderer Bezeichnung.",
+  "zones[0].def": "Besitzt und verwaltet das Risiko täglich: die Teams, die das System bauen, bereitstellen und betreiben.",
+  "zones[1].def": "Setzt Politik, berät, stellt Fragen und überwacht — Risiko, Compliance, Legal, eine KI-Governance-Funktion. Unabhängig von der Lieferung, nicht von der Verwaltung.",
+  "zones[2].def": "Interne Revision. Unabhängige Zusicherung an den Vorstand, ob die ersten zwei Linien wirklich funktionieren.",
+  "zones[3].def": "Legt den Appettit fest, hält die ultimative Rechenschaftspflicht und ist der einzige Körper, der Risiken über delegierte Grenzen hinaus akzeptieren kann."
+ },
+ "ro-01": {
+  "label": "Das Engineering-Team führt die Fairness-Evaluierungs-Suite vor der Beförderung eines Modells in die Produktion aus.",
+  "why": "Das Ausführen von Kontrollen innerhalb des Lieferprozesses ist erste Instanzarbeit. Wenn es gut gemacht wird, macht das es nicht zur Zusicherung, weil das Team seine eigene Ausgabe bewertet."
+ },
+ "ro-02": {
+  "label": "Der Product Owner erfasst ein neues Risiko im Register und schlägt eine Behandlung vor.",
+  "why": "Risikoidentifikation und tägliche Verwaltung liegen bei den Leuten, die der Aktivität am nächsten sind. Das Register gehört ihnen zum Ausfüllen, nicht der Riskofunktion."
+ },
+ "ro-03": {
+  "label": "Das Operations-Team überwacht Produktions-Drift-Dashboards und meldet einen Incident, wenn Schwellenwerte überschritten werden.",
+  "why": "Ein Kontrollmechanismus, einschließlich eines detektiven, ist erste Instanzarbeit. Zweite Instanz fragt, ob der Schwellenwert richtig ist; erste Instanz agiert, wenn er auslöst."
+ },
+ "ro-04": {
+  "label": "Das Data-Science-Team dokumentiert Modellbeschränkungen und Verwendungszweck in der Modellkarte.",
+  "why": "Das Erzeugen der Dokumentation ist eine Build-Aktivität. Überprüfung, ob es die Politik erfüllt, ist Aufgabe einer anderen Instanz."
+ },
+ "ro-05": {
+  "label": "Das KI-Governance-Team schreibt die Politik, die definiert, welche Anwendungsfälle eine Auswirkungsbewertung erfordern.",
+  "why": "Die Festlegung des Rahmens und der Standards, an die sich die erste Instanz halten muss, ist die definierende zweite Instanzaktivität."
+ },
+ "ro-06": {
+  "label": "Compliance überprüft die abgeschlossene Auswirkungsbewertung und stellt die Bewertung des Restrisikos durch das Team in Frage.",
+  "why": "Unabhängige Infragestellung der Bewertung durch die erste Instanz ist zweite Instanzarbeit. Sie ist beratend und Überwachung, nicht Zusicherung an den Vorstand."
+ },
+ "ro-07": {
+  "label": "Legal berät, dass eine vorgeschlagene Bereitstellung in einen Annex-III-Bereich fällt und daher Hochrisiko-Verpflichtungen anzieht.",
+  "why": "Spezialisierte Beratung, die einschränkt, was die erste Instanz tun darf, ist zweite Instanzarbeit. Die Entscheidung fortzufahren bleibt die der ersten Instanz, innerhalb der Politik."
+ },
+ "ro-08": {
+  "label": "Das Riskofunktion führt das Unternehmensregister und meldet die aggregierte KI-Risiko-Exposition dem Führungsteam.",
+  "why": "Aggregation, Aufsicht und Berichterstattung über die erste Instanz hinweg ist zweite Instanzüberwachung. Sie stützt sich auf Daten der ersten Instanz, weshalb es eine dritte Instanz gibt."
+ },
+ "ro-09": {
+  "label": "Die interne Revision überprüft, ob das Modell-Genehmigungsverfahren für jede Freigabe im letzten Jahr eingehalten wurde.",
+  "why": "Das Testen, ob die Kontrollen wie geplant funktioniert haben, nach dem Ereignis und unabhängig, ist die Aufgabe der internen Revision."
+ },
+ "ro-10": {
+  "label": "Eine unabhängige Überprüfung meldet dem Audit-Komitee, dass der Herausforderungsprozess der zweiten Instanz nicht dokumentiert ist.",
+  "why": "Die dritte Instanz prüft auch die zweite Instanz sowie die erste, und berichtet an den Vorstand statt an die Verwaltung — diese Berichtslinie macht sie unabhängig."
+ },
+ "ro-11": {
+  "label": "Zusicherungsarbeit wird auf einem risikobasierten Zyklus geplant und sein Umfang wird mit dem Audit-Komitee vereinbart, nicht mit den zu prüfenden Teams.",
+  "why": "Ein Umfang, der außerhalb des Managements festgelegt ist, ist das strukturelle Merkmal, das Revision von einer zweiten Instanz-Überprüfung unterscheidet."
+ },
+ "ro-12": {
+  "label": "Eine Überprüfung stellt fest, dass ein Kontrollmechanismus dokumentiert ist, aber nie tatsächlich ausgeführt wurde, und meldet dies nach oben.",
+  "why": "Das Finden der Lücke zwischen dokumentiert und betriebswirksam ist der Wert, den Revision bringt. Keine der ersten zwei Instanzen ist positioniert, dies gegen sich selbst zu berichten."
+ },
+ "ro-13": {
+  "label": "Das Risikoappetit für automatisierte Entscheidungsfindung wird festgelegt und veröffentlicht.",
+  "why": "Der Appettit ist eine Erklärung auf Vorstandsebene, wie viel Risiko die Organisation eingehen wird. Alles darunter ist Kalibrierung dagegen."
+ },
+ "ro-14": {
+  "label": "Ein Restrisiko, das die delegierte Grenze überschreitet, wird eskaliert und formal an der Spitze der Organisation akzeptiert.",
+  "why": "Nur der Körper mit der Autorität darf über delegierte Grenzen hinaus akzeptieren. Akzeptanz anderswo ist keine Akzeptanz; es ist eine nicht erfasste Exposition."
+ },
+ "ro-15": {
+  "label": "Ein verantwortlicher Führungskraft wird für das KI-Verwaltungssystem benannt, mit der Autorität und den Ressourcen, um es zum Funktionieren zu bringen.",
+  "why": "Verwaltungssystem-Standards erfordern benannte Führungsverantwortung. Eine Governance-Funktion ohne Executive-Verantwortlichen hat Verantwortung ohne Autorität."
+ },
+ "ro-16": {
+  "label": "Die Entscheidung wird getroffen, ein bereitgestelltes System zurückzuziehen, nachdem Zusicherung berichtet, dass sein Risiko nicht im Appettit gebracht werden kann.",
+  "why": "Rückzug gegen kommerzielle Interessen ist eine Entscheidung, die nur die verantwortliche Ebene treffen kann, weshalb die Eskalationsroute existieren muss, bevor sie benötigt wird."
+ }
+}

@@ -1,0 +1,37 @@
+{
+ "inference": {
+  "hint": "Cherche le besoin opérationnel : le temps de réponse, le volume de requêtes, la localisation des appareils, l'accès hébergé ou le changement entre l'entraînement et la production."
+ },
+ "inference-01": {
+  "label": "Retourne une prédiction immédiatement pour une demande interactive où la faible latence compte.",
+  "why": "Retourne une prédiction immédiatement pour une demande interactive où la faible latence compte."
+ },
+ "inference-02": {
+  "label": "Traite plusieurs enregistrements stockés ensemble quand une réponse immédiate n'est pas nécessaire.",
+  "why": "Traite plusieurs enregistrements stockés ensemble quand une réponse immédiate n'est pas nécessaire."
+ },
+ "inference-03": {
+  "label": "Exécute le modèle près de la source de données ou de l'appareil pour réduire la latence, l'utilisation de bande passante ou la dépendance de la connectivité.",
+  "why": "Exécute le modèle près de la source de données ou de l'appareil pour réduire la latence, l'utilisation de bande passante ou la dépendance de la connectivité."
+ },
+ "inference-04": {
+  "label": "Une interface hébergée par laquelle les applications envoient les entrées et reçoivent les sorties du modèle.",
+  "why": "Une interface hébergée par laquelle les applications envoient les entrées et reçoivent les sorties du modèle."
+ },
+ "inference-05": {
+  "label": "Le temps entre la soumission d'une demande d'inférence et la réception de son résultat.",
+  "why": "Le temps entre la soumission d'une demande d'inférence et la réception de son résultat."
+ },
+ "inference-06": {
+  "label": "Le nombre de demandes d'inférence ou d'enregistrements traités dans une période de temps.",
+  "why": "Le nombre de demandes d'inférence ou d'enregistrements traités dans une période de temps."
+ },
+ "inference-07": {
+  "label": "La distribution des entrées de production change par rapport aux données utilisées lors de l'entraînement.",
+  "why": "La distribution des entrées de production change par rapport aux données utilisées lors de l'entraînement."
+ },
+ "inference-08": {
+  "label": "La relation entre les entrées et la sortie correcte change au fil du temps.",
+  "why": "La relation entre les entrées et la sortie correcte change au fil du temps."
+ }
+}

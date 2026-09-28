@@ -1,0 +1,145 @@
+{
+ "sol-01": {
+  "label": "Um supermercado quer entender quais os produtos comprados frequentemente em conjunto.",
+  "sub": "Análise de Cesto de Compras",
+  "why": "A aprendizagem de associação encontra combinações de itens que ocorrem em conjunto e mede o seu suporte, confiança e lift. Coloque ou promova produtos associados em conjunto para aumentar o valor do cesto."
+ },
+ "sol-02": {
+  "label": "Um negócio de subscrição quer identificar clientes provavelmente cancelarem o próximo mês.",
+  "sub": "Churn de Cliente",
+  "why": "O alvo é uma categoria rotulada com duas classes possíveis: churn ou reter. Foque ofertas de retenção em clientes com probabilidade de churn elevada."
+ },
+ "sol-03": {
+  "label": "Uma plataforma de propriedade quer estimar o preço de venda de um novo anúncio.",
+  "sub": "Estimação de Preço de Casa",
+  "why": "A regressão aprende relações entre características de entrada e um alvo numérico. Forneça uma estimação de preço informada por dados para cada propriedade."
+ },
+ "sol-04": {
+  "label": "Um retalhista quer descobrir grupos naturais de clientes sem rótulos predefinidos.",
+  "sub": "Segmentação de Cliente",
+  "why": "Clustering é aprendizagem não supervisionada que agrupa registos por similitude sem resultados rotulados. Crie campanhas personalizadas para segmentos comportamentais distintos."
+ },
+ "sol-05": {
+  "label": "Uma fábrica quer identificar comportamento anómalo da máquina antes de uma falha.",
+  "sub": "Sinais de Falha de Equipamento",
+  "why": "Os modelos de detecção de anomalia comportam-se normalmente e sinalizam observações que desviam dele. Investigue equipamento anómalo cedo e reduza inatividade não planeada."
+ },
+ "sol-06": {
+  "label": "Um distribuidor precisa de estimações de procura semanais para o próximo trimestre.",
+  "sub": "Planeamento de Procura",
+  "why": "A previsão explicitamente modela observações ordenadas ao longo do tempo, incluindo tendência e sazonalidade. Planeie inventário e pessoal em torno da procura esperada."
+ },
+ "sol-07": {
+  "label": "Uma plataforma de streaming quer sugerir conteúdo que cada utilizador provavelmente aprecie.",
+  "sub": "Media Personalizada",
+  "why": "Os sistemas de recomendação aprendem afinidade de padrões de utilizador, item e interação. Apresente uma lista classificada personalizada que melhora descoberta e engajamento."
+ },
+ "sol-08": {
+  "label": "Uma equipa de produto quer rastrear se comentários de clientes são positivos, neutros ou negativos.",
+  "sub": "Sentimento de Revisão",
+  "why": "A classificação de texto converte linguagem em características e prevê um rótulo predefinido. Monitorize tendências de sentimento e encaminhe feedback negativo para atenção."
+ },
+ "sol-09": {
+  "label": "Uma linha de produção precisa de decidir se cada imagem de componente é aceitável ou defeituosa.",
+  "sub": "Controlo de Qualidade Visual",
+  "why": "A classificação de imagem prevê uma categoria para uma imagem inteira. Separe automaticamente prováveis defeitos para inspeção."
+ },
+ "sol-10": {
+  "label": "Um sistema de assistência de veículo deve encontrar cada peão visível numa moldura de câmara.",
+  "sub": "Segurança de Peão",
+  "why": "A detecção de objeto prevê quais objetos estão presentes e onde cada um aparece. Localize peões para que sistemas de segurança a jusante possam responder."
+ },
+ "sol-11": {
+  "label": "Funcionários precisam de respostas fundamentadas em políticas internas frequentemente alteradas com referências de origem.",
+  "sub": "Assistente de Política Atual",
+  "why": "RAG recupera contexto externo relevante no tempo de pedido e fornece-o a um modelo generativo. Responda de políticas atuais com fontes de suporte rastreáveis."
+ },
+ "sol-12": {
+  "label": "Um modelo de linguagem deve consistentemente produzir relatórios num formato e tom de especialista estável.",
+  "sub": "Estilo de Especialista Consistente",
+  "why": "Fine-tuning atualiza comportamento do modelo de exemplos e é útil para estilo estável ou adaptação de tarefa. Gere relatórios que consistentemente seguem o padrão de especialista."
+ },
+ "sol-13": {
+  "label": "Um modelo de linguagem geral deve devolver nomes, datas e totais como um objeto JSON rigoroso.",
+  "sub": "Extração Estruturada",
+  "why": "Prompts de poucos exemplos demonstram a tarefa esperada e formato dentro do contexto do modelo. Produz saída consistentemente estruturada com configuração mínima."
+ },
+ "sol-14": {
+  "label": "Um robô deve aprender rotas eficientes através de um armazém alterado tentando ações.",
+  "sub": "Navegação de Armazém",
+  "why": "A aprendizagem de reforço melhora escolhas de ação através de feedback expresso como recompensas e penalidades. Navegue dinamicamente equilibrando velocidade e segurança."
+ },
+ "sol-15": {
+  "label": "Uma equipa de marketing quer criar novas imagens de produto a partir de breves criativos escritas.",
+  "sub": "Obra de Campanha",
+  "why": "Os modelos de difusão geram imagens aprendendo a reverter um processo de ruído gradual condicionado num prompt. Crie conceitos de campanha originais a partir de descrições em linguagem natural."
+ },
+ "sol-16": {
+  "label": "Um benefício público deve ser aprovado apenas quando um conjunto fixo de condições legais é cumprido.",
+  "sub": "Elegibilidade Estatutária",
+  "why": "Um mecanismo de regra fixo é preferível quando o resultado requerido é exato, explicável e inteiramente especificado. Produza decisões consistentes que podem ser rastreadas diretamente para política."
+ },
+ "sol-17": {
+  "label": "Uma equipa tem um dataset histórico e precisa de desenvolver um modelo sem sobrestimar o seu desempenho.",
+  "sub": "Avaliação Honesta de Modelo",
+  "why": "Dados de treino aprendem parâmetros, dados de validação guiam escolhas de modelo e hiperparâmetro, e dados de teste intocados estimam generalização final. Compare modelos durante o desenvolvimento enquanto preserva uma avaliação final honesta."
+ },
+ "sol-18": {
+  "label": "Um help desk quer encaminhar novos tickets para categorias definidas pela sua equipa de suporte.",
+  "sub": "Categorias de Ticket Conhecidas",
+  "why": "A aprendizagem supervisionada usa exemplos rotulados para aprender como entradas se relacionam com respostas predefinidas. Encaminhe automaticamente novos tickets para uma fila de suporte apropriada."
+ },
+ "sol-19": {
+  "label": "Um serviço de música quer descobrir tipos de comportamento de ouvinte sem decidir os grupos antecipadamente.",
+  "sub": "Padrões de Audição Desconhecidos",
+  "why": "A aprendizagem não supervisionada descobre padrões em dados que não têm rótulo predefinido ou alvo numérico. Revele segmentos de ouvinte úteis para pesquisa de produto e personalização."
+ },
+ "sol-20": {
+  "label": "Uma equipa tem bilhões de frases mas muito poucos dados de linguagem rotulados manualmente.",
+  "sub": "Aprendizagem de Linguagem em Escala",
+  "why": "A aprendizagem auto-supervisionada cria rótulos a partir dos dados brutos, como mascarar tokens e treinar o modelo para reconstruir. Construa representações gerais que mais tarde possam ser adaptadas com muito menos dados rotulados."
+ },
+ "sol-21": {
+  "label": "Um modelo de linguagem é capaz mas frequentemente produz respostas que as pessoas julgam como não úteis ou mal alinhadas.",
+  "sub": "Alinhamento de um Assistente",
+  "why": "RLHF aprende um modelo de recompensa de preferências humanas e depois otimiza comportamento do modelo para essa recompensa. Produza respostas que melhor refletem expectativas humanas e instruções."
+ },
+ "sol-22": {
+  "label": "Um modelo atinge 99% de exatidão de treino mas apenas 68% de exatidão de validação.",
+  "sub": "Exemplos de Treino Memorizados",
+  "why": "A lacuna sinaliza overfitting e variância elevada; limitar complexidade ou parar antes da memorização pode melhorar desempenho não visto. Negocie um pouco de desempenho de treino por desempenho de validação e produção mais forte."
+ },
+ "sol-23": {
+  "label": "Um modelo pequeno tem desempenho deficiente tanto nos seus dados de treino como de validação.",
+  "sub": "Modelo Demasiado Simples",
+  "why": "Desempenho deficiente mesmo em dados de treino indica underfitting e enviesamento elevado; características mais ricas, capacidade maior ou treino mais longo pode ajudar. Aprenda um modelo complexo o suficiente para representar o sinal útil."
+ },
+ "sol-24": {
+  "label": "Uma equipa deve selecionar taxa de aprendizagem, tamanho de lote, profundidade de árvore e força de regularização.",
+  "sub": "Escolhendo Definições de Treino",
+  "why": "Hiperparâmetros são selecionados fora da aprendizagem de parâmetro e devem ser comparados usando dados de validação ou validação cruzada. Encontre uma configuração forte enquanto preserva o conjunto de teste para avaliação final."
+ },
+ "sol-25": {
+  "label": "Um credor recalcula risco para cinco milhões de contas existentes cada noite.",
+  "sub": "Classificação de Portfólio Noturna",
+  "why": "A inferência de lote classifica registos armazenados em conjunto e é apropriada quando os resultados podem ser produzidos numa agenda. Gere pontuações de risco de portfólio atualizadas antes do próximo dia de negócios."
+ },
+ "sol-26": {
+  "label": "Uma plataforma de pagamento deve avaliar cada transação enquanto o cliente está esperando no checkout.",
+  "sub": "Autorização de Pagamento",
+  "why": "A inferência em tempo real serve pedidos individuais através de um ponto final persistente quando latência baixa é essencial. Aprove, recuse ou reveja a transação sem interromper o checkout."
+ },
+ "sol-27": {
+  "label": "Um modelo de rastreio suporta clínicos onde perder um caso genuíno é muito mais prejudicial que revisar um alarme falso.",
+  "sub": "Rastreio de Doença Rara",
+  "why": "Recall mede a fração de positivos reais encontrados; exatidão pode parecer elevada em dados desequilibrados enquanto perde casos raros. Selecione um limiar e modelo que minimize falsos negativos perigosos."
+ },
+ "sol-28": {
+  "label": "Um gestor quer vendas totais por região e a mudança percentual do mês passado.",
+  "sub": "Resumo de Vendas Mensal",
+  "why": "Agrupar, somar e calcular mudança percentual são tarefas de analytics determinísticas sem requisito de aprendizagem ou previsão. Produza um relatório exato e auditável com uma consulta de base de dados ou cálculo de business-intelligence."
+ },
+ "solution-builder": {
+  "hint": "Leia os dados e a saída desejada, depois arrasta cada cenário para a sua técnica."
+ }
+}

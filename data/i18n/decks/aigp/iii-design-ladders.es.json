@@ -1,0 +1,45 @@
+{
+ "iii-dl-01": {
+  "prompt": "Ordena las puertas que un sistema de IA nuevo pasa a través de desde primer caso de negocio a evidencia de preparación en modo sombra.",
+  "steps[0].label": "Caso de negocio y objetivos",
+  "steps[0].detail": "Define por qué IA en absoluto: el caso de costo-beneficio, incluyendo impactos sociales, viene primero. Nada posterior puede ser evaluado sin un objetivo establecido para medirlo en comparación.",
+  "steps[1].label": "Caso de uso + evaluación de impacto (apalancado de un PIA)",
+  "steps[1].detail": "Delimita el caso de uso específico y ejecuta una evaluación de impacto para anticipar y gestionar los daños que podría causar. La mejor plantilla existente para adaptar es una evaluación de impacto de privacidad (PIA/DPIA), la gobernanza no inventa esto desde cero.",
+  "steps[2].label": "Diseño — estimación de impacto de riesgo y arquitectura",
+  "steps[2].detail": "El trabajo de diseño incluye estimar impacto de riesgo y elegir arquitectura. Esta es la primera puerta donde la arquitectura es realmente decidida; la planificación explícitamente la excluye, la planificación establece objetivos y enfoque de gobernanza, el diseño elige cómo se construye el sistema.",
+  "steps[3].label": "Construcción",
+  "steps[3].detail": "Construye el sistema en comparación con la estimación de impacto de riesgo y arquitectura elegida del diseño.",
+  "steps[4].label": "Evaluación en comparación con expertos humanos en el mismo contexto de decisión",
+  "steps[4].detail": "Antes de pilotar, compara el desempeño del sistema en comparación con el desempeño de expertos humanos en el mismo dominio, este es el referencia de gobernanza más valiosa, no un objetivo de precisión abstracta.",
+  "steps[5].label": "Piloto — valida imparcialidad y precisión a escala controlada",
+  "steps[5].detail": "Ejecuta un piloto previo al despliegue cuyo propósito principal es validar imparcialidad y precisión en datos del mundo real a una escala controlada y limitada antes del despliegue completo.",
+  "steps[6].label": "Ejecución en modo sombra como evidencia de preparación documentada",
+  "steps[6].detail": "Ejecuta el sistema en paralelo con el proceso en vivo (modo sombra) y documenta los resultados. Esta evidencia documentada, no un visto bueno verbal, es lo que demuestra preparación para despliegue (SG)."
+ },
+ "iii-dl-02": {
+  "prompt": "Ordena la jerarquía de mitigación de riesgos desde la solución más duradera al último recurso.",
+  "steps[0].label": "Elimina el riesgo",
+  "steps[0].detail": "Elimina completamente la característica o caso de uso riesgoso, no uses IA en el contexto de alto riesgo en absoluto, de la manera en que un algoritmo de reclutamiento que continúa produciendo resultados sesgados es retirado en lugar de parche sin fin. En el vocabulario paralelo del examen este mismo nivel superior se llama 'Evitar': deja de llevar a cabo la actividad para que la exposición vaya a cero. Mismo concepto, etiqueta diferente, desactiva el choque de vocabulario, no elijas un lado.",
+  "steps[1].label": "Sustituye con un diseño de menor riesgo",
+  "steps[1].detail": "Si la eliminación no es factible, intercambia un modelo más simple, más interpretable o un conjunto de datos de menor riesgo que logre el mismo propósito, un modelo opaco por uno interpretable, un conjunto de datos ruidoso por uno recopilado bajo controles de calidad más estrictos. El phrasing del examen a veces dobla esto en 'Mitigar' (actúa en probabilidad o impacto mientras la actividad continúa), de nuevo, el mismo movimiento de diseño bajo una palabra diferente.",
+  "steps[2].label": "Ingeniería de salvaguardas",
+  "steps[2].detail": "Construye salvaguardas en el sistema en sí: umbrales de confianza, pruebas de solidez, auditorías de sesgo, herramientas de explicabilidad, y controles humano-en-el-bucle, que se sientan aquí como una técnica de ejemplo entre varias, no como un nivel de último recurso separado en sí. Aquí es donde viven la mayoría de controles técnicos, y donde el cubo 'Mitigar/Reducir' del examen también aterriza.",
+  "steps[3].label": "Advierte y entrena usuarios",
+  "steps[3].detail": "Una vez que el sistema en sí es tan seguro como la ingeniería puede hacerlo, la siguiente línea de defensa es decirle a las personas: tableros de interpretabilidad, advertencias en lenguaje plano, y entrenamiento del usuario para que las personas que interactúan con el sistema comprendan sus límites. Este es un nivel distinto de controles de ingeniería, cambia lo que el humano sabe, no lo que el sistema hace.",
+  "steps[4].label": "Acepta con monitoreo",
+  "steps[4].detail": "Sea cual sea el riesgo que permanece después de los cuatro niveles anteriores es aceptado deliberadamente y vigilado, auditoría de registros y revisión posterior al mercado, no tolerancia silenciosa. El nivel final del examen, 'Aceptar', se mapea limpiamente en este: una decisión registrada, poseída en el nivel correcto de autoridad, respaldada por monitoreo continuo en lugar de un visto bueno único. Algunos marcos insertan controles Administrativos como un nivel distinto, la jerarquía de estilo NIOSH enseñada en Jerarquía de Controles, misma idea, rebanada diferente."
+ },
+ "iii-dl-03": {
+  "prompt": "Ordena los pasos para ejecutar una matriz de daños probabilidad × severidad durante el diseño.",
+  "steps[0].label": "Enumera daños por interesado",
+  "steps[0].detail": "Lista las formas en que el sistema podría salir mal para cada grupo afectado, usuarios finales, sujetos posteriores, operadores, antes de puntuar cualquier cosa. El mapeo de interesados amplía la lente más allá del equipo de desarrollo para que no se pierda exposición de ningún grupo.",
+  "steps[1].label": "Puntuación probabilidad × severidad",
+  "steps[1].detail": "Califica cada daño enumerado en probabilidad e impacto usando escalas pre-definidas. Esta puntuación se aplica a través del diseño y pruebas, no como un ejercicio único, para que nuevos hallazgos puedan mover ítems en la grilla (SG).",
+  "steps[2].label": "Prioriza — lo catastrófico anula la puntuación",
+  "steps[2].detail": "Clasifica por la puntuación trazada, pero deja que un ítem de impacto catastrófico anule una clasificación de prioridad simplemente promedio: un fallo de baja probabilidad, alta severidad en un sistema autónomo aún dispara una puerta dura incluso si su puntuación sin procesar no encabeza la lista.",
+  "steps[3].label": "Aplica la jerarquía de mitigación a la fuente de diseño",
+  "steps[3].detail": "Arregla los daños de prioridad más alta a nivel de diseño/fuente en lugar de empacar en descargos de responsabilidad o monitoreo después del hecho, e.g. diseñando un diálogo del chatbot para escenarios de crisis en lugar de depender de un descargo de responsabilidad, o diseñando un modelo para excluir clientes financieramente vulnerables de una oferta dañina en lugar de señalarlos después del hecho.",
+  "steps[4].label": "Documenta riesgo residual y propietario",
+  "steps[4].detail": "Registra qué riesgo permanece después de la mitigación, a qué puntuación, y quién es responsable de aceptarlo. Un riesgo residual no registrado es indistinguible de uno no gestionado."
+ }
+}

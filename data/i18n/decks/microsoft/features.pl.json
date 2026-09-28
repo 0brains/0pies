@@ -1,0 +1,193 @@
+{
+ "feat-000-00": {
+  "label": "Wyodrębniaj tekst możliwy do odczytania maszynowo ze zdjęcia tablicy lub znaku ulicznego.",
+  "why": "Read API Azure AI Vision stosuje OCR do wyodrębniania drukowanego i ręcznie pisanego tekstu ze zdjęć, w przeciwieństwie do etykietowania i tagowania Image Analysis."
+ },
+ "feat-000-01": {
+  "label": "Identyfikuj i umieszczaj pola ograniczające wokół poszczególnych obiektów na zdjęciu.",
+  "why": "Object Detection Azure AI Vision zwraca pola ograniczające i etykiety dla poszczególnych obiektów znalezionych na obrazie."
+ },
+ "feat-000-02": {
+  "label": "Generuj opis w języku naturalnym tego, co dzieje się na zdjęciu.",
+  "why": "Funkcja napisy Image Analysis Azure AI Vision generuje opis w języku naturalnym zawartości zdjęcia."
+ },
+ "feat-001-00": {
+  "label": "Konwertuj transmisję na żywo z mikrofonu na tekst strumieniowy w czasie rzeczywistym.",
+  "why": "Rozpoznawanie mowy do tekstu Azure AI Speech transkrybuje transmisję lub zbiorczą mowę do tekstu w czasie rzeczywistym."
+ },
+ "feat-001-01": {
+  "label": "Generuj naturalnie brzmiące słowa audio z napisanego tekstu dla asystenta głosowego.",
+  "why": "Synteza tekstu na mowę Azure AI Speech konwertuje napisany tekst na naturalnie brzmiące słowa audio."
+ },
+ "feat-001-02": {
+  "label": "Tłumacz mówioną francuską audio na mówioną lub napisaną angielszczyznę w czasie rzeczywistym.",
+  "why": "Funkcja tłumaczenia mowy Azure AI Speech tłumaczy mówioną audio na tekst lub mowę innego języka w czasie rzeczywistym, łącząc rozpoznawanie i tłumaczenie w jedno wywołanie."
+ },
+ "feat-002-00": {
+  "label": "Wyodrębniaj osoby, miejsca, organizacje i daty wymienione w bloku tekstu.",
+  "why": "Rozpoznawanie nazwanych jednostek Azure AI Language identyfikuje i kategoryzuje osoby, miejsca, organizacje i daty wymienione w tekście."
+ },
+ "feat-002-01": {
+  "label": "Automatycznie znajdź i zredaguj numery kart kredytowych i numery telefonów znalezione w transkryptach wsparcia.",
+  "why": "Funkcja wykrywania danych wrażliwych Azure AI Language znajduje i może zredagować wrażliwe dane osobiste, takie jak numery telefonów i numery kart w tekście."
+ },
+ "feat-002-02": {
+  "label": "Skróć długi artykuł do jego najważniejszych zdań.",
+  "why": "Funkcja podsumowania Azure AI Language skraca długi tekst do jego najdonioślejszych zdań lub krótkiego streszczenia."
+ },
+ "feat-002-03": {
+  "label": "Wykrywaj, w jakim z dziesiątek języków napisany jest przychodzący tekst.",
+  "why": "Funkcja wykrywania języka Azure AI Language identyfikuje, w jakim z dziesiątek języków napisany jest tekst."
+ },
+ "feat-002-04": {
+  "label": "Zbuduj chatbota, który rozpoznaje intencję użytkownika, taką jak 'zarezerwuj lot', i wyodrębniaj klucze jednostki z jego wiadomości.",
+  "why": "Conversational Language Understanding Azure AI Language trenuje model do rozpoznawania intencji użytkownika i ekstrakcji jednostek z wejścia konwersacyjnego."
+ },
+ "feat-003-00": {
+  "label": "Natychmiast tłumacz wiadomość czatu wpisaną w języku hiszpańskim na niemiecki.",
+  "why": "Funkcja tłumaczenia tekstu Azure AI Translator konwertuje tekst między językami w czasie rzeczywistym poprzez pojedyncze wywołanie API."
+ },
+ "feat-003-01": {
+  "label": "Tłumacz cały dokument Word, zachowując jego oryginalny układ i formatowanie.",
+  "why": "Funkcja tłumaczenia dokumentów Azure AI Translator tłumaczy całe dokumenty asynchronicznie, zachowując ich oryginalny format i układ."
+ },
+ "feat-004-00": {
+  "label": "Wyodrębniaj dostawcę, całkowitą kwotę i pozycje z rachunku przy użyciu gotowego modelu, bez treningu.",
+  "why": "Prebudowane modele Azure AI Document Intelligence wyodrębniają znane pola ze standardowych typów formularzy, takich jak faktury i rachunki, bez treningu."
+ },
+ "feat-004-01": {
+  "label": "Trenuj model na swoim niestandardowym układzie formularza, który nie obejmuje żaden prebudowany model.",
+  "why": "Niestandardowe modele Azure AI Document Intelligence są trenowane na twoich własnych oznaczonych układach formularzy, które nie obejmuje żaden prebudowany model."
+ },
+ "feat-004-02": {
+  "label": "Wyodrębniaj surowy tekst, tabele i znaczniki zaznaczenia wraz ze strukturą zeskanowanego dokumentu.",
+  "why": "Model Layout Azure AI Document Intelligence wyodrębnia surowy tekst, tabele i znaczniki zaznaczenia wraz ze strukturą dokumentu."
+ },
+ "feat-005-00": {
+  "label": "Wyodrębniaj numery faktur, całkowite kwoty i pozycje ze zeskanowanych formularzy PDF i sfotografowanych paragonów do pól JSON strukturalnych, które sam naznaczyłeś.",
+  "why": "Ekstrakcja pola dokumentu Content Understanding firmy Azure stosuje niestandardowy schemat analizatora do plików PDF, zeskanowanych formularzy i obrazów, aby zwrócić określone pola strukturalne, które zdefiniujesz, a nie tylko stały prebudowany układ."
+ },
+ "feat-005-01": {
+  "label": "Uzyskaj transkrypcję nagrania rozmowy, jej sentyment i podsumowanie kluczowych punktów, lub wyodrębniaj dialog mówiony i tekst na ekranie z wideo szkoleniowego.",
+  "why": "Analiza audio i wideo Content Understanding firmy Azure transkrybuje i rozumuje nad nagraniami rozmów i zawartością wideo, wyodrębniając pola, takie jak sentyment mówcy, streszczenia i dialog, które nie istnieją w dokumencie statycznym."
+ },
+ "feat-006-00": {
+  "label": "Trenuj model do sortowania własnych zdjęć produktów do kategoria, które definiujesz.",
+  "why": "Klasyfikacja obrazu Azure AI Custom Vision trenuje model na własnych oznaczonych zdjęciach do sortowania obrazów do kategorii, które definiujesz."
+ },
+ "feat-006-01": {
+  "label": "Trenuj model do lokalizacji i narysowania pola wokół określonego typu wady w swoim obrazach.",
+  "why": "Wykrywanie obiektów Azure AI Custom Vision trenuje model na swoich własnych oznaczonych obrazach do lokalizacji i umieszczenia pola wokół konkretnego obiektu lub wady."
+ },
+ "feat-007-00": {
+  "label": "Znajdź lokalizację każdej twarzy obecnej na grupowym zdjęciu.",
+  "why": "Detekcja twarzy Azure AI Face lokalizuje pozycję każdej twarzy obecnej na obrazie."
+ },
+ "feat-007-01": {
+  "label": "Potwierdź, że dwa zdjęcia pokazują tę samą konkretną osobę.",
+  "why": "Weryfikacja Azure AI Face (1:1 dopasowywanie) potwierdza, czy dwa obrazy twarzy należą do tej samej osoby."
+ },
+ "feat-007-02": {
+  "label": "Przeszukaj dużą galerię zarejestrowanych twarzy, aby zidentyfikować, kto pojawia się na nowym zdjęciu.",
+  "why": "Identyfikacja Azure AI Face (1:N dopasowywanie) przeszukuje galerię zarejestrowanych twarzy, aby znaleźć dopasowanie dla nowego zdjęcia."
+ },
+ "feat-008-00": {
+  "label": "Oceniaj wiadomość czatu pod kątem zawartości nienawiści, przemocy, seksualnej lub autouszkodzenia.",
+  "why": "Moderacja tekstu Azure AI Content Safety ocenia tekst pod kątem ciężkości zawartości nienawiści, przemocy, seksualnej i autouszkodzenia."
+ },
+ "feat-008-01": {
+  "label": "Wykrywaj próby złamania chatbota lub ukrycia złośliwych instrukcji w dokumencie, który model będzie czytać.",
+  "why": "Prompt Shields Azure AI Content Safety wykrywa próby jailbreaka i wstrzyknięcia instrukcji pośredniej ukryte w zawartości, którą model przetworzy."
+ },
+ "feat-008-02": {
+  "label": "Oznacz przesłany obraz za zastosowanie graficznej lub gwałtownej zawartości wizualnej.",
+  "why": "Moderacja obrazu Azure AI Content Safety ocenia przesłane obrazy dla tych samych kategorii treści szkodliwych stosowanych do tekstu."
+ },
+ "feat-009-00": {
+  "label": "Oznacz niezwykły wzrost odczytu pojedynczego czujnika w ciągu czasu.",
+  "why": "Detekcja jednowymiarowa Azure AI Anomaly Detector oznacza nieoczekiwane wzrosty lub spadki w pojedynczym strumieniu serii czasowej."
+ },
+ "feat-009-01": {
+  "label": "Wykrywaj niezwykły połączony wzorzec w dziesiątkach skorelowanych strumieni czujników naraz.",
+  "why": "Detekcja wielowymiarowa Azure AI Anomaly Detector oznacza anomalne połączone wzorce w wielu skorelowanych sygnałach serii czasowej naraz."
+ },
+ "feat-010-00": {
+  "label": "Pobieraj dokumenty według bliskości ich znaczenia zamiast dokładnego dopasowania słów kluczowych.",
+  "why": "Wyszukiwanie wektorowe Azure AI Search pobiera dokumenty według bliskości ich znaczenia zamiast dokładnego nakładania się słów kluczowych."
+ },
+ "feat-010-01": {
+  "label": "Uruchom potok wzbogacania AI, który wyodrębnia jednostki, kluczowe frazy i tekst obrazu z surowej zawartości przed indeksowaniem.",
+  "why": "Zestawy umiejętności Azure AI Search uruchamiają potok wzbogacania AI, który wyodrębnia jednostki, kluczowe frazy i tekst obrazu z surowej zawartości przed indeksowaniem."
+ },
+ "feat-010-02": {
+  "label": "Zmieniaj ranking wyników wyszukiwania słów kluczowych przy użyciu modelu języka, aby umieścić najbardziej trafne trafienia na górze.",
+  "why": "Rangowanie semantyczne Azure AI Search zmienia kolejność wyników wyszukiwania słów kluczowych przy użyciu modelu języka, aby wyświetlić najbardziej trafne dopasowania."
+ },
+ "feat-011-00": {
+  "label": "Identyfikuj i etykietuj tę samą twarz osoby, gdziekolwiek pojawia się ponownie w całym filmie wideo.",
+  "why": "Detekcja twarzy Video Indexer Azure AI identyfikuje i śledzi tę samą twarz osoby, gdy pojawia się ponownie w całym filmie wideo."
+ },
+ "feat-011-01": {
+  "label": "Wytwórz transkrypcję możliwą do przeszukiwania oznaczoną przez mówcę, który powiedział każdą linię.",
+  "why": "Funkcja transkrypcji Video Indexer Azure AI tworzy transkrypcję możliwą do przeszukiwania oznaczoną przez mówcę, który powiedział każdą linię."
+ },
+ "feat-011-02": {
+  "label": "Automatycznie wykrywaj granice scen i ujęć w przesłanym filmie wideo.",
+  "why": "Detekcja scen i ujęć Video Indexer Azure AI automatycznie oznacza granice scen i ujęć w przesłanym filmie wideo."
+ },
+ "feat-012-00": {
+  "label": "Wdrażaj GPT-4o do uzupełniania czatu przedsiębiorstwa z własnym limitem i filtrami zawartości.",
+  "why": "Azure OpenAI Service wdraża modele czatu i uzupełniania, takie jak GPT-4o, jako zasób przedsiębiorstwa z własnym limitem i filtrami zawartości."
+ },
+ "feat-012-01": {
+  "label": "Generuj zestaw unikalnych obrazów produktów z opisu tekstu.",
+  "why": "Wdrożenie DALL-E Azure OpenAI Service generuje nowe obrazy z opisu tekstu."
+ },
+ "feat-012-02": {
+  "label": "Konwertuj partię dokumentów na wektory numeryczne dla wyszukiwania podobieństwa.",
+  "why": "Modele osadzania Azure OpenAI Service konwertują tekst na wektory numeryczne dla podobieństwa i wyszukiwania."
+ },
+ "feat-012-03": {
+  "label": "Dostosuj ton i styl modelu bazowego przy użyciu własnych oznaczonych przykładów.",
+  "why": "Fine-tuning Azure OpenAI Service dostosowuje ton i zachowanie wdrażanego modelu przy użyciu própnych oznaczonych przykładów."
+ },
+ "feat-013-00": {
+  "label": "Przeglądaj i porównuj modele fundamentalne z wielu dostawców w jednym katalogu przed wdrożeniem.",
+  "why": "Katalog modeli Microsoft Foundry pozwala przeglądać i porównywać modele fundamentalne z wielu dostawców przed wdrożeniem jednego."
+ },
+ "feat-013-01": {
+  "label": "Śledź, testuj i oceniaj warianty promptów względem zestawów danych ewaluacyjnych przed wysłaniem.",
+  "why": "Przepływ promptów Microsoft Foundry i narzędzia ewaluacyjne śledzą, testują i oceniają warianty promptów względem zestawów danych przed wysłaniem."
+ },
+ "feat-013-02": {
+  "label": "Wywołuj projekt Foundry programowo z Pythona, aby zarządzać modelami i agentami.",
+  "why": "SDK Microsoft Foundry udostępnia AIProjectClient, aby kod mógł połączyć się z projektem Foundry i zarządzać modelami i agentami programowo."
+ },
+ "feat-014-00": {
+  "label": "Pozwól agentowi na przeszukiwanie i przytaczanie twoich własnych przesłanych plików przy odpowiadaniu na pytanie.",
+  "why": "Narzędzie wyszukiwania plików Microsoft Foundry Agent Service pozwala agentowi na przeszukiwanie i przytaczanie twoich własnych przesłanych plików przy odpowiadaniu."
+ },
+ "feat-014-01": {
+  "label": "Pozwól agentowi na napisanie i uruchamianie kodu w piaskownicy w trakcie rozmowy, aby rozwiązać problem danych lub matematyki.",
+  "why": "Narzędzie interpretera kodu Microsoft Foundry Agent Service pozwala agentowi na napisanie i uruchamianie kodu w piaskownicy w trakcie rozmowy, aby rozwiązać problem."
+ },
+ "feat-014-02": {
+  "label": "Daj agentowi możliwość wywoływania twoich własnych zewnętrznych interfejsów API lub funkcji w ramach jego wnioskowania.",
+  "why": "Function calling Microsoft Foundry Agent Service pozwala agentowi na wywoływanie twoich własnych zewnętrznych interfejsów API lub funkcji w ramach jego wnioskowania."
+ },
+ "feat-015-00": {
+  "label": "Automatycznie spróbuj wielu algorytmów i hiperparametrów, aby znaleźć model o najlepszej wydajności dla Twojego zestawu danych.",
+  "why": "Automated ML Azure Machine Learning próbuje wielu algorytmów i hiperparametrów, aby znaleźć model o najlepszej wydajności dla Twojego zestawu danych."
+ },
+ "feat-015-01": {
+  "label": "Zbuduj potok szkoleniowy wizualnie, przeciągając i łącząc moduły, bez kodu.",
+  "why": "Designer Azure Machine Learning buduje potok szkoleniowy wizualnie, przeciągając i łącząc moduły, bez kodu."
+ },
+ "feat-015-02": {
+  "label": "Śledź przebiegi eksperymentów, rejestruj modele i zarządzaj wdrożeniem poprzez potok MLOps zarządzony.",
+  "why": "Potoki Azure Machine Learning i rejestr modeli śledzą przebiegi eksperymentów, rejestrują modele i zarządzają wdrożeniem zarządzanym."
+ },
+ "features": {
+  "hint": "Przeciągnij każde zadanie do zdolności, która je wykonuje. Ujawnienie nazwie usługę, do której należy."
+ }
+}

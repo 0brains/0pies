@@ -1,0 +1,45 @@
+{
+ "iii-dl-01": {
+  "prompt": "Order the gates a new AI system passes through from first business case to shadow-mode readiness evidence.",
+  "steps[0].label": "Business case & objectives",
+  "steps[0].detail": "Define why AI at all: the cost-benefit case, including societal impacts, comes first. Nothing downstream can be evaluated without a stated objective to measure it against.",
+  "steps[1].label": "Use case + impact assessment (leveraged from a PIA)",
+  "steps[1].detail": "Scope the specific use case and run an impact assessment to anticipate and manage the harms it could cause. The best existing template to adapt is a privacy impact assessment (PIA/DPIA) — governance doesn't invent this from scratch.",
+  "steps[2].label": "Design — risk-impact estimation & architecture",
+  "steps[2].detail": "Design work includes estimating risk impact and choosing architecture. This is the first gate where architecture is actually decided; planning explicitly excludes it — planning sets objectives and governance approach, design picks how the system is built (; planning excludes architecture, ).",
+  "steps[3].label": "Build",
+  "steps[3].detail": "Construct the system against the design's risk-impact estimate and chosen architecture.",
+  "steps[4].label": "Benchmark vs human experts in the same decision context",
+  "steps[4].detail": "Before piloting, compare the system's performance against human expert performance in the same domain — this is the most valuable governance benchmark, not an abstract accuracy target.",
+  "steps[5].label": "Pilot — validate fairness + accuracy at controlled scale",
+  "steps[5].detail": "Run a pre-deployment pilot whose primary purpose is validating fairness and accuracy on real-world data at a controlled, limited scale before full rollout.",
+  "steps[6].label": "Shadow-mode run as documented readiness evidence",
+  "steps[6].detail": "Run the system in parallel with the live process (shadow mode) and document the outcomes. This documented evidence — not a verbal sign-off — is what demonstrates deployment readiness (SG)."
+ },
+ "iii-dl-02": {
+  "prompt": "Order the risk-mitigation hierarchy from the most durable fix to the last resort.",
+  "steps[0].label": "Eliminate the risk",
+  "steps[0].detail": "Remove the risky feature or use case entirely — don't use AI in the high-risk context at all, the way a recruitment algorithm that keeps producing biased outcomes gets retired rather than endlessly patched. In the exam's parallel vocabulary this same top tier is called 'Avoid': stop undertaking the activity so the exposure goes to zero. Same concept, different label — defuse the vocabulary clash, don't pick a side.",
+  "steps[1].label": "Substitute with a lower-risk design",
+  "steps[1].detail": "If elimination isn't feasible, swap in a simpler, more interpretable model or a lower-risk dataset that achieves the same purpose — an opaque model for an interpretable one, a noisier dataset for one collected under stricter quality controls. Exam phrasing sometimes folds this into 'Mitigate' (act on likelihood or impact while the activity continues) — again, the same design move under a different word.",
+  "steps[2].label": "Engineer safeguards",
+  "steps[2].detail": "Build safeguards into the system itself: confidence thresholds, robustness testing, bias audits, explainability tools — and human-in-the-loop controls, which sit here as one example technique among several, not as a separate last-resort tier of their own. This is where most technical controls live, and where the exam's 'Mitigate/Reduce' bucket lands too.",
+  "steps[3].label": "Warn and train users",
+  "steps[3].detail": "Once the system itself is as safe as engineering can make it, the next line of defense is telling people: interpretability dashboards, plain-language warnings, and user training so people interacting with the system understand its limits. This is a distinct tier from engineering controls — it changes what the human knows, not what the system does.",
+  "steps[4].label": "Accept with monitoring",
+  "steps[4].detail": "Whatever risk remains after the four tiers above is knowingly accepted and watched — audit logs and post-market review, not silent tolerance. The exam's final tier, 'Accept', maps cleanly onto this one: a recorded decision, owned at the right level of authority, backed by ongoing monitoring rather than a one-time sign-off. Some frameworks insert Administrative controls as a distinct tier — the NIOSH-style hierarchy taught in Hierarchy of Controls — same idea, different slicing."
+ },
+ "iii-dl-03": {
+  "prompt": "Order the steps for running a probability × severity harms matrix during design.",
+  "steps[0].label": "Enumerate harms per stakeholder",
+  "steps[0].detail": "List the ways the system could go wrong for each affected group — end users, downstream subjects, operators — before scoring anything. Stakeholder mapping widens the lens beyond the development team so no group's exposure is missed.",
+  "steps[1].label": "Score probability × severity",
+  "steps[1].detail": "Rate each enumerated harm on likelihood and impact using pre-defined scales. This scoring is applied throughout design and testing, not as a one-off exercise, so new findings can move items on the grid (SG).",
+  "steps[2].label": "Prioritize — catastrophic overrides score",
+  "steps[2].detail": "Rank by the plotted score, but let a catastrophic-impact item override a merely-average priority ranking: a low-likelihood, high-severity failure in an autonomous system still triggers a hard gate even if its raw score wouldn't top the list.",
+  "steps[3].label": "Apply the mitigation hierarchy at the design source",
+  "steps[3].detail": "Fix the highest-priority harms at the design/source level rather than bolting on disclaimers or monitoring after the fact — e.g. designing a chatbot's dialogue for crisis scenarios instead of relying on a disclaimer, or designing a model to exclude financially vulnerable customers from a harmful offer rather than flagging them after the fact.",
+  "steps[4].label": "Document residual risk & owner",
+  "steps[4].detail": "Record what risk remains after mitigation, at what score, and who is accountable for accepting it. An unrecorded residual risk is indistinguishable from an unmanaged one."
+ }
+}

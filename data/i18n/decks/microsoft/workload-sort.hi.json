@@ -1,0 +1,108 @@
+{
+  "wl-001": {
+    "label": "एक two-line brief से एक नए उत्पाद के लिए पांच उम्मीदवार slogans तैयार करें",
+    "why": "एक prompt से नई सामग्री बनाना generative AI है — कुछ भी analyzed, extracted या spoken नहीं है।"
+  },
+  "wl-002": {
+    "label": "एक सहायक जो inventory को जांचता है, reorder को फ़ाइल करता है, और supplier को ईमेल भेजता है step-by-step prompts के बिना",
+    "why": "Multi-step autonomous कार्य tool use के साथ agentic signature है — histack's 'persistent assistant' vs 'one stateless response'।"
+  },
+  "wl-003": {
+    "label": "यह निर्धारित करें कि एक दर्ज मीटिंग में कौन बोला (speaker diarisation)",
+    "why": "Diarisation ऑडियो के भीतर speakers को अलग करता है — एक भाषण क्षमता। Trap: यह कुछ भी उत्पादन नहीं करता, इसलिए यह कभी synthesize नहीं है।"
+  },
+  "wl-004": {
+    "label": "एक voice agent के लिए कम-latency, high-quality भाषण-से-भाषण interactions",
+    "why": "Verbatim Voice Live / gpt-realtime corpus से phrasing — real-time ऑडियो में, ऑडियो बाहर।"
+  },
+  "wl-005": {
+    "label": "Traffic-camera footage में हर vehicle के चारों ओर bounding boxes return करें",
+    "why": "Object detection — bounding boxes प्रति ऑब्जेक्ट — computer vision है, पूरी-छवि classification से अलग।"
+  },
+  "wl-006": {
+    "label": "हजारों scanned PDFs से structured fields को निकालें invoice नंबर, कुल, और due date",
+    "why": "दस्तावेजों और प्रपत्रों से structured fields को निकालना Information-Extraction workload है — Content Understanding territory Domain 2 में।"
+  },
+  "wl-007": {
+    "label": "एक उत्पाद पृष्ठ के लिए एक item और इसकी सेटिंग के two-sentence पाठ विवरण से एक photorealistic hero छवि बनाएं",
+    "why": "एक पाठ prompt से एक brand-नई छवि को produce करना generative AI की छवि पक्ष है — कोई मौजूदा छवि analyzed नहीं है, जो इसे computer vision बनाएगी।"
+  },
+  "wl-008": {
+    "label": "बात points के एक bullet-point outline से एक उत्पाद FAQ पृष्ठ का प्रथम draft तैयार करें",
+    "why": "एक sparse outline को नई prose में बदलना एक prompt से content बनाने की capability है, wl-001 के slogans के समान, केवल एक लंबे दस्तावेज़ पर लागू।"
+  },
+  "wl-009": {
+    "label": "एक चैट window में एक single one-off ग्राहक सवाल का उत्तर दें एक प्रतिक्रिया के साथ, कोई follow-up steps या tools invoked नहीं",
+    "why": "एक prompt के लिए one stateless response generative AI है; moment एक प्रणाली कदम की योजना शुरू करती है और अपनी ही tool कॉल करती है यह agentic AI में पार जाता है।"
+  },
+  "wl-010": {
+    "label": "एक travel-booking सहायक तीन साइटों के बीच fares की तुलना करता है, एक seat को hold करता है, और price target को hit करने के बाद purchase को complete करता है, कोई भी चरण confirming के साथ एक मानव के बिना",
+    "why": "Comparing, deciding, और end to end purchase execute करना कोई per-step prompting के साथ agentic pattern है, केवल reply करने वाली chatbot से अलग।"
+  },
+  "wl-011": {
+    "label": "एक IT-support सहायक एक आने वाली ticket को triage करता है, affected server के विरुद्ध एक diagnostic script चलाता है, और केवल अगर automated fix failed तो मानव के लिए escalates",
+    "why": "Tool use plus एक conditional next action परीक्षा's 'tool use मतलब agent बाहरी capabilities कॉल कर सकता है' परिभाषा है — एक single generated response से अलग।"
+  },
+  "wl-012": {
+    "label": "एक research सहायक एक broad सवाल को sub-questions में breaks करता है, प्रत्येक के लिए multiple sources खोजता है, और निष्कर्षों को एक final report में stitches करता है",
+    "why": "Task planning जो एक goal को steps में decompose करता है, end to end executed, परीक्षा's task-planning-plus-task-completion परिभाषा है agentic AI की, एक single generated answer नहीं।"
+  },
+  "wl-013": {
+    "label": "Free-text support tickets को scan करें और हर phone नंबर या email पता को flag करें वे store से पहले",
+    "why": "PII detection unstructured पाठ के भीतर sensitive spans को flags करता है — एक पाठ-विश्लेषण सुविधा, information extraction नहीं जो fixed fields प्राप्त करता है प्रपत्रों और दस्तावेजों से।"
+  },
+  "wl-014": {
+    "label": "हजारों support tickets भर से मुख्य topics की एक short ranked सूची return करें, बिना एक rewritten paragraph produce के",
+    "why": "Keyword extraction salient terms को list करता है; परीक्षा का planted trap है summarization की offer करना इसके बजाय, जो prose produce करेगी एक topic list के बजाय।"
+  },
+  "wl-015": {
+    "label": "समाचार लेख के एक batch भर में mentioned हर व्यक्ति नाम, organization, और स्थान को पहचानें",
+    "why": "Named entity recognition mentions को बचाते हुए पाठ में लोग, स्थान और organizations में classify करता है — एक पाठ-विश्लेषण क्षमता, एक fixed दस्तावेज़ schema के विरुद्ध निष्कर्षण नहीं।"
+  },
+  "wl-016": {
+    "label": "एक 40-page नीति दस्तावेज़ को तीन-paragraph overview में condense करें जो इसके key points को capture करता है",
+    "why": "Summarization मौजूदा पाठ को नई लेकिन faithful prose में compress करता है — पाठ विश्लेषण, generative AI नहीं, क्योंकि आउटपुट source दस्तावेज़ में grounded और constrained है।"
+  },
+  "wl-017": {
+    "label": "उन सभी के upload होने के बाद दर्ज साक्षात्कार recordings के एक batch को transcribe करें, जैसा कि वे बोले जा रहे हैं",
+    "why": "Batch transcription pre-recorded ऑडियो को asynchronously प्रक्रिया करता है — अभी भी एक भाषण क्षमता, केवल realtime recognition का offline sibling, एक पाठ या निष्कर्षण कार्य नहीं।"
+  },
+  "wl-018": {
+    "label": "एक e-learning module के लिए एक लिखित script से natural-sounding narrated ऑडियो produce करें",
+    "why": "लिखित पाठ को बोले गए ऑडियो में परिवर्तित करना है text-to-speech synthesis — भाषण workload का आउटपुट पक्ष, wl-004 के ऑडियो-में/ऑडियो-बाहर case को mirroring।"
+  },
+  "wl-019": {
+    "label": "एक login camera के सामने व्यक्ति एक live मानव को verify करें, एक printed photo या एक video replay नहीं",
+    "why": "Face liveness detection presentation attacks से बचाव करता है live camera छवि को analyze करके — एक computer-vision सुरक्षा क्षमता, face verification की पहचान मेल से अलग।"
+  },
+  "wl-020": {
+    "label": "एक अपलोड की गई प्रशिक्षण video के visual frames को analyze करके दृश्य परिवर्तन को detect करें और chapter markers generate करें",
+    "why": "frames से क्या दिखाया जाता है इसे derive करना visual frames का विश्लेषण है; एक ही footage भाषण में shifts जब deliverable spoken transcript है इसके बजाय।"
+  },
+  "wl-021": {
+    "label": "एक अपलोड की गई फ़ोटो को एक single पूरी-छवि श्रेणी जैसे 'beach' या 'city street' के साथ tag करें, कोई per-object locations की जरूरत नहीं",
+    "why": "Image classification पूरी छवि के लिए एक लेबल निर्दिष्ट करता है, wl-005's object detection के विपरीत, जो per-object bounding boxes देता है — दोनों computer vision हैं, लेकिन अलग-अलग techniques।"
+  },
+  "wl-022": {
+    "label": "Indexing के दौरान हजारों scanned reports और images भर से AI enrichment skills चलाएं ताकि content जो पहले unsearchable था searchable हो",
+    "why": "यह है knowledge mining — परीक्षा की Azure AI Search परिभाषा करने का unstructured content से सूचना को surface करना एक search index में।"
+  },
+  "wl-023": {
+    "label": "दर्ज support calls के एक batch से fixed business schema की fields return करें — call reason, resolution, और follow-up कार्य",
+    "why": "Audio content से fixed business schema को निकालना Content Understanding की structured निष्कर्षण है; deliverable परिभाषित fields है, एक प्रतिलेख नहीं, जो इसे भाषण बनाएगी।"
+  },
+  "wl-024": {
+    "label": "Contracts, intake forms, और handwritten रसीद के एक mixed batch से एक reusable schema का उपयोग करके key-value pairs और table structure को निकालें",
+    "why": "Structured field और table extraction विभिन्न दस्तावेज़ प्रकारों के भर में document intelligence's layout/custom-model क्षेत्र है — wl-006 के invoices के समान workload, एक broader दस्तावेज़ mix पर लागू।"
+  },
+  "workload-sort": {
+    "hint": "पूछता है कि deliverable वास्तव में क्या है: एक prompt से brand-नई सामग्री (generative), tools के साथ autonomous multi-step कार्य (agentic), एक निर्णय या सारांश existing पाठ के बारे में (पाठ विश्लेषण), कुछ भी जो बोली गई ऑडियो को छूता है (भाषण), एक छवि या video frame के बारे में एक निर्णय (computer vision), या एक fixed set structured fields/एक index documents या mixed सामग्री से निकाले गए (information निष्कर्षण)।",
+    "note": "कई requests दो workloads की तरह लग सकते हैं। Tie-break हमेशा वह एक चीज है जो deliverable वास्तव में है: नई सामग्री vs. एक autonomous कार्य vs. एक existing पाठ विश्लेषण vs. ऑडियो में/बाहर vs. एक pixels के बारे में निर्णय vs. एक structured field set।",
+    "zones[0].def": "एक prompt से नई सामग्री बनाना — पाठ, छवियां, कोड, या ऑडियो — मौजूद सामग्री को analyze या कार्य करने के बजाय।",
+    "zones[1].def": "Autonomously योजना बनाना, tools का उपयोग करना, और एक लक्ष्य की ओर multi-step कार्य लेना, एक single stateless response से परे।",
+    "zones[2].def": "पहले से ही इसमें present अर्थ को surface करने के लिए लिखित पाठ का विश्लेषण करना — sentiment, मुख्य वाक्य, entities, PII, या एक grounded सारांश — नई सामग्री generate के बिना।",
+    "zones[3].def": "बोली गई ऑडियो और पाठ के बीच परिवर्तित करना, या सीधे ऑडियो streams के साथ काम करना — पहचान, synthesize, अनुवाद, और diarization।",
+    "zones[4].def": "छवि और video frames की visual सामग्री का विश्लेषण करना — classify करना, ऑब्जेक्ट detect करना, faces verify करना, या एक दृश्य पढ़ना।",
+    "zones[5].def": "दस्तावेजों, प्रपत्रों, या mixed-modality सामग्री से structured fields का एक fixed set, या एक searchable index निकालना।"
+  }
+}

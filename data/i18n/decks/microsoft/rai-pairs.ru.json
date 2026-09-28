@@ -1,0 +1,50 @@
+{
+ "rp-01": {
+  "a.text": "Hiring model shortlists far fewer candidates из one demographic group несмотря на equal qualifications.",
+  "a.why": "Unequal outcomes across groups — это fairness — fixed с balanced training data и fairness assessments.",
+  "b.text": "The same hiring portal's AI screening works только by voice, чтобы deaf candidates не можешь complete это at all.",
+  "b.why": "Nobody scored unfairly — some users locked out. Multiple interaction methods и accessibility — это inclusiveness."
+ },
+ "rp-02": {
+  "a.text": "Retailer's shoplifting-detection camera system, trained mostly на images из one demographic group, flags люди из других groups в much higher rate.",
+  "a.why": "Accuracy gap traceable к underrepresented training data across demographic groups — это fairness — representative, balanced training data — это fix.",
+  "b.text": "The same retailer's self-checkout assistant accepts only spoken commands, чтобы customers, кто не может speak или hear clearly, не могу use это at all.",
+  "b.why": "No group scored worse here — entire set из users shut out by relying на one interaction method. That access gap — это inclusiveness, не scoring problem."
+ },
+ "rp-03": {
+  "a.text": "Bank publishes model card explaining credit model's capabilities и known limitations.",
+  "a.why": "Communicating capabilities AND limitations — model cards, transparency notes — это transparency.",
+  "b.text": "Bank keeps audit logs из every AI credit decision и names officer кто signs off на overrides.",
+  "b.why": "Human oversight, governance и reviewable record из кто responsible — это accountability."
+ },
+ "rp-04": {
+  "a.text": "When patient's insurance claim denied by triage model, care team может point к specific factors, которые drove that particular denial.",
+  "a.why": "Explaining specific reasons behind one already-made decision, к person это affected — это transparency.",
+  "b.text": "Hospital defines кто responsible для reviewing denial и escalating его если triage model's decision turns out к be wrong.",
+  "b.why": "Assigning ownership и escalation path для when things go wrong — это accountability — кто answers за outcome, не что gets disclosed."
+ },
+ "rp-05": {
+  "a.text": "Support bot configured чтобы customer PII никогда не appears в responses или logs.",
+  "a.why": "PII governance, data protection и access control map к privacy & security.",
+  "b.text": "Support bot opens every session stating это AI и listing что это может и не может help с.",
+  "b.why": "Disclosing what system is и its limits — это transparency — different obligation из protecting data."
+ },
+ "rp-06": {
+  "a.text": "Release notes state summarizer performs poorly на legal documents чтобы users может judge when к trust его.",
+  "a.why": "Stating limitations up front — это transparency, даже though это feels safety-adjacent.",
+  "b.text": "Summarizer stress-tested с adversarial prompts и refuses к produce harmful content under них.",
+  "b.why": "Consistent, tested, safe behavior under risky prompts — content filters и model evaluation — это reliability & safety."
+ },
+ "rp-07": {
+  "a.text": "Content-moderation service должно resist adversarial prompts, которые try к make его generate violent instructions.",
+  "a.why": "Resisting adversarial prompts к keep output из turning harmful — это tested, consistent system behavior — reliability & safety.",
+  "b.text": "The same service должно keep customer phone numbers typed в chat messages из ever appearing в stored logs.",
+  "b.why": "Keeping personal data out из storage и logs — это data protection — different concern из как model behaves under attack."
+ },
+ "rp-08": {
+  "a.text": "Financial-advice chatbot adds screen-reader-compatible output и keyboard-only navigation чтобы люди с visual или motor impairments может complete session end к end.",
+  "a.why": "Removing barriers чтобы люди с different abilities может use product at all — это inclusiveness.",
+  "b.text": "The same chatbot opens every session stating это automated assistant и listing topics это not qualified к advise на.",
+  "b.why": "Disclosing that system — это AI и stating its limits — это different obligation из making interface usable к everyone."
+ }
+}

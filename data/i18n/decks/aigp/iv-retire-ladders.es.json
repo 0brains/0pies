@@ -1,0 +1,43 @@
+{
+ "iv-rl-01": {
+  "prompt": "Ordena los pasos para retirar responsablemente un sistema de IA en vivo.",
+  "steps[0].label": "Evalúa dependencias + opciones de fallback",
+  "steps[0].detail": "Antes de tocar nada en vivo, mapea qué depende del sistema — alimentaciones de datos corriente arriba, procesos corriente abajo, flujos de trabajo de otros equipos — y confirma que exista un fallback para que la jubilación no cree una interrupción (SG).",
+  "steps[1].label": "Notifica interesados + planifica desactivación controlada",
+  "steps[1].detail": "El primer paso en una jubilación dirigida es decirle a las personas afectadas y construir un plan de desactivación, no simplemente voltear un interruptor (SG).",
+  "steps[2].label": "Desactivación graduada con respaldo humano",
+  "steps[2].detail": "Para infraestructura crítica, disminuye en etapas en lugar de todo a la vez, con un fallback ejecutado-por-humano cubriendo el hueco — la misma disciplina usada para sistemas críticos en general.",
+  "steps[3].label": "Archiva, no elimines, para legal/auditoría",
+  "steps[3].detail": "Preserva datos, modelos y registros del sistema retirado en lugar de eliminarlos — reguladores y auditores pueden necesitar reconstruir qué hizo el sistema y por qué, mucho tiempo después de que deja de ejecutarse (SG).",
+  "steps[4].label": "Registra como una investigación de caja negra, con responsables de decisión nombrados",
+  "steps[4].detail": "Registra el activador exacto, quién autorizó el cierre, y el razonamiento de la jubilación en el mismo estilo de evidencia que una investigación de incidente — una única fuente de verdad auditable que nombra quién tuvo la autoridad para actuar (SG)."
+ },
+ "iv-rl-02": {
+  "prompt": "Ordena la respuesta a un incidente de IA en vivo de primer detección a cerrar la llave.",
+  "steps[0].label": "Detecta",
+  "steps[0].detail": "Una alerta, una señal de monitoreo, o una queja supone que algo está mal — esto comienza el reloj en todo lo que sigue.",
+  "steps[1].label": "Contiene / cuarentena primero",
+  "steps[1].detail": "Antes de investigar causas o redactar comunicaciones, detén el daño de propagarse: cuarentena el modelo y notifica legal/cumplimiento inmediatamente. La contención vence investigación, recuperación, o comunicación como el movimiento muy siguiente — saltar directamente al análisis de causa-raíz mientras el sistema continúa causando daño es la trampa de examen registrada.",
+  "steps[2].label": "Notifica legal/cumplimiento (+reloj de violación de 72 horas donde datos personales)",
+  "steps[2].detail": "Dónde el incidente implica datos personales, un controlador GDPR debe notificar a la autoridad supervisora dentro de 72 horas de tomar conocimiento de la violación — procedimientos de respuesta ante incidentes y notificación deben ser construidos para alcanzar esa fecha límite, no tratados como una idea tardía técnica (SG).",
+  "steps[3].label": "Causa-raíz (Cinco Por Qué / árbol de fallo)",
+  "steps[3].detail": "Usa un marco de análisis formal — el método de «Cinco Por Qué» o análisis de árbol de fallo — para profundizar en la causa subyacente en lugar de detenerse en el síntoma de nivel de superficie (SG).",
+  "steps[4].label": "CAPA",
+  "steps[4].detail": "Registra acciones correctivas y preventivas en un sistema central con propietarios asignados, fechas límite, y pasos de verificación, para que la causa raíz sea realmente cerrada, no solo diagnosticada.",
+  "steps[5].label": "Retrospectiva sin culpa + divulgación proactiva con lecciones aprendidas",
+  "steps[5].detail": "Ejecuta una revisión multifuncional, sin culpa de lo que pasó y por qué, y divulga proactivamente detalles técnicos y lecciones aprendidas en lugar de esperar a ser preguntado — esto es lo que convierte un síntoma parcheado en una mejora documentada, defensible."
+ },
+ "iv-rl-03": {
+  "prompt": "Ordena los pasos para traer con seguridad un sistema desactivado de vuelta en línea.",
+  "steps[0].label": "Verifica la corrección",
+  "steps[0].detail": "Confirma que el defecto específico que desencadenó la desactivación ha sido realmente corregido antes de que algo más se mueva — la reanudación depende de correcciones verificadas, no meramente intentadas (SG).",
+  "steps[1].label": "Re-prueba con rigor de primera-liberación",
+  "steps[1].detail": "Pon el sistema corregido a través de la misma prueba completa que enfrentó antes de su lanzamiento original — rendimiento, robustez, seguridad, equidad — re-prueba confirma seguridad y cumplimiento desde cero, no obtiene un atajo porque el sistema ha ejecutado antes (SG).",
+  "steps[2].label": "Aprobación multifuncional",
+  "steps[2].detail": "El sistema se reanuda solo una vez que los equipos multifuncionales — no un ingeniero o líder de equipo individual — aprueban el reinicio, cerrando la llave que comenzó con responsables de decisión nombrados autorizando el cierre.",
+  "steps[3].label": "Re-rollout canario/azul-verde graduado detrás de banderas de característica",
+  "steps[3].detail": "Trae el sistema de vuelta gradualmente — un lanzamiento canario o despliegue azul-verde compuerta por banderas de característica — para que la exposición pueda ser marcada de vuelta instantáneamente si el problema resurge, en lugar de voltear cada usuario de vuelta a la vez (SG).",
+  "steps[4].label": "Ventana de monitoreo elevada",
+  "steps[4].detail": "Observa el sistema reiniciado más estrechamente que la operación de estado-estable por una ventana definida después, para que una recurrencia sea atrapada inmediatamente en lugar de en la siguiente revisión programada."
+ }
+}

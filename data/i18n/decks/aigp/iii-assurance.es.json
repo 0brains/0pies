@@ -1,0 +1,84 @@
+{
+ "iii-ab-01": {
+  "label": "Un revisor independiente, organizacionalmente separado del equipo de producto, verifica distribuciones de imparcialidad y registros de procedencia de datos en comparación con ISO/IEC 42001 antes del visto bueno.",
+  "why": "Independencia del equipo de construcción más un registro de evidencia documentada es la firma de esta disciplina, distinta de red teaming, donde la misma independencia se usa para atacar el sistema en lugar de revisar su papeleo."
+ },
+ "iii-ab-02": {
+  "label": "El resultado más crucial no es una puntuación de referencia pero una lista priorizada de no-conformidades, cada una con un propietario nombrado y un plazo de remediación.",
+  "why": "El resultado de una auditoría es un registro de brecha y arreglo en comparación con el registro de papeleo, diferente del catálogo de caso de abuso del modelo de amenaza, que lista lo que podría pasar en lugar de lo que ya salió mal."
+ },
+ "iii-ab-03": {
+  "label": "Una semana antes del lanzamiento programado, una revisión interna final del archivo técnico descubre una brecha de imparcialidad que las pruebas de muestra uniforme anterior habían perdido.",
+  "why": "Revisar el registro después del hecho para atrapar lo que las pruebas perdieron es el trabajo de esta disciplina, las pruebas anteriores en sí mismas, y cualquier ejercicio de red teaming que ya fue ejecutado y cerrado, pertenecen a sus propias zonas."
+ },
+ "iii-ab-04": {
+  "label": "Los especialistas contratados encadenan prompts de jailbreak para pasar los guardias antes del lanzamiento; los hallazgos alimentan el registro de riesgos y se re-prueban una vez que se arreglan.",
+  "why": "Simular uso incorrecto realista de extremo a extremo es el trabajo de la disciplina, una pen test solo prueba infraestructura, y una auditoría revisaría el informe resultante, no iría a encontrar el exploit en sí."
+ },
+ "iii-ab-05": {
+  "label": "Los probadores empujan un chatbot de servicio al cliente a través de marco de ingeniería social, inyección de prompt y escenarios de uso incorrecto de caso extremo que ningún script de QA ordinario intentaría.",
+  "why": "Simulación adversarial multi-perspectiva combinando ataques técnicos con marco de uso incorrecto es el mayor valor de gobernanza de la disciplina, una sonda de componente de un solo endpoint de API permanece en la siguiente zona en lugar."
+ },
+ "iii-ab-06": {
+  "label": "Un fallo de condición rara que solo se muestra bajo condiciones específicas de clima e iluminación surge durante pruebas adversariales previas al lanzamiento; el lanzamiento se retrasa hasta que el escenario se arregla y se revalida, sin importar cuán raro sea el disparador.",
+  "why": "Las pruebas adversariales en vivo es lo que sacó este fallo a la luz en primer lugar, un ejercicio de modelado de amenaza solo lo habría señalado como escenario hipotético en papel, nunca lo ejecutaría realmente."
+ },
+ "iii-ab-07": {
+  "label": "Activos, límites de confianza y casos de abuso son enumerados en el diagrama de arquitectura en tiempo de diseño, antes de que ninguna prueba se ejecute.",
+  "why": "Anticipación estructurada en papel, sin ataque en vivo, es lo que hace que esta disciplina sea preventiva en lugar de diagnóstica, el momento en que alguien realmente intenta el jailbreak, el trabajo se ha movido a red teaming."
+ },
+ "iii-ab-08": {
+  "label": "La revisión de diseño lista posibles adversarios, sus objetivos y capacidades, junto con la salvaguarda que cada caso de abuso necesitará, sin ataque en vivo intentado aún.",
+  "why": "Un catálogo de propietario nombrado, vinculado a mitigación, es el resultado de aquí, distinto de prueba de seguridad, que solo comienza una vez que una salvaguarda específica necesita ser confirmada como realmente funcionando."
+ },
+ "iii-ab-09": {
+  "label": "El mapa cataloga qué conjuntos de datos, librerías y pesos pre-entrenados podrían ser alterados a lo largo de la cadena de suministro, y nombra un propietario para cada salvaguarda, el ejercicio ocurre antes de que el sistema se envíe.",
+  "why": "Catalogar lo que podría ser alterado es anticipación, no verificación, confirmar que un escaneo de dependencia realmente atrapó una librería comprometida es una disciplina diferente, práctica."
+ },
+ "iii-ab-10": {
+  "label": "Los pen testers golpean el API de servicio y consola de administración por malas configuraciones y autenticación débil, un escaneo de dependencia señala librerías desactualizadas, y los límites de velocidad se verifican bajo carga simulada.",
+  "why": "Sondeo práctico de componentes específicos, ya identificados, confirma que una defensa realmente funciona, el modelo de amenaza solo mapeó dónde estos puntos débiles podrían estar, nunca ejecutó la verificación."
+ },
+ "iii-ab-11": {
+  "label": "Una revisión línea-por-línea del pipeline de preprocesamiento verifica riesgos de inyección y secretos expuestos, mientras que un inventario rastrea cada librería y conjunto de datos del que depende el lanzamiento.",
+  "why": "Confirmar que un componente específico nombrado es endurecido es más estrecho que la simulación de abuso de todo el stack, de extremo a extremo de red teaming, esta disciplina permanece dentro de un componente a la vez."
+ },
+ "iii-ab-12": {
+  "label": "Los hallazgos de API pen-test y escaneo de dependencia se registran con una severidad, un propietario y un plazo de re-prueba, y el lanzamiento no puede firmar hasta que se cierren.",
+  "why": "Sondeo, parche, re-prueba es el bucle de operación de esta disciplina en comparación con un componente definido, una auditoría revisaría en lugar si ese bucle ocurrió en absoluto, en lugar de ejecutarlo."
+ },
+ "iii-ab-13": {
+  "label": "Las evaluaciones semanales de sombra reproducen tráfico reciente en comparación con un modelo de referencia, y las verificaciones mensuales de imparcialidad se ejecutan en el ritmo que el plan de lanzamiento estableció.",
+  "why": "Este es el lado de cadencia técnica y panel de la plan de monitoreo; el deber legal permanente de ejecutarlo en absoluto, una vez que el sistema está en vivo, pertenece a una junta diferente."
+ },
+ "iii-ab-14": {
+  "label": "El tablero del equipo de producto rastrea calibración y latencia en comparación con una línea de base validada en un ritmo semanal en vivo, con proporciones de disparidad de imparcialidad actualizándose automáticamente junto con ellas.",
+  "why": "Un flujo continuo, automatizado poseído por el equipo que construyó el sistema es la textura de esta zona, el momento en que esa misma verificación es ejecutada por un revisor organizacionalmente separado de ese equipo, en una visita programada en lugar de un flujo en vivo, es una auditoría."
+ },
+ "iii-ab-15": {
+  "label": "La telemetría automatizada vigila patrones de tráfico anómalo y entradas elaboradas pensadas para confundir el modelo, y levanta una alerta cuando cualquiera cruza un umbral.",
+  "why": "Una vigilancia automatizada, siempre activa es la textura de esta zona, una sonda programada, práctica de las mismas interfaces para confirmar la defensa se sostiene es la disciplina de pen-testing en lugar."
+ },
+ "iii-ab-16": {
+  "label": "Durante un piloto previo al lanzamiento con un pequeño grupo de usuarios reales, daño real se confirma, el momento en que se confirma, la contención comienza inmediatamente: aislar primero, investigar segundo, con el reloj de notificación GDPR de 72 horas ya en marcha.",
+  "why": "Daño confirmado es el disparador de esta disciplina, independientemente de si el sistema sigue en un piloto cerrado o completamente en vivo; un patrón de predicciones de baja severidad aún siendo registrado y vigilado para una tendencia no ha cruzado esa línea aún, y permanece en rastreo de problema rutinario."
+ },
+ "iii-ab-17": {
+  "label": "Mid-piloto, antes de disponibilidad general, un chatbot de servicio al cliente emite orientación médica insegura a uno de los usuarios de prueba; el hallazgo dispara un playbook formal, una etiqueta de severidad, roles de escalada claros, y un análisis de causa raíz que debe terminar antes de que el caso pueda cerrarse.",
+  "why": "La maquinaria formal, tiempo-limitada, severidad, propiedad definida, un cierre definido, se activa el momento en que daño realmente cae en una persona real, piloto o no, a diferencia de revisión programada de una auditoría de registros que pueden no mostrar nada malo en absoluto."
+ },
+ "iii-ab-18": {
+  "label": "Antes de que el piloto se convierta a disponibilidad general, una retrospectiva sin culpa en el caso de daño confirmado aún asigna arreglos concretos, reentrenamiento en datos corregidos, límites de velocidad más estrictos, una tarjeta de modelo actualizada, con evidencia preservada para forense.",
+  "why": "Convertir un daño confirmado en arreglos durables y un registro de evidencia preservada cierra el bucle de esta disciplina, independientemente de si el daño surgió en un piloto cerrado o producción completa, alimentar un hallazgo en el registro de riesgos sin que ese daño haya ocurrido aún es el trabajo del modelo de amenaza en lugar."
+ },
+ "iii-assurance": {
+  "hint": "Estos son verificaciones previas al lanzamiento, ciclo de desarrollo. Pregunta en qué etapa está la escena: un catálogo de papel antes de que ninguna prueba se ejecute es modelo de amenaza; un intento en vivo de romper el sistema es red teaming; un revisor independiente verificando el registro de evidencia es una auditoría.",
+  "note": "Todo en esta junta ocurre antes o durante la decisión de preparación. Lo que un sistema en vivo debe a su operador después del lanzamiento, en base recurrente, es una junta diferente.",
+  "zones[0].def": "Un revisor independiente, organizacionalmente separado del equipo que construyó el sistema, verifica el archivo técnico, procedencia de datos, registros de prueba, evaluaciones de impacto, en comparación con un estándar o política nombrada y produce un informe de brechas con propietarios y plazos. El registro de evidencia, no un ataque en vivo.",
+  "zones[1].def": "Los especialistas simulan un escenario de adversario realista o uso incorrecto de extremo a extremo, jailbreaks, inyección de prompt, ingeniería social, abuso de caso extremo, para ver cómo el sistema completo se sostiene bajo presión, luego alimentan lo que encontraron en un plan de remediación que se re-prueba.",
+  "zones[2].def": "Un ejercicio estructurado, basado en papel, realizado en tiempo de diseño antes de que ninguna prueba se ejecute, que cataloga lo que necesita protección, quién podría atacarlo, y qué casos de abuso importan más, produciendo una lista de riesgos y mitigaciones nombradas, no un intento en vivo de explotar cualquier cosa.",
+  "zones[3].def": "Sondeo práctico de componentes específicos, ya identificados, el API de servicio, dependencias, el código del pipeline, para confirmar que una defensa está realmente presente y correctamente configurada, distinto de simulación adversarial de sistema completo o catálogo de papel de lo que podría salir mal.",
+  "zones[4].def": "La cadencia técnica de verificaciones, evaluaciones programadas, métricas rastreadas, alertas automatizadas, que se construye y ensaya a medida que el plan de monitoreo se reúne. Los tableros y detectores en sí mismos, no el deber legal permanente de ejecutarlos una vez que el sistema está en vivo.",
+  "zones[5].def": "La maquinaria formal, tiempo-limitada, contención primero, luego análisis de causa raíz, luego acción correctiva, que se activa el momento en que una escena involucra daño real confirmado en el mundo, no un hallazgo rutinario aún siendo registrado y vigilado."
+ }
+}

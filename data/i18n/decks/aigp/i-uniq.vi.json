@@ -1,0 +1,110 @@
+{
+ "i-uniq": {
+  "hint": "Hỏi cụ thể điều gì đang thất bại: một con người không thể nhìn thấy (Độ mờ), hay không thể theo dõi cấu trúc ngay cả với quyền truy cập đầy đủ (Độ phức tạp)? Hệ thống có hoạt động mà không được yêu cầu (Tính tự chủ), hay là một nhiệm vụ mà một người từng làm bằng tay đơn giản đã biến mất vào hệ thống (Tự động hóa)? Hệ thống đã thay đổi sau khi học thêm (Khả năng thích ứng), hay là khiếm khuyết đã được nướng vào những gì nó học từ trước (Phụ thuộc vào dữ liệu)? Làm cơn đầu vào tương tự cho một câu trả lời khác nhau (Đầu ra xác suất), hay là một lỗi nhỏ lây lan nhanh hơn bất cứ ai có thể bắt kịp (Tốc độ & quy mô)?",
+  "note": "Đây là danh sách chuẩn tám mục của kỳ thi. Tám vùng cố định có nghĩa là hầu hết các giao dịch thẻ sáu chiếc để trống một hoặc hai vùng — dự kiến, không phải một lỗi. Tự động hóa và Tính tự chủ là cặp đáng chú ý nhất để chậm lại: Tự động hóa là về bàn tay của ai từng làm công việc (thay thế nhiệm vụ, quá phụ thuộc, gián đoạn lực lượng lao động); Tính tự chủ là về ai ra lệnh (quyết định độc lập mà không có sự phê chuẩn con người).",
+  "zones[0].def": "Luận lý nội bộ không thể được nhìn thấy hoặc giải thích, ngay cả bởi những người xây dựng nó — một thất bại hiển thị. Khác với Độ phức tạp: độ mờ là về những gì bị ẩn khỏi tầm nhìn, không phải về cách cấu trúc phức tạp.",
+  "zones[1].def": "Hệ thống tự quyết định và hoạt động, mà không có sự phê chuẩn của con người đối với hành động cụ thể đó — một rủi ro độc lập trong hành động. Khác với Tự động hóa: tính tự chủ là về ai ra lệnh, không phải bàn tay của ai từng làm công việc.",
+  "zones[2].def": "Học tập liên tục và huấn luyện lại có thể chuyển một hệ thống đi khỏi các mục tiêu ban đầu, hoặc làm cho nó âm thầm mất các khả năng nó đã có.",
+  "zones[3].def": "AI tiếp quản các nhiệm vụ và quyết định mà một người từng thực hiện bằng tay, ở một quy mô mà không có đội con người nào có thể phù hợp — nâng cao rủi ro quá phụ thuộc và gián đoạn lực lượng lao động khác biệt với sự phán đoán độc lập của chính hệ thống.",
+  "zones[4].def": "Hiệu suất chỉ tốt như dữ liệu đào tạo đằng sau nó — dễ vỡ đối với khoảng trống, thay đổi, và những khiếm khuyết được kế thừa từ những gì hệ thống học từ.",
+  "zones[5].def": "AI hoạt động nhanh hơn và trên những trường hợp đột biến hơn so với con người có thể xem xét trong thời gian thực, vì vậy một lỗi nhỏ có thể trở thành một lỗi lớn trước khi ai đó chú ý.",
+  "zones[6].def": "Kết quả được rút ra từ một phân phối các câu trả lời có thể có thay vì các quy tắc cố định, vì vậy cùng một đầu vào có thể mang lại một đầu ra khác nhau mỗi lần.",
+  "zones[7].def": "Nhiều lớp tương tác và tham số đến nỗi ngay cả các nhà phát triển không thể theo dõi con đường quyết định — một thất bại cấu trúc. Khác với Độ mờ: độ phức tạp là về cách cấu trúc phức tạp, không phải về những gì bị ẩn khỏi tầm nhìn."
+ },
+ "i-uq-01": {
+  "label": "Một ngân hàng không thể cho biết cơ quan quản lý tại sao mạng nơron của nó từ chối ứng viên cho vay này.",
+  "why": "Không có khả năng hiển thị logic nội bộ của mô hình — khác biệt với Độ phức tạp, đó là cấu trúc quá phức tạp để theo dõi, không phải là inability để nhìn vào ở tất cả."
+ },
+ "i-uq-02": {
+  "label": "Một trưởng phòng cấp cao cảnh báo rằng nếu mô hình đặt hàng kho nào đó bao giờ mắc một lỗi tốn kém, sẽ không ai có thể giải thích sau đó tại sao nó xảy ra.",
+  "why": "Khiếu nại là lý do bị ẩn, không phải mô hình có cấu trúc phức tạp — khoảng trống hộp đen tương tự mà khu vực này theo dõi, không phải cái cấu trúc của Độ phức tạp."
+ },
+ "i-uq-03": {
+  "label": "Một người kiểm duyệt nội dung xóa một bài viết theo các quy tắc không bao giờ được xuất bản, và người đăng không có cách nào để tìm ra quy tắc nào được áp dụng.",
+  "why": "Các quy tắc tồn tại nhưng không bao giờ được bề mặt cho những người bị ảnh hưởng là thất bại xác định của khu vực này — lý do ẩn, không phải một cấu trúc quá phức tạp để theo dõi."
+ },
+ "i-uq-04": {
+  "label": "Một chiếc xe tự lái điều hướng lưu lượng truy cập thành phố dày đặc và tự thực hiện mọi cuộc gọi lái xe, phanh và định tuyến, không có người sẵn sàng để can thiệp.",
+  "why": "Độc lập cao trong hành động kết hợp với tiềm năng gây hại cao là sự ghép nối chữ ký của khu vực này — khác biệt với Tự động hóa, đó là về bàn tay của ai từng làm công việc, không phải ai ra lệnh."
+ },
+ "i-uq-05": {
+  "label": "Một bot giao dịch mua và bán cổ phiếu trong mili giây; không có người nào xác nhận bất kỳ giao dịch cá nhân nào trước khi nó được thực hiện.",
+  "why": "Độc lập của hành động — quyết định và hoạt động mà không chờ phê chuẩn con người — là những gì khu vực này theo dõi, bất kể giao dịch có xảy ra nhanh hay không. Khác biệt với Tự động hóa, đó là về một người có từng đặt giao dịch bằng tay hay không, không phải về ai ký từng cái."
+ },
+ "i-uq-06": {
+  "label": "Một công cụ tuyển dụng sàng lọc hôn nhân và chuyển các ứng viên để phỏng vấn hoặc từ chối mà không có một người tuyển dụng bao giờ xem xét cuộc gọi.",
+  "why": "Mối quan tâm là một quyết định đã đi mà không có sự phê chuẩn con người — một khoảng trống kiểm soát và trách nhiệm, không phải sự biến mất của một nhiệm vụ một người từng làm bằng tay (đó là mặt Tự động hóa của cặp này)."
+ },
+ "i-uq-07": {
+  "label": "Sau khi người mecommender được huấn luyện lại trên danh mục sản phẩm mới, nó im lặng mất các kỹ năng nó từng có, như cờ các danh sách bản sao.",
+  "why": "Đây là quên lãng thảm họa — phiên bản nhân số rủi ro của một hệ thống chuyển từ các khả năng ban đầu mỗi lần nó tái học từ dữ liệu mới; một rủi ro thực sự, nhưng không bao giờ một khu vực của riêng nó."
+ },
+ "i-uq-08": {
+  "label": "Hệ thống phát hiện gian lận của ngân hàng huấn luyện lại trên các giao dịch gần đây và bắt đầu cấm số lượng lớn các mua hàng hợp pháp.",
+  "why": "Chuyển đi khỏi mục tiêu ban đầu sau khi huấn luyện lại — phản ứng quản trị là giám sát, kiểm thử trước triển khai của các bản cập nhật, và theo dõi chuyển, không phải một đánh giá khởi chạy một lần."
+ },
+ "i-uq-09": {
+  "label": "Sáu tháng sau khi khởi chạy, các đề xuất của một công cụ khuyến cáo liều lượng đã im lặng chuyển đổi vì nó được huấn luyện lại trên dữ liệu bệnh viện chứa các lỗi ghi nhãn.",
+  "why": "Hành vi thay đổi sau khi huấn luyện lại hoặc tiếp xúc dữ liệu mới là dấu hiệu của khu vực này; sửa chữa là giám sát liên tục, phát hiện chuyển, và các cổng phê duyệt trước khi một mô hình được cập nhật đi trực tiếp."
+ },
+ "i-uq-10": {
+  "label": "Phân loại hàng đợi của trung tâm gọi, một lần được xử lý bởi một người đọc từng yêu cầu, bây giờ được giải quyết từ đầu đến cuối bởi hệ thống mà không ai chạm vào hàng đợi.",
+  "why": "Đây là trục thay thế lao động — một nhiệm vụ một người từng thực hiện bằng tay bây giờ được thực hiện bởi hệ thống ở âm lượng. Khác biệt với Tính tự chủ, đó là về ai ra lệnh, không phải bàn tay của ai làm công việc."
+ },
+ "i-uq-11": {
+  "label": "Triển khai rộng rãi một công cụ dịch vụ khách hàng loại bỏ nhu cầu về hầu hết nhân viên của trung tâm gọi, làm quên phân đội thị trường công việc địa phương.",
+  "why": "Gián đoạn lực lượng lao động và kinh tế từ thay thế lao động con người là chi phí xã hội của khu vực này — một mối quan tâm quản trị khác nhau so với khung lý luận kiểm soát và trách nhiệm của Tính tự chủ."
+ },
+ "i-uq-12": {
+  "label": "Sau khi hệ thống quyết định đúng hàng ngàn trường hợp liên tiếp, các điều chỉnh bỏ lại kiểm tra lại các từ chối được cờ của nó và bắt đầu phê duyệt bất kỳ điều gì nó khuyến nghị.",
+  "why": "Quá phụ thuộc vào những gì hệ thống tạo ra — in đơn thay vì xem xét phê bình — là rủi ro quản trị khu vực này tồn tại để bắt; nó là một phản ứng con người để thay thế nhiệm vụ, không phải để quyết định độc lập của chính hệ thống, đó là rủi ro của Tính tự chủ."
+ },
+ "i-uq-13": {
+  "label": "Một mô hình cảm xúc đã dự đoán ý kiến công cộng chính xác trong quá trình đào tạo đi lạc hoang dã một khi một sự kiện lớn xảy ra mà dữ liệu đào tạo không bao giờ nắm bắt.",
+  "why": "Tính hiểu biết sâu khi thế giới thay đổi đi khỏi những gì dữ liệu đào tạo nắm bắt là thất bại cốt lõi của khu vực này — mô hình chỉ tốt như những gì nó học từ."
+ },
+ "i-uq-14": {
+  "label": "Một máy dự đoán loại da học chủ yếu từ các tông da nhạt hơn trong các ảnh đào tạo và cung cấp lời khuyên không chính xác cho tất cả mọi người khác.",
+  "why": "Mô hình thực hiện chỉ cũng như dân số đại diện trong dữ liệu đào tạo của nó — khoảng trống ở những gì nó học từ, không phải một cấu trúc hoặc vấn đề hiển thị."
+ },
+ "i-uq-15": {
+  "label": "Một mô hình chấm điểm tín dụng từ chối khoản vay cho các ứng viên nhập cư với tỷ lệ cao hơn so với những người khác có hồ sơ tài chính giống hệt nhau.",
+  "why": "Dữ liệu đào tạo mang lên phía trước phân biệt lịch sử, và mô hình tái sản xuất — thất bại hệ thống nhất của khu vực này chế độ, bởi vì sửa mô hình mà không sửa dữ liệu để lại nguyên nhân gốc không bị xúc phạm."
+ },
+ "i-uq-16": {
+  "label": "Một lỗi định giá sai trên một danh sách sản phẩm nhân bản trên hàng triệu trang trước khi bất kỳ con người nào chú ý.",
+  "why": "Một lỗi nhỏ xíu, nhân lên theo máy tốc độ và âm lượng, vượt quá đánh giá con người và phản ứng theo quy định trước khi bất cứ ai có thể bước vào — thất bại chữ ký của khu vực này."
+ },
+ "i-uq-17": {
+  "label": "Camera giám sát xử lý toàn bộ luồng video thời gian thực của cả thành phố ngay lập tức, cờ hàng ngàn 'hoạt động bất thường' mỗi phút.",
+  "why": "Âm lượng và tốc độ vượt quá những gì bất kỳ người xem xét con người nào có thể theo kịp là những gì làm cho rủi ro của khu vực này khác với một hệ thống chỉ lý luận tồi tệ — vấn đề là thông lượng, không phải logic."
+ },
+ "i-uq-18": {
+  "label": "Công cụ suy thoái bệnh nhân của bệnh viện chạy các dự đoán liên tục, có khối lượng cao trên mọi khu vực, và một sự hiệu chỉnh sai duy nhất snowballs vào một cơn bão báo động trên toàn hệ thống trong vòng một vài giờ.",
+  "why": "Đầu ra nhanh, có khối lượng cao biến một miscalibration nhỏ thành một vấn đề trên toàn hệ thống trước khi nhân viên có thể bắt kịp — thông lượng là bội số rủi ro ở đây, không phải logic cơ bản."
+ },
+ "i-uq-19": {
+  "label": "Cùng một lời nhắc nhủ nhận được một khuyến nghị đầu tư khác nhau trên các ngày liên tiếp, với không có gì khác về yêu cầu thay đổi.",
+  "why": "Đầu ra lấy mẫu từ một chênh lệch trọng số của câu trả lời có thể làm phức tạp cho một giải thích rõ ràng cho một kết quả cụ thể — nhưng điều đó không có nghĩa là kiểm toán là không thể, một ghi lại sai lệm."
+ },
+ "i-uq-20": {
+  "label": "Một hệ thống trên một trang thanh toán luôn luôn tính toán cùng một thuế bán hàng cho cùng một đơn hàng; một hệ thống thứ hai trên cùng một trang gợi ý các sản phẩm hơi khác nhau mỗi lần trang tải lại.",
+  "why": "Động cơ thuế là xác định — luôn luôn cùng một đầu ra cho cùng một đầu vào — trong khi người giới thiệu rút từ một chênh lệch trọng số của các đầu ra có thể mỗi lần; chỉ có hành vi thứ hai thuộc khu vực này."
+ },
+ "i-uq-21": {
+  "label": "Một chatbot được hỏi cùng một câu hỏi tráng miệng ba lần riêng biệt cung cấp ba câu trả lời khác nhau, mỗi câu được rút ra từ một danh sách có trọng số của các tùy chọn gợi ý nhất chuyên tiếp một quy tắc cố định.",
+  "why": "Lấy mẫu từ một chênh lệch trọng số của các câu trả lời có thể thay vì tuân theo một đường dẫn chặt chẽ là chính xác những gì khu vực này quản trị — sửa chữa là hiệu chỉnh tự tin và đặt kỳ vọng, không phải coi bất kỳ một câu trả lời như sự thật cố định."
+ },
+ "i-uq-22": {
+  "label": "Những người xem xét thừa nhận họ không còn có thể theo dõi mà tham số tương tác hàng triệu của mô hình thực sự chuyển động một quyết định cụ thể.",
+  "why": "Đây là về cấu trúc nội bộ — quá nhiều lớp và tham số để theo dõi — không phải về liệu lý do bị ẩn khỏi tầm nhìn; đó là ranh giới với Độ mờ, đó là một vấn đề hiển thị, không phải một cấu trúc."
+ },
+ "i-uq-23": {
+  "label": "Một mô hình phân tích hợp đồng phải cân nhắc ngôn ngữ pháp lý và các yêu cầu khác nhau giữa một tá thẩm quyền cùng một lúc, và không có một người xem xét duy nhất có thể giữ toàn bộ logic trong đầu của họ.",
+  "why": "Độ phức tạp cấu trúc — quá nhiều yếu tố tương tác để theo dõi từ đầu đến cuối — là những gì xác định khu vực này, khác biệt với một mô hình chỉ đơn giản từ chối để hiển thị lý do của nó ở tất cả."
+ },
+ "i-uq-24": {
+  "label": "Logic tối ưu hóa của mô hình định tuyến giao hàng đã trở nên quá phức tạp mà các kỹ sư không còn có thể khắc phục sự cố tại sao nó chọn một tuyến đường thay vì một cách khác.",
+  "why": "Tính phức tạp đánh bại ngay cả những người xây dựng nó là thất bại cấu trúc này khu vực theo dõi — sinh đôi của thất bại hiển thị của Độ mờ, nói rõ ràng vì vậy hai cái không bao giờ bị nhầm lẫn."
+ }
+}

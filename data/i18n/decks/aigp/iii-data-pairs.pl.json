@@ -1,0 +1,74 @@
+{
+ "iii-dp-01": {
+  "a.text": "Używany podczas opracowania, aby dostrajać hiperparametry i złapać overfitting między rundami szkolenia.",
+  "a.why": "Ta rola jest powtarzalna i iteracyjna — model jest dostrajany względem niego raz za razem, to dokładnie dlaczego może nigdy również stojący w ostatecznym werdykcie.",
+  "b.text": "Zamrożony i niezmieniony, aż wszystkie dostrajanie jest zakończone, następnie uruchomić raz dostarczyć ostateczny, bezstronny szacunek błędu modelu.",
+  "b.why": "Ocenianie ostatecznego modelu na zestawie została dostrajana — nagrany egzamin pułapka — tworzy stronniczy szacunek. Tylko zestaw dostrajanie proces nigdy nie dotknął może dać bezstronny ostateczny numer."
+ },
+ "iii-dp-02": {
+  "a.text": "Dokładna wersja skryptu ETL używana do zagregowania funkcje modelu churn jest zalogowana na każdy krok transformacji, od surowego tabela do ostateczne funkcji.",
+  "a.why": "To śledzi podróży — każdy transformacja zestaw danych przechodzi — i transformacja-script wersja jest pojedynczy najbardziej krytyczne dla reproducibility i drift debugging.",
+  "b.text": "Zanim transformacja się dzieje, zestawu danych oryginalne źródło, łańcuch opieki i warunki zbierania są rejestrowane ustalić jego autentyczność.",
+  "b.why": "To jest urodzenie certyfikat — pochodzenia i opieka — nie zapis co zostało następnie zrobione do dane; że zapis należy do drugiej strony tej pary."
+ },
+ "iii-dp-03": {
+  "a.text": "Skalibrowany matematycz szum jest dodany podczas szkolenia, aby żaden pojedyncz szkolenia zapis może być pokazano miał więcej niż pomijalny wpływ na wynik modelu.",
+  "a.why": "To jest matematycz gwarancja o wpływ, nie około gdzie dane fizycz podróży — stosuje czy dane kiedykolwiek opuści jego źródło.",
+  "b.text": "Każdy szpital trains lokalnie na jego własnym pacjenta rekordy, a jedynie wynikowy aktualizacje — nigdy surowy rekordy — podróż do centralny serwer do agregacji.",
+  "b.why": "Co być chronione tutaj jest które dane opuści stronie, nie ile każdy pojedyncz zapis może być wnioskowane z wynik — surowy rekordy nigdy podróż, pełny stop."
+ },
+ "iii-dp-04": {
+  "a.text": "Standardowe dokument określa zestawu danych motywacja, składu, zbierania proces i zalecane użytki, zanim żaden model jest szkolone na niego.",
+  "a.why": "To dokumenty surowy materiały sami, niezależnie od jakiekolwiek model, który będzie szkolone na niego.",
+  "b.text": "Pojedyncz wersja cel, jej szkolenia/walidacja/test dane, jej wydajności metryki i jego znane ograniczenia są podsumowani dla ten decyduje, czy wdrażać to.",
+  "b.why": "To jest objęty jeden konkretny wersja, nie zestawu danych za to — etykieta odżywiania dla szkolone artefaktu, odrębnie od zestawu danych-poziom objęty drugiej strony."
+ },
+ "iii-dp-05": {
+  "a.text": "Napastnik pracuje wstecz z system wyniki do odbudowy przybliżenia rzeczywisty rekordy został szkolone na.",
+  "a.why": "Ten atak odzyskuje szkolenia dane zawartość z co system tworzy — odbudowy, nie tak/nie czek.",
+  "b.text": "Napastnik odbudowy nic, tylko potwierdza czy jeden konkretny osoba danych było zawarte w szkolenia ustaw na wszystko.",
+  "b.why": "Ten atak odpowiedzi binarny ustawiać-członkostwo pytanie; to nigdy odzyskuje rejestru zawartość sposób drugiej strony działa."
+ },
+ "iii-dp-06": {
+  "a.text": "Mieszkaniec UE wycofuje zgodę, i firma musi wymazać ich osobowych rekordy z jego systemy.",
+  "a.why": "To usunięcia surowy dane sami w odpowiedź do prawa żądanie — argument że dane pomaga trenować model nie przesłonić wymazania prawe raz zgodę zostaje wycofana.",
+  "b.text": "Nawet po tego przesunięcia rekordy są szlify, model sami muszą być poprawionym, ponieważ to już nauczył się wzory z dane, które nigdy powinny być używane.",
+  "b.why": "To usunięcia co model wchłonął z niewłaściwie używane dane — odrębne remedium, ponieważ model może zatrzymać efekt daleko po bazowe rekordy są wymazane."
+ },
+ "iii-dp-07": {
+  "a.text": "Udokumentowany ocena linki dane charakterystyki i objętym na model konkretny przeznaczony kontekst użytki.",
+  "a.why": "To jest około dopasowania dane do konkretny użytek, nie dane wiek lub objętością — duży, niedawne zestawu dane może wciąż nie ten czek, jeśli to nigdy oceniano względem rzeczywisty sprzedaż przypadku.",
+  "b.text": "Zestawu dane jest sprawdzony potwierdź to zwierciadło populacja model będzie rzeczywiście stosować do — traktowany jak pojedyncz najbardziej ważne uprzedzenia mitigator w cały potoku.",
+  "b.why": "To jest zwierciadło-mecz pytanie o populacja; po prostu augmenting skośny zestawu dane z syntetycz przykłady nie rozwiązuje luka tutaj, ponieważ bazowe administracyjna pytanie czy oryginalne dane była stosowna nigdy dostała odpowiedź."
+ },
+ "iii-dp-08": {
+  "a.text": "Zestawu dane jest sprawdzony potwierdź to nie został zmieniony lub uszkodzony w każdy punkt między jego oryginalne źródło i jego bieżącego użytki.",
+  "a.why": "To jest ochrona-od-zmiana nieruchomość, odrębnie od czy zawartość sami jest dokładna lub niezawodna.",
+  "b.text": "Ten sam zestawu dane jest oddzielnie sprawdzony potwierdź to zostaje dokładna i niezawodna, gdy to dzielone i ponownie używane około inny systemy i środowiska.",
+  "b.why": "To pyta czy zawartość sami trzyma górze między konteksty; zestawu dane może być doskonale bez zmian, podczas gdy wciąż bycie przestarzone lub niespójna w co to faktycznie powiada."
+ },
+ "iii-dp-09": {
+  "a.text": "Stawka pozytywny wyniki jest porównywane między chroniony grupy na model rzeczywisty, rzeczywisty-świat wynik dystrybucji.",
+  "a.why": "Ten metryka porównanie agregat wynik stawki między grupy na dane gdy to faktycznie stoi.",
+  "b.text": "Jeden kandydat chroniony atrybut jest odwrócony, natomiast każdy inny wkład zostaje identyczna, a wynik jest sprawdzony każdy zmianę.",
+  "b.why": "To testuje jeden zapis przeciwko jego własny hipotetycz bliźniak, nie grupy-poziom wynik stawki — model może przejść zagregować czek, natomiast wciąż nie powiódł się tego indywidualny-poziom jeden."
+ },
+ "iii-dp-10": {
+  "a.text": "Waga wartości wewnątrz sieci są aktualizowane przez backpropagation jako szkolenia zmniejsza błąd przewidywania.",
+  "a.why": "To są uczony wartości który określić jak wkład dane są zmieniane w wynik — nie istnieją finał forma, aż szkolenie dzieje.",
+  "b.text": "Szybkość uczenia się jest naprawiona przez zespół zanim szkolenia kiedykolwiek zaczyna, i zostaje niezmieniony, natomiast sieć uczy się.",
+  "b.why": "To są wybrany z wyprzedzeniem do kontrola jak uczenie się dzieje — wejścia do szkolenia, nie wyniki tego."
+ },
+ "iii-dp-11": {
+  "a.text": "Sprzedaży-przewidywanie model wykonuje prawie doskonale na historyczną dane to szkolone na, następnie robi znaczny błędy przewidywanie sprzedaży dla genuinely nowy produkty.",
+  "a.why": "Model zapamiętał dziwaczności specyficzne do jego szkolenia dane zamiast nauczyć wzory, że przenieść — silny na znane, słaby na nowy.",
+  "b.text": "Churn model z bardzo mało parametry i jedynie handflul funkcje wykonuje słabo na obie dane to szkolone na i na nowy klienci.",
+  "b.why": "Słaba wydajność wszędzie, zawartym szkolenia dane, sygnały model nigdy nie miał wystarczająco złożoność do złapania wzór w pierwszą kolejność — przeciwieństwo nieudane modo od zapamiętanie to zbyt dobrze."
+ },
+ "iii-dp-12": {
+  "a.text": "Głos-rozpoznanie system szkolone tylko kilka tysiące audio klipy zmagania do złapania variability rzeczywisty-świat mowy.",
+  "a.why": "To pyta czy tam jest wystarczająco dane, pełny koniec, aby nauczyć się znaczący wzory na wszystko — zbyt mało dane tutaj oznacza model nigdy nie miał szansa do ogólny.",
+  "b.text": "Medycyna AI szkolone na dane od jeden kraj wykonuje dobrze w jego pilot, następnie zmagania raz rozszerzona do pacjenci z inny genetycz tła i opieka systemy gdzie.",
+  "b.why": "To pyta czy zestawu dane, że było dosyć do pilot może wciąż wspierać ekspansja do nowy populacje i konteksty — odrębne pytanie od czy tam było dosyć dane do pilot w pierwszą kolejność."
+ }
+}

@@ -1,0 +1,45 @@
+{
+ "model-decisions": {
+  "hint": "Kéo mỗi tình huống vào phản hồi nó yêu cầu. Một số phản hồi trên bảng ở đó để cám dỗ bạn."
+ },
+ "model-decisions-01": {
+  "label": "Một trợ lý phải trả lời từ các chính sách riêng tư thay đổi mỗi tuần và trích dẫn nguồn hiện tại.",
+  "sub": "Chính Sách Thường Xuyên Thay Đổi",
+  "why": "RAG truy xuất bằng chứng riêng tư hiện tại tại thời gian yêu cầu và hỗ trợ trích dẫn. Sự cân bằng: Fine-tuning có thể điều chỉnh hành vi, nhưng nó là cơ chế kém cho các sự kiện thay đổi thường xuyên."
+ },
+ "model-decisions-02": {
+  "label": "Hàng nghìn ví dụ cho thấy một phong cách báo cáo ổn định mà model cơ sở không thể tái tạo một cách nhất quán.",
+  "sub": "Định Dạng Chuyên Gia Ổn Định",
+  "why": "Fine-tuning phù hợp với hành vi tái diễn được minh họa bởi một tập ví dụ được tuyển chọn. Sự cân bằng: Few-shot prompting vẫn nên được thử trước tiên khi nó đáp ứng yêu cầu chất lượng với độ phức tạp thấp hơn."
+ },
+ "model-decisions-03": {
+  "label": "Một model có khả năng phải trích xuất năm trường vào một đối tượng JSON đã được xác thực; không cần kiến thức mới.",
+  "sub": "Trích Xuất JSON Chặt Chẽ",
+  "why": "Các hướng dẫn rõ ràng, các ví dụ, một schema, và xác thực địa chỉ định dạng mà không thay đổi trọng số model. Sự cân bằng: Fine-tuning chỉ có lý do khi trích xuất dựa trên lời nhắc liên tục thất bại ở tỷ lệ và chất lượng cần thiết."
+ },
+ "model-decisions-04": {
+  "label": "Một model phải nội tại hóa thuật ngữ chuyên biệt từ một kho dữ liệu khoa học lớn không được gắn nhãn.",
+  "sub": "Ngôn Ngữ Miền Ở Quy Mô",
+  "why": "Pretraining liên tục điều chỉnh các biểu diễn ngôn ngữ của model bằng cách sử dụng số lượng lớn văn bản miền. Sự cân bằng: RAG vẫn được ưa thích khi nhu cầu là quyền truy cập vào các sự kiện thay đổi thay vì thích ứng ngôn ngữ miền sâu hơn."
+ },
+ "model-decisions-05": {
+  "label": "Hệ thống phải kiểm tra một đơn hàng, yêu cầu phê duyệt, gọi API hoàn lại, và báo cáo kết quả.",
+  "sub": "Trợ Lý Hành Động",
+  "why": "Một tác nhân sử dụng công cụ có thể điều phối các bước, nhưng mỗi công cụ cần quyền hạn hẹp, xác thực và cổng phê duyệt. Sự cân bằng: Một quy trình xác định có thể an toàn hơn khi chuỗi được sửa chữa và không yêu cầu lập kế hoạch hướng model."
+ },
+ "model-decisions-06": {
+  "label": "Một hệ thống khiếu nại phải suy luận trên một bức ảnh thiệt hại cùng với mô tả sự cố viết.",
+  "sub": "Kiểm Tra Hình Ảnh và Văn Bản",
+  "why": "Một model đa phương thức có thể cùng giải thích các đầu vào trực quan và văn bản. Sự cân bằng: Các mô hình chuyên gia tầm nhìn và văn bản riêng biệt có thể thắng khi các đầu ra độc lập, kiểm soát, hoặc chi phí thấp hơn là quan trọng hơn."
+ },
+ "model-decisions-07": {
+  "label": "Mười triệu bản ghi ngắn phải được phân loại vào ban đêm dưới một ngân sách chặt chẽ sau khi nhãn có sẵn.",
+  "sub": "Phân Loại Đơn Giản Khối Lượng Cao",
+  "why": "Một bộ phân loại được đánh giá nhỏ hơn có thể cung cấp chất lượng đầy đủ với chi phí suy luận hàng loạt thấp hơn nhiều. Sự cân bằng: Một mô hình nền tảng có thể tăng tốc độ tạo mẫu hoặc tạo nhãn, nhưng nên kiếm chi phí sản xuất của nó thông qua chất lượng được đo lường."
+ },
+ "model-decisions-08": {
+  "label": "Các quy tắc được công bố hoàn toàn xác định đủ điều kiện và mọi quyết định phải có thể tái tạo và có thể kiểm toán.",
+  "sub": "Chính Sách Đủ Điều Kiện Chính Xác",
+  "why": "Các quy tắc chính xác, hoàn chỉnh nên được thực hiện trực tiếp thay vì được xấp xỉ bởi một mô hình xác suất. Sự cân bằng: AI có thể hỗ trợ tiếp nhận tài liệu hoặc giải thích mà không sở hữu quyết định có thẩm quyền."
+ }
+}

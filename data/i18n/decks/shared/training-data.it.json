@@ -1,0 +1,101 @@
+{
+  "training-data": {
+    "hint": "La distinzione importante è il ruolo dei dati, il formato o l'idoneità per la popolazione reale; questi dettagli determinano cosa può essere imparato e se la valutazione è affidabile."
+  },
+  "training-data-01": {
+    "label": "La porzione di dati utilizzata per imparare i parametri del modello.",
+    "why": "La porzione di dati utilizzata per imparare i parametri del modello."
+  },
+  "training-data-02": {
+    "label": "Dati trattenuti utilizzati durante lo sviluppo per confrontare le scelte e affinare gli iperparametri.",
+    "why": "Dati trattenuti utilizzati durante lo sviluppo per confrontare le scelte e affinare gli iperparametri."
+  },
+  "training-data-03": {
+    "label": "Dati intoccati utilizzati alla fine per stimare le prestazioni su esempi invisibili.",
+    "why": "Dati intoccati utilizzati alla fine per stimare le prestazioni su esempi invisibili."
+  },
+  "training-data-04": {
+    "label": "Esempi che includono la risposta target richiesta per l'apprendimento supervisionato.",
+    "why": "Esempi che includono la risposta target richiesta per l'apprendimento supervisionato."
+  },
+  "training-data-05": {
+    "label": "Esempi senza risposte target, spesso utilizzati per l'apprendimento non supervisionato o auto-supervisionato.",
+    "why": "Esempi senza risposte target, spesso utilizzati per l'apprendimento non supervisionato o auto-supervisionato."
+  },
+  "training-data-06": {
+    "label": "Dati organizzati in campi definiti, righe, colonne o record.",
+    "why": "Dati organizzati in campi definiti, righe, colonne o record."
+  },
+  "training-data-07": {
+    "label": "Contenuto in formato libero come testo, immagini, audio e video.",
+    "why": "Contenuto in formato libero come testo, immagini, audio e video."
+  },
+  "training-data-08": {
+    "label": "Esempi che riflettono le persone, le condizioni e i casi che il modello incontrerà in uso.",
+    "why": "Esempi che riflettono le persone, le condizioni e i casi che il modello incontrerà in uso."
+  },
+  "training-data-09": {
+    "label": "Le informazioni non disponibili al momento della previsione per incidente entrano nell'addestramento e gonfiato le prestazioni misurate.",
+    "why": "Le informazioni non disponibili al momento della previsione per incidente entrano nell'addestramento e gonfiato le prestazioni misurate."
+  },
+  "training-data-10": {
+    "label": "Una classe target appare molto più spesso di un'altra, rendendo l'accuratezza potenzialmente fuorviante.",
+    "why": "Una classe target appare molto più spesso di un'altra, rendendo l'accuratezza potenzialmente fuorviante."
+  },
+  "training-data-11": {
+    "label": "Applicare etichette di riferimento verificate a esempi grezzi affinché un modello supervisionato abbia risposte da cui imparare.",
+    "why": "La qualità delle etichette limita la qualità del modello: etichette rumorose o incoerenti insegnano al modello la mappatura sbagliata, per quanti dati ci siano."
+  },
+  "training-data-12": {
+    "label": "La risposta corretta verificata con cui la previsione del modello viene confrontata durante l'addestramento e la valutazione.",
+    "why": "Senza una risposta di riferimento affidabile, né la perdita di addestramento né le metriche di valutazione significano nulla: entrambe si misurano rispetto a essa."
+  },
+  "training-data-13": {
+    "label": "Creare esempi di addestramento aggiuntivi trasformando quelli esistenti, come capovolgere immagini o parafrasare testo.",
+    "why": "Estende un dataset piccolo e insegna l'invarianza a variazioni innocue, riducendo l'overfitting senza raccogliere nuovi dati."
+  },
+  "training-data-14": {
+    "label": "Esempi generati artificialmente, usati quando i dati reali sono scarsi, sensibili o privi di casi rari.",
+    "why": "Colmano lacune che la raccolta reale non può coprire (eventi rari, record limitati dalla privacy), ma ereditano le assunzioni del loro generatore."
+  },
+  "training-data-15": {
+    "label": "Riequilibrare un dataset sbilanciato duplicando o generando esempi aggiuntivi della classe minoritaria.",
+    "why": "Dà alla classe rara abbastanza peso per essere imparata, con il rischio di overfitting su esempi minoritari ripetuti o sintetici."
+  },
+  "training-data-16": {
+    "label": "Riequilibrare un dataset sbilanciato scartando alcuni esempi della classe maggioritaria.",
+    "why": "Eguaglia l'influenza delle classi a basso costo, ma nel processo butta via segnale reale della classe maggioritaria."
+  },
+  "training-data-17": {
+    "label": "Un attributo di input individuale e misurabile, come età, valore di un pixel o importo di una transazione, da cui il modello impara.",
+    "why": "I modelli vedono solo le feature che ricevono; cosa viene incluso, e come viene codificato, delimita ciò che può essere imparato."
+  },
+  "training-data-18": {
+    "label": "Trasformare input grezzi in attributi più informativi, come rapporti, intervalli o codifiche, prima dell'addestramento.",
+    "why": "Buone feature derivate permettono a modelli più semplici di catturare il pattern; feature scadenti costringono modelli complessi a riscoprirlo nel rumore."
+  },
+  "training-data-19": {
+    "label": "Ruotare quale porzione di dati viene trattenuta affinché ogni esempio sia usato sia per l'addestramento sia per la valutazione.",
+    "why": "Fare la media su più fold trattenuti dà una stima più stabile della generalizzazione rispetto a una singola divisione, specialmente su dataset piccoli."
+  },
+  "training-data-20": {
+    "label": "Controlli di completezza, accuratezza, coerenza e attualità applicati prima che i dati vengano usati per l'addestramento.",
+    "why": "I difetti fluiscono a valle: un modello addestrato su record incompleti o incoerenti codifica quei difetti come comportamento."
+  },
+  "training-data-21": {
+    "label": "Distorsione sistematica introdotta quando il metodo di raccolta favorisce alcune persone o alcuni casi rispetto ad altri.",
+    "why": "Un modello può essere equo solo verso i casi che ha visto; una raccolta distorta produce previsioni distorte per quanto buono sia l'algoritmo."
+  },
+  "training-data-22": {
+    "label": "Un esempio estremo o anomalo che si colloca molto al di fuori del pattern del resto dei dati.",
+    "why": "Una manciata di punti estremi può trascinare parametri e scalatura; decidere se sono errori o casi reali cambia il modello."
+  },
+  "training-data-23": {
+    "label": "Una divisione consapevole dell'ordine in cui il modello si addestra sui periodi precedenti e viene valutato su quelli successivi.",
+    "why": "Mescolare le serie temporali lascia che il modello sbirci il futuro, gonfiando i punteggi; una valutazione onesta deve rispettare l'ordine di arrivo."
+  },
+  "training-data-24": {
+    "label": "Una divisione che mantiene le proporzioni di classe di ogni sottoinsieme uguali a quelle dell'intero dataset.",
+    "why": "Divisioni casuali di dati sbilanciati possono lasciare un fold completamente privo della classe rara; stratificare mantiene ogni valutazione rappresentativa."
+  }
+}

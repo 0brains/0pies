@@ -1,0 +1,109 @@
+{
+ "service-selection": {
+  "hint": "İki soru kararı verir: giriş neye benziyor (metin, form, görüntü, ses, video veya vektörler) ve iş çıkarmak/analiz etmek, tercüme etmek, arama/endeks yapmak veya üretmek? Diğer işi yapan, girişi paylaşan komşu neredeyse her zaman dikilmiş seçenektir."
+ },
+ "ss-001": {
+  "label": "PDF'lerden, fotoğraflardan ve çağrı kayıtlarından yapılandırılmış JSON'a fatura alanlarını düz dilde açıkla ve çıkar",
+  "why": "Çok modlu giriş üzerinde düz dil alan açıklaması → yapılandırılmış JSON, İçerik Anlama; Belge Zekası ön oluşturma belirteçlerdir."
+ },
+ "ss-002": {
+  "label": "Standart makbuzlar ve kimlik kartlarından önceden oluşturulmuş bir modelle yüksek hacimli belirleyici çıkarma",
+  "why": "Bilinen form türleri — faturalar, makbuzlar, kimlikler, işletme kartları — Belge Zekası ön oluşturma alanıdır."
+ },
+ "ss-003": {
+  "label": "İngilizce metinden yazılı ürün kılavuzlarını Japonca metne çevir",
+  "why": "Tercüman metin-metin-; Azure Konuşma, ses dahil çevresi — 6 sayı corpus kafa karışıklığı (çift #29)."
+ },
+ "ss-004": {
+  "label": "Çıkarılan fatura verilerini endeksl, böylece aşağı akış uygulamaları ve alabilirsiniz",
+  "why": "CU çıkarır; AI Arama endeksleri ve alır aşağı akış (endeksleyici, skillset, bilgi deposu) — çıkarma ve alma farklı hizmetlerdir (çift #22)."
+ },
+ "ss-005": {
+  "label": "Tam anahtar söz eşleştirmesi yerine anlamsal benzerlikle ürün açıklamalarını ara",
+  "why": "Gömme vektörleri anlamsal karşılaştırma (metin gömülü-3-büyük) için metni vektörlere çevir — alırlar ve karşılaştırırlar, hiçbir zaman içerik oluşturmazlar (çift #18)."
+ },
+ "ss-006": {
+  "label": "Kullanıcının sohbet iletisine eklediği fotoğraf hakkında serbest şekilli soruları yanıtla",
+  "why": "Görüntü giriş, görüntü içeriği parçalarını okuyan dağıtılan çok modlu model gerekir; görüntü oluşturma diğer yöne gider ve ImageAnalysisClient/Vision sabit özellikler döndürür — farklı bir API ve uç nokta (çift #23)."
+ },
+ "ss-007": {
+  "label": "Uygulamanın düz metin olarak gösterebilmesi için fotoğraflanmış sokak levhasından yazdırılan metni oku",
+  "why": "OCR/Oku, genel görüntüler üzerinde temel Vision yeteneği; Belge Zekası yapılandırılmış form yerleşimlerini hedefler, tesadüfi sokak sahne metni değil."
+ },
+ "ss-008": {
+  "label": "Gelen metni otomatik olarak kaynak dili algıla, aynı çağrıda İngilizceye çevirden önce",
+  "why": "Tercüman'ın dil otomatik algılaması, tercüme hattının parçası olarak satır içi çalışır; AI Dil Dili Algılaması, tercüme çağrısının dışında kullanılan bağımsız bir metin analitikleri özelliğidir."
+ },
+ "ss-009": {
+  "label": "Kusurlu parçaları bir üretim hattında kabul edilebilir olanlardan ayırmak için kendi etiketli fotoğraflarında bir model eğit",
+  "why": "Özel Vizyon, verilerine etiketlenmiş görüntülerden yönetilen eğitim döngüsüne sahip sınıflandırma/algılama yapı; genel Vizyon yalnızca sabit ön oluşturulmuş özellikleri döndürür ve verilerinizde yeniden eğitilenemez."
+ },
+ "ss-010": {
+  "label": "Kişinin kimliğini doğrulamak için bir rozet tarayıcı fotoğrafını çalışan fotoğrafları rosterine karşı eşle",
+  "why": "1:1 doğrulama ve kayıtlı yüzler karşı 1:N tanımlaması Face'ın özel yeteneklerdir; genel Vizyon analizi kimlik eşleştirme özelliğine sahip değildir."
+ },
+ "ss-011": {
+  "label": "Belge hattından çıkarılan anahtar cümleleri, duyguyu ve varlıkları, aşağı akış uygulamalarının arayabileceği bir depoya kalıcı tutuştur",
+  "why": "Skillset AI Dili aramak için çağırabilir, ancak kalıcı, sorgulanabilir bilgi deposu AI Arama'ya aittir — zenginleştirme ve alma ayrı hat aşamaları."
+ },
+ "ss-012": {
+  "label": "Kütüphaneden destek çizimleri ham metin dışından duyguyu, anahtar cümleleri ve adlandırılmış varlıkları doğrudan çekiliş",
+  "why": "Duygu, anahtar cümle çıkarılması ve NER, AI Dil metin analitikleri özellikleridir; AI Arama yalnızca bu çıktıyı zenginleştirme adımı olarak tüketir, onu üretmez."
+ },
+ "ss-013": {
+  "label": "Fabrika sensöründeki olağandışı tepki zamanla akar olarak zaman serisinde işaretlendir",
+  "why": "Zaman serisi verilerine yönelik amaç tarafından oluşturulmuş tek değişkenli/çok değişkenli anormallik algılaması, Anormallik Dedektörü'ün işidir; genel bir ML çalışma alanı, kendinizi tasarlamanız, eğitmeniz ve o modeli yönetmeniz gerekir."
+ },
+ "ss-014": {
+  "label": "Kayıtlı iki kişi destek araması bir transkript olsun ses açılı hoparlör dönüşleri ile",
+  "why": "Ses-metin ve konuşmacı diarization ham ses üzerinde doğrudan Konuşma yeteneği olarak çalışır; AI Dil yalnızca transkript yapılmış zaten olan metinle çalışır."
+ },
+ "ss-015": {
+  "label": "Video ses açacağı için video için yazılı İngilizce pazarlama kopyasını anlatıcı ses çevir",
+  "why": "Sinir metin-ses sentezi, yerel Konuşma yeteneğidir; Azure OpenAI'dan konuşulan ses üretmek ayrı bir çok modlu/realtime dağıtım gerekir ve Tercüman ses hiç dokunmaz."
+ },
+ "ss-016": {
+  "label": "Şiddetli veya nefret dolu dili kullanıcı tarafından sunulan sohbet iletileri modele ulaşmadan önce işaretle",
+  "why": "Ayırt cevaplar ve denetim kategorileri İçerik Güvenliği işidir, giriş ve çıkışa; AI Dil'ın KBV algılaması bir gizlilik özelliği, zararlı içerik sınıflandırıcı değildir."
+ },
+ "ss-017": {
+  "label": "Müşterinin telefon numarasını ve e-posta adresini bulan ve sohbet transkripti tutulmadan önce düzeltmek için izole et",
+  "why": "KBV Algılaması ve Redaksyon, telefon numaraları ve e-posta adresleri gibi kişisel veri bulup maskeleme için özel bir AI Dil özelliğidir; İçerik Güvenliği bunun yerine zararlı içerik kategorilerini sınıflandırır — gizlilik endişesi değil, güvenlik."
+ },
+ "ss-018": {
+  "label": "Milyonlarca önceden hesaplanmış gömme vektörü sakla ve sorgula, böylece en yakın komşu arama milisaniye cinsinden döndürür",
+  "why": "Vektör araması ve sorgu zamanında depolama AI Arama'nın işidir; Gömme modelleri vektörleri ilk yerde üretir, dizin veya almaz."
+ },
+ "ss-019": {
+  "label": "Çalıştırılmakta olan aracının araç çağrısını canlı bir hava durumu API'sine yönlendir ve sonucu geri aynı konuşmaya besle",
+  "why": "Çalıştırma sırasında canlı harici API'ye karşı bir işlev/özel araç çağrı yapmak, Ajan Hizmeti'nin düzenleme katmanıdır; çıplak bir sohbet tamamlama çağrısının kendi kendine araç çağrısı döngüsü yoktur."
+ },
+ "ss-020": {
+  "label": "Mevcut bir arama endeksini Foundry acentesine ekle, böylece yanıtları temeli ve alıntılanıp endeksli belgelerinize dayalı",
+  "why": "Bir bilgi kaynağını ajan'ın zemin/alıntı davranışına kablolu, Ajan Hizmeti üzerinde yapılandırılır; endeks kendisi yalnızca sorguları işler, ajan'ın kişiliği, araçları veya bilgi kablolu sahibi olmaz."
+ },
+ "ss-021": {
+  "label": "Düz İngilizce açıklamadan hiç başlangıç fotoğrafı olmadan fotogerçekçi ürün sahte görüntü oluştur",
+  "why": "Metin-görüntü oluşturma DALL-E'nin işidir; çok modlu sohbet modeli giriş görüntüsü okur ama boyamaz ve Vizyon yalnızca zaten var olan görüntüleri analiz eder."
+ },
+ "ss-022": {
+  "label": "Yalnızca kısa, basit istekleri işleyen bir bütçe dağıtımında maliyete duyarlı bir yardımcıyı çalıştır",
+  "why": "Phi sınıfı küçük dil modeli bazı yeteneği çok daha küçük ayak izi ve düşük maliyet için takas eder, hafif, bütçe kısıtlanmış isteklere uyar; basit metin için tam sınır modeli dağıtma klasik aşırı sağlamadır."
+ },
+ "ss-023": {
+  "label": "Bir kullanıcı konuşulan soru ve aynı düşük latens dönüşte konuşulan yanıt duysun, hiçbir ayrı tanıyıcı/sentetizleyici çağrıları kablolu olmadan",
+  "why": "gpt-realtime / Voice Live, tek düşük latens konuşma giriş, konuşma çıkış oturumu; Azure AI Konuşma çıplaklık, manuel SpeechRecognizer→process→SpeechSynthesizer hattını kablolu demektir, latens ve entegrasyon kaybedersek — realtime API'nin tam olarak yerini aldığı şey."
+ },
+ "ss-024": {
+  "label": "Dağıtılan modelin yanıtını, sağladığın şemayı eşleştiren iyi biçimlenmiş JSON olarak al, onu çerçeveye doğru bir şekilde çekme olmadan",
+  "why": "Yapılandırılmış çıkış, dağıtılan sohbet/tamamlama modelinde çağrı başına parametredir; ince tuning kalıcı olarak model ağırlıklarını değiştirir ve yalnızca bir yanıtın formatını şekillendirmek için gereksizdir."
+ },
+ "ss-025": {
+  "label": "Yazma stilini yüzlerce etiketli örnek transkriptler kullanarak her gelecek yanıtta pişir, böylece asla yeniden istenmesi gerekli olmaz",
+  "why": "İnce ayar, gösterilmiş davranışı yeni ağırlıklarda pişiren eğitim geçişidir, çağrılar boyunca persists; hisse senedi sohbet/tamamlama dağıtımı yalnızca o çağrının istemi de yansıtır ve çok modlu model, stil persists olmadan giriş türlerini değiştirir."
+ },
+ "ss-026": {
+  "label": "Konuşulan istemler dağıtılan ses uyumlu model karşı Foundry sohbet çalma alanında doğrudan test et, SDK kod yaz olmadan",
+  "why": "Ses uyumlu çok modlu dağıtım doğrudan sohbet çalma alanında egzersiz yapabilir; Voice Live/gpt-realtime, sürekli konuşma konuşması için inşa edilen adanmış düşük latens realtime oturum API'sidir."
+ }
+}

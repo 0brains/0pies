@@ -1,0 +1,62 @@
+{
+ "i-vp-01": {
+  "a.text": "A vision system keeps classifying correctly on adversarially perturbed images.",
+  "a.why": "Withstanding hostile or novel input while maintaining accuracy and functionality is this side's whole job — the model never leaves its normal performance band.",
+  "b.text": "After degraded sensor inputs, the system returns to its specified performance limits.",
+  "b.why": "Maintaining performance within defined acceptable limits despite real-world or adversarial conditions, and recovering to them, is the other half — a system can be resilient without ever facing a deliberate attack."
+ },
+ "i-vp-02": {
+  "a.text": "A synthetic audio clip of a public official is fabricated and spread with the deliberate goal of causing harm.",
+  "a.why": "Deliberate fabrication with intent to harm is the defining feature — the same false content shared by someone who believes it's real belongs on the other side.",
+  "b.text": "A blogger shares a deepfake video believing it's authentic, then corrects the record once the fabrication comes to light.",
+  "b.why": "No intent to deceive — the sharer believed the content was true — is what separates this from the deliberate-harm side of the pair."
+ },
+ "i-vp-03": {
+  "a.text": "Large numbers of fake, low-fare rides are injected into a fare-prediction model's training dataset from one source.",
+  "a.why": "Corrupting what the model learns from, before it's ever deployed, is a training-time attack — the other side happens after the model is already live.",
+  "b.text": "A malicious user crafts input data that tricks an already-deployed triage model into labeling urgent cases as non-urgent.",
+  "b.why": "Fooling a live model's outputs with crafted inputs at inference time is the other half of the pair — the model's training data was never touched."
+ },
+ "i-vp-04": {
+  "a.text": "Documentation discloses what data and logic went into building the system, before anyone asks about a specific outcome.",
+  "a.why": "This is openness about the system's design and data — a property of the system as a whole, not of any one decision.",
+  "b.text": "A specific applicant asks why their case was decided the way it was, and the organization can walk through that one output in terms a person can follow.",
+  "b.why": "The official calibration is that a decision is explainable when its input, output and functioning are understandable to human beings — a per-decision property, distinct from transparency's system-wide openness."
+ },
+ "i-vp-05": {
+  "a.text": "Confidential patient data becomes publicly accessible because a cloud storage bucket was misconfigured, with no attacker involved.",
+  "a.why": "Unintentional exposure through misconfiguration, not malicious activity, is what keys this side.",
+  "b.text": "An external actor deliberately bypasses access controls to obtain the same kind of data.",
+  "b.why": "Deliberate, unauthorized access by a malicious actor is the other half — the same category of harm, the opposite cause."
+ },
+ "i-vp-06": {
+  "a.text": "A manufacturing defect-detector reaches near-perfect accuracy on the exact production-line photos it trained on, then misses obvious cracks in photos from a different factory line.",
+  "a.why": "Excellent on the training set and poor on anything new is this side's signature — the model memorized the specific photos rather than learning what a crack actually looks like.",
+  "b.text": "A defect-detector built with only a couple of basic image filters and no deeper layers misses cracks even in the very photos it trained on.",
+  "b.why": "Poor performance everywhere, including on the training data itself, signals the model never had enough complexity to capture the pattern in the first place."
+ },
+ "i-vp-07": {
+  "a.text": "A radiologist stops double-checking a scan-triage tool's low-risk calls after months of accurate flags, and starts signing off on whatever it labels benign.",
+  "a.why": "Over-reliance on AI outputs without critical human oversight is this side's mechanism — a human failure to keep checking, not a flaw baked into the data.",
+  "b.text": "A hiring tool trained on past hiring records rejects more candidates from minority groups, because those records already reflected who got hired before.",
+  "b.why": "The flaw is inherited from the training data itself, carrying forward patterns from a discriminatory past — distinct from over-trusting a tool's output once it's already deployed."
+ },
+ "i-vp-08": {
+  "a.text": "A self-driving car independently decides the best route to an address the driver provides, but does nothing outside that one task.",
+  "a.why": "Operating within a single, limited task domain, however capable at that task, is what keeps a system on this side of the line.",
+  "b.text": "The same car would also need to reason, learn, and act across any task a human could, not just driving, to count as this instead.",
+  "b.why": "Full human cognitive ability across domains, not just excelling at one task, is what the other side requires — and it remains theoretical."
+ },
+ "i-vp-09": {
+  "a.text": "A governance committee comparing two vendors asks how many billions of weight values each network ended up with once training was complete.",
+  "a.why": "This is the definitional line this pair tests: an internal value that training itself discovers and adjusts, which doesn't exist in final form until training is done.",
+  "b.text": "The same committee separately asks what learning rate and batch size the engineering team fixed before training ever began.",
+  "b.why": "These are choices a person makes in advance to control how training runs — inputs the team sets, not values training discovers on its own."
+ },
+ "i-vp-10": {
+  "a.text": "A random forest model learns to draw the line between fraudulent and legitimate transactions.",
+  "a.why": "Learning the boundary between existing classes, rather than producing new examples, is this side's job.",
+  "b.text": "A different model, given the same transaction history, produces entirely new synthetic transaction records that never happened.",
+  "b.why": "Producing new content rather than classifying existing inputs is the other half of the pair."
+ }
+}

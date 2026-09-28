@@ -1,0 +1,62 @@
+{
+ "iv-ap-01": {
+  "a.text": "Das Eigenwissen der Organisation wird durch zusätzliche Trainingsrunden direkt in die Modell-Gewichte trainiert und wird ein ständiger Bestandteil dessen, was das Modell 'kennt'.",
+  "a.why": "Das Backen von Domain-Daten in die Gewichte bedeutet, das Modell erbt jedes Memorisierungs- oder Leckagenrisiko, das diese Daten haben — ein synthetischer Datengenerator, auf diese Weise bei Produktionsdatensätzen angepasst, kann immer noch Spuren der Originale lecken, auch nach Anonymisierung, und die Verwendung schülerspezifischer Daten auf diese Weise schafft sein eigenes Durchsatz-Risiko.",
+  "b.text": "Das Eigenwissen der Organisation bleibt in einem externen, separat gepflegten Speicher und wird nur im Moment jeder Frage abgerufen.",
+  "b.why": "Nichts über dieses Wissen wird vom Modell selbst gelernt — es wird pro Abfrage frisch abgerufen, was genau dazu führt, dass es diese Monats-Vorgaben widerspiegeln kann, ohne einen einzigen Trainings-Durchlauf. Die Anpassungs-Wahl, die hier getroffen wird, ist das, was den Assurance-Aufwand bestimmt, den das Team am Ende übernimmt."
+ },
+ "iv-ap-02": {
+  "a.text": "Ruft die aktuellen Policy-Dokumente ab, um eine einzelne Antwort zu gründen, die dann ein Mensch liest und handelt.",
+  "a.why": "Die Aufgabe des Systems endet bei einer gut gründenden Antwort; jede bedeutsame Aktion nachgelagert ist noch für einen Menschen zu erledigen.",
+  "b.text": "Plant eine Multi-Schritt-Aufgabe selbst und führt Aktionen über Buchungs- und Bezahlwerkzeuge mit minimaler menschlicher Überprüfung bei jedem Schritt aus.",
+  "b.why": "Autonomie des Handelns, nicht nur Autonomie der Antwort, ist die neue Governance-Oberfläche hier: wenn ein Deployer ein System handeln lässt anstatt bloß zu informieren, fällt direkte Verantwortung für schädliches oder täuschendes Agenten-Verhalten auf den Deployer — das verlangt nach Aktions-Scoping, Human-in-the-Loop-Schwellen und vollständigen Aktionslogs, keines davon braucht ein rein retrieval-gegründeter Assistent."
+ },
+ "iv-ap-03": {
+  "a.text": "Die Organisation kann die Modell-Gewichte und den Code selbst lesen, ändern und verteilen, und kann ihn völlig auf Infrastruktur ausführen, die sie kontrolliert.",
+  "a.why": "Inspektierbarkeit ist der ganze Handel: du kannst selbst den Algorithmus prüfen und vermeidest, von einem Herstellers Roadmap abhängig zu sein, aber du übernimmst auch die interne Pflicht, Lizenzen, Trainings-Daten-Herkunft und deine eigene Sicherheitsprüfung zu checken.",
+  "b.text": "Die Organisation kann das Modell nur über eine API aufrufen und sieht die Gewichte nie, aber der Hersteller unterstützt es mit Support-Verträgen, Incident-Response und Schadensersatz-Garantien.",
+  "b.why": "Du wechselst Inspektionsrechte für vertragsgestützte Garantien — und die strategische Kosten dieses Handels werden als Top-Risiko dieses Pfads aufgezeichnet: Sobald Workflows um eines Herstellers API gebaut sind, wird ein späterer Wechsel teuer."
+ },
+ "iv-ap-04": {
+  "a.text": "Das Basis-Modell wird komprimiert und umgeformt — Parameter gekürzt, Präzision reduziert, ein leichter Adapter geschichtet — um Kosten und Latenz für Edge- oder Hochvolumen-Nutzung zu senken.",
+  "a.why": "Das Verkleinern oder Umformen des Artefakts auf diese Weise kann leise seine Entscheidungsgrenzen verschieben und die Interpretierbarkeit reduzieren, daher müssen Genauigkeit, Fairness und Robustheit nach jeder solchen Änderung neu geprüft werden, nicht angenommen werden, dass sie unverändert mitgetragen.",
+  "b.text": "Das Hersteller-Modell läuft unverändert, genau wie verschifft, nur unterstützt durch menschliche Überprüfung und andere um es herum geschichtete Kontrollen.",
+  "b.why": "Nichts am Artefakt selbst hat sich verändert, daher lehnt sich Governance auf die eigene Dokumentation des Herstellers und auf kompensierende Kontrollen wie menschliche Überprüfung anstatt auf die Neu-Validierung der Modell-Innereien."
+ },
+ "iv-ap-05": {
+  "a.text": "Ein Kreditbewertungs-System prognostiziert oder klassifiziert aus strukturierten Eingaben; seine Risiken sind Bias gegen bestimmte Gruppen und Genauigkeit, die leise abnimmt, wenn die zugrundeliegenden Daten treiben.",
+  "a.why": "Die Prognose oder Klassifizierung einer bekannten Kategorie aus strukturierten Features ist das Fehler-Modus dieses Profils — vertraute Bias- und Drift-Risiken, die Fairness-Tests und Überwachung erfasst.",
+  "b.text": "Ein Entwurfs-Assistent produziert völlig neuen Text, Bilder oder Code aus einer Eingabeaufforderung; seine Risiken sind Halluzination, Copyright-Exposition und überzeugend falsche Ausgabe.",
+  "b.why": "Das Erzeugen von Inhalten, die es nie gab, öffnet eine völlig andere Risiko-Oberfläche — Halluzination und Herkunft, nicht das Bias-und-Drift-Profil, das ein Nur-Prognose-System regiert."
+ },
+ "iv-ap-06": {
+  "a.text": "Ein Hersteller-Modell wird genau wie geliefert genutzt; die Aufgabe des Teams ist, es gegen seine eigenen Leistungs- und Fairness-Standards zu validieren und Lücken zu dokumentieren.",
+  "a.why": "Governance hier lehnt sich fast vollständig auf Hersteller-Transparenz plus kompensierende Kontrollen — das Team berührt nie die Modell-Innereien, daher enden ihre Pflichten bei Validierung und Dokumentation.",
+  "b.text": "Ein Allzweck-Modell wird auf den Organisationen eigenen gekennzeichneten Daten umtrainiert, bis es ein spezifisches, gewünschtes Verhalten reproduziert.",
+  "b.why": "Im Moment, in dem eine Organisation das Modell umtrainiert, behandelt Governance das Ergebnis als neues System: Fairness- und Robustness-Tests müssen von vorne wiederholt werden, und — im Vergleich zur Verwendung eines Hersteller-Modells wie geliefert — trägt die Organisation jetzt erhöhte eigene rechtliche Haftung."
+ },
+ "iv-ap-07": {
+  "a.text": "Ein Support-Chatbot nimmt schriftliche Fragen auf und produziert nur schriftliche Antworten, ohne anderen Eingabe-Kanal zum Überdenken.",
+  "a.why": "Nur-Text rein, nur-Text raus — die Governance-Bedenken hier sind Halluzination, verzerrte Ausdrücke und Jailbreak-artige Eingabeaufforderungs-Attacken, keines davon betrifft eine zweite Modalität.",
+  "b.text": "Ein Claims-Werkzeug wägt ein Schadenfoto zusammen mit den schriftlichen Noten des Sachversicherers, bevor es ein einziges kombiniertes Urteil produziert.",
+  "b.why": "Kanäle kombinieren fügt ein Risiko hinzu, das ein reiner Text-System nie face: falsche Korrelationen zwischen einem Bild und dem daneben stehenden Text, und die Notwendigkeit, zu zeigen, welche Eingabe tatsächlich die Ausgabe fuhren."
+ },
+ "iv-ap-08": {
+  "a.text": "Ein enges Klassifikator-Netz bearbeitet eine Aufgabe mit engerem Rechnerbudget, trainiert schnell um, und verfolgt seine Ausgaben zu Eingaben mit wenig Aufwand zurück.",
+  "a.why": "Ein kompaktes, enges System ist billig, neu zu testen und einfach zu erklären — die Kosten sind, dass es unterperformen kann, sobald die Umgebung variabler wird als das, für das es gebaut wurde.",
+  "b.text": "Ein breites Fundament-System generalisiert über viele Aufgaben hinweg, für das es nie spezifisch trainiert wurde, auf Kosten schwererer Rechengovernance und einer größeren Angriffsfläche.",
+  "b.why": "Breite gekauft durch Skala bedeutet, das System kann unfamiläre Domains mit Null-Shot angehen, aber es braucht auch Rechen-Quoten, Red-Teaming und Drift-Überwachung, die ein enges System nicht braucht."
+ },
+ "iv-ap-09": {
+  "a.text": "Jede Quelle, auf die das Modell während einer Session gezogen hat, wird zur Überwachung protokolliert, und jede persönliche Daten, die durch das verbundene Corpus gehen, müssen redacted werden, bevor sie jemals dem Modell gezeigt werden.",
+  "a.why": "Audit-Protokollierung und PII-Redaktion über ein externes Corpus sind Governance-Pflichten, die für ein Modell mit keiner live-Daten-Pipeline schlicht nicht existieren — dieser Pfad-Assurance-Aufwand lebt in der Ausrüstung, nicht in den Gewichten.",
+  "b.text": "Das Hersteller-Modell wird genau wie geliefert genutzt, und der schnellste Weg zu einem funktionierenden Piloten wird genau deshalb gewählt, weil keine neuen Trainingsdaten oder Pipeline gebaut werden müssen.",
+  "b.why": "Geschwindigkeit ist der ganzen Reiz hier — kein Umtraining, keine neuen Daten-Ausrüstungen — aber Governance behandelt diese Geschwindigkeit als Schuld: das Modell wird angenommen Hochrisiko, bis validiert gegen diese Organisationen eigene Leistungs- und Fairness-Standards, da nichts an ihm mit diesem Deployment im Sinn gebaut wurde."
+ },
+ "iv-ap-10": {
+  "a.text": "Das gleiche Basis-Modell kommt kleiner und billiger zu laufen nach Kompression, ohne dass auch nur eine einzelne neue Tatsache hinzugefügt wurde.",
+  "a.why": "Dieser Pfad zielt auf Fußabdruck ab, nicht Wissen — aber Verkleinern oder Umformen des Artefakts kann seine Entscheidungsgrenzen immer noch verschieben, daher brauchen Genauigkeit und Fairness Neuchecks, auch wenn nichts Neues \"gelernt\" wurde.",
+  "b.text": "Das gleiche Basis-Modell kommt mit der gleichen Größe raus, aber jetzt zuverlässig reproduziert es ein Spezialisten-Verhalten, das es nie Zugang hatte, gelernt von kuratierten Beispielen.",
+  "b.why": "Dieser Pfad zielt auf Verhalten und Wissen ab, nicht Fußabdruck — und weil das neue Verhalten aus der Organisationen eigenen Daten gelernt wurde, behandelt Governance das Ergebnis jetzt als neues System, das seinen eigenen Test braucht, nicht eine umgestaltete Kopie des alten."
+ }
+}

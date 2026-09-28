@@ -1,0 +1,366 @@
+{
+ "id": "cissp",
+ "title": "ISC2 CISSP Certification Exam Outline",
+ "effective": "2024-04-15",
+ "provenance": {
+  "authority": "ISC2",
+  "derivedFrom": "data/cissp_sources/moore — per-domain objective files at vendored commit a446a0ad1299dbb2ee93192833fb3b6d21ed006b, whose headings track the published April-2024 outline one-to-one",
+  "extracted": "2026-08-13",
+  "areaLabels": "Area ids and titles are taxonomy, recorded as published — the same treatment the OWASP category names get. No explanatory prose is carried, and nothing in this file is authoring input; it is the scope ruler.",
+  "weights": "Domain weights are the published April-2024 blueprint percentages. They are NOT derived from any vendored artifact — confirm against the ISC2 outline PDF before using them to weight a sampler. Nothing in the coverage gate reads them."
+ },
+ "domains": [
+  {
+   "id": "1",
+   "label": "Security and Risk Management",
+   "weight": 0.16
+  },
+  {
+   "id": "2",
+   "label": "Asset Security",
+   "weight": 0.1
+  },
+  {
+   "id": "3",
+   "label": "Security Architecture and Engineering",
+   "weight": 0.13
+  },
+  {
+   "id": "4",
+   "label": "Communication and Network Security",
+   "weight": 0.13
+  },
+  {
+   "id": "5",
+   "label": "Identity and Access Management (IAM)",
+   "weight": 0.13
+  },
+  {
+   "id": "6",
+   "label": "Security Assessment and Testing",
+   "weight": 0.12
+  },
+  {
+   "id": "7",
+   "label": "Security Operations",
+   "weight": 0.13
+  },
+  {
+   "id": "8",
+   "label": "Software Development Security",
+   "weight": 0.1
+  }
+ ],
+ "areas": [
+  {
+   "id": "1.1",
+   "domain": "1",
+   "label": "Understand, adhere to, and promote professional ethics"
+  },
+  {
+   "id": "1.2",
+   "domain": "1",
+   "label": "Understand and apply security concepts"
+  },
+  {
+   "id": "1.3",
+   "domain": "1",
+   "label": "Evaluate, apply, and sustain security governance principles"
+  },
+  {
+   "id": "1.4",
+   "domain": "1",
+   "label": "Understand legal, regulatory, and compliance issues that pertain to information security in a holistic context"
+  },
+  {
+   "id": "1.5",
+   "domain": "1",
+   "label": "Understand requirements for investigation types (i.e., administrative, criminal, civil, regulatory, industry standards)"
+  },
+  {
+   "id": "1.6",
+   "domain": "1",
+   "label": "Develop, document, and implement security policy, standards, procedures and guidelines"
+  },
+  {
+   "id": "1.7",
+   "domain": "1",
+   "label": "Identify, analyze, assess, prioritize, and implement Business Continuity (BC) requirements"
+  },
+  {
+   "id": "1.8",
+   "domain": "1",
+   "label": "Contribute to and enforce personnel security policies and procedures"
+  },
+  {
+   "id": "1.9",
+   "domain": "1",
+   "label": "Understand and apply risk management concepts"
+  },
+  {
+   "id": "1.10",
+   "domain": "1",
+   "label": "Understand and apply threat modeling concepts and methodologies"
+  },
+  {
+   "id": "1.11",
+   "domain": "1",
+   "label": "Apply Supply Chain Risk Management (SCRM) concepts"
+  },
+  {
+   "id": "1.12",
+   "domain": "1",
+   "label": "Establish and maintain a security awareness, education, and training program"
+  },
+  {
+   "id": "2.1",
+   "domain": "2",
+   "label": "Identify and classify information and assets"
+  },
+  {
+   "id": "2.2",
+   "domain": "2",
+   "label": "Establish information and asset handling requirements"
+  },
+  {
+   "id": "2.3",
+   "domain": "2",
+   "label": "Provision information and assets securely"
+  },
+  {
+   "id": "2.4",
+   "domain": "2",
+   "label": "Manage data lifecycle"
+  },
+  {
+   "id": "2.5",
+   "domain": "2",
+   "label": "Ensure appropriate asset retention (e.g. End-of-Life (EOL), End-of-Support)"
+  },
+  {
+   "id": "2.6",
+   "domain": "2",
+   "label": "Determine data security controls and compliance requirements"
+  },
+  {
+   "id": "3.1",
+   "domain": "3",
+   "label": "Research, implement, and manage engineering processes using secure design principles"
+  },
+  {
+   "id": "3.2",
+   "domain": "3",
+   "label": "Understand the fundamental concepts of security models (e.g. Biba, Star Model, Bell-LaPadula)"
+  },
+  {
+   "id": "3.3",
+   "domain": "3",
+   "label": "Select controls based upon systems security requirements"
+  },
+  {
+   "id": "3.4",
+   "domain": "3",
+   "label": "Understand security capabilities of Information Systems (IS) (e.g. memory protection, Trusted Platform Model (TPM), encryption/decryption)"
+  },
+  {
+   "id": "3.5",
+   "domain": "3",
+   "label": "Assess and mitigate the vulnerabilities of security architectures, designs and solution elements"
+  },
+  {
+   "id": "3.6",
+   "domain": "3",
+   "label": "Select and determine cryptographic solutions"
+  },
+  {
+   "id": "3.7",
+   "domain": "3",
+   "label": "Understand methods of cryptanalytic attacks"
+  },
+  {
+   "id": "3.8",
+   "domain": "3",
+   "label": "Apply security principles to site and facility design"
+  },
+  {
+   "id": "3.9",
+   "domain": "3",
+   "label": "Design site and facility security controls"
+  },
+  {
+   "id": "3.10",
+   "domain": "3",
+   "label": "Manage the information system lifecycle"
+  },
+  {
+   "id": "4.1",
+   "domain": "4",
+   "label": "Apply secure design principles in network architectures"
+  },
+  {
+   "id": "4.2",
+   "domain": "4",
+   "label": "Secure network components"
+  },
+  {
+   "id": "4.3",
+   "domain": "4",
+   "label": "Implement secure communication channels according to design"
+  },
+  {
+   "id": "5.1",
+   "domain": "5",
+   "label": "Control physical and logical access to assets"
+  },
+  {
+   "id": "5.2",
+   "domain": "5",
+   "label": "Design identification and authentication strategy (e.g., people, devices, and services)"
+  },
+  {
+   "id": "5.3",
+   "domain": "5",
+   "label": "Federated Identity with a third-party service"
+  },
+  {
+   "id": "5.4",
+   "domain": "5",
+   "label": "Implement and manage authorization mechanisms"
+  },
+  {
+   "id": "5.5",
+   "domain": "5",
+   "label": "Manage the identity and access provisioning lifecycle"
+  },
+  {
+   "id": "5.6",
+   "domain": "5",
+   "label": "Implement authentication systems"
+  },
+  {
+   "id": "6.1",
+   "domain": "6",
+   "label": "Design and validate assessment, test, and audit strategies"
+  },
+  {
+   "id": "6.2",
+   "domain": "6",
+   "label": "Conduct security controls testing"
+  },
+  {
+   "id": "6.3",
+   "domain": "6",
+   "label": "Collect security process data (e.g. technical and administrative)"
+  },
+  {
+   "id": "6.4",
+   "domain": "6",
+   "label": "Analyze test output and generate report"
+  },
+  {
+   "id": "6.5",
+   "domain": "6",
+   "label": "Conduct or facilitate security audits"
+  },
+  {
+   "id": "7.1",
+   "domain": "7",
+   "label": "Understand and comply with investigations"
+  },
+  {
+   "id": "7.2",
+   "domain": "7",
+   "label": "Conduct logging and monitoring activities"
+  },
+  {
+   "id": "7.3",
+   "domain": "7",
+   "label": "Perform Configuration Management (CM) (e.g. provisioning, baselining, automation)"
+  },
+  {
+   "id": "7.4",
+   "domain": "7",
+   "label": "Apply foundational security operations concepts"
+  },
+  {
+   "id": "7.5",
+   "domain": "7",
+   "label": "Apply resource protection"
+  },
+  {
+   "id": "7.6",
+   "domain": "7",
+   "label": "Conduct incident management"
+  },
+  {
+   "id": "7.7",
+   "domain": "7",
+   "label": "Operate and maintain detection and preventative measures"
+  },
+  {
+   "id": "7.8",
+   "domain": "7",
+   "label": "Implement and support patch and vulnerability management"
+  },
+  {
+   "id": "7.9",
+   "domain": "7",
+   "label": "Understand and participate in change management processes"
+  },
+  {
+   "id": "7.10",
+   "domain": "7",
+   "label": "Implement recovery strategies"
+  },
+  {
+   "id": "7.11",
+   "domain": "7",
+   "label": "Implement Disaster Recovery (DR) processes"
+  },
+  {
+   "id": "7.12",
+   "domain": "7",
+   "label": "Test Disaster Recovery Plans (DRP)"
+  },
+  {
+   "id": "7.13",
+   "domain": "7",
+   "label": "Participate in Business Continuity (BC) planning and exercises"
+  },
+  {
+   "id": "7.14",
+   "domain": "7",
+   "label": "Implement and manage physical security"
+  },
+  {
+   "id": "7.15",
+   "domain": "7",
+   "label": "Address personnel safety and security concerns"
+  },
+  {
+   "id": "8.1",
+   "domain": "8",
+   "label": "Understand and integrate security in the Software Development Life Cycle (SDLC)"
+  },
+  {
+   "id": "8.2",
+   "domain": "8",
+   "label": "Identify and apply security controls in development ecosystems"
+  },
+  {
+   "id": "8.3",
+   "domain": "8",
+   "label": "Assess the effectiveness of software security"
+  },
+  {
+   "id": "8.4",
+   "domain": "8",
+   "label": "Assess security impact of acquired software"
+  },
+  {
+   "id": "8.5",
+   "domain": "8",
+   "label": "Define and apply secure coding guidelines and standards"
+  }
+ ]
+}

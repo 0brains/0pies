@@ -1,0 +1,95 @@
+{
+  "iv-deploy": {
+    "hint": "Her senaryoyu çağırdığı seçime sürükle. Tahta her eksen aracılığıyla aldatıcı tutar — model türü, altyapı ve uyum — bu nedenle gerçek kısıtlama için oku; yalnız tanıdık kelimeler değil."
+  },
+  "iv-dm-01": {
+    "label": "El cihazlarında kesintili bağlantı ile gerçek zamanlı çeviri.",
+    "sub": "Gecikme Sınırı, Çevrimdışı Yeteneği",
+    "why": "Gecikme ve çevrimdışı esneklik ham yeteneğini burada yener — cihazda yerel olarak çalışan kompakt model, canlı bağlantı gerektiren daha büyük modeli dışarıda çevirir. \"Büyük modeller gerçek zamanlı için her zaman gerekli\" kaydedilmiş yanlış aldatıcıdır: yeteneği düşük gecikmeyi garanti etmez; ağ düşerse."
+  },
+  "iv-dm-02": {
+    "label": "Cevaplar, klinisyenin sorduğu anda bu ayın klinik rehberliğini yansıtmak zorundasıdır — geçen çeyreğin eğitim anlık görüntüsü değil.",
+    "sub": "Sorgu Zamanında Tazelik",
+    "why": "Tazelik ağırlıkların dışında: sorgu zamanında geçerli, küratörlü bir kaynağa bağlanmak; cevapları yeniden eğitim olmadan güncel tutar. Yanılmayı yok etmez — model bulduğunu yanlış okuyabilir — ve eğitim maliyetini yeni ops yükü için karşılaştırır: hattın geçerli kalması için sürekli yeniden dizine ihtiyacı vardır."
+  },
+  "iv-dm-03": {
+    "label": "Kredi teklifleri aynı girdiler için aynı olmalıdır ve yalnızca yazılı kredi politikası kurallarını takip etmeli — hiçbir durumun başka bir şekilde kararlaştırılması yok.",
+    "sub": "Kural Tarafından Tekrarlanabilir",
+    "why": "Sonuçlar mükemmel şekilde tekrarlanabilir olmalı ve kodlanmış kurallara izlenebilir olduğunda, eğer-o zaman kuralları motoru — olasılıksal model değil — doğru uyum; kurallar motoru can alamaz veya yanılı bir şekilde farklı cevap çeviremez; aynı girdiler."
+  },
+  "iv-dm-04": {
+    "label": "Katı ikamet yetkilisi, düzenleyenin hassas mali kayıtları üzerinde tam altyapı görünürlüğüne sahip olmasını gerektirir.",
+    "sub": "Düzenleyici-Görünebilir Kontrol",
+    "why": "Modeli ve veriyi kuruluşun kendi ortamının içinde tutmak, kontrolü maksimize eder ve sınır ötesi transfer soruları atlayarak, düzenleyenin aksi takdirde satıcının altyapısı aracılığıyla takip etmesi gereken — kapanış, verilere yakınlık, merkezi düzenleyici görünürlük önemliyse daha ciddi duruşta ve denetim yükü. Gecikmeler / gözetleme sıralamasında kendi depo hâlâ güneyde yenir."
+  },
+  "iv-dm-05": {
+    "label": "Liderlik görüntü analiz hızlı ölçeklemek için yönetilen hizmet istiyor; veri merkezi inşaa etmeden; ve sağlayıcı tüm güvenlik riskine sahip olduğunu varsayar.",
+    "sub": "Esnek, Ama Kimin Riski?",
+    "why": "Bulut, altyapı sahipliğisiz ölçek için doğru çağrı — fakat \"sağlayıcı güvenlik sahip ediliyor\" tuzak: paylaşılan sorumluluk modeli altında, dağıtım kuruluşu kendi verisi için hâlâ cevaplandırır; müşteri tarafında tek yanlış ayarlama ihlal oluşturabilir."
+  },
+  "iv-dm-06": {
+    "label": "Sınır kontrol noktalarında çok dilli sohbet kioskleri sınırlı bağlantı ve sınırlı güç var; yanıtlar yakın ani kalmalıdır.",
+    "sub": "Sunucu Yok, Bekleme Yok",
+    "why": "Modeli cihazda çalıştırmak bu kontrol noktaları güvenilir bir şekilde garanti edemiyor; dış bağlantıya bağımlılığı kaldırır. Seçim maliyetini: kenar çıkarımı hesaplama tesisinde merkezi kayma algılama araçlarını yok eder; cihaz filo sessizce belirtim dışında kayabilir; tek bir pano yakalanamaz."
+  },
+  "iv-dm-07": {
+    "label": "Küçük tescilli model canlı içerik akışında sürekli yeniden eğitilir ve binlerce vitrin arasında yerel puanlama tutuşturması gerekir; ağ gidiş gelişi yok.",
+    "sub": "Filoda Yerel Önce Ölçekle",
+    "why": "Yerel, çevrimdışı puanlama cihazda modeli gerektirir. Maliyeti: izleme ve denetim performansı tutarlı olur çok daha sabit; merkezi hizmetin yerine fiziksel dağılmış filo genelinde kararlar."
+  },
+  "iv-dm-08": {
+    "label": "Lojistik firma tesisinin tedarik zinciri iyileştir; modelin ağırlıklarını çevirmek; değiştirir ve dağıtır; tek bir satıcının rotasına bağlı olmak istemiyor.",
+    "sub": "Kendin Denetledikten Sonra",
+    "why": "Açık ağırlıklar şeffaflık, esneklik ve tek satıcının yayın programından özgürlük satın al — ama içsel lisans gözden geçirmesi, menşei kontrolleri ve kendi güvenlik testi taşı; satıcı başka taşıdı."
+  },
+  "iv-dm-09": {
+    "label": "Medya şirketi video özetleri otomatikleştir; satıcının SLA, olay tepkisi ve IP tazminat garanti istiy; sevk ettiği modeli destekliyor.",
+    "sub": "Sözleşme Destekli, İncelenebilir Değil",
+    "why": "Sözleşme destekli destek ve garantiler tescilli için gitmenin tamamı — fakat kolaylık adlandırılmış stratejik maliyeti: daha sonra uzaklaşmak daha sabit; iş akışları, komutlar ve entegrasyonlar bir satıcının API'si etrafında inşa olunmuşsa; ve satıcı kilidi kaydedilmiş en üst stratejik risk bu yolu."
+  },
+  "iv-dm-10": {
+    "label": "Banka, binlerce etiketli tarihsel karar sergilesin; kararlı, uzman puanlama davranış; genel amaçlı model kendi başına yeniden üretmediği.",
+    "sub": "Gösterilmiş, Açıklanmadı",
+    "why": "Araç gösterilmiş; kararlı davranış ağırlıklara pişirilmiş; seçilmiş örnekler aracılığıyla — serbest yükseltme değil: yönetim sonucu yeni sistem olarak görür; kendi adalet ve sağlamlık yeniden testi; artan yasal yükümlülük; üçüncü taraf yapı modeli olduğu gibi karşılaştırıldığında."
+  },
+  "iv-dm-11": {
+    "label": "Sentetik veri üreticisi, üretim kayıtları kümesiyle daha ileri eğitilmiş; çıkışı QA güvenilir gerçekçi hissettirilir.",
+    "sub": "Gerçekten Ödünç Alınan Gerçekçilik",
+    "why": "Temel model kuruluşun veri üzerinde daha ileri uyum; ince ayar tanımı — bu yolu takip eden risk belirli: oluşturulan sentetik çıkışı hâlâ orijinal hassas üretim kayıtlarının izlerini taşıyabilir; anonimleştirdikten sonra; çünkü bilgi ağırlıklara pişirilmiştir; denetlenebilir veritabanında oturmuyor."
+  },
+  "iv-dm-12": {
+    "label": "Özgeçmiş elenmiş pilot bu çeyrek başlatılması gerekir; yeniden eğitim için zaman veya bütçe yok; yalnızca lisans modeli doğrulanması; gerçek işe alım sonucu.",
+    "sub": "Hızlı, Kanıtlanmadı Uyum",
+    "why": "Kutudan çıktı mevcut pilot en hızlı yoludur; yeniden eğitim maliyeti kaçın — ama yönetim yüksek riskli olarak davranmak zorundadır; kadar kanıtlanmıştır: satıcının eğitim verisi veya karar sınırları alan uyum; doğrulama; bu kuruluşun performans ve adalet standartları; artı insan gözden geçirmesi gibi kompense edici kontroller; isteğe bağlı değil."
+  },
+  "iv-dm-13": {
+    "label": "Dolandırıcılık algılama, yapılandırılmış işlem kayıtlarını sınıflandırır; ana riskleri belirli gruplarla karşı önyargı ve doğruluk sessizce bozulur; harcama alışkanlıkları kayıyor.",
+    "sub": "Yapılandırılmış Giriş, Tanıdık Başarısızlık",
+    "why": "Bilinen kategoriye yapılandırılmış özelliklerden tahmin veya sınıflandırmak klasik başarısızlık profili — tanıdık önyargı ve kayma riskleri; adalet testi ve izleme yakalamak için yapı; üretim sistemi başarısızlık modu baştan sona tarafından ayrı."
+  },
+  "iv-dm-14": {
+    "label": "Pazarlama, kısa istem aracılığıyla yeni reklam metni ve kampanya görüntüleri çizeceğim araç gerekir; veya herhangi bir şeyi sınıflandırmak veya başka puanlamaz.",
+    "sub": "Yeni İçerik, Kararı Değil",
+    "why": "Yeni içerik oluşturma — metin, görüntü, kod — üretim faydası-ve-risk profili: ikna edici yanlış çıktı, IP ve menşei soruları; içerik-güvenlik tutamağı; klasik modelinin yapılandırılmış-tahmin başarısızlık modu ayrı."
+  },
+  "iv-dm-15": {
+    "label": "Talep gözden geçirmecileri sistem hasar fotoğrafını yazılı olay açıklamasıyla birlikte ölçer; talep işaretlemeden önce.",
+    "sub": "İki Kanal, Bir Yargı",
+    "why": "Görüntü ve metni birlikte yorumlamak — hangi girdiyi çıktıyı yürüttüğünü açıklamak — çok kiplik risk-ve-yeteneği profili; metin yalnız sistemi fotografın kanalı yok."
+  },
+  "iv-dm-16": {
+    "label": "Metin yalnız destek chatbotu müşteri sorularını cevaplandırır; yapay zekanın olduğunu açıklamalıdır; kaynakları alıntılamalıdır; hassas durumlar insana değinmeli.",
+    "sub": "Kanal Açıklandı",
+    "why": "Metin-giriş, metin-çıkışı açıklaması ile; alıntılama ve insan-yükseltme kontrolleri dil modeli yönetim profili — ikinci giriş kanalı yok; bu çok kiplik profili yerine itme yapacaktır."
+  },
+  "iv-dm-17": {
+    "label": "İki milyon kısa, yapılandırılmış kayıt gece hızlı tutulur; dar hesaplama bütçesi altında; etiketli bir işlevler avuç kullanılır.",
+    "sub": "Dar Görev, Dar Bütçe",
+    "why": "Dar, düşük hesaplama modeli açıklaması kolay; hızlı yeniden eğitilir; toplu ölçek altında çalışması ucuz — kapanış; ortam daha karmaşık veya değişken olduğunda; inşa edildi; için mücadele edebilir."
+  },
+  "iv-dm-18": {
+    "label": "Sistem ilk günden birçok alışılmadık alan arasında genelleştirmek zorundasıdır; hiç yapı veya etiket zaman alan veri yok.",
+    "sub": "Ölçek Aracılığıyla Satın Alınan Genişlik",
+    "why": "Geniş öneğitim sıfır- ve az sayı genelleme alışılmadık alanlar; kimse etiketli veri yok — maliyet; daha büyük şeffafını sistemini; hesaplama yönetimi; güvenlik değerlendirmesi ve kayma izleme gerekir."
+  }
+}

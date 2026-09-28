@@ -1,0 +1,50 @@
+{
+ "genai-ops": {
+  "hint": "Her durumu gerektirdiği yanıta sürükleyin. Tahtadaki bazı yanıtlar sizi baştan çıkarmak için orada."
+ },
+ "genai-ops-01": {
+  "label": "Yanıtlar iyi okunuyor ama alınan politika pasajlarından eksik olan iddialar içeriyor.",
+  "sub": "Desteklenmeyen İddialar",
+  "why": "İlk olarak iddiaların desteklenip desteklenmediğini belirleyin, sonra kanıt kullanımını, reddetme davranışını ve alıntı doğrulamasını sıkılaştırın. Değiş tokuş: Daha büyük bir model eksik veya göz ardı edilen kanıtı çözmeden akıcılığı geliştireebilir."
+ },
+ "genai-ops-02": {
+  "label": "Yanıt üreteç, ilgili pasaj alınan setten yoktur çünkü doğru gerçeği kullanamaz.",
+  "sub": "Doğru Kanıt Asla Görünmüyor",
+  "why": "Erişim çağrısı, parçalama, gömme, filtreler, sorgu yeniden yazma veya aday sayı gerekli kanıtı kaçırıp kaçırmadığını yalıtır. Değiş tokuş: Nesil değişiklikleri hiçbir zaman bağlam girmemiş kanıtı kurtaramaz."
+ },
+ "genai-ops-03": {
+  "label": "İlgili pasaj mevcut, ama çok sayıda dikkat dağıtan yığın arasında gömülü.",
+  "sub": "Çok Fazla İlgisiz Bağlam",
+  "why": "Daha iyi filtreler, melez erişim ve yeniden sıralama en iyi kanıtı korurken gürültüyü azaltır. Değiş tokuş: Aday sayısını artırmak geri çağrıyı geliştirebilir ama kesinliği, gecikmesi ve belirteç maliyetini kötüleştirebilir."
+ },
+ "genai-ops-04": {
+  "label": "Bir istem değişikliği test örneklerini geliştirdi ama birçok önemli müşteri iş akışını bozdu.",
+  "sub": "Sürümden Sonra Kalite Değişir",
+  "why": "Sürümlenmiş bir temsili değerlendirme seti kullanım durumları arasında yayınlamadan önce gerilemeleri algılar. Değiş tokuş: İnsan incelemesi bir rubrık tarafından kılavuzlandığında ve gerçek dağılım arasında örneklendiğinde değerli kalır."
+ },
+ "genai-ops-05": {
+  "label": "LLM yargıcı, özlü cevaplar doğru olduğunda bile tutarlı şekilde daha uzun cevapları daha yüksek puanlandırıyor.",
+  "sub": "Değerlendirici Ayrıntılı Cevapları Tercih Ediyor",
+  "why": "LLM yargıcları konum, ayrıntılılık ve öz tercih önyargıları olabilir ve insan kararları ile kalibre edilmelidir. Değiş tokuş: Otomatik yargılama, rubriki ve önyargısı insan kararları ile doğrulandıktan sonra ölçek için yararlı kalır."
+ },
+ "genai-ops-06": {
+  "label": "Kullanım sabit, ama ortalama girdi bağlamı ve çıktı uzunluğu üçe katlandı.",
+  "sub": "Etkileşimli Maliyet Artışı",
+  "why": "Belirteç telemetrisi doğrudan maliyet sürücüsünü gösterir; daha az gürültü alıntı, özet tarihi, istikrarlı bağlamı önbelleğe ve sınırı çıktı. Değiş tokuş: Sağlanan iş hacmi yüksek tahmin edilebilir kullanıma yardımcı olur, önemsiz istem büyümesi değil."
+ },
+ "genai-ops-07": {
+  "label": "Birçok kullanıcı değişmemiş genel bilgi hakkında anlamsal olarak eşdeğer sorular soruyor.",
+  "sub": "Yavaş Ama Tekrarlanan Cevaplar",
+  "why": "Dikkatle anahtarlanan bir önbellek, tazelik ve erişim sınırları saygı gösterildiğinde eşdeğer istekler için gecikmeyi ve belirteç harcamasını azaltabilir. Değiş tokuş: Hassas, kişiselleştirilmiş, hızla değişen veya yeterince izole edilmemiş yanıtları önbelleğe almayın."
+ },
+ "genai-ops-08": {
+  "label": "Bir destek aracısı, yürütme bütçesi tükenene kadar başarısız olan bir API'yi tekrar tekrar çağırıyor.",
+  "sub": "Ajan Bir Araç Çağrısını Tekrarlamaya Devam Ediyor",
+  "why": "Sınırlı yeniden denemeler, açık hata işleme, idempotency, gözlemlenebilirlik ve insan yükseltmesi kaçak döngüleri önler. Değiş tokuş: Araç açıklamalarının iyileştirilmesi seçimi yardımcı olur ama çalışma zamanı sınırları ve başarısızlık denetimleri değil."
+ },
+ "genai-ops-10": {
+  "label": "Bir tıbbi destek modeli belirsiz ve yanlış tavsiyenin maliyeti ciddi.",
+  "sub": "Yüksek Bahisler Düşük Güven",
+  "why": "Güven eşikleri, geçit reddi, kanıt görüntüleme ve nitelikli insan incelemesi sonuç belirsizliği için uygun. Değiş tokuş: İnsan gözetimi açık sorumluluk, yararlı bağlam ve ölçülen inceleme kalitesi yerine törensel onay gerekir."
+ }
+}

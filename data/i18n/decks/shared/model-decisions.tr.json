@@ -1,0 +1,45 @@
+{
+ "model-decisions": {
+  "hint": "Her durumu gerektirdiği yanıta sürükleyin. Tahtadaki bazı yanıtlar sizi baştan çıkarmak için orada."
+ },
+ "model-decisions-01": {
+  "label": "Bir asistan her hafta değişen özel politikalardan cevaplandırmalı ve geçerli kaynağı alıntı yapmalı.",
+  "sub": "Sık Değişen Politikalar",
+  "why": "RAG talep zamanında güncel özel kanıt alıntı ve alıntı desteği. Değiş tokuş: İnce ayar davranışı uyarlayabilir, ama sık değişen gerçekler için zayıf bir mekanizmadır."
+ },
+ "model-decisions-02": {
+  "label": "Binlerce örnek temel modelin tutarlı şekilde yeniden üretmekte başarısız olduğu istikrarlı bir rapor stilini gösteriyor.",
+  "sub": "İstikrarlı Uzman Biçimi",
+  "why": "Küratörlü bir örnek seti tarafından gösterilen yinelenen davranış için ince ayar uygun. Değiş tokuş: Kalite gereksinimlerini karşıladığında birkaç atış isteme hala denenmelidir, daha düşük karmaşıklıkta."
+ },
+ "model-decisions-03": {
+  "label": "Yetenekli model beş alanı doğrulanmış JSON nesnesine ayıklamalı; yeni bilgi gerekli değil.",
+  "sub": "Katı JSON Ayıklama",
+  "why": "Açık talimatlar, örnekler, bir şema ve doğrulama model ağırlıklarını değiştirmeden biçimleme ile ilgileniyor. Değiş tokuş: İnce ayar sadece istem tabanlı ayıklama gerekli ölçek ve kalitesinde tekrar başarısız olduğunda makul hale gelir."
+ },
+ "model-decisions-04": {
+  "label": "Bir model çok büyük etiketlenmemiş bilimsel gövdesinden uzman terminoloji içselleştirmelidir.",
+  "sub": "Ölçekli Alan Dili",
+  "why": "Devam eden ön eğitim büyük nicelikte alan metni kullanarak modelin dil temsillerini uyarlar. Değiş tokuş: Değişen gerçeklere erişim yerine daha derin alan dilinin uyarlanması gerekiyorsa RAG tercih edilir."
+ },
+ "model-decisions-05": {
+  "label": "Sistem bir sipariş muayene etmeli, onay talep etmeli, iade API çağırmalı ve sonuç bildirmeli.",
+  "sub": "Eylem Alan Asistan",
+  "why": "Araç kullanan bir ajan adımları yönetebilir, ama her araç dar izinler, doğrulama ve onay kapıları gerekir. Değiş tokuş: Dizi sabit ve model yönlendirmeli planlama gerektirmediğinde, belirleyici bir iş akışı daha güvenlidir."
+ },
+ "model-decisions-06": {
+  "label": "Hasar talebinde hasar fotoğrafı ile birlikte yazılı olay açıklamasını incelemeli.",
+  "sub": "Görüntü ve Metin İncelemesi",
+  "why": "Çok modlu model görsel ve metin girdilerini birlikte yorumleyebilir. Değiş tokuş: Bağımsız çıktılar, denetim veya daha düşük maliyet önemli olduğunda, ayrı uzman vizyon ve metin modelleri kazanabilir."
+ },
+ "model-decisions-07": {
+  "label": "On milyon kısa kayıt, etiketler kullanılabilir olduktan sonra dar bir bütçe altında gece sınıflandırılmalı.",
+  "sub": "Yüksek Hacim Basit Sınıflandırma",
+  "why": "Daha küçük değerlendirilen sınıflandırıcı çok daha düşük toplu çıkarım maliyeti ile yeterli kalite sunabilir. Değiş tokuş: Bir temel model prototipi hızlandırabilir veya etiket oluşturabilir, ama ölçülen kalite ile üretim maliyetini kazanmalıdır."
+ },
+ "model-decisions-08": {
+  "label": "Yayınlanan kurallar uygunluğu tamamen belirler ve her karar tekrarlanabilir ve denetim edilebilir olmalı.",
+  "sub": "Tam Uygunluk Politikası",
+  "why": "Tam, tam kurallar olasılıksal bir model tarafından yaklaşık yapılması yerine doğrudan uygulanmalı. Değiş tokuş: AI belge alımı veya açıklamada yardımcı olabilir yetkili karar sahip olmaksızın."
+ }
+}

@@ -1,0 +1,74 @@
+{
+ "iii-dp-01": {
+  "a.text": "Se usa durante el desarrollo para ajustar hiperparámetros y detectar sobreajuste entre rondas de entrenamiento.",
+  "a.why": "Este rol es repetible e iterativo, el modelo se ajusta en comparación con él una y otra vez, que es exactamente por qué nunca puede representar también el veredicto final.",
+  "b.text": "Congelado e intacto hasta que todo ajuste se completa, luego se ejecuta una sola vez para proporcionar la estimación final de error imparcial del modelo.",
+  "b.why": "Evaluar el modelo final en el conjunto en el que fue ajustado, la trampa de examen grabada, produce una estimación sesgada. Solo un conjunto que el proceso de ajuste nunca tocó puede dar un número imparcial final."
+ },
+ "iii-dp-02": {
+  "a.text": "La versión exacta del script ETL usado para agregar características del modelo de abandono es registrada en cada paso de transformación, desde tabla sin procesar a característica final.",
+  "a.why": "Esto rastrea el viaje, cada transformación que un conjunto de datos pasa a través de, y la versión del script de transformación es la pieza más crítica única de esos metadatos para reproducibilidad y depuración de desviación.",
+  "b.text": "Antes de que ocurra cualquier transformación, la fuente original del conjunto de datos, cadena de custodia y condiciones de recopilación se registran para establecer su autenticidad.",
+  "b.why": "Esto es el certificado de nacimiento, origen y custodia, no el registro de lo que posteriormente fue hecho a los datos; ese registro pertenece al otro lado de este par."
+ },
+ "iii-dp-03": {
+  "a.text": "Ruido matemático calibrado se agrega durante el entrenamiento para que ningún registro de entrenamiento único pueda demostrarse que tenga más de un efecto negligible en la salida del modelo.",
+  "a.why": "Esta es una garantía matemática sobre influencia, no sobre dónde viajan los datos físicamente, se aplica si los datos nunca dejan su origen o no.",
+  "b.text": "Cada hospital entrena localmente en sus propios registros de pacientes, y solo las actualizaciones resultantes, nunca los registros sin procesar, viajan a un servidor central para agregación.",
+  "b.why": "Lo que se protege aquí es qué datos dejan el sitio, no cuánto de cualquier registro único puede ser inferido de una salida, los registros sin procesar nunca viajan, punto."
+ },
+ "iii-dp-04": {
+  "a.text": "Un documento estandarizado establece la motivación, composición, proceso de recopilación y usos recomendados de un conjunto de datos, antes de que cualquier modelo sea entrenado en él.",
+  "a.why": "Esto documenta la materia prima en sí, independiente de cualquier modelo que posteriormente será entrenado en él.",
+  "b.text": "La propósito de una versión única, sus datos de entrenamiento/validación/prueba, sus métricas de desempeño y sus limitaciones conocidas se resumen para quienquiera que decida si desplegarlo.",
+  "b.why": "Esto es alcance a una versión específica, no el conjunto de datos detrás de ella, una etiqueta de nutrición para el artefacto entrenado, distinto del alcance de nivel de conjunto de datos del otro lado."
+ },
+ "iii-dp-05": {
+  "a.text": "Un atacante trabaja hacia atrás desde las salidas de un sistema para reconstruir aproximaciones de los registros reales en los que fue entrenado.",
+  "a.why": "Este ataque recupera contenido de datos de entrenamiento de lo que el sistema produce, reconstrucción, no una verificación sí/no.",
+  "b.text": "Un atacante no reconstruye nada, solo confirma si los datos de una persona específica fueron incluidos en el conjunto de entrenamiento en absoluto.",
+  "b.why": "Este ataque responde una pregunta de membresía de conjunto binaria; nunca recupera contenido del registro de la manera que el otro lado hace."
+ },
+ "iii-dp-06": {
+  "a.text": "Un residente de la UE retira consentimiento, y la compañía debe borrar sus registros personales de sus sistemas.",
+  "a.why": "Esto elimina los datos sin procesar en sí en respuesta a una solicitud de derechos, un argumento de que los datos ayudan a entrenar el modelo no anula el derecho de borrado una vez que el consentimiento se retira.",
+  "b.text": "Incluso después de que los registros ofensivos se van, el modelo en sí debe ser corregido porque ya aprendió patrones de datos que nunca debería haber sido usado.",
+  "b.why": "Esto elimina lo que un modelo absorbió de datos impropiamente usados, un remedio distinto, porque el modelo puede retener el efecto mucho después de que los registros subyacentes son borrados."
+ },
+ "iii-dp-07": {
+  "a.text": "Una evaluación documentada vincula las características del conjunto de datos y cobertura al contexto de uso específico e intencionado del modelo.",
+  "a.why": "Esto trata sobre hacer coincidir datos con un uso particular, no la antigüedad o volumen del conjunto de datos, un conjunto de datos grande y reciente puede aún fallar esta verificación si nunca fue evaluado en comparación con el caso de uso real.",
+  "b.text": "El conjunto de datos se verifica para confirmar que refleja la población a la que el modelo será realmente aplicado, tratado como el mitigador de sesgo más importante en toda la pipeline.",
+  "b.why": "Esta es una pregunta de coincidencia de espejo sobre la población; simplemente aumentar un conjunto de datos sesgado con ejemplos sintéticos no resuelve una brecha genuina aquí, porque la pregunta de gobernanza subyacente de si los datos originales fueron apropiados nunca fue respondida."
+ },
+ "iii-dp-08": {
+  "a.text": "Un conjunto de datos se verifica para confirmar que no ha sido alterado o corrompido en ningún punto entre su fuente original y su uso actual.",
+  "a.why": "Esta es una propiedad de protección-contra-alteración, distinta de si el contenido en sí es preciso o confiable.",
+  "b.text": "El mismo conjunto de datos se verifica por separado para confirmar que permanece preciso y confiable cuando se comparte y reutiliza en diferentes sistemas y entornos.",
+  "b.why": "Esto pregunta si el contenido en sí se sostiene a través de contextos; un conjunto de datos puede ser perfectamente sin tocar mientras siendo aún anticuado o inconsistente en lo que realmente dice."
+ },
+ "iii-dp-09": {
+  "a.text": "La tasa de resultados positivos se compara a través de grupos protegidos en la distribución real de salida actual del modelo.",
+  "a.why": "Esta métrica compara tasas de resultado agregadas entre grupos en datos como realmente permanece.",
+  "b.text": "El atributo protegido de un solicitante se voltea mientras cada otra entrada permanece idéntica, y la salida se verifica para cualquier cambio.",
+  "b.why": "Esto prueba un registro único en comparación con su gemelo hipotético, no tasas de resultado de nivel de grupo, un modelo puede pasar la verificación agregada mientras aún fallar esta individual."
+ },
+ "iii-dp-10": {
+  "a.text": "Los valores de peso dentro de la red se actualizan a través de retropropagación conforme el entrenamiento reduce error de predicción.",
+  "a.why": "Estos son valores aprendidos que determinan cómo los datos de entrada se transforman en salida, no existen en forma final hasta que ocurre el entrenamiento.",
+  "b.text": "La velocidad de aprendizaje es fijada por el equipo antes de que el entrenamiento jamás comience, y permanece intacta mientras la red aprende.",
+  "b.why": "Estos se establecen por adelantado para controlar cómo ocurre el aprendizaje, entradas a entrenamiento, no salidas de él."
+ },
+ "iii-dp-11": {
+  "a.text": "Un modelo de predicción de ventas funciona casi perfectamente en los datos históricos en los que fue entrenado, luego comete errores significativos prediciendo ventas para productos genuinamente nuevos.",
+  "a.why": "El modelo memorizó peculiaridades específicas a sus datos de entrenamiento en lugar de aprender patrones que transfieran, fuerte en lo familiar, débil en lo nuevo.",
+  "b.text": "Un modelo de abandono con muy pocos parámetros y solo un puñado de características funciona mal en los datos en los que fue entrenado y en clientes nuevos.",
+  "b.why": "Pobre desempeño en todos lados, incluyendo en los datos de entrenamiento en sí, señala que el modelo nunca tuvo suficiente complejidad para capturar el patrón en primer lugar, el modo de fallo opuesto de memorizarlo demasiado bien."
+ },
+ "iii-dp-12": {
+  "a.text": "Un sistema de reconocimiento de voz entrenado en solo unos pocos miles de clips de audio lucha por capturar la variabilidad del habla del mundo real.",
+  "a.why": "Esto pregunta si hay suficientes datos, punto, para aprender patrones significativos en absoluto, muy pocos datos aquí significa que el modelo nunca tuvo una oportunidad de generalizar.",
+  "b.text": "Una IA médica entrenada en datos de un solo país funciona bien en su piloto, luego lucha una vez expandida a pacientes con antecedentes genéticos diferentes y sistemas de cuidado de salud en otro lugar.",
+  "b.why": "Esto pregunta si un conjunto de datos que fue suficiente para un piloto puede aún soportar expansión en nuevas poblaciones y contextos, una pregunta distinta de si había suficientes datos para el piloto en primer lugar."
+ }
+}

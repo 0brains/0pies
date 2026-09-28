@@ -1,0 +1,53 @@
+{
+  "rag": {
+    "hint": "Coloca-o no caminho de recuperação: preparar conhecimento, encontrar candidatos, melhorar a sua relevância, ou garantir a resposta gerada permaneça apoiada e rastreável."
+  },
+  "rag-01": {
+    "label": "Um vector numérico representando características semânticas para que conteúdo relacionado possa ser comparado matematicamente.",
+    "why": "Um vector numérico representando características semânticas para que conteúdo relacionado possa ser comparado matematicamente."
+  },
+  "rag-02": {
+    "label": "Divide documentos de origem em passagens recuperáveis dimensionadas para preservar significado sem desperdiçar contexto.",
+    "why": "Divide documentos de origem em passagens recuperáveis dimensionadas para preservar significado sem desperdiçar contexto."
+  },
+  "rag-03": {
+    "label": "Armazena embeddings e suporta busca de vizinho mais próximo similar eficiente.",
+    "why": "Armazena embeddings e suporta busca de vizinho mais próximo similar eficiente."
+  },
+  "rag-04": {
+    "label": "Recupera conteúdo por significado em vez de necessitar de correspondência exata de palavra-chave.",
+    "why": "Recupera conteúdo por significado em vez de necessitar de correspondência exata de palavra-chave."
+  },
+  "rag-05": {
+    "label": "Recupera conteúdo utilizando correspondências de termos léxicos e permanece útil para nomes, códigos e frases exactas.",
+    "why": "Recupera conteúdo utilizando correspondências de termos léxicos e permanece útil para nomes, códigos e frases exactas."
+  },
+  "rag-06": {
+    "label": "Combina recuperação semântica e palavra-chave para beneficiar de significado e correspondência de termo-exacto.",
+    "why": "Combina recuperação semântica e palavra-chave para beneficiar de significado e correspondência de termo-exacto."
+  },
+  "rag-07": {
+    "label": "Constrange recuperação por atributos tal como tenant, data, tipo de documento ou nível de acesso.",
+    "why": "Constrange recuperação por atributos tal como tenant, data, tipo de documento ou nível de acesso."
+  },
+  "rag-08": {
+    "label": "Re-scores candidatos recuperados para colocar as passagens mais relevantes para a query completa primeiro.",
+    "why": "Re-scores candidatos recuperados para colocar as passagens mais relevantes para a query completa primeiro."
+  },
+  "rag-09": {
+    "label": "Constrange geração a evidência fornecida para que afirmações possam ser apoiadas e traçadas.",
+    "why": "Constrange geração a evidência fornecida para que afirmações possam ser apoiadas e traçadas."
+  },
+  "rag-10": {
+    "label": "Linka uma afirmação de resposta de volta para a passagem de fonte que a apoia.",
+    "why": "Linka uma afirmação de resposta de volta para a passagem de fonte que a apoia."
+  },
+  "rag-11": {
+    "label": "Indica se o estágio de recuperação encontra a evidência necessária para responder uma questão.",
+    "why": "Se 100 questões requerem uma passagem de evidência conhecida e o retriever a retorna para 85, o recall de recuperação é 85%. Recall de recuperação baixo aponta a chunking, embeddings, filtros, reescrita de query ou problemas de contagem-de-candidatos que geração não pode reparar."
+  },
+  "rag-12": {
+    "label": "Indica quanto do contexto recuperado é relevante em vez de distrair ruído.",
+    "why": "Indica quanto do contexto recuperado é relevante em vez de distrair ruído."
+  }
+}

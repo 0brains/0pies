@@ -1,0 +1,25 @@
+{
+ "ml-lifecycle": {
+  "prompt": "Sắp xếp vòng đời từ mục tiêu kinh doanh đến giám sát sản xuất.",
+  "steps[0].label": "Xác Định Mục Tiêu Kinh Doanh",
+  "steps[0].detail": "Mọi thứ phía sau thừa kế điều này. Nếu không có mục tiêu kinh doanh, không có cách nào để nói liệu model có tốt hay không.",
+  "steps[1].label": "Khung Bài Toán ML",
+  "steps[1].detail": "Dịch mục tiêu thành một tác vụ có thể học được: cái gì được dự đoán, từ cái gì, và cái gì tính là thành công.",
+  "steps[2].label": "Thu Thập Dữ Liệu",
+  "steps[2].detail": "Lắp ráp nguyên liệu thô và thiết lập nguồn gốc cũng như quyền sử dụng của nó trước khi nó được dựa vào.",
+  "steps[3].label": "Tiền Xử Lý Dữ Liệu",
+  "steps[3].detail": "Làm sạch, kết hợp, loại trừ trùng lặp và xử lý các giá trị bị thiếu, để model học tín hiệu thay vì các sản phẩm phụ.",
+  "steps[4].label": "Kỹ Thuật Tính Năng",
+  "steps[4].detail": "Định hình đầu vào thành các biểu diễn mà thuật toán có thể sử dụng. Thường là đòn bẩy có ảnh hưởng lớn nhất trên độ chính xác.",
+  "steps[5].label": "Huấn Luyện Model",
+  "steps[5].detail": "Điều chỉnh các tham số trên tập huấn luyện. Rẻ để lặp lại, vì vậy nó xuất hiện sau công việc dữ liệu tốn kém, không phải trước.",
+  "steps[6].label": "Tinh Chỉnh Siêu Tham Số",
+  "steps[6].detail": "Tìm kiếm các cài đặt mà model không thể tự học, được đánh giá trên dữ liệu xác thực thay vì kiểm tra.",
+  "steps[7].label": "Đánh Giá Model",
+  "steps[7].detail": "Đo lường dựa trên dữ liệu được tách biệt và chỉ số kinh doanh. Đây là cổng, không phải hình thức.",
+  "steps[8].label": "Triển Khai Model (Suy Luận và Dự Đoán)",
+  "steps[8].detail": "Cung cấp dự đoán cho các yêu cầu thực, với cùng tiền xử lý như huấn luyện hoặc kết quả sẽ không khớp.",
+  "steps[9].label": "Giám Sát Model",
+  "steps[9].detail": "Quan sát đầu vào, đầu ra và chất lượng trong sản xuất. Đây là nơi drift xuất hiện, và nó không bao giờ kết thúc."
+ }
+}

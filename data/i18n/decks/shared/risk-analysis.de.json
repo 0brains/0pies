@@ -1,0 +1,83 @@
+{
+ "ra-01": {
+  "label": "Jedes Risiko wird 1–5 für Wahrscheinlichkeit und 1–5 für Konsequenz bewertet, und das Produkt entscheidet, wo es im Register sitzt.",
+  "why": "Das Scoring-Gitter ist das Standard-Priorisierungs-Gerät. Seine Schwäche ist, dass es ein seltenes katastrophales Risiko und ein häufiges triviales in die gleiche Zelle plättet."
+ },
+ "ra-02": {
+  "label": "Risiken werden auf einem rot/orange/grünen Gitter aufgetragen, damit der Ausschuss auf einen Blick sehen kann, welche zuerst Aufmerksamkeit brauchen.",
+  "why": "Die Heatmap ist ein Kommunikations-Werkzeug, das auf den gleichen zwei Achsen gebaut wird. Es ist für Triage, nicht um Ursache zu verstehen."
+ },
+ "ra-03": {
+  "label": "Die Methode wird dafür kritisiert, Genauigkeit zu implizieren, die sie nicht hat, wenn die zugrunde liegenden Wahrscheinlichkeiten Vermutungen sind.",
+  "why": "Ordinale Scores, die zusammen multipliziert werden, produzieren Nummern, die quantitativ aussehen und nicht sind. Zu wissen, dass dies ist, was 12 davon abhält, das Doppelte von 6 zu sein."
+ },
+ "ra-04": {
+  "label": "Ein einzelner Top-Event wird in die Mitte platziert, mit Bedrohungswegen und präventiven Barrieren zu seiner Linken und Folgen-Wegen mit mildernden Barrieren zu seiner Rechten.",
+  "why": "Die Links/Rechts-Aufteilung um ein Ereignis ist die definierbare Form des Diagramms, und es macht die präventive/mildernde Unterscheidung sichtbar statt angenommen."
+ },
+ "ra-05": {
+  "label": "Die Analyse macht es offensichtlich, dass drei der vier Barrieren auf der Linken die gleiche Kontrolle dreimal gezählt sind.",
+  "why": "Die Offenlegung von gemeinsamen-Modus-Barrieren ist genau das, wofür das Diagramm gut ist. Ein Register von Kontrollen, die als Text aufgelistet werden, verbergen diese Abhängigkeit."
+ },
+ "ra-06": {
+  "label": "Eskalations-Faktoren werden gegen jede Barriere gezogen, zeigend die Bedingungen, unter denen die Barriere aufhört zu arbeiten.",
+  "why": "Eskalations-Faktoren und ihre eigenen Kontrollen sind Teil der Bowtie-Methode. Sie sind wie das Diagramm vermeidet anzunehmen, dass Barrieren immer wirksam sind."
+ },
+ "ra-07": {
+  "label": "Jede Komponente wird nacheinander für die Wege untersucht, auf die sie fehlschlagen kann, und jedes Fehler wird für Schwere, Wahrscheinlichkeit des Auftretens und Wahrscheinlichkeit der Erkennung bewertet.",
+  "why": "Das drei-Faktoren-Score, das eine Risiko-Prioritäts-Nummer produziert, ist FMEAs Signatur. Es ist Bottom-up, von Komponente zum Effekt."
+ },
+ "ra-08": {
+  "label": "Ein Fehler, der schwerwiegend ist, aber zuverlässig erkannt wird, bevor er einen Benutzer erreicht, erzielt ein niedrigeres Ergebnis als einer, der still ist.",
+  "why": "Erkennbarkeit als explizite dritte Achse ist einzigartig für FMEA unter diesen Techniken, und deshalb Stille Fehler Rang so hoch — was ML-Fehlermodi gut passt."
+ },
+ "ra-09": {
+  "label": "Die Analyse wird dafür kritisiert, Kombinationen gleichzeitiger Fehler schlecht zu handhaben, da jeder Fehlermodus auf seinem eigenen betrachtet wird.",
+  "why": "Einzelne-Fehler-Punkt-Orientierung ist FMEAs bekannte Begrenzung. Verwende sie mit einer Technik, die Kombinationen modelliert, nicht statt einer."
+ },
+ "ra-10": {
+  "label": "Eine Vorfalls-Überprüfung kommt zu dem Ergebnis, dass keine einzelne Verteidigung katastrophal fehlgeschlagen ist; vier Teils-Schwächen passten an dem Tag auseinander.",
+  "why": "Die Ausrichtung von Löchern über Schichten ist die Kern-Behauptung des Modells, und deshalb ist 'wer den Fehler gemacht hat' gewöhnlich die falsche erste Frage."
+ },
+ "ra-11": {
+  "label": "Das Modell unterscheidet aktive Fehler an der scharfen Ende von latenten Bedingungen, die viel früher von Design und Management-Entscheidungen erstellt wurden.",
+  "why": "Die aktive/latente Unterscheidung ist Reasons, und es ist, was Aufmerksamkeit zu den Entscheidungen lenkt, die den Fehler voraus luden."
+ },
+ "ra-12": {
+  "label": "Das Framing warnt, dass eine andere Verteidigungs-Schicht hinzufügen weniger Schutz gibt als erwartet, wenn die Löcher der neuen Schicht am gleichen Ort sind.",
+  "why": "Korrelierte Verteidigungen sind die Falle. Zwei Reviewer, die die gleiche fehlerhafte Checkliste verwenden, sind eine Schicht, nicht zwei."
+ },
+ "ra-13": {
+  "label": "Die Bewertung trennt Schäden der Zuteilung, wo Gelegenheiten oder Ressourcen entzogen werden, von Schäden der Darstellung, wo eine Gruppe verspottet oder gelöscht wird.",
+  "why": "Die Zuteilungs-/Darstellungs-Aufteilung ist grundlegend, und Darstellungsschaden ist der, der Bewertungen, die von Genauigkeits-Metriken angetrieben werden, entschlüpft."
+ },
+ "ra-14": {
+  "label": "Die Bewertung zeichnet auf, dass ein System messbar schlimmer für eine Gruppe funktioniert, obwohl keine Entscheidung ihnen entzogen wird.",
+  "why": "Dienst-Qualitäts-Schaden ist eine separate Kategorie. Ohne eine Taxonomie, die es benennt, neigt dieser Befund dazu, als Genauigkeits-Problem eingereicht zu werden und deprioritiert."
+ },
+ "ra-15": {
+  "label": "Die Methode existiert, um zu stoppen, dass die Bewertung nur die Schäden abdeckt, die zufällig eine Metrik angehängt haben.",
+  "why": "Das Aufzählen von Kategorien zuerst, dann Suche nach Messung, ist, was würdigende und gesellschaftliche Schäden in Umfang statt von ihm hält."
+ },
+ "ra-16": {
+  "label": "Das Risiko wird zweimal bewertet: einmal, als wenn keine Kontrollen existieren, und einmal mit den Kontrollen, die wie entworfen arbeiten.",
+  "why": "Die vor-und-nach-Paarung ist die ganze Technik. Der Unterschied ist die Evidenzbasis für ob eine Kontrolle ihre Kosten wert ist."
+ },
+ "ra-17": {
+  "label": "Eine Kontrolle wird gefunden, um die Punktzahl um fast nichts zu reduzieren, was zum Argument wird, sie zu entfernen und die Anstrengung woanders zu verbringen.",
+  "why": "Das Vergleichen der zwei Bewertungen ist wie Kontrollen, die nur zum Auflisten existieren, identifiziert werden. Eine Kontrolle ohne Delta ist Theater."
+ },
+ "ra-18": {
+  "label": "Das Register zeichnet die Ebene auf, die nach der Behandlung bleibt, und es ist diese Ebene, die vorher Zeichen im Appetit sitzen muss.",
+  "why": "Restrisiko ist, was akzeptiert wird; inhärentes Risiko ist nur jemals Kontext. Akzeptieren gegen die inhärente Figur ist ein Kategorien-Fehler."
+ },
+ "risk-analysis": {
+  "hint": "Ziehe jede Beschreibung auf ihre Technik. Frag, was die Methode tatsächlich gebaut ist zu offenbaren — eine Rangliste, einen Kausal-Weg, einen Fehlermodus oder eine Messung.",
+  "zones[0].def": "Rate Wahrscheinlichkeit und Konsequenz, trage auf einem Gitter auf, verwende es zur Priorisierung. Schnell, grob und die Standard in den meisten Registern.",
+  "zones[1].def": "Ein Ereignis in die Mitte; Ursachen und präventive Barrieren auf der Linken, Folgen und mildernde Barrieren auf der Rechten.",
+  "zones[2].def": "Arbeite Bottom-up von jede Komponente Fehlermodi zu ihren Effekten, wertend Schwere, Auftritt und Erkennbarkeit.",
+  "zones[3].def": "Schaden tritt auf, wenn Löcher in aufeinanderfolgenden Verteidigungs-Schichten ausrichten. Erklärt, warum Single-Ursache-Erklärungen von Vorfällen gewöhnlich falsch sind.",
+  "zones[4].def": "Zähle Schaden-Kategorien auf — Zuteilung, Darstellung, Dienst-Qualität, würdigende, gesellschaftliche — damit Bewertung nicht auf das beschränkt ist, was einfach zu messen ist.",
+  "zones[5].def": "Bewerte Risiko vor Kontrollen und erneut danach. Der Gap ist, was die Kontrollen tatsächlich kaufen."
+ }
+}

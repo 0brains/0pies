@@ -1,0 +1,74 @@
+{
+ "risk-rmf-functions": {
+  "hint": "Ziehe jede Aktivität auf ihre Funktion. Govern verläuft über alle hinweg; Map stellt Kontext her, Measure quantifiziert, Manage agiert.",
+  "note": "Govern ist keine Phase, die endet. Wenn eine Aktivität die Bedingungen festlegt, unter denen die anderen drei passieren — Kultur, Verantwortung, Politik — ist es Govern, wann immer es passiert.",
+  "zones[0].def": "Kultiviere eine Risikoverwaltungskultur: Richtlinien, Verantwortungsstrukturen, Rollen, Fähigkeiten der Belegschaft, Überwachung Dritter. Schneidet über die anderen drei.",
+  "zones[1].def": "Stellen Sie den Kontext fest und rahmen Sie Risiken ein: Zweck, Einstellung, Akteure, betroffene Menschen, Fähigkeiten und Beschränkungen, gegenseitige Abhängigkeiten.",
+  "zones[2].def": "Analysieren, bewerten, benchmarken und überwachen Sie mit quantitativen und qualitativen Methoden, einschließlich der Vertrauenswürdigkeitsmerkmale.",
+  "zones[3].def": "Weisen Sie Ressourcen zu kartierten und gemessenen Risiken zu: Priorisieren, reagieren, wiederherstellen, kommunizieren und agieren Sie auf Risiken Dritter und Restrisiken."
+ },
+ "rmf-01": {
+  "label": "Die Organisation dokumentiert, wer für KI-Risiko-Entscheidungen verantwortlich ist und auf welcher Ebene jede Entscheidungsklasse getroffen werden kann.",
+  "why": "Verantwortungsstrukturen sind die archetypische GOVERN-Aktivität. Ohne sie haben die anderen drei Funktionen niemanden zum Berichten und niemanden zur Eskalation."
+ },
+ "rmf-02": {
+  "label": "Eine KI-Politik wird genehmigt, an Rechtsvorschriften angepasst und ein Ausnahmeverfahren ist definiert.",
+  "why": "Politik und sein Ausnahmeverfahren legen die Bedingungen fest, unter denen jede andere Aktivität passiert. GOVERN ist übergreifend, nicht sequenziell."
+ },
+ "rmf-03": {
+  "label": "Mitarbeiter, die an KI-Systemen arbeiten, erhalten rollenspezifische Schulungen und ihre Kompetenz wird verfolgt.",
+  "why": "Fähigkeiten der Belegschaft liegen klar in GOVERN. Ein Messsystem, das niemand kompetent durchführen kann, erzeugt Zahlen ohne Zusicherung."
+ },
+ "rmf-04": {
+  "label": "Es werden Prozesse zur Überwachung von Drittanbieter-Modellen und Daten eingerichtet, einschließlich was von Lieferanten erhalten werden muss.",
+  "why": "GOVERN deckt Überwachungsrichtlinien Dritter explizit ab. Die Anwendung auf ein spezifisches Risiko eines Lieferanten in einem spezifischen System ist MANAGE."
+ },
+ "rmf-05": {
+  "label": "Das Team dokumentiert den beabsichtigten Zweck des Systems, die Bereitstellungsumgebung und die Kategorien von Menschen, die es beeinflussen wird.",
+  "why": "Die Einrahmung von Kontext ist der ganze Sinn von MAP. Das Überspringen führt dazu, dass ein System später genau gegen das falsche Ziel gemessen wird."
+ },
+ "rmf-06": {
+  "label": "Bekannte Fähigkeiten, Beschränkungen und Annahmen des Systems werden katalogisiert, einschließlich wo es nicht verwendet werden sollte.",
+  "why": "MAP stellt fest, was das System ist und wofür nicht. Die Erklärung außerhalb des Umfangs, die hier verfasst wird, ist das, wogegen spätere Evaluierung und Überwachung beurteilt werden."
+ },
+ "rmf-07": {
+  "label": "Interne und externe Stakeholder, einschließlich betroffener Gemeinschaften, werden zusammen mit den Vorteilen und potenziellen Schäden für jeden identifiziert.",
+  "why": "Das Identifizieren betroffener Parteien und das Einrahmen potenzieller Auswirkungen ist MAP. Die Quantifizierung dieser Auswirkungen ist MEASURE."
+ },
+ "rmf-08": {
+  "label": "Abhängigkeiten mit anderen Systemen und die Konsequenzen eines Ausfalls des KI-Komponente werden nachverfolgbar gemacht.",
+  "why": "MAP deckt das System in seinem weiteren Kontext ab, einschließlich was anderes bricht, wenn es passiert. Eine isoliert betrachtete Komponente ist ein kartiertes Risiko, das übersehen wurde."
+ },
+ "rmf-09": {
+  "label": "Das System wird gegen definierte Metriken für Gültigkeit, Zuverlässigkeit und Robustheit vor der Freigabe benchmarkt.",
+  "why": "MEASURE umfasst die Bewertung gegen die Vertrauenswürdigkeitsmerkmale mit wiederholbaren Methoden."
+ },
+ "rmf-10": {
+  "label": "Die Leistung wird für jede demografische Untergruppe separat evaluiert und die Abweichung wird quantifiziert.",
+  "why": "Das Analysieren schädlicher Vorurteile mit quantitativen Methoden ist MEASURE. Die Entscheidung, was mit der Abweichung zu tun ist, ist MANAGE."
+ },
+ "rmf-11": {
+  "label": "Die laufende Überwachung instrumentiert das bereitgestellte System für Eingabe-Drift und Qualitätsverschlechterung.",
+  "why": "MEASURE umfasst kontinuierliche Überwachung nach der Bereitstellung, nicht nur Pre-Release-Testen. Drift-Erkennung lebt hier."
+ },
+ "rmf-12": {
+  "label": "Test-, Evaluierungs-, Verifikations- und Validierungsmethoden werden ausgewählt, dokumentiert und ihre eigenen Beschränkungen aufgezeichnet.",
+  "why": "MEASURE erfordert, dass der Messansatz selbst bewertet wird. Eine Metrik mit ungeprüften blinden Flecken ist eine falsche Zusicherung."
+ },
+ "rmf-13": {
+  "label": "Risiken werden priorisiert gegen Auswirkungen und Ressourcen werden zunächst den höchsten zugewiesen.",
+  "why": "Priorisierung und Ressourcenallokation über kartierte und gemessene Risiken ist die Definition von MANAGE."
+ },
+ "rmf-14": {
+  "label": "Ein Aktionsplan wird für einen Modellausfall eingerichtet, der Incident-Eindämmung, Wiederherstellung und Kommunikation abdeckt.",
+  "why": "MANAGE deckt Reagieren auf, Wiederherstellen von und Kommunizieren über Incidents ab. Das Schreiben des Plans ist MANAGE; die Vorbereitung der Fähigkeit ist GOVERN."
+ },
+ "rmf-15": {
+  "label": "Das Restrisiko nach Minderung wird dokumentiert und an den Einsatzführer des Systems kommuniziert.",
+  "why": "MANAGE behandelt Restrisiken explizit, einschließlich dem Mitteilen nachgelagerter Benutzer, was bleibt. Nicht dokumentiertes Restrisiko wird versehentlich übertragen."
+ },
+ "rmf-16": {
+  "label": "Eine Entscheidung wird getroffen, ein bereitgestelltes Modell zu deaktivieren, dessen Risiko nicht länger im Toleranzbereich gebracht werden kann.",
+  "why": "Die Ablösung oder Deaktivierung eines Systems ist eine MANAGE-Reaktion. Ein definierter Ruhestandspfad macht es möglich."
+ }
+}

@@ -1,0 +1,62 @@
+{
+ "iv-ap-01": {
+  "a.text": "Wiedza własnościowa organizacji jest trenowana bezpośrednio na wagach modelu poprzez dodatkowe rundy treningu, stając się stałą częścią tego, co model 'wie'.",
+  "a.why": "Wpieczenie danych domeny w wagi oznacza, że model dziedziczy wszelkie ryzyko zapamiętania lub wycieku, które niosą te dane — generator danych syntetycznych zaadaptowany w ten sposób na rekordach produkcyjnych może nadal wyciekać ślady oryginałów nawet po anonimizacji, a użycie danych specyficznych dla ucznia w ten sam sposób tworzy własne ryzyko naruszenia.",
+  "b.text": "Wiedza własnościowa organizacji pozostaje w zewnętrznym, oddzielnie utrzymywanym magazynie i jest pobierana tylko w momencie zadania każdego pytania.",
+  "b.why": "Nic o tej wiedzy nie jest uczone przez sam model — jest pobierane na świeżo na zapytanie, co jest dokładnie tym, dlaczego może odzwierciedlać wytyczne tego miesiąca bez żadnego rundy retrenningu. Wybór adaptacji dokonany tutaj to to, co określa obciążenie zapewnienia, które zespół kończy posiadając."
+ },
+ "iv-ap-02": {
+  "a.text": "Pobiera bieżące dokumenty polityki, aby uzasadnić pojedynczą odpowiedź, którą człowiek następnie czyta i działa.",
+  "a.why": "Zadanie systemu zatrzymuje się na wyprodukowaniu dobrze uzasadnionej odpowiedzi; każda następna konsekwentna akcja jest wciąż zadaniem człowieka.",
+  "b.text": "Planuje wieloetapowe zadanie na własną rękę i wykonuje akcje na całych narzędziach rezerwacji i płatności, z minimalnym przeglądem człowieka na każdym etapie.",
+  "b.why": "Autonomia działania, a nie tylko autonomia odpowiedzi, to nowa powierzchnia zarządzania tutaj: gdy wdrażający pozwala systemowi działać zamiast tylko informować, bezpośrednia odpowiedzialność za szkodliwe lub zwodnicze zachowanie agenta spada na wdrażającego — wymaga to zakresu działania, progów człowieka w pętli i pełnych dzienników działań, z których żaden czysty asystent pobrany nie potrzebuje."
+ },
+ "iv-ap-03": {
+  "a.text": "Organizacja może czytać, modyfikować i rozpowszechniać wagi i kod modelu, oraz uruchamiać go całkowicie na infrastrukturze, którą kontroluje.",
+  "a.why": "Inspektowalność to cały kompromis: możesz sam audytować algorytm i uniknąć zależności od harmonogramu jednego dostawcy, ale także dziedziczysz wewnętrzne obciążenie sprawdzania licencji, pochodzenia danych treningowych i twoich własnych testów bezpieczeństwa.",
+  "b.text": "Organizacja może tylko wywołać model poprzez API i nigdy nie widzi wag, ale dostawca wspiera go umowami wsparcia, reagowaniem na incydenty i zabezpieczeniami.",
+  "b.why": "Ty handlujesz prawami inspekcji na gwarancje wspierane kontraktem — i strategiczny koszt tego handlu jest rejestrowany jako główne ryzyko tej ścieżki: gdy przepływy pracy są zbudowane wokół API jednego dostawcy, przełączanie się później staje się drogie."
+ },
+ "iv-ap-04": {
+  "a.text": "Model bazowy jest kompresowany i przeniesiony — parametry przycięte, precyzja zmniejszona, adapter ultralekkiego warstwowany na — aby zmniejszyć koszt i opóźnienie do użytku krawędziowego lub dużej objętości.",
+  "a.why": "Zmniejszenie lub zmiana kształtu artefaktu w ten sposób może cicho przesunąć jego granice decyzji i zmniejszyć interpretowność, więc dokładność, sprawiedliwość i solidność wszystko musi być ponownie sprawdzone po każdej takiej zmianie, nie zakładane do przeniesienia się bez zmian.",
+  "b.text": "Model dostawcy działa niezmodyfikowany, dokładnie tak jak wysłany, wspierany tylko przeglądem człowieka i innymi kontrolami warstwowanymi wokół niego.",
+  "b.why": "Nic o samym artefakcie się nie zmieniło, więc zarządzanie opiera się na dokumentacji dostawcy i kontrolach wyrównawczych, takich jak przegląd człowieka, zamiast ponownego walidacji wewnętrzności modelu."
+ },
+ "iv-ap-05": {
+  "a.text": "System punktacji kredytowej przewiduje lub klasyfikuje ze strukturalnych danych wejściowych; jego zagrożenia to stronniczość wobec pewnych grup i dokładność, która skrycie się pogarsza w miarę dryftu danych źródłowych.",
+  "a.why": "Przewidywanie lub klasyfikacja znanej kategorii ze strukturalnych cech to profil awarii tego — znane zagrożenia stronniczości i dryfu, które testy sprawiedliwości i monitorowanie są zbudowane do złapania.",
+  "b.text": "Asystent redakcji produkuje zupełnie nowy tekst, obrazy lub kod z monitu; jego zagrożenia to halucynacja, ekspozycja na prawa autorskie i przekonujące złe dane wyjściowe.",
+  "b.why": "Tworzenie zawartości, która wcześniej nie istniała otwiera zupełnie inną powierzchnię ryzyka — halucynacja i pochodzenie, a nie profil stronniczości i dryfu, który rządzi systemem tylko przewidywania."
+ },
+ "iv-ap-06": {
+  "a.text": "Model dostawcy jest używany dokładnie tak, jak dostarczony; zadaniem zespołu jest walidacja go względem własnych standardów wydajności i sprawiedliwości oraz udokumentowanie wszelkich luk.",
+  "a.why": "Zarządzanie tutaj opiera się prawie całkowicie na przejrzystości dostawcy plus kontrolach wyrównawczych — zespół nigdy nie dotyka wewnętrzności modelu, więc jego zobowiązania zatrzymują się na walidacji i dokumentacji.",
+  "b.text": "Model ogólnego przeznaczenia jest ponownie trenowany na etykietowanych danych organizacji, aż do odtworzenia określonego, pożądanego zachowania.",
+  "b.why": "W momencie, gdy organizacja ponownie trenuje model, zarządzanie traktuje wynik jako nowy system: testy sprawiedliwości i solidności muszą być powtórzone od nowa, a — w porównaniu z użyciem modelu dostawcy zgodnie z wdrażaniem — organizacja teraz nosi zwiększoną odpowiedzialność prawną na własną rękę."
+ },
+ "iv-ap-07": {
+  "a.text": "Czatbot wsparcia przyjmuje pisane pytania i produkuje tylko pisane odpowiedzi, bez żadnego innego kanału wejściowego do rozumowania.",
+  "a.why": "Tylko tekst w, tylko tekst na wyjściu — obawy zarządzania tutaj to halucynacja, stronnicza frazeologia i ataki w stylu jailbreak, z których żaden nie obejmuje drugiej modalności.",
+  "b.text": "Narzędzie reklamacji waży fotografię uszkodzenia razem z pisanymi notatkami korektora przed wyprodukowaniem pojedynczego połączonego osądu.",
+  "b.why": "Łączenie kanałów dodaje ryzyko, z którym system tylko tekstu nigdy nie styka: fałszywe korelacje między obrazem a tekstem obok niego, i potrzebę pokazania, które wejście faktycznie napędzało dane wyjściowe."
+ },
+ "iv-ap-08": {
+  "a.text": "Wąski klasyfikator obsługuje jedno zadanie na ciasnym budżecie obliczeniowym, szybko przewiny i śledzi swoje dane wyjściowe z powrotem na wejścia z małym wysiłkiem.",
+  "a.why": "Kompaktowy, wąski system jest tani do ponownego testowania i łatwy do wyjaśnienia — koszt jest taki, że może niedowykonywać się, gdy środowisko staje się bardziej zmienne niż to, dla którego został zbudowany.",
+  "b.text": "Szeroki system fundacyjny uogólnia na wiele zadań, dla których nigdy nie był specjalnie trenowany, kosztem cięższego zarządzania obliczeniami i większej powierzchni ataku.",
+  "b.why": "Szerokość kupiona przez skalę oznacza system może bronić nieznanych domen zero-shot, ale to również wymaga przydziałów obliczeniowych, red-teamingu i monitorowania dryfu, że wąski system nie."
+ },
+ "iv-ap-09": {
+  "a.text": "Każde źródło, na które model narysował podczas sesji, jest rejestrowane na audyt, a wszelkie dane osobowe przechodzące przez połączony korpus muszą być redagowane zanim kiedykolwiek zostaną pokazane modelowi.",
+  "a.why": "Rejestracja audytu i redakcja PII w całym zewnętrznym korpusie to zobowiązania zarządzania, które po prostu nie istnieją dla modelu bez live potoku danych podłączonych — obciążenie zapewnienia tej ścieżki żyje w instalacjach sanitarnych, a nie wagach.",
+  "b.text": "Model dostawcy jest używany dokładnie tak, jak dostarczony, i najszybsza ścieżka do działającego pilota jest wybierana dokładnie dlatego, że nie trzeba budować nowego retrenningu danych ani potoku.",
+  "b.why": "Prędkość to całe zainteresowanie tutaj — bez retrenningu, bez nowych instalacji sanitarnych danych — ale zarządzanie traktuje tę prędkość jako dług: model jest domniemany wysokiego ryzyka, aż do walidacji względem własnych standardów wydajności i sprawiedliwości tej organizacji, ponieważ nic o tym nie zostało zbudowane z tym wdrażaniem na myśli."
+ },
+ "iv-ap-10": {
+  "a.text": "Ten sam model bazowy wychodzi mniejszy i tańszy do uruchamiania po kompresji, bez jednego nowego faktu dodanego do niego.",
+  "a.why": "Ta ścieżka celuje w rozmiar, a nie wiedzę — ale zmniejszenie lub zmiana kształtu artefaktu może nadal przesunąć jego granice decyzji, więc dokładność i sprawiedliwość potrzebują ponownego sprawdzenia, nawet jeśli nic 'nowego' nie było nauczane.",
+  "b.text": "Ten sam model bazowy wychodzi ten sam rozmiar, ale teraz niezawodnie reprodukuje specjalistyczne zachowanie, które nigdy nie miało dostępu do siebie, nauczane z starannie wyselekcjonowanych przykładów.",
+  "b.why": "Ta ścieżka celuje w zachowanie i wiedzę, a nie rozmiar — i ponieważ to nowe zachowanie zostało nauczane z własnych danych organizacji, zarządzanie teraz traktuje wynik jako nowy system wymagający jego własnego testowania, a nie zmienioną kopię starego."
+ }
+}

@@ -1,0 +1,108 @@
+{
+ "wl-001": {
+  "label": "Draft five candidate slogans for a new product from a two-line brief",
+  "why": "Creating new content from a prompt is generative AI — nothing is being analyzed, extracted or spoken."
+ },
+ "wl-002": {
+  "label": "An assistant that checks inventory, files the reorder, and emails the supplier without step-by-step prompts",
+  "why": "Multi-step autonomous action with tool use is the agentic signature — histack's 'persistent assistant' vs 'one stateless response'."
+ },
+ "wl-003": {
+  "label": "Determine who spoke when in a recorded meeting (speaker diarisation)",
+  "why": "Diarisation separates speakers within audio — a speech capability. Trap: it generates nothing, so it is never synthesis."
+ },
+ "wl-004": {
+  "label": "Low-latency, high-quality speech-to-speech interactions for a voice agent",
+  "why": "Verbatim Voice Live / gpt-realtime phrasing from the corpus — real-time audio in, audio out."
+ },
+ "wl-005": {
+  "label": "Return bounding boxes around each vehicle in traffic-camera footage",
+  "why": "Object detection — bounding boxes per object — is computer vision, distinct from whole-image classification."
+ },
+ "wl-006": {
+  "label": "Pull the invoice number, total, and due date out of thousands of scanned PDFs",
+  "why": "Extracting structured fields from documents and forms is the information-extraction workload — Content Understanding territory in Domain 2."
+ },
+ "wl-007": {
+  "label": "Create a photorealistic hero image for a product page from a two-sentence text description of the item and its setting",
+  "why": "Producing a brand-new image from a text prompt is generative AI's image side — there is no existing image being analyzed, which is what would make it computer vision."
+ },
+ "wl-008": {
+  "label": "Produce a first draft of a product FAQ page from a bullet-point outline of talking points",
+  "why": "Turning a sparse outline into new prose is content creation from a prompt, the same capability as wl-001's slogans, just applied to a longer document."
+ },
+ "wl-009": {
+  "label": "Answer a single one-off customer question in a chat window with one reply, with no follow-up steps or tools invoked",
+  "why": "One stateless response to one prompt is generative AI; the moment a system starts planning steps and calling tools on its own it crosses into agentic AI."
+ },
+ "wl-010": {
+  "label": "A travel-booking assistant compares fares across three sites, holds a seat, and completes the purchase once the price target is hit, with no human confirming each step",
+  "why": "Comparing, deciding, and executing a purchase end to end with no per-step prompting is the agentic pattern, distinct from a chatbot that only replies."
+ },
+ "wl-011": {
+  "label": "An IT-support assistant triages an incoming ticket, runs a diagnostic script against the affected server, and escalates to a human only if the automated fix fails",
+  "why": "Tool use plus a conditional next action is the exam's 'tool use means the agent can call external capabilities' definition — distinct from a single generated response."
+ },
+ "wl-012": {
+  "label": "A research assistant breaks a broad question into sub-questions, searches multiple sources for each, and stitches the findings into one final report",
+  "why": "Task planning that decomposes a goal into steps, executed end to end, is the exam's task-planning-plus-task-completion definition of agentic AI, not a single generated answer."
+ },
+ "wl-013": {
+  "label": "Scan free-text support tickets and flag any phone numbers or email addresses they contain before the tickets are stored",
+  "why": "PII detection flags sensitive spans inside unstructured text — a text-analysis feature, distinct from information extraction's fixed fields pulled from forms and documents."
+ },
+ "wl-014": {
+  "label": "Return a short ranked list of the main topics mentioned across thousands of support tickets, without producing a rewritten paragraph",
+  "why": "Keyword extraction lists the salient terms; the exam's planted trap is offering summarization instead, which would produce prose rather than a topic list."
+ },
+ "wl-015": {
+  "label": "Identify every person name, organization, and location mentioned across a batch of news articles",
+  "why": "Named entity recognition classifies mentions inside running text into people, places and organizations — a text-analysis capability, not extraction against a fixed document schema."
+ },
+ "wl-016": {
+  "label": "Condense a 40-page policy document into a three-paragraph overview that captures its key points",
+  "why": "Summarization compresses existing text into new but faithful prose — text analysis, not generative AI, because the output is grounded in and constrained by the source document."
+ },
+ "wl-017": {
+  "label": "Transcribe a batch of uploaded interview recordings once they have all finished uploading, rather than as they are spoken",
+  "why": "Batch transcription processes pre-recorded audio asynchronously — still a speech capability, just the offline sibling of real-time recognition, not a text or extraction task."
+ },
+ "wl-018": {
+  "label": "Produce natural-sounding narrated audio for an e-learning module from a written script",
+  "why": "Converting written text into spoken audio is text-to-speech synthesis — the output side of the speech workload, mirroring wl-004's audio-in/audio-out case."
+ },
+ "wl-019": {
+  "label": "Verify that the person in front of a login camera is a live human being, not a printed photo or a video replay",
+  "why": "Face liveness detection defends against presentation attacks by analyzing the live camera image — a computer-vision security capability, distinct from face verification's identity match."
+ },
+ "wl-020": {
+  "label": "Detect scene changes and generate chapter markers by analyzing the visual frames of an uploaded training video",
+  "why": "Deriving chapter breaks from what the frames show is visual analysis of the video; the same footage shifts to speech only when the deliverable is the spoken transcript instead."
+ },
+ "wl-021": {
+  "label": "Tag an uploaded photo with a single whole-image category such as 'beach' or 'city street', with no per-object locations needed",
+  "why": "Image classification assigns one label to the whole image, unlike wl-005's object detection, which returns per-object bounding boxes — both are computer vision, but distinct techniques."
+ },
+ "wl-022": {
+  "label": "Run AI enrichment skills over thousands of scanned reports and images during indexing so content that was previously unsearchable becomes searchable",
+  "why": "This is knowledge mining — the exam's Azure AI Search definition of using AI skills to surface information from unstructured content into a search index."
+ },
+ "wl-023": {
+  "label": "Return a schema-defined set of fields — call reason, resolution, and follow-up action — from a batch of recorded support calls",
+  "why": "Pulling a fixed business schema out of audio content is Content Understanding's structured extraction; the deliverable is defined fields, not a transcript, which is what would make it speech."
+ },
+ "wl-024": {
+  "label": "Pull key-value pairs and table structure from a mixed batch of contracts, intake forms, and handwritten receipts using one reusable schema",
+  "why": "Structured field and table extraction across varied document types is document intelligence's layout/custom-model territory — the same workload as wl-006's invoices, applied to a broader document mix."
+ },
+ "workload-sort": {
+  "hint": "Ask what the deliverable actually is: brand-new content from a prompt (generative), autonomous multi-step action with tools (agentic), a judgment or summary about existing text (text analysis), anything that touches spoken audio (speech), a judgment about an image or video frame (computer vision), or a fixed set of structured fields/an index pulled out of documents or mixed content (information extraction).",
+  "note": "Several requests could sound like two workloads. The tie-break is always the deliverable: new content vs. an autonomous action vs. an analysis of existing text vs. audio in/out vs. a judgment about pixels vs. a structured field set.",
+  "zones[0].def": "Creating new content — text, images, code, or audio — from a prompt, rather than analyzing or acting on content that already exists.",
+  "zones[1].def": "Autonomously planning, using tools, and taking multi-step action toward a goal, going beyond a single stateless response.",
+  "zones[2].def": "Analyzing written text to surface meaning already present in it — sentiment, key phrases, entities, PII, or a grounded summary — without generating new content.",
+  "zones[3].def": "Converting between spoken audio and text, or working directly with audio streams — recognition, synthesis, translation, and diarization.",
+  "zones[4].def": "Analyzing the visual content of images and video frames — classifying, detecting objects, verifying faces, or reading a scene.",
+  "zones[5].def": "Pulling a fixed set of structured fields, or a searchable index, out of documents, forms, or mixed-modality content."
+ }
+}

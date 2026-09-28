@@ -1,0 +1,84 @@
+{
+ "iii-ab-01": {
+  "label": "Um reviewer independente, organizacionalmente separado da equipa de produto, verifica distribuições de equidade e registos de procedência de dados contra ISO/IEC 42001 antes de aprovação.",
+  "why": "Independência da equipa de build mais uma pista de evidência documentada é a assinatura desta disciplina — distinto de red teaming, onde a mesma independência é usada para atacar o sistema em vez de rever o seu paperwork."
+ },
+ "iii-ab-02": {
+  "label": "A saída mais crucial não é uma pontuação de benchmark mas uma lista priorizada de non-conformities, cada uma com um owner nomeado e uma deadline de remediação.",
+  "why": "A entregável de uma auditoria é um ledger de gap-e-fix contra a pista de papel — diferente do catálogo de caso de abuso de threat modeling, que lista o que poderia acontecer em vez do que já correu mal."
+ },
+ "iii-ab-03": {
+  "label": "Uma semana antes do lançamento agendado, uma revisão interna final do ficheiro técnico descobre um gap de equidade que teste uniforme-amostra anterior tinha perdido.",
+  "why": "Rever o registo depois do facto para apanhar o que teste perdeu é o trabalho desta disciplina — o teste anterior em si, e qualquer exercício red-team que já correu e fechou, pertencem às suas próprias zonas."
+ },
+ "iii-ab-04": {
+  "label": "Especialistas contratados fazem corrente de prompts jailbreak para ultrapassar as guardrails antes do lançamento; constatações alimentam o registo de risco e são re-testadas uma vez corrigido.",
+  "why": "Simular uso realista misuse end-to-end é o trabalho desta disciplina — um pen test apenas sonda infraestrutura, e uma auditoria revisaria o relatório resultante, não ia encontrar o exploit em si próprio."
+ },
+ "iii-ab-05": {
+  "label": "Testers colocam um chatbot de atendimento ao cliente através de framing de engenharia social, injeção de prompt e cenários de misuse de edge-case que nenhum script QA ordinário tentaria.",
+  "why": "Simulação adversarial de múltiplas perspectivas combinando ataques técnicos com framing de misuse é o maior valor de governança desta disciplina — uma probe a nível de componente de um endpoint de API fica na zona seguinte em vez."
+ },
+ "iii-ab-06": {
+  "label": "Uma falha de condição-rara que só mostra sob condições de tempo e iluminação específicas superficialidades durante teste adversarial pré-lançamento; lançamento é atrasado até que o cenário seja corrigido e revalidado, por muito raro o gatilho.",
+  "why": "Teste adversarial live é o que superficialidades desta falha em primeiro lugar — um exercício de threat-modeling apenas a teria sinalizado como um cenário hipotético em papel, nunca realmente executá-lo."
+ },
+ "iii-ab-07": {
+  "label": "Assets, limites de confiança e casos de abuso são enumerados no diagrama de arquitetura no tempo de design, antes de qualquer teste correr.",
+  "why": "Antecipação estruturada em papel, com nenhum ataque live, é o que torna esta disciplina preventiva em vez de diagnóstica — o momento em que alguém realmente tenta o jailbreak, o trabalho moveu para red teaming."
+ },
+ "iii-ab-08": {
+  "label": "A revisão de design lista possíveis adversários, seus objetivos e capacidades, ao lado da salvaguarda que cada caso de abuso precisará — nenhum ataque live tentado ainda.",
+  "why": "Um catálogo de owner nomeado, ligado-mitigação é a entregável aqui — distinto de teste de segurança, que apenas começa uma vez que uma salvaguarda específica precisa de ser confirmada como realmente funcionar."
+ },
+ "iii-ab-09": {
+  "label": "O mapa cataloga quais conjuntos de dados, bibliotecas e pesos pré-treinados poderiam ser adulterados ao longo da cadeia de supply, e nomeia um owner para cada salvaguarda — o exercício acontece antes do sistema ser enviado.",
+  "why": "Catalogar o que poderia ser adulterado é antecipação, não verificação — confirmar que uma scansão de dependência realmente apanhou uma biblioteca comprometida é uma disciplina diferente, hands-on."
+ },
+ "iii-ab-10": {
+  "label": "Pen testers atingem a API de serving e consola de admin por misconfigurações e autenticação fraca, uma scansão de dependência sinaliza bibliotecas desatualizadas, e limites de taxa são verificados sob carga simulada.",
+  "why": "Probing hands-on de componentes específicos, já identificados, confirma que uma defesa realmente funciona — threat modeling apenas mapeou onde estes pontos fracos poderiam ser, nunca executou a verificação."
+ },
+ "iii-ab-11": {
+  "label": "Uma revisão linha-por-linha do pipeline de pré-processamento verifica riscos de injeção e segredos expostos, enquanto um inventário rastreia cada biblioteca e conjunto de dados que o lançamento depende.",
+  "why": "Confirmar que um componente específico, nomeado é hardened é mais estreito do que a simulação de misuse full-stack, end-to-end de red teaming — esta disciplina fica dentro de um componente de cada vez."
+ },
+ "iii-ab-12": {
+  "label": "Os constatações de pen-test e scansão de dependência de API ficam logged com uma severidade, um owner e uma deadline de re-test, e o lançamento não consegue sinal off até que fechem.",
+  "why": "Probe, patch, re-test é o loop de operação desta disciplina contra um componente definido — uma auditoria em vez revisaria se aquele loop aconteceu em tudo, em vez de correr."
+ },
+ "iii-ab-13": {
+  "label": "Avaliações de shadow semanais replay de tráfego recente contra um modelo de referência, e verificações de equidade mensais correm sobre a cadência que o plano de lançamento definiu.",
+  "why": "Este é o lado de cadência técnica-e-dashboard do plano de monitorização; o dever legal de estar a correr-o, uma vez que o sistema está vivo, pertence a uma placa de nível diferente inteiramente."
+ },
+ "iii-ab-14": {
+  "label": "O dashboard próprio da equipa de produto rastreia calibração e latência contra uma baseline validada numa cadência de semana a correr, com proporções de disparidade de equidade refrescando automaticamente ao lado delas.",
+  "why": "Um feed contínuo, automatizado own pela equipa que construiu o sistema é a textura desta zona — o momento que a mesma verificação é em vez correr por um reviewer organizacionalmente separado daquela equipa, numa visita agendada em vez de um feed vivo, é uma auditoria."
+ },
+ "iii-ab-15": {
+  "label": "Telemetria automatizada vigia padrões de tráfego anómalo e entradas artesanadas significadas para confundir o modelo, e levanta um alerta quando ambas ultrapassam um threshold.",
+  "why": "Um relógio automatizado, sempre-ligado é a textura desta zona — uma probe agendada, hands-on das mesmas interfaces para confirmar a defesa aguenta é a disciplina de pen-testing em vez."
+ },
+ "iii-ab-16": {
+  "label": "Durante um piloto pré-lançamento com um pequeno grupo de utilizadores reais, dano real-mundo é confirmado — o momento que é, contenção começa imediatamente: isolar primeiro, investigar segundo, com o relógio de notificação de 72-hora GDPR já a correr.",
+  "why": "Dano confirmado é o gatilho desta disciplina, se o sistema está ainda num piloto gated ou totalmente live; um padrão de mispredictions baixa-severidade ainda a ser logged e vigilância por uma tendência não ultrapassou aquela linha ainda, e fica em rastreio de questão de rotina."
+ },
+ "iii-ab-17": {
+  "label": "Mid-piloto, antes de disponibilidade geral, um chatbot de atendimento ao cliente emite orientação médica insegura para um dos utilizadores de trial; o achado dispara um playbook formal — uma tag de severidade, papéis de escalação claros, e uma análise de causa-raiz que deve terminar antes de o caso conseguir fechar.",
+  "why": "A maquinaria formal, time-boxed — severidade, ownership, um close-out definido — estica-se o momento que o dano realmente pousa numa pessoa real, piloto ou não, ao contrário de uma revisão agendada de uma auditoria de registos que pode não mostrar nada errado em tudo."
+ },
+ "iii-ab-18": {
+  "label": "Antes do piloto converte para disponibilidade geral, um retrospectivo blameless no caso de dano-confirmado ainda atribui correções concretas — retreinamento em dados corrigidos, limites de taxa mais apertados, um model card atualizado — com evidência preservada para forense.",
+  "why": "Transformar um dano confirmado em correções duráveis e uma pista de evidência preservada fecha o loop desta disciplina, se o dano superficialidades num piloto gated ou produção total — alimentar um achado no registo de risco sem aquele dano ter ocorrido ainda é o trabalho de threat modeling em vez."
+ },
+ "iii-assurance": {
+  "hint": "Estes são verificações de pré-lançamento, ciclo de desenvolvimento. Pergunta que estádio a cena está: um catálogo de papel antes de qualquer teste correr é threat modeling; uma tentativa live de quebrar o sistema é red teaming; um reviewer independente verificando a pista de evidência é uma auditoria.",
+  "note": "Tudo nesta placa acontece antes ou durante a decisão de prontidão. O que um sistema vivo deve seu operador após lançamento, numa base recorrente, é uma placa diferente.",
+  "zones[0].def": "Um reviewer independente, organizacionalmente separado da equipa que construiu o sistema, verifica o ficheiro técnico — procedência de dados, registos de teste, avaliações de impacto — contra uma norma ou política nomeada e produz um relatório de gaps com owners e deadlines. A pista de evidência, não um ataque live.",
+  "zones[1].def": "Especialistas simulam um cenário adversário realista ou misuse end-to-end — jailbreaks, injeção de prompt, engenharia social, abuso de edge-case — para ver como o sistema inteiro aguenta sob pressão, então alimentam o que descobriram de volta para um plano de remediação que fica re-testado.",
+  "zones[2].def": "Um exercício estruturado, baseado-em-papel, feito no tempo de design antes de qualquer teste correr, que cataloga o que precisa proteger, quem pode atacá-lo, e que casos de abuso importam — produzindo uma lista de riscos e mitigações nomeadas, não uma tentativa live de explorar qualquer coisa.",
+  "zones[3].def": "Probing hands-on de componentes específicos, já-identificados — a API de serving, dependências, o código do pipeline — para confirmar que uma defesa está realmente presente e corretamente configurada, distinto de uma simulação adversarial full-system ou um catálogo de papel do que poderia correr mal.",
+  "zones[4].def": "A cadência técnica de verificações — avaliações agendadas, métricas rastreadas, alertas automatizados — que fica construído e ensaiado à medida que o plano de monitorização vem junto. Os dashboards e detectores em si, não o dever legal de estar a correr-os uma vez que o sistema está vivo.",
+  "zones[5].def": "A maquinaria formal, time-boxed — contenção primeiro, depois análise de causa-raiz, depois ação corretiva — que ativa o momento que uma cena envolve dano real-mundo confirmado, não um achado de rotina ainda a ser logged e vigilância."
+ }
+}

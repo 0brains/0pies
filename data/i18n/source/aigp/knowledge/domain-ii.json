@@ -1,0 +1,1340 @@
+{
+ "II-brief-capstone": {
+  "scenario": "Meridian Health operates hospital groups in Ireland, Illinois, South Korea and Brazil. It is deploying a single AI platform across all four: a triage assistant that ranks emergency arrivals by acuity, plus a generative documentation assistant that drafts clinical notes and patient-facing discharge summaries.\n\nThe triage model was built in-house in Dublin. The documentation assistant is a third-party general-purpose model above the systemic-risk threshold, accessed via API, fine-tuned on Meridian's own clinical notes, and deployed under the name \"Meridian Scribe\". Patient-facing summaries are generated and sent automatically unless a clinician intervenes; clinicians intervene in about 4% of cases.\n\nMeridian's Irish entity is the contracting party for the API. Korean patient data stays in Korea. Illinois staff are also screened for internal promotion using a separate AI tool. Brazilian operations were added by acquisition three months ago and have no AI documentation of any kind. The group CISO has proposed \"comply with the EU AI Act everywhere — it's the strictest, so we're covered\".\n\nIt is September 2026. The board wants a governance position before the platform goes live in November.",
+  "fields[0].prompt": "Classify each system in each jurisdiction where it operates.",
+  "fields[1].prompt": "What is Meridian's role for each system, and does it differ by jurisdiction?",
+  "fields[2].prompt": "Assess the CISO's 'comply with the strictest' proposal.",
+  "fields[3].prompt": "As of September 2026, which obligations actually bind, and which are still ahead?",
+  "fields[4].prompt": "What are the three most urgent gaps, and why those three?",
+  "fields[5].prompt": "State the governance position and the go/no-go recommendation for November."
+ },
+ "II-campaign": {
+  "prompt": "Expand your AI company worldwide without running out of compliance capital."
+ },
+ "II-case-001": {
+  "brief": "A Dutch insurer licenses a third-party model to price motor policies, retrains it on its own claims history, and markets it to customers under its own brand. Pricing decisions are issued automatically.",
+  "steps[0].why": "It rebranded the system and substantially modified it by retraining — either alone transfers provider obligations.",
+  "steps[1].why": "Automatic pricing decisions with significant effects are solely automated decision-making.",
+  "steps[2].why": "Provider duties for a high-risk system, alongside the DPIA required on the privacy side."
+ },
+ "II-case-002": {
+  "brief": "A US retailer's AI screening tool for warehouse roles rejects applicants at a much higher rate from one postal-code cluster that correlates strongly with race. There was no intent to discriminate.",
+  "steps[0].why": "Facially neutral feature, disproportionate effect, no intent needed.",
+  "steps[1].why": "Employment context.",
+  "steps[2].why": "The statutory test. \"The vendor built it\" is not a defence, and overall accuracy does not answer disparate impact."
+ },
+ "II-case-003": {
+  "brief": "A board asks why the company should adopt ISO/IEC 42001 when it already intends to comply with the EU AI Act.",
+  "steps[0].why": "Standards are not law, but a certified management system is strong evidence of the governance the Act demands.",
+  "steps[1].why": "Certifiability is the practical value; it confers no immunity."
+ },
+ "II-case-004": {
+  "brief": "A US company trains a general-purpose model above the systemic-risk compute threshold. It has no EU establishment, but EU businesses integrate the model into their products.",
+  "steps[0].why": "Extraterritorial reach follows market placement, not establishment.",
+  "steps[1].why": "Systemic-risk duties sit on top of the baseline GPAI set.",
+  "steps[2].why": "Third-country GPAI providers must appoint an EU authorised representative."
+ },
+ "II-case-005": {
+  "brief": "A marketing agency fine-tunes an LLM on scraped web content to generate campaign copy. Some source sites carry machine-readable rights reservations. The campaign targets construction businesses, not individuals.",
+  "steps[0].why": "The commercial exception can be reserved; the research exception cannot.",
+  "steps[1].why": "Legal persons are outside GDPR, but named individuals at those firms are personal data."
+ },
+ "II-case-006": {
+  "brief": "It is September 2026. Your board asks which EU AI Act obligations currently bind the company's Annex III recruitment system.",
+  "steps[0].why": "Prohibitions since February 2025, transparency since August 2026; high-risk deferred to December 2027.",
+  "steps[1].why": "A deferral is not a repeal, and conformity work takes longer than the extension granted."
+ },
+ "II-map-jurisdictions": {
+  "prompt": "Match each instrument to its jurisdiction, then answer what actually binds you there.",
+  "note": "Positions are the real coordinates of each jurisdiction, projected onto a Miller-style world map. Labels for dense regions are nudged clear of their marker; the marker itself is always at the true location.",
+  "legend[0].label": "Comprehensive AI law in force",
+  "legend[1].label": "Sectoral or partial rules in force",
+  "legend[2].label": "Voluntary or non-binding framework",
+  "legend[3].label": "Proposed, not in force",
+  "legend[4].label": "No AI-specific statute",
+  "legend[5].label": "Binding treaty — binds states, not companies",
+  "projection.note": "x/y are computed at build time from lat/lon by tools/build_aigp_game.py"
+ },
+ "II-roles": {
+  "prompt": "Assign each obligation to the role it attaches to. Obligations follow actors, not systems."
+ },
+ "II-timeline-global": {
+  "prompt": "Place each milestone on the timeline, then answer: on a given date, which obligations actually bind you?",
+  "note": "Jurisdictions marked scope \"horizon\" are professional currency rather than blueprint content; they are excluded from mastery scoring. \"Ongoing / uncertain\" covers proposed bills and rolling state/regional developments with no confirmed date."
+ },
+ "II.A-brief-01": {
+  "scenario": "Helio, a SaaS company headquartered in Berlin, has eleven years of customer support transcripts — roughly 40 million messages. Customers were told at collection that the data would be used to \"resolve your support request and improve our service\". Helio's new product team wants to fine-tune a language model on the full archive to build an automated support agent, and later to license that agent to other companies.\n\nThe archive is not clean. Customers routinely paste screenshots, order numbers, and occasionally health information when explaining why they missed a payment. About 12% of transcripts come from users who have since closed their accounts, and 3% from users who have made erasure requests that were actioned against the account record but not against the transcript store. The transcripts are stored in Frankfurt, but the fine-tuning would run on infrastructure in Oregon.\n\nThe product team's position is that the transcripts are Helio's own business records, that \"improve our service\" covers building a better support agent, and that because the model will not reproduce transcripts verbatim, no personal data leaves the training process. The general counsel is uneasy but cannot articulate why. You are asked for a written position before the sprint starts.",
+  "fields[0].prompt": "Is \"improve our service\" a sufficient basis for this training, and for the licensing plan?",
+  "fields[0].hint": "Address purpose limitation and compatibility separately for each of the two uses.",
+  "fields[1].prompt": "How do you handle the closed accounts and the 3% erasure requests?",
+  "fields[2].prompt": "What follows from the incidental health information in the transcripts?",
+  "fields[3].prompt": "What does the Frankfurt-to-Oregon training run require?",
+  "fields[4].prompt": "What controls and documentation would you require before the sprint starts?",
+  "fields[5].prompt": "State your position to the general counsel in five sentences or fewer."
+ },
+ "II.A-pair-009": {
+  "a.text": "A lender declines a loan automatically on the model score, with no human review.",
+  "a.why": "A decision based solely on automated processing with legal or similarly significant effects triggers Art. 22 safeguards.",
+  "b.text": "The model flags the application and an underwriter reviews the file and can overturn it.",
+  "b.why": "Meaningful human involvement with real authority to change the outcome takes it outside \"solely\" automated. Rubber-stamping does not count."
+ },
+ "II.A-pair-010": {
+  "a.text": "A system processes facial images specifically to identify a named individual.",
+  "a.why": "Biometric data processed for the purpose of uniquely identifying a person is special-category data.",
+  "b.text": "A system processes facial images only to count how many people are in a room.",
+  "b.why": "Without the identification purpose the same raw data is not Art. 9 biometric data, though it remains personal data."
+ },
+ "II.A-pair-011": {
+  "a.text": "Customer service transcripts collected to resolve tickets are reused to train a commercial model.",
+  "a.why": "Training a product on data collected for support is not what the data subject was told; it needs a fresh basis or genuine compatibility analysis.",
+  "b.text": "The same transcripts are used to audit whether ticket resolution met the stated service standard.",
+  "b.why": "Quality assurance of the very service the data was collected for is a compatible further purpose."
+ },
+ "II.A-pair-012": {
+  "a.text": "A model infers users' likely religious beliefs from their posting history.",
+  "a.why": "Inferring a special category attribute is processing that category, even though it was never collected directly.",
+  "b.text": "A model records which product pages each user visited.",
+  "b.why": "Behavioural data alone is personal but not special category, unless it is used to infer a protected attribute."
+ },
+ "II.A-tell-009": {
+  "snippet": "The data subject shall have the right not to be subject to a decision based solely on automated processing, including profiling, which produces legal effects concerning them.",
+  "tell": "\"solely on automated processing\" plus \"legal effects or similarly significantly affects\" is Art. 22. It is a data-protection right, not an AI Act obligation — a favourite exam trap."
+ },
+ "II.A-tell-010": {
+  "snippet": "Where processing is likely to result in a high risk to the rights and freedoms of natural persons, the controller shall, prior to processing, carry out an assessment of the impact.",
+  "tell": "\"rights and freedoms of natural persons\" plus \"prior to the processing\" is the GDPR DPIA. Distinguish from the AI Act's fundamental rights impact assessment and from ISO 42005 guidance."
+ },
+ "II.B-brief-01": {
+  "scenario": "Marchetti Logistics runs 400 warehouses across the United States and hires around 30,000 seasonal staff each year. To cope, it has deployed a third-party AI screening tool that scores applicants on a 0–100 \"reliability index\" built from work history, commute distance, prior seasonal completion rates, and a short situational judgement questionnaire. Anyone below 55 is auto-rejected without human review. The vendor describes the model as \"bias-tested and EEOC-aligned\" but will not disclose the feature weights, calling them proprietary.\n\nSix months in, an internal analyst notices that applicants from three postal-code clusters are rejected at roughly 2.4 times the rate of others. Those clusters are predominantly Black and Hispanic. Commute distance is by far the heaviest-weighted feature. Separately, the tool has been marketed to Marchetti's own clients as a service, and Marchetti's website advertises it as \"removing human bias from hiring\".\n\nMarchetti's operations director argues that commute distance is a legitimate business factor because long commutes predict no-shows, that the vendor certified the tool, and that no protected characteristic is used as an input. The head of HR wants to keep using it through peak season and review afterwards. You are the AI governance lead.",
+  "fields[0].prompt": "What is the legal exposure, and under which statutes?",
+  "fields[1].prompt": "Is \"commute distance predicts no-shows\" a valid defence? Reason it through.",
+  "fields[2].prompt": "What is the significance of the vendor's certification and refusal to disclose weights?",
+  "fields[3].prompt": "Does the \"removes human bias\" claim create separate exposure?",
+  "fields[4].prompt": "Respond to the proposal to keep using it through peak season.",
+  "fields[5].prompt": "What would you require, in what order, and on what timescale?"
+ },
+ "II.B-pair-013": {
+  "a.text": "A hiring model is deliberately configured to downweight applicants from a protected group.",
+  "a.why": "Intentional differential treatment on a protected characteristic.",
+  "b.text": "A hiring model uses postal code, which correlates strongly with race, and rejects one group at a far higher rate.",
+  "b.why": "Facially neutral feature, disproportionate effect, no intent required. Proxy variables are the classic AI exposure."
+ },
+ "II.B-pair-014": {
+  "a.text": "An AI tool screens candidates for a warehouse role and disadvantages older applicants.",
+  "a.why": "Employment discrimination sits under Title VII, with the ADEA covering age specifically.",
+  "b.text": "An AI model sets credit limits and produces systematically lower limits for one protected group.",
+  "b.why": "Credit decisions fall under ECOA, which also requires specific adverse action reasons — hard to give from an opaque model."
+ },
+ "II.B-pair-015": {
+  "a.text": "A vendor advertises 99% accuracy for its AI screening tool without evidence.",
+  "a.why": "Unsubstantiated performance claims are deceptive practices under FTC Act §5.",
+  "b.text": "A firmware update to an AI home robot causes erratic movement that damages property.",
+  "b.why": "Defect causing damage is product liability; the EU's revised regime expressly brings software and AI within scope."
+ },
+ "II.B-pair-016": {
+  "a.text": "A company scrapes news sites commercially where publishers have machine-readably reserved their rights.",
+  "a.why": "The EU commercial TDM exception can be opted out of by an express reservation, so scraping needs a licence.",
+  "b.text": "A university mines the same corpus for non-commercial scientific research with lawful access.",
+  "b.why": "The research TDM exception cannot be overridden by contract or reservation."
+ },
+ "II.B-tell-011": {
+  "snippet": "Unfair or deceptive acts or practices in or affecting commerce are hereby declared unlawful.",
+  "tell": "\"unfair or deceptive acts or practices\" is the literal statutory phrase of FTC Act §5 — the main US hook for overstated AI capability claims."
+ },
+ "II.B-tell-012": {
+  "snippet": "A practice that is neutral on its face but falls more harshly on a protected group, and which cannot be justified by business necessity.",
+  "tell": "\"Neutral on its face\" plus \"business necessity\" is the disparate-impact test. Disparate treatment needs intent; disparate impact does not — which is why proxy features in a model are the usual AI exposure."
+ },
+ "II.C-amend-001": {
+  "a.text": "The AI Act lists 8 distinct prohibited AI practices under Article 5 — no specific rule against synthetic intimate imagery.",
+  "a.why": "The original Article 5 list of 8 practices predates the Amendments Regulation.",
+  "b.text": "Article 5 prohibits AI systems intended to generate or manipulate non-consensual intimate imagery or CSAM, including systems with inadequate safety guardrails, alongside the original 8 practices.",
+  "b.why": "The Amendments Regulation adds this ninth prohibited practice, closing a gap the original 8-item list left open."
+ },
+ "II.C-amend-002": {
+  "a.text": "A provider whose system meets the Article 6(3) derogation criteria (exempted from high-risk classification) must register it in the EU's public database, providing full supporting information.",
+  "a.why": "The original Article 6(3)/71 registration duty requires the full information set for these exempted systems.",
+  "b.text": "An exempted system under Article 6(3) is registered in the EU's public database with a reduced information set.",
+  "b.why": "The Amendments Regulation keeps the registration duty but reduces the information burden for exempted systems."
+ },
+ "II.C-amend-003": {
+  "a.text": "Providers and deployers are required to ensure a sufficient level of AI literacy of their staff.",
+  "a.why": "Article 4's original wording is a duty to ensure literacy outright.",
+  "b.text": "Providers and deployers are required to support the development of AI literacy of their staff.",
+  "b.why": "The Amendments Regulation softens Article 4 from an 'ensure' duty to a 'support the development of' duty."
+ },
+ "II.C-amend-004": {
+  "a.text": "Only high-risk AI system providers may process sensitive personal data for bias detection and correction, and only when strictly necessary with safeguards in place.",
+  "a.why": "The original Article 10(5) scope is limited to high-risk AI system providers.",
+  "b.text": "Providers and deployers of other AI systems and GPAI models, and deployers of high-risk AI systems, may process sensitive personal data for bias detection and correction when strictly necessary with safeguards in place.",
+  "b.why": "The Amendments Regulation widens Article 10(5)'s scope beyond just high-risk providers, while keeping the strict-necessity/safeguards test unchanged."
+ },
+ "II.C-amend-005": {
+  "a.text": "The European AI Office and member state regulators have overlapping regulatory powers for AI systems built on GPAI models, where the same provider developed both the model and the system.",
+  "a.why": "The original allocation of powers between the AI Office and national regulators is overlapping, not exclusive.",
+  "b.text": "The European AI Office has exclusive competence over AI systems built on GPAI models where the same provider developed both — except for high-risk systems under Annex I and specific Annex III categories such as critical infrastructure and law enforcement.",
+  "b.why": "The Amendments Regulation moves the AI Office from overlapping to exclusive competence for this category, carving out Annex I and specific Annex III high-risk systems."
+ },
+ "II.C-amend-006": {
+  "a.text": "Enforcement penalties are capped for small and medium-sized enterprises (SMEs), but small mid-cap (SMC) enterprises get no such cap.",
+  "a.why": "The original penalty regime's proportionality cap applies to SMEs only.",
+  "b.text": "SMEs and SMCs pay the lower of the percentage of global annual turnover or the fixed amount, while larger organisations pay the higher value.",
+  "b.why": "The Amendments Regulation extends the SME proportionality cap to SMCs on the same lower-of-two-values basis."
+ },
+ "II.C-amend-007": {
+  "a.text": "AI systems that are products, or safety components of products, regulated by the EU Machinery Regulation must directly adhere to the AI Act's high-risk AI system requirements.",
+  "a.why": "In the original Annex I, the Machinery Regulation sits in Section A, which triggers direct high-risk AI Act requirements.",
+  "b.text": "The Machinery Regulation sits in Annex I Section B, so the AI Act's high-risk AI system requirements do not apply to it directly.",
+  "b.why": "The Amendments Regulation reclassifies the Machinery Regulation into Annex I Section B, removing the direct high-risk trigger."
+ },
+ "II.C-brief-01": {
+  "scenario": "NordBank, headquartered in Stockholm, licenses a general-purpose model from a US developer with no EU establishment. NordBank fine-tunes the model on twelve years of its own customer transaction data, wraps it in a decisioning layer, and deploys it to make consumer credit decisions across the Nordics and Germany. It is marketed to customers as \"NordBank AI Advisor\". Declines under €10,000 are issued automatically; above that, a credit officer reviews a one-line summary and, in practice, follows the recommendation 97% of the time.\n\nThe US developer's model was trained above the systemic-risk compute threshold. NordBank's contract with the developer disclaims all liability for downstream use and provides no technical documentation beyond a public model card. NordBank has not performed a conformity assessment; its position is that it is \"only a customer\" of the model. It plans to offer the Advisor to two smaller partner banks next year.\n\nA declined customer has asked, in writing, how the decision about her was reached and what data was used. The board wants to know its exposure before the partner-bank rollout.",
+  "fields[0].prompt": "What is NordBank under the EU AI Act, and what is the US developer? Justify each.",
+  "fields[1].prompt": "What is the risk classification of the Advisor, and on what basis?",
+  "fields[2].prompt": "Which obligations attach to NordBank, and which to the developer?",
+  "fields[3].prompt": "Which other regimes are engaged, and what do they require here?",
+  "fields[4].prompt": "How must NordBank answer the declined customer?",
+  "fields[5].prompt": "Quantify the exposure and state what must happen before the partner-bank rollout."
+ },
+ "II.C-ladder-penalties": {
+  "prompt": "Order these breaches from the highest maximum penalty to the lowest.",
+  "steps[0].label": "Breach of the Article 5 prohibitions",
+  "steps[0].detail": "Up to €35 million or 7% of total worldwide annual turnover, whichever is higher.",
+  "steps[1].label": "Non-compliance with other obligations",
+  "steps[1].detail": "Up to €15 million or 3% — provider and deployer duties, notified body and transparency obligations.",
+  "steps[2].label": "Supplying incorrect or misleading information to authorities",
+  "steps[2].detail": "Up to €7.5 million or 1%."
+ },
+ "II.C-ladder-phases": {
+  "prompt": "Order the EU AI Act milestones from earliest to latest.",
+  "steps[0].label": "Entry into force",
+  "steps[0].detail": "The Act enters into force; obligations phase in afterwards.",
+  "steps[1].label": "Prohibitions and AI literacy",
+  "steps[1].detail": "Article 5 prohibited practices and Article 4 AI literacy duties apply.",
+  "steps[2].label": "GPAI obligations and governance",
+  "steps[2].detail": "General-purpose AI model obligations, governance bodies and most penalty provisions apply.",
+  "steps[3].label": "Article 50 transparency",
+  "steps[3].detail": "Transparency duties for AI interaction, synthetic content, deepfakes and emotion recognition. Unchanged by the Omnibus.",
+  "steps[4].label": "High-risk: standalone Annex III",
+  "steps[4].detail": "Employment, credit, education, essential services and similar. Deferred roughly 16 months.",
+  "steps[5].label": "GPAI models placed before Aug 2025",
+  "steps[5].detail": "Legacy general-purpose models must reach compliance.",
+  "steps[6].label": "High-risk: Annex I embedded products",
+  "steps[6].detail": "AI inside regulated products under existing sectoral law. Deferred 12 months."
+ },
+ "II.C-pair-001": {
+  "a.text": "An AI system screens job applicants and produces a ranked shortlist that recruiters hire from.",
+  "a.why": "Annex III employment use — the system materially influences who gets hired.",
+  "b.text": "The same system only sorts applicants alphabetically for a recruiter who reads every CV and decides independently.",
+  "b.why": "Art. 6(3): a narrow procedural task that does not materially influence the outcome falls outside high-risk."
+ },
+ "II.C-pair-002": {
+  "a.text": "A bank licenses a third-party high-risk model and uses it internally under the vendor's brand.",
+  "a.why": "Using a system under another's name keeps you a deployer.",
+  "b.text": "The same bank puts its own trademark on the system and offers it to customers as its own.",
+  "b.why": "Placing your name or trademark on a high-risk system makes you its provider, with the full provider obligation set."
+ },
+ "II.C-pair-003": {
+  "a.text": "Police run real-time remote biometric identification across a public square to find suspects generally.",
+  "a.why": "Art. 5 bans real-time remote biometric identification in publicly accessible spaces for law enforcement, save narrow authorised exceptions.",
+  "b.text": "Police run the same biometric matching after the fact, on stored footage, under judicial authorisation.",
+  "b.why": "Post-remote biometric identification is not banned but is Annex III high-risk with authorisation requirements."
+ },
+ "II.C-pair-004": {
+  "a.text": "An employer deploys emotion recognition to monitor staff attentiveness at their desks.",
+  "a.why": "Art. 5 bans emotion inference in the workplace and in education, outside medical and safety uses.",
+  "b.text": "A games studio uses emotion recognition in a consumer entertainment app, disclosed to the user.",
+  "b.why": "Outside workplace and education the ban does not bite; Art. 50 transparency duties apply instead."
+ },
+ "II.C-pair-005": {
+  "a.text": "A provider releases a general-purpose model trained well below the systemic-risk compute threshold.",
+  "a.why": "Baseline duties: technical documentation, information to downstream providers, copyright policy, training-data summary.",
+  "b.text": "The same provider releases a model whose cumulative training compute exceeds the systemic-risk threshold.",
+  "b.why": "Adds model evaluation, adversarial testing, systemic-risk assessment and mitigation, incident reporting and cybersecurity duties."
+ },
+ "II.C-pair-006": {
+  "a.text": "An organisation deploys a prohibited social-scoring system.",
+  "a.why": "Breach of the Art. 5 prohibitions attracts the top band.",
+  "b.text": "An organisation deploys a high-risk system but fails to keep the required technical documentation.",
+  "b.why": "Non-compliance with obligations other than the Art. 5 prohibitions sits in the middle band."
+ },
+ "II.C-pair-007": {
+  "a.text": "A hospital uses a CE-marked diagnostic AI exactly as the vendor intended.",
+  "a.why": "Use within the intended purpose leaves provider duties with the vendor.",
+  "b.text": "The hospital retrains the model on its own data and applies it to a different clinical purpose.",
+  "b.why": "A substantial modification, or a change of intended purpose that makes a system high-risk, transfers provider obligations to you."
+ },
+ "II.C-pair-008": {
+  "a.text": "A Dublin firm brings a US-built high-risk system into the EU market for the first time.",
+  "a.why": "Placing a third-country system on the EU market makes you the importer: verify conformity assessment, CE marking, documentation and the authorised representative.",
+  "b.text": "A Dublin firm resells that system onward within the EU without altering it.",
+  "b.why": "Distributors make available a system already on the market; duties are lighter but include checking CE marking and not supplying a system they know to be non-compliant."
+ },
+ "II.C-pair-019": {
+  "a.text": "As the AI Act was originally enacted, when did obligations for standalone Annex III high-risk systems apply?",
+  "a.why": "The original two-year phase-in date, and what the study guide teaches.",
+  "b.text": "After the Digital Omnibus agreed in May 2026, when do those same obligations apply?",
+  "b.why": "The Omnibus deferred standalone Annex III obligations by roughly 16 months. Annex I embedded systems moved to 2 August 2028."
+ },
+ "II.C-pair-020": {
+  "a.text": "A chatbot must be built so that users can tell they are interacting with an AI system.",
+  "a.why": "Art. 50 places design-time disclosure for AI interaction on the provider.",
+  "b.text": "An employer using an emotion recognition system must inform the people exposed to it.",
+  "b.why": "Art. 50 places the duty to inform exposed individuals on the deployer operating the system."
+ },
+ "II.C-tell-007": {
+  "snippet": "Providers shall ensure that the system undergoes the relevant conformity assessment procedure prior to its placing on the market, and shall draw up an EU declaration of conformity.",
+  "tell": "\"shall\" plus conformity assessment, declaration of conformity and placing on the market is EU product-safety legislation. Standards never say \"shall … prior to placing on the market\"."
+ },
+ "II.D-brief-01": {
+  "scenario": "You have joined a 900-person medical devices company as its first AI governance lead. The company builds imaging software with embedded AI, sold in the EU and the US. It already holds ISO 13485 and ISO 27001 certification and has a mature quality management system.\n\nThe CTO wants to \"adopt the NIST AI RMF because it's free and the Americans use it\". The quality director wants ISO/IEC 42001 \"because we can certify it and our auditors already know ISO\". The general counsel says neither matters because \"only the EU AI Act is law\". The CEO has asked for a one-page recommendation and is impatient with nuance.\n\nComplicating this: the company's products are Annex I embedded AI under the EU AI Act, not standalone Annex III. Nobody in the room knows what that changes. The board also wants to state something about responsible AI in the annual report and has asked whether the company can say it \"complies with the OECD AI Principles\".",
+  "fields[0].prompt": "Explain the relationship between the AI Act, ISO/IEC 42001, the NIST AI RMF and the OECD Principles.",
+  "fields[1].prompt": "Is the general counsel right that only the AI Act matters?",
+  "fields[2].prompt": "What does being Annex I embedded rather than Annex III change?",
+  "fields[3].prompt": "Which ISO standards are relevant here, and what does each actually do?",
+  "fields[4].prompt": "Can the company claim it 'complies with the OECD AI Principles'?",
+  "fields[5].prompt": "Give the one-page recommendation the CEO asked for."
+ },
+ "II.D-pair-017": {
+  "a.text": "An organisation fails to complete a conformity assessment for a high-risk AI system.",
+  "a.why": "EU AI Act obligation, enforceable with administrative fines.",
+  "b.text": "An organisation chooses not to implement the NIST AI RMF's MEASURE function.",
+  "b.why": "The AI RMF is voluntary guidance. It carries no penalty — though it may inform what counts as reasonable practice."
+ },
+ "II.D-pair-018": {
+  "a.text": "An organisation seeks third-party certification of its AI governance arrangements.",
+  "a.why": "ISO/IEC 42001 is a management system standard, so it can be audited and certified against.",
+  "b.text": "An organisation wants agreed definitions of \"AI system\" and \"machine learning\" for its policy set.",
+  "b.why": "ISO/IEC 22989 supplies vocabulary and concepts; there is nothing to certify against."
+ },
+ "II.D-tell-001": {
+  "snippet": "The organization shall establish, implement, maintain and continually improve an AI management system, including the processes needed and their interactions.",
+  "tell": "\"management system\" plus the \"establish, implement, maintain and continually improve\" formula is ISO management-standard boilerplate. It is the same sentence shape as ISO 27001 and 9001."
+ },
+ "II.D-tell-002": {
+  "snippet": "GOVERN, MAP, MEASURE and MANAGE are the four core functions, each broken into categories and subcategories.",
+  "tell": "Four verbs in capitals is unique to NIST. Nothing else in Domain II organises itself into GOVERN/MAP/MEASURE/MANAGE."
+ },
+ "II.D-tell-003": {
+  "snippet": "This document provides a vocabulary and describes concepts and terminology for AI, so that different communities can use consistent language.",
+  "tell": "Vocabulary and concepts only, with nothing to certify against, is 22989. If a standard tells you what words mean rather than what to do, it is the terminology standard."
+ },
+ "II.D-tell-004": {
+  "snippet": "Guidance on the process for performing an impact assessment of an AI system on individuals and societies.",
+  "tell": "Impact assessment process = 42005. Easily confused with 42001 (the management system) and 23894 (risk management). BoK v2.1 names 22989, 42001 and 42005 as the three core ISO standards."
+ },
+ "II.D-tell-005": {
+  "snippet": "AI actors should respect the rule of law, human rights and democratic values throughout the AI system lifecycle, including inclusive growth and sustainable development.",
+  "tell": "\"AI actors\" plus \"inclusive growth, sustainable development and well-being\" is OECD language. It states values, imposes nothing, and is addressed to governments as much as firms."
+ },
+ "II.D-tell-006": {
+  "snippet": "An evaluation programme that assesses model performance in laboratory, in controlled field testing, and in real-world use, in three layers.",
+  "tell": "Layered evaluation moving from lab to field to real world is ARIA (Assessing Risks and Impacts of AI). The AI RMF is a framework; ARIA is a testing programme that feeds it."
+ },
+ "II.D-tell-008": {
+  "snippet": "A companion resource offering suggested actions, references and documentation for each subcategory, which organisations may use in whole or in part.",
+  "tell": "\"Suggested actions\" that are voluntary and per-subcategory is the Playbook, the companion to the AI RMF. BoK II.D.2 names the Playbook alongside the framework."
+ },
+ "authrep": {
+  "definition": "Appointed in writing by a third-country provider to act on its behalf in the EU."
+ },
+ "controller": {
+  "definition": "Determines the purposes and means of processing."
+ },
+ "deployer": {
+  "definition": "Uses an AI system under its own authority, other than in a personal non-professional activity."
+ },
+ "distributor": {
+  "definition": "Makes a system available on the EU market without being provider or importer."
+ },
+ "dpo": {
+  "definition": "Appointed to inform, advise and monitor compliance, independently."
+ },
+ "gdpr-rep": {
+  "definition": "Represents a non-EU controller or processor within the EU."
+ },
+ "grid-eu-amend-01": {
+  "original.text": "The AI Act lists 8 distinct prohibited AI practices under Article 5 — no specific rule against synthetic intimate imagery.",
+  "updated.text": "Article 5 prohibits AI systems intended to generate or manipulate non-consensual intimate imagery or CSAM, including systems with inadequate safety guardrails, alongside the original 8 practices."
+ },
+ "grid-eu-amend-02": {
+  "original.text": "Applicable date is 2 August 2026 (for Annex III AI systems) and 2 August 2027 (for Annex I AI systems).",
+  "updated.text": "Applicable date is postponed to 2 December 2027 (for Annex III AI systems) and 2 August 2028 (for Annex I AI systems)."
+ },
+ "grid-eu-amend-03": {
+  "original.text": "All Article 50 obligations apply from 2 August 2026. This includes the AI output detection and watermarking obligation (Article 50(2)).",
+  "updated.text": "Applicable date for the AI output detection and watermarking obligation (Article 50(2)) postponed to 2 December 2026, for legacy AI systems only."
+ },
+ "grid-eu-amend-04": {
+  "original.text": "A provider whose system meets the Article 6(3) derogation criteria (exempted from high-risk classification) must register it in the EU's public database, providing full supporting information.",
+  "updated.text": "An exempted system under Article 6(3) is registered in the EU's public database with a reduced information set."
+ },
+ "grid-eu-amend-05": {
+  "original.text": "Providers and deployers are required to ensure a sufficient level of AI literacy of their staff.",
+  "updated.text": "Providers and deployers are required to support the development of AI literacy of their staff."
+ },
+ "grid-eu-amend-06": {
+  "original.text": "Only high-risk AI system providers may process sensitive personal data for bias detection and correction, and only when strictly necessary with safeguards in place.",
+  "updated.text": "Providers and deployers of other AI systems and GPAI models, and deployers of high-risk AI systems, may process sensitive personal data for bias detection and correction when strictly necessary with safeguards in place."
+ },
+ "grid-eu-amend-07": {
+  "original.text": "The European AI Office and member state regulators have overlapping regulatory powers for AI systems built on GPAI models, where the same provider developed both the model and the system.",
+  "updated.text": "The European AI Office has exclusive competence over AI systems built on GPAI models where the same provider developed both — except for high-risk systems under Annex I and specific Annex III categories such as critical infrastructure and law enforcement."
+ },
+ "grid-eu-amend-08": {
+  "original.text": "Enforcement penalties are capped for small and medium-sized enterprises (SMEs), but small mid-cap (SMC) enterprises get no such cap.",
+  "updated.text": "SMEs and SMCs pay the lower of the percentage of global annual turnover or the fixed amount, while larger organisations pay the higher value."
+ },
+ "grid-eu-amend-09": {
+  "original.text": "AI systems that are products, or safety components of products, regulated by the EU Machinery Regulation must directly adhere to the AI Act's high-risk AI system requirements.",
+  "updated.text": "The Machinery Regulation sits in Annex I Section B, so the AI Act's high-risk AI system requirements do not apply to it directly."
+ },
+ "ii-rr-ae-c01": {
+  "why": "The nearest confusable is (b) — there is no nationwide AI-specific banking duty; the binding instrument is DIFC Regulation 10 inside the zone, and even ADGM next door has only guidance, no Regulation-10 equivalent. (c) fails because the Charter binds no one."
+ },
+ "ii-rr-ae-n01": {
+  "why": "The nearest confusable is (b) — CE marking and declarations of conformity are EU AI Act artifacts with no DIFC counterpart. (c) is NYC Local Law 144's employer duty. Regulation 10 asks for the data-protection-style cluster, with fines around USD 25k–50k per violation."
+ },
+ "ii-rr-ae-n02": {
+  "why": "The nearest confusable is (b): January 2026 changed enforcement intensity, not geography — Regulation 10 binds only within the DIFC. The Charter (c) has no enforcement chapter. Mainland processing answers to PDPL (Decree-Law 45/2021), with a reported 2027-01-01 compliance deadline."
+ },
+ "ii-rr-ae-s01": {
+  "why": "The nearest confusable is (b): no horizontal UAE AI statute exists — the June 2026 federal body is a regulator, not an act. (c) inverts the Charter, which is aspirational. (d) ignores that one binding instrument does exist, but only inside the financial free zone."
+ },
+ "ii-rr-ae-s02": {
+  "why": "The nearest confusable is (b) — regulator is not statute: the 2026-06-14 announcement created the Federal Authority for Artificial Intelligence and Data, while the UAE still has no horizontal AI law. (c) is wrong because Regulation 10 stays scoped to the DIFC free zone."
+ },
+ "ii-rr-ae-s03": {
+  "why": "The nearest confusable is (b): the instrument with real fines (about USD 25k–50k per violation) is DIFC Regulation 10, not the Charter (July 2024), which has no enforcement arm. (d) invents a repeal — the Charter simply sits alongside the new authority."
+ },
+ "ii-rr-any-k01": {
+  "why": "Nearest confusable is (b): ISO/IEC 42005 is GUIDANCE for AI impact assessments — not a management-system standard and not certifiable. (c) — the NIST AI RMF is voluntary with no certification scheme behind it; (d) — CE marking attests a PRODUCT'S conformity, never an organisation's governance."
+ },
+ "ii-rr-any-n01": {
+  "why": "Nearest confusable is (b): modification is a SEPARATE trigger (Art. 25(1)(b)) — name-or-trademark substitution alone re-allocates the provider role under Art. 25(1)(a). (c) mistakes the supply-chain geography test for the branding test; (d) invents a sharing rule the Act does not contain."
+ },
+ "ii-rr-any-n02": {
+  "why": "Nearest confusable is (b): putting a substantially modified high-risk system INTO SERVICE under your own authority triggers the Art. 25(1)(b) shift even without a sale. (c) is wrong on the residue — the original provider owes cooperation and documentation handover, not responsibility for someone else's modification."
+ },
+ "ii-rr-any-n03": {
+  "why": "Nearest confusable is (b): the vendor's INTENDED PURPOSE fixed the original classification — whoever changes that purpose so the system becomes high-risk takes the provider role for the new use (Art. 25(1)(c)). (c) would leave a high-risk use ungoverned, which the role-shift rule exists to prevent."
+ },
+ "ii-rr-any-n04": {
+  "why": "Nearest confusable is (b): releasing a modified model under your own name is provider activity, not use — the Commission's GPAI guidelines treat significant fine-tunes as making you provider OF THE MODIFICATION, while the upstream lab keeps duties for the base model (contra c). (d) invents an AI Act licensing rule; that question is contract and IP law."
+ },
+ "ii-rr-any-n05": {
+  "why": "Nearest confusable is (b): Art. 25(2) keeps the initial provider on the hook for cooperation, information and reasonable technical access. But it does not make it a co-assessor of a system it no longer controls (c) — the conformity duty travels whole to the new provider."
+ },
+ "ii-rr-any-n06": {
+  "why": "Scale of use is not a trigger — the nearest confusable is assuming heavy operational reliance alone converts a deployer. The three statutory triggers are exactly (b), (c) and (d): rebranding, substantial modification, and purpose change into high-risk (Art. 25(1)(a)–(c))."
+ },
+ "ii-rr-any-w01": {
+  "why": "Nearest confusable is (c): 'binding statute' does not mean 'business duties' — Japan's Act No. 53 of 2025 is binding law addressed to the STATE, with a deliberate no-penalty design, while Korea's Act No. 20676 (in force 2026-01-22) imposes operator duties, softened only by MSIT's 2026 enforcement grace period."
+ },
+ "ii-rr-any-w02": {
+  "why": "Nearest confusable is (c), the retained-EU-law reflex: the AI Act post-dates Brexit and never applied in the UK. (d) fails on currency — the EU's prohibitions, GPAI duties and Article 50 transparency are already live; only the high-risk regime waits until 2027-12-02."
+ },
+ "ii-rr-any-w03": {
+  "why": "Nearest confusable is (b): the Colorado AI Act (SB 24-205) NEVER took effect — delayed, challenged in court by xAI with DOJ intervening, then repealed and replaced by SB 26-189 (signed 2026-05-14, effective 2027-01-01). Texas's HB 149 has been enforceable by the AG since New Year 2026."
+ },
+ "ii-rr-any-w04": {
+  "why": "Nearest confusable is (d), the clean inversion: a REGULATION has direct effect on operators across member states, while a TREATY obliges its state parties to act. Mixing up which instrument works which way is the exact error this pairing punishes."
+ },
+ "ii-rr-any-w05": {
+  "why": "Nearest confusable is (b): 'Brussels effect' logic predicts convergence, but the February 2025 Federal Council decision expressly rejected a horizontal act. The catch for Swiss firms: the EU AI Act still reaches them extraterritorially whenever their systems' output is used in the EU."
+ },
+ "ii-rr-any-w06": {
+  "why": "Nearest confusable is (b): AIDA died with Parliament's prorogation and was never revived — Canada's 2023 generative-AI code remains voluntary. (c) fails on status: PL 2338 is still a bill before Brazil's legislature. Korea's Act No. 20676 has been in force since 2026-01-22."
+ },
+ "ii-rr-any-w07": {
+  "why": "Nearest confusable is (b): the Digital Omnibus deferral hit the ANNEX III high-risk duties, not Article 50, which became enforceable on 2026-08-02. (c) is stale — Korea's Act has been in force since January 2026; (d) borrows the litigation story from COLORADO (xAI/DOJ v. the old SB 24-205) and pins it on the wrong state."
+ },
+ "ii-rr-au-c01": {
+  "why": "This government-internal DTA policy is the confusable that fuels 'Australia went mandatory' claims — it binds federal agencies as an administrative policy, while the private sector remains under voluntary guidance and general law. Note the date discipline: agency full compliance is 2026-12-15, distinct from the Privacy Act ADM date in December 2026."
+ },
+ "ii-rr-au-c02": {
+  "why": "The nearest confusable is (c), the abandoned proposal — the December 2026 change comes from the Privacy and Other Legislation Amendment Act 2024, existing law adapting to AI, not an AI statute. The AI Safety Institute stays advisory; it gained no powers."
+ },
+ "ii-rr-au-k01": {
+  "why": "The adviser is working from stale 2024 reporting on the proposals paper. The only binding accents in Australia are government-internal agency rules (from 2026-06-15) and the Privacy Act ADM transparency change (December 2026) — neither is 'AI guardrails', and neither touches ordinary private-sector deployment."
+ },
+ "ii-rr-au-s01": {
+  "why": "The nearest confusable is (d): the Commonwealth-agency requirements ARE binding (first requirements 2026-06-15) but only on federal agencies, never on the private sector. (b) and (c) never happened — the guidance stack stayed voluntary (the AI6 Guidance for AI Adoption superseded the 2024 standard in October 2025) and no AI act exists."
+ },
+ "ii-rr-au-s02": {
+  "why": "The nearest confusable is (b), the stale-news trap: 2024 reporting made mandatory guardrails look inevitable, but the National AI Plan formally dropped them. The Australian AI Safety Institute (launched early 2026, AUD 29.9m) is advisory, not a regulator — no enforcement powers came with it."
+ },
+ "ii-rr-br-c01": {
+  "why": "The nearest confusable is (b) — the design builds on the EXISTING authority rather than replacing it: the ANPD is tipped as coordinator of the SIA, with sector regulators retained. Fragmented state-level enforcement (c) is the US pattern, not the bill's."
+ },
+ "ii-rr-br-c02": {
+  "why": "The nearest confusable is (b) — the Senate already approved the bill in 2024; the pending step is the Chamber, and the scheduled 27 May 2026 vote simply never happened. Archiving (c) would require a floor defeat that never occurred; the bill remains live in committee."
+ },
+ "ii-rr-br-k01": {
+  "why": "The nearest confusable is (c), which mistakes bicameral progress for enactment — Senate approval in 2024 created no duties; the Chamber has not voted. Retroactive application (b) is not how the bill is drafted. Budget goes to the LGPD obligations that bind now."
+ },
+ "ii-rr-br-s01": {
+  "why": "The nearest confusable is (b) — the Latin American framework actually in force since January 2026 is PERU's, not Brazil's. PL 2338/2023 passed the Senate on 2024-12-10 and sits 'Aguardando Parecer' in the Chamber; there has been no floor vote, veto or withdrawal."
+ },
+ "ii-rr-br-s02": {
+  "why": "The nearest confusable is (d) — the ANPD is tipped to coordinate the bill's future enforcement system, but it has issued no binding AI-role duties; contracting as if the bill were law imports obligations that do not exist. The role names themselves are correctly Brazilian (b is wrong): the bill does not copy EU labels."
+ },
+ "ii-rr-br-s03": {
+  "why": "The nearest confusable is (d), the legal-vacuum myth — no AI act does not mean no law; the LGPD's Article 20 already gives review rights over automated decisions. Provisional application (b) is not a thing in Brazilian legislative procedure, and the EU AI Act (c) reaches EU-market conduct, not domestic Brazilian processing."
+ },
+ "ii-rr-ca-c01": {
+  "why": "The nearest confusable is (c) — code signatories make voluntary commitments, which is the opposite of binding law. The ADM Directive binds government deployers only; a federally REGULATED private company (banks, airlines) is still outside its scope, which trips up option (b) thinkers."
+ },
+ "ii-rr-ca-c02": {
+  "why": "The nearest confusable is (b): the 'AI for All' strategy (launched 2026-06-04) and the February 2026 consultation summary signal rules on safety testing and oversight to come, but nothing has been tabled. Option (c) is a category error — the EU AI Act has no accession mechanism for states."
+ },
+ "ii-rr-ca-k01": {
+  "why": "The nearest confusable is (b), the comply-now trap: AIDA died at the January 2025 prorogation and no successor text exists to comply WITH — building conformity machinery against a rumour misallocates capital. Voluntarily adopting good practice differs from (c)'s pretence that EU law maps onto a nonexistent Canadian statute."
+ },
+ "ii-rr-ca-s01": {
+  "why": "The nearest confusable is (c), the still-in-committee myth — AIDA (Bill C-27 Part 3) is dead, not dormant, and no successor bill has been tabled as of August 2026. The government has said future AI legislation will proceed separately from privacy reform, so (d) is backwards too."
+ },
+ "ii-rr-ca-s02": {
+  "why": "The nearest confusable is (b) — the ADM Directive is genuinely binding, but only on the federal government's own decision systems, so it sets no private-sector expectations. PIPEDA has no AI chapter (c), and no province has a general private-sector AI act (d) — Ontario's 2024 act reaches only public-sector use."
+ },
+ "ii-rr-ch-c01": {
+  "why": "Nearest confusable is (b): the decision expressly REJECTED a horizontal act in favour of the lean sectoral route — the opposite of the EU's choice next door. (d) mistakes Switzerland's institutional position: it is not in the EEA and has no mechanism to adopt the AI Act wholesale."
+ },
+ "ii-rr-ch-c02": {
+  "why": "Nearest confusable is (b), the classic 'no AI law means no law' error — the FADP, product rules and financial supervision all reach AI systems today. (c) is wrong on mechanism: EU rules are not Swiss law and bite only extraterritorially where output is used in the EU market."
+ },
+ "ii-rr-ch-s01": {
+  "why": "Nearest confusable is (b): Switzerland is neither EU nor EEA, so the AI Act is not Swiss law — though it can still reach a Swiss firm extraterritorially when output is used in the EU. (d) fails on status: Switzerland SIGNED the Convention in March 2025 but has not ratified it."
+ },
+ "ii-rr-ch-s02": {
+  "why": "Nearest confusable is (b): that is the UNITED KINGDOM'S position — the UK ratified and the Convention has been in force for it since 2025-11-01. Switzerland is a signatory only, and a treaty of this kind needs ratification plus implementing legislation before it binds (contra d)."
+ },
+ "ii-rr-cn-c01": {
+  "why": "The nearest confusable is (b): what took effect on 2026-01-01 is the amended Cybersecurity Law with AI safe-development provisions — not a comprehensive AI statute. (c) confuses China with Japan or Singapore: China's measures are fully binding, just not consolidated."
+ },
+ "ii-rr-cn-c02": {
+  "why": "The nearest confusable is (b): the State Council's 'accelerate comprehensive legislation' commitment is a drafting agenda, not an enactment — no unified statute is in force as of 2026-08-02. The CSL amendment (adopted by the NPC Standing Committee 2025-10-28) is real but is an amendment to existing law, not the awaited AI act."
+ },
+ "ii-rr-cn-n01": {
+  "why": "The nearest confusable is (b): data localisation is a Cybersecurity Law / Data Security Law concern — the Interim Measures' training-data governance duty is about source legality, IP and personal-information compliance, and training data is expressly in scope (contrary to (c))."
+ },
+ "ii-rr-cn-n02": {
+  "why": "The nearest confusable is (b), which describes Korea's operator-only duty design — China uniquely extends verification and re-labelling duties to distribution platforms. Implicit metadata labels are mandatory, not optional, so (c) fails too."
+ },
+ "ii-rr-cn-p01": {
+  "why": "The nearest confusable is (b): no unified AI statute exists in China as of August 2026 — comprehensive-law drafting has only been accelerated on the 2026 legislative agenda. (c) adds AI safe-development language but is not the operative service-level rulebook; (d) is Singapore's voluntary framework. The Interim Measures have been in force since 2023-08-15."
+ },
+ "ii-rr-cn-p02": {
+  "why": "The nearest confusable is (b): self-assessment-plus-marking is the EU internal-control conformity route — China's mechanism is administrative filing in a regulator-run registry (Algorithm Recommendation Provisions, in force 2022-03-01), and public-facing generative services file too: 796 had completed filing as of 2026-02-28. Filing is not certification and not CE marking."
+ },
+ "ii-rr-cn-p03": {
+  "why": "The nearest confusable is (b): the layering is the tested fact — China stacks instruments rather than replacing them, so the Deep Synthesis Provisions (eff. 2023-01-10) operate alongside the Labelling Measures and GB 45438-2025. Assuming the newer measure supersedes the older is the classic error in this regime."
+ },
+ "ii-rr-cn-p04": {
+  "why": "The nearest confusable is (b): the realistic-vs-clearly-artificial distinction is Korea's rule under its Framework Act — China requires BOTH label types on generated output regardless. (d) inverts the duty split: platforms have their own verify-and-relabel obligations, but that supplements rather than replaces the generator's duty."
+ },
+ "ii-rr-cn-p05": {
+  "why": "The nearest confusable is (b): third-party conformity assessment is the EU's reserved route for certain biometric systems — China's gate for services with public-opinion attributes is a regulator-facing security assessment paired with filing. (c) is the EU deployer's FRIA; (d) is Singapore's voluntary assurance tooling."
+ },
+ "ii-rr-co-c01": {
+  "why": "The nearest confusable is (b): no court ever ruled the law unconstitutional — xAI's suit (filed 2026-04-09, DOJ intervening) produced a stay, and the LEGISLATURE then repealed and replaced it. Option (c) erases the litigation pressure that shaped the outcome."
+ },
+ "ii-rr-co-c02": {
+  "why": "The nearest confusable is (b), which inverts the outcome — disclosure and transparency are exactly what SB 26-189 KEPT; the heavyweight governance machinery is what went. That deletion is why commentators describe the replacement as substantially narrower."
+ },
+ "ii-rr-co-k01": {
+  "why": "The nearest confusable is (c), the signing-date-equals-effective-date error — SB 26-189 was signed 2026-05-14 but operates from 2027-01-01. Option (b) treats a dead law as live. Colorado today is a gap: general consumer and privacy law apply, nothing AI-specific."
+ },
+ "ii-rr-co-s01": {
+  "why": "The nearest confusables are (b) and (d), which recite the two effective dates that never arrived: 2026-02-01 was pushed to 2026-06-30 by SB 25B-004, and the repeal-and-replace (2026-05-14) landed first. SB 24-205 produced zero days of operative law."
+ },
+ "ii-rr-co-s02": {
+  "why": "The nearest confusable is (b), which describes TEXAS's TRAIGA — in force since January 2026 and intent-based. Colorado's SB 26-189 is a disclosure/transparency regime for automated decision technology and does not operate until 2027-01-01."
+ },
+ "ii-rr-co-s03": {
+  "why": "The nearest confusable is (b) — the developer duty-of-care with impact assessments was the REPEALED SB 24-205 design; SB 26-189 largely eliminated the developer/deployer duty split and weighted what remains toward deployers. Importers (c) are an EU role with no Colorado analogue."
+ },
+ "ii-rr-co-s04": {
+  "why": "The nearest confusable is (d) — the DOJ did intervene in the court challenge, but no federal preemption statute exists; the reversal was Colorado's own legislature. Four moves in two years is the date-churn lesson: a compliance date is not a fact you memorise once."
+ },
+ "ii-rr-coe-c01": {
+  "why": "Nearest confusable is (c): the FRIA (AI Act Art. 27) is EU law and deployer-facing — HUDERIA is Council of Europe methodology supporting Convention implementation, and it is guidance, not itself mandatory (b). (d) describes ISO/IEC 42001, a different animal entirely."
+ },
+ "ii-rr-coe-c02": {
+  "why": "Nearest confusable is (c): signature signals intent — obligations attach only on ratification and entry into force for that party. The US and Japan have signed but not ratified (d), and the treaty is expressly open to non-members (b)."
+ },
+ "ii-rr-coe-s01": {
+  "why": "Nearest confusable is (b): conformity assessment is EU AI Act machinery — the Convention contains no company-facing operative rules. (d) is the stale fact this game punishes: CETS 225 entered into force on 2025-11-01."
+ },
+ "ii-rr-coe-s02": {
+  "why": "Nearest confusable is (c): unlike the OECD Principles or the G7 Hiroshima Process, CETS 225 creates binding obligations for its parties. It is a Council of Europe treaty open to non-members — international, not national (b) — and not an EU act (d): the EU is acceding to it as a party."
+ },
+ "ii-rr-coe-s03": {
+  "why": "Nearest confusable is (b): the treaty's general entry into force (2025-11-01) bound the states that had ratified by then — for each new party, including the EU, the clock runs from its own ratification, with effect 2026-09-01. (d) borrows the Digital Omnibus deferral date from an entirely different instrument."
+ },
+ "ii-rr-eu-c01": {
+  "why": "Nearest confusable is (b): Annex III sits a full year later, on 2027-12-02 — 2026-12-02 is the Omnibus's own transition date, closing the Art. 50 watermarking grace for pre-August-2026 systems and switching on the new Art. 5 NCII/CSAM ban it added. (c) is stale by four months — fining powers arrived 2026-08-02; (d) misses both December-2026 items."
+ },
+ "ii-rr-eu-c02": {
+  "why": "Nearest confusable is (b): the pre-Omnibus calendar would indeed have made high-risk duties bite today, but Regulation (EU) 2026/1744 moved Annex III to 2027-12-02. (c) over-corrects in the other direction — GPAI duties and Article 50 are live alongside the prohibitions."
+ },
+ "ii-rr-eu-d01": {
+  "why": "Article 26 is the deployer's operational set. Nearest confusables: (b) and (c) are the PROVIDER'S pre-market duties — the deployer inherits neither by merely using the system; (d) is the Article 50 synthetic-content marking duty, which belongs to providers of generative systems."
+ },
+ "ii-rr-eu-d02": {
+  "why": "Nearest confusable is (d): that describes the GDPR Article 35 DPIA. The Article 27 FRIA is deployer-side and limited to public-sector-type deployers plus specified credit/insurance uses — not every deployer, and not annual (b); (c) confuses it with the provider's conformity assessment."
+ },
+ "ii-rr-eu-d03": {
+  "why": "Nearest confusable is (b): the Omnibus deferred Annex III high-risk duties, not Article 50, which became enforceable 2026-08-02. (c) names the PROVIDER'S marking duty — the deployer side is deepfake labelling and informing exposed persons; (d) the FRIA is a high-risk instrument for public-sector-type deployers, not a transparency disclosure."
+ },
+ "ii-rr-eu-d04": {
+  "why": "Nearest confusable is (b): enabling oversight by design is the PROVIDER'S Article 14 duty; the deployer's Article 26(2) duty is assigning capable people. (c) overstates — oversight means meaningful ability to intervene, not per-output human approval."
+ },
+ "ii-rr-eu-i01": {
+  "why": "Nearest confusable is (c): the importer VERIFIES the provider completed the pre-market steps (Art. 23) — it does not redo them. (d) confuses the importer with the authorised representative, a separate mandated role; (b) ignores that importers carry their own verification and identification duties."
+ },
+ "ii-rr-eu-i02": {
+  "why": "Nearest confusable is (b): putting your name or trademark on a high-risk system already on the market is precisely the Article 25(1)(a) trigger that re-allocates the provider role. (d) is wrong on the mechanism — the original provider owes cooperation and documentation handover, not joint provider status."
+ },
+ "ii-rr-eu-i03": {
+  "why": "Nearest confusable is (b): the WRITTEN MANDATE to act for a third-country provider is the defining mark of the authorised representative (Art. 22), while the importer is the EU entity that places a third-country system on the market. Neither role attaches by mere position in the chain (c), and neither firm is using the system (d)."
+ },
+ "ii-rr-eu-k01": {
+  "why": "Nearest confusable is (b): the Digital Omnibus moved the Annex III date but left the Article 57 sandbox deadline at 2026-08-02. (c) confuses the UK's Regulating for Growth Bill — a proposal before Parliament, and not EU law — with the EU member-state obligation."
+ },
+ "ii-rr-eu-n01": {
+  "why": "Nearest confusable is (b): declarations of conformity and CE marking belong to the HIGH-RISK product-safety machinery, not the GPAI chapter. (c) is a deployer instrument; (d) misapplies the Omnibus deferral, which moved Annex III/I dates and left GPAI duties (applying since 2025-08-02) untouched."
+ },
+ "ii-rr-eu-n02": {
+  "why": "Nearest confusable is (b): untargeted scraping of facial images is an Article 5 PROHIBITED practice, not an Annex III high-risk use — no conformity route legalises it. (c) fails on currency: the prohibitions applied from 2025-02-02 and were untouched by the Digital Omnibus."
+ },
+ "ii-rr-eu-p01": {
+  "why": "Annex III employment systems use the internal-control route (Art. 43(2)) — self-assess, CE-mark, register. Nearest confusable: (b) third-party assessment is for biometrics without fully applied harmonised standards. (c) is the deployer's FRIA; (d) is NYC LL144. High-risk duties bind from 2027-12-02 (Digital Omnibus deferral), which is why the stem is future-dated."
+ },
+ "ii-rr-eu-p02": {
+  "why": "The stagger is the tested point and (b) is the nearest confusable: Art. 53 duties applied from 2025-08-02, while the Commission/AI Office enforcement and fining powers (Art. 101) arrive 2026-08-02. (c) is the prohibited-practices band, not the GPAI band; (d) confuses the GPAI chapter with the Annex III deferral."
+ },
+ "ii-rr-eu-p03": {
+  "why": "Nearest confusable is (b): deepfake labelling and emotion-recognition disclosure are the DEPLOYER'S Article 50 duties; the provider side is machine-readable marking plus interaction disclosure. (c) misreads the Omnibus — Article 50 became enforceable 2026-08-02 (only a watermarking grace to 2026-12-02 for systems already on the market); (d) is high-risk product machinery, not transparency."
+ },
+ "ii-rr-eu-p04": {
+  "why": "Nearest confusable is (b): emotion recognition OUTSIDE workplaces and schools sits in Annex III as high-risk, but in the workplace it is an Article 5 prohibited practice — no conformity route legalises it. (d) misapplies the Omnibus: the deferral touched Annex III, while the prohibitions have applied since 2025-02-02."
+ },
+ "ii-rr-eu-p05": {
+  "why": "Nearest confusable is (b): Article 73 serious-incident reporting attaches to HIGH-RISK systems and was deferred with Annex III to 2027-12-02; the systemic-risk GPAI duty (Art. 55, to the AI Office) has applied since 2025-08-02. (d) grafts the GDPR's 72-hour breach idiom onto the wrong instrument."
+ },
+ "ii-rr-ev-01": {
+  "text": "The AI Office opens a coordinated inquiry into general-purpose model providers — and since the Digital Omnibus it wields real fining powers over GPAI providers (up to 3% of global turnover or EUR 15M). Your model documentation is requested."
+ },
+ "ii-rr-ev-02": {
+  "text": "A market-surveillance authority probes whether your biometric deployment crosses into the EU's prohibited-practices tier — the ban layer has applied since February 2025."
+ },
+ "ii-rr-ev-03": {
+  "text": "A hospital customer reports a malfunction. The AI Office runs a readiness sweep: your post-market monitoring and serious-incident process will be duties when the deferred high-risk regime binds from 2 December 2027 — regulators are checking preparedness now."
+ },
+ "ii-rr-ev-04": {
+  "text": "A rejected loan applicant files an automated-decision-making complaint. Whatever the AI-law timeline says, GDPR Article 22 rights are enforceable today, and your DPO owns the response."
+ },
+ "ii-rr-ev-05": {
+  "text": "Engineering ships a fine-tuned foundation model under your own brand. Congratulations: in EU terms you now carry provider duties for what you modified."
+ },
+ "ii-rr-ev-06": {
+  "text": "Sales closes a white-label deal: a third-party system now ships under your trademark. Putting your name on it moves provider obligations onto you."
+ },
+ "ii-rr-ev-07": {
+  "text": "New York City's enforcement arm sweeps employers using automated employment decision tools: bias-audit currency and candidate notices are being checked."
+ },
+ "ii-rr-ev-08": {
+  "text": "A candidate files a Human Rights Act charge over AI use in hiring — the HB 3773 amendment has been in force since 1 January 2026, and the agency wants your records."
+ },
+ "ii-rr-ev-09": {
+  "text": "Colorado repealed SB 24-205 before it ever took effect and replaced it with SB 26-189 (signed 2026-05-14): a narrower ADMT disclosure law, effective 2027-01-01, with duties mainly on deployers. Date-churn is the lesson — track the law, not the headline."
+ },
+ "ii-rr-ev-10": {
+  "text": "The FTC announces a deception sweep over exaggerated AI claims in consumer products. Your chatbot's marketing copy is in scope under Section 5."
+ },
+ "ii-rr-ev-11": {
+  "text": "A regulator demands your adverse-action notices for algorithmic credit denials — specific reasons are required, and 'the model said so' is not one."
+ },
+ "ii-rr-ev-12": {
+  "text": "Consumers exercise their California privacy rights against your automated decisionmaking in a coordinated wave. The ADMT regulations' access and opt-out machinery is being stress-tested on you."
+ },
+ "ii-rr-ev-13": {
+  "text": "California spot-checks covered generative providers for AI-detection tooling and content disclosures under the AI Transparency Act."
+ },
+ "ii-rr-ev-14": {
+  "text": "The Ministry of Science and ICT writes: does your system meet the Framework Act's high-impact or compute thresholds? Misjudging scope here is the top Korea compliance failure."
+ },
+ "ii-rr-ev-15": {
+  "text": "A takedown notice cites unlabelled AI-generated output reaching Korean users. The Framework Act's generative-AI labelling duty is being enforced against your service."
+ },
+ "ii-rr-ev-16": {
+  "text": "The Cyberspace Administration audits your algorithm filing and security assessment for the public-facing generative service you operate in China."
+ },
+ "ii-rr-ev-17": {
+  "text": "Inspectors check your outputs for the explicit and implicit labels the 2025 labelling measures and their companion standard require on synthetic content."
+ },
+ "ii-rr-ev-19": {
+  "text": "Ottawa insiders whisper that the federal AI bill — dead since prorogation killed Bill C-27 in January 2025 — is coming back. Clients want to know whether to stand up compliance now."
+ },
+ "ii-rr-ev-20": {
+  "text": "Headlines say the Brazilian AI bill is moving in the Chamber of Deputies and an AI act is 'imminent'. A client asks whether to stand up an EU-style compliance programme in São Paulo this quarter."
+ },
+ "ii-rr-ev-22": {
+  "text": "An Australian paper runs a mandatory-AI-rules headline. Worth remembering: the 2024 mandatory-guardrails proposal was abandoned in the December 2025 National AI Plan — check the substance before reacting."
+ },
+ "ii-rr-ev-24": {
+  "text": "The Texas programme invites your novel AI product into its regulatory sandbox under TRAIGA. Getting the terms right earns supervised room to test."
+ },
+ "ii-rr-ev-25": {
+  "text": "A member-state sandbox — every member state must now have at least one operational — offers your novel system supervised testing with regulatory cover."
+ },
+ "ii-rr-ev-26": {
+  "text": "Your board wants a recognised credential for the AI management system before the next funding round. A certification audit window opens this quarter."
+ },
+ "ii-rr-ev-27": {
+  "text": "Regulators in the binding-statute jurisdictions you operate across run a coordinated enforcement sweep. Knowing which duties are actually live where is the whole test."
+ },
+ "ii-rr-ev-28": {
+  "text": "An industry association benchmarks members against the voluntary frameworks of the soft-law jurisdictions you hold. Mislabelling what is and is not binding costs credibility."
+ },
+ "ii-rr-ev-30": {
+  "text": "The DIFC Commissioner of Data Protection opens an inspection of your autonomous decision systems — Regulation 10 has been fully enforced since 1 January 2026, with per-violation fines."
+ },
+ "ii-rr-ev-31": {
+  "text": "Peru's digital-government secretariat verifies your high-risk classification and duty evidence under Law 31814's implementing regulation, in force since January 2026."
+ },
+ "ii-rr-ev-32": {
+  "text": "After IMDA's world-first agentic-AI governance framework (launched at Davos, January 2026; updated May 2026), your board asks for a briefing on what it changes for your agents."
+ },
+ "ii-rr-ev-33": {
+  "text": "Kenya's Artificial Intelligence Bill (Senate Bill No. 4) had its Senate first reading on 2 April 2026 and sits with the ICT committee. It must still pass the National Assembly — Africa's strongest dedicated-AI-bill candidate, but not yet law."
+ },
+ "ii-rr-ev-34": {
+  "text": "'Taiwan's AI law is in force' crosses the wire and your leadership asks whether the Taipei business must now stand up a compliance programme. Read the statute before you answer."
+ },
+ "ii-rr-ev-35": {
+  "text": "Switzerland stays deliberately minimalist: the Federal Council's February 2025 decision holds — lean, sectoral, no horizontal AI act — with a draft bill due in consultation by end-2026. The CoE Convention is signed but not ratified."
+ },
+ "ii-rr-ev-36": {
+  "text": "The June 2026 Digital Omnibus rewrote the EU AI Act timeline: Annex III high-risk duties now bind from 2 December 2027 (embedded systems 2028). Binding today: prohibitions and AI literacy, GPAI duties with fining powers, Article 50 transparency, and member-state sandboxes."
+ },
+ "ii-rr-ev-37": {
+  "text": "The EU's accession to the Council of Europe Framework Convention on AI takes effect on 1 September 2026. Remember what kind of instrument this is: a binding treaty that binds states — obligations reach companies only through implementing law."
+ },
+ "ii-rr-ev-38": {
+  "text": "A Denver client has read that Colorado passed an AI law and asks whether to stand up compliance now. Signing dates are not effective dates — check what actually binds today before you answer."
+ },
+ "ii-rr-il-c01": {
+  "why": "The nearest confusable is (c), the suspension myth: statutory duties operate regardless of the rulemaking's fate. IDHR proposed Subpart J on 2026-05-15, then temporarily withdrew it on 2026-06-02 to coordinate with other agencies — no adopted rules exist, but HB 3773 binds anyway."
+ },
+ "ii-rr-il-n01": {
+  "why": "The nearest confusable is (b): HB 3773 makes the notice duty freestanding — a silent deployment violates the act even absent any discriminatory outcome. The vendor relationship (c) is irrelevant to the civil-rights charge."
+ },
+ "ii-rr-il-n02": {
+  "why": "The nearest confusable is HB 3773's route — employment-AI charges there go through the IDHR administrative process, whereas BIPA lets plaintiffs sue directly for statutory damages of $1,000 per negligent and $5,000 per intentional or reckless violation, with no proof of actual harm required (Rosenbach v. Six Flags) — multiplied across a class of thousands of workers. Neither criminal liability (b) nor license loss (c) is BIPA's mechanism."
+ },
+ "ii-rr-il-s01": {
+  "why": "The nearest confusable is (b) — that intent-based standard is Texas TRAIGA's, and HB 3773 pointedly chose the opposite: effect suffices. Vendor certification (d) shifts nothing; the duty sits on the employer under the amended IHRA."
+ },
+ "ii-rr-il-s02": {
+  "why": "The nearest confusable is (b) — the published bias audit is NYC LL144's hiring rule, a different instrument and city. BIPA §15 demands informed written consent and a retention/destruction policy before collection; on-premises storage (d) is no exemption."
+ },
+ "ii-rr-il-s03": {
+  "why": "The nearest confusable is (c) — BIPA is the other famous Illinois statute, but it covers biometric identifiers, not geographic proxies. HB 3773 names ZIP-code-as-proxy explicitly, so no resort to federal redlining doctrine (d) is needed."
+ },
+ "ii-rr-in-c01": {
+  "why": "The nearest confusable is (c), the old 'none' classification — outdated since MeitY's official framework of November 2025. India is a layered regime, not a statute regime: what binds is general law (DPDP) and sectoral rules (IT Amendment Rules), while the AI-wide layer stays voluntary."
+ },
+ "ii-rr-in-c02": {
+  "why": "The discriminator is private member's bill versus government instrument: contrast the DPDP Rules, which MeitY notified and which ARE binding and phasing in. Treating every introduced bill as pending law is the horizon-scanning error this card trains against."
+ },
+ "ii-rr-in-s01": {
+  "why": "The confusables are 'official' and 'binding' pulling in opposite directions: the Guidelines are genuinely government-issued (under the IndiaAI Mission) yet voluntary — India's binding instruments are general and sectoral laws (DPDP, IT Rules), never the Guidelines themselves."
+ },
+ "ii-rr-in-s02": {
+  "why": "The nearest confusable is (b): that bill is a private member's bill introduced in the Lok Sabha in December 2025, not enacted law. The DPDP regime is not AI-specific, but its consent requirements reach personal data used for model training — which is exactly why (c) is wrong."
+ },
+ "ii-rr-in-s03": {
+  "why": "The nearest confusable is (c), over-applying India's 'voluntary' label: accurate for the horizontal framework, but the deepfake-labelling rules under the IT Act (Gazette notification February 2026) are binding and AI-specific — user declarations, prominent labels, provenance metadata where feasible. No comprehensive AI statute exists and the Guidelines never hardened."
+ },
+ "ii-rr-jp-c01": {
+  "why": "The nearest confusable is (b), which is Taiwan's AI Basic Act timeline (passed 2025-12-23, effective 2026-01-14) — the two Asian framework statutes are easy to swap because they share the no-business-duties design."
+ },
+ "ii-rr-jp-c02": {
+  "why": "The pattern recurs in Taiwan's Basic Act — statute in force, business duties absent — so 'has an AI law' is never sufficient for a compliance trigger. In Japan the trigger for companies remains general law (APPI, product liability), not the AI statute, and nothing was repealed."
+ },
+ "ii-rr-jp-s01": {
+  "why": "The nearest confusable is (d), the outdated claim: Japan HAS a binding statute — the AI Promotion Act (Act No. 53 of 2025), in force since 2025-06-04 — it just imposes no business obligations. (b) and (c) import EU-style registration and conformity machinery that Japan deliberately never adopted."
+ },
+ "ii-rr-jp-s02": {
+  "why": "The nearest confusable is (b)/(d): the Act does create government machinery — the AI Strategy Headquarters and the AI Basic Plan (adopted by Cabinet 2025-12-23) — but that machinery directs the state, not business. The operative layer for companies is agile, voluntary guidance riding on general law."
+ },
+ "ii-rr-jp-s03": {
+  "why": "The nearest confusable is (b): a 3%-of-turnover fining power is the EU Commission's GPAI enforcement tool — Japan's act contains no monetary penalties at all. Reputational naming after investigation is the only teeth; there is no suspension or recall power in the statute."
+ },
+ "ii-rr-ke-c01": {
+  "why": "The nearest confusable is (b): the Commissioner's office does not exist yet — it is created only if the bill passes. The African Union (c) issues continental strategy, not directly applicable regulation. The March 2025 strategy (about KES 152bn) is the operative framework."
+ },
+ "ii-rr-ke-c02": {
+  "why": "The nearest confusable is (b): nothing is enacted — a first-reading bill is precisely what puts Kenya ahead on the dedicated-statute track. Nigeria is the closest call, but its AI provisions sit inside a digital-economy omnibus (the e-governance bill, at third reading in July 2026), not a standalone AI act; Rwanda and South Africa govern by policy only. (c) invents an adoption mechanism that does not exist."
+ },
+ "ii-rr-ke-s01": {
+  "why": "The nearest confusable is (b) — the classic proposed-tier trap: Senate Bill No. 4 (published 2026-02-19, first reading 2026-04-02) is at committee stage, not law. (c) gets the criticism right but the withdrawal wrong; (d) understates a real bill before the Senate."
+ },
+ "ii-rr-ke-s02": {
+  "why": "The nearest confusable is (b): the bill regulates AI systems through a commissioner-licensing model and draws no EU-style role chain — its published text makes no clear provider/deployer distinction. (d) is the Taiwan pattern (and roughly Peru's), not Kenya's commissioner-licensing design."
+ },
+ "ii-rr-kr-c01": {
+  "why": "The nearest confusable is (c), which transplants the EU's deferred Annex III timeline onto Korea — the Framework Act has applied since 2026-01-22; what is soft-pedalled in 2026 is enforcement, not applicability. That distinction (in force vs actively fined) is exactly what a compliance brief must get right."
+ },
+ "ii-rr-kr-c02": {
+  "why": "The nearest confusable is (b): the EU's provider/deployer/importer split allocates sharply different duty sets per role, and Korea rejected that design — its two operator types largely share obligations, and Korea's foreign-operator domestic-representative duty is threshold-based (user/revenue scale) where the EU's authorised-representative duty (Art. 22) is role-based, attaching to every third-country provider."
+ },
+ "ii-rr-kr-d01": {
+  "why": "The nearest confusable is (c): Korea's Act attaches its own duty content to the bank's use — safety/reliability measures and protection of the users the model is run on — rather than importing the EU's deployer duty set; the utilization operator sits roughly where the EU deployer does, but the duties come from the Korean statute alone. (d) is the foreign-operator threshold duty, irrelevant to a domestic bank."
+ },
+ "ii-rr-kr-d02": {
+  "why": "The nearest confusable is (b): an importer that assumes responsibility for a third-country product is an EU AI Act role — Korea has no importer category; the Act reaches foreign operators affecting the Korean market directly and adds a local-representative duty above thresholds. (c) is wrong because extraterritorial application is explicit. Unlike the EU's authorised-representative duty (Art. 22), which is role-based and attaches to every third-country provider of a high-risk system regardless of scale, Korea's duty is threshold-triggered — it keys on user/revenue scale."
+ },
+ "ii-rr-kr-d03": {
+  "why": "The nearest confusable is (d): the generative-AI transparency duty is a standalone obligation that applies regardless of high-impact designation — the two tiers trigger different duty sets. (b) confuses user-facing transparency with the high-impact operator's internal documentation, which is never handed to consumers."
+ },
+ "ii-rr-kr-n01": {
+  "why": "The Act has three distinct triggers that are easy to swap: the compute threshold (b) triggers the safety-report duty, and high-impact designation (c) triggers risk-management duties — the representative duty keys on user/revenue scale for foreign operators."
+ },
+ "ii-rr-kr-n02": {
+  "why": "GB 45438-2025 is China's mandatory labelling standard and the METI/MIC guidelines are Japan's voluntary layer — Korea's labelling methods are detailed in the Enforcement Decree, finalized and effective with the Act on 2026-01-22 after the September 2025 draft."
+ },
+ "ii-rr-kr-n03": {
+  "why": "The nearest confusable is (b): an enumerated use-case annex is the EU's Annex III architecture — Korea uses criteria-based determination under the Enforcement Decree, which businesses report remains vague in practice."
+ },
+ "ii-rr-kr-p01": {
+  "why": "The nearest confusable is (b): a conformity-assessment-plus-marking route is the EU AI Act's machinery — Korea's Act imposes direct statutory duties on the operator with no CE-style marking. (d) transplants the EU's deferred Annex III timeline (December 2027 under the Digital Omnibus); Korea's Act has been fully in force since 2026-01-22. Note the taxonomy: an 'AI development business operator' sits roughly where the EU's provider does, but Korea's Act uses the operator terms, not the EU ones."
+ },
+ "ii-rr-kr-p02": {
+  "why": "The nearest confusable is (d): a platform-side verify-and-relabel duty is China's regime under the Labelling Measures and GB 45438-2025 — in Korea the duty stays with the operator. (c) confuses the separate advance-notice duty with output marking: both exist, and notice does not substitute for marking realistic content."
+ },
+ "ii-rr-kr-p03": {
+  "why": "The nearest confusable is (c): registry filing is China's mechanism under its algorithm provisions — Korea's compute-threshold trigger is a safety-assurance-and-report duty owed to MSIT, the AI ministry. (b) points at the privacy regulator, which owns personal-data questions, not large-scale-AI safety; no licensing regime exists."
+ },
+ "ii-rr-nyc-c01": {
+  "why": "The nearest confusable is (b) — no court touched LL144; this was the NYS Comptroller's performance audit of DCWP (2025-12-02). Weak past enforcement plus accepted recommendations signals MORE enforcement ahead, the opposite of (c)'s complacency read."
+ },
+ "ii-rr-nyc-c02": {
+  "why": "The nearest confusable is (b), the preemption assumption — the RAISE Act (signed 2025-12-19) regulates frontier-model developers at state level and does not displace LL144's employer-side hiring duties. Different duty-bearers, different subject matter."
+ },
+ "ii-rr-nyc-d01": {
+  "why": "The nearest confusable is (d): LL144 requires candidate NOTICE, not consent — consent-before-collection is Illinois BIPA's model. CE marking (b) belongs to the EU regime, and there is no algorithm filing in NYC (c); that pattern is China's."
+ },
+ "ii-rr-nyc-d02": {
+  "why": "The nearest confusable is (b) — confidential regulator filing is how China's algorithm-filing regime works, but LL144 chose sunlight: the summary is public. On-request or internal-only handling (c, d) both fail the publication duty."
+ },
+ "ii-rr-nyc-d03": {
+  "why": "The nearest confusable is (c) — notice AFTER the decision is the ECOA adverse-action pattern from credit law; LL144's notice is prospective. Publication of the audit (d) is a separate, parallel duty and does not substitute for individual notice."
+ },
+ "ii-rr-nyc-d04": {
+  "why": "The nearest confusable is (b), the EU-style provider framing — LL144 places no duty on developers or vendors at all; the deployer-side employer carries everything. Auditors (d) are third-party service providers, not duty-bearers."
+ },
+ "ii-rr-nyc-n01": {
+  "why": "The nearest confusable is (b): LL144 penalties are not a one-off — each day the tool runs without a current audit is a fresh violation, so three months compounds fast. There is no first-offense grace (c); enforcement has run since 2023-07-05."
+ },
+ "ii-rr-nyc-n02": {
+  "why": "The nearest confusable is (c), which inverts the independence rule — the auditor must NOT be someone involved in developing or using the tool, so a vendor self-review fails per se. LL144 has no notarization or state-filing mechanics (b)."
+ },
+ "ii-rr-pe-c01": {
+  "why": "The nearest confusable is (b) — Peru created no standalone AI office; oversight runs through the existing PCM/SGTD machinery inside the National Digital Transformation System. The central-bank framing (c) would make the regime sectoral, which it is not."
+ },
+ "ii-rr-pe-c02": {
+  "why": "The nearest confusable is (b) — no postponement ever happened; the interval was designed in from day one, and it is counted in BUSINESS days, not calendar days, which is why it stretches from September into late January. (c) misreads the instrument: a supreme decree regulating Law 31814 needs no congressional ratification."
+ },
+ "ii-rr-pe-n01": {
+  "why": "The nearest confusable is (b) — CE marking and declarations of conformity are EU AI Act artifacts with no Peruvian counterpart. The published bias-audit summary (c) is NYC LL144's employer duty. Peru's decree asks for transparency, security and auditability evidence."
+ },
+ "ii-rr-pe-n02": {
+  "why": "The nearest confusable is (b) — Law 31814 (2023) was principles-level; operative duties arrived only with the reglamento, so dating everything to 2023 overreaches just as (c)'s 2027 deferral underreaches. The decree published 2025-09-09 with a phased entry ending 2026-01-22."
+ },
+ "ii-rr-pe-s01": {
+  "why": "The nearest confusable is (b), the Senate-vote-as-law error — Brazil's PL 2338 is still pending in the Chamber. Peru's Law 31814 (2023) gained operative force through Supreme Decree 115-2025-PCM on 2026-01-22, making it the first binding general AI framework in the region."
+ },
+ "ii-rr-pe-s02": {
+  "why": "The nearest confusable is (c) — sector-by-sector regulation is the US pattern; Peru's reglamento is a general framework with EU-flavoured tiering (prohibited and high-risk categories). Classification is legal, not self-selected (d)."
+ },
+ "ii-rr-pe-s03": {
+  "why": "The nearest confusable is (d), which understates it — the reglamento's duties are binding; 'promotion-oriented' describes the statute's purpose (economic and social development), not an absence of force. Option (c) overstates the EU likeness: the tiering rhymes, the weight does not."
+ },
+ "ii-rr-pe-s04": {
+  "why": "The nearest confusable is (c) — the development/utilization operator split is SOUTH KOREA's taxonomy, not Peru's. Option (b) borrows EU labels the decree does not use. The reglamento reaches developers and implementers/deployers, with the weight on high-risk deployment."
+ },
+ "ii-rr-sg-c01": {
+  "why": "The confusable is mistaking sector guidance (MAS FEAT/Veritas, MOH healthcare guidelines) for standalone AI law — that guidance interprets existing binding statutes; the AI-specific layer itself never binds. There is no IMDA endorsement or filing mechanism that creates obligations."
+ },
+ "ii-rr-sg-c02": {
+  "why": "The trap is the reversal in (c) — Singapore is the voluntary exemplar and Korea the comprehensive-law jurisdiction. The date coincidence makes a clean memory anchor for Asia's two diverging governance tracks."
+ },
+ "ii-rr-sg-k01": {
+  "why": "The nearest confusable is (b) — launch profile is not legal force: the Davos debut (2026-01-22) and the 2026-05-20 update change nothing about the instrument being a voluntary IMDA model framework. (c) invents a role split; it addresses developers, deployers and agent operators without binding any of them."
+ },
+ "ii-rr-sg-s01": {
+  "why": "The nearest confusable is (b): the PDPA is binding law, but it is general data protection — the Model Framework (2nd ed. 2020) and GenAI edition (May 2024) sit on top of it voluntarily. No self-certification mechanism converts them into obligations; Singapore is the deliberate voluntary exemplar."
+ },
+ "ii-rr-sg-s02": {
+  "why": "The nearest confusable is (c): 'conformity assessment' is EU-route thinking — AI Verify (IMDA, open-sourced 2023 under the AI Verify Foundation) is voluntary assurance tooling, not a gatekeeper. MAS FEAT (d) is sectoral guidance for financial institutions and is likewise non-binding."
+ },
+ "ii-rr-sg-s03": {
+  "why": "The nearest confusable is (c), a date slip: the GenAI edition dates from May 2024 — the 2026-01-22 Davos launch was the Model AI Governance Framework for Agentic AI, non-binding like the rest of Singapore's stack (and updated with industry feedback on 2026-05-20)."
+ },
+ "ii-rr-tw-c01": {
+  "why": "The tempting neighbour-match (b) is the opposite pattern: Korea's Framework Act carries operative duties, fines and extraterritorial reach from commencement. Taiwan and Japan share the statute-without-business-duties design — law on the books, obligations delegated to the future."
+ },
+ "ii-rr-tw-c02": {
+  "why": "The nearest confusable is (b), the statute-equals-duties error this territory exists to break. The compliance action today is monitoring: the MODA risk framework had a Q1 2026 public target that appears to be slipping, and sector regulators legislate only after it lands."
+ },
+ "ii-rr-tw-k01": {
+  "why": "The nearest confusable is (b) — the statute-equals-duties error: the Basic Act (effective on promulgation, 2026-01-14) codifies seven principles and tasks MODA with a risk framework, imposing no immediate obligations or penalties on private business. (c) is wrong twice over: no EU mirroring, and no provider/deployer split yet."
+ },
+ "ii-rr-tw-s01": {
+  "why": "The nearest confusable is (b), the outdated claim — the bill did stall for years as the NSTC draft, but the Legislative Yuan passed it in December 2025 and President Lai promulgated it effective 2026-01-14. (c) confuses the statute's effectiveness with the arrival of business duties: the Act took effect on promulgation; the duties are what await sector rules."
+ },
+ "ii-rr-tw-s02": {
+  "why": "The nearest confusable is (b), the exact inversion — MODA is the digital ministry and looks like the natural lead, but the Act seats central competence with the science and technology council (NSTC) and delegates the internationally aligned risk-classification framework to MODA (Q1 2026 target, slipping). No new AI commission exists (c), and sector regulators (d) act only under the coming framework."
+ },
+ "ii-rr-tw-s03": {
+  "why": "The nearest confusable is (b): an enumerated high-risk annex with conformity assessment is the EU AI Act's architecture — Taiwan chose principles-plus-delegation instead (sustainability, human autonomy, privacy, security, transparency, fairness, accountability). The Act contains no fines on business and no licensing."
+ },
+ "ii-rr-tx-c01": {
+  "why": "The nearest confusable is (b) — that is Colorado's trajectory, not Texas's. TRAIGA took effect on schedule (2026-01-01) and is widely described as the third state comprehensive AI law. The hiring-only audit ordinance (c) is NYC Local Law 144."
+ },
+ "ii-rr-tx-d01": {
+  "why": "The nearest confusable is (b) — pre-launch algorithm filing is China's mechanism, not Texas's. The fundamental-rights impact assessment (c) is the EU AI Act's deployer duty. TRAIGA reaches deployers through intent-based prohibited uses, not paperwork gates."
+ },
+ "ii-rr-tx-d02": {
+  "why": "The nearest confusable is (b), which inverts the asymmetry: TRAIGA is STRICTER on government (social scoring; capturing biometric identifiers from public data without consent) than on private actors. It is a state law, so (d)'s federal framing is a category error."
+ },
+ "ii-rr-tx-k01": {
+  "why": "The nearest confusable is (b): sandbox relief is temporary and conditional, never a permanent pass. And no state program can displace federal law (c) — FTC Act §5 still applies inside the sandbox."
+ },
+ "ii-rr-tx-n01": {
+  "why": "The nearest confusable is (c) — clean outcome statistics argue effects, but TRAIGA turns on intent and its safe harbors, which include following recognized frameworks like the NIST AI RMF. Vendor reputation (b) is no statutory defense anywhere."
+ },
+ "ii-rr-tx-n02": {
+  "why": "The nearest confusable is (c): the sandbox is a prospective testing shelter, not an after-the-fact defense. TRAIGA's cure period is the pre-enforcement safety valve — fix it in 60 days and the AG action never starts."
+ },
+ "ii-rr-tx-p01": {
+  "why": "The nearest confusable is (b) — that duty-of-care-plus-impact-assessment design was Colorado's original SB 24-205 model, which TRAIGA deliberately rejected in favor of intent-based prohibitions. Third-party conformity assessment (c) is the EU route; no US state runs one."
+ },
+ "ii-rr-tx-p02": {
+  "why": "The nearest confusable is Illinois HB 3773, which uses a discriminatory-EFFECT standard — under TRAIGA the same statistics prove nothing without intent. The annual bias audit (c) is New York City's LL144 mechanism, and Texas keeps no high-risk registry (d)."
+ },
+ "ii-rr-tx-p03": {
+  "why": "The nearest confusable is (b), the BIPA-style private right of action — TRAIGA expressly has none, which is a large part of why it is 'light-touch'. The sandbox (c) is a testing shelter, not an enforcement gatekeeper."
+ },
+ "ii-rr-uk-c01": {
+  "why": "Nearest confusable is (c): a King's Speech announcement is not law — the Bill remains before Parliament. (d) is the SEPARATE SI 2026/425, which IS in force; (b) is what the Bill deliberately is not — the UK is legislating for sandboxes, not for an AI Act."
+ },
+ "ii-rr-uk-c02": {
+  "why": "Nearest confusable is (c): those are the EU HLEG trustworthy-AI requirements, not the UK's five pro-innovation principles. (b) is the NIST AI RMF's four functions; (d) is the EU AI Act's risk classification — a tiering scheme, not a principles set."
+ },
+ "ii-rr-uk-k01": {
+  "why": "Nearest confusable is (b): the DUAA is data-protection law that happens to reshape automated-decision rules — it is not an AI statute. (c) fails on status: the Regulating for Growth Bill was only ANNOUNCED in the King's Speech and remains before Parliament."
+ },
+ "ii-rr-uk-k02": {
+  "why": "Nearest confusable is (c), the direction-of-travel reversal — easy if you anchor on the shared pre-Brexit text: it is the UK that liberalised, while EU Article 22 keeps its restriction-shaped default. (b) fails because the EU has made no equivalent amendment — this is now a live cross-border compliance split for any group running one decisioning stack in both markets."
+ },
+ "ii-rr-uk-s01": {
+  "why": "Nearest confusable is (b): the UK deliberately created no central AI regulator — the principles route through existing sectoral remits, so one AI system can face the ICO on data, the FCA on financial services and Ofcom on content. DSIT (c) coordinates policy and steers the framework; it does not enforce against firms. (d) understates: regulators apply the principles through their existing statutory powers."
+ },
+ "ii-rr-uk-s02": {
+  "why": "Nearest confusable is (b): that is the OLD Article 22 posture the Data (Use and Access) Act replaced — UK GDPR Articles 22A–22D flip the default to permission-with-safeguards (human intervention, representations, contest). (c) overshoots: safeguards and the special-category carve-out remain; (d) imports the wrong regime entirely."
+ },
+ "ii-rr-uk-s03": {
+  "why": "Nearest confusable is (b): the binding duty falls on the REGULATOR — to prepare the code — not directly on companies; the code will then guide enforcement of existing law. (c) is impossible post-Brexit mechanics; nothing in the SI licenses developers (d)."
+ },
+ "ii-rr-uk-s04": {
+  "why": "Nearest confusable is (b): CETS 225 binds States Parties, not firms. (c) describes SWITZERLAND'S position (signed 2025-03-27, not ratified) — the UK ratified, and the Convention has been in force for it since 2025-11-01. (d) is doubly wrong: the UK left the EU and the EU's own accession takes effect only from 2026-09-01."
+ },
+ "ii-rr-us-c01": {
+  "why": "The nearest confusable is (b): the White House sent legislative preemption recommendations to Congress on 2026-03-20, but recommendations are not enacted law. EO 14365 created the DOJ AI Litigation Task Force (established 2026-01-09) to challenge state laws in court — the opposite of endorsement (c)."
+ },
+ "ii-rr-us-c02": {
+  "why": "The nearest confusable is (b), the EU-style risk-tier model — no US federal statute does that. Provenance labelling (c) is California SB 942's territory, not federal law. The TAKE IT DOWN Act's platform removal process had to be in place by 2026-05-19."
+ },
+ "ii-rr-us-n01": {
+  "why": "The nearest confusable is the jurisdiction gambit (b) — Section 5 reaches AI conduct without any AI-specific statute, so that argument loses. Substantiation must pre-date the claim; framework alignment (c) is good hygiene but does not immunize deception."
+ },
+ "ii-rr-us-n02": {
+  "why": "The nearest confusable is (c), the human-in-the-loop misconception — ECOA's adverse-action duty attaches to the credit decision however it is made. A generic below-threshold line (b) fails the specificity requirement the CFPB reiterated for AI models."
+ },
+ "ii-rr-us-s01": {
+  "why": "The nearest confusable is the TAKE IT DOWN Act — it really is a federal AI statute, but its scope is narrow (non-consensual intimate deepfakes), not comprehensive. The NIST AI RMF is voluntary guidance, and executive orders bind agencies, not companies."
+ },
+ "ii-rr-us-s02": {
+  "why": "The nearest confusable is the no-federal-AI-act fallacy: absence of an AI statute is not absence of law — FTC Act §5 already reaches AI-washing. The CFPB's adverse-action rules govern credit decisions, not ad copy, and NIST has no enforcement power at all."
+ },
+ "ii-rr-us-s03": {
+  "why": "The nearest confusable is the black-box excuse (b): ECOA/Regulation B require specific reasons and the CFPB has said model complexity is no defense. Handing over documentation or routing to the FTC answers a different question — the duty is a reasons notice to the applicant."
+ },
+ "ii-rr-us-s04": {
+  "why": "The nearest confusable is ISO/IEC 42001, which IS a certifiable management-system standard — the NIST AI RMF has no certification scheme and no legal mandate. Option (d) imports the EU notified-body machinery, which belongs to AI Act conformity assessment, not NIST."
+ },
+ "ii-rr-us-s05": {
+  "why": "The nearest confusable is (b), which imports the EU's high-risk registration database — the US has no such register. The patchwork discipline is activity-based: CFPB/ECOA for credit, FDA for medical devices, EEOC/Title VII for hiring. Framework profiles (d) are voluntary choices, not jurisdictional facts."
+ },
+ "ii-rr-usca-c01": {
+  "why": "The nearest confusable is (b) — CE marking is EU conformity iconography with no California analogue. SB 53 is a transparency statute: publish the safety framework, protect whistleblowers, report critical incidents. It licenses nothing and divests nothing (c)."
+ },
+ "ii-rr-usca-c02": {
+  "why": "The nearest confusable is (b): unlike the EU AI Act's single role taxonomy, California has no unified scheme — AB 2013 names developers, SB 942 covered providers, the CCPA regs businesses. Option (c) describes Colorado's deployer-weighted replacement law, not California."
+ },
+ "ii-rr-usca-d01": {
+  "why": "The nearest confusable is (c) — the CRD's FEHA rules also reach automated decisions but only in EMPLOYMENT; lending is a 'significant decision' under the CPPA's ADMT regulations. No federal ADMT framework exists (d), and SB 942 (b) is about content provenance, not decisions."
+ },
+ "ii-rr-usca-d02": {
+  "why": "The nearest confusable is (b): SB 942 marks AI-GENERATED CONTENT, while SB 1001 governs conversational identity when a bot incentivizes a sale or influences a vote — different disclosure objects. Option (d) describes Texas TRAIGA, the wrong state."
+ },
+ "ii-rr-usca-d03": {
+  "why": "The nearest confusable is (b) — the CPPA's ADMT regs also touch employment decisions, but the DISCRIMINATION question runs through the CRD's FEHA rules (effective 2025-10-01). Option (d) is false: those rules are already in force, no waiting period."
+ },
+ "ii-rr-usca-n01": {
+  "why": "The nearest confusable is (b), which misreads the phase-in as total deferral — the CPPA regulations have been effective since 2026-01-01; only the significant-decision ADMT compliance deadline runs to 2027-01-01. Option (c) invents an autonomy threshold the rules do not use."
+ },
+ "ii-rr-usca-n02": {
+  "why": "The nearest confusable is (c) — the EU AI Act's serious-incident reporting is the parallel mechanism but the wrong jurisdiction; SB 53 routes critical incidents to California's OES. The city consumer-affairs channel (b) is NYC LL144's enforcement home, unrelated to frontier models."
+ },
+ "ii-rr-usca-p01": {
+  "why": "The nearest confusable is (b) — the training-data summary is AB 2013's separate duty, not SB 942's. SB 942 became operative today (2026-08-02, after the AB 853 delay) for covered providers over one million monthly visitors or users; the bias audit (c) is NYC's mechanism."
+ },
+ "ii-rr-usca-p02": {
+  "why": "The nearest confusable is (b) — repeal-and-replace is Colorado's story; California merely DELAYED via AB 853 (chaptered 2025-10-13). No court has enjoined SB 942 (d). The lesson is date-churn: track amendments, not just enactments."
+ },
+ "ii-rr-usca-p03": {
+  "why": "The nearest confusable is (b), which overreads AB 2013 — the duty is a high-level summary (sources, types, copyright/personal-data flags), never corpus disclosure. Option (c) imports EU risk-tier gating; AB 2013 applies without any risk classification."
+ },
+ "ii-tp-01": {
+  "a.text": "Defines the common vocabulary and conceptual framework for AI — terms like AI system, machine learning, training, inference, and bias — so every other AI standard rests on the same definitions.",
+  "a.why": "This is the dictionary of AI governance: it eliminates ambiguity in technical, legal, and governance discussions by fixing what the words mean, but it imposes no organisational requirements of its own.",
+  "b.text": "Specifies a certifiable AI management system (AIMS) — policies, governance structures, risk controls, and oversight mechanisms an organisation can be independently audited against.",
+  "b.why": "Published 2023, this moves AI governance from voluntary principles to auditable, certifiable practice — the AI-governance equivalent of ISO/IEC 27001 for information security."
+ },
+ "ii-tp-02": {
+  "a.text": "Guides how an organisation assesses an AI system's effects on individuals and societies — an AI impact assessment standard.",
+  "a.why": "42005 scopes the assessment around the people and communities the system touches, not the organisation's internal risk posture.",
+  "b.text": "Guides how an organisation manages AI-related risk across its own processes — risk identification, analysis, evaluation, and treatment.",
+  "b.why": "23894 is the AI-specific companion to ISO 31000's generic risk-management process, aimed at the organisation's risk function rather than the affected individual."
+ },
+ "ii-tp-03": {
+  "a.text": "A marketing bot's ad copy claims the AI hiring tool is 'completely objective'; the system later exhibits bias and the regulator calls the claim deceptive.",
+  "a.why": "The FTC Act bars false or exaggerated claims about what a product can do — the defect here is in what was said about the system, not in the system itself.",
+  "b.text": "A flaw in how the system was engineered means it fails to perform as safely as consumers are entitled to expect, and a user is injured as a result.",
+  "b.why": "Under doctrines like the EU Product Liability Directive, manufacturers can be strictly liable for a defective design even without proof of negligence — the harm traces to engineering, not messaging."
+ },
+ "ii-tp-04": {
+  "a.text": "Widely adopted, high-level principles for trustworthy AI — a values-level reference point rather than a step-by-step process.",
+  "a.why": "The OECD's contribution is normative and international: what trustworthy AI should look like, not how to operationalise finding and fixing its risks.",
+  "b.text": "A U.S.-originated but globally influential framework built specifically to help organisations identify and mitigate AI risks in practice.",
+  "b.why": "The RMF is operational scaffolding — functions like Govern, Map, Measure, and Manage — that an organisation actually runs, distinct from OECD's principle-level guidance."
+ },
+ "ii-tp-05": {
+  "a.text": "A published summary of a model's data sources, known risks, and mitigations, written in language a non-expert can understand.",
+  "a.why": "A model card documents what the model already is and does — transparency about a finished artefact.",
+  "b.text": "A structured exercise, run before deployment, to anticipate and manage the potential risks and harms an AI system could cause.",
+  "b.why": "An impact assessment looks forward at consequences for people and society, not backward at what the model card already discloses about the artefact."
+ },
+ "ii-tp-06": {
+  "a.text": "The vendor contractually promises the AI model will perform to a stated standard; if it doesn't, the deployer has a contract remedy against the vendor.",
+  "a.why": "A warranty is a promise about the product itself — it fails or holds based on whether the system performs as stated.",
+  "b.text": "The vendor agrees to cover the deployer's losses if a third party sues over IP infringement or a regulatory violation caused by the model — but the clause is voided once the deployer uses the model outside the jurisdictions the vendor covered.",
+  "b.why": "Indemnity reallocates who pays for a third-party claim; it says nothing about whether the model itself works, and — as exam-prep materials note — it can be voided by deploying outside the covered jurisdiction."
+ },
+ "ii-tp-07": {
+  "a.text": "A claimant must show the developer failed to exercise reasonable care in designing, testing, or validating the system before liability attaches.",
+  "a.why": "Negligence liability turns on proving a failure of care — no proof of fault, no claim.",
+  "b.text": "Under the EU Product Liability Directive, a manufacturer can be held liable for damage caused by a defective AI-enabled product even without any proof of negligence.",
+  "b.why": "Strict liability removes the fault question entirely: if the product was defective and caused harm, liability can attach regardless of how carefully the manufacturer behaved."
+ },
+ "ii-tp-08": {
+  "a.text": "An AI diagnostic tool that processes protected health information must comply with privacy and security rules covering access controls, audit logs, and breach notification.",
+  "a.why": "HIPAA's obligations attach the moment protected health information is processed, regardless of whether a decision is even automated.",
+  "b.text": "An AI model that denies a consumer a loan must provide an adverse-action notice explaining the key factors driving the decision, and the underlying credit-scoring model must not produce discriminatory outcomes.",
+  "b.why": "These finance-sector laws require explainability and non-discrimination specifically for credit decisions — a different duty, in a different sector, from HIPAA's data-handling rules."
+ },
+ "importer": {
+  "definition": "Established in the EU and places on the market a system bearing the name or trademark of a third-country entity."
+ },
+ "joint": {
+  "definition": "Two or more controllers that jointly determine purposes and means."
+ },
+ "map-ae": {
+  "tell": "Binding AI rules live only inside a financial free zone — the scope of the sectoral rule is a place, not an industry."
+ },
+ "map-au": {
+  "tell": "The 2024 mandatory-guardrails proposal was abandoned in the December 2025 National AI Plan — Australia chose to stay voluntary, not to drift toward binding rules."
+ },
+ "map-br": {
+  "tell": "Stalled, not abandoned. Meanwhile the data protection law does the work."
+ },
+ "map-ca": {
+  "tell": "A high-value distractor: AIDA is dead — it died on the order paper in January 2025 and was never revived — yet it is still widely cited as pending."
+ },
+ "map-ch": {
+  "tell": "The deliberate minimalist — a lean, sector-specific approach chosen on purpose, next door to the EU's comprehensive regime."
+ },
+ "map-cn": {
+  "tell": "A stack of binding measures rather than one statute, and the only major regime built around content control and filing."
+ },
+ "map-coe": {
+  "tell": "International instrument, not a national law — in force and binding, but on states: companies feel it only through national implementation."
+ },
+ "map-eu": {
+  "tell": "The only regime combining a risk tier system with product-safety machinery (CE marking, notified bodies, conformity assessment)."
+ },
+ "map-in": {
+  "tell": "Large AI market with an official voluntary framework — MeitY guidelines plus a phasing data-protection regime, still no comprehensive AI statute."
+ },
+ "map-jp": {
+  "tell": "A binding statute with no business duties or penalties — the counterexample that shows 'has an AI law' does not mean 'has AI obligations'."
+ },
+ "map-ke": {
+  "tell": "Africa's strongest legislative candidate — a licensing-commissioner model, not an EU-style provider/deployer chain."
+ },
+ "map-kr": {
+  "tell": "Second comprehensive AI law in force worldwide. Named in BoK v2.1 but absent from the study guide — the domestic-representative duty has no EU AI Act equivalent."
+ },
+ "map-pe": {
+  "tell": "First binding general AI framework in force in Latin America — promotion-oriented and lighter than the EU, while Brazil's bill is still pending."
+ },
+ "map-sg": {
+  "tell": "The voluntary exemplar — world's first governance framework specifically for agentic AI, and still nothing AI-specific is enforceable."
+ },
+ "map-tw": {
+  "tell": "The Japan pattern repeated: a binding framework statute in force with no business duties — obligations arrive only via forthcoming risk-classification and sectoral rules."
+ },
+ "map-uk": {
+  "tell": "Principles delegated to existing regulators rather than a new statute."
+ },
+ "map-us": {
+  "tell": "Regulation by existing statute and enforcement, not by a new AI act."
+ },
+ "map-us-ca": {
+  "tell": "Closest US analogue to GDPR-style ADM rights."
+ },
+ "map-us-co": {
+  "tell": "Four moves in two years. The clearest proof that a compliance date is not a fact you memorise once."
+ },
+ "map-us-il": {
+  "tell": "Amends existing civil rights law rather than creating a new AI regime."
+ },
+ "map-us-nyc": {
+  "tell": "Earliest operative AI hiring rule anywhere, and city-level — jurisdiction is not only national."
+ },
+ "map-us-tx": {
+  "tell": "The third state comprehensive AI law — cross-sector but light-touch and intent-based, unlike Colorado's effects-based consequential-decision model."
+ },
+ "processor": {
+  "definition": "Processes personal data on behalf of the controller."
+ },
+ "provider": {
+  "definition": "Develops an AI system or has one developed and places it on the market or puts it into service under its own name or trademark."
+ },
+ "roles-aiact": {
+  "obligations[0].text": "Establish and maintain a risk management system across the lifecycle",
+  "obligations[1].text": "Draw up technical documentation before placing on the market",
+  "obligations[2].text": "Carry out the conformity assessment and affix CE marking",
+  "obligations[3].text": "Register the high-risk system in the EU database",
+  "obligations[4].text": "Operate a quality management system",
+  "obligations[5].text": "Design the system so human oversight is possible",
+  "obligations[6].text": "Apply data governance to training, validation and test data",
+  "obligations[7].text": "Conduct post-market monitoring and report serious incidents",
+  "obligations[8].text": "Use the system in accordance with the instructions for use",
+  "obligations[9].text": "Assign human oversight to people with the competence and authority to act",
+  "obligations[10].text": "Ensure input data is relevant and sufficiently representative for the intended purpose",
+  "obligations[11].text": "Inform workers and their representatives before putting a high-risk system into use in the workplace",
+  "obligations[12].text": "Inform individuals that they are subject to a high-risk system's decision",
+  "obligations[13].text": "Retain automatically generated logs for the required period",
+  "obligations[14].text": "Carry out a fundamental rights impact assessment where required",
+  "obligations[15].text": "Verify the provider has completed the conformity assessment before placing on the market",
+  "obligations[16].text": "Verify the third-country provider has appointed an authorised representative",
+  "obligations[17].text": "Indicate your name and contact address on the system or its packaging",
+  "obligations[18].text": "Verify the CE marking and required documentation are present before making available",
+  "obligations[19].text": "Refrain from making available a system you know or should know is non-compliant",
+  "obligations[20].text": "Keep the declaration of conformity and technical documentation at the authorities' disposal",
+  "obligations[21].text": "Terminate the mandate if the provider acts contrary to its obligations, and inform the authority"
+ },
+ "roles-gdpr": {
+  "obligations[0].text": "Identify a lawful basis before processing begins",
+  "obligations[1].text": "Provide Article 13 and 14 transparency information to data subjects",
+  "obligations[2].text": "Respond to access, rectification, erasure and objection requests",
+  "obligations[3].text": "Carry out a data protection impact assessment for high-risk processing",
+  "obligations[4].text": "Notify the supervisory authority of a breach within 72 hours",
+  "obligations[5].text": "Communicate a high-risk breach to affected data subjects",
+  "obligations[6].text": "Put an Article 28 contract in place before engaging a processor",
+  "obligations[7].text": "Establish a transfer mechanism under Chapter V before sending data abroad",
+  "obligations[8].text": "Agree an arrangement setting out respective responsibilities, and make its essence available to data subjects",
+  "obligations[9].text": "Accept that a data subject may exercise their rights against either of you, regardless of the arrangement",
+  "obligations[10].text": "Process only on documented instructions from the controller",
+  "obligations[11].text": "Obtain authorisation before engaging a sub-processor",
+  "obligations[12].text": "Notify the controller of a personal data breach without undue delay",
+  "obligations[13].text": "Assist the controller in responding to data subject requests",
+  "obligations[14].text": "Delete or return the data at the end of the engagement",
+  "obligations[15].text": "Inform and advise on obligations, and monitor compliance, without receiving instructions on how to perform the task",
+  "obligations[16].text": "Act as the contact point for the supervisory authority and for data subjects",
+  "obligations[17].text": "Maintain the record of processing activities and make it available to the authority on request"
+ },
+ "roles-overlap": {
+  "prompt": "For each statement, decide whether it belongs to the EU AI Act, the GDPR, or both.",
+  "items[0].text": "Roles are assigned by who places a system on the market or puts it into service",
+  "items[0].why": "Market placement is the AI Act's allocator. The GDPR allocates by who determines purposes and means.",
+  "items[1].text": "Roles are assigned by who determines the purposes and means of processing",
+  "items[1].why": "Purpose determination, not market position.",
+  "items[2].text": "An organisation can be a provider under one regime and a controller under the other for the same system",
+  "items[2].why": "The two role sets are independent. A provider may process no personal data at all; a deployer is very often the controller.",
+  "items[3].text": "Requires an impact assessment before high-risk activity",
+  "items[3].why": "AI Act fundamental rights impact assessment for certain deployers; GDPR Article 35 DPIA for high-risk processing. Different triggers, different scopes, and they can be run together.",
+  "items[4].text": "Gives an individual the right not to be subject to a solely automated decision with significant effects",
+  "items[4].why": "Article 22 is a data subject right. The AI Act imposes oversight duties on organisations but does not create this right.",
+  "items[5].text": "Requires that people be told when they are interacting with an AI system",
+  "items[5].why": "Article 50 transparency. GDPR notice obligations are about processing of personal data, which is a different subject matter.",
+  "items[6].text": "Applies to organisations outside the EU on the basis of effects inside it",
+  "items[6].why": "Both reach extraterritorially, but on different triggers: market placement or output used in the EU, versus establishment, offering goods and services, or monitoring behaviour.",
+  "items[7].text": "Maximum fines can reach 7% of total worldwide annual turnover",
+  "items[7].why": "The Article 5 prohibitions band. The GDPR tops out at 4% or €20 million.",
+  "items[8].text": "Permits processing special categories of data specifically to detect and correct bias, subject to safeguards",
+  "items[8].why": "AI Act Article 10(5) creates the permission for high-risk bias monitoring; it has to be read with GDPR Article 9. Neither works alone.",
+  "items[9].text": "Enforced by data protection authorities",
+  "items[9].why": "The AI Act is enforced by market surveillance authorities and the AI Office — though some member states have designated their DPA as the market surveillance authority for certain Annex III areas.",
+  "items[10].text": "Requires data used for training to be relevant, representative and as free of errors as possible",
+  "items[10].why": "Article 10 data governance for high-risk systems. This sits in genuine tension with GDPR data minimisation, and reconciling the two is a governance judgment, not a lookup.",
+  "items[11].text": "Requires records to be kept that demonstrate compliance",
+  "items[11].why": "AI Act technical documentation, logging and record-keeping; GDPR Article 30 records and the Article 5(2) accountability principle.",
+  "items[12].text": "Obligations can attach to you even if you never touch personal data",
+  "items[12].why": "A provider of a high-risk system processing only industrial sensor data still carries the full obligation set. This is the cleanest demonstration that the two regimes are not nested."
+ },
+ "tl-asean-001": {
+  "milestone": "Expected to diversify",
+  "note": "Malaysia is the primary hard-law watch; Singapore remains assurance-led. Keep country-specific overlays."
+ },
+ "tl-au-001": {
+  "milestone": "No comprehensive AI Act",
+  "note": "Apply privacy-impact, consumer-protection, safety and sectoral controls today; track proposed guardrails."
+ },
+ "tl-au-002": {
+  "milestone": "Policy / legislative watch",
+  "note": "Prepare accountability, testing, data-governance, transparency and contestability controls; dates unconfirmed."
+ },
+ "tl-br-001": {
+  "milestone": "Broad AI bill still legislative",
+  "note": "Build privacy, automated-decision explanation and data-governance evidence; monitor the AI bill."
+ },
+ "tl-br-002": {
+  "milestone": "Legislative watch",
+  "note": "Prepare EU-style risk classification, governance and impact-assessment capability; enactment date uncertain."
+ },
+ "tl-ca-001": {
+  "milestone": "AIDA (Bill C-27) not enacted",
+  "note": "Do not treat AIDA as law; manage automated-decision and privacy risk under current regimes."
+ },
+ "tl-ca-002": {
+  "milestone": "Policy / legislative watch after AIDA stalled",
+  "note": "Monitor a replacement legislative vehicle; do not base compliance dates on AIDA."
+ },
+ "tl-cn-001": {
+  "milestone": "Synthetic-content labelling and filing regime in force",
+  "note": "Assess filing/security-assessment exposure, content controls, user identity and provenance labelling."
+ },
+ "tl-eu-001": {
+  "milestone": "Prohibited practices and AI-literacy obligations apply",
+  "note": "Article 5 bans and Article 4 AI-literacy duties; maintain screening and training evidence."
+ },
+ "tl-eu-002": {
+  "milestone": "GPAI provider obligations apply",
+  "note": "Technical documentation, training-content summary, copyright-policy and systemic-risk evidence for GPAI providers."
+ },
+ "tl-eu-003": {
+  "milestone": "Transparency obligations apply (AI-interaction disclosure, marked synthetic content)",
+  "note": "Chatbot disclosure, machine-readable provenance marking and deepfake/public-interest labelling."
+ },
+ "tl-eu-004": {
+  "milestone": "Becomes broadly applicable, subject to transition exceptions",
+  "note": "Complete AI inventory/classification and assign provider/deployer/importer/distributor roles."
+ },
+ "tl-eu-005": {
+  "milestone": "Vulnerability and severe-incident reporting begins",
+  "note": "For AI-enabled products with digital elements: vulnerability handling, coordinated disclosure, SBOM and reporting."
+ },
+ "tl-eu-006": {
+  "milestone": "Ban on non-consensual intimate-imagery/CSAM systems; legacy GenAI marking deadline",
+  "note": "Article 5 ban on non-consensual intimate-imagery/CSAM systems applies from this date; the AI-output marking deadline (Article 50(2)) is postponed to this date for legacy GenAI systems only, per the Amendments Regulation (the \"Digital Omnibus\")."
+ },
+ "tl-eu-007": {
+  "milestone": "Expected operational for advanced AI",
+  "note": "A regulatory-support milestone, not a direct company deadline — use as a benchmark for frontier/GPAI governance."
+ },
+ "tl-eu-008": {
+  "milestone": "Main obligations apply",
+  "note": "Secure-by-design, vulnerability-management, technical documentation, conformity and lifecycle support."
+ },
+ "tl-eu-009": {
+  "milestone": "Annex III high-risk duties apply (biometrics, critical infrastructure, employment, justice, etc.)",
+  "note": "Risk-management system, data governance, logging, human oversight and post-market monitoring. Postponed from 2 Aug 2026 to this date by the Amendments Regulation (the \"Digital Omnibus\")."
+ },
+ "tl-eu-010": {
+  "milestone": "Annex I high-risk systems embedded in regulated products apply",
+  "note": "Integrate AI Act evidence with CE marking, product safety, quality management and post-market surveillance. Postponed from 2 Aug 2027 to this date by the Amendments Regulation (the \"Digital Omnibus\")."
+ },
+ "tl-in-001": {
+  "milestone": "No standalone horizontal AI act",
+  "note": "Apply consent/data controls and content/intermediary obligations; monitor AI governance proposals."
+ },
+ "tl-jp-001": {
+  "milestone": "Predominantly soft-law",
+  "note": "Documented risk management, data governance, transparency and sector-specific assessments."
+ },
+ "tl-kr-001": {
+  "milestone": "Takes effect",
+  "note": "AI inventory, high-impact use-case assessment, transparency, safety and human-oversight controls; check extraterritorial reach."
+ },
+ "tl-my-001": {
+  "milestone": "Existing-law baseline",
+  "note": "AI-system inventory, privacy/data controls, cyber incident workflows and content-risk procedures."
+ },
+ "tl-my-002": {
+  "milestone": "Proposed — consultation under way",
+  "note": "Build readiness for lifecycle roles, risk tiering, incident reporting and central-authority oversight."
+ },
+ "tl-sa-gcc-001": {
+  "milestone": "Expanding AI governance",
+  "note": "Map localisation, cross-border transfer, cloud assurance and critical-infrastructure requirements before deployment."
+ },
+ "tl-sg-001": {
+  "milestone": "Voluntary but procurement-influential",
+  "note": "AI Verify-style testing, model documentation and assurance evidence for government/enterprise buyers."
+ },
+ "tl-uae-001": {
+  "milestone": "Current policy guidance",
+  "note": "Binding duties arise from underlying federal/emirate/free-zone rules; segment controls for mainland, DIFC and ADGM."
+ },
+ "tl-uae-002": {
+  "milestone": "Continued development",
+  "note": "Monitor federal ministries, the UAE AI Office, CBUAE, DFSA, FSRA, VARA, DIFC and ADGM per footprint."
+ },
+ "tl-uk-001": {
+  "milestone": "No omnibus AI Act",
+  "note": "Map each use case to sector, privacy, equality, consumer and online-safety obligations; watch regulator guidance."
+ },
+ "tl-us-ca-001": {
+  "milestone": "In force",
+  "note": "Public AI disclosures and training-data/governance evidence where the law applies."
+ },
+ "tl-us-co-001": {
+  "milestone": "Scheduled, after 2026 replacement of the prior AI Act",
+  "note": "Impact/risk assessments, consumer notices, review/appeal process, vendor controls and discrimination testing."
+ },
+ "tl-us-multi-001": {
+  "milestone": "Privacy, biometrics, deepfakes, employment AI, synthetic content",
+  "note": "Operate a state-law rules engine; there is no single “US-compliant” control set or federal omnibus AI law."
+ },
+ "tl-us-tx-001": {
+  "milestone": "In force",
+  "note": "Prohibited uses, government deployment controls, biometric/consumer and synthetic-media governance."
+ }
+}

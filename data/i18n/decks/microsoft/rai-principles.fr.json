@@ -1,0 +1,132 @@
+{
+ "rai-001": {
+  "label": "Un modèle d'approbation de prêt rejette bien plus de candidats d'un quartier particulier",
+  "why": "Des résultats biaisés entre les groupes démographiques est le scénario canonique d'équité — atténué par des évaluations d'équité et des données d'entraînement équilibrées et représentatives."
+ },
+ "rai-002": {
+  "label": "Un chatbot doit refuser le contenu nuisible et rester stable quand les utilisateurs envoient des requêtes à risque",
+  "why": "Un comportement cohérent et testé et des résultats moins dangereux face à une entrée adversariale est la fiabilité et la sécurité ; les filtres de contenu et l'évaluation de modèles sont ses leviers Azure."
+ },
+ "rai-003": {
+  "label": "Fournir des sous-titres pour l'audio et un support multilingue afin que tout le monde puisse utiliser l'assistant",
+  "why": "Utilisable et accessible à tous par plusieurs méthodes d'interaction est l'inclusivité — le piège de l'examen 'exiger une seule méthode d'interaction pour tous' en est l'opposé."
+ },
+ "rai-004": {
+  "label": "Garder un historique révisable de ce que l'IA a fait et qui a approuvé ses décisions",
+  "why": "La supervision humaine, la gouvernance et la propriété claire des résultats — journaux d'audit et surveillance des abus — est l'imputabilité, pas la transparence (qui est la divulgation)."
+ },
+ "rai-005": {
+  "label": "Modèles publiés pour chaque modèle déployé, énonçant les capacités et les limites",
+  "why": "Communiquer ce qu'un système peut ET ne peut pas faire est la transparence ; les cartes de modèles sont le histack des fonctionnalités Azure qui y correspondent. Cacher les limites viole le principe."
+ },
+ "rai-006": {
+  "label": "Identités gérées et points de terminaison privés afin que les données personnelles des clients ne s'échappent jamais dans les réponses ou les journaux",
+  "why": "La protection des données, la gouvernance des données personnelles et le contrôle d'accès correspondent à la confidentialité et la sécurité — les identités gérées et les points de terminaison privés sont les fonctionnalités Azure mappées."
+ },
+ "rai-007": {
+  "label": "Un modèle de recrutement noте systématiquement les candidats d'un groupe d'âge plus bas que les autres, même quand leurs qualifications sont comparables",
+  "why": "Un score inégal par un attribut protégé malgré des qualifications égales est un problème de résultat différentiel, pas un problème d'accès — c'est pourquoi c'est l'équité, pas l'inclusivité."
+ },
+ "rai-008": {
+  "label": "Un modèle de reconnaissance faciale entraîné sur un ensemble de données avec bien moins d'images d'un groupe ethnique produit un taux d'erreur bien plus élevé pour ce groupe",
+  "why": "Une sous-représentation dans les données d'entraînement entraînant un écart d'exactitude systématique entre les groupes est un problème d'équité — aucune donnée n'est exposée, donc ce n'est pas la confidentialité et la sécurité."
+ },
+ "rai-009": {
+  "label": "Un outil d'embauche classe les candidats de certaines universités plus bas quels que soient leurs qualifications réelles, désavantageant systématiquement un groupe de candidats",
+  "why": "Une variable proxy (université) produisant un désavantage cohérent pour un groupe de candidats est l'équité, même si aucun attribut démographique n'est utilisé directement."
+ },
+ "rai-010": {
+  "label": "Comparer le taux d'erreur et le taux d'approbation du modèle côte à côte entre les groupes démographiques avant qu'il ne soit expédié",
+  "why": "Les évaluations d'équité sont le levier Azure pour l'équité — distinctes des filtres de contenu (fiabilité et sécurité) ou des journaux d'audit (imputabilité)."
+ },
+ "rai-011": {
+  "label": "Une ligne de modération détecte parfois manque le contenu nuisible et bloque parfois le contenu qui est réellement sûr",
+  "why": "Une qualité de détection incohérente en conditions normales d'exploitation est un problème de performance, pas un problème d'exposition de données ou de divulgation — c'est la fiabilité et la sécurité."
+ },
+ "rai-012": {
+  "label": "Un outil IA qui résume les notes médicales pour les cliniciens doit se comporter de manière prévisible même sur une entrée inhabituelle ou extrême, puisque les décisions cliniques en dépendent",
+  "why": "Un comportement prévisible à enjeu élevé face à une entrée inattendue est la préoccupation relative à la fiabilité et la sécurité — le risque ici est que le système fonctionne mal, non pas qui il traite injustement."
+ },
+ "rai-013": {
+  "label": "Une équipe teste le comportement d'un système IA face à des conditions inattendues ou adversariales avant sa sortie, en vérifiant qu'il se dégrade en sécurité plutôt que de s'arrêter de manière imprévisible",
+  "why": "Les tests de pré-sortie contre les conditions adversariales et extrêmes est la définition directe de la fiabilité et la sécurité, distincte de la surveillance post-hoc de l'imputabilité."
+ },
+ "rai-014": {
+  "label": "Configurer les filtres de contenu et exécuter des évaluations d'équipe rouge automatisées sur un modèle déployé pour détecter les résultats nuisibles ou de faible qualité avant que les utilisateurs réels ne les voient",
+  "why": "Les filtres de contenu et l'évaluation automatisée sont le levier Azure mappé à la fiabilité et la sécurité, pas l'imputabilité — l'imputabilité concerne qui signe, pas ce que le modèle produit."
+ },
+ "rai-015": {
+  "label": "Un chatbot de support client peut recevoir des numéros de compte et d'autres données personnelles tapées directement dans les invites utilisateur",
+  "why": "Les données personnelles s'écoulant par les invites est un risque d'exposition de données, atténué par la rédaction et le contrôle d'accès — la préoccupation définissante de la confidentialité et la sécurité."
+ },
+ "rai-016": {
+  "label": "Un assistant IA traite les documents RH des employés, et l'équipe doit réduire le risque que ces données s'échappent à des parties non autorisées",
+  "why": "Restreindre qui peut accéder aux données sensibles stockées est la confidentialité et la sécurité, pas l'imputabilité — l'imputabilité concerne la propriété des décisions, pas le contrôle d'accès."
+ },
+ "rai-017": {
+  "label": "Une école prévoit de sortir un tuteur IA qui traite les conversations privées des étudiants et doit examiner comment ces données sont stockées et protégées avant un déploiement large",
+  "why": "L'examen du stockage et de la protection des données de conversation personnelles avant le déploiement est un examen de la confidentialité et la sécurité, distinct d'un examen de la transparence des capacités divulguées."
+ },
+ "rai-018": {
+  "label": "Une application IA est configurée pour ne collecter et conserver que les champs de conversation spécifiques dont elle a réellement besoin, en supprimant le reste après une fenêtre de rétention fixe",
+  "why": "La minimisation des données et les limites de rétention réduisent le volume de données personnelles qui existe pour être exposé en premier lieu — un levier distinct de la confidentialité et la sécurité par rapport aux mécanismes de contrôle d'accès comme les identités gérées."
+ },
+ "rai-019": {
+  "label": "Un centre d'aide IA est construit pour une main-d'œuvre mondiale et doit bien fonctionner pour les personnes parlant différentes langues et utilisant différents appareils",
+  "why": "Concevoir pour une gamme de langues et d'appareils afin que tout le monde puisse utiliser le système est l'inclusivité — la préoccupation est qui peut accéder au système, non pas qui il traite différemment."
+ },
+ "rai-020": {
+  "label": "Un assistant de traduction suppose que tous les utilisateurs peuvent bien entendre les réponses audio, ignorant les personnes malentendantes",
+  "why": "Un écart de conception accessible qui exclut les utilisateurs handicapés est l'inclusivité, pas l'équité — l'équité concerne les résultats de modèle différentiels entre les groupes, pas une conception utilisable."
+ },
+ "rai-021": {
+  "label": "Un kiosque IA doit fonctionner aussi bien sur un sol d'usine bruyant qu'au bureau calme, puisque certains utilisateurs ne peuvent pas compter sur l'entrée vocale seule dans l'un ou l'autre cadre",
+  "why": "Soutenir des environnements physiques variés et des besoins d'interaction afin que le kiosque reste utilisable pour tout le monde est l'inclusivité."
+ },
+ "rai-022": {
+  "label": "Une application IA activée par la voix est améliorée afin de mieux fonctionner pour les personnes ayant des accents différents, des capacités physiques et des besoins d'interaction",
+  "why": "Élargir qui le système sert bien, entre les accents et les capacités, est la définition directe de l'inclusivité."
+ },
+ "rai-023": {
+  "label": "Les utilisateurs sont avertis d'avance qu'ils parlent à un assistant IA, non pas à un humain, avant que la conversation commence",
+  "why": "Divulguer qu'une interaction est avec l'IA est le cœur de la transparence — c'est ce que l'on dit aux utilisateurs, pas qui est responsable si quelque chose va mal (imputabilité)."
+ },
+ "rai-024": {
+  "label": "Un résumé généré par l'IA intégré dans une page de résultats de recherche porte une étiquette visible partout où il apparaît sur la page, pas seulement dans une fenêtre contextuelle unique la première fois que quelqu'un visite",
+  "why": "Un étiquetage continu et en contexte du contenu généré par l'IA est un mécanisme différent d'un avis initial ponctuel (rai-023) ou d'une carte de modèles écrite (rai-005) — le discriminateur par rapport à l'imputabilité est que c'est ce que la page montre, pas qui possède le résultat."
+ },
+ "rai-025": {
+  "label": "Un candidat emprunteur qui est rejeté demande les raisons spécifiques derrière cette décision, et la banque doit être capable de pointer les facteurs qui ont entraîné ce résultat particulier pour lui",
+  "why": "Expliquer une décision individuelle déjà prise à la personne qu'elle a affectée est la transparence — distincte de l'imputabilité, qui concerne qui est responsable du processus de décision, non pas l'explication d'un résultat spécifique à la personne affectée."
+ },
+ "rai-026": {
+  "label": "Un assistant IA générative affiche les documents source spécifiques sur lesquels il s'est appuyé afin qu'un utilisateur puisse vérifier la base de sa réponse avant de la faire confiance",
+  "why": "La surface des sources de fondement derrière une réponse permet aux utilisateurs de la vérifier eux-mêmes — un angle de traçabilité distinct de la divulgation des capacités/limites générales (rai-005) ou de l'explication d'une décision (rai-025)."
+ },
+ "rai-027": {
+  "label": "Une banque conçoit son IA de recommandation de prêt de sorte qu'un examinateur humain, et non le modèle lui-même, prend la décision finale sur les cas escaladés",
+  "why": "Garder un humain nommé comme autorité finale sur les décisions conséquentes est l'imputabilité — la réponse piège traite le système IA lui-même comme l'autorité finale, qu'l'imputabilité rejette explicitement."
+ },
+ "rai-028": {
+  "label": "Bien qu'une entreprise utilise un service IA construit par quelqu'un d'autre, l'entreprise reste responsable de la façon dont cette solution est utilisée et gouvernée dans ses propres opérations",
+  "why": "La responsabilité de la gouvernance ne s'éloigne pas simplement parce que le modèle sous-jacent ou le service est géré par un vendeur — cette propriété non transférable est l'imputabilité."
+ },
+ "rai-029": {
+  "label": "Une équipe demande qui est responsable si le système IA produit un résultat nuisible ou incorrect, et définit un chemin d'escalade avant le lancement",
+  "why": "Assigner la responsabilité et un chemin d'escalade pour quand les choses vont mal est l'imputabilité — c'est la propriété des résultats, non pas ce que le système divulgue (transparence)."
+ },
+ "rai-030": {
+  "label": "Avant qu'une nouvelle fonctionnalité IA ne puisse être mise en ligne, un propriétaire de risque nommé doit l'approuver, et la fonctionnalité est bloquée du déploiement sans cette approbation documentée",
+  "why": "Un point de contrôle de gouvernance de pré-lancement lié à un propriétaire nommé est distinct de l'override humain par cas de rai-027 d'une décision individuelle et du point de responsabilité du vendeur de rai-028."
+ },
+ "rai-principles": {
+  "hint": "Glisse chaque carte sur le principe auquel elle appartient. Demande ce qui s'est réellement passé : qui est traité différemment (équité), si le système se comporte et tient face au stress (fiabilité et sécurité), si les données ou l'accès est exposé (confidentialité et sécurité), qui peut l'utiliser du tout (inclusivité), ce qu'on dit aux gens à ce sujet (transparence), ou qui répond pour après les faits (imputabilité).",
+  "note": "Plusieurs cartes ressemblent à pouvoir s'adapter à deux zones. Le bris d'égalité est toujours la seule chose dont le scénario est réellement sur — résultat différentiel, comportement du système, exposition de données, utilisabilité, divulgation, ou propriété.",
+  "zones[0].def": "Les systèmes IA doivent traiter tous les gens équitablement, en évitant les biais et les résultats inégaux entre les groupes démographiques.",
+  "zones[1].def": "Les systèmes IA doivent performer de manière cohérente dans les conditions attendues et adversariales et éviter de causer des dommages involontaires.",
+  "zones[2].def": "Les systèmes IA doivent protéger les données personnelles et les invites/réponses de l'accès, de la collecte ou de l'utilisation non autorisés.",
+  "zones[3].def": "Les systèmes IA doivent autonomiser et engager tout le monde, y compris les personnes ayant différentes capacités, langues et besoins.",
+  "zones[4].def": "Les systèmes IA doivent être compréhensibles — les gens doivent savoir qu'ils interagissent avec l'IA et connaître ses capacités et ses limites.",
+  "zones[5].def": "Les personnes qui conçoivent et déploient des systèmes IA restent responsables de la façon dont ces systèmes sont construits, exploités et surveillés."
+ }
+}

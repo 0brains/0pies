@@ -1,0 +1,110 @@
+{
+ "drift-01": {
+  "label": "Model kredytowy trenowany na wnioskodawcach w wieku 25–60 lat. Po kampanii marketingowej na rynku studenckiej teraz trzecia część wniosków pochodzi od osób poniżej 25 lat. Zachowanie spłaty dla dowolnego profilu nie uległo zmianie.",
+  "why": "Mieszanina wejść przesunęła się w region, który dane treningowe ledwie pokrywały, ale relacja między profilem a spłatą pozostaje nienaruszona. To P(X) przesunięty, gdy P(Y|X) pozostaje stały — dryft kowarianty, a naprawa to zasięg, nie nowa reguła."
+ },
+ "drift-02": {
+  "label": "Model mowy trenowany głównie na nagraniach studyjnych teraz otrzymuje dużą część połączeń z telefonów komórkowych na hałaśliwych ulicach. Słowa oznaczają to, co zawsze oznaczały.",
+  "why": "Warunki akustyczne to cecha wejścia. Odwzorowanie z audio na tekst nie uległo zmianie; model po prostu działa poza regionem wejścia, w którym się dobrze nauczył."
+ },
+ "drift-03": {
+  "label": "Model popytu zbudowany na sklepach jednego kraju wdrażany w trzech krajach. Produkty, pory roku i logika zakupów są takie same; profile sklepów nie są.",
+  "why": "To podręcznikowy przypadek rozkładu treningowego nie pokrywającego rozkład wdrożenia. Nic o tym, jak powstaje popyt, się nie zmieniło — zmienił się tylko, które wejścia są widoczne."
+ },
+ "drift-04": {
+  "label": "Precyzja modelu oszustw załamuje się w jeden tydzień. Śledczy odkrywają nową technikę ataku, która rozpoczęła się w określonym dniu i jest teraz dominującym wzorem.",
+  "why": "Te same wartości cech, które oznaczały prawidłowe w ubiegłym miesiącu, teraz oznaczają oszustwo. P(Y|X) się zmieniło, i zmieniło się w momencie — gwałtowna zmiana koncepcji, a nie przesunięcie w tym, kto wykonuje transakcje."
+ },
+ "drift-05": {
+  "label": "Model wyceny pogarsza się z dnia na dzień, gdy regulator ogranicza opłatę, którą model nauczył się traktować jako silny sygnał segmentu klienta.",
+  "why": "Zmiana reguły zewnętrzna względem danych natychmiast przezmienia znaczenie cechy. Przetreniowanie na danych po zmianie to naprawa; nic z danych przed zmianą nie jest do odzyskania."
+ },
+ "drift-06": {
+  "label": "Klasyfikator zawartości działa doskonale, aż zmiana polityki platformy wejdzie w życie pierwszego dnia miesiąca, po czym jej etykieta 'akceptowalna' nie pasuje już do decyzji moderatorów.",
+  "why": "Sama definicja celu została przedefiniowana w określonym dniu. Cechy są niezmienione; rzeczywistość gruntowa przesunęła się pod nimi."
+ },
+ "drift-07": {
+  "label": "Przez osiem miesięcy dokładność modelu churn przesuwała się, gdy plan konkurenta jest adoptowany przez coraz więcej klientów. Zarówno stara, jak i nowa dynamika churn są widoczne w danych przez cały czas.",
+  "why": "Dwa reżimy współistnieją, przy czym nowszy przejmuje coraz większy udział przypadków. Ta mieszanina w czasie to sygnatura stopniowego dryftu, i dlatego pojedynczy punkt zmian nie może być znaleziony."
+ },
+ "drift-08": {
+  "label": "Model rekomendacji pogarsza się powoli, gdy starsza kohorta użytkowników jest stopniowo zastępowana przez młodszą o innych gustach. Przez długi okres obie zachowania są obecne.",
+  "why": "Dwie populacje z dwiema różnymi regułami wejścia do wyniku nakładają się podczas przejścia. Detekcja jest opóźniona właśnie dlatego, że żaden pojedynczy tydzień nie wygląda na anomalny."
+ },
+ "drift-09": {
+  "label": "Filtr spamu słabnie w ciągu roku, gdy nadawcy migrują z jednej rodziny szablonów na drugą, z długim okresem, w którym oba szablony przychodzą w ilości.",
+  "why": "Stare i nowe koncepcje są oba aktywne podczas przełączenia. Porównaj to ze stopniowym dryfte, gdzie nie ma dwóch reżimów, po prostu jeden, który wciąż się porusza."
+ },
+ "drift-10": {
+  "label": "Błąd modelu czasu dostawy rośnie stale miesiąc za miesiącem, gdy zatłoczenie ruchu powoli się pogarsza. Nie ma punktu, w którym zachowanie skacze i nie ma wcześniejszego reżimu, do którego można by wrócić.",
+  "why": "Relacja przechodzi w sposób ciągły przez stany pośrednie zamiast przełączania się między dwoma zdefiniowanymi reżimami. Przetreniowanie okien toczących się pasuje do tego; detekcja punktu zmiany nie znajdzie nic."
+ },
+ "drift-11": {
+  "label": "Model jakości oparty na czujnikach dryftuje, gdy komponenty maszyny się zużywają, pogarsza się o ułamek procenta tygodniowo bez nieciągłości.",
+  "why": "Fizyczne zużycie gładko i monotonicznie przesusza odwzorowanie wejścia do wyniku. Każdy tydzień to nieco nowa koncepcja, nie mieszanina starej i nowej."
+ },
+ "drift-12": {
+  "label": "Dokładność tematyczna modelu języka eroduje miesiąc za miesiącem, gdy słownictwo i użycie ewoluują, bez pojedynczego zdarzenia odpowiedzialnego.",
+  "why": "Ciągły, kierunkowy ruch koncepcji bez punktu zmiany i bez powrotu. Środek zaradczy to rytm odświeżania, nie próg alarmu."
+ },
+ "drift-13": {
+  "label": "Model prognozowania sprzedaży detalicznej zawodzi każdego grudnia, wraca w stycznia i zawodzi ponownie w następnym grudniu.",
+  "why": "Wcześniej widziana koncepcja wraca w cyklu. Prawidłowa odpowiedź to modelowanie sezonowości lub utrzymanie modelu sezonowego, nie przetreniowanie w panice każdej zimy."
+ },
+ "drift-14": {
+  "label": "Błędy modelu popytu energetycznego podążają za wzorem dzień roboczy/weekend, który powtarza się w nieskończoność.",
+  "why": "Reżimy naprzemienne są zarówno znane, jak i obaj wracają. Przetreniowanie tylko na najnowszym oknie uczyniłoby model trwale niewłaściwym dla któregokolwiek reżimu, który ostatnio widział."
+ },
+ "drift-15": {
+  "label": "Model obsady pogarsza się podczas każdych przerw szkolnych i wraca do normy potem, rok po roku.",
+  "why": "Powtarzający się kontekst. Zatrzymanie i ponowny wybór modeli historycznych na kontekst pokonuje ich odrzucenie, ponieważ stara koncepcja gwarantuje powrót."
+ },
+ "drift-16": {
+  "label": "Współczynnik pozytywny modelu przesiewu chorób spada gwałtownie po udanej kampanii szczepień. Objawy nadal wskazują chorobę dokładnie tak jak przedtem.",
+  "why": "Rozpowszechnienie wyniku spadło — P(Y) przesunął się — podczas gdy P(X|Y) pozostał. Progi i jakakolwiek kalibracja zależna od wcześniejszej potrzeby dostosowania; nauczona relacja nie."
+ },
+ "drift-17": {
+  "label": "Model oszustw trenowany, gdy 3% transakcji było oszustwami, teraz działa gdzie 0,5%, z powodu kontroli wprowadzonych gdzie indziej. Transakcje oszustwów wyglądają tak samo jak zawsze.",
+  "why": "Szybkość bazowa się zmieniła, więc każde prawdopodobieństwo, które model emituje, jest źle skalibrowane, chociaż jego dyskryminacja jest nienaruszona. Korekcja wcześniejsza to naprawia bez przetreniowania."
+ },
+ "drift-18": {
+  "label": "Klasyfikator wad przeniesiony z linii pilotażu o szybkości defektu 20% do linii dojrzałej z 2%. Defekty pojawiają się identycznie na obu.",
+  "why": "Tylko poprzednia klasa się zmieniła. Odczytanie tego jako dryftu kowarianty prowadzi do bezcelowej pracy funkcji; odczytanie go jako przesunięcia etykiety prowadzi do kalibracji progu, która faktycznie działa."
+ },
+ "drift-19": {
+  "label": "Monitoring pokazuje, że udział decyzji 'zatwierdzenia' rośnie z 61% do 78% w ciągu sześciu tygodni. Żadne etykiety jeszcze nie dotarły, więc jakość nie może być zmierzona.",
+  "why": "Rozkład wyjścia się przesunął. To jest alert, nie diagnoza: może być spowodowany drytem kowarianty, przesunięciem etykiety, przerwaniem kanału lub genuinnie zmienioną populacją. To, co obserwujesz, gdy etykiety są opóźnione."
+ },
+ "drift-20": {
+  "label": "Średnie przewidywane prawdopodobieństwo modelu wzrasta stale, podczas gdy rozkłady cech wejścia wyglądają stabilnie na każdym wykresie.",
+  "why": "Wyjścia poruszające się bez widocznego ruchu wejścia zwykle oznacza, że ruch jest w interakcji funkcji lub funkcji, którą nikt nie monitoruje. Odkrycie jest rzeczywiste; przyczyna wciąż jest niezidentyfikowana."
+ },
+ "drift-21": {
+  "label": "Po wdrożeniu nowej wersji modelu rozkład wyników zauważalnie się przesunął, chociaż dane przychodzące są identyczne jak z zeszłego tygodnia.",
+  "why": "Te same wejścia, różne wyjścia oznacza, że zmiana jest w modelu, nie na świecie. Dryft przewidywania wersji do wersji jest powodem, dla którego nowe wydanie jest porównywane na stałej próbce referencyjnej."
+ },
+ "drift-22": {
+  "label": "Średnia cechy dochodu spada do trzeciej części zwykłej wartości z dnia na dzień. Zespół upstream przesłał pole z centów na całe jednostki w tę samą noc.",
+  "why": "Świat się nie zmienił; jednostka tak. Przetreniowanie tutaj nauczyłoby model traktować skorumpowane wartości jako normalne i uczynić ostateczną naprawę jak nową regresję."
+ },
+ "drift-23": {
+  "label": "Kategoryczna cecha nagle pokazuje 40% wartości zerowych. Zmiana schematu zmienia nazwę kolumny źródłowej i złączenie teraz spada.",
+  "why": "Defekt potoku przedstawia dokładnie jak gwałtowny dryft na tablicy dryfu. Wskaźnik to to, że zmiana współpada z wdrożeniem lub zdarzeniem schematu zamiast czegokolwiek na świecie."
+ },
+ "drift-24": {
+  "label": "Wejścia modelu przesuwają się w momencie, gdy dostawca zmienia domyślny interfejs API, po cichu zastępując brakujące wartości zerami zamiast je pomijać.",
+  "why": "Zera oznaczające 'brakujące' są odczytywane przez model jako rzeczywista, ekstremalna wartość. Naprawa to egzekwowanie umowy upstream i semantyka zerowa, nigdy przetreniowanie."
+ },
+ "drift-types": {
+  "hint": "Przeciągnij każdy symptom produkcji na rodzaj dryftu, który opisuje. Pytanie zawsze brzmi, który rozkład się przesunął — wejścia, etykiety, wyjścia czy relacja między nimi.",
+  "note": "Przerwanie danych upstream dostaje własną strefę, ponieważ wygląda identycznie jak rzeczywisty dryft na każdej tablicy, a prawidłowa odpowiedź to odwrotna: napraw kanał, nigdy nie przetreniuj na nim.",
+  "zones[0].def": "P(X) przesunął się. Wejścia wyglądają inaczej, ale reguła mapowania wejść do wyników wciąż trzyma się.",
+  "zones[1].def": "P(Y|X) zmienia się gwałtownie w momencie w czasie. Stara reguła przestaje działać z dnia na dzień.",
+  "zones[2].def": "Stare i nowe reguły współistnieją, przy czym nowa pojawia się w coraz większym udziale przypadków.",
+  "zones[3].def": "Reguła sama przechodzi w sposób ciągły przez stany pośrednie zamiast przełączania się między dwiema.",
+  "zones[4].def": "Wcześniej widziana reguła wraca w cyklu. Sezonowość jest powszechnym przypadkiem.",
+  "zones[5].def": "P(Y) przesunął się — mieszanina wyników się zmieniła — podczas gdy cechy biorąc pod uwagę wynik zachowują się tak jak przedtem.",
+  "zones[6].def": "Rozkład wyjścia modelu się przesunął. To symptom, obserwowany bez jakichkolwiek etykiet, nie diagnoza.",
+  "zones[7].def": "Nic na świecie się nie zmieniło. Potok, schemat, jednostka lub domyślna wartość się zmieniła, a model otrzymuje skorumpowane wejście."
+ }
+}

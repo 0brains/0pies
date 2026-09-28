@@ -1,0 +1,53 @@
+{
+ "terms": {
+  "hint": "Arrastra cada definición al término que define."
+ },
+ "terms-01": {
+  "label": "El campo amplio de la construcción de sistemas que realizan tareas asociadas con la inteligencia humana.",
+  "why": "La IA es el campo paraguas: sistemas expertos basados en reglas, visión por computadora, robótica, aprendizaje automático, y modelos generativos pueden todos ser IA. El aprendizaje automático es una forma de construir IA, no un sinónimo de todo el campo."
+ },
+ "terms-02": {
+  "label": "Un subconjunto de IA en el que los sistemas aprenden patrones desde datos en lugar de basarse solo en reglas explícitas.",
+  "why": "Por ejemplo, un filtro de spam puede inferir patrones de mensajes etiquetados en lugar de requerir que un desarrollador enumere cada regla de spam. La señal de examen clave es la mejora desde datos o experiencia."
+ },
+ "terms-03": {
+  "label": "Un subconjunto de ML que usa redes neuronales de múltiples capas para aprender representaciones complejas.",
+  "why": "Un modelo de visión puede aprender bordes en capas tempranas, formas en capas intermedias, y objetos en capas posteriores. Se distingue del aprendizaje automático más amplio por su uso de redes neuronales profundas y típicamente mayores necesidades de datos y computación."
+ },
+ "terms-04": {
+  "label": "IA que crea contenido nuevo como texto, imágenes, audio, video, o código.",
+  "why": "Un modelo de texto que redacta un correo electrónico y un modelo de difusión que crea una imagen son generativos porque sintetizan salida nueva. Predecir si un correo existente es spam es clasificación discriminativa en su lugar."
+ },
+ "terms-05": {
+  "label": "La representación aprendida que mapea entradas a predicciones o salidas generadas.",
+  "why": "Después del entrenamiento, el modelo es el artefacto usado para inferencia. Por ejemplo, un modelo de precio de casa aplica relaciones aprendidas a las características de una propiedad nueva para estimar su precio."
+ },
+ "terms-06": {
+  "label": "El procedimiento usado para aprender patrones, optimizar un modelo, o realizar un cálculo.",
+  "why": "El descenso de gradiente es un algoritmo de aprendizaje, mientras que la red entrenada que produce es el modelo. La distinción es proceso versus artefacto aprendido."
+ },
+ "terms-07": {
+  "label": "Una variable de entrada o atributo medible suministrado a un modelo.",
+  "why": "Para un modelo de precio de casa, el área de piso, código postal, y número de dormitorios son características porque entran al modelo como evidencia. El precio de venta es la etiqueta a predecir, mientras que los parámetros son valores internos que el modelo aprende durante el entrenamiento."
+ },
+ "terms-08": {
+  "label": "La respuesta conocida o respuesta deseada adjunta a un ejemplo de entrenamiento supervisado.",
+  "why": "En detección de spam, la respuesta de cada correo de entrenamiento de spam o no-spam es su etiqueta. Una etiqueta es el destino que el modelo aprende a predecir; las características son la evidencia usada para hacer esa predicción."
+ },
+ "terms-09": {
+  "label": "Un valor, como un peso de red neuronal, aprendido desde datos de entrenamiento.",
+  "why": "Un peso de red neuronal se ajusta automáticamente mientras el entrenamiento minimiza el error. Los parámetros se aprenden por el modelo, a diferencia de los hiperparámetros como velocidad de aprendizaje que los practicantes eligen antes o alrededor del entrenamiento."
+ },
+ "terms-10": {
+  "label": "Una configuración de entrenamiento o modelo elegida fuera del proceso de aprendizaje, como velocidad de aprendizaje o profundidad de árbol.",
+  "why": "Los ejemplos incluyen velocidad de aprendizaje, tamaño de lote, profundidad de árbol, y fortaleza de regularización. Estas configuraciones controlan el entrenamiento o la estructura del modelo y se seleccionan usualmente con datos de validación en lugar de aprenderse como pesos de modelo."
+ },
+ "terms-11": {
+  "label": "El proceso de ajustar parámetros de modelo para reducir error en ejemplos.",
+  "why": "Durante el entrenamiento, el sistema compara salidas con una señal de aprendizaje, calcula el error, y actualiza parámetros. Esta es la fase de aprendizaje; la inferencia usa el modelo fijo resultante en entradas nuevas."
+ },
+ "terms-12": {
+  "label": "Usar un modelo entrenado para producir una predicción, decisión, incrustación, o resultado generado.",
+  "why": "Un modelo de fraude desplegado que puntúa una nueva transacción de tarjeta está realizando inferencia. No se requiere aprendizaje de modelo para esa solicitud; el modelo entrenado está siendo aplicado a entrada previamente no vista."
+ }
+}

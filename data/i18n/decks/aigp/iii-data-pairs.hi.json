@@ -1,0 +1,74 @@
+{
+ "iii-dp-01": {
+  "a.text": "Development के दौरान use होता है hyperparameters को tune करने के लिए और overfitting को catch करने के लिए training rounds के बीच।",
+  "a.why": "यह role है repeatable और iterative — model get होता है tune किया इसके विरुद्ध बार-बार, जो है exactly क्यों यह कभी भी stand नहीं कर सकता final verdict के लिए।",
+  "b.text": "Frozen और untouched जब तक सभी tuning complete नहीं है, फिर run होता है एक बार supply करने के लिए model की final, unbiased error estimate।",
+  "b.why": "Evaluating final model को set के विरुद्ध यह tune किया गया — recorded exam trap — produce करता है एक biased estimate। केवल एक set tuning process never touched दे सकता है एक unbiased final number।"
+ },
+ "iii-dp-02": {
+  "a.text": "Exact ETL script version used aggregate करने के लिए एक churn model features को log होता है हर transformation step पर, raw table से final feature तक।",
+  "a.why": "यह track करता है journey — हर transformation dataset pass करता है through — और transformation-script version है single सबसे critical piece उस metadata का reproducibility और drift debugging के लिए।",
+  "b.text": "किसी भी transformation होने से पहले, dataset का original source, custody chain और collection conditions record होते हैं establish करने के लिए इसकी authenticity।",
+  "b.why": "यह है birth certificate — origin और custody — नहीं record क्या subsequently हुआ data को; वह record belong करता है pair के दूसरे side को।"
+ },
+ "iii-dp-03": {
+  "a.text": "Calibrated mathematical noise add किया जाता है training के दौरान तो कोई भी single training record नहीं दिखाया जा सकता है कि more than एक negligible effect है model output पर।",
+  "a.why": "यह है mathematical guarantee influence के बारे में, नहीं कहां data physically travel करता है — यह apply करता है चाहे या नहीं data कभी छोड़ता है अपनी source को।",
+  "b.text": "हर hospital trains locally अपने own patient records पर, और केवल resulting updates — कभी नहीं raw records — travel एक central server को aggregation के लिए।",
+  "b.why": "क्या protected है यहां जो data leave करता है site, नहीं कितना हर single record inferred हो सकता है एक output से — raw records कभी नहीं travel, full stop।"
+ },
+ "iii-dp-04": {
+  "a.text": "एक standardized document lay करता है एक dataset motivation, composition, collection process और recommended uses, किसी भी model train होने से पहले।",
+  "a.why": "यह document करता है raw material itself, independent किसी भी model से जो later train होगा यह पर।",
+  "b.text": "एक single version purpose, अपनी training/validation/test data, अपनी performance metrics और अपनी known limitations को summarize किया जाता है whoever के लिए decide करता है deploy करने के लिए।",
+  "b.why": "यह है scoped एक specific version को, नहीं dataset इसके पीछे — एक nutrition label trained artifact के लिए, distinct dataset-level scope से other side।"
+ },
+ "iii-dp-05": {
+  "a.text": "एक attacker काम करता है backward एक system outputs से reconstruct करने के लिए approximations actual records का यह train किया गया।",
+  "a.why": "यह attack recover करता है training data content से जो system produce करता है — reconstruction, नहीं एक yes/no check।",
+  "b.text": "एक attacker reconstruct नहीं करता कुछ, केवल confirm करता है एक specific person data था included training set में पर।",
+  "b.why": "यह attack answer करता है एक binary set-membership question; यह कभी नहीं recover करता record content जो other side करता है।"
+ },
+ "iii-dp-06": {
+  "a.text": "एक EU resident withdraw करता है consent, और company को erase करना चाहिए उनके personal records को अपने systems से।",
+  "a.why": "यह remove करता है raw data itself एक rights request के जवाब में — एक argument कि data help करता है train model को override नहीं करता erasure right को एक बार consent withdraw हो जाता है।",
+  "b.text": "भले ही offending records gone हैं, model को खुद correct होना चाहिए क्योंकि यह already learn किया है patterns data से जो कभी नहीं चाहिए use किया गया हो।",
+  "b.why": "यह remove करता है क्या एक model absorb किया improper use किए गए data से — एक distinct remedy, क्योंकि model retain कर सकता है effect एक बार long underlying records erase हो।"
+ },
+ "iii-dp-07": {
+  "a.text": "एक documented assessment link करता है data characteristics और coverage को model specific intended context use के।",
+  "a.why": "यह है about matching data एक particular use को, नहीं data age या volume — एक large, recent dataset अभी भी fail कर सकता है यह check अगर यह कभी assess नहीं किया गया actual use case के विरुद्ध।",
+  "b.text": "Dataset को check किया जाता है confirm करने के लिए यह mirror करता है population model actually apply होगा — treated एक single most important bias mitigator के रूप में पूरे pipeline में।",
+  "b.why": "यह है एक mirror-match question population के बारे में; simply augmenting एक skewed dataset के साथ synthetic examples नहीं resolve करता एक genuine gap यहां, क्योंकि underlying governance question कि क्या original data appropriate था कभी नहीं got answered।"
+ },
+ "iii-dp-08": {
+  "a.text": "एक dataset को check किया जाता है confirm करने के लिए यह altered नहीं किया गया है या corrupted किसी भी point पर अपने original source और current use के बीच।",
+  "a.why": "यह है एक protection-from-alteration property, distinct कि क्या content itself accurate या reliable है।",
+  "b.text": "Same dataset को separately check किया जाता है confirm करने के लिए यह stay करता है accurate और reliable जब यह shared है और reused किया गया है different systems और environments के पार।",
+  "b.why": "यह ask करता है कि क्या content itself hold अप करता है contexts के पार; एक dataset बिल्कुल perfect untampered हो सकता है जबकि still being stale या inconsistent जो यह actually कहता है में।"
+ },
+ "iii-dp-09": {
+  "a.text": "Positive outcomes का rate compare होता है protected groups के पार model actual, real-world output distribution पर।",
+  "a.why": "यह metric compare करता है aggregate outcome rates between groups data पर जैसा actually stands।",
+  "b.text": "एक applicant protected attribute को flip किया जाता है जबकि हर दूसरा input stay identical, और output checked होता है किसी भी change के लिए।",
+  "b.why": "यह test करता है एक single record अपने विरुद्ध hypothetical twin, नहीं group-level outcome rates — एक model pass कर सकता है aggregate check जबकि still fail करता है individual-level को।"
+ },
+ "iii-dp-10": {
+  "a.text": "Weight values network के अंदर update होते हैं backpropagation के through जैसे training reduce करता है prediction error।",
+  "a.why": "ये हैं learned values जो determine करते हैं कैसे input data transform होता है output में — वह exist नहीं करते final form में जब तक training नहीं होता है।",
+  "b.text": "Learning rate fixed होता है team द्वारा training ever start होने से पहले, और stay करता है untouched जबकि network learn करता है।",
+  "b.why": "ये set हैं advance में control करने के लिए कैसे learning होता है — inputs training को, नहीं outputs।"
+ },
+ "iii-dp-11": {
+  "a.text": "एक sales-prediction model perform करता है almost perfectly historical data पर यह train किया गया, फिर करता है significant errors predict करते हुए sales genuinely new products के लिए।",
+  "a.why": "Model memorize किया specific quirks अपने training data के rather than learning patterns जो transfer — strong familiar पर, weak नई पर।",
+  "b.text": "एक churn model बहुत कुछ parameters के साथ और केवल handful features perform करता है poorly both data पर यह train किया गया और नई customers पर।",
+  "b.why": "Poor performance everywhere, including training data में खुद signal करता है model कभी नहीं था enough complexity capture करने के लिए pattern को — opposite failure mode memorize करने से बहुत अच्छी तरह।"
+ },
+ "iii-dp-12": {
+  "a.text": "एक voice-recognition system trained केवल few thousand audio clips पर struggle करता है capture करने के लिए variability real-world speech का।",
+  "a.why": "यह ask करता है कि क्या sufficient data है, full stop, learn करने के लिए meaningful patterns — बहुत कम data यहां mean करता है model कभी नहीं था chance generalize करने के लिए।",
+  "b.text": "एक medical AI trained data पर एक single country से perform करता है अच्छी तरह अपने pilot में, फिर struggle करता है एक बार expand होता है नई populations को और healthcare systems कहीं और।",
+  "b.why": "यह ask करता है कि क्या एक dataset जो sufficient था एक pilot के लिए अभी भी support कर सकता है expansion नई populations में और contexts — एक distinct question कि क्या sufficient data था pilot के लिए पहली जगह में।"
+ }
+}

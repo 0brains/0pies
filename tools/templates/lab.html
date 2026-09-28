@@ -6,6 +6,9 @@
 <title>__LAB_TITLE__</title>
 <link rel="stylesheet" href="assets/fonts/fonts.css">
 <link rel="icon" type="image/svg+xml" href="assets/misc/favicon.svg">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="theme-color" content="#f9f9f9" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#15161a" media="(prefers-color-scheme: dark)">
 <style>
 :root{
   --bg:#15161a; --panel:#1c1e24; --panel2:#24262e; --line:#f0f0f0; --edge:#f0f0f0;
@@ -32,6 +35,13 @@ header{position:sticky;top:0;z-index:30;background:var(--bg);
   text-decoration:none;border:2px solid var(--edge);background:var(--panel);
   padding:5px 12px;white-space:nowrap}
 .home-link:hover{background:var(--primary);color:#1a1c1c}
+.lang-select{background:var(--panel);border:2px solid var(--edge);color:var(--ink);
+  font:inherit;font-size:12px;font-weight:700;padding:5px 8px;cursor:pointer;
+  text-transform:none;max-width:130px}
+/* Arabic: letter-spacing breaks cursive joining; kill it wholesale under RTL.
+   The world map stays LTR — geography does not mirror. */
+:root[dir=rtl] body *{letter-spacing:normal !important}
+.map-wrap,.rr-map{direction:ltr}
 .brand-social{display:flex;align-items:center;gap:10px;margin-left:auto}
 .brand-social a{display:inline-flex;align-items:center;color:var(--dim)}
 .brand-social a:hover{color:var(--ink)}
@@ -72,7 +82,7 @@ main{max-width:1120px;margin:0 auto;padding:18px 16px 90px}
 /* ---- board ---- */
 .bank{background:var(--panel2);border:2px dashed var(--edge);
   padding:12px;min-height:64px;display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}
-.bank:empty::after{content:"Bank empty — every card placed";color:var(--dim);font-size:13px}
+.bank-note{color:var(--dim);font-size:13px}
 .tok{background:var(--panel);border:2px solid var(--edge);color:var(--ink);
   padding:9px 12px;cursor:grab;font:inherit;font-size:13.5px;
   text-align:left;max-width:100%;line-height:1.4;display:flex;align-items:center;gap:8px}
@@ -156,9 +166,50 @@ main{max-width:1120px;margin:0 auto;padding:18px 16px 90px}
 .badge{display:inline-block;font-size:11px;font-weight:700;text-transform:uppercase;
   padding:3px 9px;background:var(--panel2);color:var(--ink);border:2px solid var(--edge)}
 .badge.horizon{color:#1a1c1c;background:var(--warn);border-color:var(--edge)}
+/* Release marking + home ladder (beta.1): the masthead/hub badge renders only
+   when the manifest carries "release"; the rung-ladder strip and group blurb
+   only when it declares "groups". Labs without either pay nothing. */
+.release-badge{display:inline-block;font-size:11px;font-weight:700;text-transform:uppercase;
+  letter-spacing:.8px;padding:1px 7px;border:2px solid var(--edge);background:var(--warn);
+  color:#1a1c1c;vertical-align:middle}
+.release-badge:empty{display:none}
+.release-note{margin:0 0 12px;font-size:13px;color:var(--dim)}
+.rung-ladder{font-weight:400;margin-left:10px;opacity:.75;letter-spacing:.5px}
+.group-blurb{margin:-6px 0 12px;font-size:13px;color:var(--dim)}
 .sweep{background:var(--panel2);border:2px solid var(--edge);
   padding:13px;margin-top:14px}
 .sweep p{margin:0 0 9px;font-size:14px}
+/* ---- gauntlet ---- */
+.g-hud{display:flex;gap:12px;align-items:center;flex-wrap:wrap;background:var(--panel2);
+  border:2px solid var(--edge);padding:8px 12px;margin:0 0 12px;font-weight:700;font-size:13px}
+.g-lives{color:var(--bad);letter-spacing:2px}
+.g-lives i{font-style:normal}
+.g-lives i.spent{color:var(--dim)}
+.g-clock{flex:1;min-width:90px;height:10px;background:var(--panel);
+  border:2px solid var(--edge);overflow:hidden}
+.g-clock i{display:block;height:100%;background:var(--ok);transition:width .1s linear}
+.g-clock.low i{background:var(--bad)}
+.g-secs{min-width:36px;text-align:right}
+.g-stem{font-size:16px;line-height:1.5;font-weight:600;margin:0 0 12px}
+/* Out of time is not the same failure as a wrong pick: the answer you never
+   gave is marked in the warning colour, not the correct-answer green. */
+.pick button.correct.lapsed{background:var(--warn);color:#2a1a05}
+.g-grade{display:flex;align-items:center;gap:10px;background:var(--panel2);
+  border:3px solid var(--edge);padding:11px 13px;margin:0 0 12px;
+  font-weight:700;text-transform:uppercase;font-size:14px}
+.g-grade .medal{font-size:24px;line-height:1}
+.g-grade.gold{background:var(--primary);color:#1a1c1c}
+.g-grade.bronze{background:var(--secondary);color:#1a1c1c}
+.g-grade.none{color:var(--dim)}
+.g-doms{display:flex;flex-direction:column;gap:6px;margin:8px 0 0}
+.g-dom{display:grid;grid-template-columns:minmax(96px,1.2fr) 3fr auto;gap:10px;
+  align-items:center;font-size:13px;font-weight:400}
+.g-bar{display:flex;height:12px;background:var(--panel);border:2px solid var(--edge);overflow:hidden}
+.g-bar i{display:block;height:100%}
+.g-bar i.right{background:var(--ok)}
+.g-bar i.wrong{background:var(--bad)}
+.reveal li .lapse{color:var(--warn)}
+@media (max-width:640px){ .g-dom{grid-template-columns:1fr;gap:3px} }
 /* ---- map ---- */
 .map-wrap{width:100%;margin:0 0 12px}
 .map{position:relative;width:100%;aspect-ratio:1016.371/514.609;background:var(--panel2);
@@ -431,16 +482,89 @@ textarea:focus{outline:none;border-color:var(--secondary)}
   .rr-print li{margin:0}
   @page{size:A4 portrait;margin:11mm}
 }
+/* ---- siegeBoard (sg) ----
+   Build-then-defend on an inlined SVG scene. The scene art carries sg-zone /
+   sg-node / sg-wire / sg-glyph / sg-slot / text classes so it follows the page
+   theme; the engine overlays 44px point-target seats, a budgeted chip shop,
+   and the breach-animation layer (sg-fx traces + travelling sg-dot). */
+.sg-hud{display:flex;gap:12px;align-items:center;flex-wrap:wrap;background:var(--panel2);
+  border:2px solid var(--edge);padding:8px 12px;margin:0 0 12px;font-weight:700;font-size:13px}
+.sg-wrap{width:100%;margin:0 0 12px}
+.sg-scene{position:relative;width:100%;background:var(--panel2);border:3px solid var(--edge);
+  overflow:hidden}
+.sg-svg,.sg-fx{position:absolute;inset:0;width:100%;height:100%;display:block}
+.sg-fx{pointer-events:none;z-index:2}
+.sg-svg .sg-zone{fill:var(--panel);stroke:var(--edge);stroke-width:2;stroke-dasharray:8 6}
+.sg-svg .sg-node{fill:var(--panel2);stroke:var(--edge);stroke-width:2}
+.sg-svg .sg-wire{stroke:var(--dim);stroke-width:2;fill:none}
+.sg-svg .sg-glyph{stroke:var(--dim);stroke-width:1.5;fill:none}
+.sg-svg .sg-slot{stroke:var(--edge);stroke-width:3;stroke-dasharray:4 4}
+.sg-svg text{fill:var(--dim);font-family:"Space Mono",ui-monospace,SFMono-Regular,Menlo,monospace}
+.sg-svg .sg-zlab{font-size:19px;font-weight:700;letter-spacing:3px}
+.sg-svg .sg-nlab{font-size:12px;letter-spacing:.5px}
+.sg-tgt{position:absolute;transform:translate(-50%,-50%);min-width:44px;min-height:44px;
+  background:transparent;border:none;cursor:pointer;z-index:3;color:var(--ink);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  font-family:inherit;padding:0}
+.sg-seat{width:22px;height:22px;border:2px dashed var(--edge);border-radius:50%;
+  background:var(--panel);display:flex;align-items:center;justify-content:center;
+  font-size:12px;font-weight:700;line-height:1}
+.sg-tgt.sg-held .sg-seat{border-style:solid;background:var(--primary);color:#1a1c1c}
+.sg-tgt.sg-sel .sg-seat,.sg-tgt.over .sg-seat{border-color:var(--secondary);
+  box-shadow:2px 2px 0 0 var(--secondary)}
+.sg-tgt.sg-safe .sg-seat{border-style:solid;background:var(--ok);color:#0c1a12}
+.sg-tgt.sg-hit .sg-seat{border-style:solid;background:var(--bad);color:#2a0505}
+.sg-tlab{font-size:9.5px;font-weight:700;line-height:1.1;background:var(--panel);
+  border:1px solid var(--edge);padding:0 3px;margin-top:2px;white-space:nowrap}
+.sg-tchips{font-size:9px;line-height:1.15;background:var(--panel2);border:1px solid var(--edge);
+  padding:0 3px;margin-top:1px;max-width:150px}
+.sg-trace{fill:none;stroke:var(--bad);stroke-width:2.5;stroke-dasharray:6 4;
+  transition:opacity .25s}
+.sg-dot{position:absolute;width:14px;height:14px;margin:-7px 0 0 -7px;border-radius:50%;
+  background:var(--bad);border:2px solid var(--edge);z-index:4;pointer-events:none}
+.sg-shop{display:flex;flex-wrap:wrap;gap:8px;background:var(--panel2);
+  border:2px dashed var(--edge);padding:12px;margin:0 0 12px;min-height:64px}
+.sg-chip{background:var(--panel);border:2px solid var(--edge);color:var(--ink);
+  padding:9px 11px;cursor:grab;font:inherit;font-size:13px;text-align:left;max-width:280px;
+  display:flex;gap:9px;align-items:flex-start}
+.sg-chip:hover{border-color:var(--secondary)}
+.sg-chip.sel{background:var(--primary);color:#1a1c1c}
+.sg-chip.sg-poor{opacity:.45}
+.sg-chip b{display:block;font-size:13px}
+.sg-chip em{display:block;font-style:normal;color:var(--dim);font-size:11.5px;margin-top:2px}
+.sg-chip.sel em{color:inherit;opacity:.8}
+.sg-cost{flex-shrink:0;min-width:26px;height:26px;border:2px solid var(--edge);
+  background:var(--panel2);color:var(--ink);font-weight:700;font-size:13px;
+  display:flex;align-items:center;justify-content:center;padding:0 4px}
+.sg-chip.sel .sg-cost{background:var(--panel);color:var(--ink)}
+.sg-log{display:grid;gap:6px;margin:0 0 12px}
+.sg-line{background:var(--panel2);border-left:4px solid var(--ok);padding:8px 11px;
+  font-size:13.5px;transition:opacity .25s}
+.sg-line.no{border-left-color:var(--bad)}
+.sg-medal{display:flex;align-items:center;gap:10px;background:var(--panel2);
+  border:3px solid var(--edge);padding:11px 13px;margin:0 0 12px;font-weight:700;
+  text-transform:uppercase;font-size:14px}
+.sg-medal .medal{font-size:24px;line-height:1}
+.sg-medal.gold{background:var(--primary);color:#1a1c1c}
+.sg-mode .btn{min-height:44px}
+@media (max-width:640px){
+  /* Target labels are text and collide below ~640px; scroll the scene inside
+     its own container, like the world map, rather than degrading the board. */
+  .sg-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+  .sg-scene{min-width:640px}
+}
 </style>
 </head>
 <body>
 <header>
   <div class="brand">
-    <a class="home-link" href="index.html" aria-label="Back to 0pi.es">&larr; Home</a>
+    <a class="home-link" href="index.html" aria-label="Back to 0pi.es" data-i18n="header.home"></a>
     <h1 id="lab-title"></h1>
+    <span class="release-badge" id="lab-release"></span>
     <span class="sub" id="lab-sub"></span>
+    <select id="lang-select" class="lang-select" aria-label="Language"></select>
     <span class="brand-social">
-      <a href="https://github.com/0brains/0pies" target="_blank" rel="noopener noreferrer" title="0pi.es on GitHub — fork it, it's yours" aria-label="0pi.es source code on GitHub">
+      <a href="https://github.com/0brains/0pies" target="_blank" rel="noopener noreferrer" title="0pi.es on GitHub — leave a star, it feeds the developer" aria-label="0pi.es source code on GitHub">
         <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
       </a>
       <a href="https://www.reddit.com/r/0pi/" target="_blank" rel="noopener noreferrer" title="r/0pi — argue about AI regulation with us" aria-label="r/0pi on Reddit">
@@ -453,6 +577,7 @@ textarea:focus{outline:none;border-color:var(--secondary)}
 <main id="main"></main>
 <script id="lab-manifest" type="application/json">/*__LAB__*/</script>
 <script id="lab-decks" type="application/json">/*__DECKS__*/</script>
+<script id="lab-scenes" type="application/json">/*__SCENES__*/</script>
 <script id="i18n" type="application/json">/*__I18N__*/</script>
 <script>
 "use strict";
@@ -460,10 +585,106 @@ textarea:focus{outline:none;border-color:var(--secondary)}
 // data file those games reference, keyed by the path the manifest used. A deck
 // referenced by two labs is authored once and inlined into both.
 const LAB = JSON.parse(document.getElementById("lab-manifest").textContent);
-const DECKS = JSON.parse(document.getElementById("lab-decks").textContent);
+let DECKS = JSON.parse(document.getElementById("lab-decks").textContent);
+// Per-game SVG scenes (siegeBoard boards), keyed by the deck's scene.svgRef.
+// The build inlines only the scenes this lab's games actually reference — the
+// aigpMap conditional-inlining rule generalized — so every other lab carries
+// an empty object here.
+const SCENES = JSON.parse(document.getElementById("lab-scenes").textContent);
 document.getElementById("lab-title").textContent = LAB.title;
+// Release marking (beta.1 verdict point 5): manifest "release" ("beta", ...)
+// stamps the masthead; empty/absent renders nothing (CSS hides :empty), so
+// flipping a lab to stable is a manifest edit, not an engine edit.
+document.getElementById("lab-release").textContent = LAB.release || "";
 document.getElementById("lab-sub").textContent = LAB.subtitle || "";
 const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"}[c]));
+
+/* ------------------------------------------------------------------ i18n */
+const I18N = JSON.parse(document.getElementById("i18n").textContent);
+const LANG_KEY = "0pies.lang";
+function pickLang(){
+  try{ const s = localStorage.getItem(LANG_KEY); if(s && I18N.meta[s]) return s; }catch(e){}
+  const nav = (navigator.language || "en").toLowerCase().split("-")[0];
+  return I18N.meta[nav] ? nav : "en";
+}
+let lang = pickLang();
+function t(key, vars){
+  const d = I18N.ui[lang] || {};
+  let s = d[key] != null ? d[key] : I18N.ui.en[key];
+  if(s == null){ console.error("i18n: missing key " + key); return key; }
+  if(vars) for(const k in vars) s = s.split("{"+k+"}").join(vars[k]);
+  return s;
+}
+const tn = (key, n) => t(key + (n === 1 ? "_one" : "_other"), {n});
+function tGame(gameId, field, fallback){
+  const v = (I18N.labs[lang] || {})[LAB.id + "." + gameId + "." + field];
+  return v != null ? v : fallback;
+}
+/* Card-content overlay: flat {itemId | "zone:<key>": {dottedPath: text}}.
+   Applied by re-parsing the pristine inlined deck JSON and patching it in
+   place — one seam that covers every adapter, corpora included, at zero
+   per-render cost. English restore = re-parse without patching. */
+let OVERLAY = {};
+const overlayCache = {};
+async function loadOverlay(code){
+  OVERLAY = {};
+  if(code === "en" || !(I18N.meta[code] || {}).cards) return;
+  if(overlayCache[code]){ OVERLAY = overlayCache[code]; return; }
+  try{
+    const r = await fetch("i18n/" + encodeURIComponent(LAB.id) + "." + code + ".json");
+    if(!r.ok) throw new Error("HTTP " + r.status);
+    OVERLAY = overlayCache[code] = await r.json();
+  }catch(e){ /* file:// or offline — English cards, translated UI */ }
+}
+function patchTree(node, anchored){
+  if(Array.isArray(node)){ node.forEach(n => patchTree(n, anchored)); return; }
+  if(!node || typeof node !== "object") return;
+  const isId = node.id != null;
+  const isZone = !anchored && !isId && node.key != null && node.def != null;
+  const oKey = isId ? String(node.id) : (isZone ? "zone:" + node.key : null);
+  const o = oKey != null ? OVERLAY[oKey] : null;
+  if(o) for(const path in o){
+    const parts = path.split(/[.\[\]]+/).filter(Boolean); let tgt = node;
+    for(let i = 0; i < parts.length - 1 && tgt; i++) tgt = tgt[parts[i]];
+    const leaf = parts[parts.length - 1];
+    if(tgt && typeof tgt[leaf] === "string") tgt[leaf] = o[path];
+  }
+  const childAnchored = anchored || isId || isZone;
+  for(const k in node) patchTree(node[k], childAnchored);
+}
+function relocalizeDecks(){
+  DECKS = JSON.parse(document.getElementById("lab-decks").textContent);
+  if(Object.keys(OVERLAY).length) patchTree(DECKS);
+}
+function applyStatic(){
+  document.querySelectorAll("[data-i18n]").forEach(n => n.textContent = t(n.dataset.i18n));
+  document.querySelectorAll("[data-i18n-attrs]").forEach(n =>
+    n.dataset.i18nAttrs.split(";").forEach(pair => {
+      const i = pair.indexOf(":");
+      n.setAttribute(pair.slice(0, i), t(pair.slice(i + 1)));
+    }));
+}
+async function setLang(code){
+  if(!I18N.meta[code]) return;
+  lang = code;
+  try{ localStorage.setItem(LANG_KEY, code); }catch(e){}
+  document.documentElement.lang = code;
+  document.documentElement.dir = I18N.meta[code].dir === "rtl" ? "rtl" : "ltr";
+  const sel = document.getElementById("lang-select");
+  if(sel) sel.value = code;
+  await loadOverlay(code);
+  relocalizeDecks();
+  applyStatic();
+  render();
+}
+function mountLangSelect(){
+  const sel = document.getElementById("lang-select");
+  sel.innerHTML = Object.keys(I18N.meta).map(c => {
+    const m = I18N.meta[c], label = m.flag ? `${m.flag} ${m.name}` : m.name;
+    return `<option value="${esc(c)}" ${c === lang ? "selected" : ""}>${esc(label)}</option>`;
+  }).join("");
+  sel.onchange = () => setLang(sel.value);
+}
 
 /* ---------------------------------------------------------------- storage */
 const KEY = LAB.storageKey;
@@ -501,7 +722,10 @@ function markConfidentlyWrong(id){
 }
 function priority(id){
   const it = progress.items[id];
-  if(!it) return 0;
+  // Unseen cards rank between wrong and just-learned: a card answered
+  // correctly minutes ago must not crowd out concepts never dealt at all,
+  // or a small deck re-deals the same near-complete set every round.
+  if(!it) return -1.5;
   if(it.confidentWrong>0) return -3;
   if(it.wrong>0) return -2;
   if(it.interval<7) return -1;
@@ -777,10 +1001,10 @@ function tellsBoard(g){
       return [...s].map(o => ({key:o, name:o}));
     },
     items: DATA.tells.map(t => ({
-      id:t.id, area:t.area, status:t.status, label:`“${t.snippet}”`,
+      id:t.id, area:t.area, status:t.status, label:`"${t.snippet}"`,
       answer:t.answer, options:t.options, why:t.tell, citation:t.citation
     })),
-    hint:"Drag each snippet onto the instrument it came from. The reveal names the tell."
+    hint:t("board.tellsHintDesktop")
   };
 }
 function roleBoard(g){
@@ -808,12 +1032,22 @@ function roleBoard(g){
 }
 function timelineBoard(g){
   const t = deckOf(g).timeline;
+  // Area + provenance are parameterized (beta.1): a milestone may carry its
+  // own area/label/sub/why/citation/asOf, with timeline-level area/citation/
+  // asOf as the deck-wide defaults. The AIGP knowledge file predates every
+  // override field, so each fallback below reproduces its historical output
+  // byte-for-byte; a generic deck (runner "timeline", e.g. Crypto Graveyard
+  // on areas 3.6/3.7) authors the same board purely from data.
   return {
     zones:t.buckets.map(b => ({key:b, name:b})),
     items:t.milestones.map(m => ({
-      id:m.id, area:"II.C", status:m.status, scope:m.scope,
-      label:`${m.instrument} — ${m.milestone}`, sub:m.jurisdiction,
-      answer:m.bucket, why:`${m.date}. ${m.note}`, citation:t.title
+      id:m.id, area:m.area || t.area || "II.C", status:m.status, scope:m.scope,
+      label:m.label || `${m.instrument} — ${m.milestone}`,
+      sub:m.sub !== undefined ? m.sub : m.jurisdiction,
+      answer:m.bucket,
+      why:m.why || `${m.date}. ${m.note}`,
+      citation:m.citation || t.citation || t.title,
+      asOf:m.asOf || t.asOf
     })),
     hint:t.prompt, note:t.note
   };
@@ -833,12 +1067,27 @@ const ADAPTERS = {
   board:        genericBoard,
   pairs:        genericPairs,
   ladders:      genericLadders,
+  // The gauntlet runner needs the whole deck, not one collection: the run is
+  // sampled from `questions` in proportion to the deck-level `weights` map.
+  gauntlet:     g => deckOf(g),
   aigpTells:    tellsBoard,
   aigpRoles:    roleBoard,
   aigpTimeline: timelineBoard,
+  // The same board, driven by a generic deck's `timeline` collection instead
+  // of a typed knowledge file (beta.1 area parameterization) — a board-shaped
+  // runner, so it deals/renders through the board machinery below.
+  timeline:     timelineBoard,
   aigpCases:    caseBoards,
   aigpMap:      g => deckOf(g).map,
   aigpRisk:     g => ({campaign: deckOf(g).campaign, map: deckOf(g).map}),
+  // Generalized rr code path (beta.1): same payload shape, but the map is
+  // optional — a map-less campaign renders the territory list without the
+  // world-map board, and all theater resolves via campaign.copy/config.
+  opsCampaign:  g => ({campaign: deckOf(g).campaign, map: deckOf(g).map || null}),
+  // Build-then-defend (beta.1 debut, point-target grammar only): the payload
+  // is the deck's whole `siege` object; the board SVG itself is looked up in
+  // SCENES by scene.svgRef at render time.
+  siegeBoard:   g => deckOf(g).siege,
   aigpBriefs:   g => deckOf(g).briefs,
   aigpPairs:    g => deckOf(g).pairs.filter(p => g.setId ? p.set===g.setId : !p.set),
   aigpLadders:  g => deckOf(g).ladders,
@@ -852,7 +1101,10 @@ const GAMES = LAB.games.map(g => {
   // Payloads are built on demand, not cached: a board spec is rebuilt per deal
   // so that option-mode zones can vary with the round.
   const payload = () => fn(g);
-  return {...g, runner, payload, board: runner==="board" ? payload : null};
+  // "timeline" is board-shaped end to end: it deals via dealBoard and renders
+  // via renderBoard, exactly like runner "board" with a different collection.
+  const boardish = runner==="board" || runner==="timeline";
+  return {...g, runner, payload, board: boardish ? payload : null};
 });
 
 const ROUND = 6;
@@ -860,7 +1112,7 @@ const state = {domain:(LAB.tabs && LAB.tabs.find(t=>t.enabled!==false) || {id:"a
                area:"all", game:null, board:null, placed:{}, sel:null, serviceFilter:null,
                checked:false, round:0, pairIdx:0, pairPick:{}, brief:null,
                ladder:null, order:[], track:"enacted", deskIdx:0, deskPick:{}, sweep:null,
-               scored:false, confirmClear:null,
+               scored:false, confirmClear:null, gauntlet:null,
                gridRound:0, gridGroups:null, gridItems:[], gridPlaced:{}, gridChecked:false, gridSel:null, gridScored:false};
 
 const areaOK = it => state.area==="all" || (it.area||"").startsWith(state.area);
@@ -874,21 +1126,26 @@ const tabOK = g => TABS.length<2 || (g.tab || TABS[0].id) === state.domain;
 function renderDomainTabs(){
   const tabs = document.getElementById("domain-tabs");
   if(TABS.length < 2){ tabs.innerHTML = ""; return; }
-  tabs.innerHTML = TABS.map(t => {
-    const live = t.enabled !== false;
-    return `<button class="tab" role="tab" data-domain="${t.id}" aria-selected="${state.domain===t.id}"
-      ${live?"":"disabled"}>${esc(t.label)}${live?"":" · soon"}</button>`;
+  tabs.innerHTML = TABS.map(tab => {
+    const live = tab.enabled !== false;
+    return `<button class="tab" role="tab" data-domain="${tab.id}" aria-selected="${state.domain===tab.id}"
+      ${live?"":"disabled"}>${esc(tab.label)}${live?"":t("header.soon")}</button>`;
   }).join("");
   tabs.querySelectorAll("[data-domain]").forEach(b =>
     b.onclick = () => { state.domain=b.dataset.domain; state.game=null; state.area="all"; render(); });
 }
 const RENDERERS = {board:renderBoard, pairs:renderPairs, map:renderMap, risk:renderRisk,
-                   desk:renderDesk, ladders:renderLadders, briefs:renderBriefs, grid3x3:renderGrid3x3};
+                   desk:renderDesk, ladders:renderLadders, briefs:renderBriefs, grid3x3:renderGrid3x3,
+                   gauntlet:renderGauntlet, opsCampaign:renderRisk, siegeBoard:renderSiege,
+                   timeline:renderBoard};
 function render(){
   renderDomainTabs();
   // RR-scoped 44px touch-target bump (playtest wave 1): scoping class only —
   // the shared house kit keeps its own baseline for every other lab.
-  main.classList.toggle("rr-mode", !!(state.game && state.game.runner === "risk"));
+  main.classList.toggle("rr-mode", !!(state.game
+    && (state.game.runner === "risk" || state.game.runner === "opsCampaign")));
+  // Same 44px bump for the siege board, on its own scoping class.
+  main.classList.toggle("sg-mode", !!(state.game && state.game.runner === "siegeBoard"));
   const tab = TABS.find(t => t.id===state.domain) || TABS[0];
   if(tab.enabled === false){
     main.innerHTML = `<div class="empty"><h2>${esc(tab.label)}</h2>
@@ -934,10 +1191,10 @@ window.addEventListener("hashchange", () => {
 });
 function backBar(title){
   return `<div class="row" style="margin:0 0 14px">
-    <button class="btn ghost" id="back">← All games</button>
-    <strong style="margin-left:4px">${esc(title)}</strong>
+    <button class="btn ghost" id="back">${esc(t("header.allGames"))}</button>
+    <strong style="margin-left:4px">${esc(tGame(state.game.id, "title", title))}</strong>
     <button class="btn ghost share-btn" id="share-game" style="margin-left:auto"
-      title="Share this game">↗ Share</button></div>`;
+      title="${esc(t("share.title"))}">${esc(t("header.share"))}</button></div>`;
 }
 function wireBack(){
   const b=document.getElementById("back"); if(b) b.onclick=()=>{state.game=null;render();};
@@ -949,21 +1206,18 @@ function wireBack(){
 // the game, {lab} the lab, {b} the game's own blurb — so the post carries the
 // actual context of what you were playing, not a generic site plug.
 const SHARE_TONES = [
-  {id:"learned", label:"Make me sound like I just learned something",
-   hint:"accidental expertise, mild smugness", variants:[
-    'TIL: {t}. I have sorted an entire board about it, so I’m basically certified now.',
-    'Just played “{t}” on {lab} and I am now unbearable in meetings. Ask me anything. Actually don’t.',
-    'Studying used to be flashcards. Now it’s “{t}” — a free browser game — and it’s somehow working. My notes are jealous.']},
-  {id:"amazing", label:"I just found this and it’s amazing",
-   hint:"breathless discovery, zero chill", variants:[
-    'Stop scrolling: free study games. No ads, no signup, no tracking, zero pies. This one is “{t}” — {b}',
-    'Found the internet’s weirdest good study site. It’s a game called “{t}” and I’m genuinely obsessed.',
-    'Someone built free games for {lab} and just… left them on the internet. Start with “{t}”. Thank me later.']},
-  {id:"crap", label:"Look at this crap",
-   hint:"disgusted, yet somehow three hours in", variants:[
-    'Look at this crap: someone gamified {lab}. Anyway, three hours later, my score on “{t}” is a personal attack.',
-    'This is the dumbest possible way to learn {t} and it is ABSOLUTELY working. Furious.',
-    'A game. About {t}. Who hurt these people. (I’ve played it six times.)']},
+  {id:"learned", label:"share.tone_learned", hint:"share.tone_learned_hint", variants:[
+    "TIL: {t}. I have sorted an entire board about it, so I'm basically certified now.",
+    "Just played \"{t}\" on {lab} and I am now unbearable in meetings. Ask me anything. Actually don't.",
+    "Studying used to be flashcards. Now it's \"{t}\" — a free browser game — and it's somehow working. My notes are jealous."]},
+  {id:"amazing", label:"share.tone_amazing", hint:"share.tone_amazing_hint", variants:[
+    "Stop scrolling: free study games. No ads, no signup, no tracking, zero pies. This one is \"{t}\" — {b}",
+    "Found the internet's weirdest good study site. It's a game called \"{t}\" and I'm genuinely obsessed.",
+    "Someone built free games for {lab} and just… left them on the internet. Start with \"{t}\". Thank me later."]},
+  {id:"crap", label:"share.tone_crap", hint:"share.tone_crap_hint", variants:[
+    "Look at this crap: someone gamified {lab}. Anyway, three hours later, my score on \"{t}\" is a personal attack.",
+    "This is the dumbest possible way to learn {t} and it is ABSOLUTELY working. Furious.",
+    "A game. About {t}. Who hurt these people. (I've played it six times.)"]},
 ];
 // Ordered as requested: all of the majors. Each entry knows how its intent
 // URL wants the text and link delivered — separately where the platform
@@ -987,11 +1241,12 @@ function shareUrl(){
   return base + "#g/" + encodeURIComponent(state.game.id);
 }
 function shareText(){
-  const tone = SHARE_TONES.find(t => t.id === shareState.tone);
+  const tone = SHARE_TONES.find(toneObj => toneObj.id === shareState.tone);
   const raw = tone.variants[shareState.variant % tone.variants.length];
-  let b = state.game.blurb || "worth a look.";
+  const title = tGame(state.game.id, "title", state.game.title);
+  let b = tGame(state.game.id, "blurb", state.game.blurb || "worth a look.");
   if(b.length > 110) b = b.slice(0, 110).replace(/\s+\S*$/, "") + "…";
-  return raw.replace(/\{t\}/g, state.game.title)
+  return raw.replace(/\{t\}/g, title)
             .replace(/\{lab\}/g, LAB.title)
             .replace(/\{b\}/g, b);
 }
@@ -1001,17 +1256,15 @@ function ensureShareRoot(){
   root = document.createElement("div");
   root.id = "share-root"; root.className = "share-root";
   root.innerHTML = `<div class="share-backdrop"></div>
-    <div class="share-modal" role="dialog" aria-modal="true" aria-label="Share this game">
-      <button class="share-close" aria-label="Close">×</button>
-      <h3>Share this game</h3>
-      <p class="share-sub">Pick your energy:</p>
+    <div class="share-modal" role="dialog" aria-modal="true" aria-label="${esc(t("rr.aria_share_this_game"))}">
+      <button class="share-close" aria-label="${esc(t("rr.aria_close"))}">×</button>
+      <h3>${esc(t("share.title"))}</h3>
+      <p class="share-sub">${esc(t("share.subtitle"))}</p>
       <div class="share-tones"></div>
       <p class="share-preview" id="share-preview"></p>
-      <button class="share-reroll" id="share-reroll">↻ Another take</button>
+      <button class="share-reroll" id="share-reroll">${esc(t("share.rerollButton"))}</button>
       <div class="share-nets" id="share-nets"></div>
-      <p class="share-note">To be expressly clear: we don’t track you when you share this —
-        or what you’re doing, buying, or watching in your mum’s basement. These buttons are
-        plain links. Nothing fires until you click one, and even then we never find out.</p>
+      <p class="share-note">${esc(t("share.privacyNote"))}</p>
     </div>`;
   document.body.appendChild(root);
   root.querySelector(".share-backdrop").onclick = closeShare;
@@ -1021,9 +1274,9 @@ function ensureShareRoot(){
 }
 function renderShare(){
   const root = ensureShareRoot();
-  root.querySelector(".share-tones").innerHTML = SHARE_TONES.map(t =>
-    `<button class="share-tone" data-tone="${t.id}" aria-pressed="${t.id===shareState.tone}">
-       ${esc(t.label)}<span class="hint">${esc(t.hint)}</span></button>`).join("");
+  root.querySelector(".share-tones").innerHTML = SHARE_TONES.map(tone =>
+    `<button class="share-tone" data-tone="${tone.id}" aria-pressed="${tone.id===shareState.tone}">
+       ${esc(t(tone.label))}<span class="hint">${esc(t(tone.hint))}</span></button>`).join("");
   root.querySelectorAll(".share-tone").forEach(b => b.onclick = () => {
     shareState.tone = b.dataset.tone;
     shareState.variant = Math.floor(Math.random() * 3);
@@ -1034,13 +1287,13 @@ function renderShare(){
   document.getElementById("share-reroll").onclick = () => { shareState.variant++; renderShare(); };
   const nets = SHARE_NETS.map(n =>
     `<a href="${esc(n.url(txt, u))}" target="_blank" rel="noopener noreferrer">${esc(n.name)}</a>`).join("");
-  const native = navigator.share ? `<button id="share-native">More…</button>` : "";
+  const native = navigator.share ? `<button id="share-native">${esc(t("share.moreButton"))}</button>` : "";
   document.getElementById("share-nets").innerHTML =
-    nets + `<button id="share-copy">Copy</button>` + native;
+    nets + `<button id="share-copy">${esc(t("share.copyButton"))}</button>` + native;
   document.getElementById("share-copy").onclick = () => {
     const full = txt + "\n" + u;
     if(navigator.clipboard && navigator.clipboard.writeText)
-      navigator.clipboard.writeText(full).then(() => toast("Copied — go paste it somewhere loud"))
+      navigator.clipboard.writeText(full).then(() => toast(t("share.toastCopied")))
         .catch(() => fallbackCopy(full));
     else fallbackCopy(full);
   };
@@ -1064,73 +1317,142 @@ function closeShare(){
 function homeMeta(g){
   const p = g.payload();
   switch(g.runner){
+    case "timeline":   // board-shaped payload ({items}), same worth
     case "board": {
       const ids = p.items.filter(areaOK).map(i=>i.id);
-      return ids.length ? {label:`${ids.length} cards`, ids} : null;
+      return ids.length ? {label:`${ids.length} ${t("count.cards")}`, ids} : null;
     }
     case "pairs": {
       const ps = p.filter(areaOK);
-      return ps.length ? {label:`${ps.length} pairs`, ids:ps.map(x=>x.id)} : null;
+      return ps.length ? {label:`${ps.length} ${t("count.pairs")}`, ids:ps.map(x=>x.id)} : null;
+    }
+    case "gauntlet": {
+      const qs = (p.questions || []).filter(areaOK);
+      return qs.length ? {label:`${qs.length} ${t("count.questions")}`, ids:qs.map(q=>q.id)} : null;
     }
     case "ladders": {
       const ls = p.filter(l => state.area==="all" || l.area===state.area);
-      return ls.length ? {label:`${ls.length} ladders`} : null;
+      return ls.length ? {label:`${ls.length} ${t("count.ladders")}`} : null;
     }
     case "desk": {
       const cs = p.filter(c => state.area==="all" || c.areas.includes(state.area));
-      return cs.length ? {label:`${cs.length} case files`} : null;
+      return cs.length ? {label:`${cs.length} ${t("count.case_files")}`} : null;
     }
     case "briefs": {
       const bs = p.filter(b => state.area==="all" || b.area===state.area || b.capstone);
-      return bs.length ? {label:`${bs.length} briefs`} : null;
+      return bs.length ? {label:`${bs.length} ${t("count.briefs")}`} : null;
     }
-    case "map": return {label:`${p.jurisdictions.length} jurisdictions`};
-    case "risk": return {label:`${p.map.jurisdictions.length} jurisdictions · ${p.campaign.config.turns}-turn campaign`};
+    case "map": return {label:`${p.jurisdictions.length} ${t("count.jurisdictions")}`};
+    case "risk": return {label:`${p.map.jurisdictions.length} ${t("count.jurisdictions")} · ${p.campaign.config.turns}-${t("count.campaign")}`};
+    case "opsCampaign": {
+      // Area-filterable like the boards: the campaign's cards carry area tags,
+      // so the chips scope the count and the mastery meter tracks the pool.
+      const cs = p.campaign.cards.filter(areaOK);
+      if(!cs.length) return null;
+      const cp = (p.campaign.copy || {}).home_label;
+      const label = cp
+        ? cp.split("{n}").join(cs.length).split("{turns}").join(p.campaign.config.turns)
+        : `${cs.length} ${t("count.cards")} · ${p.campaign.config.turns}-${t("count.campaign")}`;
+      return {label, ids:cs.map(c => c.id)};
+    }
+    case "siegeBoard": {
+      // The scored atoms are the wave events (freebie demo events are never
+      // recorded); area chips scope the count and the mastery meter.
+      const evs = p.waves.flatMap(w => w.events).filter(areaOK);
+      if(!evs.length) return null;
+      const cp = (p.copy || {}).home_label;
+      const label = cp ? cp.split("{n}").join(evs.length)
+                       : `${evs.length} ${t("count.cards")}`;
+      return {label, ids:evs.map(e => e.id)};
+    }
     case "grid3x3": {
       const domains = g.payload();
       const ids = domains.flatMap(d => [`${d.id}-original`, `${d.id}-updated`]);
-      return {label:"9 domains · 3 rounds", ids};
+      return {label:t("count.grid3x3"), ids};
     }
   }
   return null;
 }
-const RUNGS = ["Learn","Contrast","Apply","Brief"];
+// Rung ladder, bottom to top. "Sim" is the strategy-campaign rung the CISSP
+// beta introduces (Learn → Apply → Sim, design §5); the AIGP vocabulary keeps
+// its existing rungs untouched.
+const RUNGS = ["Learn","Contrast","Apply","Drill","Sim","Brief"];
+// One home-screen card. Returns "" when the current area filter leaves the
+// game with nothing to deal (hidden rather than offered and found empty).
+function homeCard(g){
+  const meta = homeMeta(g);
+  if(!meta) return "";
+  const count = meta.label;
+  const meter = meta.ids
+    ? `<div class="meter"><i style="width:${Math.round(masteryOf(meta.ids)*100)}%"></i></div>` : "";
+  return `<button class="card" data-game="${g.id}"><span class="rung">${esc(t("rung."+g.rung.toLowerCase()))}</span>
+        <h3>${esc(tGame(g.id, "title", g.title))}</h3><p>${esc(tGame(g.id, "blurb", g.blurb))}</p>
+        <p style="margin-top:8px;font-size:12px">${count}</p>${meter}</button>`;
+}
+const homeH2 = inner => `<h2 style="font-size:14px;text-transform:uppercase;letter-spacing:.8px;color:var(--dim);
+      margin:22px 0 10px">${inner}</h2>`;
 function renderHome(){
   const filters = (LAB.filters || []).filter(f => !f.tab || f.tab===state.domain);
   const chipHtml = !filters.length ? "" :
     [{id:"all", label:LAB.allLabel || "Everything"}].concat(filters).map(c =>
       `<button class="chip" data-area="${c.id}" aria-selected="${state.area===c.id}">${esc(c.label)}</button>`).join("");
 
-  const sections = RUNGS.map(rung => {
-    const cards = GAMES.filter(g => g.rung===rung && tabOK(g)).map(g => {
-      const meta = homeMeta(g);
-      if(!meta) return "";
-      const count = meta.label;
-      const meter = meta.ids
-        ? `<div class="meter"><i style="width:${Math.round(masteryOf(meta.ids)*100)}%"></i></div>` : "";
-      return `<button class="card" data-game="${g.id}"><span class="rung">${rung}</span>
-        <h3>${esc(g.title)}</h3><p>${esc(g.blurb)}</p>
-        <p style="margin-top:8px;font-size:12px">${count}</p>${meter}</button>`;
-    }).filter(Boolean).join("");
-    if(!cards) return "";
-    return `<h2 style="font-size:14px;text-transform:uppercase;letter-spacing:.8px;color:var(--dim);
-      margin:22px 0 10px">${rung}</h2><div class="grid">${cards}</div>`;
-  }).join("");
+  let sections;
+  if(LAB.groups && LAB.groups.length){
+    // Per-domain rung ladder (design §5, beta.1 ship gate R8): one section per
+    // manifest group in manifest order, its games climbing the rung ladder;
+    // each card wears its rung chip and the section header spells out the
+    // rungs present ("Learn → Apply → Sim") so a first visit reads the ladder
+    // without instructions. Groups the area filter empties collapse entirely.
+    sections = LAB.groups.map(gr => {
+      const games = RUNGS.flatMap(r => GAMES.filter(g => g.group===gr.id && g.rung===r && tabOK(g)));
+      const cards = games.map(g => [g, homeCard(g)]).filter(x => x[1]);
+      if(!cards.length) return "";
+      const ladder = [...new Set(cards.map(x => x[0].rung))]
+        .map(r => esc(t("rung."+r.toLowerCase()))).join(" → ");
+      return homeH2(`${esc(gr.label)}<span class="rung-ladder">${ladder}</span>`)
+        + (gr.blurb ? `<p class="group-blurb">${esc(gr.blurb)}</p>` : "")
+        + `<div class="grid">${cards.map(x => x[1]).join("")}</div>`;
+    }).join("");
+  }else{
+    sections = RUNGS.map(rung => {
+      const cards = GAMES.filter(g => g.rung===rung && tabOK(g)).map(homeCard).filter(Boolean).join("");
+      if(!cards) return "";
+      return homeH2(esc(t("rung."+rung.toLowerCase()))) + `<div class="grid">${cards}</div>`;
+    }).join("");
+  }
 
-  const banner = memoryOnly ? `<div class="banner">This browser is blocking storage, so progress
-    stays in memory only and is lost on reload.</div>` : "";
-  main.innerHTML = banner + (chipHtml ? `<div class="chips">${chipHtml}</div>` : "") + sections;
+  const banner = memoryOnly ? `<div class="banner">${esc(t("home.storageBlocked"))}</div>` : "";
+  // Release marking (manifest "release": e.g. "beta") — the hub carries it too,
+  // not just the masthead, so a shared deep link back to home still says so.
+  const release = LAB.release ? `<div class="release-note"><span class="release-badge">${esc(LAB.release)}</span>${
+    LAB.releaseNote ? " " + esc(LAB.releaseNote) : ""}</div>` : "";
+  main.innerHTML = banner + release + (chipHtml ? `<div class="chips">${chipHtml}</div>` : "") + sections;
   main.querySelectorAll("[data-area]").forEach(b => b.onclick=()=>{state.area=b.dataset.area;render();});
   main.querySelectorAll("[data-game]").forEach(b => b.onclick=()=>start(b.dataset.game));
 }
 function start(id){
+  // A run left behind by another game must not keep a clock alive under the
+  // one being opened; the gauntlet arms a fresh interval for itself below.
+  gauntletStopClock();
+  // Campaign screen state is per game: opening a different game drops another
+  // campaign's transient UI state (its persisted run stays in localStorage
+  // under its own key). Reopening the same campaign resumes as before.
+  if(state.rr && state.rr.gameId !== id){ rrStopRegTimer(); state.rr = null; }
+  // siegeBoard is session-only, like the gauntlet: opening any game invalidates
+  // a running attack replay (seq bump); opening a different game drops the
+  // build entirely. Reopening the same siege game resumes its build screen.
+  sgAnimSeq++;
+  if(state.siege && state.siege.gameId !== id) state.siege = null;
   state.game = GAMES.find(g=>g.id===id);
+  state.gauntlet=null;
   state.placed={}; state.sel=null; state.checked=false; state.round=0; state.serviceFilter=null;
   state.pairIdx=0; state.pairPick={}; state.brief=null; state.ladder=null;
   state.order=[]; state.deskIdx=0; state.deskPick={}; state.sweep=null; state.scored=false;
   state.gridRound=0; state.gridGroups=null; state.gridItems=[]; state.gridPlaced={}; state.gridChecked=false; state.gridSel=null;
   if(state.game.board) dealBoard();
   if(state.game.runner==="grid3x3") dealGrid3x3();
+  if(state.game.runner==="gauntlet") dealGauntlet();
   render();
 }
 
@@ -1146,7 +1468,11 @@ function dealBoard(){
     }
   }
   const scoped = spec.serviceGroups ? spec.items.filter(i => i.service===state.serviceFilter) : spec.items;
-  const pool = scoped.filter(areaOK).slice().sort((a,b)=>priority(a.id)-priority(b.id));
+  // Seeded pre-shuffle + stable sort: equal-priority cards land in an order
+  // that changes every round instead of the deck's file order, so a fully-played
+  // small deck still varies from deal to deal.
+  const pool = shuffle(scoped.filter(areaOK), state.round*31 + 11)
+                 .sort((a,b)=>priority(a.id)-priority(b.id));
   const due = pool.filter(i=>dueNow(i.id));
   const source = due.length>=ROUND ? due : pool;
 
@@ -1223,7 +1549,7 @@ function openSheet(cfg){
 // first; on a real phone it hid the board and read as the sheet being stuck.)
 function sheetFlow(sheet, cardId){
   openSheet({
-    title: `Place “${sheet.labelOf(cardId)}” in:`,
+    title: t("board.sheetTitle", {label: sheet.labelOf(cardId)}),
     targets: sheet.targets(),
     onPick: key => {
       sheet.place(cardId, key);
@@ -1239,8 +1565,8 @@ function renderBoard(){
   // the reveal. The home screen hides empty games, so this is a backstop.
   if(!b.items.length){
     main.innerHTML = backBar(state.game.title) + `<div class="panel empty">
-      <h2>Nothing here for ${esc(state.area==="all" ? (LAB.allLabel||"this lab") : state.area)}</h2>
-      <p>This game has no cards in the selected area. Pick another area or another game.</p></div>`;
+      <h2>${esc(t("board.emptyAreaHeader", {area: state.area==="all" ? (LAB.allLabel||"this lab") : state.area}))}</h2>
+      <p>${esc(t("board.emptyAreaText"))}</p></div>`;
     wireBack();
     return;
   }
@@ -1270,56 +1596,54 @@ function renderBoard(){
     const current = spec.serviceGroups.find(s => s.name===state.serviceFilter) || spec.serviceGroups[0];
     body += `<div class="service-identity">
       <img src="${esc(current.icon)}" alt="">
-      <div><label for="service-select">Choose a service</label><br>
+      <div><label for="service-select">${esc(t("board.serviceLabel"))}</label><br>
         <select id="service-select">${spec.serviceGroups.map(s =>
           `<option value="${esc(s.name)}" ${s.name===state.serviceFilter?"selected":""}>${esc(s.name)}</option>`
         ).join("")}</select>
       </div></div>`;
   }
-  body += `<p class="hint">${esc(isCoarse() ? "Tap a card, then choose where it belongs." : spec.hint)}</p>`;
+  body += `<p class="hint">${esc(isCoarse() ? t("board.hintMobile") : spec.hint)}</p>`;
   if(spec.note) body += `<p class="cite" style="margin:-8px 0 12px">${esc(spec.note)}</p>`;
-  body += `<div class="bank">${bank.map(i => tok(i, state.sel===i.id?"sel":"")).join("")}</div>`;
+  body += `<div class="bank">${bank.map(i => tok(i, state.sel===i.id?"sel":"")).join("")}${bank.length===0?`<span class="bank-note">${esc(t("board.bankEmpty"))}</span>`:""}</div>`;
   body += `<div class="zones">${zonesHtml}</div>`;
 
   const placedCount = b.items.length - bank.length;
   if(!state.checked){
     body += `<div class="row"><button class="btn" id="check" ${allPlaced?"":"disabled"}>
-      ${allPlaced?"Check the board":`Place all ${b.items.length} cards`}</button>
-      <button class="btn ghost" id="clear" ${placedCount?"":"disabled"}>Clear board</button>
-      <span class="badge">${placedCount} of ${b.items.length} placed</span></div>`;
+      ${allPlaced?esc(t("board.checkButton")):esc(t("board.placeAllButton", {n: b.items.length}))}</button>
+      <button class="btn ghost" id="clear" ${placedCount?"":"disabled"}>${esc(t("board.clearButton"))}</button>
+      <span class="badge">${t("board.badgePlaced", {placed: placedCount, total: b.items.length})}</span></div>`;
   }else{
     const right = b.items.filter(i => state.placed[i.id]===i.answer);
     const wrong = b.items.filter(i => state.placed[i.id]!==i.answer);
     const pct = right.length / b.items.length;
     body += `<div class="reveal">
-      <p class="score ${pct===1?"ok":pct>=.6?"mid":"no"}">${right.length} of ${b.items.length}</p>
+      <p class="score ${pct===1?"ok":pct>=.6?"mid":"no"}">${t("board.scoreLine", {right: right.length, total: b.items.length})}</p>
       <ul>` + b.items.map(i => {
         const ok = state.placed[i.id]===i.answer;
         return `<li><b class="${ok?"hit":"miss"}">${ok?"✓":"✗"} ${esc(i.label)}</b>
-          <span>${ok?"":`You said <em>${esc(state.placed[i.id])}</em> — it is <em>${esc(i.answer)}</em>. `}${esc(i.why)}</span></li>`;
+          <span>${ok?"":t("board.revealWrong", {said: `<em>${esc(state.placed[i.id])}</em>`, actual: `<em>${esc(i.answer)}</em>`})}${esc(i.why)}</span></li>`;
       }).join("") + `</ul>`;
     if(spec.traps){
-      body += `<div class="dim-note"><b>Traps worth remembering</b><ul style="margin:6px 0 0;padding-left:18px">`
+      body += `<div class="dim-note"><b>${esc(t("board.trapsHeading"))}</b><ul style="margin:6px 0 0;padding-left:18px">`
         + spec.traps.map(t=>`<li>${esc(t)}</li>`).join("") + `</ul></div>`;
     }
     const cites = [...new Set(b.items.map(i => i.citation).filter(Boolean))];
     body += `<p class="cite">${esc(cites.join(" · "))}</p>`;
     body += aiLinks(explainPrompt(state.game.title, b.items, cites.join("; ")),
-                    "Explain these concepts:");
+                    esc(t("board.explainLink")));
     if(wrong.length){
       body += aiLinks(deepenPrompt(state.game.title,
         wrong.map(i => ({label:i.label, said:state.placed[i.id], answer:i.answer, why:i.why})),
-        cites.join("; ")), "Go deeper on what you missed:");
+        cites.join("; ")), esc(t("board.deepenLink")));
     }
     if(wrong.length && !state.sweep){
-      body += `<div class="sweep"><p><strong>Quick sweep on the ${wrong.length} you missed.</strong>
-        Tap any you thought you had right — those come back soonest, because a confident miss is
-        the one that fails you.</p><div class="row" style="margin:0">` +
+      body += `<div class="sweep"><p><strong>${esc(t("board.sweepHint", {n: wrong.length}))}</strong></p><div class="row" style="margin:0">` +
         wrong.map(i=>`<button class="btn ghost" data-cw="${i.id}">${esc(i.label.slice(0,44))}${i.label.length>44?"…":""}</button>`).join("")
-        + `<button class="btn" data-cw="none">None of them</button></div></div>`;
+        + `<button class="btn" data-cw="none">${esc(t("board.sweepNone"))}</button></div></div>`;
     }
-    body += `<div class="row"><button class="btn" id="next">Next board →</button>
-      <button class="btn ghost" id="retry">Replay this board</button></div></div>`;
+    body += `<div class="row"><button class="btn" id="next">${esc(t("board.nextButton"))}</button>
+      <button class="btn ghost" id="retry">${esc(t("board.retryButton"))}</button></div></div>`;
   }
 
   const boardSheet = () => {
@@ -1432,7 +1756,7 @@ function renderGrid3x3(){
     const item = cellItem(key);
     const cls = state.gridChecked && item ? (item.domainId===d.id && item.side===side ? "correct" : "wrong") : "";
     return `<div class="zone grid-cell" data-cell="${key}"><div class="drop">${
-      item ? tok(item, cls) : `<span class="cell-empty">Drop ${side==="original"?"Original":"Updated"} here</span>`
+      item ? tok(item, cls) : `<span class="cell-empty">${esc(t(side==="original"?"grid.cellEmptyOriginal":"grid.cellEmptyUpdated"))}</span>`
     }</div></div>`;
   };
   const rows = roundDomains.map(d => `<div class="grid-row">
@@ -1442,41 +1766,41 @@ function renderGrid3x3(){
     </div>`).join("");
 
   let body = `<p class="hint">${esc(isCoarse()
-      ? "Tap a card, then choose where it belongs."
-      : "Column 1 is fixed. Drag each Original/Updated snippet onto the matching domain and side.")}</p>
-    <div class="grid-head"><span></span><span>Original Act</span><span>Updated Act</span></div>
+      ? t("grid.hintMobile")
+      : t("grid.hintDesktop"))}</p>
+    <div class="grid-head"><span></span><span>${esc(t("grid.originalHeader"))}</span><span>${esc(t("grid.updatedHeader"))}</span></div>
     <div class="grid3x3">${rows}</div>
     <div class="bank">${bank.map(i => tok(i, state.gridSel===i.id?"sel":"")).join("")}</div>`;
 
   if(!state.gridChecked){
     body += `<div class="row"><button class="btn" id="check" ${allPlaced?"":"disabled"}>
-      ${allPlaced?"Check round":"Place all 6 cards"}</button>
-      <button class="btn ghost" id="clear" ${Object.keys(state.gridPlaced).length?"":"disabled"}>Clear round</button>
-      <span class="badge">Round ${state.gridRound+1} of 3</span></div>`;
+      ${allPlaced?esc(t("grid.checkButton")):esc(t("grid.placeAllButton"))}</button>
+      <button class="btn ghost" id="clear" ${Object.keys(state.gridPlaced).length?"":"disabled"}>${esc(t("grid.clearButton"))}</button>
+      <span class="badge">${t("grid.badgeRound", {n: state.gridRound+1})}</span></div>`;
   }else{
     const right = state.gridItems.filter(i => state.gridPlaced[i.id]===`${i.domainId}:${i.side}`);
     body += `<div class="reveal">
-      <p class="score ${right.length===6?"ok":right.length>=4?"mid":"no"}">${right.length} of 6</p>
+      <p class="score ${right.length===6?"ok":right.length>=4?"mid":"no"}">${t("grid.scoreLine", {right: right.length, total: 6})}</p>
       <ul>` + state.gridItems.map(i => {
         const ok = state.gridPlaced[i.id]===`${i.domainId}:${i.side}`;
-        return `<li><b class="${ok?"hit":"miss"}">${ok?"✓":"✗"} ${esc(i.domain)} — ${i.side==="original"?"Original":"Updated"}</b>
+        return `<li><b class="${ok?"hit":"miss"}">${ok?"✓":"✗"} ${esc(i.domain)} — ${i.side==="original"?t("grid.originalLabel"):t("grid.updatedLabel")}</b>
           <span>${esc(i.text)} <em>${esc(i.citation)}</em></span></li>`;
       }).join("") + `</ul></div>`;
     const isLast = state.gridRound===2;
-    body += `<div class="row"><button class="btn" id="next">${isLast?"Finish":"Next round →"}</button>
-      <button class="btn ghost" id="retry">Replay this round</button></div>`;
+    body += `<div class="row"><button class="btn" id="next">${isLast?esc(t("grid.finishButton")):esc(t("grid.nextButton"))}</button>
+      <button class="btn ghost" id="retry">${esc(t("grid.retryButton"))}</button></div>`;
   }
 
   const gridSheet = () => ({
     targets: () => {
-      const t = [];
+      const targets = [];
       roundDomains.forEach(d => ["original","updated"].forEach(side => {
         const key = `${d.id}:${side}`;
         const occ = cellItem(key);
-        t.push({key, label: `${d.domain} — ${side === "original" ? "Original" : "Updated"}`,
-                sub: occ ? `Holds: ${occ.text.slice(0, 60)}…` : "", icon: null});
+        targets.push({key, label: `${d.domain} — ${side === "original" ? t("grid.originalLabel") : t("grid.updatedLabel")}`,
+                sub: occ ? t("grid.sheetHolds", {text: occ.text.slice(0, 60)}) : "", icon: null});
       }));
-      return t;
+      return targets;
     },
     labelOf: id => {
       const i = state.gridItems.find(x => x.id === id);
@@ -1562,21 +1886,21 @@ function renderPairs(){
       `</div>`;
   };
 
-  let body = `<p class="hint">Classify both. They differ by exactly one fact.</p>
+  let body = `<p class="hint">${esc(t("pairs.hint"))}</p>
     <div class="flip">${side("a")}${side("b")}</div>`;
 
   if(!state.checked){
     const both = state.pairPick.a!==undefined && state.pairPick.b!==undefined;
     const any = state.pairPick.a!==undefined || state.pairPick.b!==undefined;
     body += `<div class="row"><button class="btn" id="check" ${both?"":"disabled"}>
-      ${both?"Check both":"Classify both cards"}</button>
-      <button class="btn ghost" id="clear" ${any?"":"disabled"}>Clear</button>
-      <span class="badge">${state.pairIdx+1} of ${pairs.length}</span></div>`;
+      ${both?esc(t("pairs.checkButton")):esc(t("pairs.classifyButton"))}</button>
+      <button class="btn ghost" id="clear" ${any?"":"disabled"}>${esc(t("pairs.clearButton"))}</button>
+      <span class="badge">${t("pairs.badgeIndex", {idx: state.pairIdx+1, total: pairs.length})}</span></div>`;
   }else{
     const ok = state.pairPick.a===p.a.answer && state.pairPick.b===p.b.answer;
     body += `<div class="reveal">
-      <p class="score ${ok?"ok":"no"}">${ok?"Both right":"Not quite"}</p>
-      <div class="dim-note">The variable that changed: <b>${esc(p.dimension)}</b></div>`;
+      <p class="score ${ok?"ok":"no"}">${ok?esc(t("pairs.verdictCorrect")):esc(t("pairs.verdictWrong"))}</p>
+      <div class="dim-note">${esc(t("pairs.dimensionLabel"))} <b>${esc(p.dimension)}</b></div>`;
     if(p.currency) body += currencyHtml(p.currency);
     body += `<p class="cite">${esc(p.citation)}</p>`;
     const missed = [];
@@ -1587,12 +1911,12 @@ function renderPairs(){
       [{label:p.a.text,answer:p.a.answer,why:p.a.why},
        {label:p.b.text,answer:p.b.answer,why:p.b.why}], ctx) +
       `\n\nThis was a deliberate minimal pair: the ONLY fact that changed between the two was ${p.dimension}. Show me three further variations along that same axis where the answer is genuinely contestable, and tell me exactly where the boundary sits.`,
-      "Explain this concept:");
+      esc(t("pairs.explainLink")));
     if(missed.length){
-      body += aiLinks(deepenPrompt(state.game.title, missed, ctx), "Go deeper on what you missed:");
+      body += aiLinks(deepenPrompt(state.game.title, missed, ctx), esc(t("pairs.deepenLink")));
     }
-    body += `<div class="row"><button class="btn" id="next">Next pair →</button>
-      <button class="btn ghost" id="retry">Replay this pair</button></div></div>`;
+    body += `<div class="row"><button class="btn" id="next">${esc(t("pairs.nextButton"))}</button>
+      <button class="btn ghost" id="retry">${esc(t("pairs.retryButton"))}</button></div></div>`;
   }
 
   main.innerHTML = backBar(state.game.title) + `<div class="panel">${body}</div>`;
@@ -1620,9 +1944,281 @@ function renderPairs(){
 }
 function currencyHtml(c){
   return `<div class="currency">
-    <div>📖 <strong>The book says:</strong> ${esc(c.book)}</div>
-    <div>⚡ <strong>What changed:</strong> ${esc(c.changed)}</div>
-    <div>🎯 <strong>For the exam:</strong> ${esc(c.exam)}</div></div>`;
+    <div>📖 <strong>${esc(t("pairs.currencyBook"))}</strong> ${esc(c.book)}</div>
+    <div>⚡ <strong>${esc(t("pairs.currencyChanged"))}</strong> ${esc(c.changed)}</div>
+    <div>🎯 <strong>${esc(t("pairs.currencyExam"))}</strong> ${esc(c.exam)}</div></div>`;
+}
+
+/* --------------------------------------------------------------- gauntlet */
+// Night Shift: a timed, blueprint-weighted multiple-choice run. Twenty
+// questions or three misses, whichever comes first. The run itself is
+// session-only — the only thing that reaches the progress store is the usual
+// record() call per question, exactly as the board and pairs runners do. A
+// half-finished run under a stale clock is worth nothing, so nothing about it
+// is persisted and a reload starts a fresh run.
+const GAUNTLET_RUN = 20;         // questions in a full run
+const GAUNTLET_LIVES = 3;        // misses — wrong or timed out — before it ends
+const GAUNTLET_SECS = 25;        // per-question clock
+const GAUNTLET_SECS_FAST = 20;   // ...for definitional questions
+const GAUNTLET_FAST_MAX = 2;     // difficulty at or below which "fast" applies
+// Grades are read off the fraction of a PERFECT run — every question served
+// answered right, with the streak ramping from 1.0 to the 2.0 cap. That ramp
+// is why the denominator is not 100 · served · 2: an unbroken 20-question run
+// scores 3450, not 4000 (the multiplier only reaches 2.0 on the 11th answer),
+// so a flat cap would have made 86.3 % the physical ceiling and gold
+// unreachable. Cuts are tuned against tools/ns_sim.py — move one, move both.
+const GAUNTLET_GRADES = [["gold", .75], ["silver", .65], ["bronze", .50]];
+const gauntletMult = streak => 1 + Math.min(0.1 * streak, 1);
+// Score of a flawless run of n questions — the grading denominator.
+const gauntletPerfect = n => {
+  let s = 0;
+  for(let i = 0; i < n; i++) s += Math.round(100 * gauntletMult(i));
+  return s;
+};
+// A deck that states no difficulty gets the full clock; only a question
+// explicitly marked definitional is put on the short one.
+const gauntletSecs = q =>
+  (q.difficulty != null && q.difficulty <= GAUNTLET_FAST_MAX) ? GAUNTLET_SECS_FAST : GAUNTLET_SECS;
+
+// Blueprint-weighted sampling without replacement: each draw picks a domain in
+// proportion to its exam weight among the domains that still have questions
+// left, then takes one of that domain's questions at random. Weighting the
+// domain rather than the question stops a deep domain crowding out a thin one,
+// which is the whole point of sampling to the published blueprint.
+function gauntletSample(questions, weights, n){
+  const byDom = {};
+  questions.forEach(q => (byDom[q.domain] = byDom[q.domain] || []).push(q));
+  const doms = Object.keys(weights).filter(d => (byDom[d] || []).length);
+  const run = [];
+  while(run.length < n && doms.some(d => byDom[d].length)){
+    const total = doms.reduce((s, d) => s + (byDom[d].length ? weights[d] : 0), 0);
+    let r = Math.random() * total;
+    const dom = doms.find(d => byDom[d].length && (r -= weights[d]) < 0)
+             || doms.find(d => byDom[d].length);
+    run.push(byDom[dom].splice(Math.floor(Math.random() * byDom[dom].length), 1)[0]);
+  }
+  return run;
+}
+function dealGauntlet(){
+  const deck = state.game.payload();
+  const pool = (deck.questions || []).filter(areaOK);
+  const run = gauntletSample(pool, deck.weights || {}, GAUNTLET_RUN);
+  state.gauntlet = {run, idx:0, lives:GAUNTLET_LIVES, score:0, streak:0, best:0,
+                    answers:[], pick:null, gain:0, options:[], deadline:0,
+                    phase: run.length ? "live" : "over"};
+  if(run.length) gauntletArm();
+}
+// A question is "armed" when its option order is frozen and its deadline set.
+// The order is settled once here rather than per render, or the choices would
+// jump under the player's finger every time the clock repaints.
+function gauntletArm(){
+  const g = state.gauntlet, q = g.run[g.idx];
+  let h = (g.idx + 1) >>> 0;
+  for(let i = 0; i < q.id.length; i++) h = (Math.imul(h, 31) + q.id.charCodeAt(i)) >>> 0;
+  g.options = shuffle(q.options, h);
+  g.pick = null; g.gain = 0; g.phase = "live";
+  g.deadline = Date.now() + gauntletSecs(q) * 1000;
+}
+// One interval, owned by this module, cleared on every path that ends a
+// question: an answer, a timeout, the end of the run, leaving the game, and
+// every re-render (renderGauntlet re-arms it only for a live question).
+let gauntletClock = null;
+function gauntletStopClock(){
+  if(gauntletClock){ clearInterval(gauntletClock); gauntletClock = null; }
+}
+// pick === null is the clock running out: still a miss, still costs a life and
+// resets the streak, but reported as its own state rather than as a wrong pick.
+function gauntletResolve(pick){
+  const g = state.gauntlet;
+  if(!g || g.phase !== "live") return;
+  gauntletStopClock();
+  const q = g.run[g.idx];
+  const ok = pick === q.answer;
+  g.gain = ok ? Math.round(100 * gauntletMult(g.streak)) : 0;
+  g.score += g.gain;
+  if(ok){ g.streak++; g.best = Math.max(g.best, g.streak); }
+  else { g.streak = 0; g.lives--; }
+  g.pick = pick; g.phase = "reveal";
+  g.answers.push({id:q.id, domain:q.domain, ok, pick, lapsed: pick === null});
+  // Same scheduler write the other runners make, once per question. A gauntlet
+  // question is freshly sampled every run, so unlike a replayed board there is
+  // no second attempt at the same deal to guard against.
+  record(q.id, ok);
+  render();
+}
+function gauntletAdvance(){
+  const g = state.gauntlet;
+  if(g.lives <= 0 || g.idx + 1 >= g.run.length){ g.phase = "over"; render(); return; }
+  g.idx++; gauntletArm(); render();
+}
+function gauntletGrade(g){
+  const served = g.answers.length;
+  const pct = served ? g.score / gauntletPerfect(served) : 0;
+  const hit = GAUNTLET_GRADES.find(gr => pct >= gr[1]);
+  return {served, pct, grade: hit ? hit[0] : "none"};
+}
+const gauntletDomName = (deck, d) =>
+  ((deck.domains || {})[d]) || t("gauntlet.domainLabel", {n: d});
+
+function renderGauntlet(){
+  // Any re-render invalidates a live countdown; the live branch below re-arms
+  // it. Every other path — reveal, end screen, empty pool — leaves it stopped.
+  gauntletStopClock();
+  if(!state.gauntlet) dealGauntlet();
+  const g = state.gauntlet;
+  // An area filter can leave the game with nothing to sample. The home screen
+  // hides an empty game, so this is a backstop, matching the board's.
+  if(!g.run.length){
+    main.innerHTML = backBar(state.game.title) + `<div class="panel empty">
+      <h2>${esc(t("board.emptyAreaHeader", {area: state.area==="all" ? (LAB.allLabel||"this lab") : state.area}))}</h2>
+      <p>${esc(t("board.emptyAreaText"))}</p></div>`;
+    wireBack();
+    return;
+  }
+  if(g.phase === "over") return gauntletRenderEnd();
+
+  const q = g.run[g.idx], secs = gauntletSecs(q), reveal = g.phase === "reveal";
+  const hearts = Array.from({length: GAUNTLET_LIVES},
+    (_, i) => `<i class="${i < g.lives ? "" : "spent"}">${i < g.lives ? "♥" : "♡"}</i>`).join("");
+  const left = reveal ? 0 : Math.max(0, g.deadline - Date.now());
+  const hud = `<div class="g-hud">
+    <span class="g-lives" aria-label="${esc(t("gauntlet.livesLabel", {n: g.lives}))}">${hearts}</span>
+    <span>${esc(t("gauntlet.scoreLabel", {score: g.score}))}</span>
+    <span>${esc(t("gauntlet.streakLabel", {mult: gauntletMult(g.streak).toFixed(1)}))}</span>
+    <div class="g-clock${!reveal && left <= 5000 ? " low" : ""}" id="g-clock">
+      <i id="g-clock-fill" style="width:${reveal ? 0 : Math.round(left / (secs*1000) * 100)}%"></i></div>
+    <span class="g-secs" id="g-secs">${esc(t("gauntlet.secondsLeft", {n: Math.ceil(left/1000)}))}</span>
+    <span class="badge">${t("gauntlet.badgeQuestion", {n: g.idx+1, total: g.run.length})}</span></div>`;
+
+  let body = hud + `<p class="hint">${esc(t("gauntlet.hint", {lives: GAUNTLET_LIVES}))}</p>
+    <p class="g-stem">${esc(q.label)}</p><div class="pick">` +
+    g.options.map(o => {
+      let cls = "";
+      // Three states, three looks: the answer you got right, the answer you
+      // never gave because the clock beat you, and the one you picked wrongly.
+      if(reveal) cls = o === q.answer ? (g.pick === null ? "correct lapsed" : "correct")
+                                      : (g.pick === o ? "wrong" : "");
+      return `<button class="${cls}" data-opt="${esc(o)}" ${reveal ? "disabled" : ""}>${esc(o)}</button>`;
+    }).join("") + `</div>`;
+
+  if(reveal){
+    const ok = g.pick === q.answer;
+    const verdict = ok ? t("gauntlet.verdictCorrect")
+                       : g.pick === null ? t("gauntlet.verdictLapsed") : t("gauntlet.verdictWrong");
+    const note = ok ? t("gauntlet.gainBadge", {gain: g.gain, mult: gauntletMult(g.streak - 1).toFixed(1)})
+                    : t("gauntlet.lifeLostBadge", {n: g.lives});
+    const last = g.lives <= 0 || g.idx + 1 >= g.run.length;
+    body += `<div class="reveal">
+      <p class="score ${ok ? "ok" : g.pick === null ? "mid" : "no"}">${esc(verdict)}</p>
+      <div class="row" style="margin:0 0 10px"><span class="badge">${esc(note)}</span></div>
+      <p class="why">${esc(q.why)}</p>
+      <p class="cite">${esc(q.ref)}</p>
+      <div class="row"><button class="btn" id="g-next">${esc(last
+        ? t("gauntlet.finishButton") : t("gauntlet.nextButton"))}</button></div></div>`;
+  }
+
+  main.innerHTML = backBar(state.game.title) + `<div class="panel">${body}</div>`;
+  wireBack();
+  main.querySelectorAll(".pick button[data-opt]").forEach(b =>
+    b.onclick = () => gauntletResolve(b.dataset.opt));
+  const nx = document.getElementById("g-next");
+  if(nx) nx.onclick = gauntletAdvance;
+
+  if(g.phase !== "live") return;
+  const fill = document.getElementById("g-clock-fill");
+  const tick = () => {
+    // Self-guarding, the way the campaign's regulator countdown is: if the
+    // game was left, the run restarted, the language switched or the screen
+    // was rebuilt, the interval clears itself rather than ticking against a
+    // DOM that no longer exists.
+    if(!state.game || state.game.runner !== "gauntlet" || state.gauntlet !== g
+       || g.phase !== "live" || !fill.isConnected) return gauntletStopClock();
+    const ms = g.deadline - Date.now();
+    if(ms <= 0) return gauntletResolve(null);
+    fill.style.width = Math.min(100, ms / (secs*1000) * 100) + "%";
+    const el = document.getElementById("g-secs");
+    if(el) el.textContent = t("gauntlet.secondsLeft", {n: Math.ceil(ms/1000)});
+    if(ms <= 5000) fill.parentNode.classList.add("low");
+  };
+  gauntletClock = setInterval(tick, 100);
+  tick();
+}
+function gauntletRenderEnd(){
+  const g = state.gauntlet, deck = state.game.payload();
+  const {served, pct, grade} = gauntletGrade(g);
+  const right = g.answers.filter(a => a.ok).length;
+  const medal = {gold:"🥇", silver:"🥈", bronze:"🥉", none:"—"}[grade];
+  const dead = g.lives <= 0;
+
+  // One bar per domain the run actually served, in blueprint order.
+  const doms = [...new Set(g.answers.map(a => a.domain))].sort();
+  const bars = doms.map(d => {
+    const rows = g.answers.filter(a => a.domain === d);
+    const hit = rows.filter(a => a.ok).length;
+    return `<div class="g-dom"><span>${esc(gauntletDomName(deck, d))}</span>
+      <div class="g-bar"><i class="right" style="width:${hit/rows.length*100}%"></i
+        ><i class="wrong" style="width:${(rows.length-hit)/rows.length*100}%"></i></div>
+      <span>${t("gauntlet.domainScore", {right: hit, total: rows.length})}</span></div>`;
+  }).join("");
+
+  const qOf = id => g.run.find(q => q.id === id);
+  const missed = g.answers.filter(a => !a.ok);
+  const missList = missed.length
+    ? `<ul>` + missed.map(a => {
+        const q = qOf(a.id);
+        return `<li><b class="${a.lapsed ? "lapse" : "miss"}">${a.lapsed ? "⏱" : "✗"} ${esc(q.label)}</b>
+          <span>${esc(a.lapsed ? t("gauntlet.missLapsed", {answer: q.answer})
+                                : t("gauntlet.missWrong", {said: a.pick, answer: q.answer}))} ${esc(q.why)}</span>
+          <span class="cite">${esc(q.ref)}</span></li>`;
+      }).join("") + `</ul>`
+    : `<p class="why">${esc(t("gauntlet.missNone"))}</p>`;
+
+  let body = `<div class="g-grade ${grade}"><span class="medal">${medal}</span>
+      <span>${esc(t("gauntlet.gradeLine", {grade: t("gauntlet.grade_" + grade),
+                                           pct: Math.round(pct*100)}))}</span></div>
+    <p class="score ${grade==="gold"||grade==="silver" ? "ok" : grade==="bronze" ? "mid" : "no"}">
+      ${esc(t("gauntlet.scoreFinal", {score: g.score}))}</p>
+    <div class="row" style="margin:0 0 4px">
+      <span class="badge">${t("gauntlet.badgeRight", {right, total: served})}</span>
+      <span class="badge">${t("gauntlet.badgeStreak", {n: g.best})}</span>
+      <span class="badge">${dead ? t("gauntlet.badgeDead") : t("gauntlet.badgeLives", {n: g.lives})}</span></div>
+    <div class="dim-note"><b>${esc(t("gauntlet.domainHeading"))}</b><div class="g-doms">${bars}</div></div>
+    <div class="reveal"><p class="score ${missed.length ? "no" : "ok"}">${esc(t("gauntlet.missHeading"))}</p>
+      ${missList}`;
+
+  const cites = [...new Set(g.answers.map(a => (qOf(a.id) || {}).ref).filter(Boolean))];
+  const ctx = t("gauntlet.promptContext", {served, right, grade: t("gauntlet.grade_" + grade)});
+  body += aiLinks(explainPrompt(state.game.title,
+    g.answers.map(a => { const q = qOf(a.id); return {label:q.label, answer:q.answer, why:q.why}; }),
+    ctx + "; " + cites.join("; ")), esc(t("gauntlet.explainLink")));
+  if(missed.length){
+    body += aiLinks(deepenPrompt(state.game.title, missed.map(a => {
+      const q = qOf(a.id);
+      return {label:q.label, said: a.pick === null ? t("gauntlet.saidNothing") : a.pick,
+              answer:q.answer, why:q.why};
+    }), ctx), esc(t("gauntlet.deepenLink")));
+  }
+  // Same confident-miss sweep the board offers: the questions you thought you
+  // had right come back soonest.
+  if(missed.length && !state.sweep){
+    body += `<div class="sweep"><p><strong>${esc(t("board.sweepHint", {n: missed.length}))}</strong></p>
+      <div class="row" style="margin:0">` + missed.map(a => {
+        const q = qOf(a.id);
+        return `<button class="btn ghost" data-cw="${esc(q.id)}">${esc(q.label.slice(0,44))}${q.label.length>44?"…":""}</button>`;
+      }).join("") + `<button class="btn" data-cw="none">${esc(t("board.sweepNone"))}</button></div></div>`;
+  }
+  body += `<div class="row"><button class="btn" id="g-again">${esc(t("gauntlet.restartButton"))}</button></div></div>`;
+
+  main.innerHTML = backBar(state.game.title) + `<div class="panel">${body}</div>`;
+  wireBack(); wireAiLinks();
+  main.querySelectorAll("[data-cw]").forEach(x => x.onclick = () => {
+    if(x.dataset.cw!=="none") markConfidentlyWrong(x.dataset.cw);
+    x.disabled = true; x.classList.remove("ghost");
+    if(x.dataset.cw==="none"){ state.sweep=true; render(); }
+  });
+  document.getElementById("g-again").onclick = () => {
+    state.sweep = null; dealGauntlet(); render();
+  };
 }
 
 /* -------------------------------------------------------------------- map */
@@ -1659,13 +2255,13 @@ function renderMap(){
         held.map(i=>`<span class="held">${esc(i.label)}</span>`).join("")}</button>`;
   }).join("");
 
-  let body = `<p class="hint">${esc(isCoarse() ? "Tap a card, then choose where it belongs." : MAP.prompt)}</p>
+  let body = `<p class="hint">${esc(isCoarse() ? t("map.hintScroll") : MAP.prompt)}</p>
     <div class="legend">${MAP.legend.map(l=>`<span class="badge">${esc(l.label)}</span>`).join("")}</div>
-    <p class="map-hint">Scroll the map sideways to reach every jurisdiction.</p>
+    <p class="map-hint">${esc(t("map.hintScroll"))}</p>
     <div class="map-wrap"><div class="map">
       <svg class="map-svg" viewBox="0 0 1016.371 514.609" preserveAspectRatio="none"
         aria-hidden="true"><!--__WORLD_MAP__--></svg>${pins}</div></div>
-    <p class="cite">Base map: “Simplified World Map” by Guilherme de Souza Vieira, via Wikimedia
+    <p class="cite">Base map: "Simplified World Map" by Guilherme de Souza Vieira, via Wikimedia
       Commons, licensed <a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank"
       rel="noopener noreferrer">CC BY-SA 3.0</a>. Modified: metadata stripped, coordinate precision
       reduced, fills removed so the land follows the page theme.</p>
@@ -1675,13 +2271,13 @@ function renderMap(){
   if(!state.checked){
     const placed = items.length - bank.length;
     body += `<div class="row"><button class="btn" id="check" ${bank.length?"disabled":""}>
-      ${bank.length?`Place all ${items.length}`:"Check the map"}</button>
-      <button class="btn ghost" id="clear" ${placed?"":"disabled"}>Clear map</button>
-      <span class="badge">${placed} of ${items.length} placed</span></div>`;
+      ${bank.length?esc(t("map.placeAllButton", {n: items.length})):esc(t("map.checkButton"))}</button>
+      <button class="btn ghost" id="clear" ${placed?"":"disabled"}>${esc(t("map.clearButton"))}</button>
+      <span class="badge">${t("map.badgePlaced", {placed: placed, total: items.length})}</span></div>`;
   }else{
     const right = items.filter(i => state.placed[i.id]===i.answer);
     body += `<div class="reveal"><p class="score ${right.length===items.length?"ok":"no"}">
-      ${right.length} of ${items.length}</p><ul>` + items.map(i => {
+      ${t("map.scoreLine", {right: right.length, total: items.length})}</p><ul>` + items.map(i => {
         const j = js.find(x=>x.id===i.answer); const ok = state.placed[i.id]===i.answer;
         return `<li><b class="${ok?"hit":"miss"}">${ok?"✓":"✗"} ${esc(i.label)} — ${esc(j.name)}</b>
           <span>${esc(j.tell)} <em>Effective ${esc(j.effective)}.</em></span></li>`;
@@ -1693,16 +2289,16 @@ function renderMap(){
               why:`${j.tell} Effective ${j.effective}. Obligations: ${j.obligations.join("; ")}`};
     });
     body += aiLinks(explainPrompt("Jurisdiction Map", asItems,
-      "matching AI instruments to the jurisdictions that enacted them"), "Explain these jurisdictions:");
+      "matching AI instruments to the jurisdictions that enacted them"), esc(t("map.explainLink")));
     const missedMap = items.filter(i => state.placed[i.id]!==i.answer);
     if(missedMap.length){
       body += aiLinks(deepenPrompt("Jurisdiction Map", missedMap.map(i => {
         const j=js.find(x=>x.id===i.answer), g=js.find(x=>x.id===state.placed[i.id]);
         return {label:i.label, said:g?g.name:"nothing", answer:j.name, why:j.tell};
-      }), "global AI regulation"), "Go deeper on what you missed:");
+      }), "global AI regulation"), esc(t("map.deepenLink")));
     }
-    body += `<div class="row"><button class="btn" id="next">Next round →</button>
-      <button class="btn ghost" id="retry">Replay this round</button></div></div>`;
+    body += `<div class="row"><button class="btn" id="next">${esc(t("map.nextButton"))}</button>
+      <button class="btn ghost" id="retry">${esc(t("map.retryButton"))}</button></div></div>`;
   }
   main.innerHTML = backBar(state.game.title) + `<div class="panel">${body}</div>`;
   wireBack();
@@ -1732,15 +2328,22 @@ function renderMap(){
   };
 }
 
-/* ------------------------------------------------- regulatory risk (rr) */
+/* -------------------------------------- opsCampaign runner (rr code path) */
 // Slice 1: adapter + campaign persistence + S1 role select + S2 tinted
 // board. Slice 2: the S3 action screen (expand gate / defend / consolidate),
 // card draws per ADD §3.3, record(card.id, ok) at every submit, pending
 // persistence + resume per ADD §3.4, and the §1.3 capital/notice mutations
 // with the nexus rule. Slice 3 adds the regulator phase, the US inset sheet
 // and the debrief on top of the same module-level helpers. Every id handed
-// to record() is an ii-rr-* card id; no localStorage key this game touches
+// to record() is a campaign card id; no localStorage key this game touches
 // ever ends in "-map".
+//
+// The runner is theme-agnostic (beta.1 opsCampaign parameterization): every
+// piece of AIGP theater — copy, currency glyph, tier letters, inset ids,
+// storage keys, default picks — resolves from the game's own deck first and
+// falls back to the aigpRisk values, so the shipped AIGP lab behaves exactly
+// as before while a campaign deck with `copy`/config overrides (SOC Shift
+// Command) reskins the whole loop without touching this code.
 const RR_KEY = "rr-campaign-v1", RR_META_KEY = "rr-meta-v1";
 const RR_COV_LETTER = {comprehensive:"C", sectoral:"S", voluntary:"V",
                        proposed:"P", none:"—", treaty:"T"};
@@ -1748,20 +2351,60 @@ const RR_COV_LETTER = {comprehensive:"C", sectoral:"S", voluntary:"V",
 // world-map hit targets; the US pin carries the ⊞ 5 chip instead.
 const RR_INSET_IDS = ["map-us-co","map-us-il","map-us-tx","map-us-nyc","map-us-ca"];
 
-function rrData(){ return state.game.payload(); }        // {campaign, map}
+function rrData(){ return state.game.payload(); }        // {campaign, map?}
 function rrCfg(){ return rrData().campaign.config; }
-function rrJur(mapId){ return rrData().map.jurisdictions.find(j => j.id===mapId); }
+// Map-less campaigns (opsCampaign generic decks) carry name/short/coverage on
+// the territory entries themselves; a map deck joins against map.jurisdictions.
+function rrJurisAll(){
+  const m = rrData().map;
+  return m ? m.jurisdictions
+           : rrData().campaign.territories.map(x => ({id:x.mapId, ...x}));
+}
+function rrJur(mapId){ return rrJurisAll().find(j => j.id===mapId); }
+// Copy layer: campaign.copy[key] (deck-authored theater, {var} interpolation
+// like t()) wins over the built-in rr.* i18n strings. A deck with no copy
+// object — the AIGP campaign — resolves every key exactly as before.
+function rrT(key, vars){
+  const cp = rrData().campaign.copy;
+  let s = cp && cp[key] != null ? cp[key] : null;
+  if(s == null) return t("rr." + key, vars);
+  if(vars) for(const k in vars) s = s.split("{"+k+"}").join(vars[k]);
+  return s;
+}
+function rrCur(){ return rrCfg().currency || "₿"; }
+function rrCovLetter(tier){ return (rrCfg().tierLetters || RR_COV_LETTER)[tier] || "?"; }
+function rrInsetIds(){ return rrCfg().insetIds || RR_INSET_IDS; }
+function rrInsetParent(){ return rrCfg().insetParent || "map-us"; }
+function rrOpsRequired(){ return rrCfg().opsRequired || 2; }
+function rrDefaultPick(){
+  const C = rrData().campaign, cfg = C.config, hats = C.hats || [];
+  return {role:cfg.defaultRole
+            || ((C.roles.find(r => r.id==="deployer") || C.roles[0]).id),
+          hat:cfg.defaultHat
+            || ((hats.find(h => h.id==="dpo") || hats[0] || {}).id),
+          ops:[]};
+}
+// Storage keys per game (spec §2.3): config.storagePrefix ("ns" → the
+// ns-campaign-v1 / ns-meta-v1 pair) with the aigpRisk "rr" pair as default.
+function rrKeys(){
+  const cfg = rrCfg(), p = cfg.storagePrefix || "rr";
+  return {camp:p === "rr" ? RR_KEY : p + "-campaign-v1",
+          meta:p === "rr" ? RR_META_KEY : p + "-meta-v1",
+          legacy:cfg.legacyKeys || []};
+}
 
 function rrMeta(){
   let m = null;
-  try{ m = JSON.parse(localStorage.getItem(RR_META_KEY) || "null"); }catch(e){}
+  try{ m = JSON.parse(localStorage.getItem(rrKeys().meta) || "null"); }catch(e){}
   if(!m || m.v !== 1) m = {v:1, campaignCount:0, baseSeed:(Date.now() % 2147483647) || 1};
   return m;
 }
-function rrMetaSave(m){ try{ localStorage.setItem(RR_META_KEY, JSON.stringify(m)); }catch(e){} }
+function rrMetaSave(m){ try{ localStorage.setItem(rrKeys().meta, JSON.stringify(m)); }catch(e){} }
 
 // The live campaign. undefined = storage not read yet; null = no campaign.
-let rrCamp;
+// Cached per storage key: a lab can host several opsCampaign games, and a
+// cache loaded for one game's key must never be served under another's.
+let rrCamp, rrCampKey;
 let rrStaleNote = false;   // saved campaign from an older version was discarded
 // Shape + range validation on load (playtest wave 1): a v:1 blob with the
 // wrong types (log not an Array, held not a plain object, pending truthy but
@@ -1779,10 +2422,20 @@ function rrValidCampaign(c){
   return true;
 }
 function rrState(){
-  if(rrCamp !== undefined) return rrCamp;
+  const keys = rrKeys();
+  if(rrCamp !== undefined && rrCampKey === keys.camp) return rrCamp;
+  rrCampKey = keys.camp;
+  rrStaleNote = false;
   rrCamp = null;
+  // Migration hook (spec §2.3): storage left behind by a retired runner under
+  // this game's id — e.g. Night Shift's gauntlet-era keys — is detected and
+  // discarded on first load, never semantically reused. SR record() history
+  // lives in the lab-wide progress key and is untouched.
+  keys.legacy.forEach(k => {
+    try{ if(localStorage.getItem(k) != null) localStorage.removeItem(k); }catch(e){}
+  });
   try{
-    const raw = localStorage.getItem(RR_KEY);
+    const raw = localStorage.getItem(keys.camp);
     if(raw){
       const c = JSON.parse(raw);
       if(rrValidCampaign(c)){
@@ -1801,7 +2454,7 @@ function rrState(){
 function rrSave(){
   if(!rrCamp) return;
   rrCamp.updatedAt = new Date().toISOString();
-  try{ localStorage.setItem(RR_KEY, JSON.stringify(rrCamp)); }catch(e){}
+  try{ localStorage.setItem(rrKeys().camp, JSON.stringify(rrCamp)); }catch(e){}
 }
 function rrStart(role, hat, ops){
   const meta = rrMeta();
@@ -1818,8 +2471,8 @@ function rrStart(role, hat, ops){
   rrSave();
 }
 function rrClear(){
-  rrCamp = null; rrStaleNote = false;
-  try{ localStorage.removeItem(RR_KEY); }catch(e){}
+  rrCamp = null; rrCampKey = rrKeys().camp; rrStaleNote = false;
+  try{ localStorage.removeItem(rrKeys().camp); }catch(e){}
 }
 
 // Joined territory view: campaign entry + map jurisdiction + tier config +
@@ -1839,7 +2492,8 @@ function rrTerr(mapId){
   // the view (always true) for compatibility with older consumers.
   const u = t.unlock;
   const unlocked = true;
-  return {mapId, name:j.name, short:j.short, sid:mapId.slice(4), tier:j.coverage,
+  return {mapId, name:j.name, short:j.short,
+          sid:mapId.indexOf("map-")===0 ? mapId.slice(4) : mapId, tier:j.coverage,
           gateSize:tier.gateSize, market:tier.market, noticeOnFail:tier.noticeOnFail,
           entryCost:tier.entryCost || 0,
           unlock:u, opsHooks:t.opsHooks, teach:t.teach, roleSensitive:t.roleSensitive,
@@ -1852,6 +2506,7 @@ function rrTerr(mapId){
 // opacity channel; notices add a stroke + a hatch clone in #rr-fx; the CoE
 // ring is stroke-only. Idempotent — safe to call after every state change.
 function rrTint(){
+  if(!rrData().map) return;   // list-only campaign: no svg surfaces to tint
   // All .rr-svg surfaces tint together: the world map and, when the US inset
   // sheet is open, its five hand-authored state shapes share the same classes.
   document.querySelectorAll(".rr-svg").forEach(svg => {
@@ -1883,11 +2538,11 @@ function rrGrade(score){
 }
 
 function rrStatusText(v){
-  const notice = v.noticeLevel ? ` · ⚑ L${v.noticeLevel} notice` : "";
-  if(v.suspended) return `SUSPENDED — L3 enforcement${notice}`;
-  if(v.held) return `HELD · market +${v.market}${notice}`;
-  const entry = v.entryCost ? ` · entry −₿${v.entryCost}` : "";
-  return `OPEN · ${v.gateSize}-Q gate${entry} · market ${v.market}${notice}`;
+  const notice = v.noticeLevel ? rrT("status_notice_frag", {level:v.noticeLevel}) : "";
+  if(v.suspended) return rrT("status_suspended") + notice;
+  if(v.held) return rrT("status_held", {market:v.market}) + notice;
+  const entry = v.entryCost ? rrT("status_entry_frag", {entryCost:v.entryCost}) : "";
+  return rrT("status_open", {gateSize:v.gateSize, entry, market:v.market}) + notice;
 }
 
 // Launch/Expand button shared by the board list and the US inset sheet.
@@ -1897,10 +2552,10 @@ function rrStatusText(v){
 function rrExpandBtn(v, camp, acted){
   const cost = v.entryCost || 0;
   const poor = cost > 0 && camp.capital <= cost;
-  const label = (Object.keys(camp.held).length ? "Expand" : "Launch")
-    + (cost ? ` −₿${cost}` : "");
+  const label = (Object.keys(camp.held).length ? rrT("btn_expand") : rrT("btn_launch"))
+    + (cost ? ` −${rrCur()}${cost}` : "");
   const hint = poor
-    ? ` title="Entry costs ₿${cost} and you hold ₿${camp.capital} — entering would bust you"` : "";
+    ? ` title="${esc(rrT("entry_would_bust", {cost, capital:camp.capital}))}"` : "";
   return `<button class="btn rr-act" data-rr-act="expand"
     data-rr-terr="${v.mapId}"${(acted || poor) ? " disabled" : ""}${hint}>${label}</button>`;
 }
@@ -1911,8 +2566,8 @@ function rrStopRegTimer(){ if(rrRegTimer){ clearInterval(rrRegTimer); rrRegTimer
 function renderRisk(){
   // Any screen re-render invalidates a live countdown; the board re-arms it.
   rrStopRegTimer();
-  if(!state.rr) state.rr = {screen:null, sel:null, action:null, confirmAbandon:false,
-                            pick:{role:"deployer", hat:"dpo", ops:[]}};
+  if(!state.rr) state.rr = {gameId:state.game.id, screen:null, sel:null, action:null,
+                            confirmAbandon:false, pick:rrDefaultPick()};
   if(!state.rr.screen) state.rr.screen = rrState() ? "board" : "role";
   const s = state.rr.screen;
   if(s === "role") return rrRenderRole();
@@ -1928,27 +2583,30 @@ function renderRisk(){
 /* S1 — role select */
 function rrRenderRole(){
   const C = rrData().campaign, cfg = C.config, p = state.rr.pick;
+  const hats = C.hats || [], need = rrOpsRequired();
   const role = C.roles.find(r => r.id===p.role);
-  const hat = C.hats.find(h => h.id===p.hat);
+  const hat = hats.find(h => h.id===p.hat);
   const one = (items, key) => `<div class="pick">` + items.map(o =>
     `<button data-rr-pick="${key}" data-rr-val="${o.id}"
        aria-pressed="${key==="ops" ? p.ops.includes(o.id) : p[key]===o.id}">${esc(o.name)}</button>`)
     .join("") + `</div>`;
-  const stale = rrStaleNote ? `<p class="dim-note hint">Saved campaign is from an older
-    version — starting fresh.</p>` : "";
+  const stale = rrStaleNote ? `<p class="dim-note hint">${esc(rrT("stale_campaign_note"))}</p>` : "";
+  // A campaign without hats (opsCampaign decks that only pick role + loadout)
+  // simply omits the field; the AIGP campaign keeps its three hats.
+  const hatField = hats.length ? `
+    <div class="field"><label>${esc(rrT("hat_label"))}</label>
+      ${one(hats, "hat")}
+      <p class="hint" style="margin:8px 0 0">${esc(hat ? hat.blurb : "")}</p></div>` : "";
   const body = `<p class="hint">${esc(C.prompt)}</p>${stale}
-    <div class="field"><label>Legal role — decides which gate and defend questions you face</label>
+    <div class="field"><label>${esc(rrT("role_label"))}</label>
       ${one(C.roles, "role")}
-      <p class="hint" style="margin:8px 0 0">${esc(role ? role.definition : "")}</p></div>
-    <div class="field"><label>Org hat — flavours the regulator event deck only</label>
-      ${one(C.hats, "hat")}
-      <p class="hint" style="margin:8px 0 0">${esc(hat ? hat.blurb : "")}</p></div>
-    <div class="field"><label>Declared operations — pick exactly 2 (they decide where regulators have a nexus)</label>
+      <p class="hint" style="margin:8px 0 0">${esc(role ? role.definition : "")}</p></div>${hatField}
+    <div class="field"><label>${esc(rrT("ops_label"))}</label>
       ${one(C.operations, "ops")}
-      <p class="rr-opscount">${p.ops.length} of 2 chosen${p.ops.length===2 ? " — ready" : ""}</p></div>
-    <div class="row"><button class="btn" id="rr-start" ${p.ops.length===2 ? "" : "disabled"}>
-      ${p.ops.length===2 ? "Start campaign" : "Pick 2 operations"}</button>
-      <span class="badge">${cfg.turns} turns · ₿ ${cfg.startCapital} start · cap ${cfg.capitalCap}</span></div>`;
+      <p class="rr-opscount">${rrT("ops_badge_count", {n:p.ops.length})}${p.ops.length===need ? rrT("ops_badge_ready") : ""}</p></div>
+    <div class="row"><button class="btn" id="rr-start" ${p.ops.length===need ? "" : "disabled"}>
+      ${p.ops.length===need ? rrT("start_button") : rrT("pick_ops_button")}</button>
+      <span class="badge">${rrT("campaign_badge", {turns:cfg.turns, start:cfg.startCapital, cap:cfg.capitalCap})}</span></div>`;
   main.innerHTML = backBar(state.game.title) + `<div class="panel">${body}</div>`;
   wireBack();
   main.querySelectorAll("[data-rr-pick]").forEach(b => b.onclick = () => {
@@ -1956,13 +2614,13 @@ function rrRenderRole(){
     if(key === "ops"){
       const i = p.ops.indexOf(val);
       if(i >= 0) p.ops.splice(i, 1);
-      else if(p.ops.length < 2) p.ops.push(val);
+      else if(p.ops.length < rrOpsRequired()) p.ops.push(val);
     }else p[key] = val;
     render();
   });
   const st = document.getElementById("rr-start");
   if(st) st.onclick = () => {
-    if(p.ops.length !== 2) return;
+    if(p.ops.length !== rrOpsRequired()) return;
     rrStart(p.role, p.hat, p.ops);
     state.rr.screen = "board"; state.rr.sel = null;
     render();
@@ -2000,30 +2658,34 @@ function rrRenderBoard(){
   // action, derived from the log rather than a separate flag.
   const acted = camp.log.some(l => l.t === camp.turn
     && ["expand","defend","consolidate"].includes(l.a));
-  const views = M.jurisdictions.map(j => rrTerr(j.id));
+  // A map deck derives the board from map.jurisdictions; a map-less campaign
+  // (opsCampaign generic deck) lists its territories directly.
+  const views = (M ? M.jurisdictions.map(j => rrTerr(j.id))
+                   : rrData().campaign.territories.map(x => rrTerr(x.mapId)))
+    .filter(Boolean);
 
   const regBtn = `<button class="btn${acted ? "" : " ghost"} rr-reg">
-      ${acted ? "Regulator phase →" : "Pass the turn → regulator phase"}</button>`;
+      ${acted ? rrT("regulator_phase_button") : rrT("pass_turn_button")}</button>`;
   // The top copy lives INSIDE the sticky turn bar; the countdown targets the
   // .rr-reg class, so it keeps ticking here too. Narrow screens get a compact
   // label so the bar wraps vertically rather than scrolling horizontally.
   const narrow = window.matchMedia("(max-width:700px)").matches;
   const hudReg = `<button class="btn${acted ? "" : " ghost"} rr-reg">
-      ${acted ? "Regulator phase →" : (narrow ? "Pass turn →" : "Pass the turn → regulator phase")}</button>`;
-  const hud = `<div class="rr-hud" id="rr-hud"><span>TURN ${camp.turn}/${cfg.turns}</span>
-    <span>₿ ${camp.capital}</span><span>⚑ ${camp.notices.length}</span>
+      ${acted ? rrT("regulator_phase_button") : (narrow ? rrT("pass_turn_narrow") : rrT("pass_turn_button"))}</button>`;
+  const hud = `<div class="rr-hud" id="rr-hud"><span>${rrT("hud_turn_label", {turn: camp.turn, totalTurns: cfg.turns})}</span>
+    <span>${rrCur()} ${camp.capital}</span><span>${rrT("hud_notice_icon", {n: camp.notices.length})}</span>
     <div class="meter"><i style="width:${Math.round((camp.turn-1)/cfg.turns*100)}%"></i></div>
     ${hudReg}</div>`;
 
-  const hits = views.filter(v => !RR_INSET_IDS.includes(v.mapId)).map(v => {
+  const hits = !M ? "" : views.filter(v => !rrInsetIds().includes(v.mapId)).map(v => {
     const j = rrJur(v.mapId);
     const glyph = (v.noticeLevel || v.suspended) ? "▨" : v.held ? "●" : "◍";
     // Desktop-only 5-dot substate mirror under the US pin (ADD §5.4).
-    const dots = v.mapId==="map-us" ? `<span class="rr-usdots">` + RR_INSET_IDS.map(id => {
+    const dots = v.mapId===rrInsetParent() ? `<span class="rr-usdots">` + rrInsetIds().map(id => {
       const sv = rrTerr(id);
       return `<i style="background:var(--cov-${sv.tier});opacity:${sv.held ? 1 : .35}"></i>`;
     }).join("") + `</span>` : "";
-    const chip = v.mapId==="map-us" ? `<span class="rr-chip">⊞ 5</span>${dots}` : "";
+    const chip = v.mapId===rrInsetParent() ? `<span class="rr-chip">⊞ ${rrInsetIds().length}</span>${dots}` : "";
     // Desktop pin labels consume the same labelDx/labelDy nudges (map-%) the
     // Jurisdiction Map uses, converted to px at the capped desktop map width
     // (~1050×532), so clustered labels (EU/CoE/CH) can be separated in data.
@@ -2048,26 +2710,27 @@ function rrRenderBoard(){
       ${lead}<span class="rr-glyph">${glyph}</span><span class="rr-pinlab"${nudge}>${esc(v.sid.toUpperCase())}</span>${chip}</button>`;
   }).join("");
 
-  const legend = `<div class="rr-legend">` + M.legend.map(l =>
-    `<span><i class="rr-badge cov-${l.key}">${RR_COV_LETTER[l.key] || "?"}</i>${esc(l.label)}</span>`)
+  const legendSrc = (M ? M.legend : rrData().campaign.legend) || [];
+  const legend = !legendSrc.length ? "" : `<div class="rr-legend">` + legendSrc.map(l =>
+    `<span><i class="rr-badge cov-${l.key}">${rrCovLetter(l.key)}</i>${esc(l.label)}</span>`)
     .join("") + `</div>`;
 
   const row = v => {
     const dis = acted ? " disabled" : "";
     let acts = "";
     if(v.noticeLevel) acts += `<button class="btn rr-act" data-rr-act="defend"
-      data-rr-terr="${v.mapId}"${dis}>Defend</button>`;
+      data-rr-terr="${v.mapId}"${dis}>${rrT("defend_button")}</button>`;
     if(v.held){
       const consDone = (camp.held[v.mapId].consolidates || 0) >= rrConsLimit(v.mapId);
       acts += `<button class="btn ghost rr-act" data-rr-act="consolidate"
         data-rr-terr="${v.mapId}"${consDone ? " disabled" : dis}>${consDone
-        ? "Consolidated ✓" : "Consolidate"}</button>`;
+        ? rrT("consolidate_done") : rrT("consolidate_button")}</button>`;
     }
     else acts += rrExpandBtn(v, camp, acted);
-    if(v.mapId==="map-us") acts += `<button class="btn ghost rr-act" data-rr-inset="1">⊞ States</button>`;
+    if(v.mapId===rrInsetParent()) acts += `<button class="btn ghost rr-act" data-rr-inset="1">${rrT("inset_button")}</button>`;
     return `<div class="rr-row${state.rr.sel===v.mapId ? " rr-rowsel" : ""}"
       id="rr-row-${v.mapId}">
-      <span class="rr-badge cov-${v.tier}">${RR_COV_LETTER[v.tier] || "?"}</span>
+      <span class="rr-badge cov-${v.tier}">${rrCovLetter(v.tier)}</span>
       <div class="rr-tinfo"><b>${esc(v.name)}</b><em>${esc(rrStatusText(v))}</em></div>
       <div class="rr-acts">${acts}</div></div>`;
   };
@@ -2075,23 +2738,24 @@ function rrRenderBoard(){
     ? `<div class="rr-group">${label}</div>` + vs.map(row).join("") : "";
   const heldVs = views.filter(v => v.held);
   const openVs = views.filter(v => !v.held);
-  const list = `<div class="rr-list">${grp(`Held (${heldVs.length})`, heldVs)}
-    ${grp(`Open to expand (${openVs.length})`, openVs)}</div>`;
+  const list = `<div class="rr-list">${grp(rrT("held_group", {n: heldVs.length}), heldVs)}
+    ${grp(rrT("open_group", {n: openVs.length}), openVs)}</div>`;
 
-  const body = `${hud}<p class="hint">${acted
-      ? "Action taken this turn — run the regulator phase to end the turn."
-      : esc(rrData().campaign.prompt)
-        + " Every action lives in the list below — map taps just jump to a territory."}</p>
-    ${legend}
-    <div class="rr-map"><svg class="rr-svg" viewBox="0 0 1016.371 514.609"
+  const mapBlock = !M ? "" : `<div class="rr-map"><svg class="rr-svg" viewBox="0 0 1016.371 514.609"
       preserveAspectRatio="none" aria-hidden="true"><!--__WORLD_MAP__--></svg>${hits}</div>
-    <p class="cite">Base map: “Simplified World Map” by Guilherme de Souza Vieira, via Wikimedia
+    <p class="cite">Base map: "Simplified World Map" by Guilherme de Souza Vieira, via Wikimedia
       Commons, licensed <a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank"
       rel="noopener noreferrer">CC BY-SA 3.0</a>. Modified: metadata stripped, coordinate precision
-      reduced, fills removed so the land follows the page theme; paths classified by territory for per-mode tinting.</p>
+      reduced, fills removed so the land follows the page theme; paths classified by territory for per-mode tinting.</p>`;
+  const body = `${hud}<p class="hint">${acted
+      ? rrT("action_taken_hint")
+      : esc(rrData().campaign.prompt)
+        + (M ? " " + rrT("map_hint_suffix") : "")}</p>
+    ${legend}
+    ${mapBlock}
     ${list}
     <div class="row">${regBtn}
-      <button class="btn ghost" id="rr-abandon">${state.rr.confirmAbandon ? "Really abandon?" : "Abandon campaign"}</button></div>`;
+      <button class="btn ghost" id="rr-abandon">${state.rr.confirmAbandon ? rrT("abandon_confirm") : rrT("abandon_button")}</button></div>`;
   main.innerHTML = backBar(state.game.title) + `<div class="panel">${body}</div>`;
   wireBack();
   rrTint();
@@ -2135,7 +2799,7 @@ function rrRenderBoard(){
       const left = Math.ceil((state.rr.regDeadline - Date.now()) / 1000);
       if(left <= 0) return goReg();
       main.querySelectorAll(".rr-reg").forEach(b =>
-        b.textContent = `Regulator phase → ${left}s`);
+        b.textContent = rrT("countdown_regulator", {left}));
     };
     rrRegTimer = setInterval(tick, 250);
     tick();
@@ -2273,12 +2937,10 @@ function rrOpNames(ids){
 function rrNexusCopy(terr){
   const v = rrTerr(terr), hooked = rrHookedOps(terr);
   if(!v.noticeOnFail)
-    return `No notice: ${v.name} is a ${v.tier === "none" ? "no-AI-law" : v.tier} regime with no ` +
-           `enforcement hook — nothing to serve a notice under. That asymmetry is the lesson.`;
+    return rrT("nexus_no_notice", {territory:v.name, tier:v.tier === "none" ? "no-AI-law" : v.tier});
   if(!hooked.length)
-    return `Application refused. Your declared operations (${rrOpNames(rrState().operations)}) ` +
-           `create no regulated nexus in ${v.name} — no notice.`;
-  return `Your ${rrOpNames(hooked)} operations create a ${v.name} nexus — L1 notice served.`;
+    return rrT("nexus_no_nexus", {operations:rrOpNames(rrState().operations), territory:v.name});
+  return rrT("nexus_l1_notice", {operations:rrOpNames(hooked), territory:v.name});
 }
 function rrResolveFail(a){
   const camp = rrState(), cfg = rrCfg(), v = rrTerr(a.terr);
@@ -2290,11 +2952,10 @@ function rrResolveFail(a){
       camp.notices.push({id:"n"+camp.noticeSeq, terr:a.terr, level:1, ageTurns:0,
                          source:"gate-fail"});
     }
-    msg = `Gate failed — −${cfg.gateFailCost} capital. ${rrNexusCopy(a.terr)}`;
+    msg = rrT("action_gate_fail", {penalty:cfg.gateFailCost, nexusMessage:rrNexusCopy(a.terr)});
   }else if(a.type === "defend"){
     camp.capital -= cfg.gateFailCost;
-    msg = `Defence failed — −${cfg.gateFailCost} capital. The ${v.name} notice stays open ` +
-          `and keeps aging.`;
+    msg = rrT("action_defence_fail", {penalty:cfg.gateFailCost, territory:v.name});
   }else if(a.type === "audit"){
     // ADD §4.1: audit wrong → −1 capital AND an L1 notice on that territory,
     // unconditionally (the regulator already established its own nexus).
@@ -2302,16 +2963,16 @@ function rrResolveFail(a){
     camp.noticeSeq = (camp.noticeSeq || 0) + 1;
     camp.notices.push({id:"n"+camp.noticeSeq, terr:a.terr, level:1, ageTurns:0,
                        source:a.eventId || "audit"});
-    msg = `Audit failed — −1 capital, and an L1 notice lands in ${v.name}.`;
-    rrEvResolved(a.eventId, "audit failed — −1 capital, L1 notice");
+    msg = rrT("action_audit_fail", {territory:v.name});
+    rrEvResolved(a.eventId, rrT("event_res_audit_fail"));
   }else if(a.type === "check"){
     const pen = a.penalty || 0;
     camp.capital -= pen;
-    msg = pen ? `Wrong call — −${pen} capital.`
-              : `Wrong call — no capital lost, but the fact goes on your review list.`;
-    rrEvResolved(a.eventId, pen ? `check failed — −${pen} capital` : "check failed");
+    msg = pen ? rrT("action_check_wrong_with_penalty", {penalty:pen})
+              : rrT("action_check_wrong_no_penalty");
+    rrEvResolved(a.eventId, pen ? rrT("event_res_check_fail_penalty", {penalty:pen}) : rrT("event_res_check_fail"));
   }else{
-    msg = `Review missed — no capital gained, none lost. Consolidate stays the safe action.`;
+    msg = rrT("action_missed");
   }
   camp.log.push({t:camp.turn, a:a.type, terr:a.terr || "any", ok:false});
   camp.pending = null;
@@ -2326,30 +2987,30 @@ function rrResolvePass(a){
     camp.held[a.terr] = {turnClaimed:camp.turn, suspended:false, consolidates:0};
     // The entry stake comes back on a passed gate (lost on fail/withdraw).
     if(v.entryCost) camp.capital = Math.min(cfg.capitalCap, camp.capital + v.entryCost);
-    msg = `${v.name} claimed — market +${v.market} while held${v.entryCost
-      ? `, ₿${v.entryCost} entry stake returned` : ""}.`;
+    msg = rrT("market_claimed", {territory:v.name, market:v.market,
+      entryStakeFrag:v.entryCost ? rrT("entry_stake_returned", {entryCost:v.entryCost}) : ""});
   }else if(a.type === "defend"){
     const i = camp.notices.findIndex(n => n.id===a.noticeId);
     if(i >= 0) camp.notices.splice(i, 1);
     const rec = camp.held[a.terr];
-    if(rec && rec.suspended){ rec.suspended = false; msg = `Notice cleared — ${v.name} reinstated.`; }
-    else msg = `Notice cleared — ${v.name} is back in good standing.`;
+    if(rec && rec.suspended){ rec.suspended = false; msg = rrT("action_notice_cleared_reinstated", {territory:v.name}); }
+    else msg = rrT("action_notice_cleared_good_standing", {territory:v.name});
   }else if(a.type === "audit"){
-    msg = `Audit passed — the ${v.name} file holds. No capital moves.`;
-    rrEvResolved(a.eventId, "audit passed");
+    msg = rrT("action_audit_pass", {territory:v.name});
+    rrEvResolved(a.eventId, rrT("event_res_audit_pass"));
   }else if(a.type === "check"){
     const rew = a.reward || 0;
     const gained = rew && camp.capital < cfg.capitalCap;
     camp.capital = Math.min(cfg.capitalCap, camp.capital + rew);
-    msg = !rew ? `Right call — status confirmed.`
-        : gained ? `Right call — +${rew} capital (now ₿ ${camp.capital}).`
-                 : `Right call — capital already at the cap of ${cfg.capitalCap}.`;
-    rrEvResolved(a.eventId, rew ? "check passed — +" + rew + " capital" : "check passed");
+    msg = !rew ? rrT("action_check_right_no_reward")
+        : gained ? rrT("action_check_right_with_reward", {reward:rew, capital:camp.capital})
+                 : rrT("action_check_right_at_cap", {cap:cfg.capitalCap});
+    rrEvResolved(a.eventId, rew ? rrT("event_res_check_pass_reward", {reward:rew}) : rrT("event_res_check_pass"));
   }else{
     const gained = camp.capital < cfg.capitalCap;
     camp.capital = Math.min(cfg.capitalCap, camp.capital + 1);
-    msg = gained ? `Position consolidated — +1 capital (now ₿ ${camp.capital}).`
-                 : `Position consolidated — capital already at the cap of ${cfg.capitalCap}.`;
+    msg = gained ? rrT("action_consolidate_no_reward", {capital:camp.capital})
+                 : rrT("action_consolidate_at_cap", {cap:cfg.capitalCap});
   }
   camp.log.push({t:camp.turn, a:a.type, terr:a.terr || "any", ok:true});
   camp.pending = null;
@@ -2373,7 +3034,7 @@ function rrRenderAction(){
   // Check events can draw territory-"any" cards, so the joined view may be
   // null there — the event title stands in for the territory name.
   let v = a && (rrTerr(a.terr)
-    || (fromEvent ? {name:a.evName || "Regulator docket"} : null));
+    || (fromEvent ? {name:a.evName || rrT("regulator_docket_fallback")} : null));
   if(!a || !v || (fromEvent && !camp.pending && !state.rr.reveal)){
     state.rr.action = null; state.rr.screen = "board"; return rrRenderBoard();
   }
@@ -2387,11 +3048,12 @@ function rrRenderAction(){
       || camp.notices.filter(n => n.terr===a.terr).sort((x,y) => y.level - x.level)[0] || null;
     if(notice) a.noticeId = notice.id;
   }
-  const head = `<div class="row" style="margin:0 0 12px"><strong>${(a.type === "expand"
-      && !Object.keys(camp.held).length ? "launch" : a.type).toUpperCase()} —
+  const rrTypeKey = "type_" + (a.type === "expand"
+      && !Object.keys(camp.held).length ? "launch" : a.type);
+  const head = `<div class="row" style="margin:0 0 12px"><strong>${rrT(rrTypeKey).toUpperCase()} —
       ${esc(v.name)}</strong>
-    <span class="badge">₿ ${camp.capital}</span>
-    <span class="badge">TURN ${camp.turn}/${cfg.turns}</span></div>`;
+    <span class="badge">${rrCur()} ${camp.capital}</span>
+    <span class="badge">${rrT("hud_turn_label", {turn: camp.turn, totalTurns: cfg.turns})}</span></div>`;
   const shell = body => {
     main.innerHTML = backBar(state.game.title) + `<div class="panel">${head}${body}</div>`;
     wireBack();
@@ -2408,25 +3070,24 @@ function rrRenderAction(){
             : (r.pick===o ? "wrong" : "")}">${esc(o)}</button>`).join("")
         + `</div></div>
         <p class="why" style="margin:9px 0 0;font-size:13px">${esc(card.why)}</p>
-        <p class="cite">${esc(card.citation)} · as of ${esc(card.asOf)}</p>`;
+        <p class="cite">${rrT("citation_line", {citation:esc(card.citation), asOf:esc(card.asOf)})}</p>`;
       body += r.ok
-        ? aiLinks(explainPrompt(`Regulatory Risk — ${v.name}`,
+        ? aiLinks(explainPrompt(`${state.game.title} — ${v.name}`,
             [{label:card.q, answer:card.answer, why:card.why}],
             `${a.type} action in ${v.name}, playing as ${camp.role}`),
-            "Go deeper with AI:")
-        : aiLinks(deepenPrompt(`Regulatory Risk — ${v.name}`,
+            rrT("explain_link"))
+        : aiLinks(deepenPrompt(`${state.game.title} — ${v.name}`,
             [{label:card.q, said:r.pick, answer:card.answer, why:card.why}],
             `${a.type} action in ${v.name}, playing as ${camp.role}`),
-            "Go deeper on what you missed:");
+            rrT("deepen_link"));
     }
     if(r.done){
       body += `<div class="reveal"><p class="score ${r.done.ok ? "ok" : "no"}">${esc(r.done.msg)}</p>`;
-      if(r.done.bust) body += `<p class="score no">Compliance capital exhausted — the campaign
-        is over. Bust is always an F.</p>`;
+      if(r.done.bust) body += `<p class="score no">${rrT("capital_exhausted")}</p>`;
       body += `</div>`;
     }
-    const label = r.done ? (r.done.bust ? "To the debrief →" : "Back to the board →")
-                         : "Next question →";
+    const label = r.done ? (r.done.bust ? rrT("action_to_debrief") : rrT("action_return_board"))
+                         : rrT("action_next_question");
     body += `<div class="row"><button class="btn" id="rr-cont">${label}</button></div>`;
     shell(body); wireAiLinks();
     document.getElementById("rr-cont").onclick = () => {
@@ -2444,24 +3105,27 @@ function rrRenderAction(){
     if(!card){ camp.pending = null; rrSave(); return toBoard(); }   // data drift guard
     const wd = state.rr.confirmWd;
     const wdWarn = a.type === "expand"
-      ? `Withdrawing counts as a gate fail: −${cfg.gateFailCost} capital. ${rrNexusCopy(a.terr)}`
+      ? rrT("wd_gate_fail", {gateFailCost:cfg.gateFailCost, nexusMessage:rrNexusCopy(a.terr)})
       : a.type === "defend"
-      ? `Withdrawing counts as a failed defence: −${cfg.gateFailCost} capital and the notice keeps aging.`
+      ? rrT("wd_defend_fail", {gateFailCost:cfg.gateFailCost})
       : a.type === "audit"
-      ? `You cannot dodge a regulator: withdrawing counts as a failed audit — −1 capital and an L1 notice in ${v.name}.`
+      ? rrT("wd_audit_fail", {territory:v.name})
       : a.type === "check"
-      ? `Withdrawing counts as the wrong call${(a.penalty || 0) ? `: −${a.penalty} capital` : " — the reward is forfeit"}.`
-      : `Withdrawing counts as a missed review — no gain, no loss, but the question is spent.`;
-    const body = `<p class="hint">Question ${p.qIndex + 1} of ${p.cardIds.length}
-        · ${p.correctSoFar} correct so far${a.type==="expand" ? " · first miss ends the gate" : ""}</p>
+      ? rrT("wd_check_fail", {penalty:(a.penalty || 0)
+          ? rrT("wd_check_penalty_amount", {penalty:a.penalty})
+          : rrT("wd_check_reward_forfeit")})
+      : rrT("wd_missed");
+    const body = `<p class="hint">${rrT("question_progress",
+        {n:p.qIndex + 1, total:p.cardIds.length, correct:p.correctSoFar})}${a.type==="expand"
+        ? " · " + rrT("first_miss_note") : ""}</p>
       <div class="field"><div class="scenario">${esc(card.q)}</div><div class="pick">`
       + rrOptOrder(card).map(o => `<button data-rr-opt="${esc(o)}"
           aria-pressed="${state.rr.qPick===o}">${esc(o)}</button>`).join("")
       + `</div></div>
       ${wd ? `<p class="why" style="margin:0 0 9px;font-size:13px">${esc(wdWarn)}</p>` : ""}
       <div class="row"><button class="btn" id="rr-submit" ${state.rr.qPick ? "" : "disabled"}>
-        ${state.rr.qPick ? "Submit answer" : "Pick an answer"}</button>
-      <button class="btn ghost" id="rr-wd">${wd ? "Really withdraw — accept the fail" : "Withdraw"}</button></div>`;
+        ${state.rr.qPick ? rrT("action_submit_answer") : rrT("action_pick_answer")}</button>
+      <button class="btn ghost" id="rr-wd">${wd ? rrT("action_really_withdraw") : rrT("action_withdraw")}</button></div>`;
     shell(body);
     main.querySelectorAll("[data-rr-opt]").forEach(b => b.onclick = () => {
       state.rr.qPick = b.dataset.rrOpt; render();
@@ -2503,18 +3167,17 @@ function rrRenderAction(){
   const rrActedNow = () => camp.log.some(l => l.t === camp.turn && rrPlayerActs.includes(l.a));
   let bad = null;
   if(rrPlayerActs.includes(a.type) && rrActedNow())
-    bad = "Action already taken this turn — run the regulator phase to end the turn.";
-  if(a.type === "expand" && v.held) bad = `${v.name} is already held.`;
-  if(a.type === "defend" && !notice) bad = `No open notice in ${v.name}.`;
+    bad = rrT("action_already_taken_turn");
+  if(a.type === "expand" && v.held) bad = rrT("action_already_held", {territory:v.name});
+  if(a.type === "defend" && !notice) bad = rrT("action_no_open_notice", {territory:v.name});
   if(a.type === "consolidate"){
-    if(!v.held) bad = `${v.name} is not held — nothing to consolidate.`;
+    if(!v.held) bad = rrT("action_not_held", {territory:v.name});
     else if((camp.held[a.terr].consolidates || 0) >= rrConsLimit(a.terr))
-      bad = `Consolidate limit reached for ${v.name} — ` +
-            `${rrConsLimit(a.terr)} per territory per campaign.`;
+      bad = rrT("action_consolidate_limit", {territory:v.name, limit:rrConsLimit(a.terr)});
   }
   if(bad){
     shell(`<p class="hint">${esc(bad)}</p>
-      <div class="row"><button class="btn" id="rr-back2">← Back to the board</button></div>`);
+      <div class="row"><button class="btn" id="rr-back2">${rrT("action_back_board")}</button></div>`);
     document.getElementById("rr-back2").onclick = toBoard;
     return;
   }
@@ -2524,52 +3187,52 @@ function rrRenderAction(){
   if(a.type === "expand"){
     const hooked = rrHookedOps(a.terr);
     const noticeLine = !v.noticeOnFail
-      ? `a ${v.tier} regime serves no notices — no enforcement hook.`
+      ? rrT("stakes_notice_none", {tier:v.tier})
       : hooked.length
-      ? `your ${rrOpNames(hooked)} operations give ${v.name} an enforcement nexus — expect an L1 notice.`
-      : `your operations create no regulated nexus in ${v.name} — no notice.`;
+      ? rrT("stakes_notice_hooked", {operations:rrOpNames(hooked), territory:v.name})
+      : rrT("stakes_notice_no_nexus", {territory:v.name});
     const costLine = entryCost
-      ? ` Entering this ${v.tier} regime takes a ₿${entryCost} stake up front —
-        charged when the first question is shown, returned if you pass the gate,
-        lost on a fail or withdrawal (a fail costs the usual
-        −${cfg.gateFailCost} on top).` : "";
-    stakes = `${v.gateSize}-question market-entry gate, drawn for your ${camp.role} role.${costLine}
-      First miss ends the gate: −${cfg.gateFailCost} capital, and ${noticeLine}`;
+      ? " " + rrT("stakes_cost_line", {tier:v.tier, entryCost, gateFailCost:cfg.gateFailCost})
+      : "";
+    // `C` is a local in the other rr* renderers, never here — reading it threw
+    // ReferenceError on every expand and left "Take ticket" silently dead (#28).
+    const roles = rrData().campaign.roles;
+    stakes = rrT("stakes_expand_gate", {gateSize:v.gateSize, role:camp.role,
+      roleName:(roles.find(r => r.id===camp.role) || {name:camp.role}).name}) + costLine + "\n      "
+      + rrT("stakes_first_miss", {gateFailCost:cfg.gateFailCost, noticeLine});
   }else if(a.type === "defend"){
-    stakes = `Answer ${notice.level >= 2 ? "2 questions — both required —" : "1 question"}
-      to clear the L${notice.level} notice. Fail: −${cfg.gateFailCost} capital and the
-      notice stays open and keeps aging.`;
+    stakes = (notice.level >= 2
+      ? rrT("stakes_defend_multi", {level:notice.level, gateFailCost:cfg.gateFailCost})
+      : rrT("stakes_defend_single", {level:notice.level, gateFailCost:cfg.gateFailCost}));
   }else{
-    stakes = `1 review question. Pass: +1 capital (cap ${cfg.capitalCap}). Fail: no gain,
-      no loss. ${(camp.held[a.terr].consolidates || 0)} of ${rrConsLimit(a.terr)} consolidations used here.`;
+    stakes = rrT("stakes_consolidate", {cap:cfg.capitalCap,
+      used:(camp.held[a.terr].consolidates || 0), limit:rrConsLimit(a.terr)});
   }
   shell(`<p class="hint">${esc(stakes)}</p>
-    <p class="hint">Withdrawing is free until the first question is shown. After that,
-      withdrawing counts as a fail with full consequences.</p>
-    ${canAfford ? "" : `<p class="why" style="margin:0 0 9px;font-size:13px">Entry costs
-      ₿${entryCost} and you hold ₿${camp.capital} — entering would bust you, so the
-      gate cannot begin.</p>`}
+    <p class="hint">${rrT("stakes_withdraw_free")}</p>
+    ${canAfford ? "" : `<p class="why" style="margin:0 0 9px;font-size:13px">${esc(rrT("entry_would_bust",
+      {cost:entryCost, capital:camp.capital}) + rrT("gate_cannot_begin_suffix"))}</p>`}
     <div class="row"><button class="btn" id="rr-begin" ${canAfford ? "" : "disabled"}>
-      ${canAfford ? "Show the first question" : `Need more than ₿${entryCost} to enter`}</button>
-      <button class="btn ghost" id="rr-wdfree">Withdraw (free)</button></div>`);
+      ${canAfford ? rrT("action_show_question") : rrT("action_need_capital", {cost:entryCost})}</button>
+      <button class="btn ghost" id="rr-wdfree">${rrT("action_withdraw_free")}</button></div>`);
   document.getElementById("rr-wdfree").onclick = toBoard;
   document.getElementById("rr-begin").onclick = () => {
     const badState = msg => {
       shell(`<p class="hint">${esc(msg)}</p>
-        <div class="row"><button class="btn" id="rr-back2">← Back to the board</button></div>`);
+        <div class="row"><button class="btn" id="rr-back2">${rrT("action_back_board")}</button></div>`);
       document.getElementById("rr-back2").onclick = toBoard;
     };
     // Mutation-layer turn guard (playtest wave 1): re-check the log right
     // before pending is created — the intro screen may be stale or forced.
     if(rrPlayerActs.includes(a.type) && rrActedNow())
-      return badState("Action already taken this turn — run the regulator phase to end the turn.");
+      return badState(rrT("action_already_taken_turn"));
     let cardIds;
     if(a.type === "expand") cardIds = rrDrawGate(a.terr, camp.role, rrDrawSeed());
     else if(a.type === "defend") cardIds = rrDrawDefend(notice);
     else cardIds = rrDrawConsolidate(a.terr);
     // Empty-draw guard (playtest wave 1): never silently bounce begin→board.
     if(!cardIds.length)
-      return badState(`No ${a.type === "expand" ? "gate" : "question"} available for ${v.name} right now.`);
+      return badState(rrT("action_no_available", {actionType:a.type === "expand" ? "gate" : "question", territory:v.name}));
     // Tier entry stake — charged exactly once, in the same code path that
     // creates pending (a reload mid-gate resumes pending and never re-charges).
     // Returned on a gate pass (rrResolvePass); lost on fail/withdraw, with
@@ -2577,7 +3240,7 @@ function rrRenderAction(){
     // entering must not itself bust you (bust fires at capital ≤ 0).
     if(entryCost > 0){
       if(camp.capital <= entryCost)
-        return badState(`Entry costs ₿${entryCost} and you hold ₿${camp.capital} — entering would bust you.`);
+        return badState(rrT("action_entry_bust_check", {cost:entryCost, capital:camp.capital}));
       camp.capital -= entryCost;
     }
     camp.pending = {action:a.type, terr:a.terr, cardIds, qIndex:0, correctSoFar:0};
@@ -2661,19 +3324,16 @@ function rrRegBegin(){
     const name = (rrJur(n.terr) || {name:n.terr}).name;
     if(n.level === 1 && n.ageTurns >= cfg.escalateEveryTurns){
       n.level = 2;
-      lines.push({cls:"warn", txt:`⚠ ${name} notice escalates to FORMAL INVESTIGATION — ` +
-        `defending now needs 2 correct answers, and audit pressure doubles.`});
+      lines.push({cls:"warn", txt:rrT("event_escalate", {territory:name})});
     }else if(n.level === 2 && n.ageTurns >= cfg.escalateEveryTurns * 2){
       n.level = 3;
       camp.capital -= cfg.l3Cost;
       camp.sanctions += 1;
       const rec = camp.held[n.terr];
       if(rec) rec.suspended = true;
-      lines.push({cls:"no", txt:`⛔ ${name.toUpperCase()}: ENFORCEMENT ACTION — ` +
-        `−${cfg.l3Cost} capital, sanction on record${rec ? ", operations SUSPENDED" : ""}.`});
+      lines.push({cls:"no", txt:rrT("event_enforcement", {territory:name.toUpperCase(), penalty:cfg.l3Cost, suspended:rec ? rrT("suspended_fragment") : ""})});
     }else{
-      lines.push({cls:"", txt:`⚑ ${name} L${n.level} notice remains open ` +
-        `(${n.ageTurns} regulator ${n.ageTurns===1 ? "phase" : "phases"} unresolved).`});
+      lines.push({cls:"", txt:rrT("event_open", {territory:name, level:n.level, turns:n.ageTurns, plural:n.ageTurns===1 ? "phase" : "phases"})});
     }
   });
   camp.reg = {turn:camp.turn, lines, ev:null, terr:null, shiftLines:null, bust:false};
@@ -2693,23 +3353,21 @@ function rrRegBegin(){
       // gains an L1 notice whose defend pool is the any-pool duty-shift cards.
       camp.role = eff.toRole;
       camp.roleShiftsFired += 1;
-      const shift = [`Your legal role is now ${eff.toRole.toUpperCase()} — every future ` +
-        `gate and defence draws ${eff.toRole} questions.`];
+      const shift = [rrT("role_shift_msg", {newRole:eff.toRole.toUpperCase()})];
       const comps = Object.keys(camp.held).filter(id =>
         (rrTerr(id) || {}).tier === "comprehensive" && !camp.held[id].suspended);
       if(comps.length){
-        const t = comps[Math.floor(rrRand((camp.seed ^ Math.imul(camp.turn, 40503)) >>> 0)()
+        const terrId = comps[Math.floor(rrRand((camp.seed ^ Math.imul(camp.turn, 40503)) >>> 0)()
           * comps.length)];
         camp.noticeSeq = (camp.noticeSeq || 0) + 1;
-        camp.notices.push({id:"n"+camp.noticeSeq, terr:t, level:1, ageTurns:0,
+        camp.notices.push({id:"n"+camp.noticeSeq, terr:terrId, level:1, ageTurns:0,
                            source:pick.id, pool:"any"});
-        shift.push(`⚑ Conformity status re-assessment: an L1 notice is served in ` +
-          `${(rrJur(t) || {name:t}).name} — which duties just moved to you?`);
+        shift.push(rrT("role_shift_notice", {territory:(rrJur(terrId) || {name:terrId}).name}));
       }
       camp.reg.shiftLines = shift;
-      rrEvResolved(pick.id, "role → " + eff.toRole);
+      rrEvResolved(pick.id, rrT("event_res_role_shift", {toRole:eff.toRole}));
     }
-    if(eff.type === "info") rrEvResolved(pick.id, "noted");
+    if(eff.type === "info") rrEvResolved(pick.id, rrT("event_res_noted"));
   }
   rrSave();
 }
@@ -2722,38 +3380,36 @@ function rrRenderRegulator(){
   if(!camp.reg || camp.reg.turn !== camp.turn) rrRegBegin();
   const cfg = rrCfg(), reg = camp.reg;
   const ev = reg.ev ? rrData().campaign.events.find(e => e.id===reg.ev) : null;
-  const aging = `<div class="rr-group">Ongoing matters</div><div class="rr-aging">`
+  const aging = `<div class="rr-group">${rrT("ongoing_heading")}</div><div class="rr-aging">`
     + (reg.lines.length
         ? reg.lines.map(l => `<div class="rr-age ${l.cls}">${esc(l.txt)}</div>`).join("")
-        : `<div class="rr-age">No open matters — a quiet docket.</div>`)
+        : `<div class="rr-age">${rrT("no_matters")}</div>`)
     + `</div>`;
-  const head = `<div class="row" style="margin:0 0 12px"><strong>REGULATOR PHASE —
-      TURN ${camp.turn}/${cfg.turns}</strong>
-    <span class="badge">₿ ${camp.capital}</span>
+  const head = `<div class="row" style="margin:0 0 12px"><strong>${rrT("regulator_phase_head",
+      {turn: camp.turn, totalTurns: cfg.turns})}</strong>
+    <span class="badge">${rrCur()} ${camp.capital}</span>
     <span class="badge">⚑ ${camp.notices.length}</span></div>`;
   let body = head + aging, wire = null;
   if(reg.bust){
-    body += `<p class="score no">Compliance capital exhausted — the campaign is over.
-        Bust is always an F.</p>
-      <div class="row"><button class="btn" id="rr-toend">To the debrief →</button></div>`;
+    body += `<p class="score no">${rrT("bust_message")}</p>
+      <div class="row"><button class="btn" id="rr-toend">${rrT("action_to_debrief")}</button></div>`;
     wire = () => document.getElementById("rr-toend").onclick = () => {
       state.rr.screen = "debrief"; render();
     };
   }else if(!ev){
-    body += `<div class="rr-event"><h3>Quiet docket</h3>
-        <p>No regulator event reaches your desk this turn.</p></div>
-      <div class="row"><button class="btn" id="rr-turn">[ YOUR TURN → ]</button></div>`;
+    body += `<div class="rr-event"><h3>${rrT("quiet_docket_title")}</h3>
+        <p>${rrT("quiet_docket_text")}</p></div>
+      <div class="row"><button class="btn" id="rr-turn">${rrT("your_turn_button")}</button></div>`;
   }else{
-    const cite = `<p class="cite">${esc(ev.citation)} · as of ${esc(ev.asOf)}</p>`;
+    const cite = `<p class="cite">${rrT("citation_line", {citation:esc(ev.citation), asOf:esc(ev.asOf)})}</p>`;
     if(ev.effect.type === "audit"){
       const tn = (rrJur(reg.terr) || {name:reg.terr}).name;
       body += `<div class="rr-event"><h3>⚖ ${esc(ev.title)}</h3><p>${esc(ev.text)}</p>
-          <p class="hint">Audit of ${esc(tn)}: 1 question from its defend file. Wrong:
-            −1 capital and an L1 notice there.</p>${cite}</div>
-        <div class="row"><button class="btn" id="rr-face">Face the audit →</button></div>`;
+          <p class="hint">${rrT("audit_hint")}</p>${cite}</div>
+        <div class="row"><button class="btn" id="rr-face">${rrT("face_audit_button")}</button></div>`;
       wire = () => document.getElementById("rr-face").onclick = () => {
         const cardIds = rrDrawDefend({terr:reg.terr, level:1});
-        if(!cardIds.length){ rrEvResolved(ev.id, "no file to audit"); rrTurnEnd();
+        if(!cardIds.length){ rrEvResolved(ev.id, rrT("event_res_no_file")); rrTurnEnd();
           state.rr.screen = "board"; return render(); }
         camp.pending = {action:"audit", terr:reg.terr, cardIds, qIndex:0,
                         correctSoFar:0, eventId:ev.id, evName:ev.title};
@@ -2764,15 +3420,15 @@ function rrRenderRegulator(){
       };
     }else if(ev.effect.type === "check"){
       const rew = ev.effect.reward || 0, pen = ev.effect.penalty || 0;
+      const hint = `${rew ? rrT("check_right_text", {reward: rew, cap: cfg.capitalCap}) + " " : ""}${pen ? rrT("check_wrong_text", {penalty: pen}) : rrT("check_no_loss")} ${rrT("check_never_notice")}`;
       body += `<div class="rr-event"><h3>☑ ${esc(ev.title)}</h3><p>${esc(ev.text)}</p>
-          <p class="hint">1 question. ${rew ? `Right: +${rew} capital (cap ${cfg.capitalCap}). ` : ""}
-            ${pen ? `Wrong: −${pen} capital.` : "Wrong: no capital lost."} Never a notice.</p>${cite}</div>
-        <div class="row"><button class="btn" id="rr-face">Make the call →</button></div>`;
+          <p class="hint">${hint}</p>${cite}</div>
+        <div class="row"><button class="btn" id="rr-face">${rrT("make_call_button")}</button></div>`;
       wire = () => document.getElementById("rr-face").onclick = () => {
         const pool = (ev.effect.cardId ? [rrCard(ev.effect.cardId)]
           : (ev.effect.cardPool || []).map(id => rrCard(id))).filter(Boolean);
         const cardIds = rrDrawFrom(pool, 1, rrDrawSeed());
-        if(!cardIds.length){ rrEvResolved(ev.id, "no card resolved"); rrTurnEnd();
+        if(!cardIds.length){ rrEvResolved(ev.id, rrT("event_res_no_card")); rrTurnEnd();
           state.rr.screen = "board"; return render(); }
         const ct = (rrCard(cardIds[0]) || {}).territory;
         camp.pending = {action:"check", terr:ct==="any" ? null : ct, cardIds, qIndex:0,
@@ -2787,10 +3443,10 @@ function rrRenderRegulator(){
       body += `<div class="rr-event"><h3>⇄ ${esc(ev.title)}</h3><p>${esc(ev.text)}</p>
           ${(reg.shiftLines || []).map(l => `<p class="score no" style="font-size:14px">
             ${esc(l)}</p>`).join("")}${cite}</div>
-        <div class="row"><button class="btn" id="rr-turn">[ YOUR TURN → ]</button></div>`;
+        <div class="row"><button class="btn" id="rr-turn">${rrT("your_turn_button")}</button></div>`;
     }else{
       body += `<div class="rr-event"><h3>ℹ ${esc(ev.title)}</h3><p>${esc(ev.text)}</p>${cite}</div>
-        <div class="row"><button class="btn" id="rr-turn">[ YOUR TURN → ]</button></div>`;
+        <div class="row"><button class="btn" id="rr-turn">${rrT("your_turn_button")}</button></div>`;
     }
   }
   main.innerHTML = backBar(state.game.title) + `<div class="panel">${body}</div>`;
@@ -2817,35 +3473,36 @@ function rrRenderInset(){
   if(state.rr.screen !== "inset") return;      // the board redirected elsewhere
   const acted = camp.log.some(l => l.t === camp.turn
     && ["expand","defend","consolidate"].includes(l.a));
-  const rows = RR_INSET_IDS.map(id => {
+  const rows = rrInsetIds().map(id => {
     const v = rrTerr(id), dis = acted ? " disabled" : "";
     let acts = "";
     if(v.noticeLevel) acts += `<button class="btn rr-act" data-rr-act="defend"
-      data-rr-terr="${id}"${dis}>Defend</button>`;
+      data-rr-terr="${id}"${dis}>${rrT("inset_defend")}</button>`;
     if(v.held){
       const consDone = (camp.held[id].consolidates || 0) >= rrConsLimit(id);
       acts += `<button class="btn ghost rr-act" data-rr-act="consolidate"
         data-rr-terr="${id}"${consDone ? " disabled" : dis}>${consDone
-        ? "Consolidated ✓" : "Consolidate"}</button>`;
+        ? rrT("inset_consolidated") : rrT("inset_consolidate")}</button>`;
     }
     else acts += rrExpandBtn(v, camp, acted);
-    const frame = id==="map-us-nyc" ? `<rect class="rr-frame" x="16" y="16"
+    const frame = (rrCfg().insetFrameIds || ["map-us-nyc"]).includes(id)
+      ? `<rect class="rr-frame" x="16" y="16"
       width="68" height="68"/>` : "";
-    const shape = RR_INSET_SHAPES[id]
+    const shape = (RR_INSET_SHAPES[id] || "")
       .replace("/>", ` class="t t-${v.sid} cov-${v.tier}"/>`);
     return `<div class="rr-inset-row">
       <svg class="rr-svg" viewBox="0 0 100 100" aria-hidden="true"
         style="position:static">${frame}${shape}</svg>
-      <span class="rr-badge cov-${v.tier}">${RR_COV_LETTER[v.tier] || "?"}</span>
+      <span class="rr-badge cov-${v.tier}">${rrCovLetter(v.tier)}</span>
       <div class="rr-tinfo"><b>${esc(v.name)}</b><em>${esc(rrStatusText(v))}</em></div>
       <div class="rr-acts">${acts}</div></div>`;
   }).join("");
   main.insertAdjacentHTML("beforeend",
     `<div class="rr-scrim" id="rr-scrim"></div>
-     <div class="rr-sheet" role="dialog" aria-label="US state regimes">
-       <div class="rr-sheet-head"><h3>⊞ US state &amp; city regimes</h3>
-         <button class="btn ghost" id="rr-sheet-close">Close</button></div>
-       <p class="hint">All five sub-national regimes are open from turn 1 — each stands on its own gate.</p>
+     <div class="rr-sheet" role="dialog" aria-label="${esc(rrT("aria_states_title"))}">
+       <div class="rr-sheet-head"><h3>${rrT("inset_title")}</h3>
+         <button class="btn ghost" id="rr-sheet-close">${rrT("inset_close")}</button></div>
+       <p class="hint">${rrT("inset_hint")}</p>
        ${rows}</div>`);
   rrTint();
   const close = () => { state.rr.screen = "board"; render(); };
@@ -2879,42 +3536,45 @@ function rrScore(camp){
 // Hardened (playtest wave 1): survives fallback card objects with no fact/id
 // (card-id drift across redeploys) instead of throwing mid-debrief render.
 function rrFactText(card){ return String(card.fact || card.id || card.q || "?").replace(/-/g, " "); }
-function rrTerrName(t){
-  if(!t || t === "any") return "Cross-cutting";
-  return (rrJur(t) || {name:t}).name;
+function rrTerrName(terr){
+  if(!terr || terr === "any") return rrT("cross_cutting");
+  return (rrJur(terr) || {name:terr}).name;
 }
 // Print-only one-page strategy report (SPEC §2.7). Pure markup derived from
 // the campaign in memory — nothing persisted, no new localStorage keys.
 function rrPrintReport(camp, s){
   const C = rrData().campaign, cfg = C.config;
   const role = (C.roles.find(r => r.id===camp.role) || {name:camp.role}).name;
-  const hat = (C.hats.find(h => h.id===camp.hat) || {name:camp.hat}).name;
-  const arith = `Market ${s.market}${s.parts.length ? ` (${s.parts.join(" · ")})` : ""}
-    ${s.capital < 0 ? `− ${-s.capital} capital` : `+ ${s.capital} capital`} − ${s.open} open notice${s.open===1 ? "" : "s"}
-    − 2 × ${s.sanctions} sanction${s.sanctions===1 ? "" : "s"} = ${s.score}
-    → ${s.bust ? "BUST — grade F (bust is always an F)" : "grade " + s.grade}`;
-  const tierOrder = ["comprehensive","sectoral","proposed","voluntary","none","treaty"];
+  const hat = ((C.hats || []).find(h => h.id===camp.hat) || {name:camp.hat || ""}).name;
+  const arith = rrT("print_score_arith", {market:s.market,
+    parts:s.parts.length ? ` (${s.parts.join(" · ")})` : "",
+    capitalDelta:s.capital < 0 ? `− ${-s.capital}` : `+ ${s.capital}`,
+    open:s.open, noticePlural:s.open===1 ? "" : "s",
+    sanctions:s.sanctions, sanctionPlural:s.sanctions===1 ? "" : "s", score:s.score,
+    gradeFrag:s.bust ? rrT("bust_message") : rrT("grade_fragment", {grade:s.grade})});
+  const tierOrder = cfg.tierOrder
+    || ["comprehensive","sectoral","proposed","voluntary","none","treaty"];
   const terrRows = tierOrder.map(tier =>
-    rrData().map.jurisdictions.filter(j => j.coverage===tier).map(j => {
+    rrJurisAll().filter(j => j.coverage===tier).map(j => {
       const v = rrTerr(j.id);
-      const status = v.suspended ? `SUSPENDED (L3)` : v.held
-        ? `HELD (turn ${camp.held[j.id].turnClaimed})` : "open";
-      const outcome = v.held && !v.suspended ? `+${v.market} market` : "—";
-      const notice = v.noticeLevel ? ` · L${v.noticeLevel} notice open` : "";
-      return `<tr><td>${esc(tier)}</td><td>${RR_COV_LETTER[tier] || "?"}</td>
+      const status = v.suspended ? rrT("print_suspended_status") : v.held
+        ? rrT("print_held_status", {turn:camp.held[j.id].turnClaimed}) : rrT("print_open_status");
+      const outcome = v.held && !v.suspended ? rrT("print_outcome_market", {market:v.market}) : "—";
+      const notice = v.noticeLevel ? " · " + rrT("print_notice_open", {level:v.noticeLevel}) : "";
+      return `<tr><td>${esc(tier)}</td><td>${rrCovLetter(tier)}</td>
         <td>${esc(v.name)}</td><td>${esc(status + notice)}</td><td>${esc(outcome)}</td></tr>`;
     }).join("")).join("");
   const evRows = (camp.eventsFaced || []).map(f => {
     const e = C.events.find(x => x.id===f.id) || {title:f.id};
     return `<tr><td>${esc(e.title)}</td><td>${esc(f.res)}</td></tr>`;
-  }).join("") || `<tr><td colspan="2">No regulator events reached the desk.</td></tr>`;
+  }).join("") || `<tr><td colspan="2">${rrT("print_no_events")}</td></tr>`;
   const qRows = (camp.answers || []).map((an, i) => {
     const card = rrCard(an.id) || {id:an.id};
     return `<tr><td>${i + 1}</td><td>${an.ok ? "✓" : "✗"}</td>
       <td>${esc(rrTerrName(card.territory))}</td>
       <td>${esc(rrFactText(card))}</td>
       <td>${esc(card.citation || "")}</td></tr>`;
-  }).join("") || `<tr><td colspan="5">No questions answered.</td></tr>`;
+  }).join("") || `<tr><td colspan="5">${rrT("print_no_questions")}</td></tr>`;
   const missedBy = {};
   (camp.answers || []).filter(an => !an.ok).forEach(an => {
     const card = rrCard(an.id) || {id:an.id};
@@ -2924,24 +3584,24 @@ function rrPrintReport(camp, s){
   const study = Object.keys(missedBy).length
     ? Object.keys(missedBy).sort().map(k =>
         `<li><b>${esc(k)}:</b> ${esc([...new Set(missedBy[k])].join(" · "))}</li>`).join("")
-    : `<li>No missed facts — nothing owed. Replay under another role to widen coverage.</li>`;
+    : `<li>${rrT("print_no_missed")}</li>`;
   return `<div class="rr-print">
-    <h2>Regulatory Risk — strategy report</h2>
-    <p><b>Role:</b> ${esc(role)} · <b>Hat:</b> ${esc(hat)} · <b>Operations:</b>
-      ${esc(rrOpNames(camp.operations))} · <b>Date:</b>
+    <h2>${rrT("print_title")}</h2>
+    <p><b>${rrT("print_role_label")}</b> ${esc(role)} · <b>${rrT("print_hat_label")}</b> ${esc(hat)} · <b>${rrT("print_operations_label")}</b>
+      ${esc(rrOpNames(camp.operations))} · <b>${rrT("print_date_label")}</b>
       ${new Date().toISOString().slice(0, 10)} ·
-      <b>Grade: ${esc(s.grade)}</b> (turn ${Math.min(camp.turn, cfg.turns)}
-      of ${cfg.turns})</p>
-    <p><b>Score:</b> ${esc(arith)}</p>
-    <h3>Territories by tier</h3>
-    <table><tr><th>Tier</th><th></th><th>Territory</th><th>Status</th><th>Outcome</th></tr>
+      <b>${rrT("print_grade_label", {grade:s.grade})}</b> ${rrT("print_turn_of",
+      {turn:Math.min(camp.turn, cfg.turns), total:cfg.turns})}</p>
+    <p><b>${rrT("print_score_label")}</b> ${esc(arith)}</p>
+    <h3>${rrT("print_territories_head")}</h3>
+    <table><tr><th>${rrT("print_th_tier")}</th><th></th><th>${rrT("print_th_territory")}</th><th>${rrT("print_th_status")}</th><th>${rrT("print_th_outcome")}</th></tr>
       ${terrRows}</table>
-    <h3>Events faced</h3>
-    <table><tr><th>Event</th><th>Resolution</th></tr>${evRows}</table>
-    <h3>Every answered question</h3>
-    <table><tr><th>#</th><th></th><th>Jurisdiction</th><th>Tested fact</th>
-      <th>Citation</th></tr>${qRows}</table>
-    <h3>Study next — missed facts by jurisdiction</h3>
+    <h3>${rrT("print_events_head")}</h3>
+    <table><tr><th>${rrT("print_th_event")}</th><th>${rrT("print_th_resolution")}</th></tr>${evRows}</table>
+    <h3>${rrT("print_questions_head")}</h3>
+    <table><tr><th>#</th><th></th><th>${rrT("print_th_jurisdiction")}</th><th>${rrT("print_th_tested_fact")}</th>
+      <th>${rrT("print_th_citation")}</th></tr>${qRows}</table>
+    <h3>${rrT("print_study_head")}</h3>
     <ul>${study}</ul>
   </div>`;
 }
@@ -2957,17 +3617,20 @@ function rrRenderDebrief(){
   const answers = camp.answers || [];
   const right = answers.filter(a => a.ok).length;
   const otherRole = C.roles.find(r => r.id !== camp.role) || C.roles[0];
-  const otherHat = C.hats.find(h => h.id !== camp.hat) || C.hats[0];
-  const arith = `${s.market} market ${s.parts.length ? `(${s.parts.join(" · ")}) ` : ""}
-    ${s.capital < 0 ? `− ${-s.capital}` : `+ ${s.capital}`} capital − ${s.open} open notice${s.open===1 ? "" : "s"}
-    − 2 × ${s.sanctions} sanction${s.sanctions===1 ? "" : "s"} = ${s.score}`;
+  const otherHat = (C.hats || []).find(h => h.id !== camp.hat)
+    || (C.hats || [])[0] || {id:undefined, name:""};
+  const arith = rrT("debrief_score_arith", {market:s.market,
+    parts:s.parts.length ? `(${s.parts.join(" · ")}) ` : "",
+    capitalDelta:s.capital < 0 ? `− ${-s.capital}` : `+ ${s.capital}`,
+    open:s.open, noticePlural:s.open===1 ? "" : "s",
+    sanctions:s.sanctions, sanctionPlural:s.sanctions===1 ? "" : "s", score:s.score});
   const review = answers.map(an => {
     const card = rrCard(an.id) || {id:an.id, q:an.id, citation:""};
     return `<div class="rr-q${an.ok ? "" : " miss"}">${an.ok ? "✓" : "✗"}
       <b>${esc(rrTerrName(card.territory))}</b> — ${esc(rrFactText(card))}
       <em>${esc(card.q || "")}</em>
       <em>${esc(card.citation || "")} · turn ${an.t}</em></div>`;
-  }).join("") || `<p class="hint">No questions answered this campaign.</p>`;
+  }).join("") || `<p class="hint">${rrT("debrief_no_questions")}</p>`;
   const missed = answers.filter(an => !an.ok).map(an => {
     const card = rrCard(an.id) || {id:an.id};
     return {label:card.q || an.id, said:an.pick, answer:card.answer, why:card.why};
@@ -2978,45 +3641,484 @@ function rrRenderDebrief(){
   });
   let links = "";
   if(allItems.length)
-    links += aiLinks(explainPrompt("Regulatory Risk campaign debrief", allItems,
+    links += aiLinks(explainPrompt(rrT("print_campaign_debrief"), allItems,
       `${cfg.turns}-turn campaign as ${camp.role} + ${camp.hat}, grade ${s.grade}`),
-      "Dial the whole campaign in:");
+      rrT("debrief_dial_campaign"));
   if(missed.length)
-    links += aiLinks(deepenPrompt("Regulatory Risk campaign debrief", missed,
-      `campaign as ${camp.role} + ${camp.hat}`), "Go deeper on what you missed:");
+    links += aiLinks(deepenPrompt(rrT("print_campaign_debrief"), missed,
+      `campaign as ${camp.role} + ${camp.hat}`), rrT("deepen_link"));
   const stats = `<div class="row" style="margin:0 0 4px">
-    <span class="badge">Turn reached ${Math.min(camp.turn, cfg.turns)}/${cfg.turns}</span>
-    <span class="badge">Questions ${right}/${answers.length}</span>
-    <span class="badge">Held ${Object.keys(camp.held).length}/22</span>
-    <span class="badge">Events ${(camp.eventsFaced || []).length}</span>
-    <span class="badge">Sanctions ${s.sanctions}</span></div>`;
+    <span class="badge">${rrT("badge_turn", {turn: Math.min(camp.turn, cfg.turns), totalTurns: cfg.turns})}</span>
+    <span class="badge">${rrT("badge_questions", {correct: right, total: answers.length})}</span>
+    <span class="badge">${rrT("badge_held", {held: Object.keys(camp.held).length})}</span>
+    <span class="badge">${rrT("badge_events", {n: (camp.eventsFaced || []).length})}</span>
+    <span class="badge">${rrT("badge_sanctions", {n: s.sanctions})}</span></div>`;
   const body = `<p class="score ${s.bust ? "no" : (s.grade==="A+" || s.grade==="A")
-      ? "ok" : s.grade==="F" ? "no" : "mid"}">GRADE ${esc(s.grade)}${s.bust
-      ? " — BUST" : ""}</p>
+      ? "ok" : s.grade==="F" ? "no" : "mid"}">${rrT("grade_display", {grade: s.grade})}${s.bust
+      ? rrT("grade_bust_suffix") : ""}</p>
     ${stats}
-    <div class="rr-arith"><b>Score arithmetic:</b> ${esc(arith)}
-      ${s.bust ? " — bust overrides everything: F." : ""}</div>
-    <div class="rr-group">Every answered question</div>
+    <div class="rr-arith"><b>${rrT("score_arithmetic_label")}</b> ${esc(arith)}
+      ${s.bust ? " — " + rrT("bust_overrides") : ""}</div>
+    <div class="rr-group">${rrT("review_heading")}</div>
     <div class="rr-review">${review}</div>
     ${links}
     <div class="row">
-      <button class="btn" id="rr-replay">Replay as ${esc(otherRole.name)} +
-        ${esc(otherHat.name)}?</button>
-      <button class="btn ghost" id="rr-print">Print strategy report</button>
-      <button class="btn ghost" id="rr-new">New campaign</button></div>`;
+      <button class="btn" id="rr-replay">${rrT("replay_button", {role: otherRole.name, hat: otherHat.name})}</button>
+      <button class="btn ghost" id="rr-print">${rrT("print_button")}</button>
+      <button class="btn ghost" id="rr-new">${rrT("new_campaign_button")}</button></div>`;
   main.innerHTML = backBar(state.game.title) + `<div class="panel">${body}</div>`
     + rrPrintReport(camp, s);
   wireBack(); wireAiLinks();
   const endCampaign = pick => {
     rrClear();  // seed slot is consumed in rrStart, not here
-    state.rr = {screen:"role", sel:null, action:null, confirmAbandon:false, pick};
+    state.rr = {gameId:state.game.id, screen:"role", sel:null, action:null,
+                confirmAbandon:false, pick};
     render();
   };
   document.getElementById("rr-replay").onclick = () =>
     endCampaign({role:otherRole.id, hat:otherHat.id, ops:[]});
   document.getElementById("rr-new").onclick = () =>
-    endCampaign({role:"deployer", hat:"dpo", ops:[]});
+    endCampaign(rrDefaultPick());
   document.getElementById("rr-print").onclick = () => window.print();
+}
+
+/* ----------------------------------------------- siegeBoard runner (sg) */
+// Build-then-defend, point-target grammar only (spec §3.2 wave 1).
+// Phase 1 (decide): spend a budget dragging typed control chips — each with a
+// cost, TRUE properties, and a visible definition — onto point targets of an
+// inlined SVG scene; coarse pointers place through the shared bottom sheet.
+// Phase 2 (resolve): "Run the attack" — the wave's event deck resolves each
+// attacker against the properties of whatever guards its target; every breach
+// ANIMATES along its authored breachPath with mechanism-naming copy, and the
+// leak list names what would have stopped it. A deck-scripted freebie wave
+// (one interception + one breach) plays before anything is scored.
+// record(event.id, stopped) fires once per wave event when the attack is run;
+// nothing about a run is persisted — like the gauntlet, a reload starts fresh.
+let sgAnimSeq = 0;
+const sgSleep = ms => new Promise(res => setTimeout(res, ms));
+// Deck-authored copy wins over these built-in English defaults (rrT pattern,
+// no new i18n keys — the CISSP lab ships English-first, untranslated:true).
+const SG_COPY = {
+  demo_hint: "Freebie wave — watch one attack get intercepted and one get through before anything is scored. The pre-placed controls below are the demo loadout.",
+  demo_run: "Run the demo wave",
+  demo_end: "Start the shift",
+  build_hint_fine: "Drag a control onto a target to deploy it, or click a control then click a target. Click a guarded target to take its last control back.",
+  build_hint_coarse: "Tap a control, then choose where to deploy it. Tap a guarded target to take its last control back.",
+  hud_budget: "Budget {left}/{budget}",
+  hud_spent: "Spent {spent}",
+  hud_par: "Par {par}",
+  hud_wave: "Wave {n}/{total}",
+  run_button: "Run the attack",
+  run_locked: "Deploy at least one control",
+  clear_button: "Recall all",
+  over_budget: "Not enough budget left for that control.",
+  resolve_hint: "The wave is coming in…",
+  wave_clear: "Wave survived — every attack intercepted.",
+  wave_leaks: "{n} attack(s) got through.",
+  stopped_by: "Stopped by {chip}.",
+  unguarded: "{target} had nothing deployed on it.",
+  wrong_guard: "{chips} could not answer it — wrong properties for this attack class.",
+  leak_head: "Would have stopped it: {chips}.",
+  review_heading: "Attack review",
+  next_wave: "Next wave",
+  to_debrief: "End-of-run debrief",
+  new_run: "New run",
+  medal_gold: "Held under par — {spent} spent, par {par}.",
+  medal_silver: "Held the perimeter — but over par: {spent} spent, par {par}.",
+  medal_none: "{n} breach(es) got through.",
+  citation_line: "{citation} · as of {asOf}",
+  said_nothing: "nothing deployed on the struck target",
+  said_chips: "guarded by {chips}",
+  explain_link: "Dial in what held",
+  deepen_link: "Drill what got through",
+  prompt_context: "tower-defense build: {spent} of {budget} budget spent, {breaches} breach(es)",
+  status_open: "open seat",
+  status_held: "guarded by {chips}"
+};
+function sgData(){ return state.game.payload(); }          // the deck's `siege`
+function sgT(key, vars){
+  const cp = sgData().copy || {};
+  let s = cp[key] != null ? cp[key] : SG_COPY[key];
+  if(s == null) return key;
+  if(vars) for(const k in vars) s = s.split("{"+k+"}").join(vars[k]);
+  return s;
+}
+function sgChip(id){ return sgData().chips.find(c => c.id===id); }
+function sgTarget(id){ return sgData().scene.targets.find(x => x.id===id); }
+function sgFresh(demoDone){
+  return {gameId:state.game.id,
+          phase:(sgData().freebie && !demoDone) ? "demo" : "build",
+          demo:false, demoDone:!!demoDone, wave:0, placed:{}, sel:null,
+          res:null, hist:[], scored:{}, played:false};
+}
+function sgSpent(placed){
+  return Object.keys(placed).reduce((s, id) => s + ((sgChip(id) || {}).cost || 0), 0);
+}
+// The scripted freebie placement as a placed-map, same shape as S.placed.
+function sgDemoPlaced(){
+  const out = {};
+  ((sgData().freebie || {}).place || []).forEach(p => { out[p.chip] = p.target; });
+  return out;
+}
+function sgChipsOn(placed, targetId){
+  return Object.keys(placed).filter(id => placed[id]===targetId)
+    .map(sgChip).filter(Boolean);
+}
+// The resolution rule — an attacker is stopped iff some chip on its target
+// carries one of the properties the event's attack class requires. The chip's
+// REAL properties, not its name, decide: that mismatch is the lesson.
+function sgResolveEvents(events, placed){
+  return events.map(ev => {
+    const guards = sgChipsOn(placed, ev.target);
+    const by = guards.find(ch => (ch.properties || [])
+      .some(p => (ev.requires || []).includes(p))) || null;
+    return {ev, stopped:!!by, by, guards};
+  });
+}
+// Every chip in the shop that could have answered this attack class.
+function sgLeakChips(ev){
+  return sgData().chips.filter(ch => (ch.properties || [])
+    .some(p => (ev.requires || []).includes(p)));
+}
+
+function sgSceneHtml(S, placed, interactive){
+  const siege = sgData(), sc = siege.scene;
+  // Final per-target status once a run has resolved (or replayed statically).
+  const status = {};
+  const resolved = S.phase === "debrief" ? S.hist
+    : (S.res && (S.phase === "waveEnd" || (S.phase === "resolve" && S.played)))
+      ? S.res : null;
+  if(resolved) resolved.forEach(r => {
+    if(r.stopped) status[r.ev.target] = "sg-safe";
+    else (r.ev.breachPath || []).forEach(id => { status[id] = "sg-hit"; });
+  });
+  const targets = sc.targets.map(tg => {
+    const held = sgChipsOn(placed, tg.id);
+    const chips = held.map(ch => esc(ch.short || ch.label)).join(" · ");
+    const st = held.length ? sgT("status_held", {chips:held.map(ch => ch.label).join(", ")})
+                           : sgT("status_open");
+    const cls = ["sg-tgt", held.length ? "sg-held" : "",
+      status[tg.id] || ""].filter(Boolean).join(" ");
+    return `<button class="${cls}" style="left:${tg.x}%;top:${tg.y}%"
+      data-sg-tgt="${esc(tg.id)}" aria-label="${esc(tg.label)} — ${esc(st)}"
+      ${interactive ? "" : "tabindex=\"-1\""}>
+      <span class="sg-seat">${held.length || ""}</span>
+      <span class="sg-tlab">${esc(tg.label)}</span>
+      ${chips ? `<span class="sg-tchips">${chips}</span>` : ""}</button>`;
+  }).join("");
+  // Breach traces are rendered statically for every resolved breach; during
+  // the replay they start invisible and the animation chain reveals them.
+  const traces = !S.res ? "" : S.res.filter(r => !r.stopped).map(r => {
+    const pts = (r.ev.breachPath || []).map(sgTarget).filter(Boolean);
+    if(pts.length < 2) return "";
+    return `<polyline class="sg-trace" data-sg-ev="${esc(r.ev.id)}"
+      vector-effect="non-scaling-stroke"
+      points="${pts.map(p => `${p.x},${p.y}`).join(" ")}"
+      ${S.played ? "" : ' style="opacity:0"'}></polyline>`;
+  }).join("");
+  const vb = String(sc.viewBox || "0 0 100 100").split(/\s+/);
+  const ratio = `${vb[2] || 100}/${vb[3] || 100}`;
+  return `<div class="sg-wrap"><div class="sg-scene" style="aspect-ratio:${ratio}">
+    <svg class="sg-svg" viewBox="${esc(sc.viewBox)}" preserveAspectRatio="none"
+      aria-hidden="true">${SCENES[sc.svgRef] || ""}</svg>
+    <svg class="sg-fx" viewBox="0 0 100 100" preserveAspectRatio="none"
+      aria-hidden="true">${traces}</svg>
+    ${targets}</div></div>`;
+}
+function sgHudHtml(S, placed){
+  const siege = sgData(), spent = sgSpent(placed);
+  return `<div class="sg-hud">
+    <span>${sgT("hud_budget", {left:siege.budget - spent, budget:siege.budget})}</span>
+    <span>${sgT("hud_spent", {spent})}</span>
+    <span>${sgT("hud_par", {par:siege.par})}</span>
+    <span class="badge">${sgT("hud_wave", {n:S.wave + 1, total:siege.waves.length})}</span></div>`;
+}
+function sgLogHtml(S){
+  return `<div class="sg-log" aria-live="polite">` + S.res.map(r => {
+    const tg = sgTarget(r.ev.target) || {label:r.ev.target};
+    const line = r.stopped
+      ? `${esc(r.ev.stopCopy)} ${sgT("stopped_by", {chip:esc(r.by.label)})}`
+      : esc(r.ev.failCopy);
+    return `<div class="sg-line ${r.stopped ? "ok" : "no"}" data-sg-ev="${esc(r.ev.id)}"
+      ${S.played ? "" : ' style="opacity:0"'}>${r.stopped ? "✓" : "✗"}
+      ${esc(r.ev.attackClass)} → ${esc(tg.label)} — ${line}</div>`;
+  }).join("") + `</div>`;
+}
+function sgReviewHtml(res, full){
+  return `<ul>` + res.map(r => {
+    const tg = sgTarget(r.ev.target) || {label:r.ev.target};
+    let extra = "";
+    if(!r.stopped){
+      const could = sgLeakChips(r.ev).map(ch => ch.label);
+      const guards = r.guards.map(ch => ch.label).join(", ");
+      extra += `<span>${guards
+        ? sgT("wrong_guard", {chips:esc(guards)})
+        : sgT("unguarded", {target:esc(tg.label)})} ${sgT("leak_head",
+        {chips:esc(could.join(", "))})}</span>`;
+    }
+    const why = full && r.ev.why ? `<span>${esc(r.ev.why)}</span>` : "";
+    const cite = full && r.ev.citation ? `<span class="cite">${sgT("citation_line",
+      {citation:esc(r.ev.citation), asOf:esc(r.ev.asOf || "")})}</span>` : "";
+    return `<li><b class="${r.stopped ? "hit" : "miss"}">${r.stopped ? "✓" : "✗"}
+      ${esc(r.ev.attackClass)} → ${esc(tg.label)}</b>
+      <span>${esc(r.stopped ? r.ev.stopCopy : r.ev.failCopy)}</span>${extra}${why}${cite}</li>`;
+  }).join("") + `</ul>`;
+}
+
+function renderSiege(){
+  sgAnimSeq++;                       // any re-render invalidates a live replay
+  if(!state.siege || state.siege.gameId !== state.game.id)
+    state.siege = sgFresh(false);
+  const S = state.siege, siege = sgData();
+  if(S.phase === "demo" && (!siege.freebie || S.demoDone)) S.phase = "build";
+  if(S.phase === "debrief") return sgRenderDebrief();
+  const placed = (S.demo || S.phase === "demo") ? sgDemoPlaced() : S.placed;
+
+  /* ---- demo: the scripted freebie wave, pre-placed and unscored ---- */
+  if(S.phase === "demo"){
+    const body = `<p class="hint">${esc(siege.prompt)}</p>
+      <p class="dim-note" style="margin:0 0 12px">${sgT("demo_hint")}</p>
+      ${sgSceneHtml(S, placed, false)}
+      <div class="row"><button class="btn" id="sg-demo-run">${sgT("demo_run")}</button></div>`;
+    main.innerHTML = backBar(state.game.title) + `<div class="panel">${body}</div>`;
+    wireBack();
+    document.getElementById("sg-demo-run").onclick = () => {
+      S.res = sgResolveEvents(siege.freebie.events, sgDemoPlaced());
+      S.demo = true; S.played = false; S.phase = "resolve";
+      render();
+    };
+    return;
+  }
+
+  /* ---- resolve: the attack replays; copy lands line by line ---- */
+  if(S.phase === "resolve"){
+    const body = `<p class="hint">${sgT("resolve_hint")}</p>
+      ${sgHudHtml(S, placed)}
+      ${sgSceneHtml(S, placed, false)}
+      ${sgLogHtml(S)}`;
+    main.innerHTML = backBar(state.game.title) + `<div class="panel">${body}</div>`;
+    wireBack();
+    sgPlay(sgAnimSeq);
+    return;
+  }
+
+  /* ---- waveEnd: static replay result + review + the next step ---- */
+  if(S.phase === "waveEnd"){
+    const leaks = S.res.filter(r => !r.stopped).length;
+    const next = S.demo ? {id:"sg-demo-end", label:sgT("demo_end")}
+      : (S.wave + 1 < siege.waves.length)
+        ? {id:"sg-next-wave", label:sgT("next_wave")}
+        : {id:"sg-debrief", label:sgT("to_debrief")};
+    const body = `${sgHudHtml(S, placed)}
+      ${sgSceneHtml(S, placed, false)}
+      ${sgLogHtml(S)}
+      <div class="reveal">
+        <p class="score ${leaks ? "no" : "ok"}">${leaks
+          ? sgT("wave_leaks", {n:leaks}) : sgT("wave_clear")}</p>
+        ${sgReviewHtml(S.res, !S.demo)}
+        <div class="row"><button class="btn" id="${next.id}">${next.label}</button></div>
+      </div>`;
+    main.innerHTML = backBar(state.game.title) + `<div class="panel">${body}</div>`;
+    wireBack();
+    const de = document.getElementById("sg-demo-end");
+    if(de) de.onclick = () => {
+      S.demoDone = true; S.demo = false; S.res = null; S.phase = "build"; render();
+    };
+    const nw = document.getElementById("sg-next-wave");
+    if(nw) nw.onclick = () => { S.wave++; S.res = null; S.phase = "build"; render(); };
+    const db = document.getElementById("sg-debrief");
+    if(db) db.onclick = () => { S.phase = "debrief"; render(); };
+    return;
+  }
+
+  /* ---- build: budgeted placement ---- */
+  const spent = sgSpent(S.placed), left = siege.budget - spent;
+  const anyPlaced = Object.keys(S.placed).length > 0;
+  const shopChips = siege.chips.filter(c => !S.placed[c.id]);
+  const chipBtn = c => {
+    const cls = ["sg-chip", state.siege.sel===c.id ? "sel" : "",
+      c.cost > left ? "sg-poor" : ""].filter(Boolean).join(" ");
+    return `<button class="${cls}" draggable="true" data-sg-chip="${esc(c.id)}"
+      title="${esc(c.definition)}">
+      <span class="sg-cost">${c.cost}</span>
+      <span><b>${esc(c.label)}</b><em>${esc((c.properties || []).join(" · "))}</em>
+        <em>${esc(c.definition)}</em></span></button>`;
+  };
+  const hint = siege.hint ? `<p class="dim-note" style="margin:0 0 12px">${esc(siege.hint)}</p>` : "";
+  const body = `<p class="hint">${esc(siege.prompt)} ${isCoarse()
+      ? sgT("build_hint_coarse") : sgT("build_hint_fine")}</p>
+    ${hint}
+    ${sgHudHtml(S, S.placed)}
+    ${sgSceneHtml(S, S.placed, true)}
+    <div class="sg-shop">${shopChips.map(chipBtn).join("")}${shopChips.length
+      ? "" : `<span class="bank-note">${sgT("run_locked")}</span>`}</div>
+    <div class="row">
+      <button class="btn" id="sg-run" ${anyPlaced ? "" : "disabled"}>${anyPlaced
+        ? sgT("run_button") : sgT("run_locked")}</button>
+      <button class="btn ghost" id="sg-clear" ${anyPlaced ? "" : "disabled"}>${sgT("clear_button")}</button>
+    </div>`;
+  main.innerHTML = backBar(state.game.title) + `<div class="panel">${body}</div>`;
+  wireBack();
+
+  const place = (chipId, targetId) => {
+    const c = sgChip(chipId);
+    if(!c || S.placed[chipId]) return;
+    if(c.cost > siege.budget - sgSpent(S.placed)){ toast(sgT("over_budget")); return; }
+    S.placed[chipId] = targetId; S.sel = null; render();
+  };
+  const sgSheet = {
+    targets: () => siege.scene.targets.map(tg => {
+      const held = sgChipsOn(S.placed, tg.id);
+      return {key:tg.id, label:tg.label,
+        sub:(tg.sub ? tg.sub + " · " : "") + (held.length
+          ? sgT("status_held", {chips:held.map(ch => ch.short || ch.label).join(", ")})
+          : sgT("status_open")), icon:null};
+    }),
+    labelOf: id => (sgChip(id) || {}).label || id,
+    nextUnplaced: () => null,
+    place,
+  };
+  let dragId = null;
+  main.querySelectorAll("[data-sg-chip]").forEach(b => {
+    b.onclick = () => {
+      const id = b.dataset.sgChip;
+      if(isCoarse()){ sheetFlow(sgSheet, id); return; }
+      S.sel = S.sel === id ? null : id;
+      render();
+    };
+    b.ondragstart = e => { dragId = b.dataset.sgChip; e.dataTransfer.effectAllowed = "move"; };
+  });
+  main.querySelectorAll("[data-sg-tgt]").forEach(z => {
+    z.ondragover = e => { e.preventDefault(); z.classList.add("over"); };
+    z.ondragleave = () => z.classList.remove("over");
+    z.ondrop = e => {
+      e.preventDefault(); z.classList.remove("over");
+      if(dragId){ place(dragId, z.dataset.sgTgt); dragId = null; }
+    };
+    z.onclick = () => {
+      const tid = z.dataset.sgTgt;
+      if(S.sel){ place(S.sel, tid); return; }
+      // No selection: clicking a guarded target takes its last control back.
+      const held = Object.keys(S.placed).filter(id => S.placed[id]===tid);
+      if(held.length){ delete S.placed[held[held.length - 1]]; render(); }
+    };
+  });
+  const run = document.getElementById("sg-run");
+  if(run) run.onclick = () => {
+    if(!Object.keys(S.placed).length) return;
+    S.res = sgResolveEvents(siege.waves[S.wave].events, S.placed);
+    // The scheduler write, once per wave event per run — the placement verdict
+    // is the record()ed outcome, exactly as the board records a drop.
+    S.res.forEach(r => {
+      if(!S.scored[r.ev.id]){ record(r.ev.id, r.stopped); S.scored[r.ev.id] = true; }
+    });
+    S.hist = S.hist.concat(S.res);
+    S.demo = false; S.played = false; S.phase = "resolve";
+    render();
+  };
+  const clr = document.getElementById("sg-clear");
+  if(clr) clr.onclick = () => { S.placed = {}; S.sel = null; render(); };
+}
+
+// The attack replay. Self-guarding like the gauntlet clock: the seq token,
+// the game, the phase and the DOM are all re-checked between steps, so
+// leaving the game or re-rendering kills the chain instead of animating a
+// detached tree. Interrupted replays restart from the top on re-render;
+// results were computed (and recorded) before the animation began.
+async function sgPlay(seq){
+  const S = state.siege;
+  const alive = () => sgAnimSeq === seq && state.game
+    && state.game.runner === "siegeBoard" && state.siege === S
+    && S.phase === "resolve" && !!main.querySelector(".sg-scene");
+  const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  await sgSleep(400);
+  for(const r of S.res){
+    if(!alive()) return;
+    const scene = main.querySelector(".sg-scene");
+    const line = main.querySelector(`.sg-line[data-sg-ev="${r.ev.id}"]`);
+    if(line) line.style.opacity = "1";
+    const tgtEl = id => main.querySelector(`.sg-tgt[data-sg-tgt="${id}"]`);
+    if(r.stopped){
+      const el = tgtEl(r.ev.target);
+      if(el) el.classList.add("sg-safe");
+      await sgSleep(reduce ? 250 : 750);
+    }else{
+      const trace = main.querySelector(`.sg-trace[data-sg-ev="${r.ev.id}"]`);
+      if(trace) trace.style.opacity = "1";
+      const pts = (r.ev.breachPath || []).map(sgTarget).filter(Boolean);
+      if(!reduce && pts.length > 1 && scene){
+        const dot = document.createElement("i");
+        dot.className = "sg-dot";
+        dot.style.left = pts[0].x + "%"; dot.style.top = pts[0].y + "%";
+        scene.appendChild(dot);
+        try{
+          await dot.animate(
+            pts.map((p, i) => ({left:p.x + "%", top:p.y + "%",
+                                offset:i / (pts.length - 1)})),
+            {duration:450 * (pts.length - 1), easing:"linear", fill:"forwards"}).finished;
+        }catch(e){ /* cancelled — the guard below decides what happens next */ }
+        dot.remove();
+      }
+      if(!alive()) return;
+      pts.forEach(p => { const el = tgtEl(p.id); if(el) el.classList.add("sg-hit"); });
+      await sgSleep(reduce ? 250 : 550);
+    }
+  }
+  if(!alive()) return;
+  S.played = true;
+  S.phase = "waveEnd";
+  render();
+}
+
+function sgRenderDebrief(){
+  const S = state.siege, siege = sgData();
+  const spent = sgSpent(S.placed);
+  const breaches = S.hist.filter(r => !r.stopped).length;
+  const medal = breaches === 0 && spent <= siege.par ? "gold"
+    : breaches === 0 ? "silver" : "none";
+  const medalIcon = {gold:"🥇", silver:"🥈", none:"—"}[medal];
+  const medalLine = medal === "gold" ? sgT("medal_gold", {spent, par:siege.par})
+    : medal === "silver" ? sgT("medal_silver", {spent, par:siege.par})
+    : sgT("medal_none", {n:breaches});
+  const missed = S.hist.filter(r => !r.stopped).map(r => {
+    const tg = sgTarget(r.ev.target) || {label:r.ev.target};
+    return {label:`${r.ev.attackClass} against ${tg.label}`,
+      said:r.guards.length
+        ? sgT("said_chips", {chips:r.guards.map(ch => ch.label).join(", ")})
+        : sgT("said_nothing"),
+      answer:sgLeakChips(r.ev).map(ch => ch.label).join(" / "),
+      why:r.ev.why};
+  });
+  const allItems = S.hist.map(r => {
+    const tg = sgTarget(r.ev.target) || {label:r.ev.target};
+    return {label:`${r.ev.attackClass} against ${tg.label}`,
+      answer:sgLeakChips(r.ev).map(ch => ch.label).join(" / "),
+      why:r.ev.why};
+  });
+  const ctx = sgT("prompt_context", {spent, budget:siege.budget, breaches});
+  let links = "";
+  if(allItems.length)
+    links += aiLinks(explainPrompt(state.game.title, allItems, ctx), sgT("explain_link"));
+  if(missed.length)
+    links += aiLinks(deepenPrompt(state.game.title, missed, ctx), sgT("deepen_link"));
+  const cites = [...new Set(S.hist.map(r => r.ev.citation).filter(Boolean))];
+  const body = `<div class="sg-medal ${medal}"><span class="medal">${medalIcon}</span>
+      <span>${medalLine}</span></div>
+    ${sgHudHtml(S, S.placed)}
+    ${sgSceneHtml(S, S.placed, false)}
+    <div class="reveal">
+      <p class="score ${breaches ? "no" : "ok"}">${sgT("review_heading")}</p>
+      ${sgReviewHtml(S.hist, true)}
+      ${cites.length ? `<p class="cite">${esc(cites.join(" · "))}</p>` : ""}
+      ${links}
+      <div class="row"><button class="btn" id="sg-again">${sgT("new_run")}</button></div>
+    </div>`;
+  main.innerHTML = backBar(state.game.title) + `<div class="panel">${body}</div>`;
+  wireBack(); wireAiLinks();
+  document.getElementById("sg-again").onclick = () => {
+    state.siege = sgFresh(true);      // demo already seen this session
+    render();
+  };
 }
 
 /* ------------------------------------------------------------------- desk */
@@ -3039,25 +4141,25 @@ function renderDesk(){
   if(!state.checked){
     const anyAnswered = c.steps.some(s => state.deskPick[s.id]);
     body += `<div class="row"><button class="btn" id="check" ${answered?"":"disabled"}>
-      ${answered?"Submit the case file":"Answer every step"}</button>
-      <button class="btn ghost" id="clear" ${anyAnswered?"":"disabled"}>Clear answers</button>
-      <span class="badge">Case ${state.deskIdx+1} of ${cases.length}</span></div>`;
+      ${answered?t("desk.submit_button"):t("desk.answer_all_button")}</button>
+      <button class="btn ghost" id="clear" ${anyAnswered?"":"disabled"}>${t("desk.clear_button")}</button>
+      <span class="badge">${t("desk.badge_case", {n: state.deskIdx+1, total: cases.length})}</span></div>`;
   }else{
     const missed = c.steps.filter(s => state.deskPick[s.id]!==s.answer);
     const right = c.steps.length - missed.length;
     body += `<div class="reveal"><p class="score ${right===c.steps.length?"ok":"no"}">
-      ${right} of ${c.steps.length} steps</p><p class="cite">${esc(c.citation)}</p>`;
+      ${t("desk.score_display", {correct: right, total: c.steps.length})}</p><p class="cite">${esc(c.citation)}</p>`;
     body += aiLinks(explainPrompt(`Compliance Desk — ${c.areas.join(", ")}`,
       c.steps.map(s => ({label:s.q, answer:s.answer, why:s.why})), `case facts: ${c.brief}`) +
       `\n\nThen change two facts in the case so the correct answers shift, walk me through the new analysis, and tell me what a governance lead would still be missing even with every answer right.`,
-      "Explain this case:");
+      t("desk.explain_link"));
     if(missed.length){
       body += aiLinks(deepenPrompt(`Compliance Desk — ${c.areas.join(", ")}`,
         missed.map(s => ({label:s.q, said:state.deskPick[s.id], answer:s.answer, why:s.why})),
-        `case facts: ${c.brief}`), "Go deeper on what you missed:");
+        `case facts: ${c.brief}`), t("desk.deepen_link"));
     }
-    body += `<div class="row"><button class="btn" id="next">Next case →</button>
-      <button class="btn ghost" id="retry">Replay this case</button></div></div>`;
+    body += `<div class="row"><button class="btn" id="next">${t("desk.next_button")}</button>
+      <button class="btn ghost" id="retry">${t("desk.retry_button")}</button></div></div>`;
   }
   main.innerHTML = backBar(state.game.title) + `<div class="panel">${body}</div>`;
   wireBack(); wireAiLinks();
@@ -3086,8 +4188,8 @@ function renderDesk(){
 function renderLadders(){
   const ls = state.game.payload().filter(l => state.area==="all" || l.area===state.area);
   if(!state.ladder){
-    main.innerHTML = backBar("Ladders") + `<div class="grid">` + ls.map((l,i) =>
-      `<button class="card" data-l="${i}"><span class="rung">Apply</span>
+    main.innerHTML = backBar(t("ladders.page_title")) + `<div class="grid">` + ls.map((l,i) =>
+      `<button class="card" data-l="${i}"><span class="rung">${t("ladders.rung_apply")}</span>
        <h3>${esc(l.title)}</h3><p>${esc(l.prompt)}</p></button>`).join("") + `</div>`;
     wireBack();
     main.querySelectorAll("[data-l]").forEach(b =>
@@ -3103,8 +4205,8 @@ function renderLadders(){
 
   let body = `<p class="hint">${esc(l.prompt)}</p>`;
   if(l.dualTrack) body += `<div class="row" style="margin:0 0 12px">
-    <button class="btn ${track==="enacted"?"":"ghost"}" data-track="enacted">As enacted</button>
-    <button class="btn ${track==="amended"?"":"ghost"}" data-track="amended">As amended</button></div>`;
+    <button class="btn ${track==="enacted"?"":"ghost"}" data-track="enacted">${t("ladders.track_enacted")}</button>
+    <button class="btn ${track==="amended"?"":"ghost"}" data-track="amended">${t("ladders.track_amended")}</button></div>`;
   body += `<div class="order-list">` + ordered.map((s,i) => {
     const placed = state.order[i]; const right = placed===s.label;
     return `<div class="order-slot ${placed?"filled":""}"
@@ -3115,12 +4217,12 @@ function renderLadders(){
     body += `<div class="bank">` + shuffle(remaining, l.id.length).map(s =>
       `<button class="tok" data-step="${esc(s.label)}">${esc(s.label)}</button>`).join("") + `</div>`;
     body += `<div class="row"><button class="btn ghost" id="clear"
-      ${state.order.length?"":"disabled"}>Clear order</button>
-      <span class="badge">${state.order.length} of ${ordered.length} placed</span></div>`;
+      ${state.order.length?"":"disabled"}>${t("ladders.clear_button")}</button>
+      <span class="badge">${t("ladders.badge_placed", {n: state.order.length, total: ordered.length})}</span></div>`;
   }else{
     const rc = state.order.filter((lab,i)=>lab===ordered[i].label).length;
     body += `<div class="reveal"><p class="score ${rc===ordered.length?"ok":"no"}">
-      ${rc} of ${ordered.length} in the right place</p>` +
+      ${t("ladders.scoreLine", {right: rc, total: ordered.length})}</p>` +
       ordered.map(s => `<p class="why"><strong>${esc(s.label)}</strong>${
         key(s)?` — ${esc(key(s))}`:""}. ${esc(s.detail)}</p>`).join("");
     if(l.currency) body += currencyHtml(l.currency);
@@ -3130,9 +4232,9 @@ function renderLadders(){
         answer:key(s)||`step ${i+1}`, why:s.detail})),
       l.dualTrack ? `ordered on the "${track}" track` : l.prompt) +
       (l.currency ? `\n\nNote the currency position: ${l.currency.book} ${l.currency.changed} ${l.currency.exam} Explain what a governance lead should actually plan against, versus what the exam expects.` : ""),
-      "Explain this sequence:");
-    body += `<div class="row"><button class="btn" id="reset">Try again</button>
-      <button class="btn ghost" id="pick">Other ladder</button></div></div>`;
+      t("ladders.explain_link"));
+    body += `<div class="row"><button class="btn" id="reset">${t("ladders.reset_button")}</button>
+      <button class="btn ghost" id="pick">${t("ladders.pick_button")}</button></div></div>`;
   }
   main.innerHTML = backBar(l.title) + `<div class="panel">${body}</div>`;
   wireBack(); wireAiLinks();
@@ -3149,11 +4251,17 @@ function renderLadders(){
 function renderBriefs(){
   const bs = state.game.payload().filter(b => state.area==="all" || b.area===state.area || b.capstone);
   if(!state.brief){
-    main.innerHTML = backBar("Governance Brief") + `<div class="grid">` + bs.map(b => {
+    main.innerHTML = backBar(t("briefs.page_title")) + `<div class="grid">` + bs.map(b => {
       const st = progress.briefs[b.id] || {};
-      return `<button class="card" data-b="${b.id}"><span class="rung">Brief</span>
-        <h3>${esc(b.title)}</h3><p>${b.capstone?"Capstone · ":""}${b.rubric.length} rubric criteria</p>
-        ${st.selfMark?`<p style="margin-top:8px"><span class="badge">${esc(st.selfMark)}</span></p>`:""}</button>`;
+      const markLabel = st.selfMark ? (
+        st.selfMark === "nailed" ? t("briefs.mark_nailed") :
+        st.selfMark === "gaps" ? t("briefs.mark_gaps") :
+        st.selfMark === "redo" ? t("briefs.mark_redo") :
+        st.selfMark  // fallback for legacy translated values
+      ) : null;
+      return `<button class="card" data-b="${b.id}"><span class="rung">${t("briefs.rung_brief")}</span>
+        <h3>${esc(b.title)}</h3><p>${b.capstone?t("briefs.capstone_label"):""}${t("briefs.rubric_count", {n: b.rubric.length})}</p>
+        ${markLabel?`<p style="margin-top:8px"><span class="badge">${esc(markLabel)}</span></p>`:""}</button>`;
     }).join("") + `</div>`;
     wireBack();
     main.querySelectorAll("[data-b]").forEach(x =>
@@ -3181,27 +4289,25 @@ function renderBrief(b){
   // Two-step confirm rather than a one-click wipe: this button can destroy
   // twenty minutes of writing, and there is no undo.
   const clearBtn = state.confirmClear === b.id
-    ? `<button class="btn" id="clear-yes" style="background:var(--bad)">Yes, delete my answers</button>
-       <button class="btn ghost" id="clear-no">Keep them</button>`
-    : `<button class="btn ghost" id="clear" ${written?"":"disabled"}>Clear my answers</button>`;
+    ? `<button class="btn" id="clear-yes" style="background:var(--bad)">${t("briefs.confirm_clear")}</button>
+       <button class="btn ghost" id="clear-no">${t("briefs.cancel_clear")}</button>`
+    : `<button class="btn ghost" id="clear" ${written?"":"disabled"}>${t("briefs.clear_button")}</button>`;
   body += `<div class="row"><button class="btn" id="reveal" ${filled?"":"disabled"}>
-    ${filled?"Reveal the model answer":"Answer every field to unlock the model answer"}</button>
+    ${filled?t("briefs.reveal_button"):t("briefs.reveal_locked")}</button>
     ${clearBtn}</div>
-    <p class="cite">Saves as you type${memoryOnly?" — in memory only, this browser blocks storage":""}.</p>
-    <div class="reveal"><p style="font-weight:600;margin:0 0 6px">Have it critiqued</p>
-    <p class="why">Sends the scenario, the rubric and your full answer to an AI examiner and asks for a
-    per-criterion verdict with quoted evidence. The prompt is copied to your clipboard — paste it into
-    the tab that opens.</p>${aiLinks(critiquePrompt(b), "Critique my answer:")}</div>`;
+    <p class="cite">${t("briefs.autosave_note", {memoryOnly: memoryOnly?t("briefs.autosave_no_storage"):""})}</p>
+    <div class="reveal"><p style="font-weight:600;margin:0 0 6px">${t("briefs.critique_heading")}</p>
+    <p class="why">${t("briefs.critique_intro")}</p>${aiLinks(critiquePrompt(b), t("briefs.critique_link"))}</div>`;
 
   if(st.revealed){
-    body += `<div class="reveal rubric"><h3 style="font-size:15px">What a strong response contains</h3><ul>` +
+    body += `<div class="reveal rubric"><h3 style="font-size:15px">${t("briefs.rubric_heading")}</h3><ul>` +
       b.rubric.map(r => `<li><b>${esc(r.criterion)}</b>${esc(r.expected)}
         <span class="cite">${esc(r.citation)}</span></li>`).join("") + `</ul>
-      <div class="sweep"><p><strong>How did you do?</strong> This feeds the same scheduler as the boards.</p>
+      <div class="sweep"><p><strong>${t("briefs.self_assess_prompt")}</strong> ${t("briefs.self_assess_note")}</p>
       <div class="row" style="margin:0">
-        <button class="btn" data-mark="Nailed it">Nailed it</button>
-        <button class="btn ghost" data-mark="Gaps">Gaps</button>
-        <button class="btn ghost" data-mark="Redo">Redo</button></div></div></div>`;
+        <button class="btn" data-mark="nailed">${t("briefs.mark_nailed")}</button>
+        <button class="btn ghost" data-mark="gaps">${t("briefs.mark_gaps")}</button>
+        <button class="btn ghost" data-mark="redo">${t("briefs.mark_redo")}</button></div></div></div>`;
   }
 
   main.innerHTML = backBar(b.title) + `<div class="panel">${body}</div>`;
@@ -3219,7 +4325,7 @@ function renderBrief(b){
       if(btn){
         const ok = b.fields.every(f => (rec.responses[f.key]||"").trim().length>0);
         btn.disabled = !ok;
-        btn.textContent = ok?"Reveal the model answer":"Answer every field to unlock the model answer";
+        btn.textContent = ok?t("briefs.reveal_button"):t("briefs.reveal_locked");
       }
     };
   });
@@ -3236,7 +4342,7 @@ function renderBrief(b){
   if(yes) yes.onclick = () => {
     delete progress.briefs[b.id];
     save(); state.confirmClear = null; render();
-    toast("Answers cleared");
+    toast(t("briefs.toast_cleared"));
   };
   main.querySelectorAll("[data-mark]").forEach(x => x.onclick = () => {
     const rec = progress.briefs[b.id]||{responses:{}}; rec.selfMark=x.dataset.mark;
@@ -3326,17 +4432,21 @@ let promptSeq = 0;
 const PROMPTS = new Map();
 function aiLinks(prompt, label){
   const key = `p${++promptSeq}`;
-  PROMPTS.set(key, prompt);
+  let finalPrompt = prompt;
+  if(lang !== "en") finalPrompt += "\n\nPlease respond in " + I18N.meta[lang].name + ".";
+  PROMPTS.set(key, finalPrompt);
   // AI_LOGOS holds each mark's inner geometry plus the brand fill that sat on
   // the source <svg> element. Both are needed: dropped straight into a <button>
   // the browser discards the paths, and without the fill every mark renders
   // black — invisible on the dark theme. ChatGPT's mark has no brand colour, so
   // it carries currentColor and follows the text colour instead.
-  const btns = Object.keys(AI_URLS).map(s =>
-    `<button class="ai-link ${s}" data-ai="${s}" data-prompt="${key}"
-      data-label="Open in ${AI_NAMES[s]}" aria-label="Open in ${AI_NAMES[s]}"
+  const btns = Object.keys(AI_URLS).map(s => {
+    const openLabel = t("ai.open_in_label", {serviceName: AI_NAMES[s]});
+    return `<button class="ai-link ${s}" data-ai="${s}" data-prompt="${key}"
+      data-label="${esc(openLabel)}" aria-label="${esc(openLabel)}"
       ><svg viewBox="0 0 24 24" fill="${AI_LOGOS[s].fill}" aria-hidden="true"
-        focusable="false">${AI_LOGOS[s].inner}</svg></button>`).join("");
+        focusable="false">${AI_LOGOS[s].inner}</svg></button>`;
+  }).join("");
   return `<div class="ai-links">${label?`<span class="lbl">${esc(label)}</span>`:""}${btns}</div>`;
 }
 function wireAiLinks(){
@@ -3344,31 +4454,52 @@ function wireAiLinks(){
     handoff(PROMPTS.get(b.dataset.prompt) || "", b.dataset.ai));
 }
 function handoff(prompt, service){
-  if(prompt.length < 1800){
-    window.open(`${AI_URLS[service]}?q=${encodeURIComponent(prompt)}`, "_blank", "noopener");
+  // Gate on the URL actually sent, not the raw prompt: the target sites all
+  // read ?q= client-side and tolerate long query strings, so prefill works
+  // well past the old 1800-char guess. ~8k total URL keeps clear of proxy/CDN
+  // request-line limits.
+  const url = `${AI_URLS[service]}?q=${encodeURIComponent(prompt)}`;
+  if(url.length < 7600){
+    window.open(url, "_blank", "noopener");
     return;
   }
+  // Too long to prefill: copy, then tell the player in a way that cannot be
+  // missed. A toast dies unseen because window.open steals focus, so reuse
+  // the placement sheet — the new tab only opens from the player's own tap
+  // on "Open in <service>", after they have read that the prompt was copied.
   const open = () => window.open(AI_URLS[service], "_blank", "noopener");
+  const announce = () => openSheet({
+    title: t("ai.sheet_copied_title"),
+    targets: [{key:"open", label: t("ai.open_in_label", {serviceName: AI_NAMES[service]}),
+               sub: t("ai.sheet_copied_sub")}],
+    onPick: () => { closeSheet(); open(); }
+  });
   if(navigator.clipboard && navigator.clipboard.writeText){
     navigator.clipboard.writeText(prompt)
-      .then(() => { toast("Prompt copied — paste it into the tab that opened"); open(); })
-      .catch(() => { fallbackCopy(prompt); open(); });
-  }else{ fallbackCopy(prompt); open(); }
+      .then(announce)
+      .catch(() => { if(fallbackCopy(prompt)) announce(); else open(); });
+  }else{ if(fallbackCopy(prompt)) announce(); else open(); }
 }
 function fallbackCopy(text){
   const ta = document.createElement("textarea");
   ta.value=text; ta.style.position="fixed"; ta.style.opacity="0";
   document.body.appendChild(ta); ta.select();
-  try{ document.execCommand("copy"); toast("Prompt copied — paste it into the new tab"); }
-  catch(e){ toast("Could not copy — select the prompt manually"); }
+  let ok = false;
+  try{ ok = document.execCommand("copy"); }
+  catch(e){ ok = false; }
+  if(!ok) toast(t("ai.toast_copy_fail"));
   document.body.removeChild(ta);
+  return ok;
 }
 function toast(msg){
-  const t=document.createElement("div"); t.className="toast"; t.textContent=msg;
-  document.body.appendChild(t); setTimeout(()=>t.remove(),3200);
+  const el=document.createElement("div"); el.className="toast"; el.textContent=msg;
+  document.body.appendChild(el); setTimeout(()=>el.remove(),3200);
 }
 
-if(!openFromHash()) render();
+mountLangSelect();
+document.documentElement.lang = lang;
+document.documentElement.dir = I18N.meta[lang].dir === "rtl" ? "rtl" : "ltr";
+loadOverlay(lang).then(() => { relocalizeDecks(); applyStatic(); if(!openFromHash()) render(); });
 </script>
 </body>
 </html>

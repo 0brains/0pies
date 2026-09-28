@@ -1,0 +1,220 @@
+{
+  "id": "agent-id-control",
+  "runner": "board",
+  "title": "Blast Radius",
+  "blurb": "An agent misbehaves, a site overshares, a model endpoint gets hammered. You decide which console owns the problem before you touch anything.",
+  "source": "Microsoft Learn: Purview DSPM and data risk assessments, Foundry agent identity and guardrails, Foundry AI Gateway with Azure API Management, Defender XDR security for AI agents, Defender for Cloud AI posture and threat protection, Microsoft 365 Copilot agent governance · SC-500 outline 3.1",
+  "asOf": "2026-08",
+  "area": "3.1",
+  "hint": "Ask what the scene is actually about before you ask which product you like. If the subject is the DATA an agent can reach, who it is shared with, and whether prompts carried sensitive content, it is Purview DSPM. If the subject is the agent's IDENTITY, its blueprint class, the roles it holds, or the policy that gates its sign-in, it is Entra Agent ID. If the subject is DETECTION and investigation of agent behaviour after or during a run, including tracing how far a compromise spread, it is Defender XDR. If the subject is an AZURE workload plan, posture recommendations, attack paths, or a cross-subscription estate view, it is Defender for Cloud. If the subject is what the agent is allowed to say, call, or spend inside its own project, it is Foundry controls. If the subject is what tenant users can install, share, or see in Teams and Copilot, it is the M365 admin center.",
+  "zones": [
+    {
+      "key": "Purview DSPM",
+      "name": "Purview DSPM",
+      "def": "Data exposure and oversharing risk: data risk assessments over SharePoint and Fabric, AI observability of apps and agents, and prompt and response activity carrying sensitive information types. It owns the DATA the agent can reach, not the agent object itself, which belongs to Entra Agent ID, and not detection of a live attack, which belongs to Defender XDR."
+    },
+    {
+      "key": "Entra Agent ID",
+      "name": "Entra Agent ID",
+      "def": "The agent as a directory principal: agent identities and their blueprints, Conditional Access applied to an agent class, token audiences, least-privilege role assignments, and governance of owners, sponsors, and expiry. It grants or withholds access up front, unlike Defender XDR, which watches what the agent does afterwards, and unlike the M365 admin center, which only decides where users see the agent."
+    },
+    {
+      "key": "Defender XDR",
+      "name": "Defender XDR",
+      "def": "Detection, investigation, and runtime blocking for agents: the AI agents inventory, risk indicators and risk levels, real-time protection rules, incident graphs that trace how far a compromise reached, and the AgentsInfo hunting table. It is behaviour-driven, unlike Entra Agent ID, which is permission-driven, and it covers agents across platforms, unlike Defender for Cloud, which is scoped to Azure AI workload resources."
+    },
+    {
+      "key": "Defender for Cloud",
+      "name": "Defender for Cloud",
+      "def": "Azure-side AI workload security: turning on the AI services plan for a subscription, discovering the AI bill of materials, posture recommendations and attack paths on model endpoints, and the Data and AI security dashboard across the estate. It reasons about Azure RESOURCES, where Defender XDR reasons about individual agents and their runtime actions."
+    },
+    {
+      "key": "Foundry controls",
+      "name": "Foundry controls",
+      "def": "Controls configured inside Foundry itself for a project's own models and agents: guardrail policies with risk controls at user input, tool call, tool response, and output, task adherence, network egress rules, and AI Gateway limits backed by Azure API Management. It shapes what one project can say, call, and spend, where Defender for Cloud only observes and recommends across subscriptions."
+    },
+    {
+      "key": "M365 admin center",
+      "name": "M365 admin center",
+      "def": "Tenant-level Copilot agent governance through the Copilot Control System: who may access agents, which agent types users may install, sharing and publishing policy, and blocking an agent so it stops appearing in Teams and Microsoft 365 Copilot. Blocking here changes visibility only, unlike a Foundry disable or stop, which takes the endpoint or compute offline, and unlike Entra Agent ID, which revokes what the agent can reach."
+    }
+  ],
+  "items": [
+    {
+      "id": "age-01",
+      "label": "A housing association turns on Copilot and within a fortnight staff are getting tender documents summarised that they were never meant to open. The security lead wants a recurring look at the busiest SharePoint sites, counts of items shared by anonymous links, and a per-site remediation flyout.",
+      "sub": "Which surface owns this?",
+      "answer": "Purview DSPM",
+      "why": "Data risk assessments in DSPM run weekly against the top hundred SharePoint sites by usage and open a per-site flyout with Identify, Protect, and Monitor tabs, including restricting Copilot summarisation by label or exempting the site entirely with Restricted Content Discovery. Defender XDR is the nearest wrong pick because oversharing does feed agent risk, but XDR assesses the agent's posture and behaviour, not the permission sprawl on the content underneath it.",
+      "citation": "Learn: Purview DSPM data risk assessments · outline 3.1"
+    },
+    {
+      "id": "age-02",
+      "label": "A clinical research group suspects staff are pasting unpublished trial figures into a consumer chatbot. The compliance officer wants to see browsing to generative AI sites, prompts and responses that carried sensitive information types, and which DLP rules matched during those interactions.",
+      "sub": "Where does that evidence live?",
+      "answer": "Purview DSPM",
+      "why": "The AI activities view in the DSPM Activity explorer is built exactly for prompt-level and response-level signal, including DLP rule matches during AI interactions. Defender for Cloud is the tempting neighbour because it can also collect prompt evidence, but that evidence is attached to alerts on Azure model resources, not to a tenant-wide record of who typed what into which AI site.",
+      "citation": "Learn: Purview DSPM overview · outline 3.1"
+    },
+    {
+      "id": "age-03",
+      "label": "A building society's data protection officer asks for a single list of every AI app and agent that has been active in the last thirty days, how many count as high risk, how many touched sensitive interactions, and which policies currently cover each one.",
+      "sub": "Which console produces that list?",
+      "answer": "Purview DSPM",
+      "why": "The AI observability page in DSPM is the inventory that pairs each app or agent with its sensitive-interaction volume and the policies governing it, and it is the page that includes agents registered through Microsoft Agent 365. Defender XDR also keeps an agents inventory, but that one is organised around risk indicators and alerts rather than around data policy coverage.",
+      "citation": "Learn: Purview DSPM overview · outline 3.1"
+    },
+    {
+      "id": "age-04",
+      "label": "An energy retailer wants the same oversharing sweep it already gets for SharePoint extended to its analytics estate: lakehouses, notebooks, and reports. The platform team is told to register an application in Entra and add it to a security group named in the Fabric admin portal before anything will run.",
+      "sub": "Which surface is being set up?",
+      "answer": "Purview DSPM",
+      "why": "Assessments in DSPM cover Fabric on their own tab, and that tab needs the one-time registered application plus an Admin API security group, authenticated by federated credentials or by a client secret; once it is wired up the default sweep covers the top hundred workspaces weekly. Defender for Cloud is the near miss because it also discovers data estates, but it does not run Fabric workspace oversharing assessments or offer the sharing-link remediation actions.",
+      "citation": "Learn: Purview DSPM data risk assessments · outline 3.1"
+    },
+    {
+      "id": "age-05",
+      "label": "An insurer's claims-triage agent has never been published, so at runtime it borrows the shared identity of the Foundry project it lives in, alongside four other agents. Internal audit wants this one agent to carry its own storage permissions and its own audit trail.",
+      "sub": "What change closes this?",
+      "answer": "Entra Agent ID",
+      "why": "An unpublished agent uses the project's shared identity, which is the wider blast radius; publishing it creates an agent application with a distinct Entra agent identity, and roles must then be reassigned to that new identity. Defender XDR is the wrong pull here because it would only report the shared identity as a risk indicator, whereas the fix is an identity change in Entra and Foundry.",
+      "citation": "Learn: Agent identity concepts in Microsoft Foundry · outline 3.1"
+    },
+    {
+      "id": "age-06",
+      "label": "A grocery chain has stamped out forty instances of the same sales assistant agent across its regional trading teams. Security wants every instance of that class, present and future, to be refused a token unless the call originates from a trusted network.",
+      "sub": "Where is that policy applied?",
+      "answer": "Entra Agent ID",
+      "why": "The agent identity blueprint is the class object, and Conditional Access policies attached to it apply to every agent identity created from it, which is also how you revoke or disable a whole class at once. The M365 admin center is the nearest wrong zone: blocking there would only remove the agent from Teams and Copilot surfaces and would not stop token issuance for other channels.",
+      "citation": "Learn: Agent identity concepts in Microsoft Foundry · outline 3.1"
+    },
+    {
+      "id": "age-07",
+      "label": "A logistics developer grants their agent a storage role on the right container, but every tool call still fails authentication. Digging into the connection, the token is being requested for the address of the MCP server rather than for the storage service resource identifier.",
+      "sub": "Which surface is at fault?",
+      "answer": "Entra Agent ID",
+      "why": "The runtime exchange asks Entra for a token scoped to the downstream service audience, and a wrong audience fails even when RBAC is correct, because the resource rejects a token minted for something else. Foundry controls is the wrong instinct because a guardrail refusal shows up as blocked content or a stopped tool action, not as an authentication failure on the resource side.",
+      "citation": "Learn: Agent identity concepts in Microsoft Foundry · outline 3.1"
+    },
+    {
+      "id": "age-08",
+      "label": "A university has accumulated roughly three hundred agents built by different faculties, many with no named owner and no end date. The identity team wants one inventory covering Foundry, Copilot Studio, and other platforms, with owners, sponsors, and expiry attached.",
+      "sub": "Which admin surface holds this?",
+      "answer": "Entra Agent ID",
+      "why": "The Entra admin center exposes all agent identities in the tenant under Agent ID, and that is where governance settings such as expiration, owners, and sponsors are applied, alongside Conditional Access and identity protection. Defender XDR lists agents too, but its inventory exists to rank risk and drive investigation, not to assign directory ownership and lifecycle.",
+      "citation": "Learn: Agent identity concepts in Microsoft Foundry · outline 3.1"
+    },
+    {
+      "id": "age-09",
+      "label": "A telco's overnight shift finds an HR onboarding agent has been persuaded to forward an internal document to an outside address. The analyst now needs to know what else that agent touched, which user and device context it ran under, and which other entities are pulled into the same incident.",
+      "sub": "Where is that traced?",
+      "answer": "Defender XDR",
+      "why": "Defender correlates agent signals into incidents and gives an incident graph and investigation experience that shows entity relationships and the reach of the compromise, which is exactly the blast-radius question. Defender for Cloud is the closest wrong answer: it will alert on threats to an Azure model resource, but it does not assemble the cross-workload identity and endpoint picture around one agent.",
+      "citation": "Learn: Defender XDR agent threat detection · outline 3.1"
+    },
+    {
+      "id": "age-10",
+      "label": "A hospital trust reviews its agent estate and one scheduling agent stands out: it can write to a key clinical system, its instructions are thin, and it is flagged as reachable by content it does not control. It is ranked High overall with a short list of suggested fixes.",
+      "sub": "Which surface produced this?",
+      "answer": "Defender XDR",
+      "why": "Defender combines active risk indicators such as weak instructions, privileged business-system access, and indirect prompt injection exposure into one risk level, then offers recommendations that are calculated separately and mapped back to the indicators they address. Defender for Cloud also issues recommendations, but those attach to Azure AI resources and their configuration, not to per-agent risk indicators like instruction quality.",
+      "citation": "Learn: AI agent posture risk in Microsoft Defender · outline 3.1"
+    },
+    {
+      "id": "age-11",
+      "label": "A freight operator is content to keep auditing most of its agents, but one Copilot Studio agent handling supplier onboarding must have any attempt to move credentials out of the tenant stopped before the tool call runs, while the rest of the estate stays in audit only.",
+      "sub": "What do you configure?",
+      "answer": "Defender XDR",
+      "why": "The built-in default rule only audits and records behaviours, so a scoped custom real-time protection rule under Security for AI is what actually blocks a chosen detection type such as secret exfiltration for named agents. Foundry controls is the near neighbour, but guardrails only reach agents built in Foundry Agent Service, and this agent was built in Copilot Studio.",
+      "citation": "Learn: Defender XDR real-time protection rules · outline 3.1"
+    },
+    {
+      "id": "age-12",
+      "label": "A games studio's threat hunter wants a table of every agent with its current configuration, one row per agent rather than the pile of historical snapshots the query keeps returning, and with deleted agents dropped.",
+      "sub": "Which surface answers this?",
+      "answer": "Defender XDR",
+      "why": "The AgentsInfo table in Advanced Hunting stores repeated snapshots per agent, so you summarise with arg_max on the timestamp by agent id and filter out the deleted lifecycle state to get current inventory. Purview DSPM also inventories agents, but it reports data-risk framing over a thirty-day window rather than exposing a queryable configuration table for hunting.",
+      "citation": "Learn: Defender XDR AI agent inventory · outline 3.1"
+    },
+    {
+      "id": "age-13",
+      "label": "A regional bank has just stood up its first Azure OpenAI deployment and the security team has no visibility at all into jailbreak attempts or credential-theft attempts against it. They have Owner rights on the subscription and want alerts flowing within the hour.",
+      "sub": "What do you switch on?",
+      "answer": "Defender for Cloud",
+      "why": "Threat protection for AI services is enabled per subscription from Environment settings by toggling the AI services plan on, and it draws on Prompt Shields and Microsoft threat intelligence to alert on jailbreak, data leakage, and similar attacks. Defender XDR is the wrong first move because it centralises and correlates these alerts once they exist, but the plan that generates them is a Defender for Cloud subscription toggle.",
+      "citation": "Learn: Enable threat protection for AI services · outline 3.1"
+    },
+    {
+      "id": "age-14",
+      "label": "A manufacturer's cloud team learns that one of its model endpoints answers from the public internet, and the identity in front of it holds far more permission than it needs to reach a storage account full of design files. They want the chain, not three separate findings.",
+      "sub": "Which surface shows the chain?",
+      "answer": "Defender for Cloud",
+      "why": "Defender CSPM discovers the AI bill of materials and uses attack path analysis to link an internet-reachable endpoint to an over-permissioned identity and the sensitive data it can reach, then prioritises stronger authentication and least privilege. Defender XDR is the nearest wrong zone because it investigates an attack that has happened, whereas this is a posture chain that nobody has exploited yet.",
+      "citation": "Learn: Overview - AI security posture management · outline 3.1"
+    },
+    {
+      "id": "age-15",
+      "label": "A group CISO across eleven Azure subscriptions wants one screen showing storage, databases, and AI services together, how much of that estate is actually covered by a protection plan, and which critical alerts, recommendations, and attack paths need attention first.",
+      "sub": "Which view is this?",
+      "answer": "Defender for Cloud",
+      "why": "The Data and AI security dashboard is enabled per subscription and needs Defender CSPM with sensitive data discovery plus the storage, database, and AI workload plans, and it presents coverage and top issues in one place. Purview DSPM is the tempting neighbour, but its posture dashboard reports on data security objectives and policy coverage rather than on Azure resource protection plans.",
+      "citation": "Learn: Data and AI security dashboard · outline 3.1"
+    },
+    {
+      "id": "age-16",
+      "label": "A borough council runs a hosted benefits agent that only ever needs to reach two approved internal services. Someone points out that nothing today stops it opening a connection to any address on the internet if a tool leads it there.",
+      "sub": "What closes this?",
+      "answer": "Foundry controls",
+      "why": "Hosted agents support network egress controls configured in the same guardrail policy, restricting outbound connections to destinations you allow. Entra Agent ID is the near miss: it decides which resources the agent may authenticate to, but it does not constrain the raw outbound network destinations the hosted runtime can open.",
+      "citation": "Learn: Guardrails and controls overview in Microsoft Foundry · outline 3.1"
+    },
+    {
+      "id": "age-17",
+      "label": "A travel firm's booking agent is asked to check a fare and instead calls the refund tool with arguments the customer never implied. The team wants that mismatch caught in the loop, with a reason attached, so the call can be stopped or handed to a person.",
+      "sub": "Which control catches this?",
+      "answer": "Foundry controls",
+      "why": "Task adherence detects tool actions and outputs that drift from the user's stated intent, supplies reasoning for the misalignment, and produces a signal to block the invocation or escalate for human review, and the tool call and tool response intervention points exist only for agents. Defender XDR is the nearest alternative, but its real-time rules block named detection types such as exfiltration rather than judging whether an action matched the user's goal.",
+      "citation": "Learn: Agentic Workflows Task Adherence and Intervention points in Microsoft Foundry · outline 3.1"
+    },
+    {
+      "id": "age-18",
+      "label": "In a shared Foundry resource, one data science team's batch job repeatedly drains the model capacity and three other project teams see their requests fail all afternoon. The platform owner wants each project boxed into its own throughput and its own total allowance.",
+      "sub": "What do you deploy?",
+      "answer": "Foundry controls",
+      "why": "AI Gateway is enabled from Manage in the Foundry portal, sits in front of the models on an API Management instance, and applies tokens-per-minute limits and quotas per project, returning a rate-limit response when throughput is exceeded and a forbidden response once the quota is spent. Defender for Cloud is the wrong zone because it will happily tell you the workload exists and is risky, but it enforces no traffic limits.",
+      "citation": "Learn: Configure AI Gateway in your Foundry resources · outline 3.1"
+    },
+    {
+      "id": "age-19",
+      "label": "A reinsurance firm already runs a hardened API Management instance in the same tenant and subscription, on a version two tier, and refuses to expose model endpoints publicly. Agents in a new Foundry project must reach those models through that existing front door.",
+      "sub": "What do you configure?",
+      "answer": "Foundry controls",
+      "why": "Foundry only offers existing API Management instances that sit in the same tenant and subscription, are on a v2 tier, and on which you hold at least API Management Service Contributor, and new projects join the gateway automatically while existing ones must be added by hand. Entra Agent ID is the near miss because credentials are involved, but the gateway connection is a Foundry resource configuration, not an agent identity decision.",
+      "citation": "Learn: Configure AI Gateway in your Foundry resources · outline 3.1"
+    },
+    {
+      "id": "age-20",
+      "label": "A retailer's people team published a Copilot Studio agent that is confidently quoting last year's leave policy in Teams chats. The maker needs two days to fix it, and the head of IT wants staff to stop seeing it in Teams and Copilot meanwhile, without anyone touching Azure resources.",
+      "sub": "Which action fits?",
+      "answer": "M365 admin center",
+      "why": "Blocking in the Microsoft 365 admin center affects only how the agent is projected into Teams and Microsoft 365 Copilot, leaving it functional in Foundry and other integration points and leaving the underlying resources alone. Foundry controls is the tempting neighbour, but disabling a Foundry agent takes its endpoint offline across every channel and stopping an application deallocates compute, which is far more than was asked for.",
+      "citation": "Learn: Foundry agent infrastructure governance · outline 3.1"
+    },
+    {
+      "id": "age-21",
+      "label": "A law firm decides that only the knowledge management group may install agents beyond the prebuilt ones, and that everybody else should be able to use published agents but not add their own. The partner responsible wants this set once, tenant-wide.",
+      "sub": "Where is that set?",
+      "answer": "M365 admin center",
+      "why": "Agent access and availability policies in the Copilot Control System within the Microsoft 365 admin center control who can access agents and which types users may install, applied across the tenant. Entra Agent ID is the nearest wrong zone: it governs what an agent identity may reach once it exists, not which humans are permitted to add agents in the first place.",
+      "citation": "Learn: Microsoft 365 agents deployment checklist · outline 3.1"
+    },
+    {
+      "id": "age-22",
+      "label": "A charity finds staff have been quietly sideloading personal agents and sharing them around by link, so nobody knows how many exist. Leadership wants sideloading and sharing brought under an explicit tenant policy with a proper publishing route instead.",
+      "sub": "Which surface owns this?",
+      "answer": "M365 admin center",
+      "why": "Sideloading, sharing, and publishing agents all happen subject to tenant policies and admin controls configured in the Microsoft 365 admin center, which is also where the agent registry and inventory controls for ownerless agents sit. Purview DSPM is the near miss because it will show you those agents and the sensitive data they touch, but it cannot decide whether users are allowed to sideload them.",
+      "citation": "Learn: Microsoft 365 Agents FAQ and agent policies · outline 3.1"
+    }
+  ]
+}

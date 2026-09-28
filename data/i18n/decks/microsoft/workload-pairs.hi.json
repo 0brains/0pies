@@ -1,0 +1,62 @@
+{
+  "wp-01": {
+    "a.text": "समर्थन टिकटों से, हर उत्पाद नाम, व्यक्ति, और दिनांक का उल्लेख करें।",
+    "a.why": "Entities यह पहचानते हैं कि कौन/क्या mentioned है — लोग, दिनांक, organizations (histack: 'विशिष्ट चीजों को categorizes')।",
+    "b.text": "उसी टिकटों से, यह निर्धारित करें कि ग्राहक सकारात्मक, नकारात्मक, या neutral महसूस करते हैं।",
+    "b.why": "Opinion polarity sentiment है — परीक्षा की #1 confused जोड़ी (17 co-occurrences)।"
+  },
+  "wp-02": {
+    "a.text": "एक कॉल-सेंटर रिकॉर्डिंग को प्रतिलेखित करें ताकि agents बातचीत को खोज सकें।",
+    "a.why": "ऑडियो में, पाठ बाहर — पहचान। 'Transcribe' giveaway क्रिया है।",
+    "b.text": "एक नेविगेशन एप्लिकेशन en-US-Ava neural voice के साथ turn-by-turn निर्देशों को जोर से पढ़ता है।",
+    "b.why": "पाठ में, ऑडियो बाहर — संश्लेषण। SSML और voice names जैसे en-US-Ava:DragonHDLatestNeural केवल संश्लेषण के लिए संबंधित हैं।"
+  },
+  "wp-03": {
+    "a.text": "एक सम्मेलन एप्लिकेशन एक फ्रेंच स्पीकर को सुनता है और दर्शकों के लिए लाइव अंग्रेजी captions उत्पादन करता है।",
+    "a.why": "एक भाषा में भाषण को पहचान करना और दूसरे में रेंडर करना अनुवाद है — परीक्षा की बताना इस जोड़ी के लिए (ऑडियो-में, अलग-भाषा-बाहर)।",
+    "b.text": "एक ही एप्लिकेशन सामने की पंक्ति में एक सुनने में कमजोर attendee के लिए same-language फ्रेंच captions का उत्पादन भी करता है।",
+    "b.why": "ऑडियो में, same-language पाठ बाहर है सादा भाषण-से-पाठ; कोई भाषा crosses, इसलिए अनुवाद करने के लिए कुछ नहीं है।"
+  },
+  "wp-04": {
+    "a.text": "photographed उपकरण लेबल पर मुद्रित क्रम संख्या को निकालें।",
+    "a.why": "OCR/Read छवि में मौजूद शब्दवर्तनी पाठ को निकालता है — 'एक छवि से readable पाठ निकालें' परीक्षा stem है।",
+    "b.text": "फ़ोटो क्या दिखाती है इसका एक-वाक्य प्राकृतिक-भाषा विवरण उत्पन्न करें।",
+    "b.why": "Captioning (VisualFeatures.CAPTION) दृश्य का वर्णन करता है — यह इसमें पाठ नहीं पढ़ता है।"
+  },
+  "wp-05": {
+    "a.text": "एक स्कैनिंग एप्लिकेशन एक photographed लिफाफे से printed पता ब्लॉक पढ़ता है संरचित पाठ क्षेत्रों में।",
+    "a.why": "OCR मौजूदा pixels को पाठ में परिवर्तित करता है — इनपुट एक छवि है, आउटपुट पाठ है।",
+    "b.text": "एक डिजाइन उपकरण 'एक सादा rocket का नीला आइकन' प्रॉम्प्ट लेता है और एक ब्रांड-नई PNG उत्पादन करता है जो पहले कभी मौजूद नहीं थी।",
+    "b.why": "छवि पीढ़ी (client.images.generate के साथ gpt-image-1 / DALL·E) विपरीत दिशा में चलाता है — पाठ प्रॉम्प्ट में, synthesized pixels बाहर — परीक्षा के दिशा-flip जाल इस जोड़ी पर।"
+  },
+  "wp-06": {
+    "a.text": "यह तय करें कि क्या प्रत्येक uploaded फ़ोटो 'defective part' या 'good part' है।",
+    "a.why": "Classification पूरी छवि के लिए एक लेबल निर्दिष्ट करता है।",
+    "b.text": "conveyor छवि पर हर भाग बैठे जहां bounding boxes के साथ मार्क करें।",
+    "b.why": "प्रति ऑब्जेक्ट Bounding boxes परीक्षा बताना है पहचान के लिए — क्लासिक vision भ्रम।"
+  },
+  "wp-07": {
+    "a.text": "समीक्षाओं के एक batch से ['pricing', 'battery life', 'customer support'] return करें।",
+    "a.why": "Key phrases महत्वपूर्ण शब्दों की एक सूची देते हैं — कोई नई prose नहीं लिखी जाती है।",
+    "b.text": "समग्र feedback को capture करते हुए एक ही समीक्षाओं को तीन fresh sentences में condense करें।",
+    "b.why": "Summarization नई condensed sentences लिखता है — आउटपुट-shape भेद corpus परीक्षाएं (जोड़ी #14)।"
+  },
+  "wp-08": {
+    "a.text": "एक हल्के एप्लिकेशन को हर ईमेल पता और फ़ोन नंबर को खोज और संपादित करना चाहिए ग्राहक संदेशों में उन्हें store करने से पहले।",
+    "a.why": "PII detection समर्पित क्षमता है जो संवेदनशील व्यक्तिगत डेटा को पहचानती है और संपादित कर सकती है जैसे फ़ोन नंबर और ईमेल पते (परीक्षा इसे 'most direct privacy-focused capability' कहती है)।",
+    "b.text": "एक ही एप्लिकेशन एक searchable सूचकांक के लिए संदेशों में mentioned हर व्यक्ति, organization, और स्थान को tag करता है।",
+    "b.why": "Entity recognition श्रेणियों के बीच व्यापक निष्कर्षण है — लोग, स्थान, organizations — समर्पित redaction-focused feature PII detection नहीं।"
+  },
+  "wp-09": {
+    "a.text": "एक मीटिंग प्रतिलेख प्रत्येक अनुभाग को दर्ज ऑडियो को सही participant के लिए attribute करना चाहिए।",
+    "a.why": "Diarization आने वाली ऑडियो के भीतर speakers को पहचानता है और अलग करता है, प्रतिलेख के प्रत्येक हिस्से को labeling करता है (परीक्षा इसे 'audio speaker attribution' कहती है)।",
+    "b.text": "एक बार प्रतिलेख अंतिम हो, एक narrator voice प्रसारण feed के लिए मीटिंग सारांश पढ़ता है।",
+    "b.why": "Synthesis पाठ को मानव जैसी voice output में परिवर्तित करता है — मौजूदा ऑडियो diarizing के विपरीत pipeline चरण।"
+  },
+  "wp-10": {
+    "a.text": "एक developer को एक वीडियो सम्मेलन का लाइव ऑडियो captioning की जरूरत है वास्तविक समय में, same language, सुनने में कमजोर participants के लिए।",
+    "a.why": "Azure AI Speech लाइव ऑडियो captioning के लिए realtime speech-to-text पाइपलाइन प्रदान करता है — captioning के लिए मानक सेवा, cross-language पाठ रूपांतरण से अलग।",
+    "b.text": "एक खुदरा विक्रेता को लिखित उत्पाद विवरणों को अंग्रेजी से 20 अन्य भाषाओं में परिवर्तित करने की जरूरत है पाठ के रूप में।",
+    "b.why": "Azure AI Translator भाषाओं के बीच तंत्रिका मशीन अनुवाद प्रदान करता है पाठ के लिए — परीक्षा की contrast ऑडियो-pipeline सेवा vs cross-language पाठ सेवा है, workload overlap नहीं (जोड़ी #29)।"
+  }
+}

@@ -1,0 +1,84 @@
+{
+ "ag-001": {
+  "label": "\"तुम एक विनम्र सहायता एजेंट हो; रिफंड से संबंधित किसी भी चीज को बढ़ाना\" — एजेंट के निर्माण समय सेट किया जाता है",
+  "why": "instructions फील्ड निर्माण समय पर स्थायी व्यवहार परिभाषित करता है — अध्ययन सामग्री की सबसे ज़्यादा जोर दी गई एजेंट अवधारणा, runtime chat state से अलग।"
+ },
+ "ag-002": {
+  "label": "एजेंट को बाहरी फ़ंक्शन या API कॉल करने दें और कार्रवाई करने दें",
+  "why": "Function calling / tools मॉडल को टेक्स्ट से आगे जाने देते हैं — वह capability जो एजेंट को plain chat कॉल से अलग करती है।"
+ },
+ "ag-003": {
+  "label": "Deployed gpt-4o जिसके साथ एजेंट तर्क करता है — deployment name से संदर्भित",
+  "why": "एक एजेंट = model + instructions + tools; model एक deployment है, और {\"deployment\":{\"model\":AGENT_NAME}} canonical गलत उत्तर है।"
+ },
+ "ag-004": {
+  "label": "Grounding फाइलें और डेटा स्रोत जिन्हें एजेंट खोज सकता है ताकि तुम्हारी content से उत्तर दे सकें",
+  "why": "Knowledge एजेंट के लिए तुम्हारा डेटा attach करता है ताकि उत्तर इसमें आधार रखें — अभ्यास guide में नाम दी गई एजेंट anatomy का हिस्सा।"
+ },
+ "ag-005": {
+  "label": "Runtime पर एक ongoing conversation के user और assistant messages रखता है",
+  "why": "Threads/conversations runtime chat state रखते हैं — client app द्वारा per session बनाए जाते हैं, agent-definition समय पर नहीं।"
+ },
+ "ag-006": {
+  "label": "Invocation जो conversation को process करता है और एजेंट का अगला output देता है",
+  "why": "एक run (openai.responses.create / create run) एजेंट को thread के विरुद्ध execute करता है — तीसरी distinct layer: definition vs session vs invocation।"
+ },
+ "ag-007": {
+  "label": "Natural-language persona टेक्स्ट PromptAgentDefinition के अंदर model name के साथ, जब एजेंट पहली बार code में defined होता है",
+  "why": "PromptAgentDefinition(model=MODEL_NAME, instructions=...) दोनों fields को definition समय पर सेट करता है, लेकिन सिर्फ persona टेक्स्ट ही एजेंट के व्यवहार को shape करता है — इसके बगल वाला model name एक अलग component है।"
+ },
+ "ag-008": {
+  "label": "हर response को एक numbered list के रूप में format करें जो पाँच items तक सीमित है — authoring समय पर fixed, न कि per question चुना जाता है",
+  "why": "एक standing formatting rule authoring समय पर bake किया जाता है वह behavior है, न कि बाहरी action — यह टेक्स्ट से कुछ नहीं call करता, जो इसे Tools से अलग करता है।"
+ },
+ "ag-009": {
+  "label": "Reasoning engine को gpt-4o-mini से gpt-5-mini में बदलें बिना एजेंट के persona या attached tools को छुए",
+  "why": "सिर्फ deployed reasoning engine बदलता है यहाँ; persona और tool wiring fixed रहते हैं — क्या deployment एजेंट के अन्य components से एक अलग layer है इसका एक clean test।"
+ },
+ "ag-010": {
+  "label": "Deployment identifier PromptAgentDefinition के अंदर persona टेक्स्ट के साथ, जब एजेंट पहली बार code में defined होता है",
+  "why": "Same PromptAgentDefinition() call persona टेक्स्ट के रूप में, लेकिन यह parameter किस deployed engine को एजेंट कॉल करता है यह names करता है — एक behavior नहीं, एक deployment reference।"
+ },
+ "ag-011": {
+  "label": "Live web search चालू करें ताकि एजेंट अपने training data के बाहर current information pull कर सकें",
+  "why": "Web search Foundry portal के tool catalog से खुलता है (Build > Tools) code interpreter और file search के साथ — एक live external capability, static content attached नहीं।"
+ },
+ "ag-012": {
+  "label": "एजेंट को एक calculation के steps को सिर्फ describe करने की जगह result compute करने के लिए generated code run करने दें",
+  "why": "Code execution catalog capabilities में से एक है, web search और file search के साथ, जो एजेंट को सिर्फ टेक्स्ट produce करने से परे act करने देता है — reasoning engine स्वयं कभी code directly execute नहीं करता।"
+ },
+ "ag-013": {
+  "label": "एक existing Azure AI Search index connect करें ताकि एजेंट के उत्तर तुम्हारी indexed content cite करें guessing की जगह",
+  "why": "एक attached search index static content है जिसे एजेंट अपने उत्तरों को ground करने के लिए retrieve करता है — web search जैसे tool से distinct, जो एक live external capability के बजाय बाहर पहुँचता है।"
+ },
+ "ag-014": {
+  "label": "Company policy documents जोड़ें ताकि एजेंट उन्हें खोज सकें — Agents playground में इसके persona टेक्स्ट और attached tools के साथ configured — multi-turn behavior test करने से पहले",
+  "why": "Agents playground तीन distinct surfaces को side by side configure करता है — persona, tools, और attached documents — और यह card attached-content वाला है: data जिसमें एजेंट उत्तर ground करता है, न कि action जो यह लेता है।"
+ },
+ "ag-015": {
+  "label": "openai.conversations.create() client app द्वारा पहले turn से पहले एजेंट को भेजा जाता है",
+  "why": "Conversation object को create करना कोई भी message भेजने से पहले होता है — यह runtime container को खोलता है जिसमें later turns लिखते हैं, उस कॉल से distinct जो actually एक reply produce करता है।"
+ },
+ "ag-016": {
+  "label": "Turns की single unbroken timeline जो एजेंट को three questions पहले user ने कहा कुछ reference करने देता है, बिना उन messages को हर बार hand से resend किए",
+  "why": "Accumulated runtime chat history session state है, एजेंट behavior नहीं — यह per conversation grow होता है, definition समय पर fixed persona rules के विपरीत।"
+ },
+ "ag-017": {
+  "label": "openai.responses.create() उस कॉल है जो actually user का latest message भेजता है और एजेंट का reply return करता है",
+  "why": "यह invocation step है — यही है जो actually conversation को process करता है और output produce करता है, openai.conversations.create() से distinct, जो सिर्फ वह container खोलता है जिसमें messages रहते हैं।"
+ },
+ "ag-018": {
+  "label": "Extra_body={\"agent_reference\": {...}} parameter उसी कॉल के अंदर, system को बताना कि कौन सी एजेंट definition को conversation के विरुद्ध execute करना है",
+  "why": "agent_reference responses.create() कॉल पर per-invocation metadata है, न कि fixed agent property — exam explicitly deployment name से यह distinction खींचता है जो एजेंट की अपनी definition में bake है।"
+ },
+ "agent-anatomy": {
+  "hint": "पूछें job किस layer में है: fixed at creation (instructions), reasoning engine स्वयं (model), action beyond text (tools), attached data to ground answers (knowledge), one conversation's accumulating state (thread), या single call that produces output (run)।",
+  "note": "Instructions और tools दोनों design समय पर configured होते हैं — tie-break क्या है कि card एक behavior rule है (instructions) या एक external capability एजेंट कॉल करता है (tools)। Thread और run दोनों runtime पर रहते हैं — tie-break क्या है कि card messages hold करने वाला container है (thread) या invocation जो अगला message produce करता है (run)।",
+  "zones[0].def": "Persistent behavior, persona, और rules agent के definition समय set होते हैं — per conversation चुना नहीं जाता।",
+  "zones[1].def": "Deployed model — deployment name से referenced — जिसके साथ एजेंट तर्क करता है।",
+  "zones[2].def": "Functions, APIs, और other actions एजेंट टेक्स्ट generate करने से परे कॉल कर सकता है।",
+  "zones[3].def": "Files, indexes, और other data sources एजेंट अपने उत्तरों को ground करने के लिए खोज सकता है।",
+  "zones[4].def": "One ongoing conversation की runtime message history, per session created।",
+  "zones[5].def": "Invocation जो एजेंट को thread के विरुद्ध execute करता है और अगला output देता है।"
+ }
+}

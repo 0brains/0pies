@@ -1,0 +1,105 @@
+{
+ "iv-ops": {
+  "hint": "Estos son todos deberes de tiempo de implementación — el sistema ya está en vivo. Pregunta qué obligación permanente con nombre la escena está ejerciendo, no si algo salió mal.",
+  "note": "La seguranza previa a lanzamiento (revisiones de preparación, pruebas antes de que un sistema se envíe) pertenece a un juego diferente. Todo lo que está en este tablero sucede después del lanzamiento, en base recurrente o activada.",
+  "zones[0].def": "El deber legal nombrado, continuo de rastrear el rendimiento, equidad y cumplimiento del sistema en vivo contra métricas y umbrales preestablecidos, con reglas de escalación para cuando los resultados caen fuera de ellos. Es el plan de monitoreo en sí — no las matemáticas de desplazamiento detrás de ninguna métrica, y no el verificación independiente que más tarde verifica que el plan fue realmente seguido.",
+  "zones[1].def": "Controles que detienen que las salidas o capacidades de un sistema implementado sea repurposadas a un uso, audiencia o población que la aprobación original nunca cubrió — prediciendo la repurposing y restringiéndola antes de que suceda, no reaccionando una vez que ya es pública.",
+  "zones[2].def": "Contenido y canales preacodados por lo que la organización dice a reguladores, usuarios y público sobre un sistema en vivo — proactivo (avisos de transparencia, tarjetas de sistema) y reactivo (reconociendo un problema en vivo) — distinto de la investigación interna que las declaraciones describen.",
+  "zones[3].def": "Autoridad, activadores y criterios de reinicio preecritos para sacar un sistema en vivo completamente fuera de línea (desactivación) o restringirlo a menos regiones o características (localización) — una decisión de stop-o-restrict con condiciones documentadas para reanudar, no la corrección técnica que la sigue.",
+  "zones[4].def": "Preparar a las personas que operan un sistema en vivo o dependen de sus salidas — instrucción específica de rol, práctica simulada y atestación registrada — para que puedan detectar una salida incorrecta y sepan cuándo anularlo, renovada en un cadence en lugar de entregado una vez en el lanzamiento.",
+  "zones[5].def": "Detectar, registrar, clasificar y cerrar problemas de sistema en vivo, clasificados por severidad — desde una queja registrada menor rastreada por patrón, hasta una respuesta formal con contención, análisis de causa raíz y acción correctiva.",
+  "zones[6].def": "Verificación independiente programada que los controles de un sistema en vivo aún se mantienen — revisiones de cumplimiento recurrentes y pruebas adversariales ejecutadas después del lanzamiento, en un cadence o vinculadas a un cambio importante — distinto de la evaluación de preparación única ejecutada antes de que un sistema se envíe."
+ },
+ "iv-ops-01": {
+  "label": "Un proveedor silenciosamente intercambia una nueva versión de modelo, sin noticia al equipo que la implementó.",
+  "why": "El monitoreo post-mercado es un deber legal permanente de rastrear un sistema en vivo contra su línea base; un intercambio de versión no anunciado es un fallo del plan de monitoreo, distinto de la gestión de problemas e incidentes, que solo abre un archivo una vez que alguien ha notado el daño resultante."
+ },
+ "iv-ops-02": {
+  "label": "Una revisión trimestral rastrea desplazamiento de distribución de características, problemas de calidad de datos de entrada, y latencia/carga de computación — nunca el conjunto de entrenamiento original con el que el modelo se envió.",
+  "why": "Calibración oficial: las métricas de monitoreo de producción son desplazamiento de datos, calidad de datos y señales de latencia/computacional — nunca datos de entrenamiento históricos. Establecer qué se rastrea es el trabajo de esta zona; verificación independiente de que el plan fue realmente seguido es auditorías y red teaming periódicas."
+ },
+ "iv-ops-03": {
+  "label": "Las reglas de escalación enrutan cualquier métrica que cruce su umbral directamente a un propietario nombrado, quién puede ordenar un rollback o un aviso regulador.",
+  "why": "El plan de monitoreo nombra quién actúa y qué hacen una vez que un umbral es superado; la gestión de problemas e incidentes elige solo después de que esa escalación se dispara, para registrar y clasificar el problema específico que nombra."
+ },
+ "iv-ops-04": {
+  "label": "Una herramienta de programación construida para personal de turnos silenciosamente es re-apuntada a puntuación de rendimiento de empleados individuales.",
+  "why": "Repurposing a un uso no aprobado necesita protocolos de consentimiento y restricciones de uso antes de que suceda; el deber de «mal uso razonablemente previsible» vincula proveedores e implementadores por igual, a diferencia de la gestión de problemas e incidentes, que solo se encarga una vez que una queja ya ha surgido."
+ },
+ "iv-ops-05": {
+  "label": "Dieciocho meses en implementación, el equipo ejecuta un ejercicio de pensamiento de segundo orden programado como parte de la gobernanza continua, mapeando quién más podría estar conectando la salida de este sistema en su propio flujo de trabajo.",
+  "why": "Pronosticar repurposing y efectos de segundo orden es una actividad de gobernanza post-implementación recurrente, más amplia que una evaluación de impacto puntual y diferente de las pruebas adversariales de auditorías y red teaming periódicas, que sonda por ataque, no por repurposing legal que aparenta que la aprobación original nunca cubrió."
+ },
+ "iv-ops-06": {
+  "label": "Cada salida dejando la API lleva una etiqueta de versión de modelo y una bandera de «no validado para decisiones de contratación o crédito», y cualquier nuevo caso de uso dispara una revisión fresca antes de que se permita la reutilización.",
+  "why": "Marcadores de procedencia más una compuerta de aprobación de reutilización detienen daño compuesto a través del flujo de trabajo de otro equipo; el control vive en cómo se permite que las salidas viajen, distinto de comunicaciones externas, que es lo que se dice una vez que un problema ya es visible para extraños."
+ },
+ "iv-ops-07": {
+  "label": "Una queja sobre una decisión automatizada incorrecta se hace viral durante la noche.",
+  "why": "Reconoce públicamente de inmediato que el problema es conocido y está bajo investigación; esperar a que el trabajo de causa-raíz interno de gestión de problemas e incidentes termine primero solo compone el daño reputacional."
+ },
+ "iv-ops-08": {
+  "label": "La declaración pública divulga el propósito del sistema y limitaciones conocidas, y se detiene corto del método que produjo la decisión marcada.",
+  "why": "La divulgación cubre propósito previsto, capacidades y limitaciones, pero métodos propietarios permanecen fuera de cualquier declaración pública — un límite de alcance en lo que esta zona dice, distinto de la etiqueta de aprobación de reutilización que Secondary-use control estampa en una salida antes de que viaje."
+ },
+ "iv-ops-09": {
+  "label": "Los reguladores reciben el paquete de evidencia completo — evaluación de impacto, resultados de monitoreo, propietarios de acción correctiva nombrados — mientras la declaración pública permanece en lenguaje claro sin causa raíz técnica aún.",
+  "why": "El mismo registro subyacente se adapta por audiencia aquí: los reguladores obtienen evidencia, el público obtiene responsabilidad y próximos pasos — nunca al revés, y nunca los hallazgos sin procesar que un ejercicio de auditorías y red teaming periódicas produjo para uso interno solo."
+ },
+ "iv-ops-10": {
+  "label": "Los umbrales preecritos nombran exactamente quién puede sacar un sistema en vivo fuera de línea, y los criterios que deben ser cumplidos antes de que se reinicie.",
+  "why": "Este es el protocolo de kill-switch: autoridad preacodada y criterios de reinicio, distinto del movimiento de contención inmediata de gestión de problemas e incidentes, que aísla un sistema mid-problema sin necesitar la aprobación documentada de esta zona para reanudar. La metodología algorítmica es el factor nombrado no en la decisión."
+ },
+ "iv-ops-11": {
+  "label": "Una nueva ley de privacidad en una región significa que el sistema deja de operar allí mientras continúa ejecutándose en todas partes, bajo una política reversible y predocumentada.",
+  "why": "La restricción selectiva de alcance jurisdiccional es un movimiento diferente de un kill switch completo, pero esta zona es propietaria de ambos extremos del mismo control — stop total y restricción regional — en lugar de dividirlos a través de juegos separados."
+ },
+ "iv-ops-12": {
+  "label": "Un sistema de mantenimiento predictivo sirviendo infraestructura crítica es eliminado gradualmente en etapas, con un respaldo humano ejecutándose junto a él hasta que la transición se complete.",
+  "why": "El apagado graduado con planificación de continuidad pertenece aquí porque el activador es una preocupación de seguridad permanente siendo manejada en un horario, a diferencia de la gestión de problemas e incidentes, cuyo paso de contención responde a un solo problema sucediendo ahora."
+ },
+ "iv-ops-13": {
+  "label": "Los clínicos continúan malinterpretando las puntuaciones de confianza de IA, por lo que el equipo arregla coaching basado en simulación con pareamiento de mentor continuo.",
+  "why": "Instrucción específica de rol con práctica práctica y soporte continuo aborda una brecha de habilidades y confianza que un examen de certificación única solo probaría conocimiento contra, no construiría; esto es un plan de estudios permanente, no la pantalla de puntuación de confianza en sí, que es una característica de producto."
+ },
+ "iv-ops-14": {
+  "label": "A los suscriptores se les dice que apliquen su propio juicio a la recomendación inicial del modelo antes de que se vuelva final.",
+  "why": "Este es el hábito de supervisión humana que el plan de estudios está diseñado para inculcar; un aviso de derecho a apelar o una encuesta de retroalimentación son más pasivos y no ponen el juicio de una persona por delante de la salida automatizada de la manera que esto lo hace."
+ },
+ "iv-ops-15": {
+  "label": "Antes de renovar el acceso del sistema, cada revisor completa un simulacro de escenario y firma una atestación confirmando que entienden los límites estatutos del herramienta.",
+  "why": "Atestación obligatoria y registrada vinculada a acceso renovado es lo que hace que esto sea un control exigible en lugar de una orientación única — evidencia que un auditor puede verificar, a diferencia de los canales de reporte de gestión de problemas e incidentes, que existen para supuesto un problema, no para certificar preparación de antemano."
+ },
+ "iv-ops-16": {
+  "label": "Mispredictions de severidad baja repetidos se registran y observan para un patrón antes de que cualquiera escale.",
+  "why": "Esta es la pista de severidad inferior — registrada, clasificada y tendida, escalando solo si el patrón persiste. La división de la pista de severidad superior se activa en escala de daño y exposición legal, no en si un error ocurrió en absoluto; permanece aquí en lugar de mover a auditorías y red teaming periódicas, que verifica controles en un horario, no por error."
+ },
+ "iv-ops-17": {
+  "label": "La detección de fraude es ampliamente sobre-marcada de transacciones legítimas; el movimiento muy primero es sacar el sistema fuera de línea antes de que cualquiera comience el trabajo de causa-raíz.",
+  "why": "Contención — aislando inmediatamente el sistema — es el paso de respuesta primera de esta zona dentro de un problema en vivo, distinto de desactivación y localización, que es propietaria de la autoridad preacodada y criterios de reinicio documentados que hacen un cierre legal y reversible en el primer lugar."
+ },
+ "iv-ops-18": {
+  "label": "Un hallazgo de sesgo sienta en 1.8%, apenas bajo el activador de escalación de 2% — el equipo abre la pista de respuesta formal de todas formas porque el grupo afectado es una clase protegida.",
+  "why": "Los umbrales de severidad guían pero no anulan juicio cuando un grupo protegido es afectado: el hallazgo obtiene la pista de respuesta formal completa en lugar de ser registrado como un elemento menor y se deja tendencia, que es el tratamiento un hallazgo de clase no-protegida bajo-umbral obtendría."
+ },
+ "iv-ops-19": {
+  "label": "Doce meses después del lanzamiento, una tripulación exterior re-ejecuta intentos de jailbreak contra el asistente en vivo en un cadence programado.",
+  "why": "Las pruebas adversariales recurrentes y programadas después de la implementación es la disciplina de esta zona; la versión previa-a lanzamiento de la misma técnica — la evaluación de preparación ejecutada antes de que un sistema se envíe — pertenece a un juego completamente diferente."
+ },
+ "iv-ops-20": {
+  "label": "Un equipo de segunda línea independiente muestras de los últimas decisiones automatizadas del trimestre, re-ejecuta las verificaciones de equidad por mano, y camina a través de cómo la última escalación realmente jugó.",
+  "why": "Independencia del equipo de producto más re-ejecutar verificaciones en lugar de confiar en el panel es lo que separa esto del monitoreo post-mercado propio de revisión en vivo, que el equipo de producto ejecuta y personal."
+ },
+ "iv-ops-21": {
+  "label": "Los reguladores esperan que un proveedor de modelo base documente una ronda fresca de sondeo adversarial cada vez que se envíe una versión importante, además de lo que se ejecutó antes del lanzamiento primero.",
+  "why": "Re-prueba recurrente vinculada a un cambio material es una expectativa permanente, de tiempo de implementación para modelos alto-riesgo y propósito general — una obligación recurrente, no la compuerta única cruzada una vez en la liberación inicial."
+ },
+ "iv-ops-22": {
+  "label": "Antes de que un sistema se saque fuera de línea, el equipo primero mapea cada alimentación corriente arriba y proceso corriente abajo que depende de él, y confirma que un fallback está listo para tomar el hueco.",
+  "why": "Este es el paso de planificación que tiene que suceder antes de que una decisión de stop-o-restrict sea ejecutada — distinto de la contención de gestión de problemas e incidentes, que reacciona a un problema ya sucediendo, y de monitoreo post-mercado, que asume el sistema permanece en vivo."
+ },
+ "iv-ops-23": {
+  "label": "Una vez que un sistema es completamente retirado, sus datos, modelos y registros de decisión se preservan en lugar de eliminarse, para que un regulador o auditor pueda reconstruir qué hizo años después.",
+  "why": "La preservación es parte del registro de cierre en sí, siendo propietario por la misma autoridad que sacó el sistema fuera de línea — a diferencia de la bitácora CAPA de gestión de problemas e incidentes, que rastrea correcciones a un problema específico, y a diferencia de monitoreo post-mercado, que solo rastrea un sistema mientras esté en vivo."
+ }
+}

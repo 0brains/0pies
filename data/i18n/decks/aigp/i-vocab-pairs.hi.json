@@ -1,0 +1,62 @@
+{
+ "i-vp-01": {
+  "a.text": "एक vision system classify करता है correctly adversarially perturbed images पर।",
+  "a.why": "Withstanding hostile या novel input जबकि maintain करते हुए accuracy और functionality है यह side का पूरा काम — model कभी नहीं छोड़ता अपनी normal performance band को।",
+  "b.text": "Degraded sensor inputs के बाद, system return करता है अपनी specified performance limits को।",
+  "b.why": "Maintaining performance within defined acceptable limits despite real-world या adversarial conditions, और recovering करना उनको, और दूसरा half — एक system हो सकता है resilient बिना कभी face किए deliberate attack को।"
+ },
+ "i-vp-02": {
+  "a.text": "एक synthetic audio clip एक public official का fabricate होता है और spread होता है deliberately goal के साथ harm करने की।",
+  "a.why": "Deliberate fabrication intent के साथ harm करने की यह है defining feature — same false content shared किसी द्वारा जो believe करता है यह real है belong करता है दूसरी side पर।",
+  "b.text": "एक blogger share करता है एक deepfake video believing यह authentic है, फिर correct करता है record एक बार fabrication come to light हो।",
+  "b.why": "No intent to deceive — sharer believe किया content true है — है कि क्या separate करता है यह deliberate-harm side से।"
+ },
+ "i-vp-03": {
+  "a.text": "Large numbers fake, low-fare rides को inject किया जाता है एक fare-prediction model के training dataset में एक source से।",
+  "a.why": "Corrupting क्या model learn करता है, से पहले यह ever deployed है एक training-time attack — दूसरा side होता है एक बार model already live है।",
+  "b.text": "एक malicious user craft करता है input data जो trick करता है एक already-deployed triage model को को label करने के लिए urgent cases को non-urgent की तरह।",
+  "b.why": "Fooling एक live model outputs को crafted inputs के साथ inference time पर है दूसरा half pair के — model training data कभी नहीं था touched।"
+ },
+ "i-vp-04": {
+  "a.text": "Documentation disclose करता है क्या data और logic build में गया system को, किसी को ask करने से पहले एक specific outcome के बारे में।",
+  "a.why": "यह है openness system design को और data को — एक property system का पूरे, किसी एक decision का नहीं।",
+  "b.text": "एक specific applicant ask करता है क्यों उनका case decide किया गया है way में जो किया गया था, और organization walk कर सकता है यह एक output के through terms में एक person follow कर सकता है।",
+  "b.why": "Official calibration है कि एक decision है explainable जब अपनी input, output और functioning हो understandable को human beings — एक per-decision property, distinct transparency से system-wide openness।"
+ },
+ "i-vp-05": {
+  "a.text": "Confidential patient data हो जाता है publicly accessible क्योंकि एक cloud storage bucket गलत configure किया गया था, कोई attacker involved नहीं।",
+  "a.why": "Unintentional exposure through misconfiguration, malicious activity नहीं, है कि क्या keys यह side।",
+  "b.text": "एक external actor deliberately bypass करता है access controls को obtain करने के लिए same kind का data।",
+  "b.why": "Deliberate, unauthorized access एक malicious actor से है दूसरा half — same category harm, opposite cause।"
+ },
+ "i-vp-06": {
+  "a.text": "एक manufacturing defect-detector reach करता है near-perfect accuracy exact production-line photos पर यह train किया गया, फिर miss करता है obvious cracks में photos एक different factory line से।",
+  "a.why": "Excellent training set पर और poor कुछ भी नई पर है यह side signature — model memorize किया specific photos को rather than learning क्या एक crack actually है।",
+  "b.text": "एक defect-detector built कुछ basic image filters के साथ और कोई deeper layers नहीं miss करता है cracks भी exact photos में यह train किया गया।",
+  "b.why": "Poor performance everywhere, including training data में खुद यह signal करता है model कभी नहीं था enough complexity capture करने के लिए pattern को।"
+ },
+ "i-vp-07": {
+  "a.text": "एक radiologist stop करता है double-check एक scan-triage tool के low-risk calls को months के बाद accurate flags, और start करता है sign off जो यह label करता है benign को।",
+  "a.why": "Over-reliance एक AI outputs पर without critical human oversight है यह side mechanism — एक human failure को keep checking, flaw नहीं बेक किया गया data में।",
+  "b.text": "एक hiring tool trained past hiring records पर reject करता है more candidates को minority groups से, क्योंकि वह records पहले से reflect किए गए कौन को hire किया गया था।",
+  "b.why": "Flaw inherited है training data से खुद, carry forward करते हुए patterns एक discriminatory past से — distinct over-trusting tool को एक बार यह already deployed है।"
+ },
+ "i-vp-08": {
+  "a.text": "एक self-driving car independently decide करता है best route एक को address को driver provide करता है, लेकिन does कुछ नहीं do नहीं करता single task के बाहर।",
+  "a.why": "Operating एक single, limited task domain के अंदर, however capable एक task को, यह है कि क्या keep करता है एक system इस side की line की।",
+  "b.text": "Same car को भी need करने के लिए reason, learn, और act करना across कोई भी task एक human हो सकता है, just driving नहीं, count करने के लिए इस की जगह।",
+  "b.why": "Full human cognitive ability across domains, just एक task को excel करना नहीं, है कि क्या दूसरी side require करता है — और यह remain करता है theoretical।"
+ },
+ "i-vp-09": {
+  "a.text": "एक governance committee comparing दो vendors ask करता है कितने billions weight values हर नेटवर्क एन्ड अप किया एक बार training complete हो गया।",
+  "a.why": "यह है definitional line इस pair test करता है: एक internal value कि training खुद को discover करता है और adjust करता है, जो exist नहीं करता है final form में जब तक training done नहीं है।",
+  "b.text": "Same committee separately ask करता है क्या learning rate और batch size engineering team fixed किया पहले training ever begun था।",
+  "b.why": "ये हैं choices एक person make करता है advance में को control करने के लिए कैसे training run होता है — inputs team set करता है, नहीं values training discover करता है अपने आप को।"
+ },
+ "i-vp-10": {
+  "a.text": "एक random forest model learn करता है draw करने के लिए line को between fraudulent और legitimate transactions।",
+  "a.why": "Learning boundary between existing classes, rather than producing नई examples, है यह side job।",
+  "b.text": "एक different model, given same transaction history, produce करता है entirely नई synthetic transaction records कि कभी नहीं हुआ।",
+  "b.why": "Producing नई content rather than classifying existing inputs है दूसरा half pair का।"
+ }
+}

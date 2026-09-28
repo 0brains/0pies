@@ -1,0 +1,83 @@
+{
+ "ra-01": {
+  "label": "Mỗi rủi ro được ghi điểm 1–5 cho xác suất và 1–5 cho hậu quả, và sản phẩm quyết định nơi nó ngồi trong sổ đăng ký.",
+  "why": "Lưới ghi điểm là thiết bị ưu tiên tiêu chuẩn. Điểm yếu của nó là nó làm phẳng một rủi ro thảm họa hiếm gặp và một rủi ro tầm thường thường xuyên vào cùng một ô."
+ },
+ "ra-02": {
+  "label": "Các rủi ro được vẽ trên lưới đỏ/hổ phách/xanh lá cây để ủy ban có thể thấy ngay lập tức những cái nào cần chú ý trước tiên.",
+  "why": "Bản đồ nhiệt là một công cụ giao tiếp được xây dựng trên hai trục giống nhau. Nó dùng để sàng lọc, không phải để hiểu nhân quả."
+ },
+ "ra-03": {
+  "label": "Phương pháp này bị chỉ trích vì ngụ ý độ chính xác nó không có khi các xác suất cơ bản là những dự đoán.",
+  "why": "Các điểm thứ tự được nhân với nhau tạo ra các số trông như lượng tử nhưng không phải. Biết điều này là những gì ngăn một 12 được đối xử như gấp đôi một 6."
+ },
+ "ra-04": {
+  "label": "Một sự kiện hàng đầu duy nhất được đặt ở giữa, với các đường dòng đe dọa và các rào cản ngăn chặn được vẽ ở bên trái của nó và các đường dòng hậu quả với các rào cản làm giảm nhẹ ở bên phải.",
+  "why": "Sự chia tách trái/phải xung quanh một sự kiện là hình dạng xác định của sơ đồ, và nó làm cho sự phân biệt phòng ngừa/giảm nhẹ có thể nhìn thấy thay vì giả định."
+ },
+ "ra-05": {
+  "label": "Phân tích làm cho rõ ràng rằng ba trong bốn rào cản ở bên trái là cùng một kiểm soát được tính ba lần.",
+  "why": "Tiếp lộ các rào cản chế độ chung chính xác là những gì sơ đồ tốt cho. Một sổ đăng ký các kiểm soát được liệt kê dưới dạng văn bản che giấu sự phụ thuộc đó."
+ },
+ "ra-06": {
+  "label": "Các yếu tố tăng cấp được vẽ so với mỗi rào cản, hiển thị các điều kiện mà rào cản đó ngừng hoạt động.",
+  "why": "Các yếu tố tăng cấp và các kiểm soát của chúng là một phần của phương pháp bowtie. Họ là cách sơ đồ tránh giả định các rào cản luôn hiệu quả."
+ },
+ "ra-07": {
+  "label": "Mỗi thành phần được kiểm tra lần lượt cho các cách nó có thể thất bại, và mỗi thất bại được ghi điểm cho mức độ nghiêm trọng, khả năng xảy ra và khả năng phát hiện.",
+  "why": "Điểm ba yếu tố tạo ra một con số ưu tiên rủi ro là chữ ký của FMEA. Nó là từ dưới lên, từ thành phần đến hiệu ứng."
+ },
+ "ra-08": {
+  "label": "Một thất bại nghiêm trọng nhưng được phát hiện một cách đáng tin cậy trước khi nó đạt đến người dùng được ghi điểm thấp hơn một cái im lặng.",
+  "why": "Khả năng phát hiện là một trục thứ ba rõ ràng là duy nhất đối với FMEA trong số các kỹ thuật này, và đó là lý do tại sao các thất bại im lặng xếp hạng cao — điều phù hợp với các chế độ thất bại ML."
+ },
+ "ra-09": {
+  "label": "Phân tích bị chỉ trích vì xử lý kém các kết hợp đồng thời các thất bại, vì nó xem xét từng chế độ thất bại của riêng nó.",
+  "why": "Định hướng điểm thất bại duy nhất là giới hạn đã biết của FMEA. Sử dụng nó với một kỹ thuật mô hình hóa các kết hợp, không thay vì một."
+ },
+ "ra-10": {
+  "label": "Một bài kiểm tra sự cố kết luận rằng không có lỗi phòng vệ duy nhất thất bại thảm họa; bốn điểm yếu một phần tình cờ xếp hàng vào ngày hôm đó.",
+  "why": "Sự xếp hàng của các lỗ trên các lớp là yêu cầu cơ bản của mô hình, và đó là lý do tại sao 'ai đã mắc lỗi' thường là câu hỏi đầu tiên sai."
+ },
+ "ra-11": {
+  "label": "Mô hình phân biệt các thất bại hoạt động tại đầu nhọn từ các điều kiện tiềm ẩn được tạo ra sớm hơn bởi các quyết định thiết kế và quản lý.",
+  "why": "Sự phân biệt hoạt động/tiềm ẩn là của Reason, và đó là những gì hướng chú ý đến các quyết định đã tải trước thất bại."
+ },
+ "ra-12": {
+  "label": "Khung cảnh cảnh báo rằng thêm một lớp phòng vệ khác cung cấp ít bảo vệ hơn dự kiến nếu các lỗ của lớp mới nằm ở cùng một chỗ.",
+  "why": "Các phòng vệ tương quan là cái bẫy. Hai người phê bình sử dụng cùng một danh sách kiểm tra bị lỗi là một lớp, không phải hai."
+ },
+ "ra-13": {
+  "label": "Đánh giá tách hạn harm của phân bổ, nơi các cơ hội hoặc tài nguyên bị cảm thấy, khỏi hạn harm đại diện, nơi một nhóm bị làm nhục hoặc bị xóa.",
+  "why": "Sự chia tách phân bổ/đại diện là nền tảng, và hạn harm đại diện là cái mà trượt qua các đánh giá được điều khiển bởi số liệu độ chính xác."
+ },
+ "ra-14": {
+  "label": "Đánh giá ghi lại rằng một hệ thống hoạt động đáng kể tệ hơn cho một nhóm ngay cả khi không có quyết định nào bị từ chối cho họ.",
+  "why": "Hạn harm chất lượng dịch vụ là một danh mục riêng biệt. Không có phân loại đặt tên nó, phát hiện này có xu hướng được lưu dưới dạng vấn đề độ chính xác và bị hạ thấp."
+ },
+ "ra-15": {
+  "label": "Phương pháp tồn tại để dừng đánh giá chỉ bao gồm hạn harm xảy ra có một số liệu được đính kèm.",
+  "why": "Liệt kê các danh mục trước, sau đó tìm kiếm đo lường, là những gì giữ cho hạn harm nhân phẩm và xã hội nằm trong phạm vi chứ không phải ngoài."
+ },
+ "ra-16": {
+  "label": "Rủi ro được đánh giá hai lần: một lần như thể không có kiểm soát nào tồn tại, và một lần với các kiểm soát hoạt động như thiết kế.",
+  "why": "Sự ghép đôi trước và sau là toàn bộ kỹ thuật. Sự khác biệt là cơ sở bằng chứng cho dù một kiểm soát có đáng giá chi phí hay không."
+ },
+ "ra-17": {
+  "label": "Một kiểm soát được phát hiện để giảm điểm bằng hầu như không có gì, nó trở thành lập luận để loại bỏ nó và chi tiêu nỗ lực ở nơi khác.",
+  "why": "So sánh hai đánh giá là cách các kiểm soát chỉ tồn tại để được liệt kê được xác định. Một kiểm soát không có delta là nhà hát."
+ },
+ "ra-18": {
+  "label": "Sổ đăng ký ghi lại mức độ còn lại sau điều trị, và đó là mức độ này phải nằm trong ưu tiên trước khi ký.",
+  "why": "Rủi ro còn lại là những gì được chấp nhận; rủi ro vốn chỉ là bối cảnh. Chấp nhận dựa trên hình ảnh vốn là một lỗi danh mục."
+ },
+ "risk-analysis": {
+  "hint": "Kéo mỗi mô tả vào kỹ thuật của nó. Hỏi những gì phương pháp được xây dựng để tiết lộ — một xếp hạng, một con đường nhân quả, một chế độ thất bại, hoặc một phép đo.",
+  "zones[0].def": "Tỷ lệ xác suất và hậu quả, vẽ trên lưới, sử dụng nó để ưu tiên. Nhanh, thô và mặc định trong hầu hết các sổ đăng ký.",
+  "zones[1].def": "Một sự kiện ở giữa; nguyên nhân và rào cản ngăn chặn ở bên trái, hậu quả và rào cản giảm nhẹ ở bên phải.",
+  "zones[2].def": "Làm việc từ dưới lên từ các chế độ thất bại của mỗi thành phần đến hiệu ứng của chúng, ghi điểm mức độ nghiêm trọng, sự xuất hiện và khả năng phát hiện.",
+  "zones[3].def": "Tổn hại xảy ra khi các lỗ trong các lớp phòng vệ liên tiếp xếp hàng. Giải thích tại sao các giải thích nguyên nhân đơn của sự cố thường sai.",
+  "zones[4].def": "Liệt kê các danh mục tổn hại — phân bổ, đại diện, chất lượng dịch vụ, nhân phẩm, xã hội — để đánh giá không giới hạn ở những gì dễ dàng đo lường.",
+  "zones[5].def": "Đánh giá rủi ro trước kiểm soát và lại sau chúng. Khoảng cách là những gì các kiểm soát thực sự mua."
+ }
+}

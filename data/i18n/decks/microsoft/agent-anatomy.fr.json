@@ -1,0 +1,84 @@
+{
+  "ag-001": {
+    "label": "« Tu es un agent d'assistance courtois ; escalade tout ce qui implique des remboursements » — défini une fois quand l'agent est créé",
+    "why": "Le champ instructions définit le comportement persistant au moment de la création — le concept d'agent le plus souligné du matériel d'étude, distinct de l'état de chat à l'exécution."
+  },
+  "ag-002": {
+    "label": "Permets à l'agent d'appeler des fonctions externes ou des API pour agir",
+    "why": "L'appel de fonctions / outils permet au modèle d'agir au-delà du texte — la capacité qui distingue un agent d'un simple appel de chat."
+  },
+  "ag-003": {
+    "label": "Le gpt-4o déployé avec lequel l'agent raisonne — référencé par son nom de déploiement",
+    "why": "Un agent = modèle + instructions + outils ; le modèle est un déploiement, et {\"deployment\":{\"model\":AGENT_NAME}} est la mauvaise réponse canonique."
+  },
+  "ag-004": {
+    "label": "Les fichiers de base et les sources de données que l'agent peut fouiller pour répondre à partir de ton contenu",
+    "why": "La connaissance attache tes données à l'agent afin que les réponses s'y enracinent — partie de l'anatomie de l'agent que le guide d'étude nomme pour la tâche 2.1."
+  },
+  "ag-005": {
+    "label": "Porte la conversation en cours d'un utilisateur et les messages de l'assistant à l'exécution",
+    "why": "Les threads/conversations contiennent l'état de chat à l'exécution — créés par session par l'application client, non au moment de la définition de l'agent."
+  },
+  "ag-006": {
+    "label": "L'invocation qui traite la conversation et produit la sortie suivante de l'agent",
+    "why": "Une exécution (openai.responses.create / create run) exécute l'agent par rapport au thread — la troisième couche distincte : définition vs session vs invocation."
+  },
+  "ag-007": {
+    "label": "Le texte de persona en langage naturel fourni à l'intérieur de PromptAgentDefinition aux côtés du nom du modèle, quand l'agent est d'abord défini dans le code",
+    "why": "PromptAgentDefinition(model=MODEL_NAME, instructions=...) définit les deux champs au moment de la définition, mais seul le texte de persona façonne le comportement de l'agent — le nom du modèle à côté est un composant séparé."
+  },
+  "ag-008": {
+    "label": "Formate chaque réponse comme une liste numérotée limitée à cinq éléments — fixé quand l'agent est écrit, non choisi par question",
+    "why": "Une règle de formatage permanente intégrée au moment de la rédaction est un comportement, non une action externe — cela n'appelle rien au-delà du texte, ce qui la distingue des outils."
+  },
+  "ag-009": {
+    "label": "Remplacer le moteur de raisonnement de gpt-4o-mini à gpt-5-mini sans toucher à la persona de l'agent ou à ses outils attachés",
+    "why": "Seul le moteur de raisonnement déployé change ici ; la persona et le câblage des outils restent fixes — un test propre de savoir si le déploiement est une couche séparée des autres composants de l'agent."
+  },
+  "ag-010": {
+    "label": "L'identifiant de déploiement passé à l'intérieur de PromptAgentDefinition aux côtés du texte de persona, quand l'agent est d'abord défini dans le code",
+    "why": "Même appel PromptAgentDefinition() que le texte de persona, mais ce paramètre nomme le moteur déployé que l'agent appelle — une référence de déploiement, non le comportement lui-même."
+  },
+  "ag-011": {
+    "label": "Active la recherche Web en direct afin que l'agent puisse extraire les informations actuelles au-delà de ce qui se trouve dans ses données d'entraînement",
+    "why": "La recherche Web est ouverte à partir du catalogue d'outils du portail Foundry (Build > Tools) aux côtés de l'interpréteur de code et de la recherche de fichiers — une capacité externe en direct, non du contenu statique attaché."
+  },
+  "ag-012": {
+    "label": "Permets à l'agent de exécuter du code généré pour calculer un résultat au lieu de simplement décrire les étapes de calcul",
+    "why": "L'exécution de code est l'une des capacités du catalogue, aux côtés de la recherche Web et de la recherche de fichiers, qui permet à l'agent d'agir au-delà de la production de texte — le moteur de raisonnement lui-même n'exécute jamais directement le code."
+  },
+  "ag-013": {
+    "label": "Connecte un index Azure AI Search existant afin que les réponses de l'agent citent ton contenu indexé au lieu de deviner",
+    "why": "Un index de recherche attaché est du contenu statique que l'agent récupère pour enraciner ses réponses — distinct d'un outil comme la recherche Web, qui atteint une capacité externe en direct au lieu de tes propres données."
+  },
+  "ag-014": {
+    "label": "Ajoute des documents de politique d'entreprise que l'agent peut fouiller — configuré dans le terrain de jeu Agents aux côtés de sa persona et de ses outils attachés — avant de tester le comportement multi-tour",
+    "why": "Le terrain de jeu Agents configure trois surfaces distinctes côte à côte — persona, outils et documents attachés — et cette carte est celle du contenu attaché : les données que l'agent enracine les réponses, non une action qu'il entreprend."
+  },
+  "ag-015": {
+    "label": "openai.conversations.create() appelé par l'application client avant l'envoi du premier tour à l'agent",
+    "why": "La création de l'objet de conversation se produit avant l'envoi de tout message — elle ouvre le conteneur d'exécution dans lequel les tours ultérieurs s'écrivent, distinct de l'appel qui produit réellement une réponse."
+  },
+  "ag-016": {
+    "label": "La chronologie ininterrompue unique des tours qui permet à l'agent de référencer quelque chose que l'utilisateur a dit trois questions auparavant, sans que ces messages soient renvoyés manuellement à chaque fois",
+    "why": "L'historique de chat accumulé à l'exécution est l'état de session, non le comportement de l'agent — il croît par conversation, contrairement aux règles de persona fixes une fois au moment de la définition."
+  },
+  "ag-017": {
+    "label": "openai.responses.create() est l'appel qui envoie réellement le dernier message de l'utilisateur et retourne la réponse de l'agent",
+    "why": "C'est l'étape d'invocation — c'est ce qui traite réellement la conversation et produit la sortie, distinct de openai.conversations.create(), qui ouvre uniquement le conteneur dans lequel les messages vivent."
+  },
+  "ag-018": {
+    "label": "Le paramètre extra_body={\"agent_reference\": {...}} dans ce même appel, indiquant au système quelle définition d'agent exécuter par rapport à la conversation",
+    "why": "agent_reference est des métadonnées par invocation sur l'appel responses.create(), non une propriété d'agent fixe — l'examen établit cette distinction explicitement par rapport au nom de déploiement intégré à la définition de l'agent elle-même."
+  },
+  "agent-anatomy": {
+    "hint": "Demande à quelle couche appartient le travail : fixé à la création (instructions), le moteur de raisonnement lui-même (modèle), une action au-delà du texte (outils), des données attachées pour enraciner les réponses (connaissance), l'état d'une seule conversation accumulant (thread), ou l'appel unique qui produit la sortie (run).",
+    "note": "Les instructions et les outils sont tous deux configurés au moment de la conception — le bris d'égalité est de savoir si la carte est une règle de comportement (instructions) ou une capacité externe que l'agent appelle (outils). Thread et run vivent tous les deux à l'exécution — le bris d'égalité est de savoir si la carte est le conteneur contenant les messages (thread) ou l'invocation qui produit le message suivant (run).",
+    "zones[0].def": "Le comportement persistant, la persona et les règles définies quand l'agent est défini — non choisi par conversation.",
+    "zones[1].def": "Le modèle déployé — référencé par le nom de déploiement — avec lequel l'agent raisonne.",
+    "zones[2].def": "Les fonctions, API et autres actions que l'agent peut appeler au-delà de la génération de texte.",
+    "zones[3].def": "Les fichiers, index et autres sources de données que l'agent peut fouiller pour enraciner ses réponses.",
+    "zones[4].def": "L'historique des messages d'exécution d'une seule conversation en cours, créé par session.",
+    "zones[5].def": "L'invocation qui exécute l'agent par rapport à un thread et produit sa sortie suivante."
+  }
+}

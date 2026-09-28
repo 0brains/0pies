@@ -1,0 +1,193 @@
+{
+ "feat-000-00": {
+  "label": "Извлеки машиночитаемый текст из фотографии доски или уличного знака.",
+  "why": "Azure AI Vision's Read API применяет OCR для extraction печатного и рукописного текста из изображений, в отличие от Image Analysis's captioning и tagging."
+ },
+ "feat-000-01": {
+  "label": "Идентифицируй и размести bounding boxes вокруг отдельных объектов на фотографии.",
+  "why": "Azure AI Vision's Object Detection возвращает bounding boxes и labels для отдельных объектов, найденных в изображении."
+ },
+ "feat-000-02": {
+  "label": "Создай natural-language caption, описывающий, что происходит в изображении.",
+  "why": "Azure AI Vision's Image Analysis captioning feature создает natural-language описание содержания изображения."
+ },
+ "feat-001-00": {
+  "label": "Преобразуй live microphone feed в streaming text в реальном времени.",
+  "why": "Azure AI Speech's speech-to-text recognition транскрибирует streaming или batch audio в text в реальном времени."
+ },
+ "feat-001-01": {
+  "label": "Создай natural-sounding spoken audio из написанного text для voice assistant.",
+  "why": "Azure AI Speech's text-to-speech synthesis преобразует написанный text в natural-sounding spoken audio."
+ },
+ "feat-001-02": {
+  "label": "Переведи spoken French audio в spoken или written English в реальном времени.",
+  "why": "Azure AI Speech's Speech Translation feature переводит spoken audio в text или речь другого языка в реальном времени, объединяя recognition и translation в один вызов."
+ },
+ "feat-002-00": {
+  "label": "Извлеки людей, места, организации и даты, названные в блоке text.",
+  "why": "Azure AI Language's Named Entity Recognition идентифицирует и категоризирует людей, места, организации и даты, упомянутые в text."
+ },
+ "feat-002-01": {
+  "label": "Автоматически найди и redact номера кредитных карт и телефонные номера, найденные в support transcripts.",
+  "why": "Azure AI Language's PII detection feature находит и может redact чувствительные personal data, как номера телефонов и номера карт в text."
+ },
+ "feat-002-02": {
+  "label": "Сожми длинную статью до ее наиболее важных предложений.",
+  "why": "Azure AI Language's summarization feature сжимает длинный text в его наиболее salient предложения или короткое резюме."
+ },
+ "feat-002-03": {
+  "label": "Определи, на каком из десятков языков написан входящий text.",
+  "why": "Azure AI Language's language detection feature идентифицирует, на каком из десятков языков написан piece of text."
+ },
+ "feat-002-04": {
+  "label": "Построй chatbot, который распознает намерение пользователя, такое как 'забронировать рейс', и извлекает ключевые entities из их сообщения.",
+  "why": "Azure AI Language's Conversational Language Understanding обучает модель распознавать намерение пользователя и extract entities из conversational input."
+ },
+ "feat-003-00": {
+  "label": "Мгновенно переведи chat message, введенное на испанском, на немецкий.",
+  "why": "Azure AI Translator's text translation feature преобразует text между языками в реальном времени через один вызов API."
+ },
+ "feat-003-01": {
+  "label": "Переведи весь Word document, сохраняя его original layout и formatting.",
+  "why": "Azure AI Translator's Document Translation feature переводит целые documents асинхронно, сохраняя их original formatting и layout."
+ },
+ "feat-004-00": {
+  "label": "Извлеки поставщика, сумму и line items из receipt, используя готовую модель, без требуемого обучения.",
+  "why": "Azure AI Document Intelligence's prebuilt models извлекают известные поля из standard form types, как счета-фактуры и receipts, без требуемого обучения."
+ },
+ "feat-004-01": {
+  "label": "Обучи модель на собственном custom form layout, который не покрывает ни один prebuilt model.",
+  "why": "Azure AI Document Intelligence's custom models обучаются на собственных labeled form layouts, которые не покрывает ни один prebuilt model."
+ },
+ "feat-004-02": {
+  "label": "Извлеки raw text, таблицы и selection marks из структуры scanned document.",
+  "why": "Azure AI Document Intelligence's Layout model извлекает raw text, таблицы и selection marks наряду со структурой document."
+ },
+ "feat-005-00": {
+  "label": "Извлеки invoice numbers, totals и line items из scanned PDF forms и фотографированных receipts в structured JSON fields, которые ты назвал сам.",
+  "why": "Azure Content Understanding's document field extraction применяет custom analyzer schema к PDFs, scanned forms и изображениям для возврата specific структурированных fields, которые ты определил, а не только fixed prebuilt layout."
+ },
+ "feat-005-01": {
+  "label": "Получи call recording, transcribed и его sentiment и key talking points summarized, или извлеки spoken dialogue и on-screen text из training video.",
+  "why": "Azure Content Understanding's audio и video analysis transcribes и reasons over call recordings и video content, extracting fields, такие как speaker sentiment, summaries и dialogue, которые не существуют в static document."
+ },
+ "feat-006-00": {
+  "label": "Обучи модель сортировать твои собственные фотографии продуктов в categories, которые ты определишь.",
+  "why": "Azure AI Custom Vision's image classification обучает модель на собственных labeled фотографиях для сортировки изображений в categories, которые ты определяешь."
+ },
+ "feat-006-01": {
+  "label": "Обучи модель расположить и нарисовать box вокруг specific defect type в собственных изображениях.",
+  "why": "Azure AI Custom Vision's object detection обучает модель на собственных labeled изображениях для расположения и boxing specific объекта или defect."
+ },
+ "feat-007-00": {
+  "label": "Найди местоположение каждого лица, присутствующего на групповой фотографии.",
+  "why": "Azure AI Face's face detection расположивает позицию каждого лица, присутствующего в изображении."
+ },
+ "feat-007-01": {
+  "label": "Подтверди, что две фотографии показывают одно и то же specific лицо.",
+  "why": "Azure AI Face's verification (1:1 matching) подтверждает, принадлежат ли две face images одному и тому же лицу."
+ },
+ "feat-007-02": {
+  "label": "Поиск в большой галерее enrolled faces для идентификации, кто появляется на новой фотографии.",
+  "why": "Azure AI Face's identification (1:N matching) ищет в галерее enrolled faces для поиска совпадения для новой фотографии."
+ },
+ "feat-008-00": {
+  "label": "Оцени chat message на severity content hate, violence, sexual или self-harm.",
+  "why": "Azure AI Content Safety's text moderation оценивает text на severity content hate, violence, sexual и self-harm."
+ },
+ "feat-008-01": {
+  "label": "Обнаружи попытку jailbreak chatbot или скрыть malicious instructions внутри document, который модель будет читать.",
+  "why": "Azure AI Content Safety's Prompt Shields обнаруживает jailbreak attempts и indirect prompt injection, скрытые в content, который модель будет обрабатывать."
+ },
+ "feat-008-02": {
+  "label": "Отметь загруженное изображение на наличие graphic или violent visual content.",
+  "why": "Azure AI Content Safety's image moderation оценивает загруженные изображения на те же harmful-content categories, применяемые к text."
+ },
+ "feat-009-00": {
+  "label": "Отметь unusual spike в reading одного датчика за время.",
+  "why": "Azure AI Anomaly Detector's univariate detection отмечает unexpected spikes или dips в single time-series stream."
+ },
+ "feat-009-01": {
+  "label": "Обнаружи unusual combined pattern across десятков correlated sensor streams одновременно.",
+  "why": "Azure AI Anomaly Detector's multivariate detection отмечает anomalous combined patterns across много correlated time-series signals одновременно."
+ },
+ "feat-010-00": {
+  "label": "Получи documents по closeness их meaning, а не exact keyword match.",
+  "why": "Azure AI Search's vector search получает documents по closeness их meaning, а не exact keyword overlap."
+ },
+ "feat-010-01": {
+  "label": "Запусти AI enrichment pipeline, который extract entities, key phrases и image text из raw content перед indexing.",
+  "why": "Azure AI Search's skillsets запускают AI enrichment pipeline, который extract entities, key phrases и image text из raw content перед его indexing."
+ },
+ "feat-010-02": {
+  "label": "Re-rank keyword search results, используя language model для push most relevant hits к top.",
+  "why": "Azure AI Search's semantic ranking переупорядочивает keyword search results, используя language model для surface most relevant matches первым."
+ },
+ "feat-011-00": {
+  "label": "Идентифицируй и labeled то же лицо человека, где они переапель across video.",
+  "why": "Azure AI Video Indexer's face detection идентифицирует и tracks то же лицо человека, когда они переапель across video."
+ },
+ "feat-011-01": {
+  "label": "Создай searchable transcript, labeled по которому speaker сказал каждую line.",
+  "why": "Azure AI Video Indexer's transcription feature создает searchable transcript, labeled по которому speaker сказал каждую line."
+ },
+ "feat-011-02": {
+  "label": "Автоматически обнаружи scene и shot boundaries в загруженном video.",
+  "why": "Azure AI Video Indexer's scene и shot detection автоматически отмечает scene и shot boundaries в загруженном video."
+ },
+ "feat-012-00": {
+  "label": "Deploy GPT-4o для enterprise chat completions с собственной quota и content filters.",
+  "why": "Azure OpenAI Service развертывает chat и completion models, как GPT-4o, как enterprise resource с собственной quota и content filters."
+ },
+ "feat-012-01": {
+  "label": "Создай набор unique product images из text description.",
+  "why": "Azure OpenAI Service's DALL-E deployment создает новые images из text description."
+ },
+ "feat-012-02": {
+  "label": "Преобразуй пакет documents в numeric vectors для similarity search.",
+  "why": "Azure OpenAI Service's embeddings models преобразуют text в numeric vectors для similarity search и retrieval."
+ },
+ "feat-012-03": {
+  "label": "Адаптируй base model's tone и style, используя собственные labeled examples.",
+  "why": "Azure OpenAI Service's fine-tuning адаптирует deployed model's tone и behavior, используя собственные labeled examples."
+ },
+ "feat-013-00": {
+  "label": "Просмотри и сравни foundation models от multiple providers в одном каталоге перед deployment.",
+  "why": "Microsoft Foundry's model catalog позволяет просмотреть и сравнить foundation models от multiple providers перед развертыванием одного."
+ },
+ "feat-013-01": {
+  "label": "Trace, test и score prompt variants против evaluation datasets перед shipping.",
+  "why": "Microsoft Foundry's prompt flow и evaluation tools trace, test и score prompt variants против datasets перед shipping."
+ },
+ "feat-013-02": {
+  "label": "Вызови Foundry project программно из Python для управления models и agents.",
+  "why": "Microsoft Foundry's SDK expose AIProjectClient, чтобы code мог подключиться к Foundry project и управлять models и agents программно."
+ },
+ "feat-014-00": {
+  "label": "Позволь agent искать и цитировать твои собственные загруженные файлы при ответе на question.",
+  "why": "Microsoft Foundry Agent Service's file search tool позволяет agent искать и цитировать твои собственные загруженные файлы при ответе."
+ },
+ "feat-014-01": {
+  "label": "Позволь agent писать и запускать code в sandbox mid-conversation для решения data или math problem.",
+  "why": "Microsoft Foundry Agent Service's code interpreter tool позволяет agent писать и запускать code в sandbox mid-conversation для решения problem."
+ },
+ "feat-014-02": {
+  "label": "Дай agent способность вызывать твои собственные external APIs или functions как часть его reasoning.",
+  "why": "Microsoft Foundry Agent Service's function calling позволяет agent invoke твои собственные external APIs или functions как часть его reasoning."
+ },
+ "feat-015-00": {
+  "label": "Автоматически попробуй multiple algorithms и hyperparameters для поиска best-performing model для твоего dataset.",
+  "why": "Azure Machine Learning's Automated ML пробует multiple algorithms и hyperparameters для поиска best-performing model для твоего dataset."
+ },
+ "feat-015-01": {
+  "label": "Построй training pipeline визуально, перетаскивая и соединяя modules, без требуемого code.",
+  "why": "Azure Machine Learning's Designer строит training pipeline визуально, перетаскивая и соединяя modules, без требуемого code."
+ },
+ "feat-015-02": {
+  "label": "Отслеживай experiment runs, регистрируй models и управляй deployment через governed MLOps pipeline.",
+  "why": "Azure Machine Learning's pipelines и model registry отслеживают experiment runs, регистрируют models и управляют governed deployment."
+ },
+ "features": {
+  "hint": "Перетащи каждую работу на capability, которая ее выполняет. Reveal названия service, к которому она принадлежит."
+ }
+}

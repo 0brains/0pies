@@ -1,0 +1,50 @@
+{
+ "genai-ops": {
+  "hint": "Kéo mỗi tình huống vào phản hồi nó yêu cầu. Một số phản hồi trên bảng ở đó để cám dỗ bạn."
+ },
+ "genai-ops-01": {
+  "label": "Câu trả lời đọc tốt nhưng bao gồm các yêu sách vắng mặt từ các đoạn chính sách được truy xuất.",
+  "sub": "Các Yêu Sách Không Được Hỗ Trợ",
+  "why": "Trước tiên xác định xem các yêu sách có được hỗ trợ hay không, sau đó làm chặt hơn việc sử dụng bằng chứng, hành vi từ chối và xác thực trích dẫn. Sự cân bằng: Một model lớn hơn có thể cải thiện độ trôi chảy mà không giải quyết các bằng chứng bị thiếu hoặc bị bỏ qua."
+ },
+ "genai-ops-02": {
+  "label": "Bộ tạo câu trả lời không thể sử dụng thực tế đúng vì đoạn liên quan không có trong tập truy xuất.",
+  "sub": "Bằng Chứng Chính Xác Không Bao Giờ Xuất Hiện",
+  "why": "Truy xuất lại cô lập xem phân đoạn, nhúng, bộ lọc, viết lại truy vấn hoặc đếm ứng cử viên bỏ lỡ bằng chứng cần thiết. Sự cân bằng: Những thay đổi thế hệ không thể khôi phục bằng chứng chưa bao giờ nhập bối cảnh."
+ },
+ "genai-ops-03": {
+  "label": "Đoạn liên quan có mặt, nhưng nó bị chôn vùi trong số nhiều đoạn gây xao lãng.",
+  "sub": "Quá Nhiều Bối Cảnh Không Liên Quan",
+  "why": "Bộ lọc tốt hơn, truy xuất lai ghép, và xếp hạng lại giảm tiếng ồn trong khi bảo tồn bằng chứng tốt nhất. Sự cân bằng: Tăng số lượng ứng cử viên có thể cải thiện lại nhưng có thể làm tệ hơn độ chính xác, độ trễ và chi phí token."
+ },
+ "genai-ops-04": {
+  "label": "Một thay đổi nhắc nhở cải thiện các ví dụ kiểm tra nhưng làm suy giảm một số quy trình làm việc của khách hàng quan trọng.",
+  "sub": "Chất Lượng Thay Đổi Sau Phát Hành",
+  "why": "Một tập đánh giá đại diện được phiên bản phát hiện các hồi quy trên các trường hợp sử dụng trước phát hành. Sự cân bằng: Bài kiểm tra của con người vẫn có giá trị khi được hướng dẫn bởi một rubric và được lấy mẫu trên toàn bộ phân phối thực."
+ },
+ "genai-ops-05": {
+  "label": "Một thẩm phán LLM liên tục ghi điểm cao hơn cho các câu trả lời dài hơn ngay cả khi các câu trả lời ngắn gọn là chính xác.",
+  "sub": "Đánh Giá Viên Ưa Thích Câu Trả Lời Dài Dòng",
+  "why": "Các thẩm phán LLM có thể có vị trí, dài dòng, và thành kiến tự ưa thích và phải được hiệu chuẩn với phán xét của con người. Sự cân bằng: Phán xét tự động vẫn hữu ích cho tỷ lệ sau khi rubric và thành kiến của nó được xác thực."
+ },
+ "genai-ops-06": {
+  "label": "Việc sử dụng ổn định, nhưng bối cảnh đầu vào trung bình và độ dài đầu ra đã tăng gấp ba lần.",
+  "sub": "Loại Chi Phí Tương Tác",
+  "why": "Telemetry token tiếp lộ trình điều khiển chi phí trực tiếp; truy xuất ít tiếng ồn, tóm tắt lịch sử, bối cảnh ổn định cache, và giới hạn đầu ra. Sự cân bằng: Thông lượng được cấp phát giúp sử dụng dự đoán cao, không phải lãng phí tăng trưởng nhắc nhở bằng chính nó."
+ },
+ "genai-ops-07": {
+  "label": "Nhiều người dùng hỏi các câu hỏi tương đương ngữ nghĩa về thông tin công cộng không thay đổi.",
+  "sub": "Câu Trả Lời Chậm Nhưng Lặp Lại",
+  "why": "Một cache được khóa cẩn thận có thể giảm độ trễ và chi phí token cho các yêu cầu tương đương khi tính mới và ranh giới truy cập được tôn trọng. Sự cân bằng: Không cache các phản hồi nhạy cảm, được cá nhân hóa, thay đổi nhanh chóng hoặc không đủ cô lập."
+ },
+ "genai-ops-08": {
+  "label": "Một tác nhân hỗ trợ gọi API không hạn chế cho đến khi ngân sách thực hiện của nó cạn kiệt.",
+  "sub": "Tác Nhân Lặp Lại Lệnh Gọi Công Cụ",
+  "why": "Thử lại bị ràng buộc, xử lý lỗi rõ ràng, tính idempotency, khả năng quan sát và tăng cấp con người ngăn chặn các vòng lặp chạy trốn. Sự cân bằng: Mô tả công cụ cải thiện sự lựa chọn nhưng không thay thế giới hạn runtime và kiểm soát thất bại."
+ },
+ "genai-ops-10": {
+  "label": "Một mô hình hỗ trợ y tế không chắc chắn và chi phí của một khuyến nghị sai lầm là nghiêm trọng.",
+  "sub": "Độ Tin Cậy Thấp Cược Cao",
+  "why": "Ngưỡng tự tin, tổng quát, hiển thị bằng chứng, và bài kiểm tra con người có trách nhiệm đều thích hợp cho sự không chắc chắn có hậu quả. Sự cân bằng: Giám sát của con người cần trách nhiệm rõ ràng, bối cảnh hữu ích, và chất lượng bài kiểm tra được đo lường thay vì phê duyệt nghi thức."
+ }
+}

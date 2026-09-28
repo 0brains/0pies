@@ -1,0 +1,95 @@
+{
+  "iv-deploy": {
+    "hint": "Trascina ogni scenario sulla scelta che richiede. La tavola contiene esche tratte da ogni asse — tipo di modello, infrastruttura e adattamento — quindi leggi il vincolo effettivo, non solo il vocabolario familiare."
+  },
+  "iv-dm-01": {
+    "label": "Traduzione in tempo reale su dispositivi portatili con connettività intermittente.",
+    "sub": "Latency-Bound, Offline-Capable",
+    "why": "La latenza e la resilienza offline battono la capacità grezza qui — un modello compatto che viene eseguito localmente supera un modello più grande che ha bisogno di una connessione live. \"I modelli grandi sono sempre richiesti per il tempo reale\" è un distrazione registrato falsa: la capacità non garantisce bassa latenza una volta che la rete cade."
+  },
+  "iv-dm-02": {
+    "label": "Le risposte devono riflettere le linee guida cliniche di questo mese nel momento in cui un clinico chiede — non lo snapshot di addestramento dell'ultimo trimestre.",
+    "sub": "Freshness at Query Time",
+    "why": "La freschezza vive al di fuori dei pesi: collegare il modello a una fonte attuale e curata al momento della query mantiene le risposte attuali senza riaddestramento. Non elimina l'allucinazione — il modello può ancora fraintendere quello che ha recuperato — e scambia il costo di addestramento per un nuovo carico operativo: il corpus ha bisogno di re-indicizzazione continua per rimanere attuale."
+  },
+  "iv-dm-03": {
+    "label": "Le offerte di prestito devono essere identiche per input identici e devono seguire solo le regole scritte della politica di credito — nessun caso può essere deciso in altro modo.",
+    "sub": "Reproducible by Rule",
+    "why": "Quando i risultati devono essere perfettamente riproducibili e tracciabili a regole codificate, un motore di regole if-then — non un modello probabilistico — è l'adattamento giusto; un motore di regole non può derivare o allucinare la sua strada verso una risposta diversa per gli stessi input."
+  },
+  "iv-dm-04": {
+    "label": "Un mandato rigoroso di residenza richiede al regolatore di avere piena visibilità dell'infrastruttura su record finanziari sensibili.",
+    "sub": "Regulator-Visible Control",
+    "why": "Mantenere il modello e i dati all'interno dell'ambiente proprio dell'organizzazione massimizza il controllo e evita questioni di trasferimento transfrontaliero che un regolatore altrimenti dovrebbe inseguire attraverso l'infrastruttura di un fornitore — il compromesso è personale interno più pesante e carico di audit. Su un ranking latenza-vs-oversight, in sede batte sempre il bordo quando la visibilità centralizzata del regolatore è più importante della vicinanza alla fonte di dati."
+  },
+  "iv-dm-05": {
+    "label": "La leadership vuole un servizio gestito per scalare rapidamente l'analisi delle immagini senza costruire un data center, e assume che il fornitore ora possieda tutto il rischio di sicurezza.",
+    "sub": "Elastic, But Whose Risk?",
+    "why": "Il cloud è la scelta giusta per scalare senza proprietà dell'infrastruttura — ma \"il fornitore possiede la sicurezza adesso\" è la trappola: secondo il modello di responsabilità condivisa, l'organizzazione che distribuisce ancora risponde per i propri dati, e una singola errata configurazione dal lato del cliente può comunque causare una violazione."
+  },
+  "iv-dm-06": {
+    "label": "I chioschi di chat multilingue ai varchi di confine hanno connettività limitata e potenza limitata, e le risposte devono rimanere quasi istantanee.",
+    "sub": "No Server, No Wait",
+    "why": "Eseguire il modello sul dispositivo stesso rimuove la dipendenza da una connessione esterna che questi varchi non possono garantire in modo affidabile. Quello che questa scelta ti costa: spingere l'inferenza al bordo scambia gli strumenti centralizzati di rilevamento del drift, quindi una flotta di dispositivi può derivare silenziosamente fuori specifica con nessun singolo pannello per intercettarlo."
+  },
+  "iv-dm-07": {
+    "label": "Un modello proprietario piccolo si riaddestra continuamente su un flusso di contenuti dal vivo e deve mantenere i punteggi delle foto localmente attraverso migliaia di negozi, senza round-trip di rete.",
+    "sub": "Local-First at Fleet Scale",
+    "why": "Il scoring locale e offline ha bisogno del modello sul dispositivo. Quello che questa scelta ti costa: il monitoraggio e l'audit delle prestazioni in modo coerente diventano molto più difficili una volta che le decisioni sono distribuite su una vasta flotta fisicamente dispersa invece di un servizio centralizzato."
+  },
+  "iv-dm-08": {
+    "label": "Un'azienda logistica che ottimizza la sua catena di approvvigionamento vuole ispezionare, modificare e ridistribuire i pesi del modello piuttosto che dipendere dalla roadmap di un fornitore.",
+    "sub": "Inspect It Yourself",
+    "why": "I pesi aperti acquistano trasparenza, flessibilità e libertà dalla pianificazione di rilascio di un singolo fornitore — al costo di assumere internamente la revisione della licenza, i controlli di provenienza e i tuoi stessi test di sicurezza che un fornitore altrimenti portasse."
+  },
+  "iv-dm-09": {
+    "label": "Un'azienda mediatica che automatizza i riassunti video vuole gli SLA di un fornitore, la risposta agli incident e gli indennizzi IP che supportano qualsiasi modello spedisce con.",
+    "sub": "Contract-Backed, Not Inspectable",
+    "why": "Il supporto sostenuto da contratto e le garanzie sono l'intero punto di andare proprietario — ma quella convenienza ha un costo strategico nominato: il passaggio a versioni successive è più difficile una volta che i flussi di lavoro, i prompt e le integrazioni sono costruiti intorno all'API di un fornitore, e il blocco del fornitore è registrato come il rischio strategico principale di questo percorso."
+  },
+  "iv-dm-10": {
+    "label": "Una banca ha migliaia di decisioni storiche etichettate che dimostrano un comportamento di scoring specialista stabile che il modello generico non riproduce da solo.",
+    "sub": "Demonstrated, Not Described",
+    "why": "Questo è lo strumento giusto per un comportamento stabile e dimostrato cucinato nei pesi attraverso esempi curati. Non è un aggiornamento gratuito: la governance ora tratta il risultato come un nuovo sistema che richiede i suoi stessi test di equità e robustezza, e porta una maggiore responsabilità legale rispetto all'utilizzo di un modello precostruito di terze parti così com'è."
+  },
+  "iv-dm-11": {
+    "label": "Un generatore di dati sintetici viene addestrato ulteriormente su una fetta di record di produzione in modo che il suo output di test si senta abbastanza realistico affinché il QA si fidi.",
+    "sub": "Realismo Preso Dalla Realtà",
+    "why": "L'adattamento del modello base ulteriormente sui dati dell'organizzazione è fine-tuning per definizione. Il rischio che segue è specifico per questo percorso: l'output sintetico generato può comunque portare tracce dei record di produzione sensibili originali anche dopo l'anonimizzazione, perché l'informazione è ora cotta nei pesi, non seduta in un database ispezionabile."
+  },
+  "iv-dm-12": {
+    "label": "Un pilot di screening del curriculum ha bisogno di lanciare questo trimestre; non c'è tempo o budget ancora per il riaddestramento, solo per convalidare il modello concesso in licenza rispetto ai risultati di assunzione reali.",
+    "sub": "Fast, Unproven Fit",
+    "why": "Out-of-the-box è il percorso più veloce verso un pilot e evita il costo di riaddestramento — ma la governance deve trattarlo come ad alto rischio fino a prova contraria: i dati di addestramento del fornitore o i confini decisionali potrebbero non adattarsi a questo dominio, quindi la validazione rispetto ai propri standard di prestazione e equità dell'organizzazione, più controlli compensanti come la revisione umana, non è facoltativa."
+  },
+  "iv-dm-13": {
+    "label": "Un sistema di rilevamento frodi classifica record di transazioni strutturate; i suoi rischi principali sono bias contro certi gruppi e accuratezza che silenziosamente si degrada mentre i modelli di spesa si spostano.",
+    "sub": "Structured Input, Familiar Failure",
+    "why": "Predire o classificare una categoria nota da caratteristiche strutturate è il profilo di fallimento classico — rischi di bias e drift familiari che i test di equità e il monitoraggio sono costruiti per intercettare, distinto dalla modalità di fallimento di un sistema generativo di inventare con sicurezza contenuto sbagliato."
+  },
+  "iv-dm-14": {
+    "label": "Il marketing ha bisogno di uno strumento che rediga nuovi ad copy e immagini di campagna da un breve prompt, non uno che classifichi o punti nulla che esiste già.",
+    "sub": "Contenuto Nuovo, Non un Verdetto",
+    "why": "Creare nuovo contenuto — testo, immagini, codice — è il profilo di beneficio e rischio generativo: output plausibilmente sbagliato, domande di IP e provenienza, e la necessità di guardrail di sicurezza dei contenuti, distinto dalle modalità di fallimento di predizione strutturata di un modello classico."
+  },
+  "iv-dm-15": {
+    "label": "Un revisore di reclami ha bisogno che il sistema pesi una fotografia di danno insieme alla descrizione dell'incident scritto prima di segnalare un reclamo.",
+    "sub": "Two Channels, One Judgment",
+    "why": "Interpretare congiuntamente un'immagine e testo insieme — e poter spiegare quale input ha guidato l'output — è il profilo di rischio e capacità multimodale; un sistema solo testo semplicemente non ha nessun canale per la fotografia."
+  },
+  "iv-dm-16": {
+    "label": "Un chatbot di supporto solo testo risponde alle domande dei clienti e deve divulgare che è AI, citare le fonti e inoltare i casi sensibili a un essere umano.",
+    "sub": "One Channel, Disclosed",
+    "why": "Testo in, testo fuori con divulgazione, citazione e controlli di inoltro umano è il profilo di governance del modello linguaggio — non c'è nessun secondo canale di input su cui ragionare, che è ciò che spingerebbe questo verso il profilo multimodale invece."
+  },
+  "iv-dm-17": {
+    "label": "Due milioni di record brevi strutturati devono essere valutati nottetempo con un budget di calcolo stretto, utilizzando una manciata di caratteristiche già etichettate.",
+    "sub": "Narrow Task, Tight Budget",
+    "why": "Un modello stretto e basso a basso calcolo è più facile da spiegare, riaddestra rapidamente e viene eseguito economicamente a questa scala batch — il compromesso è che può avere difficoltà una volta che l'ambiente diventa più complesso o variabile di quello per cui è stato costruito."
+  },
+  "iv-dm-18": {
+    "label": "Il sistema deve generalizzare in molti domini sconosciuti dal primo giorno, senza tempo per costruire o etichettare un dataset per dominio prima.",
+    "sub": "Breadth Bought Through Scale",
+    "why": "Il pretraining ampio è quello che acquista generalizzazione zero- e pochi-shot tra domini di cui nessuno ha ancora dati etichettati — il costo è un sistema più grande, meno trasparente che ha bisogno della sua propria governance di calcolo, valutazione della sicurezza e monitoraggio del drift."
+  }
+}

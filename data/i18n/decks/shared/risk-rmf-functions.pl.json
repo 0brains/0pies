@@ -1,0 +1,74 @@
+{
+  "risk-rmf-functions": {
+    "hint": "Przeciągnij każde działanie na jego funkcję. Govern przebiega przez wszystkie; Map ustanawia kontekst, Measure ilościuje, Manage działa.",
+    "note": "Govern to nie faza, która się kończy. Jeśli działanie ustala warunki, pod którymi trzy pozostałe się zdarzają — kultura, odpowiedzialność, polityka — to Govern, zawsze gdy się pojawi.",
+    "zones[0].def": "Kultywuj kulturę zarządzania ryzykiem: polityki, struktury odpowiedzialności, role, zdolność siły roboczej, nadzór stron trzecich. Przechodzi przez pozostałe trzy.",
+    "zones[1].def": "Ustal kontekst i ramę ryzyk: cel, ustawienie, aktorzy, osoby, których dane dotyczą, możliwości i ograniczenia, współzależności.",
+    "zones[2].def": "Analizuj, oceniaj, porównuj i monitoruj używając metod ilościowych i jakościowych, w tym cech wiarygodności.",
+    "zones[3].def": "Przydziel zasoby do zmapowanych i zmierzonych ryzyk: priorytetyzuj, odpowiadaj, powracaj, komunikuj i działaj na trzecią stronę i pozostałe ryzyko."
+  },
+  "rmf-01": {
+    "label": "Organizacja dokumentuje, kto jest odpowiedzialny za decyzje dotyczące ryzyka AI i na jakim poziomie każda klasa decyzji może być podjęta.",
+    "why": "Struktury odpowiedzialności to archetypowe działanie GOVERN. Bez nich pozostałe trzy funkcje nie mają, do kogo raportować i do kogo eskalować."
+  },
+  "rmf-02": {
+    "label": "Polityka AI jest zatwierdzona, wyrównana do wymogów prawnych i zdefiniowany jest jej proces wyjątków.",
+    "why": "Polityka i jej droga wyjątku ustanawiają warunki, pod którymi każde inne działanie się zdarzają. GOVERN jest przechodzący, nie sekwencyjny."
+  },
+  "rmf-03": {
+    "label": "Pracownicy pracujący na systemach AI otrzymują szkolenie dotyczące ról i ich kompetencja jest śledzona.",
+    "why": "Zdolność siły roboczej siedzi prosto w GOVERN. Reżim pomiarów, który nikt jest kompetentny do uruchomienia, produkuje liczby bez gwarancji."
+  },
+  "rmf-04": {
+    "label": "Procesy są ustanawiane do nadzorowania modeli i danych stron trzecich, w tym co musi być uzyskane od dostawców.",
+    "why": "GOVERN jawnie obejmuje politykę nadzoru stron trzecich. Zastosowanie jej do konkretnego ryzyka dostawcy na konkretnym systemie to MANAGE."
+  },
+  "rmf-05": {
+    "label": "Zespół dokumentuje zamierzone przeznaczenie systemu, ustawienie wdrażania i kategorie osób, które będą dotyczyć.",
+    "why": "Ramowanie kontekstu to cały punkt MAP. Pominięcie tego to jak system jest później mierzony dokładnie przeciwko błędnemu celowi."
+  },
+  "rmf-06": {
+    "label": "Znane możliwości, ograniczenia i założenia systemu są katalogowane, w tym gdzie nie powinien być używany.",
+    "why": "MAP ustanawia, do czego system jest i nie jest. Stwierdzenie poza zakresem napisane tutaj to co późniejsza ocena i monitorowanie są oceniane."
+  },
+  "rmf-07": {
+    "label": "Wewnętrzne i zewnętrzne interesariusze, w tym społeczności, których to dotyczy, są zidentyfikowani wraz z korzyściami i potencjalną szkodą dla każdego.",
+    "why": "Identyfikowanie dotkniętych stron i ramowanie potencjalnych wpływów to MAP. Ilościowanie tych wpływów to MEASURE."
+  },
+  "rmf-08": {
+    "label": "Współzależności z innymi systemami i konsekwencje awarii komponentu AI są śledzone.",
+    "why": "MAP obejmuje system w jego szerszym kontekście, w tym co inne się psuje, gdy się psuje. Komponent widziany w izolacji to zmapowane ryzyko pominięte."
+  },
+  "rmf-09": {
+    "label": "System jest porównywany z zdefiniowanymi metrykami dla ważności, niezawodności i solidności przed wydaniem.",
+    "why": "MEASURE obejmuje ocenę gegen charakterystyki wiarygodności używając powtarzalnych metod."
+  },
+  "rmf-10": {
+    "label": "Wydajność jest oceniana osobno dla każdej demograficznej podgrupy i rozbieżność jest ilościowana.",
+    "why": "Analiza szkodliwego stronniczości metody ilościowymi to MEASURE. Decydowanie, co z tym zrobić z rozbieżnością, to MANAGE."
+  },
+  "rmf-11": {
+    "label": "Ciągłe monitorowanie instrumentuje wdrażany system dla dryftu wejścia i degradacji jakości.",
+    "why": "MEASURE obejmuje monitorowanie ciągłe po wdrażaniu, nie tylko testowanie przed wydaniem. Detekcja dryftu siedzi tutaj."
+  },
+  "rmf-12": {
+    "label": "Metody testowania, oceny, weryfikacji i walidacji są wybierane, dokumentowane i ich własne ograniczenia są rejestrowane.",
+    "why": "MEASURE wymaga, aby podejście pomiarów było oceniane. Metrika z niezbadanymi punktami ślepymi to fałszywa gwarancja."
+  },
+  "rmf-13": {
+    "label": "Ryzyka są priorytetyzowane przed wpływem i zasoby są przydzielane do najwyższego najpierw.",
+    "why": "Priorytetyzacja i alokacja zasobów w zmapowanych i zmierzonych ryzykach to definicja MANAGE."
+  },
+  "rmf-14": {
+    "label": "Plan odpowiedzi jest wprowadzony obejmujący zawartość incydentu, odzyskanie i komunikację dla awarii modelu.",
+    "why": "MANAGE obejmuje reagowanie, odzyskiwanie i komunikowanie się o incydentach. Pisanie planu to MANAGE; ćwiczenie zdolności to GOVERN."
+  },
+  "rmf-15": {
+    "label": "Pozostałe ryzyko po mitigacji jest dokumentowane i komunikowane wdrażającemu systemu.",
+    "why": "MANAGE jawnie adresuje pozostałe ryzyko, w tym powiedzenie użytkownikom podrzędnym, co pozostaje. Niedokumentowane pozostałe ryzyko jest przenoszone przez wypadek."
+  },
+  "rmf-16": {
+    "label": "Decyzja jest podjęta, aby zdekomisjonować wdrażany model, którego ryzyko nie może być już wprowadzone w tolerancję.",
+    "why": "Zastępowanie lub dekomisjonowanie systemu to odpowiedź MANAGE. Posiadanie zdefiniowanej drogi do emerytury to co to czyni możliwym."
+  }
+}

@@ -1,0 +1,45 @@
+{
+ "iii-dl-01": {
+  "prompt": "Ordena os gates um novo sistema de IA passa através de primeiro caso de negócio para evidência de prontidão de shadow-mode.",
+  "steps[0].label": "Caso de negócio e objetivos",
+  "steps[0].detail": "Define por que IA em tudo: o caso de custo-benefício, incluindo impactos societais, vem primeiro. Nada downstream consegue ser avaliado sem um objetivo afirmado para medi-lo contra.",
+  "steps[1].label": "Caso de uso + avaliação de impacto (alavancado de um PIA)",
+  "steps[1].detail": "Dimensiona o caso de uso específico e executa uma avaliação de impacto para antecipar e gerir os danos que poderia causar. O melhor template existente para adaptar é uma avaliação de impacto de privacidade (PIA/DPIA) — governança não inventa isto do zero.",
+  "steps[2].label": "Design — estimação de impacto de risco e arquitetura",
+  "steps[2].detail": "Trabalho de design inclui estimação de impacto de risco e escolha de arquitetura. Este é o primeiro gate onde arquitetura é realmente decidida; planeamento explicitamente a exclui — planeamento define objetivos e abordagem de governança, design escolhe como o sistema é construído (planeamento exclui arquitetura).",
+  "steps[3].label": "Construir",
+  "steps[3].detail": "Constrói o sistema contra a estimação de impacto de risco do design e arquitetura escolhida.",
+  "steps[4].label": "Benchmark vs especialistas humanos no mesmo contexto de decisão",
+  "steps[4].detail": "Antes de piloto, compara o desempenho do sistema contra desempenho de especialista humano no mesmo domínio — este é o benchmark de governança mais valioso, não um alvo de precisão abstrata.",
+  "steps[5].label": "Piloto — valida equidade + precisão em escala controlada",
+  "steps[5].detail": "Executa um piloto pré-lançamento cujo propósito primário é validar equidade e precisão em dados real-mundo em escala controlada, limitada antes de rollout total.",
+  "steps[6].label": "Shadow-mode corre como evidência de prontidão documentada",
+  "steps[6].detail": "Executa o sistema em paralelo com o processo vivo (shadow mode) e documenta os resultados. Esta evidência documentada — não uma aprovação verbal — é o que demonstra prontidão de lançamento."
+ },
+ "iii-dl-02": {
+  "prompt": "Ordena a hierarquia de mitigação de risco de a correção mais durável para o último recurso.",
+  "steps[0].label": "Elimina o risco",
+  "steps[0].detail": "Remove a característica ou caso de uso arriscado inteiramente — não usa IA no contexto alto-risco em tudo, da maneira um algoritmo de recrutamento que continua a produzir resultados enviesados fica reformado em vez de remendado sem fim. No vocabulário paralelo do exame isto mesma tier superior é chamado 'Evitar': para de empreender a atividade para que a exposição vá para zero. Mesmo conceito, rótulo diferente — defuse o choque de vocabulário, não escolha um lado.",
+  "steps[1].label": "Substitui com um design de risco mais baixo",
+  "steps[1].detail": "Se eliminação não é viável, troca para um modelo mais simples, mais interpretável ou um conjunto de dados mais baixa-risco que realiza o mesmo propósito — um modelo opaco por um interpretável, um conjunto de dados mais barulhento por um coletado sob controlos de qualidade mais rigorosos. Redação de exame algumas vezes dobra isto para 'Mitigar' (aja em probabilidade ou impacto enquanto a atividade continua) — novamente, o mesmo movimento de design sob uma palavra diferente.",
+  "steps[2].label": "Engenharia de salvaguardas",
+  "steps[2].detail": "Constrói salvaguardas dentro do sistema em si: limites de confiança, teste de robustez, auditorias de viés, ferramentas de explicabilidade — e controlos human-in-the-loop, que sentam aqui como um exemplo técnica entre vários, não como uma tier final de último recurso separada por si própria. Isto é onde controles técnicos mais vivos, e onde o balde 'Mitigar/Reduzir' do exame também pousa.",
+  "steps[3].label": "Avisa e treina utilizadores",
+  "steps[3].detail": "Uma vez que o sistema em si é tão seguro quanto a engenharia consegue fazer, a próxima linha de defesa é dizendo às pessoas: dashboards de interpretabilidade, avisos linguagem-simples, e treino de utilizador para que pessoas interagindo com o sistema entendam seus limites. Isto é uma tier distinta de controlos de engenharia — muda o que o humano sabe, não o que o sistema faz.",
+  "steps[4].label": "Aceita com monitorização",
+  "steps[4].detail": "Qualquer risco que permaneça depois das quatro tiers acima é conscientemente aceite e vigiado — registos de auditoria e revisão pós-lançamento, não tolerância silenciosa. A tier final do exame, 'Aceita', mapeia limpo para esta: uma decisão gravada, própria no nível certo de autoridade, apoiada por monitorização contínua em vez de um sign-off one-time. Alguns frameworks inserem controlos Administrativos como uma tier distinta — a hierarquia NIOSH-style ensinada em Hierarquia de Controlos — mesma ideia, slicing diferente."
+ },
+ "iii-dl-03": {
+  "prompt": "Ordena os passos para executar uma matriz de danos probabilidade × severidade durante design.",
+  "steps[0].label": "Enumera danos por stakeholder",
+  "steps[0].detail": "Lista os caminhos o sistema poderia correr mal para cada grupo afetado — utilizadores finais, assuntos downstream, operadores — antes de scoring qualquer coisa. Stakeholder mapping alarga a lente além da equipa de desenvolvimento para que nenhuma exposição de grupo seja perdida.",
+  "steps[1].label": "Pontua probabilidade × severidade",
+  "steps[1].detail": "Classifica cada dano enumerado em probabilidade e impacto usando escalas pré-definidas. Este scoring é aplicado através de design e teste, não como um exercício one-off, para que constatações novas possam mover itens na grid.",
+  "steps[2].label": "Prioriza — catastrófico sobrepõe score",
+  "steps[2].detail": "Classifica pelo score plotado, mas deixa um item de impacto-catastrófico sobrepor um ranking de prioridade meramente-média: uma falha baixa-probabilidade, alta-severidade num sistema autónomo ainda dispara um gate duro mesmo se seu score bruto não viesse topar a lista.",
+  "steps[3].label": "Aplica a hierarquia de mitigação na fonte de design",
+  "steps[3].detail": "Corrige os danos de prioridade-mais-alta no nível de design/fonte em vez de parafusar em disclaimers ou monitorização depois do facto — por exemplo, desenhando o diálogo de um chatbot para cenários de crise em vez de confiando num disclaimer, ou desenhando um modelo para excluir clientes financeiramente vulneráveis de uma oferta prejudicial em vez de sinalizá-los depois do facto.",
+  "steps[4].label": "Documenta dano residual e owner",
+  "steps[4].detail": "Registar que risco permanece depois de mitigação, a que score, e quem é accountable por aceitá-lo. Um risco residual não-gravado é indistinguível de um não-gerido."
+ }
+}

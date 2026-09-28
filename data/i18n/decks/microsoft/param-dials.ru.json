@@ -1,0 +1,106 @@
+{
+ "pd-001": {
+  "label": "Ты нуждаешься в consistent, repeatable output из того же prompt каждый run",
+  "why": "histack's exact exam cue: 'consistent, repeatable output' → low temperature. Это rescales всю probability distribution; tune его или top_p, не оба."
+ },
+ "pd-002": {
+  "label": "Restrict sampling к smallest set из tokens, чья cumulative probability достигает set threshold",
+  "why": "Nucleus sampling — top_p truncates candidate set, while temperature reshapes всю distribution (corpus confused-pair #5)."
+ },
+ "pd-003": {
+  "label": "Responses продолжают cutting off mid-sentence — ты нуждаешься в complete answers",
+  "why": "max_tokens caps output length только — exam's most frequent parameter trap предлагается как randomness control (pair #4)."
+ },
+ "pd-004": {
+  "label": "Model продолжает repeating один phrase; penalize tokens в proportion как часто они appeared",
+  "why": "Frequency penalty scales с repeat count (repetition); presence penalty fires один раз token появился at all (topic novelty) — corpus pair #6."
+ },
+ "pd-005": {
+  "label": "Generated marketing images выглядят rough — request higher render fidelity tier",
+  "why": "gpt-image-1's payload берет prompt, size, quality (включая 'high' trap value) и n — quality controls fidelity, size controls dimensions."
+ },
+ "pd-006": {
+  "label": "Видеть image progress раньше while large generation renders",
+  "why": "Streaming partial_images на images/generations path возвращает progressive output — exam's 'see image progress sooner' stem verbatim."
+ },
+ "pd-007": {
+  "label": "Randomness knob, который reshapes entire token probability distribution перед sampling, не только top slice",
+  "why": "Temperature scales logits across всю distribution; top_p вместо этого truncates по cumulative probability mass — то же 'creativity' intuition, различный mechanism."
+ },
+ "pd-008": {
+  "label": "Team хочет model чтобы он только когда-либо consider most probable slice из next-token candidates, cutting off long tail",
+  "why": "Nucleus sampling (top_p) restricts candidates к cumulative-probability slice; temperature reshapes probabilities но никогда не removes candidates outright."
+ },
+ "pd-009": {
+  "label": "Hard ceiling на how many tokens single response может generate, regardless из what это говорит",
+  "why": "max_tokens — это length ceiling enforced во время generation; stop sequence вместо этого halts generation рано только когда specific string появляется — различный trigger, то же 'shorter output' goal."
+ },
+ "pd-010": {
+  "label": "Discourage model из reusing то же word или phrase много раз over — чем больше он repeats, harder pushback",
+  "why": "Frequency penalty scales с how often token уже appeared; presence penalty applies flat penalty момент token appears даже один раз — count-proportional vs binary."
+ },
+ "pd-011": {
+  "label": "Chat transcript никогда не revisits earlier topics — model всегда drifts на new subject matter вместо returning к what это уже covered",
+  "why": "High presence penalty fires instant token появился один раз, pushing model к new topics; frequency penalty scales с repeat count и mainly curbs literal repetition, не topic drift."
+ },
+ "pd-012": {
+  "label": "Applies то же fixed penalty к any token, который показался at all в response до сих пор, no matter how many times",
+  "why": "Presence penalty — это binary per-token (appeared или not); frequency penalty вместо этого grows с repeat count — exam's confused-pair distinction между двумя penalty parameters."
+ },
+ "pd-013": {
+  "label": "Generation должно end instant model writes specific marker string, без waiting к hit length ceiling",
+  "why": "Stop sequence — это literal string trigger, который halts generation рано; max_tokens только enforces length ceiling и имеет no awareness из specific text."
+ },
+ "pd-014": {
+  "label": "Specific piece из text model told к treat как ending marker, чтобы output stops момент text produced",
+  "why": "Stop sequences trigger на matching text content; ни max_tokens ни frequency penalty inspects generated text само по себе — один counts tokens, другой counts repeats."
+ },
+ "pd-015": {
+  "label": "Latency должно stay predictable в high, sustained request volume, и team fine платящий reserved hourly cost к guarantee его",
+  "why": "Provisioned throughput (PTU) reserves dedicated capacity для predictable latency в scale; Standard deployment — это pay-per-token с variable throughput под load, и Capacity (TPM) — это только quota dial, не deployment type само по себе."
+ },
+ "pd-016": {
+  "label": "Reserved, dedicated model capacity purchased ahead из time чтобы throughput не fluctuate с shared-tenant traffic",
+  "why": "PTU — это reserved-capacity deployment model; Standard shares capacity и bills per token с variable throughput, пока Capacity (TPM) только sets quota на whichever deployment type chosen."
+ },
+ "pd-017": {
+  "label": "Traffic к customer-support app unpredictable и bursty, и team хочет pay-per-token billing вместо hourly reserved capacity",
+  "why": "Pay-per-token pricing под variable load — это Standard deployment (exam's exact scenario); PTU вместо этого bills hourly для reserved capacity regardless из actual usage."
+ },
+ "pd-018": {
+  "label": "Bills per token consumed нежели per hour из reserved compute, с throughput, который может vary под shared load",
+  "why": "Standard — это consumption-based billing с variable throughput; PTU trades эту variability для fixed hourly reservation, и Capacity (TPM) — это quota setting layered на top либо model."
+ },
+ "pd-019": {
+  "label": "Deployment продолжает hitting throttling под peak load, чтобы team shifts spare throughput quota over из другого underused deployment",
+  "why": "Per-deployment throughput quota может быть reallocated между deployments (exam's documented scenario); PTU и Standard describe deployment's billing/reservation model, не его quota dial."
+ },
+ "pd-020": {
+  "label": "Dial, который sets upper bound на total throughput deployment может process каждую minute, independent из any single response's length",
+  "why": "Capacity (TPM) throttles в deployment level across все requests измеренные в tokens per minute; max_tokens вместо этого caps length из one response и имеет nothing делать с rate limiting."
+ },
+ "pd-021": {
+  "label": "Banner image request продолжает returning small square когда layout нуждается в wide rectangular canvas",
+  "why": "size sets pixel dimensions (e.g. wide format вместо 1024x1024); quality controls rendering fidelity и n controls image count — ни один не changes canvas shape."
+ },
+ "pd-022": {
+  "label": "Request field, который sets pixel dimensions из generated image, такие как 1024×1024",
+  "why": "size — это dimensions field в images/generations payload; quality вместо этого governs rendering fidelity, и partial_images controls progressive streaming, не final canvas dimensions."
+ },
+ "pd-023": {
+  "label": "Field, который accepts 'high' fidelity tier чтобы fine detail renders more crisply, separate из how big image",
+  "why": "quality (включая documented 'high' trap value) controls rendering fidelity; size controls dimensions и n controls как много images come back — три independent dials на том же request."
+ },
+ "pd-024": {
+  "label": "One prompt должно return четыре separate image variations к choose between, в single request",
+  "why": "n sets как много images request returns (e.g. n=4); size и quality shape каждый individual image но не change как много come back."
+ },
+ "pd-025": {
+  "label": "Parameter, который sets как много image variations single images/generations call returns",
+  "why": "n — это image-count field; partial_images вместо этого streams progressive previews из single image как это renders, и size только sets that image's dimensions."
+ },
+ "pd-026": {
+  "label": "Combined с streaming, этот field sets как много progressive preview frames sent перед final image completes",
+  "why": "partial_images (используемый together с stream=True) sets count из progressive preview frames во время rendering; n вместо этого sets как много separate final images returned, и quality sets fidelity, не preview cadence."
+ }
+}

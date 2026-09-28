@@ -1,0 +1,82 @@
+{
+  "lad-agent": {
+    "prompt": "按必须发生的顺序放置代理的生命周期。",
+    "steps[0].label": "定义代理：PromptAgentDefinition(model=MODEL_NAME, instructions=..., tools=[...])",
+    "steps[0].detail": "模型 + instructions + 工具在定义时设置—— {\"deployment\":{\"model\":AGENT_NAME}} 是规范的错误答案；部署托管模型，代理是模型 + instructions + 工具。",
+    "steps[1].label": "在代理游乐场中测试它",
+    "steps[1].detail": "游乐场并列配置角色、工具和附加知识，让你在任何客户端代码调用代理之前尝试多轮行为。",
+    "steps[2].label": "保存它：project.agents.create_version(agent_name=AGENT_NAME, definition=...)",
+    "steps[2].detail": "未保存的游乐场编辑在离开门户时丢失—— create_version 是实际持久化定义的内容，无论你在门户还是代码中构建它。",
+    "steps[3].label": "创建线程：openai.conversations.create()",
+    "steps[3].detail": "打开后来写入的运行时容器—— 由客户端应用在发送第一条消息之前调用，与代理自身的定义不同。",
+    "steps[4].label": "将用户的消息添加到线程中",
+    "steps[4].detail": "转向的内容被追加到线程的累积消息历史—— 运行不能处理尚未添加的消息。",
+    "steps[5].label": "创建运行并读取输出：openai.responses.create(..., extra_body={\"agent_reference\": {...}})",
+    "steps[5].detail": "实际处理对话并生成代理下一个输出的调用；agent_reference 是指向已保存定义的每次调用元数据。"
+  },
+  "lad-chat": {
+    "prompt": "按必须运行的顺序放置代码流。",
+    "steps[0].label": "安装 azure-ai-projects",
+    "steps[0].detail": "「你应该为项目客户端安装哪个包？」是一个经典的考试题干—— 答案是 azure-ai-projects。",
+    "steps[1].label": "创建 AIProjectClient(endpoint, DefaultAzureCredential())",
+    "steps[1].detail": "端点 + 凭证在任何调用之前都必须存在；无密钥认证 = Entra ID DefaultAzureCredential。",
+    "steps[2].label": "调用 get_openai_client()",
+    "steps[2].detail": "将项目客户端桥接到 OpenAI 兼容的聊天客户端—— 如果移除则破坏一切的行。",
+    "steps[3].label": "构建消息列表(系统提示优先，然后用户提示)",
+    "steps[3].detail": "系统消息中的规则和护栏；此转向的请求在用户消息中。",
+    "steps[4].label": "调用 chat.completions.create(model=DEPLOYMENT_NAME, messages=[...])",
+    "steps[4].detail": "model= 采用你的部署名称，永远不是基础模型名称—— 经典的陷阱。",
+    "steps[5].label": "读取 response.choices[0].message.content",
+    "steps[5].detail": "回复文本存在于第一个选项的消息上—— 语料库代码片段问题在这里结束。"
+  },
+  "lad-cu": {
+    "prompt": "按顺序放置 Content Understanding 工作流。",
+    "steps[0].label": "选择或定义分析器：用自然语言描述架构(ContentAnalyzer(base_analyzer_id=..., field_schema=...))",
+    "steps[0].detail": "预构建分析器 id(prebuilt-invoice, prebuilt-audio,...)涵盖常见域；自定义 ContentAnalyzer 通过 field_schema 用纯语言命名你想要的字段—— 超出描述要提取内容的代码。",
+    "steps[1].label": "注册它：client.begin_create_analyzer(...)",
+    "steps[1].detail": "在可以针对任何内容调用之前，将分析器定义作为长期运行的操作进行供应—— 一个一次性的设置步骤，而不是每个文档。",
+    "steps[2].label": "提交内容：client.begin_analyze(analyzer_id=..., inputs=[AnalysisInput(url=file_url)])",
+    "steps[2].detail": "每个文档/图像/音频/视频文件根据已注册的分析器获得其自己的 begin_analyze 调用—— 每个文档步骤，与步骤 2 不同。",
+    "steps[3].label": "轮询操作：poller.result()",
+    "steps[3].detail": "begin_analyze 返回轮询器；调用其.result() 方法以等待最终分析输出—— 分析是异步的，而不是同步返回(考试将其称为「调用轮询器的 ________ 方法」)。",
+    "steps[4].label": "从结果中读取结构化 JSON 字段",
+    "steps[4].detail": "提取的字段—— 供应商名称、发票日期、发票总额等—— 落入轮询器的结果有效载荷；这是 Content Understanding 自身工作的结束。",
+    "steps[5].label": "移交给 Azure AI Search 以建立索引",
+    "steps[5].detail": "Content Understanding 只提取—— 它永远不会索引或生成；Azure AI Search 是分开的下游服务，为检索/RAG 索引 CU 的结构化输出。"
+  },
+  "lad-genai": {
+    "prompt": "按生成模型将你的提示转换为文本的顺序放置步骤。",
+    "steps[0].label": "标记化",
+    "steps[0].detail": "输入文本被分成令牌—— 单词或子单词—— 每个从模型的词汇表映射到一个 id；下游没有任何东西有意义，直到这发生(任务 1.2)。",
+    "steps[1].label": "嵌入",
+    "steps[1].detail": "每个令牌 id 被转换为编码含义的数字向量—— 同一向量空间使语义相似性计算为向量距离。",
+    "steps[2].label": "转换器注意力",
+    "steps[2].detail": "自注意力层根据序列中的每个其他令牌权衡每个令牌—— 「为大多数现代基础模型供电」的机制，它需要嵌入向量已经存在。",
+    "steps[3].label": "下一个令牌预测",
+    "steps[3].detail": "模型为单个下一令牌输出整个词汇表上的概率分布；温度和 top-p 在采样一个令牌之前重塑此分布。",
+    "steps[4].label": "去标记化输出",
+    "steps[4].detail": "预测的令牌 id 被解码回文本，循环重复一次一个令牌，直到停止条件—— 困惑度衡量此步骤的预测如何匹配保留文本。"
+  },
+  "lad-speech": {
+    "prompt": "按必须运行的顺序放置语音 SDK 调用。",
+    "steps[0].label": "SpeechConfig(subscription=key, region=region)",
+    "steps[0].detail": "每个语音 SDK 流都从这里开始—— 认证后续所有调用的 key/region(或端点)对。",
+    "steps[1].label": "设置 speech_config.speech_synthesis_voice_name = \"...\"",
+    "steps[1].detail": "语音选择是直接在配置对象上设置的属性—— 考试的 DragonHD-voice 代码片段在 SpeechConfig 之后设置此行，在从中构建任何其他对象之前。",
+    "steps[2].label": "AudioConfig(...) —— 麦克风、文件或默认设备",
+    "steps[2].detail": "独立于语音名称属性构建，但快速开始代码片段仅在配置设置完成后立即构建它，在将消费两个对象的识别器/合成器之前。",
+    "steps[3].label": "创建识别器或合成器：SpeechRecognizer(speech_config, audio_config) / SpeechSynthesizer(speech_config)",
+    "steps[3].detail": "两个构造函数都采用已构建的 speech_config(识别器也采用 audio_config)—— 此点之后的任何东西都无法再注入配置。",
+    "steps[4].label": "调用 recognize_once() / speak_text_async(text)",
+    "steps[4].detail": "recognize_once() 捕获一个简短的说法(vs 连续识别)；speak_text_async() 实际播放文本—— 异步未来/.get() 模式属于这里，最后，对象存在一次。"
+  },
+  "lad-voice": {
+    "prompt": "按顺序放置经典语音代理管道。",
+    "steps[0].label": "语音到文本：将调用者的口头音频转换为文本",
+    "steps[0].detail": "管道步骤一—— recognize_once() 或连续识别将音频转换为成绩单，然后才能对其进行任何推理。",
+    "steps[1].label": "语言/生成 AI 处理：推理成绩单并生成文本回复",
+    "steps[1].detail": "聊天/代理调用推理成绩单—— 单个多模态模型(例如 audio-in/audio-out 聊天部署)可以与步骤 1 和 3 一起折叠的步骤，以及语音实时 API 旨在用单一低延迟语音对语音接口一次替换所有三个的步骤。",
+    "steps[2].label": "文本到语音：将回复合成回音频",
+    "steps[2].detail": "speak_text_async() 播放生成的回复—— 经典管道的最后一步，也可以折叠到在步骤 2 的细节中命名的单一多模态模型或语音实时替代中。"
+  }
+}

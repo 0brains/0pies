@@ -1,0 +1,137 @@
+{
+ "id": "federation-pairs",
+ "runner": "pairs",
+ "title": "Federation, One Word Apart",
+ "blurb": "Seven identity and access minimal pairs — the vocabulary CISSP loves to swap on federation, SSO and MFA questions.",
+ "source": "Chapple CISSP SG 10ed ch.13-14 · April-2024 outline 5.2, 5.3, 5.4",
+ "asOf": "2026-08",
+ "area": "5.2-5.4",
+ "pairs": [
+  {
+   "id": "fp-01",
+   "dimension": "proving who you are vs what you're allowed to do",
+   "buckets": ["Authentication", "Authorization"],
+   "a": {
+    "text": "A help-desk agent enters a one-time code from her phone after her password to confirm she really is the account holder.",
+    "answer": "Authentication",
+    "why": "Verifying the claimed identity against credentials — knowledge, ownership, or characteristic — happens before any access decision is made.",
+    "citation": "SG ch.13 · outline 5.2"
+   },
+   "b": {
+    "text": "Once the same agent is logged in, the system checks her role and lets her view billing records but blocks her from deleting accounts.",
+    "answer": "Authorization",
+    "why": "This step decides what an already-verified identity may do — a separate check that happens only after authentication has succeeded.",
+    "citation": "SG ch.14 · outline 5.4"
+   },
+   "citation": "SG ch.13-14 · outline 5.2, 5.4"
+  },
+  {
+   "id": "fp-02",
+   "dimension": "vouching for who the subject is vs handing over a scoped slice of her data",
+   "buckets": ["SAML", "OAuth"],
+   "a": {
+    "text": "When a research fellow opens the genomics portal, her university's identity system sends the portal a signed XML statement that this session belongs to a verified faculty member.",
+    "answer": "SAML",
+    "why": "A signed XML assertion vouching for who the subject is, passed to the site that must decide whether to admit her, is this protocol's core job.",
+    "citation": "SG ch.13 · outline 5.3"
+   },
+   "b": {
+    "text": "When the same fellow opens the genomics portal, her university's identity system instead issues the portal a token good only for reading her stored sequence files, and her university password never leaves the university.",
+    "answer": "OAuth",
+    "why": "Handing a relying site a narrow, revocable slice of access to one resource, without disclosing the owner's credential or stating who she is, is what this framework grants.",
+    "citation": "SG ch.13 · outline 5.2"
+   },
+   "citation": "SG ch.13 · outline 5.2, 5.3"
+  },
+  {
+   "id": "fp-03",
+   "dimension": "an access token alone vs an added token that also asserts who the user is",
+   "buckets": ["OAuth", "OIDC"],
+   "a": {
+    "text": "A nurse connects the shift-swap app to her hospital account, and the hospital returns one token: it lets the app read and add entries on her rota, and carries nothing about who she is.",
+    "answer": "OAuth",
+    "why": "A token that only authorizes actions on a resource, silent on the resource owner's identity, is this framework's whole scope — access, never authentication.",
+    "citation": "SG ch.13 · outline 5.2"
+   },
+   "b": {
+    "text": "The same nurse connects the same app to the same hospital account, and alongside that rota token the hospital returns a second, signed token naming her and attesting that it authenticated her just now.",
+    "answer": "OIDC",
+    "why": "The extra signed identity token, layered on the same delegated-access exchange so the app learns who signed in rather than merely what it may do, is this layer's addition.",
+    "citation": "SG ch.13 · outline 5.2"
+   },
+   "citation": "SG ch.13 · outline 5.2"
+  },
+  {
+   "id": "fp-04",
+   "dimension": "one org's resources vs multiple orgs' trust relationship",
+   "buckets": ["SSO", "Federation"],
+   "a": {
+    "text": "An employee logs into the corporate directory once each morning and reaches the intranet, the ticketing tool, and the file share, all inside the same company.",
+    "answer": "SSO",
+    "why": "One authentication event unlocking multiple resources within a single organization's own access control system is the narrower case.",
+    "citation": "SG ch.13 · outline 5.2"
+   },
+   "b": {
+    "text": "That same employee later uses her employer's login to access a training platform run by an entirely separate company that has agreed to trust her employer's identity assertions.",
+    "answer": "Federation",
+    "why": "Crossing an organizational boundary on the strength of a pre-established trust relationship between separate entities is what turns single sign-on into this broader arrangement.",
+    "citation": "SG ch.13 · outline 5.2"
+   },
+   "citation": "SG ch.13 · outline 5.2"
+  },
+  {
+   "id": "fp-05",
+   "dimension": "holds the identity vs consumes the assertion",
+   "buckets": ["IdP", "SP"],
+   "a": {
+    "text": "In a SAML exchange, the third party that stores the user's credentials and issues the signed assertion confirming who logged in is this entity.",
+    "answer": "IdP",
+    "why": "Owning the identity store and producing the authentication assertion, rather than the resource the user wants, is this side's role.",
+    "citation": "SG ch.13 · outline 5.3"
+   },
+   "b": {
+    "text": "The travel-booking application that receives that signed assertion and, trusting it, lets the user in without collecting a password of its own is this entity.",
+    "answer": "SP",
+    "why": "Relying on someone else's assertion to grant access to its own resource, rather than holding the identity itself, is the defining trait of the other half of the pair.",
+    "citation": "SG ch.13 · outline 5.3"
+   },
+   "citation": "SG ch.13 · outline 5.3"
+  },
+  {
+   "id": "fp-06",
+   "dimension": "counts toward multifactor vs describes a policy engine's input",
+   "buckets": ["MFA factor", "ABAC attribute"],
+   "a": {
+    "text": "A login requires a password plus a hardware token's generated code — two different proof categories, knowledge and ownership, combined before access is granted.",
+    "answer": "MFA factor",
+    "why": "A distinct category of identity proof, drawn from knowledge, ownership, or characteristic, that must differ in kind from any other factor already used, is what strengthens authentication here.",
+    "citation": "SG ch.13 · outline 5.2"
+   },
+   "b": {
+    "text": "A policy engine evaluates the requester's department, the sensitivity label on the file, and the time of day before deciding whether the already-authenticated user may open it.",
+    "answer": "ABAC attribute",
+    "why": "Characteristics about the subject, resource, or environment that feed an access-control policy after identity is already established belong to authorization, not to strengthening the login itself.",
+    "citation": "SG ch.14 · outline 5.4"
+   },
+   "citation": "SG ch.13-14 · outline 5.2, 5.4"
+  },
+  {
+   "id": "fp-07",
+   "dimension": "provisions accounts automatically on first login vs requires an admin to create them in advance",
+   "buckets": ["JIT provisioning", "Pre-provisioned accounts"],
+   "a": {
+    "text": "A contractor's first federated login to the design portal is accepted and the portal builds her local account from the assertion on the spot, no ticket having been filed beforehand.",
+    "answer": "JIT provisioning",
+    "why": "Building the local account from the assertion the moment the first federated login arrives, with no prior administrative step, is what just-in-time provisioning adds on top of federation.",
+    "citation": "SG ch.13 · outline 5.2"
+   },
+   "b": {
+    "text": "The same contractor's first federated login to the design portal is refused until an administrator has created her local account there in advance from a filed ticket.",
+    "answer": "Pre-provisioned accounts",
+    "why": "Requiring the local account to exist before any federated assertion will be honored is the baseline arrangement that just-in-time provisioning was built to remove.",
+    "citation": "SG ch.13 · outline 5.2"
+   },
+   "citation": "SG ch.13 · outline 5.2"
+  }
+ ]
+}

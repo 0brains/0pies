@@ -1,0 +1,50 @@
+{
+ "rp-01": {
+  "a.text": "La evaluación califica la exposición de un modelo de decisión automatizada como si ninguno de los mecanismos de revisión, umbral o apelación existiera.",
+  "a.why": "El riesgo inherente es la posición bruta antes de controles. Existe para dimensionar el esfuerzo de control, y nunca es lo que se acepta.",
+  "b.text": "La evaluación clasifica el mismo modelo con revisión, umbrales y apelación operando según lo diseñado, e informa sobre lo que queda.",
+  "b.why": "El riesgo residual es lo que la firma efectivamente enfrenta. Aceptar contra la cifra inherente sobre-expresa lo que la organización ha acordado soportar."
+ },
+ "rp-02": {
+  "a.text": "El consejo declara que la organización no buscará aplicaciones de IA que tomen decisiones consecuentes sobre individuos sin revisión humana.",
+  "a.why": "El apetito es la declaración amplia y prospectiva de qué riesgo está dispuesta a asumir la organización en busca de sus objetivos.",
+  "b.text": "La política establece que un modelo puede ir en vivo solo si la dispersión de precisión de subgrupo está por debajo de cuatro puntos porcentuales.",
+  "b.why": "La tolerancia es el límite medible que operacionaliza el apetito. El apetito sin tolerancia no puede ser probado; la tolerancia sin apetito es arbitraria."
+ },
+ "rp-03": {
+  "a.text": "El modelo puede producir texto fluido y confiado que es fácticamente incorrecto.",
+  "a.why": "Un peligro es el potencial intrínseco de causar daño. Es una propiedad de la cosa y no depende del despliegue.",
+  "b.text": "Porque el modelo redacta instrucciones de alta hospitalaria que leen especialistas no, los errores confiados pueden llevar a uso de medicación incorrecto.",
+  "b.why": "El riesgo combina el peligro con exposición y consecuencia en un contexto. El mismo peligro es un riesgo diferente en un despliegue diferente — por eso los tiers se unen al uso."
+ },
+ "rp-04": {
+  "a.text": "La validación de entrada rechaza solicitudes que contienen patrones que el sistema no está autorizado a procesar.",
+  "a.why": "Los controles preventivos actúan sobre la probabilidad, antes del evento. Son el único tipo que puede llevar una probabilidad significativamente hacia cero.",
+  "b.text": "Un informe semanal lista solicitudes que fueron procesadas a pesar de estar fuera de categorías autorizadas.",
+  "b.why": "Los controles detectivos actúan sobre la duración e impacto después del hecho. Un registro listando controles detectivos como mitigación de probabilidad sobre-expresa su posición."
+ },
+ "rp-05": {
+  "a.text": "El equipo de gobernanza de IA revisa la evaluación de impacto del equipo de entrega y desafía sus conclusiones, reportando al jefe de riesgo.",
+  "a.why": "Independiente de la entrega pero aún dentro de la gestión. Segunda línea asesora, desafía y monitoriza; no puede proporcionar aseguramiento sobre sí misma.",
+  "b.text": "Una función de revisión examina si esas revisiones de gobernanza se realizaron según la política requiere, e informa al comité de auditoría.",
+  "b.why": "Informar al consejo en lugar de a la gestión es la diferencia estructural. Sin él, el aseguramiento es autoevaluación con un membrete diferente."
+ },
+ "rp-06": {
+  "a.text": "El equipo añade una puerta de evaluación automatizada que bloquea lanzamientos que fallan el umbral de robustez.",
+  "a.why": "La probabilidad cae porque un lanzamiento fallido no puede desplegarse. Algo sobre el riesgo en sí cambió.",
+  "b.text": "El equipo añade un dashboard mostrando puntuaciones de robustez, y acuerda revisarlas mensualmente sin puerta.",
+  "b.why": "Ver un riesgo no es tratarlo. Monitorización más una decisión de no poner puerta es retención con mejor visibilidad — legítimo, siempre que se registre como aceptación."
+ },
+ "rp-07": {
+  "a.text": "Un modelo de propósito general que excede el umbral de computación debe someterse a pruebas adversariales e informar incidentes serios.",
+  "a.why": "Las obligaciones de riesgo sistémico de GPAI se unen al modelo independientemente de cualquier uso descendente, razón por la cual se sitúan fuera de la pirámide de riesgo.",
+  "b.text": "Un implementador usando ese mismo modelo para seleccionar solicitantes de empleo debe cumplir con obligaciones de alto riesgo para el despliegue.",
+  "b.why": "El tier sigue el propósito. Un modelo puede llevar simultáneamente obligaciones a nivel de modelo y sentarse en varios tiers de uso diferentes."
+ },
+ "rp-08": {
+  "a.text": "Un contrato hace al proveedor responsable del coste del daño derivado de defectos en el modelo que suministró.",
+  "a.why": "La consecuencia financiera se mueve. Este es un tratamiento legítimo y no cambia nada sobre la probabilidad del daño.",
+  "b.text": "El regulador responsabiliza a la empresa implementadora por los resultados de las decisiones que toma con el modelo del proveedor.",
+  "b.why": "La responsabilidad regulatoria generalmente no puede ser contratada fuera. Asumir que una indemnidad la cubre es la versión más cara de esta confusión."
+ }
+}

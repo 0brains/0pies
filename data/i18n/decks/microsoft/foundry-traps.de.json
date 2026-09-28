@@ -1,0 +1,74 @@
+{
+ "ft-01": {
+  "a.text": "Das Platform-Team braucht einen Ort, um geteilte Sicherheit, Verbindungen, Compute und Quota für alle KI-Teams zu verwalten.",
+  "a.why": "Der Hub ist der Top-Level-Zusammenarbeit und Governance-Container mit geteilten Ressourcen — Histack-Falle #3.",
+  "b.text": "Ein Produkt-Team braucht den Ort, wo ihre Bereitstellungen, Agents, Daten und Evaluationen tatsächlich leben.",
+  "b.why": "Ein Projekt lebt in einem Hub und ist, wo du tatsächlich baust — Bereitstellungen, Agents, Daten, Evaluationen."
+ },
+ "ft-02": {
+  "a.text": "Dein Code übergibt 'chat-app-prod' — den Custom-Namen, gewählt zum Bereitstellungszeitpunkt — als model-Argument in chat.completions.create.",
+  "a.why": "Der Bereitstellungsname — nicht der Basis-Modellname — ist das, was dein Code aufruft (Histack's exakte Falle; Corpus Paar #19).",
+  "b.text": "Der Foundry-Katalog listet gpt-4o mit seinen Benchmark-Scores auf, bevor etwas bereitgestellt wird.",
+  "b.why": "gpt-4o ist die Basis-Modell-ID im Katalog; es wird aufrufbar nur durch eine benannte Bereitstellung."
+ },
+ "ft-03": {
+  "a.text": "Ein Entwickler konfiguriert den Client mit der Foundry-Ressource's HTTPS-Adresse, gelesen aus einer Umgebungsvariable, damit jede Anfrage weiß, welche Ressource auf Azure zu erreichen.",
+  "a.why": "Der Endpoint (azure_endpoint) ist die Ressourcen-Adresse, die das SDK anvisiert — er identifiziert, wohin der Aufruf gesendet wird, nicht wer ihn senden darf.",
+  "b.text": "Ein Entwickler zieht ein Geheimnis aus der Quellcode-Datei in eine separate Umgebungsvariable, damit das Credential, das die Aufrufer's Identität beweist, nie hart-kodiert ist.",
+  "b.why": "Das Credential wird als api_key (os.getenv('AZURE_OPENAI_KEY')) übergeben und authentifiziert den Aufrufer — eine Datenschutz-und-Sicherheits-Gewohnheit, distinct vom Routing."
+ },
+ "ft-04": {
+  "a.text": "Eine Foundry-Ressource wird einmal mit einem Namen, Instructions und angehängten Tools erstellt, dann über viele spätere Durchgänge durch Follow-Up-Anfragen mit der gleichen Konversation referenziert.",
+  "a.why": "Ein Agent ist eine persistente, benannte Ressource — erstellt via PromptAgentDefinition mit Instructions und Tools, dann wiederholt aufgerufen.",
+  "b.text": "Ein Script sendet messages=[{'role': 'user', 'content': 'Fasse diesen Fall zusammen.'}] und bekommt eine Antwort zurück von einer Plain-Completions-Anfrage, mit nichts auf dem Server gespeichert und keinen Thread oder Tools beteiligt.",
+  "b.why": "Ein bloßes chat.completions.create ist eine einzelne stateless Anfrage — keine persistierten Instructions, Tools oder Identität überleben zwischen Aufrufen."
+ },
+ "ft-05": {
+  "a.text": "'Gib Customer-Details immer in einer fixierten JSON-Form zurück und antworte nur auf HR-Richtlinien-Fragen' — eine persistente Regel für jeden Durchgang.",
+  "a.why": "Persona, Ton, Regeln und Guardrails gehören in den System-Prompt — Histack's 'die am meisten getestete Unterscheidung'; die gepflanzte falsche Antwort setzt Verhalten in den Benutzer-Prompt oder Bereitstellungseinstellungen.",
+  "b.text": "'Fasse den Fehlensbericht dieses Quartals für mich zusammen' — eine Anfrage, dieser Durchgang nur.",
+  "b.why": "Der Benutzer-Prompt trägt diese Durchgang's Anfrage; vorherige Modell-Antworten, die zum Gedächtnis abgespielt werden, sind Assistant-Nachrichten."
+ },
+ "ft-06": {
+  "a.text": "Nach dem Bereitstellen eines Modells tippt ein Entwickler einen Prompt direkt ins Foundry-Portal und liest die Antwort auf dem Bildschirm, ohne eine einzige Zeile Python zu schreiben.",
+  "a.why": "Das Playground ist Foundry's On-Demand, No-Code-Umgebung für schnelle Prototypisierung und Validierung, bevor Code existiert.",
+  "b.text": "Der gleiche Entwickler kopiert das Code-Tab's Snippet, das einen AzureOpenAI-Client konstruiert und chat.completions.create aus einer Python-Datei aufruft, die die App tatsächlich laufen wird.",
+  "b.why": "Das Code-Tab gibt dir das programmgesteuerte Zugriff-Muster — der SDK-Aufruf ist, was ausgeliefert wird, nicht die Portal-Sitzung, die es validiert hat."
+ },
+ "ft-07": {
+  "a.text": "Ein Prompt-Agent ist konfiguriert, damit er immer in einem formalen Ton antwortet und Gespräche über Konkurrenz-Preise ablehnt, egal was der Benutzer fragt.",
+  "a.why": "Persona und Verhaltensregeln, die PromptAgentDefinition geliefert werden, sind Instructions — sie formen, wie der Agent antwortet, nicht was er tun kann.",
+  "b.text": "Der gleiche Agent bekommt Websuche und Dateisuche, damit er Live-Informationen nachschauen kann, anstatt sich nur auf das zu verlassen, das er bereits weiß.",
+  "b.why": "Websuche und Dateisuche werden aus dem Build > Tools-Katalog angehängt — Fähigkeiten, die der Agent aufrufen kann, separate von seinen Instructions."
+ },
+ "ft-08": {
+  "a.text": "Das Modell muss immer in deiner Firma's Haus-Stil antworten, gelernt aus 5.000 vergangenen Beispielen.",
+  "a.why": "Fine-Tuning trainiert Gewichte auf Beispiele neu — das Werkzeug für dauerhaften Stil/Verhaltens-Änderung.",
+  "b.text": "Das Modell muss aus dieser Monats-Preisliste antworten, die wöchentlich ändert, ohne Neutraining.",
+  "b.why": "RAG injiziert abgerufene aktuelle Org-Daten bei Inferenz — 'Füttern des Modells mit deinen eigenen Daten, damit Antworten genau bleiben'."
+ },
+ "ft-09": {
+  "a.text": "Eine Batch-Workload braucht eine vorhersagbare, garantierte Verarbeitungsrate zu fixierten Stundenkosten, im Voraus reserviert, egal wie viele Tokens tatsächlich gesendet werden.",
+  "a.why": "PTU reserviert dedizierte Stunden-Kapazität für vorhersagbaren, hohen-Durchsatz — du bezahlst für die Reservierung, nicht pro Token.",
+  "b.text": "Eine interaktive Chat-App hat unvorhersagbaren Traffic und braucht Pay-Per-Token-Billing mit regionalen, Daten-Zonen oder globalen Verarbeitungsoptionen, anstelle von Stunden-reservierter Kapazität.",
+  "b.why": "Standard-Bereitstellung ist die bevorzugte Option, die die breiteste Palette von Fähigkeiten und elastisches Pay-Per-Token-Pricing bietet — die am meisten getestete Bereitstellungs-Gegenüberstellung der Prüfung (Paar #27)."
+ },
+ "ft-10": {
+  "a.text": "Du hast ein Custom-Feldschema für Supplier-Verträge geschrieben und musst es registrieren, bevor ein Dokument verarbeitet wird.",
+  "a.why": "Das Erstellen/Definieren des Analyzers aus einem Feldschema ist Setup, nicht Ausführung.",
+  "b.text": "Der Analyzer existiert bereits; der Code führt ihn gegen eine Vertrags-URL aus und fragt den strukturierten Ergebnis ab.",
+  "b.why": "Ausführung ist begin_analyze(analyzer_id=…, inputs=[AnalysisInput(url=…)]) — die Swapped-Methodenname-Methode, die das Corpus dokumentiert (Paar #26)."
+ },
+ "ft-11": {
+  "a.text": "Beschreibe die Felder, die du in natürlicher Sprache möchtest und extrahiere sie aus einer Mix von PDFs, Bildern und Meeting-Audio in strukturiertes JSON.",
+  "a.why": "CU lässt dich Felder in natürlicher Sprache beschreiben, während ein LLM über multimodaler Eingabe nachdenkt — Histack's Hinweis: 'Freiform- oder Nicht-Dokument-Eingabe'.",
+  "b.text": "Extrahiere Totale aus einer hohen Menge von Standard-Invoices und Quittungen unter Verwendung eines gebrauchsfertigen Modells.",
+  "b.why": "Deterministische Extraktion aus bekannten Formulartypen — Invoices, Quittungen, IDs, Geschäftskarten. 'Die Extraktions-Falle', Histack's Favorit."
+ },
+ "ft-12": {
+  "a.text": "Ein Einzelhandels-Team sendet Regalbrett-Fotos ein und bekommt strukturierte Produktfelder wie Name, Preis und Menge zurück, definiert durch ihr eigenes Schema.",
+  "a.why": "Content Understanding wandelt rohe, unstrukturierte oder multimodale Eingabe in die spezifischen strukturierten Ausgabe, die ein Schema fragt.",
+  "b.text": "Ein RAG-Chatbot braucht eine Knowledge Base, die er durch semantische Ähnlichkeit abfragen kann, damit ein Chat-Modell seine Antworten in den abgerufenen Passages verankern kann.",
+  "b.why": "Azure AI Search indiziert Inhalt — oft via Embeddings — und ruft ihn zum Query-Zeit ab; RAG-Muster paaren ein Chat-Modell mit AI Search zum Verankern, ein anderer Job von Feldextraktion aus einem Dokument."
+ }
+}

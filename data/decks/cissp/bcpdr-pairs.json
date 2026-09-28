@@ -1,0 +1,119 @@
+{
+ "id": "bcpdr-pairs",
+ "runner": "pairs",
+ "title": "Recovery, Minus One Detail",
+ "blurb": "Six BCP/DR vocabulary pairs examiners love to swap for each other. One flipped detail — a metric, a site's readiness, a backup's chain — tells them apart every time.",
+ "source": "Chapple CISSP SG 10ed ch.18 · outline 7.10 (Implement recovery strategies), 7.11 (Implement DR processes)",
+ "asOf": "2026-08",
+ "area": "7.10-7.11",
+ "pairs": [
+  {
+   "id": "bdp-01",
+   "dimension": "time to restore vs data you can afford to lose",
+   "buckets": ["RTO", "RPO"],
+   "a": {
+    "text": "The DR plan sets a four-hour ceiling on how long the claims-processing system may stay unavailable after a declared disaster.",
+    "answer": "RTO",
+    "why": "It caps clock time down — restoration speed — and says nothing about how much data may be lost, which is the other measurement's job.",
+    "citation": "SG ch.18 · outline 7.11"
+   },
+   "b": {
+    "text": "The DR plan sets a four-hour ceiling on how much claims data may be lost, measured backward from the moment the system fails.",
+    "answer": "RPO",
+    "why": "It caps data loss measured backward from failure, not downtime — the same four-hour figure now describes lost records, not how long the system stays down.",
+    "citation": "SG ch.18 · outline 7.11"
+   },
+   "citation": "SG ch.18 · outline 7.11"
+  },
+  {
+   "id": "bdp-02",
+   "dimension": "data the function may lose vs downtime the function may survive",
+   "buckets": ["RPO", "MTD"],
+   "a": {
+    "text": "The BIA records that order-entry may lose at most two days of captured orders in a failure, counted backward from the moment it stops.",
+    "answer": "RPO",
+    "why": "Counting backward from the failure to fix how stale the recovered records may be is a data-currency ceiling, saying nothing about how long the function may sit idle.",
+    "citation": "SG ch.18 · outline 7.11"
+   },
+   "b": {
+    "text": "The BIA records that order-entry may sit unavailable for at most two days after a failure before the business can no longer survive the outage.",
+    "answer": "MTD",
+    "why": "The same two-day figure now measures forward from the failure as the outer downtime the business can absorb — the ceiling every recovery-time target for the function must fit inside.",
+    "citation": "SG ch.18 · outline 7.11"
+   },
+   "citation": "SG ch.18 · outline 7.11"
+  },
+  {
+   "id": "bdp-03",
+   "dimension": "data already current vs data still needs restoring",
+   "buckets": ["Hot site", "Warm site"],
+   "a": {
+    "text": "The brokerage's leased failover facility continuously mirrors live trade data, so operations can shift over within minutes of a declared disaster.",
+    "answer": "Hot site",
+    "why": "Continuously current data plus near-instant takeover is the marker — the other facility type has the hardware ready but not the live data, so it can't cut over this fast.",
+    "citation": "SG ch.18 · outline 7.10.3"
+   },
+   "b": {
+    "text": "The brokerage's leased failover facility has racks and network drops preinstalled, but last night's trade data still has to be loaded before operations can shift over, a process expected to take about half a day.",
+    "answer": "Warm site",
+    "why": "Hardware present but data not yet current, needing restoration work before cutover, is the marker — the other facility type would already hold live, replicated data.",
+    "citation": "SG ch.18 · outline 7.10.3"
+   },
+   "citation": "SG ch.18 · outline 7.10.3"
+  },
+  {
+   "id": "bdp-04",
+   "dimension": "some equipment preinstalled vs no computing facilities installed",
+   "buckets": ["Warm site", "Cold site"],
+   "a": {
+    "text": "The utility's alternate facility already has servers and network gear racked and ready, needing only current data loaded before staff can resume billing operations.",
+    "answer": "Warm site",
+    "why": "Preinstalled hardware and connectivity awaiting only current data is the marker — the other facility type has no computing equipment installed at all yet.",
+    "citation": "SG ch.18 · outline 7.10.3"
+   },
+   "b": {
+    "text": "The utility's alternate facility is an empty shell with power and HVAC provisioned, but no servers, network gear, or computing equipment of any kind installed.",
+    "answer": "Cold site",
+    "why": "No preinstalled computing facilities at all, only the building shell and utilities, is the marker — the other facility type already has hardware racked and waiting on data.",
+    "citation": "SG ch.18 · outline 7.10.3"
+   },
+   "citation": "SG ch.18 · outline 7.10.3"
+  },
+  {
+   "id": "bdp-05",
+   "dimension": "captures everything every run vs captures changes since the last full run",
+   "buckets": ["Full backup", "Differential backup"],
+   "a": {
+    "text": "Every Sunday night, the archive job copies the entire file server's contents regardless of which files changed that week, resetting every archive bit.",
+    "answer": "Full backup",
+    "why": "Copying everything unconditionally and clearing every archive bit each run is the marker — the other scheme would only capture what changed since the last full run.",
+    "citation": "SG ch.18 · outline 7.10.1"
+   },
+   "b": {
+    "text": "Every weeknight, the archive job copies only the files changed since Sunday's full backup without touching the archive bit, so Thursday's job is visibly larger than Monday's.",
+    "answer": "Differential backup",
+    "why": "Growing nightly size, because it always measures from the last full backup and never clears the archive bit, is the marker — a full run would instead copy everything, every night.",
+    "citation": "SG ch.18 · outline 7.10.1"
+   },
+   "citation": "SG ch.18 · outline 7.10.1"
+  },
+  {
+   "id": "bdp-06",
+   "dimension": "chains off the last backup of any type vs always measures from the last full",
+   "buckets": ["Incremental backup", "Differential backup"],
+   "a": {
+    "text": "Restoring the crashed file server needs Monday's full backup plus every single nightly job run since, replayed in order.",
+    "answer": "Incremental backup",
+    "why": "A multi-step restore chain, needing the full plus every backup since in sequence, is the marker — each job only captured changes since the last job of any type, whichever that was.",
+    "citation": "SG ch.18 · outline 7.10.1"
+   },
+   "b": {
+    "text": "Restoring the crashed file server needs only Monday's full backup and last night's job, nothing else, no matter how many nights have passed since.",
+    "answer": "Differential backup",
+    "why": "A two-job restore, the last full plus just the most recent run, is the marker — the other scheme would instead require replaying every night's job since the full.",
+    "citation": "SG ch.18 · outline 7.10.1"
+   },
+   "citation": "SG ch.18 · outline 7.10.1"
+  }
+ ]
+}

@@ -1,0 +1,62 @@
+{
+  "iv-ap-01": {
+    "a.text": "Kuruluşun tescilli bilgisi, ek eğitim turları aracılığıyla doğrudan modelin ağırlıklarına eğitilir; modelin \"bildiği\" şeyin kalıcı bir parçası olur.",
+    "a.why": "Alan verilerini ağırlıklara pişirmek, modelin bu verilerin taşıdığı herhangi bir hafıza veya sızıntı riskini miras alması anlamına gelir — bu şekilde uyarlanan sentetik veri üreticisi, anonimleştirmeden sonra bile orijinal kayıtların izlerini sızıtabilir; öğrenci özel veriler aynı şekilde kullanılır ve kendi ihlal riskini oluşturur.",
+    "b.text": "Kuruluşun tescilli bilgisi harici olarak kalmış; ayrı olarak bakım yapılan bir depoda; sınıflandırma depoya çekilir yalnızca her soru sorulduğunda.",
+    "b.why": "Modelin kendisinin bu bilgiden hiçbir şey öğrenmiş olması yoktur — sorgu başına taze getirilir; bu da bu ayın rehberliğini tek bir yeniden eğitim turı olmadan yansıtabilmesini sağlar. Burada yapılan uyum seçimi takımın sonunda üstüne aldığı yükümlülüğü belirler."
+  },
+  "iv-ap-02": {
+    "a.text": "Cevap vermek için geçerli politika belgelerini getirir; bu belgelerle insanın okuması ve hareket etmesi sonra gelir.",
+    "a.why": "Sistemin işi iyi dayandırılmış bir cevap üretmekle biter; herhangi bir önemli akış aşağısı hareketi yine de insana ait olur.",
+    "b.text": "Görev planlama kendi başına ve eylemleri rezervasyon ve ödeme araçları arasında yürütür; her adımda insan gözden geçirmesi çok az.",
+    "b.why": "Eylem özerkliği, yalnız cevap özerkliği değil, yeni yönetim yüzeyidir: bir uygulayıcı bir sistemi hareket ettirmeyi izin verince, yanlış veya aldatıcı ajan davranışına karşı doğrudan sorumluluk uygulayıcıya düşer — bu eylem kapsama alanı, insan-döngüde eşikler ve tam eylem günlükleri talep eder; saf alma yardımcısının hiçbirinin ihtiyacı yoktur."
+  },
+  "iv-ap-03": {
+    "a.text": "Kuruluş, modelin ağırlıklarını ve kodunu okuyup değiştirebilir ve dağıtabilir; kontrol ettiği altyapıda tamamen çalıştırabilir.",
+    "a.why": "Denetlenebilirlik tüm ticarettir: algoritmayı kendin denetlemeye hakka sahip olursun ve bir satıcının rotasına bağlı olmamaktan kaçınırsın; ama ayrıca lisansları kontrol etme, eğitim verisi kaynağını ve kendi güvenlik testini kontrol etme içsel yükünü miras alırsın.",
+    "b.text": "Kuruluş modeli yalnızca bir API aracılığıyla çağırabilir ve ağırlıkları hiçbir zaman görmez; satıcı onu destek sözleşmeleri, olay tepkisi ve tazminat garantisi ile destekler.",
+    "b.why": "Denetim haklarını sözleşme destekli garantilere karşı değiştirirsin — bu ticarete stratejik maliyeti kayıt altındadır; bu yolun en büyük riski: iş akışları bir satıcının API'si etrafında yapılandırıldığında, daha sonra uzaklaşmak pahalı olur."
+  },
+  "iv-ap-04": {
+    "a.text": "Temel model sıkıştırılır ve yeniden şekillendirilir — parametreler kırpılır, kesinlik azaltılır, hafif bir uyarlayıcı katman eklenir — kenar veya yüksek hacimli kullanım için maliyet ve gecikmeyi kesmek için.",
+    "a.why": "Eseri bu şekilde küçültmek veya yeniden şekillendirmek karar sınırlarını sessizce hareket ettirebilir ve denetlenebilirliği azaltır; doğruluk, adalet ve sağlamlık hepsi bir sonra yeniden kontrol edilmesi gerekir; değişmemiş olarak taşınması varsayılmaz.",
+    "b.text": "Satıcının modeli gönderildikleri yolla tamamen değişmemiş çalışır; yalnızca insan gözden geçirmesi ve çevresine katmanlı diğer kontroller tarafından desteklenir.",
+    "b.why": "Eserin kendisinde hiçbir şey değişmemiştir; yönetim satıcının kendi belgelerine ve insan gözden geçirmesi gibi kompense edici kontrollere yaslanır; modelin içini yeniden doğrulamaktansa."
+  },
+  "iv-ap-05": {
+    "a.text": "Kredi puanlama sistemi yapılandırılmış girdilerden tahmin veya sınıflandırır; riskleri belirli gruplarla karşı önyargı ve doğruluk sessizce düşer; altında yatan veri kayıyor.",
+    "a.why": "Bilinen bir kategoriden yapılandırılmış özellikleri tahmin veya sınıflandırmak bu profilin başarısızlık modu — tanıdık önyargı ve kayma riskleri; adalet testi ve izleme yakalamak için inşa edilmiştir.",
+    "b.text": "Taslak yardımcısı, komut isteminden hiç olmayan yeni metin, görüntü veya kod üretir; riskleri yanılı, telif hakkı maruziyeti ve ikna edici yanlış çıktı.",
+    "b.why": "Daha önce var olmayan içerik oluşturmak tamamen farklı bir risk yüzeyi açar — yanılı ve menşei; önyargı-ve-kayma profilini değil; tahmin yapan yalnız bir sistemi yönetir."
+  },
+  "iv-ap-06": {
+    "a.text": "Satıcının modeli sunulduğu şekliyle tamamen kullanılır; takımın işi, kendi performans ve adalet standartlarına karşı doğrulamak ve herhangi bir boşluğu belgelemektir.",
+    "a.why": "Yönetim burada satıcı şeffaflığı ve kompense edici kontroller üzerine neredeyse tamamen yaslanır — takım hiçbir zaman modelin içine dokunmaz; yükümlülükleri doğrulama ve belgelemeyle biter.",
+    "b.text": "Genel amaçlı model, kuruluşun kendi etiketli verilerine kadar yeniden eğitilir; belirli istenen davranışı yeniden üretene kadar.",
+    "b.why": "Kuruluş modeli yeniden eğittiği an, yönetim sonucu yeni sistem olarak görür: adalet ve sağlamlık testi sıfırdan tekrarlanmalı ve — satıcının modelini olduğu gibi kullanmakla karşılaştırıldığında — kuruluş şimdi kendi artan yasal sorumluluğu taşır."
+  },
+  "iv-ap-07": {
+    "a.text": "Destek chatbotu yazılı sorular alır ve yalnızca yazılı cevaplar üretir; onun üzerinde düşünecek başka giriş kanalı yok.",
+    "a.why": "Yalnız metinden metne — yönetim endişeleri yanılı, önyargılı ifade ve jailbreak tarzı komut saldırıları; bunların hiçbiri ikinci bir kiplikle başa çıkmaz.",
+    "b.text": "Hasar fotoğrafı talep aracı, eksper'in yazılı notlarıyla birlikte; tek bir birleştirilmiş yargı üretmeden önce.",
+    "b.why": "Kanalları birleştirmek, metin yalnız sistemi asla karşılaşmayan riskleri ekler: görüntü ve yan metni arasında yanlış korelasyonlar ve hangi girdinin çıktıyı gerçekten yürüttüğünü gösterme ihtiyacı."
+  },
+  "iv-ap-08": {
+    "a.text": "Dar sınıflandırıcı dar hesaplama bütçesinde bir görev işler; hızlı yeniden eğitir; çıktıları girdilere çok az çabayla izler.",
+    "a.why": "Kompakt dar sistem yeniden test etmesi ucuz ve açıklaması kolay — maliyet ortam, yapı için inşa edilenden daha değişken olur; zayıf performans.",
+    "b.text": "Geniş kuruluş, hiçbir zaman özel olarak eğitilmediği birçok görev arasında genelleştirilebilir; ağır hesaplama yönetimi ve daha büyük saldırı yüzeyinin maliyetiyle.",
+    "b.why": "Ölçek aracılığıyla satın alınan genişlik, sistem hiç açıkça eğitilmediği alışılmadık alan sıfır çekiminden hale gelir; ama dar sistem ihtiyaç duymayan hesaplama kotaları, kırmızı takım ve kayma izleme de gerekir."
+  },
+  "iv-ap-09": {
+    "a.text": "Model oturum sırasında çekilen her kaynak denetim için günlüğe kaydedilir ve bağlı kütleye geçen herhangi bir kişisel veri, modele gösterilmeden önce redakte edilmelidir.",
+    "a.why": "Denetim günlüğü ve PII redaksiyonu bir dış kütleye yönetim yükümlülükleri; canlı veri hattı bağlı olmayan modele açıkça yok — bu yolun yükümlülüğü ağırlıklarda değil; tesisatlarda.",
+    "b.text": "Satıcının modeli sunulduğu şekliyle tamamen kullanılır; işleyen pilot yolunun en hızlısı, yalnızca yeni eğitim verisi veya hattın yapılması gerekmeyeceği için seçilir.",
+    "b.why": "Hız tüm çekicidir — yeniden eğitim yok, yeni veri tesisatı yok — ama yönetim hızı borç olarak görür: model bu kuruluş tarafından doğrulanana kadar yüksek risklenen sayılır; kendi performans ve adalet standartlarına karşı; bu dağıtım için hiçbir şey yapılmadı akılda."
+  },
+  "iv-ap-10": {
+    "a.text": "Aynı temel model, sıkıştırmadan sonra daha küçük ve daha ucuz çalıştırmak üretilir; tek bir yeni gerçek buna eklenmemiştir.",
+    "a.why": "Bu yol ayakkabı boyutu, bilgi hedefleri değil — ama eseri küçültmek veya yeniden şekillendirmek karar sınırlarını hareket ettirebilir; doğruluk ve adalet yeniden kontrol edilmesi gerekir; hiçbir şey \"yeni\" öğretilmediği halde.",
+    "b.text": "Aynı temel model aynı boyutla gelir; ama şimdi güvenilir bir uzman davranışı yeniden üretir; hiç erişimi yoktu önceden; seçilmiş örneklerden öğrenilir.",
+    "b.why": "Bu yol davranış ve bilgi hedefleri; ayakkabı boyutu değil — ve bu yeni davranış kuruluşun verilerinden öğrenilmiştir; yönetim sonucu yeni sistem olarak görür; kendi test gerektirir; eski yeniden boyut sürüsü değil."
+  }
+}

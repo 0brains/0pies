@@ -1,0 +1,50 @@
+{
+ "rp-01": {
+  "a.text": "The assessment rates the exposure from an automated decisioning model as if none of the review, threshold or appeal mechanisms existed.",
+  "a.why": "Inherent risk is the gross position before controls. It exists to size the control effort, and it is never what gets accepted.",
+  "b.text": "The assessment rates the same model with review, thresholds and appeal operating as designed, and reports what remains.",
+  "b.why": "Residual risk is what sign-off is actually against. Accepting against the inherent figure over-states what the organisation has agreed to carry."
+ },
+ "rp-02": {
+  "a.text": "The board states that the organisation will not pursue AI applications that make consequential decisions about individuals without human review.",
+  "a.why": "Appetite is the broad, forward-looking statement of what risk the organisation is willing to take in pursuit of its objectives.",
+  "b.text": "The policy states that a model may go live only if subgroup accuracy disparity is below four percentage points.",
+  "b.why": "Tolerance is the measurable boundary that operationalises appetite. Appetite without tolerance cannot be tested; tolerance without appetite is arbitrary."
+ },
+ "rp-03": {
+  "a.text": "The model can produce fluent, confident text that is factually wrong.",
+  "a.why": "A hazard is the intrinsic potential to cause harm. It is a property of the thing and does not depend on deployment.",
+  "b.text": "Because the model drafts patient discharge instructions read by non-specialists, confident errors may lead to incorrect medication use.",
+  "b.why": "Risk combines the hazard with exposure and consequence in a context. The same hazard is a different risk in a different deployment — which is why tiers attach to use."
+ },
+ "rp-04": {
+  "a.text": "Input validation rejects requests containing patterns that the system is not authorised to process.",
+  "a.why": "Preventive controls act on likelihood, before the event. They are the only kind that can bring a probability meaningfully toward zero.",
+  "b.text": "A weekly report lists requests that were processed despite falling outside authorised categories.",
+  "b.why": "Detective controls act on duration and impact after the fact. A register listing detective controls as mitigation of likelihood over-states its position."
+ },
+ "rp-05": {
+  "a.text": "The AI governance team reviews the delivery team's impact assessment and challenges its conclusions, reporting to the chief risk officer.",
+  "a.why": "Independent of delivery but still inside management. Second line advises, challenges and monitors; it cannot provide assurance on itself.",
+  "b.text": "A review function examines whether those governance reviews were carried out as policy requires, and reports to the audit committee.",
+  "b.why": "Reporting to the board rather than to management is the structural difference. Without it, assurance is self-assessment with a different letterhead."
+ },
+ "rp-06": {
+  "a.text": "The team adds an automated evaluation gate that blocks releases failing the robustness threshold.",
+  "a.why": "Likelihood falls because a failing release cannot ship. Something about the risk itself changed.",
+  "b.text": "The team adds a dashboard showing robustness scores, and agrees to review them monthly with no gating.",
+  "b.why": "Watching a risk is not treating it. Monitoring plus a decision not to gate is retention with better visibility — legitimate, provided it is recorded as acceptance."
+ },
+ "rp-07": {
+  "a.text": "A general-purpose model exceeding the compute threshold must undergo adversarial testing and report serious incidents.",
+  "a.why": "Systemic-risk GPAI duties attach to the model regardless of any downstream use, which is why they sit outside the risk pyramid.",
+  "b.text": "A deployer using that same model to screen job applicants must meet high-risk obligations for the deployment.",
+  "b.why": "The tier follows the purpose. One model can simultaneously carry model-level duties and sit in several different use tiers."
+ },
+ "rp-08": {
+  "a.text": "A contract makes the vendor liable for the cost of damages arising from defects in the model they supplied.",
+  "a.why": "Financial consequence moves. This is a legitimate treatment and it changes nothing about the harm's likelihood.",
+  "b.text": "The regulator holds the deploying firm answerable for the outcomes of the decisions it makes with that vendor's model.",
+  "b.why": "Regulatory accountability generally cannot be contracted away. Assuming an indemnity covers it is the most expensive version of this confusion."
+ }
+}

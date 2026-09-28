@@ -1,0 +1,193 @@
+{
+ "feat-000-00": {
+  "label": "एक whiteboard या street sign की photo से machine-readable text निकालें।",
+  "why": "Azure AI Vision की Read API printed और handwritten text को images से निकालने के लिए OCR लागू करता है, Image Analysis के captioning और tagging के विपरीत।"
+ },
+ "feat-000-01": {
+  "label": "Individual objects को एक photo में identify करें और उनके चारों ओर bounding boxes रखें।",
+  "why": "Azure AI Vision की Object Detection एक image में found individual objects के लिए bounding boxes और labels return करता है।"
+ },
+ "feat-000-02": {
+  "label": "एक image में क्या हो रहा है इसका एक natural-language caption generate करें।",
+  "why": "Azure AI Vision की Image Analysis captioning feature एक image के content का natural-language description generate करता है।"
+ },
+ "feat-001-00": {
+  "label": "एक live microphone feed को real time में streaming text में convert करें।",
+  "why": "Azure AI Speech की speech-to-text recognition real time में streaming या batch audio को text में transcribe करता है।"
+ },
+ "feat-001-01": {
+  "label": "Written text से एक voice assistant के लिए natural-sounding spoken audio produce करें।",
+  "why": "Azure AI Speech की text-to-speech synthesis written text को natural-sounding spoken audio में convert करता है।"
+ },
+ "feat-001-02": {
+  "label": "Spoken French audio को real time में spoken या written English में translate करें।",
+  "why": "Azure AI Speech की Speech Translation feature spoken audio को real time में दूसरी language के text या speech में translate करता है, एक कॉल में recognition और translation को combine करता है।"
+ },
+ "feat-002-00": {
+  "label": "People, places, organizations, और dates को एक text के block में named निकालें।",
+  "why": "Azure AI Language की Named Entity Recognition text में mentioned people, places, organizations, और dates को identify और categorize करता है।"
+ },
+ "feat-002-01": {
+  "label": "Credit-card numbers और phone numbers को automatically find करें और support transcripts में found redact करें।",
+  "why": "Azure AI Language की PII detection feature text में phone numbers और card numbers जैसे sensitive personal data को find करता है और redact कर सकता है।"
+ },
+ "feat-002-02": {
+  "label": "एक long article को इसके most important sentences में condense करें।",
+  "why": "Azure AI Language की summarization feature long text को इसके most salient sentences या एक short abstract में condense करता है।"
+ },
+ "feat-002-03": {
+  "label": "Detect करें कि incoming text के दर्जनों languages में से कौन सी language लिखी गई है।",
+  "why": "Azure AI Language की language detection feature identify करता है कि एक text कौन सी language में लिखी गई है दर्जनों में से।"
+ },
+ "feat-002-04": {
+  "label": "एक chatbot build करें जो एक user के intent को recognize करता है, जैसे 'book a flight,' और उनके message से key entities को pull करता है।",
+  "why": "Azure AI Language की Conversational Language Understanding एक model को train करता है user के intent को recognize करने और conversational input से entities को extract करने के लिए।"
+ },
+ "feat-003-00": {
+  "label": "Spanish में typed एक chat message को instantly German में translate करें।",
+  "why": "Azure AI Translator की text translation feature एक single API कॉल के through real time में languages के बीच text को convert करता है।"
+ },
+ "feat-003-01": {
+  "label": "एक entire Word document को translate करें जबकि इसके original layout और formatting को preserve करते हुए।",
+  "why": "Azure AI Translator की Document Translation feature asynchronously whole documents को translate करता है जबकि उनके original formatting और layout को preserve करते हुए।"
+ },
+ "feat-004-00": {
+  "label": "एक ready-made model का use करके एक receipt से vendor, total, और line items को निकालें, training की कोई जरूरत नहीं।",
+  "why": "Azure AI Document Intelligence के prebuilt models invoices और receipts जैसे standard form types से known fields को extract करते हैं बिना training के।"
+ },
+ "feat-004-01": {
+  "label": "अपने own custom form layout पर एक model को train करें जिसे कोई prebuilt model नहीं cover करता।",
+  "why": "Azure AI Document Intelligence के custom models तुम्हारे own labeled form layouts पर train होते हैं जिसे कोई prebuilt model नहीं cover करता।"
+ },
+ "feat-004-02": {
+  "label": "Raw text, tables, और selection marks को एक scanned document के structure के साथ निकालें।",
+  "why": "Azure AI Document Intelligence की Layout model raw text, tables, और selection marks को एक document के structure के साथ निकालता है।"
+ },
+ "feat-005-00": {
+  "label": "Invoice numbers, totals, और line items को scanned PDF forms और photographed receipts से structured JSON fields में जो तुमने name दिए हैं निकालें।",
+  "why": "Azure Content Understanding की document field extraction एक custom analyzer schema को PDFs, scanned forms, और images पर लागू करता है specific structured fields को return करने के लिए जिसे तुमने define किया है, न कि सिर्फ एक fixed prebuilt layout।"
+ },
+ "feat-005-01": {
+  "label": "एक call recording को transcribed करवाएं और इसके sentiment और key talking points को summarize करवाएं, या एक training video से spoken dialogue और on-screen text को निकलवाएं।",
+  "why": "Azure Content Understanding की audio और video analysis call recordings और video content को transcribe और reason करता है, extracting fields जैसे speaker sentiment, summaries, और dialogue जो एक static document में exist नहीं करते।"
+ },
+ "feat-006-00": {
+  "label": "एक model को train करें अपने product photos को तुम्हारे define किए गए categories में sort करने के लिए।",
+  "why": "Azure AI Custom Vision की image classification तुम्हारे own labeled photos पर एक model को train करता है images को तुम्हारे define किए categories में sort करने के लिए।"
+ },
+ "feat-006-01": {
+  "label": "एक model को train करें अपने own images में एक specific defect type को locate और box करने के लिए।",
+  "why": "Azure AI Custom Vision की object detection तुम्हारे own labeled images पर एक model को train करता है एक specific object या defect को locate और box करने के लिए।"
+ },
+ "feat-007-00": {
+  "label": "एक group photo में present हर face की location find करें।",
+  "why": "Azure AI Face की face detection एक image में present हर face की position locate करता है।"
+ },
+ "feat-007-01": {
+  "label": "Confirm करें कि दो photos same specific person को दिखाते हैं।",
+  "why": "Azure AI Face की verification (1:1 matching) confirm करता है कि क्या दो face images same person को belong करती हैं।"
+ },
+ "feat-007-02": {
+  "label": "एक large gallery के enrolled faces में search करें एक नई photo में दिखने वाले को identify करने के लिए।",
+  "why": "Azure AI Face की identification (1:N matching) एक नई photo के लिए match find करने के लिए enrolled faces की एक gallery को search करता है।"
+ },
+ "feat-008-00": {
+  "label": "एक chat message को hate, violence, sexual, या self-harm content severity के लिए score करें।",
+  "why": "Azure AI Content Safety की text moderation text को hate, violence, sexual, और self-harm content severity के लिए score करता है।"
+ },
+ "feat-008-01": {
+  "label": "एक chatbot को jailbreak करने का एक attempt detect करें या malicious instructions को एक document में hide करें जिसे model read करेगा।",
+  "why": "Azure AI Content Safety की Prompt Shields jailbreak attempts को detect करता है और indirect prompt injection को hide किया गया एक model के द्वारा process किए जाने वाले content में।"
+ },
+ "feat-008-02": {
+  "label": "एक uploaded image को graphic या violent visual content के लिए flag करें।",
+  "why": "Azure AI Content Safety की image moderation uploaded images को text पर लागू किए गए same harmful-content categories के लिए score करता है।"
+ },
+ "feat-009-00": {
+  "label": "एक single sensor की reading में एक unusual spike को time के over flag करें।",
+  "why": "Azure AI Anomaly Detector की univariate detection एक single time-series stream में unexpected spikes या dips को flag करता है।"
+ },
+ "feat-009-01": {
+  "label": "Detect करें एक unusual combined pattern दर्जनों correlated sensor streams के across एक साथ।",
+  "why": "Azure AI Anomaly Detector की multivariate detection एक साथ anomalous combined patterns को flag करता है many correlated time-series signals के across।"
+ },
+ "feat-010-00": {
+  "label": "Documents को retrieve करें exact keyword match की बजाय उनके meaning की closeness से।",
+  "why": "Azure AI Search की vector search documents को exact keyword overlap की बजाय उनके meaning की closeness से retrieve करता है।"
+ },
+ "feat-010-01": {
+  "label": "एक AI enrichment pipeline को run करें जो raw content को indexing से पहले entities, key phrases, और image text को extract करता है।",
+  "why": "Azure AI Search की skillsets एक AI enrichment pipeline को run करते हैं जो raw content से entities, key phrases, और image text को extract करता है इसे index किए जाने से पहले।"
+ },
+ "feat-010-02": {
+  "label": "Keyword search results को एक language model का use करके re-rank करें सबसे relevant hits को top पर push करने के लिए।",
+  "why": "Azure AI Search की semantic ranking एक language model का use करके keyword search results को reorder करता है सबसे relevant matches को surface करने के लिए।"
+ },
+ "feat-011-00": {
+  "label": "Identify और label करें एक video में एक ही person का face जहाँ भी वह reappear होता है।",
+  "why": "Azure AI Video Indexer की face detection एक video में एक ही person के face को identify और track करता है जहाँ भी वह reappear करता है।"
+ },
+ "feat-011-01": {
+  "label": "एक searchable transcript produce करें जिसे label किया जाए कि कौन सा speaker हर line को कहा।",
+  "why": "Azure AI Video Indexer की transcription feature एक searchable transcript produce करता है जिसे label किया जाए कि कौन सा speaker हर line को कहा।"
+ },
+ "feat-011-02": {
+  "label": "Automatically detect करें एक uploaded video में scene और shot boundaries।",
+  "why": "Azure AI Video Indexer की scene और shot detection automatically एक uploaded video में scene और shot boundaries को mark करता है।"
+ },
+ "feat-012-00": {
+  "label": "Enterprise chat completions के लिए GPT-4o को deploy करें अपने own quota और content filters के साथ।",
+  "why": "Azure OpenAI Service GPT-4o जैसे chat और completion models को एक enterprise resource के रूप में deploy करता है अपने own quota और content filters के साथ।"
+ },
+ "feat-012-01": {
+  "label": "एक text description से एक set of unique product images को generate करें।",
+  "why": "Azure OpenAI Service की DALL-E deployment एक text description से नई images को generate करती है।"
+ },
+ "feat-012-02": {
+  "label": "एक batch of documents को similarity search के लिए numeric vectors में convert करें।",
+  "why": "Azure OpenAI Service की embeddings models similarity search और retrieval के लिए text को numeric vectors में convert करते हैं।"
+ },
+ "feat-012-03": {
+  "label": "अपने own labeled examples का use करके एक base model के tone और style को adapt करें।",
+  "why": "Azure OpenAI Service की fine-tuning अपने own labeled examples का use करके एक deployed model के tone और behavior को adapt करती है।"
+ },
+ "feat-013-00": {
+  "label": "एक catalog में multiple providers के foundation models को browse करें और compare करें deploy करने से पहले।",
+  "why": "Microsoft Foundry की model catalog तुम्हें एक catalog में multiple providers के foundation models को browse और compare करने देता है deploy करने से पहले।"
+ },
+ "feat-013-01": {
+  "label": "Prompt variants को trace करें, test करें, और evaluation datasets के विरुद्ध score करें ship करने से पहले।",
+  "why": "Microsoft Foundry की prompt flow और evaluation tools prompt variants को trace करते हैं, test करते हैं, और datasets के विरुद्ध score करते हैं ship करने से पहले।"
+ },
+ "feat-013-02": {
+  "label": "Python से Foundry project को programmatically call करें models और agents को manage करने के लिए।",
+  "why": "Microsoft Foundry की SDK एक AIProjectClient expose करता है ताकि code एक Foundry project को connect कर सकें और models और agents को programmatically manage कर सकें।"
+ },
+ "feat-014-00": {
+  "label": "एक agent को अपनी uploaded files को search और cite करने दें एक question का answer देते समय।",
+  "why": "Microsoft Foundry Agent Service की file search tool एक agent को अपनी uploaded files को search और cite करने देती है जब answer दे रहा हो।"
+ },
+ "feat-014-01": {
+  "label": "एक agent को mid-conversation में एक sandbox में code write और run करने दें एक data या math problem को solve करने के लिए।",
+  "why": "Microsoft Foundry Agent Service की code interpreter tool एक agent को mid-conversation में एक sandbox में code write और run करने देती है एक problem को solve करने के लिए।"
+ },
+ "feat-014-02": {
+  "label": "एक agent को अपने own external APIs या functions को call करने की ability दें अपने reasoning के एक part के रूप में।",
+  "why": "Microsoft Foundry Agent Service की function calling एक agent को अपने own external APIs या functions को invoke करने देती है अपने reasoning के एक part के रूप में।"
+ },
+ "feat-015-00": {
+  "label": "Automatically multiple algorithms और hyperparameters को try करें अपने dataset के लिए best-performing model को find करने के लिए।",
+  "why": "Azure Machine Learning की Automated ML अपने dataset के लिए best-performing model को find करने के लिए multiple algorithms और hyperparameters को try करता है।"
+ },
+ "feat-015-01": {
+  "label": "Modules को dragging और connecting करके एक training pipeline को visually build करें, code की कोई जरूरत नहीं।",
+  "why": "Azure Machine Learning की Designer modules को dragging और connecting करके एक training pipeline को visually build करता है, code की कोई जरूरत नहीं।"
+ },
+ "feat-015-02": {
+  "label": "Track करें experiment runs, register करें models, और deploy को एक governed MLOps pipeline के through manage करें।",
+  "why": "Azure Machine Learning की pipelines और model registry experiment runs को track करते हैं, models को register करते हैं, और governed deployment को manage करते हैं।"
+ },
+ "features": {
+  "hint": "हर job को capability पर drag करें जो इसे perform करता है। Reveal इसे belong करने वाली service को name करता है।"
+ }
+}

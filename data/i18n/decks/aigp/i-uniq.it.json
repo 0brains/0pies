@@ -1,0 +1,110 @@
+{
+ "i-uniq": {
+  "hint": "Chiedi specificamente cosa sta fallendo: una persona non può vedere dentro (Opacità), oppure non può seguire la struttura anche con accesso completo (Complessità)? Il sistema ha agito senza essere chiesto (Autonomia), oppure un compito che una persona era solita fare manualmente è semplicemente scomparso nel sistema (Automazione)? Il sistema è cambiato dopo aver imparato di più (Adattabilità), oppure il difetto era incorporato in ciò da cui ha imparato in primo luogo (Dipendenza dai dati)? Lo stesso input ha dato una risposta diversa (Output probabilistici), oppure un piccolo errore si è diffuso più velocemente di quanto chiunque potesse catturarlo (Velocità e scala)?",
+  "note": "Questo è il roster canonico di otto elementi dell'esame. Otto zone fisse significa che la maggior parte dei sei carte lasciano una o due zone vuote — atteso, non un bug. Automazione e Autonomia sono la coppia più degna di rallentare: Automazione è su le cui mani hanno fatto il lavoro una volta (sostituzione di compiti, over-affidamento, interruzione della forza lavoro); Autonomia è su chi prende la decisione (decisioni indipendenti senza l'approvazione umana).",
+  "zones[0].def": "La logica interna che non può essere vista o spiegata, nemmeno dalle persone che l'hanno costruita — un fallimento di visibilità. Diverso da Complessità: l'opacità riguarda ciò che è nascosto dalla vista, non quanto intricate sia la struttura.",
+  "zones[1].def": "Il sistema decide e agisce da solo, senza che una persona approvi quell'azione specifica — un rischio di indipendenza d'azione. Diverso da Automazione: l'autonomia riguarda chi prende la decisione, non le cui mani hanno fatto il lavoro una volta.",
+  "zones[2].def": "L'apprendimento e l'addestramento continui possono far deviare il sistema dai suoi obiettivi originali, o fargli perdere silenziosamente le capacità che aveva già.",
+  "zones[3].def": "L'AI assume compiti e decisioni che una persona una volta eseguiva manualmente, su una scala che nessun team umano potrebbe eguagliare — sollevando rischi di over-affidamento e interruzione della forza lavoro distinti dal giudizio indipendente del sistema stesso.",
+  "zones[4].def": "La prestazione è solo buona quanto i dati di addestramento dietro di essa — fragile ai divari, ai cambiamenti e ai difetti ereditati da ciò da cui il sistema ha imparato.",
+  "zones[5].def": "L'AI agisce molto più velocemente e su molti più istanti di quanto gli umani possano revisionare in tempo reale, quindi un piccolo errore può diventare un errore massicchio prima che chiunque se ne accorga.",
+  "zones[6].def": "I risultati sono tratti da una distribuzione di risposte possibili anziché da regole fisse, quindi lo stesso input può produrre un output diverso ogni volta.",
+  "zones[7].def": "Così tanti strati e parametri che si interagiscono che nemmeno gli sviluppatori possono tracciare il percorso decisionale — un fallimento strutturale. Diverso da Opacità: la complessità riguarda quanto intricate sia la struttura, non ciò che è nascosto dalla vista."
+ },
+ "i-uq-01": {
+  "label": "Una banca non può dire al regolatore perché la sua rete neurale ha rifiutato questo richiedente di prestito.",
+  "why": "Nessuna visibilità nella logica interna del modello — diverso da Complessità, che è una struttura troppo intricata per seguire, non un'incapacità di vedere dentro a tutto."
+ },
+ "i-uq-02": {
+  "label": "Un senior manager avverte che se il modello di ordinazione magazzino commette mai un errore costoso, nessuno sarà in grado di spiegare in seguito perché sia successo.",
+  "why": "Il reclamo è che il ragionamento è nascosto, non che il modello sia strutturalmente intricato — lo stesso divario black-box che questa zona traccia, non uno strutturale di Complessità."
+ },
+ "i-uq-03": {
+  "label": "Un moderatore di contenuti rimuove un post sotto regole che non sono mai state pubblicate, e il poster non ha modo di scoprire quale regola si applicava.",
+  "why": "Le regole che esistono ma non sono mai surfaciate alle persone interessate è il fallimento definitorio di questa zona — ragionamento nascosto, non una struttura troppo intricata per seguire."
+ },
+ "i-uq-04": {
+  "label": "Un'auto a guida autonoma naviga il traffico cittadino denso e fa ogni movimento di sterzo, frenata e routing da sola, senza che nessuno sia pronto a intervenire.",
+  "why": "L'indipendenza d'azione elevata accoppiata a danni potenziali elevati è l'accoppiamento di firma di questa zona — distinto da Automazione, che riguarda le cui mani hanno fatto il lavoro una volta, non chi prende la decisione."
+ },
+ "i-uq-05": {
+  "label": "Un bot di trading compra e vende azioni in millisecondi; nessuna persona conferma alcun singolo trade prima che si esegua.",
+  "why": "L'indipendenza d'azione — decidere e agire senza attendere l'approvazione umana — è ciò che questa zona traccia, indipendentemente dal fatto che il trade accada anche velocemente. Distinto da Automazione, che riguarda se una persona una volta piazzava trades manualmente, non su chi approva ciascuno."
+ },
+ "i-uq-06": {
+  "label": "Uno strumento di assunzione scherma i curriculum e sposta i candidati all'intervista o al rifiuto senza che un reclutatore mai riveda la decisione.",
+  "why": "La preoccupazione è che una decisione sia uscita senza l'approvazione umana — un divario di controllo e accountability, non la scomparsa di un compito che una persona aveva l'abitudine di fare manualmente (questo è il lato Automazione di questa coppia)."
+ },
+ "i-uq-07": {
+  "label": "Dopo che il recommender viene riaddestrare sul nuovo catalogo di prodotti, perde silenziosamente le abilità che aveva l'abitudine di avere, come il segnalamento di duplicati.",
+  "why": "Questo è il catastrophic forgetting — la versione risk-multiplier di un sistema che si allontana dalle sue capacità originali ogni volta che ri-impara da nuovi dati; un vero rischio, ma mai una zona propria."
+ },
+ "i-uq-08": {
+  "label": "Il sistema di rilevamento delle frodi di una banca si riaddestra su transazioni recenti e inizia a bloccare grandi numeri di acquisti legittimi.",
+  "why": "La deriva lontano dall'obiettivo originale dopo il riadestramento — la risposta di governance è il monitoraggio, i test di pre-distribuzione degli aggiornamenti, e il drift tracking, non una revisione di lancio una-tantum."
+ },
+ "i-uq-09": {
+  "label": "Sei mesi dopo il lancio, i suggerimenti di uno strumento di raccomandazione di dosaggio si sono silenziosamente spostati perché è stato riaddestrare sui dati ospedalieri contenenti errori di etichettatura.",
+  "why": "Il comportamento che cambia dopo il riadestramento o l'esposizione a nuovi dati è il segnale di questa zona; la correzione è il monitoraggio continuo, la rilevazione della deriva, e i cancelli di approvazione prima che un modello aggiornato vada in diretta."
+ },
+ "i-uq-10": {
+  "label": "Il triage di ticket del call center, una volta gestito da una persona che legge ogni richiesta, è ora risolto da inizio a fine dal sistema senza che nessuno tocchi la coda.",
+  "why": "Questo è l'asse della sostituzione del lavoro — un compito che una persona aveva l'abitudine di eseguire manualmente è ora eseguito dal sistema a volume. Distinto da Autonomia, che riguarda chi prende la decisione, non le cui mani fanno il lavoro."
+ },
+ "i-uq-11": {
+  "label": "L'implementazione diffusa di uno strumento di servizio clienti rimuove la necessità della maggior parte del personale del call center, inquietando il mercato del lavoro locale.",
+  "why": "L'interruzione della forza lavoro ed economica dalla sostituzione del lavoro umano è il costo societale di questa zona — una preoccupazione di governance diversa dal framing di controllo e accountability di Autonomia."
+ },
+ "i-uq-12": {
+  "label": "Dopo che il sistema di reclami ha correttamente risolto migliaia di casi di fila, gli aggiustatori smettono di doppio-controllo dei suoi rifiuti segnalati e iniziano ad approvare qualunque cosa raccomandi.",
+  "why": "L'over-affidamento su ciò che il sistema produce — la gomma-stampa anziché la revisione critica — è il rischio di governance che questa zona esiste per catturare; è una risposta umana alla sostituzione di compiti, non al decisioning indipendente del sistema stesso, che è il rischio di Autonomia."
+ },
+ "i-uq-13": {
+  "label": "Un modello di sentimento che ha previsto accuratamente l'opinione pubblica durante l'addestramento va completamente fuori una volta che accade un evento importante che i dati di addestramento non hanno mai catturato.",
+  "why": "La fragilità quando il mondo si allontana da ciò che i dati di addestramento hanno catturato è il fallimento centrale di questa zona — il modello è solo buono quanto da ciò da cui ha imparato."
+ },
+ "i-uq-14": {
+  "label": "Un predittore di tipo di pelle impara principalmente dai toni di pelle più leggeri nelle sue foto di addestramento e dà consigli imprecisi a tutti gli altri.",
+  "why": "Il modello funziona solo così bene come la popolazione rappresentata nei suoi dati di addestramento — un divario in ciò da cui ha imparato, non un problema strutturale o di visibilità."
+ },
+ "i-uq-15": {
+  "label": "Un modello di valutazione del credito nega prestiti ai richiedenti immigrati a un tasso più elevato di altri con profili finanziari identici.",
+  "why": "I dati di addestramento hanno portato avanti la discriminazione storica, e il modello l'ha riprodotta — il modo di fallimento più sistemico in questa zona, perché correggere il modello senza correggere i dati lascia la causa fondamentale intocata."
+ },
+ "i-uq-16": {
+  "label": "Un errore di mispricing su un elenco di prodotti si replica su milioni di pagine prima che alcun umano se ne accorga.",
+  "why": "Un piccolo errore, moltiplicato al ritmo e al volume della macchina, supera la revisione umana e la risposta normativa prima che chiunque possa intervenire — il fallimento di firma di questa zona."
+ },
+ "i-uq-17": {
+  "label": "Le fotocamere di sorveglianza elaborano istantaneamente l'intero feed video in tempo reale di una città, segnalando migliaia di 'attività insolite' per minuto.",
+  "why": "Il volume e il ritmo oltre ciò che qualsiasi revisore umano potrebbe stare al passo è ciò che rende il rischio di questa zona diverso da un sistema che semplicemente ragiona male — il problema è il throughput, non la logica."
+ },
+ "i-uq-18": {
+  "label": "Lo strumento di deterioramento dei pazienti di un ospedale esegue previsioni ad alto volume continuo su ogni corsia, e una singola miscalibrazione si trasforma in una tempesta di allarmi a livello di sistema entro ore.",
+  "why": "L'output rapido e ad alto volume trasforma una miscalibrazione minore in un problema a livello di sistema prima che il personale possa catturarlo — il throughput è il risk multiplier qui, non la logica sottostante."
+ },
+ "i-uq-19": {
+  "label": "Lo stesso prompt riceve una raccomandazione di investimento diversa su giorni consecutivi, senza che nulla di diverso riguardi la richiesta sia cambiato.",
+  "why": "Le uscite campionate da uno spread ponderato di risposte possibili anziché da una regola fissa complicano la fornitura di una spiegazione definitiva per un risultato specifico — ma questo non significa che gli audit siano impossibili, una risposta registrata sbagliata."
+ },
+ "i-uq-20": {
+  "label": "Un sistema su una pagina di checkout sempre calcola la stessa imposta di vendita per lo stesso ordine; un secondo sistema sulla stessa pagina suggerisce prodotti leggermente diversi ogni volta che la pagina si ricarica.",
+  "why": "Il motore fiscale è deterministico — sempre lo stesso output per lo stesso input — mentre il recommender attinge da uno spread ponderato di possibili output ogni volta; solo il comportamento del secondo appartiene a questa zona."
+ },
+ "i-uq-21": {
+  "label": "Un chatbot chiesto la stessa domanda di dolce tre volte separate dà tre risposte diverse, ciascuna tratta da un elenco ponderato di opzioni plausibili piuttosto che da una regola fissa.",
+  "why": "Il campionamento da uno spread ponderato di risposte possibili anziché il seguire un percorso rigoroso è esattamente ciò che questa zona governa — la correzione è la calibrazione della fiducia e l'impostazione delle aspettative, non il trattamento di alcuna risposta come la verità fissa."
+ },
+ "i-uq-22": {
+  "label": "I revisori ammettono che non riescono più a tracciare quale dei milioni di parametri che si interagiscono del modello ha effettivamente guidato una decisione specifica.",
+  "why": "Questo riguarda la struttura interna — troppi strati e parametri per seguire — non se il ragionamento è nascosto dalla vista; questo è il confine con Opacità, che è un problema di visibilità, non uno strutturale."
+ },
+ "i-uq-23": {
+  "label": "Un modello di analisi di contratti deve pesare il linguaggio legale e i requisiti che differiscono in una dozzina di giurisdizioni contemporaneamente, e nessun revisore singolo può tenere in mente l'intera logica.",
+  "why": "L'intricatezza strutturale — troppi fattori che si interagiscono per tracciare da capo a coda — è ciò che definisce questa zona, distinto da un modello che semplicemente si rifiuta di mostrare il suo ragionamento a tutto."
+ },
+ "i-uq-24": {
+  "label": "La logica di ottimizzazione di un modello di routing di consegna è diventata così intricata che gli ingegneri non riescono più a risolvere i problemi di perché ha scelto un percorso anziché un altro.",
+  "why": "L'intricatezza che sconfigge nemmeno le persone che lo hanno costruito è il fallimento strutturale che questa zona traccia — il gemello del fallimento di visibilità di Opacità, dichiarato esplicitamente in modo che i due non siano mai confusi."
+ }
+}

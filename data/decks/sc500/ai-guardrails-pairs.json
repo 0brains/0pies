@@ -1,0 +1,191 @@
+{
+  "id": "ai-guardrails-pairs",
+  "runner": "pairs",
+  "title": "Guardrail or Gate",
+  "blurb": "Ten AI security surfaces that read the same in a vendor deck and land in completely different portals. Each pair moves exactly one detail, so you have to know which blade actually cuts.",
+  "source": "Microsoft Foundry guardrails and AI Gateway docs, Defender for Cloud AI threat protection, Defender XDR security for AI agents, Purview DSPM, Foundry agent identity and control plane docs · SC-500 outline 3.1",
+  "asOf": "2026-08",
+  "area": "3.1",
+  "pairs": [
+    {
+      "id": "aig-01",
+      "dimension": "harmful content stopped at an intervention point vs request volume capped in front of the deployment",
+      "buckets": ["Foundry guardrail control", "AI Gateway token limit"],
+      "a": {
+        "text": "A fintech's claims triage agent runs on a Foundry project. A customer pastes a block of text engineered to override the agent's instructions, and the request never reaches the model: the prompt is classified as a user prompt attack and the interaction halts.",
+        "answer": "Foundry guardrail control",
+        "why": "A guardrail is a named set of controls, each pairing a risk with an intervention point and a response action, and the user input point is where an incoming prompt gets classified and blocked. The gateway is the wrong home for this: API Management counts and caps tokens for the project, it does not classify prompt content for jailbreak patterns.",
+        "citation": "Learn: Guardrails and controls overview in Microsoft Foundry · outline 3.1"
+      },
+      "b": {
+        "text": "The same fintech's claims triage project starts hammering the shared capacity during month-end. Callers begin receiving 429 responses partway through the afternoon, and the platform team confirms the project hit its tokens-per-minute ceiling.",
+        "answer": "AI Gateway token limit",
+        "why": "AI Gateway puts an API Management instance in front of the Foundry resource, and each project on that gateway carries its own per-minute rate and total quota; exceeding the rate returns 429, and exhausting the quota returns 403. A guardrail control cannot do this, because guardrails act on classified risk in content, never on how many tokens a team burns.",
+        "citation": "Learn: Configure AI Gateway in your Foundry resources · outline 3.1"
+      },
+      "citation": "Learn: Guardrails overview and Configure AI Gateway in Foundry · outline 3.1"
+    },
+    {
+      "id": "aig-02",
+      "dimension": "an agent action stopped before it executes vs the same agent's data exposure reported after the fact",
+      "buckets": ["Defender real-time protection rule", "Purview DSPM AI observability"],
+      "a": {
+        "text": "A hospital trust's HR onboarding agent, built in Copilot Studio, tries to pass a service account password into an outbound tool call. The invocation never runs, and the attempt is written to the behaviour telemetry with the agent, the user, and the tool named.",
+        "answer": "Defender real-time protection rule",
+        "why": "Custom real-time protection rules in the Defender portal block a matching action before it executes and record it as a behaviour, and Copilot Studio agents are covered by evaluating their tool invocations once Copilot Studio is connected. DSPM cannot be the answer, because Purview reports on data exposure and risky behaviour rather than intercepting a tool call mid-run.",
+        "citation": "Learn: Defender runtime protection for AI agents · outline 3.1"
+      },
+      "b": {
+        "text": "At the same hospital trust, the data protection lead needs a monthly picture of every AI agent that has been active in the past thirty days, how many rate as high risk, which ones touched sensitive interactions, and which policies currently govern them.",
+        "answer": "Purview DSPM AI observability",
+        "why": "The AI observability page in Purview DSPM inventories AI apps and agents with recent activity, flags high-risk ones, and shows the per-agent breakdown and governing policies. A real-time protection rule would not produce this, because rules act on individual actions in flight and do not maintain an estate-wide posture inventory.",
+        "citation": "Learn: Purview DSPM for AI overview · outline 3.1"
+      },
+      "citation": "Learn: Defender real-time protection for AI agents and Purview DSPM · outline 3.1"
+    },
+    {
+      "id": "aig-03",
+      "dimension": "conditions placed on how an agent identity may authenticate vs which resources that identity is entitled to reach",
+      "buckets": ["Conditional Access for Entra Agent ID", "Entra Agent ID access management"],
+      "a": {
+        "text": "A logistics operator has fifty agents provisioned from one blueprint. The identity team opens the Entra admin center, browses to the agent identity inventory, and attaches a policy so that every agent of that class is subject to the same sign-in conditions, including network restrictions.",
+        "answer": "Conditional Access for Entra Agent ID",
+        "why": "The blueprint classifies a kind of agent, and that classification is exactly what lets an administrator apply one Conditional Access policy across every identity created from it, alongside identity protection and network access controls in the Agent ID inventory. Access management is the wrong bucket here: nothing is being granted, only conditioned.",
+        "citation": "Learn: Agent identity concepts in Microsoft Foundry · outline 3.1"
+      },
+      "b": {
+        "text": "The same logistics operator publishes one of those agents to production. It immediately fails every call to the depot manifest storage account, even though it worked fine in the project the day before.",
+        "answer": "Entra Agent ID access management",
+        "why": "Publishing mints a distinct blueprint and agent identity bound to the agent application, and role assignments held by the shared project identity do not follow it, so the published identity has to be granted the storage data role against its own identifier. Conditional Access would not fix this, because the failure is a missing entitlement rather than a blocked sign-in condition.",
+        "citation": "Learn: Agent identity concepts in Microsoft Foundry · outline 3.1"
+      },
+      "citation": "Learn: Agent identity concepts in Microsoft Foundry · outline 3.1"
+    },
+    {
+      "id": "aig-04",
+      "dimension": "an attack on the model surfaced as a security alert vs sensitive content in the same exchange surfaced as a data finding",
+      "buckets": ["Defender for AI Services alert", "Purview DSPM for AI finding"],
+      "a": {
+        "text": "An insurer runs a quoting assistant on a Foundry model deployment. Overnight, an unfamiliar caller sends a run of prompts probing for the system instructions and the model's capabilities, and the SOC queue picks it up with MITRE reconnaissance tactics attached and a prompt snippet as evidence.",
+        "answer": "Defender for AI Services alert",
+        "why": "Threat protection for AI services watches Foundry model traffic and raises alerts for reconnaissance, jailbreak, credential leakage and similar attacks, with redacted prompt evidence when that component is turned on. A Purview finding would not carry MITRE tactics or reach the SOC alert queue, because Purview is classifying and auditing data, not detecting attacks.",
+        "citation": "Learn: Defender for Cloud AI threat protection and AI service alerts · outline 3.1"
+      },
+      "b": {
+        "text": "At the same insurer, on the same quoting assistant, a broker pastes a claimant's policy record into a prompt. Nothing is blocked and no alert fires, but the exchange turns up later tagged with the sensitive information types it contained, alongside any policy rules it matched.",
+        "answer": "Purview DSPM for AI finding",
+        "why": "Turning on data security for AI interactions lets Purview process Foundry prompts, responses and metadata for sensitive information type classification, auditing and activity reporting. A Defender alert is the wrong home, because no attack technique was observed here; only regulated content moved through a prompt.",
+        "citation": "Learn: Enable threat protection for AI services · outline 3.1"
+      },
+      "citation": "Learn: Enable threat protection for AI services and Purview DSPM · outline 3.1"
+    },
+    {
+      "id": "aig-05",
+      "dimension": "the security scope of what an agent touched vs the operational health and cost of the same agent",
+      "buckets": ["Defender XDR investigation", "Foundry Control Plane observability"],
+      "a": {
+        "text": "A university's research assistant agent is suspected of leaking supervisor mailbox content. An analyst pulls its tool invocations and data access events, joins them to the alerts raised against it, and maps out which users, files and downstream systems the agent reached.",
+        "answer": "Defender XDR investigation",
+        "why": "Agent activity lands in Defender advanced hunting tables covering observability events, agent inventory, alert evidence and real-time protection behaviours, and correlated incidents give the analyst the entity graph and blast radius. The Foundry control plane cannot answer this, because it never sees alerts or the entities an agent touched outside its own telemetry.",
+        "citation": "Learn: Defender XDR agent threat detection and investigation · outline 3.1"
+      },
+      "b": {
+        "text": "At the same university, the platform lead reviews the same research assistant agent to see how many runs it made last month, what share of them failed, how many tokens it burned and roughly what that cost.",
+        "answer": "Foundry Control Plane observability",
+        "why": "The agents inventory under Operate shows run counts, error rate, token usage and estimated cost, drawn from the Application Insights resource behind the hosting project. Defender XDR is the wrong bucket, because its hunting tables carry security telemetry rather than the agent's billing and reliability metrics.",
+        "citation": "Learn: Foundry Control Plane agent management at scale · outline 3.1"
+      },
+      "citation": "Learn: Defender XDR AI agent detection and Foundry Control Plane agent management · outline 3.1"
+    },
+    {
+      "id": "aig-06",
+      "dimension": "an agent hidden from the surfaces users chat in vs the Azure compute behind it taken down",
+      "buckets": ["Block the agent", "Stop the agent application"],
+      "a": {
+        "text": "A retailer's pricing agent starts giving staff wrong discount guidance in Teams. An administrator works from the agent's page in the Microsoft 365 admin center so employees stop meeting it in Teams and Copilot, and the developers keep exercising it from the Foundry portal and its API without noticing anything.",
+        "answer": "Block the agent",
+        "why": "Blocking, in the Microsoft 365 and Teams admin centers, only changes how the agent is projected to users in those two channels: it leaves the agent fully functional in the Foundry portal and at other integration points, and touches no Azure resource at all. Stopping would overshoot here, because deallocating the deployments' compute takes the developers offline as well.",
+        "citation": "Learn: Entra admin governance for agent infrastructure · outline 3.1"
+      },
+      "b": {
+        "text": "The same retailer discovers the pricing agent is calling a compromised supplier endpoint. An administrator works from the same admin center page, and this time the agent application refuses requests everywhere at once, Teams, Copilot, the Foundry portal and the API alike, with its compute deallocated until someone starts it again.",
+        "answer": "Stop the agent application",
+        "why": "Stopping is an infrastructure operation on Azure resources: it deallocates the compute behind the application's deployments, so requests are refused on every channel, and the application and its deployments survive so the action can be reversed. The portal is not the tell, since the Stop and Start buttons sit on the same admin center page for anyone holding Foundry Owner on the application. Blocking would be the weaker miss, because the agent would keep running in Foundry and could still reach the supplier endpoint.",
+        "citation": "Learn: Entra admin governance for agent infrastructure · outline 3.1"
+      },
+      "citation": "Learn: Entra admin governance for agent infrastructure · outline 3.1"
+    },
+    {
+      "id": "aig-07",
+      "dimension": "the risk scanned on the prompt entering the agent vs on the payload a tool hands back",
+      "buckets": ["User input intervention point", "Tool response intervention point"],
+      "a": {
+        "text": "A law firm's matter summarisation agent receives a message from a paralegal that has been crafted to talk the agent out of its instructions. The classification catches it, the message never reaches the model, and the conversation stops there.",
+        "answer": "User input intervention point",
+        "why": "The user input point covers the prompt as it is sent to the model or agent, so a jailbreak style attempt is caught and blocked before generation begins. The tool response point cannot apply, because no tool has been called yet in this turn.",
+        "citation": "Learn: Intervention points and controls in Microsoft Foundry · outline 3.1"
+      },
+      "b": {
+        "text": "At the same law firm, the same agent queries its SharePoint grounding tool and the document that comes back has instructions buried in it telling the agent to forward the matter file elsewhere. The payload is caught before it can be kept or acted on, and the agent stops.",
+        "answer": "Tool response intervention point",
+        "why": "The tool response point inspects what a tool sends back inside the agent's orchestration, before the content is added to memory or shown to the user, which is exactly where an indirect injection hides. The user input point would miss it, because the malicious text never came from the person typing.",
+        "citation": "Learn: Intervention points and controls in Microsoft Foundry · outline 3.1"
+      },
+      "citation": "Learn: Intervention points and controls in Microsoft Foundry · outline 3.1"
+    },
+    {
+      "id": "aig-08",
+      "dimension": "Copilot held off certain items by their sensitivity label vs the whole site withdrawn from Copilot",
+      "buckets": ["Restrict access by label", "Restrict all items"],
+      "a": {
+        "text": "A borough council reviews an overshared SharePoint site in the Purview assessment flyout. Most of the site is ordinary committee material, but the files carrying one particular sensitivity label must never be summarised for staff by Copilot or by an agent. Everything else stays available.",
+        "answer": "Restrict access by label",
+        "why": "The label-based option creates a policy that stops Microsoft 365 Copilot and agents from summarising items carrying the labels you pick, so unlabelled and differently labelled content on the site keeps working. Withdrawing the whole site would be wrong here, because the council wants ordinary committee material to stay in reach.",
+        "citation": "Learn: Purview DSPM data risk assessments for oversharing · outline 3.1"
+      },
+      "b": {
+        "text": "The same council reviews a second site holding social care case notes, where the labelling has never been applied consistently. The decision is that nothing on that site should ever surface through Copilot, whatever any individual file happens to be labelled.",
+        "answer": "Restrict all items",
+        "why": "This option applies SharePoint restricted content discovery so the entire site is exempted from Microsoft 365 Copilot regardless of item-level labelling. The label-based route would leave gaps, because the site's labelling is patchy and unlabelled case notes would remain discoverable.",
+        "citation": "Learn: Purview DSPM data risk assessments for oversharing · outline 3.1"
+      },
+      "citation": "Learn: Purview DSPM data risk assessments for oversharing · outline 3.1"
+    },
+    {
+      "id": "aig-09",
+      "dimension": "prompt fragments attached to Defender alerts vs prompt data handed to Purview for classification",
+      "buckets": ["Suspicious prompt evidence", "Data security for AI interactions"],
+      "a": {
+        "text": "A pharmaceutical firm's SOC keeps closing AI alerts as inconclusive because the offending text is masked. The team turns on one setting in the AI services plan so that the suspicious fragments of user prompts and model responses appear inside each alert, with sensitive values redacted.",
+        "answer": "Suspicious prompt evidence",
+        "why": "That toggle in the AI services plan settings decides whether the flagged portions of prompts and responses are carried as evidence for triage, and detection carries on either way, only masked when it is off. The data security toggle sitting beside it is the near miss: that one hands prompt and response data to Purview for classification, audit and eDiscovery, and changes nothing about what a Defender alert shows the analyst.",
+        "citation": "Learn: Enable threat protection for AI services · outline 3.1"
+      },
+      "b": {
+        "text": "At the same firm, the compliance team wants the Foundry prompts and responses to reach Purview so they can be classified for sensitive information types and picked up by audit, insider risk and eDiscovery. They turn on a second toggle in the same plan settings pane, and are told it carries its own Purview licence cost.",
+        "answer": "Data security for AI interactions",
+        "why": "This toggle lets Purview access, process and store Foundry prompt and response data plus metadata for classification and compliance workflows, and it is a separately licensed Purview capability rather than part of the AI services plan. Prompt evidence is the wrong pick, because that setting only governs what a Defender alert displays.",
+        "citation": "Learn: Enable threat protection for AI services · outline 3.1"
+      },
+      "citation": "Learn: Enable threat protection for AI services · outline 3.1"
+    },
+    {
+      "id": "aig-10",
+      "dimension": "matching activity watched and recorded vs matching activity stopped before it runs",
+      "buckets": ["Default real-time protection rule", "Custom real-time protection rule"],
+      "a": {
+        "text": "A telco has just connected Copilot Studio to Defender and wants a fortnight of evidence before it interferes with anything. Risky agent actions still complete, but each one is written to the behaviour telemetry, and near-real-time alerts keep arriving for the security team to triage.",
+        "answer": "Default real-time protection rule",
+        "why": "The built-in rule audits every agent, recording matching activity as a behaviour without stopping the action, which is exactly the visibility phase before enforcement, and alerts continue to be generated while an agent is only audited. A custom rule would break the exercise by preventing the very actions the team is trying to observe.",
+        "citation": "Learn: Defender runtime protection for AI agents · outline 3.1"
+      },
+      "b": {
+        "text": "A fortnight later the same telco is confident about one detection type on three named agents. Those actions now fail to execute at all, the block is recorded as a behaviour, and the security team notices the near-real-time alerts for those three agents have stopped arriving.",
+        "answer": "Custom real-time protection rule",
+        "why": "A custom rule prevents a matching action from running, is scoped to whichever agents and detection types you pick, and writes the block to behaviour telemetry; once an agent falls under a blocking rule, its near-real-time alerts stop being raised. The default rule cannot produce this, because auditing lets the action complete and leaves the alerts flowing.",
+        "citation": "Learn: Defender runtime protection for AI agents · outline 3.1"
+      },
+      "citation": "Learn: Defender runtime protection for AI agents · outline 3.1"
+    }
+  ]
+}

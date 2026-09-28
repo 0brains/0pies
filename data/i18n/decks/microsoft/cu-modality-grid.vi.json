@@ -1,0 +1,109 @@
+{
+ "cu-001": {
+  "label": "Phân tích một PDF hóa đơn và đọc các trường nhà cung cấp, tổng cộng và ngày hết hạn được trích xuất",
+  "sub": "prebuilt-invoice",
+  "why": "prebuilt-invoice trích xuất các trường được cấu trúc từ tài liệu hóa đơn — bộ phân tích prebuilt được kiểm tra nhiều nhất trong kỳ thi (7 lần đề cập)."
+ },
+ "cu-002": {
+  "label": "Xác định lược đồ trường của riêng bạn bằng ngôn ngữ tự nhiên và trích xuất các trường đó từ hợp đồng",
+  "sub": "custom analyzer via begin_create_analyzer",
+  "why": "Các bộ phân tích tùy chỉnh được xây dựng từ lược đồ trường mà bạn mô tả — mô tả trường ngôn ngữ thuần túy của CU là những gì phân biệt nó với Document Intelligence prebuilts."
+ },
+ "cu-003": {
+  "label": "Trích xuất văn bản và các đối tượng được xác định từ các nhãn thiết bị được chụp ảnh",
+  "sub": "prebuilt-image",
+  "why": "prebuilt-image trích xuất văn bản và các đối tượng từ hình ảnh tĩnh thông qua cùng quy trình phân tích như mọi phương thức khác."
+ },
+ "cu-004": {
+  "label": "Nhận bản ghi âm cộng với bản tóm tắt và phân tích loa từ các cuộc gọi hỗ trợ được ghi âm",
+  "sub": "prebuilt-audio",
+  "why": "Các bộ phân tích âm thanh của CU trả lại các bản ghi âm, bản tóm tắt và loa — trích xuất, không bao giờ tổng hợp giọng nói."
+ },
+ "cu-005": {
+  "label": "Phân chia các phiên đào tạo được ghi âm và lập chỉ mục các bản ghi âm và sự kiện trực quan của chúng để tìm kiếm",
+  "sub": "prebuilt-videoSearch",
+  "why": "Các bộ phân tích video trả lại các phân đoạn, bản ghi âm và sự kiện trực quan; các biến thể *Search chuẩn bị nội dung để truy xuất — Azure AI Search lập chỉ mục những gì CU trích xuất."
+ },
+ "cu-006": {
+  "label": "Trả lại văn bản, bảng và dấu lựa chọn với cấu trúc tài liệu — không có ngữ nghĩa trường",
+  "sub": "prebuilt-layout",
+  "why": "Layout trích xuất văn bản, bảng, dấu lựa chọn và cấu trúc; OCR kiểu Read chỉ là văn bản — phân biệt Read-vs-Layout của histack CU."
+ },
+ "cu-007": {
+  "label": "Một lô hỗn hợp các biểu mẫu nhà cung cấp cần các cặp khóa-giá trị lỏng lẻo của chúng được kéo ra mà không bắt đầu từ lược đồ trường được xác định trước",
+  "sub": "prebuilt-documentFields",
+  "why": "prebuilt-documentFields trích xuất các cặp khóa-giá trị chung từ tài liệu không yêu cầu lược đồ cụ thể cho miền — không giống như các trường hóa đơn cố định của prebuilt-invoice."
+ },
+ "cu-008": {
+  "label": "Trước khi xây dựng bộ phân tích tùy chỉnh cho loại biểu mẫu hoàn toàn mới, hãy yêu cầu Content Understanding đề xuất lược đồ trường, sau đó dựa trên bộ phân tích tài liệu chung mới",
+  "sub": "prebuilt-documentFieldSchema → prebuilt-document",
+  "why": "prebuilt-documentFieldSchema đề xuất các trường cho loại tài liệu mà bạn chưa schema; prebuilt-document là base_analyzer_id được sử dụng khi xác định bộ phân tích tài liệu tùy chỉnh mới — hai id riêng biệt trong cùng quy trình xây dựng tùy chỉnh."
+ },
+ "cu-009": {
+  "label": "Chạy khởi động nhanh Python so với ảnh sản phẩm và đọc mô tả được tạo trở lại từ trường Tóm tắt của kết quả",
+  "sub": "prebuilt-imageSearch",
+  "why": "prebuilt-imageSearch là bộ phân tích khởi động nhanh cho đầu ra hình ảnh mô tả — kết quả của nó hiển thị trường Tóm tắt giữ mô tả ngôn ngữ tự nhiên."
+ },
+ "cu-010": {
+  "label": "Xây dựng bộ phân tích tùy chỉnh rút ra các trường Tiêu đề và ChartType từ lô ảnh chụp màn hình bảng điều khiển",
+  "sub": "custom analyzer via base_analyzer_id=\"prebuilt-image\"",
+  "why": "Các bộ phân tích hình ảnh tùy chỉnh đặt base_analyzer_id thành prebuilt-image trước khi xếp lớp lược đồ trường — mô hình được ghi chép để trích xuất biểu đồ và ảnh chụp màn hình."
+ },
+ "cu-011": {
+  "label": "Phân tích ảnh kệ từ kiểm tra bán lẻ và trả lại các trường được cấu trúc cho số lượng sản phẩm, sự hiện diện của thương hiệu và các chỉ báo hết hàng",
+  "sub": "prebuilt-image",
+  "why": "Bộ phân tích hình ảnh của Content Understanding trả lại các trường được cấu trúc theo lược đồ trực tiếp từ ảnh — kịch bản kiểm tra kệ bán lẻ mà kỳ thi kiểm tra trực tiếp."
+ },
+ "cu-012": {
+  "label": "Dây chuyền máy khách Python gọi begin_analyze với analyzer_id=\"prebuilt-image\" so với URL ảnh, sau đó đọc lại các đối tượng được phát hiện từ kết quả",
+  "sub": "prebuilt-image",
+  "why": "Mô hình cuộc gọi begin_analyze(analyzer_id=..., inputs=[AnalysisInput(url=...)]) giống nhau trên các phương thức — chỉ id bộ phân tích thay đổi, và prebuilt-image là bộ phân tích hình ảnh trực tiếp (không tìm kiếm)."
+ },
+ "cu-013": {
+  "label": "Dây chuyền máy khách Python nhẹ gọi begin_analyze với URL ghi âm cuộc gọi để kéo lại bản ghi âm và bản tóm tắt sẵn sàng cho chỉ mục truy xuất",
+  "sub": "prebuilt-audioSearch",
+  "why": "prebuilt-audioSearch là id bộ phân tích được ghi chép trong đoạn khởi động nhanh SDK — hậu tố *Search đánh dấu đầu ra được chuẩn bị cho lập chỉ mục/truy xuất RAG, không giống như prebuilt-audio's trích xuất trực tiếp không chuẩn bị truy xuất."
+ },
+ "cu-014": {
+  "label": "Kéo các cụm thành phần bản ghi âm được gắn nhãn loa, được định thời chính xác từ lô các tập phim podcast",
+  "sub": "transcriptPhrases",
+  "why": "transcriptPhrases là trường đầu ra mang thông tin định danh loa và thời gian — một đầu ra trích xuất âm thanh trực tiếp, khác biệt với id bộ phân tích chính nó."
+ },
+ "cu-015": {
+  "label": "Nhận ra rằng gửi một podcast MP3 đến Content Understanding đặt đối tượng nội dung loại của nó thành cùng giá trị được sử dụng cho đầu vào video",
+  "sub": "kind: \"audioVisual\"",
+  "why": "Các đầu vào chỉ âm thanh và video đều sử dụng kind: \"audioVisual\" trong lược đồ nội dung — một giá trị chia sẻ khiến bất kỳ ai mong đợi một loại 'âm thanh' riêng biệt bị lẫn lộn."
+ },
+ "cu-016": {
+  "label": "Xác nhận rằng kéo một bản ghi âm có cấu trúc từ hộp thoại thoại là giọng nói được ghi lại thành văn bản, không bao giờ văn bản được chuyển thành giọng nói",
+  "why": "Các bộ phân tích âm thanh của CU chuyển ghi giọng nói hiện có thành đầu ra có cấu trúc — chúng không bao giờ tổng hợp đầu ra nói mới; công việc đó thuộc về Azure AI Speech, không phải Content Understanding."
+ },
+ "cu-017": {
+  "label": "Chia một phim demo sản phẩm được tải lên thành các phân đoạn cảnh hợp lý trước khi bất kỳ xử lý hạ lưu nào chạy",
+  "sub": "enableSegment",
+  "why": "enableSegment là thuộc tính lược đồ bộ phân tích chia nội dung thành các phân đoạn hợp lý như cảnh — một điều khiển bộ phân tích video, không phải âm thanh hoặc tài liệu."
+ },
+ "cu-018": {
+  "label": "Sau khi phân tích một clip tiếp thị, đọc lại bản tóm tắt markdown có cấu trúc của bản ghi âm và nội dung trực quan của nó",
+  "sub": "prebuilt-videoSearch",
+  "why": "Các kết quả prebuilt-videoSearch hiển thị trường markdown tóm tắt bản ghi âm và nội dung trực quan trên mỗi phân đoạn — trường read-back được ghi chép của SDK cho video."
+ },
+ "cu-019": {
+  "label": "Xác nhận rằng trích xuất các khung hình chính và sự kiện trực quan từ một bản ghi được tải lên hoạt động trên nội dung tồn tại, thay vì tạo các khung mới",
+  "why": "Các bộ phân tích của CU trích xuất các khung hình chính, bản ghi âm và sự kiện trực quan từ nội dung tồn tại — chúng không tạo các khung tổng hợp; đó là một thể loại dịch vụ AI hoàn toàn khác."
+ },
+ "cu-020": {
+  "label": "Dây chuyền máy khách Python gọi begin_analyze với analyzer_id=\"prebuilt-videoSearch\" so với URL MP4 được tải lên",
+  "sub": "prebuilt-videoSearch",
+  "why": "Lệnh gọi begin_analyze(analyzer_id=\"prebuilt-videoSearch\", inputs=[AnalysisInput(url=...)]) là mô hình SDK được ghi chép để khởi động trích xuất video."
+ },
+ "cu-modality-grid": {
+  "hint": "Hỏi tệp nguồn thực sự là gì, sau đó kiểm tra dòng sub cho id bộ phân tích prebuilt-* chính xác — id chính nó đặt tên phương thức của nó (document/image/audio/video), và các id có hậu tố Search chuẩn bị đầu ra cho lập chỉ mục thay vì thay đổi phương thức.",
+  "note": "Content Understanding luôn trích xuất — nó không bao giờ tạo hoặc lập chỉ mục. Trích xuất vào Azure AI Search là một bước hạ lưu, không phải thứ CU tự làm."
+  ,
+  "zones[0].def": "PDF, hóa đơn, hợp đồng và giấy tờ tự do mà Content Understanding biến thành các trường được cấu trúc, bảng và văn bản.",
+  "zones[1].def": "Ảnh, ảnh chụp màn hình và biểu đồ mà Content Understanding biến thành các trường được cấu trúc, mô tả và các đối tượng được phát hiện.",
+  "zones[2].def": "Giọng nói được ghi âm — cuộc gọi, podcast và tin nhắn thoại — Content Understanding biến thành bản ghi âm, bản tóm tắt và nhãn loa.",
+  "zones[3].def": "Nội dung được ghi hình Content Understanding phân chia, phiên âm và chuẩn bị để tìm kiếm."
+ }
+}

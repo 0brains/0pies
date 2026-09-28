@@ -1,0 +1,50 @@
+{
+ "dp-01": {
+  "a.text": "Un modèle de crédit voit une vague de candidats d'une nouvelle région. Pour tout profil de revenus, emploi et antécédents donnés, les taux de défaut sont exactement ce que le modèle attend.",
+  "a.why": "Les entrées se sont déplacées dans un nouveau territoire mais la règle est intacte. Plus de données d'entraînement représentatives la fixent ; une nouvelle règle n'est pas nécessaire.",
+  "b.text": "Un modèle de crédit voit la même vague de candidats d'une nouvelle région. Pour un profil de revenus, emploi et antécédents identique, les taux de défaut y sont le double de ce que le modèle attend.",
+  "b.why": "Les entrées identiques produisent maintenant des résultats différents, donc P(Y|X) a changé. Aucune quantité de rééquilibrage du mélange d'entrées ne fixera une relation qui ne tient plus."
+ },
+ "dp-02": {
+  "a.text": "L'erreur d'un modèle de tarification monte un mardi. L'enquête découvre qu'un concurrent a lancé une campagne de réduction agressive ce matin-là.",
+  "a.why": "Un vrai changement dans le monde a altéré la relation que le modèle encode. La rééducation sur les données post-changement est la réponse correcte.",
+  "b.text": "L'erreur d'un modèle de tarification monte un mardi. L'enquête découvre que le travail ETL de nuit a commencé à écrire le prix de liste dans le champ qui contenait auparavant le prix net.",
+  "b.why": "Rien sur le comportement de tarification n'a changé — le modèle se voit remettre une quantité différente sous le même nom. La rééducation ici cuit le défaut et le cache."
+ },
+ "dp-03": {
+  "a.text": "Sur six mois, un modèle de fraude se dégrade alors qu'un ancien motif d'attaque est progressivement remplacé par un nouveau. Pendant toute la période, les deux motifs arrivent en volume.",
+  "a.why": "Deux concepts distincts se chevauchant dans le temps, avec le poids du mélange se déplaçant. Un ensemble qui garde un modèle par concept gère cela bien.",
+  "b.text": "Sur six mois, un modèle de fraude se dégrade alors que les attaquants ajustent en continu les montants des transactions vers le haut par petites étapes, sans ancien et nouveau motif distinct à aucun moment.",
+  "b.why": "Un concept se déplaçant régulièrement à travers des états intermédiaires. Une fenêtre de rééducation glissante le suit ; la machinerie de commutation de concept n'a rien à commuter."
+ },
+ "dp-04": {
+  "a.text": "Un modèle de dépistage est déployé à une nouvelle clinique. Les patients sont plus jeunes et plus en forme que la population d'entraînement, et la prévalence de la maladie est inchangée.",
+  "a.why": "La distribution des caractéristiques s'est déplacée alors que le mélange des résultats ne l'a pas fait. La préoccupation est l'extrapolation dans les régions d'entrée faiblement couvertes.",
+  "b.text": "Un modèle de dépistage est déployé à une nouvelle clinique. Les patients ressemblent démographiquement de manière identique à la population d'entraînement, mais la prévalence de la maladie est un quart de ce qu'elle était.",
+  "b.why": "P(Y) s'est déplacé avec P(X|Y) intacte, donc le classement du modèle fonctionne toujours mais ses probabilités sont systématiquement trop élevées. Correction préalable, pas rééducation."
+ },
+ "dp-05": {
+  "a.text": "La part des scores à haut risque d'un modèle de recouvrement passe de 12 % à 25 % en un mois. Les résultats prennent quatre-vingt-dix jours à observer, aucun n'est donc disponible pour cette cohorte.",
+  "a.why": "Un changement de distribution de sortie sans étiquettes est un signal d'enquête, pas une conclusion. C'est peut-être une réponse correcte à une population véritablement plus risquée.",
+  "b.text": "La part des scores à haut risque d'un modèle de recouvrement passe de 12 % à 25 % en un mois, et la cohorte d'il y a quatre-vingt-dix jours a maintenant résolu avec la précision baissée de 18 points.",
+  "b.why": "Les étiquettes sont arrivées et la qualité a réellement chuté. Ce n'est que maintenant que la rééducation est justifiée par des preuves plutôt que par la forme d'un histogramme."
+ },
+ "dp-06": {
+  "a.text": "La précision d'un modèle logistique s'effondre chaque année dans la quinzaine avant Noël et se rétablit immédiatement après.",
+  "a.why": "Un concept connu qui revient sur un cycle. Ne retire rien : garde le modèle saisonnier et sélectionne-le par contexte.",
+  "b.text": "La précision d'un modèle logistique s'effondre dans la quinzaine suivant un changement permanent à la réglementation nationale de la livraison, et ne se rétablit jamais.",
+  "b.why": "Un changement abrupt, unidirectionnel sans retour. Le modèle pré-changement n'a pas d'utilisation supplémentaire et les données pré-changement ont une valeur limitée pour la rééducation."
+ },
+ "dp-07": {
+  "a.text": "Une équipe de modération réécrit son orientation afin qu'une catégorie de contenu limitrophe soit maintenant étiquetée « violation » où elle était auparavant « acceptable ». Le contenu arrivant est inchangé.",
+  "a.why": "Mêmes entrées, étiquettes différentes : la cartographie a été redéfinie. Chaque étiquette historique sous l'ancien orientation est maintenant partiellement incorrecte à des fins de formation.",
+  "b.text": "L'orientation d'une équipe de modération est inchangée, mais une tendance virale signifie que le contenu réellement violant passe de 2 % à 9 % de la file d'attente.",
+  "b.why": "La règle est stable ; le mélange des résultats s'est déplacé. Les seuils et la planification de la capacité ont besoin d'attention, pas la limite apprise du modèle."
+ },
+ "dp-08": {
+  "a.text": "Les scores se décalent le jour où une nouvelle version de modèle est publiée. Un exemple de référence fixe, rejeu à travers les deux versions, reproduit exactement le décalage.",
+  "a.why": "Des entrées identiques produisant des résultats différents isolent le changement au modèle. C'est l'utilisation attendue d'un exemple de référence doré au déploiement.",
+  "b.text": "Les scores se décalent le jour où une nouvelle version de modèle est publiée. Le même exemple de référence fixe, rejeu à travers les deux versions, produit des résultats identiques.",
+  "b.why": "Si le modèle est prouvablement inchangé sur des entrées fixes, les entrées en direct doivent avoir changé — et une coïncidence même le jour pointe les changements du côté données du déploiement, pas du monde."
+ }
+}

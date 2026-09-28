@@ -1,0 +1,105 @@
+{
+ "iv-ops": {
+  "hint": "Dies sind alle Bereitstellungs-Zeit-Pflichten — das System ist bereits live. Frag, welche stehende Pflicht die Szene ausübt, nicht ob etwas schiefgelaufen ist.",
+  "note": "Pre-Release-Sicherstellung (Bereitschaftsprüfungen, Test vor einem System jemals verschifft) gehört zu einem anderen Spiel. Alles auf diesem Board geschieht nach Go-Live, auf wiederkehrender oder ausgelöster Basis.",
+  "zones[0].def": "Die benannte, laufende rechtliche Pflicht, ein live System's Leistung, Fairness und Compliance gegen vorgesetzte Metriken und Schwellen zu verfolgen, mit Escallation-Regeln für wenn Ergebnisse außerhalb ihnen fallen. Es ist der Überwachungs-Plan selbst — nicht die Drift-Mathematik hinter irgendeinem einer Metrik, und nicht die unabhängige Prüfung, die später verfiziert, dass der Plan tatsächlich verfolgt wurde.",
+  "zones[1].def": "Kontrollen, die das eingesetzte System's Ausgaben oder Fähigkeiten stoppen, die zu einer Nutzung, Publikum oder Population neu bestimmt werden, das ursprüngliche Genehmigung nie erfasst — die Umbestimmung prognostizieren und es beschränken, bevor es geschieht, nicht reagieren, einmal ist es bereits öffentlich.",
+  "zones[2].def": "Vorher-vereinbarte Inhalte und Kanäle für das, was die Organisation Regulatoren, Nutzern und dem Publikum über ein live System sagt — proaktiv (Transparenz-Hinweise, System-Karten) und reaktiv (ein live Problem anerkennen) — unterscheidend von der internen Untersuchung, die Statements beschreiben.",
+  "zones[3].def": "Vor-geschriebener Autorität, Auslösern und Neustart-Kriterien zum Ziehen eines live Systems voll offline (Deactivation) oder Beschränkung auf weniger Regionen oder Funktionen (Lokalisierung) — ein Stop-oder-Beschränkungs-Entscheidung mit dokumentierten Bedingungen zum Resume, nicht das technische Fix, das folgt.",
+  "zones[4].def": "Die Vorbereitung der Leute, die ein live System fahren oder auf seine Ausgaben verlassen — Rollen-spezifische Instruktion, simulierte Praxis und protokollierte Bestätigung — daher können sie eine falsche Ausgabe fangen und wissen, wann es zu überschreiben, erneuert auf einer Kadenz, anstatt einmal beim Start geliefert.",
+  "zones[5].def": "Erkennend, Protokollierend, Triagierend und Abschließend live-System-Probleme, größer nach Schwere — von einer kleinen protokollierten Beschwerde, die für ein Muster verfolgt wird, durch zu einer formalen Antwort mit Enthalten, Root-Cause-Analyse und korrigierender Aktion.",
+  "zones[6].def": "Geplante, unabhängige Verifikation, dass ein live System's Kontrollen immer noch halten — wiederkehrende Compliance-Prüfungen und adversarische Tests, die nach Start laufen, auf einer Kadenz oder gebunden an einen Hauptwechsel — unterscheidend von der eins-Zeit-Bereitschafts-Assessment, die vor einem System je Ausverkauft läuft."
+ },
+ "iv-ops-01": {
+  "label": "Ein Hersteller wechselt leise in eine neue Modell-Version, mit keinem Hinweis zum Team, das sie einbrachte.",
+  "why": "Post-Market-Überwachung ist eine stehende rechtliche Pflicht, ein live System gegen sein Baseline zu verfolgen; ein unnounced Version-Swap ist ein Überwachungs-Plan-Fehler, unterscheidend von Issue & Incident-Management, die nur eine Datei öffnet, wenn jemand der resultierenden Schaden bemerkt hat."
+ },
+ "iv-ops-02": {
+  "label": "Eine vierteljährliche Überprüfung verfolgt Feature-Verteilungs-Drift, Eingangs-Datens-Qualitätsprobleme und Latenz/Rechnen-Last — nie den ursprünglichen Trainings-Datensatz, den das Modell mit verschifft.",
+  "why": "Offizielle Kalibrierung: Produktions-Überwachungs-Metriken sind Daten-Drift, Daten-Qualität und Latenz/Rechner-Signale — nie historische Trainings-Daten. Das Setting, das verfolgt wird, ist diese Zone's Aufgabe; unabhängig Neu-Prüfen, daß der Plan tatsächlich verfolgt wurde, ist Periodische Audits & Red-Teaming's."
+ },
+ "iv-ops-03": {
+  "label": "Escallation-Regeln route jede Metrik, die ihren Schwelle kreuzt, direkt zu einem benannten Besitzer, wer kann eine Rollback oder eine Regulator-Hinweis bestellen.",
+  "why": "Der Überwachungs-Plan nennt, wer handelt und das, was sie tun, sobald eine Schwelle ist gebrochen; Issue & Incident-Management hebt nur auf, nachdem jene Escallation feuert, zu aufzeichnen und die spezifische Frage triagieren, es nennt."
+ },
+ "iv-ops-04": {
+  "label": "Ein Zeitplans-Werkzeug, das Schichten gebaut wird, wird leise zu Scoring einzelner Angestellten's Leistung zielgerichtet.",
+  "why": "Umzielgerichtung zu unapproved Gebrauch braucht Zustimmungs-Protokolle und Gebrauch-Beschränkungen bevor es geschieht; die 'vernünftig vorsehbarer Missbrauch' Pflicht bindet Anbieter und Einbringer gleich, anders Issue & Incident-Management, die nur engagiert, einmal eine Beschwerde bereits aufgetaucht hat."
+ },
+ "iv-ops-05": {
+  "label": "Achtzehn Monate in Bereitstellung, das Team läuft eine geplante Sekunde-Ordnung-Denken Übung als Teil laufender Governance, Kartierung, wer sonst möchte jetzt dieses System's Ausgabe in ihr eigenes Workflow-Steckverbindungen.",
+  "why": "Prognostizierend Umzielgerichtung und Knock-On-Effekte ist eine wiederkehrende Post-Bereitstellungs-Governance-Aktivität, breiter als eine Zeit-und Raum-Auswirkungs-Bewertung und unterscheidend von Periodische Audits & Red-Teaming's adversarisches Test, die für Angriff, nicht für lawful-aussehend Wiederverwendung das ursprüngliche Genehmigung nie erfasst."
+ },
+ "iv-ops-06": {
+  "label": "Jede Ausgabe, das API verlassend, trägt eine Modell-Version-Tag und eine 'nicht validiert für Einstellung oder Kredit-Entscheidungen' Flagge, und jeder neue Gebrauchsfall Auslöser eine frische Überprüfung bevor Reuse ist erlaubt.",
+  "why": "Provenanz-Marker plus eine Reuse-Genehmigung-Gate stoppt Schaden-Zermalmung durch ein anderes Team's Workflow; die Kontrolle lebt, wie Ausgaben darf zu reisen, unterscheidend von Externe Kommunikationen, das ist, das gesagt wird, einmal ein Problem bereits zu Außenseitern sichtbar."
+ },
+ "iv-ops-07": {
+  "label": "Eine Beschwerde über eine falsche automatisierte Entscheidung wird über Nacht viral.",
+  "why": "Öffentlich anerkennen sofort, daß die Frage bekannt ist und unter Untersuchung; wartend für Issue & Incident-Management's interne Root-Cause-Arbeit, um zuerst zu endigen, nur macht reputativen Schaden schlimmer."
+ },
+ "iv-ops-08": {
+  "label": "Die öffentliche Statement enthüllt das System's Zweck und bekannt Einschränkungen und Halte kurz von der Methode, die die flagged Entscheidung produzierte.",
+  "why": "Enthüllung erfasst vorgesehener Zweck, Fähigkeiten und Einschränkungen, aber proprietäre Methoden bleiben aus jeder öffentlichen Statement — ein Bereichs-Grenzlinie auf dem, das diese Zone sagt, unterscheidend von der Reuse-Genehmigung-Etikett, daß Sekundäre Gebrauch-Kontrolle auf einer Ausgabe stempeln, bevor es jemals reist."
+ },
+ "iv-ops-09": {
+  "label": "Regulatoren empfangen das komplette Beweis-Paket — Auswirkungs-Bewertung, Überwachungs-Ergebnisse, benannte korrigierender Aktion-Besitzer — während die öffentliche Statement bleibt in einfacher Sprache mit kein technischer Root-Grund noch.",
+  "why": "Die gleiche zugrundeliegende Aufzeichnung wird per Publikum tailored hier: Regulatoren erhalten Beweis, das Publikum erhalten Rechenschaftspflicht und nächste Schritte — nie die Umkehrung, und nie die rohen Feststellungen eine Periodische Audits & Red-Teaming Übung produziert für nur interne Gebrauch."
+ },
+ "iv-ops-10": {
+  "label": "Vor-geschriebene Schwellen nennen genau wer mag ein live System offline ziehen, und die Kriterien, die müssen getroffen werden, bevor es neustartet.",
+  "why": "Dies ist die Kill-Switch-Protokoll: Vorher-vereinbarte Autorität und Neustart-Kriterien, unterscheidend von Issue & Incident-Management's unmittelbare Enthalten-Bewegung, die ein System während Problem isoliert, ohne jene Zone's dokumentierten Zeichen-Aus zum Resume brauchen. Algorithmische Methode ist der benannte Non-Faktor in der Entscheidung."
+ },
+ "iv-ops-11": {
+  "label": "Ein neues Datenschutz-Gesetz in einer Region bedeutet das System stoppt dort operierend, während es überall sonst läuft, unter einer Vorher-dokumentiert, reversible Politik.",
+  "why": "Selektiv, Jurisdiktions-Bereichs-Beschränkung ist eine andere Bewegung von einem vollen Kill-Switch, aber diese Zone besitzt beide Enden der gleichen Kontrolle — totaler Stoppt und regionale Beschränkung — anstatt, sie über separate Spiele zu spalten."
+ },
+ "iv-ops-12": {
+  "label": "Ein Voraussagend-Wartungs-System, das kritische Infrastruktur dient, wird in Stadien schrittweise phased, mit ein Human-Lauf Fallback, das es läuft neben, bis Transition ist kompllett.",
+  "why": "Absolvierte Wind-Down mit Kontinuität-Planung gehört hier, weil der Auslöser ein stehender Sicherheits-Bedenken ist, das auf einer Zeitplan-Verwaltung, anders Issue & Incident-Management, deren Enthalten-Schritt zu einem einzigen Frage geschieht gerade jetzt antwortet."
+ },
+ "iv-ops-13": {
+  "label": "Kliniker halten KI's Vertrauens-Scores falsch zu lesen, daher das Team arrangiert Simulations-basiert Coaching mit eine laufend Mentor-Paarung.",
+  "why": "Rollen-spezifische Instruktion mit Hände-auf-Praxis und fortlaufend Unterstützung spricht zu ein Skills-und-Vertrauens-Lücke, daß ein eins-off-Zertifikat-Examen würde nur Test-Kenntnisse gegen, nicht Bild; dies ist eine stehend Lehrplan, nicht die Vertrauens-Score-Anzeige selbst, das ist ein Produkt-Merkmal."
+ },
+ "iv-ops-14": {
+  "label": "Underwriters werden gesagt, ihre eigenen Urteil zum Modell's ursprünglicher Empfehlung zu anwenden, bevor es wird endgültig.",
+  "why": "Dies ist die Mensch-Aufsicht-Gewohnheit das Lehrplan ist gemeint zu instill; eine Recht-zu-Appell-Hinweis oder eine Feedback-Umfrage sind mehr passiv und setzen nicht eines Menschen Urteil voran vom automatisiert Ausgabe, das Weg dies tut."
+ },
+ "iv-ops-15": {
+  "label": "Bevor System-Zugang erneuert wird, jeder Reviewer vervollständigt ein Szene-Bohrung und unterschreiben eine Bestätigung, daß sie verstehen das Werkzeug's statuiert Einschränkungen.",
+  "why": "Zwingend, protokolliert Bestätigung gebunden zu erneuert Zugang ist das, das macht dies eine durchsetzbar Kontrolle anstatt ein eins-Zeit-Orientierung — Beweis ein Auditor kann prüfen, anders Issue & Incident-Management's Berichts-Kanäle, die existieren, um eine Frage oberflächlich zu machen, nicht zu zertifizieren Bereitschaft vorher."
+ },
+ "iv-ops-16": {
+  "label": "Wiederholte niedrig-Schwere Mispredictions erhalten protokolliert und beobachtet für ein Muster, bevor Jeder escallates.",
+  "why": "Dies ist die Niedrigere-Schwere-Spur — protokolliert, triagiert und getrended, escallating nur wenn das Muster andauert. Die Aufspaltung von der Höher-Schwere-Spur dreht sich auf Skala von Schaden und rechtlich Aussetzung, nicht auf ob ein Fehler überall stattfand; es bleibt hier, anstatt zu Periodische Audits & Red-Teaming zu bewegen, daß Kontrollen auf einer Zeitplan verifiziert, nicht auf eine pro-Fehler-Basis."
+ },
+ "iv-ops-17": {
+  "label": "Betrugs-Erkennungs ist wild über-Flagge legitime Transaktionen; die sehr erste Bewegung ist das System offline ziehen, bevor Jeder fängt die Root-Cause-Arbeit.",
+  "why": "Enthalten — das System sofort isolierend — ist diese Zone's erste Antwort-Schritt in ein live Problem, unterscheidend von Deactivation & Lokalisierung, die den Vorher-vereinbarte Autorität besitzt und dokumentierten Neustart-Kriterien, die eine Stilllegung rechtens und reversible im ersten Platz machen."
+ },
+ "iv-ops-18": {
+  "label": "Ein Bias-Befund sitzt bei 1.8%, genau unter den 2% Escallation-Auslöser — das Team öffnet die formale Antwort-Spur je da geschützte Klasse beeinflusst ist.",
+  "why": "Schwere-Schwellen Führer aber nicht Überschreiben Urteil, wenn eine geschützte Gruppe beeinflusst ist: der Befund erhalten die voll Formale-Antwort-Spur, anstatt zu sein protokolliert als ein weniger Item und links zum Trend, das ist die Behandlung ein unter-Schwelle, Nicht-geschützt-Klasse-Befund würde erhalten."
+ },
+ "iv-ops-19": {
+  "label": "Zwölf Monate nach Start, eine Außenseite-Crew Re-Läufe Jailbreak-Versucht gegen die live Assistent auf ein geplante Kadenz.",
+  "why": "Wiederkehrend, geplante adversarische Testung nach Bereitstellung ist diese Zone's Disziplin; die Pre-Release-Ausgabe von die gleiche Technik — die Bereitschafts-Assessment, daß vor ein System je Ausverkauft läuft — gehört zu ein ander Spiel völlig."
+ },
+ "iv-ops-20": {
+  "label": "Ein unabhängig Sekundär-Zeile-Team-Muster letztes Quartal's automatisiert Entscheidungen, Re-Läufe Fairness-Checks mit Hand, und geht durch wie die letzte Escallation tatsächlich ausgespielt.",
+  "why": "Unabhängigkeit vom Produkt-Team plus Re-Performativ Schecks, anstatt das Dashboard zu vertrauen, ist das, das dies von Post-Market-Überwachung's eigene live-Überprüfung trennt, die das Produkt-Team läuft und Mitarbeiter sich selbst."
+ },
+ "iv-ops-21": {
+  "label": "Regulatoren erwarten ein Fundament-Modell-Anbieter, um ein frisch Runde adversarialen Prüfung zu dokumentieren jedes Mal ein Hauptversion-Schiffe, auf Spitze von was läuft bevor die erste Start.",
+  "why": "Wiederkehrend Re-Testung gebunden zu ein Material-Wechsel ist ein stehend, Bereitstellungs-Zeit-Erwartung für Hochrisiko und Allzweck-Modelle — eine wiederholte Pflicht, nicht die eins-off-Tor gekreuzt einmal bei ursprüngliche Release."
+ },
+ "iv-ops-22": {
+  "label": "Bevor ein System jemals offline ist gezogen, das Team zuerst Karten jeder Vorgelagert-Zuführung und Nachgelagert-Prozess, daß verlässt auf es, und bestätigt ein Fallback ist bereit zu nehmen über die Lücke.",
+  "why": "Dies ist die Planung-Schritt, daß muß geschehen, bevor ein Stop-oder-Beschränkung-Entscheidung wird ausgeführt — unterscheidend von Issue & Incident-Management's Enthalten, die zu ein Problem reagiert schon geschehend, und von Post-Market-Überwachung's laufend Leistungs-Verfolgung, die annimmt das System bleibt live."
+ },
+ "iv-ops-23": {
+  "label": "Einmal ein System ist voll zurückgetreten, seine Daten, Modelle und Entscheidungs-Protokolle sind bewahrt, anstatt gelöscht, daher ein Regulator oder Auditor kann rekonstruieren das, das es tat Jahre später.",
+  "why": "Bewahrung ist Teil des Herunterfahren-Aufzeichnung sich, das besitzt von der gleiche Autorität, daß das System offline zog — anders Issue & Incident-Management's CAPA-Protokoll, daß Spuren-Verwerten zu ein spezifisch Frage, und anders Post-Market-Überwachung, daß nur verfolgt ein System, während es ist noch live."
+ }
+}

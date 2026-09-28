@@ -1,0 +1,110 @@
+{
+ "i-uniq": {
+  "hint": "Zapytaj, co konkretnie się nie powodzi: czy człowiek nie może widzieć w (Nieprzejrzystość), czy nie może śledzić struktury nawet z pełnym dostępem (Złożoność)? Czy system działał bez pytania (Autonomia), czy zadanie, które osoba robiła ręcznie, po prostu zniknęło w systemie (Automatyzacja)? Czy system zmienił się po nauce (Adaptacyjność), czy wada była wbita w to, czego nauczył się w pierwszej kolejności (Zależność od danych)? Czy ten sam wkład dał inną odpowiedź (Probabilistyczne wyniki), czy mały błąd rozprzestrzeniał się szybciej niż ktokolwiek mógł go złapać (Szybkość i skala)?",
+  "note": "To kanoniczny ośmioelementowy rejestr egzaminu. Osiem stałych stref oznacza, że większość sześciokartowych transakcji pozostawia jedną lub dwie strefy puste — oczekiwane, nie bug. Automatyzacja i Autonomia to para najwarta spowolnienia: Automatyzacja dotyczy czyich rąk robiły pracę (zastępowanie zadań, nadmierna poleganie, zakłócenia siły roboczej); Autonomia dotyczy tego, kto podejmuje decyzję (niezależne decyzje bez zatwierdzenia człowieka).",
+  "zones[0].def": "Logika wewnętrzna, którą nie można zobaczyć ani wyjaśnić, nawet przez osoby, które ją zbudowały — niepowodzenie widoczności. Inaczej niż Złożoność: nieprzejrzystość dotyczy tego, co jest ukryte z widoku, a nie tego, jak zawiła jest struktura.",
+  "zones[1].def": "System decyduje i działa sam, bez zatwierdzenia człowieka dla tej konkretnej akcji — ryzyko niezależności działania. Inaczej niż Automatyzacja: autonomia dotyczy tego, kto podejmuje decyzję, a nie czyich rąk robiły pracę.",
+  "zones[2].def": "Ciągłe uczenie się i przeucze mogą odciągnąć system z jego oryginalnych celów, lub sprawić, że będzie cicho tracić możliwości, które już miał.",
+  "zones[3].def": "AI przejmuje zadania i decyzje, które osoba robiła ręcznie, w skali, którą żaden zespół ludzki nie mógł dopasować — podnoszące ryzyko nadmiernego polegania i perturbacji siły roboczej odrębne od niezależnego osądu samego systemu.",
+  "zones[4].def": "Wydajność jest tak dobra jak dane treningowe, na których się opiera — krucha na braki, zmiany i wady odziedziczone z tego, czego system się nauczył.",
+  "zones[5].def": "AI działa znacznie szybciej i na znacznie więcej instancji, niż ludzie mogą przejrzeć w czasie rzeczywistym, więc mały błąd może stać się ogromnym, zanim ktoś to zauważy.",
+  "zones[6].def": "Wyniki są pobierane z rozkładu możliwych odpowiedzi zamiast stałych reguł, więc ten sam wkład może dać inny wynik za każdym razem.",
+  "zones[7].def": "Tyle wzajemnie oddziałujących warstw i parametrów, że nawet programiści nie mogą śledzić ścieżki decyzji — niepowodzenie strukturalne. Inaczej niż Nieprzejrzystość: złożoność dotyczy tego, jak zawiła jest struktura, a nie tego, co jest ukryte z widoku."
+ },
+ "i-uq-01": {
+  "label": "Bank nie może powiedzieć regulatorowi, dlaczego jego sieć neuronowa odrzuciła tego kandydata do pożyczki.",
+  "why": "Brak widoczności w logice wewnętrznej modelu — inaczej niż Złożoność, która jest strukturą zbyt zawiła do śledzenia, a nie niemożliwością zobaczenia w ogóle."
+ },
+ "i-uq-02": {
+  "label": "Starszy menedżer ostrzega, że jeśli model zamawiania magazynu kiedykolwiek popełni kosztowny błąd, nikt nie będzie w stanie wyjaśnić później, dlaczego to się stało.",
+  "why": "Skarga polega na tym, że rozumowanie jest ukryte, a nie że model jest strukturalnie zawiły — ta sama czarna skrzynka ta strefa śledzi, a nie Złożoność strukturalna."
+ },
+ "i-uq-03": {
+  "label": "Moderator treści usuwa post według reguł, które nigdy nie zostały opublikowane, a plakat nie ma sposobu na wyjaśnienie, której reguły się zastosowała.",
+  "why": "Reguły, które istnieją, ale nigdy nie są ujawniane osobom, które wpływają na definiujące niepowodzenie tej strefy — ukryte rozumowanie, a nie struktura zbyt zawiła do śledzenia."
+ },
+ "i-uq-04": {
+  "label": "Samochód autonomiczny porusza się gęstym ruchu w centrum miasta i dokonuje każdego kierowania, hamowania i decyzji trasowania samodzielnie, bez osoby gotowej do interwencji.",
+  "why": "Wysoka niezależność działania w połączeniu z wysokim potencjalnym szkód to charakterystyczne połączenie tej strefy — odrębne od Automatyzacji, która dotyczy czyich rąk robiły pracę, a nie kto podejmuje decyzję."
+ },
+ "i-uq-05": {
+  "label": "Bot handlowy kupuje i sprzedaje akcje w milisekundach; żadna osoba nie potwierdza żadną pojedynczą transakcję, zanim się wykonana.",
+  "why": "Niezależność działania — decydowanie i działanie bez czekania na zatwierdzenie człowieka — to co ta strefa śledzi, niezależnie od tego, czy transakcja również dzieje się szybko. Odrębne od Automatyzacji, która dotyczy tego, czy osoba robiła kiedyś transakcje ręcznie, a nie kto podpisuje każdą."
+ },
+ "i-uq-06": {
+  "label": "Narzędzie do zatrudniania przesiewuje CV i przesuwa kandydatów do wywiadu lub odrzucenia, bez recruteta kiedykolwiek przeglądającego rozmowę.",
+  "why": "Obawy to, że decyzja wyszła bez zatwierdzenia człowieka — luka kontroli i odpowiedzialności, a nie zniknięcie zadania, które osoba robiła ręcznie (to jest strona Automatyzacji tej pary)."
+ },
+ "i-uq-07": {
+  "label": "Po przeucze rekomendatora na nowym katalogu produktów, cicho traci umiejętności, które miał, takie jak flagowanie duplikowanych pozycji.",
+  "why": "To katastrofalne zapomnienie — wersja mnożnika ryzyka systemu driftu od jej oryginalnych możliwości za każdym razem, gdy się uczy z nowych danych; rzeczywiste ryzyko, ale nigdy nie strefa jej własna."
+ },
+ "i-uq-08": {
+  "label": "System detekcji oszustw banku przeucze się na niedawnych transakcjach i zaczyna blokować duże liczby uzasadnionych zakupów.",
+  "why": "Drift z oryginalnego celu po przeucze — odpowiedź zarządzeniowa to monitorowanie, testowanie przed wdrożeniem aktualizacji i śledzenie dryfu, a nie jeden przegląd uruchomienia."
+ },
+ "i-uq-09": {
+  "label": "Sześć miesięcy po uruchomieniu narzędzie do rekomendacji dawki sugestie się cicho zmieniły, ponieważ zostało przeucze na danych szpitalnych zawierających błędy etykietowania.",
+  "why": "Zachowanie zmieniające się po przeucze lub ekspozycji na nowe dane to zwiastun tej strefy; naprawa to ciągłe monitorowanie, wykrywanie dryfu i bramy zatwierdzenia, zanim zaktualizowany model wejdzie na żywo."
+ },
+ "i-uq-10": {
+  "label": "Triage biletów centrum telefonicznego, kiedyś obsługiwane przez osobę czytającą każdy wniosek, jest teraz rozstrzygane od początku do końca przez system bez kogokolwiek dotykającego kolejki.",
+  "why": "To oś zastępowania pracy — zadanie, które osoba robiła ręcznie, jest teraz wykonywane przez system w dużej ilości. Odrębne od Autonomii, która dotyczy tego, kto podejmuje decyzję, a nie czyich rąk robi pracę."
+ },
+ "i-uq-11": {
+  "label": "Rozległa implementacja narzędzia do obsługi klientów usuwają potrzebę większości personelu centrum telefonicznego, niepokojąc lokalny rynek pracy.",
+  "why": "Zakłócenia siły roboczej i ekonomiczne z zastępowania ludzkiej pracy to koszty społeczne tej strefy — inny problem zarządzeniowy niż rama Autonomii kontroli i odpowiedzialności."
+ },
+ "i-uq-12": {
+  "label": "Po tym, jak system prawidłowo rozstrzygnął tysiące spraw z rzędu, regulatorzy przestają przeglądać podwójnie jej oflagowane odmowy i zaczynają zatwierdzać cokolwiek rekomenduje.",
+  "why": "Nadmierne poleganie na tym, co system tworzy — gumowanie zamiast krytycznie przeglądania — to problem zarządzeniowy ta strefa istnieje, aby złapać; to ludzka odpowiedź na zastępowanie zadań, a nie do niezależnego podejmowania decyzji systemu, które jest ryzykiem Autonomii."
+ },
+ "i-uq-13": {
+  "label": "Model sentymentu, który dokładnie przewidywał opinię publiczną podczas szkolenia, znika szaleńczo, gdy dojdzie do poważnego zdarzenia, które dane treningowe nigdy nie uchwycił.",
+  "why": "Kruchość, gdy świat odsuwa się od tego, co dane treningowe uchwycił to rdzenna awaria tej strefy — model jest tak dobry, jak to, czego się nauczył."
+ },
+ "i-uq-14": {
+  "label": "Predyktor typu skóry uczy się głównie ze świetlszych tonów skóry w swoich zdjęciach treningowych i daje niedokładne porady każdemu.",
+  "why": "Model wykonuje tylko tak dobrze, jak populacja reprezentowana w jego danych treningowych — luka w tym, czego się nauczył, a nie problem strukturalny lub widoczny."
+ },
+ "i-uq-15": {
+  "label": "Model oceny kredytowej odmawia pożyczek imigrantom o wyższym wskaźniku niż inni z identycznymi profilami finansowymi.",
+  "why": "Dane treningowe przesunęły dyskryminację historyczną, a model ją powielił — najbardziej systemowe niepowodzenie w tej strefie, ponieważ naprawianie modelu bez naprawienia danych pozostawia główną przyczynę dotknięta."
+ },
+ "i-uq-16": {
+  "label": "Błąd wyceny na jednym pozycju produktu replikuje się na milionach stron, zanim jakikolwiek człowiek to zauważy.",
+  "why": "Mały błąd, pomnożony w tempie i objętości maszyn, przewyższa przegląd człowieka i odpowiedź regulacyjną, zanim ktokolwiek może step in — charakterystyczne niepowodzenie tej strefy."
+ },
+ "i-uq-17": {
+  "label": "Kamery nadzoru przetwarzają całą transmisję wideo w czasie rzeczywistym miasta momentalnie, flagując tysiące \"niezwykłych działań\" na minutę.",
+  "why": "Objętość i tempo poza tym, co jakikolwiek ludzki recenzent mógłby nadążyć, jest tym, co sprawia, że ryzyko tej strefy inne od systemu jedynie źle rozumujący — problem to przepustowość, a nie logika."
+ },
+ "i-uq-18": {
+  "label": "Narzędzie pogorszenia pacjentów szpitala uruchamia ciągłe, wysokotonowe prognozy na każdym oddziale, a pojedyncza błędna kalibracja rozprzestrzenia się w alarm systemowy w ciągu godzin.",
+  "why": "Szybki, wysokotonowy wynik zwraca błędną kalibrację w problem systemowy, zanim personel może to złapać — przepustowość to mnożnik ryzyka tutaj, a nie bazowa logika."
+ },
+ "i-uq-19": {
+  "label": "Ten sam monit w kolejnych dniach dostaje inną rekomendację inwestycji, nie zmieniła się nic innego w żądaniu.",
+  "why": "Wyniki próbkowane z ważonego rozłożenia możliwych odpowiedzi zamiast jednej stałej reguły komplikują danie definicji wyjaśnienia dla konkretnego wyniku — ale to nie oznacza, że audyty są niemożliwe, nagrany zły wynik."
+ },
+ "i-uq-20": {
+  "label": "Jeden system na stronie kasy zawsze oblicza ten sam podatek od sprzedaży dla tego samego zamówienia; drugi system na tej samej stronie sugeruje nieco różne produkty za każdym razem strona się przeładuje.",
+  "why": "Silnik podatku jest deterministyczny — zawsze ten sam wynik dla tego samego wkładu — podczas gdy rekomendator pobiera z ważonego rozłożenia możliwych wyników za każdym razem; tylko drugie zachowanie należy do tej strefy."
+ },
+ "i-uq-21": {
+  "label": "Chatbot pytany o to samo pytanie o deser trzy oddzielne razy daje trzy różne odpowiedzi, każdy pobrane z ważonej listy wiarygodnych opcji zamiast jedną stałą regułę.",
+  "why": "Próbkowanie z ważonego rozłożenia możliwych odpowiedzi zamiast stosowania jednej ścieżki to dokładnie to co ta strefa rządzi — naprawa to kalibracja pewności i ustalanie oczekiwań, a nie traktowanie żadnej odpowiedzi jako stałej prawdy."
+ },
+ "i-uq-22": {
+  "label": "Recenzenci przyznają, że nie mogą już śledzić, które z milionów wzajemnie oddziałujących parametrów modelu faktycznie napędzały konkretną decyzję.",
+  "why": "To dotyczy struktury wewnętrznej — zbyt wiele warstw i parametrów do śledzenia — a nie o tym, czy rozumowanie jest ukryte z widoku; to jest granica z Nieprzejrzystością, która jest problemem widoczności, a nie strukturalnym."
+ },
+ "i-uq-23": {
+  "label": "Model analizy umów musi ważyć język prawny i wymagania, które różnią się między tuzinem jurysdykcji na raz, i żaden recenzent nie może trzymać całej logiki w głowie.",
+  "why": "Zawiłość strukturalna — zbyt wiele wzajemnie oddziałujących czynników do śledzenia od końca do końca — to co definiuje tę strefę, odrębne od modelu, który po prostu odmawia pokazania swojego rozumowania na wszystko."
+ },
+ "i-uq-24": {
+  "label": "Logika optymalizacji modelu trasowania dostarczenia wzrosła tak zawiła, że inżynierowie nie mogą już rozwiązywać problemów dlaczego wybrał jedną trasę zamiast innego.",
+  "why": "Zawiłość, która pokonuje nawet osoby, które ją zbudowały, to strukturalne niepowodzenie ta strefa śledzi — bliźniak Nieprzejrzystości niepowodzenia widoczności, stwierdzony jawnie, aby te dwa nigdy nie były mylone."
+ }
+}

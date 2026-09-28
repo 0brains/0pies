@@ -1,0 +1,145 @@
+{
+ "sol-01": {
+  "label": "एक सुपरमार्केट यह समझना चाहता है कि कौन सी उत्पादें अक्सर एक साथ खरीदी जाती हैं।",
+  "sub": "Market Basket Analysis",
+  "why": "एसोसिएशन लर्निंग वस्तु संयोजन खोजता है जो एक साथ होते हैं और उनके समर्थन, आत्मविश्वास और उठान को मापता है। संबंधित उत्पादों को एक साथ रखने या बढ़ावा देने के लिए टोकरी मूल्य बढ़ाएं।"
+ },
+ "sol-02": {
+  "label": "एक सदस्यता व्यवसाय अगले महीने रद्द करने की संभावना वाले ग्राहकों की पहचान करना चाहता है।",
+  "sub": "Customer Churn",
+  "why": "लक्ष्य दो संभावित वर्गों के साथ एक लेबल श्रेणी है: churn या retain। चर्न संभावना के साथ ग्राहकों पर ध्यान केंद्रित करें retention प्रस्तावों पर।"
+ },
+ "sol-03": {
+  "label": "एक संपत्ति मंच एक नई सूची की बिक्री मूल्य का आकलन करना चाहता है।",
+  "sub": "House Price Estimation",
+  "why": "प्रतिगमन इनपुट विशेषताओं और संख्यात्मक लक्ष्य के बीच संबंध सीखता है। प्रत्येक संपत्ति के लिए डेटा-सूचित मूल्य अनुमान प्रदान करें।"
+ },
+ "sol-04": {
+  "label": "एक खुदरा विक्रेता पूर्वनिर्धारित लेबल के बिना प्राकृतिक ग्राहक समूहों की खोज करना चाहता है।",
+  "sub": "Customer Segmentation",
+  "why": "क्लस्टरिंग unsupervised लर्निंग है जो लेबल किए गए परिणामों के बिना similarity के आधार पर रिकॉर्ड को समूहीकृत करता है। विशिष्ट आचरण सेगमेंट के लिए कस्टमाइज किए गए प्रचार बनाएं।"
+ },
+ "sol-05": {
+  "label": "एक कारखाना टूटने से पहले असामान्य मशीन व्यवहार की पहचान करना चाहता है।",
+  "sub": "Equipment Failure Signals",
+  "why": "Anomaly detection मॉडल सामान्य व्यवहार करता है और अवलोकनों को फ्लैग करता है जो इससे विचलित होते हैं। असामान्य उपकरणों की जांच जल्दी करें और अनियोजित डाउनटाइम को कम करें।"
+ },
+ "sol-06": {
+  "label": "एक वितरक को अगली तिमाही के लिए साप्ताहिक मांग अनुमान चाहिए।",
+  "sub": "Demand Planning",
+  "why": "पूर्वानुमान स्पष्ट रूप से समय के साथ क्रमबद्ध अवलोकनों को मॉडल करता है, प्रवृत्ति और seasonality सहित। अपेक्षित मांग के आसपास inventory और staffing योजना बनाएं।"
+ },
+ "sol-07": {
+  "label": "एक स्ट्रीमिंग मंच प्रत्येक उपयोगकर्ता को सामग्री का सुझाव देना चाहता है जो वे आनंद लेने की संभावना रखते हैं।",
+  "sub": "Personalized Media",
+  "why": "सिफारिश प्रणालियां उपयोगकर्ता, आइटम और बातचीत पैटर्न से affinity सीखते हैं। एक व्यक्तिगत रैंक किए गए सूची प्रस्तुत करते हैं जो खोज और सम्मोहन में सुधार करता है।"
+ },
+ "sol-08": {
+  "label": "एक उत्पाद टीम ट्रैक करना चाहता है कि क्या ग्राहक समीक्षाएं positive, neutral या negative हैं।",
+  "sub": "Review Sentiment",
+  "why": "Text classification भाषा को विशेषताओं में परिवर्तित करता है और पूर्वनिर्धारित लेबल की भविष्यवाणी करता है। sentiment प्रवृत्तियों की निगरानी करें और negative प्रतिक्रिया को ध्यान के लिए route करें।"
+ },
+ "sol-09": {
+  "label": "एक उत्पादन लाइन यह तय करने की जरूरत है कि क्या प्रत्येक component छवि स्वीकार्य या दोषपूर्ण है।",
+  "sub": "Visual Quality Control",
+  "why": "Image classification एक पूरी छवि के लिए श्रेणी की भविष्यवाणी करता है। संभावित दोषों को स्वचालित रूप से निरीक्षण के लिए अलग करें।"
+ },
+ "sol-10": {
+  "label": "एक vehicle-assistance प्रणाली कैमरा फ्रेम में दिखाई देने वाले हर pedestrian को खोजना होगा।",
+  "sub": "Pedestrian Safety",
+  "why": "Object detection भविष्यवाणी करता है कि क्या वस्तुएं मौजूद हैं और प्रत्येक कहाँ दिखाई देता है। Pedestrians को locate करें ताकि डाउनस्ट्रीम सुरक्षा प्रणालियां प्रतिक्रिया कर सकें।"
+ },
+ "sol-11": {
+  "label": "कर्मचारियों को अक्सर बदलती आंतरिक नीतियों में grounded उत्तर चाहिए जिनमें source संदर्भ हैं।",
+  "sub": "Current Policy Assistant",
+  "why": "RAG अनुरोध समय पर relevant external संदर्भ को retrieve करता है और इसे generative मॉडल को supply करता है। वर्तमान नीतियों से traceable सहायक स्रोतों के साथ जवाब दें।"
+ },
+ "sol-12": {
+  "label": "एक भाषा मॉडल को लगातार एक स्थिर specialist प्रारूप और tone में रिपोर्ट produce करनी चाहिए।",
+  "sub": "Consistent Specialist Style",
+  "why": "Fine-tuning उदाहरणों से मॉडल व्यवहार को update करता है और स्थिर style या task अनुकूलन के लिए उपयोगी है। रिपोर्ट generate करें जो लगातार specialist पैटर्न का पालन करता है।"
+ },
+ "sol-13": {
+  "label": "एक general भाषा मॉडल को नाम, तारीखें और कुल राशि को strict JSON वस्तु के रूप में return करना चाहिए।",
+  "sub": "Structured Extraction",
+  "why": "Few-shot prompts मॉडल context के अंदर expected कार्य और प्रारूप को demonstrate करते हैं। minimal setup के साथ consistently structured output produce करें।"
+ },
+ "sol-14": {
+  "label": "एक robot को क्रियाओं को आजमाकर एक changing warehouse के माध्यम से efficient मार्गों को सीखना होगा।",
+  "sub": "Warehouse Navigation",
+  "why": "Reinforcement learning पुरस्कार और दंड के रूप में व्यक्त की गई प्रतिक्रिया के माध्यम से कार्य विकल्पों को improve करता है। गति और सुरक्षा को संतुलित करते हुए dynamically navigate करें।"
+ },
+ "sol-15": {
+  "label": "एक marketing टीम written creative briefs से नई उत्पाद छवियां create करना चाहता है।",
+  "sub": "Campaign Artwork",
+  "why": "Diffusion मॉडल एक prompt पर conditioned एक gradual noising प्रक्रिया को reverse करने के लिए सीखकर छवियां generate करते हैं। natural-language विवरणों से मूल campaign अवधारणाएं create करें।"
+ },
+ "sol-16": {
+  "label": "एक public लाभ को केवल तब अनुमोदित किया जाना चाहिए जब fixed कानूनी शर्तें set होंi।",
+  "sub": "Statutory Eligibility",
+  "why": "एक fixed rule engine पसंदीदा है जब required परिणाम exact, explainable और पूरी तरह specified हो। सुसंगत निर्णय produce करें जो सीधे नीति के लिए traced किए जा सकते हैं।"
+ },
+ "sol-17": {
+  "label": "एक टीम के पास एक ऐतिहासिक dataset है और एक model develop करना चाहता है बिना अपनी performance को overstate किए।",
+  "sub": "Honest Model Evaluation",
+  "why": "Training data parameters सीखता है, validation data मॉडल और hyperparameter विकल्पों को guide करता है, और untouched test data अंतिम generalization का आकलन करता है। विकास के दौरान मॉडल की तुलना करें जबकि ईमानदार अंतिम मूल्यांकन preserve करते हुए।"
+ },
+ "sol-18": {
+  "label": "एक help desk नई tickets को अपनी support टीम द्वारा defined categories में route करना चाहता है।",
+  "sub": "Known Ticket Categories",
+  "why": "Supervised learning labeled उदाहरणों का उपयोग करके सीखता है कि inputs पूर्वनिर्धारित जवाबों से कैसे संबंधित हैं। नई tickets को appropriate support queue में automatically route करें।"
+ },
+ "sol-19": {
+  "label": "एक music सेवा advance में groups decide किए बिना listener behavior types की खोज करना चाहता है।",
+  "sub": "Unknown Listening Patterns",
+  "why": "Unsupervised learning डेटा में पैटर्न की खोज करता है जिसमें कोई पूर्वनिर्धारित label या numeric target नहीं है। उपयोगी listener segment reveal करें जो product research और personalization के लिए।"
+ },
+ "sol-20": {
+  "label": "एक टीम के पास billions वाक्य हैं लेकिन बहुत कम manually labeled भाषा डेटा है।",
+  "sub": "Learning Language at Scale",
+  "why": "Self-supervised learning raw डेटा से labels create करता है, जैसे masking tokens और मॉडल को उन्हें reconstruct करने के लिए training करता है। आम representations build करें जिन्हें बाद में बहुत कम labeled डेटा के साथ adapt किया जा सके।"
+ },
+ "sol-21": {
+  "label": "एक भाषा मॉडल capable है लेकिन अक्सर ऐसी प्रतिक्रियाएं produce करता है जिन्हें लोग unhelpful या poorly aligned के रूप में judge करते हैं।",
+  "sub": "Aligning an Assistant",
+  "why": "RLHF human preferences से reward मॉडल सीखता है और फिर उस reward की ओर मॉडल व्यवहार को optimize करता है। ऐसी प्रतिक्रियाएं produce करें जो मानव की उम्मीदें और निर्देश बेहतर reflect करती हैं।"
+ },
+ "sol-22": {
+  "label": "एक मॉडल training accuracy में 99% तक पहुंचता है लेकिन validation accuracy में केवल 68%।",
+  "sub": "Memorized Training Examples",
+  "why": "gap overfitting और high variance को signal करता है; complexity को सीमित करना या memorization से पहले रोकना unseen performance में सुधार कर सकता है। validation और production performance को मजबूत करने के लिए थोड़ा training performance trade करें।"
+ },
+ "sol-23": {
+  "label": "एक small मॉडल अपने training डेटा और validation डेटा दोनों पर poorly perform करता है।",
+  "sub": "Model Too Simple",
+  "why": "Training डेटा पर भी poor performance underfitting और high bias को indicate करता है; richer features, अधिक capacity, या लंबे समय के लिए training सहायक हो सकता है। useful signal को represent करने के लिए काफी complex मॉडल सीखें।"
+ },
+ "sol-24": {
+  "label": "एक टीम को learning rate, batch size, tree depth और regularization strength को select करना चाहिए।",
+  "sub": "Choosing Training Settings",
+  "why": "Hyperparameters parameter learning के बाहर select किए जाते हैं और validation डेटा या cross-validation का उपयोग करके compare किए जाने चाहिए। अंतिम मूल्यांकन के लिए test set को preserve करते हुए strong configuration खोजें।"
+ },
+ "sol-25": {
+  "label": "एक lender हर रात पांच मिलियन मौजूदा accounts के लिए risk को recalculate करता है।",
+  "sub": "Overnight Portfolio Scoring",
+  "why": "Batch inference stored records को एक साथ score करता है और schedule के अनुसार परिणाम produce किए जा सकते हैं। अगले business दिन से पहले update किए गए portfolio risk score generate करें।"
+ },
+ "sol-26": {
+  "label": "एक payment मंच को checkout पर waiting ग्राहक के दौरान प्रत्येक transaction का आकलन करना चाहिए।",
+  "sub": "Payment Authorization",
+  "why": "Real-time inference persistent endpoint के माध्यम से individual requests serve करता है जब low latency आवश्यक है। checkout को disturb किए बिना transaction को approve, decline या review करें।"
+ },
+ "sol-27": {
+  "label": "एक screening मॉडल clinicians को support करता है जहाँ genuine case को miss करना false alarm की review करने की तुलना में बहुत अधिक हानिकारक है।",
+  "sub": "Rare Disease Screening",
+  "why": "Recall actual positives के अंश को measure करता है जो found हैं; imbalanced डेटा पर accuracy high दिख सकता है जबकि rare cases को miss करता है। dangerous false negatives को minimize करने के लिए threshold और मॉडल select करें।"
+ },
+ "sol-28": {
+  "label": "एक manager total sales by region चाहता है और अंतिम महीने से percentage change।",
+  "sub": "Monthly Sales Summary",
+  "why": "Grouping, summing और percentage change calculate करना deterministic analytics कार्य हैं जिनके लिए कोई learning या prediction की आवश्यकता नहीं है। एक exact, auditable रिपोर्ट produce करें database query या business-intelligence calculation के साथ।"
+ },
+ "solution-builder": {
+  "hint": "डेटा और desired output पढ़ो, फिर प्रत्येक scenario को अपने technique पर खींचो।"
+ }
+}

@@ -1,0 +1,69 @@
+{
+ "pr-001": {
+  "label": "\"तुम एक formal HR assistant हो। सिर्फ HR policy के बारे में questions का answer दो।\"",
+  "why": "Persona plus scope guardrails — histack का verbatim example system-prompt content का।"
+ },
+ "pr-002": {
+  "label": "\"हमेशा customer details को एक fixed JSON shape में return करो।\"",
+  "why": "Output-format rules turns के across persist होते हैं — exam material verbatim states करता है कि JSON-shape instructions system prompt में belong करते हैं।"
+ },
+ "pr-003": {
+  "label": "\"इस year मेरे पास कितने vacation days बचे हैं?\"",
+  "why": "यह turn की actual request — rules नहीं, persona नहीं, सिर्फ ask।"
+ },
+ "pr-004": {
+  "label": "\"तुम्हारे पास 12 vacation days बचे हैं।\" — next request के लिए context के लिए replayed",
+  "why": "Prior model replies assistant messages के रूप में resent होते हैं ताकि model को conversational memory हो; वे कभी user content नहीं होते।"
+ },
+ "pr-005": {
+  "label": "\"Attached meeting notes को three bullet points में summarize करो।\"",
+  "why": "यह turn के लिए एक one-off task — यह एक instruction जैसा sound करता है, लेकिन यह एक persistent rule नहीं है, ताकि यह user है, system नहीं।"
+ },
+ "pr-006": {
+  "label": "\"अगर एक request HR policy से outside fall करता है, तो ऐसा कह दो बजाय guessing के।\"",
+  "why": "एक fallback rule out-of-scope requests को handle करने के लिए, applied हर turn — exam का verbatim 'system prompt में एक good addition' pattern, pr-001 के persona/scope pair से distinct।"
+ },
+ "pr-007": {
+  "label": "\"जब तक customer अधिक detail के लिए नहीं ask करते replies को two sentences तक रखो।\"",
+  "why": "एक tone/length rule जो whole conversation पर लागू होता है एक system-prompt signal है pr-002 के format rule (pr-002) या pr-001 के scope rule (pr-001) से distinct — यह एक verbosity को govern करता है।"
+ },
+ "pr-008": {
+  "label": "\"Competitor pricing को discuss करने से refuse करो, भले ही customer insist करे।\"",
+  "why": "एक safety/topic-restriction guardrail meant survive करने के लिए हर turn को user pushback को — exam notes करता है system messages carry करते हैं app-specific restrictions platform content filters के बाहर।"
+ },
+ "pr-009": {
+  "label": "\"मेरी 3pm meeting को cancel करो और team को बताओ।\"",
+  "why": "एक command की तरह read करता है, लेकिन यह एक single request है right now को scoped — trap है instruction-shaped phrasing को एक persistent rule के लिए mistake करना।"
+ },
+ "pr-010": {
+  "label": "\"अब से, हमेशा French में answer दो।\" — customer द्वारा mid-chat में typed",
+  "why": "\"अब से\" persistent सुनता है, लेकिन कौन speaking करता है अभी भी decides role: एक request जो chat में customer द्वारा typed है एक user message है, भले ही एक को standing behavior के लिए asking करे — persistence system prompt में रहता है, user wording में नहीं।"
+ },
+ "pr-011": {
+  "label": "\"इन दो contract clauses को compare करो और किसी भी conflicts को flag करो।\"",
+  "why": "एक specific analytical task इस exchange के लिए submitted — कोई भी persona या app-wide rule नहीं set है जा रहा, ताकि यह इस turn की request है।"
+ },
+ "pr-012": {
+  "label": "\"तुम्हारे account के आधार पर, तुम्हारी subscription 14th पर renew होगी।\" — next turn पर भेजा गया ताकि model याद रखे कि यह already customer को कहा",
+  "why": "Model-generated output resent context को preserve करने के लिए एक assistant message है, customer के words नहीं — trap है replayed model output को something the user कहा के लिए mistake करना।"
+ },
+ "pr-013": {
+  "label": "\"{\\\"status\\\": \\\"resolved\\\", \\\"ticket_id\\\": \\\"48213\\\"}\" — model का structured reply previous turn से, history के रूप में carried forward",
+  "why": "JSON-shaped content pr-002 के format rule जैसा दिख सकता है, लेकिन एक rule और model के own output के एक instance अलग roles हैं — यह model का answer है replayed जा रहा, न कि एक standing instruction।"
+ },
+ "pr-014": {
+  "label": "\"क्या तुम return leg के लिए flights को भी check करना चाहते हो?\" — model का own follow-up question previous turn से, kept in context",
+  "why": "Question-shaped text को user speaking के लिए mistake किया जा सकता है, लेकिन यह question model द्वारा generated था और resent है ताकि याद रहे कि इसने ask किया — discriminator कौन originated है words, grammatical form नहीं।"
+ },
+ "pr-015": {
+  "label": "\"Step 1: Router को restart करो। Step 2: Wi-Fi से reconnect करो।\" — model की troubleshooting steps एक earlier turn से, replayed ताकि यह याद रहे कि यह already customer को कहा",
+  "why": "Numbered instructions rule-like लग सकते हैं, system prompt के साथ एक mix-up को tempting करते हुए, लेकिन ये model की own prior output हैं जो memory के लिए carried forward हो रही हैं, न कि एक persistent guardrail developer द्वारा set किया गया।"
+ },
+ "prompt-roles": {
+  "hint": "दो questions पूछो: क्या यह every turn या सिर्फ यह one को लागू होता है (persistent vs one-off)? और कौन speaking करता है — developer जो assistant को set up कर रहा है, person जो right now type कर रहा है, या model की own prior reply resent जा रही है memory के लिए?",
+  "note": "Instruction-shaped wording system prompt का proof नहीं है — एक one-off task एक command जैसा sound कर सकता है और फिर भी एक user message है। Persistence turns के across real test है।",
+  "zones[0].def": "Persona, tone, rules और guardrails — every turn के across persistent",
+  "zones[1].def": "इस turn की actual request",
+  "zones[2].def": "Prior model replies conversational memory के लिए replayed"
+ }
+}

@@ -1,0 +1,82 @@
+{
+ "lad-agent": {
+  "prompt": "에이전트의 라이프사이클을 일어나야 하는 순서로 배치해요",
+  "steps[0].label": "에이전트를 정의해요: PromptAgentDefinition(model=MODEL_NAME, instructions=..., tools=[...])",
+  "steps[0].detail": "모델 + instructions + 도구는 정의 시점에 설정돼요 — {\"deployment\":{\"model\":AGENT_NAME}}은 표준 오답이에요; 배포는 모델을 호스팅하고, 에이전트는 모델 + instructions + 도구예요",
+  "steps[1].label": "Agents 플레이그라운드에서 테스트해요",
+  "steps[1].detail": "플레이그라운드는 페르소나, 도구, 첨부 지식을 나란히 설정하고 클라이언트 코드가 에이전트를 호출하기 전에 다중 턴 행동을 시도하게 해요",
+  "steps[2].label": "저장해요: project.agents.create_version(agent_name=AGENT_NAME, definition=...)",
+  "steps[2].detail": "저장하지 않은 플레이그라운드 편집은 포털을 떠날 때 손실돼요 — create_version은 포털에서 구축했는지 코드에서 구축했는지 여부를 실제로 정의를 유지하는 거예요",
+  "steps[3].label": "스레드를 생성해요: openai.conversations.create()",
+  "steps[3].detail": "나중에 턴이 들어가는 런타임 컨테이너를 열어요 — 첫 번째 메시지가 전송되기 전에 클라이언트 앱에서 호출돼요. 에이전트 자신의 정의와는 별개예요",
+  "steps[4].label": "사용자의 메시지를 스레드에 추가해요",
+  "steps[4].detail": "턴의 콘텐츠는 스레드의 축적 메시지 히스토리에 추가돼요 — run은 아직 추가되지 않은 메시지를 처리할 수 없어요",
+  "steps[5].label": "run을 생성하고 출력을 읽어요: openai.responses.create(..., extra_body={\"agent_reference\": {...}})",
+  "steps[5].detail": "대화를 실제로 처리하고 에이전트의 다음 출력을 생성하는 호출이에요; agent_reference는 저장된 정의를 가리키는 호출별 메타데이터예요"
+ },
+ "lad-chat": {
+  "prompt": "코드 흐름을 실행해야 하는 순서로 배치해요",
+  "steps[0].label": "azure-ai-projects를 설치해요",
+  "steps[0].detail": "'프로젝트 클라이언트의 어느 패키지를 설치해야 해요?'는 고전적인 시험 문제예요 — 답은 azure-ai-projects예요",
+  "steps[1].label": "AIProjectClient(endpoint, DefaultAzureCredential())를 생성해요",
+  "steps[1].detail": "어떤 호출 전에도 엔드포인트 + 자격 증명이 둘 다 존재해야 해요; 열쇠 없는 인증 = Entra ID DefaultAzureCredential이에요",
+  "steps[2].label": "get_openai_client()를 호출해요",
+  "steps[2].detail": "프로젝트 클라이언트를 OpenAI 호환 채팅 클라이언트에 연결해요 — 제거되면 모든 것이 깨지는 라인이에요",
+  "steps[3].label": "메시지 목록을 구축해요(시스템 프롬프트가 먼저, 그 다음 사용자 프롬프트)",
+  "steps[3].detail": "규칙과 가드레일은 시스템 메시지에 있어요; 이 턴의 요청은 사용자 메시지에 있어요",
+  "steps[4].label": "chat.completions.create(model=DEPLOYMENT_NAME, messages=[...])를 호출해요",
+  "steps[4].detail": "model=는 기본 모델 이름이 아닌 자신의 배포 이름을 취해요 — 고전적인 함정이에요",
+  "steps[5].label": "response.choices[0].message.content를 읽어요",
+  "steps[5].detail": "답장 텍스트는 첫 번째 선택의 메시지에 있어요 — 코퍼스 코드 조각 질문은 여기서 끝나요"
+ },
+ "lad-cu": {
+  "prompt": "Content Understanding 워크플로우를 순서대로 배치해요",
+  "steps[0].label": "분석기를 선택하거나 정의해요: 자연어로 스키마를 설명해요(ContentAnalyzer(base_analyzer_id=..., field_schema=...))",
+  "steps[0].detail": "사전 구축 분석기 아이디(prebuilt-invoice, prebuilt-audio,...)는 일반적인 도메인을 포함해요; 커스텀 ContentAnalyzer는 필드 스키마를 통해 평문으로 원하는 필드를 이름지어요 — 추출할 내용을 설명하는 것 이상의 코드는 없어요",
+  "steps[1].label": "등록해요: client.begin_create_analyzer(...)",
+  "steps[1].detail": "분석기 정의를 어떤 콘텐츠에 대해 호출할 수 있기 전에 장기 실행 작업으로 프로비저닝해요 — 일회성 설정 단계이고, 문서당 단계가 아니에요",
+  "steps[2].label": "콘텐츠를 제출해요: client.begin_analyze(analyzer_id=..., inputs=[AnalysisInput(url=file_url)])",
+  "steps[2].detail": "각 문서/이미지/오디오/비디오 파일은 이미 등록된 분석기에 대해 자신의 begin_analyze 호출을 받아요 — 단계 2와 달리 문서별 단계예요",
+  "steps[3].label": "작업을 폴링해요: poller.result()",
+  "steps[3].detail": "begin_analyze는 poller를 반환해요; 최종 분석 출력을 기다리도록 그것의.result() 메서드를 호출해요 — 분석은 비동기이고, 동기 반환이 아니에요(시험은 그것을 '포러의 ________ 메서드를 호출해요'라고 이름지어요)",
+  "steps[4].label": "결과에서 구조화된 JSON 필드를 읽어요",
+  "steps[4].detail": "추출된 필드 — 공급업체 이름, 인보이스 날짜, 인보이스 총액, 그리고 그 이상 — 포러의 결과 페이로드에 들어가요; 이것이 Content Understanding 자신의 작업이 끝나는 곳이에요",
+  "steps[5].label": "인덱싱을 위해 Azure AI Search에 인계해요",
+  "steps[5].detail": "Content Understanding은 절대 인덱싱하거나 생성하지 않고 오직 추출만 해요; Azure AI Search는 검색/RAG에 대해 CU의 구조화된 출력을 인덱싱하는 별개의 다운스트림 서비스예요"
+ },
+ "lad-genai": {
+  "prompt": "생성 모델이 프롬프트를 텍스트로 바꾸는 순서로 단계를 배치해요",
+  "steps[0].label": "토큰화",
+  "steps[0].detail": "입력 텍스트는 토큰 — 단어 또는 부분 단어 — 으로 분할돼요. 각각 모델의 어휘에서 아이디로 매핑돼요; 다운스트림의 아무것도 이것이 일어나기 전까지는 의미가 없어요(Task 1.2)",
+  "steps[1].label": "임베딩",
+  "steps[1].detail": "각 토큰 아이디는 의미를 인코딩하는 숫자 벡터로 변환돼요 — 의미론적 유사성을 벡터 거리로 계산 가능하게 하는 같은 벡터 공간이에요",
+  "steps[2].label": "변환기 주의",
+  "steps[2].detail": "자체 주의 계층은 시퀀스의 모든 토큰에 대해 모든 다른 토큰에 가중치를 달아요 — '대부분의 현대 기초 모델을 구동하는' 역학이고, 임베딩 벡터가 이미 존재해야 해요",
+  "steps[3].label": "다음 토큰 예측",
+  "steps[3].detail": "모델은 단일 다음 토큰에 대해 전체 어휘에 대한 확률 분포를 출력해요; 온도와 top-p는 한 토큰이 샘플링되기 전에 이 분포를 다시 형성해요",
+  "steps[4].label": "역토큰화된 출력",
+  "steps[4].detail": "예측된 토큰 아이디는 텍스트로 다시 디코딩되고 한 번에 한 토큰씩 중단 조건이 만날 때까지 루프가 반복돼요 — 혼란도는 이 단계의 예측이 보류된 텍스트와 얼마나 잘 일치했는지 측정해요"
+ },
+ "lad-speech": {
+  "prompt": "Speech SDK 호출을 실행해야 하는 순서로 배치해요",
+  "steps[0].label": "SpeechConfig(subscription=key, region=region)",
+  "steps[0].detail": "모든 Speech SDK 흐름은 여기서 시작돼요 — 다음의 모든 호출을 인증하는 키/지역(또는 엔드포인트) 쌍이에요",
+  "steps[1].label": "speech_config.speech_synthesis_voice_name = \"...\"를 설정해요",
+  "steps[1].detail": "음성 선택은 config 객체에 직접 설정된 속성이에요 — 시험의 DragonHD-voice 코드 조각은 다른 객체가 그것에서 구축되기 전에 SpeechConfig 바로 뒤에 이 라인을 설정해요",
+  "steps[2].label": "AudioConfig(...) — 마이크, 파일, 또는 기본 디바이스",
+  "steps[2].detail": "음성 이름 속성과 독립적으로 구축돼요. 하지만 빠른 시작 코드 조각은 config 설정이 완료된 후에, 그것을 사용할 인식기/합성기 바로 전에만 그것을 구축해요",
+  "steps[3].label": "인식기 또는 합성기를 생성해요: SpeechRecognizer(speech_config, audio_config) / SpeechSynthesizer(speech_config)",
+  "steps[3].detail": "두 생성자 모두 이미 구축된 speech_config를 받아요(인식기는 또한 audio_config를 받아요) — 이 시점 이후 아무것도 여전히 config를 주입할 수 없어요",
+  "steps[4].label": "recognize_once() / speak_text_async(text)를 호출해요",
+  "steps[4].detail": "recognize_once()는 한 짧은 발화를 캡처해요(연속 인식과 달리); speak_text_async()는 실제로 텍스트를 재생해요 — 비동기 미래/.get() 패턴은 여기에 속해요, 마지막으로, 객체가 존재하면"
+ },
+ "lad-voice": {
+  "prompt": "고전적인 음성 에이전트 파이프라인을 순서대로 배치해요",
+  "steps[0].label": "음성 텍스트 변환: 호출자의 말하는 오디오를 텍스트로 변환해요",
+  "steps[0].detail": "파이프라인 단계 하나 — recognize_once() 또는 연속 인식은 추론이 일어나기 전에 오디오를 필사본으로 바꿔요",
+  "steps[1].label": "언어 / 생성 AI 처리: 필사본에 대해 이유를 들고 텍스트 답장을 생성해요",
+  "steps[1].detail": "채팅/에이전트 호출은 필사본에 대해 이유를 들어요 — 단일 다중모달 모델(예: 오디오 입력/오디오 출력 채팅 배포)은 단계 1과 3과 함께 수축할 수 있는 단계이고, Voice Live API는 단일 낮은 지연 음성 음성 인터페이스를 가지고 모두 세 개를 한 번에 교체하도록 구축되어 있어요",
+  "steps[2].label": "텍스트 음성 변환: 생성된 답장을 오디오로 합성해요",
+  "steps[2].detail": "speak_text_async()는 생성된 답장을 재생해요 — 고전적인 파이프라인의 최종 단계이고, 단계 2의 세부 정보에서 명명된 단일 다중모달 모델 또는 Voice Live 대안에 접을 수 있어요"
+ }
+}

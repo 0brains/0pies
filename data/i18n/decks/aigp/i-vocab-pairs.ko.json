@@ -1,0 +1,62 @@
+{
+ "i-vp-01": {
+  "a.text": "Vision system이 adversarially perturbed image에서 계속 정확하게 classify해요.",
+  "a.why": "Hostile 또는 novel input을 withstand하면서 accuracy와 functionality를 유지하는 게 이 side의 온 job이예요. Model이 절대 normal performance band를 떠나지 않아요.",
+  "b.text": "Degraded sensor input 후에 system이 specified performance limit로 return해요.",
+  "b.why": "Real-world나 adversarial condition에도 defined acceptable limit 안의 performance를 maintain하고, 거기에 recover하는 게 다른 절반이예요. System이 deliberate attack을 절대 face한 적이 없더라도 resilient할 수 있어요."
+ },
+ "i-vp-02": {
+  "a.text": "Public official의 synthetic audio clip이 fabricate되고 harm을 cause할 deliberate goal로 spread돼요.",
+  "a.why": "Deliberate fabrication with harm intent는 defining feature예요. Same false content를 believe해서 share한 사람이 다른 side에 속해요.",
+  "b.text": "Blogger가 deepfake video를 authentic라고 believe하고 share해요. 그리고 fabrication이 light에 오면 record를 correct해요.",
+  "b.why": "Deceive할 intent가 없어요 — sharer가 content가 true라고 believe했어요 — 이게 deliberate-harm side와 분리돼요."
+ },
+ "i-vp-03": {
+  "a.text": "Large number의 fake, low-fare ride가 한 source에서 fare-prediction model의 training dataset으로 inject돼요.",
+  "a.why": "Model이 ever deployed되기 전에 뭐를 배울 것에서 corrupt하는 게 training-time attack이예요. 다른 side는 model이 이미 live인 후에 일어나요.",
+  "b.text": "Malicious user가 input data를 craft해서 already-deployed triage model을 fool해요. Urgent case를 non-urgent로 label하게 해요.",
+  "b.why": "Live model의 output을 inference time의 crafted input으로 fool하는 게 pair의 다른 절반이예요. Model의 training data는 touched되지 않았어요."
+ },
+ "i-vp-04": {
+  "a.text": "Documentation이 system을 building한 것이 든 data와 logic을 disclose해요. 아무도 specific outcome에 대해 물어보기 전이예요.",
+  "a.why": "이건 system의 design과 data에 대한 openness예요. System 전체의 property지 any one decision의 property가 아니어요.",
+  "b.text": "Specific applicant이 왜 그 decision이 way인지를 물어보고, organization이 walk through해줄 수 있어요. One output에서 person이 follow할 수 있는 용어로요.",
+  "b.why": "Official calibration은 decision이 decision input, output, functioning이 human beings에게 understandable할 때 explainable이라는 거예요. Per-decision property예요. Transparency의 system-wide openness와는 distinct해요."
+ },
+ "i-vp-05": {
+  "a.text": "Confidential patient data가 publicly accessible해져요. Cloud storage bucket이 misconfigured되었기 때문이고, attacker는 안 involved해요.",
+  "a.why": "Unintentional exposure through misconfiguration, malicious activity 아닌 게 이 side를 key해요.",
+  "b.text": "External actor가 deliberately access control을 bypass해서 같은 종류의 data를 obtain해요.",
+  "b.why": "Deliberate, unauthorized access by malicious actor가 다른 절반이예요. 같은 category의 harm, opposite cause예요."
+ },
+ "i-vp-06": {
+  "a.text": "Manufacturing defect-detector가 exact production-line photo 위에서 near-perfect accuracy에 도달해요. 그러고는 different factory line의 obvious crack을 miss해요.",
+  "a.why": "Excellent on training set과 poor on anything new가 이 side의 signature예요. Model이 pattern이 뭔지 배운 것보다는 specific photo를 memorize해요.",
+  "b.text": "Defect-detector가 basic image filter만 가지고 built돼요. Deeper layer는 없어요. 그래서 trained photo에서조차 crack을 miss해요.",
+  "b.why": "Everywhere에서 poor performance는 training data도 포함해서 model이 절대 pattern을 capture할 enough complexity를 가지지 못했다는 signal이예요."
+ },
+ "i-vp-07": {
+  "a.text": "Radiologist이 month의 accurate flag 후에 scan-triage tool의 low-risk call을 double-check하는 걸 멈춰요. 그리고는 그게 label하는 모든 걸 sign off하기 시작해요.",
+  "a.why": "AI output에 over-reliance without critical human oversight가 이 side의 mechanism이예요. Baked into data의 flaw가 아니라 human failure예요.",
+  "b.text": "Hiring tool이 past hiring record에서 train돼요. Minority group에서 더 많은 candidate를 reject해요. 그 record가 이미 누가 hired되었는지를 reflect했기 때문이예요.",
+  "b.why": "Flaw는 training data에서 inherit돼요. Discriminatory past로부터 pattern을 carry forward해요. Once tool이 already deployed인 output을 over-trust하는 것과는 distinct해요."
+ },
+ "i-vp-08": {
+  "a.text": "Self-driving car가 independently best route을 address로 decide해요. Driver가 provide한 거 말이에요. 근데 그 one task 밖의 다른 건 하지 않아요.",
+  "a.why": "Operating within single, limited task domain이 system을 line의 이 side로 keep해요. However capable at that task요.",
+  "b.text": "Same car가 또한 need to reason해요, learn, act across any task a human could. Just driving이 아니라 all of it으로요.",
+  "b.why": "Full human cognitive ability across domain이 다른 side가 require해요. Just one task에서 excelling이 아니라요. 그리고 그건 theoretical로 remain해요."
+ },
+ "i-vp-09": {
+  "a.text": "Governance committee가 두 vendor를 compare하고 asking해요. 각 network이 training complete한 후에 얼마나 많은 billion of weight value를 end up했는지요.",
+  "a.why": "이건 이 pair가 test하는 definitional line예요. Internal value that training이 discover하고 adjust하는 거. Exist하지 않아요 final form in until training이 done인데요.",
+  "b.text": "Same committee가 separately asking해요. Learning rate과 batch size가 뭔지 engineering team이 training이 ever began 전에 fix했어요.",
+  "b.why": "이들은 advance에서 사람이 하는 choice예요. Training run을 control하려고 말이에요. Inputs to training이지 값이 training이 discover하는 output이 아니예요."
+ },
+ "i-vp-10": {
+  "a.text": "Random forest model이 learn해요. Fraudulent과 legitimate transaction 사이의 line을 draw하려고요.",
+  "a.why": "New example를 produce하는 것보다는 existing class 사이의 boundary를 learning하는 게 이 side의 job이예요.",
+  "b.text": "Different model이 주어져요. Same transaction history. Produce해요. Entirely new synthetic transaction record를 절대 happen하지 않은 거 말이예요.",
+  "b.why": "Produce new content는 classifying existing input보다는 pair의 다른 절반이예요."
+ }
+}

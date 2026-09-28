@@ -1,0 +1,37 @@
+{
+ "inference": {
+  "hint": "Szukaj wymagania operacyjnego: czas odpowiedzi, wolumin żądania, lokalizacja urządzenia, dostęp hostowany lub zmiana między treningiem a produkcją."
+ },
+ "inference-01": {
+  "label": "Zwraca prognozę natychmiast dla interaktywnego żądania, gdzie niskie opóźnienie ma znaczenie.",
+  "why": "Zwraca prognozę natychmiast dla interaktywnego żądania, gdzie niskie opóźnienie ma znaczenie."
+ },
+ "inference-02": {
+  "label": "Przetwarza wiele przechowywanych rekordów razem, gdy natychmiastowa odpowiedź nie jest potrzebna.",
+  "why": "Przetwarza wiele przechowywanych rekordów razem, gdy natychmiastowa odpowiedź nie jest potrzebna."
+ },
+ "inference-03": {
+  "label": "Uruchamia model blisko źródła danych lub urządzenia, aby zmniejszyć opóźnienie, użycie pasma lub zależność łączności.",
+  "why": "Uruchamia model blisko źródła danych lub urządzenia, aby zmniejszyć opóźnienie, użycie pasma lub zależność łączności."
+ },
+ "inference-04": {
+  "label": "Interfejs hostowany, przez który aplikacje wysyłają wejścia i otrzymują wyniki modelu.",
+  "why": "Interfejs hostowany, przez który aplikacje wysyłają wejścia i otrzymują wyniki modelu."
+ },
+ "inference-05": {
+  "label": "Czas między przesłaniem żądania wnioskowywania a otrzymaniem jego wyniku.",
+  "why": "Czas między przesłaniem żądania wnioskowywania a otrzymaniem jego wyniku."
+ },
+ "inference-06": {
+  "label": "Liczba żądań wnioskowywania lub rekordów przetwarzanych w okresie czasu.",
+  "why": "Liczba żądań wnioskowywania lub rekordów przetwarzanych w okresie czasu."
+ },
+ "inference-07": {
+  "label": "Rozkład wejść produkcji zmienia się z danych używanych podczas treningu.",
+  "why": "Rozkład wejść produkcji zmienia się z danych używanych podczas treningu."
+ },
+ "inference-08": {
+  "label": "Relacja między wejściami a prawidłowym wyjściem zmienia się w miarę upływu czasu.",
+  "why": "Relacja między wejściami a prawidłowym wyjściem zmienia się w miarze upływu czasu."
+ }
+}

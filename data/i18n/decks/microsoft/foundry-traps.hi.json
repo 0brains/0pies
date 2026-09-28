@@ -1,0 +1,74 @@
+{
+ "ft-01": {
+  "a.text": "Platform team को एक place की जरूरत है जहाँ वह सभी AI teams के लिए shared security, connections, compute और quota को manage कर सकें।",
+  "a.why": "Hub top-level collaboration और governance container है shared resources के साथ — histack trap #3।",
+  "b.text": "एक product team को वह place चाहिए जहाँ उनके deployments, agents, data और evaluations actually रहते हैं।",
+  "b.why": "एक project एक hub के अंदर रहता है और यह है जहाँ तुम actually build करते हो — deployments, agents, data, evaluations।"
+ },
+ "ft-02": {
+  "a.text": "तुम्हारे code का pass 'chat-app-prod' — custom name जो deploy समय पर choose किया गया — chat.completions.create में model argument के रूप में।",
+  "a.why": "Deployment name — base model name नहीं — यह है जो तुम्हारे code कॉल करता है (histack का exact trap; corpus pair #19)।",
+  "b.text": "Foundry catalog gpt-4o को इसके benchmark scores के साथ list करता है कुछ भी deploy होने से पहले।",
+  "b.why": "gpt-4o catalog में base model id है; यह सिर्फ एक named deployment के through callable बन जाता है।"
+ },
+ "ft-03": {
+  "a.text": "एक developer Foundry resource के HTTPS address के साथ client को configure करता है, environment variable से read किया जाता है, ताकि हर request जानता है कि कौन सी Azure पर resource को reach करना है।",
+  "a.why": "Endpoint (azure_endpoint) वह resource address है जो SDK target करता है — यह identify करता है कि कॉल कहाँ भेजा जाता है, न कि कौन इसे भेजने के लिए allowed है।",
+  "b.text": "एक developer secret को source file से एक अलग environment variable में move करता है, ताकि credential जो caller की identity को prove करता है कभी hard-coded नहीं है।",
+  "b.why": "Credential को api_key (os.getenv('AZURE_OPENAI_KEY')) के रूप में pass किया जाता है और caller को authenticate करता है — एक privacy-and-security habit distinct routing से।"
+ },
+ "ft-04": {
+  "a.text": "एक Foundry resource एक बार एक name, instructions और attached tools के साथ create होता है, फिर बाद के many turns में reference किया जाता है same conversation को use करते हुए follow-up requests।",
+  "a.why": "एक agent एक persistent, named resource है — PromptAgentDefinition के through create किया जाता है instructions और tools के साथ, फिर बार-बार invoked।",
+  "b.text": "एक script messages=[{'role': 'user', 'content': 'Summarize this case.'}] भेजता है और एक plain completions request से एक reply वापस पाता है, server पर कुछ भी save नहीं किया जाता और कोई भी thread या tools involved नहीं होते।",
+  "b.why": "एक bare chat.completions.create एक single stateless request है — कोई भी persisted instructions, tools या identity calls के बीच survive नहीं करते।"
+ },
+ "ft-05": {
+  "a.text": "\"हमेशा customer details को एक fixed JSON shape में return करें और सिर्फ HR-policy questions का answer दें\" — हर turn के लिए एक persistent rule।",
+  "a.why": "Persona, tone, rules और guardrails system prompt में belong करते हैं — histack का 'single most-tested distinction'; planted गलत उत्तर behavior को user prompt या deployment settings में put करता है।",
+  "b.text": "\"इस quarter के absence report को मेरे लिए summarize करें\" — एक request, सिर्फ यह turn।",
+  "b.why": "User prompt इस turn की request रखता है; prior model replies replayed memory के लिए assistant messages हैं।"
+ },
+ "ft-06": {
+  "a.text": "एक model को deploy करने के बाद, एक developer एक prompt को directly Foundry portal में type करता है और screen पर reply को पढ़ता है बिना single line of Python लिखे।",
+  "a.why": "Playground Foundry का on-demand, no-code environment है rapid prototyping और validation के लिए किसी production code को exist करने से पहले।",
+  "b.text": "वही developer Code tab के snippet को copy करता है, जो एक AzureOpenAI client को construct करता है और एक Python file से chat.completions.create को कॉल करता है जो app actually run करेगा।",
+  "b.why": "Code tab तुम्हें programmatic access pattern देता है — SDK कॉल यह है जो ships, न कि portal session जो इसे validated करता है।"
+ },
+ "ft-07": {
+  "a.text": "एक prompt agent को configure किया जाता है ताकि यह हमेशा एक formal tone में respond करे और competitor pricing को discuss करने से refuse करे, चाहे user क्या भी पूछे।",
+  "a.why": "Persona और behavioral rules PromptAgentDefinition को supplied होते हैं instructions हैं — वे shape करते हैं कि एजेंट कैसे respond करता है, न कि यह क्या कर सकता है।",
+  "b.text": "वही agent को web search और file search दिए जाते हैं ताकि यह live information को look up कर सकें जो यह पहले से जानता है उस पर rely करने की जगह।",
+  "b.why": "Web search और file search Build > Tools catalog से attached होते हैं — capabilities जो एजेंट invoke कर सकता है, instructions से अलग।"
+ },
+ "ft-08": {
+  "a.text": "Model को हमेशा तुम्हारे firm के house style में answer करना चाहिए, 5,000 past examples से सीखा हुआ।",
+  "a.why": "Fine-tuning weights को examples पर retrain करता है — durable style/behavior change के लिए tool।",
+  "b.text": "Model को इस month के price list से answer करना चाहिए, जो weekly बदलता है, retraining के बिना।",
+  "b.why": "RAG inference पर retrieved current org data inject करता है — 'model को तुम्हारे own data को feeding करना ताकि answers accurate रहें'।"
+ },
+ "ft-09": {
+  "a.text": "एक batch workload को एक predictable, guaranteed processing rate की जरूरत है एक fixed hourly cost पर, advance में reserved किया जाता है चाहे कितने tokens भी actually sent हों।",
+  "a.why": "PTU dedicated hourly capacity को reserve करता है predictable, high-volume throughput के लिए — तुम reservation के लिए pay करते हो, token के लिए नहीं।",
+  "b.text": "एक interactive chat app unpredictable traffic है और pay-per-token billing की जरूरत है regional, data zone, या global processing options के साथ, hourly reserved capacity की जगह।",
+  "b.why": "Standard deployment preferred option है offering करने वाला widest range of capabilities और elastic pay-per-token pricing — exam का most-tested deployment contrast (pair #27)।"
+ },
+ "ft-10": {
+  "a.text": "तुमने supplier contracts के लिए एक custom field schema लिखा है और इसे कोई भी document process होने से पहले register करना चाहिए।",
+  "a.why": "Analyzer को define/create करना एक field schema से setup है, execution नहीं।",
+  "b.text": "Analyzer पहले से exist करता है; code इसे एक contract URL के विरुद्ध run करता है और structured result के लिए poll करता है।",
+  "b.why": "Execution है begin_analyze(analyzer_id=…, inputs=[AnalysisInput(url=…)]) — close-method-name swap जो corpus documents (pair #26) को करता है।"
+ },
+ "ft-11": {
+  "a.text": "Natural language में fields को describe करें और PDFs, images और meeting audio के mix से उन्हें structured JSON में निकालें।",
+  "a.why": "CU तुम्हें fields को natural language में describe करने देता है जबकि एक LLM multimodal input के over reason करता है — histack का cue: 'free-form या non-document input'।",
+  "b.text": "Ready-made model का use करके standard invoices और receipts के high volume से totals निकालें।",
+  "b.why": "Known form types से deterministic extraction — invoices, receipts, IDs, business cards। 'The extraction trap', histack का favorite।"
+ },
+ "ft-12": {
+  "a.text": "एक retail team shelf photos भेजता है और structured product fields जैसे name, price और quantity को अपने own schema से defined return करता है।",
+  "a.why": "Content Understanding raw, unstructured या multimodal input को specific structured output में turn करता है जिसे एक schema ask करता है।",
+  "b.text": "एक RAG chatbot को एक knowledge base की जरूरत है जिसे यह semantic similarity से query कर सकें ताकि chat model अपने उत्तरों को retrieved passages में ground कर सकें।",
+  "b.why": "Azure AI Search content को index करता है — अक्सर embeddings के through — और query time पर retrieve करता है; RAG patterns एक chat model को AI Search के साथ pair करते हैं grounding के लिए, एक document से fields extract करने से अलग job।"
+ }
+}

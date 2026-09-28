@@ -1,0 +1,21 @@
+{
+ "rag-pipeline": {
+  "prompt": "Ordonne les étapes de l'ingestion à une réponse fondée et citée.",
+  "steps[0].label": "Ingérer les documents sources de confiance",
+  "steps[0].detail": "La récupération ne peut jamais faire remonter que ce qui a été ingéré. La sélection de source est une décision de gouvernance, pas une plomberie.",
+  "steps[1].label": "Nettoyer, diviser et joindre les métadonnées",
+  "steps[1].detail": "Le chunking décide ce qu'est une unité récupérable ; les métadonnées sont ce qui rend plus tard le filtrage et l'attribution possibles.",
+  "steps[2].label": "Créer des embeddings pour chaque chunk",
+  "steps[2].detail": "Le texte devient des vecteurs. Le modèle d'embedding choisi ici restreint tout ce que le récupérateur peut distinguer.",
+  "steps[3].label": "Stocker les chunks et les vecteurs dans un index",
+  "steps[3].detail": "L'index rend la recherche de similarité tractable. Les contrôles d'accès appartiennent ici, pas seulement à la réponse.",
+  "steps[4].label": "Intégrer et interpréter la requête de l'utilisateur",
+  "steps[4].detail": "La requête est intégrée par le même modèle que les chunks, ou les deux vivent dans des espaces incomparables.",
+  "steps[5].label": "Récupérer, filtrer et reclasser les preuves",
+  "steps[5].detail": "Le rappel décide si le bon passage est disponible du tout ; le classement décide s'il survit au budget du contexte.",
+  "steps[6].label": "Construire un invite avec preuves et instructions",
+  "steps[6].detail": "Les preuves récupérées sont placées dans l'invite avec des instructions sur comment les utiliser et quand refuser.",
+  "steps[7].label": "Générer, valider et citer la réponse fondée",
+  "steps[7].detail": "Le modèle répond à partir des preuves fournies et les cite, afin qu'un lecteur puisse vérifier plutôt que de faire confiance."
+ }
+}

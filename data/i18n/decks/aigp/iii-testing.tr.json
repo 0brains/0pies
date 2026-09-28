@@ -1,0 +1,84 @@
+{
+  "iii-tb-01": {
+    "label": "Tokenizer tek başına emoji girdilerinin kırılmasız işlenmesi için kontrol edilir.",
+    "why": "Tek bileşen izolasyonu bu disiplinin tüm işidir — tokenizer girdiyi işler ya da işlemez, aşağı akışındaki herhangi bir şeyden bağımsız olarak."
+  },
+  "iii-tb-02": {
+    "label": "Farklı veri noktalarının nasıl temsil edileceğini standartlaştıran bir işlev, herhangi bir aşağı akış sistemiyle entegre edilmeden önce tamamen kendi başına kontrol edilir.",
+    "why": "Tek bir yapı taşını izole etmek, hatalar ucuzken (düzeltilmeden), milyonlarca kayıt üzerinde sessizce sonuç çarpıtmadan önce düzeltilir — disiplin çalışması bu seviyede kalır; işlev daha sonra daha büyük bir hattın parçası olarak çalışsa bile."
+  },
+  "iii-tb-03": {
+    "label": "Hatladaki özel bir puanlama rutini, bilinen girdilere karşı, satır satır doğru çıktı için kontrol edilir; sistemin geri kalanı çalışmadan önce.",
+    "why": "Bir rutinin çıktısını bilinen doğru değerlere karşı kontrol etmek, sistem tamamen inşa edilmeden önce gerçekleşir — bu en dar ve en erken kapıdır; sonraki disiplin ise birden fazla parça birlikte bağlanır."
+  },
+  "iii-tb-04": {
+    "label": "Alıcı, model ve UI baştan sona entegre olarak çalıştırılır; ortaya çıkan hatalar yalnızca bu seviyede görülür.",
+    "why": "Bileşenler birlikte çalıştığında ortaya çıkan hatalar bu disiplinin imzası — tek bir bileşen kontrolü bunu yakalayamaz."
+  },
+  "iii-tb-05": {
+    "label": "Bir envanter sisteminin parçaları kendi başlarına iyi çalışır; sonra tüm sistem bir kez çalıştığında, belirli demografik gruplarla bağlantılı ürünleri aşırı sipariş etmeye başlar.",
+    "why": "Sorun yalnızca tam sistem birleştirildiğinde ortaya çıkar; bu nedenle düzeltme de birleştirilmiş seviyeye uygulanmalıdır — bileşen başına bileşen gözden geçirme bunu tamamen kaçırdı olurdu."
+  },
+  "iii-tb-06": {
+    "label": "Bir kredi onay modeli farklı donanımlarda farklı sonuçlar döndürür; bu da yalnızca tam sistem gerçek donanımda çalıştığında ortaya çıkan kayan nokta duyarlılığı farklarından kaynaklanır.",
+    "why": "Tutarsızlık, bileşenlerin gerçek donanımda birleştirilmesinin bir sonucudur — yönetim tepkisi herhangi bir yalıtılmış parçaya uygulamak değil; tutarsızlık aralığını belgelemek ve kabul edilebilir karar sınırları belirlemektir."
+  },
+  "iii-tb-07": {
+    "label": "Eğitim verisi üzerinde harika doğruluk; hiç görmediği veriler üzerinde zayıf performans.",
+    "why": "Bu genelleştirme kontrolüdür — eğitim ve görülmemiş veri davranışı arasındaki boşluk — test/bekleme setinden farklıdır; bu tamamlandıktan sonra dokunulmadan kalır ve modelin son, tarafsız hata tahminini sağlar."
+  },
+  "iii-tb-08": {
+    "label": "Bir model eğitim setinde neredeyse mükemmel doğruluk sağlar; sonra bu setin dışındaki yeni hasta grupları işlendiğinde tutarsız performans gösterir.",
+    "why": "Eğitim-görülmemiş veri boşluğu tam olarak bu disiplinin yakalamak için var olduğu şeydir; adil olma ölçütü bunun yerine korunan gruplar arasındaki hata oranlarını aynı veri setinde karşılaştırır; bu senaryo bunu hiçbir zaman yapmaz."
+  },
+  "iii-tb-09": {
+    "label": "Bir model eğitim verilerinin hangi dilimini gördüğüne bağlı olarak çılgınca dalgalanır; diğeri ne beslenirse beslensin ortalamadan neredeyse sabit kalır.",
+    "why": "Eğitim dilimleri arasında geniş dalgalanmalar ve verilere tamamen kayıtsız yatış, bu disiplinin geliştirme sırasında izlediği iki başarısızlık imzasıdır; kimse nihai performans numarasından bahsetmeden çok önce."
+  },
+  "iii-tb-10": {
+    "label": "Yanıt süresi eşitsizliği yük altında bölgeler arasında ölçülür.",
+    "why": "İşlem zamanı eşitliği bir iş/adaleti gereksinimini ölçülebilir, önceden tanımlı bir metrike dönüştürür — korunan öznitelik çevirme kontrolünden farklıdır; bu çıktı içeriğini izler, gecikmesini değil."
+  },
+  "iii-tb-11": {
+    "label": "İstatistiksel örnekleme ve karar analizi kontrolleri, sistem çıktılarına karşı yürütülür; bunların projenin başında belirlenen doğruluk ve güvenilirlik hedeflerine uyup uymadığını doğrulamak için.",
+    "why": "İstatistiksel örnekleme ve karar analizi, sorumlu bir AI sisteminin hedeflerine uyup uymadığını test etmenin tanınmış yollarıdır; olasılık çarpı şiddet açısından bir sorunu puanlamak, bir sistem test aracı değil; risk yönetimi önceliklendirme aracıdır."
+  },
+  "iii-tb-12": {
+    "label": "Projenin aylar önce kabul ettiği adalet ve güvenilirlik rakamları, sistemin aslında bugün ürettiğine karşı kontrol edilir; herkes üzerinde anlaştığı aynı ölçütler kullanılarak.",
+    "why": "Sonuçları en iyi görünen rakamı seçmektense önceden üzerinde anlaştığı ölçütlere tutmak, bu disiplini dürüst tutup takımların sessizce çekici bir ölçüyü ayarlamasını önler."
+  },
+  "iii-tb-13": {
+    "label": "Bir yabancı kişi, belirli bir hastanın kaydının eğitim setinde olup olmadığını araştırır.",
+    "why": "Bir yabancının belirli bir kaydın eğitim setinde olup olmadığını öğrenmesi bir güvenlik testi başarısızlığıdır — genelleştirme kontrolünden farklıdır; bu görülmemiş veriler üzerinde doğruluğu umursar; eğitim setinde kimin olduğunu değil."
+  },
+  "iii-tb-14": {
+    "label": "Penetrasyon tarzı kontroller, bir saldırganın modelin ağırlıklarını çalıp eğitim verilerinin parçalarını yeniden oluşturabilmesi için yollar arar.",
+    "why": "Ağırlık hırsızlığı ve eğitim verisi yeniden yapılandırması bir saldırganın perspektifinden hedef almak, genelleştirme kontrolünden farklıdır; bu hiçbir zaman modelden bir şey çıkarmayı düşünmez."
+  },
+  "iii-tb-15": {
+    "label": "Penetrasyon testçileri, dikkatle yapılandırılmış girdilerin zaten doğru olan bir modelin tanısını yaklaşık sekizde bir durumda ters çevirebileceğini bulurlar.",
+    "why": "Yapılandırılmış ters girdiler yanlış sınıflandırma, güvenlik testi bulgusu; yönetim tepkisi bunu bilinen bir sınırlama olarak belgelemek ve giriş doğrulaması ile anomali algılaması eklemektir; kliniğin doğruluğu hedefi hâlâ tutunduğu için dalgayı parmak çekmek değil."
+  },
+  "iii-tb-16": {
+    "label": "Korunan öznitelik çevrildi, başka her şey sabit tutuldu, çıktı izlendi.",
+    "why": "Yalnız korunan bir öznitelik çevrilirse çıktının değişip değişmediğini izlemek, karşı olgusal adalet kontrolüdür — üyelik çıkarımı probundan farklıdır; bu bir kaydın eğitim setinde olup olmadığını sorular."
+  },
+  "iii-tb-17": {
+    "label": "Bir hastanenin uyum dosyası adalet kontrolleri yapıldığını ve günlüğe kaydedildiğini, artı kararların gözden geçirenlere açıklanabileceğinin kaydını gösterir — kuruluş bakım görevini yerine getirdiğine dair kanıt.",
+    "why": "Adalet ve açıklama kontrollerinin gerçekten yürütülmüş olduğunu günlüğe kaydetmek, onları savunulabilir mevzuat kanıtına çevirir — güvenlik denetim izinden farklıdır; bu saldırı direnci belgelemez; adalet belgelemez."
+  },
+  "iii-tb-18": {
+    "label": "Bir modelin kararı, klinisyenin gerçekten hareket edebileceği terimlere çevrilir; yalnızca bir olasılık puanı değil.",
+    "why": "Bir kararı paydaş kullanabileceği terimlere çevirmek, yalnızca çıplak olasılık puanı bırakmak yerine, kara kutu model bile doğruluk ve adalet rakamlarından sonra başarısız olabileceği yönenin yarısıdır."
+  },
+  "iii-testing": {
+    "hint": "Sahne ne veri kullandığından ziyade ne kontrol ettiğini sorun. Doğrulama burada yalnız bir şey anlamına gelir: model eğitildiği şeyin ötesine genelleştiriyor mu. Bir modelin son, tarafsız hata tahminini sağlayan veri seti, Pipeline Twins'te baştan sona test edilen farklı bir kavramdır.",
+    "note": "Bunlar geliştirme zamanı ve yayın öncesi kontrolleridir. Bir sistem canlı gittikten ve canlı kaldıktan sonra neler olur, farklı bir konudur.",
+    "zones[0].def": "Hattın bir bileşenini, tokenizer, normalizasyon işlevi, puanlama rutini olarak kendi başına kontrol etmek — başka hiçbir şeye bağlanmadan önce. Hatalar ucuzken yakalar.",
+    "zones[1].def": "Bileşenleri baştan sona birlikte çalıştırmak; yalnızca parçalar birleştirildiğinde ortaya çıkan başarısızlıkları izlemek — uyumsuzluklar, tıkanıklıklar veya hiçbir bireysel bileşen kendi başında göstermediği önyargı.",
+    "zones[2].def": "Eğitilen modelin eğitildiği veri dışında genelleştiriyor mu kontrol etmek: eğitim seti davranışı ile hiç görmediği veri davranışı arasındaki boşluk. Aşırı uyum karşı geliştirme zamanı kontrolü — modelin performansa son söyüsü değil.",
+    "zones[3].def": "Sistemi belirli, önceden tanımlı ölçütlere karşı ölçmek — doğruluk, güvenilirlik, adalet eşikleri — projenin iş, etik ve mevzuat hedeflerini herkesinin üzerinde anlaştığı numaralara çevirmek.",
+    "zones[4].def": "Modelin saldırıya maruz kalıp kalamayacağını araştırmak: ağırlıklar çalınır, eğitim verisi yeniden oluşturulur, çıktılar yapılandırılmış girdilerle manipüle edilir. İstemli veya yanlışlıkla riske karşı direnç.",
+    "zones[5].def": "Sonuçların korunan gruplar arasında adil olup olmadığını ve kararın bağlı olan insanlara anlamlı terimlerde açıklanıp açıklanamayacağını kontrol etmek."
+  }
+}

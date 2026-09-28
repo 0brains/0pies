@@ -1,0 +1,74 @@
+{
+ "risk-org": {
+  "hint": "Arrasta cada atividade para a linha que deveria realizá-la. O teste é a independência: quem pode classificar o seu próprio trabalho e quem não pode.",
+  "note": "As linhas falam sobre independência, não seniority ou número de pessoas. Uma função de segunda linha que reporta à equipa que supervisiona é uma função de primeira linha com um crachá diferente.",
+  "zones[0].def": "Detém e gere o risco no dia a dia: as equipas que constroem, implementam e operam o sistema.",
+  "zones[1].def": "Define política, aconselha, desafia e monitoriza — risco, conformidade, legal, uma função de governança de IA. Independente da implementação, não da gestão.",
+  "zones[2].def": "Auditoria interna. Assurance independente ao conselho sobre se as duas primeiras linhas realmente funcionam.",
+  "zones[3].def": "Define apetite, detém responsabilidade última, e é o único corpo que pode aceitar risco além dos limites delegados."
+ },
+ "ro-01": {
+  "label": "A equipa de engenharia executa a suite de avaliação de equidade antes de promover um modelo para produção.",
+  "why": "Executar controlos dentro do processo de implementação é trabalho de primeira linha. Fazê-lo bem não torna isso assurance, porque a equipa está a avaliar o seu próprio resultado."
+ },
+ "ro-02": {
+  "label": "O product owner regista um novo risco no registo e propõe um tratamento.",
+  "why": "A identificação de risco e a gestão diária ficam com as pessoas mais próximas da atividade. O registo é delas para preencherem, não da função de risco."
+ },
+ "ro-03": {
+  "label": "A equipa de operações monitoriza dashboards de drift em produção e levanta um incidente quando os limiares são ultrapassados.",
+  "why": "Operar um controlo, incluindo um de deteção, é primeira linha. Segunda linha questiona se o limiar é correto; primeira linha age quando dispara."
+ },
+ "ro-04": {
+  "label": "A equipa de ciência de dados documenta limitações do modelo e uso pretendido no model card.",
+  "why": "Produzir a documentação é uma atividade de construção. Revisar se cumpre a política é o trabalho de uma linha diferente."
+ },
+ "ro-05": {
+  "label": "A função de governança de IA escreve a política definindo quais os casos de uso que requerem uma avaliação de impacto.",
+  "why": "Definir o framework e os padrões com que a primeira linha deve trabalhar é a atividade definidora de segunda linha."
+ },
+ "ro-06": {
+  "label": "Conformidade revê uma avaliação de impacto concluída e questiona a classificação de risco residual da equipa.",
+  "why": "Questionamento independente do julgamento de primeira linha é segunda linha. É consultiva e de monitorização, e não é assurance para o conselho."
+ },
+ "ro-07": {
+  "label": "Legal aconselha que uma implementação proposta se enquadra numa área do Anexo III e portanto atrai obrigações de risco elevado.",
+  "why": "Conselho especializado que limita o que a primeira linha pode fazer é segunda linha. A decisão de avançar continua a ser da primeira linha, dentro da política."
+ },
+ "ro-08": {
+  "label": "A função de risco mantém o registo empresarial e relata exposição de risco de IA agregada ao executivo.",
+  "why": "Agregação, supervisão e relatório através da primeira linha é monitorização de segunda linha. Depende de dados de primeira linha, o que é exatamente por que existe terceira linha."
+ },
+ "ro-09": {
+  "label": "Auditoria interna examina se o processo de aprovação de modelo foi seguido para cada lançamento do último ano.",
+  "why": "Testar se os controlos funcionaram conforme concebido, após os factos e independentemente, é responsabilidade da auditoria interna."
+ },
+ "ro-10": {
+  "label": "Uma revisão independente relata ao comité de auditoria que o processo de desafio da segunda linha não é evidenciado.",
+  "why": "Terceira linha audita a segunda linha assim como a primeira, e relata ao conselho em vez de à gestão — essa linha de reporte é o que torna isso independente."
+ },
+ "ro-11": {
+  "label": "O trabalho de assurance é planeado num ciclo baseado em risco e o seu âmbito é acordado com o comité de auditoria, não com as equipas auditadas.",
+  "why": "O âmbito definido fora da gestão é a característica estrutural que separa auditoria de uma revisão de segunda linha."
+ },
+ "ro-12": {
+  "label": "Uma revisão conclui que um controlo é documentado mas nunca foi realmente realizado, e relata isso acima.",
+  "why": "Encontrar a lacuna entre documentado e efetivamente operacional é o valor que auditoria acrescenta. Nenhuma das duas primeiras linhas está posicionada para relatar isso contra si mesma."
+ },
+ "ro-13": {
+  "label": "O apetite de risco para tomada de decisão automatizada é definido e publicado.",
+  "why": "Apetite é uma declaração de nível de conselho sobre quanto risco a organização irá aceitar. Tudo abaixo é calibração contra isso."
+ },
+ "ro-14": {
+  "label": "Um risco residual que excede o limite delegado é escalado e formalmente aceite no topo da organização.",
+  "why": "Apenas o corpo que detém a autoridade pode aceitar além dos limites delegados. Aceitação noutro lugar não é aceitação; é uma exposição não registada."
+ },
+ "ro-15": {
+  "label": "Um executivo accountable é designado para o sistema de gestão de IA, com a autoridade e recursos para o fazer funcionar.",
+  "why": "Os padrões de sistema de gestão requerem responsabilidade de liderança designada. Uma função de governança sem proprietário executivo tem responsabilidade sem autoridade."
+ },
+ "ro-16": {
+  "label": "A decisão é tomada de retirar um sistema implementado após assurance relatar que o seu risco não pode ser trazido dentro do apetite.",
+  "why": "Retirada contra interesse comercial é uma decisão que apenas o nível accountable pode tomar, o que é por que a rota de escalação tem de existir antes de ser necessária."
+ }
+}

@@ -1,0 +1,110 @@
+{
+ "drift-01": {
+  "label": "Bir kredi modeli 25–60 yaş arası başvuru sahipleri üzerine eğitildi. Öğrenci pazarına yapılan bir pazarlama hareketi sonrası, başvuruların üçte biri artık 25 yaş altından geliyor. Herhangi bir profil için geri ödeme davranışı değişmedi.",
+  "why": "Girdi kombinasyonu eğitim verilerinin nadir kapsadığı bir bölgeye taşındı, ancak profil ile geri ödeme arasındaki ilişki sağlam. Bu, P(X) hareket etmiş P(Y|X) sabit kalmış demek — kovaryat kayması ve çözüm kapsama, yeni bir kurala değil."
+ },
+ "drift-02": {
+  "label": "Çoğunlukla stüdyo kayıtlarında eğitilmiş bir konuşma modeli artık gürültülü sokakların mobil telefonlarından çok sayıda çağrı alıyor. Sözcükler hala aynı anlamı taşıyor.",
+  "why": "Akustik koşullar bir girdi özelliği. Ses'ten metne eşleme değişmedi; model sadece iyi öğrendiği girdi bölgesinin dışında çalışıyor."
+ },
+ "drift-03": {
+  "label": "Bir ülkenin mağazaları üzerine inşa edilmiş bir talep modeli üç ülkeye daha dağıtılıyor. Ürünler, sezonlar ve satın alma mantığı aynı; mağaza profilleri değil.",
+  "why": "Bu, eğitim dağılımının dağıtım dağılımını kaplamadığının ders kitabı örneği. Talebin nasıl oluşturulduğu değişmedi — sadece hangi girdilerin görüldüğü."
+ },
+ "drift-04": {
+  "label": "Bir dolandırıcılık modelinin doğruluğu tek bir haftada çöküyor. Araştırmacılar belirli bir tarihte başlayan ve şimdi baskın patern olan yeni bir saldırı tekniği buluyorlar.",
+  "why": "Geçen ay meşru anlamına gelen aynı özellik değerleri şimdi dolandırıcılık anlamına geliyor. P(Y|X) değişti ve zamanın bir noktasında değişti — ani bir kavram değişimi, işlem yapan kişilerin değişimi değil."
+ },
+ "drift-05": {
+  "label": "Bir fiyatlandırma modeli, düzenleyici modelin güçlü bir müşteri segmenti sinyali olarak tedavi etmeyi öğrendiği bir ücret sınırladığında bir gecede düşüyor.",
+  "why": "Veri dışındaki bir kural değişimi özelliğin anlamını anında yeniden yapılandırıyor. Değişim sonrası veriler üzerinde yeniden eğitim çözüm; değişim öncesi hiçbir veri kurtarılamaz."
+ },
+ "drift-06": {
+  "label": "Bir içerik sınıflandırıcısı, ayın ilk günü bir platform politikası değişikliği yürürlüğe girince 'kabul edilebilir' etiketi artık moderatör kararlarıyla eşleşmeyene kadar iyi çalışıyor.",
+  "why": "Hedef tanımının kendisi bir tarihte yeniden tanımlandı. Özellikler değişmedi; yer alan gerçek onların altında taşındı."
+ },
+ "drift-07": {
+  "label": "Sekiz ay boyunca, bir değişim modeli doğruluğu, rakibin yeni planı giderek daha fazla müşteri tarafından benimsenirken azalıyor. Hem eski hem de yeni değişim dinamikleri veriler boyunca görülüyor.",
+  "why": "İki rejim bir arada var ve daha yenisi vakaların artan payını alıyor. Bu zamansal karışım kademeli sapmanın imzası ve tek bir değişim noktasının bulunamayacağı neden."
+ },
+ "drift-08": {
+  "label": "Bir öneri modeli, eski bir kullanıcı kohortu kademeli olarak farklı zevkleri olan daha genç biriyle değiştirildikçe yavaş şekilde düşüyor. Uzun bir süre her iki davranış da var.",
+  "why": "İki popülasyon iki farklı girdi-çıktı kuralı ile geçiş sırasında örtüşüyor. Hiçbir tek hafta anormal görünmediği için algılama geç oluyor."
+ },
+ "drift-09": {
+  "label": "Bir spam filtresi, gönderenlerin bir şablon ailesinden diğerine göç ettikçe bir yıl boyunca zayıflıyor, her iki şablonun da uzun bir süre bol miktarda gelmesiyle.",
+  "why": "Eski ve yeni kavramlar anahtarlama sırasında her ikisi de canlı. Artırımlı sapmaya karşılaştırın, bunun yerine iki rejim yoktur, yalnızca biri hareket etmeye devam eder."
+ },
+ "drift-10": {
+  "label": "Bir teslimat zamanı modelinin hatası, trafik tıkanıklığı aydan aya biraz kötüleştikçe istikrarlı şekilde büyüyor. Davranışın sıçradığı bir nokta ve geri dönülecek önceki bir rejim yok.",
+  "why": "İlişki, iki tanımlanmış rejim arasında değişmek yerine ara durumlar boyunca sürekli geçiyor. Yuvarlanan pencere yeniden eğitimi buna uygun; değişim noktası tespiti hiçbir şey bulamayacak."
+ },
+ "drift-11": {
+  "label": "Sensör tabanlı bir kalite modeli, bir makinenin bileşenleri aşındıkça, her hafta yüzde kesri çökerek, hiçbir süreksizlik olmadan sapıyor.",
+  "why": "Fiziksel aşınma girdi-çıktı eşlemesini sorunsuz ve monoton olarak taşıyor. Her hafta eski ve yeninin bir karışımı değil, biraz yeni bir kavram."
+ },
+ "drift-12": {
+  "label": "Bir dil modelinin konuya ilişkin doğruluğu, sözcük dağarcığı ve kullanım evole dukça aydan aya aşınıyor, hiçbir olay sorumlu değil.",
+  "why": "Değişim noktası olmayan ve dönüş olmayan kavramın sürekli, yönlü hareketi. Çare, alarm eşiği değil, yenileme temposu."
+ },
+ "drift-13": {
+  "label": "Bir perakende tahmin modeli Aralık ayında başarısız olur, Ocak ayında iyileşir ve ertesi Aralık ayında tekrar başarısız olur.",
+  "why": "Daha önce görülen bir kavram bir döngü üzerinde geri dönüyor. Doğru yanıt her kış panik içinde yeniden eğitim değil, mevsimselliği modellemek veya mevsimsel modeli tutmak."
+ },
+ "drift-14": {
+  "label": "Bir enerji talep modelinin hataları, belirsiz şekilde tekrarlanan hafta içi/hafta sonu paternini takip ediyor.",
+  "why": "Değişen rejimler her ikisi de biliniyor ve her ikisi de geri dönüyor. En son penceredeki yalnızca eğitim, hangisini en son gördüğü için modeli kalıcı olarak yanlış yapacak."
+ },
+ "drift-15": {
+  "label": "Bir personel modeli her okul tatilinde düşüyor ve sonrası normal duruma dönüyor, yıl aşırı yıl.",
+  "why": "Yinelenen bağlam. Geçmiş modelleri bağlama göre tutmak ve seçmek onları atmanın yerine daha iyidir, çünkü eski kavram geri dönmesi garantilidir."
+ },
+ "drift-16": {
+  "label": "Bir hastalık tarama modelinin pozitif oranı başarılı bir aşılama kampanyasından sonra keskin şekilde düşüyor. Semptomlar hastalığı tam olarak önceden olduğu gibi gösteriyor.",
+  "why": "Çıktının yaygınlığı düştü — P(Y) taşındı — P(X|Y) sabit kaldı. Eşikler ve herhangi bir önceki bağımlı kalibrasyon ayarlanması gerekiyor; öğrenilen ilişki değil."
+ },
+ "drift-17": {
+  "label": "İşlemlerinin %3'ü sahte olduğu zaman eğitilmiş bir dolandırıcılık modeli artık başka yerlerde tanıtılan denetimler nedeniyle %0,5'inin yanlış olduğu yerde çalışıyor. Dolandırıcılık işlemleri her zaman aynı görünüyor.",
+  "why": "Temel oran değişti, bu nedenle model yayınladığı her olasılık yanlış kalibre edildi ayrım etkilenmedi. Ön düzeltme bunu yeniden eğitim olmadan düzeltir."
+ },
+ "drift-18": {
+  "label": "Bir kusur sınıflandırıcısı %20 kusur oranına sahip bir pilot hattan %2'ye sahip olgun bir hatta taşınıyor. Kusurlar her iki tarafta da aynı şekilde mevcut.",
+  "why": "Sadece sınıf öncesi değişti. Bunu kovaryat sapması olarak okumak anlamsız özellik çalışmasına yol açar; bunu etiket kayması olarak okumak gerçekten işe yarayan eşik rekalibrasyon yol açar."
+ },
+ "drift-19": {
+  "label": "İzleme 'onayla' kararlarının payının altı hafta içinde %61'den %78'e yükseldiğini gösteriyor. Henüz etiket gelmemiş, bu nedenle kalite ölçülemez.",
+  "why": "Çıktı dağılımı taşındı. Bu bir tanı değil, bir uyarıdır: kovaryat sapması, etiket kayması, kırılmış bir beslenme veya gerçekten değiştirilmiş bir popülasyon tarafından neden olunabilir. Etiketler gecikmişken baktığınız budur."
+ },
+ "drift-20": {
+  "label": "Girdilerin dağılımı her çizelgede stabil görünürken, bir modelin ortalama tahmin edilen olasılığı istikrarlı şekilde tırmanıyor.",
+  "why": "Görünür girdi hareketi olmadan taşınan çıktılar genellikle hareketi bir özellik etkileşimi veya kimsenin izlemediği bir özellikte olduğu anlamına gelir. Bulgu gerçek; neden hala tanımlanmamış."
+ },
+ "drift-21": {
+  "label": "Bir model sürümü dağıtıldıktan sonra, gelen veriler son haftanın aynısı olmasına rağmen puan dağılımı fark edilir şekilde kaymıyor.",
+  "why": "Aynı girdiler, farklı çıktılar değişim dünyada değil, model olduğu anlamına gelir. Sürüm-sürüm tahmin sapması neden yeni bir yayın sabit bir referans örneği ile karşılaştırıldığı."
+ },
+ "drift-22": {
+  "label": "Bir gelir özelliğinin ortalaması bir gecede normale üçte birine düşüyor. Bir yukarı ekip aynı gece alanı sentten tüm birimlerine değiştirdi.",
+  "why": "Dünya değişmedi; birimi yaptı. Yeniden eğitim burada modeli bozuk değerleri normalleri olarak tedavi etmeyi öğretir ve sonraki düzeltmeyi yeni bir regresyon gibi göster."
+ },
+ "drift-23": {
+  "label": "Kategorik bir özellik aniden %40 boşluk gösteriyor. Şema değişikliği kaynak sütunu yeniden adlandırdı ve katılma şimdi ıskalanıyor.",
+  "why": "Bir pipeline kusuru bir sapma panosundaki ani sapma gibi tam olarak görünüyor. Söyleyişi değişim değişim veya şema olayı ile çakışır, dünyada herhangi bir şey ile değil."
+ },
+ "drift-24": {
+  "label": "Bir modelin girdileri bir satıcı bir API varsayılanını değiştirdiğinde, sessizce eksik değerleri hıçkırıklar atlamak yerine sıfırla değiştiren dakikada kaymıyor.",
+  "why": "'Eksik' anlamına gelen sıfırlar model tarafından gerçek, aşırı değer olarak okunuyor. Çözüm yukarı akış sözleşmesi uygulaması ve null semantikleri, asla yeniden eğitim değil."
+ },
+ "drift-types": {
+  "hint": "Her üretim semptomunu açıkladığı sapma türüne sürükleyin. Soru her zaman hangi dağılımın taşındığıdır — girdileri, etiketleri, çıktıları veya aralarındaki ilişki.",
+  "note": "Yukarı akış veri kırılması kendisine ait bir bölge alır çünkü her panosunda gerçek sapmaya özdeş görünüyor ve doğru yanıt zıt olanıdır: yemi düzeltmeyin, asla onun üzerinde yeniden eğitim yapın.",
+  "zones[0].def": "P(X) taşınıyor. Girdiler farklı görünüyor, ancak girdileri çıktılara eşleyen kural hala tutuyor.",
+  "zones[1].def": "P(Y|X) zamanın bir noktasında aniden değişir. Eski kural bir gecede uygulamayı bırakır.",
+  "zones[2].def": "Eski ve yeni kurallar birlikte var ve yeni olanı vakaların artan payında ortaya çıkıyor.",
+  "zones[3].def": "Kural kendisi iki arasında geçiş yapmak yerine ara durumlar boyunca sürekli hareket ediyor.",
+  "zones[4].def": "Daha önce görülen bir kural bir döngü üzerinde geri dönüyor. Mevsimsellik yaygın durumdur.",
+  "zones[5].def": "P(Y) taşınıyor — çıktıların karışımı değişiyor — özellikler çıktı verilen davranıştan önceki gibi davranırken.",
+  "zones[6].def": "Modelin çıktı dağılımı taşınıyor. Bu bir semptom, herhangi bir etiket olmadan gözlemlenebilir, bir tanı değil.",
+  "zones[7].def": "Dünyada hiçbir şey değişmedi. Bir boru hattı, şema, birim veya varsayılan değişti ve model bozuk girdi besleniyordu."
+ }
+}

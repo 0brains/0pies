@@ -1,0 +1,108 @@
+{
+ "cu-001": {
+  "label": "Analysiere eine Invoice-PDF und lies die extrahierten Felder Vendor, Total und Due-Date",
+  "sub": "prebuilt-invoice",
+  "why": "prebuilt-invoice extrahiert strukturierte Felder aus Invoice-Dokumenten — die am häufigsten getestete prebuilt-Analysator der Prüfung (7 Nennungen)."
+ },
+ "cu-002": {
+  "label": "Definiere dein eigenes Feldschema in natürlicher Sprache und extrahiere diese Felder aus Verträgen",
+  "sub": "custom analyzer via begin_create_analyzer",
+  "why": "Custom Analyzer werden aus einem Feldschema gebaut, das du beschreibst — CU's natürlichsprachige Feldbeschreibung ist das, was es von Document Intelligence Prebuilts unterscheidet."
+ },
+ "cu-003": {
+  "label": "Extrahiere Text und identifizierte Objekte aus fotografierten Ausrüstungsetiketten",
+  "sub": "prebuilt-image",
+  "why": "prebuilt-image extrahiert Text und Objekte aus statischen Bildern über den gleichen Analyzer-Workflow wie jede andere Modalität."
+ },
+ "cu-004": {
+  "label": "Erhalte ein Transkript plus Zusammenfassung und Sprecher-Aufschlüsselung aus aufgezeichneten Support-Anrufen",
+  "sub": "prebuilt-audio",
+  "why": "CU's Audio-Analyzer geben Transkripte, Zusammenfassungen und Sprecher zurück — Extraktion, nie Sprachsynthese."
+ },
+ "cu-005": {
+  "label": "Segmentiere aufgezeichnete Trainings-Sessions und indiziere ihre Transkripte und visuellen Ereignisse zur Suche",
+  "sub": "prebuilt-videoSearch",
+  "why": "Video-Analyzer geben Segmente, Transkripte und visuelle Ereignisse zurück; die *Search Varianten bereiten Inhalte für Abruf vor — Azure AI Search indiziert, was CU extrahiert."
+ },
+ "cu-006": {
+  "label": "Gib Text, Tabellen und Auswahlmarken mit Dokumentstruktur zurück — keine Feldsemantics",
+  "sub": "prebuilt-layout",
+  "why": "Layout extrahiert Text, Tabellen, Auswahlmarken und Struktur; Read-artiges OCR ist nur Text — Histack's CU Read-vs-Layout Unterscheidung."
+ },
+ "cu-007": {
+  "label": "Eine gemischte Charge von Vendor-Formularen muss ihre lose Key-Value-Paare extrahiert bekommen, ohne aus einem vordefinierten Feldschema zu starten",
+  "sub": "prebuilt-documentFields",
+  "why": "prebuilt-documentFields extrahiert allgemeine Key-Value-Paare aus Dokumenten ohne domain-spezifisches Schema erforderlich — anders als prebuilt-invoice's fixe Invoice-Felder."
+ },
+ "cu-008": {
+  "label": "Bevor du einen Custom Analyzer für einen nagelneu Formulartyp erstellst, bitte Content Understanding, das Feldschema vorzuschlagen, dann basiere den neuen Analyzer auf dem allgemeinen Document Analyzer",
+  "sub": "prebuilt-documentFieldSchema → prebuilt-document",
+  "why": "prebuilt-documentFieldSchema schlägt Felder für einen Dokumenttyp vor, den du noch nicht schematisiert hast; prebuilt-document ist die base_analyzer_id, die beim Definieren eines neuen Custom Document Analyzers verwendet wird — zwei distinct IDs im gleichen Custom-Build-Workflow."
+ },
+ "cu-009": {
+  "label": "Führe den Python-Quickstart gegen ein Produktfoto aus und lies die generierte Beschreibung zurück aus dem Summary-Feld des Ergebnisses",
+  "sub": "prebuilt-imageSearch",
+  "why": "prebuilt-imageSearch ist der Quickstart-Analyzer für deskriptive Bild-Ausgabe — sein Ergebnis zeigt ein Summary-Feld, das die natürlichsprachige Beschreibung hält."
+ },
+ "cu-010": {
+  "label": "Erstelle einen Custom Analyzer, der Title- und ChartType-Felder aus einer Charge von Dashboard-Screenshots extrahiert",
+  "sub": "custom analyzer via base_analyzer_id=\"prebuilt-image\"",
+  "why": "Custom Image Analyzer setzen base_analyzer_id auf prebuilt-image, bevor sie ein Feldschema überlagern — das dokumentierte Muster für Chart- und Screenshot-Extraktion."
+ },
+ "cu-011": {
+  "label": "Analysiere Regalbrett-Fotos aus einem Einzelhandels-Audit und gib strukturierte Felder für Produktanzahl, Marken-Präsenz und Ausverkauft-Indikatoren zurück",
+  "sub": "prebuilt-image",
+  "why": "Content Understanding's Image Analyzer geben schema-definierte strukturierte Felder direkt aus Fotos zurück — das Einzelhandels-Regalbrett-Szenario, das die Prüfung direkt testet."
+ },
+ "cu-012": {
+  "label": "Verkabele einen Python-Client, der begin_analyze mit analyzer_id=\"prebuilt-image\" gegen eine Foto-URL aufruft, dann lies die erkannten Objekte aus dem Ergebnis zurück",
+  "sub": "prebuilt-image",
+  "why": "Das begin_analyze(analyzer_id=..., inputs=[AnalysisInput(url=...)])-Aufrufsformat ist über Modalitäten hinweg identisch — nur die Analyzer-ID ändert sich, und prebuilt-image ist der direkte (nicht-Search) Image-Analyzer."
+ },
+ "cu-013": {
+  "label": "Verkabele einen leichtgewichtigen Python-Client, der begin_analyze mit einer Call-Recording-URL aufruft, um ein Transkript und eine Zusammenfassung auszuziehen, die für einen Retrieval Index bereit sind",
+  "sub": "prebuilt-audioSearch",
+  "why": "prebuilt-audioSearch ist die dokumentierte Analyzer-ID im SDK's Quickstart-Snippet — das *Search-Suffix kennzeichnet Ausgabe, vorbereitet für Indizierung/RAG-Retrieval, anders als prebuilt-audio's direkte Extraktion ohne Retrieval-Vorbereitung."
+ },
+ "cu-014": {
+  "label": "Ziehe Sprecher-gekennzeichnete, präzise getimte Transkript-Phrasen aus einer Charge von Podcast-Episoden",
+  "sub": "transcriptPhrases",
+  "why": "transcriptPhrases ist das Ausgabefeld, das Sprecher-Identifikation und Timing-Information trägt — eine direkte Audio-Extraktions-Ausgabe, distinct von der Analyzer-ID selbst."
+ },
+ "cu-015": {
+  "label": "Erkenne, dass das Einreichen eines Podcast-MP3 zu Content Understanding den contents-Objekt-Kind auf den gleichen Wert setzt, der für Video-Eingaben verwendet wird",
+  "sub": "kind: \"audioVisual\"",
+  "why": "Nur-Audio- und Video-Eingaben nutzen beide kind: \"audioVisual\" im contents-Schema — ein geteilter Wert, der jeden verwirrt, der ein distinct 'audio'-Kind erwartet."
+ },
+ "cu-016": {
+  "label": "Bestätige, dass das Extrahieren eines strukturierten Transkripts aus einem Voicemail-Postfach Sprache ist, die in Text eingefangen wird, nie Text, der in Sprache umgewandelt wird",
+  "why": "CU's Audio-Analyzer transkribieren existierende Sprache in strukturierte Ausgabe — sie synthetisieren nie neue gesprochene Ausgabe; dieser Job gehört zu Azure AI Speech, nicht Content Understanding."
+ },
+ "cu-017": {
+  "label": "Teile ein hochgeladenes aufgezeichnetes Produktdemo in logische Szenen-Segmente auf, bevor eine downstream Verarbeitung läuft",
+  "sub": "enableSegment",
+  "why": "enableSegment ist die Analyzer-Schema-Eigenschaft, die Aufnahmen in logische Segmente wie Szenen aufteilt — eine Video-Analyzer-Kontrolle, nicht eine Audio- oder Dokument-Kontrolle."
+ },
+ "cu-018": {
+  "label": "Nach dem Analysieren eines Marketing-Clips lies eine strukturierte Markdown-Zusammenfassung seines Transkripts und visuellen Inhalts zurück",
+  "sub": "prebuilt-videoSearch",
+  "why": "prebuilt-videoSearch-Ergebnisse zeigen ein Markdown-Feld, das Transkript und visuellen Inhalt pro Segment zusammenfasst — das dokumentierte Read-Back-Feld des SDK's für Video."
+ },
+ "cu-019": {
+  "label": "Bestätige, dass das Extrahieren von Keyframes und visuellen Ereignissen aus einer hochgeladenen Aufnahme auf Aufnahmen funktioniert, die bereits existieren, anstatt neue Frames zu generieren",
+  "why": "CU's Analyzer extrahieren Keyframes, Transkripte und visuelle Ereignisse aus Aufnahmen, die bereits existieren — sie generieren keine synthetischen Frames; das ist eine ganz andere Kategorie von KI-Service."
+ },
+ "cu-020": {
+  "label": "Verkabele einen Python-Client, der begin_analyze mit analyzer_id=\"prebuilt-videoSearch\" gegen eine hochgeladene MP4-URL aufruft",
+  "sub": "prebuilt-videoSearch",
+  "why": "Der begin_analyze(analyzer_id=\"prebuilt-videoSearch\", inputs=[AnalysisInput(url=...)])-Aufruf ist das dokumentierte SDK-Muster zum Starten von Video-Extraktion."
+ },
+ "cu-modality-grid": {
+  "hint": "Frage, welche Quelldatei es tatsächlich ist, dann prüfe die sub-Zeile auf die exakte prebuilt-* Analyzer-ID — die ID selbst benennt ihre Modalität (document/image/audio/video), und Search-suffixed IDs bereiten Ausgabe für Indizierung vor, anstatt die Modalität zu ändern.",
+  "note": "Content Understanding extrahiert immer — es generiert oder indiziert nie. Extraktion zu Azure AI Search ist ein downstream-Schritt, nicht etwas, das CU selbst tut.",
+  "zones[0].def": "PDFs, Invoices, Verträge und freiform Paperwork, die Content Understanding in strukturierte Felder, Tabellen und Text umwandelt.",
+  "zones[1].def": "Fotos, Screenshots und Charts, die Content Understanding in strukturierte Felder, Beschreibungen und erkannte Objekte umwandelt.",
+  "zones[2].def": "Aufgezeichnete Sprache — Anrufe, Podcasts und Voicemails — die Content Understanding in Transkripte, Zusammenfassungen und Sprecher-Kennzeichnung umwandelt.",
+  "zones[3].def": "Aufgezeichnete Aufnahmen, die Content Understanding segmentiert, transkribiert und zur Suche vorbereitet."
+ }
+}

@@ -1,0 +1,62 @@
+{
+ "wp-01": {
+  "a.text": "À partir des tickets de support, énumérez chaque nom de produit, personne et date mentionnés.",
+  "a.why": "Les entités identifient qui/quoi est mentionné — les gens, les dates, les organisations (histack : « catégorise des choses spécifiques »).",
+  "b.text": "À partir des mêmes tickets, déterminez si les clients se sentent positifs, négatifs ou neutres.",
+  "b.why": "La polarité d'opinion est le sentiment — la paire confuse n°1 de l'examen (17 co-occurrences)."
+ },
+ "wp-02": {
+  "a.text": "Transcrivez un enregistrement du centre d'appels afin que les agents puissent rechercher la conversation.",
+  "a.why": "Audio en, texte en sortie — reconnaissance. « Transcrire » est le verbe révélateur.",
+  "b.text": "Une application de navigation lit les instructions tour par tour à haute voix avec la voix neurale en-US-Ava.",
+  "b.why": "Texte en, audio en sortie — synthèse. SSML et les noms de voix comme en-US-Ava:DragonHDLatestNeural appartiennent uniquement à la synthèse."
+ },
+ "wp-03": {
+  "a.text": "Une application de conférence écoute un orateur français et produit des sous-titres anglais en direct pour l'audience.",
+  "a.why": "Reconnaître la parole dans une langue et la rendre dans une autre est la traduction — le signe de l'examen pour cette paire (audio-in, différente-langue-out).",
+  "b.text": "La même application produit également des sous-titres français de même langue pour un participant malentendant au premier rang.",
+  "b.why": "Audio en, texte de même langue en sortie est la parole à texte simple ; aucune langue ne traverse, donc il n'y a rien à traduire."
+ },
+ "wp-04": {
+  "a.text": "Extrayez le numéro de série imprimé sur une étiquette d'équipement photographiée.",
+  "a.why": "La reconnaissance optique des caractères/lecture extrait le texte littéral présent dans l'image — « extraire le texte lisible d'une image » est la tige de l'examen.",
+  "b.text": "Générez une description en langage naturel d'une phrase décrivant ce que la photo montre.",
+  "b.why": "Le sous-titrage (VisualFeatures.CAPTION) décrit la scène — il ne lit pas le texte qu'elle contient."
+ },
+ "wp-05": {
+  "a.text": "Une application de numérisation lit le bloc d'adresses imprimé hors d'une enveloppe photographiée dans des champs de texte structurés.",
+  "a.why": "La reconnaissance optique des caractères convertit les pixels existants en texte — l'entrée est une image, la sortie est du texte.",
+  "b.text": "Un outil de conception accepte l'invite « une icône plate d'une fusée bleue » et produit un PNG tout nouveau qui n'a jamais existé auparavant.",
+  "b.why": "La génération d'images (client.images.generate avec gpt-image-1 / DALL·E) s'exécute dans la direction opposée — invite de texte en, pixels synthétisés en sortie — le piège de retournement de direction de l'examen sur cette paire."
+ },
+ "wp-06": {
+  "a.text": "Déterminez si chaque photo téléchargée est « pièce défectueuse » ou « bonne pièce ».",
+  "a.why": "La classification attribue une étiquette à l'image entière.",
+  "b.text": "Marquez où chaque pièce s'assied sur l'image du convoyeur avec des boîtes de délimitation.",
+  "b.why": "Les boîtes de délimitation par objet sont le signe de l'examen pour la détection — la confusion classique de la vision."
+ },
+ "wp-07": {
+  "a.text": "Retournez ['tarification', 'autonomie', 'service client'] à partir d'un lot d'avis.",
+  "a.why": "Les expressions clés retournent une liste de termes importants — aucune nouvelle prose n'est écrite.",
+  "b.text": "Condensez les mêmes avis en trois nouvelles phrases capturant les commentaires généraux.",
+  "b.why": "La résumé écrit de nouvelles phrases condensées — le contraste de forme de sortie que le corpus teste (paire #14)."
+ },
+ "wp-08": {
+  "a.text": "Une application légère doit trouver et rédiger chaque adresse électronique et numéro de téléphone dans les messages client avant de les stocker.",
+  "a.why": "La détection PII est la capacité dédiée qui identifie et peut rédiger des données personnelles sensibles comme les numéros de téléphone et les adresses électroniques (l'examen l'appelle « la capacité la plus directement axée sur la confidentialité »).",
+  "b.text": "La même application étiquette également chaque personne, organisation et lieu mentionnés dans les messages pour un index consultable.",
+  "b.why": "La reconnaissance d'entités nommées est une extraction plus large entre les catégories — les gens, les lieux, les organisations — pas la fonctionnalité axée sur la rédaction dédiée que la détection PII est."
+ },
+ "wp-09": {
+  "a.text": "Une transcription de réunion doit attribuer chaque section de l'audio enregistré au participant correct.",
+  "a.why": "La diarisation identifie et sépare les orateurs au sein de l'audio entrant, étiquetant qui a parlé chaque portion de la transcription (l'examen l'appelle « attribution de l'orateur audio »).",
+  "b.text": "Une fois la transcription finalisée, une voix de narrateur lit le résumé de la réunion à haute voix pour un flux de balado.",
+  "b.why": "La synthèse convertit le texte en sortie de voix humaine — l'étape de pipeline opposée de la diarisation de l'audio existant."
+ },
+ "wp-10": {
+  "a.text": "Un développeur a besoin de sous-titrage audio en direct d'une vidéoconférence en temps réel, même langue, pour les participants malentendants.",
+  "a.why": "Azure AI Speech fournit le pipeline de parole à texte en temps réel pour l'audio en direct — le service standard pour le sous-titrage, distinct de la conversion de texte entre langues.",
+  "b.text": "Un détaillant doit convertir les descriptions de produits écrites du français en 20 autres langues en tant que texte.",
+  "b.why": "Azure AI Translator fournit la traduction automatique neurale entre les langues pour le texte — le contraste de l'examen est le service du pipeline audio par rapport au service de texte entre langues, pas un chevauchement de charge de travail (paire #29)."
+ }
+}

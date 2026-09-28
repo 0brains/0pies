@@ -1,0 +1,21 @@
+{
+  "rag-pipeline": {
+    "prompt": "Ordena las etapas desde ingesta hasta una respuesta fundamentada y citada.",
+    "steps[0].label": "Ingerir Documentos de Fuente Confiable",
+    "steps[0].detail": "La recuperación solo puede descubrir lo que fue ingerido. La selección de fuente es una decisión de gobernanza, no de plomería.",
+    "steps[1].label": "Limpiar, Dividir y Adjuntar Metadatos",
+    "steps[1].detail": "El chunking decide qué es una unidad recuperable; los metadatos son lo que luego hace la filtración y atribución posibles.",
+    "steps[2].label": "Crear Embeddings para Cada Chunk",
+    "steps[2].detail": "El texto se convierte en vectores. El modelo de embedding elegido aquí constriñe todo lo que el recuperador puede distinguir.",
+    "steps[3].label": "Almacenar Chunks y Vectores en un Índice",
+    "steps[3].detail": "El índice hace la búsqueda de similitud manejable. Los controles de acceso pertenecen aquí, no solo en la respuesta.",
+    "steps[4].label": "Incrustar e Interpretar la Consulta del Usuario",
+    "steps[4].detail": "La consulta es incrustada por el mismo modelo que los chunks, o los dos viven en espacios incomparables.",
+    "steps[5].label": "Recuperar, Filtrar y Reordenar Evidencia",
+    "steps[5].detail": "El recall decide si el pasaje correcto está disponible en absoluto; el ranking decide si sobrevive al presupuesto de contexto.",
+    "steps[6].label": "Construir un Prompt con Evidencia e Instrucciones",
+    "steps[6].detail": "La evidencia recuperada se coloca en el prompt con instrucciones sobre cómo usarla y cuándo rechazarla.",
+    "steps[7].label": "Generar, Validar y Citar la Respuesta Fundamentada",
+    "steps[7].detail": "El modelo responde desde la evidencia proporcionada y la cita, así un lector puede verificar en lugar de confiar."
+  }
+}

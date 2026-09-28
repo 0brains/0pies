@@ -1,0 +1,218 @@
+{
+ "id": "access-foundations",
+ "runner": "board",
+ "title": "Access Model & Factor Sort",
+ "blurb": "Four access control models, three authentication factor types. Sort each scene into the model or factor it exercises.",
+ "source": "Chapple CISSP SG 10ed ch.13 (Managing Identity and Authentication) & ch.14 (Controlling and Monitoring Access) · CISSP April-2024 outline 5.2, 5.4",
+ "asOf": "2026-08",
+ "area": "5.2 / 5.4",
+ "hint": "First decide: is this a static access-control model (MAC/DAC/RBAC/ABAC) or an authentication-factor scene (know/have/are)? Then ask who or what actually makes the access decision, and what kind of proof is being offered.",
+ "note": "MAC, DAC, RBAC and ABAC answer 'who may reach this object and on what basis.' Know/have/are answer a different question — 'what is this person proving to establish identity in the first place.' Don't let a scene about proving identity get sorted into an access-model zone, or vice versa.",
+ "zones": [
+  {
+   "key": "MAC",
+   "name": "Mandatory Access Control",
+   "def": "A central authority assigns classification labels to both subjects (clearances) and objects (sensitivity labels), and the system — not any individual — grants access only when a subject's label matches or dominates the object's label. Nobody with access, including an object's own creator, can override or reclassify the label; that rigidity, driven by policy rather than personal discretion, is what separates MAC from DAC."
+  },
+  {
+   "key": "DAC",
+   "name": "Discretionary Access Control",
+   "def": "Every object has an owner, and that owner personally decides — at will, without going through a central authority — who else may access it and what they may do. The defining tell is a person granting or revoking permission directly on something they created or now own; once a central admin or a fixed role definition makes that call instead, it has left DAC for RBAC or MAC."
+  },
+  {
+   "key": "RBAC",
+   "name": "Role-Based Access Control",
+   "def": "Permissions attach to a job-function role, not to an individual or an object owner; a user placed into a role inherits everything the role carries, and removing them from the role removes it just as cleanly. The discriminator against DAC is that a central administrator manages the role definitions, not the resource's owner; the discriminator against MAC is that roles reflect job function, not a classification lattice."
+  },
+  {
+   "key": "ABAC",
+   "name": "Attribute-Based Access Control",
+   "def": "Access is computed at request time by evaluating a policy against multiple attributes at once — who the subject is, what the resource is, what action is requested, and the surrounding environment (time, device, location). The tell against RBAC is that no single fixed role bucket explains the decision; two or more independent attribute types must combine before the policy resolves, which is also what separates it from a flat rule applied identically to everyone."
+  },
+  {
+   "key": "Something you know",
+   "name": "Something you know (knowledge factor)",
+   "def": "A secret that exists only in the subject's memory and in the verifier's stored record — a password, PIN, passphrase, or answer to a security question. It proves nothing about who is typing it, only that the typist knows the secret, which is why it is compromised the moment anyone else learns it, whether by guessing, phishing, or simply watching."
+  },
+  {
+   "key": "Something you have",
+   "name": "Something you have (possession factor)",
+   "def": "A physical or virtual object the legitimate subject holds — a smart card, hardware or software token, badge, or code generator — presented or read as proof of identity. Losing or cloning the object defeats the factor entirely, which is what separates it from a memorized secret (nothing to physically lose) and from a biometric (nothing to physically steal off the person's own body)."
+  },
+  {
+   "key": "Something you are",
+   "name": "Something you are (characteristic factor)",
+   "def": "A measurable physical or behavioral trait — fingerprint, iris pattern, facial geometry, voice — captured as a template at enrollment and matched against a fresh scan at each check. Unlike a password it cannot be changed if compromised, and unlike a token it cannot be handed to someone else, but matching is probabilistic, so accuracy is judged by trade-offs between false rejection and false acceptance rather than a clean yes/no."
+  }
+ ],
+ "items": [
+  {
+   "id": "acf-01",
+   "label": "A defense contractor's document system blocks an analyst from opening a file because her clearance and compartment tags don't match the file's classification label — even though she wrote a related briefing memo the day before.",
+   "sub": "Which access control model governs this decision?",
+   "answer": "MAC",
+   "why": "The gate is a label-to-label comparison set by policy, not a decision anyone in the room gets to make; DAC is the tempting neighbour because she authored a related document, but authorship never grants her discretion here — only a matching label does.",
+   "citation": "SG ch.14 · outline 5.4.3"
+  },
+  {
+   "id": "acf-02",
+   "label": "A hospital's oncology records carry a compartment tag set by the security office; only staff whose accounts carry the matching tag can open them, regardless of which department the record's physician belongs to.",
+   "sub": "Which access control model governs this decision?",
+   "answer": "MAC",
+   "why": "Compartment tags assigned centrally and matched mechanically are the lattice-style labeling that defines MAC; RBAC is the tempting neighbour because a job-function grouping is visible (department), but the actual gate is the compartment label, not the physician's role.",
+   "citation": "SG ch.14 · outline 5.4.3"
+  },
+  {
+   "id": "acf-03",
+   "label": "An intelligence agency's file server refuses to let an analyst downgrade a document's classification label, even though he wrote the document and technically owns the file.",
+   "sub": "Which access control model governs this decision?",
+   "answer": "MAC",
+   "why": "MAC strips discretion even from the creator — labels are set and changed only by the mandating authority, which is exactly the reverse of DAC, the tempting neighbour, where ownership alone would normally be enough to reclassify or reshare the object.",
+   "citation": "SG ch.14 · outline 5.4.3"
+  },
+  {
+   "id": "acf-04",
+   "label": "A marketing lead who created a shared spreadsheet adds one colleague as an editor and, in the same sitting, revokes another colleague's access entirely — no ticket, no approval.",
+   "sub": "Which access control model governs this decision?",
+   "answer": "DAC",
+   "why": "The person making the grant is the object's own owner acting unilaterally, which is the defining move of DAC; RBAC is the tempting neighbour because permissions are being changed, but no role definition or central admin is involved — it's pure personal discretion.",
+   "citation": "SG ch.14 · outline 5.4.4"
+  },
+  {
+   "id": "acf-05",
+   "label": "An engineering lead grants two contractors read access to her design folder without involving IT, and can pull that access back herself just as easily whenever the project ends.",
+   "sub": "Which access control model governs this decision?",
+   "answer": "DAC",
+   "why": "Grant and revoke both sit entirely with the folder's owner, bypassing any central authority — the tell for DAC; RBAC is the tempting neighbour since contractors often get access via project roles, but here no role assignment ever happens.",
+   "citation": "SG ch.14 · outline 5.4.4"
+  },
+  {
+   "id": "acf-06",
+   "label": "A team wiki page's original creator sets the edit list, then transfers ownership to a teammate, who immediately starts adding and removing editors on her own authority.",
+   "sub": "Which access control model governs this decision?",
+   "answer": "DAC",
+   "why": "Ownership itself is what carries the permission-granting power, and it transfers along with the object — the hallmark of DAC; MAC is the tempting neighbour only in the sense that 'ownership' sounds like a fixed rule, but nothing here is mandated by policy or labels.",
+   "citation": "SG ch.14 · outline 5.4.4"
+  },
+  {
+   "id": "acf-07",
+   "label": "A hospital places every new hire into a 'Ward Nurse' role at onboarding; moving a nurse out of that role instantly strips her charting access with no per-user changes needed.",
+   "sub": "Which access control model governs this decision?",
+   "answer": "RBAC",
+   "why": "Access rises and falls purely with role membership, managed centrally — the RBAC signature; DAC is the tempting neighbour because access is being changed for a person, but no object owner is making a personal grant here, only an admin moving a role assignment.",
+   "citation": "SG ch.14 · outline 5.4.1"
+  },
+  {
+   "id": "acf-08",
+   "label": "A bank groups staff into teller, loan-officer, and branch-manager job functions; a promoted teller gains full loan-officer permissions the instant IT reassigns her role, with no individual permission edits.",
+   "sub": "Which access control model governs this decision?",
+   "answer": "RBAC",
+   "why": "Permissions attach to the job-function bucket, not the person or any object she touches, and a central admin — not a resource owner — manages the reassignment, which rules out DAC, the tempting neighbour.",
+   "citation": "SG ch.14 · outline 5.4.1"
+  },
+  {
+   "id": "acf-09",
+   "label": "A helpdesk splits into Tier-1 and Tier-2 job functions; the only thing that differs between two analysts' access is which tier they're assigned to, not any individual grant either has ever received.",
+   "sub": "Which access control model governs this decision?",
+   "answer": "RBAC",
+   "why": "A single, centrally managed role assignment fully explains the access difference, which is RBAC's defining shape; ABAC is the tempting neighbour because tiers sound like an attribute, but nothing else — device, time, request context — factors into the decision.",
+   "citation": "SG ch.14 · outline 5.4.1"
+  },
+  {
+   "id": "acf-10",
+   "label": "A cloud policy grants file access only when the requester's device is company-managed, the request lands within business hours, and the file's own sensitivity tag reads 'internal' — the same employee is denied from her personal laptop at midnight.",
+   "sub": "Which access control model governs this decision?",
+   "answer": "ABAC",
+   "why": "Three independent attribute types — device, time, resource sensitivity — combine before the policy resolves, which is ABAC's signature; RBAC is the tempting neighbour because a job role could easily gate this instead, but no role membership appears anywhere in the rule.",
+   "citation": "SG ch.14 · outline 5.4.5"
+  },
+  {
+   "id": "acf-11",
+   "label": "A software-defined network lets a contractor reach only the subnet tagged for her currently active project, evaluated against her badge status, the subnet's project tag, and whether the project is still open.",
+   "sub": "Which access control model governs this decision?",
+   "answer": "ABAC",
+   "why": "Subject attribute (badge status), resource attribute (subnet tag) and environment attribute (project state) are all weighed together at request time — ABAC's multi-attribute policy evaluation; MAC is the tempting neighbour because tags are involved, but these are dynamic project attributes, not a fixed classification lattice.",
+   "citation": "SG ch.14 · outline 5.4.5"
+  },
+  {
+   "id": "acf-12",
+   "label": "A trading platform approves a transaction only if the approver holds manager rank, the amount is under a set threshold, and the request originates from an office IP address — all three checked together for one decision.",
+   "sub": "Which access control model governs this decision?",
+   "answer": "ABAC",
+   "why": "Rank, transaction amount, and network location are three unrelated attribute types combined into a single policy evaluation, which pushes this past RBAC — the tempting neighbour, since a role (manager) is visibly part of the picture, but RBAC alone would never also weigh the dollar amount or the requester's location.",
+   "citation": "SG ch.14 · outline 5.4.5"
+  },
+  {
+   "id": "acf-13",
+   "label": "An employee unlocks her laptop by typing the four-digit PIN she memorized at enrollment, nothing else required.",
+   "sub": "Which authentication factor type is this?",
+   "answer": "Something you know",
+   "why": "A PIN is a secret held only in memory and in the verifier's record, the definition of a knowledge factor; 'something you have' is the tempting neighbour because devices are involved, but the laptop itself isn't being presented as proof — the memorized digits are.",
+   "citation": "SG ch.13 · outline 5.2.2"
+  },
+  {
+   "id": "acf-14",
+   "label": "A helpdesk agent restores a locked-out caller's account after she correctly names the childhood street she grew up on, a fact recorded as a challenge answer when she opened the account.",
+   "sub": "Which authentication factor type is this?",
+   "answer": "Something you know",
+   "why": "A cognitive-password answer is still a memorized fact compared against a stored record, so it stays a knowledge factor even though it feels more personal than a PIN; 'something you are' is the tempting neighbour because it concerns her personal history, but nothing about her body is being measured.",
+   "citation": "SG ch.13 · outline 5.2.4"
+  },
+  {
+   "id": "acf-15",
+   "label": "A VPN client won't move past its first screen until the user types the passphrase she chose during setup.",
+   "sub": "Which authentication factor type is this?",
+   "answer": "Something you know",
+   "why": "A chosen passphrase, like a password or PIN, is a memorized secret compared against a stored value — the knowledge factor in its plainest form, with no possessed object or measured trait involved.",
+   "citation": "SG ch.13 · outline 5.2.2"
+  },
+  {
+   "id": "acf-16",
+   "label": "A contractor taps the badge issued to her on her first day against a reader to unlock the server room door.",
+   "sub": "Which authentication factor type is this?",
+   "answer": "Something you have",
+   "why": "The badge is a physical object she was issued and carries — the possession factor's defining trait; losing it, not forgetting it, is what defeats the control, unlike the knowledge factor where nothing physical needs to go missing.",
+   "citation": "SG ch.13 · outline 5.2.2"
+  },
+  {
+   "id": "acf-17",
+   "label": "An engineer's phone displays a six-digit code that regenerates every thirty seconds from an authenticator app mimicking a hardware token she carries everywhere.",
+   "sub": "Which authentication factor type is this?",
+   "answer": "Something you have",
+   "why": "The code is generated by a token she possesses, even though it's software rather than a physical dongle — possession of the generator is what's being proven; 'something you know' is the tempting neighbour because she types the code, but the code itself isn't a memorized secret, it's produced by the item she holds.",
+   "citation": "SG ch.13 · outline 5.2.2"
+  },
+  {
+   "id": "acf-18",
+   "label": "A field technician signs into his workstation using a smart card with an embedded chip that IT issued alongside his laptop.",
+   "sub": "Which authentication factor type is this?",
+   "answer": "Something you have",
+   "why": "A smart card is a possessed physical item generating unique authentication data per transaction — the possession factor; the tempting confusion with a biometric fades once you notice the card, not any part of his body, is what's being read.",
+   "citation": "SG ch.13 · outline 5.2.2"
+  },
+  {
+   "id": "acf-19",
+   "label": "A warehouse worker clocks in each morning by pressing her finger to a scanner that compares the print's minutiae against her enrolled template.",
+   "sub": "Which authentication factor type is this?",
+   "answer": "Something you are",
+   "why": "A fingerprint scan matched against an enrolled template is a measured physical characteristic — the biometric factor; 'something you have' is the tempting neighbour because a scanner device is involved, but the device isn't the proof, her own finger is.",
+   "citation": "SG ch.13 · outline 5.2.2"
+  },
+  {
+   "id": "acf-20",
+   "label": "An airport gate compares live facial geometry against a traveler's passport photo, verifying her identity without asking her to present a card or type anything.",
+   "sub": "Which authentication factor type is this?",
+   "answer": "Something you are",
+   "why": "Facial geometry is a measured physical trait compared to an enrolled reference image — a characteristic factor; nothing possessed or memorized is offered, which rules out the other two factor types entirely.",
+   "citation": "SG ch.13 · outline 5.2.2"
+  },
+  {
+   "id": "acf-21",
+   "label": "A data center's entry system unlocks only after an iris scanner matches the unique pattern captured during an employee's original enrollment.",
+   "sub": "Which authentication factor type is this?",
+   "answer": "Something you are",
+   "why": "Iris pattern matching against an enrollment template is a biometric characteristic check; 'something you have' is the tempting neighbour since access badges also guard data centers, but here the pattern belongs to the person's own body, not to any object she could hand off or lose.",
+   "citation": "SG ch.13 · outline 5.2.2"
+  }
+ ]
+}

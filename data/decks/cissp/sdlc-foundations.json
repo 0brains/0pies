@@ -1,0 +1,246 @@
+{
+ "id": "sdlc-foundations",
+ "runner": "board",
+ "title": "SDLC, Maturity & Testing Sort",
+ "blurb": "Development methodologies, process-maturity models, application-security testing techniques, and OWASP vulnerability vocabulary — sort each scene to the concept it exercises.",
+ "source": "Chapple CISSP SG 10ed ch.15, ch.20-21 · April-2024 outline 8.1-8.5 · OWASP Top 10 (2025 edition), owasp.org/Top10/2025",
+ "asOf": "2026-08",
+ "area": "8.1-8.5",
+ "hint": "First sort into a family — development philosophy, process-maturity rating, testing technique, or code-level vulnerability class — then land on the specific term inside that family.",
+ "note": "This board covers Domain 8's process, maturity, testing, and vulnerability-vocabulary layer. Acquisition-risk questions (COTS, open source, third-party, managed/cloud services) and single-language secure-coding mechanics live in a different game.",
+ "zones": [
+  {
+   "key": "Waterfall",
+   "name": "Waterfall",
+   "def": "A linear SDLC where each phase — requirements, design, build, test, operate — must fully close before the next opens, with no built-in path back once a gate is passed. Pick this when a scene stresses requirements frozen up front and sequential sign-off, not iterative re-planning (Agile) and not a score of how mature the org's process is (Maturity models)."
+  },
+  {
+   "key": "Agile",
+   "name": "Agile",
+   "def": "Iterative, incremental delivery built around short cycles of planning, building and evaluating, with frequent stakeholder feedback and self-organizing teams reprioritizing as they go. Pick this when the scene is about adapting scope mid-project and shipping working slices often — the discriminator against DevSecOps is that this zone is about the planning/delivery cadence itself, not the automated security tooling fused into a pipeline."
+  },
+  {
+   "key": "DevSecOps",
+   "name": "DevSecOps",
+   "def": "Extends a DevOps CI/CD pipeline by embedding security controls — scanning gates, policy-as-code, threat-modeling checkpoints — directly into the automated build-and-release cycle instead of checking security at the end. Pick this when a scene shows security folded into the automated pipeline alongside ops; a single named technique running inside that pipeline (SAST, DAST) still sorts to its own zone, not here."
+  },
+  {
+   "key": "Maturity models (CMM/SAMM)",
+   "name": "Maturity models (CMM/SAMM)",
+   "def": "Frameworks that score how consistent and repeatable an organization's software or security *process* is — CMM's five levels (Initial through Optimizing) for general software-process discipline, SAMM's five business functions for security-practice maturity — rather than telling a team which SDLC methodology to run. Pick this when the scene is an assessor rating an org's process capability, not a team choosing or executing a specific methodology."
+  },
+  {
+   "key": "SAST",
+   "name": "SAST",
+   "def": "Static analysis of source or intermediate code without executing it, usually pre-compile, catching flaws like unreachable branches or policy violations at the code level. Pick this when the scene examines code at rest before it ever runs — not a running application (DAST) and not code being hit with malformed live input (Fuzzing)."
+  },
+  {
+   "key": "DAST",
+   "name": "DAST",
+   "def": "Dynamic evaluation of a program while it is running, driving the live application to surface exploitable behavior — logic errors, memory leaks, session handling flaws — without needing source-code access. Pick this when the scene exercises the running app as a black box with realistic, well-formed traffic — the discriminator against Fuzzing is that Fuzzing narrows in on deliberately malformed or random input specifically."
+  },
+  {
+   "key": "Fuzzing",
+   "name": "Fuzzing",
+   "def": "An automated technique that bombards a running program with malformed, random or boundary-pushing input at an interface, hunting for a crash or unhandled path that exposes an exploitable defect. Pick this when the scene centers on injecting deliberately corrupted or oversized data — a narrower, input-focused subset of dynamic testing, distinct from DAST's broader behavioral sweep and from a human-led Penetration test."
+  },
+  {
+   "key": "Penetration testing",
+   "name": "Penetration testing",
+   "def": "An authorized, human-led simulated attack against a live target, chaining findings — including automated-scan output — toward a defined objective under agreed rules of engagement. Pick this when a person is exercising attacker judgment and pursuing a goal, not an unattended automated tool running a sweep (DAST) or a fuzz harness (Fuzzing)."
+  },
+  {
+   "key": "Injection",
+   "name": "Injection",
+   "def": "Untrusted data reaching an interpreter — SQL, LDAP, OS command — as part of a query or command because input was never separated from code, letting the interpreter execute something unintended. Pick this when unsanitized input flows straight into a query/command engine, not when the failure is a missing permission check on an otherwise-valid request (Broken access control)."
+  },
+  {
+   "key": "Broken access control",
+   "name": "Broken access control",
+   "def": "Failures that let an authenticated user act outside their intended permissions — reading or modifying another user's data, or reaching admin functions — because the server never re-checks authorization on the specific object requested. Pick this when the request itself is well-formed and the user is logged in, but the ownership/permission check is missing — not an unhardened default setting exposing the same data (Security misconfiguration), and not input reaching an interpreter (Injection)."
+  },
+  {
+   "key": "Security misconfiguration",
+   "name": "Security misconfiguration",
+   "def": "Insecure default settings, unnecessary exposed features, verbose error output, or missing hardening anywhere in the stack — a setting problem, not a code-logic one. Pick this when the root cause is what was left configured or exposed by default, distinct from a code-level authorization gap (Broken access control) and from an interpreter receiving unsanitized input (Injection)."
+  }
+ ],
+ "items": [
+  {
+   "id": "sdlf-01",
+   "label": "A municipal payroll rewrite locks every requirement at kickoff; the team can only start design once every requirement doc is signed off, and reopening requirements later needs a formal change board.",
+   "sub": "Which SDLC model is in play?",
+   "answer": "Waterfall",
+   "why": "Sequential, gated phases with requirements frozen before design begins is Waterfall's signature; the tempting neighbour is a maturity model, but this scene is about the methodology itself, not a score of how disciplined the org's process is.",
+   "citation": "SG ch.20 · outline 8.1.1"
+  },
+  {
+   "id": "sdlf-02",
+   "label": "A defense contractor's statement of work requires preliminary design and detailed design to be delivered and signed as two separate, sequential stage-gates before any code is written.",
+   "sub": "Which SDLC model is in play?",
+   "answer": "Waterfall",
+   "why": "Discrete, ordered stage-gates that must close before the next opens is the linear model, not the short-cycle re-planning of Agile or the automated pipeline gating of DevSecOps.",
+   "citation": "SG ch.20 · outline 8.1.1"
+  },
+  {
+   "id": "sdlf-03",
+   "label": "A fintech squad ships a working slice of the loan-approval feature every two weeks and re-prioritizes the backlog after each demo based on live customer feedback.",
+   "sub": "Which SDLC model is in play?",
+   "answer": "Agile",
+   "why": "Short iterations with reprioritization driven by fresh feedback is Agile's core loop, distinct from Waterfall's frozen up-front scope and from DevSecOps, whose distinguishing trait is security tooling fused into the automated pipeline, not the planning cadence itself.",
+   "citation": "SG ch.20 · outline 8.1.1"
+  },
+  {
+   "id": "sdlf-04",
+   "label": "Product owners and developers hold a daily quarter-hour sync to reset that sprint's priorities as market conditions shift mid-project.",
+   "sub": "Which SDLC model is in play?",
+   "answer": "Agile",
+   "why": "Daily replanning in response to changing conditions is the iterative planning cadence itself — no security-scanning or pipeline automation is described, which is what would push it toward DevSecOps instead.",
+   "citation": "SG ch.20 · outline 8.1.1"
+  },
+  {
+   "id": "sdlf-05",
+   "label": "A retailer's pipeline chains secret-scanning, dependency-vulnerability checks and a container-policy gate, all running automatically on every merge before a human reviewer even opens the pull request.",
+   "sub": "Which SDLC model is in play?",
+   "answer": "DevSecOps",
+   "why": "Multiple security disciplines woven into the automated build pipeline is the DevSecOps philosophy; a single one of those checks in isolation would name its own technique (SAST), but the chained, pipeline-wide integration is the tell here.",
+   "citation": "SG ch.20 · outline 8.1.1"
+  },
+  {
+   "id": "sdlf-06",
+   "label": "Security engineers add a threat-modeling checkpoint to each sprint's Definition of Done, running alongside the same automation that deploys the build to production.",
+   "sub": "Which SDLC model is in play?",
+   "answer": "DevSecOps",
+   "why": "Security review embedded into the same automated cadence that operations uses to deploy is DevSecOps's fusion; Agile alone would only describe the sprint cadence, without security controls riding along inside the deployment automation.",
+   "citation": "SG ch.20 · outline 8.1.1"
+  },
+  {
+   "id": "sdlf-07",
+   "label": "An assessor rates a software house at 'basic project planning and configuration management now exist, but there's still no organization-wide standard process.'",
+   "sub": "Which framework produced this rating?",
+   "answer": "Maturity models (CMM/SAMM)",
+   "why": "Scoring an org's process discipline on a defined level scale is what a maturity model does; the org isn't choosing between Waterfall and Agile here, it's being graded on how consistently it already runs whichever one it uses.",
+   "citation": "SG ch.20 · outline 8.1.2"
+  },
+  {
+   "id": "sdlf-08",
+   "label": "A security review maps a vendor's practices against five named business functions — governance, design, implementation, verification, operations — and scores each on a maturity scale.",
+   "sub": "Which framework is being applied?",
+   "answer": "Maturity models (CMM/SAMM)",
+   "why": "Scoring security practice against named business functions is SAMM's structure; it's still a maturity-assessment framework, not the DevSecOps pipeline it might later recommend implementing.",
+   "citation": "SG ch.20 · outline 8.1.2"
+  },
+  {
+   "id": "sdlf-09",
+   "label": "A tool parses an application's source before it is ever compiled and flags an unreachable code branch plus a mismatched data-type assignment.",
+   "sub": "Which testing technique is this?",
+   "answer": "SAST",
+   "why": "Examining code without executing it, pre-compile, is static analysis; the same flaw found by exercising a running instance instead would be DAST's territory.",
+   "citation": "SG ch.15 · outline 8.2.9"
+  },
+  {
+   "id": "sdlf-10",
+   "label": "Every pull request automatically triggers a scan of just the changed lines for hard-coded credentials and unsafe string concatenation, before a human reviewer opens the diff.",
+   "sub": "Which testing technique is this?",
+   "answer": "SAST",
+   "why": "An automated scan of source text itself, run before execution, is the static technique; running it inside a broader pipeline of chained security gates would be described as DevSecOps, but this item names one specific scan.",
+   "citation": "SG ch.15 · outline 8.2.9"
+  },
+  {
+   "id": "sdlf-11",
+   "label": "Testers drive a live checkout service with realistic HTTP requests, watching for exposed session tokens and memory leaks, with no access to its source code.",
+   "sub": "Which testing technique is this?",
+   "answer": "DAST",
+   "why": "Exercising a running application as a black box with well-formed traffic is dynamic testing; the lack of source access is exactly what separates it from SAST, and the traffic being realistic rather than deliberately corrupted separates it from Fuzzing.",
+   "citation": "SG ch.15 · outline 8.2.9"
+  },
+  {
+   "id": "sdlf-12",
+   "label": "A nightly job replays a scripted, valid user journey against staging to see whether a newly deployed rule quietly lets requests bypass the rate limiter.",
+   "sub": "Which testing technique is this?",
+   "answer": "DAST",
+   "why": "A scripted but legitimate interaction sequence run against the live app is dynamic testing's behavioral sweep, not a static code review and not a fuzz harness generating malformed data.",
+   "citation": "SG ch.15 · outline 8.2.9"
+  },
+  {
+   "id": "sdlf-13",
+   "label": "A harness feeds an image-parsing library thousands of randomly corrupted file headers overnight, looking for the crash that reveals a buffer overflow.",
+   "sub": "Which testing technique is this?",
+   "answer": "Fuzzing",
+   "why": "Deliberately malformed, randomly generated input aimed at one interface is fuzzing's narrow focus; a broader behavioral test with realistic, valid traffic against the whole running app would be DAST instead.",
+   "citation": "SG ch.15 · outline 8.2.9"
+  },
+  {
+   "id": "sdlf-14",
+   "label": "An API gateway is bombarded with automatically generated oversized and boundary-value payloads, hunting for an unhandled exception path.",
+   "sub": "Which testing technique is this?",
+   "answer": "Fuzzing",
+   "why": "Automated generation of boundary-pushing, malformed payloads is fuzzing; a human deliberately chaining that finding toward a further objective would shift the scene to Penetration testing.",
+   "citation": "SG ch.15 · outline 8.2.9"
+  },
+  {
+   "id": "sdlf-15",
+   "label": "A hired red-team operator chains a phishing foothold with a misconfigured file share to reach the domain controller, working under a signed rules-of-engagement letter.",
+   "sub": "Which testing technique is this?",
+   "answer": "Penetration testing",
+   "why": "A human exercising attacker judgment to chain footholds toward a domain-controller objective, under agreed scope, is a penetration test; an unattended automated scan producing the same initial finding would be DAST or Fuzzing instead.",
+   "citation": "SG ch.15 · outline 8.2.9"
+  },
+  {
+   "id": "sdlf-16",
+   "label": "After the automated scanner's report lands, a tester manually verifies which findings are actually exploitable and pivots from one weak host to a more sensitive second one.",
+   "sub": "Which testing technique is this?",
+   "answer": "Penetration testing",
+   "why": "Manual verification and pivoting toward a further target is the human-led exploitation phase that follows automated scanning, not the automated scan itself, which only produced the raw list of findings.",
+   "citation": "SG ch.15 · outline 8.2.9"
+  },
+  {
+   "id": "sdlf-17",
+   "label": "A search box passes user text straight into a backend SQL WHERE clause with no parameterization, letting an attacker retrieve every customer's record in one query.",
+   "sub": "Which OWASP vulnerability class is this?",
+   "answer": "Injection",
+   "why": "Untrusted input reaching a query engine unseparated from the command itself is the defining pattern of injection; the request was authenticated normally, which rules out a missing-permission-check story (Broken access control).",
+   "citation": "SG ch.21 · outline 8.5.1"
+  },
+  {
+   "id": "sdlf-18",
+   "label": "A directory-lookup widget concatenates a submitted username straight into an LDAP filter string, letting an attacker widen the filter to return every employee's record.",
+   "sub": "Which OWASP vulnerability class is this?",
+   "answer": "Injection",
+   "why": "Unsanitized input reaching an interpreter — here an LDAP filter rather than SQL — is still injection; no default setting or missing ownership check is described, which rules out Security misconfiguration and Broken access control.",
+   "citation": "SG ch.21 · outline 8.5.1"
+  },
+  {
+   "id": "sdlf-19",
+   "label": "A logged-in customer edits the order ID in the URL and successfully views another customer's invoice, because the server never re-checks who owns that order before returning it.",
+   "sub": "Which OWASP vulnerability class is this?",
+   "answer": "Broken access control",
+   "why": "The request is well-formed and the user is properly authenticated; the failure is a missing ownership check on the specific object requested, not an interpreter executing manipulated input (Injection) and not an exposed default setting (Security misconfiguration).",
+   "citation": "SG ch.21 · outline 8.5.1"
+  },
+  {
+   "id": "sdlf-20",
+   "label": "An API's report-download endpoint accepts any report ID in the request body, and the server never verifies the requesting user actually owns that report before returning it.",
+   "sub": "Which OWASP vulnerability class is this?",
+   "answer": "Broken access control",
+   "why": "A missing per-object authorization check on an otherwise valid, authenticated request is broken access control; the endpoint itself works exactly as configured, so this isn't a hardening gap (Security misconfiguration).",
+   "citation": "SG ch.21 · outline 8.5.1"
+  },
+  {
+   "id": "sdlf-21",
+   "label": "A cloud storage bucket is left with public-read permissions because the team never changed the platform's default access setting before go-live.",
+   "sub": "Which OWASP vulnerability class is this?",
+   "answer": "Security misconfiguration",
+   "why": "An unhardened default left in place is a configuration problem, not a code-level flaw; no query engine or authorization check is involved, which rules out Injection and Broken access control.",
+   "citation": "SG ch.21 · outline 8.5.1"
+  },
+  {
+   "id": "sdlf-22",
+   "label": "An application server still returns verbose stack-trace error pages in production, revealing internal file paths and library versions to anyone who trips an exception.",
+   "sub": "Which OWASP vulnerability class is this?",
+   "answer": "Security misconfiguration",
+   "why": "Exposed debug output that should have been disabled for production is a settings failure across the stack, distinct from a missing per-object permission check (Broken access control) or unsanitized input reaching an interpreter (Injection).",
+   "citation": "SG ch.21 · outline 8.5.1"
+  }
+ ]
+}

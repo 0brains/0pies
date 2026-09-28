@@ -1,0 +1,73 @@
+{
+ "metrics": {
+  "hint": "Choisisis une métrique en fonction du type et du coût de l'erreur, pas de la commodité ; la classification, la régression, la récupération, la génération, la sécurité et le jugement humain répondent à différentes questions de qualité."
+ },
+ "metrics-01": {
+  "label": "La fraction de toutes les prédictions qui sont correctes ; utile surtout quand les classes et les coûts d'erreur sont équilibrés.",
+  "why": "Pour 90 prédictions correctes sur 100, la précision est de 90 %. Elle peut être trompeuse avec les classes déséquilibrées : un modèle qui prédit chaque cas de maladie rare comme négatif peut sembler hautement précis tout en ne trouvant aucun patient ayant besoin d'aide."
+ },
+ "metrics-02": {
+  "label": "De tous les positifs prédits, la fraction qui sont réellement positifs.",
+  "why": "Utilise la précision quand les faux positifs sont coûteux. Si 100 transactions sont signalées comme fraude et seulement 80 sont frauduleuses, la précision est de 80 % ; les 20 restantes créent des enquêtes inutiles ou des achats bloqués."
+ },
+ "metrics-03": {
+  "label": "De tous les vrais positifs, la fraction que le modèle trouve avec succès.",
+  "why": "Utilise le rappel quand manquer un vrai positif est coûteux. Si 100 transactions frauduleuses se produisent et le modèle en attrape 90, le rappel est de 90 % ; les 10 autres sont des faux négatifs qui ont échappé à la détection."
+ },
+ "metrics-04": {
+  "label": "La moyenne harmonique de la précision et du rappel, équilibrant les deux en une seule valeur.",
+  "why": "F1 devient élevé seulement quand la précision et le rappel sont tous les deux élevés, donc c'est utile pour la classification déséquilibrée quand les fausses alarmes et les positifs manqués comptent tous les deux. Elle n'inclut pas les vrais négatifs et peut cacher lequel de la précision ou du rappel est plus faible."
+ },
+ "metrics-05": {
+  "label": "Compte les vrais positifs, les vrais négatifs, les faux positifs et les faux négatifs.",
+  "why": "Ce tableau expose les types d'erreurs exacts cachés par un seul score de synthèse. Lis ses quatre cellules pour voir si le modèle crée de fausses alarmes, manque les vrais positifs, ou gère chaque classe correctement avant de choisir la précision, le rappel ou une autre métrique."
+ },
+ "metrics-06": {
+  "label": "Mesure la qualité du classement des positifs au-dessus des négatifs entre les seuils.",
+  "why": "AUC-ROC évalue la qualité du classement sans s'engager à un seul seuil de classification : 1,0 est un classement parfait et environ 0,5 est aléatoire. Pour les données hautement déséquilibrées, inspecte également le comportement précision-rappel parce que les résultats ROC peuvent sembler optimistes quand les négatifs dominent."
+ },
+ "metrics-07": {
+  "label": "La différence quadratique moyenne entre les valeurs prédites et réelles ; plus bas est meilleur.",
+  "why": "Élever au carré chaque résidu fait que les grandes erreurs contribuent de manière disproportionnée. Les erreurs de 2 et 10 contribuent 4 et 100, donc MSE pénalise fortement les valeurs aberrantes ; ses unités carrées la rendent moins intuitive à expliquer directement."
+ },
+ "metrics-08": {
+  "label": "La racine carrée de MSE, exprimant l'erreur dans la même unité que les valeurs prédites.",
+  "why": "RMSE préserve la pénalité supplémentaire de MSE pour les grandes erreurs mais convertit le résultat dans l'unité de la cible. Un RMSE de 5 000 $ sur les prix des maisons signifie que l'échelle typique d'erreur s'exprime en dollars, bien que les gros manques l'influencent toujours fortement."
+ },
+ "metrics-09": {
+  "label": "La différence absolue moyenne entre les valeurs numériques prédites et réelles.",
+  "why": "MAE traite la magnitude d'erreur linéairement : les manques de 2 et 10 contribuent 2 et 10. Elle est plus facile à interpréter et moins sensible aux valeurs aberrantes que MSE ou RMSE, la rendant utile quand chaque unité d'erreur a à peu près le même coût."
+ },
+ "metrics-10": {
+  "label": "Mesure comment un modèle prédit la probabilité du prochain jeton ou mot.",
+  "why": "Une perplexité inférieure signifie que le modèle de langage est moins surpris par le texte d'évaluation et attribue une probabilité plus élevée à ses jetons. Elle mesure la prédiction du prochain jeton, pas si une réponse est factuelle, sûre, utile ou fondée."
+ },
+ "metrics-11": {
+  "label": "Mesure le chevauchement entre le texte généré et le texte de référence et est couramment utilisée pour les résumés.",
+  "why": "ROUGE mesure généralement la quantité de formulation de référence qu'un résumé généré récupère, souvent en correspondant les mots, les n-grammes ou les séquences. Un score élevé peut toujours manquer du sens ou récompenser la copie de formulation, donc l'évaluation sémantique et humaine peut aussi être nécessaire."
+ },
+ "metrics-12": {
+  "label": "Évalue la traduction en comparant les n-grammes dans le texte généré et de référence.",
+  "why": "BLEU récompense le chevauchement n-gramme avec une ou plusieurs traductions de référence et applique une pénalité aux sorties qui sont trop courtes. Les traductions valides peuvent utiliser une formulation différente, donc BLEU est plus utile pour la comparaison globale et pas comme preuve qu'une phrase est correcte."
+ },
+ "metrics-13": {
+  "label": "Vérifie si les affirmations générées sont soutenues par le contexte ou les sources fournies au modèle.",
+  "why": "Pour une réponse RAG, inspecte si chaque affirmation découle des passages récupérés fournis au modèle. Une affirmation peut être généralement vraie mais toujours non fondée si les preuves fournies ne la soutiennent pas ; les citations aident à rendre cette vérification traçable."
+ },
+ "metrics-14": {
+  "label": "Vérifie les affirmations par rapport aux faits de confiance plutôt que de mesurer seulement la similitude textuelle.",
+  "why": "Ceci demande si les affirmations s'accordent avec la réalité de confiance, même quand aucun passage de soutien n'a été fourni dans l'invite. Elle diffère de la fondation : une réponse peut être factuellement correcte mais non soutenue par son contexte cité, ou fondée dans une source qui est elle-même erronée."
+ },
+ "metrics-15": {
+  "label": "Mesure la fréquence à laquelle le récupérateur inclut les preuves pertinentes parmi les passages retournés.",
+  "why": "Si 100 questions exigent un passage de preuves connu et le récupérateur le retourne pour 85, le rappel de récupération est de 85 %. Le rappel de récupération bas pointe vers le chunking, les embeddings, les filtres, la réécriture de requête ou les problèmes de nombre de candidats que la génération ne peut pas réparer."
+ },
+ "metrics-16": {
+  "label": "Utilise des gens et une grille d'évaluation définie pour juger les qualités que les métriques automatisées peuvent manquer.",
+  "why": "Les gens peuvent évaluer l'utilité, le ton, le raisonnement, l'adaptation culturelle et la correction nuancée par rapport à une grille d'évaluation cohérente. Utilise des échantillons représentatifs, plusieurs relecteurs entraînés et des vérifications d'accord parce que les jugements humains peuvent être subjectifs, lents et coûteux."
+ },
+ "metrics-17": {
+  "label": "Teste les sorties pour les contenus nuisibles, les fuites de confidentialité, les violations de politique et le comportement adversarial.",
+  "why": "Teste à la fois les requêtes ordinaires et adversariales pour les sorties nuisibles, le succès du jailbreak, l'exposition des données sensibles, le biais et les actions d'outil dangereuses. Rapporte les résultats par catégorie de risque et groupe d'utilisateurs ; un score de qualité moyen ne peut pas démontrer qu'un système est sûr."
+ }
+}

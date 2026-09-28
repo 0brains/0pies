@@ -1,0 +1,82 @@
+{
+ "lad-agent": {
+  "prompt": "Расположи lifecycle агента в порядке, в котором это должно произойти.",
+  "steps[0].label": "Определи agent: PromptAgentDefinition(model=MODEL_NAME, instructions=..., tools=[...])",
+  "steps[0].detail": "Model + instructions + tools устанавливаются на этапе определения — {\"deployment\":{\"model\":AGENT_NAME}} — это канонический неправильный ответ; deployments размещают models, agents — это model + instructions + tools.",
+  "steps[1].label": "Протестируй в Agents playground",
+  "steps[1].detail": "Playground настраивает persona, tools и attached knowledge рядом и позволяет попробовать multi-turn behavior перед любым client code вызовом agent.",
+  "steps[2].label": "Сохрани его: project.agents.create_version(agent_name=AGENT_NAME, definition=...)",
+  "steps[2].detail": "Unsaved playground edits теряются при выходе из портала — create_version — это то, что фактически persists определение, построил ли ты его в портале или в code.",
+  "steps[3].label": "Создай thread: openai.conversations.create()",
+  "steps[3].detail": "Opens runtime container, в который позже turns записывают — вызван client app перед отправкой первого сообщения, отличается от определения agent.",
+  "steps[4].label": "Добавь сообщение пользователя в thread",
+  "steps[4].detail": "Содержание turn добавляется в accumulating message history thread — run не может обработать сообщение, которое еще не было добавлено.",
+  "steps[5].label": "Создай run и прочитай output: openai.responses.create(..., extra_body={\"agent_reference\": {...}})",
+  "steps[5].detail": "Вызов, который фактически обрабатывает conversation и produces следующий output agent; agent_reference — это per-call metadata, указывающее на saved definition."
+ },
+ "lad-chat": {
+  "prompt": "Расположи код flow в порядке, в котором это должно работать.",
+  "steps[0].label": "Установи azure-ai-projects",
+  "steps[0].detail": "'Какой пакет следует установить для project client?' — это классический exam stem — ответ — azure-ai-projects.",
+  "steps[1].label": "Создай AIProjectClient(endpoint, DefaultAzureCredential())",
+  "steps[1].detail": "Endpoint + credential оба должны существовать перед любым вызовом; keyless auth = Entra ID DefaultAzureCredential.",
+  "steps[2].label": "Вызови get_openai_client()",
+  "steps[2].detail": "Bridges project client к OpenAI-compatible chat client — линия, которая ломает все, если удалена.",
+  "steps[3].label": "Построй messages list (system prompt первым, затем user prompt)",
+  "steps[3].detail": "Rules и guardrails в system message; запрос этого turn в user message.",
+  "steps[4].label": "Вызови chat.completions.create(model=DEPLOYMENT_NAME, messages=[...])",
+  "steps[4].detail": "model= принимает ТВОЕ deployment name, никогда не base model name — классическая trap.",
+  "steps[5].label": "Прочитай response.choices[0].message.content",
+  "steps[5].detail": "Reply text живет в первом choice message — corpus snippet questions кончаются здесь."
+ },
+ "lad-cu": {
+  "prompt": "Расположи Content Understanding workflow в порядок.",
+  "steps[0].label": "Выбери или определи analyzer: опиши schema на естественном языке (ContentAnalyzer(base_analyzer_id=..., field_schema=...))",
+  "steps[0].detail": "Prebuilt analyzer ids (prebuilt-invoice, prebuilt-audio,...) покрывают common domains; custom ContentAnalyzer называет fields, которые ты хочешь, на plain language через field_schema — без code, кроме описания того, что extract.",
+  "steps[1].label": "Регистрируй это: client.begin_create_analyzer(...)",
+  "steps[1].detail": "Provisions analyzer definition как long-running operation перед тем, как она сможет быть вызвана против любого content — one-time setup step, не per-document один.",
+  "steps[2].label": "Отправь content: client.begin_analyze(analyzer_id=..., inputs=[AnalysisInput(url=file_url)])",
+  "steps[2].detail": "Каждый document/image/audio/video файл получает свой собственный begin_analyze вызов против already-registered analyzer — per-document step, в отличие от шага 2.",
+  "steps[3].label": "Опрашивай operation: poller.result()",
+  "steps[3].detail": "begin_analyze возвращает poller; вызови его.result() метод для ожидания финального analysis output — analysis асинхронна, а не synchronous return (экзамен называет это 'вызови ________ метод poller').",
+  "steps[4].label": "Прочитай structured JSON fields из результата",
+  "steps[4].detail": "Extracted fields — vendor name, invoice date, invoice total и тому подобное — land в poller's result payload; это где собственная работа Content Understanding кончается.",
+  "steps[5].label": "Передай Azure AI Search для indexing",
+  "steps[5].detail": "Content Understanding только extract — никогда не index или generate; Azure AI Search — это separate downstream service, который индексирует CU's structured output для retrieval/RAG."
+ },
+ "lad-genai": {
+  "prompt": "Расположи steps в порядке, в котором generative model превращает твой prompt в text.",
+  "steps[0].label": "Tokenization",
+  "steps[0].detail": "Input text разбит на tokens — words или sub-words — каждый mapped к id из model's vocabulary; ничего downstream не имеет значения, пока это не произойдет (Task 1.2).",
+  "steps[1].label": "Embeddings",
+  "steps[1].detail": "Каждый token id преобразуется в numeric vector, кодирующий meaning — то же vector space, что делает semantic similarity computable как vector distance.",
+  "steps[2].label": "Transformer attention",
+  "steps[2].detail": "Self-attention layers взвешивают каждый token против каждого другого token в sequence — механика, которая 'powers most modern foundation models' и нуждается в embedding vectors для уже существования.",
+  "steps[3].label": "Next-token prediction",
+  "steps[3].detail": "Model выводит probability distribution над whole vocabulary для единственного next token; temperature и top-p reshape этот distribution перед sampled один token.",
+  "steps[4].label": "Detokenized output",
+  "steps[4].detail": "Predicted token id декодирован обратно к text и loop повторяется one token за время до stop condition — perplexity измеряет, как хорошо этот step's predictions сопоставлены held-out text."
+ },
+ "lad-speech": {
+  "prompt": "Расположи Speech SDK calls в порядке, в котором они должны работать.",
+  "steps[0].label": "SpeechConfig(subscription=key, region=region)",
+  "steps[0].detail": "Каждый Speech SDK flow начинается здесь — key/region (или endpoint) пара, которая аутентифицирует каждый вызов, который следует.",
+  "steps[1].label": "Set speech_config.speech_synthesis_voice_name = \"...\"",
+  "steps[1].detail": "Voice selection — это property, устанавливаемое напрямую на config object — exam's DragonHD-voice snippet устанавливает эту line прямо после SpeechConfig, перед любым другим object, построенным из него.",
+  "steps[2].label": "AudioConfig(...) — microphone, file или default device",
+  "steps[2].detail": "Построен независимо от voice-name property, но quickstart snippets конструируют его только после config setup finished, immediately перед recognizer/synthesizer, который будет потреблять оба objects.",
+  "steps[3].label": "Создай Recognizer или Synthesizer: SpeechRecognizer(speech_config, audio_config) / SpeechSynthesizer(speech_config)",
+  "steps[3].detail": "Оба constructors принимают already-built speech_config (recognizer также принимает audio_config) — ничего после этой point не может still inject config.",
+  "steps[4].label": "Вызови recognize_once() / speak_text_async(text)",
+  "steps[4].detail": "recognize_once() захватывает один short utterance (vs. continuous recognition); speak_text_async() фактически plays text — async future/.get() pattern принадлежит здесь, last, once object существует."
+ },
+ "lad-voice": {
+  "prompt": "Расположи classic voice-agent pipeline в порядок.",
+  "steps[0].label": "Speech-to-text: преобразуй caller's spoken audio в text",
+  "steps[0].detail": "Pipeline step one — recognize_once() или continuous recognition включает audio в transcript перед любым reasoning на нем может произойти.",
+  "steps[1].label": "Language / generative-AI processing: reason over transcript и produce text reply",
+  "steps[1].detail": "Chat/agent call reasons over transcript — шаг, который single multimodal model (e.g. audio-in/audio-out chat deployment) может collapse вместе со steps 1 и 3 и один Voice Live API построен для замены всех трех at once с single low-latency speech-to-speech interface.",
+  "steps[2].label": "Text-to-speech: synthesize reply обратно к audio",
+  "steps[2].detail": "speak_text_async() plays generated reply — classic pipeline's final step, также foldable в single-multimodal-model или Voice Live alternative named в step 2's detail."
+ }
+}

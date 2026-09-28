@@ -1,0 +1,82 @@
+{
+ "lad-agent": {
+  "prompt": "Agent के lifecycle को उस order में put करें जिसमें यह happen होना चाहिए।",
+  "steps[0].label": "Agent को define करें: PromptAgentDefinition(model=MODEL_NAME, instructions=..., tools=[...])",
+  "steps[0].detail": "Model + instructions + tools definition समय पर set होते हैं — {\"deployment\":{\"model\":AGENT_NAME}} canonical गलत उत्तर है; deployments host करते हैं models, agents होते हैं model + instructions + tools।",
+  "steps[1].label": "इसे Agents playground में test करें",
+  "steps[1].detail": "Playground persona, tools, और attached knowledge को side by side configure करता है और client code agent को कॉल करने से पहले multi-turn behavior को try करने देता है।",
+  "steps[2].label": "इसे save करें: project.agents.create_version(agent_name=AGENT_NAME, definition=...)",
+  "steps[2].detail": "Unsaved playground edits portal छोड़ते समय lost हो जाते हैं — create_version actual है जो definition को persist करता है, चाहे तुमने इसे portal में या code में build किया हो।",
+  "steps[3].label": "एक thread create करें: openai.conversations.create()",
+  "steps[3].detail": "Runtime container को खोलता है जिसमें later turns लिखते हैं — client app द्वारा पहले message भेजने से पहले कॉल किया जाता है, agent की अपनी definition से distinct।",
+  "steps[4].label": "User का message thread में add करें",
+  "steps[4].detail": "Turn की content को thread के accumulating message history में append किया जाता है — एक run एक message को process नहीं कर सकता जो अभी add नहीं हुआ है।",
+  "steps[5].label": "Create करें एक run और output को read करें: openai.responses.create(..., extra_body={\"agent_reference\": {...}})",
+  "steps[5].detail": "Invocation जो actually conversation को process करता है और agent का अगला output देता है; agent_reference per-call metadata है जो saved definition की ओर point करता है।"
+ },
+ "lad-chat": {
+  "prompt": "Code flow को उस order में put करें जिसमें यह run होना चाहिए।",
+  "steps[0].label": "azure-ai-projects install करें",
+  "steps[0].detail": "\"Project client के लिए तुम्हें कौन सा package install करना चाहिए?\" एक classic exam stem है — answer है azure-ai-projects।",
+  "steps[1].label": "AIProjectClient(endpoint, DefaultAzureCredential()) create करें",
+  "steps[1].detail": "Endpoint + credential दोनों को कोई भी कॉल होने से पहले exist करना चाहिए; keyless auth = Entra ID DefaultAzureCredential।",
+  "steps[2].label": "get_openai_client() को call करें",
+  "steps[2].detail": "Project client को एक OpenAI-compatible chat client से bridges करता है — वह line जो removed होने पर सब कुछ break करता है।",
+  "steps[3].label": "Messages list को build करें (system prompt पहले, फिर user prompt)",
+  "steps[3].detail": "System message में rules और guardrails; इस turn की request user message में।",
+  "steps[4].label": "chat.completions.create(model=DEPLOYMENT_NAME, messages=[...]) को call करें",
+  "steps[4].detail": "model= तुम्हारे deployment name को लेता है, base model name को कभी नहीं — classic trap।",
+  "steps[5].label": "response.choices[0].message.content को read करें",
+  "steps[5].detail": "Reply text पहली choice के message पर रहता है — corpus snippet questions यहाँ end होते हैं।"
+ },
+ "lad-cu": {
+  "prompt": "Content Understanding workflow को order में put करें।",
+  "steps[0].label": "एक analyzer को choose या define करें: natural language में schema को describe करें (ContentAnalyzer(base_analyzer_id=..., field_schema=...))",
+  "steps[0].detail": "Prebuilt analyzer ids (prebuilt-invoice, prebuilt-audio,...) common domains को cover करते हैं; एक custom ContentAnalyzer तुम्हारे desired fields को plain language के through name करता है field_schema के via — code की कोई जरूरत नहीं extract करने के लिए क्या के बाहर describing।",
+  "steps[1].label": "इसे register करें: client.begin_create_analyzer(...)",
+  "steps[1].detail": "Analyzer definition को एक long-running operation के रूप में provision करता है इससे पहले कि यह किसी भी content के विरुद्ध कॉल किया जा सकें — एक one-time setup step, per-document one नहीं।",
+  "steps[2].label": "Content को submit करें: client.begin_analyze(analyzer_id=..., inputs=[AnalysisInput(url=file_url)])",
+  "steps[2].detail": "हर document/image/audio/video file को अपनी begin_analyze कॉल के against चलाया जाता है already-registered analyzer — per-document step, step 2 के विपरीत।",
+  "steps[3].label": "Operation को poll करें: poller.result()",
+  "steps[3].detail": "begin_analyze एक poller return करता है; its.result() method को कॉल करें final analysis output के लिए wait करने के लिए — analysis asynchronous है, एक synchronous return नहीं (exam इसे 'call the poller के ________ method' कहता है)।",
+  "steps[4].label": "Structured JSON fields को result से read करें",
+  "steps[4].detail": "Extracted fields — vendor name, invoice date, invoice total, और जैसे — poller के result payload में land करते हैं; यह है जहाँ Content Understanding का अपना job end होता है।",
+  "steps[5].label": "Hand off करें Azure AI Search को indexing के लिए",
+  "steps[5].detail": "Content Understanding सिर्फ extract करता है — यह कभी index या generate नहीं करता; Azure AI Search वह separate downstream service है जो CU के structured output को index करता है retrieval/RAG के लिए।"
+ },
+ "lad-genai": {
+  "prompt": "Steps को उस order में put करें जिसमें एक generative model तुम्हारे prompt को text में turn करता है।",
+  "steps[0].label": "Tokenization",
+  "steps[0].detail": "Input text को tokens में split किया जाता है — words या sub-words — हर एक को model के vocabulary से एक id पर map किया जाता है; downstream को इससे पहले कुछ भी meaning नहीं है यह होता है।",
+  "steps[1].label": "Embeddings",
+  "steps[1].detail": "हर token id को एक numeric vector में convert किया जाता है जो meaning को encode करता है — वही vector space जो semantic similarity को vector distance के रूप में computable बनाता है।",
+  "steps[2].label": "Transformer attention",
+  "steps[2].detail": "Self-attention layers हर token को sequence में हर दूसरे token के विरुद्ध weigh करते हैं — वह mechanic जो 'most modern foundation models को power करता है,' और embedding vectors को पहले से exist करने की जरूरत है।",
+  "steps[3].label": "Next-token prediction",
+  "steps[3].detail": "Model whole vocabulary के over एक probability distribution output करता है single next token के लिए; temperature और top-p इस distribution को reshape करते हैं एक token को sample करने से पहले।",
+  "steps[4].label": "Detokenized output",
+  "steps[4].detail": "Predicted token id को text में decode किया जाता है और loop repeat होता है एक token at एक time until एक stop condition — perplexity मापता है कि कितनी अच्छी तरह इस step की predictions held-out text को match किया।"
+ },
+ "lad-speech": {
+  "prompt": "Speech SDK calls को order में put करें जिसमें वे run होना चाहिए।",
+  "steps[0].label": "SpeechConfig(subscription=key, region=region)",
+  "steps[0].detail": "हर Speech SDK flow यहाँ से शुरू होता है — key/region (या endpoint) pair जो authenticate करता है हर call जो follow करता है।",
+  "steps[1].label": "speech_config.speech_synthesis_voice_name = \"...\" को set करें",
+  "steps[1].detail": "Voice selection एक property है जो directly config object पर set है — exam की DragonHD-voice snippet इस line को set करती है SpeechConfig के right after, किसी दूसरे object को build किए जाने से पहले।",
+  "steps[2].label": "AudioConfig(...) — microphone, file, या default device",
+  "steps[2].detail": "Voice-name property से independently built होता है, लेकिन quickstart snippets इसे सिर्फ config setup के बाद construct करते हैं, recognizer/synthesizer से तुरंत पहले जो दोनों objects को consume करेगा।",
+  "steps[3].label": "Recognizer या Synthesizer को create करें: SpeechRecognizer(speech_config, audio_config) / SpeechSynthesizer(speech_config)",
+  "steps[3].detail": "दोनों constructors को already-built speech_config लेते हैं (recognizer भी audio_config लेता है) — इस point के बाद कुछ भी config को still inject नहीं कर सकता।",
+  "steps[4].label": "recognize_once() / speak_text_async(text) को call करें",
+  "steps[4].detail": "recognize_once() एक short utterance को capture करता है (vs. continuous recognition); speak_text_async() actually text को play करता है — async future/.get() pattern यहाँ belong करता है, last, एक बार object exist करता है।"
+ },
+ "lad-voice": {
+  "prompt": "Classic voice-agent pipeline को order में put करें।",
+  "steps[0].label": "Speech-to-text: caller के spoken audio को text में convert करें",
+  "steps[0].detail": "Pipeline step one — recognize_once() या continuous recognition audio को transcript में turn करता है reasoning से पहले इस पर कोई हो सकता है।",
+  "steps[1].label": "Language / generative-AI processing: transcript के over reason करें और एक text reply produce करें",
+  "steps[1].detail": "एक chat/agent कॉल transcript के over reason करता है — वह step जो एक single multimodal model (e.g. audio-in/audio-out chat deployment) steps 1 और 3 के साथ together collapse कर सकता है, और वह जो Voice Live API built है सभी तीन को replace करने के लिए एक single low-latency speech-to-speech interface के साथ।",
+  "steps[2].label": "Text-to-speech: reply को audio में synthesize करें",
+  "steps[2].detail": "speak_text_async() generated reply को play करता है — classic pipeline का final step, भी foldable single-multimodal-model या Voice Live alternative में step 2 के detail में named के साथ।"
+ }
+}

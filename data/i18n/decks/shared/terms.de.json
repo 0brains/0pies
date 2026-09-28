@@ -1,0 +1,53 @@
+{
+ "terms": {
+  "hint": "Ziehe jede Definition auf den Begriff, den sie definiert."
+ },
+ "terms-01": {
+  "label": "Das breite Feld des Aufbaus von Systemen, die Aufgaben ausführen, die mit menschlicher Intelligenz verbunden sind.",
+  "why": "KI ist das Umschlag-Feld: regelbasierte Expertensysteme, Computervision, Robotik, Maschinenlernen und generative Modelle können alle KI sein. Maschinenlernen ist eine Möglichkeit, KI zu bauen, kein Synonym für das ganze Feld."
+ },
+ "terms-02": {
+  "label": "Eine Teilmenge der KI, in der Systeme Muster aus Daten lernen statt sich nur auf explizite Regeln zu verlassen.",
+  "why": "Ein Spam-Filter kann beispielsweise Muster aus gekennzeichneten Nachrichten inferieren statt einen Entwickler zu benötigen, die jede Spam-Regel aufzuzählen. Das Schlüssel-Exam-Stichwort ist Verbesserung von Daten oder Erfahrung."
+ },
+ "terms-03": {
+  "label": "Eine Teilmenge von ML, die neuronale Multi-Layer-Netzwerke nutzt um komplexe Darstellungen zu lernen.",
+  "why": "Ein Visions-Modell kann Kanten in frühen Schichten, Formen in mittleren Schichten und Objekte in späteren Schichten lernen. Es wird von breiterem Maschinenlernen durch seine Nutzung von tiefem neuronale Netzwerke und typischer größere Daten und Compute-Anforderungen unterschieden."
+ },
+ "terms-04": {
+  "label": "KI, die neue Inhalte wie Text, Bilder, Audio, Video oder Code erzeugt.",
+  "why": "Ein Text-Modell entwirft eine E-Mail und ein Diffusions-Modell erstellt ein Bild sind generativ, weil sie neue Ausgabe synthetisieren. Prognostizierung, ob ein existierende E-Mail Spam ist, ist stattdessen diskriminative Klassifizierung."
+ },
+ "terms-05": {
+  "label": "Die gelernte Darstellung, die Eingaben auf Prognosen oder generierte Ausgaben abbildet.",
+  "why": "Nach dem Training ist das Modell das für Inference verwendete Artefakt. Ein Haus-Preis-Modell wendet beispielsweise gelernte Beziehungen auf Features einer neuen Immobilie an um ihren Preis zu schätzen."
+ },
+ "terms-06": {
+  "label": "Die Verfahren verwendet zu Muster lernen, ein Modell zu optimieren oder eine Berechnung durchzuführen.",
+  "why": "Gradient Descent ist ein Lern-Algorithmus, während das Netzwerk, das er erzeugt, das Modell ist. Die Unterscheidung ist Prozess gegenüber gelerntem Artefakt."
+ },
+ "terms-07": {
+  "label": "Eine Eingabe-Variable oder messbare Attribut zum Modell geliefert.",
+  "why": "Für ein Haus-Preis-Modell sind Geschossfläche, Postleitzahl und Zimmerzahl Features, weil sie als Beweis in das Modell eingehen. Der Verkaufspreis ist das Etikett zu prognostizieren, während Parameter interne Werte sind, das Modell während Training lernt."
+ },
+ "terms-08": {
+  "label": "Das bekannte Ziel oder gewünschte Antwort an ein überwachtes Trainings-Beispiel angehängt.",
+  "why": "In der Spam-Erkennung ist die Spam oder nicht-Spam-Antwort jeder Training-E-Mail ihr Etikett. Ein Etikett ist das Ziel, das das Modell lernt zu prognostizieren; Features sind die Beweis verwendet zu Prognostizierung machen."
+ },
+ "terms-09": {
+  "label": "Ein Wert, wie ein neuronale-Netzwerk-Gewicht, aus Trainings-Daten gelernt.",
+  "why": "Ein neuronale-Netzwerk-Gewicht wird automatisch angepasst, da Training Fehler minimiert. Parameter sind vom Modell gelernt, ungleich Hyperparameter, wie Learning-Rate, die Praktiker vor oder während Training auswählen."
+ },
+ "terms-10": {
+  "label": "Eine Trainings- oder Modell-Einstellung, die außerhalb des Lernprozesses ausgewählt ist, wie Learning-Rate oder Baum-Tiefe.",
+  "why": "Beispiele sind Learning-Rate, Batch-Größe, Baum-Tiefe und Regularisierungs-Stärke. Diese Einstellungen steuern Training oder Modell-Struktur und werden normalerweise mit Validierungs-Daten statt Modell-Gewichte gelernt ausgewählt."
+ },
+ "terms-11": {
+  "label": "Der Prozess der Anpassung von Modell-Parametern zu Fehler auf Beispielen reduzieren.",
+  "why": "Während Training vergleicht das System Ausgaben mit einer Lern-Signal, berechnet Fehler und aktualisiert Parameter. Das ist die Lern-Phase; Inference verwendet das resultierende fixe Modell auf neue Eingaben."
+ },
+ "terms-12": {
+  "label": "Verwenden ein trainiertes Modell zu produzieren eine Prognose, Entscheidung, Einbettung oder generierte Resultat.",
+  "why": "Ein bereitgestelltes Fraud-Modell bewertet eine neue Karten-Transaktion ist Inference ausführend. Kein Modell-Lernen ist erforderlich für diese Anfrage; das trainierte Modell wird zu vorher ungesehene Eingabe angewendet."
+ }
+}

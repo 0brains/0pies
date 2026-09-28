@@ -1,0 +1,108 @@
+{
+ "cu-001": {
+  "label": "एक invoice PDF analyze करें और extracted vendor, total और due-date fields को पढ़ें",
+  "sub": "prebuilt-invoice",
+  "why": "prebuilt-invoice invoice documents से structured fields निकालता है — exam का सबसे-tested prebuilt analyzer (7 mentions)।"
+ },
+ "cu-002": {
+  "label": "Natural language में अपना field schema define करें और उन fields को contracts से निकालें",
+  "sub": "custom analyzer via begin_create_analyzer",
+  "why": "Custom analyzers एक field schema से build होते हैं जिसे तुम describe करते हो — CU का plain-language field description ही इसे Document Intelligence prebuilts से अलग करता है।"
+ },
+ "cu-003": {
+  "label": "Text और identified objects को photographed equipment labels से निकालें",
+  "sub": "prebuilt-image",
+  "why": "prebuilt-image still images से text और objects निकालता है उसी analyzer workflow के through जैसे हर दूसरी modality।"
+ },
+ "cu-004": {
+  "label": "Recorded support calls से transcript plus summary और speaker breakdown पाएं",
+  "sub": "prebuilt-audio",
+  "why": "CU के audio analyzers transcripts, summaries और speakers return करते हैं — extraction, कभी speech synthesis नहीं।"
+ },
+ "cu-005": {
+  "label": "Recorded training sessions को segment करें और उनके transcripts और visual events को search के लिए index करें",
+  "sub": "prebuilt-videoSearch",
+  "why": "Video analyzers segments, transcripts और visual events return करते हैं; *Search variants content को retrieval के लिए prepare करते हैं — Azure AI Search क्या CU निकालता है उसे index करता है।"
+ },
+ "cu-006": {
+  "label": "Text, tables, और selection marks को document structure के साथ return करें — कोई field semantics नहीं",
+  "sub": "prebuilt-layout",
+  "why": "Layout text, tables, selection marks और structure निकालता है; Read-style OCR सिर्फ text है — histack का CU Read-vs-Layout distinction।"
+ },
+ "cu-007": {
+  "label": "A mixed batch of vendor forms को उनके loose key-value pairs को pull out करने के लिए बिना predefined field schema से शुरू किए",
+  "sub": "prebuilt-documentFields",
+  "why": "prebuilt-documentFields documents से general key-value pairs निकालता है बिना domain-specific schema के — prebuilt-invoice के fixed invoice fields के विपरीत।"
+ },
+ "cu-008": {
+  "label": "एक brand-new form type के लिए custom analyzer build करने से पहले, Content Understanding से propose किए गए field schema को पूछें, फिर नए analyzer को general document analyzer के आधार पर बनाएं",
+  "sub": "prebuilt-documentFieldSchema → prebuilt-document",
+  "why": "prebuilt-documentFieldSchema एक document type के लिए fields propose करता है जिसे तुमने अभी schema नहीं दिया है; prebuilt-document base_analyzer_id है जब एक नया custom document analyzer define करते हैं — custom-build workflow में दो distinct ids।"
+ },
+ "cu-009": {
+  "label": "Python quickstart को product photo के विरुद्ध run करें और generated description को result के Summary field से पढ़ें",
+  "sub": "prebuilt-imageSearch",
+  "why": "prebuilt-imageSearch descriptive image output के लिए quickstart analyzer है — इसका result एक Summary field expose करता है जो natural-language description रखता है।"
+ },
+ "cu-010": {
+  "label": "एक custom analyzer build करें जो dashboard screenshots के एक batch से chart के Title और ChartType fields को pull करता है",
+  "sub": "custom analyzer via base_analyzer_id=\"prebuilt-image\"",
+  "why": "Custom image analyzers base_analyzer_id को prebuilt-image पर सेट करते हैं फिर एक field schema layer करते हैं — chart और screenshot extraction के लिए documented pattern।"
+ },
+ "cu-011": {
+  "label": "Retail audit से shelf photos को analyze करें और structured fields को return करें जैसे product count, brand presence, और out-of-stock indicators",
+  "sub": "prebuilt-image",
+  "why": "Content Understanding का image analyzer schema-defined structured fields को photos से directly return करता है — retail shelf-audit scenario जो exam directly test करता है।"
+ },
+ "cu-012": {
+  "label": "एक Python client wire करें जो begin_analyze को analyzer_id=\"prebuilt-image\" के साथ एक photo URL के विरुद्ध कॉल करता है, फिर detected objects को result से पढ़ें",
+  "sub": "prebuilt-image",
+  "why": "begin_analyze(analyzer_id=..., inputs=[AnalysisInput(url=...)]) कॉल pattern सभी modalities में identical है — सिर्फ analyzer id बदलता है, और prebuilt-image direct (non-search) image analyzer है।"
+ },
+ "cu-013": {
+  "label": "एक lightweight Python client wire करें जो begin_analyze को call-recording URL के साथ कॉल करता है एक transcript और summary pull करने के लिए एक retrieval index के लिए ready",
+  "sub": "prebuilt-audioSearch",
+  "why": "prebuilt-audioSearch SDK के quickstart snippet में documented analyzer id है — *Search suffix output को indexing/RAG retrieval के लिए prepped marks करता है, prebuilt-audio के direct extraction के विपरीत retrieval prep के साथ।"
+ },
+ "cu-014": {
+  "label": "Speaker-labeled, precisely timed transcript phrases को podcast episodes के एक batch से pull करें",
+  "sub": "transcriptPhrases",
+  "why": "transcriptPhrases output field जो speaker identification और timing information रखता है — एक direct audio-extraction output, analyzer id स्वयं से distinct।"
+ },
+ "cu-015": {
+  "label": "Recognize करें कि एक podcast MP3 को Content Understanding में submit करना contents object के kind को video inputs के लिए use किए गए same value पर सेट करता है",
+  "sub": "kind: \"audioVisual\"",
+  "why": "Audio-only और video inputs दोनों contents schema में kind: \"audioVisual\" use करते हैं — एक shared value जो कोई भी कौन expected एक distinct 'audio' kind करता है उसे trip करता है।"
+ },
+ "cu-016": {
+  "label": "Confirm करें कि एक voicemail inbox से एक structured transcript pull करना captured speech को text में है, कभी नहीं text को speech में turned",
+  "why": "CU के audio analyzers existing speech को structured output में transcribe करते हैं — कभी synthesize नहीं करते नए spoken output; वह job Azure AI Speech को belong करती है, Content Understanding को नहीं।"
+ },
+ "cu-017": {
+  "label": "एक uploaded recorded product demo को logical scene segments में divide करें किसी भी downstream processing से पहले run करता है",
+  "sub": "enableSegment",
+  "why": "enableSegment analyzer schema property जो footage को logical segments जैसे scenes में split करता है — एक video-analyzer control, audio या document one नहीं।"
+ },
+ "cu-018": {
+  "label": "एक marketing clip को analyze करने के बाद, एक structured markdown summary को पढ़ें इसके transcript और visual content का",
+  "sub": "prebuilt-videoSearch",
+  "why": "prebuilt-videoSearch results एक markdown field expose करते हैं जो transcript और visual content को per segment summarize करता है — SDK का documented read-back field video के लिए।"
+ },
+ "cu-019": {
+  "label": "Confirm करें कि keyframes और visual events को uploaded recording से निकालना existing footage पर काम करता है, नए frames generate करने के बजाय",
+  "why": "CU के analyzers keyframes, transcripts और visual events को already existing footage से निकालते हैं — synthetic frames generate नहीं करते; वह एक completely different AI service category है।"
+ },
+ "cu-020": {
+  "label": "एक Python client wire करें जो begin_analyze को analyzer_id=\"prebuilt-videoSearch\" के साथ uploaded MP4 URL के विरुद्ध कॉल करता है",
+  "sub": "prebuilt-videoSearch",
+  "why": "begin_analyze(analyzer_id=\"prebuilt-videoSearch\", inputs=[AnalysisInput(url=...)]) कॉल SDK का documented pattern है video extraction को kick off करने के लिए।"
+ },
+ "cu-modality-grid": {
+  "hint": "पूछें कि source file actually क्या है, फिर sub line में exact prebuilt-* analyzer id को check करें — id स्वयं उसकी modality name करता है (document/image/audio/video), और Search-suffixed ids output को indexing के लिए prep करते हैं बजाय modality change करें।",
+  "note": "Content Understanding हमेशा extract करता है — यह कभी generate या index नहीं करता। Extraction into Azure AI Search एक downstream step है, कोई भी CU स्वयं करता है।",
+  "zones[0].def": "PDFs, invoices, contracts और freeform paperwork जिसे Content Understanding structured fields, tables और text में turn करता है।",
+  "zones[1].def": "Photos, screenshots और charts जिसे Content Understanding structured fields, descriptions और detected objects में turn करता है।",
+  "zones[2].def": "Recorded speech — calls, podcasts और voicemails — जिसे Content Understanding transcripts, summaries और speaker labels में turn करता है।",
+  "zones[3].def": "Recorded footage जिसे Content Understanding segment करता है, transcribe करता है और search के लिए prepare करता है।"
+ }
+}

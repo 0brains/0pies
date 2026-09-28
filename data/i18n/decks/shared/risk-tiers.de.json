@@ -1,0 +1,91 @@
+{
+ "risk-tiers": {
+  "hint": "Ziehe jedes System auf seine Risiko-Stufe. Die Stufe folgt dem Zweck und Kontext, nicht wie ausgereift das Modell ist.",
+  "note": "Die Stufen hängen am Gebrauch, nicht an der Technologie. Das gleiche Modell kann in einer Bereitstellung verboten, in einer anderen hochrisiko und in einer dritten minimal sein.",
+  "zones[0].def": "Verbotene Praktiken unter Art. 5. Kein Risiko, das gemindert werden kann — die Praktik darf nicht in den Handel gebracht oder überhaupt verwendet werden.",
+  "zones[1].def": "Art. 6 und Annex III, oder eine Sicherheitskomponente eines regulierten Produkts. Zulässig vorbehaltlich großer Verpflichtungen vor und nach dem Inverkehrbringen.",
+  "zones[2].def": "Art. 50 Transparenzpflichten: Mitteile Menschen, dass sie mit KI umgehen, oder dass Inhalte synthetisch sind.",
+  "zones[3].def": "Alles andere. Keine Verpflichtungen unter der Verordnung über das hinaus, was für Software gilt; freiwillige Kodexe können gelten.",
+  "zones[4].def": "Allzweck-Modelle, die die Art. 51 Schwelle erfüllen, mit Modellzustände unterschiedlich von der Gebrauchspyramide."
+ },
+ "rt2-01": {
+  "label": "Ein staatliches Schema, das die Vertrauenswürdigkeit von Bürgern aus nicht verwandtem sozialem Verhalten bewertet und es verwendet, um den Zugang zu öffentlichen Diensten zu verweigern.",
+  "why": "Die Bewertung von Bürgern durch oder im Namen öffentlicher Behörden, die zu nachteiligen Behandlung in nicht verwandten Kontexten führt, ist gemäß Art. 5 vollständig verboten."
+ },
+ "rt2-02": {
+  "label": "Ein System, das Gefühle von Mitarbeitern aus Gesichtsausdrücken während ihrer Arbeitszeit abliest, außerhalb eines medizinischen oder Sicherheitszwecks.",
+  "why": "Emotionserkennung am Arbeitsplatz und in der Bildung ist verboten, mit engen medizinischen und Sicherheitsausnahmen. Darum fängt das Verbot HR-Analytik-Produkte."
+ },
+ "rt2-03": {
+  "label": "Ein Werkzeug, das Gesichtsbilder aus dem Internet und CCTV unterschiedslos kratzt, um eine Gesichtserkennungsdatenbank zu erstellen.",
+  "why": "Unterschiedsloses Kratzen zum Erstellen von Gesichtserkennungsdatenbanken ist ausdrücklich verboten, unabhängig vom Zweck des Betreibers."
+ },
+ "rt2-04": {
+  "label": "Ein System, das unterschwellige Techniken jenseits des Bewusstseins einer Person nutzt, um Verhalten wesentlich zu verzerren und erhebliche Schäden zu verursachen.",
+  "why": "Manipulative und ausnutzende Techniken, die erhebliche Schäden verursachen, sind verboten. Der Test ist wesentliche Verhaltensverzerrung, nicht die Ausgereiftheit der Technik."
+ },
+ "rt2-05": {
+  "label": "Ein System zur Überprüfung von Lebensläufen, das Bewerber für eine Rolle filtert und rangiert.",
+  "why": "Beschäftigung und Arbeitnehmerverwaltung ist ein Annex-III-Bereich. Die Überprüfung bei der Rekrutierung ist das kanonische Hochrisiko-Beispiel und zieht den vollständigen Obligationssatz an."
+ },
+ "rt2-06": {
+  "label": "Ein Modell, das von einer Bank verwendet wird, um die Kreditwürdigkeit von natürlichen Personen zu bewerten.",
+  "why": "Die Bewertung der Kreditwürdigkeit von natürlichen Personen ist in Annex III aufgelistet, mit einer Ausnahme für die Erkennung von Finanzbetrügereien."
+ },
+ "rt2-07": {
+  "label": "Eine KI-Komponente, die die Sicherheitsfunktion eines bereits nach EU-Harmonisierungsrecht regulierten Medizinprodukts steuert.",
+  "why": "Das ist die Art. 6(1)-Route: eine Sicherheitskomponente eines Produkts, das unter aufgelistete Harmonisierungsgesetzgebung fällt und eine Konformitätsbewertung Dritter erfordert."
+ },
+ "rt2-08": {
+  "label": "Ein System, das verwendet wird, um den Zugang zu oder die Zuweisung von Menschen an Bildungseinrichtungen zu bestimmen.",
+  "why": "Bildungs- und Berufsausbildungsentscheidungen, die den Zugang einer Person beeinflussen, sind Annex III. Der Schaden ist für Lebenschancen, weshalb die Stufe hoch statt begrenzt ist."
+ },
+ "rt2-09": {
+  "label": "Ein Kundendienst-Chatbot, der dem Benutzer klar machen muss, dass er mit einem KI-System umgeht.",
+  "why": "Art. 50 Transparenz: Eine Person muss wissen, dass sie mit einer Maschine umgeht, es sei denn, es ist offensichtlich. Diese Offenlegung ist die ganze Verpflichtung."
+ },
+ "rt2-10": {
+  "label": "Ein Bildgenerator, dessen synthetische Ausgaben in einem maschinenlesbaren Format als künstlich generiert gekennzeichnet werden müssen.",
+  "why": "Das Kennzeichnen synthetischen Inhalts ist eine Art. 50-Pflicht für Anbieter von Generierungssystemen, unabhängig von welcher Stufe die Bereitstellung sitzt."
+ },
+ "rt2-11": {
+  "label": "Ein Deepfake, das als Teil eines Nachrichtenelements veröffentlicht wird, muss als künstlich generiert oder manipuliert offengelegt werden.",
+  "why": "Die Offenlegung von Deepfakes ist eine Transparenzverpflichtung für Einsatzführer, mit Anpassungen für offensichtlich künstlerische oder satirische Werke."
+ },
+ "rt2-12": {
+  "label": "Ein System zur Emotionserkennung, das außerhalb eines verbotenen Kontexts verwendet wird, muss seine Betroffenen über seinen Betrieb informieren.",
+  "why": "Wo Emotionserkennung nicht vollständig verboten ist, ist es Betroffene zu informieren eine Art. 50-Pflicht. Die gleiche Technologie sitzt in zwei verschiedenen Stufen je nach Einstellung."
+ },
+ "rt2-13": {
+  "label": "Ein Spam-Filter, der eingehende E-Mails für einen Unternehmens-Mail-Dienst klassifiziert.",
+  "why": "Spam-Filterung ist das Beispiel der Verordnung für minimales Risiko. Keine Verpflichtungen hängen über allgemeines Recht hinaus an."
+ },
+ "rt2-14": {
+  "label": "Ein KI-Gegner, der Nicht-Spieler-Charaktere in einem Videospiel steuert.",
+  "why": "Unterhaltungsgebrauch ohne Auswirkung auf Rechte, Sicherheit oder Zugang zu Diensten fällt außerhalb der Stufen, die Verpflichtungen tragen."
+ },
+ "rt2-15": {
+  "label": "Ein Bestand-Prognose-Modell, das Lagerniveaus vorhersagt ohne Auswirkung auf Einzelne.",
+  "why": "Kein aufgelisteter Bereich, keine Sicherheitskomponente, keine Wechselwirkung mit einer Person. Operationale Analytik ist wo die meisten Enterprise-KI tatsächlich sitzt."
+ },
+ "rt2-16": {
+  "label": "Ein Modell, das Energieverbrauch im Kühlsystem eines Rechenzentrums optimiert.",
+  "why": "Industrielle Optimierung, die keinen Annex-III-Bereich berührt und keine Person ist minimales Risiko, so kommerziell folgenreich es ist."
+ },
+ "rt2-17": {
+  "label": "Ein Allzweck-Modell, von dem angenommen wird, dass es systemisches Risiko trägt, weil sein Trainings-Compute die in der Verordnung festgelegte Schwelle überschreitet.",
+  "why": "Art. 51 setzt eine Compute-basierte Vermutung. Dies ist eine Modellzustands-Klassifizierung und sitzt völlig außerhalb der Gebrauchspyramide."
+ },
+ "rt2-18": {
+  "label": "Ein Allzweck-Modell, das von der Kommission als hochauswirkungsfähig mit den fortschrittlichsten Modellen gleichwertig bestimmt wird.",
+  "why": "Die Bestimmung ist die zweite Route ins systemische Risiko, neben der Compute-Vermutung. Entweder Route löst die gleichen Verpflichtungen aus."
+ },
+ "rt2-19": {
+  "label": "Ein Anbieter, der Model-Evaluierungen, adversales Testen durchführen muss und Serious Incidents auf Model-Ebene verfolgen und berichten.",
+  "why": "Evaluierung, adversales Testen, systemische-Risiko-Minderung und Incident-Berichterstattung sind die Art. 55-Verpflichtungen, die nur systemisches-Risiko-GPAI trägt."
+ },
+ "rt2-20": {
+  "label": "Ein Anbieter, der ein angemessenes Cybersecurity-Schutzniveau für das Modell und seine physische Infrastruktur gewährleisten muss.",
+  "why": "Model-Cybersecurity ist eine systemisches-Risiko-GPAI-Pflicht. Baseline-GPAI-Verpflichtungen — Dokumentation, Urheberrechtspolitik, Trainings-Daten-Zusammenfassung — gelten ohne sie."
+ }
+}

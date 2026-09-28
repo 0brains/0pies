@@ -1,0 +1,208 @@
+{
+ "id": "audit-trail",
+ "runner": "board",
+ "title": "Audit Trail",
+ "blurb": "Five ways an organization checks its own security — a scan, a test, an audit, a review, and a log check. Sort each scene into the assessment that produced it, or the one that's still missing.",
+ "source": "Chapple CISSP SG 10ed ch.15 (Security Assessment and Testing) · CISSP April-2024 outline 6.1, 6.2, 6.5",
+ "asOf": "2026-08",
+ "area": "6.1-6.2, 6.5",
+ "hint": "Ask two questions: did anyone try to actually exploit anything, and is the output a technical finding or a formal opinion against a standard? That sorts most of the board.",
+ "note": "Several scenes describe a report or a claim that already exists but is missing a specific piece of proof. Sort those to the assessment type that would have produced the missing proof, not the one that produced the claim in front of you.",
+ "zones": [
+  {
+   "key": "Vulnerability scan",
+   "name": "Vulnerability scan",
+   "def": "An automated, repeatable probe of hosts, ports and configurations against known-weakness databases (missing patches, misconfigurations, exposed services) that stops at identification — it never attempts to exploit what it finds. A credentialed run, logged in with a read-only account, sees deeper than an unauthenticated one, but neither one proves a flaw is actually reachable by an attacker; that proof belongs to a penetration test."
+  },
+  {
+   "key": "Penetration test",
+   "name": "Penetration test",
+   "def": "Authorized, scoped testing under agreed Rules of Engagement where testers actively attempt to exploit weaknesses — white-box (source and internal detail given), gray-box (partial knowledge), or black-box (none) — to prove real-world impact. It goes past a vulnerability scan's list of findings into actually using one, and its final deliverable is a report, not a live compromise left running."
+  },
+  {
+   "key": "Audit",
+   "name": "Audit",
+   "def": "A formal, independent review of controls against a named standard, regulation or baseline (ISO 27001, PCI DSS, SOC 1/2/3), producing a documented opinion rather than a list of technical flaws. An auditor evaluates and recommends but never decides or remediates on the organization's behalf, and a report's credibility depends on whether it only reviewed a description of controls (Type I) or actually confirmed the controls operated correctly over an extended period (Type II)."
+  },
+  {
+   "key": "Code review",
+   "name": "Code review",
+   "def": "Static, pre-production inspection of an application's own source — by a peer developer or an automated static-analysis tool — for defects before the code ever runs. It catches what only exists in the text of the code itself, such as a hardcoded secret, which a scan or test that only observes the running application would never see."
+  },
+  {
+   "key": "Log review",
+   "name": "Log review",
+   "def": "Retrospective inspection of events already recorded by systems and security tools (SIEM, NetFlow, admin activity logs) to confirm what actually happened and who actually touched what — reconstructing history from a passive record, never by probing or exploiting the live system in the moment."
+  }
+ ],
+ "items": [
+  {
+   "id": "aud-01",
+   "label": "An automated tool sweeps 200 hosts on a subnet overnight against a known-CVE database and returns a list of twelve machines running unpatched software, without ever attempting to leverage any of the flaws it flags.",
+   "answer": "Vulnerability scan",
+   "why": "Automated identification that stops short of exploitation is the defining boundary; a penetration test would be the tempting neighbor once someone actually tries to use one of these twelve flaws, but nobody here does.",
+   "citation": "SG ch.15 · outline 6.2.1"
+  },
+  {
+   "id": "aud-02",
+   "label": "The same scanning tool is re-run against a finance server, this time logged in with a read-only local-admin account instead of anonymously, and the new report surfaces internal misconfigurations the earlier run never saw.",
+   "answer": "Vulnerability scan",
+   "why": "This is a credentialed scan going deeper because it can see past the front door — still identification, not exploitation, so it stays here rather than sliding into a penetration test just because a login was used.",
+   "citation": "SG ch.15 · outline 6.2.1"
+  },
+  {
+   "id": "aud-03",
+   "label": "A report from an automated tool lists open ports, guessed operating systems, and a handful of stale services running across a subnet, generated overnight entirely without logging into any host or attempting to leverage what it finds.",
+   "answer": "Vulnerability scan",
+   "why": "Automated identification of ports, OS fingerprints and stale services — all without any exploitation attempt — is exactly what an unauthenticated vulnerability scan produces. A penetration test is the tempting neighbor once someone actually tries to use one of those stale services, but nothing here goes past enumeration.",
+   "citation": "SG ch.15 · outline 6.2.1"
+  },
+  {
+   "id": "aud-04",
+   "label": "Before deciding what deeper testing a new subnet needs, a team just wants a fast, repeatable inventory of every live host and open port on it.",
+   "answer": "Vulnerability scan",
+   "why": "Establishing what exists on the network is the network-discovery flavor of scanning, and it normally comes first — a penetration test's information-gathering phase builds on this baseline rather than replacing it.",
+   "citation": "SG ch.15 · outline 6.2.1"
+  },
+  {
+   "id": "aud-05",
+   "label": "A vulnerability report rates a flaw in Meridian Retail's checkout API at CVSS 9.8, but leadership won't fund an emergency fix until someone shows an attacker could actually reach cardholder data through it.",
+   "answer": "Penetration test",
+   "why": "A severity score describes potential impact, not proven reachability; only an authorized attempt to actually exploit the flaw supplies the missing proof, which a scan — by design — never attempts.",
+   "citation": "SG ch.15 · outline 6.2.2"
+  },
+  {
+   "id": "aud-06",
+   "label": "Testers are handed Meridian Retail's source code and internal network diagrams up front, letting them skip most reconnaissance and go straight at logic flaws in the loyalty-points module.",
+   "answer": "Penetration test",
+   "why": "Full prior knowledge makes this a white-box, known-environment test; the tempting confusion is gray-box, but gray-box gives only partial knowledge — full source and diagrams go all the way to white-box.",
+   "citation": "SG ch.15 · outline 6.2.2"
+  },
+  {
+   "id": "aud-07",
+   "label": "Before any tester touches Meridian Retail's network, legal, IT security, and senior management all sign off on a rules-of-engagement document naming exactly which systems are off-limits.",
+   "answer": "Penetration test",
+   "why": "The planning phase and its Rules of Engagement are what make active exploitation lawful and scoped; skipping this multi-party sign-off is what turns testing into unauthorized intrusion, so its presence is the tell for this assessment type.",
+   "citation": "SG ch.15 · outline 6.2.2"
+  },
+  {
+   "id": "aud-08",
+   "label": "After finding a SQL injection flaw in a returns portal, a tester pulls a small sample of customer records to prove the flaw is real, then destroys the copy and reports the finding.",
+   "answer": "Penetration test",
+   "why": "Actually using the flaw to extract data, however briefly, is the exploitation step that separates this from a vulnerability scan, which would have flagged the injection point and stopped there.",
+   "citation": "SG ch.15 · outline 6.2.2"
+  },
+  {
+   "id": "aud-09",
+   "label": "A firm hires an outside team and tells them nothing beyond Meridian Retail's public domain name, wanting the engagement to mirror what an external attacker would actually see.",
+   "answer": "Penetration test",
+   "why": "Zero prior information is the black-box, unknown-environment form — the trap is assuming any testing without full access must be an audit, but this is still active exploitation attempted from an outsider's starting point, which audits never do.",
+   "citation": "SG ch.15 · outline 6.2.2"
+  },
+  {
+   "id": "aud-10",
+   "label": "A payments processor asks a vendor for a report confirming that its access controls, encryption, and monitoring didn't just exist on paper but actually functioned correctly every day for the past twelve months.",
+   "answer": "Audit",
+   "why": "Confirming operating effectiveness over an extended period is a SOC 2 Type II opinion; a Type I report would only cover whether the controls were well-designed at a single point in time, which is the weaker, tempting-but-wrong read of 'confirming controls.'",
+   "citation": "SG ch.15 · outline 6.1.3"
+  },
+  {
+   "id": "aud-11",
+   "label": "A hospital hires a CPA firm with no financial or reporting relationship to the hospital to render an independent opinion on whether its safeguards meet a healthcare regulation's requirements.",
+   "answer": "Audit",
+   "why": "Independence from the org being reviewed, plus a documented opinion against a named regulation, is what makes this an audit rather than an internal security assessment, which the hospital's own staff could run without any outside opinion at all.",
+   "citation": "SG ch.15 · outline 6.1.2"
+  },
+  {
+   "id": "aud-12",
+   "label": "A marketing team wants a short, public document to reassure customers that a new SaaS product's controls are sound enough to post on the company website.",
+   "answer": "Audit",
+   "why": "This is a SOC 3 report — the public, management-assertion-level cousin of SOC 2, intentionally light on technical detail; expecting it to carry SOC 2's confidential, control-by-control detail is the trap, since that level stays under NDA.",
+   "citation": "SG ch.15 · outline 6.1.3"
+  },
+  {
+   "id": "aud-13",
+   "label": "Reviewing an incident afterward, a committee notes that the auditor who assessed Meridian Retail's controls last quarter also personally ordered the remediation team to change its firewall rules.",
+   "answer": "Audit",
+   "why": "An auditor's role is to evaluate and recommend, never to decide or act on the organization's behalf; an auditor directing a remediation crosses into a role this assessment type structurally excludes, which is the finding worth flagging.",
+   "citation": "SG ch.15 · outline 6.5.1"
+  },
+  {
+   "id": "aud-14",
+   "label": "A small private company, without the budget for an outside firm, has its own compliance staff check password-policy adherence purely for internal management's use, against no published external standard.",
+   "answer": "Audit",
+   "why": "This is still an audit — an internal, informal one — because it is a compliance check against a defined policy; it only stops being an audit if nobody is checking against any standard or baseline at all, which is not the case here.",
+   "citation": "SG ch.15 · outline 6.1.1"
+  },
+  {
+   "id": "aud-15",
+   "label": "Before a payment module merges, two developers who did not write it walk through the code line by line looking for logic and security defects, without running the application at all.",
+   "answer": "Code review",
+   "why": "Inspecting the source itself, by someone other than its author, with the app never executed, is a static review; the moment someone actually runs the module to see how it behaves, it becomes a different, dynamic form of testing.",
+   "citation": "SG ch.15 · outline 6.2.5"
+  },
+  {
+   "id": "aud-16",
+   "label": "Before any change to Meridian Retail's encryption library ships, the team follows a fixed six-stage process — planning, overview, preparation, inspection, rework, follow-up — with formal entry and exit criteria at each stage.",
+   "answer": "Code review",
+   "why": "This is a Fagan inspection, the most formal variant of this assessment type; its rigidity distinguishes it from an informal peer walkthrough, but both stay in the same zone because both examine the code itself rather than the running system.",
+   "citation": "SG ch.15 · outline 6.2.5"
+  },
+  {
+   "id": "aud-17",
+   "label": "An automated static-analysis tool scans a repository's raw source without compiling or executing it, and flags a hardcoded database password sitting in a configuration file.",
+   "answer": "Code review",
+   "why": "Finding a secret embedded in text nobody runs is a static-analysis result; a dynamic scanner exercising the live application for weeks would never trip this finding, since the running app never displays the raw source line containing it.",
+   "citation": "SG ch.15 · outline 6.2.5"
+  },
+  {
+   "id": "aud-18",
+   "label": "A dynamic scanner has exercised Meridian Retail's live checkout service for weeks and found nothing wrong, yet a hardcoded database password sits untouched in a source file no human or static tool has ever opened.",
+   "answer": "Code review",
+   "why": "The missing evidence is a look at the code itself: dynamic testing only observes what the running application does, so a secret that the application never displays back to a tester stays invisible until someone actually inspects the source.",
+   "citation": "SG ch.15 · outline 6.2.5"
+  },
+  {
+   "id": "aud-19",
+   "label": "A junior developer's pull request to a permissions module sits unmerged for a week because no policy requires a second person to look at it before it ships.",
+   "answer": "Code review",
+   "why": "The gap here is the missing second set of eyes on the code itself before release; a later vulnerability scan or penetration test could eventually catch a resulting flaw, but only after the flawed code is already live, which defeats the point of catching it pre-production.",
+   "citation": "SG ch.15 · outline 6.2.5"
+  },
+  {
+   "id": "aud-20",
+   "label": "Every quarter, a security manager samples admin-account activity across Meridian Retail's production servers to confirm privileged users haven't touched files outside their duties.",
+   "answer": "Log review",
+   "why": "Sampling already-recorded activity for misuse is a retrospective check on history, not a live probe of the system — a penetration test would be the tempting neighbor, but nothing here is being actively attacked or exploited.",
+   "citation": "SG ch.15 · outline 6.2.3"
+  },
+  {
+   "id": "aud-21",
+   "label": "All of Meridian Retail's servers sync their clocks to a common time source before their events feed into a central console, so an investigator can trust the order in which two systems recorded the same incident.",
+   "answer": "Log review",
+   "why": "Synchronized timestamps are what make this assessment type's core output — a trustworthy sequence of events — usable at all; without it, an investigator reconstructing what happened couldn't rely on the record, even though the events were still captured.",
+   "citation": "SG ch.15 · outline 6.2.3"
+  },
+  {
+   "id": "aud-22",
+   "label": "Investigators determine exactly which employee copied a sensitive file at 2:14 a.m. entirely from records already stored in the SIEM, without touching the live system at all.",
+   "answer": "Log review",
+   "why": "Reconstructing an event purely from a passive, already-captured record is this assessment type's signature move; a penetration test only produces new evidence by acting on a live system, which is the opposite of what happens here.",
+   "citation": "SG ch.15 · outline 6.2.3"
+  },
+  {
+   "id": "aud-23",
+   "label": "A retained NetFlow record from a border firewall lets the team determine that an internal host quietly talked to a suspicious external address three weeks before anyone noticed.",
+   "answer": "Log review",
+   "why": "This is a review of a passively retained record after the fact; a vulnerability scan run today would find whatever weaknesses exist now, but it can't tell the team what already happened three weeks ago.",
+   "citation": "SG ch.15 · outline 6.2.3"
+  },
+  {
+   "id": "aud-24",
+   "label": "A signed audit opinion states that Meridian Retail's access controls are well designed, but nobody can show which specific privileged accounts actually touched the finance database last month.",
+   "answer": "Log review",
+   "why": "An audit opinion can confirm a control is well designed without ever confirming what day-to-day activity actually occurred under it; only a review of the recorded access events themselves supplies proof of who actually touched what.",
+   "citation": "SG ch.15 · outline 6.2.3"
+  }
+ ]
+}

@@ -1,0 +1,74 @@
+{
+ "iii-dp-01": {
+  "a.text": "Usado durante desenvolvimento para sintonizar hiperparâmetros e apanhar overfitting entre rondas de treino.",
+  "a.why": "Este papel é repetível e iterativo — o modelo fica sintonizado contra ele repetidamente, que é exatamente por que não pode também estar na posição do veredicto final.",
+  "b.text": "Congelado e intocado até que toda a sintonização esteja completa, depois correr uma vez para fornecer a estimativa de erro final, imparcial do modelo.",
+  "b.why": "Avaliar o modelo final no conjunto ele foi sintonizado contra — a armadilha de exame gravada — produz uma estimativa enviesada. Apenas um conjunto o processo de sintonização nunca tocou pode dar um número imparcial final."
+ },
+ "iii-dp-02": {
+  "a.text": "A versão exata de script ETL usada para agregar características do modelo de churn é logged em cada passo de transformação, de tabela bruta para característica final.",
+  "a.why": "Isto rastreia a jornada — cada transformação um conjunto de dados passa — e a versão script transformação é a peça único mais crítica daquela metadados para reprodutibilidade e debug de drift.",
+  "b.text": "Antes de qualquer transformação acontecer, a origem original do conjunto de dados, cadeia de custódia e condições de coleta são gravadas para estabelecer sua autenticidade.",
+  "b.why": "Isto é a certidão de nascimento — origem e custódia — não o registo do que subsequentemente foi feito aos dados; aquele registo pertence ao outro lado deste par."
+ },
+ "iii-dp-03": {
+  "a.text": "Ruído matemático calibrado é adicionado durante treino para que nenhum registo de treino único possa ser mostrado ter mais que um efeito negligenciável na saída do modelo.",
+  "a.why": "Isto é uma garantia matemática sobre influência, não sobre onde dados fisicamente viajam — aplica se dados nunca deixam sua fonte.",
+  "b.text": "Cada hospital treina localmente nos seus próprios registos de paciente, e apenas as atualizações resultantes — nunca os registos brutos — viajam para um servidor central para agregação.",
+  "b.why": "O que está protegido aqui é que dados deixa a site, não quanto qualquer registo único pode ser inferido de uma saída — os registos brutos nunca viajam, ponto final."
+ },
+ "iii-dp-04": {
+  "a.text": "Um documento normalizado estabelece motivação, composição, processo de coleta e usos recomendados de um conjunto de dados, antes de qualquer modelo ser treinado nele.",
+  "a.why": "Isto documenta a matéria-prima em si, independente de qualquer modelo que mais tarde será treinado nele.",
+  "b.text": "Um único propósito da versão, seu treino/validação/dados de teste, suas métricas de desempenho e suas limitações conhecidas são resumidas para quem quer que decidir se o implementa.",
+  "b.why": "Isto é scoped para uma única versão, não o conjunto de dados por trás — uma etiqueta de nutrição para o artefato treinado, distinto do escopo nível-de-conjunto de dados do outro lado."
+ },
+ "iii-dp-05": {
+  "a.text": "Um atacante trabalha para trás a partir de saídas de um sistema para reconstruir aproximações dos registos reais que foi treinado.",
+  "a.why": "Este ataque recupera conteúdo de dados de treino do que o sistema produz — reconstrução, não uma verificação sim/não.",
+  "b.text": "Um atacante não reconstrói nada, apenas confirma se dados de uma pessoa específica foram incluídos no conjunto de treino em tudo.",
+  "b.why": "Este ataque responde uma pergunta de set-membership binária; nunca recupera o conteúdo do registo da maneira do outro lado."
+ },
+ "iii-dp-06": {
+  "a.text": "Um residente da UE retire consentimento, e a empresa deve apagar seus registos pessoais de seus sistemas.",
+  "a.why": "Isto remove os dados brutos em si em resposta a um pedido de direitos — um argumento que os dados ajudam treinar o modelo não sobrepõe o direito de apagamento uma vez que consentimento é retirado.",
+  "b.text": "Mesmo depois dos registos ofensivos desaparecerem, o modelo em si deve ser corrigido porque já aprendeu padrões de dados que nunca deveria ter sido usados.",
+  "b.why": "Isto remove o que um modelo absorveu de dados impropriamente usados — um remédio distinto, porque o modelo pode reter o efeito muito depois dos registos subjacentes serem apagados."
+ },
+ "iii-dp-07": {
+  "a.text": "Uma avaliação documentada liga as características e cobertura do dado ao contexto específico de uso pretendido do modelo.",
+  "a.why": "Isto é sobre igualar dados a um uso particular, não a idade ou volume do dado — um grande, conjunto de dados recente pode ainda falhar esta verificação se nunca foi avaliado contra o caso de uso real.",
+  "b.text": "O conjunto de dados é verificado para confirmar que espelha a população o modelo será realmente aplicado — tratado como a questão mais importante de mitigação de viés em todo o pipeline.",
+  "b.why": "Isto é uma pergunta de espelhamento-match sobre a população; simplesmente aumentar um conjunto de dados enviesado com exemplos sintéticos não resolve um gap genuíno aqui, porque a questão de governança subjacente de se os dados originais eram apropriados nunca ficou respondida."
+ },
+ "iii-dp-08": {
+  "a.text": "Um conjunto de dados é verificado para confirmar que não foi alterado ou corrompido em qualquer ponto entre sua fonte original e seu uso atual.",
+  "a.why": "Isto é uma propriedade proteção-de-alteração, distinta de se o conteúdo em si é preciso ou confiável.",
+  "b.text": "O mesmo conjunto de dados é separadamente verificado para confirmar que fica preciso e confiável quando é partilhado e reusado em diferentes sistemas e ambientes.",
+  "b.why": "Isto pergunta se o conteúdo em si aguenta em contextos; um conjunto de dados pode ser perfeitamente intocado enquanto ainda estando obsoleto ou inconsistente no que realmente diz."
+ },
+ "iii-dp-09": {
+  "a.text": "A taxa de resultados positivos é comparada em grupos protegidos na distribuição de saída real, real-mundo do modelo.",
+  "a.why": "Esta métrica compara taxas de resultado agregadas entre grupos em dados como realmente fica.",
+  "b.text": "O atributo protegido de um candidato é virado enquanto cada outra entrada fica idêntica, e a saída é verificada por qualquer mudança.",
+  "b.why": "Isto testa um registo único contra seu próprio gémeo hipotético, não taxas de resultado nível-grupo — um modelo pode passar a verificação agregada enquanto ainda falha esta individual."
+ },
+ "iii-dp-10": {
+  "a.text": "Valores de peso dentro da rede são atualizados através de backpropagation conforme treino reduz erro de previsão.",
+  "a.why": "Estes são valores aprendidos que determinam como dados de entrada são transformados em saída — não existem em forma final até treino acontecer.",
+  "b.text": "A taxa de aprendizagem é fixada pela equipa antes de treino alguma vez começar, e fica intocada enquanto a rede aprende.",
+  "b.why": "Estas são escolhas que uma pessoa faz em antecedência para controlar como a aprendizagem acontece — entradas para treino, não saídas dele."
+ },
+ "iii-dp-11": {
+  "a.text": "Um modelo de previsão de vendas executa quase perfeitamente em dados históricos que treinou, depois faz erros significativos prevendo vendas para produtos genuinamente novos.",
+  "a.why": "O modelo memorizou peculiaridades específicas aos seus dados de treino em vez de aprender padrões que transferem — forte no familiar, fraco no novo.",
+  "b.text": "Um modelo de churn com muito poucos parâmetros e apenas um punhado de características executa pobremente em ambos os dados que treinou e em clientes novos.",
+  "b.why": "Desempenho pobre em qualquer lugar, incluindo nos dados de treino em si, sinaliza que o modelo nunca teve complexidade suficiente para capturar o padrão em primeiro lugar — o modo de falha oposto de memorizá-lo demasiado bem."
+ },
+ "iii-dp-12": {
+  "a.text": "Um sistema de reconhecimento de voz treinado em apenas alguns mil clipes de áudio luta para capturar a variabilidade de fala real-mundo.",
+  "a.why": "Isto pergunta se há dados suficientes, ponto final, para aprender padrões significativos em tudo — dados demasiado poucos aqui significam o modelo nunca teve uma chance para generalizar.",
+  "b.text": "Uma IA médica treinada em dados de um único país executa bem em seu piloto, depois luta uma vez expandida para pacientes com fundos genéticos diferentes e sistemas de cuidados noutros lugares.",
+  "b.why": "Isto pergunta se um conjunto de dados que era suficiente para um piloto consegue ainda suportar expansão em novas populações e contextos — uma pergunta distinta de se havia dados suficientes para o piloto em primeiro lugar."
+ }
+}

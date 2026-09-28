@@ -1,0 +1,50 @@
+{
+ "dp-01": {
+  "a.text": "Model kredytowy widzi falę kandydatów z nowego regionu. Dla każdego danego profilu dochodów, zatrudnienia i historii, wskaźniki niespłacenia dokładnie to, czego model oczekuje.",
+  "a.why": "Wejścia przesunęły się do nowych terenów, ale reguła jest nienaruszona. Bardziej reprezentatywne dane treningowe to naprawiają; nowa reguła nie jest potrzebna.",
+  "b.text": "Model kredytowy widzi tę samą falę kandydatów z nowego regionu. Dla identycznego profilu dochodów, zatrudnienia i historii, wskaźniki niespłacenia tam to dwa razy to, czego model oczekuje.",
+  "b.why": "Identyczne wejścia produkują teraz różne wyniki, więc P(Y|X) zmieniła. Żadna ilość przeważania mieszaniny wejścia nie naprawi relacji, która już się nie utrzymuje."
+ },
+ "dp-02": {
+  "a.text": "Model wyceny widzi skok błędu we wtorek. Dochodzenie stwierdza, że konkurent uruchomił agresywną kampanię rabatów tego ranka.",
+  "a.why": "Rzeczywista zmiana w świecie zmieniła relację model koduje. Ponowne wytrenowanie na danych post-zmiany to prawidłowa odpowiedź.",
+  "b.text": "Model wyceny widzi skok błędu we wtorek. Dochodzenie stwierdza, że nocna praca ETL zaczęła pisać cenę katalogową na pole, które wcześniej trzymało cenę netto.",
+  "b.why": "Nic o cenie się nie zmieniło — model jest karmiony inną ilością pod tą samą nazwą. Ponowne wytrenowanie tutaj piecze wadę i ją ukrywa."
+ },
+ "dp-03": {
+  "a.text": "Nad sześć miesięcy model oszustwa degraduje się, gdy stary wzorzec ataku jest stopniowo zastępowany nowym. Przez cały okres oba wzorce przybyły w objętości.",
+  "a.why": "Dwa odrębne pojęcia nakładające się w czasie, ze zmianą wagi mieszanki. Zestaw, który przechowuje model na pojęcie, obsługuje to dobrze.",
+  "b.text": "Nad sześć miesięcy model oszustwa degraduje się, gdy atakujący stale dostosowują rozmiary transakcji w górę w małych krokach, bez odrębnych starych i nowych wzorców w żadnym punkcie.",
+  "b.why": "Jedno pojęcie gładko przesuwające się przez stany pośrednie. Okno ponownego treningu toczące się śledzi to; maszyna przełączania koncepcji nie ma nic, aby przełączyć."
+ },
+ "dp-04": {
+  "a.text": "Model przesiewania jest wdrażany w nowej klinice. Pacjenci są młodsi i zdrowsi niż populacja treningowa, a rozpowszechnienie choroby jest niezmieniane.",
+  "a.why": "Rozkład funkcji przesunął się, gdy mieszanka wyniku nie. Obawy to ekstrapolacja w cienkie pokryte regiony wejścia.",
+  "b.text": "Model przesiewania jest wdrażany w nowej klinice. Pacjenci wyglądają demograficznie identycznie do populacji treningowej, ale rozpowszechnienie choroby to ćwierć tego, czym było.",
+  "b.why": "P(Y) przesunął się z P(X|Y) nienaruszoną, więc ranking modelu nadal działa, ale jego prawdopodobieństwa są systematycznie zbyt wysokie. Korekta poprzednia, nie ponowne wytrenowanie."
+ },
+ "dp-05": {
+  "a.text": "Udział modelu zbiorów wysokiego ryzyka wzrasta z 12% do 25% w miesiąc. Wyniki zajmują dziewięćdziesiąt dni do obserwacji, więc żadne z nich nie są jeszcze dostępne dla tego kohortu.",
+  "a.why": "Zmiana rozkładu wyjścia bez etykiet to sygnał do dochodzenia, a nie znalezienie. Może to być prawidłowa odpowiedź na rzeczywiście bardziej ryzykowną populację.",
+  "b.text": "Udział modelu zbiorów wysokiego ryzyka wzrasta z 12% do 25% w miesiąc, i kohort sprzed dziewięćdziesięciu dni ma teraz rozstrzygniętą precyzję w dół 18 punktów.",
+  "b.why": "Etykiety dotarły i jakość faktycznie spadła. Dopiero teraz ponowne wytrenowanie jest uzasadnione na dowodzie zamiast na kształcie histogramu."
+ },
+ "dp-06": {
+  "a.text": "Dokładność modelu logistyki zawala się co roku w fortnight przed Bożym Narodzeniem i natychmiast się odradza.",
+  "a.why": "Znane pojęcie wracające w cykl. Nic nie przechowujesz: przechowaj model sezonowy i wybierz go przez kontekst.",
+  "b.text": "Dokładność modelu logistyki zawala się w fortnight po stałej zmianie do krajowych przepisów dostaw i nigdy się nie radzi.",
+  "b.why": "Nagła zmiana jednosygnałowa bez powrotu. Model przed zmianą nie ma dalszego użytku i dane przed zmianą mają ograniczoną wartość do ponownego trenowania."
+ },
+ "dp-07": {
+  "a.text": "Zespół moderacji przepisuje jego wytyczne tak, że kategoria zawartości granicznej jest teraz oznaczona jako 'naruszająca', gdzie była wcześniej 'akceptowalna'. Przychodząca treść jest niezmieniana.",
+  "a.why": "Te same wejścia, inne etykiety: mapowanie zostało przedefiniowane. Każda historyczna etykieta pod starą wytyczną jest teraz częściowo błędna do celów treningowych.",
+  "b.text": "Wytyczne zespołu moderacji są niezmieniane, ale trend wirusowy oznacza rzeczywiście naruszającą zawartość wzrost z 2% do 9% kolejki.",
+  "b.why": "Reguła jest stabilna; mieszanina wyników przesunęła się. Progi i planowanie pojemności potrzebują uwagi, nie uczonej granicy modelu."
+ },
+ "dp-08": {
+  "a.text": "Wyniki przesuwają się dzień, w którym nowa wersja modelu jest wydawana. Stały przykład referencyjny, przegrywany przez obie wersje, odtwarza przesunięcie dokładnie.",
+  "a.why": "Identyczne wejścia produkujące różne wyniki izoluje zmianę do modelu. To jest oczekiwane użycie złotej próbki referencyjnej przy wydaniu.",
+  "b.text": "Wyniki przesuwają się dzień, w którym nowa wersja modelu jest wydawana. Ta sama stała próbka referencyjna, przegrywana przez obie wersje, produkuje identyczne wyniki.",
+  "b.why": "Jeśli model jest dowodliwie niezmieniony na stałych wejściach, wejścia życia musiały się zmienić — i zbieg okoliczności tego samego dnia wskazuje na zmiany po stronie danych wdrażania, a nie świat."
+ }
+}

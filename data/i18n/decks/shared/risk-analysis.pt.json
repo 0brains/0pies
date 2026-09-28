@@ -1,0 +1,83 @@
+{
+  "ra-01": {
+    "label": "Cada risco é scored 1–5 para probabilidade e 1–5 para consequência, e o produto decide onde se senta no registo.",
+    "why": "A grelha de scoring é o dispositivo de priorização padrão. A sua fraqueza é que aplana um risco catastrófico raro e um trivial frequente na mesma célula."
+  },
+  "ra-02": {
+    "label": "Riscos são traçados numa grelha vermelha/âmbar/verde para que o comité possa ver de relance quais precisam atenção primeiro.",
+    "why": "O mapa de calor é uma ferramenta de comunicação construída nos mesmos dois eixos. É para triagem, não para entender causação."
+  },
+  "ra-03": {
+    "label": "O método é criticado por implicar precisão que não tem quando as probabilidades subjacentes são adivinhas.",
+    "why": "Scores ordinais multiplicados juntos produzem números que parecem quantitativos e não são. Saber isto é o que impede um 12 de ser tratado como duas vezes 6."
+  },
+  "ra-04": {
+    "label": "Um evento de topo simples é colocado no centro, com caminhos de ameaça e barreiras preventivas desenhas à sua esquerda e caminhos de consequência com barreiras mitigantes à sua direita.",
+    "why": "A divisão esquerda/direita em torno de um evento é a forma definidora do diagrama, e torna a distinção preventivo/mitigante visível em vez de assumida."
+  },
+  "ra-05": {
+    "label": "A análise torna óbvio que três das quatro barreiras na esquerda são o mesmo controle contado três vezes.",
+    "why": "Expor barreiras de modo comum é exactamente o que o diagrama é bom para. Um registo de controles listado como texto esconde essa dependência."
+  },
+  "ra-06": {
+    "label": "Factores de escalação são desenhas contra cada barreira, mostrando as condições sob as quais essa barreira deixa de funcionar.",
+    "why": "Factores de escalação e os seus próprios controles são parte do método bowtie. São como o diagrama evita assumir barreiras são sempre eficazes."
+  },
+  "ra-07": {
+    "label": "Cada componente é examinado por vez pelos modos em que pode falhar, e cada falha é scored para severidade, probabilidade de ocorrência e probabilidade de detecção.",
+    "why": "O score de três-factores produzindo um número de prioridade de risco é a assinatura de FMEA. É de baixo-para-cima, de componente para efeito."
+  },
+  "ra-08": {
+    "label": "Uma falha que é severa mas confiávelmente detectada antes que atinja um utilizador scores mais baixa que uma silenciosa.",
+    "why": "Detectabilidade como um terceiro eixo explícito é único a FMEA entre estas técnicas, e é por isso que falhas silenciosas classificam tão elevadas — o que convém modos de falha de ML bem."
+  },
+  "ra-09": {
+    "label": "A análise é criticada por manipular combinações de falhas simultâneas mal, uma vez que considera cada modo de falha por si.",
+    "why": "Orientação de ponto-de-falha simples é a limitação conhecida de FMEA. Utiliza-a com uma técnica que modela combinações, não em vez de uma."
+  },
+  "ra-10": {
+    "label": "Uma revisão de incidente conclui que nenhuma defesa simples falhou catastroficamente; quatro fraquezas parciais aconteceram a alinhar naquele dia.",
+    "why": "Alinhamento de furos através de camadas é a afirmação de núcleo do modelo, e é por isso que 'quem fez o erro' é geralmente a primeira questão errada."
+  },
+  "ra-11": {
+    "label": "O modelo distingue falhas activas na ponta afiada de condições latentes criadas muito mais cedo por decisões de design e gestão.",
+    "why": "A distinção activo/latente é de Reason, e é o que direciona atenção às decisões que pré-carregaram a falha."
+  },
+  "ra-12": {
+    "label": "O framing avisa que adicionar outra camada de defesa dá menos protecção que o esperado se os furos da nova camada estão no mesmo lugar.",
+    "why": "Defesas correlacionadas são a armadilha. Dois revisores utilizando a mesma checklist falhada são uma camada, não duas."
+  },
+  "ra-13": {
+    "label": "A avaliação separa danos de alocação, onde oportunidades ou recursos são retidos, de danos de representação, onde um grupo é demeritado ou apagado.",
+    "why": "A divisão alocativa/representacional é fundamental, e dano representacional é o que desliza através de avaliações conduzidas por métricas de precisão."
+  },
+  "ra-14": {
+    "label": "A avaliação regista que um sistema funciona mensuradamente pior para um grupo embora nenhuma decisão lhes está a ser negada.",
+    "why": "Dano de qualidade-de-serviço é uma categoria distinta. Sem uma taxonomia nomeando-a, esta descoberta tende a ser classificada como um problema de precisão e desprioritizada."
+  },
+  "ra-15": {
+    "label": "O método existe para impedir a avaliação cobrir apenas os danos que acontecem a ter uma métrica anexada.",
+    "why": "Enumerando categorias primeiro, depois procurando medição, é o que mantém danos dignos e societais em escopo em vez de fora."
+  },
+  "ra-16": {
+    "label": "O risco é avaliado duas vezes: uma vez como se nenhuns controles existissem, e uma vez com os controles operando como desenhado.",
+    "why": "O emparelhamento antes-e-depois é a técnica toda. A diferença é a base de evidência para se um controle vale seu custo."
+  },
+  "ra-17": {
+    "label": "Um controle é encontrado para reduzir o score por quase nada, que se torna o argumento para removê-lo e gastar o esforço noutro lugar.",
+    "why": "Comparando as duas avaliações é como controles que existem apenas para ser listados são identificados. Um controle sem delta é teatro."
+  },
+  "ra-18": {
+    "label": "O registo regista o nível permanecendo após tratamento, e é este nível que deve se sentar dentro do apetite antes de assinatura.",
+    "why": "O risco residual é o que é aceite; risco inerente é apenas contexto sempre. Aceitar contra a figura inerente é um erro de categoria."
+  },
+  "risk-analysis": {
+    "hint": "Arrasta cada descrição para a sua técnica. Pergunta o que o método é realmente construído para revelar — uma ranking, um caminho causal, um modo de falha ou uma medição.",
+    "zones[0].def": "Taxa probabilidade e consequência, traça numa grelha, utiliza para priorizar. Rápido, bruto e o padrão na maioria dos registos.",
+    "zones[1].def": "Um evento no meio; causas e barreiras preventivas na esquerda, consequências e barreiras mitigantes na direita.",
+    "zones[2].def": "Trabalha de baixo-para-cima de cada modo de falha de componente para os seus efeitos, scoring severidade, ocorrência e detectabilidade.",
+    "zones[3].def": "O dano ocorre quando furos em camadas sucessivas de defesa alinham. Explica por que explicações de causa única de incidentes são geralmente erradas.",
+    "zones[4].def": "Enumera categorias de dano — alocativo, representacional, qualidade-de-serviço, digno, societário — para que avaliação não está limitada ao que é fácil de medir.",
+    "zones[5].def": "Avalia risco antes de controles e novamente depois deles. A diferença é o que os controles estão realmente a comprar."
+  }
+}

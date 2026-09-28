@@ -1,0 +1,50 @@
+{
+ "rp-01": {
+  "a.text": "A avaliação classifica a exposição de um modelo de decisão automatizada como se nenhum dos mecanismos de revisão, limiar ou apelação existisse.",
+  "a.why": "O risco inerente é a posição bruta antes de controlos. Existe para dimensionar o esforço de controlo, e nunca é o que é aceite.",
+  "b.text": "A avaliação classifica o mesmo modelo com revisão, limiares e apelação operando conforme concebido, e relata o que permanece.",
+  "b.why": "O risco residual é o que a aprovação é realmente contra. Aceitar contra a figura inerente sobreestima o que a organização concordou em suportar."
+ },
+ "rp-02": {
+  "a.text": "O conselho declara que a organização não seguirá aplicações de IA que tomam decisões consequentes sobre indivíduos sem revisão humana.",
+  "a.why": "Apetite é a declaração ampla e prospetiva do risco que a organização está disposta a aceitar na prossecução dos seus objetivos.",
+  "b.text": "A política declara que um modelo pode ir em produção apenas se a disparidade de exatidão por subgrupo estiver abaixo de quatro pontos percentuais.",
+  "b.why": "Tolerância é o limite mensurável que operacionaliza apetite. Apetite sem tolerância não pode ser testado; tolerância sem apetite é arbitrária."
+ },
+ "rp-03": {
+  "a.text": "O modelo pode produzir texto fluente e confiante que é factualmente incorreto.",
+  "a.why": "Um risco é o potencial intrínseco de causar dano. É uma propriedade da coisa e não depende da implementação.",
+  "b.text": "Porque o modelo redige instruções de alta hospitalar lidas por não-especialistas, erros confiantes podem conduzir a uso incorreto de medicação.",
+  "b.why": "O risco combina o risco com exposição e consequência num contexto. O mesmo risco é um risco diferente numa implementação diferente — o que é por que os níveis se prendem ao uso."
+ },
+ "rp-04": {
+  "a.text": "A validação de entrada rejeita pedidos contendo padrões que o sistema não está autorizado a processar.",
+  "a.why": "Os controlos preventivos atuam sobre probabilidade, antes do evento. São o único tipo que pode levar uma probabilidade significativamente para perto de zero.",
+  "b.text": "Um relatório semanal lista pedidos que foram processados apesar de caírem fora de categorias autorizadas.",
+  "b.why": "Os controlos de deteção atuam sobre duração e impacto após os factos. Um registo que lista controlos de deteção como mitigação de probabilidade sobreestima sua posição."
+ },
+ "rp-05": {
+  "a.text": "A equipa de governança de IA revê a avaliação de impacto da equipa de implementação e questiona as suas conclusões, relatando ao chief risk officer.",
+  "a.why": "Independente da implementação mas ainda dentro da gestão. Segunda linha aconselha, desafia e monitoriza; não pode fornecer assurance sobre si mesma.",
+  "b.text": "Uma função de revisão examina se essas revisões de governança foram realizadas conforme a política requer, e relata ao comité de auditoria.",
+  "b.why": "Relatar ao conselho em vez de à gestão é a diferença estrutural. Sem isso, assurance é auto-avaliação com um papel diferente."
+ },
+ "rp-06": {
+  "a.text": "A equipa adiciona um portão de avaliação automatizado que bloqueia lançamentos que falham o limiar de robustez.",
+  "a.why": "A probabilidade cai porque um lançamento falhando não pode ser lançado. Algo sobre o próprio risco mudou.",
+  "b.text": "A equipa adiciona um dashboard mostrando pontuações de robustez, e concorda em revê-las mensalmente sem gating.",
+  "b.why": "Observar um risco não é tratá-lo. Monitorização mais uma decisão de não fazer gating é retenção com melhor visibilidade — legítima, desde que seja registada como aceitação."
+ },
+ "rp-07": {
+  "a.text": "Um modelo de propósito geral que exceda o limiar de compute deve sofrer testes adversariais e relatar incidentes graves.",
+  "a.why": "As obrigações sistemáticas de risco GPAI anexam ao modelo independentemente de qualquer uso a jusante, o que é por que ficam fora da pirâmide de risco.",
+  "b.text": "Um implementador usando esse mesmo modelo para peneirar candidatos a emprego deve cumprir obrigações de risco elevado para a implementação.",
+  "b.why": "O nível segue o propósito. Um modelo pode simultaneamente carregar obrigações de nível de modelo e sentar-se em vários níveis de uso diferentes."
+ },
+ "rp-08": {
+  "a.text": "Um contrato torna o fornecedor responsável pelo custo dos danos originários de defeitos no modelo que forneceu.",
+  "a.why": "A consequência financeira move-se. Este é um tratamento legítimo e não muda nada sobre a probabilidade do dano.",
+  "b.text": "O regulador responsabiliza a empresa implementadora pelos resultados das decisões que toma com o modelo do fornecedor.",
+  "b.why": "Responsabilidade regulatória geralmente não pode ser contratada. Assumir que uma indenização a cobre é a versão mais cara desta confusão."
+ }
+}

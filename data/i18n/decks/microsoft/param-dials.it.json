@@ -1,0 +1,106 @@
+{
+ "pd-001": {
+  "label": "Hai bisogno di output coerente e ripetibile dal prompt stesso ogni esecuzione",
+  "why": "L'indizio esatto dell'esame di histack: 'output coerente e ripetibile' → bassa temperatura. Ridimensiona l'intera distribuzione di probabilità; metti a punto la temperatura o top_p, non entrambi."
+ },
+ "pd-002": {
+  "label": "Limita il campionamento al più piccolo set di token la cui probabilità cumulativa raggiunge una soglia fissa",
+  "why": "Nucleus sampling — top_p tronca il set di candidati, mentre la temperatura ridimensiona l'intera distribuzione (coppia confusa del corpus #5)."
+ },
+ "pd-003": {
+  "label": "Le risposte continuano a tagliarsi a metà frase — hai bisogno di risposte complete",
+  "why": "max_tokens limita solo la lunghezza dell'output — la trappola di parametri più frequente dell'esame è offrirlala come controllo della casualità (coppia #4)."
+ },
+ "pd-004": {
+  "label": "Il modello continua a ripetere una frase; penalizza i token in proporzione a quanto spesso sono apparsi",
+  "why": "La penalità di frequenza scala con il conteggio di ripetizioni (ripetizione); la penalità di presenza si attiva una volta che un token è apparso affatto (novità dell'argomento) — coppia corpus #6."
+ },
+ "pd-005": {
+  "label": "Le immagini di marketing generate sembrano ruvide — richiedi il livello di fedeltà di rendering più alto",
+  "why": "Il payload di gpt-image-1 accetta prompt, size, quality (inclusa la trappola di valore 'high') e n — la qualità controlla la fedeltà, size controlla le dimensioni."
+ },
+ "pd-006": {
+  "label": "Vedi il progresso dell'immagine prima mentre un rendering di grandi dimensioni viene eseguito",
+  "why": "Streaming partial_images sul percorso images/generations restituisce output progressivo — lo stem 'vedi il progresso dell'immagine prima' dell'esame verbatim."
+ },
+ "pd-007": {
+  "label": "Il manopola della casualità che ridimensiona l'intera distribuzione di probabilità dei token prima del campionamento, non solo la fetta superiore",
+  "why": "La temperatura scala i logit su tutta la distribuzione; top_p invece tronca per massa di probabilità cumulativa — stessa intuizione di 'creatività', meccanica diversa."
+ },
+ "pd-008": {
+  "label": "Il team vuole che il modello consideri solo la fetta più probabile di candidati next-token, tagliando via la coda lunga",
+  "why": "Nucleus sampling (top_p) limita i candidati a una fetta di probabilità cumulativa; la temperatura ridimensiona le probabilità ma non rimuove mai i candidati completamente."
+ },
+ "pd-009": {
+  "label": "Un massimale duro su quanti token una singola risposta può generare, indipendentemente da cosa dice",
+  "why": "max_tokens è un massimale di lunghezza applicato durante la generazione; una sequenza di stop invece interrompe la generazione presto solo quando appare una stringa specifica — trigger diverso, stesso obiettivo di 'output più breve'."
+ },
+ "pd-010": {
+  "label": "Scoraggia il modello dal riutilizzare la stessa parola o frase molte volte — più ripete, più forte la spinta",
+  "why": "La penalità di frequenza scala con quanto spesso un token è già apparso; la penalità di presenza applica una penalità fissa nel momento in cui un token appare anche solo una volta — conta-proporzionale vs binario."
+ },
+ "pd-011": {
+  "label": "La trascrizione di chat non rivisita mai i precedenti argomenti — il modello sempre si sposta sempre su un nuovo argomento invece di tornare a quello che ha già coperto",
+  "why": "Una penalità di presenza alta si attiva nel momento in cui un token è apparso una volta, spingendo il modello verso nuovi argomenti; la penalità di frequenza scala con il conteggio di ripetizioni e principalmente frena la ripetizione letterale, non la deriva dell'argomento."
+ },
+ "pd-012": {
+  "label": "Applica la stessa penalità fissa a qualsiasi token che è comparso affatto nella risposta finora, non importa quante volte",
+  "why": "La penalità di presenza è binaria per token (apparso o no); la penalità di frequenza invece cresce con il conteggio di ripetizioni — la distinzione coppia confusa dell'esame tra i due parametri di penalità."
+ },
+ "pd-013": {
+  "label": "La generazione dovrebbe terminare nel momento in cui il modello scrive una stringa di marker specifica, senza attendere il massimale di lunghezza",
+  "why": "Una sequenza di stop è un trigger di stringa letterale che interrompe la generazione presto; max_tokens solo applica un massimale di lunghezza e non ha consapevolezza di testo specifico."
+ },
+ "pd-014": {
+  "label": "Un pezzo specifico di testo che il modello è detto di trattare come marker di fine, affinché l'output si fermi nel momento che il testo è prodotto",
+  "why": "Le sequenze di stop si attivano su corrispondenza di contenuto di testo; né max_tokens né la penalità di frequenza ispezionano il testo generato stesso — uno conta i token, l'altro conta le ripetizioni."
+ },
+ "pd-015": {
+  "label": "La latenza deve rimanere prevedibile a volume di richiesta elevato e sostenuto, e il team va bene nel pagare il costo riservato orario per garantirlo",
+  "why": "Provisioned throughput (PTU) riserva capacità dedicata per latenza prevedibile in scala; la distribuzione standard è pay-per-token con throughput variabile sotto carico, e la capacità (TPM) è solo il quadrante di quota, non il tipo di distribuzione stesso."
+ },
+ "pd-016": {
+  "label": "Capacità di modello riservata e dedicata acquistata in anticipo affinché il throughput non fluttui con il traffico di tenant condivisi",
+  "why": "PTU è il modello di distribuzione a capacità riservata; la distribuzione standard condivide la capacità e fattura per token con throughput variabile, mentre la capacità (TPM) semplicemente imposta la quota su qualunque tipo di distribuzione sia scelto."
+ },
+ "pd-017": {
+  "label": "Il traffico verso l'app di supporto clienti è imprevedibile e a raffica, e il team vuole fatturazione pay-per-token invece di capacità oraria riservata",
+  "why": "La fatturazione pay-per-token sotto carico variabile è la distribuzione standard (lo scenario esatto dell'esame); PTU invece fattura orariamente per capacità riservata indipendentemente dall'uso effettivo."
+ },
+ "pd-018": {
+  "label": "Fattura per token consumato piuttosto che per ora di calcolo riservato, con throughput che può variare sotto carico condiviso",
+  "why": "Standard è fatturazione basata su consumo con throughput variabile; PTU scambia quella variabilità per una prenotazione oraria fissa, e la capacità (TPM) è la configurazione della quota stratificata in cima a uno dei due modelli."
+ },
+ "pd-019": {
+  "label": "Una distribuzione continua a raggiungereilimitazione sotto carico di picco, quindi il team sposta la quota di throughput di riserva da un'altra distribuzione sottoutilizzata",
+  "why": "La quota di throughput per distribuzione può essere riallocata tra le distribuzioni (lo scenario documentato dell'esame); PTU e standard descrivono il modello di fatturazione/prenotazione della distribuzione, non il suo quadrante di quota."
+ },
+ "pd-020": {
+  "label": "Il quadrante che imposta un limite superiore sul throughput totale che una distribuzione può elaborare ogni minuto, indipendente dalla lunghezza di qualsiasi singola risposta",
+  "why": "La capacità (TPM) limita al livello di distribuzione su tutte le richieste misurate in token al minuto; max_tokens invece limita solo la lunghezza di una risposta e non ha nulla a che fare con la limitazione di velocità."
+ },
+ "pd-021": {
+  "label": "La richiesta di immagine del banner continua a restituire un quadrato piccolo quando il layout ha bisogno di una tela rettangolare ampia",
+  "why": "size imposta le dimensioni in pixel (ad esempio un formato ampio invece di 1024x1024); la qualità controlla la fedeltà di rendering e n controlla il conteggio delle immagini — nessuno dei due cambia la forma della tela."
+ },
+ "pd-022": {
+  "label": "Il campo di richiesta che imposta le dimensioni in pixel dell'immagine generata, come 1024×1024",
+  "why": "size è il campo delle dimensioni nel payload images/generations; la qualità invece governa la fedeltà di rendering, e partial_images controlla lo streaming progressivo, non le dimensioni finali della tela."
+ },
+ "pd-023": {
+  "label": "Il campo che accetta il livello di fedeltà 'high' affinché i dettagli fini si rendono più nitidi, separato da quanto grande è l'immagine",
+  "why": "quality (incluso il valore di trappola documentato 'high') controlla la fedeltà di rendering; size controlla le dimensioni e n controlla quante immagini tornano — tre quadranti indipendenti sulla stessa richiesta."
+ },
+ "pd-024": {
+  "label": "Un prompt dovrebbe restituire quattro variazioni di immagine separate da scegliere, in una singola richiesta",
+  "why": "n imposta quante immagini la richiesta restituisce (ad esempio n=4); size e quality formano ogni immagine individuale ma non cambiano quante tornano."
+ },
+ "pd-025": {
+  "label": "Il parametro che imposta quante variazioni di immagine una singola chiamata images/generations restituisce",
+  "why": "n è il campo del conteggio delle immagini; partial_images invece trasmette in streaming le anteprime progressive di una singola immagine mentre si esegue il rendering, e size imposta solo le dimensioni di quell'immagine."
+ },
+ "pd-026": {
+  "label": "Combinato con lo streaming, questo campo imposta quante cornici di anteprima progressiva vengono inviate prima che l'immagine finale si completi",
+  "why": "partial_images (utilizzato insieme a stream=True) imposta il conteggio dei fotogrammi di anteprima progressiva durante il rendering; n invece imposta quante immagini finali separate vengono restituite, e la qualità imposta la fedeltà, non la cadenza di anteprima."
+ }
+}

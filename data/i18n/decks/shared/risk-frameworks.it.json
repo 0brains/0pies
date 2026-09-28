@@ -1,0 +1,74 @@
+{
+  "rf-01": {
+    "label": "Stabilisce il processo di rischio come: stabilire ambito e contesto, identificare, analizzare, valutare, trattare, con monitoraggio e comunicazione nel corso.",
+    "why": "Questo è il processo di rischio generico su cui si basano tutti gli altri documenti di rischio. Il suo vocabolario — probabilità, conseguenza, trattamento, rischio residuo — è ciò che i documenti specifici dell'AI ereditano."
+  },
+  "rf-02": {
+    "label": "Definisce il rischio come l'effetto dell'incertezza sugli obiettivi, che può essere positivo così come negativo.",
+    "why": "La definizione inclusiva del rovescio del rischio è dell'ISO 31000, ed è per questo che lo standard parla di obiettivi piuttosto che di danni."
+  },
+  "rf-03": {
+    "label": "È deliberatamente agnostico dal settore e agnostico dalla tecnologia; non dice nulla su modelli, dati o addestramento.",
+    "why": "La sua generalità è il punto e anche il suo limite — è per questo che 23894 esiste per dire cosa cambia l'IA."
+  },
+  "rf-04": {
+    "label": "Inquadra la gestione del rischio come principi, un framework e un processo, con l'impegno della leadership come primo requisito del framework.",
+    "why": "La struttura in tre parti è l'idea organizzativa dell'ISO 31000. I documenti specifici dell'AI l'adottano piuttosto che sostituirla."
+  },
+  "rf-05": {
+    "label": "Fornisce guida su come applicare un processo di rischio generico specificamente all'intelligenza artificiale, incluse le fonti di rischio specifiche dell'AI.",
+    "why": "23894 è il documento ponte: il processo dell'ISO 31000, con le fonti di rischio particolari dell'AI e il ciclo di vita allegato. È una guida, non un requisito."
+  },
+  "rf-06": {
+    "label": "Descrive come le attività di gestione del rischio si mappano sul ciclo di vita del sistema AI, dall'inizio al ritiro.",
+    "why": "La guida al rischio di IA mappata al ciclo di vita è il contributo di 23894. Essendo una guida, non può essere controllata, ecco dove entra in gioco 42001."
+  },
+  "rf-07": {
+    "label": "Offre fonti di rischio AI illustrative — qualità dei dati, opacità, bias di automazione, uso involontario — come aiuto piuttosto che come lista obbligatoria.",
+    "why": "Il catalogo delle fonti di rischio dell'AI è consultivo. Trattarlo come una lista di controllo di conformità fraintende lo stato del documento."
+  },
+  "rf-08": {
+    "label": "È il compagno specifico dell'AI che spiega cosa cambia quando la cosa di cui stai gestendo il rischio impara dai dati.",
+    "why": "Questo è lo scopo intero del documento: 31000 per l'AI. Se un'affermazione riguarda l'applicazione del metodo di rischio all'AI senza imporre requisiti, è 23894."
+  },
+  "rf-09": {
+    "label": "Specifica i requisiti per stabilire, implementare, mantenere e continuamente migliorare un sistema di gestione per l'AI.",
+    "why": "'Requisiti per un sistema di gestione' è il linguaggio dello standard del sistema di gestione: questo è quello certificabile, strutturato come l'ISO 27001."
+  },
+  "rf-10": {
+    "label": "Un'organizzazione può essere controllata da un organismo di certificazione e rilasciare un certificato contro di esso.",
+    "why": "La certificabilità è il discriminatore più pulito tra questi quattro. Nessuno dei framework di NIST o dei documenti di guida dell'ISO può essere certificato."
+  },
+  "rf-11": {
+    "label": "Porta un Allegato A di controlli e richiede una dichiarazione di applicabilità che spieghi quali sono implementati.",
+    "why": "Allegato A più una dichiarazione di applicabilità è il modello del sistema di gestione. È ciò che un auditor effettivamente attraversa."
+  },
+  "rf-12": {
+    "label": "Richiede una politica dell'AI, ruoli definiti, obiettivi, audit interno e revisione della gestione su un ciclo di miglioramento continuo.",
+    "why": "L'audit interno e la revisione della gestione sono obblighi del sistema di gestione. I documenti di guida raccomandano; solo lo standard del sistema di gestione richiede."
+  },
+  "rf-13": {
+    "label": "Organizza il lavoro di rischio in quattro funzioni: Govern, Map, Measure e Manage.",
+    "why": "Le quattro funzioni sono la struttura della firma dell'RMF, con Govern che taglia attraverso le altre tre piuttosto che precederle."
+  },
+  "rf-14": {
+    "label": "Nomina sette caratteristiche di IA affidabile, incluse valide e affidabili, sicure, protette e resilienti e responsabili e trasparenti.",
+    "why": "Le sette caratteristiche di affidabilità sono il framing di NIST. I documenti ISO parlano invece di obiettivi e controlli."
+  },
+  "rf-15": {
+    "label": "È esplicitamente volontario, sviluppato da un'agenzia federale statunitense sotto una direzione statutaria ed è accompagnato da un playbook complementare.",
+    "why": "Volontario, federale statunitense, con un playbook e profili — nessuno dei quali descrive uno standard ISO."
+  },
+  "rf-16": {
+    "label": "Supporta profili di utilizzo che adattano il framework a un particolare settore o caso d'uso.",
+    "why": "I profili sono il modo in cui l'RMF viene adattato senza essere certificato. Sono la risposta a 'come applichiamo questo a noi' in un framework volontario."
+  },
+  "risk-frameworks": {
+    "hint": "Trascina ogni descrizione sul framework a cui appartiene. Chiedi che tipo di documento è: rischio generico, guida al rischio specifico dell'AI, un sistema di gestione certificabile o un framework volontario.",
+    "note": "Solo uno di questi quattro è certificabile. Solo uno è federale statunitense e volontario. Confondere 'seguiamo l'RMF dell'AI NIST' con 'siamo certificati' è l'errore che questo tabellone esiste per prevenire.",
+    "zones[0].def": "Principi di gestione del rischio generico, framework e processo. Non specifico dell'AI e non certificabile.",
+    "zones[1].def": "Guida che applica ISO 31000 all'AI. Consultivo: ti dice come il rischio dell'AI differisce, non cosa certificare.",
+    "zones[2].def": "Standard di sistema di gestione dell'AI. Requisiti più controlli Allegato A e quello contro cui un'organizzazione può essere certificata.",
+    "zones[3].def": "Framework volontario statunitense: quattro funzioni, sette caratteristiche di affidabilità, senza certificazione."
+  }
+}

@@ -1,0 +1,50 @@
+{
+ "rp-01": {
+  "a.text": "L'évaluation évalue l'exposition d'un modèle de prise de décision automatisée comme si aucun des mécanismes d'examen, de seuil ou d'appel n'existait.",
+  "a.why": "Le risque inhérent est la position brute avant les contrôles. Il existe pour dimensionner l'effort de contrôle, et ce n'est jamais ce qui est accepté.",
+  "b.text": "L'évaluation évalue le même modèle avec examen, seuils et appel fonctionnant comme prévu, et rapporte ce qui reste.",
+  "b.why": "Le risque résiduel est ce par rapport à quoi l'approbation se fait réellement. L'acceptation contre le chiffre inhérent surestime ce que l'organisation a accepté."
+ },
+ "rp-02": {
+  "a.text": "Le conseil énonce que l'organisation ne poursuivra pas les applications d'IA qui prennent des décisions conséquentielles concernant les individus sans examen humain.",
+  "a.why": "L'appétence est la déclaration large et prospective du risque que l'organisation est disposée à prendre dans la poursuite de ses objectifs.",
+  "b.text": "La politique énonce qu'un modèle ne peut être lancé que si la disparité de précision par sous-groupe est inférieure à quatre points de pourcentage.",
+  "b.why": "La tolérance est la limite mesurable qui opérationnalise l'appétence. L'appétence sans tolérance ne peut pas être testée ; la tolérance sans appétence est arbitraire."
+ },
+ "rp-03": {
+  "a.text": "Le modèle peut produire du texte fluide et confiant qui est factuellement faux.",
+  "a.why": "Un danger est le potentiel intrinsèque de causer du préjudice. C'est une propriété de la chose et ne dépend pas du déploiement.",
+  "b.text": "Parce que le modèle rédige des instructions de sortie d'hôpital lues par des non-spécialistes, les erreurs confiantes peuvent mener à une utilisation incorrecte des médicaments.",
+  "b.why": "Le risque combine le danger avec l'exposition et la conséquence dans un contexte. Le même danger est un risque différent dans un déploiement différent — c'est pourquoi les niveaux s'attachent à l'usage."
+ },
+ "rp-04": {
+  "a.text": "La validation des entrées rejette les demandes contenant des motifs que le système n'est pas autorisé à traiter.",
+  "a.why": "Les contrôles préventifs agissent sur la probabilité, avant l'événement. Ce sont les seuls qui peuvent réduire une probabilité de manière significative vers zéro.",
+  "b.text": "Un rapport hebdomadaire énumère les demandes qui ont été traitées malgré le fait d'être en dehors des catégories autorisées.",
+  "b.why": "Les contrôles détectifs agissent sur la durée et l'impact après le fait. Un registre énumérant les contrôles détectifs comme atténuation de la probabilité surestime sa position."
+ },
+ "rp-05": {
+  "a.text": "L'équipe de gouvernance de l'IA examine l'évaluation d'impact de l'équipe de livraison et conteste ses conclusions, rendant compte au directeur des risques.",
+  "a.why": "Indépendant de la livraison mais toujours dans la gestion. La deuxième ligne conseille, conteste et surveille ; elle ne peut pas fournir d'assurance sur elle-même.",
+  "b.text": "Une fonction d'examen examine si ces examens de gouvernance ont été effectués comme la politique l'exige, et rend compte au comité d'audit.",
+  "b.why": "Le rapport au conseil plutôt qu'à la gestion est la différence structurelle. Sans cela, l'assurance est une auto-évaluation avec un en-tête différent."
+ },
+ "rp-06": {
+  "a.text": "L'équipe ajoute une porte d'évaluation automatisée qui bloque les versions échouant le seuil de robustesse.",
+  "a.why": "La probabilité diminue car une version échouée ne peut pas être lancée. Quelque chose dans le risque lui-même a changé.",
+  "b.text": "L'équipe ajoute un tableau de bord montrant les scores de robustesse, et accepte de les examiner mensuellement sans aucune barrière.",
+  "b.why": "Regarder un risque n'est pas le traiter. La surveillance plus une décision de non-barrière est la rétention avec une meilleure visibilité — légitime, pourvu qu'elle soit enregistrée comme acceptation."
+ },
+ "rp-07": {
+  "a.text": "Un modèle à usage général dépassant le seuil de calcul doit subir des tests adversaires et signaler les incidents graves.",
+  "a.why": "Les obligations des GPAI en matière de risque systémique s'attachent au modèle indépendamment de tout usage en aval, c'est pourquoi elles se trouvent en dehors de la pyramide des risques.",
+  "b.text": "Un déploiement utilisant ce même modèle pour évaluer les candidats à un emploi doit répondre aux obligations de haut risque pour le déploiement.",
+  "b.why": "Le niveau suit l'objectif. Un modèle peut simultanément supporter des obligations au niveau du modèle et se situer dans plusieurs niveaux d'usage différents."
+ },
+ "rp-08": {
+  "a.text": "Un contrat rend le fournisseur responsable du coût des dommages découlant des défauts du modèle qu'il a fourni.",
+  "a.why": "La conséquence financière se déplace. C'est un traitement légitime et cela ne change rien à la probabilité du préjudice.",
+  "b.text": "Le régulateur tient la firme déploiement responsable des résultats des décisions qu'elle prend avec le modèle du fournisseur.",
+  "b.why": "La responsabilité réglementaire généralement ne peut pas être contractée. Supposer qu'une indemnité le couvre est la version la plus onéreuse de cette confusion."
+ }
+}

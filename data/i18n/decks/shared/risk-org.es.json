@@ -1,0 +1,74 @@
+{
+ "risk-org": {
+  "hint": "Arrastra cada actividad a la línea que debe realizarla. La prueba es la independencia: quién puede evaluar su propio trabajo, y quién no puede.",
+  "note": "Las líneas se refieren a independencia, no a antigüedad o número de personas. Una función de segunda línea que reporta al equipo que supervisa es una función de primera línea con un badge diferente.",
+  "zones[0].def": "Posee y gestiona el riesgo día a día: los equipos que construyen, despliegan y operan el sistema.",
+  "zones[1].def": "Establece políticas, asesora, desafía y monitoriza — riesgo, cumplimiento, legal, una función de gobernanza de IA. Independiente de la entrega, no de la gestión.",
+  "zones[2].def": "Auditoría interna. Aseguramiento independiente al consejo sobre si las dos primeras líneas funcionan realmente.",
+  "zones[3].def": "Establece el apetito, mantiene la responsabilidad máxima, y es el único organismo que puede aceptar riesgos más allá de los límites delegados."
+ },
+ "ro-01": {
+  "label": "El equipo de ingeniería ejecuta la suite de evaluación de imparcialidad antes de promocionar un modelo a producción.",
+  "why": "Ejecutar controles dentro del proceso de entrega es trabajo de primera línea. Hacerlo bien no lo convierte en aseguramiento, porque el equipo está evaluando su propio resultado."
+ },
+ "ro-02": {
+  "label": "El propietario del producto registra un nuevo riesgo en el registro y propone un tratamiento.",
+  "why": "La identificación de riesgos y la gestión día a día residen con las personas más cercanas a la actividad. El registro es suyo para completar, no de la función de riesgo."
+ },
+ "ro-03": {
+  "label": "El equipo de operaciones monitoriza los dashboards de deriva en producción y abre un incidente cuando se superan los umbrales.",
+  "why": "Operar un control, incluyendo uno detectivo, es primera línea. Segunda línea cuestiona si el umbral es correcto; primera línea actúa cuando se dispara."
+ },
+ "ro-04": {
+  "label": "El equipo de ciencia de datos documenta las limitaciones del modelo y el uso previsto en la tarjeta del modelo.",
+  "why": "Producir la documentación es una actividad de construcción. Revisar si cumple la política es trabajo de una línea diferente."
+ },
+ "ro-05": {
+  "label": "El equipo de gobernanza de IA escribe la política que define qué casos de uso requieren una evaluación de impacto.",
+  "why": "Establecer el marco y los estándares que la primera línea debe cumplir es la actividad de segunda línea característica."
+ },
+ "ro-06": {
+  "label": "Cumplimiento revisa una evaluación de impacto completada y desafía la valoración de riesgo residual del equipo.",
+  "why": "El desafío independiente del juicio de primera línea es segunda línea. Es asesoramiento y monitorización, no aseguramiento al consejo."
+ },
+ "ro-07": {
+  "label": "Legal asesora que un despliegue propuesto se encuentra dentro de un área del Anexo III y, por tanto, atrae obligaciones de alto riesgo.",
+  "why": "El asesoramiento especializado que limita lo que la primera línea puede hacer es segunda línea. La decisión de proceder sigue siendo de la primera línea, dentro de la política."
+ },
+ "ro-08": {
+  "label": "La función de riesgo mantiene el registro empresarial y reporta la exposición de riesgo de IA agregada al ejecutivo.",
+  "why": "La agregación, supervisión e información de la primera línea es monitorización de segunda línea. Depende de datos de primera línea, que es precisamente por qué existe la tercera línea."
+ },
+ "ro-09": {
+  "label": "La auditoría interna examina si se siguió el proceso de aprobación del modelo para cada lanzamiento en el último año.",
+  "why": "Probar si los controles operaron según lo diseñado, después del hecho e independientemente, es la responsabilidad de auditoría interna."
+ },
+ "ro-10": {
+  "label": "Una revisión independiente reporta al comité de auditoría que el proceso de desafío de segunda línea no tiene evidencia.",
+  "why": "Tercera línea audita segunda línea así como primera línea, e informa al consejo en lugar de a la gestión — esa línea de información es lo que la hace independiente."
+ },
+ "ro-11": {
+  "label": "El trabajo de aseguramiento se planifica en un ciclo basado en riesgos y su alcance se acuerda con el comité de auditoría, no con los equipos auditados.",
+  "why": "El alcance establecido fuera de la gestión es la característica estructural que separa auditoría de una revisión de segunda línea."
+ },
+ "ro-12": {
+  "label": "Una revisión concluye que un control está documentado pero nunca se ha realizado efectivamente, e lo informa hacia arriba.",
+  "why": "Encontrar la brecha entre efectividad documentada y operativa es el valor que aporta auditoría. Ninguna de las dos primeras líneas está posicionada para informar en contra de sí misma."
+ },
+ "ro-13": {
+  "label": "El apetito de riesgo para la toma de decisiones automatizada se establece y se publica.",
+  "why": "El apetito es una declaración a nivel de consejo de cuánto riesgo tomará la organización. Todo lo demás es calibración contra él."
+ },
+ "ro-14": {
+  "label": "Un riesgo residual que excede el límite delegado se escala y se acepta formalmente en la cúspide de la organización.",
+  "why": "Solo el organismo que posee la autoridad puede aceptar más allá de límites delegados. La aceptación en otro lugar no es aceptación; es una exposición no registrada."
+ },
+ "ro-15": {
+  "label": "Se nombra a un ejecutivo responsable del sistema de gestión de IA, con la autoridad y recursos para hacerlo funcionar.",
+  "why": "Los estándares de sistema de gestión requieren responsabilidad de liderazgo nombrada. Una función de gobernanza sin propietario ejecutivo tiene responsabilidad sin autoridad."
+ },
+ "ro-16": {
+  "label": "Se toma la decisión de retirar un sistema desplegado después de que la aseguramiento reporta que su riesgo no puede mantenerse dentro del apetito.",
+  "why": "La retirada contra el interés comercial es una decisión que solo el nivel responsable puede tomar, razón por la cual la ruta de escalación debe existir antes de que se necesite."
+ }
+}

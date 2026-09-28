@@ -1,0 +1,228 @@
+{
+ "id": "sentinel-collection",
+ "runner": "board",
+ "title": "Get the Signal In",
+ "blurb": "Telemetry is missing, doubled, or costing a fortune, and every fix lives in a different part of Microsoft Sentinel. Sort each ingestion problem to the mechanism that actually resolves it.",
+ "source": "Microsoft Learn Sentinel collection docs: data connectors and diagnostic settings, content hub solutions, syslog and CEF via AMA, Windows security events with data collection rules, custom log tables and ingestion-time transformation, data tiers and retention · SC-500 outline 4.2",
+ "asOf": "2026-08",
+ "area": "4.2",
+ "hint": "Work backwards from where the plumbing is broken. If the source is an Azure or Microsoft service and the question is whether a pipe exists at all, you are in data connectors. If the connector or its packaged rules, workbooks and parsers are simply not present in the tenant, you are in content hub. If a Linux daemon, a forwarder VM, port 514, a facility or CommonSecurityLog is in the story, you are in syslog and CEF. If the words Security event log, event set, XPath or Windows Event Collector appear, you are in Windows event DCRs. If the data has no home table, needs reshaping, filtering or masking before it lands, you are in custom ingestion. And if the data is already arriving correctly but the argument is about cost, tier, how long it lives or how to reach old records, you are in table plans and retention.",
+ "zones": [
+  {
+   "key": "Data connector",
+   "name": "Data connector",
+   "def": "Turning on a pipe from a Microsoft or Azure source: service-to-service connectors such as Microsoft Defender XDR and Microsoft Entra ID, and diagnostic settings connections for Azure resources such as firewalls, storage accounts and subscription activity, including the Azure Policy assignment that applies them at scale. Distinct from Content hub solution, which only puts the connector package into the tenant and never configures the source resource; and from Syslog and CEF and Windows collection rule, which are the agent-based paths for machines rather than Azure resource plumbing."
+  },
+  {
+   "key": "Content hub solution",
+   "name": "Content hub solution",
+   "def": "Discovering, installing, updating and managing packaged Microsoft Sentinel solutions and standalone content: the connector package itself plus its analytics templates, workbooks, hunting queries, parsers and playbook templates, install with dependencies, bulk updates, and the Microsoft Sentinel Contributor role needed at resource group scope to do any of it. Distinct from connectors, which is the configuration step you perform after the package is installed; the content hub never moves a single log record on its own."
+  },
+  {
+   "key": "Syslog and CEF",
+   "name": "Syslog and CEF",
+   "def": "Collecting messages from Linux hosts and from network and security appliances through rsyslog or syslog-ng and the Azure Monitor Agent, on the device itself or on a dedicated Linux log forwarder: listening ports, the forwarder installation script, facility and minimum severity choices, and the split between the Syslog and CommonSecurityLog tables. Distinct from Windows collection rule, which covers the Windows event log path, and from Custom ingestion, which covers application text files and API payloads that have no standard syslog shape."
+  },
+  {
+   "key": "Windows collection rule",
+   "name": "Windows collection rule",
+   "def": "Collecting Windows Security and AppLocker event log data with the Azure Monitor Agent and a data collection rule: the All events, Common and Minimal prebuilt sets, custom XPath filters, the destination table the events land in, and the forwarded events path where an agent sits on a Windows Event Collector host instead of on every endpoint. Distinct from Syslog and CEF, which is the Linux and appliance path, and from Table plan and retention, where the argument is about the cost of data already collected rather than which events to collect."
+  },
+  {
+   "key": "Custom ingestion",
+   "name": "Custom ingestion",
+   "def": "Giving data a shape and a home when no built-in table fits, and changing records on the way in: custom tables with the _CL suffix, the Logs ingestion API with a standard DCR, the Custom Logs via AMA text-file path, and ingestion-time transformations including workspace transformation DCRs that filter, enrich or mask before storage. Distinct from connectors, where a supported table and schema already exist, and from Table plan and retention, which decides how long a table keeps its records rather than what those records contain."
+  },
+  {
+   "key": "Table plan and retention",
+   "name": "Table plan and retention",
+   "def": "Deciding where collected data lives and for how long: the analytics tier versus the data lake tier, analytics retention and total retention, tier changes and what they break, search jobs and restore for reaching older records, and the Table insights view that exposes silent connectors and cost spikes per table. Distinct from Custom ingestion, which shapes and filters records at the moment of collection, and from connectors, which is about whether the data arrives at all."
+  }
+ ],
+ "items": [
+  {
+   "id": "sen-01",
+   "label": "A retail chain runs Sentinel happily on Entra and endpoint data, but the Azure Firewall in its hub virtual network has never contributed a single record to the workspace. The firewall resource itself has no export configured on it at all.",
+   "sub": "Which mechanism closes this?",
+   "answer": "Data connector",
+   "why": "Azure resource logs reach Sentinel through a diagnostic settings connection created on the resource, so this is a data connector configuration on the firewall, not a missing package. Content hub is the nearest wrong answer: installing the Azure Firewall solution would place the connector and its rules in the tenant, but the resource still exports nothing until the diagnostic setting exists.",
+   "citation": "Learn: Sentinel connections based on diagnostic settings · outline 4.2"
+  },
+  {
+   "id": "sen-02",
+   "label": "A building society enables Sentinel on a fresh Log Analytics workspace and wants directory sign-in and audit records flowing before the first detections go live. The Microsoft Entra ID solution is already installed and its connector page still reads Disconnected.",
+   "sub": "Which mechanism closes this?",
+   "answer": "Data connector",
+   "why": "Entra ID arrives over a built-in service-to-service connector, and an installed solution leaves the connector present but unconfigured until someone opens the connector page and selects the log types. Content hub is the near miss and has already been done here; the Disconnected status is exactly the marker that the second, connector-level step is still outstanding.",
+   "citation": "Learn: Sentinel data connectors, connecting a data source · outline 4.2"
+  },
+  {
+   "id": "sen-03",
+   "label": "A media group runs five Azure subscriptions under one management group. Control plane operations from the two oldest subscriptions, including role assignments and resource deletions, never appear in the workspace, while the three subscriptions created after the log streaming policy was assigned are complete. Nobody ticked the box for a remediation task when that assignment was made.",
+   "sub": "Which mechanism closes this?",
+   "answer": "Data connector",
+   "why": "Subscription activity is delivered by a diagnostic settings connector applied through an Azure Policy assignment, and such an assignment only reaches subscriptions that already existed if you run a remediation task against them, which is why everything created afterwards is fine. Tables-retention is the tempting neighbour because the data looks partial, but retention only trims records that were ingested; these operations were never collected in the first place.",
+   "citation": "Learn: Sentinel connections based on diagnostic settings · outline 4.2"
+  },
+  {
+   "id": "sen-04",
+   "label": "An insurer wired up its storage account for Sentinel and can chart transaction metrics, but analysts investigating a data theft find no record of individual blob or queue read operations anywhere in the workspace.",
+   "sub": "Which mechanism closes this?",
+   "answer": "Data connector",
+   "why": "A storage account exports the transaction metric at the parent level, while the file, table, queue and blob child resources each need their own diagnostic configuration for their logs to be collected. Custom-ingestion is the wrong instinct here: the schema already exists and is supported, so nothing needs a bespoke table or transformation, only complete diagnostic coverage.",
+   "citation": "Learn: Sentinel connections based on diagnostic settings · outline 4.2"
+  },
+  {
+   "id": "sen-05",
+   "label": "A hospital trust plans to bring firewall appliance events into Sentinel. The engineer opens the Data connectors page, searches for the Common Event Format entry, and it is not in the list at all, on a workspace that is otherwise healthy.",
+   "sub": "Which mechanism closes this?",
+   "answer": "Content hub solution",
+   "why": "A connector only appears on the Data connectors page once the solution containing it has been installed from the content hub, so the missing entry is an install problem rather than a configuration problem. Syslog-cef is the destination of this journey but cannot start yet; the data collection rule and the agent work comes after the Common Event Format solution is in the workspace.",
+   "citation": "Learn: content hub, deploying packaged Sentinel content · outline 4.2"
+  },
+  {
+   "id": "sen-06",
+   "label": "A logistics operator has run the same Sentinel deployment for two years without touching its packaged content. The list view now shows Update against nine solutions, and analysts complain the built-in detection templates lag behind what Microsoft publishes.",
+   "sub": "Which mechanism closes this?",
+   "answer": "Content hub solution",
+   "why": "Solution lifecycle management lives in the content hub, where the list view flags updates and lets the team select many solutions and update them in one action, while standalone items refresh themselves. Connectors is the near miss because stale content does not interrupt ingestion at all, and no connector page in the tenant is misconfigured here.",
+   "citation": "Learn: content hub, deploying packaged Sentinel content · outline 4.2"
+  },
+  {
+   "id": "sen-07",
+   "label": "A new security engineer at a supermarket group holds Microsoft Sentinel Reader on the resource group holding the workspace. She can read incidents and run queries, but every attempt to add a vendor solution to the workspace is refused.",
+   "sub": "Which mechanism closes this?",
+   "answer": "Content hub solution",
+   "why": "Installing, updating and deleting solutions or standalone items requires Microsoft Sentinel Contributor at resource group level, which is the documented prerequisite for the content hub, and Reader is deliberately below that bar. Connectors is the neighbouring zone people reach for, but connector configuration hinges on write permission to the workspace plus source-specific rights, which is a separate grant from the content hub prerequisite.",
+   "citation": "Learn: content hub deployment, plus Sentinel roles and permissions · outline 4.2"
+  },
+  {
+   "id": "sen-08",
+   "label": "Hunters at a games studio write queries against a vendor firewall's raw table and hand-map the source and destination fields into normalised names every single time, because nobody realised the vendor package ships ready-made parsing functions.",
+   "sub": "Which mechanism closes this?",
+   "answer": "Content hub solution",
+   "why": "Parsers are a packaged content type: installing the solution adds them to the workspace as functions that hunters can load or use directly in the query editor, which removes the hand mapping. Custom-ingestion is the seductive alternative because both reshape fields, but a transformation rewrites records permanently at collection time, whereas a parser normalises at query time and leaves the stored data intact.",
+   "citation": "Learn: Sentinel content overview and the content hub · outline 4.2"
+  },
+  {
+   "id": "sen-09",
+   "label": "A manufacturer sends appliance events to a Linux collector in Common Event Format over the same facility the estate uses for ordinary Linux messages. Every event is now billed twice, landing once in CommonSecurityLog and once in Syslog.",
+   "sub": "Which mechanism closes this?",
+   "answer": "Syslog and CEF",
+   "why": "Duplication here is a collection design fault: separate the facilities so that the appliance stream and the plain Linux stream do not overlap, and give each data collection rule the facility that belongs to it. Tables-retention is the wrong reflex, because shortening retention or moving a tier reduces what is kept but does nothing about paying to ingest the same event twice.",
+   "citation": "Learn: syslog and CEF via AMA connector overview · outline 4.2"
+  },
+  {
+   "id": "sen-10",
+   "label": "A county council points its on-premises firewalls at a dedicated Ubuntu collector and waits. Nothing arrives. On that collector the syslog daemon is still in its stock configuration, listening only for local processes, and the setup script that opens the listening port was never executed.",
+   "sub": "Which mechanism closes this?",
+   "answer": "Syslog and CEF",
+   "why": "A forwarder only accepts messages from other machines after the installation script reconfigures rsyslog or syslog-ng and opens the listening port, and the agent then relays what the daemon receives. Connectors is the nearest wrong zone because the collection rule is already created and the agent is already deployed, so there is nothing left to configure on the connector page; the break sits on the host, below anything the portal shows you, and the connector will keep reporting no data until the daemon is fixed.",
+   "citation": "Learn: ingesting syslog and CEF with the Azure Monitor Agent · outline 4.2"
+  },
+  {
+   "id": "sen-11",
+   "label": "A telecoms operator collects everything from forty Linux hosts, including chatty informational cron chatter, and the workspace bill is dominated by messages nobody has ever queried. The team only cares about error-grade and worse events from a couple of facilities.",
+   "sub": "Which mechanism closes this?",
+   "answer": "Syslog and CEF",
+   "why": "The collection rule for these connectors is where you choose facilities and a minimum severity, and selecting a level collects that level and everything more severe, so the noise is filtered before it becomes chargeable. Tables-retention is the plausible-looking neighbour, but a shorter retention period still pays full ingestion cost for records that were never worth collecting.",
+   "citation": "Learn: ingesting syslog and CEF with the Azure Monitor Agent · outline 4.2"
+  },
+  {
+   "id": "sen-12",
+   "label": "Analysts at a shipping line building an intrusion timeline find that the clock stamped in each appliance message and the time the record carries in the workspace disagree by two hours. The collector sits in a different time zone from the appliances feeding it.",
+   "sub": "Which mechanism closes this?",
+   "answer": "Syslog and CEF",
+   "why": "This is a documented property of forwarder-based collection: one timestamp reflects when the collector processed the message, while the other is read from a syslog header that carries no zone and is converted using the collector's own offset, so the gap is the offset between appliance and collector. Custom-ingestion is the tempting fix because a transformation can rewrite fields, but nothing here is malformed or mis-shaped: both values are exactly what the collection path is specified to produce, and a transformation that overwrote one of them would destroy evidence rather than correct it.",
+   "citation": "Learn: syslog and CEF via AMA connector overview · outline 4.2"
+  },
+  {
+   "id": "sen-13",
+   "label": "A pharmaceutical firm ingests the complete Security event log from three thousand domain-joined servers. Ingestion costs have tripled in a quarter, yet the compliance team still insists on a usable audit trail covering sign-in and sign-out activity.",
+   "sub": "Which mechanism closes this?",
+   "answer": "Windows collection rule",
+   "why": "The Windows security event connector offers prebuilt sets, and the Common set exists precisely for this trade-off: it keeps a full audit trail including both sign-in and sign-out records while dropping the sheer bulk of the unfiltered log. Tables-retention is the nearest wrong zone, since pushing the table to the data lake tier would cut storage cost but would also strip the analytics rules and hunting that depend on this data.",
+   "citation": "Learn: Windows security event sets for Sentinel · outline 4.2"
+  },
+  {
+   "id": "sen-14",
+   "label": "An airline already funnels events from eight thousand branch and gate endpoints into two hardened Windows Event Collector servers, and its change board has flatly refused any new agent on the endpoints themselves.",
+   "sub": "Which mechanism closes this?",
+   "answer": "Windows collection rule",
+   "why": "The forwarded events path is built for exactly this shape: keep the existing collection subscriptions, put the agent only on the collector hosts, and pair it with the normalisation parsers so queries behave. Syslog-cef is the neighbour to reject, because these are Windows event channels rather than syslog messages, and no Linux daemon or listening port is involved anywhere in the flow.",
+   "citation": "Learn: Windows agent-based data connector for Sentinel · outline 4.2"
+  },
+  {
+   "id": "sen-15",
+   "label": "A defence contractor wants only process-creation records where the parent image is one specific service binary, from twelve jump servers, and refuses to pay for anything else from those machines.",
+   "sub": "Which mechanism closes this?",
+   "answer": "Windows collection rule",
+   "why": "Custom XPath expressions inside the data collection rule filter Windows events at the source, so unwanted records never leave the machine, and the agent supports version 1.0 expressions with a documented limit on how many you can add. Custom-ingestion is the near miss: an ingestion-time transformation would also drop the records, but only after they have been shipped to the pipeline, which forfeits the source-side saving.",
+   "citation": "Learn: collecting Windows events with Azure Monitor Agent · outline 4.2"
+  },
+  {
+   "id": "sen-16",
+   "label": "A platform team builds a plain Azure Monitor rule, picks the Security log from the Windows event source list, and confirms records are arriving. The SOC then reports that every Sentinel detection built on Windows security telemetry is matching nothing at all.",
+   "sub": "Which mechanism closes this?",
+   "answer": "Windows collection rule",
+   "why": "A generic Windows events data source deposits Security records into the shared Event table alongside System and Application, whereas Sentinel content expects the SecurityEvent table produced by the Windows security events connector on the same agent. Connectors looks right because a connector is indeed involved, but the discriminating detail is which data source type the rule declares and therefore which destination table receives the records.",
+   "citation": "Learn: collecting Windows events with Azure Monitor Agent · outline 4.2"
+  },
+  {
+   "id": "sen-17",
+   "label": "A fintech's in-house fraud scoring engine emits structured JSON from its own service. There is no vendor package for it, no agent can be installed on the platform hosting it, and the analysts want the records queryable under column names the fraud team chose.",
+   "sub": "Which mechanism closes this?",
+   "answer": "Custom ingestion",
+   "why": "The logs ingestion API sends arbitrary records from any REST client into a custom table whose columns you define, with a standard data collection rule naming the schema and destination. Connectors is the wrong shelf because no built-in or codeless connector exists for a bespoke internal service, and inventing one is far more work than defining the table and rule.",
+   "citation": "Learn: custom ingestion and transformation in Sentinel · outline 4.2"
+  },
+  {
+   "id": "sen-18",
+   "label": "A payments processor's licensing appliance writes plain text log lines to a file on a Linux host, one event per line, in a layout no vendor recognises. The team plans to collect the file with the agent and needs somewhere for those lines to land.",
+   "sub": "Which mechanism closes this?",
+   "answer": "Custom ingestion",
+   "why": "Text-file collection requires you to create the destination table first, with a name ending in _CL and only a timestamp column plus the raw message column, before the rule and file pattern are configured. Syslog-cef is the near miss and would be right if the appliance emitted syslog to a daemon, but a text file on disk is read directly by the agent and has no facility or severity to select.",
+   "citation": "Learn: collecting text file logs with the Azure Monitor Agent · outline 4.2"
+  },
+  {
+   "id": "sen-19",
+   "label": "A payroll platform's service-to-service connector delivers records into a supported built-in table, and each record carries a complete national insurance number. The privacy office has ruled that those digits must never be written to storage.",
+   "sub": "Which mechanism closes this?",
+   "answer": "Custom ingestion",
+   "why": "Service-to-service connectors that write to transformation-capable tables are covered by the workspace transformation rule, where a query masks or strips the sensitive column before the record is stored. Connectors is the neighbouring zone but offers no such control: a connector decides whether data flows and into which table, never what individual fields look like once it arrives.",
+   "citation": "Learn: custom ingestion, configuring ingestion-time transformation · outline 4.2"
+  },
+  {
+   "id": "sen-20",
+   "label": "A hospital group must be able to produce seven years of perimeter firewall logs on demand for its regulator, but in practice analysts touch that data only during an annual audit and never in live detections.",
+   "sub": "Which mechanism closes this?",
+   "answer": "Table plan and retention",
+   "why": "This is a table plan decision: the data lake tier holds high-volume, low-touch records cheaply and total retention stretches to twelve years, which comfortably covers a seven-year obligation. Custom-ingestion is the wrong zone because filtering or reshaping the records would defeat the whole point, since the regulator expects a complete history rather than a curated one.",
+   "citation": "Learn: data tiers and retention, log retention tiers in Sentinel · outline 4.2"
+  },
+  {
+   "id": "sen-21",
+   "label": "An investigator at a credit union needs sign-in records from roughly two hundred days ago to establish when an insider first accessed a system. Analytics retention on that table is ninety days, though total retention is far longer.",
+   "sub": "Which mechanism closes this?",
+   "answer": "Table plan and retention",
+   "why": "A search job scans a table over a long window and writes its hits to a new analytics table, and restore brings a chosen time range back for full-speed querying, which is how you reach records past the analytics retention boundary. Connectors is the reflex answer people give, but reconnecting a source only affects data arriving from now on and cannot conjure history that is already sitting in long-term storage.",
+   "citation": "Learn: search jobs and restoring archived logs in Sentinel · outline 4.2"
+  },
+  {
+   "id": "sen-22",
+   "label": "To trim a cost overrun, an engineer at a gaming company moves the verbose proxy table to the cheaper tier. Within a day the scheduled detection that watched that table for beaconing has stopped raising incidents entirely, though nothing else changed.",
+   "sub": "Which mechanism closes this?",
+   "answer": "Table plan and retention",
+   "why": "Moving a table out of the analytics tier is exactly the change that stops real-time analytics and hunting against it, and the portal warns about this before you save; recovering detection means returning the table to the analytics tier. Custom-ingestion is the better long-term partner to consider but a different mechanism: filtering the noisy rows at collection would have cut cost while leaving the table where the detection can still see it.",
+   "citation": "Learn: configuring table settings and data tiers in Sentinel · outline 4.2"
+  },
+  {
+   "id": "sen-23",
+   "label": "A SOC lead at an energy utility opens the workspace's table view and finds one third-party table has fallen to zero volume over the last day compared with the same day the previous week, while another has spiked hard enough to move the estimated daily cost.",
+   "sub": "Which mechanism closes this?",
+   "answer": "Table plan and retention",
+   "why": "Table insights on the Tables page is the observability surface for exactly this pair of signals, showing fluctuation against the same day last week, last data received and estimated daily cost per table, which is how a silent third-party feed and a cost spike surface side by side. Connectors is the nearest wrong answer: the eventual repair may well be a connector, but you cannot know which one until the table view names it, and no connector page ranks tables by volume or flags a week-on-week drop.",
+   "citation": "Learn: configuring table settings in Sentinel, Table insights · outline 4.2"
+  }
+ ]
+}

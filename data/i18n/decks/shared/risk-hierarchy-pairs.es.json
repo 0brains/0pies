@@ -1,0 +1,50 @@
+{
+ "rhp-01": {
+  "a.text": "La empresa añade validación de salida y revisión humana a un modelo de reclamaciones, reduciendo la tasa de denegaciones incorrectas.",
+  "a.why": "La probabilidad del daño efectivo disminuye. La reducción es el único tratamiento que mejora la situación de la persona afectada.",
+  "b.text": "La empresa compra una póliza de seguros que cubre el coste de las reclamaciones denegadas incorrectamente, dejando el modelo sin cambios.",
+  "b.why": "El solicitante es denegado exactamente con la misma tasa; solo se protege el balance de la empresa. Los seguros nunca son un control."
+ },
+ "rhp-02": {
+  "a.text": "Después de la evaluación, la característica de inferencia de emociones se cancela y se elimina de la cartera de proyectos.",
+  "a.why": "La actividad se detiene, por lo que la exposición llega a cero. La evitación es el único tratamiento sin riesgo residual que registrar.",
+  "b.text": "Después de la evaluación, la característica de inferencia de emociones se lanza con umbrales de confianza, evaluación de subgrupos y revisión humana de casos de baja confianza.",
+  "b.why": "La actividad continúa con menor probabilidad de daño. La mitigación sustancial sigue siendo reducción, y el riesgo residual sigue necesitando un propietario."
+ },
+ "rhp-03": {
+  "a.text": "El pipeline de despliegue rechaza promocionar un modelo cuya evaluación de imparcialidad se ha degradado pasando un umbral.",
+  "a.why": "La regla se ejecuta en cada lanzamiento sin que nadie tenga que elegir aplicarla, por lo que la presión de plazos no puede erosionarla.",
+  "b.text": "La lista de verificación de lanzamiento requiere que el gestor de lanzamiento confirme que la evaluación de imparcialidad no se ha degradado.",
+  "b.why": "Intención idéntica, aplicada por diligencia humana. Este es el error de acreditación más común en las evaluaciones de riesgo de IA."
+ },
+ "rhp-04": {
+  "a.text": "La capacidad del agente para emitir reembolsos se elimina completamente de su conjunto de herramientas.",
+  "a.why": "Sin capacidad, sin modo de fallo, y nada que monitorizar. La eliminación es el nivel superior porque retira la rama completa del árbol de riesgos.",
+  "b.text": "El agente mantiene su herramienta de reembolso, con un límite duro de un reembolso por sesión y un tope de cantidad aplicado por la herramienta.",
+  "b.why": "Una restricción técnica fuerte que deja una exposición acotada — y deja el tope en sí mismo como algo que puede ser mal configurado."
+ },
+ "rhp-05": {
+  "a.text": "El asistente detecta y bloquea la entrada que parece confidencial antes de que se envíe al modelo.",
+  "a.why": "El sistema evita la divulgación independientemente de lo que haga el usuario. La carga recae sobre la parte capaz de soportarla.",
+  "b.text": "El asistente muestra un aviso pidiendo a los usuarios que no peguen información confidencial.",
+  "b.why": "El mismo riesgo, con la carga trasladada al usuario. Nivel más débil, y frecuentemente el único implementado."
+ },
+ "rhp-06": {
+  "a.text": "El comité de riesgos registra el riesgo residual, confirma que está dentro del apetito, nombra un propietario y establece una fecha de revisión.",
+  "a.why": "La aceptación es una decisión afirmativa con autoridad, un propietario y un punto de revisión. Ese registro es lo que la distingue de la negligencia.",
+  "b.text": "El equipo de entrega conoce el riesgo residual, no está en el registro de riesgos, y nadie por encima del equipo ha sido informado.",
+  "b.why": "El silencio no es aceptación. Sin que la autoridad correcta lo decida, no hay tratamiento en absoluto — solo exposición que nadie ha asumido."
+ },
+ "rhp-07": {
+  "a.text": "Un resumidor de generación libre sobre notas clínicas se reemplaza con un resumidor extractivo que solo puede citar texto fuente.",
+  "a.why": "El mecanismo de alucinación se reemplaza por uno incapaz de alucinar, mientras que el propósito sobrevive. El rediseño supera el ajuste.",
+  "b.text": "El mismo resumidor de generación libre se mantiene, con temperatura reducida e instrucción de fundamentación añadida al prompt.",
+  "b.why": "El mecanismo que puede alucinar está intacto y solo desalentado. Útil, y estructuralmente más débil que eliminar la capacidad."
+ },
+ "rhp-08": {
+  "a.text": "La recuperación aplica los derechos de acceso del usuario solicitante, por lo que los documentos no autorizados nunca se devuelven.",
+  "a.why": "El daño no puede ocurrir. La prevención es lo que reduce la probabilidad; todo lo demás solo reduce la duración o el impacto.",
+  "b.text": "Una auditoría trimestral muestrea respuestas e informa de cualquiera que citara documentos que el usuario no debería haber visto.",
+  "b.why": "La divulgación ya ocurrió, hace hasta tres meses. La detección limita el impacto y se confunde rutinariamente con prevención en catálogos de controles."
+ }
+}

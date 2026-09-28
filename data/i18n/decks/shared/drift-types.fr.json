@@ -1,0 +1,110 @@
+{
+ "drift-01": {
+  "label": "Un modèle de crédit a été entraîné sur des demandeurs âgés de 25 à 60 ans. Après une campagne marketing ciblant le marché étudiant, un tiers des demandes provient désormais de personnes de moins de 25 ans. Le comportement de remboursement pour un profil donné n'a pas changé.",
+  "why": "Le mélange des entrées s'est déplacé dans une région à peine couverte par les données d'entraînement, mais la relation entre profil et remboursement reste intacte. C'est P(X) qui bouge avec P(Y|X) inchangé — dérive de covariable, et la solution est la couverture, pas une nouvelle règle."
+ },
+ "drift-02": {
+  "label": "Un modèle vocal entraîné principalement sur des enregistrements en studio reçoit désormais une grande part d'appels depuis des téléphones mobiles dans les rues bruyantes. Les mots veulent dire ce qu'ils signifiaient.",
+  "why": "Les conditions acoustiques sont une propriété d'entrée. La correspondance de l'audio au texte n'a pas changé ; le modèle fonctionne simplement en dehors de la région d'entrée qu'il a bien apprise."
+ },
+ "drift-03": {
+  "label": "Un modèle de demande construit sur les magasins d'un pays est déployé dans trois autres pays. Les produits, les saisons et la logique d'achat sont les mêmes ; les profils de magasins ne le sont pas.",
+  "why": "C'est le cas d'école où la distribution d'entraînement ne couvre pas la distribution de déploiement. Rien sur la façon dont la demande est générée n'a changé — seules les entrées visibles sont différentes."
+ },
+ "drift-04": {
+  "label": "La précision d'un modèle de fraude s'effondre en une seule semaine. Les enquêteurs découvrent une nouvelle technique d'attaque qui a commencé à une date précise et est désormais le motif dominant.",
+  "why": "Les mêmes valeurs de caractéristiques qui signifiaient légitimes le mois dernier signifient maintenant fraude. P(Y|X) a changé, et cela s'est passé à un moment donné — un changement de concept abrupt, pas un déplacement de qui effectue les transactions."
+ },
+ "drift-05": {
+  "label": "Un modèle tarifaire se dégrade du jour au lendemain quand un régulateur plafonne une commission que le modèle avait appris à traiter comme un signal fort du segment client.",
+  "why": "Un changement de règle externe aux données réoriente instantanément ce que la caractéristique signifie. Le réentraînement sur les données post-changement est la solution ; rien des données pré-changement ne peut être récupéré."
+ },
+ "drift-06": {
+  "label": "Un classifieur de contenu fonctionne bien jusqu'à ce qu'un changement de politique de plateforme prenne effet le premier du mois, après quoi son étiquette d'« acceptable » ne correspond plus aux décisions du modérateur.",
+  "why": "La définition de la cible elle-même a été redéfinie à une date donnée. Les caractéristiques sont inchangées ; la vérité terrain s'est déplacée sous elles."
+ },
+ "drift-07": {
+  "label": "Sur huit mois, la précision d'un modèle de churn glisse alors qu'un nouveau plan d'un concurrent est adopté par de plus en plus de clients. Les deux dynamiques de churn, ancienne et nouvelle, sont visibles dans les données tout au long.",
+  "why": "Deux régimes coexistent, le nouveau prenant une part croissante des cas. Ce mélange dans le temps est la signature de la dérive graduelle, et c'est pourquoi un seul point de changement ne peut pas être trouvé."
+ },
+ "drift-08": {
+  "label": "Un modèle de recommandation se dégrade lentement alors qu'une cohorte plus ancienne d'utilisateurs est progressivement remplacée par une plus jeune ayant des goûts différents. Pendant une longue période, les deux comportements sont présents.",
+  "why": "Deux populations avec deux règles d'entrée-vers-résultat différentes se chevauchent lors de la transition. La détection est tardive précisément parce qu'aucune semaine isolée ne semble anormale."
+ },
+ "drift-09": {
+  "label": "Un filtre anti-spam s'affaiblit au fil d'une année alors que les expéditeurs migrent d'une famille de modèles à une autre, avec une longue période où les deux modèles arrivent en quantité.",
+  "why": "Les anciens et les nouveaux concepts sont tous deux actifs lors du basculement. Comparez-le à la dérive incrémentale, où il n'y a pas deux régimes, juste un qui continue de bouger."
+ },
+ "drift-10": {
+  "label": "L'erreur d'un modèle de temps de livraison augmente régulièrement mois après mois à mesure que la congestion routière s'aggrave peu à peu. Il n'y a pas de moment où le comportement saute ni de régime antérieur auquel revenir.",
+  "why": "La relation passe continuellement par des états intermédiaires plutôt que de basculer entre deux régimes définis. Le réentraînement par fenêtre glissante convient ; la détection de point de changement ne trouvera rien."
+ },
+ "drift-11": {
+  "label": "Un modèle de qualité basé sur des capteurs dérive à mesure que les composants d'une machine s'usent, se dégradant d'une fraction de pour cent par semaine sans discontinuité.",
+  "why": "L'usure physique déplace la correspondance d'entrée-vers-résultat de manière lisse et monotone. Chaque semaine est un concept légèrement nouveau, pas un mélange d'un ancien et d'un nouveau."
+ },
+ "drift-12": {
+  "label": "La précision thématique d'un modèle de langage s'érode mois après mois à mesure que le vocabulaire et l'utilisation évoluent, sans événement unique responsable.",
+  "why": "Mouvement continu et directionnel du concept sans point de changement ni retour. Le remède est un cycle d'actualisation, pas un seuil d'alarme."
+ },
+ "drift-13": {
+  "label": "Un modèle de prévision de vente au détail échoue chaque décembre, se rétablit en janvier et échoue à nouveau le décembre suivant.",
+  "why": "Un concept précédemment vu revient selon un cycle. La bonne réponse est de modéliser la saisonnalité ou de conserver le modèle saisonnier, pas de réentraîner en panique chaque hiver."
+ },
+ "drift-14": {
+  "label": "Les erreurs d'un modèle de demande énergétique suivent un motif jour de semaine/week-end qui se répète indéfiniment.",
+  "why": "Les régimes alternés sont tous deux connus et reviennent tous les deux. Le réentraînement sur la fenêtre la plus récente seule rendrait le modèle définitivement erroné pour le régime qu'il a vu en dernier."
+ },
+ "drift-15": {
+  "label": "Un modèle d'effectifs se dégrade pendant chaque congé scolaire et revient à la normale après, année après année.",
+  "why": "Contexte récurrent. Conserver et resélectionner les modèles historiques selon le contexte surpasse les jeter, car l'ancien concept est garanti de revenir."
+ },
+ "drift-16": {
+  "label": "Le taux de positivité d'un modèle de dépistage de maladie chute brusquement après une campagne de vaccination réussie. Les symptômes indiquent toujours la maladie exactement comme avant.",
+  "why": "La prévalence du résultat a baissé — P(Y) a bougé — tandis que P(X|Y) est restée. Les seuils et toute calibration dépendante des priors nécessitent un ajustement ; la relation apprise ne le fait pas."
+ },
+ "drift-17": {
+  "label": "Un modèle de fraude entraîné quand 3 % des transactions étaient frauduleuses fonctionne désormais où 0,5 % le sont, en raison des contrôles introduits ailleurs. Les transactions frauduleuses se présentent exactement comme avant.",
+  "why": "Le taux de base a changé, donc chaque probabilité que le modèle émet est mal calibrée même si sa discrimination est inaffectée. La correction antérieure le corrige sans réentraînement."
+ },
+ "drift-18": {
+  "label": "Un classifieur de défaut est déplacé d'une ligne pilote avec un taux de défaut de 20 % à une ligne mature avec 2 %. Les défauts se présentent identiquement sur les deux.",
+  "why": "Seul l'antécédent de classe a changé. Lire ceci comme une dérive de covariable mène à un travail de caractéristiques inutile ; le lire comme un changement d'étiquette mène à une recalibration de seuil qui fonctionne réellement."
+ },
+ "drift-19": {
+  "label": "La surveillance montre que la part des décisions d'« approbation » passe de 61 % à 78 % sur six semaines. Aucune étiquette n'est encore arrivée, donc la qualité ne peut pas être mesurée.",
+  "why": "La distribution de sortie a bougé. C'est une alerte, pas un diagnostic : cela peut être causé par une dérive de covariable, un changement d'étiquette, un flux cassé, ou une population genuinely changée. C'est ce que tu observes quand les étiquettes sont retardées."
+ },
+ "drift-20": {
+  "label": "La probabilité moyenne prédite d'un modèle augmente régulièrement alors que les distributions des caractéristiques d'entrée semblent stables sur chaque graphique.",
+  "why": "Les sorties qui se déplacent sans mouvement d'entrée visible signifient généralement que le mouvement est dans une interaction de caractéristique ou une caractéristique que personne ne surveille. La découverte est réelle ; la cause est encore non identifiée."
+ },
+ "drift-21": {
+  "label": "Après le déploiement d'une version de modèle, la distribution des scores se décale notablement même si les données entrantes sont identiques à celles de la semaine précédente.",
+  "why": "Mêmes entrées, sorties différentes signifie que le changement est dans le modèle, pas le monde. La dérive de prédiction d'une version à l'autre est la raison pour laquelle une nouvelle version est comparée sur un échantillon de référence fixe."
+ },
+ "drift-22": {
+  "label": "La moyenne d'une caractéristique de revenu chute à un tiers de sa valeur habituelle du jour au lendemain. Une équipe amont a changé le champ de cents à unités entières la même nuit.",
+  "why": "Le monde n'a pas changé ; l'unité l'a fait. Le réentraînement ici enseignerait au modèle de traiter les valeurs corrompues comme normales et faire que le correctif éventuel ressemble à une nouvelle régression."
+ },
+ "drift-23": {
+  "label": "Une caractéristique catégorique montre soudainement 40 % de valeurs nulles. Un changement de schéma a renommé la colonne source et la jointure manque maintenant.",
+  "why": "Un défaut de pipeline se présente exactement comme une dérive soudaine sur un tableau de bord de dérive. L'indice est que le changement coïncide avec un déploiement ou un événement de schéma plutôt que quelque chose dans le monde."
+ },
+ "drift-24": {
+  "label": "Les entrées d'un modèle se décalent au moment où un fournisseur change une valeur par défaut API, en remplaçant silencieusement les valeurs manquantes par zéro au lieu de les omettre.",
+  "why": "Les zéros qui signifient « manquant » sont lus par le modèle comme une valeur réelle et extrême. La solution est l'application des contrats amont et la sémantique des valeurs nulles, jamais un réentraînement."
+ },
+ "drift-types": {
+  "hint": "Fais glisser chaque symptôme de production sur le type de dérive qu'il décrit. La question est toujours quelle distribution a bougé — les entrées, les étiquettes, les sorties, ou la relation entre elles.",
+  "note": "Une rupture de données amont obtient une zone propre parce qu'elle ressemble exactement à une vraie dérive sur chaque tableau de bord, et la réponse correcte est l'opposée : corriger le flux, jamais réentraîner dessus.",
+  "zones[0].def": "P(X) bouge. Les entrées semblent différentes, mais la règle de correspondance des entrées aux résultats tient toujours.",
+  "zones[1].def": "P(Y|X) change brusquement à un moment donné. L'ancienne règle cesse de s'appliquer du jour au lendemain.",
+  "zones[2].def": "Les anciennes et les nouvelles règles coexistent, la nouvelle apparaissant dans une part croissante des cas.",
+  "zones[3].def": "La règle elle-même se déplace continuellement par des états intermédiaires plutôt que de basculer entre deux.",
+  "zones[4].def": "Une règle précédemment vue revient selon un cycle. La saisonnalité est le cas courant.",
+  "zones[5].def": "P(Y) bouge — le mélange des résultats change — tandis que les caractéristiques données le résultat se comportent comme avant.",
+  "zones[6].def": "La distribution de sortie du modèle bouge. C'est un symptôme, observable sans aucune étiquette, pas un diagnostic.",
+  "zones[7].def": "Rien dans le monde n'a changé. Un pipeline, un schéma, une unité ou une valeur par défaut a changé, et le modèle reçoit une entrée corrompue."
+ }
+}

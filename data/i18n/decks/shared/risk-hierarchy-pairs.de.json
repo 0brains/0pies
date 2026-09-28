@@ -1,0 +1,50 @@
+{
+ "rhp-01": {
+  "a.text": "Das Unternehmen ergänzt die Ausgabevalidierung und menschliche Überprüfung um sein Anspruchsmodell und senkt damit die Quote der falschen Ablehnungen.",
+  "a.why": "Die Wahrscheinlichkeit des tatsächlichen Schadens sinkt. Risikoreduktion ist die einzige Behandlung, die den Betroffenen besser stellt.",
+  "b.text": "Das Unternehmen schließt eine Versicherungspolice ab, die die Kosten ungerechtfertigter Ablehnungen von Ansprüchen deckt, ohne das Modell zu ändern.",
+  "b.why": "Der Anspruchsteller wird genau im gleichen Umfang abgelehnt; nur die Bilanz des Unternehmens ist geschützt. Versicherung ist niemals ein Kontrollmechanismus."
+ },
+ "rhp-02": {
+  "a.text": "Nach der Bewertung wird die Funktion zur Emotionserkennung storniert und von der Roadmap entfernt.",
+  "a.why": "Die Aktivität endet, daher geht die Exposition auf null. Vermeidung ist die einzige Behandlung ohne Restrisiko.",
+  "b.text": "Nach der Bewertung wird die Funktion zur Emotionserkennung mit Konfidenzschwellen, Subgruppen-Evaluationen und menschlicher Überprüfung von Fällen mit niedriger Konfidenz in den Live-Betrieb gehen.",
+  "b.why": "Die Aktivität setzt sich mit geringerer Schadenswahrscheinlichkeit fort. Wesentliche Minderung ist immer noch Reduktion, und Restrisiko benötigt einen Verantwortlichen."
+ },
+ "rhp-03": {
+  "a.text": "Die Bereitstellungs-Pipeline lehnt die Beförderung eines Modells ab, dessen Fairness-Evaluierung über einen Schwellenwert rückläufig ist.",
+  "a.why": "Die Regel wird bei jeder Freigabe ausgeführt, ohne dass jemand aktiv entscheiden muss, sie anzuwenden, daher kann Termindruck sie nicht untergraben.",
+  "b.text": "Die Release-Checkliste verpflichtet den Release Manager zu bestätigen, dass die Fairness-Evaluierung nicht rückläufig ist.",
+  "b.why": "Identische Absicht, durchgesetzt durch menschliche Sorgfalt. Das ist der häufigste Fehler in KI-Risikobewertungen."
+ },
+ "rhp-04": {
+  "a.text": "Die Fähigkeit des Agenten, Rückerstattungen auszuführen, wird vollständig aus seinem Werkzeugsatz entfernt.",
+  "a.why": "Keine Fähigkeit, kein Fehlermodus und nichts zu überwachen. Eliminierung ist die höchste Stufe, weil sie einen ganzen Zweig des Risikobaums aufhebt.",
+  "b.text": "Der Agent behält sein Rückerstattungswerkzeug mit einer harten Grenze von einer Rückerstattung pro Sitzung und einer durch das Werkzeug durchgesetzten Obergrenze.",
+  "b.why": "Eine starke technische Einschränkung, die noch begrenzte Exposition hinterlässt — und die Obergrenze selbst als etwas Fehlerhaftes zurück."
+ },
+ "rhp-05": {
+  "a.text": "Der Assistent erkennt und blockiert vertraulich aussehende Eingaben, bevor sie an das Modell gesendet werden.",
+  "a.why": "Das System verhindert die Offenlegung unabhängig von den Handlungen des Nutzers. Die Verantwortung liegt bei der Partei, die sie tragen kann.",
+  "b.text": "Der Assistent zeigt einen Hinweis an, der Nutzer bittet, keine vertraulichen Informationen einzufügen.",
+  "b.why": "Gleiches Risiko, Verantwortung auf den Nutzer übertragen. Schwächste Stufe, und häufig die einzige implementierte."
+ },
+ "rhp-06": {
+  "a.text": "Der Risikoausschuss erfasst das Restrisiko, bestätigt, dass es im Risikoappetit liegt, benennt einen Verantwortlichen und legt ein Überprüfungsdatum fest.",
+  "a.why": "Akzeptanz ist eine affirmative Entscheidung mit Autorität, einem Verantwortlichen und einem Überprüfungspunkt. Diese Dokumentation ist das, was sie von Vernachlässigung unterscheidet.",
+  "b.text": "Das Restrisiko ist dem Lieferteam bekannt, ist nicht im Risikoregister enthalten, und niemand über dem Team wurde informiert.",
+  "b.why": "Stille ist keine Akzeptanz. Ohne dass die richtige Autorität entscheidet, gibt es keine Behandlung — nur Exposition, deren sich niemand angenommen hat."
+ },
+ "rhp-07": {
+  "a.text": "Ein Zusammenfassungssystem mit freier Generierung über klinische Notizen wird durch ein extraktives Zusammenfassungssystem ersetzt, das nur Quelltext zitieren kann.",
+  "a.why": "Der Fabrikationsmechanismus wird gegen einen ausgetauscht, der nicht fabrizieren kann, während der Zweck erhalten bleibt. Redesign schlägt Optimierung.",
+  "b.text": "Das gleiche Zusammenfassungssystem mit freier Generierung wird beibehalten, die Temperatur wird gesenkt und eine Verarbeitungsanweisung zum Prompt hinzugefügt.",
+  "b.why": "Der Mechanismus, der fabrizieren kann, bleibt intakt und wird lediglich abgeraten. Nützlich, aber strukturell schwächer als das Entfernen der Fähigkeit."
+ },
+ "rhp-08": {
+  "a.text": "Der Abruf setzt die Zugriffsrechte des anfragenden Nutzers durch, daher werden nicht autorisierte Dokumente nie zurückgegeben.",
+  "a.why": "Der Schaden kann nicht auftreten. Prävention ist das, was die Wahrscheinlichkeit reduziert; alles andere reduziert nur Dauer oder Auswirkungen.",
+  "b.text": "Eine vierteljährliche Prüfung stichprobenartig überprüft Antworten und meldet alle, die Dokumente zitierten, die der Nutzer nicht sehen sollte.",
+  "b.why": "Die Offenlegung ist bereits passiert, vor bis zu drei Monaten. Erkennung begrenzt Auswirkungen und wird routinemäßig mit Prävention in Kontrollkatalogisierungen verwechselt."
+ }
+}

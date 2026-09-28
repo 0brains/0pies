@@ -1,0 +1,110 @@
+{
+ "drift-01": {
+  "label": "Ein Kreditmodell wurde mit Antragstellern im Alter von 25–60 Jahren trainiert. Nach einer Marketingkampagne im Studentenmarkt stammt nun ein Drittel der Anträge von unter 25-Jährigen. Das Rückzahlungsverhalten für ein gegebenes Profil ist unverändert.",
+  "why": "Der Input-Mix ist in eine Region verschoben, die die Trainingsdaten kaum abdecken, aber die Beziehung zwischen Profil und Rückzahlung ist intakt. Das ist P(X) das sich bewegt, während P(Y|X) gleich bleibt — Kovariate Drift, und die Lösung ist Abdeckung, nicht eine neue Regel."
+ },
+ "drift-02": {
+  "label": "Ein Sprachmodell, das hauptsächlich auf Studioaufnahmen trainiert wurde, verarbeitet jetzt einen großen Anteil von Anrufen von Mobiltelefonen auf lauten Straßen. Worte bedeuten, was sie bedeuteten.",
+  "why": "Akustische Bedingungen sind eine Input-Eigenschaft. Die Abbildung von Audio zu Text hat sich nicht verändert; das Modell arbeitet einfach außerhalb der Region, in der es gut gelernt hat."
+ },
+ "drift-03": {
+  "label": "Ein Nachfragemodell aus den Geschäften eines Landes wird in drei weitere Länder ausgerollt. Die Produkte, Jahreszeiten und Kauflogik sind gleich; die Geschäftsprofile nicht.",
+  "why": "Das ist der Lehrbuchfall der Trainingsdistribution, die die Deployment-Distribution nicht abdeckt. Nichts an der Art, wie Nachfrage generiert wird, hat sich geändert — nur welche Inputs gesehen werden."
+ },
+ "drift-04": {
+  "label": "Die Genauigkeit eines Betrugsmodells bricht in einer einzigen Woche zusammen. Ermittler finden eine neue Angriffstechnik, die an einem bestimmten Datum begann und jetzt das dominierende Muster ist.",
+  "why": "Die gleichen Merkmalswerte, die letzen Monat legitim bedeuteten, bedeuten jetzt Betrug. P(Y|X) hat sich geändert, und es hat sich an einem Zeitpunkt geändert — ein abrupter Konzeptwechsel, kein Wechsel in wer transagiert."
+ },
+ "drift-05": {
+  "label": "Ein Preismodell wird über Nacht schlecht, wenn ein Regulator eine Gebühr deckelt, die das Modell gelernt hat, als starkes Signal für das Kundensegment zu behandeln.",
+  "why": "Eine Regeländerung außerhalb der Daten verdrahtet augenblicklich, was das Merkmal bedeutet. Ein Retrain auf Daten nach der Änderung ist die Lösung; nichts an den Daten vor der Änderung ist verwertbar."
+ },
+ "drift-06": {
+  "label": "Ein Inhaltsklassifizierer funktioniert, bis eine Richtlinienänderung der Plattform am ersten des Monats in Kraft tritt, nach der das Label 'akzeptabel' nicht mehr den Moderatorentscheidungen entspricht.",
+  "why": "Die Zieldefinition selbst wurde an einem Datum neu definiert. Die Merkmale sind unverändert; die Grundwahrheit verschob sich unter ihnen."
+ },
+ "drift-07": {
+  "label": "Über acht Monate sinkt die Genauigkeit eines Churn-Modells, da ein neuer Plan eines Konkurrenten von immer mehr Kunden angenommen wird. Beide alte und neue Churn-Dynamiken sind durchgehend in den Daten sichtbar.",
+  "why": "Zwei Regime koexistieren, wobei das neuere einen steigenden Anteil der Fälle einnimmt. Diese Mischung über die Zeit ist die Signatur gradueller Drift, und deshalb kann ein einzelner Änderungspunkt nicht gefunden werden."
+ },
+ "drift-08": {
+  "label": "Ein Empfehlungsmodell wird langsam schlechter, da eine ältere Benutzerkohorte allmählich durch eine jüngere mit anderen Vorlieben ersetzt wird. Für eine lange Zeit sind beide Verhaltensweisen vorhanden.",
+  "why": "Zwei Populationen mit zwei verschiedenen Input-zu-Ergebnis-Regeln überlappen sich während des Übergangs. Die Erkennung erfolgt spät, genau weil keine einzelne Woche anomal aussieht."
+ },
+ "drift-09": {
+  "label": "Ein Spam-Filter wird über ein Jahr schwächer, da Absender von einer Template-Familie zur anderen migrieren, mit einer langen Zeit, in der beide Templates in Mengen ankommen.",
+  "why": "Alt und neu Konzepte sind beide live während des Wechsels. Vergleiche es mit inkrementeller Drift, wo es keine zwei Regime gibt, nur ein Regime, das sich ständig bewegt."
+ },
+ "drift-10": {
+  "label": "Der Fehler eines Lieferzeitmodells wächst stetig Monat für Monat, da sich Verkehrsüberlastung ein bisschen zur Zeit verschlimmert. Es gibt keinen Punkt, an dem das Verhalten springt und keine frühere Regime, zu der man zurückkehrt.",
+  "why": "Die Beziehung durchläuft kontinuierlich Zwischenzustände statt zwischen zwei definierten Regimen zu wechseln. Rolling-Window-Retraining passt hierzu; Änderungspunkterkennung findet nichts."
+ },
+ "drift-11": {
+  "label": "Ein Sensor-basiertes Qualitätsmodell wird schlecht, wenn sich die Komponenten einer Maschine abnutzen, Verschlechterung eines Bruchteils von einem Prozent pro Woche ohne Diskontinuität.",
+  "why": "Physikalischer Verschleiß bewegt die Input-zu-Ergebnis-Abbildung sanft und monoton. Jede Woche ist ein leicht neues Konzept, nicht eine Mischung aus alter und neuer."
+ },
+ "drift-12": {
+  "label": "Die thematische Genauigkeit eines Sprachmodells erodiert Monat für Monat, da sich Vokabeln und Verwendung entwickeln, ohne dass ein einzelnes Ereignis verantwortlich ist.",
+  "why": "Kontinuierliche, direktionale Bewegung des Konzepts ohne Änderungspunkt und ohne Rückkehr. Das Mittel ist ein Refresh-Rhythmus, kein Alarmschwellenwert."
+ },
+ "drift-13": {
+  "label": "Ein Einzelhandelsprognosemodell scheitert jeden Dezember, erholt sich im Januar und scheitert wieder im folgenden Dezember.",
+  "why": "Ein vorher gesehenes Konzept kehrt auf einem Zyklus zurück. Die richtige Antwort ist, die Saisonalität zu modellieren oder das Saisonalitätsmodell zu behalten, nicht panisch jeden Winter zu retrainieren."
+ },
+ "drift-14": {
+  "label": "Die Fehler eines Energiebedarfsmodells folgen einem Wochentag-/Wochenende-Muster, das sich endlos wiederholt.",
+  "why": "Die alternierenden Regime sind beide bekannt und beide kommen zurück. Retraining auf dem aktuellsten Fenster allein würde das Modell permanent für welches Regime auch immer falsch machen, das es zuletzt sah."
+ },
+ "drift-15": {
+  "label": "Ein Personalmodell wird während jedes Schulferientags schlecht und normalisiert sich danach, Jahr für Jahr.",
+  "why": "Wiederkehrender Kontext. Das Beibehalten und erneute Auswählen historischer Modelle pro Kontext schlägt das Verwerfen, weil das alte Konzept garantiert zurückkehrt."
+ },
+ "drift-16": {
+  "label": "Die positive Quote eines Krankheitsscreeningmodells fällt deutlich nach einer erfolgreichen Impfkampagne. Symptome zeigen weiterhin die Krankheit genau wie zuvor an.",
+  "why": "Die Prävalenz des Ergebnisses fiel — P(Y) bewegte sich — während P(X|Y) gleich blieb. Schwellenwerte und kalibrierungsabhängige Anpassungen müssen angepasst werden; die gelernte Beziehung nicht."
+ },
+ "drift-17": {
+  "label": "Ein Betrugsmodell, das trainiert wurde, als 3% der Transaktionen betrügerisch waren, arbeitet jetzt, wo 0,5% sind, wegen anderswo eingeführter Kontrollen. Betrügerische Transaktionen sehen wie immer aus.",
+  "why": "Die Basisrate hat sich geändert, also ist jede Wahrscheinlichkeit, die das Modell ausstößt, falsch kalibriert, obwohl seine Unterscheidungskraft unbeeinträchtigt ist. Vorherige Korrektur behebt dies ohne Retraining."
+ },
+ "drift-18": {
+  "label": "Ein Fehlerklassifizierer wird von einer Pilotlinie mit einer 20%-Fehlerquote zu einer reifen Linie mit 2% verschoben. Fehler präsentieren sich auf beiden identisch.",
+  "why": "Nur die Klassen-A-priori-Quote hat sich geändert. Dies als kovariante Drift zu lesen führt zu sinnloser Feature-Arbeit; es als Label-Versatz zu lesen führt zu einer Schwellenwert-Kalibrierung, die tatsächlich funktioniert."
+ },
+ "drift-19": {
+  "label": "Die Überwachung zeigt, dass der Anteil der 'Genehmigen'-Entscheidungen über sechs Wochen von 61% auf 78% ansteigt. Noch keine Labels angekommen, so dass die Qualität nicht gemessen werden kann.",
+  "why": "Die Ausgabeverteilung hat sich bewegt. Das ist ein Alert, keine Diagnose: es kann durch kovariante Drift, Label-Versatz, einen unterbrochenen Feed oder eine wirklich veränderte Population verursacht werden. Es ist das, was du beobachtest, wenn Labels verzögert sind."
+ },
+ "drift-20": {
+  "label": "Die durchschnittliche vorhergesagte Wahrscheinlichkeit eines Modells klettert stetig, während die Input-Merkmalsdistributionen auf jedem Diagramm stabil aussehen.",
+  "why": "Ausgaben, die sich ohne sichtbare Input-Bewegung bewegen, deuten normalerweise darauf hin, dass die Bewegung in einer Merkmals-Interaktion oder in einem Merkmal liegt, das niemand überwacht. Der Befund ist real; die Ursache ist noch unidentifiziert."
+ },
+ "drift-21": {
+  "label": "Nach der Bereitstellung einer Modellversion verschiebt sich die Verteilung der Ergebnisse merklich, obwohl die eingehenden Daten identisch mit denen der letzten Woche sind.",
+  "why": "Gleiche Eingaben, verschiedene Ausgaben bedeutet, dass die Änderung im Modell liegt, nicht in der Welt. Modell-zu-Modell-Vorhersage-Drift ist der Grund, warum eine neue Version auf einer festen Referenzmuster verglichen wird."
+ },
+ "drift-22": {
+  "label": "Der Mittelwert eines Umsatzmerkmales fällt über Nacht auf ein Drittel seines üblichen Wertes. Ein vorgelagertes Team wechselte das Feld von Cent zu ganzen Einheiten derselben Nacht.",
+  "why": "Die Welt hat sich nicht geändert; die Einheit tat es. Ein Retraining würde hier das Modell lehren, verdorbene Werte als normal zu behandeln und die eventuelle Reparatur wie eine neue Regression aussehen lassen."
+ },
+ "drift-23": {
+  "label": "Ein kategorisches Merkmal zeigt plötzlich 40% Nullen. Eine Schemaänderung benannte die Quellspalte um und der Join verpasst jetzt.",
+  "why": "Eine Pipeline-Defekt präsentiert sich genau wie plötzliche Drift auf einem Drift-Dashboard. Der Hinweis ist, dass die Änderung mit einem Deploy- oder Schema-Ereignis zusammenfällt, nicht mit etwas in der Welt."
+ },
+ "drift-24": {
+  "label": "Die Eingaben eines Modells verschieben sich in dem Moment, in dem ein Anbieter einen API-Standard ändert, stillschweigend fehlende Werte mit Null anstelle des Weglassens ersetzend.",
+  "why": "Nullen, die 'Fehlend' bedeuten, werden vom Modell als echter, extremer Wert gelesen. Die Reparatur ist Upstream-Vertragserzwingung und Null-Semantik, niemals ein Retraining."
+ },
+ "drift-types": {
+  "hint": "Ziehe jedes Produktionssymptom auf die Art von Drift, die es beschreibt. Die Frage ist immer, welche Distribution sich bewegt — die Eingaben, die Labels, die Ausgaben oder die Beziehung zwischen ihnen.",
+  "note": "Ein Upstream-Daten-Bruch erhält seine eigene Zone, weil er auf jedem Dashboard identisch wie echte Drift aussieht, und die richtige Antwort ist die Gegenteilige: repariere den Feed, trainiere nie darauf um.",
+  "zones[0].def": "P(X) bewegt sich. Die Eingaben sehen anders aus, aber die Regel, die Eingaben auf Ergebnisse abbildet, gilt weiterhin.",
+  "zones[1].def": "P(Y|X) ändert sich abrupt an einem Zeitpunkt. Die alte Regel tritt über Nacht außer Kraft.",
+  "zones[2].def": "Die alte und neue Regel koexistieren, wobei die neue in einem steigenden Anteil der Fälle erscheint.",
+  "zones[3].def": "Die Regel selbst bewegt sich kontinuierlich durch Zwischenzustände statt zwischen zwei zu wechseln.",
+  "zones[4].def": "Eine vorher gesehene Regel kehrt auf einem Zyklus zurück. Saisonalität ist der übliche Fall.",
+  "zones[5].def": "P(Y) bewegt sich — der Mix der Ergebnisse ändert sich — während die Merkmale angesichts des Ergebnisses wie zuvor verhalten.",
+  "zones[6].def": "Die Ausgabeverteilung des Modells verschiebt sich. Es ist ein Symptom, beobachtbar ohne Labels, nicht eine Diagnose.",
+  "zones[7].def": "Nichts in der Welt hat sich geändert. Eine Pipeline, Schema, Einheit oder Standardwert hat sich geändert, und das Modell wird mit beschädigtem Input gefüttert."
+ }
+}

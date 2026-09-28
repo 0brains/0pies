@@ -1,0 +1,74 @@
+{
+ "ft-01": {
+  "a.text": "Nhóm nền tảng cần một nơi để quản lý bảo mật chia sẻ, kết nối, tính toán và hạng mục cho tất cả các nhóm AI.",
+  "a.why": "Hub là thùng chứa cấp cao nhất cho sự hợp tác và quản lý với các tài nguyên chia sẻ — cái bẫy histack #3.",
+  "b.text": "Một nhóm sản phẩm cần nơi triển khai, agent, dữ liệu và đánh giá thực tế của họ sống.",
+  "b.why": "Một dự án sống bên trong một hub và là nơi bạn thực sự xây dựng — triển khai, agent, dữ liệu, đánh giá."
+ },
+ "ft-02": {
+  "a.text": "Mã của bạn chuyển 'chat-app-prod' — tên tùy chỉnh được chọn khi triển khai — làm đối số mô hình trong chat.completions.create.",
+  "a.why": "Tên triển khai — không phải tên mô hình cơ sở — là những gì mã của bạn gọi (cái bẫy chính xác của histack; cặp kho tàng #19).",
+  "b.text": "Danh mục Foundry liệt kê gpt-4o với điểm chuẩn của nó trước khi bất kỳ thứ gì được triển khai.",
+  "b.why": "gpt-4o là id mô hình cơ sở trong danh mục; nó trở thành có thể gọi được chỉ thông qua một triển khai được đặt tên."
+ },
+ "ft-03": {
+  "a.text": "Nhà phát triển cấu hình máy khách bằng địa chỉ HTTPS của tài nguyên Foundry, đọc từ biến môi trường, để mỗi yêu cầu biết tài nguyên nào trên Azure để tiếp cận.",
+  "a.why": "Điểm cuối (azure_endpoint) là địa chỉ tài nguyên mà SDK nhắm tới — nó xác định nơi cuộc gọi được gửi, không phải ai được phép gửi nó.",
+  "b.text": "Nhà phát triển di chuyển một bí mật ra khỏi tệp nguồn vào một biến môi trường riêng biệt, để chứng chỉ chứng minh danh tính của người gọi không bao giờ được mã hóa cứng.",
+  "b.why": "Chứng chỉ được chuyển làm api_key (os.getenv('AZURE_OPENAI_KEY')) và xác thực người gọi — một thói quen bảo mật và quyền riêng tư khác biệt với định tuyến."
+ },
+ "ft-04": {
+  "a.text": "Tài nguyên Foundry được tạo một lần bằng tên, hướng dẫn và công cụ đính kèm, sau đó được tham chiếu trên nhiều lượt sau này bằng cách sử dụng cuộc hội thoại tương tự.",
+  "a.why": "Một agent là một tài nguyên được đặt tên lâu dài — được tạo thông qua PromptAgentDefinition với hướng dẫn và công cụ, sau đó được gọi lặp lại.",
+  "b.text": "Một kịch bản gửi messages=[{'role': 'user', 'content': 'Summarize this case.'}] và nhận một trả lời trở lại từ yêu cầu hoàn thành thuần túy, không có gì được lưu trên máy chủ và không có luồng hoặc công cụ.",
+  "b.why": "Một chat.completions.create thuần túy là một yêu cầu không trạng thái duy nhất — không có hướng dẫn lâu dài, công cụ hoặc danh tính được lưu giữ giữa các cuộc gọi."
+ },
+ "ft-05": {
+  "a.text": "'Luôn trả lại chi tiết khách hàng ở hình dạng JSON cố định và chỉ trả lời các câu hỏi chính sách HR' — một quy tắc lâu dài cho mỗi lượt.",
+  "a.why": "Nhân vật, giọng điệu, quy tắc và đảm bảo an toàn thuộc về nhắc nhở hệ thống — phân biệt được 'kiểm tra nhất' của histack; câu trả lời sai được trồng đặt hành vi trong nhắc nhở người dùng hoặc cài đặt triển khai.",
+  "b.text": "'Tóm tắt báo cáo vắng mặt của quý này cho tôi' — một yêu cầu, lượt này chỉ.",
+  "b.why": "Nhắc nhở người dùng mang yêu cầu của lượt này; trả lời mô hình trước đó được phát lại cho bộ nhớ là tin nhắn trợ lý."
+ },
+ "ft-06": {
+  "a.text": "Sau khi triển khai một mô hình, nhà phát triển nhập một nhắc nhở trực tiếp vào cổng thông tin Foundry và đọc trả lời trên màn hình mà không viết một dòng Python duy nhất.",
+  "a.why": "Sân chơi là môi trường không mã yêu cầu của Foundry để tạo mô hình nhanh chóng và xác thực trước khi bất kỳ mã sản xuất nào tồn tại.",
+  "b.text": "Nhà phát triển tương tự sao chép đoạn mã của Tab Mã, xây dựng máy khách AzureOpenAI và gọi chat.completions.create từ tệp Python ứng dụng sẽ thực sự chạy.",
+  "b.why": "Tab Mã trao cho bạn mô hình truy cập lập trình — lệnh gọi SDK là những gì vận chuyển, không phải phiên cổng thông tin xác thực nó."
+ },
+ "ft-07": {
+  "a.text": "Một agent nhắc nhở được cấu hình để nó luôn phản ứng bằng giọng điệu chính thức và từ chối thảo luận về giá cạnh tranh, cho dù người dùng hỏi gì.",
+  "a.why": "Nhân vật và quy tắc hành vi được cung cấp cho PromptAgentDefinition là hướng dẫn — chúng hình thành cách agent phản ứng, không phải những gì nó có thể làm.",
+  "b.text": "Agent tương tự được cấp tìm kiếm web và tìm kiếm tệp để nó có thể tra cứu thông tin trực tiếp thay vì chỉ dựa vào những gì nó đã biết.",
+  "b.why": "Tìm kiếm web và tìm kiếm tệp được đính kèm từ danh sách công cụ Build > — khả năng mà agent có thể gọi, riêng biệt so với hướng dẫn của nó."
+ },
+ "ft-08": {
+  "a.text": "Mô hình phải luôn trả lời theo phong cách nhà của công ty bạn, học từ 5.000 ví dụ quá khứ.",
+  "a.why": "Tinh chỉnh đào tạo lại trọng số trên các ví dụ — công cụ để thay đổi hành vi/phong cách lâu dài.",
+  "b.text": "Mô hình phải trả lời từ danh sách giá của tháng này, thay đổi hàng tuần, mà không cần đào tạo lại.",
+  "b.why": "RAG tiêm dữ liệu org hiện tại được truy xuất tại suy luận — 'cấp mô hình dữ liệu của riêng bạn để câu trả lời ở được chính xác'."
+ },
+ "ft-09": {
+  "a.text": "Khối lượng công việc hàng loạt cần tốc độ xử lý dự đoán được đảm bảo ở chi phí hàng giờ cố định, được dự trữ trước bất kể có bao nhiêu mã được thực sự gửi.",
+  "a.why": "PTU dự trữ dung lượng hàng giờ chuyên dụng cho thông lượng dự đoán — bạn trả tiền cho dự trữ, không phải mỗi mã.",
+  "b.text": "Ứng dụng trò chuyện tương tác có lưu lượng không thể dự đoán được và cần hóa đơn theo mã với xử lý khu vực, vùng dữ liệu hoặc tùy chọn toàn cầu, thay vì dung lượng dự trữ hàng giờ.",
+  "b.why": "Triển khai tiêu chuẩn là tùy chọn ưu tiên cung cấp phạm vi khả năng rộng nhất và giá theo mã elanstic — đối sánh triển khai được kiểm tra nhất của kỳ thi (cặp #27)."
+ },
+ "ft-10": {
+  "a.text": "Bạn đã viết một lược đồ trường tùy chỉnh cho hợp đồng nhà cung cấp và phải đăng ký nó trước khi bất kỳ tài liệu nào được xử lý.",
+  "a.why": "Tạo/định nghĩa bộ phân tích từ lược đồ trường là thiết lập, không thực thi.",
+  "b.text": "Bộ phân tích đã tồn tại; mã chạy nó so với URL hợp đồng và thăm dò cho kết quả được cấu trúc.",
+  "b.why": "Thực thi là begin_analyze(analyzer_id=…, inputs=[AnalysisInput(url=…)]) — thoán phương pháp gần của kho tàng (cặp #26)."
+ },
+ "ft-11": {
+  "a.text": "Mô tả các trường bạn muốn bằng ngôn ngữ tự nhiên và trích xuất chúng từ một hỗn hợp PDF, hình ảnh và âm thanh cuộc họp thành JSON được cấu trúc.",
+  "a.why": "CU cho phép bạn mô tả các trường bằng ngôn ngữ tự nhiên trong khi LLM lý luận về đầu vào đa phương tiện — gợi ý của histack: 'đầu vào tự do hoặc không phải tài liệu'.",
+  "b.text": "Trích xuất tổng từ khối lượng cao của các hóa đơn và biên lai tiêu chuẩn bằng cách sử dụng một mô hình sẵn có.",
+  "b.why": "Trích xuất xác định từ các loại biểu mẫu đã biết — hóa đơn, biên lai, ID, danh thiếp. 'Cái bẫy trích xuất', yêu thích của histack."
+ },
+ "ft-12": {
+  "a.text": "Một nhóm bán lẻ gửi ảnh kệ vào và nhận lại các trường sản phẩm được cấu trúc chẳng hạn như tên, giá và số lượng, được xác định bởi lược đồ của riêng họ.",
+  "a.why": "Content Understanding biến đầu vào thô, không cấu trúc hoặc đa phương tiện thành đầu ra được cấu trúc cụ thể mà lược đồ yêu cầu.",
+  "b.text": "Một RAG chatbot cần một cơ sở kiến thức nó có thể truy vấn bằng tương tự ngữ nghĩa để mô hình trò chuyện có thể nền tảng câu trả lời của nó trong các đoạn được truy xuất.",
+  "b.why": "Azure AI Search lập chỉ mục nội dung — thường qua nhúng — và truy xuất nó tại thời gian truy vấn; các mô hình RAG ghép một mô hình trò chuyện với AI Search để nền tảng, một công việc khác biệt từ trích xuất trường từ tài liệu."
+ }
+}

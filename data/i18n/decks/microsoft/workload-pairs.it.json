@@ -1,0 +1,62 @@
+{
+ "wp-01": {
+  "a.text": "Dai ticket di supporto, elenca ogni nome di prodotto, persona e data menzionati.",
+  "a.why": "Le entità identificano chi/cosa è menzionato — persone, date, organizzazioni (histack: 'categorizza cose specifiche').",
+  "b.text": "Dai stessi ticket, determina se i clienti si sentono positivi, negativi o neutrali.",
+  "b.why": "La polarità dell'opinione è sentimento — la coppia più confusa dell'esame n°1 (17 co-occorrenze)."
+ },
+ "wp-02": {
+  "a.text": "Trascrivi una registrazione del centro di contatto in modo che gli agenti possano cercare la conversazione.",
+  "a.why": "Audio in, testo fuori — riconoscimento. 'Trascrivi' è il verbo ovvio.",
+  "b.text": "Un'app di navigazione legge le indicazioni passo dopo passo ad alta voce con la voce neurale en-US-Ava.",
+  "b.why": "Testo in, audio fuori — sintesi. SSML e nomi vocali come en-US-Ava:DragonHDLatestNeural appartengono solo alla sintesi."
+ },
+ "wp-03": {
+  "a.text": "Un'app di conferenza ascolta un oratore francese e produce didascalie inglesi dal vivo per il pubblico.",
+  "a.why": "Il riconoscimento del discorso in una lingua e il rendering in un'altra è traduzione — il tell dell'esame per questa coppia (audio-in, diverse-lingue-out).",
+  "b.text": "La stessa app produce anche didascalie francesi nella stessa lingua per un partecipante non udente in prima fila.",
+  "b.why": "Audio in, testo della stessa lingua è parola-a-testo semplice; nessuna lingua incrocia, quindi non c'è nulla da tradurre."
+ },
+ "wp-04": {
+  "a.text": "Estrai il numero di serie stampato su un'etichetta di apparecchiatura fotografata.",
+  "a.why": "OCR/Lettura estrae il testo letterale presente nell'immagine — 'estrai testo leggibile da un'immagine' è lo stelo dell'esame.",
+  "b.text": "Genera una descrizione in linguaggio naturale di una sola frase di quello che mostra la foto.",
+  "b.why": "La didascalia (VisualFeatures.CAPTION) descrive la scena — non legge il testo al suo interno."
+ },
+ "wp-05": {
+  "a.text": "Un'app di scansione legge il blocco indirizzo stampato da una busta fotografata nei campi di testo strutturato.",
+  "a.why": "OCR converte i pixel esistenti in testo — l'input è un'immagine, l'output è testo.",
+  "b.text": "Uno strumento di progettazione accetta il prompt 'un'icona piatta di un razzo blu' e produce un PNG nuovo di zecca che non è mai esistito prima.",
+  "b.why": "La generazione di immagini (client.images.generate con gpt-image-1 / DALL·E) funziona nella direzione opposta — prompt di testo in, pixel sintetizzati fuori — la trappola di capovolgimento della direzione dell'esame su questa coppia."
+ },
+ "wp-06": {
+  "a.text": "Determina se ogni foto caricata è 'parte difettosa' o 'parte buona'.",
+  "a.why": "La classificazione assegna un'etichetta all'intera immagine.",
+  "b.text": "Contrassegna dove ogni parte si trova sull'immagine del nastro trasportatore con caselle di delimitazione.",
+  "b.why": "Le caselle di delimitazione per oggetto sono il tell dell'esame per il rilevamento — la confusione classica di visione."
+ },
+ "wp-07": {
+  "a.text": "Restituisci ['prezzi', 'durata della batteria', 'supporto clienti'] da un batch di recensioni.",
+  "a.why": "Le frasi chiave restituiscono un elenco di termini importanti — nessuna prosa nuova è scritta.",
+  "b.text": "Condensa le stesse recensioni in tre frasi fresche che catturano il feedback complessivo.",
+  "b.why": "Il riassunto scrive nuove frasi condensate — il contrasto della forma di output che il corpus testa (coppia #14)."
+ },
+ "wp-08": {
+  "a.text": "Un'app leggera deve trovare e redigi ogni indirizzo email e numero di telefono nei messaggi dei clienti prima di archiviarli.",
+  "a.why": "Il rilevamento PII è la capacità dedicata che identifica e può redigi dati personali sensibili come numeri di telefono e indirizzi email (l'esame lo chiama 'la capacità più focalizzata sulla privacy').",
+  "b.text": "La stessa app etichetta anche ogni persona, organizzazione e luogo menzionati nei messaggi per un indice ricercabile.",
+  "b.why": "Il riconoscimento di entità è un'estrazione più ampia tra categorie — persone, luoghi, organizzazioni — non la caratteristica focalizzata sulla redazione che il rilevamento PII è."
+ },
+ "wp-09": {
+  "a.text": "Una trascrizione di riunione deve attribuire ogni sezione dell'audio registrato al partecipante corretto.",
+  "a.why": "La diarizzazione identifica e separa i relatori all'interno dell'audio in arrivo, etichettando chi ha parlato ogni parte della trascrizione (l'esame lo chiama 'attribuzione del relatore audio').",
+  "b.text": "Una volta che la trascrizione è finalizzata, una voce narratore legge il riassunto della riunione ad alta voce per un podcast feed.",
+  "b.why": "La sintesi converte il testo in output vocale dal suono umano — lo stage di pipeline opposto dalla diarizzazione dell'audio esistente."
+ },
+ "wp-10": {
+  "a.text": "Uno sviluppatore ha bisogno di didascalie audio dal vivo di una videoconferenza in tempo reale, stessa lingua, per partecipanti non udenti.",
+  "a.why": "Azure AI Speech fornisce la pipeline da-parola-a-testo in tempo reale per l'audio dal vivo — il servizio standard per le didascalie, distinto dalla conversione di testo tra lingue.",
+  "b.text": "Un rivenditore deve convertire descrizioni di prodotti scritte dall'inglese a 20 altre lingue come testo.",
+  "b.why": "Azure AI Translator fornisce traduzione automatica neurale tra lingue per il testo — il contrasto dell'esame è il servizio della pipeline audio vs il servizio di testo tra lingue, non un'sovrapposizione di carico di lavoro (coppia #29)."
+ }
+}

@@ -1,0 +1,69 @@
+{
+ "pr-001": {
+  "label": "\"Sen resmi bir İK yardımcısı. İK politikası hakkında sorular yanıtla.\"",
+  "why": "Persona artı kapsam koruma — histack'ın sistem istemi içeriğinin tam örneği."
+ },
+ "pr-002": {
+  "label": "\"Her zaman müşteri detaylarını sabit bir JSON şekli döndür.\"",
+  "why": "Çıktı biçimlendirme kuralları dönüşler arasında devam eder — sınav materyali, JSON şekil instructions'ları sistem istemi'ne aittir."
+ },
+ "pr-003": {
+  "label": "\"Bu yıl kaç tatil günüm kaldı?\"",
+  "why": "Bu dönüşün gerçek isteği — kuralı, persona, sadece sor."
+ },
+ "pr-004": {
+  "label": "\"12 tatil günün kaldı.\" — bağlam için sonraki isteğe tekrar oynatıldı",
+  "why": "Önceki model yanıtları asistan mesajları olarak yeniden gönderilir, böylece model konuşma hafızası; hiçbir zaman kullanıcı içeriği değildir."
+ },
+ "pr-005": {
+  "label": "\"Ekli toplantı notlarını üç madde olarak özetle.\"",
+  "why": "Bir kerelik bu dönüş görevi — bir talimat gibi geliyor, ama kalıcı bir kural değil, bu yüzden sistem değil, kullanıcı."
+ },
+ "pr-006": {
+  "label": "\"Bir istek İK politikasının dışında düşerse, tahmin etmek yerine bunu söyle.\"",
+  "why": "Kapsam dışı istekleri yönetmek için bir geri dönüş kuralı, her dönüş uygulandı — sınavın tam 'sistem istemi'ne iyi ekleme' deseni, pr-001'in persona/kapsam çiftinden ayrı."
+ },
+ "pr-007": {
+  "label": "\"Müşteri daha fazla detay isterse tüm yanıtları iki cümle tutmak isteme.\"",
+  "why": "Ton/uzunluk kuralı tüm sohbete uygulanan sistem istemi işareti, biçim kuralı (pr-002) veya kapsam kuralı (pr-001) — bu yönetir söylemi ayrı."
+ },
+ "pr-008": {
+  "label": "\"Müşteri ısrar etse bile rakip fiyatlandırması tartışmayı reddet.\"",
+  "why": "Kullanıcı geri itimi için her dönüş hayatta kalması amaçlanan bir güvenlik/konu sınırlaması — sınav not eder sistem mesajları uygulama özel kısıtlamaları platform içerik filtreleri ötesinde taşır."
+ },
+ "pr-009": {
+  "label": "\"3pm toplantımı iptal et ve takımı haberdar etsin.\"",
+  "why": "Komut okur, ama bu tek bir istek seçim şimdi — tuzak yanlış anlaşılıyor instruction şekli tutarlı kalıcı kural."
+ },
+ "pr-010": {
+  "label": "\"Bundan sonra, her zaman Fransızca yanıtla.\" — müşteri tarafından mid chat yazıldı",
+  "why": "'Bundan sonra' kalıcı gibi sesliyor, ama rolü kim konuşuyor hala karar veriyor: sohbete yazılan müşteri tarafından bir istek asistan mesajı hale kalsa — kalıcılık sistem istemi'nde yaşar, kullanıcı sözcüğü değil."
+ },
+ "pr-011": {
+  "label": "\"Bu iki sözleşme cümlesi karşılaştır ve herhangi bir çatışma işaretle.\"",
+  "why": "Bu depo için gönderilen belirli bir analitik görev — persona veya uygulama çapında kural ayarlanmıyor, bu yüzden bu dönüşün isteği."
+ },
+ "pr-012": {
+  "label": "\"Hesabınıza göre, abonelik 14th yenilenir.\" — sonraki dönüşte gönderilen model hatırlasın ne söyledi müşteri",
+  "why": "Model oluşturulan çıktı bağlam korumak için yeniden oynatılır asistan mesajıdır, müşterinin söyledikleri değildir — tuzak yanıldığı model çıktısı kullanıcı söyledi birisi için."
+ },
+ "pr-013": {
+  "label": "\\\"{\\\"status\\\": \\\"resolved\\\", \\\"ticket_id\\\": \\\"48213\\\"}\\\" — önceki dönüşten model yapılandırılmış yanıtı, tarih olarak taşındı",
+  "why": "JSON şekil içeriği pr-002'deki biçim kuralı gibi görünüyor, ama bir kural ve modelin kendi çıktısı örneği farklı roller — bu model'ün yanıt ayakta tutarlı olmayan, kalıcı olmayan kaydı."
+ },
+ "pr-014": {
+  "label": "\"Beni return bacağı uçak kontrol isterim?\" — önceki dönüşten model'ün kendi follow-up sorusu, tutarlı saklanmış",
+  "why": "Soru şekli kullanıcı konuşuyor yanlış anlaşılıyor, ama bu soru kendi tarafından model oluşturdu ve hatırla bunu sordum — ayrımcı gramer biçimi değil, sözcükleri kimin oluşturdu."
+ },
+ "pr-015": {
+  "label": "\"Adım 1: Router'i başlat. Adım 2: Wi-Fi yeniden bağlan.\" — önceki dönüşten model sorun giderme adımları, müşteri biliyor oynatıldı",
+  "why": "Numaralandırılmış talimatlar kural gibi geliyor, sistem istemi karışıklığı baştan çıkarıyor, ama bu model'ün kendi önceki çıktısı tutarlı iletildi, kalıcı bir geliştirici set tarafından ayarlandı değil."
+ },
+ "prompt-roles": {
+  "hint": "İki soru sor: her dönüş mü veya bu tek bir (kalıcı vs bir tek)? Ve kim konuşuyor — geliştirici yardımcı ayarladı, kişi sağ şimdi yazı, veya modelin kendi önceki yanıtı tutarlı yeniden oynatıldı?",
+  "note": "Instruction şekli sistem istemi kanıt değildir — bir kerelik görev bir komut gibi sesli yine de kullanıcı mesajı. Dönüş kalıcılık gerçek test.",
+  "zones[0].def": "Persona, ton, kurallar ve koruma önlemleri — her dönüş arasında kalıcı",
+  "zones[1].def": "Bu dönüşün gerçek isteği",
+  "zones[2].def": "Konuşma hafızası için yeniden oynatılan önceki model yanıtları"
+ }
+}

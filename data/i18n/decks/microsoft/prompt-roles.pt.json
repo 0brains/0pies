@@ -1,0 +1,69 @@
+{
+ "pr-001": {
+  "label": "\"Tu és um assistente formal de RH. Apenas responde a perguntas sobre política de RH.\"",
+  "why": "Persona além de guardrails de escopo — exemplo verbatim do histack de conteúdo de prompt de sistema."
+ },
+ "pr-002": {
+  "label": "\"Devolve sempre detalhes de cliente numa forma JSON fixa.\"",
+  "why": "Regras de formato de saída persistem em turnos — o material de exame afirma verbatim que instruções de forma JSON pertencem ao prompt de sistema."
+ },
+ "pr-003": {
+  "label": "\"Quantos dias de férias tenho deixado este ano?\"",
+  "why": "Pedido real desta volta — sem regras, sem persona, apenas o pedido."
+ },
+ "pr-004": {
+  "label": "\"Tens 12 dias de férias restantes.\" — repetido no próximo pedido por contexto",
+  "why": "As respostas anteriores de modelo são reenviadas como mensagens de assistente para que o modelo tenha memória de conversa; nunca são conteúdo de utilizador."
+ },
+ "pr-005": {
+  "label": "\"Resumir as notas de reunião anexadas em três pontos de bala.\"",
+  "why": "Uma tarefa única desta volta — parece uma instrução, mas não é uma regra persistente, por isso é utilizador, não sistema."
+ },
+ "pr-006": {
+  "label": "\"Se um pedido cai fora de política de RH, diz assim em vez de adivinhar.\"",
+  "why": "Uma regra de fallback para lidar com pedidos fora de escopo, aplicada a cada volta — o padrão verbatim 'boa adição ao prompt de sistema' do exame, distinto do par persona/escopo de pr-001."
+ },
+ "pr-007": {
+  "label": "\"Mantém respostas a duas frases a menos que o cliente peça mais detalhe.\"",
+  "why": "Uma regra de tom/comprimento que se aplica a toda a conversa é um sinal de prompt de sistema distinto de uma regra de formato (pr-002) ou regra de escopo (pr-001) — esta governa verborragia."
+ },
+ "pr-008": {
+  "label": "\"Recusa discutir preços de concorrentes, mesmo se o cliente insistir.\"",
+  "why": "Um guardrail de restrição de segurança/tópico destinado a sobreviver a insistência de utilizador para cada volta — o exame nota que mensagens de sistema carregam restrições específicas de app além dos filtros de conteúdo da plataforma."
+ },
+ "pr-009": {
+  "label": "\"Cancela a minha reunião das 3pm e deixa a equipa saber.\"",
+  "why": "Lê como um comando, mas é um pedido único restrito a agora — a armadilha é confundir fraseamento com forma de instrução para uma regra persistente."
+ },
+ "pr-010": {
+  "label": "\"De agora em diante, sempre responde em francês.\" — digitado pelo cliente no meio de chat",
+  "why": "'De agora em diante' parece persistente, mas quem está falando ainda decide o papel: um pedido digitado no chat pelo cliente é uma mensagem de utilizador, mesmo uma pedindo comportamento permanente — persistência vive no prompt de sistema, não em fraseamento de utilizador."
+ },
+ "pr-011": {
+  "label": "\"Compara estas duas cláusulas de contrato e assinala qualquer conflito.\"",
+  "why": "Uma tarefa analítica específica submetida para este intercâmbio — sem persona ou regra de app ampla sendo definida, por isso é o pedido desta volta."
+ },
+ "pr-012": {
+  "label": "\"Com base na tua conta, a tua subscrição renova no 14º.\" — enviado na volta seguinte para que o modelo lembre o que já disse ao cliente",
+  "why": "Saída gerada por modelo reenviada para preservar contexto é uma mensagem de assistente, não as palavras do cliente — a armadilha é confundir saída de modelo repetida com algo que o utilizador disse."
+ },
+ "pr-013": {
+  "label": "\"{\\\"status\\\": \\\"resolved\\\", \\\"ticket_id\\\": \\\"48213\\\"}\" — a resposta estruturada do modelo da volta anterior, carregada para frente como histórico",
+  "why": "Conteúdo em forma JSON parece a regra de formato de pr-002, mas uma regra e uma instância de saída de modelo são papéis diferentes — isto é a resposta do modelo sendo repetida, não uma instrução permanente."
+ },
+ "pr-014": {
+  "label": "\"Gostaria de também verificar voos para a volta?\" — a própria pergunta de acompanhamento do modelo da volta anterior, mantida em contexto",
+  "why": "Texto em forma de pergunta pode ser confundido com o utilizador falando, mas esta pergunta foi gerada pelo modelo em si e é reenviada para lembrar ter perguntado — o discriminador é quem originou as palavras, não a sua forma gramatical."
+ },
+ "pr-015": {
+  "label": "\"Passo 1: Reinicia o router. Passo 2: Reconecta a Wi-Fi.\" — os passos de resolução de problemas do modelo de uma volta anterior, repetidos para que se lembre o que já disse ao cliente",
+  "why": "Instruções numeradas parecem semelhanças de regra, tentando uma confusão com o prompt de sistema, mas isto é saída anterior do modelo sendo carregada para memória, não um guardrail persistente definido pelo programador."
+ },
+ "prompt-roles": {
+  "hint": "Faz duas perguntas: aplica isto a cada volta ou apenas esta (persistente vs única)? E quem está falando — o programador a configurar o assistente, a pessoa digitando agora ou a resposta anterior do modelo sendo reenviada para memória?",
+  "note": "Fraseamento em forma de instrução não é prova de prompt de sistema — uma tarefa única pode parecer um comando e ainda assim ser uma mensagem de utilizador. A persistência em turnos é o teste real.",
+  "zones[0].def": "Persona, tom, regras e guardrails — persistentes em cada volta",
+  "zones[1].def": "O pedido real desta volta",
+  "zones[2].def": "Respostas anteriores de modelo repetidas para memória de conversa"
+ }
+}

@@ -1,0 +1,215 @@
+{
+ "id": "zero-trust",
+ "runner": "board",
+ "title": "Where Does This Control Belong?",
+ "blurb": "Twenty-two control-placement scenes, one design principle each. Read what the control actually does — size a grant, stack a layer, re-check a request, choose a failure mode, or split a process — and sort it to the principle it embodies.",
+ "source": "Chapple CISSP SG 10ed ch.8 (Principles of Security Models, Design, and Capabilities) · April-2024 outline 3.1",
+ "asOf": "2026-08",
+ "area": "3.1",
+ "hint": "Ask what the control is actually doing to the request or the account, not what it is protecting. Sizing one person's grant is Least privilege; splitting a process across people is Separation of duties; stacking independent barriers is Defense in depth; re-checking context on every request is Zero trust; choosing what happens when a control itself breaks is Fail securely.",
+ "zones": [
+  {
+   "key": "Least privilege",
+   "name": "Least privilege",
+   "def": "Sizing a single subject's standing access down to only what its current job or task requires, no more — a ceiling set once, on one account or role. Distinct from Separation of duties, which splits a whole sensitive process across multiple people instead of shrinking one person's grant, and from Zero trust, which re-checks an existing grant at the moment of use rather than setting its size."
+  },
+  {
+   "key": "Defense in depth",
+   "name": "Defense in depth",
+   "def": "Stacking multiple independent controls — administrative, technical and physical — so that a single failed or bypassed layer does not expose the underlying asset. The controls are checked once each, in a path an attacker must cross; this is about how many barriers exist, not what one barrier does when it fails (Fail securely) and not a per-request identity re-check (Zero trust)."
+  },
+  {
+   "key": "Zero trust — verify explicitly",
+   "name": "Zero trust — verify explicitly",
+   "def": "Re-checking identity, device, and context on every request, continuously, with no standing trust granted by network location or a prior login — 'never trust, always verify.' Distinct from Least privilege, which sizes what a grant covers, and from Defense in depth, whose layers are crossed once rather than re-evaluated per request."
+  },
+  {
+   "key": "Fail securely",
+   "name": "Fail securely",
+   "def": "Deliberately choosing what a control does the moment it breaks or can't reach a dependency — deny by default to protect the asset (fail-secure/fail-closed), or open by default to protect people (fail-safe/fail-open) — rather than leaving the failure mode undefined. This is about one control's own breakdown behavior, not the count of layers standing in front of it (Defense in depth)."
+  },
+  {
+   "key": "Separation of duties",
+   "name": "Separation of duties",
+   "def": "Splitting the steps of one sensitive process across two or more people, so no single individual can complete the whole thing alone — a structural division of a process, not a size limit on any one person's access (Least privilege)."
+  }
+ ],
+ "items": [
+  {
+   "id": "zt-01",
+   "label": "An insurance adjuster's account can read only the claims files assigned to her current caseload, not the full policyholder database her team shares.",
+   "sub": "Which principle is at stake?",
+   "answer": "Least privilege",
+   "why": "This sizes one person's standing grant to her actual caseload. It isn't Separation of duties, because only one person's access ceiling is in play — no second person is required to complete anything.",
+   "citation": "SG ch.8 · outline 3.1"
+  },
+  {
+   "id": "zt-02",
+   "label": "A deployment service account can push builds to the staging registry but has no permission to reach the production database, even though the team that owns it also owns production.",
+   "sub": "Which principle is at stake?",
+   "answer": "Least privilege",
+   "why": "The account's technical footprint is shrunk to its one job. This is a single grant's size, not an added independent barrier — so it isn't Defense in depth, which would mean stacking another control alongside the existing permission rather than cutting it.",
+   "citation": "SG ch.8 · outline 3.1"
+  },
+  {
+   "id": "zt-03",
+   "label": "When a marketing coordinator's role expands to include campaign budget approval, IT waits for the formal access request before adding that one permission — nothing extra is pre-provisioned in anticipation of the change.",
+   "sub": "Which principle is at stake?",
+   "answer": "Least privilege",
+   "why": "Provisioning tracks current job need rather than anticipated future need. It stays distinct from Separation of duties, which would keep the budget requester and the budget approver as two different people — here only one person's own grant is being sized.",
+   "citation": "SG ch.8 · outline 3.1"
+  },
+  {
+   "id": "zt-04",
+   "label": "A hospital's records system gives a visiting locum physician access only to the wards she is rostered on this week, and the grant expires automatically when her contract ends.",
+   "sub": "Which principle is at stake?",
+   "answer": "Least privilege",
+   "why": "Scope and duration are both matched to the exact task at hand. This is a one-time sizing decision at provisioning, not the ongoing, every-request re-check that Zero trust performs after the grant already exists.",
+   "citation": "SG ch.8 · outline 3.1"
+  },
+  {
+   "id": "zt-05",
+   "label": "A finance director's access to a legacy reporting tool is revoked once her project using it ends, even though her seniority would let her request it back at any time.",
+   "sub": "Which principle is at stake?",
+   "answer": "Least privilege",
+   "why": "Rank does not entitle standing access once the task is over — the grant is sized to the task, not the title. This is not Fail securely, which concerns what a control does when it breaks, not when an access review closes out a grant that's simply no longer needed.",
+   "citation": "SG ch.8 · outline 3.1"
+  },
+  {
+   "id": "zt-06",
+   "label": "A datacenter server room sits behind a badge-reader door, an interior motion-sensor zone, and a locked equipment rack — each barrier still protects the servers if an earlier one is bypassed.",
+   "sub": "Which principle is at stake?",
+   "answer": "Defense in depth",
+   "why": "Three independent physical barriers stand between an intruder and the asset, each still effective if an earlier one fails. This isn't Fail securely, which would describe what happens if one of those barriers itself malfunctions, not how many of them exist.",
+   "citation": "SG ch.8 · outline 3.1"
+  },
+  {
+   "id": "zt-07",
+   "label": "An online retailer pairs a perimeter firewall, a web-application firewall in front of its checkout service, and host-based intrusion detection on the checkout servers themselves.",
+   "sub": "Which principle is at stake?",
+   "answer": "Defense in depth",
+   "why": "A single bypassed layer still leaves two more standing between an attacker and cardholder data. It is not Zero trust, because none of these three controls re-checks the requester's identity or context on every call — they are static layers in a path, not continuous per-request verification.",
+   "citation": "SG ch.8 · outline 3.1"
+  },
+  {
+   "id": "zt-08",
+   "label": "A manufacturer facing a newly disclosed zero-day in its industrial-control software adds compensating network segmentation and endpoint monitoring around the affected controllers, rather than waiting for the vendor's eventual patch.",
+   "sub": "Which principle is at stake?",
+   "answer": "Defense in depth",
+   "why": "Overlapping, independent layers absorb a flaw no single control can yet address. This isn't Least privilege, since no individual account's grant is being resized — new barriers are being added around the exposure instead.",
+   "citation": "SG ch.8 · outline 3.1"
+  },
+  {
+   "id": "zt-09",
+   "label": "Backup tapes leaving a data center are encrypted before they ever come off the rack, carried in a tamper-evident locked case, and moved in a GPS-tracked vehicle crewed by a two-person courier team.",
+   "sub": "Which principle is at stake, when the three layers are administrative, technical and physical rather than three barriers of the same kind?",
+   "answer": "Defense in depth",
+   "why": "Three barriers of three different kinds — administrative, technical and physical — stand between a thief and readable data, and defeating any one of them leaves the other two intact. This is not Zero trust, which would mean re-verifying an identity and its context on every request; nothing here re-checks anyone, the layers are simply crossed once over a single journey. Nor is it Fail securely, which fixes what one barrier does when it breaks rather than how many barriers there are.",
+   "citation": "SG ch.8 · outline 3.1"
+  },
+  {
+   "id": "zt-11",
+   "label": "An engineer who authenticated at 9am is prompted to re-confirm her identity when she opens a sensitive finance dashboard at 2pm from a laptop the system hasn't seen before.",
+   "sub": "Which principle is at stake?",
+   "answer": "Zero trust — verify explicitly",
+   "why": "The system re-evaluates identity and device context at the moment of this specific request rather than trusting the morning's login. It is not Least privilege, which would describe the size of what her account is allowed to reach, not whether that access is re-checked when the context changes.",
+   "citation": "SG ch.8 · outline 3.1"
+  },
+  {
+   "id": "zt-12",
+   "label": "A cloud workload broker checks device posture, user identity, and geolocation on every API call to a sensitive microservice, not just when the calling session first opens.",
+   "sub": "Which principle is at stake?",
+   "answer": "Zero trust — verify explicitly",
+   "why": "Verification happens continuously, per request, rather than once at session start. This is not Defense in depth, which would mean several distinct controls each checked once along a path — here it is one policy engine re-running the same checks on every single call.",
+   "citation": "SG ch.8 · outline 3.1"
+  },
+  {
+   "id": "zt-13",
+   "label": "A contractor's session token, issued that morning, is invalidated mid-task the instant her laptop reports a failed disk-encryption check.",
+   "sub": "Which principle is at stake?",
+   "answer": "Zero trust — verify explicitly",
+   "why": "Trust is withdrawn the moment device posture changes, not held for the life of the session. This is not Fail securely, which concerns what happens when a control itself malfunctions — nothing here has broken; a policy check on live device state simply revoked a still-working grant.",
+   "citation": "SG ch.8 · outline 3.1"
+  },
+  {
+   "id": "zt-14",
+   "label": "A SaaS vendor removes its internal network's implicit trust zone, so that even two servers sitting in the same data center must present signed identity tokens to call each other.",
+   "sub": "Which principle is at stake?",
+   "answer": "Zero trust — verify explicitly",
+   "why": "No location, including 'inside the network,' grants standing trust — every call proves identity on its own. This is not Defense in depth, which would add extra barriers alongside an existing trust boundary rather than removing the boundary's implicit trust entirely.",
+   "citation": "SG ch.8 · outline 3.1"
+  },
+  {
+   "id": "zt-15",
+   "label": "A support engineer holds no standing database rights at all; an access broker re-evaluates her open ticket, her live on-call status and her device's current posture afresh for each individual query, and the grant it issues dies with that one query — so a request allowed at 10:02 is refused at 10:04 once her ticket closes.",
+   "sub": "Which principle is at stake?",
+   "answer": "Zero trust — verify explicitly",
+   "why": "There is no standing grant here to size, and the same identity is allowed or refused from one minute to the next purely on live context — that per-request re-evaluation is the whole mechanism. It is therefore not Least privilege, which sets a ceiling once at provisioning and then lets the holder work inside it unchallenged; a Least privilege answer would have to point at some persistent grant whose scope was trimmed, and this design deliberately has none. Nor is it Separation of duties, since no second person is needed to complete anything.",
+   "citation": "SG ch.8 · outline 3.1"
+  },
+  {
+   "id": "zt-16",
+   "label": "A payment-authorization service that loses its connection to the risk-scoring engine defaults to declining new transactions rather than approving them.",
+   "sub": "Which principle is at stake?",
+   "answer": "Fail securely",
+   "why": "The chosen default, on breakdown, denies rather than exposes the business to unscored risk. This is not Defense in depth, which would describe additional independent controls standing alongside the risk engine, not what the risk engine itself does the moment it can't be reached.",
+   "citation": "SG ch.8 · outline 3.1"
+  },
+  {
+   "id": "zt-17",
+   "label": "When a document-management system's permissions server times out, the file server responds 'access denied' instead of falling back to showing every file to every request.",
+   "sub": "Which principle is at stake?",
+   "answer": "Fail securely",
+   "why": "The failure mode defaults to deny, so a broken dependency never becomes an open door. This is not Zero trust, which is about re-checking a working system's context on each request, not about the deliberate default chosen for the moment a component stops working.",
+   "citation": "SG ch.8 · outline 3.1"
+  },
+  {
+   "id": "zt-18",
+   "label": "A warehouse's electronic exit gate is built to unlock automatically on power loss, so staff can still evacuate even though its normal job is to restrict who leaves.",
+   "sub": "Which principle is at stake?",
+   "answer": "Fail securely",
+   "why": "Fail securely is not a rule that everything must lock — it is the principle of consciously deciding, at design time, what a control does the moment it breaks, instead of letting the failure mode fall out by accident. That decision has two branches: fail-secure, also called fail-closed, denies in order to protect the asset; fail-safe, also called fail-open, releases in order to protect people. A life-safety exit takes the fail-safe branch on purpose, so an unlocked gate is this principle being applied, not violated. It is not Defense in depth, which counts how many barriers guard an asset rather than fixing the behavior any one of them adopts when it loses power.",
+   "citation": "SG ch.8 · outline 3.1"
+  },
+  {
+   "id": "zt-20",
+   "label": "A web application's session-validation library, when it hits an unhandled exception, returns a generic error page with no stack trace or internal file paths.",
+   "sub": "Which principle is at stake?",
+   "answer": "Fail securely",
+   "why": "The broken component's default response withholds information rather than leaking it. This is not Least privilege, which concerns how much a legitimate account can reach, not what an error path discloses when the code itself has failed.",
+   "citation": "SG ch.8 · outline 3.1"
+  },
+  {
+   "id": "zt-21",
+   "label": "A wire-transfer process requires one employee to initiate the payment request and a different employee to approve it before funds move.",
+   "sub": "Which principle is at stake?",
+   "answer": "Separation of duties",
+   "why": "The sensitive process is split across two people so neither can move money alone. This is not Least privilege, which would only limit how much either individual's account can reach, not require a second person's action at all.",
+   "citation": "SG ch.8 · outline 3.1"
+  },
+  {
+   "id": "zt-22",
+   "label": "A software team requires that the developer who writes a code change is never the one who merges it into the production branch.",
+   "sub": "Which principle is at stake?",
+   "answer": "Separation of duties",
+   "why": "Authorship and release are split between two people so a single developer can't both write and ship a change unreviewed. This is not Zero trust, which would re-check the same person's identity and context at each step rather than requiring a second, different person to act.",
+   "citation": "SG ch.8 · outline 3.1"
+  },
+  {
+   "id": "zt-24",
+   "label": "A certificate authority requires that the analyst who validates a requester's identity documents is never the same person who signs the resulting certificate.",
+   "sub": "Which principle is at stake?",
+   "answer": "Separation of duties",
+   "why": "Validation and issuance are deliberately handled by different people so a single insider can't forge trust end to end. This is not Least privilege, since the issue isn't how much either analyst's account can reach — it's that completing the whole sequence takes two different people.",
+   "citation": "SG ch.8 · outline 3.1"
+  },
+  {
+   "id": "zt-25",
+   "label": "A database administrator who provisions new user accounts is barred from also being the one who reviews and signs off the quarterly access-recertification report covering those same accounts.",
+   "sub": "Which principle is at stake?",
+   "answer": "Separation of duties",
+   "why": "The person who grants access can't also be the one who checks that the grants are still justified — provisioning and review stay with different people. This is not Fail securely, which concerns a control's default behavior on breakdown, not who is allowed to audit whom.",
+   "citation": "SG ch.8 · outline 3.1"
+  }
+ ]
+}

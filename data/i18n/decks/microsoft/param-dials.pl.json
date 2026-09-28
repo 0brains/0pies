@@ -1,0 +1,106 @@
+{
+ "pd-001": {
+  "label": "Potrzebujesz spójnego, powtarzalnego wyjścia z tego samego promptu za każdym uruchomieniem",
+  "why": "Dokładna wskazówka egzaminacyjna histack: 'spójne, powtarzalne wyjście' → niska temperatura. Zmienia skalę całego rozkładu prawdopodobieństwa; dostosuj ją lub top_p, nie oba."
+ },
+ "pd-002": {
+  "label": "Ograniczaj próbkowanie do najmniejszego zestawu tokenów, których skumulowane prawdopodobieństwo osiąga ustalony próg",
+  "why": "Nucleus sampling — top_p skraca zestaw kandydatów, podczas gdy temperatura zmienia skalę całego rozkładu (para pomieszana korpusu #5)."
+ },
+ "pd-003": {
+  "label": "Odpowiedzi ciągle się urywają w połowie zdania — potrzebujesz kompletnych odpowiedzi",
+  "why": "max_tokens ogranicza tylko długość wyjścia — najczęstsza pułapka parametru egzaminu to oferowanie go jako kontrola losowości (para #4)."
+ },
+ "pd-004": {
+  "label": "Model ciągle powtarza jedno wyrażenie; karnik tokeny proporcjonalnie do tego, jak często pojawiły się",
+  "why": "Frequency penalty skaluje się z liczbą powtórzeń (powtórzenie); presence penalty pali się raz, gdy token się pojawił (nowość tematu) — para korpusu #6."
+ },
+ "pd-005": {
+  "label": "Wygenerowane obrazy marketingowe wyglądają grubo — poproś wyższą warstwę rozdzielczości renderowania",
+  "why": "Ładunek gpt-image-1 pobiera prompt, size, quality (w tym wartość pułapki 'high') i n — quality kontroluje wierność, size kontroluje wymiary."
+ },
+ "pd-006": {
+  "label": "Zobacz postęp obrazu szybciej, podczas gdy duża generacja się renderuje",
+  "why": "Streaming partial_images na ścieżce images/generations zwraca postępowe wyjście — dokładne stwierdzenie 'zobacz postęp obrazu szybciej' egzaminu."
+ },
+ "pd-007": {
+  "label": "Pokrętło losowości, które zmienia skalę całego rozkładu prawdopodobieństwa tokenu przed próbkowaniem, a nie tylko górny wycinek",
+  "why": "Temperatura skaluje logity w całym rozkładzie; top_p zamiast tego skraca pod względem skumulowanej masy prawdopodobieństwa — ta sama intuicja 'kreatywności', inny mechanizm."
+ },
+ "pd-008": {
+  "label": "Zespół chce, aby model rozważał tylko najbardziej prawdopodobny wycinek kandydatów następnego tokenu, wycinając ogon",
+  "why": "Nucleus sampling (top_p) ogranicza kandydatów do wycinka skumulowanego prawdopodobieństwa; temperatura zmienia skalę prawdopodobieństw, ale nigdy nie usuwa kandydatów."
+ },
+ "pd-009": {
+  "label": "Twardy limit na ile tokenów może wygenerować pojedyncza odpowiedź, niezależnie od tego, co mówi",
+  "why": "max_tokens to pułap długości wymuszony podczas generowania; sekwencja stop zatrzymuje generowanie wcześnie tylko gdy pojawi się określony ciąg — inny wyzwalacz, ten sam cel 'krótszego wyjścia'."
+ },
+ "pd-010": {
+  "label": "Zniechęcaj model do ponownego użycia tego samego słowa czy wyrażenia wiele razy — im więcej powtarza, tym silniejszy sprzeciw",
+  "why": "Frequency penalty skaluje się z tym, jak często token już pojawił się; presence penalty stosuje płaskę karę w momencie pojawienia się tokenu nawet raz — proporcjonalny do liczby vs binarny."
+ },
+ "pd-011": {
+  "label": "Transkrypcja czatu nigdy nie powraca do wcześniejszych tematów — model zawsze znika do nowych tematów zamiast powracać do tego, co już pokrył",
+  "why": "Wysoka presence penalty pali się w momencie pojawienia się tokenu, popychając model do nowych tematów; frequency penalty skaluje się z liczbą powtórzeń i głównie ogranicza doslowne powtarzanie, nie zbaczanie tematu."
+ },
+ "pd-012": {
+  "label": "Stosuje tę samą stałą karę do dowolnego tokenu, który pojawił się w ogóle w odpowiedzi, niezależnie od tego, ile razy",
+  "why": "Presence penalty to binarny na token (pojawił się czy nie); frequency penalty zamiast tego rośnie z liczbą powtórzeń — rozróżnienie pomieszanego parametru kar egzaminu między dwoma."
+ },
+ "pd-013": {
+  "label": "Generowanie powinno się skończyć w momencie, gdy model napiszę określony ciąg markerem, bez czekania na hit pułapu długości",
+  "why": "Sekwencja stop to wyzwalacz tekstu dosłownego, który zatrzymuje generowanie wcześnie; max_tokens tylko wymusza pułap długości i nie ma świadomości określonego tekstu."
+ },
+ "pd-014": {
+  "label": "Określony tekst, któremu model mówi traktować jako marker końca, więc wyjście zatrzymuje się w momencie wyprodukowania tego tekstu",
+  "why": "Sekwencje stop wyzwalają na dopasowanie zawartości tekstu; ani max_tokens ani frequency penalty nie sprawdzają wygenerowanego tekstu — jeden liczy tokeny, drugi liczy powtórzenia."
+ },
+ "pd-015": {
+  "label": "Opóźnienie musi pozostać przewidywalne przy wysokim, trwałym wolumenie żądania, i zespół nie mam się płacić zarezerwowanego kosztu godzinowego, aby to zagwarantować",
+  "why": "Provisioned throughput (PTU) rezerwuje dedykowaną pojemność dla przewidywalnego opóźnienia na dużą skalę; Standard deployment to pay-per-token ze zmienną przepustowością pod obciążeniem, a Capacity (TPM) jest tylko pokrętłem limitu, a nie typem wdrożenia."
+ },
+ "pd-016": {
+  "label": "Zarezerwowana, dedykowana pojemność modelu zakupiona z góry, aby przepustowość nie wahała się ruchem dzierżawcy współdzielonego",
+  "why": "PTU to model wdrożenia zarezerwowanej pojemności; Standard dzieli pojemność i liczy na token ze zmienną przepustowością, podczas gdy Capacity (TPM) tylko ustawia limit na wybrany typ wdrożenia."
+ },
+ "pd-017": {
+  "label": "Ruch do aplikacji obsługi klienta jest nieprzewidywalny i porywisty, i zespół chce rozliczania za token zamiast rezerwowanej pojemności godzinowej",
+  "why": "Rozliczanie za token pod zmiennym obciążeniem to wdrożenie standardowe (dokładny scenariusz egzaminu); PTU zamiast tego liczy godzinę za rezerwowaną pojemność niezależnie od faktycznego użycia."
+ },
+ "pd-018": {
+  "label": "Rachunki za zużyty token zamiast za godzinę zarezerwowanego zasobu obliczeniowego, ze przepustowością, która może zmieniać się pod wspólnym obciążeniem",
+  "why": "Standard to rozliczanie na bazie konsumpcji ze zmienną przepustowością; PTU handluje tą zmiennością za stałą rezerwację godzinową, a Capacity (TPM) to pokrętło limitu nałożone na każdy model."
+ },
+ "pd-019": {
+  "label": "Wdrożenie ciągle trafia na ograniczenie pod szczytowym obciążeniem, więc zespół zmienia zapasowy limit przepustowości z innego niedostatecznie wykorzystywanego wdrożenia",
+  "why": "Limit przepustowości dla wdrożenia można realokować między wdrażaniam (udokumentowany scenariusz egzaminu); PTU i Standard opisują model rozliczania/rezerwacji wdrożenia, a nie pokrętło limitu."
+ },
+ "pd-020": {
+  "label": "Pokrętło, które ustawia górny limit całkowitej przepustowości, którą wdrożenie może przetwarzać każdą minutę, niezależnie od każdej długości odpowiedzi",
+  "why": "Capacity (TPM) ogranicza na poziomie wdrożenia na wszystkie żądania mierzone w tokenach na minutę; max_tokens ogranicza tylko długość jednej odpowiedzi i nie ma nic wspólnego z ograniczeniem szybkości."
+ },
+ "pd-021": {
+  "label": "Żądanie obrazu baneru ciągle zwraca małą kwadratową, gdy układ potrzebuje szerokiego kanwy prostokątnej",
+  "why": "size ustawia wymiary pikseli (np. szeroki format zamiast 1024x1024); quality kontroluje wierność renderowania, a n kontroluje liczbę obrazów — żadne nie zmienia kształtu kanwy."
+ },
+ "pd-022": {
+  "label": "Pole żądania, które ustawia wymiary pikseli wygenerowanego obrazu, takie jak 1024×1024",
+  "why": "size to pole wymiarów w ładunku images/generations; quality zamiast tego rządzi wierności renderowania, a partial_images kontroluje transmisję progresywną, a nie ostateczne wymiary kanwy."
+ },
+ "pd-023": {
+  "label": "Pole, które przyjmuje warstwę wierności 'high', aby detale renderowały się ostrzej, odrębnie od tego, jak duży jest obraz",
+  "why": "quality (w tym udokumentowana wartość pułapki 'high') kontroluje wierność renderowania; size kontroluje wymiary, a n kontroluje ile obrazów wraca — trzy niezależne pokrętła na tym samym żądaniu."
+ },
+ "pd-024": {
+  "label": "Jedno żądanie powinno zwrócić cztery oddzielne warianty obrazu do wyboru, w jednym żądaniu",
+  "why": "n ustawia ile obrazów żądanie zwraca (np. n=4); size i quality kształtują każdy indywidualny obraz, ale nie zmieniają ile się wraca."
+ },
+ "pd-025": {
+  "label": "Parametr, który ustawia ile wariantów obrazu zwraca pojedyncze wywołanie images/generations",
+  "why": "n to pole liczby obrazów; partial_images zamiast tego transmituje progresywne podglądy pojedynczego obrazu podczas renderowania, a size tylko ustawia wymiary tego obrazu."
+ },
+ "pd-026": {
+  "label": "W połączeniu z transmisją, to pole ustawia ile progresywnych klatek podglądu jest wysyłanych zanim ostateczny obraz się zakończy",
+  "why": "partial_images (używane razem z stream=True) ustawia liczbę progresywnych klatek podglądu podczas renderowania; n zamiast tego ustawia ile oddzielnych ostatecznych obrazów jest zwróconych, a quality ustawia wierność, a nie częstość podglądu."
+ }
+}

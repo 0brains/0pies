@@ -1,0 +1,205 @@
+{
+ "id": "classify-or-die",
+ "runner": "board",
+ "title": "Classify or Die",
+ "blurb": "An asset's life from first label to final shred. Sort each scene into the stage of asset security it belongs to.",
+ "source": "Chapple CISSP SG 10ed ch.5 (Protecting Security of Assets) · April-2024 outline 2.1-2.6",
+ "asOf": "2026-08",
+ "area": "2.1-2.6",
+ "hint": "Ask what decision the scene is actually making: setting a sensitivity level, applying a day-to-day control, deciding how long to keep something, or retiring a medium. If it is a retirement, the tier is settled by one question — what recovery capability does the method have to beat? An ordinary person with ordinary tools, going through the medium's normal interface (Clearing); a well-funded laboratory with the medium in hand and that interface irrelevant (Purging); or nothing at all, because there is no longer a medium to recover from (Destroying).",
+ "note": "End-of-life media has three separate tiers of assurance, and this board makes you pick between them rather than lumping them together. What separates clearing, purging and destroying is the strength of the adversary each is built to beat — an ordinary user, a well-funded laboratory, or no one at all because nothing is left to work on — and who may reuse the medium afterwards follows from that, rather than setting it.",
+ "zones": [
+  {
+   "key": "Classify & label",
+   "name": "Classify & label",
+   "def": "Assigning a sensitivity or impact level to information or an asset and applying that level as a visible marking or metadata tag. It is the first, foundational decision everything downstream keys off of — deciding the level and stamping the label — not yet the day-to-day rules that follow from it or the question of how long the asset stays around."
+  },
+  {
+   "key": "Handling",
+   "name": "Handling",
+   "def": "Day-to-day operational rules for how an already-classified asset moves, is stored, displayed, transmitted and worked with — clean-desk practice, encryption at rest/in transit/in use, marking on printouts, DLP, workstation locking, access keyed to the existing label. It assumes classification already happened and runs continuously until a retention or destruction decision takes over."
+  },
+  {
+   "key": "Retention",
+   "name": "Retention",
+   "def": "Deciding how long an asset or record must legally or operationally stay available, and setting the schedule (including backups and legal holds) that governs when it becomes eligible for destruction. Bounded by 'as long as required or useful, whichever is longer' — never indefinite, and never a number picked purely for convenience."
+  },
+  {
+   "key": "Clearing",
+   "name": "Clearing",
+   "def": "The lowest end-of-life tier, defined by the adversary it is built to beat: an ordinary person with ordinary tools, working through the medium's own normal read/write interface. It clears the data out of everything that interface can reach, which is enough only while the medium stays inside the organization at the same sensitivity level. Doing less than that — dropping a file-table entry, or a quick format — reaches no tier at all, because the bits and the remanence risk both survive. Distinct from Purging, which is set against a far better-resourced attacker."
+  },
+  {
+   "key": "Purging",
+   "name": "Purging",
+   "def": "The middle tier, set against a much stronger adversary: a well-funded laboratory holding the medium in hand, for which the normal interface is no obstacle at all. The method must beat that, while still leaving the medium physically whole and usable afterwards. This is the bar demanded once a medium passes out of the organization's custody or drops to a lower sensitivity. Distinct from Clearing, whose weaker adversary it far exceeds, and from Destroying, which surrenders the medium along with the data."
+  },
+  {
+   "key": "Destroying",
+   "name": "Destroying",
+   "def": "The top tier, and the only one that beats every adversary by removing the thing they would work on: the medium stops existing as a medium at all. Chosen where the sensitivity leaves no residual-recovery risk acceptable and no one intends the medium to serve anyone again. Distinct from Purging, which is measured against a laboratory but deliberately leaves a working medium behind for someone else to use."
+  }
+ ],
+ "items": [
+  {
+   "id": "cod-01",
+   "label": "A regional clinic has just finished inventorying every record it holds and now has to decide, for the first time, what level of protection each one deserves before a single storage or access rule gets written.",
+   "sub": "What has to happen before any protection rule can be written?",
+   "answer": "Classify & label",
+   "why": "Assigning an impact level is the prerequisite everything else keys off of; Handling is the wrong pick here because handling rules can't be written until a level exists to key them to.",
+   "citation": "SG ch.5 · outline 2.1"
+  },
+  {
+   "id": "cod-02",
+   "label": "The moment intake creates a new patient file, a records officer stamps its folder tab \"Restricted\" so every downstream team can see its sensitivity at a glance.",
+   "sub": "What action is this marking performing?",
+   "answer": "Classify & label",
+   "why": "A visible marking applied at creation is the labeling half of classification itself; it is not yet Handling, which governs how the folder gets stored or moved once the label already exists.",
+   "citation": "SG ch.5 · outline 2.1"
+  },
+  {
+   "id": "cod-03",
+   "label": "An HR director insists on personally assigning the sensitivity level for a new compensation dataset, rather than letting the systems team that manages its nightly backups decide.",
+   "sub": "Whose call is this, and what call is it?",
+   "answer": "Classify & label",
+   "why": "Sensitivity-level assignment is a data-owner decision; the systems team running backups is exercising Handling, a different and later responsibility, which is why the director insists on keeping this call for herself.",
+   "citation": "SG ch.5 · outline 2.1"
+  },
+  {
+   "id": "cod-04",
+   "label": "A five-year-old market analysis is reviewed and found to no longer warrant its original \"Confidential\" marking, so it gets relabeled \"Internal\" and released to a wider distribution list.",
+   "sub": "What decision is this review making?",
+   "answer": "Classify & label",
+   "why": "Adjusting the sensitivity level itself, even downward, is still a classification act; it is distinct from Retention, which would decide only how long the document stays around, not what level it carries while it does.",
+   "citation": "SG ch.5 · outline 2.1"
+  },
+  {
+   "id": "cod-05",
+   "label": "New engineers are handed a rubric that scores each incoming design file by disclosure impact and sorts it into one of four sensitivity tiers, with personal opinion about a file's importance explicitly excluded.",
+   "sub": "What is the rubric actually setting?",
+   "answer": "Classify & label",
+   "why": "Sorting by disclosure impact against a fixed rubric is a classification method; the trap is reading \"sorting\" as a Handling task, but no storage, transmission or access rule has been set yet — only the sensitivity tier has.",
+   "citation": "SG ch.5 · outline 2.1"
+  },
+  {
+   "id": "cod-06",
+   "label": "Analysts are required to lock their workstation the instant they step away, and to keep printed spreadsheets in a locked drawer overnight rather than on the desk.",
+   "sub": "What kind of rule is this?",
+   "answer": "Handling",
+   "why": "Workstation locking and clean-desk practice are day-to-day controls that follow from a label already in force; they do not set or change the sensitivity level itself, which is what would make this Classify & label instead.",
+   "citation": "SG ch.5 · outline 2.2"
+  },
+  {
+   "id": "cod-07",
+   "label": "A courier service requires every confidential USB drive to travel inside a tamper-evident pouch with a signed chain-of-custody log for each handoff between offices.",
+   "sub": "Is this medium at end of life, or still in active use?",
+   "answer": "Handling",
+   "why": "This drive is being transported for continued use, not retired; that keeps it in Handling rather than any end-of-life tier — Clearing, Purging and Destroying all wait until a medium's working life is actually over.",
+   "citation": "SG ch.5 · outline 2.2"
+  },
+  {
+   "id": "cod-08",
+   "label": "Field agents' laptops use full-disk encryption for case files stored locally, and the same files stay encrypted on the server, matching the sensitivity level already stamped on each case.",
+   "sub": "Whose job is enforcing the label, day to day?",
+   "answer": "Handling",
+   "why": "Encrypting at rest to match an existing label is enforcement, not the act of setting the label; the classification decision already happened, which rules out Classify & label as the answer.",
+   "citation": "SG ch.5 · outline 2.2"
+  },
+  {
+   "id": "cod-09",
+   "label": "A print policy requires anyone sending a restricted memo to a shared printer to be physically standing at the tray before printing starts, so no page sits face-up unattended.",
+   "sub": "What is this policy controlling?",
+   "answer": "Handling",
+   "why": "This is a clean-desk-style control over how a classified document moves through a shared physical space; it neither assigns a sensitivity level nor decides how long the memo is kept, so it stays out of Classify & label and Retention.",
+   "citation": "SG ch.5 · outline 2.2"
+  },
+  {
+   "id": "cod-10",
+   "label": "A brokerage's data-loss-prevention system automatically blocks any attempt to email a spreadsheet already marked \"Restricted\" outside the corporate domain.",
+   "sub": "Is this setting the label or enforcing it?",
+   "answer": "Handling",
+   "why": "DLP is enforcing a label that already exists on the file; the trap is picking Classify & label because the spreadsheet is clearly sensitive, but nothing here is deciding or changing that sensitivity level.",
+   "citation": "SG ch.5 · outline 2.2"
+  },
+  {
+   "id": "cod-11",
+   "label": "In-house counsel flags an active lawsuit and orders every email tied to the matter preserved past its normal expiry date until the case closes.",
+   "sub": "What is this order changing?",
+   "answer": "Retention",
+   "why": "A legal hold extends how long records must be kept; it is not an end-of-life event of any tier, since the point of the hold is precisely to stop anything from being cleared, purged or destroyed while the case is open.",
+   "citation": "SG ch.5 · outline 2.5"
+  },
+  {
+   "id": "cod-12",
+   "label": "Compliance sets a seven-year schedule for financial ledgers to satisfy a statute, even though the finance team says it only needs the last two years for day-to-day operations.",
+   "sub": "What is being decided here — sensitivity, or duration?",
+   "answer": "Retention",
+   "why": "This sets how long the ledgers must be kept, bounded by the longer of legal requirement or business need; the trap is confusing a duration decision with Classify & label, but no sensitivity tier is being assigned or changed.",
+   "citation": "SG ch.5 · outline 2.5"
+  },
+  {
+   "id": "cod-13",
+   "label": "An operations team wipes backup tapes every year purely to save on storage cost, without ever checking whether any regulation requires the underlying data to be kept longer.",
+   "sub": "What failed before the tapes were ever touched?",
+   "answer": "Retention",
+   "why": "The failure is a missing retention schedule — no one decided how long the data legally had to stay available before wiping began; the trap is reading \"wipes\" as a question about which sanitization tier was used, but the tested gap sits entirely upstream of any choice between Clearing, Purging and Destroying.",
+   "citation": "SG ch.5 · outline 2.5"
+  },
+  {
+   "id": "cod-14",
+   "label": "A university keeps every historic applicant record indefinitely \"just in case,\" with no formal expiry date attached to any dataset it holds.",
+   "sub": "What's missing from this practice?",
+   "answer": "Retention",
+   "why": "Keeping everything forever is a retention failure, not a destruction one — the rule is 'as long as useful or required, whichever is longer,' never indefinite by default; nothing here has reached an end-of-life tier at all, so Clearing, Purging and Destroying are all premature.",
+   "citation": "SG ch.5 · outline 2.5"
+  },
+  {
+   "id": "cod-15",
+   "label": "Before reassigning a decommissioned laptop to a new starter in the same department, a technician runs a single-pass software overwrite across the whole drive so the previous employee's files can't be pulled back with ordinary undelete tools.",
+   "sub": "Can this drive be reused, and by whom?",
+   "answer": "Clearing",
+   "why": "A logical overwrite defeats casual recovery, which is sufficient here precisely because the drive never leaves the organization and is reused at the same sensitivity level; the moment it left custody the bar would rise to Purging, and only a decision never to reuse the medium at all would call for Destroying.",
+   "citation": "SG ch.5 · outline 2.4-2.5"
+  },
+  {
+   "id": "cod-16",
+   "label": "Before donating twenty working laptops to a community college, a hospital's IT team invokes each self-encrypting drive's own cryptographic-erase command to destroy the on-drive media key, so the old patient data can never be decrypted — and hands over machines that still boot and can be reimaged by the college.",
+   "sub": "Can this drive be reused, and by whom?",
+   "answer": "Purging",
+   "why": "Cryptographic erase leaves the ciphertext unreadable to any laboratory because the only key that ever decrypted it is gone, which is the assurance bar demanded once media passes out of the organization's custody — and it is the tier that fits here specifically because the drives must survive to be used by someone else. A single overwrite (Clearing) is calibrated for a medium that stays in-house and would not clear that bar, and Destroying would meet it but leave the college nothing to receive.",
+   "citation": "SG ch.5 · outline 2.4-2.5"
+  },
+  {
+   "id": "cod-17",
+   "label": "A defense contractor pulls drives holding Top Secret design files at end of life and has them shredded into fragments too small to reassemble, with no plan to ever issue any of them to anyone again.",
+   "sub": "Can this drive be reused, and by whom?",
+   "answer": "Destroying",
+   "why": "Reducing the platters to unreconstructable fragments guarantees the medium itself can never be reused by anyone, and at this sensitivity that is the requirement; Purging would have met the data-recovery bar but deliberately leaves a working drive behind that someone could redeploy, and Clearing is calibrated for internal reuse the contractor has explicitly ruled out.",
+   "citation": "SG ch.5 · outline 2.4-2.5"
+  },
+  {
+   "id": "cod-18",
+   "label": "A trading desk's shared scratch server is being handed to another team in the same firm at the same classification, so operations runs a validated block-level overwrite across every logical sector and re-racks it — rejecting a colleague's suggestion that a \"delete all files\" command and a quick format would have done just as well.",
+   "sub": "Which end-of-life tier does this reach, and is it enough?",
+   "answer": "Clearing",
+   "why": "A validated overwrite of the addressable sectors is exactly clearing, and it is enough because the server never leaves the firm and carries the same sensitivity to its next team; the colleague's shortcut reaches no tier at all, since deleting merely drops file-table pointers and leaves the bits recoverable as data remanence. Purging would only become the bar if the hardware were leaving the firm's custody, and Destroying is for media nobody is meant to use again.",
+   "citation": "SG ch.5 · outline 2.4"
+  },
+  {
+   "id": "cod-19",
+   "label": "A bank's retiring magnetic backup tapes are run through an approved degausser on-site, collapsing the recorded flux across every reel, before a disposal contractor collects the pallet.",
+   "sub": "Which end-of-life tier does this reach, and why that one?",
+   "answer": "Purging",
+   "why": "Collapsing the flux across the whole reel beats a laboratory working on the medium directly, which is the bar the moment media passes to an outside contractor — and it does so while leaving the reels physically whole. A pass through the medium's normal write interface is built for a far weaker attacker and would not come close, which rules Clearing out; and this is not Destroying either, because the reels survive the process as usable media rather than ceasing to exist.",
+   "citation": "SG ch.5 · outline 2.4"
+  },
+  {
+   "id": "cod-20",
+   "label": "A decommissioning contract for drives holding classified design data requires both a degaussing pass and physical shredding afterward, rather than relying on just one method alone.",
+   "sub": "Where does a scene that layers two methods actually land?",
+   "answer": "Destroying",
+   "why": "Once shredding is in the contract the outcome is annihilation of the medium, and that is the tier the scene lands in — the degaussing pass is belt-and-braces in front of it, closing the gap left by either method's known failure modes on the most sensitive media. Answering Purging reads only the first step: degaussing alone would leave intact media the contract deliberately refuses to leave behind, and Clearing, calibrated for in-house reuse of lower-sensitivity media, is nowhere near this bar.",
+   "citation": "SG ch.5 · outline 2.4-2.5"
+  }
+ ]
+}

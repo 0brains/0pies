@@ -1,0 +1,53 @@
+{
+ "rag": {
+  "hint": "Umieść go na ścieżce wycofania: przygotowanie wiedzy, znalezienie kandydatów, poprawa ich znaczenia lub zapewnienie, że wygenerowana odpowiedź pozostaje wspierana i śledzona."
+ },
+ "rag-01": {
+  "label": "Wektor numeryczny reprezentujący cechy semantyczne, aby powiązana zawartość mogła być porównywana matematycznie.",
+  "why": "Wektor numeryczny reprezentujący cechy semantyczne, aby powiązana zawartość mogła być porównywana matematycznie."
+ },
+ "rag-02": {
+  "label": "Dzieli dokumenty źródłowe na fragmenty możliwe do pobrania, wielkości do zachowania znaczenia bez marnowania kontekstu.",
+  "why": "Dzieli dokumenty źródłowe na fragmenty możliwe do pobrania, wielkości do zachowania znaczenia bez marnowania kontekstu."
+ },
+ "rag-03": {
+  "label": "Przechowuje osadzania i wspiera wydajne wyszukiwanie najbliższego sąsiada.",
+  "why": "Przechowuje osadzania i wspiera wydajne wyszukiwanie najbliższego sąsiada."
+ },
+ "rag-04": {
+  "label": "Pobiera zawartość znaczeniowo, a nie wymaga dokładnego nakładania słów kluczowych.",
+  "why": "Pobiera zawartość znaczeniowo, a nie wymaga dokładnego nakładania słów kluczowych."
+ },
+ "rag-05": {
+  "label": "Pobiera zawartość przy użyciu dopasowań terminów leksykalnych i pozostaje użyteczne dla nazw, kodów i dokładnych fraz.",
+  "why": "Pobiera zawartość przy użyciu dopasowań terminów leksykalnych i pozostaje użyteczne dla nazw, kodów i dokładnych fraz."
+ },
+ "rag-06": {
+  "label": "Łączy semantyczne i słowo kluczowe wycofania, aby czerpać korzyści ze znaczenia i dokładnego dopasowania terminów.",
+  "why": "Łączy semantyczne i słowo kluczowe wycofania, aby czerpać korzyści ze znaczenia i dokładnego dopasowania terminów."
+ },
+ "rag-07": {
+  "label": "Ogranicza wycofanie atrybutami, takimi jak dzierżawca, data, typ dokumentu lub poziom dostępu.",
+  "why": "Ogranicza wycofanie atrybutami, takimi jak dzierżawca, data, typ dokumentu lub poziom dostępu."
+ },
+ "rag-08": {
+  "label": "Przeskaluje pobranych kandydatów, aby umieścić fragmenty najbardziej istotne dla pełnego zapytania na pierwszym miejscu.",
+  "why": "Przeskaluje pobranych kandydatów, aby umieścić fragmenty najbardziej istotne dla pełnego zapytania na pierwszym miejscu."
+ },
+ "rag-09": {
+  "label": "Ogranicza generację do dostarczonego dowodu, aby twierdzenia mogły być wspierane i śledzone.",
+  "why": "Ogranicza generację do dostarczonego dowodu, aby twierdzenia mogły być wspierane i śledzone."
+ },
+ "rag-10": {
+  "label": "Łączy roszczenie odpowiedzi z powrotem do fragmentu źródłowego, który go wspiera.",
+  "why": "Łączy roszczenie odpowiedzi z powrotem do fragmentu źródłowego, który go wspiera."
+ },
+ "rag-11": {
+  "label": "Wskazuje, czy etap wycofania znajduje dowody potrzebne do odpowiedzi na pytanie.",
+  "why": "Jeśli 100 pytań wymaga znanego fragmentu dowodów, a wycofanie zwraca go dla 85, wycofanie wycofania wynosi 85%. Niskie wycofanie wycofania wskazuje na fragmentowanie, osadzania, filtry, przepisanie zapytań lub problemy z licznikiem kandydatów, które generacja nie może naprawić."
+ },
+ "rag-12": {
+  "label": "Wskazuje, ile z pobranego kontekstu jest istotne, a nie rozpraszające szumu.",
+  "why": "Wskazuje, ile z pobranego kontekstu jest istotne, a nie rozpraszające szumu."
+ }
+}

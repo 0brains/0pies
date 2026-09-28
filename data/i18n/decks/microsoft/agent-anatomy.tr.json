@@ -1,0 +1,84 @@
+{
+ "ag-001": {
+  "label": "\"Sen nazik bir destek ajanısın; geri ödeme ile ilgili her şeyi ilet et\" — ajanı oluştururken bir kez ayarlandı",
+  "why": "Instructions alanı, tasarım zamanında tanımlanmış kalıcı davranışı belirtir — çalışma materyalinin en çok vurgulanan ajan konsepti, çalışma süresi sohbet durumundan ayrıdır."
+ },
+ "ag-002": {
+  "label": "Ajanın harici işlevleri veya API'ları çağırmasına ve eylem yapmasına izin ver",
+  "why": "Function calling / tools, modelin metni aşan eylemler yapmasını sağlar — düz bir sohbet çağrısından bir ajani ayıran yetenek."
+ },
+ "ag-003": {
+  "label": "Ajanın akıl yürüttüğü konuşlandırılmış gpt-4o — deployment adıyla referans alındı",
+  "why": "Bir ajan = model + instructions + tools; model bir deployment'tır ve {\"deployment\":{\"model\":AGENT_NAME}} kanonik yanlış cevaptır."
+ },
+ "ag-004": {
+  "label": "Ajanın cevap vermek için aranabileceği temel dosya ve veri kaynakları",
+  "why": "Bilgi, verilerini ajana ekleyerek cevapların bunun içinde yer almasını sağlar — çalışma kılavuzunun Task 2.1 için adlandırdığı ajan anatomisinin parçası."
+ },
+ "ag-005": {
+  "label": "Çalışma zamanında bir devam eden sohbettin kullanıcı ve asistan mesajlarını taşır",
+  "why": "Thread'ler/sohbetler çalışma süresi sohbet durumunu tutarlar — istemci uygulaması tarafından her oturum için oluşturulur, ajan tanımı zamanında değil."
+ },
+ "ag-006": {
+  "label": "Sohbeti işleyen ve ajanın sonraki çıktısını üreten çağrı",
+  "why": "Bir run (openai.responses.create / create run) ajani thread'e karşı yürütür — üç ayrı katman: tanım vs oturum vs çağrı."
+ },
+ "ag-007": {
+  "label": "Ajan ilk kez kodda tanımlandığında PromptAgentDefinition'ın içine sağlanan doğal dil persona metni",
+  "why": "PromptAgentDefinition(model=MODEL_NAME, instructions=...) her iki alanı da tanım zamanında ayarlar, ancak yalnızca persona metni ajanın nasıl davrandığını şekillendirir — yanındaki model adı ayrı bir bileşendir."
+ },
+ "ag-008": {
+  "label": "Her yanıtı beş öğeyle sınırlı numaralı bir liste olarak biçimlendir — yazarken sabitlenerek, soru başına seçilmez",
+  "why": "Yazarlık zamanında kodlanmış kalıcı bir biçimlendirme kuralı davranıştır, harici bir eylem değildir — metinin ötesine hiçbir şey çağırmaz, bunu Tool'lerdan ayıran şey."
+ },
+ "ag-009": {
+  "label": "Akıl yürütme motorunu gpt-4o-mini'den gpt-5-mini'ye değiştirerek ajanın persona'sına veya ekli tool'lerine dokunmamak",
+  "why": "Burada yalnızca dağıtılmış akıl yürütme motoru değişir; persona ve tool wiring sabit kalır — ajanın diğer bileşenlerinden deployment'in ayrı bir katman olup olmadığının temiz bir testidir."
+ },
+ "ag-010": {
+  "label": "Ajan ilk kez kodda tanımlandığında PromptAgentDefinition'ın içinde persona metniyle birlikte iletilen dağıtım tanımlayıcısı",
+  "why": "Persona metiyle aynı PromptAgentDefinition() çağrısı, ancak bu parametre ajanın çağırdığı konuşlandırılmış motorun adını verir — davranışın kendisi değil, bir deployment referansı."
+ },
+ "ag-011": {
+  "label": "Ajan, eğitim verilerine ihtiyaç duyduğundan daha yeni bilgiler çekmek için gerçek web aramasını etkinleştir",
+  "why": "Web araması Foundry portalının tool kataloğundan açılır (Build > Tools) kod yorumlayıcı ve dosya araması ile birlikte — ekli statik içerik değil, canlı bir harici yetenek."
+ },
+ "ag-012": {
+  "label": "Ajanın, sadece hesaplama adımlarını açıklamak yerine, bir sonucu hesaplamak için oluşturulan kodu çalıştırmasına izin ver",
+  "why": "Kod yürütme, web araması ve dosya araması gibi katolog yeteneklerinden biridir ve ajanın metni üretmenin ötesinde hareket etmesini sağlar — akıl yürütme motoru asla kodu doğrudan yürütmez."
+ },
+ "ag-013": {
+  "label": "Mevcut bir Azure AI Search dizinini bağlayarak ajanın yanıtları tahmin etmek yerine dizinlenen içeriğine alıntı yapsın",
+  "why": "Ekli bir arama dizini, ajanın cevaplarını tesis etmek için alacağı statik içeriktir — canlı bir harici yeteneğe ulaşan web araması gibi bir tool'dan ayrıdır."
+ },
+ "ag-014": {
+  "label": "Ajanın aranabileceği şirket politikası belgelerini ekle — Agents oyun alanında persona metni ve ekli tool'lar ile birlikte yapılandırıldı — çok dönüşlü davranışı test etmeden önce",
+  "why": "Agents oyun alanı üç ayrı yüzeyi yan yana yapılandırır — persona, tool'lar ve ekli belgeler — ve bu kartı ekli içerik olanıdır: ajanın cevaplarını temellendirdiği veri, aldığı bir eylem değil."
+ },
+ "ag-015": {
+  "label": "openai.conversations.create() istemci uygulaması tarafından ilk dönüş ajana gönderilmeden önce çağrıldı",
+  "why": "Sohbet nesnesini oluşturmak herhangi bir mesaj gönderilmeden önce olur — daha sonra dönüşlerin yazacağı çalışma zaman konteynirini açar, aslında bir yanıt üreten çağrıdan ayrıdır."
+ },
+ "ag-016": {
+  "label": "Ajanın üç soru önce kullanıcının söylediği bir şeye atıfta bulunmasını ve bu mesajların her seferinde manuel olarak yeniden gönderilmemesini sağlayan tek, kesintisiz zaman çizelgesi",
+  "why": "Biriken çalışma zamanı sohbet geçmişi oturum durumudur, ajan davranışı değildir — tasarım zamanında sabitlenmiş persona kurallarından farklı olarak oturum başına büyür."
+ },
+ "ag-017": {
+  "label": "openai.responses.create() kullanıcının en son mesajını gerçekten gönderen ve ajanın yanıtını döndüren çağrıdır",
+  "why": "Bu çağrı adımıdır — aslında sohbeti işler ve çıktı üretir, yalnızca mesajların yaşadığı konteyneri açan openai.conversations.create()'den ayrıdır."
+ },
+ "ag-018": {
+  "label": "O aynı çağrının içindeki extra_body={\"agent_reference\": {...}} parametresi, sisteme hangi ajan tanımını sohbet'e karşı yürütecek olduğunu söyler",
+  "why": "agent_reference responses.create() çağrısında dönüş başına metaveridir, sabitlenmiş bir ajan özelliği değildir — sınav bu ayrımı ajanın kendi tanımına kodlanmış deployment adıyla açıkça belirtir."
+ },
+ "agent-anatomy": {
+  "hint": "İşin hangi katmana ait olduğunu sor: tasarım zamanında sabitlenmiş (instructions), akıl yürütme motorunun kendisi (model), metni aşan bir eylem (tools), cevapları temellendirmek için ekli veri (knowledge), bir sohbettin çalışma zamanı durumu (thread) veya çıktı üreten tek çağrı (run).",
+  "note": "Instructions ve tools'lar tasarım zamanında yapılandırılır — bağımsız değişkeni kart bir davranış kuralı (instructions) mı veya ajanın çağırdığı harici bir yetenek (tools) midir? Thread ve run çalışma zamanında canlı kalır — bağımsız değişkeni kart mesajları tutan kap (thread) mı yoksa sonraki mesajı üreten çağrı (run) mıdır?",
+  "zones[0].def": "Ajan tanımlandığında ayarlanan kalıcı davranış, persona ve kurallar — sohbet başına seçilmez.",
+  "zones[1].def": "Dağıtılan model — deployment adıyla referans alındı — ajanın akıl yürüttüğü.",
+  "zones[2].def": "Ajanın metin üretmenin ötesinde çağırabileceği işlevler, API'lar ve diğer eylemler.",
+  "zones[3].def": "Ajanın cevaplarını temellendirmek için arayabileceği dosyalar, dizinler ve diğer veri kaynakları.",
+  "zones[4].def": "Bir devam eden sohbettin çalışma zamanı mesaj geçmişi, oturum başına oluşturuldu.",
+  "zones[5].def": "Ajani bir thread'e karşı yürüten ve sonraki çıktısını üreten çağrı."
+ }
+}

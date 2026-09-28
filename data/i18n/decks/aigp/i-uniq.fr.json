@@ -1,0 +1,110 @@
+{
+ "i-uniq": {
+  "hint": "Demande-toi ce qui échoue précisément : un humain ne peut-il pas voir (Opacité), ou ne peut-il pas suivre la structure même avec un accès complet (Complexité) ? Le système a-t-il agi sans être demandé (Autonomie), ou une tâche qu'une personne avait l'habitude de faire à la main a-t-elle simplement disparu dans le système (Automatisation) ? Le système a-t-il changé après avoir appris davantage (Adaptabilité), ou le défaut était-il déjà intégré à ce dont il a appris (Dépendance aux données) ? La même entrée a-t-elle donné une réponse différente (Résultats probabilistes), ou une petite erreur s'est-elle propagée plus vite que quiconque ne pouvait l'attraper (Vitesse et échelle) ?",
+  "note": "C'est la liste de référence canonique de l'examen avec huit éléments. Huit zones fixes signifie que la plupart des offres de six cartes laissent une ou deux zones vides — c'est attendu, pas un bogue. Automatisation et Autonomie sont la paire qui mérite le plus de ralentissement : Automatisation concerne les mains de qui faisaient autrefois le travail (remplacement de tâche, dépendance excessive, perturbation de la main-d'œuvre) ; Autonomie concerne qui prend la décision (décisions indépendantes sans approbation humaine).",
+  "zones[0].def": "La logique interne qui ne peut pas être vue ni expliquée, même par les personnes qui l'ont construite — une défaillance de visibilité. Différent de Complexité : l'opacité concerne ce qui est caché à la vue, pas à quel point la structure est compliquée.",
+  "zones[1].def": "Le système décide et agit par lui-même, sans qu'un humain approuve cette action spécifique — un risque d'indépendance d'action. Différent d'Automatisation : l'autonomie concerne qui prend la décision, pas les mains de qui faisaient autrefois le travail.",
+  "zones[2].def": "L'apprentissage continu et le réentraînement peuvent dériver un système loin de ses objectifs originaux, ou le faire perdre silencieusement les capacités qu'il possédait déjà.",
+  "zones[3].def": "L'IA reprend les tâches et les décisions qu'une personne effectuait autrefois à la main, à une échelle qu'aucune équipe humaine ne pourrait égaler — soulevant les risques de dépendance excessive et de perturbation de la main-d'œuvre distincts du jugement indépendant du système lui-même.",
+  "zones[4].def": "Les performances ne sont aussi bonnes que les données d'entraînement qui les sous-tendent — fragiles aux lacunes, aux décalages et aux défauts hérités de ce que le système a appris.",
+  "zones[5].def": "L'IA agit beaucoup plus vite et sur beaucoup plus d'instances que les humains ne peuvent en vérifier en temps réel, donc une petite erreur peut devenir une erreur massive avant que quiconque ne s'en aperçoive.",
+  "zones[6].def": "Les résultats sont tirés d'une distribution de réponses possibles plutôt que de règles fixes, donc la même entrée peut produire une sortie différente à chaque fois.",
+  "zones[7].def": "Tellement de couches et de paramètres interagissant que même les développeurs ne peuvent pas tracer le chemin de la décision — une défaillance structurelle. Différent d'Opacité : la complexité concerne à quel point la structure est compliquée, pas ce qui est caché à la vue."
+ },
+ "i-uq-01": {
+  "label": "Une banque ne peut pas dire au régulateur pourquoi son réseau de neurones a rejeté ce demandeur de prêt.",
+  "why": "Pas de visibilité sur la logique interne du modèle — distinct de Complexité, qui est une structure trop compliquée pour suivre, pas une incapacité à voir du tout."
+ },
+ "i-uq-02": {
+  "label": "Un cadre supérieur avertit que si le modèle de commande d'entrepôt commet jamais une erreur coûteuse, personne ne pourra expliquer après pourquoi c'est arrivé.",
+  "why": "La plainte est que le raisonnement est caché, pas que le modèle est structurellement compliqué — l'écart de boîte noire du même type que cette zone suit, pas celui structurel de Complexité."
+ },
+ "i-uq-03": {
+  "label": "Un modérateur de contenu supprime une publication selon des règles qui n'ont jamais été publiées, et l'affiche n'a aucun moyen de découvrir quelle règle s'appliquait.",
+  "why": "Les règles qui existent mais ne sont jamais affichées aux personnes affectées constituent la défaillance déterminante de cette zone — un raisonnement caché, pas une structure trop compliquée pour suivre."
+ },
+ "i-uq-04": {
+  "label": "Une voiture autonome navigue dans le trafic dense du centre-ville et prend elle-même tous les appels de direction, de freinage et d'itinéraire, sans qu'aucune personne soit prête à intervenir.",
+  "why": "Une indépendance d'action élevée associée à un préjudice potentiel élevé est l'appariement caractéristique de cette zone — distinct d'Automatisation, qui concerne les mains de qui faisaient autrefois le travail, pas qui prend la décision."
+ },
+ "i-uq-05": {
+  "label": "Un bot de trading achète et vend des actions en millisecondes ; aucune personne ne confirme aucune transaction individuelle avant son exécution.",
+  "why": "L'indépendance d'action — décider et agir sans attendre l'approbation humaine — est ce que cette zone suit, que la transaction se produise ou non rapidement. Distinct d'Automatisation, qui concerne si une personne avait l'habitude de placer des transactions à la main du tout, pas qui signe chacune."
+ },
+ "i-uq-06": {
+  "label": "Un outil d'embauche examine les CV et déplace les candidats vers l'entretien ou le rejet sans qu'un recruteur n'examine jamais l'appel.",
+  "why": "La préoccupation est qu'une décision est sortie sans approbation humaine — un écart de contrôle et de responsabilité, pas la disparition d'une tâche qu'une personne avait l'habitude de faire à la main (c'est le côté Automatisation de cette paire)."
+ },
+ "i-uq-07": {
+  "label": "Après que le recommandateur soit réentraîné sur le nouveau catalogue de produits, il perd silencieusement des compétences qu'il avait, comme signaler les doublons.",
+  "why": "C'est l'oubli catastrophique — la version multiplicatrice de risque d'un système qui s'éloigne de ses capacités originales chaque fois qu'il réapprend à partir de nouvelles données ; c'est un vrai risque, mais jamais une zone en soi."
+ },
+ "i-uq-08": {
+  "label": "Le système de détection des fraudes d'une banque se réentraîne sur les transactions récentes et commence à bloquer un grand nombre d'achats légitimes.",
+  "why": "Une dérive loin de l'objectif original après réentraînement — la réponse de gouvernance est la surveillance, les tests de pré-déploiement des mises à jour et le suivi de la dérive, pas un examen de lancement ponctuel."
+ },
+ "i-uq-09": {
+  "label": "Six mois après le lancement, les suggestions d'un outil de recommandation de dosage ont silencieusement changé parce qu'il a été réentraîné sur des données hospitalières contenant des erreurs d'étiquetage.",
+  "why": "Le comportement changeant après le réentraînement ou l'exposition à de nouvelles données est l'indicateur de cette zone ; la correction est la surveillance continue, la détection de la dérive et les portes d'approbation avant qu'un modèle mis à jour ne soit mis en service."
+ },
+ "i-uq-10": {
+  "label": "Le tri des tickets d'un centre d'appels, autrefois géré par une personne lisant chaque demande, est maintenant résolu de bout en bout par le système sans que quiconque ne touche la file d'attente.",
+  "why": "C'est l'axe du remplacement du travail — une tâche qu'une personne avait l'habitude d'exécuter à la main est maintenant exécutée par le système en volume. Distinct d'Autonomie, qui concerne qui prend la décision, pas les mains qui font le travail."
+ },
+ "i-uq-11": {
+  "label": "Le déploiement généralisé d'un outil de service client supprime le besoin de la plupart du personnel d'un centre d'appels, ce qui perturbe le marché du travail local.",
+  "why": "La perturbation de la main-d'œuvre et économique du remplacement du travail humain est le coût sociétal de cette zone — une préoccupation de gouvernance différente du cadre de responsabilité et de responsabilité d'Autonomie."
+ },
+ "i-uq-12": {
+  "label": "Après que le système ait correctement résolu des milliers de cas de suite, les ajusteurs cessent de vérifier ses refus signalés et commencent à approuver tout ce qu'il recommande.",
+  "why": "La dépendance excessive à ce que le système produit — approuver sans réfléchir au lieu d'examiner critiquement — est le risque de gouvernance que cette zone existe pour attraper ; c'est une réponse humaine au remplacement de tâche, pas au jugement indépendant du système lui-même, qui est le risque d'Autonomie."
+ },
+ "i-uq-13": {
+  "label": "Un modèle de sentiment qui prédisait avec précision l'opinion publique pendant l'entraînement se trompe énormément une fois qu'un événement majeur se produit que les données d'entraînement n'ont jamais capturé.",
+  "why": "La fragilité quand le monde s'éloigne de ce que les données d'entraînement ont capturé est l'échec fondamental de cette zone — le modèle est seulement aussi bon que ce qu'il a appris."
+ },
+ "i-uq-14": {
+  "label": "Un prédicteur de type de peau apprend principalement à partir de tons de peau plus clairs dans ses photos d'entraînement et donne des conseils inexacts à tous les autres.",
+  "why": "Le modèle fonctionne seulement aussi bien que la population représentée dans ses données d'entraînement — une lacune dans ce qu'il a appris, pas un problème structurel ou de visibilité."
+ },
+ "i-uq-15": {
+  "label": "Un modèle de notation de crédit refuse les prêts aux demandeurs immigrants à un taux plus élevé que les autres ayant des profils financiers identiques.",
+  "why": "Les données d'entraînement contenaient la discrimination historique, et le modèle l'a reproduite — le mode d'échec le plus systémique de cette zone, parce que corriger le modèle sans corriger les données laisse la cause première intacte."
+ },
+ "i-uq-16": {
+  "label": "Une erreur de tarification sur une liste de produits se réplique sur des millions de pages avant que quiconque ne s'en aperçoive.",
+  "why": "Une petite erreur, multipliée au rythme et au volume des machines, dépasse l'examen humain et la réaction réglementaire avant que quiconque ne puisse intervenir — l'échec caractéristique de cette zone."
+ },
+ "i-uq-17": {
+  "label": "Les caméras de surveillance traitent instantanément l'ensemble du flux vidéo en temps réel d'une ville, signalant des milliers d'« activités inhabituelles » par minute.",
+  "why": "Le volume et le rythme au-delà de ce que n'importe quel examinateur humain ne peut suivre est ce qui rend le risque de cette zone différent d'un système qui raisonne simplement mal — le problème est le débit, pas la logique."
+ },
+ "i-uq-18": {
+  "label": "L'outil de détérioration des patients d'un hôpital exécute des prédictions continues et à haut volume dans tous les services, et un simple mal-calibrage s'accumule en une tempête d'alarmes à l'échelle du système en quelques heures.",
+  "why": "La sortie rapide et à haut volume transforme un petit mal-calibrage en un problème à l'échelle du système avant que le personnel ne puisse l'attraper — le débit est le multiplicateur de risque ici, pas la logique sous-jacente."
+ },
+ "i-uq-19": {
+  "label": "La même demande reçoit une recommandation d'investissement différente sur des jours consécutifs, sans rien d'autre sur la demande changée.",
+  "why": "Les résultats échantillonnés à partir d'une gamme pondérée de réponses possibles plutôt qu'une règle fixe compliquent l'explication d'un résultat spécifique — mais cela ne signifie pas que les audits sont impossibles, une réponse incorrecte enregistrée."
+ },
+ "i-uq-20": {
+  "label": "Un système sur une page de paiement calcule toujours la même taxe de vente pour la même commande ; un deuxième système sur la même page suggère des produits légèrement différents à chaque rechargement de page.",
+  "why": "Le moteur fiscal est déterministe — toujours la même sortie pour la même entrée — tandis que le recommandateur tire d'une gamme pondérée de sorties possibles à chaque fois ; seul le deuxième comportement appartient à cette zone."
+ },
+ "i-uq-21": {
+  "label": "Un chatbot interrogé trois fois séparément sur la même question de dessert donne trois réponses différentes, chacune tirée d'une liste pondérée d'options plausibles plutôt qu'une règle fixe.",
+  "why": "L'échantillonnage à partir d'une gamme pondérée de réponses possibles au lieu de suivre un chemin strict est exactement ce que cette zone gouverne — la correction est l'étalonnage de la confiance et la fixation des attentes, pas traiter une réponse comme la vérité fixe."
+ },
+ "i-uq-22": {
+  "label": "Les examinateurs admettent qu'ils ne peuvent plus tracer lequel des millions de paramètres interagissant du modèle a réellement entraîné une décision spécifique.",
+  "why": "C'est à propos de la structure interne — trop de couches et de paramètres pour suivre — pas si le raisonnement est caché à la vue ; c'est la limite avec Opacité, qui est un problème de visibilité, pas structurel."
+ },
+ "i-uq-23": {
+  "label": "Un modèle d'analyse de contrats doit peser le langage juridique et les exigences qui diffèrent selon une douzaine de juridictions à la fois, et aucun examinateur unique ne peut tenir la logique entière dans sa tête.",
+  "why": "L'intricité structurelle — trop de facteurs interagissant pour tracer de bout en bout — est ce qui définit cette zone, distinct d'un modèle qui refuse simplement de montrer son raisonnement du tout."
+ },
+ "i-uq-24": {
+  "label": "La logique d'optimisation d'un modèle de routage de livraison est devenue tellement compliquée que les ingénieurs ne peuvent plus résoudre pourquoi il a choisi un itinéraire plutôt qu'un autre.",
+  "why": "L'intricité qui défait même les personnes qui l'ont construite est l'échec structurel que cette zone suit — le jumeau de l'échec de visibilité d'Opacité, déclaré explicitement pour que les deux ne soient jamais confondus."
+ }
+}

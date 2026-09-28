@@ -1,0 +1,82 @@
+{
+ "lad-agent": {
+  "prompt": "エージェントのライフサイクルを発生する必要がある順序に配置します。",
+  "steps[0].label": "エージェントを定義します: PromptAgentDefinition(model=MODEL_NAME, instructions=..., tools=[...])",
+  "steps[0].detail": "モデル + 指示 + ツールは定義時に設定されます。{{\"deployment\":{{\"model\":AGENT_NAME}}}}は標準的な誤った回答です。デプロイはモデルをホストし、エージェントはモデル + 指示 + ツールです。",
+  "steps[1].label": "Agentsプレイグラウンドでテストします",
+  "steps[1].detail": "プレイグラウンドはペルソナ、ツール、アタッチされたナレッジを並べて設定し、クライアントコードがエージェントを呼び出す前にマルチターン動作を試させます。",
+  "steps[2].label": "それを保存します: project.agents.create_version(agent_name=AGENT_NAME, definition=...)",
+  "steps[2].detail": "未保存のプレイグラウンド編集はポータルを離れるときに失われます。create_versionは、ポータルで構築したかコードで構築したかにかかわらず、定義を実際に永続化するものです。",
+  "steps[3].label": "スレッドを作成します: openai.conversations.create()",
+  "steps[3].detail": "後のターンが書き込む実行時コンテナを開きます。最初のメッセージが送信される前にクライアントアプリによって呼ばれ、エージェント自体の定義と異なります。",
+  "steps[4].label": "ユーザーのメッセージをスレッドに追加します",
+  "steps[4].detail": "ターンのコンテンツはスレッドの蓄積メッセージ履歴に追加されます。ランはまだ追加されていないメッセージを処理できません。",
+  "steps[5].label": "実行を作成して出力を読み取ります: openai.responses.create(..., extra_body={\"agent_reference\": {...}})",
+  "steps[5].detail": "会話を実際に処理してエージェントの次の出力を生成する呼び出し。agent_referenceは保存済み定義を指す呼び出しごとメタデータです。"
+ },
+ "lad-chat": {
+  "prompt": "コードフローを実行する必要がある順序に配置します。",
+  "steps[0].label": "azure-ai-projectsをインストールします",
+  "steps[0].detail": "「プロジェクトクライアント用にどのパッケージをインストールする必要があります」は古典的な試験ステムです。答えはazure-ai-projectsです。",
+  "steps[1].label": "AIProjectClient(endpoint, DefaultAzureCredential())を作成します",
+  "steps[1].detail": "エンドポイントと認証情報の両方が呼び出しの前に存在する必要があります。キーレス認証 = Entra ID DefaultAzureCredential。",
+  "steps[2].label": "get_openai_client()を呼び出します",
+  "steps[2].detail": "プロジェクトクライアントをOpenAI互換のチャットクライアントにブリッジします。削除されると、すべてが壊れます。",
+  "steps[3].label": "メッセージリストを構築します(システムプロンプト最初、その後ユーザープロンプト)",
+  "steps[3].detail": "ルールとガードレールはシステムメッセージに含まれています。このターンのリクエストはユーザーメッセージにあります。",
+  "steps[4].label": "chat.completions.create(model=DEPLOYMENT_NAME, messages=[...])を呼び出します",
+  "steps[4].detail": "model=はあなたのデプロイメント名を取ります。決してベースモデル名ではありません。古典的なトラップです。",
+  "steps[5].label": "response.choices[0].message.contentを読み取ります",
+  "steps[5].detail": "返信テキストは最初の選択肢のメッセージにあります。コーパススニペット質問はここで終わります。"
+ },
+ "lad-cu": {
+  "prompt": "Content Understandingワークフローを順序に配置します。",
+  "steps[0].label": "分析器を選択または定義します: スキーマを自然言語で説明します(ContentAnalyzer(base_analyzer_id=..., field_schema=...))",
+  "steps[0].detail": "事前構築された分析器ID(prebuilt-invoice、prebuilt-audio、...)は一般的なドメインをカバーします。カスタムContentAnalyzerはfield_schema経由で自然言語でたいえたいフィールドを指定します。コードを超える説明はありません。",
+  "steps[1].label": "それを登録します: client.begin_create_analyzer(...)",
+  "steps[1].detail": "分析器定義を長時間運用として供給します。コンテンツに対して呼び出される前にセットアップします。1回限りのセットアップステップであり、ドキュメントごとではありません。",
+  "steps[2].label": "コンテンツを送信します: client.begin_analyze(analyzer_id=..., inputs=[AnalysisInput(url=file_url)])",
+  "steps[2].detail": "各ドキュメント/画像/オーディオ/ビデオファイルは、すでに登録されている分析器に対して独自のbegin_analyzeを取得します。ステップ1とは異なり、ドキュメントごとのステップです。",
+  "steps[3].label": "操作をポーリングします: poller.result()",
+  "steps[3].detail": "begin_analyzeはポーラーを返します。その.result()メソッドを呼び出して、最終分析出力を待ちます。分析は非同期です。同期返却ではありません。試験はそれを「ポーラーの________メソッドを呼び出す」と呼びます。",
+  "steps[4].label": "結果から構造化JSONフィールドを読み取ります",
+  "steps[4].detail": "抽出されたフィールド — ベンダー名、請求書日付、請求書合計など — ポーラーの結果ペイロードに着地します。これはContent Understanding独自のジョブが終わる場所です。",
+  "steps[5].label": "インデックス作成のためにAzure AI Searchに引き渡します",
+  "steps[5].detail": "Content Understandingは抽出するだけです。決してインデックス作成または生成は行いません。Azure AI SearchはCU構造化出力をインデックス作成して取得/RAGのために別の後流サービスです。"
+ },
+ "lad-genai": {
+  "prompt": "生成モデルがプロンプトをテキストに変える順序にステップを配置します。",
+  "steps[0].label": "トークン化",
+  "steps[0].detail": "入力テキストはトークン(単語またはサブワード)に分割されます。それぞれモデルの語彙からIDにマップされます。ダウンストリーム構文がこれまでに意味を持つまで何も。(タスク1.2)。",
+  "steps[1].label": "エンベディング",
+  "steps[1].detail": "各トークンIDは意味をエンコーディングする数値ベクトルに変換されます。セマンティック類似性がベクトル距離として計算可能にする同じベクトル空間。",
+  "steps[2].label": "トランスフォーマーアテンション",
+  "steps[2].detail": "自己注意レイヤーはシーケンス内のすべてのトークンに対してすべてのトークンをウェイトします。ほとんどの最新の基礎モデルを「パワー」するメカニック。エンベディングベクトルが既に存在する必要があります。",
+  "steps[3].label": "次のトークンの予測",
+  "steps[3].detail": "モデルは単一の次のトークンの語彙全体に対して確率分布を出力します。温度とtop_pはこの分布を変更し、1つのトークンがサンプリングされます。",
+  "steps[4].label": "デトークン化された出力",
+  "steps[4].detail": "予測されたトークンIDはテキストにデコードバックされて、ループが1つのトークンを一度に繰り返します。停止条件が到達するまで。パープレキシティは、このステップの予測がテキストを保持したほどよくマッチしたかを測定します。"
+ },
+ "lad-speech": {
+  "prompt": "Speech SDK呼び出しを実行する必要がある順序に配置します。",
+  "steps[0].label": "SpeechConfig(subscription=key, region=region)",
+  "steps[0].detail": "すべてのSpeech SDKフローはここから始まります。key/region(またはendpoint)ペアはそれに続くすべての呼び出しを認証します。",
+  "steps[1].label": "speech_config.speech_synthesis_voice_name = \"...\"を設定します",
+  "steps[1].detail": "音声選択は設定オブジェクトで直接設定されたプロパティです。試験のDragonHDボイススニペットはSpeechConfigの直後にこのラインを設定して、他のオブジェクトが作成される前にそれから構築されます。",
+  "steps[2].label": "AudioConfig(...) — マイク、ファイル、またはデフォルトデバイス",
+  "steps[2].detail": "音声名プロパティから独立して構築されます。しかし、クイックスタートスニペットは、設定セットアップが完了した直後にそれを構築します。レコグナイザー/シンセサイザーが両方のオブジェクトを消費する直前に。",
+  "steps[3].label": "レコグナイザーまたはシンセサイザーを作成します: SpeechRecognizer(speech_config, audio_config) / SpeechSynthesizer(speech_config)",
+  "steps[3].detail": "両方のコンストラクタは既に構築されたspeech_configを取ります(レコグナイザーもaudio_configを取ります)。この点の後の何もまだ設定を注入することはできません。",
+  "steps[4].label": "recognize_once() / speak_text_async(text)を呼び出します",
+  "steps[4].detail": "recognize_once()は1つの短い発話をキャプチャします(連続認識対)。speak_text_async()は実際にテキストを再生します。非同期将来/.get()パターンは、オブジェクトが存在する最後にここに属します。"
+ },
+ "lad-voice": {
+  "prompt": "古典的な音声エージェントパイプラインを順序に配置します。",
+  "steps[0].label": "音声をテキストに: 呼び出し人の音声オーディオをテキストに変換します",
+  "steps[0].detail": "パイプラインステップ1 — recognize_once()または継続認識がオーディオを転写に変えます。その前に何らかの推論が発生することができます。",
+  "steps[1].label": "言語/生成AI処理: 転写について理由を述べ、テキスト返信を生成します",
+  "steps[1].detail": "チャット/エージェント呼び出しはトランスクリプトについて理由を述べます。単一のマルチモーダルモデル(例えばオーディイン/オーディオアウトチャットデプロイメント)が一緒にステップ1と3を折りたたむことができるステップ。Voice Live APIはすべての3つを単一の低レイテンシスピーチ音声インターフェースで置き換えるために構築されます。",
+  "steps[2].label": "テキストから音声: 返信をオーディオに合成します",
+  "steps[2].detail": "speak_text_async()は生成された返信を再生します。古典的なパイプラインの最終ステップ。また単一マルチモーダルモデルまたはステップ2の詳細で指定された音声ライブの代替に折りたたみます。"
+ }
+}

@@ -1,0 +1,109 @@
+{
+  "service-selection": {
+    "hint": "Duas perguntas decidem: o que é que a entrada parece (texto, formulário, imagem, áudio, vídeo ou vetores), e a tarefa extrai/analisa, traduz, procura/indexa, ou gera? A opção plantada é quase sempre o vizinho que partilha a entrada mas faz a outra tarefa."
+  },
+  "ss-001": {
+    "label": "Descrever campos de fatura em linguagem natural e extrair a partir de PDFs, fotos e gravações de chamadas em JSON estruturado",
+    "why": "Descrição de campo em linguagem natural sobre entrada multimodal → JSON estruturado é Content Understanding; os pré-construídos Document Intelligence são determinísticos e apenas para documentos."
+  },
+  "ss-002": {
+    "label": "Extração determinística de elevado volume a partir de recibos e cartões de identidade padrão com um modelo pré-construído",
+    "why": "Tipos de formulário conhecidos — faturas, recibos, IDs, cartões de negócio — são território pré-construído de Document Intelligence."
+  },
+  "ss-003": {
+    "label": "Traduzir manuais de produtos escritos de inglês em texto para japonês em texto",
+    "why": "Translator é texto-para-texto; Azure Speech trata áudio em/fora incluindo tradução de fala — uma confusão de corpus de 6 contagens (par #29)."
+  },
+  "ss-004": {
+    "label": "Indexar os dados de fatura extraídos para que aplicações a jusante possam procurar e recuperar",
+    "why": "CU extrai; AI Search indexa e recupera a jusante (indexador, skillset, knowledge store) — extração e recuperação são serviços diferentes (par #22)."
+  },
+  "ss-005": {
+    "label": "Pesquisar descrições de produto por similaridade semântica em vez de correspondência exata de palavra-chave",
+    "why": "Embeddings convertem texto em vetores para comparação semântica (text-embedding-3-large) — recuperam e comparam, nunca criam conteúdo (par #18)."
+  },
+  "ss-006": {
+    "label": "Responder a perguntas em forma livre sobre uma foto que o utilizador anexa à sua mensagem de chat",
+    "why": "Imagem como entrada precisa de um modelo multimodal implementado lendo partes de conteúdo de imagem; geração de imagem vai na outra direção, e ImageAnalysisClient/Vision devolve funcionalidades fixas — uma API e ponto de terminação diferentes (par #23)."
+  },
+  "ss-007": {
+    "label": "Ler texto impresso de um sinal de rua fotografado para que a aplicação o possa mostrar como texto simples",
+    "why": "OCR/Leitura é uma capacidade Vision central em imagens gerais; Document Intelligence visa layouts de formulário estruturados, não texto incidental de cena de rua."
+  },
+  "ss-008": {
+    "label": "Detetar automaticamente o idioma de origem do texto que chega antes de o traduzir para inglês, na mesma chamada",
+    "why": "A deteção automática de idioma do Translator executa inline como parte do pipeline de tradução; Language Detection do Idioma de IA é uma funcionalidade de análise textual independente usada fora de uma chamada de tradução."
+  },
+  "ss-009": {
+    "label": "Treinar um modelo nas tuas próprias fotos rotuladas para distinguir peças defeituosas das aceitáveis numa linha de produção",
+    "why": "Custom Vision constrói especificamente classificação/detecção a partir das tuas próprias imagens rotuladas com um loop de treino gerido; Vision geral apenas devolve as suas funcionalidades pré-construídas fixas e não pode ser retrined nos teus dados."
+  },
+  "ss-010": {
+    "label": "Combinar uma foto de scanner de crachá contra um elenco de fotos de funcionários para confirmar a identidade da pessoa",
+    "why": "Verificação 1:1 e identificação 1:N contra rostos inscritos é a capacidade dedicada de Face; análise Vision geral não tem funcionalidade de correspondência de identidade."
+  },
+  "ss-011": {
+    "label": "Persistir frases-chave, sentimento e entidades extraídas de um pipeline de documentos numa loja que aplicações a jusante possam procurar",
+    "why": "Um skillset pode chamar Idioma de IA para enriquecer cada documento, mas a knowledge store persistida e consultável pertence a AI Search — enriquecimento e recuperação são etapas de pipeline separadas."
+  },
+  "ss-012": {
+    "label": "Puxar sentimento, frases-chave e entidades nomeadas diretamente de texto de bilhete de suporte bruto",
+    "why": "Sentimento, extração de frase-chave e NER são funcionalidades de análise textual de Idioma de IA; AI Search apenas consome essa saída como etapa de enriquecimento, não a produz."
+  },
+  "ss-013": {
+    "label": "Sinalizar um pico incomum nas leituras de vibração de um sensor de fábrica conforme fluem ao longo do tempo",
+    "why": "Deteção de anomalia univariada/multivariada de propósito específico sobre dados de série temporal é o trabalho do Anomaly Detector; uma workspace ML geral exigiria que tu desenhes, treines e gerencies esse modelo."
+  },
+  "ss-014": {
+    "label": "Obter uma transcrição com turnos de falante com carimbo de tempo a partir de uma chamada de suporte de duas pessoas gravada",
+    "why": "Fala-em-texto com diarização de falante executa diretamente em áudio bruto como uma capacidade Speech; Idioma de IA apenas trabalha com texto que já foi transcrito."
+  },
+  "ss-015": {
+    "label": "Transformar um bloco de cópia de marketing inglesa escrita em áudio narrado para uma voz em vídeo",
+    "why": "Síntese neural de texto-para-fala é uma capacidade de Speech nativa; produzir áudio falado a partir do Azure OpenAI precisa de uma implementação multimodal/realtime separada, e Translator nunca toca áudio."
+  },
+  "ss-016": {
+    "label": "Sinalizar linguagem violenta ou odiente em mensagens de chat submetidas pelo utilizador antes de chegarem ao modelo",
+    "why": "Prompt Shields e categorias de moderação são o trabalho de Content Safety, aplicado à entrada e saída igualmente; deteção de PII de Idioma de IA é uma funcionalidade de privacidade, não um classificador de conteúdo prejudicial."
+  },
+  "ss-017": {
+    "label": "Desfocar ou redigir o número de telefone e endereço de email de um cliente antes de uma transcrição de chat ser armazenada",
+    "why": "Deteção e Redação de PII é uma funcionalidade dedicada de Idioma de IA para detetar e mascarar dados pessoais; Content Safety classifica categorias de conteúdo prejudicial — uma preocupação de segurança, não privacidade."
+  },
+  "ss-018": {
+    "label": "Armazenar e consultar milhões de vetores de embedding já computados para que buscas de vizinho mais próximo regressem em milissegundos",
+    "why": "Pesquisa de vetores e armazenamento no tempo de consulta é o trabalho de AI Search; modelos de Embeddings apenas produzem os vetores em primeiro lugar, não os indexam ou recuperam."
+  },
+  "ss-019": {
+    "label": "Encaminhar uma chamada de ferramenta de um agente em execução para uma API de tempo meteorológico em direto e alimentar o resultado de volta a mesma conversa",
+    "why": "Invocar uma ferramenta/ferramenta personalizada de função a meio da execução contra uma API externa em direto é a camada de orquestração do Agent Service; uma chamada de conclusão de chat simples não tem um loop de invocação de ferramenta construído."
+  },
+  "ss-020": {
+    "label": "Anexar um índice de pesquisa existente a um agente Foundry para que as suas respostas se fundamentem e citem os teus documentos indexados",
+    "why": "Conectar uma fonte de conhecimento no comportamento de fundamentação/citação de um agente é configurado no Agent Service; o índice em si apenas serve consultas, não é proprietário da personalidade, ferramentas ou fiação de conhecimento do agente."
+  },
+  "ss-021": {
+    "label": "Gerar uma imagem mockup de produto fotorealista a partir de uma descrição em inglês simples, sem foto de início",
+    "why": "Geração de texto-para-imagem é o trabalho de DALL-E; um modelo de chat multimodal lê imagens como entrada mas não pinta novas, e Vision apenas analisa imagens que já existem."
+  },
+  "ss-022": {
+    "label": "Executar um assistente sensível ao custo numa implementação orçamentária que apenas trata pedidos curtos e simples",
+    "why": "Um modelo de linguagem de classe Phi troca alguma capacidade por um footprint muito menor e custo mais baixo, o que se encaixa em pedidos leves e limitados pelo orçamento; implementar um modelo fronteiriço completo para texto simples é a armadilha clássica de sobre-aprovisionamento."
+  },
+  "ss-023": {
+    "label": "Deixar um utilizador falar uma pergunta e ouvir uma resposta falada de volta no mesmo turno de baixa latência, sem chamadas de reconhecedor/sintetizador separadas para conectar",
+    "why": "gpt-realtime / Voice Live é a sessão de fala-em, fala-fora única de baixa latência; o distrator Azure AI Speech significa conectar o pipeline manual SpeechRecognizer→process→SpeechSynthesizer tu próprio, o que perde latência e integração — exatamente o que a API realtime substitui."
+  },
+  "ss-024": {
+    "label": "Obter a resposta do modelo implementado bem-formada JSON correspondendo a um esquema que forneces, sem prosa extra à sua volta",
+    "why": "Saída estruturada é um parâmetro por chamada num modelo de chat/conclusão implementado; ajuste fino permanentemente muda pesos de modelo e é desnecessário apenas para moldar o formato de uma resposta."
+  },
+  "ss-025": {
+    "label": "Integrar o estilo de escrita de uma empresa em toda resposta futura usando centenas de transcrições de exemplo rotuladas, para nunca ter que ser re-sugerido",
+    "why": "O ajuste fino é a passagem de treino que integra o comportamento demonstrado em novos pesos para que persista através de chamadas; uma implementação de chat/conclusão de stock apenas reflete o que é reenviado no prompt dessa chamada, e um modelo multimodal muda que tipos de entrada são aceites, não se o estilo persiste sem re-sugestão."
+  },
+  "ss-026": {
+    "label": "Testar prompts falados contra um modelo capaz de áudio implementado diretamente no playground de chat Foundry, sem escrever qualquer código SDK",
+    "why": "Uma implementação multimodal capaz de áudio pode ser exercida direito no playground de chat; Voice Live/gpt-realtime é a API de sessão realtime dedicada de baixa latência, um caminho de implementação separado construído para voz conversacional contínua."
+  }
+}

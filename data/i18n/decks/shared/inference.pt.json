@@ -1,0 +1,37 @@
+{
+  "inference": {
+    "hint": "Procura pelo requisito operacional: tempo de resposta, volume de requisições, localização do dispositivo, acesso alojado, ou mudança entre treino e produção."
+  },
+  "inference-01": {
+    "label": "Retorna uma predição imediatamente para um requisição interactivo onde latência baixa importa.",
+    "why": "Retorna uma predição imediatamente para um requisição interactivo onde latência baixa importa."
+  },
+  "inference-02": {
+    "label": "Processa muitos registos armazenados em conjunto quando uma resposta imediata não é necessária.",
+    "why": "Processa muitos registos armazenados em conjunto quando uma resposta imediata não é necessária."
+  },
+  "inference-03": {
+    "label": "Executa o modelo perto da fonte de dados ou dispositivo para reduzir latência, utilização de largura de banda ou dependência de conectividade.",
+    "why": "Executa o modelo perto da fonte de dados ou dispositivo para reduzir latência, utilização de largura de banda ou dependência de conectividade."
+  },
+  "inference-04": {
+    "label": "Uma interface alojada através da qual aplicações enviam inputs e recebem outputs do modelo.",
+    "why": "Uma interface alojada através da qual aplicações enviam inputs e recebem outputs do modelo."
+  },
+  "inference-05": {
+    "label": "O tempo entre submeter um requisição de inferência e receber o seu resultado.",
+    "why": "O tempo entre submeter um requisição de inferência e receber o seu resultado."
+  },
+  "inference-06": {
+    "label": "O número de requisições de inferência ou registos processados num período de tempo.",
+    "why": "O número de requisições de inferência ou registos processados num período de tempo."
+  },
+  "inference-07": {
+    "label": "A distribuição de inputs de produção muda a partir dos dados utilizados durante o treino.",
+    "why": "A distribuição de inputs de produção muda a partir dos dados utilizados durante o treino."
+  },
+  "inference-08": {
+    "label": "A relação entre inputs e o resultado correcto muda ao longo do tempo.",
+    "why": "A relação entre inputs e o resultado correcto muda ao longo do tempo."
+  }
+}

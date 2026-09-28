@@ -1,0 +1,108 @@
+{
+ "wl-001": {
+  "label": "Redacta cinco slogans candidatos para un nuevo producto a partir de un resumen de dos líneas",
+  "why": "Crear contenido nuevo a partir de un indicador es IA generativa — nada está siendo analizado, extraído o hablado."
+ },
+ "wl-002": {
+  "label": "Un asistente que verifica el inventario, archiva la reorden y envía un correo al proveedor sin indicadores paso a paso",
+  "why": "Acción autónoma con múltiples pasos y uso de herramientas es la firma del agente — histack 'asistente persistente' vs 'una respuesta sin estado'."
+ },
+ "wl-003": {
+  "label": "Determina quién habló cuándo en una reunión registrada (diarización de hablante)",
+  "why": "Diarización separa hablantes dentro del audio — una capacidad de voz. Trampa: no genera nada, así que nunca es síntesis."
+ },
+ "wl-004": {
+  "label": "Interacciones de voz a voz de baja latencia y alta calidad para un agente de voz",
+  "why": "Frase verbatim Voice Live / gpt-realtime del corpus — audio en tiempo real entrada, audio salida."
+ },
+ "wl-005": {
+  "label": "Devuelve cuadros delimitadores alrededor de cada vehículo en grabación de cámara de tráfico",
+  "why": "Detección de objetos — cuadros delimitadores por objeto — es visión por computadora, distinta de clasificación de imagen completa."
+ },
+ "wl-006": {
+  "label": "Extrae el número de factura, total y fecha de vencimiento de miles de PDFs escaneadas",
+  "why": "Extraer campos estructurados de documentos y formularios es la carga de trabajo de extracción de información — territorio de Content Understanding en Dominio 2."
+ },
+ "wl-007": {
+  "label": "Crea una imagen de héroe fotorrealista para una página de producto a partir de una descripción de texto de dos oraciones del artículo y su configuración",
+  "why": "Producir una imagen completamente nueva a partir de un indicador de texto es el lado de imagen de la IA generativa — no hay imagen existente siendo analizada, lo que haría que sea visión por computadora."
+ },
+ "wl-008": {
+  "label": "Produce un primer borrador de una página de preguntas frecuentes de producto a partir de un esquema de viñetas de puntos de conversación",
+  "why": "Convertir un esquema escaso en prosa nueva es creación de contenido desde un indicador, la misma capacidad que los slogans de wl-001, solo aplicado a un documento más largo."
+ },
+ "wl-009": {
+  "label": "Responde una única pregunta puntual de cliente en una ventana de chat con una respuesta, sin pasos de seguimiento o herramientas invocadas",
+  "why": "Una respuesta sin estado a un indicador es IA generativa; el momento en que un sistema comienza a planificar pasos e invocar herramientas por sí solo cruza hacia IA de agentes."
+ },
+ "wl-010": {
+  "label": "Un asistente de reserva de viajes compara tarifas en tres sitios, mantiene un asiento y completa la compra una vez que se alcanza el objetivo de precio, sin confirmación humana de cada paso",
+  "why": "Comparar, decidir y ejecutar una compra de extremo a extremo sin indicación por paso es el patrón de agentes, distinto de un chatbot que solo responde."
+ },
+ "wl-011": {
+  "label": "Un asistente de soporte de TI triage un ticket entrante, ejecuta un script de diagnóstico contra el servidor afectado y escala a un humano solo si la solución automatizada falla",
+  "why": "Uso de herramientas más una acción condicional siguiente es la definición 'uso de herramientas significa el agente puede llamar capacidades externas' del examen — distinto de una única respuesta generada."
+ },
+ "wl-012": {
+  "label": "Un asistente de investigación desglosa una pregunta amplia en subpreguntas, busca múltiples fuentes para cada una e hila los hallazgos en un informe final",
+  "why": "Planificación de tareas que descompone un objetivo en pasos, ejecutados de extremo a extremo, es la definición 'planificación de tareas más finalización de tareas' de IA de agentes del examen, no una respuesta generada única."
+ },
+ "wl-013": {
+  "label": "Escanea tickets de soporte de texto libre y marca cualquier número de teléfono o dirección de correo electrónico que contengan antes de que se almacenen",
+  "why": "Detección de información personal marca spans sensibles dentro de texto no estructurado — una característica de análisis de texto, distinta de extracción de información de campos fijos extraídos de formularios y documentos."
+ },
+ "wl-014": {
+  "label": "Devuelve una lista corta clasificada de los temas principales mencionados en miles de tickets de soporte, sin producir un párrafo reescrito",
+  "why": "Extracción de palabras clave lista los términos salientes; la trampa plantada del examen es ofrecer resumir, que produciría prosa en lugar de una lista de temas."
+ },
+ "wl-015": {
+  "label": "Identifica cada nombre de persona, organización y ubicación mencionados en un lote de artículos de noticias",
+  "why": "Reconocimiento de entidad nombrada clasifica menciones dentro de texto en ejecución en personas, lugares y organizaciones — una capacidad de análisis de texto, no extracción contra esquema de documento fijo."
+ },
+ "wl-016": {
+  "label": "Condensa un documento de política de 40 páginas en una visión general de tres párrafos que captura sus puntos clave",
+  "why": "Resumen comprime texto existente en prosa nueva pero fiel — análisis de texto, no IA generativa, porque la salida es fundamentada en y restringida por el documento de origen."
+ },
+ "wl-017": {
+  "label": "Transcribe un lote de grabaciones de entrevista cargadas una vez que todas hayan terminado de cargarse, en lugar de mientras se habla",
+  "why": "La transcripción por lotes procesa audio pregrabado de manera asincrónica — todavía una capacidad de voz, solo el hermano en línea del reconocimiento en tiempo real, no una tarea de texto o extracción."
+ },
+ "wl-018": {
+  "label": "Produce audio narrado de sonido natural para un módulo de aprendizaje electrónico a partir de un guión escrito",
+  "why": "Convertir texto escrito en audio hablado es síntesis de texto a voz — el lado de salida de la carga de trabajo de voz, espejando el caso de entrada/salida de audio de wl-004."
+ },
+ "wl-019": {
+  "label": "Verifica que la persona frente a una cámara de inicio de sesión sea un ser humano vivo, no una foto impresa o una repetición de video",
+  "why": "Detección de vivacidad de rostro se defiende contra ataques de presentación analizando la imagen de cámara en vivo — una capacidad de seguridad de visión por computadora, distinta de la coincidencia de identidad de verificación facial."
+ },
+ "wl-020": {
+  "label": "Detecta cambios de escena y genera marcadores de capítulo analizando los fotogramas visuales de un video de entrenamiento cargado",
+  "why": "Derivar saltos de capítulo de lo que los fotogramas muestran es análisis visual del video; el mismo metraje cambia solo a voz cuando el entregable es la transcripción hablada en su lugar."
+ },
+ "wl-021": {
+  "label": "Etiqueta una foto cargada con una única categoría de imagen completa como 'playa' o 'calle de la ciudad', sin ubicaciones por objeto necesarias",
+  "why": "Clasificación de imagen asigna una etiqueta a la imagen completa, a diferencia de detección de objetos de wl-005, que devuelve cuadros delimitadores por objeto — ambas son visión por computadora, pero técnicas distintas."
+ },
+ "wl-022": {
+  "label": "Ejecuta habilidades de enriquecimiento de IA sobre miles de informes e imágenes escaneados durante la indexación para que contenido previamente insearchable se vuelva buscable",
+  "why": "Esto es minería de conocimiento — la definición de Azure AI Search del examen de usar habilidades de IA para exponer información de contenido no estructurado en un índice de búsqueda."
+ },
+ "wl-023": {
+  "label": "Devuelve un conjunto de campos definidos por esquema — razón de llamada, resolución y acción de seguimiento — de un lote de llamadas de soporte registradas",
+  "why": "Extraer un esquema de negocios fijo de contenido de audio es extracción estructurada de Content Understanding; el entregable es campos definidos, no una transcripción, que es lo que haría que sea voz."
+ },
+ "wl-024": {
+  "label": "Extrae pares clave-valor y estructura de tabla de un lote mixto de contratos, formularios de ingreso y recibos escritos a mano usando un esquema reutilizable",
+  "why": "Extracción de campo y tabla estructurada entre tipos de documentos variados es territorio de modelo de diseño/personalizado de Document Intelligence — la misma carga de trabajo que facturas de wl-006, aplicada a una mezcla de documentos más amplia."
+ },
+ "workload-sort": {
+  "hint": "Pregunta qué es realmente el entregable: contenido completamente nuevo desde un indicador (generativo), acción autónoma con múltiples pasos y herramientas (de agente), un juicio o resumen sobre texto existente (análisis de texto), cualquier cosa que toque audio hablado (voz), un juicio sobre un marco de imagen o video (visión por computadora), o un conjunto fijo de campos estructurados/un índice extraído de documentos o contenido mixto (extracción de información).",
+  "note": "Varias solicitudes podrían sonar como dos cargas de trabajo. El desempate es siempre el entregable: contenido nuevo vs. una acción autónoma vs. análisis de texto existente vs. audio entrada/salida vs. juicio sobre píxeles vs. conjunto de campo estructurado.",
+  "zones[0].def": "Crear contenido nuevo — texto, imágenes, código o audio — desde un indicador, en lugar de analizar o actuar sobre contenido que ya existe.",
+  "zones[1].def": "Planeando autónomamente, usando herramientas y tomando acción con múltiples pasos hacia un objetivo, yendo más allá de una única respuesta sin estado.",
+  "zones[2].def": "Analizando texto escrito para exponer significado ya presente en él — sentimiento, frases clave, entidades, información personal o resumen fundamentado — sin generar contenido nuevo.",
+  "zones[3].def": "Convertir entre audio hablado y texto, o trabajar directamente con streams de audio — reconocimiento, síntesis, traducción y diarización.",
+  "zones[4].def": "Analizando el contenido visual de imágenes y fotogramas de video — clasificando, detectando objetos, verificando rostros o leyendo una escena.",
+  "zones[5].def": "Extrayendo un conjunto fijo de campos estructurados o un índice buscable de documentos, formularios o contenido multimodal."
+ }
+}

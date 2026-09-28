@@ -1,0 +1,74 @@
+{
+ "ft-01": {
+  "a.text": "Platform takımı, tüm yapay zeka takımları için paylaşılan güvenlik, bağlantılar, hesaplama ve kotayı yönetmek için bir yere ihtiyaç duyar.",
+  "a.why": "Hub, paylaşılan kaynaklara sahip üst düzey işbirliği ve yönetim konteynerdir — histack tuzağı #3.",
+  "b.text": "Bir ürün takımı, dağıtımların, ajanların, verilerin ve değerlendirmelerin aslında yaşadığı yere ihtiyaç duyar.",
+  "b.why": "Bir proje bir hub içinde yaşar ve gerçekte oluşturduğun yerdir — dağıtımlar, ajanlar, veri, değerlendirmeler."
+ },
+ "ft-02": {
+  "a.text": "Senin kod 'chat-app-prod' — dağıtım zamanında seçilen özel ad — chat.completions.create'de model argümanı olarak iletir.",
+  "a.why": "Deployment adı — temel model adı değil — senin kodunun çağırdığı şeydir (histack'ın tam tuzağı; corpus çifti #19).",
+  "b.text": "Foundry kataloğu gpt-4o'yu benchmark puanlarıyla dağıtılmadan önce listeler.",
+  "b.why": "gpt-4o katalogdaki temel model id'sidir; yalnızca adlandırılmış bir dağıtım aracılığıyla çağrılabilir olur."
+ },
+ "ft-03": {
+  "a.text": "Bir geliştirici, istemciyi Foundry kaynağının HTTPS adresini, bir ortam değişkeninden okunan, her istek hangi Azure kaynağını hedef aldığını bilsin diye yapılandırır.",
+  "a.why": "Endpoint (azure_endpoint) SDK'ın hedeflediği kaynak adresidir — çağrının nereye gönderildiğini tanımlar, bunu göndermesine izin vereni değil.",
+  "b.text": "Bir geliştirici bir sırrı kaynak dosyasının dışına ayrı bir ortam değişkenine taşır, bu nedenle arayan'ın kimliğini kanıtlayan kimlik bilgisi asla sabit kodlanmaz.",
+  "b.why": "Kimlik bilgisi api_key (os.getenv('AZURE_OPENAI_KEY')) olarak iletilir ve arayan'ı doğrulandırır — yönlendirmeden farklı bir gizlilik ve güvenlik alışkanlığı."
+ },
+ "ft-04": {
+  "a.text": "Bir Foundry kaynağı ad, instructions ve ekli tool'lar ile bir kere oluşturulur, sonra aynı sohbeti kullanan sonraki istekler tarafından birçok daha sonra referans alındı.",
+  "a.why": "Bir ajan kalıcı, adlandırılmış bir kaynaktır — instructions ve tool'lar ile PromptAgentDefinition aracılığıyla oluşturulur, sonra tekrar tekrar çağrılır.",
+  "b.text": "Bir script messages=[{'role': 'user', 'content': 'Bu davayı özetle.'}] gönderir ve düz bir completions isteğinden bir yanıt alır, sunucu'da hiçbir şey kaydedilmez ve thread veya tool'lar yoktur.",
+  "b.why": "Düz bir chat.completions.create tek durum olmayan bir istektir — hiçbir devam ettirilen instructions, tool'lar veya kimlik çağrılar arasında kalır."
+ },
+ "ft-05": {
+  "a.text": "'Her zaman müşteri detaylarını sabit bir JSON şeklinde döndür ve yalnızca İK politikası sorularını yanıtla' — her dönüş için kalıcı bir kural.",
+  "a.why": "Persona, ton, kurallar ve koruma önlemleri sistem istemi'ne aittir — histack'ın 'tek en çok sınanması ayrım'; dikkedilmiş yanlış cevap davranışı kullanıcı istemi veya dağıtım ayarlarına koyar.",
+  "b.text": "'Bu çeyreğin devamsızlık raporunu benim için özetle' — bir istek, bu dönüş yalnızca.",
+  "b.why": "Kullanıcı istemi bu dönüşün isteğini taşır; bellek için tekrarlanan önceki model yanıtları asistan mesajlarıdır."
+ },
+ "ft-06": {
+  "a.text": "Bir model dağıtıldıktan sonra, bir geliştirici bir istem doğrudan Foundry portalı'na yazar ve hiçbir Python satırı yazmadan ekranda yanıtı okur.",
+  "a.why": "Oyun alanı herhangi bir üretim kodu ajani çağırmadan önce hızlı prototipleme ve doğrulama için Foundry'ın isteğe bağlı, kod yok ortamıdır.",
+  "b.text": "Aynı geliştirici Code sekmesinin snippet'ini kopyalar, bir AzureOpenAI istemcisi oluşturan ve uygulamanın gerçekten çalıştıracağı bir Python dosyasından chat.completions.create çağrı yapan.",
+  "b.why": "Code sekmesi programlı erişim deseni verir — SDK çağrısı bunu doğrulandıran portal oturumu değil, bunu yayınlayan şeydir."
+ },
+ "ft-07": {
+  "a.text": "Bir istem ajanı, kullanıcı ne isterse istesin, her zaman resmi bir tonla yanıt vermesi ve rakip fiyatlandırmasını tartışmayı reddetmesi için yapılandırılır.",
+  "a.why": "PromptAgentDefinition'a sağlanan Persona ve davranış kuralları instructions'dır — ajanın nasıl yanıt verdiğini, ne yapabileceğini değil.",
+  "b.text": "Aynı ajan, yalnızca zaten bildiği şeye bağlı kalmak yerine canlı bilgileri araması için web araması ve dosya araması verilir.",
+  "b.why": "Web araması ve dosya araması Build > Tools kataloğundan ekli'dir — ajan çağırabileceği yetenekler, instructions'ından ayrı."
+ },
+ "ft-08": {
+  "a.text": "Model her zaman 5.000 geçmiş örneğinden öğrenilen firmanın ev stilinde yanıt vermelidir.",
+  "a.why": "Ince ayar örnekleri üzerinde ağırlıkları yeniden eğitir — dayanıklı stil/davranış değişikliği için araç.",
+  "b.text": "Model bu ayın fiyat listesinden, haftalık değişiklik, yeniden eğitim olmadan yanıt vermelidir.",
+  "b.why": "RAG çıkarım zamanında alınan güncel org verilerini enjekte eder — 'modeli cevapların güncel kalması için kendi verilerini besle'."
+ },
+ "ft-09": {
+  "a.text": "Bir toplu iş yüklü, önceden ayrılan sabit saatlik bir maliyetle tahmin edilebilir, garantili bir işleme hızı gerekir.",
+  "a.why": "PTU, tahmin edilebilir, yüksek hacimli iş yapmak için tahmin edilebilir saatlik kapasite ayırır — rezervasyon için ödeme yapar, gönderilen token sayısı değil.",
+  "b.text": "Etkileşimli bir sohbet uygulaması tahmin edilemez trafik'e ihtiyaç duyar ve saatlik ayrılmış kapasite yerine bölgesel, veri bölgesi veya küresel işleme seçenekleri ile token başına ödeme faturası",
+  "b.why": "Standart dağıtım en geniş yetenek aralığını ve esnek token başına faturalandırmayı sunan tercih edilen seçenektir — sınavın en çok sınanması dağıtım kontrastı (çift #27)."
+ },
+ "ft-10": {
+  "a.text": "Sağlayıcı sözleşmeleri için özel bir alan şeması yazıldı ve herhangi bir belge işlenmeden önce kayıt edilmelidir.",
+  "a.why": "Alan şemasından analizleyici oluşturma/tanımlama kurulum'dur, yürütme değil.",
+  "b.text": "Analizleyici zaten var; kod onu bir sözleşme URL'sine karşı çalıştırır ve yapılandırılmış sonuç için yoklar.",
+  "b.why": "Yürütme begin_analyze(analyzer_id=…, inputs=[AnalysisInput(url=…)]) — corpus belgeleri belge yöntemi adı takası (çift #26)."
+ },
+ "ft-11": {
+  "a.text": "Doğal dilde istediğin alanları açıkla ve PDF'lerin, görüntülerin ve toplantı seslerinin bir karışımından yapılandırılmış JSON'a çıkar.",
+  "a.why": "CU, alanları doğal dilde açıklamana izin verir, bir LLM çok modlu giriş üzerinde akıl yürütür — histack'ın ipucu: 'serbest form veya belge olmayan girdi'.",
+  "b.text": "Hazır oluşturulmuş bir model kullanarak yüksek hacimli standart fatura ve makbuzlarda toplamları çıkar.",
+  "b.why": "Bilinen form türlerinden belirleyici çıkarma — faturalar, makbuzlar, Kimlikler, kartvizitler. 'Çıkarma tuzağı', histack'ın favorisidir."
+ },
+ "ft-12": {
+  "a.text": "Perakende takımı raf fotoğrafları gönderir ve kendi şemaları tarafından tanımlandığı adı, fiyatı ve miktarı gibi yapılandırılmış ürün alanlarını geri alır.",
+  "a.why": "Content Understanding ham, yapılandırılmamış veya çok modlu giriş, bir şemanın istediği belirli yapılandırılmış çıktıya dönüştürür.",
+  "b.text": "Bir RAG sohbetbotu, anlamsal benzerlik tarafından sorgulanabilecek bir bilgi tabanına ihtiyaç duyar, böylece bir sohbet modeli alınan pasajlarda cevaplarını temellendirmek.",
+  "b.why": "Azure AI Search içeriği dizinler — genellikle gömme aracılığıyla — ve sorgu zamanında alır; RAG desenleri gömülemeyi temellendirmek için bir sohbet modelini AI Search ile çiftler, belge alanlarını çıkarmaktan farklı bir iş."
+ }
+}

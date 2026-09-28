@@ -1,0 +1,84 @@
+{
+ "iii-tb-01": {
+  "label": "El tokenizador solo se verifica para manejar de forma segura las entradas de emoji.",
+  "why": "El aislamiento de componentes individuales es todo el propósito de esta disciplina — el tokenizador o maneja la entrada o no, independientemente de cualquier cosa posterior."
+ },
+ "iii-tb-02": {
+  "label": "Una función que estandariza cómo se representan diferentes puntos de datos se verifica completamente por sí sola, antes de ser integrada en nada posterior.",
+  "why": "Aislar un componente individual detecta errores mientras son más baratos de corregir, antes de que una falla sutil se amplíe a través de millones de registros y sesgue silenciosamente los resultados — la disciplina se mantiene aquí aunque la función más tarde se ejecute como parte de un pipeline mayor."
+ },
+ "iii-tb-03": {
+  "label": "Una rutina de puntuación personalizada enterrada en el pipeline se ejecuta contra un puñado de entradas conocidas y se verifica línea por línea para la salida correcta, antes de que el resto del sistema exista para llamarla.",
+  "why": "Verificar la salida de una rutina contra valores conocidos-correctos, antes de que el resto del sistema exista, es la puerta más estrecha y temprana — distinto de la siguiente disciplina, que solo comienza una vez que múltiples piezas están conectadas."
+ },
+ "iii-tb-04": {
+  "label": "Recuperador, modelo e interfaz se ejercitan juntos de extremo a extremo; fallos emergentes aparecen solo en este nivel.",
+  "why": "Los fallos que solo aparecen una vez que los componentes se ejecutan juntos son la firma de esta disciplina — ninguna verificación de componente individual los habría detectado."
+ },
+ "iii-tb-05": {
+  "label": "Las piezas de un sistema de inventario se aprueban limpiamente por sí solas, luego el sistema completo comienza a hacer pedidos excesivos de productos vinculados a ciertos grupos demográficos una vez que cada componente se ejecuta junto.",
+  "why": "El problema solo aparece una vez que el sistema completo se combina, por lo que la solución también tiene que aplicarse a nivel combinado — una revisión componente por componente la habría pasado por alto por completo."
+ },
+ "iii-tb-06": {
+  "label": "Un modelo de aprobación de préstamos devuelve resultados diferentes en diferentes hardware, debido a diferencias de precisión de punto flotante que solo aparecen una vez que el sistema completo se ejecuta de extremo a extremo.",
+  "why": "La discrepancia es un subproducto de combinar componentes en hardware real — la respuesta de gobernanza es documentar el rango de varianza y establecer límites de decisión aceptables, no perseguirla en ninguna pieza en aislamiento."
+ },
+ "iii-tb-07": {
+  "label": "Gran precisión en los datos en los que se entrenó, pobre en registros que nunca ha visto.",
+  "why": "Esta es la verificación de generalización — la brecha entre comportamiento de entrenamiento y comportamiento en datos nunca vistos — distinto del conjunto de prueba/reserva, que permanece intacto hasta que la afinación termine y luego proporciona la estimación de error final e imparcial del modelo."
+ },
+ "iii-tb-08": {
+  "label": "Un modelo alcanza precisión casi perfecta en su conjunto de entrenamiento, luego funciona de forma inconsistente una vez que se ejecutan nuevos grupos de pacientes fuera de ese conjunto.",
+  "why": "La brecha de entrenamiento a datos no vistos es exactamente para lo que existe esta disciplina; una métrica de equidad en cambio compararía tasas de error entre grupos protegidos en el mismo conjunto de datos, que este escenario nunca hace."
+ },
+ "iii-tb-09": {
+  "label": "Las predicciones de un modelo oscilan ampliamente dependiendo de qué porción de los datos de entrenamiento ve; otro apenas se mueve del promedio sin importar qué se ingrese.",
+  "why": "Oscilaciones amplias entre porciones de entrenamiento versus indiferencia plana a los datos son las dos firmas de fallo que esta disciplina observa durante el desarrollo, mucho antes de que alguien hable sobre un número de rendimiento final."
+ },
+ "iii-tb-10": {
+  "label": "La disparidad de tiempo de respuesta se mide entre regiones de usuario bajo carga.",
+  "why": "La equidad de tiempo de procesamiento convierte un requisito de negocio/equidad en una métrica medible, predefinida — distinto de una verificación de volteador de atributos protegidos, que observa contenido de salida, no latencia."
+ },
+ "iii-tb-11": {
+  "label": "Se ejecutan verificaciones de muestreo estadístico y análisis de decisiones contra las salidas del sistema para confirmar que cumplen con los objetivos de precisión y confiabilidad establecidos al comienzo del proyecto.",
+  "why": "El muestreo estadístico y el análisis de decisiones son formas reconocidas de probar si un sistema de IA responsable cumple sus objetivos; puntuar un problema por probabilidad por severidad es una herramienta de priorización de gestión de riesgos, no una forma de probar el sistema en sí."
+ },
+ "iii-tb-12": {
+  "label": "Los números de equidad y confiabilidad en los que se aprobó un proyecto hace meses se verifican contra lo que el sistema está produciendo hoy, usando las mismas métricas que todos acordaron.",
+  "why": "Mantener los resultados a las métricas acordadas de antemano, no a cualquier número que suceda verse mejor, es lo que mantiene esta disciplina honesta e impide que los equipos cambien silenciosamente una medida más halagadora."
+ },
+ "iii-tb-13": {
+  "label": "Un extraño investiga si el registro específico de un paciente estuvo en el conjunto de entrenamiento.",
+  "why": "Un extraño aprendiendo si un registro específico estuvo en el conjunto de entrenamiento es un fallo de prueba de seguridad — distinto de la verificación de generalización, que solo le importa la precisión en datos no vistos, no quién estuvo en el conjunto de entrenamiento."
+ },
+ "iii-tb-14": {
+  "label": "Verificaciones de estilo penetración buscan formas en que un atacante podría robar los pesos del modelo o reconstruir porciones de los datos de entrenamiento.",
+  "why": "Apuntar al robo de pesos y reconstrucción de datos de entrenamiento es una vista desde los ojos del atacante, distinto de una verificación de generalización, que nunca considera si alguien está intentando extraer algo del modelo."
+ },
+ "iii-tb-15": {
+  "label": "Los testers de penetración descubren que entradas cuidadosamente elaboradas pueden voltear el diagnóstico de un modelo ya preciso en aproximadamente uno de cada ocho casos.",
+  "why": "Entradas adversariales elaboradas causando mala clasificación es un hallazgo de prueba de seguridad; la respuesta de gobernanza es documentarlo como una limitación conocida y agregar validación de entrada y detección de anomalías, no descartarlo porque la precisión clínica sigue cumpliendo el objetivo."
+ },
+ "iii-tb-16": {
+  "label": "Atributo protegido volteado, todo lo demás constante, salida observada.",
+  "why": "Observar si voltear solo un atributo protegido cambia la salida es una verificación de equidad contrafáctica — distinto de una sonda de inferencia de membresía, que pregunta si un registro estuvo en el conjunto de entrenamiento en absoluto."
+ },
+ "iii-tb-17": {
+  "label": "El archivo de cumplimiento de un hospital muestra que se ejecutaron y registraron verificaciones de equidad, más un registro de que las decisiones pudieron ser explicadas a revisores — evidencia de que la organización cumplió su deber de diligencia.",
+  "why": "Registrar que las verificaciones de equidad y explicación realmente se ejecutaron es lo que las convierte en evidencia regulatoria defensible — distinto de una pista de auditoría de seguridad, que documenta resistencia a ataques, no calidad de equidad o explicación."
+ },
+ "iii-tb-18": {
+  "label": "La decisión de un modelo se traduce en términos en los que un clínico realmente pueda actuar, no solo una puntuación de probabilidad.",
+  "why": "Traducir una decisión en términos que un interesado pueda usar, en lugar de dejarla como una puntuación de probabilidad sin procesar, es la mitad de esta zona que un modelo de caja negra aún puede fallar incluso después de pasar cada número de precisión y equidad."
+ },
+ "iii-testing": {
+  "hint": "Pregunta qué está verificando la escena, no solo qué datos usa. La validación aquí significa una cosa solo: ¿el modelo generaliza más allá de lo que entrenó? El conjunto de datos que proporciona la estimación de error final e imparcial de un modelo es un concepto diferente, probado de frente en Pipeline Twins.",
+  "note": "Estas son verificaciones de tiempo de desarrollo y previas al lanzamiento. Lo que sucede después de que un sistema entra en vivo y permanece en vivo es un tablero diferente.",
+  "zones[0].def": "Verificar un componente de la canalización por sí solo — un tokenizador, una función de normalización, una rutina de puntuación — antes de que sea conectado a nada más. Detecta errores mientras son lo más baratos de corregir.",
+  "zones[1].def": "Ejercitar componentes juntos de extremo a extremo, observando fallos que solo emergen una vez que las piezas se combinan — desajustes, cuellos de botella, o sesgo que ningún componente individual mostró por sí solo.",
+  "zones[2].def": "Verificar si el modelo entrenado generaliza más allá de los datos en los que se entrenó: la brecha entre comportamiento de conjunto de entrenamiento y comportamiento en datos que nunca ha visto. Una verificación de tiempo de desarrollo contra sobreajuste — no la última palabra del modelo sobre rendimiento.",
+  "zones[3].def": "Medir el sistema contra las métricas específicas, predefinidas — precisión, umbrales de confiabilidad — que traducen los objetivos de negocio, ética y regulatorios del proyecto en números que todos aprobaron.",
+  "zones[4].def": "Investigar si el modelo puede ser atacado: pesos robados, datos de entrenamiento reconstruidos, salidas manipuladas por entradas elaboradas. Resiliencia contra compromiso deliberado o accidental.",
+  "zones[5].def": "Verificar si los resultados son justos entre grupos protegidos, y si una decisión puede ser explicada en términos significativos para las personas que tienen que confiar en ella."
+ }
+}

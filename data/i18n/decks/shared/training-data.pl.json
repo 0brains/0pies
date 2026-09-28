@@ -1,0 +1,101 @@
+{
+  "training-data": {
+    "hint": "Ważne rozróżnienie to rola danych, format lub dopasowanie do rzeczywistej populacji; te szczegóły określają, co można się nauczyć i czy ocena jest wiarygodna."
+  },
+  "training-data-01": {
+    "label": "Część danych używana do nauczenia się parametrów modelu.",
+    "why": "Część danych używana do nauczenia się parametrów modelu."
+  },
+  "training-data-02": {
+    "label": "Wstrzymane dane używane podczas tworzenia do porównania wyborów i dostrojenia hiperparametrów.",
+    "why": "Wstrzymane dane używane podczas tworzenia do porównania wyborów i dostrojenia hiperparametrów."
+  },
+  "training-data-03": {
+    "label": "Nietkniętych danych używanych na koniec do oszacowania wydajności na niewidocznych przykładach.",
+    "why": "Nietkniętych danych używanych na koniec do oszacowania wydajności na niewidocznych przykładach."
+  },
+  "training-data-04": {
+    "label": "Przykłady, które zawierają odpowiedź celową wymaganą dla nadzorowanego uczenia.",
+    "why": "Przykłady, które zawierają odpowiedź celową wymaganą dla nadzorowanego uczenia."
+  },
+  "training-data-05": {
+    "label": "Przykłady bez odpowiedzi celowych, często używane do nienadzorowanego lub samonautomatycznego uczenia.",
+    "why": "Przykłady bez odpowiedzi celowych, często używane do nienadzorowanego lub samonautomatycznego uczenia."
+  },
+  "training-data-06": {
+    "label": "Dane zorganizowane w zdefiniowane pola, wiersze, kolumny lub rekordy.",
+    "why": "Dane zorganizowane w zdefiniowane pola, wiersze, kolumny lub rekordy."
+  },
+  "training-data-07": {
+    "label": "Zawartość swobodna, taka jak tekst, obrazy, audio i wideo.",
+    "why": "Zawartość swobodna, taka jak tekst, obrazy, audio i wideo."
+  },
+  "training-data-08": {
+    "label": "Przykłady, które odzwierciedlają osoby, warunki i sprawy, które model będzie napotykać w użytku.",
+    "why": "Przykłady, które odzwierciedlają osoby, warunki i sprawy, które model będzie napotykać w użytku."
+  },
+  "training-data-09": {
+    "label": "Informacje niedostępne w czasie przewidywania przypadkowo wchodzą w trening i zawyżają zmierzoną wydajność.",
+    "why": "Informacje niedostępne w czasie przewidywania przypadkowo wchodzą w trening i zawyżają zmierzoną wydajność."
+  },
+  "training-data-10": {
+    "label": "Jedna klasa celowa pojawia się znacznie częściej niż inne, co czyni dokładność potencjalnie mylącą.",
+    "why": "Jedna klasa celowa pojawia się znacznie częściej niż inne, co czyni dokładność potencjalnie mylącą."
+  },
+  "training-data-11": {
+    "label": "Przypisywanie surowym przykładom etykiet zgodnych z prawdą, aby model uczony z nadzorem miał odpowiedzi, z których może się uczyć.",
+    "why": "Jakość etykiet ogranicza jakość modelu: zaszumione lub niespójne etykiety uczą model błędnego odwzorowania niezależnie od ilości danych."
+  },
+  "training-data-12": {
+    "label": "Zweryfikowana poprawna odpowiedź, z którą porównuje się predykcję modelu podczas treningu i ewaluacji.",
+    "why": "Bez zaufanej odpowiedzi odniesienia ani strata treningowa, ani metryki ewaluacji nic nie znaczą — obie są mierzone względem niej."
+  },
+  "training-data-13": {
+    "label": "Tworzenie dodatkowych przykładów treningowych przez przekształcanie istniejących, np. odbicia obrazów lub parafrazy tekstu.",
+    "why": "Rozszerza mały zbiór danych i uczy niewrażliwości na nieszkodliwe wariacje, ograniczając przeuczenie bez zbierania nowych danych."
+  },
+  "training-data-14": {
+    "label": "Sztucznie wygenerowane przykłady używane, gdy prawdziwe dane są skąpe, wrażliwe lub brakuje w nich rzadkich przypadków.",
+    "why": "Wypełniają luki, których nie da się pokryć zbieraniem danych — rzadkie zdarzenia, rekordy chronione prywatnością — ale dziedziczą założenia swojego generatora."
+  },
+  "training-data-15": {
+    "label": "Równoważenie przekrzywionego zbioru danych przez duplikowanie lub generowanie dodatkowych przykładów klasy mniejszościowej.",
+    "why": "Daje rzadkiej klasie wystarczającą wagę, by można było się jej nauczyć, ryzykując przeuczenie na powtarzanych lub syntetycznych przykładach mniejszości."
+  },
+  "training-data-16": {
+    "label": "Równoważenie przekrzywionego zbioru danych przez odrzucenie części przykładów klasy większościowej.",
+    "why": "Tanio wyrównuje wpływ klas, ale przy okazji wyrzuca prawdziwy sygnał z klasy większościowej."
+  },
+  "training-data-17": {
+    "label": "Pojedynczy mierzalny atrybut wejściowy, taki jak wiek, wartość piksela czy kwota transakcji, z którego uczy się model.",
+    "why": "Modele widzą tylko te cechy, które im podano; to, co uwzględniono i jak zakodowano, wyznacza granice tego, czego można się nauczyć."
+  },
+  "training-data-18": {
+    "label": "Przekształcanie surowych danych wejściowych w bardziej informatywne atrybuty, takie jak proporcje, przedziały czy kodowania, przed treningiem.",
+    "why": "Dobre cechy pochodne pozwalają prostszym modelom uchwycić wzorzec; złe zmuszają złożone modele do odkrywania go na nowo z szumu."
+  },
+  "training-data-19": {
+    "label": "Rotacyjne wybieranie, która część danych jest odkładana, tak aby każdy przykład służył zarówno do treningu, jak i do ewaluacji.",
+    "why": "Uśrednianie po kilku odłożonych foldach daje stabilniejsze oszacowanie generalizacji niż pojedynczy podział, zwłaszcza na małych zbiorach danych."
+  },
+  "training-data-20": {
+    "label": "Kontrole kompletności, poprawności, spójności i aktualności stosowane, zanim dane zostaną użyte do treningu.",
+    "why": "Wady płyną w dół strumienia: model trenowany na niekompletnych lub niespójnych rekordach koduje te wady jako swoje zachowanie."
+  },
+  "training-data-21": {
+    "label": "Systematyczne przekrzywienie wprowadzane, gdy metoda zbierania danych faworyzuje niektóre osoby lub przypadki kosztem innych.",
+    "why": "Model może być sprawiedliwy tylko wobec przypadków, które widział; przekrzywione zbieranie daje przekrzywione predykcje niezależnie od jakości algorytmu."
+  },
+  "training-data-22": {
+    "label": "Skrajny lub anomalny przykład leżący daleko poza wzorcem reszty danych.",
+    "why": "Garść skrajnych punktów może przeciągnąć parametry i skalowanie; rozstrzygnięcie, czy to błędy, czy realne przypadki, zmienia model."
+  },
+  "training-data-23": {
+    "label": "Podział uwzględniający kolejność, w którym model trenuje na wcześniejszych okresach, a jest oceniany na późniejszych.",
+    "why": "Tasowanie szeregów czasowych pozwala modelowi podglądać przyszłość, zawyżając wyniki; uczciwa ewaluacja musi respektować kolejność napływu danych."
+  },
+  "training-data-24": {
+    "label": "Podział zachowujący w każdym podzbiorze te same proporcje klas co w pełnym zbiorze danych.",
+    "why": "Losowe podziały niezbalansowanych danych mogą całkiem pozbawić fold rzadkiej klasy; stratyfikacja utrzymuje reprezentatywność każdej ewaluacji."
+  }
+}

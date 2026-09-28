@@ -1,0 +1,69 @@
+{
+ "pr-001": {
+  "label": "«Ты formal HR assistant. Only answer questions о HR policy.»",
+  "why": "Persona плюс scope guardrails — histack's verbatim example из system-prompt content."
+ },
+ "pr-002": {
+  "label": "«Always верни customer details в fixed JSON shape.»",
+  "why": "Output-format rules persist across turns — exam material states verbatim, что JSON-shape instructions принадлежат в system prompt."
+ },
+ "pr-003": {
+  "label": "«How many vacation days я have left this year?»",
+  "why": "This turn's actual request — no rules, no persona, just ask."
+ },
+ "pr-004": {
+  "label": "«You have 12 vacation days remaining.» — replayed в next request для context",
+  "why": "Prior model replies resent как assistant messages чтобы model имел conversational memory; они никогда не user content."
+ },
+ "pr-005": {
+  "label": "«Summarize attached meeting notes в three bullet points.»",
+  "why": "One-off task для this turn — это sounds как instruction, но это не persistent rule, чтобы это был user, не system."
+ },
+ "pr-006": {
+  "label": "«If request falls outside HR policy, say так вместо guessing.»",
+  "why": "Fallback rule для handling out-of-scope requests, applied каждый turn — exam's verbatim 'good addition к system prompt' pattern, distinct из pr-001's persona/scope pair."
+ },
+ "pr-007": {
+  "label": "«Keep replies к two sentences если customer не ask за more detail.»",
+  "why": "Tone/length rule, который applies к whole conversation — это system-prompt signal distinct из format rule (pr-002) или scope rule (pr-001) — этот управляет verbosity."
+ },
+ "pr-008": {
+  "label": "«Refuse к discuss competitor pricing, даже если customer insists.»",
+  "why": "Safety/topic-restriction guardrail meant к survive user pushback для каждого turn — exam notes system messages carry app-specific restrictions beyond platform content filters."
+ },
+ "pr-009": {
+  "label": "«Cancel мой 3pm meeting и let team know.»",
+  "why": "Reads как command, но это single request scoped к right now — trap — это mistaking instruction-shaped phrasing для persistent rule."
+ },
+ "pr-010": {
+  "label": "«From теперь on, always answer в French.» — typed customer mid-chat",
+  "why": "'From now on' sounds persistent, но who speaking все еще decides role: request typed в chat customer — это user message, даже one asking для standing behavior — persistence lives в system prompt, не в user wording."
+ },
+ "pr-011": {
+  "label": "«Compare эти two contract clauses и flag any conflicts.»",
+  "why": "Specific analytical task submitted для этого exchange — no persona или app-wide rule устанавливается, чтобы это was this turn's request."
+ },
+ "pr-012": {
+  "label": "«Based на твоем account, твоя subscription renews на 14th.» — sent back на next turn чтобы model remembers что это already told customer",
+  "why": "Model-generated output resent к preserve context — это assistant message, не customer's words — trap mistaking replayed model output за something user said."
+ },
+ "pr-013": {
+  "label": "\"{\\\"status\\\": \\\"resolved\\\", \\\"ticket_id\\\": \\\"48213\\\"}\" — model's structured reply из previous turn, carried forward как history",
+  "why": "JSON-shaped content looks как format rule из pr-002, но rule и instance из model's собственного output — это различные roles — это model's answer being replayed, не standing instruction."
+ },
+ "pr-014": {
+  "label": "«Would ты like мне к also check flights для return leg?» — model's собственный follow-up question из previous turn, kept в context",
+  "why": "Question-shaped text может быть mistaken для user speaking, но это question был generated model само по себе и resent чтобы это remembers having asked это — discriminator — это who originated words, не их grammatical form."
+ },
+ "pr-015": {
+  "label": "«Step 1: Restart router. Step 2: Reconnect к Wi-Fi.» — model's troubleshooting steps из earlier turn, replayed чтобы это remembers что это already told customer",
+  "why": "Numbered instructions look rule-like, tempting mix-up с system prompt, но эти — это model's собственный prior output being carried forward для memory, не persistent guardrail set developer."
+ },
+ "prompt-roles": {
+  "hint": "Ask два questions: это apply к каждому turn или just этому (persistent vs one-off)? И кто speaking — developer setting up assistant, person typing right now, или model's собственный prior reply being resent за memory?",
+  "note": "Instruction-shaped wording — это не proof из system prompt — one-off task может sound как command и все еще be user message. Persistence across turns — это real test.",
+  "zones[0].def": "Persona, tone, rules и guardrails — persistent across каждый turn",
+  "zones[1].def": "This turn's actual request",
+  "zones[2].def": "Prior model replies replayed для conversational memory"
+ }
+}

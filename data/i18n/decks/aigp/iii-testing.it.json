@@ -1,0 +1,84 @@
+{
+  "iii-tb-01": {
+    "label": "Solo il tokenizer viene controllato per la gestione senza errori dell'input emoji.",
+    "why": "L'isolamento a componente singola è l'intero lavoro di questa disciplina — il tokenizer gestisce l'input oppure no, indipendentemente da qualsiasi cosa a valle."
+  },
+  "iii-tb-02": {
+    "label": "Una funzione che standardizza il modo in cui diversi punti dati sono rappresentati viene controllata interamente da sola, prima di essere collegata a qualsiasi cosa a valle.",
+    "why": "Isolare un singolo blocco costruttivo intercetta gli errori quando sono più economici da correggere, prima che un difetto sottile si diffonda su milioni di record e modifichi silenziosamente i risultati — la disciplina rimane qui anche se la funzione verrà eseguita più tardi come parte di una pipeline più grande."
+  },
+  "iii-tb-03": {
+    "label": "Una routine di scoring personalizzata nascosta nella pipeline viene eseguita su una manciata di input noti e controllata riga per riga per l'output corretto, prima ancora che il resto del sistema esista per chiamarla.",
+    "why": "Controllare l'output di una singola routine contro valori noti-corretti, prima che il resto del sistema esista, è il cancello più stretto e primo — distinto dalla disciplina successiva, che inizia solo una volta che più pezzi sono collegati insieme."
+  },
+  "iii-tb-04": {
+    "label": "Retriever, modello e UI vengono esercitati insieme end-to-end; i fallimenti emergenti appaiono solo a questo livello.",
+    "why": "I fallimenti che appaiono solo una volta che i componenti vengono eseguiti insieme sono la firma di questa disciplina — nessun controllo a componente singolo li avrebbe intercettati."
+  },
+  "iii-tb-05": {
+    "label": "I pezzi del sistema di inventario passano con successo da soli, poi il tutto ricomincia a ordinare eccessivamente i prodotti legati a certi gruppi demografici una volta che ogni componente viene eseguito insieme.",
+    "why": "Il problema emerge solo quando l'intero sistema è combinato, quindi la correzione deve essere applicata al livello combinato — una revisione componente per componente l'avrebbe completamente mancato."
+  },
+  "iii-tb-06": {
+    "label": "Un modello di approvazione di prestiti restituisce risultati diversi su hardware diversi, a causa di differenze di precisione in virgola mobile che appaiono solo quando l'intero sistema viene eseguito end-to-end.",
+    "why": "La discrepanza è un sottoprodotto della combinazione di componenti su hardware reale — la risposta di governance è documentare l'intervallo di varianza e impostare limiti di decisione accettabili, non inseguirla in nessun pezzo in isolamento."
+  },
+  "iii-tb-07": {
+    "label": "Ottima precisione sui dati su cui è stato addestrato, scarsa sui record che non ha mai visto.",
+    "why": "Questo è il controllo di generalizzazione — il divario tra il comportamento del set di addestramento e il comportamento su dati mai visti — distinto dal set di test/holdout, che rimane intoccato fino a quando l'ottimizzazione non è terminata e poi fornisce la stima dell'errore finale e imparziale del modello."
+  },
+  "iii-tb-08": {
+    "label": "Un modello raggiunge una precisione quasi perfetta sul suo set di addestramento, poi si comporta in modo incoerente una volta che nuovi gruppi di pazienti al di fuori di quel set vengono elaborati.",
+    "why": "Il divario da addestramento a dati non visti è esattamente ciò per cui esiste questa disciplina; una metrica di equità confronterebbe invece i tassi di errore tra gruppi protetti sullo stesso set di dati, cosa che questo scenario non fa mai."
+  },
+  "iii-tb-09": {
+    "label": "Le previsioni di un modello oscillano selvaggiamente a seconda di quale fetta dei dati di addestramento vede; un altro si muove appena dalla media non importa cosa gli viene immesso.",
+    "why": "Le oscillazioni ampie tra fette di addestramento rispetto all'indifferenza piatta ai dati sono le due firme di fallimento che questa disciplina osserva durante lo sviluppo, ben prima che chiunque parli di un numero di prestazione finale."
+  },
+  "iii-tb-10": {
+    "label": "La disparità nei tempi di risposta viene misurata tra regioni di utenti sotto carico.",
+    "why": "L'equità nel tempo di elaborazione trasforma un requisito aziendale/equità in una metrica misurabile e predefinita — distinta da un controllo di flip attributo protetto, che osserva il contenuto dell'output, non la latenza."
+  },
+  "iii-tb-11": {
+    "label": "I controlli di campionamento statistico e analisi decisionale vengono eseguiti contro gli output del sistema per confermare che soddisfano i target di accuratezza e affidabilità fissati all'inizio del progetto.",
+    "why": "Il campionamento statistico e l'analisi decisionale sono modi riconosciuti per testare se un sistema AI responsabile soddisfa i suoi target; assegnare un problema in base alla probabilità per la gravità è uno strumento di prioritizzazione della gestione del rischio, non un modo di testare il sistema stesso."
+  },
+  "iii-tb-12": {
+    "label": "I numeri di equità e affidabilità che un progetto ha sottoscritto mesi fa vengono controllati contro quello che il sistema sta effettivamente producendo oggi, utilizzando le stesse metriche su cui tutti erano d'accordo.",
+    "why": "Mantenere i risultati alle metriche concordate in anticipo, non il numero che capita di sembrare migliore, è ciò che mantiene questa disciplina onesta e impedisce ai team di scambiare silenziosamente una misura più favorevole."
+  },
+  "iii-tb-13": {
+    "label": "Un estraneo esamina se il record di un paziente specifico era nel set di addestramento.",
+    "why": "Un estraneo che scopre se un record specifico era nel set di addestramento è un fallimento dei test di sicurezza — distinto dal controllo di generalizzazione, che riguarda solo l'accuratezza su dati non visti, non chi era nel set di addestramento."
+  },
+  "iii-tb-14": {
+    "label": "I controlli in stile penetrazione cercano modi in cui un attaccante potrebbe rubare i pesi del modello o ricostruire pezzi dei dati di addestramento.",
+    "why": "Mirare al furto di pesi e alla ricostruzione dei dati di addestramento è una visione dal punto di vista dell'attaccante, distinta dal controllo di generalizzazione, che non considera mai se qualcuno sta cercando di estrarre qualcosa dal modello."
+  },
+  "iii-tb-15": {
+    "label": "I tester di penetrazione scoprono che input attentamente costruiti possono capovolgere la diagnosi di un modello già accurato in più o meno un caso su otto.",
+    "why": "Gli input avversariali costruiti che causano errori di classificazione sono un risultato dei test di sicurezza; la risposta di governance è documentarlo come una limitazione nota e aggiungere validazione dell'input e rilevamento di anomalie, non escluderlo perché l'accuratezza clinica soddisfa ancora il target."
+  },
+  "iii-tb-16": {
+    "label": "L'attributo protetto è stato scambiato, tutto il resto mantenuto costante, l'output osservato.",
+    "why": "Osservare se scambiare solo un attributo protetto cambia l'output è un controllo di equità controffattuale — distinto da una sonda di inferenza di appartenenza, che chiede se un record era nel set di addestramento."
+  },
+  "iii-tb-17": {
+    "label": "Il file di conformità di un ospedale mostra che i controlli di equità sono stati eseguiti e registrati, più un record che le decisioni potrebbero essere spiegate ai revisori — prova che l'organizzazione ha soddisfatto il suo dovere di diligenza.",
+    "why": "Registrare che i controlli di equità e spiegazione sono effettivamente stati eseguiti è ciò che li trasforma in prova regolatoria difendibile — distinto da un audit trail di sicurezza, che documenta la resistenza agli attacchi, non la qualità dell'equità o della spiegazione."
+  },
+  "iii-tb-18": {
+    "label": "La decisione di un modello viene tradotta in termini su cui un clinico può effettivamente agire, non solo in un punteggio di probabilità.",
+    "why": "Tradurre una decisione in termini che uno stakeholder può utilizzare, piuttosto che lasciarla come un punteggio di probabilità nudo, è metà di questa zona che un modello black-box può ancora non superare anche dopo aver superato ogni numero di accuratezza e equità."
+  },
+  "iii-testing": {
+    "hint": "Chiedi cosa controlla la scena, non solo che dati usa. La validazione qui significa una cosa sola: il modello generalizza oltre quello su cui è stato addestrato. Il set di dati che fornisce la stima dell'errore finale e imparziale di un modello è un concetto diverso, testato direttamente in Pipeline Twins.",
+    "note": "Questi sono controlli al momento dello sviluppo e precedenti al rilascio. Ciò che accade dopo che un sistema va online e rimane online è una tavola diversa.",
+    "zones[0].def": "Controllare un componente della pipeline da solo — un tokenizer, una funzione di normalizzazione, una routine di scoring — prima che sia mai collegato a qualsiasi cosa. Intercetta gli errori mentre sono più economici da correggere.",
+    "zones[1].def": "Esercitare i componenti insieme end-to-end, osservando i fallimenti che emergono solo quando i pezzi sono combinati — disadattamenti, colli di bottiglia, o bias che nessun componente singolo ha mostrato da solo.",
+    "zones[2].def": "Controllare se il modello addestrato generalizza oltre i dati su cui è stato addestrato: il divario tra il comportamento del set di addestramento e il comportamento su dati che non ha mai visto. Un controllo al momento dello sviluppo contro l'overfitting — non l'ultima parola del modello sulle prestazioni.",
+    "zones[3].def": "Misurare il sistema rispetto alle metriche specifiche e predefinite — soglie di accuratezza, affidabilità, equità — che traducono gli obiettivi aziendali, etici e normativi del progetto in numeri su cui tutti hanno sottoscritto.",
+    "zones[4].def": "Esaminare se il modello può essere attaccato: pesi rubati, dati di addestramento ricostruiti, output manipolati da input costruiti. Resilienza contro il compromesso deliberato o accidentale.",
+    "zones[5].def": "Controllare se i risultati sono equi tra i gruppi protetti, e se una decisione può essere spiegata in termini significativi per le persone che devono fare affidamento su di essa."
+  }
+}

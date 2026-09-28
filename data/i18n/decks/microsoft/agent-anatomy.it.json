@@ -1,0 +1,84 @@
+{
+ "ag-001": {
+  "label": "\"Sei un agente di supporto cortese; escalation di qualsiasi cosa che riguarda rimborsi\" — impostato una volta quando l'agente viene creato",
+  "why": "Il campo instructions definisce il comportamento persistente al momento della creazione — il concetto di agente più sottolineato nel materiale di studio, distinto dallo stato di chat runtime."
+ },
+ "ag-002": {
+  "label": "Consenti all'agente di chiamare funzioni esterne o API per intraprendere azioni",
+  "why": "Function calling / tools consentono al modello di agire oltre il testo — la capacità che distingue un agente da una semplice chat call."
+ },
+ "ag-003": {
+  "label": "Il gpt-4o distribuito con cui l'agente ragiona — referenziato per nome di distribuzione",
+  "why": "Un agente = modello + instructions + tools; il modello è una distribuzione, e {{\"deployment\":{{\"model\":AGENT_NAME}}}} è la risposta canonica sbagliata."
+ },
+ "ag-004": {
+  "label": "File e fonti di dati che l'agente può cercare per rispondere dal tuo contenuto",
+  "why": "La knowledge attacca i tuoi dati all'agente così le risposte si radicano in essi — parte dell'anatomia dell'agente che la guida di studio nomina per Task 2.1."
+ },
+ "ag-005": {
+  "label": "Porta la cronologia di messaggi dell'utente e dell'assistente di una conversazione in corso a runtime",
+  "why": "Thread/conversazioni contengono lo stato di chat runtime — creati per sessione dall'app client, non al momento della definizione dell'agente."
+ },
+ "ag-006": {
+  "label": "L'invocazione che elabora la conversazione e produce l'output successivo dell'agente",
+  "why": "Una run (openai.responses.create / create run) esegue l'agente contro il thread — il terzo strato distinto: definizione vs sessione vs invocazione."
+ },
+ "ag-007": {
+  "label": "Il testo della persona in linguaggio naturale fornito dentro PromptAgentDefinition insieme al nome del modello, quando l'agente viene definito per la prima volta nel codice",
+  "why": "PromptAgentDefinition(model=MODEL_NAME, instructions=...) imposta entrambi i campi al momento della definizione, ma solo il testo della persona forma il modo in cui l'agente si comporta — il nome del modello accanto è un componente separato."
+ },
+ "ag-008": {
+  "label": "Formatta ogni risposta come elenco numerato limitato a cinque elementi — fisso quando l'agente viene creato, non scelto per domanda",
+  "why": "Una regola di formattazione permanente integrata nel momento della creazione è comportamento, non un'azione esterna — non chiama nulla oltre il testo, che è quello che la distingue dai Tools."
+ },
+ "ag-009": {
+  "label": "Scambio del motore di ragionamento da gpt-4o-mini a gpt-5-mini senza toccare la persona dell'agente o i suoi strumenti allegati",
+  "why": "Solo il motore di ragionamento distribuito cambia qui; persona e wiring dei tool rimangono fissi — un test pulito di se la distribuzione è uno strato separato da altri componenti dell'agente."
+ },
+ "ag-010": {
+  "label": "L'identificatore di distribuzione passato dentro PromptAgentDefinition insieme al testo della persona, quando l'agente viene definito per la prima volta nel codice",
+  "why": "Stessa chiamata PromptAgentDefinition() del testo della persona, ma questo parametro nomina quale motore distribuito l'agente chiama — un riferimento di distribuzione, non il comportamento stesso."
+ },
+ "ag-011": {
+  "label": "Attiva la ricerca web in tempo reale affinché l'agente possa estrarre informazioni attuali oltre ciò che c'è nei suoi dati di addestramento",
+  "why": "La ricerca web è aperta dal catalogo di strumenti del portale Foundry (Build > Tools) insieme all'interprete di codice e alla ricerca di file — una capacità esterna in tempo reale, non contenuto statico allegato."
+ },
+ "ag-012": {
+  "label": "Consenti all'agente di eseguire codice generato per calcolare un risultato invece di solo descrivere i passaggi di calcolo",
+  "why": "L'esecuzione del codice è una delle capacità del catalogo, insieme alla ricerca web e alla ricerca di file, che consente all'agente di agire oltre la produzione di testo — il motore di ragionamento stesso non esegue mai il codice direttamente."
+ },
+ "ag-013": {
+  "label": "Connetti un indice Azure AI Search esistente affinché le risposte dell'agente citino il tuo contenuto indicizzato invece di indovinare",
+  "why": "Un indice di ricerca allegato è contenuto statico che l'agente recupera per radicalize le sue risposte — distinto da uno strumento come la ricerca web, che raggiunge una capacità esterna in tempo reale invece dei tuoi dati."
+ },
+ "ag-014": {
+  "label": "Aggiungi documenti di politica aziendale affinché l'agente li cerchi — configurato nel playground Agents insieme al testo della persona e ai tool allegati — prima di testare il comportamento multi-turn",
+  "why": "Il playground Agents configura tre superfici distinte affiancate — persona, tool e documenti allegati — e questa carta è quella di contenuto allegato: dati con cui l'agente radica le risposte, non un'azione che intraprende."
+ },
+ "ag-015": {
+  "label": "openai.conversations.create() chiamato dall'app client prima che il primo turno venga inviato all'agente",
+  "why": "La creazione dell'oggetto conversazione accade prima che qualsiasi messaggio venga inviato — apre il contenitore runtime in cui i turni successivi scrivono, distinto dalla chiamata che produce effettivamente una risposta."
+ },
+ "ag-016": {
+  "label": "La sequenza temporale singola ininterrotta di turni che consente all'agente di fare riferimento a qualcosa che l'utente ha detto tre domande fa, senza che quei messaggi vengano rinviati manualmente ogni volta",
+  "why": "La cronologia accumulata di chat runtime è stato di sessione, non comportamento dell'agente — cresce per conversazione, a differenza delle regole della persona fissate una volta al momento della definizione."
+ },
+ "ag-017": {
+  "label": "openai.responses.create() è la chiamata che effettivamente invia il messaggio più recente dell'utente e restituisce la risposta dell'agente",
+  "why": "Questo è il passaggio di invocazione — è ciò che effettivamente elabora la conversazione e produce output, distinto da openai.conversations.create(), che apre solo il contenitore in cui vivono i messaggi."
+ },
+ "ag-018": {
+  "label": "Il parametro extra_body={{\"agent_reference\": {{...}}}} dentro quella stessa chiamata, dicendo al sistema quale definizione dell'agente eseguire contro la conversazione",
+  "why": "agent_reference è metadati per invocazione sulla chiamata responses.create(), non una proprietà fissa dell'agente — l'esame disegna questa distinzione esplicitamente contro il nome di distribuzione integrato nella definizione dell'agente stesso."
+ },
+ "agent-anatomy": {
+  "hint": "Chiedi a quale livello appartiene il lavoro: fisso alla creazione (instructions), il motore di ragionamento stesso (modello), un'azione oltre il testo (tools), dati allegati per radicalize risposte (knowledge), stato accumulato di una conversazione (thread), o la singola chiamata che produce output (run).",
+  "note": "Instructions e tools si configurano entrambi al momento della progettazione — il tie-break è se la carta è una regola di comportamento (instructions) o una capacità esterna che l'agente chiama (tools). Thread e run vivono entrambi a runtime — il tie-break è se la carta è il contenitore che contiene i messaggi (thread) o l'invocazione che produce il messaggio successivo (run).",
+  "zones[0].def": "Il comportamento persistente, la persona e le regole impostate quando l'agente viene definito — non scelta per conversazione.",
+  "zones[1].def": "Il modello distribuito — referenziato per nome di distribuzione — che l'agente utilizza per ragionare.",
+  "zones[2].def": "Funzioni, API e altre azioni che l'agente può chiamare oltre la generazione di testo.",
+  "zones[3].def": "File, indici e altre fonti di dati che l'agente può cercare per radicalize le sue risposte.",
+  "zones[4].def": "Cronologia di messaggi runtime di una conversazione in corso, creata per sessione.",
+  "zones[5].def": "L'invocazione che esegue l'agente contro un thread e produce il suo output successivo."
+ }
+}

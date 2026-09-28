@@ -1,0 +1,25 @@
+{
+ "ml-lifecycle": {
+  "prompt": "Ustaw cykl życia od celu biznesowego do monitorowania produkcji.",
+  "steps[0].label": "Identyfikacja Celu Biznesowego",
+  "steps[0].detail": "Wszystko poniżej to dziedziczy. Bez celu biznesowego nie ma sposobu, aby powiedzieć, czy model jest dobry.",
+  "steps[1].label": "Ramy Problemu ML",
+  "steps[1].detail": "Tłumacz cel na zadanie uczące się: co jest przewidywane, z czego i co liczy się jako sukces.",
+  "steps[2].label": "Zbieranie Danych",
+  "steps[2].detail": "Zbierz surowy materiał i ustanów jego pochodzenie i dozwolone użycie, zanim będzie się na nim polegać.",
+  "steps[3].label": "Przetwarzanie Wstępne Danych",
+  "steps[3].detail": "Czyszcz, łącz, deduplikuj i obsługuj brakujące wartości, aby model uczył się sygnału, a nie artefaktów.",
+  "steps[4].label": "Inżynieria Cech",
+  "steps[4].detail": "Kształtuj wejścia w reprezentacje, które algorytm może wykorzystać. Często największy pojedynczy dźwignik na dokładność.",
+  "steps[5].label": "Trening Modelu",
+  "steps[5].detail": "Dopasuj parametry na podziału treningowym. Tanie do powtarzania, więc przychodzi po drogiej pracy z danymi, nie przed.",
+  "steps[6].label": "Dostrajanie Hiperparametrów",
+  "steps[6].detail": "Szukaj ustawień, których model nie może się nauczyć sam, ocenionego na danych walidacyjnych, a nie testowych.",
+  "steps[7].label": "Ocena Modelu",
+  "steps[7].detail": "Mierz względem wstrzymanych danych i metryki biznesowej. To jest brama, nie formalność.",
+  "steps[8].label": "Wdrożenie Modelu (Wnioskowanie i Prognoza)",
+  "steps[8].detail": "Służ prognozy dla rzeczywistych żądań, z takim samym przetworzeniem wstępnym jak trening lub wyniki się nie pasują.",
+  "steps[9].label": "Monitorowanie Modelu",
+  "steps[9].detail": "Obserwuj wejścia, wyjścia i jakość w produkcji. To jest miejsce, gdzie dryft się pojawia i nigdy się nie kończy."
+ }
+}

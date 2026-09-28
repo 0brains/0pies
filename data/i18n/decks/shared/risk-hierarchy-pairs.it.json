@@ -1,0 +1,50 @@
+{
+  "rhp-01": {
+    "a.text": "L'azienda aggiunge la convalida dell'output e la revisione umana a un modello di reclami, riducendo il tasso di dinieghi errati.",
+    "a.why": "La probabilità del danno effettivo diminuisce. La riduzione è l'unico trattamento che migliora la situazione della persona colpita.",
+    "b.text": "L'azienda acquista una polizza assicurativa che copre il costo dei reclami erroneamente negati, lasciando il modello invariato.",
+    "b.why": "Il richiedente viene negato alla stessa velocità; solo il bilancio dell'azienda è protetto. L'assicurazione non è mai un controllo."
+  },
+  "rhp-02": {
+    "a.text": "Dopo la valutazione, la funzione di riconoscimento emotivo viene cancellata e rimossa dalla roadmap.",
+    "a.why": "L'attività si ferma, quindi l'esposizione va a zero. L'evitamento è l'unico trattamento senza rischio residuo da registrare.",
+    "b.text": "Dopo la valutazione, la funzione di riconoscimento emotivo viene distribuita con soglie di confidenza, valutazione dei sottogruppi e revisione umana dei casi a bassa confidenza.",
+    "b.why": "L'attività continua con minore probabilità di danno. La mitigazione sostanziale è ancora riduzione, e il rischio residuo ha ancora bisogno di un proprietario."
+  },
+  "rhp-03": {
+    "a.text": "La pipeline di distribuzione rifiuta di promuovere un modello la cui valutazione di equità ha regredito oltre una soglia.",
+    "a.why": "La regola si esegue su ogni rilascio senza che qualcuno scelga di applicarla, quindi la pressione delle scadenze non può eroderla.",
+    "b.text": "La checklist di rilascio richiede al responsabile del rilascio di confermare che la valutazione di equità non è regredita.",
+    "b.why": "Intento identico, applicato dalla diligenza umana. Questo è l'errore più comune di sovrastima nei valutazioni del rischio di AI."
+  },
+  "rhp-04": {
+    "a.text": "La capacità dell'agente di emettere rimborsi viene rimossa interamente dal suo set di strumenti.",
+    "a.why": "Nessuna capacità, nessuna modalità di errore, e nulla da monitorare. L'eliminazione è il livello superiore perché ritira l'intero ramo dell'albero dei rischi.",
+    "b.text": "L'agente mantiene il suo strumento di rimborso, con un limite rigido di un rimborso per sessione e un limite di importo applicato dallo strumento.",
+    "b.why": "Un vincolo tecnico forte che lascia ancora un'esposizione limitata — e lascia il limite stesso come qualcosa che può essere non configurato correttamente."
+  },
+  "rhp-05": {
+    "a.text": "L'assistente rileva e blocca l'input dall'aspetto confidenziale prima che venga inviato al modello.",
+    "a.why": "Il sistema previene la divulgazione indipendentemente da ciò che fa l'utente. L'onere ricade sulla parte in grado di sostenerlo.",
+    "b.text": "L'assistente visualizza un avviso che chiede agli utenti di non incollare informazioni confidenziali.",
+    "b.why": "Lo stesso rischio, con l'onere spostato all'utente. Livello più debole, e frequentemente l'unico implementato."
+  },
+  "rhp-06": {
+    "a.text": "Il comitato rischi registra il rischio residuo, conferma che rientra nell'appetito, nomina un proprietario e imposta una data di revisione.",
+    "a.why": "L'accettazione è una decisione affermativa con autorità, un proprietario e un punto di revisione. Quel record è ciò che la distingue dalla negligenza.",
+    "b.text": "Il rischio residuo è noto al team di delivery, non è nel registro dei rischi, e nessuno al di sopra del team è stato informato.",
+    "b.why": "Il silenzio non è accettazione. Senza la giusta autorità che decide, non c'è alcun trattamento — solo esposizione che nessuno ha assunto."
+  },
+  "rhp-07": {
+    "a.text": "Un riassuntore a generazione libera su note cliniche viene sostituito con un riassuntore estrattivo che può solo citare il testo sorgente.",
+    "a.why": "Il meccanismo di fabbricazione viene scambiato con uno incapace di fabbricare, mentre lo scopo sopravvive. La riprogettazione batte l'affinamento.",
+    "b.text": "Lo stesso riassuntore a generazione libera viene mantenuto, con la temperatura abbassata e un'istruzione di radicamento aggiunta al prompt.",
+    "b.why": "Il meccanismo che può fabbricare è intatto e semplicemente scoraggiato. Utile, e strutturalmente più debole che rimuovere la capacità."
+  },
+  "rhp-08": {
+    "a.text": "Il recupero applica i diritti di accesso dell'utente richiedente, così i documenti non autorizzati non vengono mai restituiti.",
+    "a.why": "Il danno non può verificarsi. La prevenzione è ciò che riduce la probabilità; tutto il resto riduce solo la durata o l'impatto.",
+    "b.text": "Un audit trimestrale campiona le risposte e segnala quelle che citano documenti che l'utente non avrebbe dovuto vedere.",
+    "b.why": "La divulgazione è già avvenuta, fino a tre mesi fa. Il rilevamento limita l'impatto ed è regolarmente confuso con la prevenzione nei cataloghi di controllo."
+  }
+}

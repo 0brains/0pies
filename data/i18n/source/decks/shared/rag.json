@@ -1,0 +1,53 @@
+{
+ "rag": {
+  "hint": "Place it in the retrieval path: preparing knowledge, finding candidates, improving their relevance, or ensuring the generated answer remains supported and traceable."
+ },
+ "rag-01": {
+  "label": "A numeric vector representing semantic characteristics so related content can be compared mathematically.",
+  "why": "A numeric vector representing semantic characteristics so related content can be compared mathematically."
+ },
+ "rag-02": {
+  "label": "Splits source documents into retrievable passages sized to preserve meaning without wasting context.",
+  "why": "Splits source documents into retrievable passages sized to preserve meaning without wasting context."
+ },
+ "rag-03": {
+  "label": "Stores embeddings and supports efficient nearest-neighbor similarity search.",
+  "why": "Stores embeddings and supports efficient nearest-neighbor similarity search."
+ },
+ "rag-04": {
+  "label": "Retrieves content by meaning rather than requiring exact keyword overlap.",
+  "why": "Retrieves content by meaning rather than requiring exact keyword overlap."
+ },
+ "rag-05": {
+  "label": "Retrieves content using lexical term matches and remains useful for names, codes, and exact phrases.",
+  "why": "Retrieves content using lexical term matches and remains useful for names, codes, and exact phrases."
+ },
+ "rag-06": {
+  "label": "Combines semantic and keyword retrieval to benefit from meaning and exact-term matching.",
+  "why": "Combines semantic and keyword retrieval to benefit from meaning and exact-term matching."
+ },
+ "rag-07": {
+  "label": "Restricts retrieval by attributes such as tenant, date, document type, or access level.",
+  "why": "Restricts retrieval by attributes such as tenant, date, document type, or access level."
+ },
+ "rag-08": {
+  "label": "Re-scores retrieved candidates to place the passages most relevant to the full query first.",
+  "why": "Re-scores retrieved candidates to place the passages most relevant to the full query first."
+ },
+ "rag-09": {
+  "label": "Constrains generation to supplied evidence so claims can be supported and traced.",
+  "why": "Constrains generation to supplied evidence so claims can be supported and traced."
+ },
+ "rag-10": {
+  "label": "Links an answer claim back to the source passage that supports it.",
+  "why": "Links an answer claim back to the source passage that supports it."
+ },
+ "rag-11": {
+  "label": "Indicates whether the retrieval stage finds the evidence needed to answer a question.",
+  "why": "If 100 questions require a known evidence passage and the retriever returns it for 85, retrieval recall is 85%. Low retrieval recall points to chunking, embeddings, filters, query rewriting, or candidate-count problems that generation cannot repair."
+ },
+ "rag-12": {
+  "label": "Indicates how much of the retrieved context is relevant rather than distracting noise.",
+  "why": "Indicates how much of the retrieved context is relevant rather than distracting noise."
+ }
+}

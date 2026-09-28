@@ -1,0 +1,101 @@
+{
+ "I-roles": {
+  "prompt": "Atribui cada dever (ou alegado dever) ao papel a que realmente pertence. Alguns não pertencem a ninguém."
+ },
+ "d1-case-charter": {
+  "brief": "A Solvix Underwriting é uma pequena startup de análise preditiva que pontua o risco de empréstimos agrícolas para bancos regionais. A governação até agora tem sido tudo o que os dois fundadores concordaram durante um café. Um grande parceiro de resseguro está prestes a assinar um acordo plurianual de partilha de dados, mas a sua equipa de diligência quer ver 'um verdadeiro programa de governação' antes de assinar. Tu és trazido para construí-lo — e, dezoito meses depois, para o manter funcionando depois de o motor de subscrição do Solvix ser licenciado para equipas de risco de crédito em bancos em toda a UE, América do Norte e Sudeste Asiático.",
+  "steps[0].why": "Não podes governar o que não contaste: um inventário de IA é a base factual que te diz o que precisa de ser governado antes de decidires quem o governa, treines alguém nele ou escreva uma política sobre isto. Contratar um CAIO ou treinar pessoal sem essa base coloca pessoas em movimento sem nada concreto para actuar, e redigir uma política primeiro produz um documento adaptado a suposições em vez do verdadeiro footprint de IA do Solvix.",
+  "steps[1].why": "Uma carta leve e baseada em princípios é governação proporcional em ação — transforma o que os fundadores já acreditam em algo documentado e repetível sem adicionar uma camada de burocracia que o Solvix ainda não precisa. Uma contratação de CAGO completa é despesa prematura, outsourcing cede o conhecimento institucional que os fundadores deveriam estar a construir, e copiar o framework de ERM em escala empresarial do ressegurador enterraria uma pequena equipa em processo construído para uma empresa dez vezes o seu tamanho.",
+  "steps[2].why": "A federação é a estrutura construída para exactamente esta tensão: um conjunto coerente de princípios do centro, com espaço para cada região adaptar detalhes à sua própria paisagem regulatória e cultural. Uma política global única é demasiado rígida para flexibilizar para a lei local, a autonomia regional completa perde a supervisão central que mantém todo o programa coerente, e uma matriz de propriedade de projeto partilhada turva exactamente a responsabilidade que um modelo de risco de crédito precisa quando um regulador vem perguntar quem assinou.",
+  "steps[3].why": "Esperar que cada funcionário técnico se reformule como um construtor de modelos não é treinamento específico de papel, é uma fantasia de contagem de cabeças — a maioria do pessoal técnico toca o sistema de IA sem nunca precisar de construir um, e o treinamento deve corresponder a essa realidade. Os outros três são peças legítimas e complementares de um programa real: treinamento orientado para papel e estrutura de governação real, uma pista de construção cultural de ética, e educação de utilizador final para as pessoas confiando nos resultados do modelo."
+ },
+ "d1-case-policies": {
+  "brief": "A Verdant Health Analytics tem executado um programa maduro de conformidade de privacidade durante anos — protocolos de violação, um processo PIA permanente, contratos de fornecedor — tudo construído em torno do seu produto SaaS original, que apenas armazenava e processava os registos de saúde que os clientes lhe davam directamente. A Verdant está agora a incorporar um assistente de documentação clínica com IA generativa no mesmo produto, e a equipa de conformidade quer reutilizar o máximo possível da stack existente em vez de construir uma paralela do zero. A engenharia, enquanto isto, já está a receber pedidos de clínicos que querem colar notas de pacientes em chatbots públicos para poupar tempo.",
+  "steps[0].why": "Um PIA já está construído para fazer exactamente as perguntas que um sistema de IA levanta — que dados entram, o que acontece aos indivíduos como resultado — então estender a cobertura para treinamento, equidade e explicabilidade é um ajuste natural, não uma reconstrução. O teste de penetração verifica a resistência técnica de intrusão, não o enviesamento algorítmico ou legalidade; avaliações de transferência respondem uma questão de cross-border mais estreita; e treinamento de pessoal constrói consciência mas não superfícies risco específico do sistema em tudo.",
+  "steps[1].why": "Uma política legada é escrita para fluxos de dados estáticos e directos — o que é colectado, onde é armazenado — e nunca antecipou que os próprios resultados e inferências de um modelo são um segundo conjunto de dados derivados que podem ser cross-referenciados para re-identificar alguém cujo registo bruto foi devidamente anonimizado. Um DPA, um DPO nomeado e um relógio de notificação de violação são todos higiene de programa de privacidade genérica que qualquer sistema de TI precisa; nenhum deles é o buraco específico de IA que este cenário está a apontar.",
+  "steps[2].why": "Cada minuto que clínicos colam notas de pacientes numa ferramenta pública, esse texto pode deixar o controlo da Verdant inteiramente — usado para treinamento próprio do fornecedor, registado ou exposto — que é o dano concreto que uma proibição está realmente a prevenir. Estratégia de monetização e custos de contratação não são riscos de privacidade em tudo, e 'sem tempo para treinar ainda' descreve uma lacuna de recursos temporária, não uma razão pela qual um vazamento de PHI é perigoso o suficiente para justificar bloquear a ferramenta inteiramente.",
+  "steps[3].why": "Dobrar regras de IA nas políticas existentes de privacidade, segurança e ética mantém a governação unificada e impede que a organização execute dois conjuntos de padrões que podem silenciosamente divergir — reguladores e auditores esperam que IA se sente sob a mesma estrutura de responsabilização que tudo o mais. O argumento de sinalização do regulador é verdadeiro mas demasiado estreito para levar o caso por si só, e ambos os argumentos de detalhe e velocidade para um documento autónomo negociam coesão de longo prazo por conveniência de curto prazo, que é exactamente o que cria os silos que a integração se destina a evitar."
+ },
+ "d1-case-vendor-file": {
+  "brief": "A divisão de sinistros do Bramwell Mutual está a avaliar fornecedores de IA de terceiros para triagem de sinistros recebidos. Dois finalistas chegaram à revisão contratual, e já está o modelo de um terceiro fornecedor a ser encarado para o piloto de rastreamento de CV da equipa de RH no próximo trimestre. A governação é pedida para executar o ficheiro: quanto escrutínio cada fornecedor realmente precisa, o que fazer quando um não mostra o seu trabalho, o que fazer quando o melhor modelo não cumpre a própria barra de segurança do Bramwell, e o que pertence na documentação antes de qualquer deles ir ao vivo.",
+  "steps[0].why": "A gestão de risco de IA de terceiros funciona da mesma forma que a gestão de risco interno: esforço proporcional a risco, verificado numa base contínua em vez de uma vez na assinatura. Uma auditoria bianual de blanket para cada fornecedor é excessiva e não escalável, estabilidade financeira por si só ignora o dano real que um sistema de IA pode causar, e dividir risco técnico de risco ético (deixando este último para texto de contrato) trata duas metades da mesma avaliação como se fossem desconexas.",
+  "steps[1].why": "Se a política diz que uma avaliação de risco deve acontecer antes da aquisição e a recusa do fornecedor torna essa avaliação impossível, proceder de qualquer forma quebra o próprio framework de governação da organização — o movimento defensável é afastar-se. A monitorização interna é um substituto fraco para a avaliação que nunca aconteceu, esculpir uma exceção de política mina a política para cada fornecedor futuro, e uma cláusula de indemnização pode deslocar responsabilidade financeira mas faz nada para preencher o ponto cego operacional e ético com que o Bramwell fica.",
+  "steps[2].why": "Um sandbox é o controlo compensador construído para precisamente esta situação — permite ao Bramwell capturar o desempenho do modelo enquanto contém a exposição criada por um fornecedor que não pode cumprir a barra de segurança directamente. Abdicar do requisito ou escrever uma exceção permanente para fornecedores 'reputáveis' ambos eroem o padrão de segurança para todos os outros, enquanto um bloqueio direto trata um problema de contenção viável como um inviável e pode custar ao Bramwell um modelo genuinamente superior por nenhuma razão defensável.",
+  "steps[3].why": "O risco de IA não fica quieto da forma que uma auditoria IP única ou um SLA estático assume — um modelo de rastreamento de CV pode derivar para resultados enviesados meses depois da assinatura, então o contrato precisa de uma obrigação permanente de manter o desempenho de documentação e um plano para reduzir o sistema quando já não é adequado para o fim. O inventário de código aberto é uma verificação de IP útil única, acesso a código-fonte e dados de treinamento é frequentemente um não-iniciador com fornecedores e desnecessário se a monitorização é sólida, e um SLA em precisão e latência captura um snapshot, não o risco de deriva e equidade contínuo que realmente se acumula durante a vida do contrato."
+ },
+ "i-rl-01": {
+  "text": "Selecciona os dados de treinamento e executa testes de enviesamento pré-lançamento, depois documenta como o sistema funciona para as pessoas que o operarão",
+  "why": "Deveres de fase de construção — curando dados, teste de equidade antes de lançamento e documentação para operadores — sentam-se com quem quer que construa o sistema. Isto é distinto da monitorização contínua e em contexto que a organização operadora executa uma vez que o sistema está ao vivo."
+ },
+ "i-rl-02": {
+  "text": "Incorpora ferramentas de teste de enviesamento e características de explicabilidade directamente no modelo enquanto é treinado, depois escolhe como negociar precisão contra equidade",
+  "why": "Salvaguardas técnicas construídas no próprio modelo — 'governação por desenho' — são uma escolha de tempo de construção sobre arquitetura e treinamento, feita antes do sistema alguma vez atingir um ambiente ao vivo."
+ },
+ "i-rl-03": {
+  "text": "Regista onde vieram os dados de treinamento e explica por que uma arquitetura de modelo particular foi escolhida sobre as alternativas",
+  "why": "Registos de proveniência de dados e desenho-racional são artefatos do próprio processo de construção — explicam escolhas feitas antes do sistema existir, não como ele actua uma vez a funcionar."
+ },
+ "i-rl-04": {
+  "text": "Monitoriza desempenho ao vivo e deriva no seu próprio contexto operacional e audita precisão numa base contínua",
+  "why": "Integridade operacional num contexto específico é o dever distinguidor aqui — não as escolhas de desenho por trás do modelo, que pertencem a quem quer que o construiu antes de este alguma vez atingir este contexto."
+ },
+ "i-rl-05": {
+  "text": "Integra o modelo num ambiente de produção e configura a monitorização que o observará uma vez a funcionar lá",
+  "why": "Levantar o sistema em produção e instrumentá-lo é um acto operacional, separado do treinamento e teste que produziram o modelo em primeiro lugar."
+ },
+ "i-rl-06": {
+  "text": "Carrega a responsabilidade primária quando um sistema não validado de terceiros é colocado no percurso de cuidados de um hospital sem validação independente primeiro",
+  "why": "A responsabilidade segue a decisão de colocar um sistema não validado numa situação ao vivo, que é a chamada da organização operadora — o construtor original não é o que escolheu saltar validação antes da utilização."
+ },
+ "i-rl-07": {
+  "text": "Interage com o sistema de IA em situações do mundo real e é frequentemente o primeiro a notar que algo correu mal",
+  "why": "Proximidade ao resultado ao vivo — notando enviesamento, erros ou deriva como realmente acontece — é o papel da primeira linha, distinto da organização que opera e monitoriza o sistema como um todo."
+ },
+ "i-rl-08": {
+  "text": "Interpreta a recomendação do sistema e faz a decisão final e informada com base nela",
+  "why": "Aplicar julgamento a um resultado específico e decidir o que fazer com ele é um acto de ponto de uso, não a monitorização operacional ou trabalho de desenho que acontece noutro lugar do ciclo de vida."
+ },
+ "i-rl-09": {
+  "text": "Serve como o ponto de escalada quando uma equipa quer enviar uma característica de IA rapidamente mas outra equipa levanta preocupações regulatórias sobre ela",
+  "why": "Conciliar interesses funcionais competindo dia a dia é um trabalho operacional e cross-funcional — mais estreito em âmbito que a revisão moralística e societal de casos de alto impacto, e não define apetite de risco empresarial da forma que o topo da organização faz."
+ },
+ "i-rl-10": {
+  "text": "Decide qual de várias propostas de IA competindo obtém recursos primeiro, pesando nível de risco contra prioridade estratégica e recursos disponíveis",
+  "why": "Priorizar casos de uso contra risco e recursos é uma decisão operacional permanente e cross-funcional — distinta da revisão moralística de uma vez que um corpo especializado dá a um único caso de alto impacto, e distinta do definição de apetite no topo que financia o programa inteiro."
+ },
+ "i-rl-11": {
+  "text": "Pergunta 'devemos construir este sistema em tudo?' em vez de apenas 'podemos construí-lo?' para um caso de uso proposto",
+  "why": "Pesar se um caso de uso é certo, não apenas permissível, é a revisão moralística e societal especializada — mais estreita e mais profunda que a priorização operacional que um corpo cross-funcional executa sobre todas as propostas."
+ },
+ "i-rl-12": {
+  "text": "Requer auditorias de enviesamento e medidas correctivas para uma ferramenta de contratação antes de aprovação, pesando equidade contra dano para grupos particulares",
+  "why": "Revisão independente de dano desproporcionado para uma população protegida é a função de revisão ética especializada — distinta do sinal de operação mais amplo de um comité cross-funcional."
+ },
+ "i-rl-13": {
+  "text": "Fornece conselho independente sobre se uma proposta encaixa os valores estabelecidos da organização, mesmo em casos onde já é tecnicamente legal",
+  "why": "Julgar uma área cinzenta que limpa a barra legal mas ainda levanta questões de confiança pública é exactamente a função reflexiva para que um corpo moralístico especializado existe, separado de sinal de operação legal ou."
+ },
+ "i-rl-14": {
+  "text": "Define o apetite de risco de IA da organização e decide se a estratégia geral favorece velocidade de inovação ou conformidade estrita",
+  "why": "Definir o tom e tolerância para risco em toda a organização senta-se acima de qualquer corpo de revisão único — comités e juntas operacional dentro do apetite que é definido aqui, não o caminho oposto."
+ },
+ "i-rl-15": {
+  "text": "Aprova o framework de governação geral e aloca o orçamento que a financia",
+  "why": "Aprovar e financiar o framework em si é um acto de legitimidade e recursos do topo da organização, distinto da operação dia a dia desse framework pelos corpos que financia."
+ },
+ "i-rl-16": {
+  "text": "Confirma a estratégia de IA se alinha com expectativas externas como padrões da indústria e requisitos regulatórios, não apenas com objectivos de negócio interno",
+  "why": "Alinhar a direcção geral da organização com o mundo exterior é um acto estratégico no topo, distinto da verificação de conformidade operacional que equipas legais e de risco executam por baixo dessa direcção."
+ },
+ "i-rl-17": {
+  "text": "Permanece plenamente responsável pela conformidade de um sistema com regulações mesmo depois de ter sido entregue a quem quer que o execute agora",
+  "why": "Documentado falso: o construtor original não permanece plenamente responsável uma vez que operação passa para outro papel. A responsabilidade é partilhada e rastreia responsabilidades reais de cada papel — a organização operadora assume a responsabilidade que vem com operar o sistema."
+ },
+ "i-rl-18": {
+  "text": "Senta-se dentro do ciclo de vida de desenvolvimento de IA como um participante permanente, aprovando cada fase antes da próxima poder prosseguir",
+  "why": "Documentado falso: isto descreve corpos de supervisão externa, e supervisão/enforcement de fora não é o mesmo que ser um participante envolvido dentro das próprias fases do ciclo de vida, juntamente com arquitetos de dados, especialistas socio-culturais e técnicos, e especialistas legais/privacidade."
+ },
+ "roles-lifecycle": {
+  "prompt": "Atribui cada dever (ou alegado dever) ao papel a que realmente pertence. Alguns não pertencem a ninguém."
+ }
+}

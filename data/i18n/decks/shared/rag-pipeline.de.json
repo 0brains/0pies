@@ -1,0 +1,21 @@
+{
+ "rag-pipeline": {
+  "prompt": "Ordne die Phasen von der Einnahme bis zu einer begründeten, zitierten Antwort.",
+  "steps[0].label": "Nimm vertrauenswürdige Quelldokumente auf",
+  "steps[0].detail": "Abruf kann nur jemals surfacen, was aufgenommen wurde. Die Quellenauswahl ist eine Governance-Entscheidung, nicht eine Klempner-.",
+  "steps[1].label": "Bereinige, teile auf und hänge Metadaten an",
+  "steps[1].detail": "Chunking bestimmt, was eine abrufbare Einheit ist; Metadaten sind, was später Filterung und Zuschreibung möglich macht.",
+  "steps[2].label": "Erstelle Embeddings für jeden Chunk",
+  "steps[2].detail": "Text wird zu Vektoren. Das gewählte Embeddings-Modell beschränkt alles, das der Retriever unterscheiden kann.",
+  "steps[3].label": "Speichere Chunks und Vektoren in einem Index",
+  "steps[3].detail": "Der Index macht Ähnlichkeitssuche verständlich. Zugangskontrollen gehören hier, nicht nur bei der Antwort.",
+  "steps[4].label": "Bettigle und interpretiere die Benutzerabfrage",
+  "steps[4].detail": "Die Abfrage wird vom gleichen Modell wie die Chunks betätigt, oder die zwei leben in unvergleichbaren Räumen.",
+  "steps[5].label": "Rufe ab, filtere und ordne neu Beweise",
+  "steps[5].detail": "Rückruf entscheidet, ob die richtige Passage überhaupt verfügbar ist; Ranking bestimmt, ob sie das Kontextbudget überlebt.",
+  "steps[6].label": "Baue ein Prompt mit Beweisen und Anweisungen",
+  "steps[6].detail": "Der abgerufene Beweis wird mit Anweisungen dazu in den Prompt gestellt, wie er zu verwenden ist und wann zu weigern.",
+  "steps[7].label": "Generiere, validiere und zitiere die begründete Antwort",
+  "steps[7].detail": "Das Modell antwortet aus den bereitgestellten Beweisen und zitiert es, damit ein Leser überprüfen kann anstatt zu trauen."
+ }
+}

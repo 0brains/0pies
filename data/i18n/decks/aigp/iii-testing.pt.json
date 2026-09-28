@@ -1,0 +1,84 @@
+{
+ "iii-tb-01": {
+  "label": "O tokenizador sozinho é verificado quanto ao tratamento sem erros de entrada de emoji.",
+  "why": "O isolamento de um único componente é todo o trabalho desta disciplina — o tokenizador ou trata a entrada ou não, independentemente de qualquer coisa a jusante."
+ },
+ "iii-tb-02": {
+  "label": "Uma função que padroniza como diferentes pontos de dados são representados é verificada inteiramente por conta própria, antes de ser integrada a qualquer coisa a jusante.",
+  "why": "Isolar um bloco de construção individual apanha erros enquanto são mais baratos de corrigir, antes que uma falha subtil se expanda por milhões de registos e mude silenciosamente resultados — a disciplina permanece aqui mesmo que a função mais tarde seja executada como parte de um pipeline maior."
+ },
+ "iii-tb-03": {
+  "label": "Uma rotina de pontuação personalizada enterrada no pipeline é executada contra um punhado de entradas conhecidas e verificada linha por linha pelo resultado correto, antes mesmo de o resto do sistema existir para a chamar.",
+  "why": "Verificar o resultado de uma rotina contra valores conhecidos como corretos, antes de o resto do sistema existir, é o portão mais estreito e mais cedo — distinto da próxima disciplina, que só começa uma vez que múltiplas peças estão integradas."
+ },
+ "iii-tb-04": {
+  "label": "Recuperador, modelo e interface são exercitados em conjunto de ponta a ponta; falhas emergentes aparecem apenas neste nível.",
+  "why": "Falhas que só aparecem uma vez que componentes funcionam juntos são a assinatura desta disciplina — nenhuma verificação de componente único as teria apanhado."
+ },
+ "iii-tb-05": {
+  "label": "As peças de um sistema de inventário passam limpar por conta própria, depois o todo começa a fazer sobre-encomendas de produtos ligados a certos grupos demográficos uma vez que cada componente funciona em conjunto.",
+  "why": "O problema só surge quando o sistema completo é combinado, portanto a correção tem de ser aplicada ao nível combinado também — uma revisão componente por componente a teria faltado inteiramente."
+ },
+ "iii-tb-06": {
+  "label": "Um modelo de aprovação de empréstimo retorna resultados diferentes em hardware diferente, por causa de diferenças de precisão de ponto flutuante que só aparecem uma vez que o sistema completo funciona de ponta a ponta.",
+  "why": "A discrepância é um subproduto da combinação de componentes em hardware real — a resposta de governance é documentar o intervalo de variância e estabelecer limites de decisão aceitáveis, não persegui-la fora de qualquer peça isoladamente."
+ },
+ "iii-tb-07": {
+  "label": "Precisão excelente nos dados em que foi treinado, pobre em registos que nunca viu.",
+  "why": "Esta é a verificação de generalização — a diferença entre o comportamento no conjunto de treino e o comportamento em dados nunca vistos — distinto do conjunto de teste/holdout, que permanece intocado até o ajuste acabar e depois fornece a estimativa final de erro imparcial do modelo."
+ },
+ "iii-tb-08": {
+  "label": "Um modelo atinge precisão quase perfeita no seu conjunto de treino, depois funciona inconsistentemente uma vez que novos grupos de doentes fora desse conjunto são executados através dele.",
+  "why": "A lacuna de treino para dados nunca vistos é exatamente o que esta disciplina existe para apanhar; uma métrica de justiça compararia em vez disso taxas de erro entre grupos protegidos no mesmo conjunto de dados, o que este cenário nunca faz."
+ },
+ "iii-tb-09": {
+  "label": "As predições de um modelo oscilam selvagemente dependendo de qual fatia dos dados de treino vê; outro mal se afasta da média não importa o que se coloque nele.",
+  "why": "Oscilações largas através de fatias de treino versus indiferença plana aos dados são as duas assinaturas de falha que esta disciplina observa durante o desenvolvimento, muito antes de alguém falar sobre um número de desempenho final."
+ },
+ "iii-tb-10": {
+  "label": "A disparidade de tempo de resposta é medida através de regiões de utilizador sob carga.",
+  "why": "A equidade de tempo de processamento transforma um requisito de negócio/justiça numa métrica mensurável, pré-definida — distinto de uma verificação de atributo protegido, que observa o conteúdo de saída, não latência."
+ },
+ "iii-tb-11": {
+  "label": "Amostragem estatística e verificações de análise de decisão são executadas contra as saídas do sistema para confirmar que atingem os objetivos de precisão e confiabilidade estabelecidos no início do projeto.",
+  "why": "Amostragem estatística e análise de decisão são formas reconhecidas de testar se um sistema de IA responsável atinge seus objetivos; pontuar um problema por probabilidade vezes severidade é uma ferramenta de priorização de gestão de risco, não uma forma de testar o sistema."
+ },
+ "iii-tb-12": {
+  "label": "Os números de justiça e confiabilidade aos quais um projeto se comprometeu meses atrás são verificados contra o que o sistema está realmente a produzir hoje, usando as mesmas métricas que todos concordaram.",
+  "why": "Manter os resultados às métricas concordadas antecipadamente, não qualquer número que pareça melhor, é o que mantém esta disciplina honesta e impede equipas de trocar silenciosamente por uma medida lisonjeira."
+ },
+ "iii-tb-13": {
+  "label": "Um forasteiro investiga se o registo específico de um doente estava no conjunto de treino.",
+  "why": "Um forasteiro saber se um registo específico estava no conjunto de treino é uma falha de teste de segurança — distinto da verificação de generalização, que só se importa com precisão em dados nunca vistos, não com quem estava no conjunto de treino."
+ },
+ "iii-tb-14": {
+  "label": "Verificações de estilo penetração procuram maneiras como um atacante poderia roubar os pesos do modelo ou reconstruir partes dos dados de treino.",
+  "why": "Alvo de roubo de peso e reconstrução de dados de treino é uma visão do atacante, distinta de uma verificação de generalização, que nunca considera se alguém está a tentar extrair algo do modelo."
+ },
+ "iii-tb-15": {
+  "label": "Os testadores de penetração descobrem que entradas cuidadosamente elaboradas podem inverter o diagnóstico de um modelo já preciso em aproximadamente um caso em oito.",
+  "why": "Entradas adversárias elaboradas causando classificação errada é um achado de teste de segurança; a resposta de governance é documentá-lo como uma limitação conhecida e adicionar validação de entrada e detecção de anomalia, não afastá-lo porque a precisão clínica ainda atinge alvo."
+ },
+ "iii-tb-16": {
+  "label": "Atributo protegido invertido, tudo o resto mantido constante, saída observada.",
+  "why": "Observar se inverter um atributo protegido sozinho altera a saída é uma verificação de justiça contrafactual — distinto de uma sonda de inferência de adesão, que pergunta se um registo estava no conjunto de treino."
+ },
+ "iii-tb-17": {
+  "label": "O arquivo de conformidade de um hospital mostra que verificações de justiça foram executadas e registadas, mais um registo que decisões podem ser explicadas aos revisores — evidência de que a organização cumpriu seu dever de cuidado.",
+  "why": "Registar que verificações de justiça e explicação realmente foram executadas é o que as transforma em evidência regulatória defensável — distinto de uma auditoria de segurança, que documenta resistência a ataques, não qualidade de justiça ou explicação."
+ },
+ "iii-tb-18": {
+  "label": "A decisão de um modelo é traduzida em termos que um clínico pode realmente agir, não apenas uma pontuação de probabilidade.",
+  "why": "Traduzir uma decisão em termos que uma parte interessada pode usar, em vez de deixá-la como uma pontuação de probabilidade nua, é a metade desta zona que um modelo de caixa preta ainda pode falhar mesmo depois de passar cada número de precisão e justiça."
+ },
+ "iii-testing": {
+  "hint": "Pergunta o que a cena está a verificar, não apenas que dados ela usa. Validação aqui significa uma coisa apenas: o modelo generaliza além do que foi treinado. O conjunto de dados que fornece a estimativa final de erro imparcial de um modelo é um conceito diferente inteiramente, testado de frente em Pipeline Twins.",
+  "note": "Estas são verificações de tempo de desenvolvimento e pré-lançamento. O que acontece após um sistema entrar em direto e permanecer em direto é um tabuleiro diferente.",
+  "zones[0].def": "Verificar um componente do pipeline por conta própria — um tokenizador, uma função de normalização, uma rotina de pontuação — antes de nunca ser integrado a nada. Apanha erros enquanto são mais baratos de corrigir.",
+  "zones[1].def": "Exercitar componentes em conjunto de ponta a ponta, observar falhas que só emergem uma vez que peças são combinadas — desvios, estrangulamentos, ou viés que nenhum componente individual mostrou por conta própria.",
+  "zones[2].def": "Verificar se o modelo treinado generaliza além dos dados em que foi treinado: a lacuna entre o comportamento do conjunto de treino e o comportamento em dados nunca vistos. Uma verificação de tempo de desenvolvimento contra sobreajuste — não a última palavra do modelo sobre desempenho.",
+  "zones[3].def": "Medir o sistema contra as métricas específicas e pré-definidas — precisão, confiabilidade, limiares de justiça — que traduzem os objetivos de negócio, ética e regulação do projeto em números que todos concordaram.",
+  "zones[4].def": "Investigar se o modelo pode ser atacado: pesos roubados, dados de treino reconstruídos, saídas manipuladas por entradas elaboradas. Resiliência contra compromisso deliberado ou acidental.",
+  "zones[5].def": "Verificar se resultados são justos através de grupos protegidos, e se uma decisão pode ser explicada em termos significativos para as pessoas que têm de confiar nela."
+ }
+}

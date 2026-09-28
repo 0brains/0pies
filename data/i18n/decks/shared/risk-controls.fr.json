@@ -1,0 +1,91 @@
+{
+ "rc-01": {
+  "label": "Le champ texte libre qui permettait aux utilisateurs de soumettre des invites arbitraires au modèle sous-jacent est supprimé ; seul un ensemble fixe d'actions reste.",
+  "why": "La surface d'injection est parti, pas gardée. L'élimination est reconnaissable parce que la mitigation supprime une capacité plutôt que de contraindre son usage."
+ },
+ "rc-02": {
+  "label": "La fonctionnalité qui a déduit les attributs démographiques des photos d'utilisateurs est supprimée du produit.",
+  "why": "Aucune inférence signifie aucune erreur d'inférence, aucune précision disparate et aucune question de base juridique. Le risque n'est pas géré ; il n'existe plus."
+ },
+ "rc-03": {
+  "label": "La capacité d'un chatbot à exécuter les changements de compte est entièrement retirée ; il ne peut maintenant que lire et expliquer.",
+  "why": "Enlever la capacité d'écriture élimine toute la classe de préjudices d'action non autorisée. Tout en aval devient inutile."
+ },
+ "rc-04": {
+  "label": "Les identifiants directs sont supprimés du corpus d'entraînement plutôt que d'être protégés en son sein.",
+  "why": "Les données jamais collectées ne peuvent pas fuir, être ré-identifiées ou être sujettes à une demande d'accès. C'est pourquoi la minimisation surclasse le chiffrement."
+ },
+ "rc-05": {
+  "label": "Un modèle génératif utilisé pour résumer les dossiers médicaux est remplacé par un résumé extractif qui ne peut que citer la source.",
+  "why": "L'objectif est préservé tandis que le mécanisme risqué — la génération libre, et donc la fabrication — est échangé pour un qui ne peut pas fabriquer."
+ },
+ "rc-06": {
+  "label": "Un modèle de boîte noire à gradient boosté dans une décision de prêt est remplacé par un scorecard monotonique avec une précision comparable.",
+  "why": "Reconcevoir pour un modèle intrinsèquement explicable supprime le problème d'explication plutôt que de boulonner un expliquant post-hoc dessus."
+ },
+ "rc-07": {
+  "label": "Les vrais enregistrements de clients utilisés dans un environnement de test sont remplacés par des données synthétiques de la même forme statistique.",
+  "why": "L'activité continue avec une entrée matériellement plus sûre. La substitution s'asseoit en dessous de l'élimination parce que le remplacement porte ses propres risques plus petits."
+ },
+ "rc-08": {
+  "label": "Une étape de reconnaissance faciale dans une vérification d'identité est remplacée par une vérification de document plus contrôle de vivacité qui ne construit pas de modèle de visage.",
+  "why": "Même objectif d'assurance, mécanisme différent, exposition biométrique bien plus faible. Le signe est que la fonction survit et le risque est échangé."
+ },
+ "rc-09": {
+  "label": "Les filtres de sortie bloquent les réponses contenant des motifs de données personnelles avant qu'elles n'atteignent jamais l'utilisateur.",
+  "why": "La contrainte est appliquée par le système à chaque demande. Personne n'a besoin de s'en souvenir, ce qui fait que les contrôles techniques surclassent ceux procéduraux."
+ },
+ "rc-10": {
+  "label": "Le contrôle d'accès basé sur les rôles empêche la couche de récupération de retourner des documents que l'utilisateur demandeur n'est pas autorisé à voir.",
+  "why": "L'autorisation est appliquée au point de récupération plutôt que de faire confiance à l'invite. Une règle que le système applique ne peut pas être oubliée sous la pression."
+ },
+ "rc-11": {
+  "label": "Un plafond dur limite le nombre d'appels d'outils qu'un agent peut faire avant de devoir s'arrêter et escalader.",
+  "why": "Une limite d'exécution tient quel que soit ce que le modèle décide de faire. Améliorer la description de l'outil serait une mesure administrative par comparaison."
+ },
+ "rc-12": {
+  "label": "Le déploiement est gâté par une suite d'évaluation automatisée qui échoue la build si les performances du sous-groupe régressent au-delà d'un seuil.",
+  "why": "La porte est mécanique et ne peut pas être sautée par un chef de version occupé, ce qui est précisément pourquoi elle surclasse une liste de contrôle d'examen couvrant le même terrain."
+ },
+ "rc-13": {
+  "label": "Une politique d'usage acceptable est publiée et tout le personnel complète une formation annuelle dessus.",
+  "why": "L'efficacité dépend entièrement des gens la lisant, la mémorisant et l'appliquant. La formation vaut la peine d'avoir et est régulièrement surcréditée dans les évaluations des risques."
+ },
+ "rc-14": {
+  "label": "Une procédure exige qu'un second examinateur approuve chaque changement de modèle à fort impact.",
+  "why": "Une porte procédurale peut être contournée sous la pression des délais. Faire de la même vérification un statut requis dans le pipeline l'élèverait."
+ },
+ "rc-15": {
+  "label": "Des audits manuels trimestriels échantillonnent les décisions du modèle et les vérifient par rapport à la politique.",
+  "why": "Détective, périodique et humain. Il trouve les problèmes après qu'ils se produisent, ce qui est utile et ne prévient pas."
+ },
+ "rc-16": {
+  "label": "Un livret de réponse aux incidents indique qui est appelé et dans quel ordre quand un modèle se comporte mal.",
+  "why": "La préparation procédurale réduit l'impact par une réponse plus rapide, mais seulement si la procédure est suivie et actuelle."
+ },
+ "rc-17": {
+  "label": "Une bannière indique aux utilisateurs que les réponses sont générées par IA et peuvent être inexactes.",
+  "why": "Une obligation de divulgation peut bien être obligatoire, mais en tant que mitigation c'est le niveau le plus faible : elle transfère la vigilance à l'utilisateur, qui ne peut pas inspecter le modèle."
+ },
+ "rc-18": {
+  "label": "L'interface avertit les utilisateurs de ne pas entrer d'informations confidentielles dans l'assistant.",
+  "why": "L'avertissement dépend de la personne la moins équipée pour l'appliquer. Bloquer les motifs sensibles à l'entrée serait un contrôle d'ingénierie pour le même risque."
+ },
+ "rc-19": {
+  "label": "La documentation indique que le modèle n'a pas été validé pour une utilisation sur les cas pédiatriques.",
+  "why": "Indiquer une limitation informe le déployeur sans prévenir l'usage abusif. Refuser les entrées hors de portée au runtime serait matériellement plus fort."
+ },
+ "rc-20": {
+  "label": "Les images générées portent une étiquette visible et les métadonnées de provenance intégrées les identifiant comme synthétiques.",
+  "why": "Le marquage de provenance prend en charge le jugement en aval et est souvent légalement requis. Cela ne change rien à ce que le système produira."
+ },
+ "risk-controls": {
+  "hint": "Fais glisser chaque mitigation sur son niveau. La question est dans quelle mesure la mesure dépend d'une personne qui fait la bonne chose — plus elle le fait, plus le niveau est faible.",
+  "note": "L'ordre compte plus que les étiquettes. Une mesure qui dépend d'une personne lisant, mémorisant et se conformant est structurellement plus faible qu'une qui rend la défaillance impossible, cependant diligent est écrit le premier.",
+  "zones[0].def": "Supprime le risque. Le mode de défaillance ne peut pas se produire parce que la capacité qui l'a produit est partie.",
+  "zones[1].def": "Remplace l'élément risqué par un plus sûr qui réalise le même objectif.",
+  "zones[2].def": "Construis la contrainte dans le système afin qu'elle tienne sans que personne choisisse de se conformer.",
+  "zones[3].def": "Les politiques, la formation, les étapes d'examen et les procédures. Efficace seulement dans la mesure où les gens les suivent.",
+  "zones[4].def": "Indique à l'utilisateur. Le niveau le plus faible : elle déplace la responsabilité vers la personne la moins capable de changer le résultat."
+ }
+}

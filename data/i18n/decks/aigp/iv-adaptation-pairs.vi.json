@@ -1,0 +1,62 @@
+{
+ "iv-ap-01": {
+  "a.text": "Kiến thức độc quyền của tổ chức được đào tạo trực tiếp vào các trọng số của mô hình thông qua các vòng đào tạo bổ sung, trở thành một phần vĩnh viễn của những gì mô hình \"biết.\"",
+  "a.why": "Nướng dữ liệu miền vào các trọng số có nghĩa là mô hình kế thừa bất kỳ rủi ro ghi nhớ hoặc rò rỉ nào dữ liệu mang lại — một trình tạo dữ liệu tổng hợp được điều chỉnh bằng cách này trên các bản ghi sản xuất vẫn có thể rò rỉ dấu vết của những bản ghi gốc ngay cả sau khi ẩn danh, và sử dụng dữ liệu cụ thể của học sinh theo cách tương tự tạo ra sự phơi bày vi phạm của riêng nó.",
+  "b.text": "Kiến thức độc quyền của tổ chức ở lại trong một cửa hàng bên ngoài, được duy trì riêng biệt và chỉ được kéo vào tại thời điểm mỗi câu hỏi được đặt ra.",
+  "b.why": "Không có gì về kiến thức này được mô hình học — nó được tìm nạp tươi mới cho mỗi truy vấn, đó chính xác là tại sao nó có thể phản ánh hướng dẫn của tháng này mà không cần một lần chạy retraining duy nhất. Lựa chọn điều chỉnh được thực hiện ở đây là những gì xác định gánh nặng bảo đảm mà nhóm kết thúc sở hữu."
+ },
+ "iv-ap-02": {
+  "a.text": "Tìm nạp các tài liệu chính sách hiện tại để tạo nền tảng cho một câu trả lời duy nhất, mà sau đó một con người đọc và hành động.",
+  "a.why": "Công việc của hệ thống dừng lại ở việc tạo ra một câu trả lời được bao bọc tốt; mọi hành động hậu quả phía sau vẫn là của con người để thực hiện.",
+  "b.text": "Lập kế hoạch một nhiệm vụ đa bước trên chính nó và thực hiện các hành động trên các công cụ đặt phòng và thanh toán, với xem xét con người tối thiểu ở mỗi bước.",
+  "b.why": "Quyền tự chủ hành động, không chỉ quyền tự chủ câu trả lời, là bề mặt quản trị mới ở đây: khi một nhà triển khai cho phép một hệ thống hành động thay vì chỉ thông báo, trách nhiệm trực tiếp cho hành vi tác nhân có hại hoặc lừa dối rơi vào người triển khai — điều này yêu cầu phạm vi hành động, ngưỡng human-in-the-loop và những bản ghi hành động đầy đủ, không một trong những trợ lý chỉ dựa trên truy vấn nào cần."
+ },
+ "iv-ap-03": {
+  "a.text": "Tổ chức có thể đọc, sửa đổi và phân phối các trọng số và mã của chính mô hình, và chạy nó hoàn toàn trên cơ sở hạ tầng nó kiểm soát.",
+  "a.why": "Khả năng kiểm tra là toàn bộ giao dịch: bạn được kiểm toán thuật toán của chính bạn và tránh phụ thuộc vào lộ trình của một nhà cung cấp, nhưng bạn cũng kế thừa gánh nặng nội bộ của kiểm tra giấy phép, nguồn gốc dữ liệu huấn luyện và kiểm tra bảo mật của chính bạn.",
+  "b.text": "Tổ chức chỉ có thể gọi mô hình thông qua một API và không bao giờ thấy các trọng số, nhưng nhà cung cấp sao lưu nó với hợp đồng hỗ trợ, phản ứng sự cố và bồi thường.",
+  "b.why": "Bạn đánh đổi quyền kiểm tra để có các đảm bảo được sao lưu theo hợp đồng — và chi phí chiến lược của giao dịch đó được ghi lại là rủi ro hàng đầu của con đường này: khi các quy trình được xây dựng xung quanh API của một nhà cung cấp, chuyển đổi đi sau đó sẽ trở nên tốn kém."
+ },
+ "iv-ap-04": {
+  "a.text": "Mô hình cơ sở được nén và định hình lại — các tham số được cắt tỉa, độ chính xác giảm, một lớp bộ điều hợp nhẹ được lớp trên — để cắt chi phí và độ trễ cho cách sử dụng cạnh hoặc khối lượng cao.",
+  "a.why": "Thu nhỏ hoặc định hình lại hiện vật theo cách này có thể yên tĩnh di chuyển các ranh giới quyết định của nó và giảm khả năng giải thích, vì vậy độ chính xác, công bằng và độ mạnh mẽ đều cần phải được kiểm tra lại sau mỗi thay đổi như vậy, không được giả định sẽ mang lại không thay đổi.",
+  "b.text": "Mô hình của nhà cung cấp chạy không sửa đổi, chính xác như được gửi, được sao lưu chỉ bởi xem xét con người và các điều khiển khác được lớp xung quanh nó.",
+  "b.why": "Không có gì về hiện vật tự nó đã thay đổi, vì vậy quản trị dựa vào tài liệu của chính nhà cung cấp và trên các điều khiển bù như xem xét con người thay vì xác thực lại nội bộ của mô hình."
+ },
+ "iv-ap-05": {
+  "a.text": "Một hệ thống xác định điểm tín dụng dự đoán hoặc phân loại từ các input có cấu trúc; những rủi ro của nó là thiên vị chống lại các nhóm nhất định và độ chính xác yên tĩnh giảm khi dữ liệu cơ bản trôi.",
+  "a.why": "Dự đoán hoặc phân loại một danh mục đã biết từ các đặc trưng có cấu trúc là chế độ thất bại của hồ sơ này — rủi ro sai lệch và trôi dạo quen thuộc mà kiểm tra công bằng và giám sát được xây dựng để bắt.",
+  "b.text": "Một trợ lý soạn thảo tạo ra văn bản hoàn toàn mới, hình ảnh hoặc mã từ một lời nhắc; những rủi ro của nó là ảo giác, phơi bày bản quyền và output sai lầm thuyết phục.",
+  "b.why": "Tạo nội dung không tồn tại trước mở ra một bề mặt rủi ro hoàn toàn khác — ảo giác và nguồn gốc, không phải hồ sơ sai lệch và trôi dạo chi phối một hệ thống dự đoán chỉ."
+ },
+ "iv-ap-06": {
+  "a.text": "Mô hình của nhà cung cấp được sử dụng chính xác như được cung cấp; công việc của nhóm là xác thực nó lại các tiêu chuẩn hiệu suất và công bằng của riêng nó và ghi lại bất kỳ khoảng cách nào.",
+  "a.why": "Quản trị ở đây dựa gần như hoàn toàn vào tính minh bạch của nhà cung cấp cộng với các điều khiển bù — nhóm không bao giờ chạm vào nội bộ của mô hình, vì vậy những nghĩa vụ của nó dừng lại ở xác thực và tài liệu.",
+  "b.text": "Một mô hình đa năng được đào tạo lại trên dữ liệu được dán nhãn của tổ chức riêng của nó cho đến khi nó tái tạo ra một hành vi cụ thể, mong muốn.",
+  "b.why": "Tại thời điểm một tổ chức retrains mô hình, quản trị xem kết quả là một hệ thống mới: kiểm tra công bằng và độ mạnh mẽ phải được lặp lại từ đầu, và — so với sử dụng mô hình của nhà cung cấp như được cung cấp — tổ chức hiện mang trách nhiệm pháp lý tăng của riêng nó."
+ },
+ "iv-ap-07": {
+  "a.text": "Một chatbot hỗ trợ nhận các câu hỏi được viết và chỉ tạo ra câu trả lời được viết, không có kênh input khác để lý do.",
+  "a.why": "Chỉ văn bản vào, chỉ văn bản ra — những lo ngại quản trị ở đây là ảo giác, cụm từ thiên vị và các cuộc tấn công kiểu jailbreak, không một trong những cuộc tấn công liên quan đến một phương thức thứ hai.",
+  "b.text": "Một công cụ yêu cầu cân nhắc một bức ảnh thiệt hại cùng với ghi chú được viết của người điều chỉnh trước khi tạo ra một phán xét kết hợp duy nhất.",
+  "b.why": "Kết hợp các kênh thêm một rủi ro mà một hệ thống chỉ văn bản không bao giờ phải đối mặt: các tương quan sai giữa một hình ảnh và văn bản bên cạnh nó, và nhu cầu hiển thị input nào thực sự lái output."
+ },
+ "iv-ap-08": {
+  "a.text": "Một bộ phân loại hẹp xử lý một nhiệm vụ trên một ngân sách tính toán chặt chẽ, retrains nhanh chóng, và truy vết các output của nó quay lại input với ít nỗ lực.",
+  "a.why": "Một hệ thống nhỏ gọn, hẹp rẻ để kiểm tra lại và dễ giải thích — chi phí là nó có thể kém hiệu suất khi môi trường trở nên biến động hơn những gì nó được xây dựng cho.",
+  "b.text": "Một hệ thống nền tảng rộng tổng quát hóa qua nhiều nhiệm vụ nó không bao giờ được đào tạo cụ thể cho, với chi phí là quản trị tính toán nặng hơn và bề mặt tấn công lớn hơn.",
+  "b.why": "Chiều rộng mua thông qua quy mô có nghĩa là hệ thống có thể giải quyết các lĩnh vực không quen thuộc zero-shot, nhưng nó cũng cần hạn ngạch tính toán, red-teaming và giám sát trôi dạo mà một hệ thống hẹp không có."
+ },
+ "iv-ap-09": {
+  "a.text": "Mọi nguồn mà mô hình rút được trong một phiên được ghi lại để kiểm toán, và bất kỳ dữ liệu cá nhân nào đi qua bộ tập hợp được kết nối phải được loại bỏ trước khi nó từng được hiển thị cho mô hình.",
+  "a.why": "Ghi lại kiểm toán và loại bỏ PII trên một bộ tập hợp bên ngoài là những nghĩa vụ quản trị chỉ không tồn tại cho một mô hình không có đường ống dữ liệu trực tiếp được đính kèm — gánh nặng bảo đảm của con đường này sống trong hệ thống ống dẫn, không phải trọng số.",
+  "b.text": "Mô hình của nhà cung cấp được sử dụng chính xác như được cung cấp, và con đường nhanh nhất đến một bản thử nghiệm hoạt động được chọn chính xác vì không cần dữ liệu đào tạo mới hoặc hệ thống ống dẫn cần được xây dựng trước.",
+  "b.why": "Tốc độ là toàn bộ sự hấp dẫn ở đây — không retraining, không hệ thống ống dẫn dữ liệu mới — nhưng quản trị coi tốc độ đó như một khoản nợ: mô hình được cho là rủi ro cao cho đến khi được xác thực lại các tiêu chuẩn hiệu suất và công bằng của tổ chức này, vì không có gì về nó được xây dựng với triển khai này trong tâm trí."
+ },
+ "iv-ap-10": {
+  "a.text": "Mô hình cơ sở giống nhau ra nhỏ hơn và rẻ hơn để chạy sau khi nén, mà không có một thực tế mới nào được thêm vào nó.",
+  "a.why": "Con đường này nhắm mục tiêu đặc tính, không phải kiến thức — nhưng thu nhỏ hoặc định hình lại hiện vật vẫn có thể di chuyển các ranh giới quyết định của nó, vì vậy độ chính xác và công bằng cần kiểm tra lại ngay cả khi không có gì \"mới\" được dạy.",
+  "b.text": "Mô hình cơ sở giống nhau ra cùng kích thước, nhưng bây giờ đáng tin cậy tái tạo ra hành vi chuyên gia nó không bao giờ có quyền truy cập trước, học được từ những ví dụ được quản lý.",
+  "b.why": "Con đường này nhắm mục tiêu hành vi và kiến thức, không phải đặc tính — và bởi vì hành vi mới đó được học từ dữ liệu của tổ chức riêng của nó, quản trị hiện coi kết quả là một hệ thống mới yêu cầu kiểm tra của riêng nó, không phải một bản sao thay đổi kích thước của cái cũ."
+ }
+}

@@ -1,0 +1,45 @@
+{
+ "model-decisions": {
+  "hint": "Przeciągnij każdą sytuację na odpowiedź, którą wymaga. Niektóre odpowiedzi na tablicy są tam, by cię zwabić."
+ },
+ "model-decisions-01": {
+  "label": "Asystent musi odpowiedzieć z prywatnych polityk, które zmieniają się co tydzień i cytować bieżące źródło.",
+  "sub": "Frequently Changing Policies",
+  "why": "RAG pobiera bieżący prywatny dowód w momencie żądania i wspiera cytowania. Kompromis: Fine-tuning może dostosować zachowanie, ale jest słabym mechanizmem do często zmieniających się faktów."
+ },
+ "model-decisions-02": {
+  "label": "Tysiące przykładów wykazuje stabilny styl raportu, który model bazowy nie odtwarza konsekwentnie.",
+  "sub": "Stable Specialist Format",
+  "why": "Fine-tuning jest odpowiedni dla powtarzającego się zachowania wykazanego przez wyselekcjonowany zbiór przykładów. Kompromis: Szybki monit powinien być wciąż spróbowany najpierw, gdy spełnia wymogi jakości przy niższej złożoności."
+ },
+ "model-decisions-03": {
+  "label": "Zdolny model musi wyodrębnić pięć pól do sprawdzonego obiektu JSON; żadna nowa wiedza nie jest wymagana.",
+  "sub": "Strict JSON Extraction",
+  "why": "Jasne instrukcje, przykłady, schemat i walidacja adresują formatowanie bez zmiany wag modelu. Kompromis: Fine-tuning staje się rozsądny tylko, jeśli ekstrakcja oparta na monicie wielokrotnie zawodzi w wymaganej skali i jakości."
+ },
+ "model-decisions-04": {
+  "label": "Model musi internalizować specjalistyczną terminologię z bardzo dużego bez etykiet naukowych korpusu.",
+  "sub": "Domain Language at Scale",
+  "why": "Kontynuowane pretraining dostosowuje reprezentacje języka modelu przy użyciu dużych ilości tekstu domeny. Kompromis: RAG pozostaje lepszy, gdy potrzeba to dostęp do zmieniających się faktów, a nie głębsze dostosowanie domeny."
+ },
+ "model-decisions-05": {
+  "label": "System musi sprawdzić zamówienie, poprosić o zatwierdzenie, wywołać interfejs API zwrotu i zgłosić wynik.",
+  "sub": "Action-Taking Assistant",
+  "why": "Agent używający narzędzi może zorganizować kroki, ale każde narzędzie potrzebuje wąskich uprawnień, walidacji i bramek zatwierdzenia. Kompromis: Przepływ pracy deterministyczny jest bezpieczniejszy, gdy sekwencja jest naprawiona i nie wymaga kierowanego planowania modelu."
+ },
+ "model-decisions-06": {
+  "label": "System roszczeń musi rozumować nad fotografią uszkodzenia wraz z opisem zdarzenia pisemnego.",
+  "sub": "Image and Text Inspection",
+  "why": "Multimodalny model może wspólnie interpretować wejścia wizualne i tekstowe. Kompromis: Oddzielne specjalistyczne modele widzenia i tekstu mogą wygrać, gdy niezależne wyniki, kontrola lub niższy koszt mają znaczenie bardziej."
+ },
+ "model-decisions-07": {
+  "label": "Dziesięć milionów krótkich rekordów musi być klasyfikowane nocą w ramach ścisłego budżetu, gdy etykiety są dostępne.",
+  "sub": "High-Volume Simple Classification",
+  "why": "Mniejszy oceniany klasyfikator może dostarczać odpowiednią jakość przy znacznie niższym koszcie wnioskowania wsadowego. Kompromis: Model fundacyjny może przyspieszyć prototypowanie lub tworzyć etykiety, ale powinien zarabiać na swoim koszcie produkcji poprzez zmierzoną jakość."
+ },
+ "model-decisions-08": {
+  "label": "Opublikowane reguły całkowicie określają prawidłowość i każda decyzja musi być powtarzalna i audytowalna.",
+  "sub": "Exact Eligibility Policy",
+  "why": "Dokładne, pełne reguły powinny być wdrażane bezpośrednio, a nie przybliżane przez model probabilistyczny. Kompromis: AI może pomagać w potwierdzeniu dokumentu lub wyjaśnieniu bez posiadania autorytarnej decyzji."
+ }
+}

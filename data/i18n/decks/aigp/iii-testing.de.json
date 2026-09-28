@@ -1,0 +1,84 @@
+{
+ "iii-tb-01": {
+  "label": "Der Tokenizer allein wird auf absturzsfreie Verarbeitung von Emoji-Eingaben überprüft.",
+  "why": "Die Isolierung einer einzelnen Komponente ist dieser Disziplin ganzer Zweck — der Tokenizer verarbeitet die Eingabe entweder oder nicht, unabhängig von allem Nachgelagerten."
+ },
+ "iii-tb-02": {
+  "label": "Eine Funktion, die standardisiert, wie verschiedene Datenpunkte dargestellt werden, wird völlig isoliert getestet, bevor sie in irgendetwas Nachgelagertes integriert wird.",
+  "why": "Das Isolieren eines Bausteins erfasst Fehler, während sie noch günstig zu beheben sind, bevor ein subtiler Fehler sich über Millionen Datensätze ausbreitet und Ergebnisse unbemerkt verzerrt — diese Disziplin bleibt aktuell, auch wenn die Funktion später als Teil einer größeren Pipeline läuft."
+ },
+ "iii-tb-03": {
+  "label": "Eine benutzerdefinierte Scoring-Routine tief in der Pipeline wird gegen eine Handvoll bekannter Eingaben ausgeführt und zeilenweise auf die richtige Ausgabe überprüft, bevor der Rest des Systems überhaupt existiert, um sie aufzurufen.",
+  "why": "Das Überprüfen einer Routine-Ausgabe gegen bekannt korrekte Werte, bevor der Rest des Systems existiert, ist das engste und früheste Tor — unterschiedlich von der nächsten Disziplin, die erst startet, wenn mehrere Teile zusammen verdrahtet sind."
+ },
+ "iii-tb-04": {
+  "label": "Retriever, Modell und UI werden gemeinsam end-to-end ausgeführt; emergente Fehler treten nur auf dieser Ebene auf.",
+  "why": "Fehler, die nur entstehen, wenn Komponenten zusammenlaufen, sind diese Disziplins Signatur — kein einzelnes Komponentenceck hätte sie erfasst."
+ },
+ "iii-tb-05": {
+  "label": "Die Teile eines Bestandsverwaltungssystems laufen einzeln sauber, dann fängt das gesamte System an, Produkte für bestimmte Demografiegruppen zu viel zu bestellen, sobald jede Komponente zusammen läuft.",
+  "why": "Das Problem taucht erst auf, wenn das komplette System kombiniert wird, daher muss die Lösung auch auf kombinierter Ebene angewendet werden — eine Komponenten-für-Komponenten-Überprüfung hätte es völlig übersehen."
+ },
+ "iii-tb-06": {
+  "label": "Ein Kreditgenehmigungsmodell liefert auf unterschiedlicher Hardware unterschiedliche Ergebnisse, weil Gleitkomma-Präzisionsunterschiede nur bei end-to-end Ausführung des kompletten Systems zutage treten.",
+  "why": "Die Abweichung ist ein Nebenprodukt der Kombination von Komponenten auf echter Hardware — die Governance-Antwort ist, die Varianzspanne zu dokumentieren und akzeptable Entscheidungsgrenzen zu setzen, nicht sie aus irgendeinem isolierten Teil herauszujagen."
+ },
+ "iii-tb-07": {
+  "label": "Großartige Genauigkeit auf den Trainingsdaten, schwach bei Datensätzen, die sie nie gesehen hat.",
+  "why": "Dies ist die Generalisierungs-Check — die Lücke zwischen Training und Verhalten bei ungesehenen Daten — unterschiedlich vom Test-/Holdout-Set, das unberührt bleibt, bis das Tuning fertig ist, und dann dem Modell seine finale, unverzerrte Fehlerquote liefert."
+ },
+ "iii-tb-08": {
+  "label": "Ein Modell erreicht nahezu perfekte Genauigkeit auf seinem Trainingssatz, dann verhält sich inkonsistent, sobald neue Patientengruppen außerhalb dieses Satzes durchlaufen werden.",
+  "why": "Die Training-zu-ungesehenen-Daten-Lücke ist genau das, wofür diese Disziplin existiert; eine Fairness-Metrik würde stattdessen Fehlerquoten über geschützte Gruppen auf demselben Datensatz vergleichen, was dieses Szenario nie tut."
+ },
+ "iii-tb-09": {
+  "label": "Die Vorhersagen eines Modells schwingen wild je nachdem, welchen Trainingsdaten-Slice es sieht; ein anderes bewegt sich kaum vom Durchschnitt, egal was gefüttert wird.",
+  "why": "Breite Schwankungen über Trainingssätze hinweg versus flache Gleichgültigkeit gegenüber den Daten sind die zwei Fehler-Signaturen, die diese Disziplin während der Entwicklung beobachtet, lange bevor irgendjemand über eine abschließende Performance-Zahl spricht."
+ },
+ "iii-tb-10": {
+  "label": "Reaktionszeitunterschiede werden über Benutzerregionen unter Last gemessen.",
+  "why": "Verarbeitungszeit-Gerechtigkeit verwandelt eine Business-/Fairness-Anforderung in eine messbare, vordefinierte Metrik — unterschiedlich von einem Schutzattribut-Flip-Check, der Ausgabeinhalte beobachtet, nicht Latenz."
+ },
+ "iii-tb-11": {
+  "label": "Statistische Stichproben und Entscheidungsanalyse-Checks werden gegen die System-Ausgaben ausgeführt, um zu bestätigen, dass sie die am Projektstart festgelegten Genauigkeits- und Zuverlässigkeitsziele erfüllen.",
+  "why": "Statistische Stichproben und Entscheidungsanalyse sind etablierte Wege, um zu testen, ob ein verantwortungsvolles KI-System seine Ziele erfüllt; das Bewerten eines Problems nach Wahrscheinlichkeit mal Schweregrad ist ein Risk-Management-Priorisierungswerkzeug, nicht ein Weg zum Testen des Systems selbst."
+ },
+ "iii-tb-12": {
+  "label": "Die Fairness- und Zuverlässigkeitskennzahlen, die ein Projekt vor Monaten unterzeichnet hat, werden überprüft gegen das, was das System heute tatsächlich produziert, mit denselben Metriken, auf die sich alle einigten.",
+  "why": "Das Halten von Ergebnissen gegen die Metriken, die zu Anfang vereinbart wurden, nicht gegen welche Zahl gerade am besten aussieht, ist das, was diese Disziplin ehrlich hält und Teams davon abhält, still ein geschmeichelhaftes Maß auszutauschen."
+ },
+ "iii-tb-13": {
+  "label": "Ein Außenstehender forscht, ob ein spezifischer Patientensatz im Trainingssatz war.",
+  "why": "Ein Außenstehender, der erfährt, ob ein spezifischer Datensatz im Trainingssatz war, ist ein Sicherheitstest-Fehler — unterschiedlich von der Generalisierungs-Check, die sich nur um Genauigkeit bei ungesehenen Daten kümmert, nicht wer im Trainingssatz war."
+ },
+ "iii-tb-14": {
+  "label": "Penetrations-artige Checks suchen nach Wegen, wie ein Angreifer die Modell-Gewichte stehlen oder Teile der Trainingsdaten rekonstruieren könnte.",
+  "why": "Auf Gewichtsraub und Trainings-Datenrekonstruktion abzuzielen ist eine Angreifer-Sicht, unterschiedlich von einer Generalisierungs-Check, die nie berücksichtigt, ob irgendjemand versucht, etwas aus dem Modell zu extrahieren."
+ },
+ "iii-tb-15": {
+  "label": "Penetrationstester finden, dass sorgfältig konstruierte Eingaben die Diagnose eines sonst genauen Modells in ungefähr einem von acht Fällen kippen können.",
+  "why": "Konstruierte adversarische Eingaben verursachen Fehlklassifizierung ist ein Sicherheitstest-Befund; die Governance-Antwort ist, es als bekannte Einschränkung zu dokumentieren und Eingabevalidierung sowie Anomalieerkennung hinzuzufügen, nicht es abzutun, weil klinische Genauigkeit noch das Ziel erfüllt."
+ },
+ "iii-tb-16": {
+  "label": "Schutzattribut umgeklappt, alles andere konstant gehalten, Ausgabe beobachtet.",
+  "why": "Das Beobachten, ob das Umklappen eines Schutzattributs allein die Ausgabe ändert, ist ein Kontrafaktisches-Fairness-Check — unterschiedlich von einer Membership-Inference-Sonde, die fragt, ob ein Datensatz überhaupt im Trainingssatz war."
+ },
+ "iii-tb-17": {
+  "label": "Die Compliance-Datei eines Krankenhauses zeigt, dass Fairness-Checks ausgeführt und protokolliert wurden, plus eine Aufzeichnung, dass Entscheidungen Reviewern erklärt werden konnten — Beweis, dass die Organisation ihre Sorgfaltspflicht erfüllte.",
+  "why": "Das Protokollieren, dass Fairness- und Erklär-Checks tatsächlich liefen, ist das, was sie in verteidigbare regulatorische Beweise verwandelt — unterschiedlich von einem Sicherheitsaudit-Trail, der Angriffsresistenz dokumentiert, nicht Fairness oder Erklärqualität."
+ },
+ "iii-tb-18": {
+  "label": "Eine Modell-Entscheidung wird in Begriffe übersetzt, auf die ein Kliniker tatsächlich handeln kann, nicht nur eine Wahrscheinlichkeitsscore.",
+  "why": "Eine Entscheidung in Begriffe übersetzen, die ein Stakeholder verwenden kann, anstatt sie als bloße Wahrscheinlichkeitsscore zu hinterlassen, ist die Hälfte dieser Zone, die ein Black-Box-Modell auch noch fehlschlagen kann, nachdem es jede Genauigkeits- und Fairness-Zahl bestanden hat."
+ },
+ "iii-testing": {
+  "hint": "Frag dich, was die Szene überprüft, nicht nur welche Daten sie nutzt. Validierung hier bedeutet nur eines: generalisiert das Modell über seine Trainingsdaten hinaus. Der Datensatz, der eines Modells finale, unverzerrte Fehlerquote liefert, ist ein anderes Konzept, das in Pipeline Twins direkt getestet wird.",
+  "note": "Dies sind Entwicklungs- und Pre-Release-Checks. Was nach dem Live-Gehen und Weiterlaufen eines Systems passiert, ist ein anderes Board.",
+  "zones[0].def": "Überprüfung einer Pipeline-Komponente für sich selbst — ein Tokenizer, eine Normalisierungsfunktion, eine Scoring-Routine — bevor sie jemals in irgendetwas anderes verdrahtet wird. Erfasst Fehler, während sie noch günstig zu beheben sind.",
+  "zones[1].def": "Komponenten gemeinsam end-to-end ausgeübt, beobachtet für Fehler, die nur entstehen, wenn Teile kombiniert sind — Nichtübereinstimmungen, Engpässe oder Bias, das kein einzelner Komponenten-Check selbst zeigte.",
+  "zones[2].def": "Überprüfung, ob das trainierte Modell über die Trainingsdaten hinaus generalisiert: die Lücke zwischen Training-Set-Verhalten und Verhalten bei nie gesehenen Daten. Ein Entwicklungs-Zeit-Check gegen Überanpassung — nicht des Modells Abschlusswort zur Performance.",
+  "zones[3].def": "Messung des Systems gegen die spezifischen, vordefinierten Metriken — Genauigkeit, Zuverlässigkeit, Fairness-Schwellen — die die Geschäfts-, ethischen und regulatorischen Ziele des Projekts in Zahlen übersetzen, auf die sich alle einigten.",
+  "zones[4].def": "Prüfung, ob das Modell attackiert werden kann: Gewichte gestohlen, Trainingsdaten rekonstruiert, Ausgaben durch konstruierte Eingaben manipuliert. Widerstandsfähigkeit gegen absichtliche oder versehentliche Kompromisse.",
+  "zones[5].def": "Überprüfung, ob Ergebnisse über geschützte Gruppen hinweg fair sind, und ob eine Entscheidung in Begriffen erklärt werden kann, die für die Personen sinnvoll sind, die darauf angewiesen sind."
+ }
+}

@@ -1,0 +1,101 @@
+{
+  "I-roles": {
+    "prompt": "Przypisz każdy obowiązek (lub rzekomy obowiązek) roli, której faktycznie przynależy. Część z nich nie przynależy nikomu."
+  },
+  "d1-case-charter": {
+    "brief": "Solvix Underwriting to mała start-upowa firma zajmująca się analityką predykcyjną, oceniająca ryzyko pożyczek rolniczych dla banków regionalnych. Zarządzanie do tej pory polegało na tym, co dwaj założyciele uzgodnią przy kawie. Duży partner reasekuracyjny ma wkrótce podpisać wieloletnią umowę udostępniania danych, ale jego zespół due diligence chce zobaczyć »prawdziwy program zarządzania« przed podpisaniem. Zostałeś zatrudniony, aby go zbudować — a osiemnaście miesięcy później, żeby utrzymać go w działaniu po tym, jak silnik underwritingu Solvix zostanie licencjonowany dla zespołów oceny ryzyka kredytowego w bankach na całym świecie, w Ameryce Północnej i Azji Południowo-Wschodniej.",
+    "steps[0].why": "Nie możesz zarządzać tym, czego nie policzyłeś: inwentarz AI jest faktyczną linią bazową, która mówi ci, co wymaga zarządzania, zanim będziesz w stanie podjąć decyzję, kto nim zarządza, przeszkolić kogokolwiek, czy napisać o tym politykę. Zatrudnienie Chief AI Officer lub szkolenie personelu bez tej linii bazowej wprawia ludzi w ruch bez czegoś konkretnego do działania, a redagowanie polityki najpierw daje dokument dostosowany do domysłów, a nie do rzeczywistego zasiągu AI Solvix.",
+    "steps[1].why": "Lekka, oparta na zasadach karta jest proporcjonalnym zarządzaniem w praktyce — zamienia to, co założyciele już wierzą, w coś udokumentowanego i powtarzalnego bez dodawania warstwy biurokracji, której Solvix nie potrzebuje. Zatrudnienie pełnowymiarowego Chief AI Officer to wcześniejszy wydatek, outsourcing pozbawia instytucję wiedzy, którą założyciele powinni budować, a skopiowanie ramy zarządzania ryzykiem w skali przedsiębiorstwa reasekuratora zagrzyłoby mały zespół procesem zbudowanym dla firmy dziesięciokrotnie większej.",
+    "steps[2].why": "Federacja to struktura zbudowana dokładnie na tę napięcie: jeden spójny zestaw zasad z centrum, z miejscem dla każdego regionu na dostosowanie szczegółów do jego własnego krajobrazu regulacyjnego i kulturowego. Pojedyncza globalna polityka jest zbyt sztywna, aby mieć możliwość elastyczności dla prawa lokalnego, pełna autonomia regionalna traci centralny nadzór, który utrzymuje spójność całego programu, a macierz wspólnego posiadania projektów zamazuje dokładnie rozliczalność, której model oceny ryzyka kredytowego potrzebuje, gdy regulator przychodzi i pyta, kto to zatwierdził.",
+    "steps[3].why": "Oczekiwanie od każdego pracownika technicznego, że będzie się przezbrajać jako budowniczy modeli, to nie szkolenie specjalistyczne dla konkretnych ról, to fantazja na temat liczby pracowników — większość pracowników technicznego dotyczy system AI bez konieczności kiedykolwiek budowania jednego, a szkolenie powinno odpowiadać tej rzeczywistości. Pozostałe trzy są legitymunymi, wzajemnie uzupełniającymi się częściami rzeczywistego programu: szkolenie dostosowane do rzeczywistej roli i struktury zarządzania, ścieżka budowania kultury etyki i edukacja użytkownika końcowego dla ludzi polegających na wynikach modelu."
+  },
+  "d1-case-policies": {
+    "brief": "Verdant Health Analytics od lat prowadzi dojrzały program zgodności z ochroną prywatności — protokoły naruszenia, stały proces oceny wpływu na prywatność, umowy z dostawcami — wszystko zbudowane wokół swojego oryginalnego produktu SaaS, który przechowywał i przetwarzał tylko rejestry zdrowotne, które klienci mu bezpośrednio przekazali. Verdant teraz osadza generatywny asystent dokumentacji klinicznej w tym samym produkcie, a zespół zgodności chce ponownie wykorzystać jak najwięcej istniejącego stosu, zamiast budować równoległy od nowa. Inżynieria tymczasem już otrzymuje prośby od lekarzy, którzy chcą wklejać notatki pacjentów do publicznych chatbotów, aby zaoszczędzić czas.",
+    "steps[0].why": "Ocena wpływu na prywatność jest już zbudowana, aby zadawać dokładnie pytania, które podtrzymuje system AI — jakie dane wchodzą, co dzieje się z osobami w wyniku — więc rozszerzenie jej o szkolenie, uczciwość i wyjaśnialność jest naturalnym dopasowaniem, a nie przebudową. Testy penetracyjne sprawdzają techniczny opór na włamanie, a nie bias algorytmiczny lub legalność; oceny transferu odpowiadają na węższą kwestię między krajami; szkolenie personelu buduje świadomość, ale nie ujawnia specyficznego ryzyka systemowego w ogóle.",
+    "steps[1].why": "Polityka spuścizny jest napisana dla statycznych, bezpośrednich przepływów danych — co się zbiera, gdzie się przechowuje — i nigdy nie przewidywała, że własne wyniki i wnioski modelu to drugi, pochodny zestaw danych, które mogą być odsyłane do ponownej identyfikacji kogoś, którego surowy rekord był prawidłowo zanonimizowany. DPA, wyznaczony Inspektor Ochrony Danych i zegar powiadomienia o naruszeniu są wszystkimi ogólną higieną programu ochrony prywatności, której każdy system IT potrzebuje; żaden z nich nie jest specyficzną dla AI luką, na którą wskazuje ten scenariusz.",
+    "steps[2].why": "Co minutę lekarze wklejają notatki pacjentów do narzędzia publicznego, tekst ten może całkowicie opuścić kontrolę Verdant — używany do szkolenia własnego dostawcy, rejestrowany lub ujawniony — co jest konkretną szkodą, którą zakaz faktycznie zapobiega. Strategia monetyzacji i koszty zatrudnienia wcale nie są ryzykami dla prywatności, a »nie ma czasu na szkolenie jeszcze« opisuje czasową lukę w zasobach, a nie powód, dla którego wyciek Protected Health Information jest wystarczająco niebezpieczny, aby uzasadnić całkowite zablokowanie narzędzia.",
+    "steps[3].why": "Włączenie reguł AI do istniejących polityk ochrony prywatności, bezpieczeństwa i etyki utrzymuje zarządzanie zjednoczone i zapobiega organizacji w uruchamianiu dwóch zestawów standardów, które mogą cicho się rozchodzić — regulatorzy i audytorzy oczekują, że AI będzie siedziało pod tą samą strukturą odpowiedzialności co wszystko inne. Argument sygnalizujący regulatora jest prawdziwy, ale zbyt wąski, aby sam nie mógł unieść sprawy, a zarówno argument szczegółu, jak i szybkości dla samodzielnego dokumentu handluje długoterminową spójnością za krótkoterminową wygodę, co dokładnie tworzy silosy, których integracja ma uniknąć."
+  },
+  "d1-case-vendor-file": {
+    "brief": "Bramwell Mutual, dział roszczeń, ocenia dostawców AI trzecich stron, aby wyselekcjonować przychodzące roszczenia ubezpieczeniowe. Dwaj finaliści dotarli do przeglądu umowy, a model trzeciego dostawcy już jest rozpatrywany dla pilotażu screenu CV zespołu HR w następnym kwartale. Zarządzanie prosi o przejrzenie pliku: jak wiele kontroli każdy dostawca faktycznie potrzebuje, co zrobić, gdy jeden nie pokaże swojej pracy, co zrobić, gdy najlepszy model nie spełnia własnego standardu bezpieczeństwa Bramwell, i co należy do papierkowych prac, zanim którykolwiek z nich trafi do eksploatacji.",
+    "steps[0].why": "Zarządzanie ryzykiem AI trzeciej strony działa w taki sam sposób, jak zarządzanie ryzykiem wewnętrznym: wysiłek proporcjonalny do ryzyka, sprawdzany na bieżąco, a nie tylko raz przy podpisywaniu. Zbiorcowy audyt każdego dostawcy co dwa lata jest nadmierny i nieznośny, stabilność finansowa sama w sobie ignoruje rzeczywistą szkodę, którą system AI może spowodować, a dzielenie ryzyka technicznego od ryzyka etycznego (pozostawiając to ostatnie tekstom umowy) traktuje dwie połowy tej samej oceny tak, jakby były niezwiązane.",
+    "steps[1].why": "Jeśli polityka mówi, że ocena ryzyka musi się odbyć przed zakupem, a odmowa dostawcy uniemożliwia tę ocenę, postępowanie mimo to łamie własną ramę zarządzania organizacji — obronną ruchą jest odejść. Wewnętrzny monitoring to słaby substytut oceny, która nigdy się nie odbyła, wyrzeźbienie wyjątku polityki podważa politykę dla każdego przyszłego dostawcy, a klauzula odszkodowania może zmienić odpowiedzialność finansową, ale nic nie robi, aby wypełnić operacyjną i etyczną ślepotę, z którą Bramwell został.",
+    "steps[2].why": "Piaskownica to kontrola kompensacyjna zbudowana dokładnie dla tej sytuacji — pozwala Bramwell na przechwycenie wydajności modelu przy jednoczesnym zawieraniu ekspozycji stworzonej przez dostawcę, który nie może bezpośrednio spełnić standardu bezpieczeństwa. Zniesienie wymogu lub napisanie wyjątku polityki dla »renomowanych« dostawców zarówno zmniejszają standard bezpieczeństwa dla wszystkich, podczas gdy całkowite zablokowanie traktuje wykonalne zawieranie problemu jako niewykonalne i może kosztować Bramwell naprawdę lepszy model bez żadnego obronnego powodu.",
+    "steps[3].why": "Ryzyko AI nie siedzi w bezruchu w taki sposób, w jaki jednorazowy audyt IP lub statyczna SLA zakłada — model screeningu CV może dryf do stronniczych wyników miesiące po podpisaniu, więc umowa potrzebuje trwałego zobowiązania do utrzymywania dokumentacji wydajności i planu zamknięcia systemu, gdy nie będzie już odpowiedni do celów. Inwentarz open-source to przydatne jednorazowe sprawdzenie IP, dostęp do kodu źródłowego i danych treningowych jest często nie do wyobrażenia z dostawcami i niepotrzebny, jeśli monitoring jest solidny, a SLA na dokładność i opóźnienia przechwytuje zdjęcie, a nie bieżący dryf i ryzyko uczciwości, które faktycznie się kumuluje przez całe życie umowy."
+  },
+  "i-rl-01": {
+    "text": "Wybiera dane treningowe i przeprowadza testy uprzedzeń przed wydaniem, a następnie dokumentuje, jak system funkcjonuje dla osób, które go będą obsługiwać",
+    "why": "Obowiązki etapu budowania — wybieranie danych, testowanie uczciwości przed wydaniem i dokumentacja dla operatorów — przypada osobie, która buduje system. To jest odrębne od bieżącego, kontekstowego monitoringu, który prowadzi organizacja operacyjna, gdy tylko system wejdzie na żywo."
+  },
+  "i-rl-02": {
+    "text": "Osadza narzędzia testowania uprzedzeń i funkcje wyjaśnialności bezpośrednio w modelu podczas jego szkolenia, a następnie wybiera, jak handlować dokładnością przed uczciowością",
+    "why": "Techniczne zabezpieczenia wbudowane w sam model — »zarządzanie poprzez projekt« — są wyborem czasu budowania o architekturze i szkoleniu, poczynione przed tym, jak system kiedykolwiek dotrze do środowiska na żywo."
+  },
+  "i-rl-03": {
+    "text": "Rejestruje, skąd pochodziły dane treningowe i wyjaśnia, dlaczego konkretna architektura modelu została wybrana zamiast alternatyw",
+    "why": "Pochodzenie danych i zapisy uzasadnienia projektu to artefakty samego procesu budowania — wyjaśniają wybory poczynione przed istnieniem systemu, a nie jak funkcjonuje po uruchomieniu."
+  },
+  "i-rl-04": {
+    "text": "Monitoruje żywą wydajność i dryf w swoim własnym kontekście operacyjnym i audytuje dokładność na bieżącej podstawie",
+    "why": "Integralność operacyjna w konkretnym kontekście jest wyróżniającym się obowiązkiem tutaj — nie wybory projektowe stojące za modelem, które przypadają osobie, która to zbudowała, zanim dotarł do tego kontekstu."
+  },
+  "i-rl-05": {
+    "text": "Integruje model do środowiska produkcji i konfiguruje monitoring, który będzie go obserwować po uruchomieniu tam",
+    "why": "Uruchomienie systemu w produkcji i instrumentowanie go to czynność operacyjna, odrębna od szkolenia i testowania, które stworzyły model na pierwszym miejscu."
+  },
+  "i-rl-06": {
+    "text": "Nosi główną odpowiedzialność, gdy niezweryfikowany system trzeciej strony jest umieszczony w ścieżce opieki szpitala bez wcześniejszej niezależnej weryfikacji",
+    "why": "Odpowiedzialność wynika z decyzji o umieszczeniu niezweryfikowanego systemu w żywym ustawieniu, co jest wezwaniem organizacji operacyjnej — oryginalny konstruktor nie jest tym, który wybrał pominąć weryfikację przed użyciem."
+  },
+  "i-rl-07": {
+    "text": "Wchodzi w interakcję z systemem AI w rzeczywistych sytuacjach i jest często pierwszym, który zauważa, że coś poszło nie tak",
+    "why": "Bliskość do żywego wyniku — zauważanie uprzedzeń, błędów lub dryfu tak, jak faktycznie się to dzieje — to rola pierwszej linii, odrębna od organizacji, która obsługuje i monitoruje system jako całość."
+  },
+  "i-rl-08": {
+    "text": "Interpretuje rekomendację systemu i podejmuje ostateczną, świadomą decyzję na jej podstawie",
+    "why": "Zastosowanie osądu do konkretnego wyniku i podjęcie decyzji, co z nim zrobić, to czynność w punkcie użycia, a nie monitoring operacyjny lub praca projektowa, która dzieje się gdzie indziej w cyklu życia."
+  },
+  "i-rl-09": {
+    "text": "Służy punktem eskalacji, gdy jeden zespół chce szybko wysłać funkcję AI, ale inny zespół podnosi zastrzeżenia regulacyjne",
+    "why": "Uzgadnianie konkurujących zainteresowań funkcjonalnych dzień po dniu to praca operacyjna, międzyfunkcyjna — węższego zakresu niż specjalistyczne przeglądy moralne i społeczne przypadków o dużym wpływie, i nie ustala apetytu na ryzyko przedsiębiorstwa w taki sposób, w jaki robi to szczyt organizacji."
+  },
+  "i-rl-10": {
+    "text": "Decyduje, którą z kilku konkurujących propozycji AI otrzyma zasoby najpierw, ważyć poziom ryzyka w stosunku do priorytetu strategicznego i dostępnych zasobów",
+    "why": "Priorytetowanie przypadków użycia względem ryzyka i zasobów to stała, międzyfunkcjonalna operacyjna decyzja — odrębna od jednorazowego przeglądu moralnego specjalistyczne ciało daje jeden przypadek o dużym wpływie, i odrębne od ustawienia apetytu na najwyższym poziomie, które finansuje cały program."
+  },
+  "i-rl-11": {
+    "text": "Pyta »czy w ogóle powinniśmy zbudować ten system?« zamiast tylko »czy możemy go zbudować?« dla proponowanego przypadku użycia",
+    "why": "Rozważenie, czy przypadek użycia jest właściwy, a nie tylko dopuszczalny, jest przeglądem moralnym i społecznym specjalizowanym — węższy i głębszy niż operacyjne priorytetyzowanie, które międzyfunkcjonalne ciało uruchamia we wszystkich propozycjach."
+  },
+  "i-rl-12": {
+    "text": "Wymaga audytów uprzedzeń i działań naprawczych dla narzędzia do wynajmowania przed jego zatwierdzeniem, ważyć uczciwość względem szkody dla poszczególnych grup",
+    "why": "Niezależny przegląd nieproporcjonalnej szkody dla chronionej populacji to specjalistyczna funkcja przeglądu etycznego — odrębna od szerszego zatwierdzenia operacyjnego, które prowadzi międzyfunkcjonalne komitet."
+  },
+  "i-rl-13": {
+    "text": "Zapewnia niezależną radę na temat tego, czy propozycja odpowiada stwierdzonym wartościom organizacji, nawet w przypadkach, gdy jest to już technicznie legalne",
+    "why": "Osądzanie szarej strefy, która przechodzi test prawny, ale mimo to podnosi pytania o zaufanie publiczne, to dokładnie funkcja refleksyjna, dla której istnieje specjalistyczne ciało moralne, odrębne od zatwierdzenia prawnego lub operacyjnego."
+  },
+  "i-rl-14": {
+    "text": "Ustanawia apetyt na ryzyko AI organizacji i decyduje, czy ogólna strategia faworyzuje szybkość innowacji czy ścisłą zgodność",
+    "why": "Ustawienie tonu i tolerancji na ryzyko w całej organizacji siedzi powyżej każdego jednego ciała przeglądu — komitety i rady działają w ramach apetytu, który jest ustalony tutaj, a nie w inny sposób."
+  },
+  "i-rl-15": {
+    "text": "Zatwierdza ogólną ramę zarządzania i przydziela budżet, który ją finansuje",
+    "why": "Zatwierdzenie i finansowanie samej ramy to akt legitymacji i zasobów w szczycie organizacji, odrębny od codziennego działania tej ramy przez ciała, które finansuje."
+  },
+  "i-rl-16": {
+    "text": "Potwierdza, że strategia AI jest zgodna z zewnętrznymi oczekiwaniami, takimi jak standardy branżowe i wymagania regulacyjne, a nie tylko cele biznesu wewnętrznego",
+    "why": "Wyrównanie kierunku ogólnego organizacji ze światem zewnętrznym to strategiczny akt na szczycie, odrębny od operacyjnego sprawdzania zgodności, które prowadzą zespoły prawne i ryzyka pod tym kierunkiem."
+  },
+  "i-rl-17": {
+    "text": "Pozostaje w pełni odpowiedzialny za zgodność systemu z przepisami nawet po tym, jak został przekazany osobie, która nim teraz zarządza",
+    "why": "Dokumentowo fałsz: oryginalny konstruktor nie pozostaje w pełni odpowiedzialny po przejściu operacji na inną rolę. Odpowiedzialność jest wspólna i śledzi rzeczywiste obowiązki każdej roli — organizacja operacyjna przejmuje odpowiedzialność, która wiąże się z obsługą systemu."
+  },
+  "i-rl-18": {
+    "text": "Siedzi wewnątrz cyklu życia rozwoju AI jako stały uczestnik, zatwierdzając każdą fazę przed następną",
+    "why": "Dokumentowo fałsz: opisuje to ciała nadzoru zewnętrznego, a nadzór/egzekucja z zewnątrz nie jest tym samym co bycie zaangażowanym uczestnikiem wewnątrz samych etapów cyklu, obok architektów danych, ekspertów społeczno-kulturowych i technicznych, specjalistów z zakresu prawa/prywatności."
+  },
+  "roles-lifecycle": {
+    "prompt": "Przypisz każdy obowiązek (lub rzekomy obowiązek) roli, której faktycznie przynależy. Część z nich nie przynależy nikomu."
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "model-decisions": {
+    "hint": "Arrastra cada situación a la respuesta que requiere. Algunas respuestas en el tablero están ahí para tentarte."
+  },
+  "model-decisions-01": {
+    "label": "Un asistente debe responder desde políticas privadas que cambian cada semana y citar la fuente actual.",
+    "sub": "Políticas Que Cambian Frecuentemente",
+    "why": "RAG recupera evidencia privada actual al momento de la solicitud y respalda citas. Compensación: El fine-tuning puede adaptar el comportamiento, pero es un mecanismo pobre para hechos que cambian frecuentemente."
+  },
+  "model-decisions-02": {
+    "label": "Miles de ejemplos demuestran un estilo de reporte estable que el modelo base no reproduce consistentemente.",
+    "sub": "Formato de Especialista Estable",
+    "why": "El fine-tuning es apropiado para comportamiento recurrente demostrado por un conjunto de ejemplos curado. Compensación: El few-shot prompting aún debe intentarse primero cuando cumple requisitos de calidad con menor complejidad."
+  },
+  "model-decisions-03": {
+    "label": "Un modelo capaz debe extraer cinco campos a un objeto JSON validado; ningún conocimiento nuevo es requerido.",
+    "sub": "Extracción de JSON Estricta",
+    "why": "Instrucciones claras, ejemplos, un esquema, y validación abordan formato sin cambiar pesos del modelo. Compensación: El fine-tuning se vuelve razonable solo si la extracción basada en prompt falla repetidamente a la escala y calidad requeridas."
+  },
+  "model-decisions-04": {
+    "label": "Un modelo debe internalizar terminología especializada de un corpus científico sin etiquetar muy grande.",
+    "sub": "Lenguaje de Dominio a Escala",
+    "why": "El preentrenamiento continuado adapta las representaciones de lenguaje del modelo utilizando grandes cantidades de texto de dominio. Compensación: RAG permanece preferible cuando la necesidad es acceso a hechos que cambian en lugar de adaptación más profunda del lenguaje de dominio."
+  },
+  "model-decisions-05": {
+    "label": "El sistema debe inspeccionar una orden, solicitar aprobación, llamar a un API de reembolso, e informar el resultado.",
+    "sub": "Asistente que Toma Acciones",
+    "why": "Un agente que usa herramientas puede orquestar pasos, pero cada herramienta necesita permisos estrechos, validación, y compuertas de aprobación. Compensación: Un flujo de trabajo determinista es más seguro cuando la secuencia es fija y no requiere planificación dirigida por el modelo."
+  },
+  "model-decisions-06": {
+    "label": "Un sistema de reclamaciones debe razonar sobre una fotografía de daño junto con la descripción del incidente escrita.",
+    "sub": "Inspección de Imagen y Texto",
+    "why": "Un modelo multimodal puede interpretar conjuntamente entradas visuales y textuales. Compensación: Modelos de visión y texto especialistas separados pueden ganar cuando salidas independientes, control, o costo más bajo importan más."
+  },
+  "model-decisions-07": {
+    "label": "Diez millones de registros cortos deben clasificarse cada noche bajo un presupuesto ajustado después de que estén disponibles las etiquetas.",
+    "sub": "Clasificación Simple de Alto Volumen",
+    "why": "Un clasificador más pequeño evaluado puede entregar calidad adecuada con costo de inferencia por lotes mucho más bajo. Compensación: Un modelo fundacional puede acelerar la prototipación o crear etiquetas, pero debe ganarse su costo de producción mediante calidad medida."
+  },
+  "model-decisions-08": {
+    "label": "Las reglas publicadas determinan completamente la elegibilidad y cada decisión debe ser reproducible y auditable.",
+    "sub": "Política de Elegibilidad Exacta",
+    "why": "Las reglas exactas y completas deben implementarse directamente en lugar de aproximarse con un modelo probabilístico. Compensación: La IA puede asistir con la ingesta de documentos o explicación sin ser dueña de la decisión autoritativa."
+  }
+}

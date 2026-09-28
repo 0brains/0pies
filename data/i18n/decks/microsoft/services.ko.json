@@ -1,0 +1,69 @@
+{
+ "services": {
+  "hint": "각 목적을 그것을 수행하기 위해 존재하는 서비스로 drag해요."
+ },
+ "svc-001": {
+  "label": "uploaded product photo에 대해 자동으로 caption 및 tags를 generate해요.",
+  "why": "Azure AI Vision의 Image Analysis 기능은 images에서 captions, tags, 그리고 objects를 직접 추출해요."
+ },
+ "svc-002": {
+  "label": "recorded customer-support call을 written transcript로 turn해요.",
+  "why": "Azure AI Speech의 speech-to-text recognition은 spoken audio를 text로 변환해요."
+ },
+ "svc-003": {
+  "label": "hundreds of product reviews가 positive 또는 negative인지 결정해요.",
+  "why": "Azure AI Language의 sentiment analysis는 text를 positive, negative, neutral, 또는 mixed로 score해요."
+ },
+ "svc-004": {
+  "label": "incoming support ticket을 Japanese에서 English로 번역해요.",
+  "why": "Azure AI Translator는 real time으로 dozens of languages에 걸쳐 text translation을 수행해요."
+ },
+ "svc-005": {
+  "label": "scanned invoice에서 vendor name, invoice number, 그리고 total을 pull해요.",
+  "why": "이것의 prebuilt invoice model은 invoices 및 receipts 같은 standard form types에서 알려진 필드를 결정론적으로 추출해요."
+ },
+ "svc-006": {
+  "label": "원하는 필드를 일반 언어로 설명하고 documents, photos, 그리고 call recordings의 mix에서 structured JSON back을 얻어요.",
+  "why": "Content Understanding은 자연 언어로 analyzer를 정의하고 multimodal input에 대해 reasoning하여 structured JSON을 반환할 수 있도록 해요. Document Intelligence의 fixed prebuilt forms와는 다르게요."
+ },
+ "svc-007": {
+  "label": "factory의 assembly-line images에서 하나의 특정 defect를 spot하기 위해 모델을 train해요.",
+  "why": "Custom Vision은 narrow, custom task를 위해 자신의 labeled images에서 image classifier 또는 object detector을 train할 수 있도록 해요."
+ },
+ "svc-008": {
+  "label": "selfie를 ID photo에 대해 비교해 person의 identity를 verify해요.",
+  "why": "Azure AI Face는 identity scenarios를 위해 face detection, verification, 그리고 liveness-check 기능을 제공해요."
+ },
+ "svc-009": {
+  "label": "hateful 또는 violent text를 자동으로 block해 app users에 도달하기 전에 해요.",
+  "why": "Content Safety는 text 및 images를 harmful-content categories 및 severity에 대해 analyze한 후, flag하거나 block해요."
+ },
+ "svc-010": {
+  "label": "sensor의 time-series readings에서 unusual spike를 spot해요.",
+  "why": "Anomaly Detector는 time-series analysis를 적용해 expected patterns로부터 deviate하는 data points를 flag해요."
+ },
+ "svc-011": {
+  "label": "employees가 thousands of internal documents에 걸쳐 natural-language search를 실행하도록 해요.",
+  "why": "Azure AI Search는 content를 index하고 enrich하여 users이 keyword 및 semantic search로 그것을 query할 수 있도록 해요."
+ },
+ "svc-012": {
+  "label": "uploaded training video에서 keywords, faces, 그리고 scene changes를 extract해요.",
+  "why": "Video Indexer는 recorded video 및 audio를 analyze하여 faces, keywords, topics, 그리고 scenes를 surface해요."
+ },
+ "svc-013": {
+  "label": "customer-support replies를 draft하기 위해 자신의 Azure tenant 내에 GPT-4o를 deploy해요.",
+  "why": "Azure OpenAI Service는 OpenAI의 models, GPT-4o 같은 것들을 enterprise Azure resource로서 host하며, 자신의 deployment, quota, 그리고 content filters를 가져요."
+ },
+ "svc-014": {
+  "label": "모델을 deploy하고, agent를 build하고, shipping 전에 이를 평가하는 하나의 장소예요.",
+  "why": "Microsoft Foundry는 model catalog, portal, SDK, 그리고 Agent Service를 combine하는 unified platform이며, AI solutions를 building 및 deploying를 위해예요."
+ },
+ "svc-015": {
+  "label": "file search, code interpreter, 그리고 function-calling tools을 give하는 모델이 multiple turns에 걸쳐 act할 수 있도록 해요.",
+  "why": "Foundry Agent Service는 model, instructions, tools, 그리고 threads를 combine하는 persistent agents를 build하여 multi-step, stateful tasks를 위해. single stateless chat call이 아니라요."
+ },
+ "svc-016": {
+  "label": "full experiment pipeline를 통해 classic ML model을 train, track, 그리고 manage해요.",
+  "why": "Azure Machine Learning은 Microsoft의 traditional ML model training, tracking, 그리고 MLOps를 위한 전용 platform이며, Foundry의 generative-AI focus와 구별돼요."
+ }
+}

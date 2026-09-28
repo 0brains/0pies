@@ -1,0 +1,43 @@
+{
+  "iv-rl-01": {
+    "prompt": "Ordina i passaggi per ritirare responsabilmente un sistema AI live.",
+    "steps[0].label": "Valuta le dipendenze + opzioni di fallback",
+    "steps[0].detail": "Prima di toccare qualsiasi cosa live, mappa ciò che dipende dal sistema — feed di dati upstream, processi downstream, flussi di lavoro di altri team — e conferma che un fallback esiste in modo che il ritiro non crei un'interruzione (SG).",
+    "steps[1].label": "Notifica agli stakeholder + pianifica la disattivazione controllata",
+    "steps[1].detail": "Il primo passo in un ritiro gestito è dire alle persone interessate e costruire un piano di disattivazione, non semplicemente capovolgere un interruttore (SG).",
+    "steps[2].label": "Disattivazione graduale con backup umano",
+    "steps[2].detail": "Per infrastrutture critiche, abbassa in fasi piuttosto che tutto in una volta, con un fallback gestito da umani che copre il divario — la stessa disciplina usata per i sistemi critici in generale.",
+    "steps[3].label": "Archivia, non cancellare, per legale/audit",
+    "steps[3].detail": "Conserva i dati, i modelli e i log del sistema ritirato piuttosto che cancellarli — i regolatori e i revisori potrebbero aver bisogno di ricostruire cosa ha fatto il sistema e perché, molto tempo dopo che ha smesso di funzionare (SG).",
+    "steps[4].label": "Registra come un'indagine di black-box, con decisori nominati",
+    "steps[4].detail": "Registra il trigger esatto, chi ha autorizzato l'arresto, e la logica di ritiro nello stesso stile probatorio di un'indagine di incident — una singola fonte di verità controllabile che nomina chi aveva l'autorità di agire (SG)."
+  },
+  "iv-rl-02": {
+    "prompt": "Ordina la risposta a un incident AI live dal primo rilevamento alla chiusura del ciclo.",
+    "steps[0].label": "Rileva",
+    "steps[0].detail": "Un avviso, un segnale di monitoraggio, o un reclamo emerge che qualcosa è sbagliato — questo inizia l'orologio su tutto ciò che segue.",
+    "steps[1].label": "Contieni / quarantena prima",
+    "steps[1].detail": "Prima di indagare le cause o redigere comunicazioni, ferma il danno dalla diffusione: quarantena il modello e notifica subito a legale/conformità. Il contenimento batte l'indagine, il recupero, o la comunicazione come il prossimo movimento — saltare direttamente all'analisi delle cause profonde mentre il sistema continua a causare danno è la trappola di esame registrata.",
+    "steps[2].label": "Notifica a legale/conformità (+72 ore di orologio di violazione dove dati personali)",
+    "steps[2].detail": "Dove l'incident coinvolge dati personali, un controllore GDPR deve notificare l'autorità di vigilanza entro 72 ore da quando è diventato consapevole della violazione — le procedure di risposta agli incident e notifica devono essere costruite per colpire quella scadenza, non trattate come un ripensamento tecnico (SG).",
+    "steps[3].label": "Causa Radice (Cinque Perché / albero dei difetti)",
+    "steps[3].detail": "Usa un framework di analisi formale — il metodo dei 'Cinque Perché' o l'analisi dell'albero dei guasti — per scavare fino alla causa sottostante invece di fermarsi al sintomo di livello di superficie (SG).",
+    "steps[4].label": "CAPA",
+    "steps[4].detail": "Registra azioni correttive e preventive in un sistema centrale con proprietari assegnati, scadenze e step di verifica, in modo che la causa profonda sia effettivamente chiusa, non solo diagnosticata.",
+    "steps[5].label": "Retrospettiva senza incolpare + divulgazione proattiva con lezioni imparate",
+    "steps[5].detail": "Esegui una revisione incrociata, senza incolpare di ciò che è accaduto e perché, e divulga proattivamente dettagli tecnici e lezioni imparate piuttosto che aspettare di essere chiesto — è questo ciò che trasforma un sintomo corretto in un miglioramento documentato e difendibile."
+  },
+  "iv-rl-03": {
+    "prompt": "Ordina i passaggi per riportare in sicurezza un sistema disattivato online.",
+    "steps[0].label": "Verifica la correzione",
+    "steps[0].detail": "Conferma che il difetto specifico che ha scatenato la disattivazione sia stato effettivamente corretto prima che qualsiasi altra cosa si muova — la ripresa dipende dalle correzioni verificate, non meramente tentate (SG).",
+    "steps[1].label": "Ri-testa con rigore di primo rilascio",
+    "steps[1].detail": "Metti il sistema corretto attraverso gli stessi test completi che ha affrontato prima del suo lancio originale — prestazioni, robustezza, sicurezza, equità — ri-testare conferma la sicurezza e la conformità da zero, non riceve una scorciatoia perché il sistema è stato eseguito prima (SG).",
+    "steps[2].label": "Approvazione interfunzionale",
+    "steps[2].detail": "Il sistema riprende solo una volta che i team interfunzionali — non un singolo ingegnere o team lead — approvano il riavvio, chiudendo il ciclo che ha iniziato con i decisori nominati che autorizzano l'arresto.",
+    "steps[3].label": "Ri-rollout blu-verde/canary in stadi dietro i flag di funzionalità",
+    "steps[3].detail": "Porta il sistema indietro gradualmente — una versione canary o una distribuzione blu-verde gated da flag di funzionalità — in modo che l'esposizione possa essere ridotta istantaneamente se il problema riappare, piuttosto che accendere ogni utente una volta (SG).",
+    "steps[4].label": "Finestra di monitoraggio aumentato",
+    "steps[4].detail": "Osserva il sistema riavviato più da vicino rispetto all'operazione in stato stabile per una finestra definita dopo, in modo che una ricorrenza sia intercettata immediatamente piuttosto che alla prossima revisione programmata."
+  }
+}

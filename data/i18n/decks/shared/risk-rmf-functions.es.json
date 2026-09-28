@@ -1,0 +1,74 @@
+{
+ "risk-rmf-functions": {
+  "hint": "Arrastra cada actividad a su función. Gobernar atraviesa todas; Mapear establece contexto, Medir cuantifica, Gestionar actúa.",
+  "note": "Gobernar no es una fase que termina. Si una actividad establece las condiciones bajo las cuales las otras tres ocurren — cultura, responsabilidad, política — es Gobernar, cuando sea que ocurra.",
+  "zones[0].def": "Cultivar una cultura de gestión de riesgos: políticas, estructuras de responsabilidad, roles, capacidad de la fuerza de trabajo, supervisión de terceros. Atraviesa las otras tres.",
+  "zones[1].def": "Establecer contexto y enmarcar riesgos: propósito, entorno, actores, personas afectadas, capacidades y limitaciones, interdependencias.",
+  "zones[2].def": "Analizar, evaluar, comparar e implementar monitorización usando métodos cuantitativos y cualitativos, incluyendo las características de confiabilidad.",
+  "zones[3].def": "Asignar recursos a riesgos mapeados y medidos: priorizar, responder, recuperarse, comunicar, y actuar sobre riesgos de terceros y residuales."
+ },
+ "rmf-01": {
+  "label": "La organización documenta quién es responsable de las decisiones de riesgo de IA y en qué nivel se puede tomar cada clase de decisión.",
+  "why": "Las estructuras de responsabilidad son la actividad GOBERNAR arquetípica. Sin ellas las otras tres funciones no tienen a quién reportar ni a quién escalar."
+ },
+ "rmf-02": {
+  "label": "Una política de IA se aprueba, se alinea con requisitos legales, y se define su proceso de excepciones.",
+  "why": "La política y su ruta de excepciones establecen las condiciones bajo las cuales cada actividad ocurre. GOBERNAR es transversal, no secuencial."
+ },
+ "rmf-03": {
+  "label": "El personal que trabaja en sistemas de IA recibe capacitación específica de roles y se rastrea su competencia.",
+  "why": "La capacidad de la fuerza de trabajo se sitúa claramente en GOBERNAR. Un régimen de medición que nadie es competente para ejecutar produce números sin aseguramiento."
+ },
+ "rmf-04": {
+  "label": "Se establecen procesos para supervisar modelos y datos de terceros, incluyendo qué debe obtenerse de proveedores.",
+  "why": "GOBERNAR explícitamente cubre política de supervisión de terceros. Aplicarla al riesgo específico de un proveedor en un sistema específico es GESTIONAR."
+ },
+ "rmf-05": {
+  "label": "El equipo documenta el propósito previsto del sistema, el entorno de despliegue, y las categorías de personas que afectará.",
+  "why": "Enmarcar contexto es todo el punto de MAPEAR. Omitirlo es cómo un sistema se mide posteriormente con precisión contra el objetivo incorrecto."
+ },
+ "rmf-06": {
+  "label": "Las capacidades, limitaciones y supuestos conocidos del sistema se catalogan, incluyendo dónde no debe usarse.",
+  "why": "MAPEAR establece qué es y qué no es el sistema. La declaración fuera de alcance escrita aquí es contra la que se juzga posteriormente la evaluación y monitorización."
+ },
+ "rmf-07": {
+  "label": "Los interesados internos y externos, incluyendo comunidades afectadas, se identifican junto con los beneficios y daños potenciales para cada uno.",
+  "why": "Identificar partes afectadas y enmarcar impactos potenciales es MAPEAR. Cuantificar esos impactos es MEDIR."
+ },
+ "rmf-08": {
+  "label": "Las interdependencias con otros sistemas y las consecuencias del fallo del componente de IA se rastrean.",
+  "why": "MAPEAR cubre el sistema en su contexto más amplio, incluyendo qué más se rompe cuando lo hace. Un componente visto aisladamente es un riesgo mapeado perdido."
+ },
+ "rmf-09": {
+  "label": "El sistema se compara contra métricas definidas de validez, fiabilidad y robustez antes del lanzamiento.",
+  "why": "MEDIR cubre evaluación contra las características de confiabilidad usando métodos repetibles."
+ },
+ "rmf-10": {
+  "label": "El rendimiento se evalúa por separado para cada subgrupo demográfico y se cuantifica la disparidad.",
+  "why": "Analizar sesgo perjudicial con métodos cuantitativos es MEDIR. Decidir qué hacer sobre la disparidad es GESTIONAR."
+ },
+ "rmf-11": {
+  "label": "La monitorización en curso instrumenta el sistema desplegado para deriva de entrada y degradación de calidad.",
+  "why": "MEDIR incluye monitorización continua después del despliegue, no solo pruebas previas al lanzamiento. La detección de deriva vive aquí."
+ },
+ "rmf-12": {
+  "label": "Los métodos de prueba, evaluación, verificación y validación se eligen, documentan, y se registran sus propias limitaciones.",
+  "why": "MEDIR requiere que el enfoque de medición mismo se evalúe. Una métrica con puntos ciegos no examinados es falsa aseguramiento."
+ },
+ "rmf-13": {
+  "label": "Los riesgos se priorizan contra el impacto y los recursos se asignan al más alto primero.",
+  "why": "La priorización y asignación de recursos a través de riesgos mapeados y medidos es la definición de GESTIONAR."
+ },
+ "rmf-14": {
+  "label": "Se implementa un plan de respuesta cubriendo contención de incidentes, recuperación y comunicación para un fallo de modelo.",
+  "why": "GESTIONAR cubre responder a, recuperarse de y comunicar sobre incidentes. Escribir el plan es GESTIONAR; ensayar capacidad es GOBERNAR."
+ },
+ "rmf-15": {
+  "label": "El riesgo residual después de mitigación se documenta y se comunica al implementador del sistema.",
+  "why": "GESTIONAR explícitamente aborda el riesgo residual, incluyendo decirle a usuarios descendentes qué queda. El riesgo residual no documentado se transfiere por accidente."
+ },
+ "rmf-16": {
+  "label": "Se toma una decisión de desactivar un modelo desplegado cuyo riesgo ya no puede mantenerse dentro de la tolerancia.",
+  "why": "La sustitución o desactivación de un sistema es una respuesta GESTIONAR. Tener una ruta definida a retiro es lo que lo hace posible."
+ }
+}

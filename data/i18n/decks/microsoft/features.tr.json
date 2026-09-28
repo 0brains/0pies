@@ -1,0 +1,193 @@
+{
+ "feat-000-00": {
+  "label": "Bir beyaz tahta veya sokak işaretinin fotoğrafından makine tarafından okunabilir metni çek.",
+  "why": "Azure AI Vision'ın Read API'si, Görüntü Analizi'nin başlık yazma ve etiketlemesinden farklı olarak görüntülerden yazdırılmış ve el yazısı metni çıkarmak için OCR uygular."
+ },
+ "feat-000-01": {
+  "label": "Bir fotoğraftaki bireysel nesneleri tanımla ve sınırlayıcı kutular çiz.",
+  "why": "Azure AI Vision'ın Nesne Algılaması, bir görüntüde bulunan bireysel nesneler için sınırlayıcı kutular ve etiketler döndürür."
+ },
+ "feat-000-02": {
+  "label": "Bir görüntüde ne olup bittiğini açıklayan doğal dilli bir başlık oluştur.",
+  "why": "Azure AI Vision'ın Görüntü Analizi başlık yazma özelliği, bir görüntünün içeriğinin doğal dilli açıklamasını oluşturur."
+ },
+ "feat-001-00": {
+  "label": "Gerçek zamanlı olarak canlı bir mikrofon beslemesini akan metne dönüştür.",
+  "why": "Azure AI Speech'in konuşmadan metne tanıması, akan veya toplu sesi gerçek zamanlı olarak metne yazıya aktarır."
+ },
+ "feat-001-01": {
+  "label": "Bir sesli asistan için yazılı metinden doğal ses konuşma sesi üret.",
+  "why": "Azure AI Speech'in metinden konuşmaya sentezi, yazılı metni doğal ses konuşma sesine dönüştürür."
+ },
+ "feat-001-02": {
+  "label": "Konuşulan Fransızca sesi gerçek zamanlı olarak konuşulan veya yazılı İngilizceye çevir.",
+  "why": "Azure AI Speech'in Konuşma Çevirisi özelliği, konuşulan sesi başka bir dilin metne veya konuşmaya gerçek zamanlı olarak çevirir, tanıma ve çeviriyi tek bir çağrıda birleştirir."
+ },
+ "feat-002-00": {
+  "label": "Bir metin bloğunda adı geçen kişileri, yerleri, kuruluşları ve tarihleri çek.",
+  "why": "Azure AI Language'ın Adlandırılmış Varlık Tanıması, metinde bahsedilen kişileri, yerleri, kuruluşları ve tarihleri tanımlar ve kategorize eder."
+ },
+ "feat-002-01": {
+  "label": "Destek transkriptlerinde bulunan kredi kartı numaralarını ve telefon numaralarını otomatik olarak bulup redakte et.",
+  "why": "Azure AI Language'ın KBV algılaması, metindeki telefon numaraları ve kart numaraları gibi duyarlı kişisel verileri bulur ve redakte edebilir."
+ },
+ "feat-002-02": {
+  "label": "Uzun bir makaleyi en önemli cümlelerine kısalt.",
+  "why": "Azure AI Language'ın özetleme özelliği, uzun metni en önemli cümlelere veya kısa bir özete kısaltır."
+ },
+ "feat-002-03": {
+  "label": "Gelen bir metin parçasının hangi dillerden yazıldığını, düzinelercesinden tanı.",
+  "why": "Azure AI Language'ın dil algılaması, bir metin parçasının yazıldığı düzinelerce dilden hangisini tanımlar."
+ },
+ "feat-002-04": {
+  "label": "Bir kullanıcının niyetini (\\\"uçak bilet al\\\" gibi) tanıyan ve mesajlarından anahtar varlıkları çeken bir sohbetbot oluştur.",
+  "why": "Azure AI Language'ın Konuşsal Dil Anlama, bir modeli kullanıcının niyetini tanımak ve konuşmaya giriş varlıklarını çıkarmak için eğitir."
+ },
+ "feat-003-00": {
+  "label": "İspanyolca yazılı bir sohbet mesajını anında Almancaya çevir.",
+  "why": "Azure AI Translator'ın metin çevirisi, tek bir API çağrısı aracılığıyla gerçek zamanlı olarak metni diller arasında dönüştürür."
+ },
+ "feat-003-01": {
+  "label": "Orijinal düzen ve biçimlendirmesini korurken tüm bir Word belgesini çevir.",
+  "why": "Azure AI Translator'ın Belge Çevirisi, orijinal biçimlendirme ve düzenini koruyarak tüm belgeleri eş zamanlı olarak çevirir."
+ },
+ "feat-004-00": {
+  "label": "Hazır oluşturulmuş bir model kullanarak bir makbuzdan satıcı, toplam ve satır öğelerini çıkar, hiçbir eğitim gerekmez.",
+  "why": "Azure AI Document Intelligence'ın önceden oluşturulmuş modelleri, fatura ve makbuz gibi standart form türlerinden hiçbir eğitim gerektirmeden bilinen alanları çıkarır."
+ },
+ "feat-004-01": {
+  "label": "Önceden oluşturulmuş hiçbir modelin kapsamadığı kendi özel form düzeni üzerine bir model eğit.",
+  "why": "Azure AI Document Intelligence'ın özel modelleri, önceden oluşturulmuş hiçbir modelin kapsamadığı kendi etiketli form düzenleri üzerine eğitilir."
+ },
+ "feat-004-02": {
+  "label": "Taranmış bir belgenin yapısından ham metni, tabloları ve seçim işaretlerini çek.",
+  "why": "Azure AI Document Intelligence'ın Layout modeli, ham metni, tabloları ve seçim işaretlerini belgenin yapısı ile birlikte çıkarır."
+ },
+ "feat-005-00": {
+  "label": "Taranmış PDF formlarından ve fotoğraflanmış makbuzlardan fatura numaralarını, toplamları ve satır öğelerini, kendin adlandırdığın yapılandırılmış JSON alanlarına çek.",
+  "why": "Azure Content Understanding'in belge alan çıkarması, özel bir analizleyici şemasını PDF'lere, taranmış formlara ve görüntülere uygular ve yalnızca sabit önceden oluşturulmuş düzeni değil, tanımladığın belirli yapılandırılmış alanları döndürür."
+ },
+ "feat-005-01": {
+  "label": "Bir çağrı kaydını yazıya aktarıp duygusu ve temel konuşma noktalarını özetleyin, veya konuşulan diyalogu ve ekran üzerindeki metni eğitim videosundan çekin.",
+  "why": "Azure Content Understanding'in ses ve video analizi, çağrı kayıtlarını ve video içeriğini yazıya aktarır ve akıl yürütür, konuşmacı duygusu, özetleri ve statik belgede mevcut olmayan diyalogu gibi alanları çıkarır."
+ },
+ "feat-006-00": {
+  "label": "Kendi ürün fotoğraflarını tanımladığın kategorilere sıralamak üzere bir model eğit.",
+  "why": "Azure AI Custom Vision'ın görüntü sınıflandırması, etiketli kendi fotoğrafların üzerine bir model eğitir ve görüntüleri tanımladığın kategorilere sıralamak için."
+ },
+ "feat-006-01": {
+  "label": "Kendi görüntülerindeki belirli bir kusur türünün etrafına bir kutu çizmek ve konumlandırmak üzere bir model eğit.",
+  "why": "Azure AI Custom Vision'ın nesne algılaması, etiketli kendi görüntülerin üzerine bir model eğitir ve belirli bir nesne veya kusurun konumunu belirlemeyi ve kutuya almayı eğitir."
+ },
+ "feat-007-00": {
+  "label": "Grup fotoğrafında mevcut olan her yüzün konumunu bul.",
+  "why": "Azure AI Face'in yüz algılaması, bir görüntüde mevcut olan her yüzün konumunu belirler."
+ },
+ "feat-007-01": {
+  "label": "İki fotoğrafın aynı belirli kişiyi gösterdiğini doğrula.",
+  "why": "Azure AI Face'in doğrulama (1:1 eşleştirmesi) iki yüz görüntüsünün aynı kişiye ait olup olmadığını doğrular."
+ },
+ "feat-007-02": {
+  "label": "Kaydedilmiş yüzlerin büyük bir galerisinde yeni bir fotoğrafta kimin göründüğünü bulmak için arama yap.",
+  "why": "Azure AI Face'in tanımlaması (1:N eşleştirmesi) kaydedilmiş yüzlerin galerisinde yeni bir fotoğraf için eşleşme bulmak için arama yapar."
+ },
+ "feat-008-00": {
+  "label": "Bir sohbet mesajını nefret, şiddet, cinsel veya öz zarar içeriği ciddiyeti için puanla.",
+  "why": "Azure AI Content Safety'nin metin denetimi, metni nefret, şiddet, cinsel ve öz zarar içeriği ciddiyeti için puanlar."
+ },
+ "feat-008-01": {
+  "label": "Bir sohbetbotu kırma girişimini veya bir modelin okuyacağı bir belgede gizli tehlikeli talimatları algıla.",
+  "why": "Azure AI Content Safety'nin Prompt Shields, kırma girişimlerini ve bir modelin işleyeceği içerikte gizli istem enjeksiyonlarını algılar."
+ },
+ "feat-008-02": {
+  "label": "Yüklenen bir görüntüyü grafik veya şiddetli görsel içerik için işaretle.",
+  "why": "Azure AI Content Safety'nin görüntü denetimi, yüklenen görüntüleri metne uygulanan aynı zararlı içerik kategorileri için puanlar."
+ },
+ "feat-009-00": {
+  "label": "Zaman içinde tek bir sensörün okumasında olağandışı bir artışı işaretle.",
+  "why": "Azure AI Anomaly Detector'ın tek değişkenli algılaması, tek bir zaman serisi akışında beklenmedik artışları veya düşüşleri işaretler."
+ },
+ "feat-009-01": {
+  "label": "Düzinelerce ilişkili sensör akışında bir kerede olağandışı bir birleşik deseni algıla.",
+  "why": "Azure AI Anomaly Detector'ın çok değişkenli algılaması, birçok ilişkili zaman serisi sinyalinde olağandışı birleşik desenleri bir kerede işaretler."
+ },
+ "feat-010-00": {
+  "label": "Belgeleri tam anahtar sözcük eşleşmesi yerine anlamının yakınlığına göre al.",
+  "why": "Azure AI Search'in vektör araması, belgeleri tam anahtar sözcük çakışması yerine anlamının yakınlığına göre alır."
+ },
+ "feat-010-01": {
+  "label": "Ham içerikten varlıkları, anahtar ifadeleri ve görüntü metnini çıkaran ve dizinlemeden önce işleten bir yapay zeka zenginleştirme ardışık hattı çalıştır.",
+  "why": "Azure AI Search'in beceri setleri, ham içerikten varlıkları, anahtar ifadeleri ve görüntü metnini çıkaran ve dizinlemeden önce işleten bir yapay zeka zenginleştirme ardışık hattı çalıştırır."
+ },
+ "feat-010-02": {
+  "label": "Anahtar sözcük arama sonuçlarını en ilgili isabet sayılarını en üste itmek için bir dil modelini kullanarak yeniden sırala.",
+  "why": "Azure AI Search'in anlamsal sıralaması, anahtar sözcük arama sonuçlarını bir dil modelini kullanarak en ilgili eşleşmeleri ilk yüzeye getirmek üzere yeniden sıralar."
+ },
+ "feat-011-00": {
+  "label": "Bir video genelinde yeniden ortaya çıktıkları gibi aynı kişinin yüzünü tanımla ve etiketle.",
+  "why": "Azure AI Video Indexer'ın yüz algılaması, bir video genelinde yeniden göründüğü gibi aynı kişinin yüzünü tanımlar ve izler."
+ },
+ "feat-011-01": {
+  "label": "Her satırı kimin söylediğini etiketleyen aranabilir bir transkript üret.",
+  "why": "Azure AI Video Indexer'ın yazıya aktarma özelliği, her satırı kimin söylediğini etiketleyen aranabilir bir transkript üretir."
+ },
+ "feat-011-02": {
+  "label": "Yüklenen bir videoda sahne ve çekim sınırlarını otomatik olarak algıla.",
+  "why": "Azure AI Video Indexer'ın sahne ve çekim algılaması, yüklenen bir videoda sahne ve çekim sınırlarını otomatik olarak işaretler."
+ },
+ "feat-012-00": {
+  "label": "Kendi kotanda ve içerik filtreleri ile kurumsal sohbet tamamlamaları için GPT-4o dağıt.",
+  "why": "Azure OpenAI Service, GPT-4o gibi sohbet ve tamamlama modellerini kendi kota ve içerik filtreleri ile kurumsal bir kaynak olarak dağıtır."
+ },
+ "feat-012-01": {
+  "label": "Bir metin açıklamasından benzersiz ürün görüntüleri seti oluştur.",
+  "why": "Azure OpenAI Service'in DALL-E dağıtımı bir metin açıklamasından yeni görüntüler oluşturur."
+ },
+ "feat-012-02": {
+  "label": "Benzerlik araması için bir belge grubu sayısal vektörlere dönüştür.",
+  "why": "Azure OpenAI Service'in gömme modelleri, benzerlik araması ve alım için metni sayısal vektörlere dönüştürür."
+ },
+ "feat-012-03": {
+  "label": "Kendi etiketli örnekleri kullanarak bir temel modelin tonunu ve stilini adapte et.",
+  "why": "Azure OpenAI Service'in ince ayarı, kendi etiketli örnekleri kullanarak dağıtılmış bir modelin tonunu ve davranışını adapte eder."
+ },
+ "feat-013-00": {
+  "label": "Dağıtmadan önce tek bir katalogda birden çok sağlayıcıdan foundation modellerini yapılandır ve karşılaştır.",
+  "why": "Microsoft Foundry'ın model kataloğu, dağıtmadan önce birden çok sağlayıcıdan foundation modellerini yapılandırmanı ve karşılaştırmanı sağlar."
+ },
+ "feat-013-01": {
+  "label": "Dağıtmadan önce istem değişkenlerini izle, test et ve değerlendirme veri setlerine karşı puan ver.",
+  "why": "Microsoft Foundry'ın hızlı akışı ve değerlendirme araçları, dağıtmadan önce istem değişkenlerini izler, test eder ve veri setlerine karşı puanlar."
+ },
+ "feat-013-02": {
+  "label": "Bir Foundry projesine Python'dan programlı olarak çağrı yap ve modelleri ve ajanları yönet.",
+  "why": "Microsoft Foundry'ın SDK'sı, kodun bir Foundry projesine bağlanabilmesi ve modelleri ve ajanları programlı olarak yönetebilmesi için bir AIProjectClient ortaya çıkarır."
+ },
+ "feat-014-00": {
+  "label": "Bir ajanın bir soruyu yanıtlarken kendi yüklü dosyalarını araması ve alıntılanmasına izin ver.",
+  "why": "Microsoft Foundry Agent Service'in dosya arama aracı, bir ajanın bir soruyu yanıtlarken kendi yüklü dosyalarını araması ve alıntılanmasına izin verir."
+ },
+ "feat-014-01": {
+  "label": "Bir ajanın, bir veri veya matematik problemini çözmek için sohbet ortasında korumalı alanında kod yazıp çalıştırmasına izin ver.",
+  "why": "Microsoft Foundry Agent Service'in kod yorumlayıcı aracı, bir ajanın bir problemi çözmek için sohbet ortasında korumalı alanında kod yazıp çalıştırmasına izin verir."
+ },
+ "feat-014-02": {
+  "label": "Bir ajana kendi harici API'larını veya işlevlerini akıl yürütmesinin bir parçası olarak çağırabileceği yeteneklerini ver.",
+  "why": "Microsoft Foundry Agent Service'in function calling, bir ajana kendi harici API'larını veya işlevlerini akıl yürütmesinin bir parçası olarak çağırmasına izin verir."
+ },
+ "feat-015-00": {
+  "label": "Veri setine en iyi performans gösteren modeli bulmak için otomatik olarak birden çok algoritma ve hiperparametreyi dene.",
+  "why": "Azure Machine Learning'in Otomatik ML, veri setine en iyi performans gösteren modeli bulmak için birden çok algoritma ve hiperparametreyi dener."
+ },
+ "feat-015-01": {
+  "label": "Modülleri sürükleyip bağlayarak kod gerektirmeksizin bir eğitim ardışık hattını görsel olarak oluştur.",
+  "why": "Azure Machine Learning'in Designer, modülleri sürükleyip bağlayarak kod gerektirmeksizin bir eğitim ardışık hattını görsel olarak oluşturur."
+ },
+ "feat-015-02": {
+  "label": "Deney çalıştırmalarını izle, modelleri kayıt et ve yönetilen bir MLOps ardışık hattı aracılığıyla dağıtımı yönet.",
+  "why": "Azure Machine Learning'in ardışık hatları ve model kaydı deney çalıştırmalarını izler, modelleri kayıt eder ve yönetilen dağıtımı yönetir."
+ },
+ "features": {
+  "hint": "Her işi onu yapan yetenekle sürükle. Gösterim, ait olduğu servisi adlandırır."
+ }
+}

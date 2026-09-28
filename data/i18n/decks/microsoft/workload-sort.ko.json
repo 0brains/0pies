@@ -1,0 +1,108 @@
+{
+ "wl-001": {
+  "label": "two-line brief에서 new product를 위해 five candidate slogans를 draft해요.",
+  "why": "prompt에서 new content를 creating하는 것은 generative AI예요. nothing이 analyzed, extracted 또는 spoken이 아니에요."
+ },
+ "wl-002": {
+  "label": "step-by-step prompts 없이 inventory를 check하고, reorder를 file하고, supplier에게 email하는 assistant예요.",
+  "why": "tool use를 가진 multi-step autonomous action은 agentic signature이며, histack의 'persistent assistant' vs 'one stateless response'예요."
+ },
+ "wl-003": {
+  "label": "recorded meeting에서 누가 언제 말했는지를 결정해요(speaker diarisation).",
+  "why": "Diarisation은 audio 내에서 speakers를 separate해요. speech capability예요. Trap: 이것은 nothing을 generate하므로, 절대 synthesis가 아니에요."
+ },
+ "wl-004": {
+  "label": "voice agent를 위해 low-latency, high-quality speech-to-speech interactions를 해요.",
+  "why": "Verbatim Voice Live / gpt-realtime phrasing from the corpus. real-time audio in, audio out예요."
+ },
+ "wl-005": {
+  "label": "traffic-camera footage에서 각각의 vehicle 주위에 bounding boxes를 return해요.",
+  "why": "Object detection. bounding boxes per object. computer vision이며, whole-image classification과 구별되어요."
+ },
+ "wl-006": {
+  "label": "thousands of scanned PDF에서 invoice number, total, 그리고 due date를 pull해요.",
+  "why": "documents 및 forms에서 structured fields를 extracting하는 것은 information-extraction workload예요. Content Understanding territory in Domain 2예요."
+ },
+ "wl-007": {
+  "label": "item의 two-sentence text description에서 product page를 위해 photorealistic hero image를 create해요.",
+  "why": "text prompt에서 brand-new image를 producing하는 것은 generative AI의 image side예요. analyzed existing image는 없으며, 이것이 computer vision을 make할 것이에요."
+ },
+ "wl-008": {
+  "label": "talking points의 bullet-point outline에서 product FAQ page의 first draft를 produce해요.",
+  "why": "sparse outline을 new prose로 turning하는 것은 content creation from a prompt이며, wl-001의 slogans과 같은 capability이며, 더 긴 document에 applied예요."
+ },
+ "wl-009": {
+  "label": "chat window에서 하나의 single one-off customer question에 하나의 reply로 답해요. no follow-up steps 또는 tools invoked이 없어요.",
+  "why": "하나의 stateless response to 하나의 prompt는 generative AI이며, system이 steps planning을 시작하고 자신의 도구를 호출하기 시작하는 moment, 이것은 agentic AI로 crossing해요."
+ },
+ "wl-010": {
+  "label": "travel-booking assistant가 three sites 전체에 fares를 compare하고, seat를 hold하고, 각 step을 human이 confirm하지 않고 price target이 hit되면 purchase를 complete해요.",
+  "why": "Comparing, deciding, 그리고 end to end purchasing를 execute하는 것은 no per-step prompting을 가진 agentic pattern이며, reply만 하는 chatbot과 구별되어요."
+ },
+ "wl-011": {
+  "label": "IT-support assistant가 incoming ticket을 triage하고, affected server에 대해 diagnostic script을 run하고, automated fix이 fail하면 human에게만 escalate해요.",
+  "why": "Tool use plus conditional next action은 시험의 'tool use means the agent can call external capabilities' definition이에요. single generated response과 구별되어요."
+ },
+ "wl-012": {
+  "label": "research assistant가 broad question을 sub-questions로 break하고, 각각을 위해 multiple sources를 search하고, findings을 하나의 final report로 stitch해요.",
+  "why": "Task planning이 goal을 steps로 decompose하고, end to end executed하는 것은 시험의 task-planning-plus-task-completion definition of agentic AI이며, single generated answer가 아니에요."
+ },
+ "wl-013": {
+  "label": "free-text support tickets을 scan하고 그들이 contain하는 phone numbers 또는 email addresses를 저장되기 전에 flag해요.",
+  "why": "PII detection은 unstructured text 내에서 sensitive spans를 flags해요. text-analysis 기능이며, information extraction의 fixed fields가 forms 및 documents에서 pulled되는 것과 구별되어요."
+ },
+ "wl-014": {
+  "label": "thousands of support tickets 전체에서 언급된 main topics의 short ranked list를 return해요. rewritten paragraph를 produce하지 않고요.",
+  "why": "Keyword extraction은 salient terms을 list해요. 시험의 심어진 trap은 summarization을 offering하는 것이며, 이것은 list가 아닌 prose를 produce해요."
+ },
+ "wl-015": {
+  "label": "news articles의 batch 전체에서 언급된 모든 person name, organization, 그리고 location을 identify해요.",
+  "why": "Named entity recognition은 running text 내에서 mentions을 people, places, organizations로 classify해요. fixed document schema에 대한 extraction이 아닌 text-analysis 기능이에요."
+ },
+ "wl-016": {
+  "label": "40-page policy document를 그것의 key points를 capturing하는 three-paragraph overview로 condense해요.",
+  "why": "Summarization은 existing text를 new하지만 faithful prose로 compress해요. text analysis이며, generative AI가 아니에요. output이 source document에 grounded 및 constrained되기 때문이에요."
+ },
+ "wl-017": {
+  "label": "uploaded interview recordings의 batch을 그들이 speaking되는 것처럼이 아닌 모두가 finish 업로드한 후 transcribe해요.",
+  "why": "Batch transcription은 pre-recorded audio를 asynchronously process해요. still a speech 기능이며, offline sibling of real-time recognition이며, text 또는 extraction task가 아니에요."
+ },
+ "wl-018": {
+  "label": "e-learning module를 위해 written script에서 natural-sounding narrated audio를 produce해요.",
+  "why": "Written text를 spoken audio로 converting하는 것은 text-to-speech synthesis예요. speech workload의 output side이며, wl-004의 audio-in/audio-out case를 mirror해요."
+ },
+ "wl-019": {
+  "label": "login camera 앞의 person이 live human being이고, printed photo 또는 video replay가 아님을 verify해요.",
+  "why": "Face liveness detection은 presentation attacks을 live camera image를 analyzing하여 defend해요. computer-vision security 기능이며, face verification의 identity match과 구별되어요."
+ },
+ "wl-020": {
+  "label": "uploaded training video의 visual frames를 analyzing하여 scene changes를 detect하고 chapter markers을 generate해요.",
+  "why": "Deriving chapter breaks from what the frames show은 video의 visual analysis예요. same footage는 speech로만 shift되며, deliverable이 spoken transcript일 때예요."
+ },
+ "wl-021": {
+  "label": "uploaded photo를 'beach' 또는 'city street' 같은 single whole-image category로 tag해요. per-object locations이 필요 없어요.",
+  "why": "Image classification은 whole image에 하나의 label을 assign해요. wl-005의 object detection과는 달라요(per-object bounding boxes return). 둘 다 computer vision이며, distinct techniques예요."
+ },
+ "wl-022": {
+  "label": "thousands of scanned reports 및 images에 대해 indexing 동안 AI enrichment skills을 run하여 previously unsearchable인 content이 searchable이 되도록 해요.",
+  "why": "이것은 knowledge mining이에요. 시험의 Azure AI Search definition of using AI skills to surface information from unstructured content into a search index예요."
+ },
+ "wl-023": {
+  "label": "recorded support calls의 batch에서 schema-defined fields의 set을 return해요. call reason, resolution, 그리고 follow-up action예요.",
+  "why": "Pulling a fixed business schema from audio content는 Content Understanding의 structured extraction이에요. deliverable이 defined fields이며, transcript가 아니며, speech를 make할 것이에요."
+ },
+ "wl-024": {
+  "label": "하나의 reusable schema를 사용해 contracts, intake forms, 그리고 handwritten receipts의 mixed batch에서 key-value pairs 및 table structure를 pull해요.",
+  "why": "Structured field 및 table extraction은 varied document types 전체에 document intelligence의 layout/custom-model territory예요. wl-006의 invoices와 같은 workload이며, broader document mix에 applied예요."
+ },
+ "workload-sort": {
+  "hint": "deliverable이 실제로 무엇인지 물어봐요: prompt에서 brand-new content (generative), tools를 가진 autonomous multi-step action (agentic), existing text에 대한 judgment 또는 summary (text analysis), spoken audio를 touch하는 anything (speech), image 또는 video frame에 대한 judgment (computer vision), 또는 documents 또는 mixed content에서 pulled되는 fixed set of structured fields/an index (information extraction).",
+  "note": "여러 requests는 two workloads처럼 sound할 수 있어요. tie-break는 항상 deliverable이에요: new content vs. autonomous action vs. existing text의 analysis vs. audio in/out vs. pixels에 대한 judgment vs. structured field set.",
+  "zones[0].def": "prompt에서 new content — text, images, code, 또는 audio —를 creating하는 것이며, already existing인 content를 analyzing 또는 acting하는 대신이에요.",
+  "zones[1].def": "Autonomously planning, using tools, 그리고 goal을 향해 multi-step action을 taking하며, single stateless response를 넘어가요.",
+  "zones[2].def": "Analyzing written text to surface meaning already present in it. sentiment, key phrases, entities, PII, 또는 grounded summary. new content를 generate하지 않고요.",
+  "zones[3].def": "Converting between spoken audio 및 text, 또는 directly audio streams와 working. recognition, synthesis, translation, 그리고 diarization이에요.",
+  "zones[4].def": "Analyzing visual content of images 및 video frames. classifying, detecting objects, verifying faces, 또는 reading a scene이에요.",
+  "zones[5].def": "Pulling a fixed set of structured fields, 또는 searchable index, documents, forms, 또는 mixed-modality content에서 나와요."
+ }
+}

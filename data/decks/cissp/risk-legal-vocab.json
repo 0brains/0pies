@@ -1,0 +1,227 @@
+{
+ "id": "risk-legal-vocab",
+ "runner": "board",
+ "title": "Risk Math & Evidence Vocabulary",
+ "blurb": "Nine terms every quantitative-risk and investigations question hinges on. Sort each scene into the metric or evidence type it's actually testing.",
+ "source": "Chapple CISSP SG 10ed ch.2 · outline 1.9 (risk management concepts); ch.19 · outline 7.1 (evidence collection and handling)",
+ "asOf": "2026-08",
+ "area": "1.9 / 7.1",
+ "hint": "For the quantitative zones, find the numbers first: a bare percentage is Exposure Factor, a bare frequency is ARO, a dollar figure with no 'per year' attached is SLE, and a dollar figure explicitly annualized is ALE. For evidence, ask what's physically in the room: the object itself, a record about it, a sworn account of it, or an aid built to explain it.",
+ "zones": [
+  {
+   "key": "Asset Value",
+   "name": "Asset Value",
+   "def": "The total dollar worth of an asset — replacement cost, lost productivity, and intangible components such as reputation or intellectual property, combined into one starting figure. Every other quantitative metric multiplies this number down; it is never itself scaled by a threat-specific percentage, which is Exposure Factor's job."
+  },
+  {
+   "key": "Exposure Factor",
+   "name": "Exposure Factor",
+   "def": "The percentage of an asset's value that one realized instance of a specific threat would destroy, not a dollar figure and not a fixed constant — the same threat produces a different EF against different assets. It only becomes money once multiplied against Asset Value to build SLE."
+  },
+  {
+   "key": "SLE",
+   "name": "SLE",
+   "def": "The dollar cost of a single occurrence of a specific risk against a specific asset, calculated as Asset Value times Exposure Factor. It measures the damage of one event only — no frequency is folded in, which is what separates it from ALE, the annualized figure built by multiplying SLE against ARO."
+  },
+  {
+   "key": "ARO",
+   "name": "ARO",
+   "def": "The expected number of times per year a specific threat will occur against a specific asset, expressed as a rate (0.125 for once a decade, 6 for six times a year). It carries no dollar amount on its own — it only becomes a cost once multiplied against SLE to produce ALE."
+  },
+  {
+   "key": "ALE",
+   "name": "ALE",
+   "def": "The projected yearly dollar cost of a specific risk, calculated as SLE times ARO. It is the figure that belongs in a safeguard's cost-benefit case, because it is the only one of the three that combines how bad one event is with how often it is expected — SLE or ARO alone answer only half that question."
+  },
+  {
+   "key": "Real evidence",
+   "name": "Real evidence",
+   "def": "Tangible physical objects — a hard drive, a server, a seized laptop — brought directly into a proceeding, authenticated by a witness who identifies it or by an unbroken chain of custody. It is the object itself, distinct from documentary evidence, which is a record about the object's contents."
+  },
+  {
+   "key": "Documentary evidence",
+   "name": "Documentary evidence",
+   "def": "Written or recorded material — logs, contracts, business records, emails — offered to prove its contents. It must satisfy the best evidence rule (the original preferred over a copy) and usually needs authentication to escape a hearsay objection, unlike real evidence, which speaks for itself once identified."
+  },
+  {
+   "key": "Testimonial evidence",
+   "name": "Testimonial evidence",
+   "def": "A sworn, live statement a witness delivers and can be cross-examined on — direct if from firsthand observation, expert if opinion-based. Its weight rests on the witness's credibility, not on chain of custody or an original-document requirement, the way real and documentary evidence do."
+  },
+  {
+   "key": "Demonstrative evidence",
+   "name": "Demonstrative evidence",
+   "def": "An illustrative aid — a model, diagram, animation, or walkthrough — built to help a fact-finder understand other evidence, not to independently prove a fact itself. Unlike real evidence, it need not be the actual object from the incident, only an accurate representation of it."
+  }
+ ],
+ "items": [
+  {
+   "id": "rlv-01",
+   "label": "A regional data center's replacement cost, including hardware, licensing, and the productivity lost during a rebuild, is tallied into a single dollar figure before any risk math begins.",
+   "sub": "Which metric is being calculated?",
+   "answer": "Asset Value",
+   "why": "This is the raw dollar worth of the asset itself, before any threat-specific scaling. It is not yet reduced by a percentage, which would make it Exposure Factor, and it is not tied to a single event or a year, which would make it SLE or ALE.",
+   "citation": "SG ch.2 · outline 1.9"
+  },
+  {
+   "id": "rlv-02",
+   "label": "A brewery prices its core recipe database not by server hardware cost but by what a competitor would realistically pay to acquire the formulas outright.",
+   "sub": "Which metric is being calculated?",
+   "answer": "Asset Value",
+   "why": "Even an intangible, IP-driven asset still needs a single dollar figure before any risk calculation can start. That figure is Asset Value; Exposure Factor would instead describe how much of it a specific threat is expected to destroy.",
+   "citation": "SG ch.2 · outline 1.9"
+  },
+  {
+   "id": "rlv-03",
+   "label": "A wildfire near an uninsulated field office is projected to destroy 70% of the value of the servers stored there, while a sister office with fire suppression down the road would lose far less to the same fire.",
+   "sub": "Which metric is being calculated?",
+   "answer": "Exposure Factor",
+   "why": "70% is a percentage of asset value lost to one specific threat against one specific asset -- Exposure Factor's defining trait. It is not yet a dollar amount, which only appears once EF is multiplied against Asset Value to build SLE.",
+   "citation": "SG ch.2 · outline 1.9"
+  },
+  {
+   "id": "rlv-04",
+   "label": "The security team estimates a phishing-triggered wire-transfer fraud would wipe out 15% of a mid-size vendor account's balance, while the same phishing threat against the payroll system would cost only 3%.",
+   "sub": "Which metric explains why the two percentages differ?",
+   "answer": "Exposure Factor",
+   "why": "Same threat, two different percentages against two different assets -- Exposure Factor is threat-and-asset-specific, not a fixed constant. It stays a percentage until multiplied by Asset Value to produce SLE.",
+   "citation": "SG ch.2 · outline 1.9"
+  },
+  {
+   "id": "rlv-05",
+   "label": "A single ransomware event is projected to encrypt and destroy 40% of a branch office's $80,000 file server before recovery completes.",
+   "sub": "What single-event dollar figure does this scenario compute?",
+   "answer": "SLE",
+   "why": "$80,000 x 40% = $32,000 is the cost of one occurrence -- Asset Value times Exposure Factor. No frequency is mentioned, so this stops at SLE; multiplying by how often ransomware is expected per year would turn it into ALE, which nothing here asks for.",
+   "citation": "SG ch.2 · outline 1.9"
+  },
+  {
+   "id": "rlv-06",
+   "label": "A one-time flood at a warehouse ruins $12,000 of the $40,000 inventory stored there, and the analyst reports the loss for that single flood event only.",
+   "sub": "Which metric is the analyst reporting?",
+   "answer": "SLE",
+   "why": "This is the damage from one occurrence -- no annual frequency is folded in, so it stays SLE rather than becoming ALE, which would require multiplying by how often floods like this are expected each year.",
+   "citation": "SG ch.2 · outline 1.9"
+  },
+  {
+   "id": "rlv-07",
+   "label": "A single burglary is calculated to cost a retailer $9,000 in stolen point-of-sale terminals, based on a $30,000 terminal fleet and a 30% loss expectation from one break-in.",
+   "sub": "Which metric does the $9,000 figure represent?",
+   "answer": "SLE",
+   "why": "$30,000 x 30% = $9,000 is the cost of a single burglary -- Asset Value times Exposure Factor once. Nothing here estimates how many burglaries per year to expect, so the annualized figure, ALE, can't yet be derived.",
+   "citation": "SG ch.2 · outline 1.9"
+  },
+  {
+   "id": "rlv-08",
+   "label": "Historical claims data shows a coastal branch experiences a flood severe enough to damage IT equipment roughly once every 8 years.",
+   "sub": "Which metric does 'once every 8 years' express?",
+   "answer": "ARO",
+   "why": "Once every 8 years converts to an annual rate of 0.125 -- a frequency, not a dollar figure. It only becomes a cost once multiplied by SLE to produce ALE; on its own it says nothing about how expensive one event is.",
+   "citation": "SG ch.2 · outline 1.9"
+  },
+  {
+   "id": "rlv-09",
+   "label": "A phishing campaign targeting the finance team is expected to succeed roughly 6 times per year based on last year's pattern.",
+   "sub": "Which metric is '6 times per year'?",
+   "answer": "ARO",
+   "why": "6 times per year is purely a frequency estimate -- Annualized Rate of Occurrence. It carries no dollar amount by itself; that only appears once it is multiplied against the SLE for a successful phishing loss.",
+   "citation": "SG ch.2 · outline 1.9"
+  },
+  {
+   "id": "rlv-10",
+   "label": "An insurer's actuarial table pegs a category-3 hurricane making landfall at this facility at a 0.2 likelihood in any given year.",
+   "sub": "Which metric is 0.2?",
+   "answer": "ARO",
+   "why": "0.2 events per year is a rate, not a loss figure -- Annualized Rate of Occurrence. Distinguishing it from ALE requires noticing no dollar amount has been introduced yet; ARO is the frequency half of ALE = SLE x ARO, not the cost half.",
+   "citation": "SG ch.2 · outline 1.9"
+  },
+  {
+   "id": "rlv-11",
+   "label": "A university's SLE for a single stolen laptop incident is $4,500, and laptop thefts occur on average 10 times per year across campus; the CISO needs the total annual exposure to justify a locking-cabinet budget.",
+   "sub": "What figure does the CISO need, and how is it built?",
+   "answer": "ALE",
+   "why": "$4,500 x 10 = $45,000 annualizes the risk -- ALE = SLE x ARO. Reporting only the SLE would understate the yearly picture, and reporting only the ARO would give a frequency with no cost attached; ALE is the only figure that combines both for a budget decision.",
+   "citation": "SG ch.2 · outline 1.9"
+  },
+  {
+   "id": "rlv-12",
+   "label": "A power-grid substation's single-outage SLE is $18,000, and outages of that severity happen twice a year on average; the utility wants the number that goes into next year's resilience budget line.",
+   "sub": "What figure goes on the budget line?",
+   "answer": "ALE",
+   "why": "$18,000 x 2 = $36,000 is the annualized figure a budget line needs -- ALE = SLE x ARO. SLE alone answers 'how bad is one outage,' not 'how much should we budget this year,' which is what's being asked.",
+   "citation": "SG ch.2 · outline 1.9"
+  },
+  {
+   "id": "rlv-13",
+   "label": "Two safeguards are compared: without a firewall upgrade the SLE is $6,000 and the breach ARO is 5; with the upgrade the SLE stays $6,000 but ARO falls to 1. The board wants the yearly dollar swing to weigh against the upgrade's cost.",
+   "sub": "Which metric does the board need on both sides of the comparison?",
+   "answer": "ALE",
+   "why": "Before: $6,000 x 5 = $30,000; after: $6,000 x 1 = $6,000 -- only ALE, not SLE or ARO alone, lets the board compare full annual dollar exposure against the safeguard's price tag, which is the point of a safeguard cost-benefit case.",
+   "citation": "SG ch.2 · outline 1.9"
+  },
+  {
+   "id": "rlv-14",
+   "label": "Investigators seize the actual hard drive from a compromised workstation and bring it into the courtroom, with an unbroken log of everyone who has touched it since seizure.",
+   "sub": "Which evidence type is this?",
+   "answer": "Real evidence",
+   "why": "The physical object itself -- the drive -- is what is presented, authenticated by chain of custody. Documentary evidence would instead be a record about the drive's contents, like the forensic report describing what was found on it.",
+   "citation": "SG ch.19 · outline 7.1.1"
+  },
+  {
+   "id": "rlv-15",
+   "label": "A stolen server is recovered and shown to the jury after the employee who removed it from the data center identifies it by its asset tag.",
+   "sub": "Which evidence type is this?",
+   "answer": "Real evidence",
+   "why": "This is the tangible object itself, authenticated by witness identification -- the hallmark of real evidence. A diagram sketched to show the jury where the server sat in the rack would instead be demonstrative evidence, an aid to understanding rather than the object itself.",
+   "citation": "SG ch.19 · outline 7.1.1"
+  },
+  {
+   "id": "rlv-16",
+   "label": "Firewall logs showing a spike in outbound traffic at 2 a.m. are offered to prove the exfiltration occurred at that time, with a system administrator ready to authenticate them.",
+   "sub": "Which evidence type is this?",
+   "answer": "Documentary evidence",
+   "why": "Logs are written records offered to prove their contents -- documentary evidence -- and need administrator authentication to clear a hearsay objection. This differs from real evidence, which would be the server itself rather than a record it produced.",
+   "citation": "SG ch.19 · outline 7.1.1"
+  },
+  {
+   "id": "rlv-17",
+   "label": "The signed vendor contract, in its original form rather than a photocopy, is entered to prove exactly what terms were agreed.",
+   "sub": "Which evidence type is this?",
+   "answer": "Documentary evidence",
+   "why": "A written record offered for its contents, and specifically the original per the best evidence rule, is documentary evidence. Testimonial evidence would instead be someone testifying from memory about what the contract said.",
+   "citation": "SG ch.19 · outline 7.1.1"
+  },
+  {
+   "id": "rlv-18",
+   "label": "A security analyst takes the stand and describes, from her own recollection, exactly what she saw on her monitor the night of the breach.",
+   "sub": "Which evidence type is this?",
+   "answer": "Testimonial evidence",
+   "why": "A live, sworn account from personal observation, open to cross-examination, is testimonial evidence. It stands or falls on the witness's credibility, not on a chain of custody the way real evidence would.",
+   "citation": "SG ch.19 · outline 7.1.1"
+  },
+  {
+   "id": "rlv-19",
+   "label": "An outside malware-reverse-engineering expert is sworn in and gives her professional opinion on how the payload likely entered the network.",
+   "sub": "Which evidence type is this?",
+   "answer": "Testimonial evidence",
+   "why": "Expert opinion delivered under oath is still testimonial evidence, distinguished from direct witness testimony only by its opinion basis -- not from documentary evidence, which would be a written report she filed instead of speaking.",
+   "citation": "SG ch.19 · outline 7.1.1"
+  },
+  {
+   "id": "rlv-20",
+   "label": "To help the jury follow a complex intrusion, the prosecution builds an animated diagram showing how the attacker pivoted from the web server to the database, without claiming the diagram is the actual incident.",
+   "sub": "Which evidence type is this?",
+   "answer": "Demonstrative evidence",
+   "why": "An illustrative aid built to help the fact-finder understand other evidence, not to be the incident itself, is demonstrative evidence. Real evidence would instead be an actual artifact recovered from that incident, like the compromised server.",
+   "citation": "SG ch.19 · outline 7.1.1"
+  },
+  {
+   "id": "rlv-21",
+   "label": "A scale model of the data center's server room is used at trial so the jury can visualize where the rack in question physically sat relative to the badge reader.",
+   "sub": "Which evidence type is this?",
+   "answer": "Demonstrative evidence",
+   "why": "A model built to aid understanding, not itself part of the incident, is demonstrative evidence -- even though it depicts something real, it isn't the object or record from the case, which is what would make it real or documentary evidence instead.",
+   "citation": "SG ch.19 · outline 7.1.1"
+  }
+ ]
+}

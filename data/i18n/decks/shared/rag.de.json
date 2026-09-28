@@ -1,0 +1,53 @@
+{
+ "rag": {
+  "hint": "Platziere es im Abrufpfad: Vorbereitung von Wissen, Findet Kandidaten, verbessert ihre Relevanz oder sichert, dass die generierte Antwort gestützt und nachverfolgbar bleibt."
+ },
+ "rag-01": {
+  "label": "Ein numerischer Vektor, der semantische Merkmale darstellt, damit verwandte Inhalte mathematisch verglichen werden können.",
+  "why": "Ein numerischer Vektor, der semantische Merkmale darstellt, damit verwandte Inhalte mathematisch verglichen werden können."
+ },
+ "rag-02": {
+  "label": "Teilt Quelldokumente in abrufbare Passages auf, deren Größe Bedeutung erhält, ohne Kontext zu verschwenden.",
+  "why": "Teilt Quelldokumente in abrufbare Passages auf, deren Größe Bedeutung erhält, ohne Kontext zu verschwenden."
+ },
+ "rag-03": {
+  "label": "Speichert Embeddings und unterstützt effiziente Nearest-Neighbor-Ähnlichkeitssuche.",
+  "why": "Speichert Embeddings und unterstützt effiziente Nearest-Neighbor-Ähnlichkeitssuche."
+ },
+ "rag-04": {
+  "label": "Ruft Inhalte nach Bedeutung statt nicht nach exakter Keyword-Überlappung ab.",
+  "why": "Ruft Inhalte nach Bedeutung statt nicht nach exakter Keyword-Überlappung ab."
+ },
+ "rag-05": {
+  "label": "Ruft Inhalte unter Verwendung von lexikalischen Begriff-Übereinstimmungen ab und bleibt nützlich für Namen, Codes und genaue Phrasen.",
+  "why": "Ruft Inhalte unter Verwendung von lexikalischen Begriff-Übereinstimmungen ab und bleibt nützlich für Namen, Codes und genaue Phrasen."
+ },
+ "rag-06": {
+  "label": "Kombiniert semantischen und Keyword-Abruf, um von Bedeutung und genauen Begriffen Abgleich zu nutzen.",
+  "why": "Kombiniert semantischen und Keyword-Abruf, um von Bedeutung und genauen Begriffen Abgleich zu nutzen."
+ },
+ "rag-07": {
+  "label": "Begrenzt den Abruf durch Attribute wie Tenant, Datum, Dokumenttyp oder Zugriffsstufe.",
+  "why": "Begrenzt den Abruf durch Attribute wie Tenant, Datum, Dokumenttyp oder Zugriffsstufe."
+ },
+ "rag-08": {
+  "label": "Bewertet abgerufene Kandidaten neu, um die Passages, die dem vollständigen Abfrage am relevantesten sind, zuerst zu platzieren.",
+  "why": "Bewertet abgerufene Kandidaten neu, um die Passages, die dem vollständigen Abfrage am relevantesten sind, zuerst zu platzieren."
+ },
+ "rag-09": {
+  "label": "Zwingt die Generierung auf bereitgestellte Beweise, damit Aussagen gestützt und nachverfolgbar sind.",
+  "why": "Zwingt die Generierung auf bereitgestellte Beweise, damit Aussagen gestützt und nachverfolgbar sind."
+ },
+ "rag-10": {
+  "label": "Verknüpft eine Antwort-Aussage zurück zu dem Quellenpassage, das sie stützt.",
+  "why": "Verknüpft eine Antwort-Aussage zurück zu dem Quellenpassage, das sie stützt."
+ },
+ "rag-11": {
+  "label": "Zeigt an, ob die Abrufstufe den Beweis findet, der zum Beantworten einer Frage erforderlich ist.",
+  "why": "Wenn 100 Fragen eine bekannte Beweis-Passage erfordern und der Retriever es für 85 zurückgibt, beträgt der Abruf-Rückruf 85%. Niedriger Abruf-Rückruf deutet auf Chunking-, Embeddings-, Filter-, Abfrage-Rewrite- oder Kandidaten-Zahl-Probleme hin, die Generierung nicht reparieren kann."
+ },
+ "rag-12": {
+  "label": "Zeigt an, wie viel des abgerufenen Kontextes relevant ist statt ablenkenden Rauschen.",
+  "why": "Zeigt an, wie viel des abgerufenen Kontextes relevant ist statt ablenkenden Rauschen."
+ }
+}

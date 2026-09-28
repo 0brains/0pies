@@ -1,0 +1,101 @@
+{
+ "training-data": {
+  "hint": "La distinción importante es el rol, formato, o idoneidad de los datos para la población real; esos detalles determinan qué puede ser aprendido y si la evaluación es confiable."
+ },
+ "training-data-01": {
+  "label": "La porción de datos usada para aprender parámetros de modelo.",
+  "why": "La porción de datos usada para aprender parámetros de modelo."
+ },
+ "training-data-02": {
+  "label": "Datos retenidos usados durante el desarrollo para comparar opciones y afinar hiperparámetros.",
+  "why": "Datos retenidos usados durante el desarrollo para comparar opciones y afinar hiperparámetros."
+ },
+ "training-data-03": {
+  "label": "Datos intactos usados al final para estimar el rendimiento en ejemplos no vistos.",
+  "why": "Datos intactos usados al final para estimar el rendimiento en ejemplos no vistos."
+ },
+ "training-data-04": {
+  "label": "Ejemplos que incluyen la respuesta destino requerida para aprendizaje supervisado.",
+  "why": "Ejemplos que incluyen la respuesta destino requerida para aprendizaje supervisado."
+ },
+ "training-data-05": {
+  "label": "Ejemplos sin respuestas destino, frecuentemente usados para aprendizaje no supervisado o autosupervisado.",
+  "why": "Ejemplos sin respuestas destino, frecuentemente usados para aprendizaje no supervisado o autosupervisado."
+ },
+ "training-data-06": {
+  "label": "Datos organizados en campos definidos, filas, columnas, o registros.",
+  "why": "Datos organizados en campos definidos, filas, columnas, o registros."
+ },
+ "training-data-07": {
+  "label": "Contenido de forma libre como texto, imágenes, audio, y video.",
+  "why": "Contenido de forma libre como texto, imágenes, audio, y video."
+ },
+ "training-data-08": {
+  "label": "Ejemplos que reflejan las personas, condiciones, y casos que el modelo encontrará en uso.",
+  "why": "Ejemplos que reflejan las personas, condiciones, y casos que el modelo encontrará en uso."
+ },
+ "training-data-09": {
+  "label": "Información no disponible en el tiempo de predicción accidentalmente entra al entrenamiento e infla el rendimiento medido.",
+  "why": "Información no disponible en el tiempo de predicción accidentalmente entra al entrenamiento e infla el rendimiento medido."
+ },
+ "training-data-10": {
+  "label": "Una clase destino aparece mucho más frecuentemente que otra, haciendo la precisión potencialmente engañosa.",
+  "why": "Una clase destino aparece mucho más frecuentemente que otra, haciendo la precisión potencialmente engañosa."
+ },
+ "training-data-11": {
+  "label": "Adjuntar etiquetas de referencia verificadas a ejemplos en bruto para que un modelo supervisado tenga respuestas de las que aprender.",
+  "why": "La calidad de las etiquetas limita la calidad del modelo: etiquetas ruidosas o inconsistentes enseñan al modelo la relación equivocada sin importar cuántos datos haya."
+ },
+ "training-data-12": {
+  "label": "La respuesta correcta verificada contra la que se compara la predicción del modelo durante el entrenamiento y la evaluación.",
+  "why": "Sin una respuesta de referencia confiable, ni la pérdida de entrenamiento ni las métricas de evaluación significan nada: ambas se miden contra ella."
+ },
+ "training-data-13": {
+  "label": "Crear ejemplos de entrenamiento adicionales transformando los existentes, como voltear imágenes o parafrasear texto.",
+  "why": "Amplía un conjunto de datos pequeño y enseña invariancia ante variaciones inofensivas, reduciendo el sobreajuste sin recolectar datos nuevos."
+ },
+ "training-data-14": {
+  "label": "Ejemplos generados artificialmente, usados cuando los datos reales son escasos, sensibles, o carecen de casos raros.",
+  "why": "Llena vacíos que la recolección real no puede cubrir (eventos raros, registros restringidos por privacidad), pero hereda las suposiciones de su generador."
+ },
+ "training-data-15": {
+  "label": "Reequilibrar un conjunto de datos sesgado duplicando o generando ejemplos adicionales de la clase minoritaria.",
+  "why": "Da a la clase rara suficiente peso para ser aprendida, con el riesgo de sobreajustarse a ejemplos minoritarios repetidos o sintéticos."
+ },
+ "training-data-16": {
+  "label": "Reequilibrar un conjunto de datos sesgado descartando algunos ejemplos de la clase mayoritaria.",
+  "why": "Iguala la influencia de las clases a bajo costo, pero en el proceso desecha señal real de la clase mayoritaria."
+ },
+ "training-data-17": {
+  "label": "Un atributo de entrada individual y medible, como edad, valor de píxel, o monto de transacción, del que el modelo aprende.",
+  "why": "Los modelos solo ven las características que se les dan; qué se incluye, y cómo se codifica, delimita lo que puede ser aprendido."
+ },
+ "training-data-18": {
+  "label": "Transformar entradas en bruto en atributos más informativos, como razones, intervalos, o codificaciones, antes del entrenamiento.",
+  "why": "Buenas características derivadas permiten que modelos más simples capturen el patrón; las malas obligan a modelos complejos a redescubrirlo entre el ruido."
+ },
+ "training-data-19": {
+  "label": "Rotar qué porción de datos se retiene para que cada ejemplo se use tanto para entrenamiento como para evaluación.",
+  "why": "Promediar sobre varios pliegues retenidos da una estimación más estable de la generalización que una sola división, especialmente en conjuntos de datos pequeños."
+ },
+ "training-data-20": {
+  "label": "Verificaciones de completitud, exactitud, consistencia, y frescura aplicadas antes de usar los datos para entrenar.",
+  "why": "Los defectos fluyen hacia abajo: un modelo entrenado con registros incompletos o inconsistentes codifica esos defectos como comportamiento."
+ },
+ "training-data-21": {
+  "label": "Sesgo sistemático introducido cuando el método de recolección favorece a algunas personas o casos sobre otros.",
+  "why": "Un modelo solo puede ser justo con los casos que ha visto; una recolección sesgada produce predicciones sesgadas por bueno que sea el algoritmo."
+ },
+ "training-data-22": {
+  "label": "Un ejemplo extremo o anómalo que queda muy fuera del patrón del resto de los datos.",
+  "why": "Un puñado de puntos extremos puede arrastrar parámetros y escalado; decidir si son errores o casos reales cambia el modelo."
+ },
+ "training-data-23": {
+  "label": "Una división consciente del orden en la que el modelo entrena con períodos anteriores y se evalúa con posteriores.",
+  "why": "Barajar series temporales deja que el modelo espíe el futuro, inflando las puntuaciones; una evaluación honesta debe respetar el orden de llegada."
+ },
+ "training-data-24": {
+  "label": "Una división que mantiene las proporciones de clase de cada subconjunto iguales a las del conjunto de datos completo.",
+  "why": "Las divisiones aleatorias de datos desequilibrados pueden dejar un pliegue sin la clase rara por completo; estratificar mantiene cada evaluación representativa."
+ }
+}

@@ -1,0 +1,195 @@
+{
+ "id": "network-foundations",
+ "runner": "board",
+ "title": "Network Foundations",
+ "blurb": "Transport protocols, segmentation architectures, wireless security generations, and the attacks that target them. Sort each scene into the zone it actually belongs to.",
+ "source": "Chapple CISSP SG 10ed ch.11 (Secure Network Architecture and Components) · ch.12 (Secure Communications and Network Attacks) · April-2024 outline 4.1-4.3",
+ "asOf": "2026-08",
+ "area": "4.1-4.3",
+ "hint": "First ask: is this a protocol or architecture behaving as designed, or is someone actively attacking it right now? Only after that, sort by which construct or generation is at stake.",
+ "note": "Wireless generations (WEP through WPA3) and segmentation constructs (VLAN, DMZ, microsegmentation) are grouped as single zones each — the discrimination inside those families is a finer-grained skill than this board tests. This board's job is the coarser sort: protocol design vs. segmentation architecture vs. wireless generation vs. active attack.",
+ "zones": [
+  {
+   "key": "TCP/UDP & core protocols",
+   "name": "TCP/UDP & core protocols",
+   "def": "The behavior and design tradeoffs of the transport-layer protocols and the core Layer 2/3 protocols that support them — TCP's connection-oriented, acknowledged, ordered delivery versus UDP's connectionless best-effort speed, plus utility protocols like ARP and ICMP doing their ordinary job. Sort a scene here when it describes how a protocol is built or chosen to behave, not when someone is abusing that same protocol to cause harm — that belongs to Common network attacks."
+  },
+  {
+   "key": "Segmentation constructs",
+   "name": "Segmentation constructs",
+   "def": "The internal and perimeter architectures that keep traffic apart: VLANs splitting a switch's broadcast domain, a DMZ (screened subnet) sandwiching internet-facing hosts between two firewalls, and microsegmentation isolating traffic down to the individual workload under a zero-trust policy. The discrimination is granularity and purpose — VLAN groups many hosts by switch port, DMZ controls what the internet can reach, microsegmentation locks down even server-to-server traffic inside the trusted zone."
+  },
+  {
+   "key": "Wireless security generations",
+   "name": "Wireless security generations",
+   "def": "The evolution of Wi-Fi authentication and encryption, from WEP's broken static RC4 key through WPA/WPA2's shared-passphrase or 802.1X/EAP enterprise modes to WPA3's AES-CCMP and SAE/Dragonfly key exchange. Sort a scene here when it describes what a protocol generation does or requires by design, not when an attacker is actively exploiting a wireless weakness in real time — that belongs to Common network attacks."
+  },
+  {
+   "key": "Common network attacks",
+   "name": "Common network attacks",
+   "def": "Active exploitation of network protocols and trust relationships to intercept, disrupt, or redirect traffic — spoofing a trusted identity (ARP, IP, or an SSID), sitting on-path between two parties, overwhelming a target with volume, or corrupting a DNS answer. The discrimination rule is that someone is actively attacking right now, not that a protocol is merely behaving, or failing to behave securely, by design."
+  }
+ ],
+ "items": [
+  {
+   "id": "netf-01",
+   "label": "A team building a live video-conferencing app picks a transport protocol that accepts occasional dropped frames rather than pay the latency cost of retransmission and acknowledgment.",
+   "sub": "Which zone does this design choice belong to?",
+   "answer": "TCP/UDP & core protocols",
+   "why": "Choosing UDP's best-effort delivery over TCP's reliability is a transport-layer design tradeoff, not an attack — nothing here overwhelms the service or forges an identity, which is what would move it to Common network attacks.",
+   "citation": "SG ch.11 · outline 4.1.1"
+  },
+  {
+   "id": "netf-02",
+   "label": "A host on a LAN segment needs the MAC address behind a known IP address before it can build the next frame, so it broadcasts a request and caches the reply it gets back.",
+   "sub": "Which zone does this belong to?",
+   "answer": "TCP/UDP & core protocols",
+   "why": "This is ARP doing its ordinary job of resolving a Layer 3 address to a Layer 2 address. The tempting neighbour is Common network attacks — ARP poisoning uses the same broadcast mechanism, but only when a third party forges replies to hijack the cache, which isn't happening here.",
+   "citation": "SG ch.11 · outline 4.1.1"
+  },
+  {
+   "id": "netf-03",
+   "label": "A packet capture shows a client and server complete a three-step SYN, SYN-ACK, ACK exchange before a large file transfer begins, with every subsequent segment acknowledged in order.",
+   "sub": "Which zone does this belong to?",
+   "answer": "TCP/UDP & core protocols",
+   "why": "A completed handshake followed by ordered, acknowledged delivery is TCP working exactly as specified. Contrast this with a flood of SYNs that never completes the handshake — that resource-exhaustion pattern is a DDoS technique that belongs to Common network attacks.",
+   "citation": "SG ch.11 · outline 4.1.1"
+  },
+  {
+   "id": "netf-04",
+   "label": "A monitoring tool measures round-trip time to a remote host by sending an echo request and timing the echo reply that comes back.",
+   "sub": "Which zone does this belong to?",
+   "answer": "TCP/UDP & core protocols",
+   "why": "This is ICMP performing its standard diagnostic function (ping). The tempting neighbour is Common network attacks, where the same echo-reply mechanism is weaponized against a spoofed victim's address at scale — that pattern, not a single diagnostic ping, is what earns the attacks zone.",
+   "citation": "SG ch.11 · outline 4.1.1"
+  },
+  {
+   "id": "netf-05",
+   "label": "A network architect reviewing a live voice call's traffic notes a four-field, 64-bit datagram header carrying source port, destination port, length, and checksum — with no sequence number and no acknowledgment field anywhere in sight.",
+   "sub": "Which zone does this belong to?",
+   "answer": "TCP/UDP & core protocols",
+   "why": "The absence of sequencing and acknowledgment fields is exactly what marks a UDP datagram header, distinguishing it from TCP's connection-oriented header — a protocol-identification exercise, not an attack scenario.",
+   "citation": "SG ch.11 · outline 4.1.1"
+  },
+  {
+   "id": "netf-06",
+   "label": "A retailer places its public-facing web server and mail relay in a network zone reachable from the internet and sandwiched between two firewalls, while the internal accounting database sits entirely behind the inner firewall.",
+   "sub": "Which zone does this architecture belong to?",
+   "answer": "Segmentation constructs",
+   "why": "Two firewalls bracketing internet-facing hosts is the defining shape of a DMZ (screened subnet). The tempting neighbour is a VLAN, but VLANs split a switch's broadcast domain for internal traffic — they don't define what the public internet is allowed to reach.",
+   "citation": "SG ch.11 · outline 4.1.9-4.1.10"
+  },
+  {
+   "id": "netf-07",
+   "label": "A hospital wires billing terminals and clinical imaging workstations into the same physical switches on the same floor, but assigns them to separate broadcast domains that require a routing function for the two to exchange traffic.",
+   "sub": "Which zone does this architecture belong to?",
+   "answer": "Segmentation constructs",
+   "why": "Splitting one physical switch fabric into separate broadcast domains is a VLAN's job. The tempting neighbour is microsegmentation, but that would isolate individual devices with per-workload policy — here whole departments share a segment, which is VLAN-scale granularity.",
+   "citation": "SG ch.11 · outline 4.1.10"
+  },
+  {
+   "id": "netf-08",
+   "label": "A zero-trust program wraps a firewall rule around every individual database server in a cluster, so two servers hosting the same application still cannot reach each other unless a policy explicitly permits it.",
+   "sub": "Which zone does this architecture belong to?",
+   "answer": "Segmentation constructs",
+   "why": "Isolation enforced down to a single server, even between peers running the same workload, is microsegmentation's signature. A VLAN would group that whole cluster into one shared broadcast domain rather than fencing off each server individually.",
+   "citation": "SG ch.11 · outline 4.1.11"
+  },
+  {
+   "id": "netf-09",
+   "label": "A cloud team needs isolated network segments numbering far beyond a switch's 4,096-VLAN ceiling, so it tunnels Layer 2 traffic inside Layer 3 packets to stretch segmentation across subnets and data centers.",
+   "sub": "Which zone does this architecture belong to?",
+   "answer": "Segmentation constructs",
+   "why": "Encapsulating Layer 2 segments over Layer 3 to exceed VLAN's numeric limit is the overlay technique that implements microsegmentation at cloud scale — the driving requirement (scale, per-workload flexibility) is what pushes this past a plain VLAN answer.",
+   "citation": "SG ch.11 · outline 4.1.11"
+  },
+  {
+   "id": "netf-10",
+   "label": "An e-commerce company hosts its externally reachable order-API gateway in a zone bounded by two firewalls, with strict rules limiting what that zone may initiate toward the internal network even if the gateway itself is fully compromised.",
+   "sub": "Which zone does this architecture belong to?",
+   "answer": "Segmentation constructs",
+   "why": "Bounding an internet-facing service between two firewalls and constraining its outbound reach is a DMZ's defense-in-depth pattern. Microsegmentation is the tempting neighbour, but that construct governs internal workload-to-workload traffic, not the internet-facing perimeter itself.",
+   "citation": "SG ch.11 · outline 4.1.9-4.1.10"
+  },
+  {
+   "id": "netf-11",
+   "label": "A decade-old router still authenticates and encrypts using one static, shared RC4-based key for every device, and transmits its initialization vector in the clear alongside every packet.",
+   "sub": "Which zone does this configuration belong to?",
+   "answer": "Wireless security generations",
+   "why": "A static shared key and a cleartext IV describe WEP's cryptographic design, however broken. This is a protocol-generation identification, not an attack in progress — no one here is actively decrypting traffic or forging frames, which is what would move it to Common network attacks.",
+   "citation": "SG ch.11 · outline 4.1.13"
+  },
+  {
+   "id": "netf-12",
+   "label": "A small office's new router requires every device to enter the same AES-based passphrase before joining, with no dedicated authentication server anywhere on the network.",
+   "sub": "Which zone does this configuration belong to?",
+   "answer": "Wireless security generations",
+   "why": "A shared passphrase without an authentication server is WPA2/WPA3-Personal mode, appropriate for a small deployment. This is the protocol operating exactly as intended for its use case, not a weakness being exploited.",
+   "citation": "SG ch.11 · outline 4.1.13"
+  },
+  {
+   "id": "netf-13",
+   "label": "An enterprise requires every laptop to present a digital certificate to a dedicated authentication server, using port-based access control, before it is granted wireless access.",
+   "sub": "Which zone does this configuration belong to?",
+   "answer": "Wireless security generations",
+   "why": "Certificate-based authentication against a dedicated server through port-based access control is 802.1X/EAP enterprise mode — the design that scales wireless auth beyond a single shared secret.",
+   "citation": "SG ch.11 · outline 4.1.13"
+  },
+  {
+   "id": "netf-14",
+   "label": "A campus network authenticates client devices using a zero-knowledge proof derived from Diffie-Hellman, relying only on a preset passphrase plus the hardware addresses of the handset and its access point.",
+   "sub": "Which zone does this configuration belong to?",
+   "answer": "Wireless security generations",
+   "why": "A zero-knowledge Diffie-Hellman derivative bound to a preset passphrase is WPA3's SAE (Dragonfly) exchange, an improvement over WPA2's PSK mode without requiring enterprise infrastructure — a generational upgrade, not an exploit.",
+   "citation": "SG ch.11 · outline 4.1.13"
+  },
+  {
+   "id": "netf-15",
+   "label": "A security review flags that a still-deployed access point negotiates an encryption protocol that was built to replace WEP but has itself since been deprecated in favor of AES-CCMP.",
+   "sub": "Which zone does this finding belong to?",
+   "answer": "Wireless security generations",
+   "why": "Identifying that an AP still runs TKIP rather than AES-CCMP is placing a device on the wireless-generation timeline. Flagging a stale configuration is a design/lifecycle observation, distinct from an attacker actively exploiting that weakness in real time.",
+   "citation": "SG ch.11 · outline 4.1.13"
+  },
+  {
+   "id": "netf-16",
+   "label": "An attacker floods a network's broadcast address with echo requests carrying a forged source address belonging to the intended victim, so every host on the segment replies to the victim at once.",
+   "sub": "Which zone does this scene belong to?",
+   "answer": "Common network attacks",
+   "why": "Forging a source address to turn an entire broadcast segment into an amplification army is a smurf-style DDoS. The tempting neighbour is TCP/UDP & core protocols, since ICMP itself is legitimate — but weaponizing it at scale against a spoofed target is what moves this to the attacks zone.",
+   "citation": "SG ch.12 · outline 4.1"
+  },
+  {
+   "id": "netf-17",
+   "label": "A rogue insider on the same LAN segment sends unsolicited replies associating their own MAC address with the default gateway's IP, so all outbound traffic quietly routes through their laptop first.",
+   "sub": "Which zone does this scene belong to?",
+   "answer": "Common network attacks",
+   "why": "Forging address-resolution replies to hijack the gateway role is ARP spoofing enabling an on-path (MITM) position — the tempting neighbour is TCP/UDP & core protocols, since ARP itself is ordinary, but here it is actively falsified to redirect traffic.",
+   "citation": "SG ch.12 · outline 4.1"
+  },
+  {
+   "id": "netf-18",
+   "label": "A traveler joins what looks like a hotel's official wireless network, unaware that an attacker nearby is broadcasting an identical network name to capture login credentials as they pass through.",
+   "sub": "Which zone does this scene belong to?",
+   "answer": "Common network attacks",
+   "why": "A duplicated SSID luring victims onto an attacker-controlled access point is an evil-twin, on-path attack. The tempting neighbour is Wireless security generations, but this scene is about an attacker actively impersonating infrastructure, not a protocol's authentication design.",
+   "citation": "SG ch.12 · outline 4.1"
+  },
+  {
+   "id": "netf-19",
+   "label": "A customer's browser is silently redirected to a fraudulent banking site after an attacker corrupts a resolver's cache with a forged record mapping the real bank's domain name to the attacker's own IP address.",
+   "sub": "Which zone does this scene belong to?",
+   "answer": "Common network attacks",
+   "why": "Falsifying a cached DNS record to redirect a legitimate domain name is DNS (cache) poisoning — a live corruption of trusted resolution data, not DNS performing its ordinary lookup function.",
+   "citation": "SG ch.12 · outline 4.1"
+  },
+  {
+   "id": "netf-20",
+   "label": "An attacker sends a continuous flood of connection-initiation packets carrying spoofed, unreachable source addresses, exhausting a web server's connection table before any legitimate handshake can complete.",
+   "sub": "Which zone does this scene belong to?",
+   "answer": "Common network attacks",
+   "why": "A SYN flood with spoofed, unreachable sources is a deliberate resource-exhaustion DDoS technique. Contrast this with a normal completed three-way handshake, which belongs to TCP/UDP & core protocols — the difference is a flood of half-open connections that never legitimately complete.",
+   "citation": "SG ch.12 · outline 4.1"
+  }
+ ]
+}

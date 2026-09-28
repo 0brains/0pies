@@ -1,0 +1,110 @@
+{
+ "i-uniq": {
+  "hint": "Pergunta o que exatamente está a falhar: é que um humano não consegue ver dentro (Opacidade), ou não consegue seguir a estrutura mesmo com acesso total (Complexidade)? É que o sistema agiu sem ser pedido (Autonomia), ou é que uma tarefa que uma pessoa costumava fazer à mão simplesmente desapareceu dentro do sistema (Automação)? É que o sistema mudou depois de aprender mais (Adaptabilidade), ou é que a falha estava incorporada no que aprendeu em primeiro lugar (Dependência de dados)? É que a mesma entrada deu uma resposta diferente (Outputs probabilísticos), ou é que um pequeno erro se espalhou mais rápido do que ninguém conseguia apanhar (Velocidade e escala)?",
+  "note": "Este é o roster canónico de oito itens do exame. Oito zonas fixas significa que a maioria de seis-card deals deixam uma ou duas zonas vazias — esperado, não um bug. Automação e Autonomia são o par que mais vale abrandar: Automação é sobre cujas mãos costumavam fazer o trabalho (substituição de tarefa, over-reliance, disrupção de força de trabalho); Autonomia é sobre quem faz a chamada (decisões independentes sem aprovação humana).",
+  "zones[0].def": "Lógica interna que não consegue ser vista ou explicada, mesmo pelas pessoas que a construíram — uma falha de visibilidade. Diferente de Complexidade: opacidade é sobre o que está escondido da vista, não sobre quão intrincada é a estrutura.",
+  "zones[1].def": "O sistema decide e age por conta própria, sem uma aprovação humana dessa ação específica — um risco de independência de ação. Diferente de Automação: autonomia é sobre quem faz a chamada, não sobre cujas mãos costumavam fazer o trabalho.",
+  "zones[2].def": "Aprendizagem contínua e retreinamento podem afastar um sistema dos seus objetivos originais, ou fazer-lhe perder silenciosamente capacidades que já tinha.",
+  "zones[3].def": "IA assume tarefas e decisões que uma pessoa costumava executar à mão, numa escala que nenhuma equipa humana conseguiria igualar — levantando riscos de over-reliance e disrupção de força de trabalho distintos do próprio juízo independente do sistema.",
+  "zones[4].def": "Desempenho é apenas tão bom quanto os dados de treino por trás — frágil a lacunas, mudanças, e falhas herdadas do que o sistema aprendeu.",
+  "zones[5].def": "IA age muito mais rápido e em muito mais instâncias do que os humanos conseguem rever em tempo real, assim um pequeno erro pode tornar-se um enorme antes de ninguém notar.",
+  "zones[6].def": "Resultados são extraídos de uma distribuição de possíveis respostas em vez de regras fixas, assim a mesma entrada pode gerar uma saída diferente cada vez.",
+  "zones[7].def": "Tantas camadas e parâmetros interagindo que até developers não conseguem rastrear o caminho de decisão — uma falha estrutural. Diferente de Opacidade: complexidade é sobre quão intrincada é a estrutura, não sobre o que está escondido da vista."
+ },
+ "i-uq-01": {
+  "label": "Um banco não consegue dizer ao regulador por que é que a sua rede neuronal recusou este candidato a empréstimo.",
+  "why": "Sem visibilidade sobre a lógica interna do modelo — distinto de Complexidade, que é estrutura demasiado intrincada para seguir, não uma incapacidade de ver dentro em tudo."
+ },
+ "i-uq-02": {
+  "label": "Um gerente sénior avisa que se o modelo de encomendas do armazém alguma vez cometer um erro dispendioso, ninguém conseguirá explicar depois por que é que aconteceu.",
+  "why": "A queixa é que o raciocínio está escondido, não que o modelo seja estruturalmente intrincado — o mesmo gap de black-box que esta zona rastreia, não o estrutural de Complexidade."
+ },
+ "i-uq-03": {
+  "label": "Um moderador de conteúdo remove uma publicação sob regras que nunca foram publicadas, e o autor não tem maneira de descobrir qual regra se aplicou.",
+  "why": "Regras que existem mas nunca são expostas às pessoas afetadas é a falha de definição desta zona — raciocínio oculto, não uma estrutura demasiado intrincada para seguir."
+ },
+ "i-uq-04": {
+  "label": "Um carro autónomo navega trânsito denso downtown e faz cada chamada de direcção, frenagem, e roteamento sozinho, sem ninguém pronto para intervir.",
+  "why": "Alta independência de ação emparelhada com alto potencial de dano é o emparelhamento de assinatura desta zona — distinto de Automação, que é sobre cujas mãos costumavam fazer o trabalho, não quem faz a chamada."
+ },
+ "i-uq-05": {
+  "label": "Um bot de trading compra e vende ações em milissegundos; nenhuma pessoa confirma qualquer trade individual antes de ser executado.",
+  "why": "Independência de ação — decidindo e agindo sem esperar aprovação humana — é o que esta zona rastreia, independentemente de o trade também acontecer rapidamente. Distinto de Automação, que é sobre se uma pessoa costumava colocar trades à mão em tudo, não sobre quem assina cada um."
+ },
+ "i-uq-06": {
+  "label": "Uma ferramenta de contratação peneira CVs e move candidatos para entrevista ou rejeição sem um recrutador rever a chamada.",
+  "why": "A preocupação é que uma decisão saiu sem aprovação humana — um gap de controlo e responsabilização, não o desaparecimento de uma tarefa que uma pessoa costumava fazer à mão (isso é o lado Automação deste par)."
+ },
+ "i-uq-07": {
+  "label": "Depois do recomendador ser retreinado no novo catálogo de produtos, silenciosamente perde skills que costumava ter, como sinalizar listagens duplicadas.",
+  "why": "Isto é catastrófico esquecimento — a versão de multiplicador de risco de um sistema que se afasta das suas capacidades originais cada vez que reaprender a partir de dados novos; um risco real, mas nunca uma zona por si própria."
+ },
+ "i-uq-08": {
+  "label": "O sistema de detecção de fraude do banco retreina-se em transações recentes e começa a bloquear grandes números de compras legítimas.",
+  "why": "Drift afastado do objetivo original depois de retreinamento — a resposta de governança é monitorização, teste pré-lançamento de atualizações, e rastreio de drift, não uma revisão one-time de lançamento."
+ },
+ "i-uq-09": {
+  "label": "Seis meses após lançamento, as sugestões de uma ferramenta de recomendação de dosagem mudaram silenciosamente porque foi retreinada em dados de hospital contendo erros de labeling.",
+  "why": "Comportamento mudando depois de retreinamento ou exposição a dados-novos é o tell desta zona; a correção é monitorização contínua, detecção de drift, e gates de aprovação antes de um modelo atualizado ir live."
+ },
+ "i-uq-10": {
+  "label": "O triage de tickets do call center, uma vez tratado por uma pessoa lendo cada pedido, é agora resolvido start-to-finish pelo sistema sem ninguém tocar na fila.",
+  "why": "Este é o eixo de substituição de trabalho — uma tarefa que uma pessoa costumava executar à mão é agora executada pelo sistema em volume. Distinto de Autonomia, que é sobre quem faz a chamada, não sobre cujas mãos fazem o trabalho."
+ },
+ "i-uq-11": {
+  "label": "Rollout generalizado de uma ferramenta de atendimento ao cliente remove a necessidade de a maioria dos funcionários do call center, perturbando o mercado de trabalho local.",
+  "why": "Disrupção de força de trabalho e económica pela substituição de trabalho humano é o custo societal desta zona — uma preocupação de governança diferente do framing de controlo-e-responsabilização de Autonomia."
+ },
+ "i-uq-12": {
+  "label": "Depois do sistema de reclamações corretamente resolver milhares de casos em linha, o pessoal de adjusters para de verificar duplo as negações sinalizadas e começa a aprovar o que quer que recomende.",
+  "why": "Over-reliance no que o sistema produz — rubber-stamping em vez de criticamente rever — é o risco de governança que esta zona existe para apanhar; é uma resposta humana a substituição de tarefa, não a um decision-making independente do sistema, que é risco de Autonomia."
+ },
+ "i-uq-13": {
+  "label": "Um modelo de sentimento que previamente com precisão a opinião pública durante treino fica selvagemente incorreto uma vez que um evento maior acontece que os dados de treino nunca capturaram.",
+  "why": "Fragilidade quando o mundo se afasta do que os dados de treino capturaram é a falha central desta zona — o modelo é apenas tão bom quanto o que aprendeu."
+ },
+ "i-uq-14": {
+  "label": "Um preditor de tipo de pele aprende principalmente a partir de tons de pele mais claros nas suas fotos de treino e dá conselhos imprecisos a todos os outros.",
+  "why": "O modelo executa apenas tão bem quanto a população representada nos seus dados de treino — um gap no que aprendeu, não um problema estrutural ou de visibilidade."
+ },
+ "i-uq-15": {
+  "label": "Um modelo de scoring de crédito nega empréstimos a candidatos imigrantes a uma taxa mais alta do que outros com perfis financeiros idênticos.",
+  "why": "Os dados de treino transportaram discriminação histórica, e o modelo reproduziu-a — o modo de falha mais sistémico nesta zona, porque consertar o modelo sem consertar os dados deixa a causa raiz intocada."
+ },
+ "i-uq-16": {
+  "label": "Um erro de mispricing numa listagem de um produto replica-se em milhões de páginas antes de qualquer humano notar.",
+  "why": "Um erro minúsculo, multiplicado ao ritmo e volume da máquina, supera revisão humana e resposta regulatória antes de ninguém conseguir intervir — a falha de assinatura desta zona."
+ },
+ "i-uq-17": {
+  "label": "Câmaras de vigilância processam todo o feed de vídeo em tempo real de toda a cidade instantaneamente, sinalizando milhares de 'atividades incomuns' por minuto.",
+  "why": "Volume e ritmo além do que qualquer reviewer humano conseguiria acompanhar é o que torna o risco desta zona diferente de um sistema meramente a raciocinar mal — o problema é throughput, não lógica."
+ },
+ "i-uq-18": {
+  "label": "Uma ferramenta de deterioração de pacientes de hospital executa previsões contínuas, de alto volume em cada enfermaria, e um único miscalibration em cascata torna-se uma tempestade de alarme em todo o sistema dentro de horas.",
+  "why": "Output rápido, de alto volume transforma um miscalibration menor numa problema em todo o sistema antes de pessoal conseguir apanhá-lo — throughput é o multiplicador de risco aqui, não a lógica subjacente."
+ },
+ "i-uq-19": {
+  "label": "O mesmo prompt recebe uma recomendação de investimento diferente em dias consecutivos, sem mais nada sobre o pedido ter mudado.",
+  "why": "Outputs amostrados a partir de um spread ponderado de respostas possíveis em vez de uma regra fixa complicam dar uma explicação definitiva para um resultado específico — mas isso não significa que auditorias são impossíveis, uma resposta gravada incorreta."
+ },
+ "i-uq-20": {
+  "label": "Um sistema numa página de checkout sempre calcula o mesmo imposto de vendas pela mesma encomenda; um segundo sistema na mesma página sugere produtos ligeiramente diferentes cada vez que a página recarrega.",
+  "why": "O motor de imposto é determinístico — sempre a mesma saída pela mesma entrada — enquanto o recomendador desenha a partir de um spread ponderado de possíveis saídas cada vez; apenas o segundo comportamento pertence a esta zona."
+ },
+ "i-uq-21": {
+  "label": "Um chatbot perguntado a mesma pergunta de sobremesa três vezes separadas dá três respostas diferentes, cada uma extraída de uma lista ponderada de opções plausíveis em vez de um caminho fixo.",
+  "why": "Amostragem a partir de um spread ponderado de possíveis respostas em vez de seguir um caminho rígido é exatamente o que esta zona governa — a correção é calibração de confiança e estabelecer expectativas, não tratar qualquer resposta como a verdade fixa."
+ },
+ "i-uq-22": {
+  "label": "Reviewers admitem que já não conseguem rastrear qual dos milhões de parâmetros interagindo do modelo realmente conduziu uma decisão específica.",
+  "why": "Isto é sobre estrutura interna — demasiadas camadas e parâmetros para seguir — não sobre se o raciocínio está escondido da vista; isso é o limite com Opacidade, que é um problema de visibilidade, não um estrutural."
+ },
+ "i-uq-23": {
+  "label": "Um modelo de análise de contrato tem de pesar linguagem legal e requisitos que diferem através de uma dúzia de jurisdições de uma só vez, e nenhum reviewer único consegue reter toda a lógica na sua cabeça.",
+  "why": "Intricacy estrutural — demasiados fatores interagindo para rastrear end to end — é o que define esta zona, distinto de um modelo que simplesmente se recusa a mostrar seu raciocínio em tudo."
+ },
+ "i-uq-24": {
+  "label": "A lógica de otimização do modelo de roteamento de entrega de um modelo cresceu tão intrincada que engenheiros já não conseguem troubleshoot por que escolheu um route sobre outro.",
+  "why": "Intricacy que derrota até as pessoas que a construíram é a falha estrutural que esta zona rastreia — a gémea do fracasso de visibilidade de Opacidade, afirmada explicitamente para que os dois nunca sejam confundidos."
+ }
+}

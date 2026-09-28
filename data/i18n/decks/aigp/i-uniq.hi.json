@@ -1,0 +1,110 @@
+{
+ "i-uniq": {
+  "hint": "पूछो कि विशेष रूप से क्या fail हो रहा है: क्या एक human अंदर नहीं देख सकता (Opacity), या पूर्ण access के साथ भी structure को follow नहीं कर सकता (Complexity)? क्या system बिना पूछे act किया (Autonomy), या एक task जो एक person used to do by hand बस system में disappear हो गया (Automation)? क्या system change किया learning करने के बाद (Adaptability), या यह flaw बेक किया गया था जो इसने learn किया (Data dependency)? क्या same input ने अलग answer दिया (Probabilistic outputs), या एक small error spread faster हुआ जितना कोई भी catch कर सकता था (Speed & scale)?",
+  "note": "यह exam की canonical eight-item roster है। आठ fixed zones का मतलब है कि ज्यादातर six-card deals एक या दो zones को empty छोड़ देंगे — expected, bug नहीं। Automation और Autonomy pairs सबसे ज्यादा slow down करने के लिए हैं: Automation जिसके hands के बारे में है (task replacement, over-reliance, workforce disruption); Autonomy कौन call make करता है इसके बारे में है (independent decisions without human sign-off)।",
+  "zones[0].def": "Internal logic जो नहीं देखी जा सकता या explain नहीं किया जा सकता, भले ही जिन लोगों ने इसे build किया — एक visibility failure। Complexity से अलग: opacity जो view से hidden है उसके बारे में है, न कि कितना intricate structure है।",
+  "zones[1].def": "System decide करता है और अपने आप पर act करता है, बिना एक human approve किए वह specific action — एक independence-of-action risk। Automation से अलग: autonomy कौन call make करता है इसके बारे में है, किसके हाथ उपयोग करता है नहीं।",
+  "zones[2].def": "Continual learning और retraining एक system को drift कर सकता है अपने original goals से दूर, या यह quietly lose कर सकता है capabilities जो इसके पास पहले से हैं।",
+  "zones[3].def": "AI लेता है tasks और decisions जो एक person used to perform by hand, एक scale पर जो कोई human team match नहीं कर सकता — raising over-reliance और workforce-disruption risks distinct system के अपने independent judgment से।",
+  "zones[4].def": "Performance केवल उतना अच्छा है जितना training data है इसके पीछे — brittle gaps, shifts, और flaws को inherited किया गया है जो system ने learn किया।",
+  "zones[5].def": "AI act करता है बहुत faster और बहुत अधिक instances के across जितना humans review कर सकते हैं real time में, तो एक small error बन सकता है एक massive एक में हो जाता है जब तक कोई notice नहीं करता।",
+  "zones[6].def": "Results draw किए जाते हैं एक distribution से possible answers का rather than fixed rules से, तो same input अलग output yield कर सकता है each time।",
+  "zones[7].def": "तो कई interacting layers और parameters कि even developers नहीं trace कर सकते decision path को — एक structural failure। Opacity से अलग: complexity intricacy है कि कितना intricate structure है, न कि view से क्या hidden है।"
+ },
+ "i-uq-01": {
+  "label": "एक bank नहीं बता सकता regulator को कि इसका neural net इस loan applicant को क्यों decline किया।",
+  "why": "Model की internal logic में कोई visibility नहीं — Complexity से अलग, जो structure बहुत intricate है follow करने के लिए, ability नहीं है अंदर देखने की।"
+ },
+ "i-uq-02": {
+  "label": "एक senior manager warn करता है कि अगर warehouse-ordering model कभी एक costly mistake करता है, तो कोई नहीं समझा पाएगा बाद में कि यह क्यों हुआ।",
+  "why": "Complaint यह है कि reasoning hidden है, structure intricate नहीं है — same black-box gap इस zone track करता है, Complexity का structural नहीं।"
+ },
+ "i-uq-03": {
+  "label": "एक content moderator एक post remove करता है rules के तहत जो कभी published नहीं हुए, और poster के पास कोई तरीका नहीं है कि जानता है कि कौन सा rule apply हुआ।",
+  "why": "Rules जो exist करते हैं लेकिन कभी नहीं surface होते उस लोगों को जो affected हैं यह defining failure है इस zone की — hidden reasoning, structure बहुत intricate follow करने के लिए नहीं।"
+ },
+ "i-uq-04": {
+  "label": "एक self-driving car navigate करता है dense downtown traffic और make करता है every steering, braking, और routing call खुद, कोई person ready नहीं है intervene करने के लिए।",
+  "why": "High independence of action paired with high potential harm है signature pairing इस zone — distinct Automation से, जो किसके hands के बारे में है work करता है, कौन call make करता है नहीं।"
+ },
+ "i-uq-05": {
+  "label": "एक trading bot buy करता है और sell करता है shares milliseconds में; कोई person confirm नहीं करता हर एक trade को पहले यह execute होता है।",
+  "why": "Independence of action — decide करना और act करना बिना waiting के human approval के — है कि क्या इस zone track करता है, चाहे trade भी happen जल्दी हो। Automation से अलग, जो व्यक्ति used to place करता है trades by hand आदी है नहीं, कौन sign off करता है हर एक पर नहीं।"
+ },
+ "i-uq-06": {
+  "label": "एक hiring tool screens resumes और move करता है candidates को interview या rejection में बिना एक recruiter ever reviewing के call।",
+  "why": "Concern है कि decision गया बिना human sign-off के — एक control-and-accountability gap, disappearance नहीं task का जो person used to do by hand है (वह Automation side है इस pair के)।"
+ },
+ "i-uq-07": {
+  "label": "के बाद recommender को retrain किया जाता है new product catalogue पर, यह quietly lose करता है skills जो इसके पास था, जैसे flagging duplicate listings।",
+  "why": "यह catastrophic forgetting है — risk-multiplier version एक system drifting से अपने original capabilities से every time यह relearns new data से; एक real risk, लेकिन कभी नहीं एक zone अपने आप।"
+ },
+ "i-uq-08": {
+  "label": "एक bank का fraud-detection system retrain करता है खुद को recent transactions पर और start करता है blocking large numbers को legitimate purchases का।",
+  "why": "Drift away से original goal के बाद retraining — governance response है monitoring, pre-deployment testing updates, और drift tracking, एक नहीं one-time launch review।"
+ },
+ "i-uq-09": {
+  "label": "Six महीने बाद launch के, एक dosage-recommendation tool suggestions quietly shift किए हैं क्योंकि यह retrain किया गया hospital data पर containing labeling errors।",
+  "why": "Behavior changing के बाद retraining या new-data exposure यह है zone की tell; fix है continuous monitoring, drift detection, और approval gates से पहले एक updated model goes live।"
+ },
+ "i-uq-10": {
+  "label": "एक call center का ticket triage, एक बार person द्वारा हर request read करके handled, अब resolve होता है start-to-finish system द्वारा बिना anyone touching queue।",
+  "why": "यह labor-replacement axis है — एक task जो person used to execute by hand अब execute होता है system द्वारा at volume। Autonomy से अलग, कौन call make करता है नहीं किसके hands do work के बारे में।"
+ },
+ "i-uq-11": {
+  "label": "Widespread rollout एक customer-service tool removes करता है most को एक call center की staff की need को, unsettling local job market।",
+  "why": "Workforce और economic disruption से replacing human labor यह है zone का societal cost — एक different governance concern जितना Autonomy का control-and-accountability framing।"
+ },
+ "i-uq-12": {
+  "label": "के बाद claims system correctly resolve करता है thousands को cases को row में, adjusters stop करता है double-checking इसकी flagged denials को और start करता है approving जो यह recommend करता है।",
+  "why": "Over-reliance पर जो system produce करता है — rubber-stamping बजाय critically reviewing के — governance risk यह है zone exist करने के लिए है; यह एक human response है task-replacement को, system के own independent decision-making को नहीं, जो Autonomy की risk है।"
+ },
+ "i-uq-13": {
+  "label": "एक sentiment model जो public opinion predict किया accurately during training को wildly off जाता है एक बार एक major event होता है जो training data कभी capture नहीं किया।",
+  "why": "Brittleness जब world shift करता है away से training data के captured को यह है zone का core failure — model केवल उतना अच्छा है जितना इसने learn किया।"
+ },
+ "i-uq-14": {
+  "label": "एक skin-type predictor learns करता है mostly lighter skin tones से अपनी training photos में और give करता है inaccurate advice सभी को नहीं।",
+  "why": "Model perform करता है केवल उतना अच्छा जितना population represented है अपनी training data में — एक gap में जो इसने learn किया, structural या visibility problem नहीं।"
+ },
+ "i-uq-15": {
+  "label": "एक credit-scoring model deny करता है loans को immigrant applicants को एक higher rate पर दूसरों के मुकाबले identical financial profiles के साथ।",
+  "why": "Training data में carry forward किया गया historical discrimination, और model को reproduce किया — most systemic failure mode इस zone में, क्योंकि fixing model को बिना fixing data के root cause untouched छोड़ देता है।"
+ },
+ "i-uq-16": {
+  "label": "एक mispricing error एक product listing पर replicate होता है millions को pages पर जब तक कोई human notice नहीं करता।",
+  "why": "एक tiny error, multiplied को machine pace और volume पर, outpace करता है human review और regulatory response से पहले कोई किसी में step कर सकता है — signature failure इस zone।"
+ },
+ "i-uq-17": {
+  "label": "Surveillance cameras process करते हैं एक entire city का real-time video feed instantly, flagging thousands को 'unusual activities' को per minute।",
+  "why": "Volume और pace beyond क्या कोई भी human reviewer keep up कर सकता है यह है जो इस zone की risk को different बनाता है एक system केवल reasoning की गलती से — problem है throughput, logic नहीं।"
+ },
+ "i-uq-18": {
+  "label": "एक hospital का patient-deterioration tool run करता है continuous, high-volume predictions across every ward, और एक single miscalibration snowball करता है एक में system-wide alarm storm के अंदर hours।",
+  "why": "Rapid, high-volume output turn करता है एक minor miscalibration को एक system-wide problem में before staff catch कर सकता है — throughput है risk multiplier यहां, underlying logic नहीं।"
+ },
+ "i-uq-19": {
+  "label": "Same prompt को एक अलग investment recommendation मिलता है consecutive days पर, कुछ भी नहीं changed request के बारे में।",
+  "why": "Outputs sampled एक weighted spread से possible answers से rather than one fixed rule देना intricate करता है giving एक definitive explanation एक specific result के लिए — लेकिन वह does नहीं mean audits impossible हैं, एक recorded wrong answer।"
+ },
+ "i-uq-20": {
+  "label": "One system एक checkout page पर always calculate करता है same sales tax एक के लिए same order; एक second system same page पर suggest करता है slightly अलग products every time page reloads।",
+  "why": "Tax engine है deterministic — always same output एक के लिए same input — जबकि recommender draw करता है एक weighted spread से possible outputs हर बार; केवल second behavior belong करता है इस zone को।"
+ },
+ "i-uq-21": {
+  "label": "एक chatbot asked same dessert question three separate times three अलग answers देता है, हर एक drawn weighted list से plausible options के rather than one fixed rule।",
+  "why": "Sampling एक weighted spread से possible answers का instead of following एक strict path है exactly क्या इस zone govern करता है — fix है confidence calibration और setting expectations, treating नहीं any one answer को fixed truth की तरह।"
+ },
+ "i-uq-22": {
+  "label": "Reviewers admit करते हैं कि वह anymore trace नहीं कर सकते कौन से model millions के interacting parameters actually drove एक specific decision।",
+  "why": "यह about है internal structure — बहुत कई layers और parameters to follow — कि क्या reasoning hide है view से; वह है boundary Opacity के साथ, जो एक visibility problem है, structural नहीं।"
+ },
+ "i-uq-23": {
+  "label": "एक contract-analysis model को weigh करना है legal language और requirements जो differ across एक dozen jurisdictions एक बार, और कोई भी single reviewer hold नहीं कर सकता whole logic को उनके head में।",
+  "why": "Structural intricacy — बहुत कई interacting factors to trace end to end — है कि क्या define करता है इस zone, distinct एक model से जो simply refuse करता है दिखाएं अपनी reasoning।"
+ },
+ "i-uq-24": {
+  "label": "एक delivery-routing model का optimization logic बढ़ गया है तो intricate कि engineers anymore troubleshoot नहीं कर सकते क्यों यह choose किया one route एक से अधिक।",
+  "why": "Intricacy जो defeat करता है भी people को जिन्होंने यह built किया यह है structural failure इस zone track करता है — twin Opacity का visibility failure, stated explicitly तो दोनों कभी confused नहीं होते।"
+ }
+}

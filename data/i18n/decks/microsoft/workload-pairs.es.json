@@ -1,0 +1,62 @@
+{
+ "wp-01": {
+  "a.text": "De tickets de soporte, enumera cada nombre de producto, persona y fecha mencionados.",
+  "a.why": "Las entidades identifican quién/qué se menciona — personas, fechas, organizaciones (histack: 'categoriza cosas específicas').",
+  "b.text": "De los mismos tickets, determina si los clientes se sienten positivos, negativos o neutrales.",
+  "b.why": "La polaridad de opinión es sentimiento — el par confundido #1 del examen (17 co-ocurrencias)."
+ },
+ "wp-02": {
+  "a.text": "Transcribe una grabación del centro de llamadas para que los agentes puedan buscar la conversación.",
+  "a.why": "Entrada de audio, salida de texto — reconocimiento. 'Transcribe' es el verbo revelador.",
+  "b.text": "Una aplicación de navegación lee direcciones turno a turno en voz alta con la voz neural en-US-Ava.",
+  "b.why": "Entrada de texto, salida de audio — síntesis. SSML y nombres de voz como en-US-Ava:DragonHDLatestNeural pertenecen solo a síntesis."
+ },
+ "wp-03": {
+  "a.text": "Una aplicación de conferencia escucha a un hablante francés y produce subtítulos en inglés en vivo para la audiencia.",
+  "a.why": "Reconocer voz en un idioma y renderizarla en otro es traducción — la señal del examen para este par (entrada de audio, salida en idioma diferente).",
+  "b.text": "La misma aplicación también produce subtítulos en francés del mismo idioma para un asistente con discapacidad auditiva en la primera fila.",
+  "b.why": "Entrada de audio, salida de texto del mismo idioma es voz a texto plano; no hay cruce de idioma, así que no hay nada que traducir."
+ },
+ "wp-04": {
+  "a.text": "Extrae el número de serie impreso en una etiqueta de equipo fotografiada.",
+  "a.why": "OCR/Read extrae el texto literal presente en la imagen — 'extraer texto legible de una imagen' es el stem del examen.",
+  "b.text": "Genera una descripción en lenguaje natural de una sola oración de lo que muestra la foto.",
+  "b.why": "Subtitulación (VisualFeatures.CAPTION) describe la escena — no lee texto dentro de ella."
+ },
+ "wp-05": {
+  "a.text": "Una aplicación de escaneo lee el bloque de dirección impreso de un sobre fotografiado en campos de texto estructurado.",
+  "a.why": "OCR convierte píxeles existentes en texto — la entrada es una imagen, la salida es texto.",
+  "b.text": "Una herramienta de diseño toma el indicador 'un icono plano de un cohete azul' y produce un PNG completamente nuevo que nunca existió antes.",
+  "b.why": "Generación de imagen (client.images.generate con gpt-image-1 / DALL·E) ejecuta la dirección opuesta — indicador de texto entrada, píxeles sintetizados salida — la trampa de inversión de dirección del examen en este par."
+ },
+ "wp-06": {
+  "a.text": "Decide si cada foto cargada es 'parte defectuosa' o 'parte buena'.",
+  "a.why": "La clasificación asigna una etiqueta a toda la imagen.",
+  "b.text": "Marca dónde se sienta cada parte en la imagen de cinta transportadora con cuadros delimitadores.",
+  "b.why": "Las caja delimitadora por objeto es la señal del examen para detección — la confusión clásica de visión."
+ },
+ "wp-07": {
+  "a.text": "Devuelve ['precios', 'vida útil de la batería', 'servicio al cliente'] de un lote de reseñas.",
+  "a.why": "Las frases clave devuelven una lista de términos importantes — no se escribe nueva prosa.",
+  "b.text": "Condensa las mismas reseñas en tres oraciones nuevas que capturan el comentario general.",
+  "b.why": "Resumen escribe nuevas oraciones condensadas — el contraste de forma de salida que el corpus prueba (par #14)."
+ },
+ "wp-08": {
+  "a.text": "Una aplicación ligera debe encontrar y redactar cada dirección de correo electrónico y número de teléfono en mensajes de clientes antes de almacenarlos.",
+  "a.why": "Detección de información personal es la capacidad dedicada que identifica y puede redactar datos personales sensibles como números de teléfono y direcciones de correo electrónico (el examen lo llama 'la capacidad más enfocada en privacidad').",
+  "b.text": "La misma aplicación también etiqueta cada persona, organización y ubicación mencionadas en los mensajes para un índice buscable.",
+  "b.why": "Reconocimiento de entidad es extracción más amplia entre categorías — personas, lugares, organizaciones — no la característica enfocada en redacción que es la detección de información personal."
+ },
+ "wp-09": {
+  "a.text": "Una transcripción de reunión debe atribuir cada sección del audio registrado al participante correcto.",
+  "a.why": "Diarización identifica y separa hablantes dentro del audio entrante, etiquetando quién habló cada porción de la transcripción (el examen lo llama 'atribución de hablante de audio').",
+  "b.text": "Una vez que la transcripción se finaliza, una voz de narrador lee el resumen de la reunión en voz alta para un feed de podcast.",
+  "b.why": "Síntesis convierte texto en salida de voz similar a humana — el inverso de la etapa de canalización de diarización del audio existente."
+ },
+ "wp-10": {
+  "a.text": "Un desarrollador necesita subtitulado de audio en vivo de una conferencia de video en tiempo real, mismo idioma, para participantes con discapacidad auditiva.",
+  "a.why": "Azure AI Speech proporciona la canalización de voz a texto en tiempo real para audio en vivo — el servicio estándar para subtítulos, distinto de conversión de texto entre idiomas.",
+  "b.text": "Un minorista necesita convertir descripciones de productos escritas del inglés a 20 otros idiomas como texto.",
+  "b.why": "Azure AI Translator proporciona traducción automática neuronal entre idiomas para texto — el contraste del examen es servicio de canalización de audio vs servicio de texto entre idiomas, no un solapamiento de carga de trabajo (par #29)."
+ }
+}

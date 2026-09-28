@@ -1,0 +1,106 @@
+{
+ "pd-001": {
+  "label": "Necesitas salida consistente y repetible del mismo prompt cada ejecución",
+  "why": "La pista de examen exacta de histack: 'salida consistente y repetible' → temperatura baja. Reescala toda la distribución de probabilidad; ajústala o top_p, no ambas."
+ },
+ "pd-002": {
+  "label": "Restringe el muestreo al conjunto más pequeño de tokens cuya probabilidad acumulativa alcanza un umbral establecido",
+  "why": "Muestreo de núcleo — top_p trunca el conjunto candidato, mientras que la temperatura remodela toda la distribución (par confundido de corpus #5)."
+ },
+ "pd-003": {
+  "label": "Las respuestas siguen cortándose a mitad de oración — necesitas respuestas completas",
+  "why": "max_tokens solo límita la longitud de salida — la trampa de parámetro más frecuente del examen es ofrecerlo como control de aleatoriedad (par #4)."
+ },
+ "pd-004": {
+  "label": "El modelo sigue repitiendo una frase; penaliza tokens en proporción a cuántas veces han aparecido",
+  "why": "La penalización de frecuencia escala con recuento de repeticiones (repetición); la penalización de presencia se activa una vez que un token ha aparecido en absoluto (novedad del tema) — par de corpus #6."
+ },
+ "pd-005": {
+  "label": "Las imágenes de marketing generadas se ven ásperas — solicita el nivel de fidelidad de renderizado más alto",
+  "why": "La carga útil de gpt-image-1 toma prompt, size, quality (incluida la trampa de valor 'high') y n — quality controla fidelidad, size controla dimensiones."
+ },
+ "pd-006": {
+  "label": "Ve el progreso de la imagen antes mientras se representa una generación grande",
+  "why": "El streaming partial_images en la ruta images/generations devuelve salida progresiva — el tallo del examen 'ver progreso de imagen antes' verbatim."
+ },
+ "pd-007": {
+  "label": "La perilla de aleatoriedad que remodela la distribución completa de probabilidad de token antes del muestreo, no solo el sector superior",
+  "why": "La temperatura escala logits en toda la distribución; top_p en lugar trunca por masa de probabilidad acumulativa — la misma intuición de 'creatividad', mecanismo diferente."
+ },
+ "pd-008": {
+  "label": "El equipo desea que el modelo solo considere la porción más probable de candidatos del siguiente token, cortando la cola larga",
+  "why": "El muestreo de núcleo (top_p) restringe candidatos a un sector de probabilidad acumulativa; la temperatura remodela probabilidades pero nunca elimina candidatos directamente."
+ },
+ "pd-009": {
+  "label": "Un techo duro sobre cuántos tokens puede generar una sola respuesta, sin importar lo que diga",
+  "why": "max_tokens es un techo de longitud reforzado durante la generación; una secuencia de parada en lugar detiene la generación temprano solo cuando aparece una cadena específica — disparador diferente, mismo objetivo de 'salida más corta'."
+ },
+ "pd-010": {
+  "label": "Desalienta al modelo de reutilizar la misma palabra o frase muchas veces — cuanto más repite, mayor el rechazo",
+  "why": "La penalización de frecuencia escala con cuántas veces un token ya ha aparecido; la penalización de presencia aplica una penalización plana en el momento en que un token aparece incluso una sola vez — proporcional al recuento vs binario."
+ },
+ "pd-011": {
+  "label": "La transcripción de chat nunca revisita temas anteriores — el modelo siempre se desplaza a nuevo asunto en lugar de volver a lo que ya cubrió",
+  "why": "Una penalización de presencia alta se activa el instante en que un token ha aparecido una vez, empujando el modelo hacia temas nuevos; la penalización de frecuencia escala con recuento de repeticiones y principalmente frena la repetición literal, no la deriva de tema."
+ },
+ "pd-012": {
+  "label": "Aplica la misma penalización fija a cualquier token que ha aparecido en absoluto en la respuesta hasta ahora, sin importar cuántas veces",
+  "why": "La penalización de presencia es binaria por token (aparecido o no); la penalización de frecuencia en lugar crece con recuento de repeticiones — la distinción de par confundido del examen entre los dos parámetros de penalización."
+ },
+ "pd-013": {
+  "label": "La generación debe finalizar el instante en que el modelo escribe una cadena de marcador específica, sin esperar a alcanzar el techo de longitud",
+  "why": "Una secuencia de parada es un disparador de cadena literal que detiene la generación temprano; max_tokens solo refuerza un techo de longitud y no tiene conocimiento de texto específico."
+ },
+ "pd-014": {
+  "label": "Una pieza específica de texto al que se le dice al modelo que trate como un marcador de finalización, para que la salida se detenga en el momento en que se produce ese texto",
+  "why": "Las secuencias de parada se activan en la coincidencia de contenido de texto; ni max_tokens ni la penalización de frecuencia inspeccionan el texto generado en sí — uno cuenta tokens, el otro cuenta repeticiones."
+ },
+ "pd-015": {
+  "label": "La latencia debe permanecer predecible a volumen de solicitud alto y sostenido, y el equipo está bien pagando costo horario reservado para garantizarlo",
+  "why": "El rendimiento aprovisionado (PTU) reserva capacidad dedicada para latencia predecible a escala; la implementación estándar es pago por token con rendimiento variable bajo carga, y Capacidad (TPM) solo es el dial de cuota, no el tipo de implementación en sí."
+ },
+ "pd-016": {
+  "label": "Capacidad de modelo dedicada reservada comprada con anticipación para que el rendimiento no fluctúe con tráfico de inquilino compartido",
+  "why": "PTU es el modelo de implementación de capacidad reservada; Standard comparte capacidad y factura por token con rendimiento variable, mientras que Capacidad (TPM) simplemente establece la cuota en cualquier tipo de implementación elegida."
+ },
+ "pd-017": {
+  "label": "El tráfico a la aplicación de soporte al cliente es impredecible y con ráfagas, y el equipo desea facturación de pago por token en lugar de capacidad horaria reservada",
+  "why": "La facturación de pago por token bajo carga variable es implementación estándar (el escenario exacto del examen); PTU en lugar factura por hora de capacidad reservada sin importar el uso real."
+ },
+ "pd-018": {
+  "label": "Factura por token consumido en lugar de por hora de cómputo reservado, con rendimiento que puede variar bajo carga compartida",
+  "why": "Standard es facturación basada en consumo con rendimiento variable; PTU cambia esa variabilidad por una reserva horaria fija, y Capacidad (TPM) es la configuración de cuota estratificada en la parte superior de cualquier modelo."
+ },
+ "pd-019": {
+  "label": "Una implementación sigue golpeando limitación bajo carga máxima, así que el equipo cambia cuota de rendimiento de repuesto de otra implementación subutilizada",
+  "why": "La cuota de rendimiento por implementación puede reasignarse entre implementaciones (el escenario documentado del examen); PTU y Standard describen el modelo de facturación/reserva de la implementación, no su dial de cuota."
+ },
+ "pd-020": {
+  "label": "El dial que establece un límite superior en el rendimiento total que puede procesar una implementación cada minuto, independiente de la longitud de cualquier respuesta única",
+  "why": "Capacidad (TPM) regula a nivel de implementación en todas las solicitudes medidas en tokens por minuto; max_tokens en lugar solo limita la longitud de una respuesta y no tiene nada que ver con limitación de velocidad."
+ },
+ "pd-021": {
+  "label": "La solicitud de imagen de pancarta sigue devolviendo un pequeño cuadrado cuando el diseño necesita un lienzo rectangular ancho",
+  "why": "size establece las dimensiones en píxeles (por ejemplo, un formato ancho en lugar de 1024x1024); quality controla fidelidad de renderizado y n controla recuento de imagen — ninguno cambia la forma del lienzo."
+ },
+ "pd-022": {
+  "label": "El campo de solicitud que establece las dimensiones en píxeles de la imagen generada, como 1024×1024",
+  "why": "size es el campo de dimensiones en la carga útil images/generations; quality en lugar rige fidelidad de renderizado, y partial_images controla streaming progresivo, no las dimensiones finales del lienzo."
+ },
+ "pd-023": {
+  "label": "El campo que acepta el nivel de fidelidad 'high' para que el detalle fino se represente más nítidamente, separado de cuán grande sea la imagen",
+  "why": "quality (incluido el valor de trampa documentado 'high') controla fidelidad de renderizado; size controla dimensiones y n controla cuántas imágenes vuelven — tres diales independientes en la misma solicitud."
+ },
+ "pd-024": {
+  "label": "Un prompt debe devolver cuatro variaciones de imagen separadas para elegir entre, en una sola solicitud",
+  "why": "n establece cuántas imágenes devuelve la solicitud (por ejemplo, n=4); size y quality dan forma a cada imagen individual pero no cambian cuántas vuelven."
+ },
+ "pd-025": {
+  "label": "El parámetro que establece cuántas variaciones de imagen devuelve una llamada images/generations única",
+  "why": "n es el campo de recuento de imagen; partial_images en lugar transmite previsualizaciones progresivas de una sola imagen mientras se representa, y size solo establece las dimensiones de esa imagen."
+ },
+ "pd-026": {
+  "label": "Combinado con streaming, este campo establece cuántos fotogramas de vista previa progresiva se envían antes de que la imagen final se complete",
+  "why": "partial_images (usado junto con stream=True) establece el recuento de fotogramas de vista previa progresiva durante el renderizado; n en lugar establece cuántas imágenes finales separadas se devuelven, y quality establece fidelidad, no cadencia de vista previa."
+ }
+}

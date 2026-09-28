@@ -1,0 +1,236 @@
+{
+ "id": "app-platform-defense",
+ "runner": "board",
+ "title": "Platform Rules",
+ "blurb": "Twenty-four things that went wrong on Azure app platforms: registries, AKS clusters, function apps, container groups. Sort each one to the control that actually closes it, not the one that merely notices it.",
+ "source": "Microsoft Learn on Defender for Containers, Azure Container Registry authentication and networking, AKS security concepts, Microsoft Entra Workload ID, Azure Policy and Deployment Safeguards for AKS, App Service access restrictions and managed identities, Azure Functions networking, Logic Apps inbound security, Container Apps networking · SC-500 outline 3.3",
+ "asOf": "2026-08",
+ "area": "3.3",
+ "hint": "Ask two questions in order. First: when in the life of the workload does this bite? Before anything is deployed, the answer lives in the registry and the image itself. At the moment a manifest hits the Kubernetes API server, the answer is an admission gate. After the workload is already running and behaving oddly, the answer is a detection. Second: if the problem is about reaching things, ask which direction. Code inside the workload reaching out to an Azure resource without a stored secret is workload identity. Callers on the internet reaching into an app that keeps its public hostname is an inbound rule set. Removing the public entry point altogether, or stopping pods talking sideways to each other, is network isolation.",
+ "zones": [
+  {
+   "key": "Registry and supply chain",
+   "name": "Registry and supply chain",
+   "def": "Everything that happens to an image before a cluster or container group ever asks for it: how callers authenticate to Azure Container Registry, which registry roles they hold, whether the admin account is switched off, whether images are signed, and the vulnerability findings that registry scanning attaches to stored images. Unlike Admission policy, nothing here inspects a Kubernetes manifest or blocks a deployment; it prepares and grades the artifact. Unlike Runtime detection, it never watches a live process. Registry credentials belong here rather than in Workload identity, which is reserved for code inside a running workload asking Microsoft Entra ID for a token to a business resource."
+  },
+  {
+   "key": "Admission policy",
+   "name": "Admission policy",
+   "def": "The gate on the Kubernetes API server: the Azure Policy add-on for AKS, which registers a Gatekeeper-based webhook, the built-in Kubernetes policy definitions and initiatives assigned in the Azure portal, Deployment Safeguards, and the Defender gated deployment controller. This zone decides whether a workload is admitted at all, so it beats Runtime detection whenever the requirement is prevention rather than an alert, and it beats Registry and supply chain whenever the offending property lives in the pod spec rather than in the image."
+  },
+  {
+   "key": "Workload identity",
+   "name": "Workload identity",
+   "def": "Getting rid of stored credentials in application code and configuration: Microsoft Entra Workload ID with the cluster OIDC issuer and annotated service accounts on AKS, and system-assigned or user-assigned managed identities on App Service, Functions, Container Instances and Container Apps. This is outbound authentication by the workload itself. It is not Inbound access rules, which governs which callers may reach the app, and it is not Registry and supply chain, which covers the registry credential and the roles that gate push and pull."
+  },
+  {
+   "key": "Inbound access rules",
+   "name": "Inbound access rules",
+   "def": "Filtering who may call an app that keeps a public hostname: App Service and Functions access restrictions with their priority-ordered allow and deny rules, unmatched rule behaviour, service tag and IP rules, HTTP header filters, the separate rules collection for the advanced tools site, and inbound IP restrictions on Logic Apps request triggers. It differs from Network isolation because the public endpoint still exists and is still doing the evaluation, rather than being removed in favour of a private endpoint or an internal-only environment."
+  },
+  {
+   "key": "Runtime detection",
+   "name": "Runtime detection",
+   "def": "Defender for Cloud noticing something after deployment: the Defender sensor DaemonSet collecting node telemetry, binary drift and antimalware alerts, control plane detections built from Kubernetes audit logs, Kubernetes-aware analytics mapped to the MITRE ATT and CK matrix for Containers, Defender XDR investigation, and Defender for App Service alerts. It is detection and response, so it never substitutes for Admission policy where the requirement is to stop the deployment, nor for Registry and supply chain where the finding is a package vulnerability in a stored image."
+  },
+  {
+   "key": "Network isolation",
+   "name": "Network isolation",
+   "def": "Taking the network path away: private endpoints and Private Link, disabling public network access, private AKS clusters and API server virtual network integration, authorized IP ranges on the API server, internal Container Apps environments, virtual network integration for outbound traffic, and Kubernetes network policy between pods. Where Inbound access rules filters callers that still arrive at a public endpoint, this zone removes or bypasses the public endpoint entirely, or governs traffic that never touches the internet at all."
+  }
+ ],
+ "items": [
+  {
+   "id": "app-01",
+   "label": "A Dublin payments firm builds a settlement API image once a quarter and stores it in a Premium registry. The March build is still the one running in its production cluster. A serious OpenSSL flaw is disclosed on a Tuesday, and the platform lead wants to know today whether that stored artifact is affected.",
+   "sub": "Which control surfaces this?",
+   "answer": "Registry and supply chain",
+   "why": "Registry vulnerability assessment in Defender for Containers rescans stored images once a day, so a flaw disclosed months after the build still lands against the March artifact, with remediation guidance in the Defender for Cloud recommendations. The tempting neighbour is Runtime detection, but the Defender sensor reports on process and network behaviour inside live containers; it says nothing about a dormant package version in a stored artifact. Note what keeps an image in that daily refresh: pushed within the last thirty days, pulled within the last thirty days, or currently running in a cluster Defender for Cloud watches. This image qualifies on the third condition, and a registry copy meeting none of them goes stale until somebody pulls it again.",
+   "citation": "Learn: Vulnerability management for containers · outline 3.3"
+  },
+  {
+   "id": "app-02",
+   "label": "A Kubernetes manifest submitted by a research group at a university sets privileged true on its container. The AKS Standard cluster accepts it, and the pod schedules onto a shared node pool alongside two other faculties.",
+   "sub": "Which control closes this?",
+   "answer": "Admission policy",
+   "why": "Installing the Azure Policy add-on for AKS and assigning the built-in pod security baseline initiative with the effect parameter changed from audit to deny makes the API server reject the privileged pod before it is persisted to the cluster. Runtime-detection would generate an alert once the privileged container was already scheduled on the shared nodes, which is exactly one node too late. Registry-supply-chain is the wrong altitude here as well, because privileged is a field in the pod spec, not a property of the image.",
+   "citation": "Learn: Secure your AKS clusters with Azure Policy · outline 3.3"
+  },
+  {
+   "id": "app-03",
+   "label": "An insurer's quote engine runs as a Linux web app on App Service. The SQL connection string, password and all, sits in the app settings blade, and the DBA rotates it every ninety days by hand, which broke the app twice last year.",
+   "sub": "Which control closes this?",
+   "answer": "Workload identity",
+   "why": "Enabling a system-assigned managed identity on this web app, then granting that identity the database role, removes the password entirely, and the platform handles credential lifecycle so there is nothing left to rotate. App-inbound-rules is the neighbour people reach for because both live in the App Service networking and identity blades, but access restrictions decide who may call the quote engine, not how the quote engine authenticates outbound to its database.",
+   "citation": "Learn: App Service and Functions managed identities · outline 3.3"
+  },
+  {
+   "id": "app-04",
+   "label": "A retail platform team enabled the registry admin account so a shared build server could sign in with a single username and password. That credential is now pasted into three separate pipelines and one engineer's laptop.",
+   "sub": "Which control closes this?",
+   "answer": "Registry and supply chain",
+   "why": "The admin account is a single high-privilege account per registry with both push and pull, it carries no Microsoft Entra role-based access control, and Microsoft does not recommend it for multiple users; disabling it and moving pipelines onto Entra identities or a managed identity restores per-caller roles and audit. Workload-identity is the near miss, and the distinction worth holding is that this zone owns the credential used to authenticate to the registry itself, while workload identity covers a running workload exchanging a token for a business resource such as Key Vault.",
+   "citation": "Learn: Authenticate with Azure Container Registry · outline 3.3"
+  },
+  {
+   "id": "app-05",
+   "label": "A hospital group's AKS cluster answers on a public fully qualified domain name for its API server. The Kubernetes control plane endpoint is reachable from any network, and the clinical safety review flags it before go-live.",
+   "sub": "Which control closes this?",
+   "answer": "Network isolation",
+   "why": "An AKS API server is published on a public address and name unless you say otherwise; limiting it to authorized IP ranges, or building a private cluster or API server virtual network integration, confines control plane access to the customer's network. App-inbound-rules is the wrong zone because access restrictions are an App Service and Functions feature applied to a web app's inbound traffic, not to a Kubernetes API server, and Admission policy governs what may be deployed once a caller is already authenticated to that server.",
+   "citation": "Learn: Security concepts for applications and clusters in AKS · outline 3.3"
+  },
+  {
+   "id": "app-06",
+   "label": "In a games studio's cluster, a container that has been serving matchmaking traffic for eleven days starts executing a process that was never part of the image it was built from.",
+   "sub": "Which control surfaces this?",
+   "answer": "Runtime detection",
+   "why": "Binary drift detection is a sensor-based capability of Defender for Containers that alerts on unauthorized external processes inside a running container, and drift policies let the team decide which conditions raise an alert or block the process outright. Registry-supply-chain is the wrong zone precisely because the process never existed in the stored image, so no amount of registry scanning would have found it. Admission-policy also cannot help, since the pod passed admission cleanly eleven days earlier.",
+   "citation": "Learn: Introduction to Microsoft Defender for Containers · outline 3.3"
+  },
+  {
+   "id": "app-07",
+   "label": "A public sector web app sits behind Azure Front Door, but a penetration tester reaches the same application directly on its azurewebsites.net hostname and bypasses the edge entirely.",
+   "sub": "Which control closes this?",
+   "answer": "Inbound access rules",
+   "why": "A service tag rule for AzureFrontDoor.Backend narrows inbound traffic to the Front Door IP ranges, and adding an HTTP header filter on X-Azure-FDID pins it to that one Front Door instance rather than anybody else's. Network-isolation is the plausible alternative, and it is a valid different design using Front Door Premium with Private Link, but as posed the app keeps its public endpoint and the requirement is to filter who arrives at it, which is what the access restriction rules collection does.",
+   "citation": "Learn: Azure App Service access restrictions · outline 3.3"
+  },
+  {
+   "id": "app-08",
+   "label": "A logistics company runs three AKS clusters. An engineer under deadline pressure deploys a workload pulling an image straight from a public hub repository, and it runs happily next to the approved internal images.",
+   "sub": "Which control closes this?",
+   "answer": "Admission policy",
+   "why": "The Azure Policy add-on extends Gatekeeper and registers as an admission webhook, so a built-in Kubernetes definition restricting permitted image repositories rejects the unapproved pull at the API server. Registry-supply-chain is the neighbour, and it does real work here by keeping the approved registry clean and scanned, but nothing on the registry side can stop a cluster from pulling an image that lives somewhere else. Runtime-detection would only tell you afterwards that an unexpected image was running.",
+   "citation": "Learn: Defender for Containers architecture, Azure Policy for Kubernetes · outline 3.3"
+  },
+  {
+   "id": "app-09",
+   "label": "Pods in a data science namespace read from Key Vault using a client secret stored in a Kubernetes Secret. The secret expires in six weeks, the team that created the app registration has been reorganised, and nobody owns the renewal.",
+   "sub": "Which control closes this?",
+   "answer": "Workload identity",
+   "why": "Microsoft Entra Workload ID projects a service account token into the pod and federates it through the cluster OIDC issuer, so Entra ID exchanges that token for an access token and there is no client secret left to expire. Registry-supply-chain is the wrong zone even though both involve credentials, because that zone governs authentication to the registry for push and pull, whereas this is application code reaching Key Vault. Remember the pod template needs the label azure.workload.identity/use set to true and the service account needs the client ID annotation.",
+   "citation": "Learn: Use Microsoft Entra Workload ID with AKS · outline 3.3"
+  },
+  {
+   "id": "app-10",
+   "label": "A media company's container images are stored in a Premium registry that build agents inside a virtual network use. The registry endpoint still accepts connections from any host on the internet, and the compliance auditor wants that path gone rather than filtered.",
+   "sub": "Which control closes this?",
+   "answer": "Network isolation",
+   "why": "A private endpoint over Private Link puts the registry on a private IP inside the virtual network and lets public network access be turned off, so the internet path stops existing. The near miss is the Premium tier public IP network rules, which are still an inbound filter on the public endpoint and would sit closer to the spirit of Inbound access rules; the doc is explicit that IP network rules do not apply to private endpoints. The auditor asked for removal, not an allow list.",
+   "citation": "Learn: Configure public IP network rules for Azure Container Registry · outline 3.3"
+  },
+  {
+   "id": "app-11",
+   "label": "An HTTP-triggered function app on a Premium plan powers a broker portal. It answers requests from anywhere on the internet, and the security team wants it reachable only from two office egress ranges and the corporate VPN.",
+   "sub": "Which control closes this?",
+   "answer": "Inbound access rules",
+   "why": "Functions uses the same priority-ordered access restrictions as App Service: add allow rules for the known ranges and the implicit deny all at the end of the list closes everything else. Network-isolation would be the answer if the requirement were to remove the public endpoint via a private endpoint, but here the app stays publicly addressed and simply filters callers. Watch one documented side effect: once you restrict a function app this way, the AzureCloud service tag has to be added to the allowed list as well, or platform traffic the app depends on is caught by the same deny.",
+   "citation": "Learn: Azure Functions networking options, inbound access restrictions · outline 3.3"
+  },
+  {
+   "id": "app-12",
+   "label": "A device manufacturer needs an external field-service fleet to pull one repository from its registry and nothing else. The fleet cannot hold Microsoft Entra identities, and the platform team refuses to hand out registry-wide credentials.",
+   "sub": "Which control closes this?",
+   "answer": "Registry and supply chain",
+   "why": "Token-based repository permissions give a credential scoped to specific repositories for unattended pull by an individual system or external device, which is exactly the constrained pull this fleet needs. Workload-identity is not available to them by definition, since the fleet has no Entra identity to federate, and the docs note that repository-scoped tokens are not integrated with Entra ID and therefore support no Entra role assignments. For Entra-based repository scoping, attribute-based access control on the registry is the alternative.",
+   "citation": "Learn: Authenticate with Azure Container Registry, token-based repository permissions · outline 3.3"
+  },
+  {
+   "id": "app-13",
+   "label": "A Defender for Cloud alert fires on a bank's cluster: an hour ago someone created a Kubernetes Service of type LoadBalancer, and it is now publishing an internal admin dashboard to the internet with no authentication in front of it.",
+   "sub": "Which control surfaced this?",
+   "answer": "Runtime detection",
+   "why": "Exposed Kubernetes service and exposed dashboard detections come from Defender for Containers analysing Kubernetes audit logs at the control plane, which needs no in-cluster component on AKS, and these exposure alerts are prioritised when internet-facing access was unintended. Admission-policy is the control that would have prevented the service object being created in the first place, so it is the right long-term fix but not what raised this alert. Network-isolation describes the eventual remediation, not the signal.",
+   "citation": "Learn: Defender for Containers architecture and runtime detection examples · outline 3.3"
+  },
+  {
+   "id": "app-14",
+   "label": "A charity's donations site has its main site locked down to two IP ranges, but the advanced tools site on the same app still answers to anyone who guesses the scm hostname.",
+   "sub": "Which control closes this?",
+   "answer": "Inbound access rules",
+   "why": "The advanced tools site, also called scm or kudu, carries its own rules collection and its own unmatched rule, so locking the main site does nothing for it until you either configure the scm rules or set it to inherit the main site's rules. Network-isolation is the neighbour, and deploying through a private endpoint while setting the scm unmatched rule to deny is the documented pattern for private deployment, but the gap described here is simply a second rules collection nobody filled in.",
+   "citation": "Learn: Azure App Service access restrictions, advanced tools site · outline 3.3"
+  },
+  {
+   "id": "app-15",
+   "label": "A pharmaceutical firm runs a batch scoring job in an Azure Container Instances container group. To reach Key Vault, the container image carries a service principal application ID and password in environment variables, printed into the deployment YAML checked into source control.",
+   "sub": "Which control closes this?",
+   "answer": "Workload identity",
+   "why": "Container Instances supports system-assigned and user-assigned managed identities on the container group, so the container can request a token for Key Vault with no secret in the YAML at all. Registry-supply-chain looks adjacent because the credential is baked into a deployment artifact, but that zone is about authenticating to the registry and about image content, whereas this is the container's own outbound authentication to a business resource. A user-assigned identity also survives the container group being deleted and recreated.",
+   "citation": "Learn: Use managed identities with Azure Container Instances · outline 3.3"
+  },
+  {
+   "id": "app-16",
+   "label": "A platform team migrating to an AKS Automatic cluster asks whether they can drop deployment safeguards to warnings for two sprints while the application teams fix their manifests.",
+   "sub": "Which control governs this?",
+   "answer": "Admission policy",
+   "why": "Deployment Safeguards enforce Kubernetes best practices through Azure Policy controls, and on AKS Automatic they run with baseline Pod Security Standards in Enforce mode by default; namespaces can be excluded, but the cluster-wide level cannot be moved to Warn. On AKS Standard the feature is opt-in and either level, warning or enforcing, is selectable, which is the contrast worth remembering. Runtime-detection is not an alternative here, because safeguards deny and mutate at admission rather than reporting on running workloads.",
+   "citation": "Learn: AKS Deployment Safeguards · outline 3.3"
+  },
+  {
+   "id": "app-17",
+   "label": "A marketing microsite reached end of life on Friday and the app was deleted, but nobody told the registrar, so the custom DNS record still points at the retired App Service hostname. Defender for Cloud raises it over the weekend, before an outsider claims the name.",
+   "sub": "Which control surfaced this?",
+   "answer": "Runtime detection",
+   "why": "Dangling DNS detection is part of Defender for App Service, which alerts at the moment a site is decommissioned while its custom domain record survives and could be taken over by someone else; note that it does not go trawling the registrar for entries that were already dangling before the plan was turned on. App-inbound-rules cannot address it because there is no live app left to filter traffic for, and Network isolation is equally beside the point since the risk is a name pointing at nothing rather than an exposed network path.",
+   "citation": "Learn: Overview of Defender for App Service, dangling DNS detection · outline 3.3"
+  },
+  {
+   "id": "app-18",
+   "label": "In a supermarket chain's cluster, the public-facing storefront pods share a virtual network with the pricing and payments namespaces. A compromised storefront pod can currently open a connection to any pod in the cluster.",
+   "sub": "Which control closes this?",
+   "answer": "Network isolation",
+   "why": "Kubernetes network policy, backed on AKS by Cilium, Azure Network Policy Manager or Calico, allows or denies specific paths between pods using namespaces and label selectors, which is the only control listed that constrains east to west traffic inside the cluster. Admission-policy governs whether a workload is admitted, not what it may talk to once running, and network security groups operate at the subnet level rather than between pods sharing a node.",
+   "citation": "Learn: AKS Kubernetes network policies between pods · outline 3.3"
+  },
+  {
+   "id": "app-19",
+   "label": "A broadcaster's security team wants deployments to be refused outright when the image being deployed exceeds the organisation's vulnerability threshold, rather than being caught in a weekly compliance report.",
+   "sub": "Which control closes this?",
+   "answer": "Admission policy",
+   "why": "Software supply chain protection in Defender for Containers feeds registry scan findings into gated deployment rules that audit or block Kubernetes deployments when an image misses the organisation's vulnerability policy, enforced in cluster by the Defender admission controller. Registry-supply-chain is genuinely upstream of this and produces the findings, but a finding sitting against an image in the registry blocks nothing on its own. Runtime-detection is the weekly-report outcome the team explicitly rejected.",
+   "citation": "Learn: Introduction to Microsoft Defender for Containers, software supply chain protection · outline 3.3"
+  },
+  {
+   "id": "app-20",
+   "label": "A council's citizen portal runs on Azure Container Apps. It must be reachable only from the council's own network over its ExpressRoute circuit, and the design review rejects any configuration that leaves an internet-facing virtual IP in place.",
+   "sub": "Which control closes this?",
+   "answer": "Network isolation",
+   "why": "A Container Apps environment created with an internal virtual IP has no public endpoints and maps to an internal load balancer address from the virtual network, and public network access on such an environment is permanently disabled. App-inbound-rules is the wrong zone twice over: access restriction rules are an App Service and Functions construct, and even IP restrictions on Container Apps ingress would still leave the public virtual IP the reviewers rejected. Note that private endpoints in a Container Apps environment require public network access to be disabled.",
+   "citation": "Learn: Networking in an Azure Container Apps environment · outline 3.3"
+  },
+  {
+   "id": "app-21",
+   "label": "A logistics integration built on a Consumption logic app starts with a request trigger. The callback URL was shared with a haulage partner two years ago, and the workflow currently accepts a call from any address that holds that URL.",
+   "sub": "Which control closes this?",
+   "answer": "Inbound access rules",
+   "why": "Logic Apps lets you restrict inbound IP addresses so that only calls originating from the partner's declared ranges can invoke the request trigger, which narrows the blast radius of a leaked callback URL without redesigning the integration. Network-isolation is the neighbour to rule out: a Consumption logic app has no private endpoint of its own, so there is no public path to remove here, only a public trigger endpoint to filter. Worth knowing alongside it that Entra OAuth authorization policies on a request trigger are the stronger control on a Consumption workflow, and they can be made the only accepted scheme, but they authenticate the caller rather than restrict where the call comes from.",
+   "citation": "Learn: Azure Logic Apps secure workflow access, restrict inbound IP addresses · outline 3.3"
+  },
+  {
+   "id": "app-22",
+   "label": "An energy company must be able to prove that every image reaching its production clusters came from its own build system, with verifiable provenance a regulator can inspect after the fact.",
+   "sub": "Which control closes this?",
+   "answer": "Registry and supply chain",
+   "why": "Signing images and verifying signatures, using the Notary Project approach, is the registry-side control that gives workloads verifiable provenance from a trusted source, and it pairs with continuous registry assessment so drift after build is caught too. Admission-policy is the enforcement partner rather than the answer to provenance itself, since the cluster gate only checks a signature that the registry practice created. Be aware that the older Docker Content Trust model in the Premium tier is on a deprecation path and cannot be newly enabled.",
+   "citation": "Learn: Security concepts for applications and clusters in AKS, registry security; ACR content trust · outline 3.3"
+  },
+  {
+   "id": "app-23",
+   "label": "A telecoms team migrates its AKS workloads off the retired pod-managed identity approach. Everything works when they test it, then after a rolling node upgrade the pods restart and every token request fails.",
+   "sub": "Which control is misconfigured?",
+   "answer": "Workload identity",
+   "why": "Entra Workload ID requires the label azure.workload.identity/use set to true on the pod template, because only labelled pods are mutated by the workload identity webhook, which injects the Azure environment variables and the volume carrying the projected token. Carrying that label is also what puts AKS into the documented fail close behaviour for workload identity; leave it off and the pods keep working until something restarts them, then every token request dies. Admission-policy is a tempting read because a webhook is involved, but this webhook exists to inject identity plumbing rather than to permit or deny the deployment. Changing service account annotations also requires a pod restart to take effect.",
+   "citation": "Learn: Use Microsoft Entra Workload ID with AKS, pod labels · outline 3.3"
+  },
+  {
+   "id": "app-24",
+   "label": "A retailer's security operations centre already triages endpoint and identity incidents in one queue. Container alerts from three AKS clusters currently arrive somewhere else, and analysts are correlating them by hand at three in the morning.",
+   "sub": "Which control closes this?",
+   "answer": "Runtime detection",
+   "why": "Defender for Containers alerts are mapped to the MITRE ATT and CK matrix for Containers and, through the Defender for Cloud integration, security operators investigate and respond to Kubernetes threats inside the Microsoft Defender XDR portal alongside their other incidents. Admission-policy contributes compliance state to the Azure Policy dashboard rather than incidents to an analyst queue, and Registry and supply chain produces recommendations for image owners, not alerts for a night shift.",
+   "citation": "Learn: Introduction to Microsoft Defender for Containers, run-time protection and Defender XDR integration · outline 3.3"
+  }
+ ]
+}

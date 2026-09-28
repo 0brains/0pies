@@ -1,0 +1,57 @@
+{
+  "prompting": {
+    "hint": "Este conceito muda instruções, contexto, amostragem, constrangimentos de output ou resistência de ataque à hora de requisição sem retreinar o modelo a menos que a pista explicitamente diga o contrário."
+  },
+  "prompting-01": {
+    "label": "Quebra uma tarefa complexa em passos explícitos mais pequenos cujos outputs podem ser verificados.",
+    "why": "Quebra uma tarefa complexa em passos explícitos mais pequenos cujos outputs podem ser verificados."
+  },
+  "prompting-02": {
+    "label": "Pergunta a um modelo para executar uma tarefa sem fornecer exemplos.",
+    "why": "Pergunta a um modelo para executar uma tarefa sem fornecer exemplos."
+  },
+  "prompting-03": {
+    "label": "Fornece um pequeno número de exemplos para guiar comportamento e formato de output.",
+    "why": "Fornece um pequeno número de exemplos para guiar comportamento e formato de output."
+  },
+  "prompting-04": {
+    "label": "Define comportamento de aplicação de prioridade alta, limites, papel e requisitos de resposta.",
+    "why": "Define comportamento de aplicação de prioridade alta, limites, papel e requisitos de resposta."
+  },
+  "prompting-05": {
+    "label": "Uma unidade de texto processada por um modelo de linguagem; contagens de token afectam capacidade de contexto, latência e custo.",
+    "why": "Uma unidade de texto processada por um modelo de linguagem; contagens de token afectam capacidade de contexto, latência e custo."
+  },
+  "prompting-06": {
+    "label": "A quantidade máxima combinada de tokens de input e gerados que um modelo pode processar numa requisição.",
+    "why": "A quantidade máxima combinada de tokens de input e gerados que um modelo pode processar numa requisição."
+  },
+  "prompting-07": {
+    "label": "Controla aleatoriedade de amostragem; valores mais baixos favorecem output mais repetível e valores mais elevados aumentam variação.",
+    "why": "Controla aleatoriedade de amostragem; valores mais baixos favorecem output mais repetível e valores mais elevados aumentam variação."
+  },
+  "prompting-08": {
+    "label": "Limita amostragem ao conjunto mais pequeno de tokens prováveis cuja probabilidade cumulativa atinge um limiar.",
+    "why": "Limita amostragem ao conjunto mais pequeno de tokens prováveis cuja probabilidade cumulativa atinge um limiar."
+  },
+  "prompting-09": {
+    "label": "Limita comprimento de resposta para controlar risco de truncagem, latência e gasto.",
+    "why": "Limita comprimento de resposta para controlar risco de truncagem, latência e gasto."
+  },
+  "prompting-10": {
+    "label": "Constrange uma resposta para um schema tal como JSON então software downstream pode validar e consumir.",
+    "why": "Constrange uma resposta para um schema tal como JSON então software downstream pode validar e consumir."
+  },
+  "prompting-11": {
+    "label": "Input malicioso tenta substituir instruções ou manipular um modelo e as suas tools conectadas.",
+    "why": "Input malicioso tenta substituir instruções ou manipular um modelo e as suas tools conectadas."
+  },
+  "prompting-12": {
+    "label": "Exemplos de treino corrompidos ou adversários manipulam o que um modelo aprende.",
+    "why": "Exemplos de treino corrompidos ou adversários manipulam o que um modelo aprende."
+  },
+  "prompting-13": {
+    "label": "Tentativas para contornar guardrails de segurança para gerar conteúdo restringido.",
+    "why": "Tentativas para contornar guardrails de segurança para gerar conteúdo restringido."
+  }
+}

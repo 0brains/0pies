@@ -1,0 +1,82 @@
+{
+  "lad-agent": {
+    "prompt": "Mets le cycle de vie de l'agent dans l'ordre où il doit se produire.",
+    "steps[0].label": "Définir l'agent : PromptAgentDefinition(model=MODEL_NAME, instructions=..., tools=[...])",
+    "steps[0].detail": "Le modèle + instructions + outils sont définis au moment de la définition — {\"deployment\":{\"model\":AGENT_NAME}} est la mauvaise réponse canonique ; les déploiements hébergent les modèles, les agents sont model + instructions + outils.",
+    "steps[1].label": "Le tester dans le terrain de jeu Agents",
+    "steps[1].detail": "Le terrain de jeu configure la persona, les outils et la connaissance attachée côte à côte et te permet d'essayer le comportement multi-tour avant tout appel de code client à l'agent.",
+    "steps[2].label": "L'enregistrer : project.agents.create_version(agent_name=AGENT_NAME, definition=...)",
+    "steps[2].detail": "Les modifications non enregistrées du terrain de jeu sont perdues en quittant le portail — create_version est ce qui persiste réellement une définition, que tu l'aies construite dans le portail ou dans le code.",
+    "steps[3].label": "Créer un thread : openai.conversations.create()",
+    "steps[3].detail": "Ouvre le conteneur d'exécution que les tours ultérieurs écriront — appelé par l'application client avant que le premier message ne soit envoyé, distinct de la définition de l'agent elle-même.",
+    "steps[4].label": "Ajouter le message de l'utilisateur au thread",
+    "steps[4].detail": "Le contenu du tour est ajouté à l'historique des messages accumulés du thread — une exécution ne peut pas traiter un message qui n'a pas encore été ajouté.",
+    "steps[5].label": "Créer une exécution et lire la sortie : openai.responses.create(..., extra_body={\"agent_reference\": {...}})",
+    "steps[5].detail": "L'invocation qui traite réellement la conversation et produit la sortie suivante de l'agent ; agent_reference est des métadonnées par appel pointant vers la définition enregistrée."
+  },
+  "lad-chat": {
+    "prompt": "Mets le flux de code dans l'ordre où il doit s'exécuter.",
+    "steps[0].label": "Installe azure-ai-projects",
+    "steps[0].detail": "« Quel package tu dois installer pour le client du projet ? » est une question typique de l'examen — la réponse est azure-ai-projects.",
+    "steps[1].label": "Créer AIProjectClient(endpoint, DefaultAzureCredential())",
+    "steps[1].detail": "Le point de terminaison + identifiant de connexion doivent tous les deux exister avant tout appel ; l'authentification sans clé = DefaultAzureCredential d'Entra ID.",
+    "steps[2].label": "Appeler get_openai_client()",
+    "steps[2].detail": "Établit un pont entre le client du projet et un client de chat compatible OpenAI — la ligne qui casse tout si elle est supprimée.",
+    "steps[3].label": "Construis la liste des messages (message système en premier, puis message de l'utilisateur)",
+    "steps[3].detail": "Les règles et les garde-fous dans le message système ; la demande de ce tour dans le message de l'utilisateur.",
+    "steps[4].label": "Appeler chat.completions.create(model=DEPLOYMENT_NAME, messages=[...])",
+    "steps[4].detail": "model= prend TON nom de déploiement, jamais le nom du modèle de base — le piège classique.",
+    "steps[5].label": "Lis response.choices[0].message.content",
+    "steps[5].detail": "Le texte de réponse se trouve sur le message du premier choix — les questions d'extrait de corpus se terminent ici."
+  },
+  "lad-cu": {
+    "prompt": "Mets le flux de travail Content Understanding en ordre.",
+    "steps[0].label": "Choisis ou définis un analyseur : décris le schéma en langage naturel (ContentAnalyzer(base_analyzer_id=..., field_schema=...))",
+    "steps[0].detail": "Les identifiants d'analyseur préintégrés (prebuilt-invoice, prebuilt-audio,...) couvrent les domaines communs ; un ContentAnalyzer personnalisé nomme les champs que tu veux en langage simple via field_schema — pas de code au-delà de la description de ce qu'il faut extraire.",
+    "steps[1].label": "L'enregistrer : client.begin_create_analyzer(...)",
+    "steps[1].detail": "Approvisionne la définition de l'analyseur en tant qu'opération longue avant qu'elle puisse être appelée contre tout contenu — une étape de configuration unique, non une étape par document.",
+    "steps[2].label": "Soumettre le contenu : client.begin_analyze(analyzer_id=..., inputs=[AnalysisInput(url=file_url)])",
+    "steps[2].detail": "Chaque fichier document/image/audio/vidéo obtient son propre appel begin_analyze par rapport à l'analyseur déjà enregistré — l'étape par document, contrairement à l'étape 2.",
+    "steps[3].label": "Interroge l'opération : poller.result()",
+    "steps[3].detail": "begin_analyze retourne un sondeur ; appelle sa méthode .result() pour attendre la sortie d'analyse finale — l'analyse est asynchrone, pas un retour synchrone (l'examen l'appelle « appelle la méthode ________ du sondeur »).",
+    "steps[4].label": "Lis les champs JSON structurés du résultat",
+    "steps[4].detail": "Les champs extraits — nom du fournisseur, date de facture, total de facture, et autres — atterrissent dans la charge utile du résultat du sondeur ; c'est ici que le travail de Content Understanding lui-même se termine.",
+    "steps[5].label": "Remets à Azure AI Search pour l'indexation",
+    "steps[5].detail": "Content Understanding n'extrait que — il n'indexe ni ne génère jamais ; Azure AI Search est le service en aval séparé qui indexe la sortie structurée de CU pour la récupération/RAG."
+  },
+  "lad-genai": {
+    "prompt": "Mets les étapes dans l'ordre qu'un modèle génératif transforme ta requête en texte.",
+    "steps[0].label": "Tokenization",
+    "steps[0].detail": "Le texte d'entrée est divisé en jetons — mots ou sous-mots — chacun mappé à un identifiant du vocabulaire du modèle ; rien en aval n'a de sens jusqu'à ce que cela se produise (Tâche 1.2).",
+    "steps[1].label": "Embeddings",
+    "steps[1].detail": "Chaque identifiant de jeton est converti en un vecteur numérique encodant le sens — le même espace vectoriel qui rend la similarité sémantique calculable comme distance vectorielle.",
+    "steps[2].label": "Attention du transformateur",
+    "steps[2].detail": "Les couches d'auto-attention pèsent chaque jeton par rapport à chaque autre jeton de la séquence — le mécanisme qui « alimente la plupart des modèles de fondation modernes », et il a besoin que les vecteurs d'intégration existent déjà.",
+    "steps[3].label": "Prédiction du prochain jeton",
+    "steps[3].detail": "Le modèle génère une distribution de probabilité sur tout le vocabulaire pour le seul jeton suivant ; la température et top-p remodèlent cette distribution avant qu'un jeton soit prélevé.",
+    "steps[4].label": "Sortie détokenisée",
+    "steps[4].detail": "L'identifiant de jeton prédit est décodé en texte et la boucle se répète un jeton à la fois jusqu'à une condition d'arrêt — la perplexité mesure la qualité de ces prédictions d'étapes par rapport au texte retenu."
+  },
+  "lad-speech": {
+    "prompt": "Mets les appels Speech SDK dans l'ordre où ils doivent s'exécuter.",
+    "steps[0].label": "SpeechConfig(subscription=key, region=region)",
+    "steps[0].detail": "Chaque flux de travail Speech SDK commence ici — la paire clé/région (ou point de terminaison) qui authentifie chaque appel qui suit.",
+    "steps[1].label": "Définis speech_config.speech_synthesis_voice_name = \"...\"",
+    "steps[1].detail": "La sélection de voix est une propriété définie directement sur l'objet config — l'extrait DragonHD-voice de l'examen définit cette ligne juste après SpeechConfig, avant tout autre objet construit à partir de celui-ci.",
+    "steps[2].label": "AudioConfig(...) — microphone, fichier ou appareil par défaut",
+    "steps[2].detail": "Construit indépendamment de la propriété du nom de voix, mais les extraits de démarrage rapide le construisent uniquement après la fin de la configuration, immédiatement avant le reconnaisseur/synthétiseur qui consommera les deux objets.",
+    "steps[3].label": "Créer le reconnaisseur ou le synthétiseur : SpeechRecognizer(speech_config, audio_config) / SpeechSynthesizer(speech_config)",
+    "steps[3].detail": "Les deux constructeurs prennent le speech_config déjà construit (le reconnaisseur prend aussi audio_config) — rien après ce point ne peut toujours injecter le config.",
+    "steps[4].label": "Appelle recognize_once() / speak_text_async(text)",
+    "steps[4].detail": "recognize_once() capture une seule courte énonciation (vs reconnaissance continue) ; speak_text_async() lit réellement le texte — le modèle asynchrone/.get() appartient ici, dernier, une fois que l'objet existe."
+  },
+  "lad-voice": {
+    "prompt": "Mets le pipeline d'agent vocal classique en ordre.",
+    "steps[0].label": "Synthèse vocale vers texte : convertis l'audio parlé de l'appelant en texte",
+    "steps[0].detail": "Première étape du pipeline — recognize_once() ou reconnaissance continue transforme l'audio en une transcription avant que tout raisonnement puisse se produire sur celui-ci.",
+    "steps[1].label": "Traitement du langage / IA générative : raisonne sur la transcription et produis une réponse textuelle",
+    "steps[1].detail": "Un appel de chat/agent raisonne sur la transcription — l'étape qu'un modèle multimodal unique (p. ex. déploiement de chat audio-entrée/audio-sortie) peut fusionner avec les étapes 1 et 3, et celle que l'API Voice Live est construite pour remplacer les trois à la fois avec une seule interface synthèse vocale à synthèse vocale à faible latence.",
+    "steps[2].label": "Synthèse vocale vers texte : synthétise la réponse en audio",
+    "steps[2].detail": "speak_text_async() joue la réponse générée — l'étape finale du pipeline classique, aussi fusionnable en modèle multimodal unique ou alternative Voice Live nommée dans le détail de l'étape 2."
+  }
+}

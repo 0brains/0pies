@@ -1,0 +1,91 @@
+{
+ "risk-tiers": {
+  "hint": "Déplacez chaque système sur son niveau de risque. Le niveau suit l'objectif et le contexte, non la sophistication du modèle.",
+  "note": "Les niveaux s'attachent à l'usage, non à la technologie. Le même modèle peut être interdit dans un déploiement, à haut risque dans un autre et minimal dans un troisième.",
+  "zones[0].def": "Pratiques interdites sous l'Art. 5. Pas un risque à atténuer — la pratique ne peut pas être mise sur le marché ou utilisée du tout.",
+  "zones[1].def": "Art. 6 et Annex III, ou un composant de sécurité d'un produit réglementé. Permis sous réserve d'obligations substantielles avant et après la mise sur le marché.",
+  "zones[2].def": "Art. 50 obligations de transparence : informer les personnes qu'elles traitent avec l'IA, ou que le contenu est synthétique.",
+  "zones[3].def": "Tout le reste. Aucune obligation selon la loi au-delà de celles qui s'appliquent à tout logiciel ; les codes volontaires peuvent s'appliquer.",
+  "zones[4].def": "Modèles à usage général répondant au seuil Art. 51, avec obligations au niveau du modèle distinctes de la pyramide basée sur l'usage."
+ },
+ "rt2-01": {
+  "label": "Un programme gouvernemental évaluant la digne de confiance des citoyens à partir d'un comportement social non lié et l'utilisant pour refuser l'accès aux services publics.",
+  "why": "L'évaluation sociale par ou au nom des autorités publiques menant à un traitement préjudiciable dans des contextes non liés est interdite catégoriquement sous l'Art. 5."
+ },
+ "rt2-02": {
+  "label": "Un système déduisant les émotions des employés à partir des expressions faciales pendant leur journée de travail, en dehors de tout objectif médical ou de sécurité.",
+  "why": "L'inférence émotionnelle sur le lieu de travail et dans l'éducation est interdite, avec des exceptions médicales et de sécurité étroites. C'est pourquoi l'interdiction capture les produits d'analyse RH."
+ },
+ "rt2-03": {
+  "label": "Un outil qui scrape les images faciales d'Internet et des CCTV sans discrimination pour construire une base de données de reconnaissance faciale.",
+  "why": "Le scraping non ciblé pour construire des bases de données de reconnaissance faciale est expressément interdit, indépendamment de l'objectif de l'opérateur."
+ },
+ "rt2-04": {
+  "label": "Un système utilisant des techniques sublimales au-delà de la conscience d'une personne pour déformer matériellement le comportement et causer un préjudice important.",
+  "why": "Les techniques manipulatrices et exploitantes causant un préjudice significatif sont interdites. Le test est la déformation matérielle du comportement, pas la sophistication de la technique."
+ },
+ "rt2-05": {
+  "label": "Un système de tri de CV qui filtre et classe les candidats pour un rôle.",
+  "why": "L'emploi et la gestion des travailleurs est une zone Annex III. Le tri au recrutement est l'exemple canonique de haut risque et attire l'ensemble complet des obligations."
+ },
+ "rt2-06": {
+  "label": "Un modèle utilisé par une banque pour évaluer la solvabilité des personnes physiques.",
+  "why": "L'évaluation de la solvabilité des personnes physiques est énumérée dans Annex III, avec une exception pour la détection de fraude financière."
+ },
+ "rt2-07": {
+  "label": "Un composant IA qui contrôle la fonction de sécurité d'un dispositif médical déjà réglementé selon la loi d'harmonisation de l'UE.",
+  "why": "C'est l'itinéraire Art. 6(1) : un composant de sécurité d'un produit couvert par la législation d'harmonisation énumérée et nécessitant l'évaluation de conformité par un tiers."
+ },
+ "rt2-08": {
+  "label": "Un système utilisé pour déterminer l'accès à, ou assigner les personnes à, les institutions éducatives.",
+  "why": "Les décisions d'éducation et de formation professionnelle affectant l'accès d'une personne sont Annex III. Le préjudice est aux chances de vie, c'est pourquoi le niveau est élevé plutôt que limité."
+ },
+ "rt2-09": {
+  "label": "Un chatbot de service client qui doit clarifier à l'utilisateur qu'il interagit avec un système d'IA.",
+  "why": "Art. 50 transparence : une personne doit savoir qu'elle traite avec une machine sauf si cela est évident. Cette divulgation est la seule obligation."
+ },
+ "rt2-10": {
+  "label": "Un générateur d'images dont les résultats synthétiques doivent être marqués dans un format lisible par machine comme artificiellement générés.",
+  "why": "Marquer le contenu synthétique est une obligation Art. 50 sur les fournisseurs de systèmes génératifs, indépendamment du niveau auquel le déploiement se situe."
+ },
+ "rt2-11": {
+  "label": "Une deepfake publiée dans le cadre d'une actualité, qui doit être divulguée comme artificiellement générée ou manipulée.",
+  "why": "La divulgation de deepfake est une obligation de transparence sur les déploiement, avec des ajustements pour le travail évidemment artistique ou satirique."
+ },
+ "rt2-12": {
+  "label": "Un système de reconnaissance émotionnelle utilisé en dehors d'un contexte interdit, dont les sujets doivent être informés de son fonctionnement.",
+  "why": "Lorsque la reconnaissance émotionnelle n'est pas interdite catégoriquement, informer les personnes exposées est une obligation Art. 50. La même technologie se situe dans deux niveaux différents selon le cadre."
+ },
+ "rt2-13": {
+  "label": "Un filtre à spam classifiant le courrier entrant pour un service de messagerie d'entreprise.",
+  "why": "Le filtrage du spam est le propre exemple de la loi concernant un risque minimal. Aucune obligation ne s'attache au-delà de la loi générale."
+ },
+ "rt2-14": {
+  "label": "Un adversaire IA contrôlant les caractères non-joueurs dans un jeu vidéo.",
+  "why": "Les usages de divertissement sans effet sur les droits, la sécurité ou l'accès aux services tombent en dehors des niveaux qui portent des obligations."
+ },
+ "rt2-15": {
+  "label": "Un modèle de prévision des stocks prédisant les niveaux d'inventaire de l'entrepôt sans aucun effet sur les individus.",
+  "why": "Aucune zone énumérée, aucun composant de sécurité, aucune interaction avec une personne. L'analyse opérationnelle est où la plupart de l'IA en entreprise se situe réellement."
+ },
+ "rt2-16": {
+  "label": "Un modèle qui optimise l'utilisation d'énergie dans le système de refroidissement du centre de données.",
+  "why": "L'optimisation industrielle ne touchant à aucune zone Annex III et aucune personne est un risque minimal, aussi conséquent qu'il soit commercialement."
+ },
+ "rt2-17": {
+  "label": "Un modèle à usage général supposé porter le risque systémique parce que son calcul d'entraînement dépasse le seuil défini dans la loi.",
+  "why": "L'Art. 51 établit une présomption basée sur le calcul. C'est une classification au niveau du modèle et se situe entièrement en dehors de la pyramide basée sur l'usage."
+ },
+ "rt2-18": {
+  "label": "Un modèle à usage général désigné par la Commission comme ayant des capacités d'impact élevé équivalentes aux modèles les plus avancés.",
+  "why": "La désignation est la deuxième itinéraire vers le risque systémique, aux côtés de la présomption de calcul. Chaque itinéraire déclenche les mêmes obligations."
+ },
+ "rt2-19": {
+  "label": "Un fournisseur obligé d'effectuer des évaluations de modèles, des tests adversaires, et de suivre et signaler les incidents graves au niveau du modèle.",
+  "why": "L'évaluation, les tests adversaires, l'atténuation des risques systémiques et le signalement des incidents sont les obligations Art. 55 que seul les GPAI à risque systémique porte."
+ },
+ "rt2-20": {
+  "label": "Un fournisseur tenu d'assurer un niveau adéquat de protection contre les cyber-attaques pour le modèle et son infrastructure physique.",
+  "why": "La cybersécurité au niveau du modèle est une obligation GPAI à risque systémique. Les obligations GPAI de base — documentation, politique de droit d'auteur, résumé des données d'entraînement — s'appliquent sans elle."
+ }
+}

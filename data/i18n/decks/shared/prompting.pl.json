@@ -1,0 +1,57 @@
+{
+ "prompting": {
+  "hint": "Ta koncepcja zmienia instrukcje, kontekst, próbkowanie, ograniczenia wyjścia lub odporność na ataki w momencie żądania bez przetreniowania modelu, chyba że wskazówka wyraźnie mówi inaczej."
+ },
+ "prompting-01": {
+  "label": "Dzieli złożone zadanie na jawne mniejsze kroki, których wyjścia mogą być sprawdzane.",
+  "why": "Dzieli złożone zadanie na jawne mniejsze kroki, których wyjścia mogą być sprawdzane."
+ },
+ "prompting-02": {
+  "label": "Prosi model o wykonanie zadania bez podawania przykładów.",
+  "why": "Prosi model o wykonanie zadania bez podawania przykładów."
+ },
+ "prompting-03": {
+  "label": "Dostarcza małą liczbę przykładów, aby poprowadzić zachowanie i format wyjścia.",
+  "why": "Dostarcza małą liczbę przykładów, aby poprowadzić zachowanie i format wyjścia."
+ },
+ "prompting-04": {
+  "label": "Definiuje zachowanie aplikacji o wysokim priorytecie, granice, rolę i wymagania odpowiedzi.",
+  "why": "Definiuje zachowanie aplikacji o wysokim priorytecie, granice, rolę i wymagania odpowiedzi."
+ },
+ "prompting-05": {
+  "label": "Jednostka tekstu przetwarzana przez model języka; liczby tokenów wpływają na pojemność kontekstu, opóźnienie i koszt.",
+  "why": "Jednostka tekstu przetwarzana przez model języka; liczby tokenów wpływają na pojemność kontekstu, opóźnienie i koszt."
+ },
+ "prompting-06": {
+  "label": "Maksymalna połączona ilość wejścia i wygenerowanych tokenów, które model może przetworzyć w jednym żądaniu.",
+  "why": "Maksymalna połączona ilość wejścia i wygenerowanych tokenów, które model może przetworzyć w jednym żądaniu."
+ },
+ "prompting-07": {
+  "label": "Kontroluje losowość próbkowania; niższe wartości faworyzują powtarzalniejsze wyjście, a wyższe wartości zwiększają zmienność.",
+  "why": "Kontroluje losowość próbkowania; niższe wartości faworyzują powtarzalniejsze wyjście, a wyższe wartości zwiększają zmienność."
+ },
+ "prompting-08": {
+  "label": "Ogranicza próbkowanie do najmniejszego zestawu prawdopodobnych tokenów, których skumulowane prawdopodobieństwo osiąga próg.",
+  "why": "Ogranicza próbkowanie do najmniejszego zestawu prawdopodobnych tokenów, których skumulowane prawdopodobieństwo osiąga próg."
+ },
+ "prompting-09": {
+  "label": "Ogranicza długość odpowiedzi do kontrolowania ryzyka obcięcia, opóźnienia i wydatków.",
+  "why": "Ogranicza długość odpowiedzi do kontrolowania ryzyka obcięcia, opóźnienia i wydatków."
+ },
+ "prompting-10": {
+  "label": "Ogranicza odpowiedź do schematu takiego jak JSON, aby oprogramowanie podrzędne mogło sprawdzić i zużyć.",
+  "why": "Ogranicza odpowiedź do schematu takiego jak JSON, aby oprogramowanie podrzędne mogło sprawdzić i zużyć."
+ },
+ "prompting-11": {
+  "label": "Złośliwe wejście próbuje przesłonić instrukcje lub manipulować modellem i jego podłączonymi narzędziami.",
+  "why": "Złośliwe wejście próbuje przesłonić instrukcje lub manipulować modellem i jego podłączonymi narzędziami."
+ },
+ "prompting-12": {
+  "label": "Skorumpowane lub antagonistyczne przykłady treningowe manipulują tym, czego model się uczy.",
+  "why": "Skorumpowane lub antagonistyczne przykłady treningowe manipulują tym, czego model się uczy."
+ },
+ "prompting-13": {
+  "label": "Próby ominięcia guard rali bezpieczeństwa w celu wygenerowania zakazanej zawartości.",
+  "why": "Próby ominięcia guard rali bezpieczeństwa w celu wygenerowania zakazanej zawartości."
+ }
+}

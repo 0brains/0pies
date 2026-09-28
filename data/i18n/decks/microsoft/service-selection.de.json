@@ -1,0 +1,109 @@
+{
+ "service-selection": {
+  "hint": "Zwei Fragen entscheiden es: Wie sieht die Eingabe aus (Text, Formular, Bild, Audio, Video oder Vektoren), und extrahiert/analysiert, übersetzt, sucht/indiziert oder generiert der Job? Die gepflanzte Option ist fast immer der Nachbar, der die Eingabe teilt, aber das andere Job tut."
+ },
+ "ss-001": {
+  "label": "Beschreibe Rechnungsfelder in Klarsprache und extrahiere sie aus PDFs, Fotos und Anruf-Aufzeichnungen in strukturierte JSON",
+  "why": "Natürlichsprachige Feld-Beschreibung über Multimodal-Eingabe → strukturierte JSON ist Content Understanding; Document Intelligence Vormodelle sind deterministisch und Dokument-nur."
+ },
+ "ss-002": {
+  "label": "Hochvolumige deterministische Extraktion von Standard-Quittungen und ID-Karten mit ein Vormodell",
+  "why": "Bekannte Formular-Typen — Rechnungen, Quittungen, IDs, Visitenkarten — sind Document Intelligence Vormodell-Territorium."
+ },
+ "ss-003": {
+  "label": "Übersetze schriftliche Produktanleitungen von Englisch-Text zu Japanisch-Text",
+  "why": "Translator ist Text-zu-Text; Azure Speech verarbeitet Audio ein/aus einschließlich Sprach-Übersetzung — eine 6-Count Corpus Verwirrung (Paar #29)."
+ },
+ "ss-004": {
+  "label": "Indiziere die extrahierten Rechnungs-Daten, damit nachgelagerte Apps sie suchen und abrufen können",
+  "why": "CU extrahiert; AI Search indiziert und ruft nachgelagert ab (Indizieren, Geschicklichkeit, Wissens-Store) — Extraktion und Abruf sind verschiedene Services (Paar #22)."
+ },
+ "ss-005": {
+  "label": "Suche Produktbeschreibungen durch semantische Ähnlichkeit statt genauen Stichwort-Abgleich",
+  "why": "Einbettungen konvertieren Text zu Vektoren für semantischen Vergleich (text-embedding-3-large) — sie rufen ab und vergleichen, sie erstellen nie Inhalte (Paar #18)."
+ },
+ "ss-006": {
+  "label": "Beantworte freiform Fragen zu einem Foto, das der Nutzer zu seiner Chat-Nachricht anhängt",
+  "why": "Bild-als-Eingabe benötigt ein bereitgestelltes Multimodal-Modell, das Bild-Inhalts-Teile liest; Bild-Generierung geht die andere Richtung, und ImageAnalysisClient/Vision gibt fest Funktionen zurück — ein verschiedener API und Endpunkt (Paar #23)."
+ },
+ "ss-007": {
+  "label": "Lese gedruckten Text von einem fotografierten Straßenschild, damit die App ihn als Klartext zeigen kann",
+  "why": "OCR/Read ist eine Kern-Vision Fähigkeit über allgemeine Bilder; Document Intelligence zielt auf strukturierte Formular-Aufmachungen, nicht nebenbei Straßen-Szenen-Text."
+ },
+ "ss-008": {
+  "label": "Erkenne die Quellsprache eingehender Text vor der Übersetzung zu Englisch, im selben Aufruf automatisch",
+  "why": "Translator's Sprach-Auto-Erkennung läuft inline als Teil der Übersetzungs-Pipeline; AI Language's Sprach-Erkennung ist ein eigen-ständige Text-Analytics Funktion außerhalb ein Übersetzungs-Aufruf."
+ },
+ "ss-009": {
+  "label": "Trainiere ein Modell auf deinen eigenen beschrifteten Fotos, um fehlerhafte Teile von akzeptablen auf einer Fertigungs-Linie zu unterscheiden",
+  "why": "Custom Vision-Zweck-Bau Klassifikation/Erkennung von deinen eigenen beschrifteten Bildern mit ein verwaltet Training Loop; allgemeine Vision gibt nur fest vorbereitete Funktionen zurück und kann nicht auf deinen Daten umgeschult werden."
+ },
+ "ss-010": {
+  "label": "Match ein Ausweis-Scanner-Foto gegen ein Roster von Mitarbeiter-Fotos, um die Person-Identität zu bestätigen",
+  "why": "1:1 Überprüfung und 1:N Identifikation gegen eingerollte Gesichter ist Face's gewährte Fähigkeit; allgemeine Vision Analyse hat keine Identität-Matching Funktion."
+ },
+ "ss-011": {
+  "label": "Behalte Stichwörter, Sentiment und Einheiten, die aus ein Dokument Pipeline gezogen werden, in ein Store, den nachgelagerte Apps suchen können",
+  "why": "Ein Geschicklichkeit kann AI Language aufrufen, um jedes Dokument anzureichern, aber der behalte, abfragbar Wissens-Store gehört AI Search — Anreicherung und Abruf sind separate Pipeline-Stufen."
+ },
+ "ss-012": {
+  "label": "Ziehe Sentiment, Stichwörter und benannte Einheiten direkt aus rohen Support-Ticket-Text",
+  "why": "Sentiment, Stichwort-Extraktion und NER sind AI Language Text-Analytics Funktionen; AI Search verbraucht nur diese Ausgabe als ein Anreicherungs-Schritt, es produziert sie nicht."
+ },
+ "ss-013": {
+  "label": "Flagge einen ungewöhnlichen Spike in ein Fabrik-Sensor's Vibrations-Ablesungen, während sie Zeit-Reihe streamen",
+  "why": "Zweck-gebaut univariat/multivariat Anomalie-Erkennung über Zeit-Reihen-Daten ist Anomaly Detector's Aufgabe; ein allgemein ML Arbeitsbereich würde dich dieses Modell designen, trainieren und verwalten erfordern."
+ },
+ "ss-014": {
+  "label": "Bekomme ein Transkript mit zeitgestempelt Sprache dreht von ein aufgezeichnet zwei-Person Support Anruf",
+  "why": "Sprach-zu-Text mit Sprache Diarization läuft direkt auf rohem Audio als ein Speech Fähigkeit; AI Language funktioniert nur auf Text, das bereits transkribiert wurde."
+ },
+ "ss-015": {
+  "label": "Drehe ein Block schriftlich Englisch Marketing Kopie in erzähltes Audio für ein Video Voiceover",
+  "why": "Neurales Text-zu-Sprache Synthese ist ein Kern Speech Fähigkeit; produzierend gesprochenes Audio von Azure OpenAI benötigt ein getrennt Multimodal/Echtzeit Bereitstellung, und Translator berührt nie Audio."
+ },
+ "ss-016": {
+  "label": "Flagge gewalttätiges oder hasserfülltes Sprache in Nutzer-eingereichte Chat-Meldungen, bevor sie je das Modell erreichen",
+  "why": "Prompt Shields und Moderations-Kategorien sind Content Safety's Aufgabe, angewandt auf Eingabe und Ausgabe gleichermaßen; AI Language's PII Erkennung ist ein Datenschutz-Funktion, nicht ein schädlich-Inhalts-Klassifizierer."
+ },
+ "ss-017": {
+  "label": "Verschwomme oder redaktionelle ein Kundin-Telefonnummer und E-Mail-Adresse, bevor ein Chat Transkript gespeichert wird",
+  "why": "PII Erkennung und Redaktion ist ein gewährte AI Language Funktion zum Erkennen und Maskieren persönlicher Daten; Content Safety statt klassifiziert schädlich-Inhalts-Kategorien — ein Datenschutz-Anliegen, nicht ein Sicherheits-Anliegen."
+ },
+ "ss-018": {
+  "label": "Speichere und Frage Millionen bereits-berechnete Einbettungs-Vektoren, damit Nächster-Nachbar-Lookups in Millisekunden zurückkehren",
+  "why": "Vektor-Suche und Speicher zur Abfragzeit ist AI Search's Aufgabe; Einbettungs-Modelle produzieren die Vektoren nur an erster Stelle, sie indizieren oder rufen sie nicht ab."
+ },
+ "ss-019": {
+  "label": "Route ein laufen-Agenten-Werkzeug-Aufruf raus zu ein Live-Wetter-API und Fütter das Ergebnis zurück in das gleiche Gespräch",
+  "why": "Aufrufen ein Funktion/benutzerdefiniert Werkzeug Mid-Run gegen ein Live extern API ist der Agent Service's Orchestrierungs-Schicht; ein blotter Chat Completions Aufruf hat keine gebaut-in Werkzeug-Aufrufs-Schleife seines eigenen."
+ },
+ "ss-020": {
+  "label": "Anhänge ein bestehender Such-Index zu ein Foundry Agent, damit seine Antworten Grund in und zitiert deine indizierte Dokumente",
+  "why": "Verdrahtung ein Wissens-Quelle in ein Agent's Erdbeben/Zitations-Verhalten ist konfiguriert auf dem Agent Service; der Index selbst nur Abfrage-Server, es besitzt nicht der Agent's Persona, Werkzeuge oder Wissens-Verdrahtung."
+ },
+ "ss-021": {
+  "label": "Generiere ein fotorealistisch Produkt Mockup Bild aus ein Klarsprache Beschreibung, mit kein Start Foto",
+  "why": "Text-zu-Bild Generierung ist DALL-E's Aufgabe; ein Multimodal Chat Modell liest Bilder als Eingabe, aber malt keine neuen, und Vision nur analysiert Bilder, das bereits existiert."
+ },
+ "ss-022": {
+  "label": "Führe ein Kosten-empfindlich Assistant auf ein Budget Bereitstellung, die nur je kurz, einfach Anfragen verarbeitet",
+  "why": "Ein Phi-Klasse klein Sprache Modell Trades einig Fähigkeit für viel klein Fußabdruck und Nieder Kosten, die passt Leicht Gewicht, Budget-gekränkt Anfragen; Bereitstellung ein voll Grenzen Modell zum einfach Text ist der klassisch über-Provisioning Falle."
+ },
+ "ss-023": {
+  "label": "Lass ein Nutzer sprechen ein Frage und höre ein gesprochene Antwort zurück im selben niedrig-Latenz Kurve, mit kein getrennt Recognizer/Synthesizer Aufrufe verdrahten",
+  "why": "gpt-realtime / Voice Live ist der einzeln niedrig-Latenz Sprach-ein, Sprach-raus Sitzung; der Azure AI Speech Ablenker bedeutet verdrahten der Handbuch SpeechRecognizer→Process→SpeechSynthesizer Pipeline dich selbst, das Latenz und Integrieren verliert — genau das die Echtzeit-API ersetzt."
+ },
+ "ss-024": {
+  "label": "Bekomme der bereitgestellt Models Antwort zurück als wohlgeformte JSON, die ein Schema du Versorgung, mit kein Extra Prosa rund es",
+  "why": "Strukturierte Ausgabe ist ein Pro-Anruf Parameter auf ein bereitgestellt Chat/Completions Modell; Feinabstimmung dauerhaft ändert Modell Gewichte und ist unnotig nur um ein Antwort Format zu Form."
+ },
+ "ss-025": {
+  "label": "Backe ein Unternehmen's schreiben Stil in jedes Zukunft Antwort mit Hunderte beschriftet Beispiel Abschriften, damit es nie erneut Aufforderung brauch",
+  "why": "Feinabstimmung ist der Training Pass, das demonstriert Verhalten in neu Gewichte bäckt, damit es über Aufrufe bestehen bleibt; ein Stock Chat/Completions Bereitstellung nur widerspiegelt das, das in dieser Aufruf's Aufforderung resend, und ein Multimodal Modell ändert, welche Eingabe Typen akzept, nicht ob Stil halten ohne Re-Aufforderung."
+ },
+ "ss-026": {
+  "label": "Prüfe gesprochene Aufforderungen gegen ein bereitgestellt Audio-fähig Modell direkt im Foundry Chat Spielplatz, ohne schreiben jemand SDK Code",
+  "why": "Ein Audio-fähig Multimodal Bereitstellung kann direkt im Chat Spielplatz ausgeübt werden; Voice Live/gpt-realtime ist der gewährte niedrig-Latenz Echtzeit Sitzung API, ein getrennt Bereitstellung Weg gebaut für kontinuierlich Unterhaltung Stimme."
+ }
+}

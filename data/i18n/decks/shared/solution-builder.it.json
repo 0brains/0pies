@@ -1,0 +1,145 @@
+{
+  "sol-01": {
+    "label": "Un supermercato vuole capire quali prodotti vengono frequentemente acquistati insieme.",
+    "sub": "Analisi del paniere di mercato",
+    "why": "L'apprendimento associativo trova le combinazioni di articoli che si verificano insieme e misura il loro supporto, confidenza e lift. Posizionare o promuovere i prodotti associati insieme per aumentare il valore del paniere."
+  },
+  "sol-02": {
+    "label": "Un'attività di abbonamento vuole identificare i clienti che probabilmente cancelleranno il mese prossimo.",
+    "sub": "Abbandono dei clienti",
+    "why": "L'obiettivo è una categoria etichettata con due possibili classi: abbandono o conservazione. Concentra le offerte di conservazione su clienti con alta probabilità di abbandono."
+  },
+  "sol-03": {
+    "label": "Una piattaforma immobiliare vuole stimare il prezzo di vendita di un nuovo annuncio.",
+    "sub": "Stima del prezzo della casa",
+    "why": "La regressione impara le relazioni tra le caratteristiche di input e un obiettivo numerico. Fornisci una stima del prezzo informata dai dati per ogni proprietà."
+  },
+  "sol-04": {
+    "label": "Un rivenditore vuole scoprire gruppi di clienti naturali senza etichette predefinite.",
+    "sub": "Segmentazione dei clienti",
+    "why": "Il clustering è apprendimento non supervisionato che raggruppa i record per somiglianza senza risultati etichettati. Crea campagne personalizzate per segmenti comportamentali distinti."
+  },
+  "sol-05": {
+    "label": "Una fabbrica vuole identificare il comportamento anomalo della macchina prima di un guasto.",
+    "sub": "Segnali di guasto dell'apparecchiatura",
+    "why": "I modelli di rilevamento anomalo modellano il comportamento normale e contrassegnano le osservazioni che si discostano da esso. Investiga precocemente le apparecchiature anomale e riduci i tempi di inattività non pianificati."
+  },
+  "sol-06": {
+    "label": "Un distributore ha bisogno di stime della domanda settimanale per il prossimo trimestre.",
+    "sub": "Pianificazione della domanda",
+    "why": "La previsione esplicita i modelli le osservazioni ordinate nel tempo, incluso il trend e la stagionalità. Pianifica l'inventario e il personale intorno alla domanda attesa."
+  },
+  "sol-07": {
+    "label": "Una piattaforma di streaming vuole suggerire contenuti che ogni utente probabilmente apprezzerà.",
+    "sub": "Media personalizzato",
+    "why": "I sistemi di raccomandazione imparano l'affinità da modelli di utenti, articoli e interazioni. Presenta un elenco classificato personalizzato che migliora la scoperta e il coinvolgimento."
+  },
+  "sol-08": {
+    "label": "Un team di prodotto vuole monitorare se le recensioni dei clienti sono positive, neutre o negative.",
+    "sub": "Sentiment delle recensioni",
+    "why": "La classificazione del testo converte il linguaggio in caratteristiche e prevede un'etichetta predefinita. Monitora le tendenze del sentiment e instrada il feedback negativo per l'attenzione."
+  },
+  "sol-09": {
+    "label": "Una linea di produzione ha bisogno di decidere se ogni immagine del componente è accettabile o difettosa.",
+    "sub": "Controllo di qualità visiva",
+    "why": "La classificazione delle immagini prevede una categoria per un'intera immagine. Separa automaticamente i probabili difetti per l'ispezione."
+  },
+  "sol-10": {
+    "label": "Un sistema di assistenza ai veicoli deve trovare ogni pedone visibile in un fotogramma della fotocamera.",
+    "sub": "Sicurezza dei pedoni",
+    "why": "Il rilevamento degli oggetti prevede quali oggetti sono presenti e dove appare ogni uno. Individua i pedoni in modo che i sistemi di sicurezza a valle possono rispondere."
+  },
+  "sol-11": {
+    "label": "I dipendenti hanno bisogno di risposte radicate nelle politiche interne che cambiano frequentemente con riferimenti di origine.",
+    "sub": "Assistente politico attuale",
+    "why": "RAG recupera il contesto esterno rilevante al momento della richiesta e lo fornisce a un modello generativo. Rispondi dalle politiche attuali con fonti di supporto tracciabili."
+  },
+  "sol-12": {
+    "label": "Un modello di linguaggio deve produrre coerentemente rapporti in un formato stabile e uno stile specialistico.",
+    "sub": "Stile specialistico coerente",
+    "why": "L'affinamento aggiorna il comportamento del modello dagli esempi ed è utile per uno stile stabile o l'adattamento dei compiti. Genera rapporti che seguono coerentemente il modello specialistico."
+  },
+  "sol-13": {
+    "label": "Un modello di linguaggio generale deve restituire nomi, date e totali come un oggetto JSON rigoroso.",
+    "sub": "Estrazione strutturata",
+    "why": "I prompt few-shot dimostrano il compito e il formato previsto all'interno del contesto del modello. Produci output strutturato coerente con una configurazione minima."
+  },
+  "sol-14": {
+    "label": "Un robot deve imparare percorsi efficienti attraverso un magazzino che cambia provando le azioni.",
+    "sub": "Navigazione del magazzino",
+    "why": "L'apprendimento per rinforzo migliora le scelte di azione attraverso il feedback espresso come ricompense e penalità. Naviga dinamicamente mentre bilanci la velocità e la sicurezza."
+  },
+  "sol-15": {
+    "label": "Un team di marketing vuole creare nuove immagini di prodotti da brief creativi scritti.",
+    "sub": "Opere d'arte della campagna",
+    "why": "I modelli di diffusione generano immagini imparando a invertire un processo di rumore graduale condizionato su un prompt. Crea concetti di campagna originali da descrizioni in linguaggio naturale."
+  },
+  "sol-16": {
+    "label": "Un vantaggio pubblico deve essere approvato solo quando viene soddisfatta una serie fissa di condizioni legali.",
+    "sub": "Idoneità statutaria",
+    "why": "Un motore di regole fisso è preferibile quando il risultato richiesto è esatto, spiegabile e completamente specificato. Produci decisioni coerenti che possono essere tracciate direttamente alla politica."
+  },
+  "sol-17": {
+    "label": "Un team ha un unico dataset storico e ha bisogno di sviluppare un modello senza sovrastare le sue prestazioni.",
+    "sub": "Valutazione onesta del modello",
+    "why": "I dati di addestramento imparano parametri, i dati di convalida guidano le scelte di modello e iperparametro, e i dati di test intoccati stimano la generalizzazione finale. Confronta i modelli durante lo sviluppo preservando una valutazione finale onesta."
+  },
+  "sol-18": {
+    "label": "Un help desk vuole instradare i nuovi ticket nelle categorie definite dal suo team di supporto.",
+    "sub": "Categorie di ticket note",
+    "why": "L'apprendimento supervisionato utilizza esempi etichettati per imparare come gli input si relazionano alle risposte predefinite. Instrada automaticamente i nuovi ticket a una coda di supporto appropriata."
+  },
+  "sol-19": {
+    "label": "Un servizio musicale vuole scoprire tipi di comportamento degli ascoltatori senza decidere i gruppi in anticipo.",
+    "sub": "Pattern di ascolto sconosciuti",
+    "why": "L'apprendimento non supervisionato scopre modelli nei dati che non hanno un'etichetta predefinita o obiettivo numerico. Rivela segmenti di ascoltatori utili per la ricerca di prodotto e la personalizzazione."
+  },
+  "sol-20": {
+    "label": "Un team ha miliardi di frasi ma molto pochi dati linguistici etichettati manualmente.",
+    "sub": "Apprendimento del linguaggio su larga scala",
+    "why": "L'apprendimento auto-supervisionato crea etichette dai dati grezzi, come mascherare i token e addestrare il modello a ricostruirli. Crea rappresentazioni generali che possono essere successivamente adattate con molti meno dati etichettati."
+  },
+  "sol-21": {
+    "label": "Un modello di linguaggio è capace ma spesso produce risposte che le persone giudicano come inutili o male allineate.",
+    "sub": "Allineamento di un assistente",
+    "why": "RLHF impara un modello di ricompensa dalle preferenze umane e quindi ottimizza il comportamento del modello verso quella ricompensa. Produci risposte che riflettono meglio le aspettative e le istruzioni umane."
+  },
+  "sol-22": {
+    "label": "Un modello raggiunge il 99% di accuratezza di addestramento ma solo il 68% di accuratezza di convalida.",
+    "sub": "Esempi di addestramento memorizzati",
+    "why": "Il divario segnala l'overfitting e l'alta varianza; limitare la complessità o interrompere prima della memorizzazione può migliorare le prestazioni invisibili. Scambia un po' di prestazioni di addestramento per prestazioni di convalida e di produzione più forti."
+  },
+  "sol-23": {
+    "label": "Un modello piccolo ha prestazioni scarse sia sui suoi dati di addestramento che sui dati di convalida.",
+    "sub": "Modello troppo semplice",
+    "why": "Le prestazioni scarse anche sui dati di addestramento indicano l'underfitting e l'alto bias; caratteristiche più ricche, capacità maggiore o addestramento più lungo possono aiutare. Impara un modello abbastanza complesso da rappresentare il segnale utile."
+  },
+  "sol-24": {
+    "label": "Un team deve selezionare il tasso di apprendimento, la dimensione del batch, la profondità dell'albero e la forza di regolarizzazione.",
+    "sub": "Scelta delle impostazioni di addestramento",
+    "why": "Gli iperparametri vengono selezionati al di fuori dell'apprendimento dei parametri e devono essere confrontati utilizzando dati di convalida o convalida incrociata. Trova una configurazione forte preservando il set di test per la valutazione finale."
+  },
+  "sol-25": {
+    "label": "Un prestatore ricalcola il rischio per cinque milioni di conti esistenti ogni notte.",
+    "sub": "Scoring del portafoglio notturno",
+    "why": "L'inferenza batch valuta i record archiviati insieme ed è appropriata quando i risultati possono essere prodotti su un programma. Genera punteggi di rischio del portafoglio aggiornati prima del prossimo giorno lavorativo."
+  },
+  "sol-26": {
+    "label": "Una piattaforma di pagamento deve valutare ogni transazione mentre il cliente è in attesa alla cassa.",
+    "sub": "Autorizzazione di pagamento",
+    "why": "L'inferenza in tempo reale serve le richieste individuali attraverso un endpoint persistente quando la bassa latenza è essenziale. Approva, rifiuta o esamina la transazione senza interrompere la cassa."
+  },
+  "sol-27": {
+    "label": "Un modello di screening supporta i clinici dove perdere un caso genuino è molto più dannoso che rivedere un falso allarme.",
+    "sub": "Screening delle malattie rare",
+    "why": "Il richiamo misura la frazione dei positivi effettivi trovati; l'accuratezza può sembrare alta su dati sbilanciati mentre mancano i casi rari. Seleziona una soglia e un modello che minimizzi i pericolosi falsi negativi."
+  },
+  "sol-28": {
+    "label": "Un manager vuole le vendite totali per regione e la variazione percentuale dal mese scorso.",
+    "sub": "Riepilogo delle vendite mensili",
+    "why": "Raggruppare, sommare e calcolare il cambio percentuale sono compiti di analisi deterministica senza alcun requisito di apprendimento o previsione. Produci un rapporto esatto e controllabile con una query di database o un calcolo di business intelligence."
+  },
+  "solution-builder": {
+    "hint": "Leggi i dati e l'output desiderato, quindi trascina ogni scenario sulla sua tecnica."
+  }
+}

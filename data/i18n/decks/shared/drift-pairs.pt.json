@@ -1,0 +1,50 @@
+{
+  "dp-01": {
+    "a.text": "Um modelo de crédito vê uma onda de candidatos de uma nova região. Para qualquer perfil de rendimento, emprego e histórico dado, as taxas de incumprimento são exatamente o que o modelo espera.",
+    "a.why": "As entradas mudaram para novo território mas a regra está intacta. Mais dados de treino representativos corrigi-o; uma nova regra não é necessária.",
+    "b.text": "Um modelo de crédito vê a mesma onda de candidatos de uma nova região. Para um perfil de rendimento, emprego e histórico idêntico, as taxas de incumprimento lá são o dobro do que o modelo espera.",
+    "b.why": "Entradas idênticas agora produzem resultados diferentes, logo P(Y|X) mudou. Nenhuma quantidade de rebalançamento da mistura de entrada corrigi-o se a relação já não se mantém."
+  },
+  "dp-02": {
+    "a.text": "O erro de um modelo de preço dispara numa terça-feira. A investigação descobre que um concorrente lançou uma campanha de desconto agressiva essa manhã.",
+    "a.why": "Uma mudança real no mundo alterou a relação que o modelo codifica. Retreino em dados pós-mudança é a resposta correta.",
+    "b.text": "O erro de um modelo de preço dispara numa terça-feira. A investigação descobre que o trabalho ETL noturno começou a escrever preço de lista no campo que anteriormente continha preço líquido.",
+    "b.why": "Nada sobre comportamento de preço mudou — o modelo está sendo alimentado uma quantidade diferente sob o mesmo nome. Retreino aqui coze o defeito e o oculta."
+  },
+  "dp-03": {
+    "a.text": "Durante seis meses um modelo de fraude degrada conforme um padrão de ataque antigo é progressivamente substituído por um novo. Durante todo o período, ambos os padrões chegam em volume.",
+    "a.why": "Dois conceitos distintos sobrepondo-se no tempo, com o peso da mistura movendo-se. Um ensemble que mantém um modelo por conceito trata bem isto.",
+    "b.text": "Durante seis meses um modelo de fraude degrada conforme os atacantes continuamente ajustam tamanhos de transação para cima em pequenos passos, sem padrão antigo e novo distinto em qualquer ponto.",
+    "b.why": "Um conceito movendo-se suavemente através de estados intermediários. Uma janela de retreino rolante o acompanha; maquinaria de troca de conceito não tem nada para trocar."
+  },
+  "dp-04": {
+    "a.text": "Um modelo de triagem é implementado numa nova clínica. Os pacientes são mais jovens e mais em forma do que a população de treino, e prevalência de doença não mudou.",
+    "a.why": "A distribuição de funcionalidade moveu-se enquanto a mistura de resultado não. A preocupação é extrapolação em regiões de entrada pouco cobertas.",
+    "b.text": "Um modelo de triagem é implementado numa nova clínica. Os pacientes parecem demograficamente idênticos à população de treino, mas prevalência de doença é um quarto do que era.",
+    "b.why": "P(Y) moveu-se com P(X|Y) intacto, então a classificação do modelo ainda funciona mas as suas probabilidades estão sistematicamente demasiado altas. Correção prévia, não retreino."
+  },
+  "dp-05": {
+    "a.text": "A quota de pontuações de elevado risco de um modelo de coleções sobe de 12% para 25% num mês. Os resultados levam noventa dias para observar, então nenhum está ainda disponível para esta coorte.",
+    "a.why": "Uma mudança de distribuição de saída sem rótulos é um sinal para investigar, não uma descoberta. Pode ser uma resposta correta a uma população genuinamente mais arriscada.",
+    "b.text": "A quota de pontuações de elevado risco de um modelo de coleções sobe de 12% para 25% num mês, e a coorte de há noventa dias resolveu-se com precisão reduzida em 18 pontos.",
+    "b.why": "Rótulos chegaram e a qualidade caiu realmente. Apenas agora é retreino justificado em evidência em vez da forma de um histograma."
+  },
+  "dp-06": {
+    "a.text": "A precisão de um modelo de logística colapsa a cada ano na quinzena antes do Natal e recupera imediatamente depois.",
+    "a.why": "Um conceito conhecido que volta num ciclo. Retire nada: mantenha o modelo sazonal e selecione-o por contexto.",
+    "b.text": "A precisão de um modelo de logística colapsa na quinzena após uma mudança permanente na regulação de entrega nacional e nunca se recupera.",
+    "b.why": "Uma mudança abrupta, de uma única forma com nenhum retorno. O modelo pré-mudança não tem mais uso e os dados pré-mudança têm valor limitado para retreino."
+  },
+  "dp-07": {
+    "a.text": "Uma equipa de moderação reescreve a sua orientação para que uma categoria de conteúdo limítrofe seja agora etiquetada 'violadora' onde era anteriormente 'aceitável'. O conteúdo chegando está inalterado.",
+    "a.why": "Entradas iguais, rótulos diferentes: o mapeamento foi redefinido. Cada rótulo histórico sob a orientação antiga está agora parcialmente errado para fins de treino.",
+    "b.text": "A orientação de uma equipa de moderação está inalterada, mas uma tendência viral significa conteúdo genuinamente violador sobe de 2% para 9% da fila.",
+    "b.why": "A regra é estável; a mistura de resultados moveu-se. Limiares e planeamento de capacidade precisam de atenção, não limite de limite de aprendizagem do modelo."
+  },
+  "dp-08": {
+    "a.text": "Os scores mudam o dia em que uma nova versão de modelo é lançada. Uma amostra de referência fixa, repetida através de ambas as versões, reproduz a mudança exatamente.",
+    "a.why": "Entradas idênticas produzindo saídas diferentes isola a mudança para o modelo. Este é o uso esperado de uma amostra de referência dourada no lançamento.",
+    "b.text": "Os scores mudam o dia em que uma nova versão de modelo é lançada. A mesma amostra de referência fixa, repetida através de ambas as versões, produz saídas idênticas.",
+    "b.why": "Se o modelo é provàvelmente inalterado em entradas fixas, as entradas em direto devem ter mudado — e uma coincidência do mesmo dia aponta as mudanças do lado de dados do deploy, não o mundo."
+  }
+}

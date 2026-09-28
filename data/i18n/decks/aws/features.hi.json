@@ -1,0 +1,1401 @@
+{
+  "feat-000-00": {
+    "label": "कई providers से foundation models की तुलना करो और एक managed service के माध्यम से चुनाव करो।",
+    "why": "Multi-provider model catalogue Amazon Bedrock से संबंधित है, और यह काम सक्षम करता है: कई providers से foundation models की तुलना करो और एक managed service के माध्यम से चुनाव करो।"
+  },
+  "feat-000-03": {
+    "label": "Candidate foundation models को quality, safety, और task-specific criteria के विरुद्ध adoption से पहले तुलना करो।",
+    "why": "model evaluation Amazon Bedrock से संबंधित है, और यह काम सक्षम करता है: Candidate foundation models को quality, safety, और task-specific criteria के विरुद्ध adoption से पहले तुलना करो।"
+  },
+  "feat-000-05": {
+    "label": "Generated responses को retrieved enterprise information में ground करो बिना model को retrain किए।",
+    "why": "Knowledge Bases for RAG Amazon Bedrock से संबंधित है, और यह काम सक्षम करता है: Generated responses को retrieved enterprise information में ground करो बिना model को retrain किए।"
+  },
+  "feat-000-07": {
+    "label": "Centrally managed safety policies और content controls को model inputs और outputs में लागू करो।",
+    "why": "Guardrails for Amazon Bedrock Amazon Bedrock से संबंधित है, और यह काम सक्षम करता है: Centrally managed safety policies और content controls को model inputs और outputs में लागू करो।"
+  },
+  "feat-000-09": {
+    "label": "Foundation-model capabilities को programmatic service calls के माध्यम से applications से जोड़ो।",
+    "why": "API-based integration Amazon Bedrock से संबंधित है, और यह काम सक्षम करता है: Foundation-model capabilities को programmatic service calls के माध्यम से applications से जोड़ो।"
+  },
+  "feat-000-11": {
+    "label": "Reusable instruction templates बनाओ, variants को test करो, और versions को centrally track करो।",
+    "why": "Prompt Management Amazon Bedrock से संबंधित है, और यह काम सक्षम करता है: Reusable instruction templates बनाओ, variants को test करो, और versions को centrally track करो।"
+  },
+  "feat-000-12": {
+    "label": "Visually prompts, models, data, और application logic को एक multistep generative workflow में जोड़ो।",
+    "why": "Bedrock Flows Amazon Bedrock से संबंधित है, और यह काम सक्षम करता है: Visually prompts, models, data, और application logic को एक multistep generative workflow में जोड़ो।"
+  },
+  "feat-000-14": {
+    "label": "Eligible third-party models को discover करो और managed foundation-model platform के माध्यम से deploy करो।",
+    "why": "Bedrock Marketplace Amazon Bedrock से संबंधित है, और यह काम सक्षम करता है: Eligible third-party models को discover करो और managed foundation-model platform के माध्यम से deploy करो।"
+  },
+  "feat-000-16": {
+    "label": "Model के domain knowledge को unlabeled proprietary text के बड़े body का उपयोग करके extend करो।",
+    "why": "continued pre-training Amazon Bedrock से संबंधित है, और यह काम सक्षम करता है: Model के domain knowledge को unlabeled proprietary text के बड़े body का उपयोग करके extend करो।"
+  },
+  "feat-001-00": {
+    "label": "एक managed agent loop को एक API call में एक model, system prompt, और tools के साथ define और invoke करो।",
+    "why": "Harness Amazon Bedrock AgentCore से संबंधित है, और यह काम सक्षम करता है: एक managed agent loop को एक API call में एक model, system prompt, और tools के साथ define और invoke करो।"
+  },
+  "feat-001-03": {
+    "label": "APIs, Lambda functions, और services को governed MCP-compatible tools में convert करो।",
+    "why": "Gateway Amazon Bedrock AgentCore से संबंधित है, और यह काम सक्षम करता है: APIs, Lambda functions, और services को governed MCP-compatible tools में convert करो।"
+  },
+  "feat-001-05": {
+    "label": "Python, JavaScript, या TypeScript को एक isolated sandbox के अंदर execute करो।",
+    "why": "Code Interpreter Amazon Bedrock AgentCore से संबंधित है, और यह काम सक्षम करता है: Python, JavaScript, या TypeScript को एक isolated sandbox के अंदर execute करो।"
+  },
+  "feat-001-06": {
+    "label": "Web applications के साथ एक secure managed environment में automation frameworks का उपयोग करके interact करो।",
+    "why": "Browser Amazon Bedrock AgentCore से संबंधित है, और यह काम सक्षम करता है: Web applications के साथ एक secure managed environment में automation frameworks का उपयोग करके interact करो।"
+  },
+  "feat-001-08": {
+    "label": "Agent microtransactions को paid APIs, MCP servers, और content के लिए x402 protocol का उपयोग करके enable करो।",
+    "why": "Payments Amazon Bedrock AgentCore से संबंधित है, और यह काम सक्षम करता है: Agent microtransactions को paid APIs, MCP servers, और content के लिए x402 protocol का उपयोग करके enable करो।"
+  },
+  "feat-001-10": {
+    "label": "Versioned configuration improvements को generate करो और controlled traffic experiments का उपयोग करके test करो।",
+    "why": "Optimization Amazon Bedrock AgentCore से संबंधित है, और यह काम सक्षम करता है: Versioned configuration improvements को generate करो और controlled traffic experiments का उपयोग करके test करो।"
+  },
+  "feat-001-12": {
+    "label": "Agents, MCP servers, tools, और skills को एक central catalog में publish, review, approve, और discover करो।",
+    "why": "Registry Amazon Bedrock AgentCore से संबंधित है, और यह काम सक्षम करता है: Agents, MCP servers, tools, और skills को एक central catalog में publish, review, approve, और discover करो।"
+  },
+  "feat-002-01": {
+    "label": "Agent applications को दो widely used programming ecosystems में से किसी एक में build करो।",
+    "why": "Python and TypeScript SDKs Strands Agents से संबंधित है, और यह काम सक्षम करता है: Agent applications को दो widely used programming ecosystems में से किसी एक में build करो।"
+  },
+  "feat-002-03": {
+    "label": "Specialized agents को coordinate करो जो collaborate करते हैं या एक दूसरे को काम सौंपते हैं।",
+    "why": "multi-agent patterns Strands Agents से संबंधित है, और यह काम सक्षम करता है: Specialized agents को coordinate करो जो collaborate करते हैं या एक दूसरे को काम सौंपते हैं।"
+  },
+  "feat-003-01": {
+    "label": "Natural-language instructions से नई visual assets और moving media बनाओ।",
+    "why": "image and video generation Amazon Nova से संबंधित है, और यह काम सक्षम करता है: Natural-language instructions से नई visual assets और moving media बनाओ।"
+  },
+  "feat-003-02": {
+    "label": "Voice experiences बनाओ जो spoken language को समझते या produce करते हैं।",
+    "why": "speech models Amazon Nova से संबंधित है, और यह काम सक्षम करता है: Voice experiences बनाओ जो spoken language को समझते या produce करते हैं।"
+  },
+  "feat-003-04": {
+    "label": "Managed foundation-model APIs और tooling के माध्यम से इस AWS model family को access करो।",
+    "why": "Amazon Bedrock integration Amazon Nova से संबंधित है, और यह काम सक्षम करता है: Managed foundation-model APIs और tooling के माध्यम से इस AWS model family को access करो।"
+  },
+  "feat-004-01": {
+    "label": "Specialized teammates बनाओ जिनके पास defined expertise, tone, और toolsets हों जो proactively काम करें।",
+    "why": "Agents Amazon Quick से संबंधित है, और यह काम सक्षम करता है: Specialized teammates बनाओ जिनके पास defined expertise, tone, और toolsets हों जो proactively काम करें।"
+  },
+  "feat-004-03": {
+    "label": "Questions को interactive dashboards, charts, forecasts, और data exploration में turn करो।",
+    "why": "Business Intelligence Amazon Quick से संबंधित है, और यह काम सक्षम करता है: Questions को interactive dashboards, charts, forecasts, और data exploration में turn करो।"
+  },
+  "feat-004-05": {
+    "label": "Code लिखे बिना या IT request file किए बिना interactive tools बनाओ और share करो।",
+    "why": "Build custom apps Amazon Quick से संबंधित है, और यह काम सक्षम करता है: Code लिखे बिना या IT request file किए बिना interactive tools बनाओ और share करो।"
+  },
+  "feat-005-01": {
+    "label": "Source-system access rights को respect करो जब तुम यह decide करते हो कि एक employee कौन सी जानकारी देख सकता है।",
+    "why": "permissions-aware responses Amazon Q Business से संबंधित है, और यह काम सक्षम करता है: Source-system access rights को respect करो जब तुम यह decide करते हो कि एक employee कौन सी जानकारी देख सकता है।"
+  },
+  "feat-006-00": {
+    "label": "नया source code बनाओ और developers को unfamiliar implementations को समझने में मदद करो।",
+    "why": "Code generation and explanation Amazon Q Developer से संबंधित है, और यह काम सक्षम करता है: नया source code बनाओ और developers को unfamiliar implementations को समझने में मदद करो।"
+  },
+  "feat-006-02": {
+    "label": "Changes को maintainability defects और potential vulnerabilities के लिए release से पहले inspect करो।",
+    "why": "code reviews and security scanning Amazon Q Developer से संबंधित है, और यह काम सक्षम करता है: Changes को maintainability defects और potential vulnerabilities के लिए release से पहले inspect करो।"
+  },
+  "feat-006-04": {
+    "label": "Cloud-service configurations और implementation approaches को development के दौरान recommend करो।",
+    "why": "AWS resource guidance Amazon Q Developer से संबंधित है, और यह काम सक्षम करता है: Cloud-service configurations और implementation approaches को development के दौरान recommend करो।"
+  },
+  "feat-007-00": {
+    "label": "Older Microsoft application stacks और frameworks को automated analysis और changes के साथ upgrade करो।",
+    "why": ".NET modernization AWS Transform से संबंधित है, और यह काम सक्षम करता है: Older Microsoft application stacks और frameworks को automated analysis और changes के साथ upgrade करो।"
+  },
+  "feat-007-02": {
+    "label": "Virtualized data-center application estates से migration को plan और execute करो।",
+    "why": "VMware workload transformation AWS Transform से संबंधित है, और यह काम सक्षम करता है: Virtualized data-center application estates से migration को plan और execute करो।"
+  },
+  "feat-007-04": {
+    "label": "Repeatable source changes को एक large application में apply करो rather than manually प्रत्येक file को edit करो।",
+    "why": "automated refactoring AWS Transform से संबंधित है, और यह काम सक्षम करता है: Repeatable source changes को एक large application में apply करो rather than manually प्रत्येक file को edit करो।"
+  },
+  "feat-008-00": {
+    "label": "High-level ideas को structured requirements, designs, और executable tasks में transform करो।",
+    "why": "Specs Kiro से संबंधित है, और यह काम सक्षम करता है: High-level ideas को structured requirements, designs, और executable tasks में transform करो।"
+  },
+  "feat-008-02": {
+    "label": "Root causes को diagnose करो, targeted corrections design करो, और regressions से guard करो।",
+    "why": "Bugfix Specs Kiro से संबंधित है, और यह काम सक्षम करता है: Root causes को diagnose करो, targeted corrections design करो, और regressions से guard करो।"
+  },
+  "feat-008-04": {
+    "label": "Prompts या shell commands को automatically run करो जब defined development events occur करें।",
+    "why": "Agent hooks Kiro से संबंधित है, और यह काम सक्षम करता है: Prompts या shell commands को automatically run करो जब defined development events occur करें।"
+  },
+  "feat-009-00": {
+    "label": "Bounded development work को asynchronously continue करो जबकि developer कहीं और focus करता है।",
+    "why": "Background task execution Kiro autonomous agent से संबंधित है, और यह काम सक्षम करता है: Bounded development work को asynchronously continue करो जबकि developer कहीं और focus करता है।"
+  },
+  "feat-009-02": {
+    "label": "Completed background work को एक reviewable source-control change के रूप में return करो।",
+    "why": "pull-request delivery Kiro autonomous agent से संबंधित है, और यह काम सक्षम करता है: Completed background work को एक reviewable source-control change के रूप में return करो।"
+  },
+  "feat-010-01": {
+    "label": "एक selected model को managed infrastructure के पीछे publish करो ताकि applications इसे invoke कर सकें।",
+    "why": "model deployment Amazon SageMaker AI JumpStart से संबंधित है, और यह काम सक्षम करता है: एक selected model को managed infrastructure के पीछे publish करो ताकि applications इसे invoke कर सकें।"
+  },
+  "feat-010-03": {
+    "label": "Pretrained community और openly distributed generative models को managed ML workflows में deploy करो।",
+    "why": "Foundation models Amazon SageMaker AI JumpStart से संबंधित है, और यह काम सक्षम करता है: Pretrained community और openly distributed generative models को managed ML workflows में deploy करो।"
+  },
+  "feat-011-01": {
+    "label": "Content को numeric vectors में convert करो semantic retrieval, clustering, या similarity comparison के लिए।",
+    "why": "embeddings Amazon Titan से संबंधित है, और यह काम सक्षम करता है: Content को numeric vectors में convert करो semantic retrieval, clustering, या similarity comparison के लिए।"
+  },
+  "feat-012-00": {
+    "label": "Complete custom-model lifecycle को experimentation से controlled production operation तक manage करो।",
+    "why": "Amazon SageMaker AI Amazon SageMaker AI से संबंधित है, और यह काम सक्षम करता है: Complete custom-model lifecycle को experimentation से controlled production operation तक manage करो।"
+  },
+  "feat-012-01": {
+    "label": "Trained models को serve करो बिना underlying application servers को administer किए।",
+    "why": "managed hosting Amazon SageMaker AI से संबंधित है, और यह काम सक्षम करता है: Trained models को serve करो बिना underlying application servers को administer किए।"
+  },
+  "feat-012-03": {
+    "label": "Large models को multiple accelerators या machines में train करो elapsed time को reduce करने के लिए।",
+    "why": "distributed training Amazon SageMaker AI से संबंधित है, और यह काम सक्षम करता है: Large models को multiple accelerators या machines में train करो elapsed time को reduce करने के लिए।"
+  },
+  "feat-012-05": {
+    "label": "Automatically data को explore करो, algorithms select करो, candidates को tune करो, और explainable model artifacts produce करो।",
+    "why": "SageMaker Autopilot Amazon SageMaker AI से संबंधित है, और यह काम सक्षम करता है: Automatically data को explore करो, algorithms select करो, candidates को tune करो, और explainable model artifacts produce करो।"
+  },
+  "feat-012-07": {
+    "label": "Reusable model inputs को training और low-latency online prediction के बीच consistent रखो।",
+    "why": "SageMaker Feature Store Amazon SageMaker AI से संबंधित है, और यह काम सक्षम करता है: Reusable model inputs को training और low-latency online prediction के बीच consistent रखो।"
+  },
+  "feat-012-09": {
+    "label": "Production data drift, quality changes, bias drift, और feature-attribution drift को detect करो।",
+    "why": "SageMaker Model Monitor Amazon SageMaker AI से संबंधित है, और यह काम सक्षम करता है: Production data drift, quality changes, bias drift, और feature-attribution drift को detect करो।"
+  },
+  "feat-012-11": {
+    "label": "Training runs, parameters, datasets, और resulting metrics को record और compare करो।",
+    "why": "SageMaker Experiments Amazon SageMaker AI से संबंधित है, और यह काम सक्षम करता है: Training runs, parameters, datasets, और resulting metrics को record और compare करो।"
+  },
+  "feat-012-13": {
+    "label": "Managed prediction modes को intermittent requests, queued payloads, या offline datasets के लिए choose करो।",
+    "why": "serverless asynchronous and batch inference Amazon SageMaker AI से संबंधित है, और यह काम सक्षम करता है: Managed prediction modes को intermittent requests, queued payloads, या offline datasets के लिए choose करो।"
+  },
+  "feat-012-15": {
+    "label": "Data, analytics, और AI teams को एक governed development और collaboration environment दो।",
+    "why": "SageMaker Unified Studio Amazon SageMaker AI से संबंधित है, और यह काम सक्षम करता है: Data, analytics, और AI teams को एक governed development और collaboration environment दो।"
+  },
+  "feat-013-01": {
+    "label": "Notebooks या source files के साथ browser-based tools में interactively develop करो।",
+    "why": "JupyterLab and Code Editor Amazon SageMaker AI Studio से संबंधित है, और यह काम सक्षम करता है: Notebooks या source files के साथ browser-based tools में interactively develop करो।"
+  },
+  "feat-013-03": {
+    "label": "एक developed model को एक ऐसे environment में move करो जहाँ consumers predictions request कर सकें।",
+    "why": "deployment Amazon SageMaker AI Studio से संबंधित है, और यह काम सक्षम करता है: एक developed model को एक ऐसे environment में move करो जहाँ consumers predictions request कर सकें।"
+  },
+  "feat-014-00": {
+    "label": "Predictive models को एक graphical workflow के माध्यम से training code न लिखते हुए create करो।",
+    "why": "Visual model building Amazon SageMaker AI Canvas से संबंधित है, और यह काम सक्षम करता है: Predictive models को एक graphical workflow के माध्यम से training code न लिखते हुए create करो।"
+  },
+  "feat-014-03": {
+    "label": "Generative capabilities के साथ एक visual interface के माध्यम से business users के लिए experiment करो।",
+    "why": "foundation-model access without writing ML code Amazon SageMaker AI Canvas से संबंधित है, और यह काम सक्षम करता है: Generative capabilities के साथ एक visual interface के माध्यम से business users के लिए experiment करो।"
+  },
+  "feat-016-00": {
+    "label": "People, instructions, और quality controls को coordinate करो training examples को annotate करने के लिए।",
+    "why": "Managed human labeling workflows Amazon SageMaker AI Ground Truth से संबंधित है, और यह काम सक्षम करता है: People, instructions, और quality controls को coordinate करो training examples को annotate करने के लिए।"
+  },
+  "feat-016-02": {
+    "label": "Ground-truth examples को produce करो जो supervised tasks को learn करने के लिए और performance को measure करने के लिए जरूरी हैं।",
+    "why": "labeled datasets for training and evaluation Amazon SageMaker AI Ground Truth से संबंधित है, और यह काम सक्षम करता है: Ground-truth examples को produce करो जो supervised tasks को learn करने के लिए और performance को measure करने के लिए जरूरी हैं।"
+  },
+  "feat-017-01": {
+    "label": "Computationally intensive training के लिए accelerator utilization और recovery को improve करो।",
+    "why": "infrastructure optimized for large-scale ML workloads Amazon SageMaker AI HyperPod से संबंधित है, और यह काम सक्षम करता है: Computationally intensive training के लिए accelerator utilization और recovery को improve करो।"
+  },
+  "feat-018-01": {
+    "label": "Human approval और correction को generative और predictive applications दोनों में embed करो।",
+    "why": "Human review workflows Amazon Augmented AI (A2I) से संबंधित है, और यह काम सक्षम करता है: Human approval और correction को generative और predictive applications दोनों में embed करो।"
+  },
+  "feat-019-01": {
+    "label": "एक human task को restrict करो ऐसे लोगों के लिए जो defined skills या approval criteria को meet करते हैं।",
+    "why": "custom worker qualifications Amazon Mechanical Turk से संबंधित है, और यह काम सक्षम करता है: एक human task को restrict करो ऐसे लोगों के लिए जो defined skills या approval criteria को meet करते हैं।"
+  },
+  "feat-020-00": {
+    "label": "यह determine करो कि different तरीकों से लिखे गए records एक ही real-world person या organization को refer करते हैं।",
+    "why": "Entity matching and resolution AWS Entity Resolution से संबंधित है, और यह काम सक्षम करता है: यह determine करो कि different तरीकों से लिखे गए records एक ही real-world person या organization को refer करते हैं।"
+  },
+  "feat-021-00": {
+    "label": "Externally produced datasets को browse करो जो organization की अपनी जानकारी को augment कर सकते हैं।",
+    "why": "Third-party data catalogue AWS Data Exchange से संबंधित है, और यह काम सक्षम करता है: Externally produced datasets को browse करो जो organization की अपनी जानकारी को augment कर सकते हैं।"
+  },
+  "feat-021-02": {
+    "label": "Subscribed information को AWS data services में एक separate transfer process के बिना available बनाओ।",
+    "why": "delivery to AWS data services AWS Data Exchange से संबंधित है, और यह काम सक्षम करता है: Subscribed information को AWS data services में एक separate transfer process के बिना available बनाओ।"
+  },
+  "feat-022-01": {
+    "label": "Provisioned big-data fleets या on-demand execution को clusters manage किए बिना choose करो।",
+    "why": "cluster and serverless deployment options Amazon EMR से संबंधित है, और यह काम सक्षम करता है: Provisioned big-data fleets या on-demand execution को clusters manage किए बिना choose करो।"
+  },
+  "feat-023-00": {
+    "label": "Multiple sources से information को prepare और combine करो data-processing servers को provision किए बिना।",
+    "why": "Serverless data integration AWS Glue से संबंधित है, और यह काम सक्षम करता है: Multiple sources से information को prepare और combine करो data-processing servers को provision किए बिना।"
+  },
+  "feat-023-02": {
+    "label": "Centralized technical metadata को maintain करो ताकि analytics और ML tools datasets को find और understand कर सकें।",
+    "why": "AWS Glue Data Catalog AWS Glue से संबंधित है, और यह काम सक्षम करता है: Centralized technical metadata को maintain करो ताकि analytics और ML tools datasets को find और understand कर सकें।"
+  },
+  "feat-023-04": {
+    "label": "Datasets के लिए expectations को define करो और records या pipelines को detect करो जो उन्हें violate करते हैं।",
+    "why": "data quality rules and monitoring AWS Glue से संबंधित है, और यह काम सक्षम करता है: Datasets के लिए expectations को define करो और records या pipelines को detect करो जो उन्हें violate करते हैं।"
+  },
+  "feat-024-01": {
+    "label": "Distributions, missing values, और anomalies को calculate करो modeling से पहले dataset को understand करने के लिए।",
+    "why": "data profiling AWS Glue DataBrew से संबंधित है, और यह काम सक्षम करता है: Distributions, missing values, और anomalies को calculate करो modeling से पहले dataset को understand करने के लिए।"
+  },
+  "feat-025-00": {
+    "label": "Governed analytical data के लिए access को एक control plane से administer करो।",
+    "why": "Centralized data-lake permissions AWS Lake Formation से संबंधित है, और यह काम सक्षम करता है: Governed analytical data के लिए access को एक control plane से administer करो।"
+  },
+  "feat-025-02": {
+    "label": "Registered analytical tables को controlled cross-team या cross-account access provide करो।",
+    "why": "governed table sharing AWS Lake Formation से संबंधित है, और यह काम सक्षम करता है: Registered analytical tables को controlled cross-team या cross-account access provide करो।"
+  },
+  "feat-026-00": {
+    "label": "Documents और operational events को fast querying के लिए index करो search cluster software को operate किए बिना।",
+    "why": "Managed search and log analytics Amazon OpenSearch Service से संबंधित है, और यह काम सक्षम करता है: Documents और operational events को fast querying के लिए index करो search cluster software को operate किए बिना।"
+  },
+  "feat-026-03": {
+    "label": "Keyword retrieval को low-latency similarity queries के साथ combine करो large content indexes के over।",
+    "why": "full-text plus high-throughput semantic search Amazon OpenSearch Service से संबंधित है, और यह काम सक्षम करता है: Keyword retrieval को low-latency similarity queries के साथ combine करो large content indexes के over।"
+  },
+  "feat-027-00": {
+    "label": "Large analytical aggregations को efficient बनाने के लिए values को column के आधार पर store करो।",
+    "why": "Columnar data warehousing Amazon Redshift से संबंधित है, और यह काम सक्षम करता है: Large analytical aggregations को efficient बनाने के लिए values को column के आधार पर store करो।"
+  },
+  "feat-027-02": {
+    "label": "Warehouse queries को provisioned clusters को maintain किए बिना automatically managed capacity के साथ run करो।",
+    "why": "serverless analytics Amazon Redshift से संबंधित है, और यह काम सक्षम करता है: Warehouse queries को provisioned clusters को maintain किए बिना automatically managed capacity के साथ run करो।"
+  },
+  "feat-028-01": {
+    "label": "Stakeholders को notify करो जब actual या forecast consumption एक chosen percentage या amount को cross करे।",
+    "why": "threshold alerts AWS Budgets से संबंधित है, और यह काम सक्षम करता है: Stakeholders को notify करो जब actual या forecast consumption एक chosen percentage या amount को cross करे।"
+  },
+  "feat-029-00": {
+    "label": "Charges को service, account, Region, tag, या अन्य billing dimension के आधार पर break down करो।",
+    "why": "Cost and usage filtering AWS Cost Explorer से संबंधित है, और यह काम सक्षम करता है: Charges को service, account, Region, tag, या अन्य billing dimension के आधार पर break down करो।"
+  },
+  "feat-029-02": {
+    "label": "Recent usage patterns से future charges को estimate करो।",
+    "why": "cost forecasting AWS Cost Explorer से संबंधित है, और यह काम सक्षम करता है: Recent usage patterns से future charges को estimate करो।"
+  },
+  "feat-030-01": {
+    "label": "Model training या inference के लिए specialized hardware को provision करो।",
+    "why": "GPU and ML accelerator instances Amazon EC2 से संबंधित है, और यह काम सक्षम करता है: Model training या inference के लिए specialized hardware को provision करो।"
+  },
+  "feat-030-02": {
+    "label": "एक virtual server के लिए operating system, networking, storage, और installed software को choose करो।",
+    "why": "Amazon EC2 instance types Amazon EC2 से संबंधित है, और यह काम सक्षम करता है: एक virtual server के लिए operating system, networking, storage, और installed software को choose करो।"
+  },
+  "feat-031-02": {
+    "label": "Requests और compute duration के लिए charge करो एक continuously running server के लिए instead of।",
+    "why": "pay-per-use execution AWS Lambda से संबंधित है, और यह काम सक्षम करता है: Requests और compute duration के लिए charge करो एक continuously running server के लिए instead of।"
+  },
+  "feat-032-01": {
+    "label": "Packaged workloads को run करो underlying hosts को select या administer किए बिना।",
+    "why": "AWS Fargate serverless containers Amazon Elastic Container Service (Amazon ECS) से संबंधित है, और यह काम सक्षम करता है: Packaged workloads को run करो underlying hosts को select या administer किए बिना।"
+  },
+  "feat-033-00": {
+    "label": "Standard container-cluster API का उपयोग करो जबकि AWS इसके core coordination components को operate करता है।",
+    "why": "Managed Kubernetes control plane Amazon Elastic Kubernetes Service (Amazon EKS) से संबंधित है, और यह काम सक्षम करता है: Standard container-cluster API का उपयोग करो जबकि AWS इसके core coordination components को operate करता है।"
+  },
+  "feat-033-02": {
+    "label": "Container clusters को cloud-native access, network, और monitoring controls के साथ connect करो।",
+    "why": "AWS identity networking and observability integration Amazon Elastic Kubernetes Service (Amazon EKS) से संबंधित है, और यह काम सक्षम करता है: Container clusters को cloud-native access, network, और monitoring controls के साथ connect करो।"
+  },
+  "feat-034-01": {
+    "label": "Relational data को failure zones में replicate करो जबकि storage को compute से अलग करो।",
+    "why": "distributed fault-tolerant storage Amazon Aurora से संबंधित है, और यह काम सक्षम करता है: Relational data को failure zones में replicate करो जबकि storage को compute से अलग करो।"
+  },
+  "feat-034-03": {
+    "label": "Embeddings को AWS के high-performance relational engine में store करने के लिए एक PostgreSQL extension का उपयोग करो।",
+    "why": "Aurora PostgreSQL with pgvector Amazon Aurora से संबंधित है, और यह काम सक्षम करता है: Embeddings को AWS के high-performance relational engine में store करने के लिए एक PostgreSQL extension का उपयोग करो।"
+  },
+  "feat-035-00": {
+    "label": "Records को fixed relational rows के बजाय flexible nested objects के रूप में represent करो।",
+    "why": "Document-oriented data model Amazon DocumentDB (with MongoDB compatibility) से संबंधित है, और यह काम सक्षम करता है: Records को fixed relational rows के बजाय flexible nested objects के रूप में represent करो।"
+  },
+  "feat-035-02": {
+    "label": "AWS को एक document database के लिए redundant copies और recovery points maintain करने दो।",
+    "why": "managed replication and backups Amazon DocumentDB (with MongoDB compatibility) से संबंधित है, और यह काम सक्षम करता है: AWS को एक document database के लिए redundant copies और recovery points maintain करने दो।"
+  },
+  "feat-035-04": {
+    "label": "Nested records को familiar document operations के साथ filter करो जबकि conceptually related content को भी retrieve करो।",
+    "why": "$vectorSearch operator Amazon DocumentDB (with MongoDB compatibility) से संबंधित है, और यह काम सक्षम करता है: Nested records को familiar document operations के साथ filter करो जबकि conceptually related content को भी retrieve करो।"
+  },
+  "feat-036-01": {
+    "label": "Serverless database traffic और storage को distribute करो जब demand grow करे।",
+    "why": "automatic horizontal scaling Amazon DynamoDB से संबंधित है, और यह काम सक्षम करता है: Serverless database traffic और storage को distribute करो जब demand grow करे।"
+  },
+  "feat-037-00": {
+    "label": "Widely adopted in-memory data structures और clients को एक managed cache में use करो।",
+    "why": "Valkey and Redis OSS compatibility Amazon ElastiCache से संबंधित है, और यह काम सक्षम करता है: Widely adopted in-memory data structures और clients को एक managed cache में use करो।"
+  },
+  "feat-037-02": {
+    "label": "Transient application state या model responses को reuse करो latency और cost को reduce करने के लिए।",
+    "why": "session and inference-result caching Amazon ElastiCache से संबंधित है, और यह काम सक्षम करता है: Transient application state या model responses को reuse करो latency और cost को reduce करने के लिए।"
+  },
+  "feat-038-01": {
+    "label": "Entities के बीच multiple links को follow करो efficiently बिना expensive relational joins के।",
+    "why": "relationship traversal Amazon Neptune से संबंधित है, और यह काम सक्षम करता है: Entities के बीच multiple links को follow करो efficiently बिना expensive relational joins के।"
+  },
+  "feat-038-03": {
+    "label": "Embedding similarity को एक highly connected analytical graph के over algorithms के साथ combine करो।",
+    "why": "Neptune Analytics vector search Amazon Neptune से संबंधित है, और यह काम सक्षम करता है: Embedding similarity को एक highly connected analytical graph के over algorithms के साथ combine करो।"
+  },
+  "feat-039-00": {
+    "label": "Familiar commercial और open-source SQL technologies को एक managed service में choose करो।",
+    "why": "Multiple relational database engines Amazon Relational Database Service (Amazon RDS) से संबंधित है, और यह काम सक्षम करता है: Familiar commercial और open-source SQL technologies को एक managed service में choose करो।"
+  },
+  "feat-039-02": {
+    "label": "एक synchronized standby को resilient database operation के लिए दूसरे failure zone में maintain करो।",
+    "why": "Multi-AZ high availability Amazon Relational Database Service (Amazon RDS) से संबंधित है, और यह काम सक्षम करता है: एक synchronized standby को resilient database operation के लिए दूसरे failure zone में maintain करो।"
+  },
+  "feat-039-04": {
+    "label": "Semantic vectors को established tables और transactions के साथ रखो एक separate search store को adopt किए बिना।",
+    "why": "RDS for PostgreSQL Amazon Relational Database Service (Amazon RDS) से संबंधित है, और यह काम सक्षम करता है: Semantic vectors को established tables और transactions के साथ रखो एक separate search store को adopt किए बिना।"
+  },
+  "feat-040-01": {
+    "label": "Generative helpers का एक family organizational knowledge और software-delivery tasks में apply करो।",
+    "why": "business and developer assistants Amazon Q से संबंधित है, और यह काम सक्षम करता है: Generative helpers का एक family organizational knowledge और software-delivery tasks में apply करो।"
+  },
+  "feat-041-01": {
+    "label": "Organization-specific labels और terminology के लिए text analysis को train करो।",
+    "why": "custom NLP models for domain-specific extraction/classification Amazon Comprehend से संबंधित है, और यह काम सक्षम करता है: Organization-specific labels और terminology के लिए text analysis को train करो।"
+  },
+  "feat-043-00": {
+    "label": "Chat और telephone experiences को बनाओ जो natural language के माध्यम से interact करें।",
+    "why": "Automatic speech recognition (ASR) Amazon Lex से संबंधित है, और यह काम सक्षम करता है: Chat और telephone experiences को बनाओ जो natural language के माध्यम से interact करें।"
+  },
+  "feat-043-02": {
+    "label": "Conversational state को track करो और एक request को complete करने के लिए जरूरी information को collect करो।",
+    "why": "dialogue management Amazon Lex से संबंधित है, और यह काम सक्षम करता है: Conversational state को track करो और एक request को complete करने के लिए जरूरी information को collect करो।"
+  },
+  "feat-044-00": {
+    "label": "Written content को natural-sounding audio में turn करो applications और accessibility के लिए।",
+    "why": "Neural text-to-speech (NTTS) Amazon Polly से संबंधित है, और यह काम सक्षम करता है: Written content को natural-sounding audio में turn करो applications और accessibility के लिए।"
+  },
+  "feat-045-01": {
+    "label": "Spoken content को search, analytics, captions, या downstream automation में feed करो।",
+    "why": "Streaming transcription Amazon Transcribe से संबंधित है, और यह काम सक्षम करता है: Spoken content को search, analytics, captions, या downstream automation में feed करो।"
+  },
+  "feat-047-00": {
+    "label": "Scanned या digital files से words और key-value structure दोनों को read करो।",
+    "why": "Document Analysis API Amazon Textract से संबंधित है, और यह काम सक्षम करता है: Scanned या digital files से words और key-value structure दोनों को read करो।"
+  },
+  "feat-048-00": {
+    "label": "Employees या customers को ordinary language का उपयोग करके documents के over questions पूछने दो।",
+    "why": "Natural-language search across unstructured enterprise content Amazon Kendra से संबंधित है, और यह काम सक्षम करता है: Employees या customers को ordinary language का उपयोग करके documents के over questions पूछने दो।"
+  },
+  "feat-049-00": {
+    "label": "Images या video को analyze करो visual entities, environments, और people को identify करने के लिए।",
+    "why": "Label detection Amazon Rekognition से संबंधित है, और यह काम सक्षम करता है: Images या video को analyze करो visual entities, environments, और people को identify करने के लिए।"
+  },
+  "feat-050-00": {
+    "label": "Items को प्रत्येक user के लिए rank करो उनके behavior और preferences से जबकि वे interact करते हैं।",
+    "why": "Real-time recommendations Amazon Personalize से संबंधित है, और यह काम सक्षम करता है: Items को प्रत्येक user के लिए rank करो उनके behavior और preferences से जबकि वे interact करते हैं।"
+  },
+  "feat-051-01": {
+    "label": "Possible future values की एक range को chosen confidence levels पर estimate करो केवल एक number return करने के बजाय।",
+    "why": "probabilistic forecasts and prediction intervals Amazon Forecast से संबंधित है, और यह काम सक्षम करता है: Possible future values की एक range को chosen confidence levels पर estimate करो केवल एक number return करने के बजाय।"
+  },
+  "feat-052-01": {
+    "label": "एक transaction या account activity को एक numeric likelihood of fraud assign करो।",
+    "why": "event risk scores Amazon Fraud Detector से संबंधित है, और यह काम सक्षम करता है: एक transaction या account activity को एक numeric likelihood of fraud assign करो।"
+  },
+  "feat-053-00": {
+    "label": "Acceptable products की appearance को learn करो और images को flag करो जिनमें unusual defects हों।",
+    "why": "Visual anomaly detection Amazon Lookout for Vision से संबंधित है, और यह काम सक्षम करता है: Acceptable products की appearance को learn करो और images को flag करो जिनमें unusual defects हों।"
+  },
+  "feat-053-02": {
+    "label": "एक trained visual quality inspection को factory equipment के close को run करो।",
+    "why": "edge-device model deployment Amazon Lookout for Vision से संबंधित है, और यह काम सक्षम करता है: एक trained visual quality inspection को factory equipment के close को run करो।"
+  },
+  "feat-054-00": {
+    "label": "Normal business-measure behavior को learn करो और unexpected changes को surface करो fixed thresholds के बिना।",
+    "why": "Automatic metric anomaly detection Amazon Lookout for Metrics से संबंधित है, और यह काम सक्षम करता है: Normal business-measure behavior को learn करो और unexpected changes को surface करो fixed thresholds के बिना।"
+  },
+  "feat-054-02": {
+    "label": "Dimensions को rank करो जो एक business measure में detected change को most strongly explain करते हैं।",
+    "why": "root-cause contribution analysis Amazon Lookout for Metrics से संबंधित है, और यह काम सक्षम करता है: Dimensions को rank करो जो एक business measure में detected change को most strongly explain करते हैं।"
+  },
+  "feat-056-01": {
+    "label": "Learned और rule-based checks को common software vulnerabilities और unsafe practices के लिए apply करो।",
+    "why": "security detector library Amazon CodeGuru Reviewer से संबंधित है, और यह काम सक्षम करता है: Learned और rule-based checks को common software vulnerabilities और unsafe practices के लिए apply करो।"
+  },
+  "feat-057-00": {
+    "label": "Executing code को profile करो expensive methods को locate करने के लिए और compute waste को reduce करो।",
+    "why": "Continuous profiling Amazon CodeGuru Profiler से संबंधित है, और यह काम सक्षम करता है: Executing code को profile करो expensive methods को locate करने के लिए और compute waste को reduce करो।"
+  },
+  "feat-058-01": {
+    "label": "Guidance और relevant information को contact-center staff को surface करो एक live conversation के दौरान।",
+    "why": "real-time agent assistance Amazon Connect से संबंधित है, और यह काम सक्षम करता है: Guidance और relevant information को contact-center staff को surface करो एक live conversation के दौरान।"
+  },
+  "feat-058-03": {
+    "label": "Contact demand को predict करो और workforce coverage को expected volume के साथ align करो।",
+    "why": "forecasting and scheduling Amazon Connect से संबंधित है, और यह काम सक्षम करता है: Contact demand को predict करो और workforce coverage को expected volume के साथ align करो।"
+  },
+  "feat-059-00": {
+    "label": "Historical orders और signals का उपयोग करके future product requirements को estimate करो।",
+    "why": "Demand planning AWS Supply Chain से संबंधित है, और यह काम सक्षम करता है: Historical orders और signals का उपयोग करके future product requirements को estimate करो।"
+  },
+  "feat-059-02": {
+    "label": "Enterprise systems से operational records को planning और analysis के लिए unify करो।",
+    "why": "supply-chain data lake AWS Supply Chain से संबंधित है, और यह काम सक्षम करता है: Enterprise systems से operational records को planning और analysis के लिए unify करो।"
+  },
+  "feat-060-01": {
+    "label": "एक managed workflow के माध्यम से shared datasets के लिए access को request, approve, और audit करो।",
+    "why": "governed data subscriptions Amazon DataZone से संबंधित है, और यह काम सक्षम करता है: एक managed workflow के माध्यम से shared datasets के लिए access को request, approve, और audit करो।"
+  },
+  "feat-061-00": {
+    "label": "Architecture documents को organizational requirements के विरुद्ध assess करो code written होने से पहले।",
+    "why": "Design security review AWS Security Agent से संबंधित है, और यह काम सक्षम करता है: Architecture documents को organizational requirements के विरुद्ध assess करो code written होने से पहले।"
+  },
+  "feat-061-02": {
+    "label": "Specialized agents का उपयोग करके multistep attack scenarios को web applications और APIs के विरुद्ध execute करो।",
+    "why": "On-demand penetration testing AWS Security Agent से संबंधित है, और यह काम सक्षम करता है: Specialized agents का उपयोग करके multistep attack scenarios को web applications और APIs के विरुद्ध execute करो।"
+  },
+  "feat-061-04": {
+    "label": "Reproducible exploit paths, impact analysis, और ready-to-implement corrections को return करो।",
+    "why": "Actionable fixes for confirmed vulnerabilities AWS Security Agent से संबंधित है, और यह काम सक्षम करता है: Reproducible exploit paths, impact analysis, और ready-to-implement corrections को return करो।"
+  },
+  "feat-062-01": {
+    "label": "Telemetry, code, और deployment data को correlate करो यह identify करने के लिए कि एक production failure क्यों occur हुई।",
+    "why": "Root cause analysis AWS DevOps Agent से संबंधित है, और यह काम सक्षम करता है: Telemetry, code, और deployment data को correlate करो यह identify करने के लिए कि एक production failure क्यों occur हुई।"
+  },
+  "feat-062-03": {
+    "label": "Services और resources को discover करो और उनके relationships का dynamic topology maintain करो।",
+    "why": "Application Mapping AWS DevOps Agent से संबंधित है, और यह काम सक्षम करता है: Services और resources को discover करो और उनके relationships का dynamic topology maintain करो।"
+  },
+  "feat-063-00": {
+    "label": "यह record करो कि किसने एक cloud control-plane action perform किया, यह कब happen हुआ, और कहाँ से।",
+    "why": "API and user activity history AWS CloudTrail से संबंधित है, और यह काम सक्षम करता है: यह record करो कि किसने एक cloud control-plane action perform किया, यह कब happen हुआ, और कहाँ से।"
+  },
+  "feat-064-00": {
+    "label": "Numerical measurements, event records, और request paths को एक monitoring service में collect करो।",
+    "why": "Metrics logs and traces Amazon CloudWatch से संबंधित है, और यह काम सक्षम करता है: Numerical measurements, event records, और request paths को एक monitoring service में collect करो।"
+  },
+  "feat-064-02": {
+    "label": "System health और model behavior को visualize करो ongoing production oversight के लिए।",
+    "why": "dashboards and model observability Amazon CloudWatch से संबंधित है, और यह काम सक्षम करता है: System health और model behavior को visualize करो ongoing production oversight के लिए।"
+  },
+  "feat-065-01": {
+    "label": "Resource settings को continuously evaluate करो required organizational conditions के विरुद्ध।",
+    "why": "compliance rules AWS Config से संबंधित है, और यह काम सक्षम करता है: Resource settings को continuously evaluate करो required organizational conditions के विरुद्ध।"
+  },
+  "feat-066-00": {
+    "label": "Major operational quality categories में best-practice findings receive करो।",
+    "why": "Cost security performance and resilience recommendations AWS Trusted Advisor से संबंधित है, और यह काम सक्षम करता है: Major operational quality categories में best-practice findings receive करो।"
+  },
+  "feat-066-01": {
+    "label": "Remediation को recommendations पर focus करो जो उनके potential account impact से ranked हों।",
+    "why": "prioritized checks AWS Trusted Advisor से संबंधित है, और यह काम सक्षम करता है: Remediation को recommendations पर focus करो जो उनके potential account impact से ranked हों।"
+  },
+  "feat-067-00": {
+    "label": "एक architecture को operational excellence, security, reliability, performance, cost, और sustainability के across assess करो।",
+    "why": "Six-pillar workload reviews AWS Well-Architected Tool से संबंधित है, और यह काम सक्षम करता है: एक architecture को operational excellence, security, reliability, performance, cost, और sustainability के across assess करो।"
+  },
+  "feat-068-00": {
+    "label": "Repeated requests को locations में serve करो users के near बजाय origin को return करने के लिए हर बार।",
+    "why": "Global edge caching Amazon CloudFront से संबंधित है, और यह काम सक्षम करता है: Repeated requests को locations में serve करो users के near बजाय origin को return करने के लिए हर बार।"
+  },
+  "feat-068-02": {
+    "label": "Web assets को encrypted connections के over distribute करो एक global network के माध्यम से।",
+    "why": "HTTPS content delivery Amazon CloudFront से संबंधित है, और यह काम सक्षम करता है: Web assets को encrypted connections के over distribute करो एक global network के माध्यम से।"
+  },
+  "feat-069-01": {
+    "label": "Resource और subnet traffic को stateful और stateless network rules से filter करो।",
+    "why": "security groups and network ACLs Amazon Virtual Private Cloud (Amazon VPC) से संबंधित है, और यह काम सक्षम करता है: Resource और subnet traffic को stateful और stateless network rules से filter करो।"
+  },
+  "feat-070-00": {
+    "label": "AWS certifications और reports को download करो जब auditors या customers assurance evidence request करें।",
+    "why": "On-demand compliance documents AWS Artifact से संबंधित है, और यह काम सक्षम करता है: AWS certifications और reports को download करो जब auditors या customers assurance evidence request करें।"
+  },
+  "feat-070-01": {
+    "label": "AWS controls और operating effectiveness के independent assessments को review करो।",
+    "why": "third-party audit reports AWS Artifact से संबंधित है, और यह काम सक्षम करता है: AWS controls और operating effectiveness के independent assessments को review करो।"
+  },
+  "feat-071-00": {
+    "label": "Mapped resource और activity records को continuously gather करो manually audit proof को assemble करने के बजाय।",
+    "why": "Automated evidence collection AWS Audit Manager से संबंधित है, और यह काम सक्षम करता है: Mapped resource और activity records को continuously gather करो manually audit proof को assemble करने के बजाय।"
+  },
+  "feat-071-02": {
+    "label": "Control status और supporting evidence को एक auditor-ready package में compile करो।",
+    "why": "assessment reports AWS Audit Manager से संबंधित है, और यह काम सक्षम करता है: Control status और supporting evidence को एक auditor-ready package में compile करो।"
+  },
+  "feat-072-01": {
+    "label": "केवल actions और resources को grant करो जो एक person के या workload के task के लिए जरूरी हैं।",
+    "why": "least-privilege permissions AWS Identity and Access Management (IAM) से संबंधित है, और यह काम सक्षम करता है: केवल actions और resources को grant करो जो एक person के या workload के task के लिए जरूरी हैं।"
+  },
+  "feat-073-00": {
+    "label": "Virtual machines और packaged software artifacts को known vulnerabilities के लिए check करो।",
+    "why": "Amazon EC2 and container image scanning Amazon Inspector से संबंधित है, और यह काम सक्षम करता है: Virtual machines और packaged software artifacts को known vulnerabilities के लिए check करो।"
+  },
+  "feat-073-02": {
+    "label": "एक vulnerability को exploitability और resource exposure context का उपयोग करके prioritize करो।",
+    "why": "risk-based findings Amazon Inspector से संबंधित है, और यह काम सक्षम करता है: एक vulnerability को exploitability और resource exposure context का उपयोग करके prioritize करो।"
+  },
+  "feat-074-01": {
+    "label": "Data को एक data key के साथ protect करो और फिर उस key को एक longer-lived root key के तहत encrypt करो।",
+    "why": "envelope encryption AWS Key Management Service (AWS KMS) से संबंधित है, और यह काम सक्षम करता है: Data को एक data key के साथ protect करो और फिर उस key को एक longer-lived root key के तहत encrypt करो।"
+  },
+  "feat-075-00": {
+    "label": "Object content को classify करो personal, financial, credential, या regulated information को locate करने के लिए।",
+    "why": "Machine-learning sensitive-data discovery Amazon Macie से संबंधित है, और यह काम सक्षम करता है: Object content को classify करो personal, financial, credential, या regulated information को locate करने के लिए।"
+  },
+  "feat-075-02": {
+    "label": "Actionable alerts को surface करो जब sensitive objects या unsafe storage settings को detect किया जाए।",
+    "why": "findings for exposed data Amazon Macie से संबंधित है, और यह काम सक्षम करता है: Actionable alerts को surface करो जब sensitive objects या unsafe storage settings को detect किया जाए।"
+  },
+  "feat-076-01": {
+    "label": "Supported database या application passwords को एक schedule पर replace करो manual update के बिना।",
+    "why": "automatic credential rotation AWS Secrets Manager से संबंधित है, और यह काम सक्षम करता है: Supported database या application passwords को एक schedule पर replace करो manual update के बिना।"
+  },
+  "feat-077-00": {
+    "label": "Files, datasets, और artifacts को redundantly persist करो long-term cloud access के लिए।",
+    "why": "Highly durable object storage Amazon Simple Storage Service (Amazon S3) से संबंधित है, और यह काम सक्षम करता है: Files, datasets, और artifacts को redundantly persist करो long-term cloud access के लिए।"
+  },
+  "feat-077-02": {
+    "label": "Objects को automatically transition या expire करो जब उनकी age और access needs change करें।",
+    "why": "lifecycle management Amazon Simple Storage Service (Amazon S3) से संबंधित है, और यह काम सक्षम करता है: Objects को automatically transition या expire करो जब उनकी age और access needs change करें।"
+  },
+  "feat-077-04": {
+    "label": "Storage economics को prioritize करो very large embedding collections के लिए जिन्हें ultra-low latency की जरूरत नहीं।",
+    "why": "cost-optimized billion-scale vector storage Amazon Simple Storage Service (Amazon S3) से संबंधित है, और यह काम सक्षम करता है: Storage economics को prioritize करो very large embedding collections के लिए जिन्हें ultra-low latency की जरूरत नहीं।"
+  },
+  "feat-078-01": {
+    "label": "Retrieval speed को price के विरुद्ध trade करो जब archived objects को restore किया जाए।",
+    "why": "expedited to bulk retrieval options Amazon S3 Glacier से संबंधित है, और यह काम सक्षम करता है: Retrieval speed को price के विरुद्ध trade करो जब archived objects को restore किया जाए।"
+  },
+  "feat-079-00": {
+    "label": "Healthcare records को एक interoperable format में persist करो जो clinical exchange के लिए designed हो।",
+    "why": "FHIR-enabled patient-data store AWS HealthLake से संबंधित है, और यह काम सक्षम करता है: Healthcare records को एक interoperable format में persist करो जो clinical exchange के लिए designed हो।"
+  },
+  "feat-080-00": {
+    "label": "Clinical conversations को healthcare-tuned vocabulary के साथ transcribe करो।",
+    "why": "Medical speech recognition AWS HealthScribe से संबंधित है, और यह काम सक्षम करता है: Clinical conversations को healthcare-tuned vocabulary के साथ transcribe करो।"
+  },
+  "feat-080-02": {
+    "label": "एक patient-clinician conversation से medically meaningful concepts को identify करो।",
+    "why": "clinical term extraction AWS HealthScribe से संबंधित है, और यह काम सक्षम करता है: एक patient-clinician conversation से medically meaningful concepts को identify करो।"
+  },
+  "feat-080-04": {
+    "label": "Regulated healthcare workloads को support करो जब required compliance controls के तहत configured किया जाए।",
+    "why": "HIPAA-eligible processing AWS HealthScribe से संबंधित है, और यह काम सक्षम करता है: Regulated healthcare workloads को support करो जब required compliance controls के तहत configured किया जाए।"
+  },
+  "feat-082-00": {
+    "label": "Trained neural networks को AWS silicon पर serve करो जो prediction economics के लिए optimize हो।",
+    "why": "Cost/performance-focused deep-learning and generative-AI inference AWS Inferentia / Inferentia2 से संबंधित है, और यह काम सक्षम करता है: Trained neural networks को AWS silicon पर serve करो जो prediction economics के लिए optimize हो।"
+  },
+  "feat-083-00": {
+    "label": "Trained neural-network graphs को AWS machine-learning accelerators के लिए optimized instructions में translate करो।",
+    "why": "Model compilation AWS Neuron SDK से संबंधित है, और यह काम सक्षम करता है: Trained neural-network graphs को AWS machine-learning accelerators के लिए optimized instructions में translate करो।"
+  },
+  "feat-083-02": {
+    "label": "Accelerator utilization और execution behavior को inspect करो performance को improve करने के लिए।",
+    "why": "profiling and debugging tools AWS Neuron SDK से संबंधित है, और यह काम सक्षम करता है: Accelerator utilization और execution behavior को inspect करो performance को improve करने के लिए।"
+  },
+  "feat-084-01": {
+    "label": "Training workloads को compile और optimize करो purpose-built AWS silicon के लिए।",
+    "why": "Neuron SDK support Amazon EC2 Trn1 / Trn2 instances से संबंधित है, और यह काम सक्षम करता है: Training workloads को compile और optimize करो purpose-built AWS silicon के लिए।"
+  },
+  "feat-085-00": {
+    "label": "AWS accelerator generations को choose करो जो neural-network prediction के लिए specifically designed हों।",
+    "why": "First- and second-generation Inferentia Amazon EC2 Inf1 / Inf2 instances से संबंधित है, और यह काम सक्षम करता है: AWS accelerator generations को choose करो जो neural-network prediction के लिए specifically designed हों।"
+  },
+  "feat-085-02": {
+    "label": "Trained models को compile और tune करो AWS prediction accelerators के लिए।",
+    "why": "Neuron SDK support for inference Amazon EC2 Inf1 / Inf2 instances से संबंधित है, और यह काम सक्षम करता है: Trained models को compile और tune करो AWS prediction accelerators के लिए।"
+  },
+  "feat-087-00": {
+    "label": "Demanding large-model training और inference के लिए एक current high-end accelerator architecture का उपयोग करो।",
+    "why": "NVIDIA Blackwell GPUs Amazon EC2 P6 instances and UltraServers से संबंधित है, और यह काम सक्षम करता है: Demanding large-model training और inference के लिए एक current high-end accelerator architecture का उपयोग करो।"
+  },
+  "feat-087-02": {
+    "label": "Distributed accelerator traffic को low latency और high throughput के साथ compute nodes के बीच move करो।",
+    "why": "high-bandwidth EFA networking Amazon EC2 P6 instances and UltraServers से संबंधित है, और यह काम सक्षम करता है: Distributed accelerator traffic को low latency और high throughput के साथ compute nodes के बीच move करो।"
+  },
+  "feat-088-01": {
+    "label": "Graphics, media, और model-serving workloads के लिए newer efficient accelerators का उपयोग करो।",
+    "why": "NVIDIA L4 GPUs on G6 instances Amazon EC2 G5 / G6 instances से संबंधित है, और यह काम सक्षम करता है: Graphics, media, और model-serving workloads के लिए newer efficient accelerators का उपयोग करो।"
+  },
+  "feat-089-00": {
+    "label": "Conventional GPU training के लिए एक alternative के रूप में dedicated deep-learning processors का उपयोग करो।",
+    "why": "Habana Gaudi accelerators Amazon EC2 DL1 instances से संबंधित है, और यह काम सक्षम करता है: Conventional GPU training के लिए एक alternative के रूप में dedicated deep-learning processors का उपयोग करो।"
+  },
+  "feat-089-01": {
+    "label": "Model learning को multiple specialized compute nodes के across coordinate करो।",
+    "why": "distributed deep-learning training Amazon EC2 DL1 instances से संबंधित है, और यह काम सक्षम करता है: Model learning को multiple specialized compute nodes के across coordinate करो।"
+  },
+  "feat-090-00": {
+    "label": "एक elastic scientific-computing environment को configuration से define और reproduce करो।",
+    "why": "Infrastructure-as-code cluster creation AWS ParallelCluster से संबंधित है, और यह काम सक्षम करता है: एक elastic scientific-computing environment को configuration से define और reproduce करो।"
+  },
+  "feat-090-02": {
+    "label": "Queued jobs के लिए worker nodes को add करो और idle capacity को remove करो जब demand fall करे।",
+    "why": "automatic compute scaling AWS ParallelCluster से संबंधित है, और यह काम सक्षम करता है: Queued jobs के लिए worker nodes को add करो और idle capacity को remove करो जब demand fall करे।"
+  },
+  "feat-091-01": {
+    "label": "Common message-passing और collective libraries को accelerate करो जो HPC और model training द्वारा use किए जाते हैं।",
+    "why": "MPI and NCCL communication Elastic Fabric Adapter से संबंधित है, और यह काम सक्षम करता है: Common message-passing और collective libraries को accelerate करो जो HPC और model training द्वारा use किए जाते हैं।"
+  },
+  "feat-092-00": {
+    "label": "Offline compute work को prioritize और hold करो जब तक suitable capacity available न हो।",
+    "why": "Managed job queues AWS Batch से संबंधित है, और यह काम सक्षम करता है: Offline compute work को prioritize और hold करो जब तक suitable capacity available न हो।"
+  },
+  "feat-092-02": {
+    "label": "Ordered pipelines या same batch task की many parallel variations को express करो।",
+    "why": "job dependencies and array jobs AWS Batch से संबंधित है, और यह काम सक्षम करता है: Ordered pipelines या same batch task की many parallel variations को express करो।"
+  },
+  "feat-094-00": {
+    "label": "Framework-ready, reproducible containers को model learning और prediction के लिए run करो।",
+    "why": "Deep Learning Containers (DLCs) AWS Deep Learning Containers से संबंधित है, और यह काम सक्षम करता है: Framework-ready, reproducible containers को model learning और prediction के लिए run करो।"
+  },
+  "feat-095-00": {
+    "label": "Popular dynamic deep-learning framework के based workloads को develop और operate करो।",
+    "why": "PyTorch on AWS PyTorch on AWS से संबंधित है, और यह काम सक्षम करता है: Popular dynamic deep-learning framework के based workloads को develop और operate करो।"
+  },
+  "feat-097-00": {
+    "label": "एक open-model ecosystem को managed training और cloud compute के साथ use करो।",
+    "why": "Hugging Face Deep Learning Containers Hugging Face on Amazon SageMaker से संबंधित है, और यह काम सक्षम करता है: एक open-model ecosystem को managed training और cloud compute के साथ use करो।"
+  },
+  "feat-098-01": {
+    "label": "Data को explore करो, results को visualize करो, और executable documents में model code पर iterate करो।",
+    "why": "interactive data science Jupyter on AWS से संबंधित है, और यह काम सक्षम करता है: Data को explore करो, results को visualize करो, और executable documents में model code पर iterate करो।"
+  },
+  "feat-099-00": {
+    "label": "Scenarios को document करो जिनके लिए एक managed AI capability को designed और evaluated किया गया था।",
+    "why": "Intended use cases AWS AI Service Cards से संबंधित है, और यह काम सक्षम करता है: Scenarios को document करो जिनके लिए एक managed AI capability को designed और evaluated किया गया था।"
+  },
+  "feat-099-02": {
+    "label": "Teams को transparency और safer-use considerations provide करो जो एक managed AI capability को adopt कर रही हैं।",
+    "why": "responsible AI design guidance AWS AI Service Cards से संबंधित है, और यह काम सक्षम करता है: Teams को transparency और safer-use considerations provide करो जो एक managed AI capability को adopt कर रही हैं।"
+  },
+  "feat-100-02": {
+    "label": "एक interactive prototype को publish करो ताकि अन्य लोग इसे try कर सकें।",
+    "why": "shareable applications Amazon PartyRock से संबंधित है, और यह काम सक्षम करता है: एक interactive prototype को publish करो ताकि अन्य लोग इसे try कर सकें।"
+  },
+  "feat-100-03": {
+    "label": "Instruction wording और context को change करो यह see करने के लिए model output experimentation के माध्यम से कैसे change होता है।",
+    "why": "hands-on prompt engineering Amazon PartyRock से संबंधित है, और यह काम सक्षम करता है: Instruction wording और context को change करो यह see करने के लिए model output experimentation के माध्यम से कैसे change होता है।"
+  },
+  "feat-000-01": {
+    "label": "पीढ़ी, एम्बेडिंग्स, और मल्टीमॉडल वर्कलोड के लिए AWS-विकसित आधार-मॉडल परिवारों का उपयोग करें।",
+    "why": "Amazon Titan और Amazon Nova मॉडल Amazon Bedrock में मौजूद हैं, और यह काम सक्षम करते हैं: पीढ़ी, एंबेडिंग, और मल्टीमॉडल कार्यभार के लिए AWS-विकसित foundation-model परिवारों का उपयोग करें।"
+  },
+  "feat-000-02": {
+    "label": "अंतर्निहित अनुमान बुनियादी ढांचे को प्रावधानित या प्रबंधित किए बिना मॉडल अनुरोध चलाएं।",
+    "why": "सर्वरलेस प्रबंधित अनुमान Amazon Bedrock में है, और यह काम सक्षम करता है: अंतर्निहित अनुमान बुनियादी ढांचे को प्रावधान या प्रबंधित किए बिना मॉडल अनुरोध चलाएं।"
+  },
+  "feat-000-04": {
+    "label": "संगठन-विशिष्ट उदाहरणों और आवश्यकताओं के साथ आधार मॉडल के व्यवहार को अनुकूल करें।",
+    "why": "फाइन-ट्यूनिंग और अनुकूलन Amazon Bedrock में है, और यह काम सक्षम करता है: संगठन-विशिष्ट उदाहरणों और आवश्यकताओं के साथ foundation-model के व्यवहार को अनुकूल बनाएं।"
+  },
+  "feat-000-06": {
+    "label": "मल्टीस्टेप कार्यों को ऑर्केस्ट्रेट करें जो निर्देशों पर तर्क करते हैं और कार्यों या डेटा स्रोतों को आमंत्रित करते हैं।",
+    "why": "Amazon Bedrock के लिए Agents Amazon Bedrock में है, और यह काम सक्षम करता है: निर्देशों पर तर्क करने वाले बहु-चरणीय कार्यों को व्यवस्थित करें और कार्यों या डेटा स्रोतों को आमंत्रित करें।"
+  },
+  "feat-000-08": {
+    "label": "संवेदनशील संकेतों और ग्राहक जानकारी को मॉडल-प्रदाता प्रशिक्षण से अलग रखें।",
+    "why": "निजी डेटा संरक्षण Amazon Bedrock में है, और यह काम सक्षम करता है: संवेदनशील प्रॉम्प्ट और ग्राहक जानकारी को मॉडल-प्रदाता प्रशिक्षण से अलग रखें।"
+  },
+  "feat-000-10": {
+    "label": "बड़े शिक्षक से छोटे मॉडल में व्यवहार स्थानांतरित करें ताकि सेवा लागत और विलंबता को कम किया जा सके।",
+    "why": "मॉडल आसवन Amazon Bedrock में है, और यह काम सक्षम करता है: बड़े शिक्षक से एक छोटे मॉडल में व्यवहार स्थानांतरित करें और सेवा लागत और विलंबता को कम करें।"
+  },
+  "feat-000-13": {
+    "label": "दस्तावेजों, छवियों, ऑडियो और वीडियो को प्रबंधित बहुमॉडल प्रसंस्करण के साथ संरचित अंतर्दृष्टि में परिवर्तित करें।",
+    "why": "Bedrock डेटा ऑटोमेशन Amazon Bedrock में है, और यह काम सक्षम करता है: दस्तावेज़, छवियों, ऑडियो और वीडियो को प्रबंधित मल्टीमॉडल प्रसंस्करण के साथ संरचित अंतर्दृष्टि में बदलें।"
+  },
+  "feat-000-15": {
+    "label": "समर्थित बाहरी रूप से अनुकूलित आधार मॉडल को प्रबंधित अनुमान में लाएं।",
+    "why": "कस्टम मॉडल आयात Amazon Bedrock में है, और यह काम सक्षम करता है: एक समर्थित बाहरी रूप से अनुकूलित foundation-model को प्रबंधित अनुमान में लाएं।"
+  },
+  "feat-000-17": {
+    "label": "ऑडिट और डीबगिंग के लिए अनुरोध पेलोड, प्रतिक्रियाएं और आमंत्रण मेटाडेटा कैप्चर करें।",
+    "why": "मॉडल आह्वान लॉगिंग Amazon Bedrock में है, और यह काम सक्षम करता है: ऑडिट और डिबगिंग के लिए अनुरोध पेलोड, प्रतिक्रियाएं और आह्वान मेटाडेटा कैप्चर करें।"
+  },
+  "feat-001-01": {
+    "label": "serverless स्केलिंग और अतुल्यकालिक निष्पादन समर्थन के साथ अलग-अलग सत्रों में गतिशील एजेंट तैनात करें।",
+    "why": "रनटाइम Amazon Bedrock AgentCore में है, और यह काम सक्षम करता है: अलग-थलग सत्रों में गतिशील एजेंटों को सर्वरलेस स्केलिंग और अतुल्यकालिक निष्पादन समर्थन के साथ तैनात करें।"
+  },
+  "feat-001-02": {
+    "label": "अल्पकालिक कथन संदर्भ बनाए रखें और दीर्घकालिक ज्ञान जो सत्रों में स्थायी रहता है।",
+    "why": "मेमोरी Amazon Bedrock AgentCore में है, और यह काम सक्षम करता है: अल्पकालिक बातचीत संदर्भ और दीर्घकालिक ज्ञान को बनाए रखें जो सत्रों में रहता है।"
+  },
+  "feat-001-04": {
+    "label": "एजेंटों को मौजूदा प्रमाणीकरण प्रदाताओं से जोड़ें और उपयोगकर्ताओं को माइग्रेट किए बिना पहुंच प्रबंधित करें।",
+    "why": "पहचान Amazon Bedrock AgentCore में है, और यह काम सक्षम करता है: एजेंटों को मौजूदा प्रमाणीकरण प्रदाताओं से कनेक्ट करें और उपयोगकर्ताओं को माइग्रेट किए बिना पहुंच का प्रबंधन करें।"
+  },
+  "feat-001-07": {
+    "label": "निष्पादन पथों का पता लगाएं, मध्यवर्ती आउटपुट का निरीक्षण करें, और उत्पादन में एजेंट प्रदर्शन को डीबग करें।",
+    "why": "अवलोकनीयता Amazon Bedrock AgentCore में है, और यह काम सक्षम करता है: निष्पादन पथों का पता लगाएं, मध्यवर्ती आउटपुट का निरीक्षण करें और उत्पादन में एजेंट प्रदर्शन को डिबग करें।"
+  },
+  "feat-001-09": {
+    "label": "मापें कि एजेंट और उपकरण कितनी विश्वसनीयता से सत्रों, ट्रेस और स्पैन में कार्य पूरा करते हैं।",
+    "why": "मूल्यांकन Amazon Bedrock AgentCore में है, और यह काम सक्षम करता है: सत्रों, ट्रेस और अवधि में कितनी विश्वसनीयता से एजेंट और उपकरण कार्य पूरे करते हैं, इसे मापें।"
+  },
+  "feat-001-11": {
+    "label": "प्राकृतिक-भाषा या Cedar नियमों के साथ उपकरण कॉल पर नियतात्मक सीमाएं लागू करें।",
+    "why": "नीति Amazon Bedrock AgentCore में है, और यह काम सक्षम करता है: प्राकृतिक-भाषा या Cedar नियमों के साथ उपकरण कॉल पर निर्धारक सीमाएं लागू करें।"
+  },
+  "feat-002-00": {
+    "label": "मॉडल को निर्देशों से कार्यों को चुनने और क्रमित करने दें बजाय हर पथ को कठिन-कोडित करने के।",
+    "why": "मॉडल-संचालित एजेंट विकास Strands Agents में है, और यह काम सक्षम करता है: मॉडल को निर्देशों से क्रियाएं चुनने और अनुक्रमित करने दें और प्रत्येक पथ को कोडित करने के बजाय।"
+  },
+  "feat-002-02": {
+    "label": "एजेंट को बाहरी कार्यों, सेवाओं और डेटा तक नियंत्रित पहुंच दें।",
+    "why": "उपकरण एकीकरण Strands Agents में है, और यह काम सक्षम करता है: बाहरी कार्यों, सेवाओं और डेटा के लिए एजेंट को नियंत्रित पहुंच दें।"
+  },
+  "feat-002-04": {
+    "label": "आसपास के एजेंट एप्लिकेशन को फिर से डिजाइन किए बिना मॉडल प्रदाताओं को बदलें।",
+    "why": "प्रदाता-स्वतंत्र मॉडल समर्थन Strands Agents में है, और यह काम सक्षम करता है: एजेंट एप्लिकेशन को पुनर्डिजाइन किए बिना मॉडल प्रदाताओं को बदलें।"
+  },
+  "feat-003-00": {
+    "label": "AWS आधार मॉडल का उपयोग करके लिखित संकेतों और दृश्य इनपुट पर तर्क करें।",
+    "why": "Nova पाठ और मल्टीमॉडल मॉडल Amazon Nova में है, और यह काम सक्षम करता है: लिखित प्रॉम्प्ट और AWS foundation मॉडल का उपयोग करके दृश्य इनपुट पर तर्क करें।"
+  },
+  "feat-003-03": {
+    "label": "एक सामान्य मॉडल को विशेष व्यवहार, शब्दावली, या संगठनात्मक उदाहरणों के लिए अनुकूल करें।",
+    "why": "मॉडल अनुकूलन Amazon Nova में है, और यह काम सक्षम करता है: विशेष व्यवहार, शब्दावली या संगठनात्मक उदाहरणों के लिए सामान्य मॉडल को अनुकूल बनाएं।"
+  },
+  "feat-004-00": {
+    "label": "टीम फाइलें, डैशबोर्ड, डेटा स्रोत, और सहयोगी कार्य क्षेत्रों में संदर्भ लाएं।",
+    "why": "Spaces Amazon Quick में है, और यह काम सक्षम करता है: टीम फाइलें, डैशबोर्ड, डेटा स्रोत और सहयोगी कार्य क्षेत्रों में संदर्भ लाएं।"
+  },
+  "feat-004-02": {
+    "label": "व्यावसायिक डेटा, सार्वजनिक इंटरनेट स्रोत, और तीसरे पक्ष के डेटासेट को पेशेदार रिपोर्ट में संश्लेषित करें।",
+    "why": "अनुसंधान Amazon Quick में है, और यह काम सक्षम करता है: व्यावसायिक डेटा, सार्वजनिक इंटरनेट स्रोत और तीसरे पक्ष के डेटासेट को पेशेदार रिपोर्ट में संश्लेषित करें।"
+  },
+  "feat-004-04": {
+    "label": "रोजमर्रा की एप्लिकेशन से जुड़े सरल या मल्टीस्टेप वर्कफ़्लो बनाएं।",
+    "why": "स्वचालित करें Amazon Quick में है, और यह काम सक्षम करता है: रोज़मर्रा की एप्लिकेशनों से जुड़े सरल या बहु-चरणीय वर्कफ़्लो बनाएं।"
+  },
+  "feat-004-06": {
+    "label": "वार्तालाप के भीतर समाप्त दस्तावेज, प्रस्तुतियां, स्प्रेडशीट या छवियां तैयार करें।",
+    "why": "पॉलिश किए गए डिलिवरेबल बनाएं Amazon Quick में है, और यह काम सक्षम करता है: बातचीत के भीतर समाप्त दस्तावेज़, प्रस्तुतियां, स्प्रेडशीट या छवियां बनाएं।"
+  },
+  "feat-005-00": {
+    "label": "संगठनात्मक जानकारी पुनः प्राप्त करें और जुड़े स्रोत से कार्यस्थल प्रतिक्रियाएं संश्लेषित करें।",
+    "why": "एंटरप्राइज़ खोज और उत्तर Amazon Q Business में है, और यह काम सक्षम करता है: कनेक्ट किए गए स्रोतों से संगठनात्मक जानकारी पुनः प्राप्त करें और कार्यस्थल प्रतिक्रियाओं को संश्लेषित करें।"
+  },
+  "feat-005-02": {
+    "label": "कार्यस्थल सहायक को जुड़ी हुई व्यावसायिक प्रणालियों में अनुमोदित संचालन करने दें।",
+    "why": "प्लगइन के माध्यम से कार्यों Amazon Q Business में है, और यह काम सक्षम करता है: कार्यस्थल सहायक को कनेक्ट किए गए व्यावसायिक प्रणालियों में अनुमोदित ऑपरेशन करने दें।"
+  },
+  "feat-006-01": {
+    "label": "मल्टीस्टेप कार्यान्वयन काम सौंपें जो योजना बना सकता है, संपादित कर सकता है, परीक्षण कर सकता है, और पुनरावृत्त कर सकता है।",
+    "why": "अग्रवर्ती सॉफ्टवेयर विकास Amazon Q Developer में है, और यह काम सक्षम करता है: बहु-चरणीय कार्यान्वयन कार्य को सौंपें जो योजना, संपादन, परीक्षा और पुनरावृत्ति कर सकता है।"
+  },
+  "feat-006-03": {
+    "label": "मौजूदा सॉफ़्टवेयर के बड़े पैमाने पर अपग्रेड या माइग्रेशन को गति दें।",
+    "why": "अनुप्रयोग परिवर्तन Amazon Q Developer में है, और यह काम सक्षम करता है: मौजूदा सॉफ्टवेयर के बड़े पैमाने पर अपग्रेड या माइग्रेशन को तेज़ करें।"
+  },
+  "feat-006-05": {
+    "label": "क्लाउड विफलताओं की जांच करें और सिस्टम संदर्भ का उपयोग करके सुधारात्मक कार्रवाई का सुझाव दें।",
+    "why": "परिचालन समस्या निवारण Amazon Q Developer में है, और यह काम सक्षम करता है: क्लाउड विफलताओं की जांच करें और सिस्टम संदर्भ का उपयोग करके सुधारात्मक कार्यों का सुझाव दें।"
+  },
+  "feat-007-01": {
+    "label": "विरासत मेजबान वर्कलोड को बनाए रखने योग्य आधुनिक आर्किटेक्चर में विश्लेषण करें और रूपांतरित करें।",
+    "why": "मेनफ्रेम आधुनिकीकरण AWS Transform में है, और यह काम सक्षम करता है: विरासत मेजबान कार्यभार का विश्लेषण करें और उन्हें बनाए रखने योग्य आधुनिक आर्किटेक्चर में बदलें।"
+  },
+  "feat-007-03": {
+    "label": "विरासत कोडबेस का निरीक्षण करें और संपादन से पहले साक्ष्य-आधारित रूपांतरण योजना तैयार करें।",
+    "why": "कोड विश्लेषण और योजना AWS Transform में है, और यह काम सक्षम करता है: विरासत कोडबेस का निरीक्षण करें और संपादन करने से पहले साक्ष्य-आधारित परिवर्तन योजना बनाएं।"
+  },
+  "feat-007-05": {
+    "label": "उत्पन्न रूपांतरण को सत्यापित करें और परिणामी परिवर्तनों पर विशेषज्ञ अनुमोदन बनाए रखें।",
+    "why": "सत्यापन और मानव निरीक्षण AWS Transform में है, और यह काम सक्षम करता है: उत्पन्न परिवर्तनों को सत्यापित करें और महत्वपूर्ण परिवर्तनों पर विशेषज्ञ अनुमोदन बनाए रखें।"
+  },
+  "feat-008-01": {
+    "label": "आवश्यकता-प्रथम या डिजाइन-प्रथम वर्कफ़्लो के माध्यम से नई एप्लिकेशन क्षमताओं की योजना बनाएं।",
+    "why": "फीचर विनिर्देश Kiro में है, और यह काम सक्षम करता है: आवश्यकता-प्रथम या डिज़ाइन-प्रथम वर्कफ़्लो के माध्यम से नई एप्लिकेशन क्षमताओं की योजना बनाएं।"
+  },
+  "feat-008-03": {
+    "label": "विशेष कार्यों को समानांतर अलग-अलग संदर्भ विंडो में सौंपें।",
+    "why": "Subagents Kiro में है, और यह काम सक्षम करता है: विशेष कार्यों को समानांतर अलग-थलग संदर्भ खिड़कियों में सौंपें।"
+  },
+  "feat-008-05": {
+    "label": "चैट, स्वचालन, और हेडलेस वर्कफ़्लो के लिए टर्मिनल से कोडिंग सहायक का उपयोग करें।",
+    "why": "Kiro CLI Kiro में है, और यह काम सक्षम करता है: चैट, ऑटोमेशन और हेडलेस वर्कफ़्लो के लिए टर्मिनल से कोडिंग सहायक का उपयोग करें।"
+  },
+  "feat-009-01": {
+    "label": "सॉफ़्टवेयर परिवर्तन करते समय संदर्भ के रूप में प्रोजेक्ट कोड और निर्देशों का उपयोग करें।",
+    "why": "रिपोजिटरी-जागरूक कार्यान्वयन Kiro स्वायत्त एजेंट में है, और यह काम सक्षम करता है: सॉफ्टवेयर परिवर्तन करते समय संदर्भ के रूप में प्रोजेक्ट कोड और निर्देशों का उपयोग करें।"
+  },
+  "feat-010-00": {
+    "label": "शुरुआत से बनाने के बजाय समीक्षा की गई पूर्व-प्रशिक्षित मॉडल और संदर्भ समाधान से शुरू करें।",
+    "why": "क्यूरेटेड मॉडल और समाधान कैटलॉग Amazon SageMaker AI JumpStart में है, और यह काम सक्षम करता है: स्क्रैच से बनाने के बजाय समीक्षा किए गए प्रशिक्षित मॉडल और संदर्भ समाधान से शुरुआत करें।"
+  },
+  "feat-010-02": {
+    "label": "कार्य-विशिष्ट डेटा और सेटिंग्स के साथ पूर्व-प्रशिक्षित मॉडल के अनुकूलन को निर्देशित करें।",
+    "why": "अनुकूलन वर्कफ़्लो Amazon SageMaker AI JumpStart में है, और यह काम सक्षम करता है: कार्य-विशिष्ट डेटा और सेटिंग्स के साथ प्रशिक्षित मॉडल को अनुकूल बनाने का मार्गदर्शन करें।"
+  },
+  "feat-011-00": {
+    "label": "निर्देश या संदर्भ से प्राकृतिक-भाषा सामग्री बनाएं या रूपांतरित करें।",
+    "why": "पाठ पीढ़ी Amazon Titan में है, और यह काम सक्षम करता है: निर्देश या संदर्भ से प्राकृतिक-भाषा सामग्री बनाएं या परिवर्तित करें।"
+  },
+  "feat-011-02": {
+    "label": "जब मॉडल परिवार का चुना गया सदस्य उस माध्यम का समर्थन करता है तो नई दृश्य सामग्री तैयार करें।",
+    "why": "चयनित मॉडल पर निर्भर छवि पीढ़ी Amazon Titan में है, और यह काम सक्षम करता है: नई दृश्य सामग्री उत्पन्न करें जब मॉडल परिवार का चुना हुआ सदस्य उस तौर को समर्थन करता है।"
+  },
+  "feat-012-02": {
+    "label": "तुरंत प्रति-अनुरोध भविष्यवाणी या संग्रहीत रिकॉर्ड के लिए अनुसूचित उच्च-मात्रा स्कोरिंग चुनें।",
+    "why": "वास्तविक समय और बैच अनुमान Amazon SageMaker AI में है, और यह काम सक्षम करता है: तत्काल प्रति-अनुरोध भविष्यवाणियों या संग्रहीत रिकॉर्ड के लिए निर्धारित उच्च-मात्रा स्कोरिंग चुनें।"
+  },
+  "feat-012-04": {
+    "label": "डेटा तैयारी, प्रशिक्षण, मूल्यांकन, अनुमोदन, और तैनाती को पुनरावृत्ति योग्य पाइपलाइन में जोड़ें।",
+    "why": "वर्कफ़्लो एकीकरण Amazon SageMaker AI में है, और यह काम सक्षम करता है: डेटा तैयारी, प्रशिक्षण, मूल्यांकन, अनुमोदन और तैनाती को दोहराए जाने वाले पाइपलाइन में कनेक्ट करें।"
+  },
+  "feat-012-06": {
+    "label": "दृश्य तैयारी वर्कफ़्लो के माध्यम से मॉडल डेटा को आयात करें, प्रोफाइल करें, साफ करें, और रूपांतरित करें।",
+    "why": "SageMaker डेटा Wrangler Amazon SageMaker AI में है, और यह काम सक्षम करता है: मॉडल डेटा को दृश्य तैयारी वर्कफ़्लो के माध्यम से आयात, प्रोफाइल, साफ़ और रूपांतरित करें।"
+  },
+  "feat-012-08": {
+    "label": "डेटासेट या भविष्यवाणियों में पूर्वाग्रह को मापें और समझाएं कि कौन से इनपुट ने आउटपुट को प्रभावित किया।",
+    "why": "SageMaker Clarify Amazon SageMaker AI में है, और यह काम सक्षम करता है: डेटासेट या भविष्यवाणियों में पूर्वाग्रह को मापें और समझाएं कि कौन सी इनपुट आउटपुट को प्रभावित करती थी।"
+  },
+  "feat-012-10": {
+    "label": "प्रसंस्करण, प्रशिक्षण, मूल्यांकन, और अनुमोदन चरणों के साथ पुनरावृत्ति योग्य मॉडल-निर्माण वर्कफ़्लो परिभाषित करें।",
+    "why": "SageMaker पाइपलाइन Amazon SageMaker AI में है, और यह काम सक्षम करता है: प्रसंस्करण, प्रशिक्षण, मूल्यांकन और अनुमोदन चरणों के साथ दोहराए जाने वाले मॉडल-निर्माण वर्कफ़्लो को परिभाषित करें।"
+  },
+  "feat-012-12": {
+    "label": "संस्करण मॉडल पैकेज, अनुमोदन स्थिति ट्रैक करें, और तैनाती की ओर प्रचार को नियंत्रित करें।",
+    "why": "SageMaker मॉडल रजिस्ट्री Amazon SageMaker AI में है, और यह काम सक्षम करता है: मॉडल पैकेज संस्करण, अनुमोदन स्थिति ट्रैक करें और तैनाती की ओर प्रचार को नियंत्रित करें।"
+  },
+  "feat-012-14": {
+    "label": "विश्लेषण और मॉडल-विकास वर्कलोड के लिए विश्लेषणात्मक स्टोर में डेटा तक पहुंच को एकीकृत करें।",
+    "why": "SageMaker Lakehouse Amazon SageMaker AI में है, और यह काम सक्षम करता है: विश्लेषण और मॉडल-विकास कार्यभार के लिए विश्लेषणात्मक भंडारों में डेटा पहुंच को एकीकृत करें।"
+  },
+  "feat-013-00": {
+    "label": "ML टीमों को डेटासेट का पता लगाने, रूपांतरित करने, और तैयार करने के लिए एक प्रबंधित स्थान दें।",
+    "why": "डेटा तैयारी के लिए केंद्रीय कार्यस्थान Amazon SageMaker AI Studio में है, और यह काम सक्षम करता है: ML टीमों को डेटासेट का पता लगाने, परिवर्तित करने और तैयार करने के लिए एक प्रबंधित स्थान दें।"
+  },
+  "feat-013-02": {
+    "label": "तैयार किए गए उदाहरणों से मॉडल मापदंडों को सीखने वाले कार्यों को चलाएं।",
+    "why": "मॉडल प्रशिक्षण Amazon SageMaker AI Studio में है, और यह काम सक्षम करता है: ऐसी नौकरियां चलाएं जो तैयार उदाहरणों से मॉडल मापदंड सीखते हैं।"
+  },
+  "feat-013-04": {
+    "label": "एक कार्यस्थान से पुनरावृत्ति योग्य मशीन-लर्निंग जीवनचक्र गतिविधियों को समन्वित करें और प्रबंधित करें।",
+    "why": "ML वर्कफ़्लो संचालन Amazon SageMaker AI Studio में है, और यह काम सक्षम करता है: एक कार्यस्थान से दोहराए जाने वाली मशीन-लर्निंग जीवनचक्र गतिविधियों को समन्वय और प्रबंधित करें।"
+  },
+  "feat-014-01": {
+    "label": "कच्ची जानकारी को मॉडल-तैयार इनपुट में साफ करें, संयोजित करें, और रूपांतरित करें।",
+    "why": "डेटा तैयारी Amazon SageMaker AI Canvas में है, और यह काम सक्षम करता है: कच्ची जानकारी को मॉडल-तैयार इनपुट में सफाई, संयोजन और परिवर्तित करें।"
+  },
+  "feat-014-02": {
+    "label": "निर्देशित नो-कोड प्रक्रिया के माध्यम से नए रिकॉर्ड पर प्रशिक्षित मॉडल लागू करें।",
+    "why": "भविष्यवाणी वर्कफ़्लो Amazon SageMaker AI Canvas में है, और यह काम सक्षम करता है: निर्देशित नो-कोड प्रक्रिया के माध्यम से नए रिकॉर्ड पर एक प्रशिक्षित मॉडल लागू करें।"
+  },
+  "feat-015-00": {
+    "label": "स्थानीय सेटअप के बिना तैयार-से-उपयोग वेब कार्यस्थान में मशीन लर्निंग के साथ प्रयोग करें।",
+    "why": "JupyterLab Amazon SageMaker AI Studio Lab में है, और यह काम सक्षम करता है: स्थानीय सेटअप के बिना तैयार-टू-यूज़ वेब कार्यस्थान में मशीन लर्निंग के साथ प्रयोग करें।"
+  },
+  "feat-016-01": {
+    "label": "अनिश्चित उदाहरणों को एनोटेशन के लिए प्राथमिकता दें ताकि मानव प्रयास मॉडल को कुशलतापूर्वक सुधार सके।",
+    "why": "सक्रिय-शिक्षा विकल्प Amazon SageMaker AI Ground Truth में है, और यह काम सक्षम करता है: मानव प्रयास मॉडल को प्रभावी ढंग से सुधारने के लिए अनिश्चित उदाहरणों को प्राथमिकता दें।"
+  },
+  "feat-017-00": {
+    "label": "मांग वाले आधार-मॉडल प्रशिक्षण कार्यों के लिए लचीले प्रबंधित कंप्यूट बेड़े प्रदान करें।",
+    "why": "बड़े मॉडलों के प्रशिक्षण के लिए उद्देश्य-निर्मित क्लस्टर Amazon SageMaker AI HyperPod में है, और यह काम सक्षम करता है: मांग वाली foundation-model प्रशिक्षण नौकरियों के लिए लचीला प्रबंधित कंप्यूट फ्लीट प्रदान करें।"
+  },
+  "feat-018-00": {
+    "label": "किसी व्यक्ति के निर्णय के लिए अनिश्चित या परिणामी AI आउटपुट को बढ़ाएं।",
+    "why": "मानव लूप Amazon Augmented AI (A2I) में है, और यह काम सक्षम करता है: अनिश्चित या महत्वपूर्ण AI आउटपुट को किसी के निर्णय के लिए बढ़ाएं।"
+  },
+  "feat-019-00": {
+    "label": "छोटे एनोटेशन, सत्यापन, या संग्रह कार्यों को ऑन-डिमांड कार्यबल को वितरित करें।",
+    "why": "भीड़ द्वारा किए गए मानव कार्य Amazon Mechanical Turk में है, और यह काम सक्षम करता है: छोटे एनोटेशन, सत्यापन या संग्रह कार्यों को मांग वाली कार्यबल में वितरित करें।"
+  },
+  "feat-019-02": {
+    "label": "प्रस्तुत मानव काम की विश्वसनीयता में सुधार करने के लिए सहमति, समीक्षा, और स्वीकृति नियमों का उपयोग करें।",
+    "why": "परिणाम गुणवत्ता नियंत्रण Amazon Mechanical Turk में है, और यह काम सक्षम करता है: सर्वसम्मति, समीक्षा और स्वीकृति नियमों का उपयोग करके प्रस्तुत मानव कार्य की विश्वसनीयता में सुधार करें।"
+  },
+  "feat-020-01": {
+    "label": "स्रोतों में डुप्लिकेट पहचान को एकीकृत प्रोफाइल में संयोजित करें।",
+    "why": "मशीन लर्निंग-आधारित मिलान AWS Entity Resolution में है, और यह काम सक्षम करता है: डुप्लिकेट पहचान को स्रोतों में एक समेकित प्रोफाइल में संयोजित करें।"
+  },
+  "feat-021-01": {
+    "label": "क्लाउड मार्केटप्लेस वर्कफ़्लो के माध्यम से प्रदाता के डेटासेट का उपयोग करने के लिए चल रहे अधिकार प्राप्त करें।",
+    "why": "सदस्यता-आधारित डेटा पहुंच AWS Data Exchange में है, और यह काम सक्षम करता है: क्लाउड मार्केटप्लेस वर्कफ़्लो के माध्यम से प्रदाता के डेटासेट का उपयोग करने के लिए चल रहे अधिकार प्राप्त करें।"
+  },
+  "feat-022-00": {
+    "label": "लोकप्रिय वितरित ओपन-सोर्स विश्लेषण फ्रेमवर्क के साथ बड़े डेटासेट को संसाधित करें।",
+    "why": "Apache Spark और Hadoop कार्यभार Amazon EMR में है, और यह काम सक्षम करता है: लोकप्रिय वितरित ओपन-सोर्स विश्लेषण framework के साथ बड़े डेटासेट को संसाधित करें।"
+  },
+  "feat-022-02": {
+    "label": "क्लाउड डेटा झील में ऑब्जेक्ट के विरुद्ध वितरित रूपांतरण सीधे चलाएं।",
+    "why": "Amazon S3 में डेटा प्रसंस्करण Amazon EMR में है, और यह काम सक्षम करता है: क्लाउड डेटा झील में ऑब्जेक्ट्स के विरुद्ध सीधे वितरित रूपांतरण चलाएं।"
+  },
+  "feat-023-01": {
+    "label": "स्रोत रिकॉर्ड पढ़ें, उन्हें फिर से आकार दें, और परिणाम को लक्ष्य सिस्टम में लिखें।",
+    "why": "AWS Glue ETL नौकरियां AWS Glue में है, और यह काम सक्षम करता है: स्रोत रिकॉर्ड पढ़ें, उन्हें आकार दें और परिणामों को लक्ष्य प्रणाली में लिखें।"
+  },
+  "feat-023-03": {
+    "label": "संरचना का अनुमान लगाने के लिए डेटा स्टोर को स्वचालित रूप से स्कैन करें और तालिकाएं और विभाजन पंजीकृत करें।",
+    "why": "स्कीमा खोज के लिए क्रॉलर AWS Glue में है, और यह काम सक्षम करता है: डेटा स्टोर को स्वचालित रूप से स्कैन करें और संरचना को इनफर करें और तालिकाएं और विभाजन पंजीकृत करें।"
+  },
+  "feat-024-00": {
+    "label": "प्रोग्रामिंग रूपांतरण के बजाय दृश्य इंटरफेस के माध्यम से स्रोत रिकॉर्ड को साफ करें और पुनः आकार दें।",
+    "why": "नो-कोड डेटा तैयारी AWS Glue DataBrew में है, और यह काम सक्षम करता है: प्रोग्रामिंग परिवर्तनों के बजाय दृश्य इंटरफेस के माध्यम से स्रोत रिकॉर्ड को साफ़ करें और आकार दें।"
+  },
+  "feat-024-02": {
+    "label": "सफाई कदमों का एक आदेश सेट सहेजें और इसे बाद के डेटासेट में लगातार लागू करें।",
+    "why": "पुनः प्रयोग करने योग्य परिवर्तन व्यंजन AWS Glue DataBrew में है, और यह काम सक्षम करता है: सफाई चरणों का एक आदेशित सेट बचाएं और इसे बाद के डेटासेट पर सुसंगत रूप से लागू करें।"
+  },
+  "feat-025-01": {
+    "label": "संपूर्ण डेटासेट को उजागर करने के बजाय डेटाबेस, तालिका, कॉलम, पंक्ति, या सेल स्तर पर पहुंच प्रदान करें।",
+    "why": "सूक्ष्म-दाने वाली पहुंच नियंत्रण AWS Lake Formation में है, और यह काम सक्षम करता है: पूरे डेटासेट को उजागर करने के बजाय डेटाबेस, तालिका, कॉलम, पंक्ति या सेल स्तर पर पहुंच प्रदान करें।"
+  },
+  "feat-026-01": {
+    "label": "उनके अर्थ के संख्यात्मक प्रतिनिधित्व की तुलना करके अर्थ की दृष्टि से समान आइटम पुनः प्राप्त करें।",
+    "why": "वेक्टर खोज Amazon OpenSearch Service में है, और यह काम सक्षम करता है: उनके अर्थ के संख्यात्मक प्रतिनिधित्व की तुलना करके सिमेंटिक रूप से समान आइटम पुनः प्राप्त करें।"
+  },
+  "feat-026-02": {
+    "label": "दृश्य और निगरानी दृश्यों के माध्यम से अनुक्रमित संचालनात्मक जानकारी का पता लगाएं।",
+    "why": "डैशबोर्ड और अवलोकनीयता Amazon OpenSearch Service में है, और यह काम सक्षम करता है: दृश्यावली और निगरानी विचारों के माध्यम से अनुक्रमित परिचालन जानकारी का पता लगाएं।"
+  },
+  "feat-026-04": {
+    "label": "जब बड़े खोजे योग्य कोष में तेजी से रैंकिंग प्रमुख आवश्यकता हो तो उत्पन्न उत्तरों को ग्राउंड करें।",
+    "why": "खोज-भारी RAG पुनरुद्धार Amazon OpenSearch Service में है, और यह काम सक्षम करता है: जब बड़े खोज योग्य कॉर्पस में तेजी से रैंकिंग प्रमुख आवश्यकता है तो उत्पन्न उत्तर को आधार बनाएं।"
+  },
+  "feat-027-01": {
+    "label": "परिचित संबंधपरक सिंटैक्स के साथ बड़े संरचित डेटासेट के लिए प्रश्न करें।",
+    "why": "स्केल पर SQL विश्लेषण Amazon Redshift में है, और यह काम सक्षम करता है: परिचित संबंधपरक वाक्य विन्यास के साथ बड़े संरचित डेटासेट को क्वेरी करें।"
+  },
+  "feat-028-00": {
+    "label": "खाते, सेवा, या परियोजना के लिए अपेक्षित खर्च या खपत सीमाएं परिभाषित करें।",
+    "why": "कस्टम लागत और उपयोग बजट AWS Budgets में है, और यह काम सक्षम करता है: किसी खाते, सेवा या परियोजना के लिए अपेक्षित खर्च या खपत सीमाएं परिभाषित करें।"
+  },
+  "feat-028-02": {
+    "label": "अनुमानित माह-अंत चार्ज को लक्ष्य के साथ तुलना करके अति-व्यय से पहले चेतावनी दें।",
+    "why": "पूर्वानुमान-आधारित सूचनाएं AWS Budgets में है, और यह काम सक्षम करता है: अनुमानित महीने-अंत शुल्कों की तुलना लक्ष्य से करके ओवरस्पेंड से पहले चेतावनी दें।"
+  },
+  "feat-029-01": {
+    "label": "देखें कि क्लाउड व्यय पूर्व दिनों या महीनों में कैसे बदला।",
+    "why": "ऐतिहासिक प्रवृत्ति दृश्यावली AWS Cost Explorer में है, और यह काम सक्षम करता है: पिछले दिनों या महीनों में क्लाउड व्यय कैसे बदला, यह जांचें।"
+  },
+  "feat-030-00": {
+    "label": "वर्कलोड के लिए वर्चुअल-मशीन CPU, मेमोरी, स्टोरेज, और नेटवर्किंग अनुपात चुनें।",
+    "why": "कॉन्फ़िगर करने योग्य उदाहरण प्रकार Amazon EC2 में है, और यह काम सक्षम करता है: किसी कार्यभार के लिए वर्चुअल-मशीन CPU, मेमोरी, भंडारण और नेटवर्किंग अनुपात चुनें।"
+  },
+  "feat-031-00": {
+    "label": "अपलोड, API कॉल, शेड्यूल, या संदेशों के प्रतिक्रिया में कोड निष्पादित करें।",
+    "why": "ईवेंट-ट्रिगर किए गए कार्य AWS Lambda में है, और यह काम सक्षम करता है: अपलोड, API कॉल, शेड्यूल या संदेशों के प्रतिक्रिया में कोड निष्पादित करें।"
+  },
+  "feat-031-01": {
+    "label": "जैसे-जैसे घटनाएं आती हैं, समवर्ती निष्पादन क्षमता को बढ़ाएं या घटाएं।",
+    "why": "स्वचालित स्केलिंग AWS Lambda में है, और यह काम सक्षम करता है: जब ईवेंट आते हैं तो समवर्ती निष्पादन क्षमता बढ़ाएं या कम करें।"
+  },
+  "feat-032-00": {
+    "label": "AWS-मूल नियंत्रण विमान के माध्यम से एक बेड़े में पैक की गई एप्लिकेशन कार्यों को अनुसूचित करें और संचालित करें।",
+    "why": "प्रबंधित कंटेनर ऑर्केस्ट्रेशन Amazon Elastic Container Service (Amazon ECS) में है, और यह काम सक्षम करता है: AWS-नेटिव नियंत्रण विमान के माध्यम से एक फ्लीट में पैकेजित एप्लिकेशन कार्यों को शेड्यूल और संचालित करें।"
+  },
+  "feat-032-02": {
+    "label": "कंटेनर कार्यों को ग्राहक-नियंत्रित वर्चुअल-मशीन क्षमता पर रखें।",
+    "why": "Amazon EC2 लॉन्च विकल्प Amazon Elastic Container Service (Amazon ECS) में है, और यह काम सक्षम करता है: कंटेनर कार्यों को ग्राहक-नियंत्रित वर्चुअल-मशीन क्षमता पर रखें।"
+  },
+  "feat-033-01": {
+    "label": "इकोसिस्टम उपकरण और मेनिफेस्ट चलाएं जो सामान्य ओपन-सोर्स ऑर्केस्ट्रेशन इंटरफेस को लक्ष्य करते हैं।",
+    "why": "Kubernetes API अनुकूलता Amazon Elastic Kubernetes Service (Amazon EKS) में है, और यह काम सक्षम करता है: सामान्य ओपन-सोर्स ऑर्केस्ट्रेशन इंटरफेस को लक्ष्य करने वाली ecosystem उपकरणें और manifestsचलाएं।"
+  },
+  "feat-034-00": {
+    "label": "AWS-निर्मित डेटाबेस इंजन के साथ परिचित ओपन-सोर्स संबंधपरक ड्राइवर और उपकरण का उपयोग करें।",
+    "why": "MySQL और PostgreSQL अनुकूलता Amazon Aurora में है, और यह काम सक्षम करता है: परिचित ओपन-सोर्स संबंधपरक ड्राइवर और उपकरणों का उपयोग करें AWS-निर्मित डेटाबेस इंजन के साथ।"
+  },
+  "feat-034-02": {
+    "label": "परिवर्तनशील मांग के लिए संबंधपरक डेटाबेस कंप्यूट को स्वचालित रूप से समायोजित करें।",
+    "why": "Aurora Serverless क्षमता Amazon Aurora में है, और यह काम सक्षम करता है: परिवर्तनशील मांग के लिए संबंधपरक डेटाबेस कंप्यूट को स्वचालित रूप से समायोजित करें।"
+  },
+  "feat-034-04": {
+    "label": "लेनदेन और संरचित एप्लिकेशन रिकॉर्ड को अर्थ-निकटतम-पड़ोसी प्रश्नों के बगल में रखें।",
+    "why": "pgvector Amazon Aurora में है, और यह काम सक्षम करता है: लेनदेन और संरचित एप्लिकेशन रिकॉर्ड को सिमेंटिक-निकटतम-पड़ोसी क्वेरी के बगल में रखें।"
+  },
+  "feat-035-01": {
+    "label": "मौजूदा एप्लिकेशन को स्थानांतरित करते समय सामान्य दस्तावेज-डेटाबेस API और ड्राइवर का उपयोग करें।",
+    "why": "MongoDB कार्यभार अनुकूलता Amazon DocumentDB (MongoDB अनुकूलता के साथ) में है, और यह काम सक्षम करता है: मौजूदा एप्लिकेशन को स्थानांतरित करते समय सामान्य दस्तावेज़-डेटाबेस APIs और ड्राइवर का उपयोग करें।"
+  },
+  "feat-035-03": {
+    "label": "चिकित्सा इतिहास या ज्ञान लेख जैसे लचीले रिकॉर्ड के बगल में एम्बेडिंग संग्रहीत करें और उनकी समानता के लिए प्रश्न करें।",
+    "why": "JSON दस्तावेज़ों के लिए मूल वेक्टर खोज Amazon DocumentDB (MongoDB अनुकूलता के साथ) में है, और यह काम सक्षम करता है: चिकित्सा इतिहास या ज्ञान लेख जैसे लचीले रिकॉर्ड के बगल में embeddings स्टोर करें और उनकी समानता क्वेरी करें।"
+  },
+  "feat-036-00": {
+    "label": "संबंधपरक जोड़ के बिना प्राथमिक कुंजी द्वारा लचीले रिकॉर्ड को कुशलतापूर्वक पुनः प्राप्त करें।",
+    "why": "कुंजी-मान और दस्तावेज़ मॉडल Amazon DynamoDB में है, और यह काम सक्षम करता है: संबंधपरक जोड़ के बिना प्राथमिक कुंजी द्वारा लचीले रिकॉर्ड को कुशलतापूर्वक पुनः प्राप्त करें।"
+  },
+  "feat-036-02": {
+    "label": "डाउनस्ट्रीम प्रसंस्करण को ट्रिगर करने के लिए आइटम परिवर्तन का एक आदेश रिकॉर्ड कैप्चर करें।",
+    "why": "DynamoDB Streams Amazon DynamoDB में है, और यह काम सक्षम करता है: आइटम परिवर्तनों का एक आदेशित रिकॉर्ड कैप्चर करें जो downstream प्रसंस्करण को ट्रिगर करता है।"
+  },
+  "feat-037-01": {
+    "label": "धीमे डेटाबेस काम से बचने के लिए मेमोरी से अक्सर अनुरोधित मान प्रदान करें।",
+    "why": "माइक्रोसेकंड-विलंबता कैशिंग Amazon ElastiCache में है, और यह काम सक्षम करता है: धीमे डेटाबेस कार्य से बचने के लिए मेमोरी से बार-बार अनुरोध किए गए मानों की सेवा करें।"
+  },
+  "feat-038-00": {
+    "label": "लेबल की गई संबंधों या अर्थ ट्रिपल के साथ जुड़े डेटा को मॉडल करें।",
+    "why": "संपत्ति ग्राफ और RDF समर्थन Amazon Neptune में है, और यह काम सक्षम करता है: संबंधपरक लेबल किए गए संबंधों या सिमेंटिक triples के साथ कनेक्ट किए गए डेटा को मॉडल करें।"
+  },
+  "feat-038-02": {
+    "label": "अर्थ खोज, सिफारिशों, या ग्राउंडिंग के लिए तथ्यों और उनके संबंधों का प्रतिनिधित्व करें।",
+    "why": "ज्ञान ग्राफ कार्यभार Amazon Neptune में है, और यह काम सक्षम करता है: सिमेंटिक खोज, सिफारिशें या grounding के लिए तथ्यों और उनके संबंधों का प्रतिनिधित्व करें।"
+  },
+  "feat-038-04": {
+    "label": "इकाइयों के बीच अर्थ मिलान और समझाए जाने योग्य पथ दोनों का उपयोग करके एक उत्पन्न उत्तर को ग्राउंड करें।",
+    "why": "GraphRAG संबंध संदर्भ Amazon Neptune में है, और यह काम सक्षम करता है: सिमेंटिक मेल और entities के बीच व्याख्यात्मक पथ दोनों का उपयोग करके उत्पन्न उत्तर को आधार बनाएं।"
+  },
+  "feat-039-01": {
+    "label": "नियमित संबंधपरक डेटाबेस रखरखाव और पुनः प्राप्ति-बिंदु निर्माण को AWS को सौंपें।",
+    "why": "स्वचालित बैकअप और patching Amazon Relational Database Service (Amazon RDS) में है, और यह काम सक्षम करता है: AWS को routine संबंधपरक डेटाबेस रखरखाव और recovery-point निर्माण को सौंपें।"
+  },
+  "feat-039-03": {
+    "label": "पारंपरिक प्रबंधित PostgreSQL एप्लिकेशन में एम्बेडिंग भंडारण और निकटतम-पड़ोसी प्रश्न जोड़ें।",
+    "why": "pgvector के साथ RDS for PostgreSQL Amazon Relational Database Service (Amazon RDS) में है, और यह काम सक्षम करता है: एक पारंपरिक प्रबंधित PostgreSQL एप्लिकेशन में embedding भंडारण और निकटतम-neighbor क्वेरी जोड़ें।"
+  },
+  "feat-040-00": {
+    "label": "केवल उस जानकारी से कार्यस्थल प्रतिक्रियाएं उत्पन्न करें जो अनुरोध करने वाली पहचान देखने के लिए अधिकृत है।",
+    "why": "अनुमति-जागरूक एंटरप्राइज़ उत्तर Amazon Q में है, और यह काम सक्षम करता है: कार्यस्थल प्रतिक्रियाएं तभी उत्पन्न करें जब requesting पहचान को जानकारी देखने का अधिकार हो।"
+  },
+  "feat-040-02": {
+    "label": "अनुमोदित कंपनी रिपॉजिटरी और एप्लिकेशन में सहायक प्रतिक्रियाएं ग्राउंड करें।",
+    "why": "संगठनात्मक डेटा के लिए कनेक्शन Amazon Q में है, और यह काम सक्षम करता है: अनुमोदित कंपनी repositories और एप्लिकेशन में सहायक प्रतिक्रियाओं को आधार बनाएं।"
+  },
+  "feat-041-00": {
+    "label": "सामान्य अनुभाग रहित पाठ से सामान्य भाषाई संकेत और संरचना निकालें।",
+    "why": "Amazon Comprehend अंतर्दृष्टि Amazon Comprehend में है, और यह काम सक्षम करता है: सामान्य अनस्ट्रक्चर्ड पाठ से सामान्य linguistic संकेत और संरचना निकालें।"
+  },
+  "feat-042-00": {
+    "label": "स्वास्थ्यसेवा आख्यानों में शर्तों, दवाओं, परीक्षणों, और उनके संबंधों की पहचान करें।",
+    "why": "DetectEntitiesV2 Amazon Comprehend Medical में है, और यह काम सक्षम करता है: स्वास्थ्यसेवा narratives में conditions, दवाइयां, परीक्षाएं और उनके संबंधों की पहचान करें।"
+  },
+  "feat-043-01": {
+    "label": "एक उच्चारण से अनुमान लगाएं कि एक उपयोगकर्ता क्या हासिल करने की कोशिश कर रहा है।",
+    "why": "intent recognition Amazon Lex में है, और यह काम सक्षम करता है: एक उच्चारण से एक उपयोगकर्ता क्या पूरा करने की कोशिश कर रहा है, यह infer करें।"
+  },
+  "feat-043-03": {
+    "label": "बैकएंड व्यावसायिक तर्क और पूर्ति प्रणालियों से एक कथात्मक इंटरफेस जोड़ें।",
+    "why": "एप्लिकेशन एकीकरण Amazon Lex में है, और यह काम सक्षम करता है: एक conversational इंटरफेस को backend व्यावसायिक तर्क और पूर्णता प्रणालियों से कनेक्ट करें।"
+  },
+  "feat-045-00": {
+    "label": "पूर्वपंजीकृत या स्ट्रीमिंग भाषण को लिखित पाठ में परिवर्तित करें।",
+    "why": "बैच transcription Amazon Transcribe में है, और यह काम सक्षम करता है: पूर्व-recorded या streaming भाषण को लिखित पाठ में रूपांतरित करें।"
+  },
+  "feat-046-00": {
+    "label": "अर्थ को संरक्षित करते हुए लिखित सामग्री को भाषाओं के बीच परिवर्तित करें।",
+    "why": "वास्तविक समय अनुवाद Amazon Translate में है, और यह काम सक्षम करता है: अर्थ को संरक्षित करते हुए written सामग्री को भाषाओं के बीच परिवर्तित करें।"
+  },
+  "feat-047-01": {
+    "label": "सेवन को स्वचालित करें जहां लेआउट, फ़ील्ड, और सारणीबद्ध मान उपयोगी रिकॉर्ड बनने चाहिए।",
+    "why": "AnalyzeExpense API Amazon Textract में है, और यह काम सक्षम करता है: intake को स्वचालित करें जहां layouts, fields और tabular मान usable रिकॉर्ड बन जाते हैं।"
+  },
+  "feat-048-01": {
+    "label": "कार्यस्थल या सहायता खोज के लिए प्रासंगिक संगठनात्मक जानकारी रैंक करें।",
+    "why": "बुद्धिमान खोज Amazon Kendra में है, और यह काम सक्षम करता है: कार्यस्थल या support खोज के लिए प्रासंगिक संगठनात्मक जानकारी को rank करें।"
+  },
+  "feat-049-01": {
+    "label": "लेबल की गई उदाहरणों का उपयोग करके संगठन-विशिष्ट ऑब्जेक्ट के लिए छवि पहचान सिखाएं।",
+    "why": "कस्टम लेबल Amazon Rekognition में है, और यह काम सक्षम करता है: labeled उदाहरणों का उपयोग करके संगठन-विशिष्ट objects के लिए image recognition सिखाएं।"
+  },
+  "feat-051-00": {
+    "label": "ML विशेषज्ञता की आवश्यकता के बिना ऐतिहासिक टिप्पणियों से पूर्वानुमान एल्गोरिदम चुनें और प्रशिक्षण दें।",
+    "why": "स्वचालित time-series मशीन लर्निंग Amazon Forecast में है, और यह काम सक्षम करता है: ML दक्षता की आवश्यकता के बिना ऐतिहासिक अवलोकनों से forecasting एल्गोरिदम चुनें और प्रशिक्षित करें।"
+  },
+  "feat-051-02": {
+    "label": "लक्ष्य इतिहास के बाहर परिवर्तनशील संकेत और वर्णनात्मक विशेषताओं के साथ भविष्य के अनुमानों में सुधार करें।",
+    "why": "संबंधित time-series और आइटम metadata Amazon Forecast में है, और यह काम सक्षम करता है: changing signals और target history से परे descriptive attributes के साथ भविष्य के अनुमानों में सुधार करें।"
+  },
+  "feat-052-00": {
+    "label": "लेबल किए गए ऐतिहासिक घटनाओं से संदिग्ध व्यवहार के संगठन-विशिष्ट पैटर्न सीखें।",
+    "why": "कस्टम fraud मॉडल Amazon Fraud Detector में है, और यह काम सक्षम करता है: labeled ऐतिहासिक events से संगठन-विशिष्ट suspicious व्यवहार के patterns सीखें।"
+  },
+  "feat-052-02": {
+    "label": "मॉडल परिणामों और व्यावसायिक शर्तों को अनुमोदन, ब्लॉक, या समीक्षा जैसे कार्यों में अनुवाद करें।",
+    "why": "नियम और परिणाम Amazon Fraud Detector में है, और यह काम सक्षम करता है: मॉडल परिणामों और व्यावसायिक conditions को approve, block या review जैसी कार्यों में translate करें।"
+  },
+  "feat-053-01": {
+    "label": "स्वीकार्य और दोषपूर्ण आउटपुट के उदाहरणों से एक औद्योगिक निरीक्षण मॉडल बनाएं।",
+    "why": "सामान्य और defective image प्रशिक्षण Amazon Lookout for Vision में है, और यह काम सक्षम करता है: acceptable और faulty आउटपुट के उदाहरणों से industrial inspection मॉडल बनाएं।"
+  },
+  "feat-054-01": {
+    "label": "एक साथ असामान्य संकेतों को संयोजित करें जो एक अंतर्निहित घटना साझा कर सकते हैं।",
+    "why": "संबंधित-event grouping Amazon Lookout for Metrics में है, और यह काम सक्षम करता है: simultaneous असामान्य signals को संयोजित करें जो एक अंतर्निहित incident share कर सकते हैं।"
+  },
+  "feat-055-00": {
+    "label": "असामान्य एप्लिकेशन व्यवहार खोजें और संभावित विश्वसनीयता प्रभाव समझाएं।",
+    "why": "प्रतिक्रियाशील अंतर्दृष्टि Amazon DevOps Guru में है, और यह काम सक्षम करता है: असामान्य एप्लिकेशन व्यवहार खोजें और likely विश्वसनीयता प्रभाव समझाएं।"
+  },
+  "feat-056-00": {
+    "label": "प्रस्तावित स्रोत परिवर्तनों का निरीक्षण करें और विलय से पहले रखरखाव में सुधार की सिफारिश करें।",
+    "why": "स्वचालित कोड समीक्षा Amazon CodeGuru Reviewer में है, और यह काम सक्षम करता है: प्रस्तावित source परिवर्तनों का निरीक्षण करें और merge से पहले बनाए रखने योग्यता सुधार की सिफारिश करें।"
+  },
+  "feat-056-02": {
+    "label": "समर्थित स्रोत-नियंत्रण परियोजनाओं के विरुद्ध विश्लेषण चलाएं जैसे कोड परिवर्तन प्रस्तुत किए जाते हैं।",
+    "why": "repository एकीकरण Amazon CodeGuru Reviewer में है, और यह काम सक्षम करता है: code परिवर्तन जमा किए जाने पर supported source-control projects के विरुद्ध विश्लेषण चलाएं।"
+  },
+  "feat-058-00": {
+    "label": "एजेंट की आवश्यकता से पहले स्वचालित वॉयस या चैट इंटरैक्शन के माध्यम से ग्राहक की जरूरतों को समाधान करें।",
+    "why": "conversational स्व-service Amazon Connect में है, और यह काम सक्षम करता है: एक एजेंट की आवश्यकता से पहले automated voice या chat interactions के माध्यम से ग्राहक की जरूरतें resolve करें।"
+  },
+  "feat-058-02": {
+    "label": "भावना, विषय, अनुपालन, और सेवा-गुणवत्ता प्रवृत्तियों के लिए इंटरैक्शन विश्लेषण करें।",
+    "why": "contact विश्लेषण Amazon Connect में है, और यह काम सक्षम करता है: sentiment, topics, compliance और service-quality trends के लिए interactions का विश्लेषण करें।"
+  },
+  "feat-058-04": {
+    "label": "वॉयस और डिजिटल चैनलों में ग्राहक बातचीत को लगातार प्रबंधित करें।",
+    "why": "omnichannel ग्राहक interactions Amazon Connect में है, और यह काम सक्षम करता है: voice और digital channels में ग्राहक बातचीत को सुसंगत रूप से प्रबंधित करें।"
+  },
+  "feat-059-01": {
+    "label": "सुविधाओं और भागीदारों में स्टॉक जोखिम और असंतुलन की पहचान करें।",
+    "why": "inventory दृश्यमानता और अंतर्दृष्टि AWS Supply Chain में है, और यह काम सक्षम करता है: facilities और partners में stock जोखिमों और imbalances की पहचान करें।"
+  },
+  "feat-060-00": {
+    "label": "व्यावसायिक विवरण और स्वामित्व के साथ खोज योग्य संगठनात्मक डेटा उत्पाद प्रकाशित करें।",
+    "why": "व्यावसायिक डेटा कैटलॉग Amazon DataZone में है, और यह काम सक्षम करता है: discoverable संगठनात्मक डेटा products को व्यावसायिक descriptions और ownership के साथ प्रकाशित करें।"
+  },
+  "feat-060-02": {
+    "label": "खोज में सुधार करने के लिए तकनीकी स्कीमा जानकारी से उपयोगी कैटलॉग संदर्भ उत्पन्न करें।",
+    "why": "AI-सहायता प्राप्त metadata descriptions Amazon DataZone में है, और यह काम सक्षम करता है: technical schema जानकारी से उपयोगी कैटलॉग संदर्भ उत्पन्न करें और खोज में सुधार करें।"
+  },
+  "feat-061-01": {
+    "label": "सामान्य कमजोरियों और संगठन-विशिष्ट आवश्यकताओं के लिए पुल अनुरोधों का विश्लेषण करें।",
+    "why": "कोड सुरक्षा समीक्षा AWS Security Agent में है, और यह काम सक्षम करता है: pull requests का विश्लेषण करें common vulnerabilities और संगठन-विशिष्ट requirements के लिए।"
+  },
+  "feat-061-03": {
+    "label": "एक खोजी गई कमजोरी का पता लगाया जा सकता है यह पुष्टि करने के लिए एक सैंडबॉक्स में एप्लिकेशन तैनात करें।",
+    "why": "सिम्युलेटेड सत्यापन AWS Security Agent में है, और यह काम सक्षम करता है: एक sandbox में एक एप्लिकेशन तैनात करें यह पुष्टि करने के लिए कि क्या खोजी गई कमजोरी exploitable है।"
+  },
+  "feat-062-00": {
+    "label": "टिकटिंग और अलर्ट प्रणालियों से स्वचालित रूप से घटना विश्लेषण लॉन्च करें।",
+    "why": "स्वचालित जांच AWS DevOps Agent में है, और यह काम सक्षम करता है: ticketing और alarming प्रणालियों से automatically incident विश्लेषण लॉन्च करें।"
+  },
+  "feat-062-02": {
+    "label": "घटना के कारण की पहचान के बाद समाधान, सत्यापन, और रोलबैक कार्रवाई प्रदान करें।",
+    "why": "विस्तृत mitigation योजनाएं AWS DevOps Agent में है, और यह काम सक्षम करता है: incident के कारण को पहचानने के बाद resolution, सत्यापन और rollback कार्यों को प्रदान करें।"
+  },
+  "feat-062-04": {
+    "label": "भविष्य की परिचालन सिफारिशों को परिष्कृत करने के लिए प्रतिक्रिया और पिछली जांच का उपयोग करें।",
+    "why": "निरंतर शिक्षा AWS DevOps Agent में है, और यह काम सक्षम करता है: feedback और past investigations का उपयोग करके future परिचालन सिफारिशें refine करें।"
+  },
+  "feat-063-01": {
+    "label": "प्रत्येक सक्षम भौगोलिक क्षेत्र से खाता गतिविधि को एक केंद्रीय गंतव्य तक पहुंचाएं।",
+    "why": "multi-Region trails AWS CloudTrail में है, और यह काम सक्षम करता है: हर enabled geographic क्षेत्र से account गतिविधि को केंद्रीय destination में deliver करें।"
+  },
+  "feat-063-02": {
+    "label": "जांच और अनुपालन समीक्षा के लिए छेड़छाड़-प्रतिरोधी गतिविधि रिकॉर्ड बनाए रखें।",
+    "why": "अपरिवर्तनीय audit साक्ष्य AWS CloudTrail में है, और यह काम सक्षम करता है: जांच और compliance समीक्षाओं के लिए tamper-resistant activity रिकॉर्ड रखें।"
+  },
+  "feat-064-01": {
+    "label": "जब एक परिचालनात्मक माप एक सीमा को पार करता है या विसंगति व्यवहार का पता लगाता है।",
+    "why": "alarms और automated कार्यों Amazon CloudWatch में है, और यह काम सक्षम करता है: जब एक परिचालन माप एक threshold को cross करता है या anomalous व्यवहार का पता लगाता है तो respond करें।"
+  },
+  "feat-065-00": {
+    "label": "देखें कि समय के साथ क्लाउड संसाधन की सेटिंग कैसे बदली।",
+    "why": "कॉन्फ़िगरेशन इतिहास AWS Config में है, और यह काम सक्षम करता है: देखें कि समय के साथ क्लाउड संसाधन की settings कैसे बदली गई।"
+  },
+  "feat-065-02": {
+    "label": "क्लाउड संपत्ति खोजें और समझें कि उनके कॉन्फिगरेशन एक दूसरे पर कैसे निर्भर करते हैं।",
+    "why": "संसाधन संबंध inventory AWS Config में है, और यह काम सक्षम करता है: क्लाउड assets की खोज करें और समझें कि उनके configurations एक दूसरे पर कैसे निर्भर करते हैं।"
+  },
+  "feat-066-02": {
+    "label": "खाता मेटाडेटा और सेवा कॉन्फिगरेशन का उपयोग करके क्लाउड-पर्यावरण सुधारों की समीक्षा करें।",
+    "why": "खाता-स्तर guidance AWS Trusted Advisor में है, और यह काम सक्षम करता है: account metadata और service configuration का उपयोग करके cloud-environment सुधारों की समीक्षा करें।"
+  },
+  "feat-067-01": {
+    "label": "रिकॉर्ड करें कि वर्कलोड अभी तक अनुशंसित आर्किटेक्चर प्रथाओं को पूरा नहीं करता है।",
+    "why": "दस्तावेज़ किए गए जोखिम AWS Well-Architected Tool में है, और यह काम सक्षम करता है: record करें जहां एक workload अभी तक recommended architectural practices को पूरा नहीं करता है।"
+  },
+  "feat-067-02": {
+    "label": "समीक्षा निष्कर्षों को आर्किटेक्चर सुधार कार्यों के एक आदेश सेट में बदलें।",
+    "why": "सुधार योजनाएं AWS Well-Architected Tool में है, और यह काम सक्षम करता है: review निष्कर्षों को architecture remediation कार्यों के एक आदेशित सेट में बदलें।"
+  },
+  "feat-068-01": {
+    "label": "सामग्री के मालिक एप्लिकेशन या स्टोरेज सिस्टम के प्रत्यक्ष लोड और जोखिम को कम करें।",
+    "why": "origin सुरक्षा Amazon CloudFront में है, और यह काम सक्षम करता है: एप्लिकेशन या storage सिस्टम के direct load और exposure को कम करें जो सामग्री के मालिक हैं।"
+  },
+  "feat-069-00": {
+    "label": "एक अलग-थलग क्लाउड नेटवर्क को विभाजित करें और नियंत्रित करें कि इसका ट्रैफिक कहां यात्रा कर सकता है।",
+    "why": "Subnets और route तालिकाएं Amazon Virtual Private Cloud (Amazon VPC) में है, और यह काम सक्षम करता है: एक अलग-थलग क्लाउड network को divide करें और नियंत्रित करें कि इसका traffic कहां travel कर सकता है।"
+  },
+  "feat-069-02": {
+    "label": "सार्वजनिक इंटरनेट के माध्यम से ट्रैफिक भेजे बिना समर्थित क्लाउड सेवाओं तक पहुंचें।",
+    "why": "VPC endpoints और AWS PrivateLink Amazon Virtual Private Cloud (Amazon VPC) में है, और यह काम सक्षम करता है: public internet के माध्यम से traffic भेजे बिना समर्थित क्लाउड services को निजी तरीके से reach करें।"
+  },
+  "feat-070-02": {
+    "label": "एक स्वयं-सेवा पोर्टल के माध्यम से चयनित क्लाउड अनुपालन समझौतों को स्वीकार करें और ट्रैक करें।",
+    "why": "समझौता प्रबंधन AWS Artifact में है, और यह काम सक्षम करता है: self-service portal के माध्यम से selected क्लाउड compliance समझौतों को स्वीकार और track करें।"
+  },
+  "feat-071-01": {
+    "label": "सामान्य मानकों और नियमों के अनुरूप नियंत्रण सेट से एक मूल्यांकन शुरू करें।",
+    "why": "prebuilt compliance frameworks AWS Audit Manager में है, और यह काम सक्षम करता है: common मानकों और नियमों से aligned control sets से एक assessment शुरू करें।"
+  },
+  "feat-072-00": {
+    "label": "पहचान का प्रतिनिधित्व करें और दस्तावेज़ संलग्न करें जो क्लाउड कार्यों की अनुमति या अस्वीकार करते हैं।",
+    "why": "उपयोगकर्ता roles और policies AWS Identity and Access Management (IAM) में है, और यह काम सक्षम करता है: identities represent करें और documents attach करें जो cloud कार्यों को allow या deny करते हैं।"
+  },
+  "feat-072-02": {
+    "label": "स्थायी कुंजियों के बजाय अनुप्रयोगों और संघीय पहचान के लिए अल्पकालिक पहुंच का उपयोग करें।",
+    "why": "अस्थायी role credentials AWS Identity and Access Management (IAM) में है, और यह काम सक्षम करता है: permanent keys के बजाय एप्लिकेशन और federated identities के लिए short-lived पहुंच का उपयोग करें।"
+  },
+  "feat-073-01": {
+    "label": "सुरक्षा कमजोरियों के लिए serverless फ़ंक्शन कोड पैकेज और निर्भरताओं का मूल्यांकन करें।",
+    "why": "AWS Lambda vulnerability scanning Amazon Inspector में है, और यह काम सक्षम करता है: सुरक्षा कमजोरियों के लिए serverless फंक्शन कोड packages और dependencies का मूल्यांकन करें।"
+  },
+  "feat-074-00": {
+    "label": "एन्क्रिप्शन कुंजी बनाएं जिनकी नीतियां, जीवनचक्र, और उपयोग संगठन द्वारा नियंत्रित होते हैं।",
+    "why": "ग्राहक द्वारा प्रबंधित keys AWS Key Management Service (AWS KMS) में है, और यह काम सक्षम करता है: encryption keys बनाएं जिनकी policies, जीवनचक्र और use संगठन द्वारा नियंत्रित होते हैं।"
+  },
+  "feat-074-02": {
+    "label": "नियंत्रित करें कि कौन क्रिप्टोग्राफिक सामग्री का उपयोग कर सकता है और इसे प्रबंधित शेड्यूल पर बदलें।",
+    "why": "key policies और automatic rotation AWS Key Management Service (AWS KMS) में है, और यह काम सक्षम करता है: नियंत्रित करें कि cryptographic material का उपयोग कौन कर सकता है और इसे प्रबंधित schedule पर बदलें।"
+  },
+  "feat-075-01": {
+    "label": "सार्वजनिक पहुंच, एन्क्रिप्शन, और साझाकरण जोखिमों के लिए ऑब्जेक्ट-स्टोरेज बकेट का मूल्यांकन करें।",
+    "why": "S3 सुरक्षा posture मूल्यांकन Amazon Macie में है, और यह काम सक्षम करता है: object-storage buckets को public पहुंच, encryption और sharing जोखिमों के लिए assess करें।"
+  },
+  "feat-076-00": {
+    "label": "स्रोत कोड और सादा पाठ कॉन्फिगरेशन से पासवर्ड, टोकन, और API क्रेडेंशियल रखें।",
+    "why": "एन्क्रिप्टेड secret भंडारण AWS Secrets Manager में है, और यह काम सक्षम करता है: passwords, tokens और API credentials को source code और plaintext configuration से बाहर रखें।"
+  },
+  "feat-076-02": {
+    "label": "प्रत्येक क्रेडेंशियल की पुनः प्राप्ति को स्पष्ट रूप से अधिकृत पहचानों तक प्रतिबंधित करें।",
+    "why": "सूक्ष्म-दाने वाली secret पहुंच AWS Secrets Manager में है, और यह काम सक्षम करता है: प्रत्येक credential की retrieval को explicitly authorized identities तक सीमित करें।"
+  },
+  "feat-077-01": {
+    "label": "ऑब्जेक्ट इतिहास और गोपनीयता की रक्षा करें जबकि नियंत्रित करें कि कौन सी पहचान इसे पुनः प्राप्त कर सकती है।",
+    "why": "versioning, encryption और पहुंच policies Amazon Simple Storage Service (Amazon S3) में है, और यह काम सक्षम करता है: object इतिहास और गोपनीयता को सुरक्षित रखें जबकि नियंत्रित करें कि कौन सी identities इसे retrieve कर सकते हैं।"
+  },
+  "feat-077-03": {
+    "label": "बड़े पैमाने पर serverless समानता प्रश्नों के लिए ऑब्जेक्ट स्टोरेज में वेक्टर बकेट और इंडेक्स बनाएं।",
+    "why": "Amazon S3 Vectors Amazon Simple Storage Service (Amazon S3) में है, और यह काम सक्षम करता है: object storage में vector buckets और indexes बनाएं massive scale पर serverless समानता queries के लिए।"
+  },
+  "feat-078-00": {
+    "label": "सक्रिय ऑब्जेक्ट स्टोरेज की तुलना में कम लागत पर कम बार पहुंचे गए रिकॉर्ड बनाए रखें।",
+    "why": "दीर्घकालीन archival भंडारण classes Amazon S3 Glacier में है, और यह काम सक्षम करता है: सक्रिय object storage से कम लागत पर infrequently accessed रिकॉर्ड retain करें।"
+  },
+  "feat-078-02": {
+    "label": "जब तत्काल पहुंच अनावश्यक हो तो लंबी संरक्षण अवधि को आर्थिक रूप से पूरा करें।",
+    "why": "retention-focused लागत अनुकूलन Amazon S3 Glacier में है, और यह काम सक्षम करता है: जब तत्काल पहुंच अनावश्यक हो तो दीर्घ preservation अवधि को आर्थिक रूप से पूरा करें।"
+  },
+  "feat-079-01": {
+    "label": "विखंडित स्वास्थ्यसेवा जानकारी को एक सामान्य आधुनिक स्कीमा में सामान्य करें।",
+    "why": "FHIR R4 AWS HealthLake में है, और यह काम सक्षम करता है: fragmented स्वास्थ्यसेवा जानकारी को common आधुनिक schema में normalize करें।"
+  },
+  "feat-080-01": {
+    "label": "एक रिकॉर्ड की गई मुठभेड़ में क्लिनिशियन और रोगी योगदान को अलग करें।",
+    "why": "speaker role identification AWS HealthScribe में है, और यह काम सक्षम करता है: recorded encounter में clinician और patient योगदान को distinguish करें।"
+  },
+  "feat-080-03": {
+    "label": "पेशेवर समीक्षा के लिए संरचित मुठभेड़ दस्तावेज़ का मसौदा तैयार करें।",
+    "why": "preliminary clinical नोट्स AWS HealthScribe में है, और यह काम सक्षम करता है: professional समीक्षा के लिए structured encounter documentation का draft करें।"
+  },
+  "feat-081-00": {
+    "label": "मॉडल मापदंडों को सीखने की लागत और समय को कम करने के लिए विशेष रूप से निर्मित AWS सिलिकॉन का उपयोग करें।",
+    "why": "AWS Trainium AWS Trainium में है, और यह काम सक्षम करता है: model parameters सीखने की लागत और समय को कम करने के लिए purpose-built AWS silicon का उपयोग करें।"
+  },
+  "feat-082-01": {
+    "label": "इंस्टेंस परिवार को प्रावधानित करें जो दूसरी पीढ़ी AWS अनुमान त्वरक को उजागर करता है।",
+    "why": "Amazon EC2 Inf2 instances AWS Inferentia / Inferentia2 में है, और यह काम सक्षम करता है: instance family को provision करें जो second-generation AWS अनुमान accelerators को expose करता है।"
+  },
+  "feat-083-01": {
+    "label": "विशेष रूप से निर्मित AWS प्रशिक्षण और अनुमान चिप्स के साथ सामान्य मॉडल-विकास लाइब्रेरी का उपयोग करें।",
+    "why": "framework एकीकरण AWS Neuron SDK में है, और यह काम सक्षम करता है: common मॉडल-विकास libraries का उपयोग करें purpose-built AWS प्रशिक्षण और अनुमान chips के साथ।"
+  },
+  "feat-084-00": {
+    "label": "विभिन्न पैमानों पर लागत-कुशल मॉडल लर्निंग के लिए AWS त्वरक पीढ़ी चुनें।",
+    "why": "पहली और दूसरी generation Trainium Amazon EC2 Trn1 / Trn2 instances में है, और यह काम सक्षम करता है: विभिन्न scales पर cost-efficient मॉडल सीखने के लिए AWS accelerator generations चुनें।"
+  },
+  "feat-084-02": {
+    "label": "बड़े सिंक्रोनाइज़्ड लर्निंग कार्यों के लिए कम-विलंबता नेटवर्किंग के साथ त्वरक इंस्टेंस कनेक्ट करें।",
+    "why": "EFA के साथ distributed प्रशिक्षण Amazon EC2 Trn1 / Trn2 instances में है, और यह काम सक्षम करता है: बड़े synchronized सीखने jobs के लिए low-latency नेटवर्किंग के साथ accelerator instances को कनेक्ट करें।"
+  },
+  "feat-085-01": {
+    "label": "विशेष रूप से निर्मित अनुमान सिलिकॉन का उपयोग करके उत्पादन भविष्यवाणियों की कीमत को कम करें।",
+    "why": "cost-efficient मॉडल serving Amazon EC2 Inf1 / Inf2 instances में है, और यह काम सक्षम करता है: purpose-built अनुमान silicon का उपयोग करके production भविष्यवाणियों की कीमत को कम करें।"
+  },
+  "feat-086-00": {
+    "label": "सबसे अधिक मांग वाले बड़े-मॉडल प्रशिक्षण और सेवा वर्कलोड के लिए उच्च-अंत त्वरक का उपयोग करें।",
+    "why": "NVIDIA H100 Tensor Core GPUs Amazon EC2 P5 instances में है, और यह काम सक्षम करता है: सबसे demanding बड़े-मॉडल प्रशिक्षण और serving workloads के लिए high-end accelerators का उपयोग करें।"
+  },
+  "feat-087-01": {
+    "label": "एक सर्वर से अधिक मॉडल के लिए कई GPU होस्ट को एक कसकर जुड़ी प्रणाली में संयोजित करें।",
+    "why": "EC2 UltraServer scale-up प्रणालियों Amazon EC2 P6 instances और UltraServers में है, और यह काम सक्षम करता है: एक तंग connected प्रणाली में multiple GPU hosts को संयोजित करें मॉडल के लिए जो एक server exceed करता है।"
+  },
+  "feat-088-00": {
+    "label": "सामान्य ML अनुमान और दृश्य वर्कलोड के लिए लागत-सचेत ग्राफिक्स त्वरक का उपयोग करें।",
+    "why": "NVIDIA A10G GPUs on G5 instances Amazon EC2 G5 / G6 instances में है, और यह काम सक्षम करता है: सामान्य ML अनुमान और दृश्य workloads के लिए cost-conscious graphics accelerators का उपयोग करें।"
+  },
+  "feat-088-02": {
+    "label": "लचीले GPU इंस्टेंस पर दृश्य एप्लिकेशन और मध्यम आकार की उत्पादन भविष्यवाणियां चलाएं।",
+    "why": "graphics और ML अनुमान workloads Amazon EC2 G5 / G6 instances में है, और यह काम सक्षम करता है: flexible GPU instances पर दृश्य एप्लिकेशन और मध्यम आकार के production भविष्यवाणियां चलाएं।"
+  },
+  "feat-089-02": {
+    "label": "Gaudi प्रोसेसर के लिए लाइब्रेरी और उपकरण के साथ वर्कलोड विकसित करें और अनुकूलित करें।",
+    "why": "SynapseAI सॉफ्टवेयर stack Amazon EC2 DL1 instances में है, और यह काम सक्षम करता है: Gaudi processors के लिए libraries और tools के साथ workloads को विकसित और optimize करें।"
+  },
+  "feat-090-01": {
+    "label": "परिचित HPC शेड्यूलिंग सॉफ़्टवेयर के माध्यम से वितरित काम को कतार और आवंटित करें।",
+    "why": "job scheduler एकीकरण AWS ParallelCluster में है, और यह काम सक्षम करता है: परिचित HPC scheduling सॉफ्टवेयर के माध्यम से distributed काम को queue और allocate करें।"
+  },
+  "feat-091-00": {
+    "label": "विलंबता को कम करने के लिए वितरित एप्लिकेशन को नेटवर्क हार्डवेयर के साथ सीधे संचार करने दें।",
+    "why": "Operating-system bypass Elastic Fabric Adapter में है, और यह काम सक्षम करता है: distributed एप्लिकेशनों को network hardware के साथ directly communicate करने दें latency को कम करने के लिए।"
+  },
+  "feat-091-02": {
+    "label": "तब ढाल को कुशलतापूर्वक सिंक्रोनाइज़ करें जब एक सीखने की नौकरी कई मशीनों में फैली हो।",
+    "why": "tightly coupled distributed प्रशिक्षण Elastic Fabric Adapter में है, और यह काम सक्षम करता है: जब एक सीखने job कई machines में फैला हो तो gradients को efficiently synchronize करें।"
+  },
+  "feat-092-01": {
+    "label": "कतार में रखी गई प्रसंस्करण नौकरियों द्वारा आवश्यक इंस्टेंस क्षमता को प्रावधान और स्केल करें।",
+    "why": "dynamic कंप्यूट environments AWS Batch में है, और यह काम सक्षम करता है: queued प्रसंस्करण नौकरियों द्वारा needed instance क्षमता को provision और scale करें।"
+  },
+  "feat-093-00": {
+    "label": "सामान्य फ्रेमवर्क और ड्राइवर के साथ वर्चुअल मशीन लॉन्च करें जो पहले से कॉन्फ़िगर किए गए हैं।",
+    "why": "Deep Learning AMI (DLAMI) AWS Deep Learning AMIs में है, और यह काम सक्षम करता है: common frameworks और drivers पहले से configured के साथ virtual machines launch करें।"
+  },
+  "feat-094-01": {
+    "label": "प्रबंधित ML, Kubernetes, कंटेनर, या वर्चुअल मशीन में एक ही ML कंटेनर कलाकृतियों का उपयोग करें।",
+    "why": "Amazon EKS तैनाती AWS Deep Learning Containers में है, और यह काम सक्षम करता है: same ML container artifacts का उपयोग managed ML, Kubernetes, containers या virtual machines में करें।"
+  },
+  "feat-096-00": {
+    "label": "Google के मशीन-लर्निंग फ्रेमवर्क के आधार पर वर्कलोड विकसित करें और संचालित करें।",
+    "why": "TensorFlow on AWS TensorFlow on AWS में है, और यह काम सक्षम करता है: Google के machine-learning framework पर आधारित workloads को विकसित और संचालित करें।"
+  },
+  "feat-098-00": {
+    "label": "नोटबुक सर्वर को मैन्युअल रूप से बनाए रखे बिना सहयोगी इंटरैक्टिव कंप्यूटिंग लॉन्च करें।",
+    "why": "प्रबंधित notebook environments Jupyter on AWS में है, और यह काम सक्षम करता है: notebook servers को manually maintain किए बिना सहयोगी interactive computing launch करें।"
+  },
+  "feat-098-02": {
+    "label": "एक नोटबुक वर्कफ़्लो से क्लाउड डेटासेट, प्रशिक्षण कार्यों, और तैनाती उपकरण तक पहुंचें।",
+    "why": "Amazon SageMaker notebook instances Jupyter on AWS में है, और यह काम सक्षम करता है: एक notebook workflow से क्लाउड डेटासेट, प्रशिक्षण नौकरियों और तैनाती tools को access करें।"
+  },
+  "feat-099-01": {
+    "label": "ज्ञात बाधाओं और स्थितियों को समझाएं जो सेवा की आउटपुट गुणवत्ता को बदल सकते हैं।",
+    "why": "limitations और performance कारक AWS AI Service Cards में है, और यह काम सक्षम करता है: ज्ञात constraints और conditions को समझाएं जो service के output गुणवत्ता को बदल सकते हैं।"
+  },
+  "feat-100-00": {
+    "label": "व्यवहार का वर्णन करके और संकेत-संचालित घटकों को जोड़कर एक उत्पन्न एप्लिकेशन बनाएं।",
+    "why": "Prompt-based ऐप building Amazon PartyRock में है, और यह काम सक्षम करता है: व्यवहार describe करके और prompt-driven components को कनेक्ट करके एक generative एप्लिकेशन बनाएं।"
+  },
+  "feat-100-01": {
+    "label": "AWS से प्रबंधित उत्पन्न मॉडल के साथ एक नो-कोड लर्निंग एप्लिकेशन को शक्ति दें।",
+    "why": "Amazon Bedrock foundation मॉडल Amazon PartyRock में है, और यह काम सक्षम करता है: AWS से managed generative models के साथ एक no-code सीखने एप्लिकेशन को power करें।"
+  },
+  "features": {
+    "hint": "प्रत्येक काम को उस क्षमता पर खींचें जो उसे निष्पादित करती है। प्रकट नाम जिस सेवा से संबंधित है।"
+  }
+}

@@ -1,0 +1,108 @@
+{
+  "cu-001": {
+    "label": "分析发票 PDF 并读取提取的供应商、总额和到期日期字段",
+    "sub": "prebuilt-invoice",
+    "why": "prebuilt-invoice 从发票文件中提取结构化字段—— 考试最多测试的预构建分析器(7 次提及)。"
+  },
+  "cu-002": {
+    "label": "用自然语言定义你自己的字段架构，从合同中提取这些字段",
+    "sub": "custom analyzer via begin_create_analyzer",
+    "why": "自定义分析器是从你描述的字段架构构建的—— CU 的纯语言字段描述是将其与 Document Intelligence 预构建区分开的原因。"
+  },
+  "cu-003": {
+    "label": "从拍摄的设备标签中提取文本和识别的对象",
+    "sub": "prebuilt-image",
+    "why": "prebuilt-image 从静止图像中提取文本和对象，通过与每个其他模态相同的分析器工作流进行。"
+  },
+  "cu-004": {
+    "label": "从录制的支持电话中获得抄本、摘要和演讲者分解",
+    "sub": "prebuilt-audio",
+    "why": "CU 的音频分析器返回转录、摘要和扬声器—— 提取，而不是语音合成。"
+  },
+  "cu-005": {
+    "label": "分段录制的培训课程并为搜索索引其成绩单和视觉事件",
+    "sub": "prebuilt-videoSearch",
+    "why": "视频分析器返回段、成绩单和视觉事件；*Search 变种为检索准备内容—— Azure AI Search 索引 CU 提取的内容。"
+  },
+  "cu-006": {
+    "label": "通过文件结构返回文本、表格和选择标记—— 无字段语义",
+    "sub": "prebuilt-layout",
+    "why": "布局提取文本、表格、选择标记和结构；Read 风格 OCR 仅为文本—— histack 的 CU Read vs Layout 区别。"
+  },
+  "cu-007": {
+    "label": "混合批次的供应商表单需要其松散的键值对被提取，而不从预定义字段架构开始",
+    "sub": "prebuilt-documentFields",
+    "why": "prebuilt-documentFields 从文件中提取通用键值对，无需特定领域架构—— 不像 prebuilt-invoice 的固定发票字段。"
+  },
+  "cu-008": {
+    "label": "在为全新表单类型构建自定义分析器之前，请求 Content Understanding 提议字段架构，然后将新分析器基于通用文档分析器",
+    "sub": "prebuilt-documentFieldSchema → prebuilt-document",
+    "why": "prebuilt-documentFieldSchema 为你尚未架构的文档类型提议字段；prebuilt-document 是定义新自定义文档分析器时使用的 base_analyzer_id—— 在同一自定义构建工作流中两个不同的 id。"
+  },
+  "cu-009": {
+    "label": "针对产品照片运行 Python 快速开始并从结果的 Summary 字段读取生成的描述",
+    "sub": "prebuilt-imageSearch",
+    "why": "prebuilt-imageSearch 是描述性图像输出的快速开始分析器—— 其结果公开保存自然语言描述的 Summary 字段。"
+  },
+  "cu-010": {
+    "label": "构建自定义分析器，从一批仪表板截图中提取图表的标题和 ChartType 字段",
+    "sub": "custom analyzer via base_analyzer_id=\"prebuilt-image\"",
+    "why": "自定义图像分析器设置 base_analyzer_id 为 prebuilt-image，然后分层字段架构—— 记录的图表和截图提取模式。"
+  },
+  "cu-011": {
+    "label": "分析零售审计的货架照片，并返回产品数量、品牌存在和缺货指示符的结构化字段",
+    "sub": "prebuilt-image",
+    "why": "Content Understanding 的图像分析器直接从照片中返回架构定义的结构化字段—— 考试直接测试的零售货架审计场景。"
+  },
+  "cu-012": {
+    "label": "接线 Python 客户端，调用 begin_analyze with analyzer_id=\"prebuilt-image\" 针对照片 URL，然后从结果中读取检测到的对象",
+    "sub": "prebuilt-image",
+    "why": "begin_analyze(analyzer_id=..., inputs=[AnalysisInput(url=...)]) 调用模式在模态中相同—— 只有分析器 id 改变，prebuilt-image 是直接(非搜索)图像分析器。"
+  },
+  "cu-013": {
+    "label": "接线轻量级 Python 客户端，调用 begin_analyze with 呼叫录音 URL 以拉回准备好供检索索引的成绩单和摘要",
+    "sub": "prebuilt-audioSearch",
+    "why": "prebuilt-audioSearch 是 SDK 快速开始代码片段中记录的分析器 id—— *Search 后缀标记为索引/RAG 检索准备的输出，与没有检索准备的 prebuilt-audio 的直接提取不同。"
+  },
+  "cu-014": {
+    "label": "从一批播客剧集中拉出演讲者标记、精确计时的成绩单短语",
+    "sub": "transcriptPhrases",
+    "why": "transcriptPhrases 是携带演讲者识别和计时信息的输出字段—— 直接音频提取输出，与分析器 id 本身不同。"
+  },
+  "cu-015": {
+    "label": "认识到提交播客 MP3 到 Content Understanding 将内容对象的 kind 设置为用于视频输入的相同值",
+    "sub": "kind: \"audioVisual\"",
+    "why": "仅音频和视频输入都使用 kind: \"audioVisual\" 在内容架构中—— 使任何期望不同'audio' kind 的人绊脚的共享值。"
+  },
+  "cu-016": {
+    "label": "确认从语音邮箱收件箱中提取结构化成绩单是将语音捕获到文本，而不是将文本转换为语音",
+    "why": "CU 的音频分析器将现有语音转录为结构化输出—— 它们永远不会合成新的口头输出；该工作属于 Azure AI Speech，而不是 Content Understanding。"
+  },
+  "cu-017": {
+    "label": "在任何下游处理运行之前，将上传的录制产品演示分成逻辑场景段",
+    "sub": "enableSegment",
+    "why": "enableSegment 是分析器架构属性，将片段分割为逻辑段(如场景)—— 视频分析器控件，不是音频或文档。"
+  },
+  "cu-018": {
+    "label": "分析营销剪辑后，读回其成绩单和视觉内容的结构化降价摘要",
+    "sub": "prebuilt-videoSearch",
+    "why": "prebuilt-videoSearch 结果公开降价字段，按段总结成绩单和视觉内容—— SDK 的视频记录后读字段。"
+  },
+  "cu-019": {
+    "label": "确认从上传的录制中提取关键帧和视觉事件适用于已存在的素材，而不是生成新帧",
+    "why": "CU 的分析器从已存在的素材中提取关键帧、成绩单和视觉事件—— 它们不生成合成帧；那是完全不同类别的 AI 服务。"
+  },
+  "cu-020": {
+    "label": "接线 Python 客户端，调用 begin_analyze with analyzer_id=\"prebuilt-videoSearch\" 针对上传的 MP4 URL",
+    "sub": "prebuilt-videoSearch",
+    "why": "begin_analyze(analyzer_id=\"prebuilt-videoSearch\", inputs=[AnalysisInput(url=...)]) 调用是启动视频提取的记录 SDK 模式。"
+  },
+  "cu-modality-grid": {
+    "hint": "询问源文件实际是什么，然后检查 sub 行以获得确切的 prebuilt-* 分析器 id—— id 本身命名其模态(document/image/audio/video)，Search 后缀 id 为索引准备输出，而不是改变模态。",
+    "note": "Content Understanding 总是提取—— 它永远不会生成或索引。提取到 Azure AI Search 是下游步骤，而不是 CU 做的东西。",
+    "zones[0].def": "PDF、发票、合同和自由形式的文书 Content Understanding 转换为结构化字段、表格和文本。",
+    "zones[1].def": "照片、截图和图表 Content Understanding 转换为结构化字段、描述和检测到的对象。",
+    "zones[2].def": "录制的语音—— 电话、播客和语音邮件—— Content Understanding 转换为成绩单、摘要和扬声器标签。",
+    "zones[3].def": "录制的片段 Content Understanding 分段、转录并为搜索准备。"
+  }
+}

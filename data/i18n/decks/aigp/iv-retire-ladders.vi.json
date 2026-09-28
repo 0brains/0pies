@@ -1,0 +1,43 @@
+{
+ "iv-rl-01": {
+  "prompt": "Sắp xếp lại các bước để chịu trách nhiệm loại bỏ một hệ thống AI trực tiếp.",
+  "steps[0].label": "Đánh giá phụ thuộc + tùy chọn fallback",
+  "steps[0].detail": "Trước khi chạm vào bất cứ điều gì trực tiếp, lập bản đồ những gì phụ thuộc vào hệ thống — những luồng dữ liệu thượng nguồn, quy trình hạ lưu, quy trình công việc của các đội khác — và xác nhận một fallback tồn tại để loại bỏ không tạo ra một outage (SG).",
+  "steps[1].label": "Thông báo cho các bên liên quan + lập kế hoạch deactivation được kiểm soát",
+  "steps[1].detail": "Bước đầu tiên trong một loại bỏ được lái là nói với những người bị ảnh hưởng và xây dựng một kế hoạch deactivation, không chỉ lật một công tắc (SG).",
+  "steps[2].label": "Deactivation graduated với bản sao lưu con người",
+  "steps[2].detail": "Cho cơ sở hạ tầng quan trọng, gió xuống theo giai đoạn thay vì tất cả cùng một lúc, với một fallback chạy của con người bao gồm khoảng — các bộ môn giống nhau được sử dụng cho các hệ thống quan trọng nói chung.",
+  "steps[3].label": "Lưu trữ, không xóa, cho pháp lý/kiểm toán",
+  "steps[3].detail": "Bảo tồn dữ liệu của hệ thống loại bỏ, mô hình và ghi lại thay vì xóa — cơ quan quản lý và auditor có thể cần tái cấu trúc những gì hệ thống đã làm và tại sao, lâu sau khi nó dừng chạy (SG).",
+  "steps[4].label": "Bản ghi như một cuộc điều tra hộp đen, với những người ra quyết định được đặt tên",
+  "steps[4].detail": "Ghi nhật ký kích hoạt chính xác, ai đã ủy quyền tắc máy, và logic loại bỏ trong phong cách bằng chứng giống như một cuộc điều tra sự cố — một nguồn sự thật có thể kiểm toán duy nhất đặt tên ai có quyền hạn để hành động (SG)."
+ },
+ "iv-rl-02": {
+  "prompt": "Sắp xếp lại phản ứng lại một sự cố AI trực tiếp từ phát hiện đầu tiên đến việc đóng vòng lặp.",
+  "steps[0].label": "Phát hiện",
+  "steps[0].detail": "Một cảnh báo, một tín hiệu giám sát, hoặc một khiếu nại bề mặt rằng có điều gì đó sai — điều này bắt đầu đồng hồ trên mọi điều theo sau.",
+  "steps[1].label": "Chứa / cách ly đầu tiên",
+  "steps[1].detail": "Trước khi điều tra nguyên nhân hoặc soạn thảo các giao tiếp, dừng tổn thương khỏi lây lan: cách ly mô hình và thông báo cho pháp lý/tuân thủ ngay lập tức. Khống chế chiến thắng điều tra, phục hồi, hoặc giao tiếp như động thái rất tiếp theo — nhảy thẳng đến phân tích nguyên nhân gốc rễ trong khi hệ thống vẫn gây tổn thương là bẫy kiểm tra được ghi lại.",
+  "steps[2].label": "Thông báo cho pháp lý/tuân thủ (+72 giờ breach clock nơi dữ liệu cá nhân)",
+  "steps[2].detail": "Nơi sự cố liên quan đến dữ liệu cá nhân, một bộ điều khiển GDPR phải thông báo cho cơ quan giám sát trong vòng 72 giờ kể từ khi biết về vi phạm — các thủ tục phản ứng sự cố và thông báo phải được xây dựng để bắt được hạn chót đó, không được coi là một suy nghĩ kỹ thuật muộn (SG).",
+  "steps[3].label": "Gốc-nguyên nhân (Năm tại sao / cây lỗi)",
+  "steps[3].detail": "Sử dụng một khuôn khổ phân tích chính thức — phương pháp 'Năm tại sao' hoặc phân tích cây lỗi — để khoan xuống nguyên nhân cơ bản thay vì dừng lại ở triệu chứng mức bề mặt (SG).",
+  "steps[4].label": "CAPA",
+  "steps[4].detail": "Ghi lại hành động sửa chữa và phòng ngừa trong một hệ thống tập trung với chủ sở hữu được gán, thời hạn, và bước xác minh, vì vậy nguyên nhân gốc rễ thực sự được đóng lại, không chỉ được chẩn đoán.",
+  "steps[5].label": "Hồi tưởng không sao hết + công bố chủ động với bài học học được",
+  "steps[5].detail": "Chạy một xem xét chức năng chéo, không sao hết những gì xảy ra và tại sao, và công khai công bố chi tiết kỹ thuật và bài học học được thay vì chờ để được hỏi — đây là những gì biến một triệu chứng vá lại thành một cải tiến được ghi lại, có thể bảo vệ."
+ },
+ "iv-rl-03": {
+  "prompt": "Sắp xếp lại các bước để một cách an toàn mang một hệ thống deactivated trở lại trực tiếp.",
+  "steps[0].label": "Xác minh bản sửa chữa",
+  "steps[0].detail": "Xác nhận khiếm khuyết cụ thể kích hoạt deactivation thực sự đã được sửa chữa trước khi bất cứ điều gì khác di chuyển về phía trước — sự tiếp tục phụ thuộc vào các bản sửa chữa được xác minh, không chỉ đơn thuần cố gắng (SG).",
+  "steps[1].label": "Kiểm tra lại với độ cứng phát hành đầu tiên",
+  "steps[1].detail": "Đặt hệ thống đã sửa qua kiểm tra đầy đủ giống nó phải đối mặt trước khi khởi chạy gốc — hiệu suất, độ mạnh mẽ, bảo mật, công bằng — kiểm tra lại xác nhận an toàn và tuân thủ từ đầu, nó không nhận được một phím tắt bởi vì hệ thống đã chạy trước đó (SG).",
+  "steps[2].label": "Phê duyệt chức năng chéo",
+  "steps[2].detail": "Hệ thống tiếp tục chỉ khi các đội chức năng chéo — không phải một kỹ sư duy nhất hoặc trưởng nhóm — phê duyệt sự khởi động lại, đóng vòng lặp bắt đầu với những người ra quyết định được đặt tên ủy quyền tắc máy.",
+  "steps[3].label": "Canary staged/blue-green re-rollout phía sau công cụ tính năng",
+  "steps[3].detail": "Mang hệ thống trở lại từng bước — một bản phát hành canary hoặc triển khai blue-green được gây dựng bởi công cụ tính năng — vì vậy phơi bày có thể được quay lại ngay lập tức nếu vấn đề tái diễn, thay vì lật mỗi người dùng trở lại cùng một lúc (SG).",
+  "steps[4].label": "Cửa sổ giám sát cao hơn",
+  "steps[4].detail": "Xem xét hệ thống được khởi động lại chặt chẽ hơn so với hoạt động trạng thái ổn định cho một cửa sổ được xác định sau đó, vì vậy một sự tái diễn được bắt ngay lập tức thay vì ở lại xem xét được lên lịch tiếp theo."
+ }
+}

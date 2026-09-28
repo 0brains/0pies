@@ -1,0 +1,73 @@
+{
+  "metrics": {
+    "hint": "Scegli una metrica dal tipo e costo dell'errore, non dalla convenienza; la classificazione, la regressione, il recupero, la generazione, la sicurezza e il giudizio umano rispondono a domande di qualità diverse."
+  },
+  "metrics-01": {
+    "label": "La frazione di tutte le previsioni che sono corrette; più utile quando le classi e i costi degli errori sono bilanciati.",
+    "why": "Per 90 previsioni corrette su 100, l'accuratezza è del 90%. Può essere ingannevole con classi sbilanciate: un modello che prevede ogni caso di malattia rara come negativo può apparire altamente accurato mentre non trova pazienti che hanno bisogno di aiuto."
+  },
+  "metrics-02": {
+    "label": "Di tutti i positivi predetti, la frazione che sono effettivamente positivi.",
+    "why": "Usa la precisione quando i falsi positivi sono costosi. Se 100 transazioni vengono segnalate come frode e solo 80 sono fraudolente, la precisione è del 80%; i restanti 20 creano indagini non necessarie o acquisti bloccati."
+  },
+  "metrics-03": {
+    "label": "Di tutti i positivi effettivi, la frazione che il modello trova con successo.",
+    "why": "Usa il richiamo quando perdere un vero positivo è costoso. Se si verificano 100 transazioni fraudolente e il modello ne cattura 90, il richiamo è del 90%; gli altri 10 sono falsi negativi che sono sfuggiti al rilevamento."
+  },
+  "metrics-04": {
+    "label": "La media armonica della precisione e del richiamo, bilanciando entrambi in un valore.",
+    "why": "F1 diventa alto solo quando sia la precisione che il richiamo sono alti, quindi è utile per la classificazione squilibrata quando contano sia i falsi allarmi che i positivi mancanti. Non include i veri negativi e può nascondere quale tra precisione e richiamo è più debole."
+  },
+  "metrics-05": {
+    "label": "Conta i veri positivi, i veri negativi, i falsi positivi e i falsi negativi.",
+    "why": "Questa tabella espone i tipi di errore esatti nascosti da un punteggio di riepilogo. Leggi le sue quattro celle per vedere se il modello crea falsi allarmi, perde positivi reali o gestisce correttamente ogni classe prima di scegliere la precisione, il richiamo o un'altra metrica."
+  },
+  "metrics-06": {
+    "label": "Misura quanto bene un classificatore classifica i positivi al di sopra dei negativi tra le soglie.",
+    "why": "AUC-ROC valuta la qualità della classificazione senza impegnarsi su una soglia di classificazione: 1,0 è una classificazione perfetta e circa 0,5 è casuale. Per i dati altamente sbilanciati, ispeziona anche il comportamento della precisione-richiamo perché i risultati ROC possono apparire ottimisti quando i negativi dominano."
+  },
+  "metrics-07": {
+    "label": "La differenza quadratica media tra i valori predetti e quelli effettivi; più basso è meglio.",
+    "why": "L'elevazione al quadrato di ogni residuo fa sì che i grandi errori contribuiscono in modo sproporzionato. Gli errori di 2 e 10 contribuiscono 4 e 100, quindi MSE penalizza fortemente gli outlier; le sue unità quadrate la rendono meno intuitiva da spiegare direttamente."
+  },
+  "metrics-08": {
+    "label": "La radice quadrata di MSE, che esprime l'errore nella stessa unità dei valori predetti.",
+    "why": "RMSE preserva la penalità extra di MSE per i grandi errori ma converte il risultato alla unità del target. Un RMSE di $5.000 sui prezzi delle case significa che la scala di errore tipica è espressa in dollari, anche se i grandi mancati ancora l'influenzano pesantemente."
+  },
+  "metrics-09": {
+    "label": "La differenza assoluta media tra i valori numerici predetti e quelli effettivi.",
+    "why": "MAE tratta la grandezza dell'errore linearmente: i mancati di 2 e 10 contribuiscono 2 e 10. È più facile da interpretare e meno sensibile agli outlier rispetto a MSE o RMSE, rendendolo utile quando ogni unità di errore ha all'incirca lo stesso costo."
+  },
+  "metrics-10": {
+    "label": "Misura quanto bene un modello prevede la probabilità del token o della parola successiva.",
+    "why": "La minore perplessità significa che il modello di linguaggio è meno sorpreso dal testo di valutazione e assegna una probabilità più alta ai suoi token. Misura la previsione del token successivo, non se una risposta è fattuale, sicura, utile o radicata."
+  },
+  "metrics-11": {
+    "label": "Misura la sovrapposizione tra il testo generato e quello di riferimento ed è comunemente usato per i riassunti.",
+    "why": "ROUGE solitamente misura quanto la formulazione di riferimento un riassunto generato recupera, spesso attraverso parole corrispondenti, n-grammi o sequenze. Un punteggio elevato può comunque mancare di significato o premiare la formulazione copiata, quindi potrebbe essere necessaria anche la valutazione semantica e umana."
+  },
+  "metrics-12": {
+    "label": "Valuta la traduzione confrontando n-grammi nel testo generato e di riferimento.",
+    "why": "BLEU premia la sovrapposizione n-gram con una o più traduzioni di riferimento e applica una penalità agli output troppo brevi. Le traduzioni valide possono usare formulazioni diverse, quindi BLEU è più utile per il confronto aggregato e non come prova che una frase sia corretta."
+  },
+  "metrics-13": {
+    "label": "Verifica se le affermazioni generate sono supportate dal contesto o dalle fonti fornite al modello.",
+    "why": "Per una risposta RAG, ispeziona se ogni affermazione segue dai passaggi recuperati forniti al modello. Un'affermazione può essere generalmente vera ma comunque non radicata se le prove fornite non la supportano; le citazioni aiutano a rendere questa verifica tracciabile."
+  },
+  "metrics-14": {
+    "label": "Verifica le affermazioni rispetto ai fatti affidabili piuttosto che misurare solo la somiglianza testuale.",
+    "why": "Questo chiede se le affermazioni concordano con la realtà affidabile, anche quando nel prompt non è stato fornito alcun passaggio di supporto. Differisce dalla radicamento: una risposta può essere fattualmente corretta ma non supportata dal suo contesto citato o radicata in una fonte che è essa stessa sbagliata."
+  },
+  "metrics-15": {
+    "label": "Misura con che frequenza il recuperatore include le prove pertinenti tra i passaggi restituiti.",
+    "why": "Se 100 domande richiedono un passaggio di prova noto e il recuperatore lo restituisce per 85, il richiamo del recupero è dell'85%. Il basso richiamo del recupero indica il chunking, gli embeddings, i filtri, la riscrittura della query o problemi di numero di candidati che la generazione non può riparare."
+  },
+  "metrics-16": {
+    "label": "Usa persone e un rubrica definito per giudicare qualità che le metriche automatizzate potrebbero perdere.",
+    "why": "Le persone possono valutare l'utilità, il tono, il ragionamento, l'adattamento culturale e la correttezza sfumata rispetto a un rubrica coerente. Usa campioni rappresentativi, più revisori addestrati e verifiche di accordo perché i giudizi umani possono essere soggettivi, lenti e costosi."
+  },
+  "metrics-17": {
+    "label": "Testa gli output per contenuti dannosi, perdite di privacy, violazioni di politica e comportamento avversariale.",
+    "why": "Testa sia i prompt ordinari che quelli avversariali per output dannosi, successo del jailbreak, esposizione di dati sensibili, bias e azioni di strumento non sicure. Segnala i risultati per categoria di rischio e gruppo di utenti; un singolo punteggio di qualità media non può dimostrare che un sistema è sicuro."
+  }
+}

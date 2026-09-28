@@ -1,0 +1,74 @@
+{
+ "rf-01": {
+  "label": "Établit le processus de risque comme : établir la portée et le contexte, identifier, analyser, évaluer, traiter, avec la surveillance et la communication tout au long.",
+  "why": "C'est le processus de risque générique sur lequel chaque autre document de risque s'appuie. Son vocabulaire — probabilité, conséquence, traitement, risque résiduel — est ce que les documents spécifiques à l'IA héritent."
+ },
+ "rf-02": {
+  "label": "Définit le risque comme l'effet de l'incertitude sur les objectifs, qui peut être positif aussi bien que négatif.",
+  "why": "La définition inclusive du côté positif du risque est celle d'ISO 31000, et c'est pourquoi la norme parle d'objectifs plutôt que de préjudices."
+ },
+ "rf-03": {
+  "label": "Est délibérément agnostique du secteur et agnostique de la technologie ; il ne dit rien sur les modèles, les données ou l'entraînement.",
+  "why": "Sa généralité est le point et aussi sa limite — c'est pourquoi 23894 existe pour dire ce que l'IA change."
+ },
+ "rf-04": {
+  "label": "Encadre la gestion des risques en tant que principes, un cadre et un processus, avec l'engagement du leadership comme première exigence du cadre.",
+  "why": "La structure à trois parties est l'idée organisatrice d'ISO 31000. Les documents spécifiques à l'IA l'adoptent plutôt que de la remplacer."
+ },
+ "rf-05": {
+  "label": "Fournit une orientation sur l'application d'un processus de risque générique spécifiquement à l'intelligence artificielle, y compris les sources de risque spécifiques à l'IA.",
+  "why": "23894 est le document pont : le processus d'ISO 31000, avec les sources de risque particulières de l'IA et le cycle de vie attachés. C'est une orientation, pas des exigences."
+ },
+ "rf-06": {
+  "label": "Décrit comment les activités de gestion des risques sont mappées sur le cycle de vie du système IA, de la création à la mise en retrait.",
+  "why": "L'orientation de gestion des risques de l'IA mappée au cycle de vie est la contribution de 23894. Étant une orientation, elle ne peut pas être auditée contre, ce qui est où 42001 entre."
+ },
+ "rf-07": {
+  "label": "Offre des sources de risque IA illustratives — qualité des données, opacité, biais d'automatisation, usage involontaire — comme une aide plutôt qu'une liste obligatoire.",
+  "why": "Le catalogue des sources de risque IA est consultatif. Le traiter comme une liste de conformité malit le statut du document."
+ },
+ "rf-08": {
+  "label": "Est le compagnon spécifique à l'IA qui explique ce qui change quand la chose que tu gères le risque pour apprend des données.",
+  "why": "C'est tout l'objectif du document : 31000 pour l'IA. Si une affirmation concerne l'application de la méthode de risque à l'IA sans imposer des exigences, c'est 23894."
+ },
+ "rf-09": {
+  "label": "Spécifie les exigences pour établir, mettre en œuvre, maintenir et améliorer continuellement un système de gestion pour l'IA.",
+  "why": "Les exigences pour un système de gestion est le langage du standard de système de gestion : c'est celui qui peut être certifié, structuré comme ISO 27001."
+ },
+ "rf-10": {
+  "label": "Une organisation peut être auditée par un organisme de certification et recevoir un certificat contre elle.",
+  "why": "La certifiabilité est le discriminateur unique le plus propre parmi ces quatre. Ni le cadre NIST ni les documents d'orientation d'ISO ne peuvent être certifiés contre."
+ },
+ "rf-11": {
+  "label": "Porte une Annexe A de contrôles et exige une déclaration d'applicabilité expliquant lesquels sont implémentés.",
+  "why": "L'Annexe A plus une déclaration d'applicabilité est le motif du système de gestion. C'est ce qu'un auditeur parcourt réellement."
+ },
+ "rf-12": {
+  "label": "Exige une politique d'IA, des rôles définis, des objectifs, un audit interne et un examen de la gestion selon un cycle d'amélioration continue.",
+  "why": "L'audit interne et l'examen de la gestion sont des obligations du système de gestion. Les documents d'orientation recommandent ; seul le standard du système de gestion exige."
+ },
+ "rf-13": {
+  "label": "Organise le travail des risques en quatre fonctions : Gouverner, Mapper, Mesurer et Gérer.",
+  "why": "Les quatre fonctions sont la structure de signature du RMF, avec Gouverner coupant à travers les trois autres plutôt que de les précéder."
+ },
+ "rf-14": {
+  "label": "Nomme sept caractéristiques de l'IA digne de confiance, y compris valide et fiable, sûr, sécurisé et résilient, et responsable et transparent.",
+  "why": "Les sept caractéristiques de fiabilité sont le cadrage du NIST. Les documents ISO parlent d'objectifs et de contrôles à la place."
+ },
+ "rf-15": {
+  "label": "Est explicitement volontaire, développé par une agence fédérale américaine selon une directive statutaire, et est accompagné d'un livre de jeu compagnon.",
+  "why": "Volontaire, fédéral américain, avec un livre de jeu et des profils — dont aucun ne décrit un standard ISO."
+ },
+ "rf-16": {
+  "label": "Prend en charge les profils d'utilisation qui adaptent le cadre à un secteur particulier ou un cas d'usage.",
+  "why": "Les profils sont comment le RMF est adapté sans être certifié. C'est la réponse à 'comment appliquons-nous ceci à nous' dans un cadre volontaire."
+ },
+ "risk-frameworks": {
+  "hint": "Fais glisser chaque description sur le cadre auquel elle appartient. Demande-toi quel type de document c'est : risque générique, orientation de risque spécifique à l'IA, un système de gestion certifiable, ou un cadre volontaire.",
+  "note": "Un seul de ces quatre est certifiable. Un seul est fédéral américain et volontaire. Confondre 'nous suivons le NIST AI RMF' avec 'nous sommes certifiés' est l'erreur que ce tableau existe pour prévenir.",
+  "zones[0].def": "Principes, cadre et processus de gestion des risques génériques. Pas spécifique à l'IA et pas certifiable.",
+  "zones[1].def": "Orientation appliquant ISO 31000 à l'IA. Consultatif : elle indique comment le risque IA diffère, pas ce pour quoi certifier.",
+  "zones[2].def": "Standard du système de gestion IA. Exigences plus Annexe A contrôles, et celui sur lequel une organisation peut être certifiée.",
+  "zones[3].def": "Cadre volontaire américain : quatre fonctions, sept caractéristiques de fiabilité, pas de certification."
+ }
+}

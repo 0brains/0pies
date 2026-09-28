@@ -1,0 +1,25 @@
+{
+  "ml-lifecycle": {
+    "prompt": "Ordena o ciclo de vida de objectivo de negócio para monitorização de produção.",
+    "steps[0].label": "Identificação de Objectivo de Negócio",
+    "steps[0].detail": "Tudo que se segue herda isto. Sem um objectivo de negócio não há forma de dizer se o modelo é bom.",
+    "steps[1].label": "Moldagem de Problema de ML",
+    "steps[1].detail": "Traduz o objectivo numa tarefa aprendível: o que é predito, a partir de quê, e o que conta como sucesso.",
+    "steps[2].label": "Recolha de Dados",
+    "steps[2].detail": "Monta o material bruto e estabelece a sua proveniência e uso permitido antes de ser depende.",
+    "steps[3].label": "Pré-processamento de Dados",
+    "steps[3].detail": "Limpa, une, des-duplica e trata valores perdidos, então o modelo aprende sinal em vez de artefactos.",
+    "steps[4].label": "Feature Engineering",
+    "steps[4].detail": "Molda inputs em representações que o algoritmo pode utilizar. Frequentemente a maior alavanca simples na precisão.",
+    "steps[5].label": "Treino de Modelo",
+    "steps[5].detail": "Encaixa parâmetros na divisão de treino. Barato de repetir, então vem após trabalho de dados caro, não antes.",
+    "steps[6].label": "Ajuste de Hiperparâmetro",
+    "steps[6].detail": "Pesquisa as definições que o modelo não pode aprender por si, avaliadas em dados de validação em vez de teste.",
+    "steps[7].label": "Avaliação de Modelo",
+    "steps[7].detail": "Mede contra dados retidos e a métrica de negócio. Este é o portão, não uma formalidade.",
+    "steps[8].label": "Implementação de Modelo (Inferência e Predição)",
+    "steps[8].detail": "Serve predições para requisições reais, com o mesmo pré-processamento que treino ou os resultados não corresponderão.",
+    "steps[9].label": "Monitorização de Modelo",
+    "steps[9].detail": "Observa inputs, outputs e qualidade em produção. Isto é onde drift aparece, e nunca termina."
+  }
+}

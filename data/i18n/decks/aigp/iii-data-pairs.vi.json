@@ -1,0 +1,74 @@
+{
+ "iii-dp-01": {
+  "a.text": "Được sử dụng trong quá trình phát triển để điều chỉnh siêu tham số và bắt overfitting giữa vòng đào tạo.",
+  "a.why": "Vai trò này có thể lặp lại và lặp lại — mô hình được điều chỉnh so với nó lặp đi lặp lại, đó chính xác tại sao nó không bao giờ cũng có thể đứng vào phán quyết cuối cùng.",
+  "b.text": "Đóng băng và không chạm cho đến khi tất cả điều chỉnh hoàn tất, sau đó chạy một lần để cung cấp ước tính lỗi cuối cùng, không thiên vị của mô hình.",
+  "b.why": "Đánh giá mô hình cuối cùng trên bộ nó đã được điều chỉnh so với — cái bẫy bài thi ghi lại — tạo ra một ước tính thiên vị. Chỉ một bộ quá trình điều chỉnh không bao giờ chạm đến có thể cho một con số cuối cùng không thiên vị."
+ },
+ "iii-dp-02": {
+  "a.text": "Phiên bản kịch bản ETL chính xác được sử dụng để tập hợp các tính năng của mô hình rời bỏ được ghi lại ở mỗi bước chuyển đổi, từ bảng thô đến tính năng cuối cùng.",
+  "a.why": "Điều này theo dõi chuyến đi — mỗi chuyển đổi một tập dữ liệu truyền qua — và phiên bản kịch bản chuyển đổi là một phần quan trọng nhất duy nhất của siêu dữ liệu đó cho tái tạo lại và khắc phục sự chuyển.",
+  "b.text": "Trước khi bất kỳ chuyển đổi nào xảy ra, nguồn gốc dữ liệu ban đầu, chuỗi giam giữ và điều kiện thu thập được ghi lại để thiết lập tính xác thực của nó.",
+  "b.why": "Đây là giấy chứng sinh — nguồn gốc và giam giữ — không phải ghi lại những gì sau đó được thực hiện cho dữ liệu; ghi lại đó thuộc mặt khác của cặp này."
+ },
+ "iii-dp-03": {
+  "a.text": "Tiếng ồn toán học được hiệu chỉnh được thêm vào trong quá trình đào tạo để không có hồ sơ đào tạo duy nhất nào có thể được hiển thị để có nhiều hơn một hiệu ứng không đáng kể trên đầu ra của mô hình.",
+  "a.why": "Đây là một bảo đảm toán học về ảnh hưởng, không phải về nơi dữ liệu di chuyển về mặt vật lý — nó áp dụng cho dù dữ liệu bao giờ rời khỏi nguồn của nó hay không.",
+  "b.text": "Mỗi bệnh viện đào tạo địa phương trên các hồ sơ bệnh nhân của riêng nó, và chỉ các bản cập nhật kết quả — không bao giờ các hồ sơ thô — du lịch đến máy chủ trung tâm để tập hợp.",
+  "b.why": "Những gì được bảo vệ đây là dữ liệu nào rời khỏi trang web, không phải bao nhiêu bất kỳ hồ sơ duy nhất nào có thể được suy luận từ một đầu ra — các hồ sơ thô không bao giờ đi du lịch, toàn bộ dừng."
+ },
+ "iii-dp-04": {
+  "a.text": "Một tài liệu tiêu chuẩn đặt ra động lực của một tập dữ liệu, thành phần, quá trình thu thập và các cách sử dụng được đề xuất, trước khi bất kỳ mô hình nào được đào tạo trên nó.",
+  "a.why": "Điều này ghi lại nguyên liệu thô chính nó, độc lập với bất kỳ mô hình nào sẽ sau được đào tạo trên nó.",
+  "b.text": "Mục đích của một phiên bản duy nhất, dữ liệu đào tạo/xác thực/kiểm tra của nó, số liệu hiệu suất của nó và những hạn chế đã biết của nó được tóm tắt cho ai đó quyết định có nên triển khai nó hay không.",
+  "b.why": "Đây là phạm vi cho một phiên bản cụ thể, không phải tập dữ liệu đằng sau nó — một nhãn dinh dưỡng cho tạo tác được đào tạo, khác biệt từ phạm vi cấp tập dữ liệu của mặt khác."
+ },
+ "iii-dp-05": {
+  "a.text": "Một kẻ tấn công hoạt động ngược lại từ đầu ra của một hệ thống để tái cấu trúc xấp xỉ những hồ sơ thực mà nó được đào tạo trên.",
+  "a.why": "Tấn công này phục hồi nội dung dữ liệu đào tạo từ những gì hệ thống tạo ra — tái cấu trúc, không phải một kiểm tra yes/no.",
+  "b.text": "Một kẻ tấn công tái cấu trúc không có gì, chỉ xác nhận liệu một người cụ thể dữ liệu có được bao gồm trong tập dữ liệu đào tạo ở tất cả hay không.",
+  "b.why": "Tấn công này trả lời một câu hỏi thẫm quyền thành viên nhị phân; nó không bao giờ phục hồi nội dung hồ sơ cách mặt khác làm."
+ },
+ "iii-dp-06": {
+  "a.text": "Một cư dân EU rút lại sự đồng ý, và công ty phải xóa các hồ sơ cá nhân của họ khỏi hệ thống.",
+  "a.why": "Điều này loại bỏ dữ liệu thô chính nó để đáp ứng yêu cầu quyền — một lập luận rằng dữ liệu giúp đào tạo mô hình không ghi đè quyền xóa một khi sự đồng ý được rút lại.",
+  "b.text": "Thậm chí sau khi hồ sơ gây khó chịu được quên, mô hình chính nó phải được sửa chữa bởi vì nó đã học các mẫu từ dữ liệu không bao giờ được sử dụng.",
+  "b.why": "Điều này loại bỏ những gì một mô hình hấp thụ từ dữ liệu được sử dụng không đúng cách — một cải tạo khác biệt, bởi vì mô hình có thể giữ lại hiệu ứng lâu sau khi các hồ sơ cơ bản được xóa."
+ },
+ "iii-dp-07": {
+  "a.text": "Một đánh giá tài liệu liên kết các đặc điểm dữ liệu và bảo hiểm đến bối cảnh sử dụng dự định cụ thể của mô hình.",
+  "a.why": "Đây là về kết hợp dữ liệu với một cách sử dụng cụ thể, không phải tuổi hoặc khối lượng dữ liệu — một tập dữ liệu lớn, gần đây vẫn có thể thất bại kiểm tra này nếu nó không bao giờ được đánh giá so với trường hợp sử dụng thực tế.",
+  "b.text": "Tập dữ liệu được kiểm tra để xác nhận nó phản ánh dân số mô hình thực sự sẽ được áp dụng cho — coi là bộ giảm nhẹ thiên vị quan trọng nhất duy nhất trong toàn bộ ống dẫn.",
+  "b.why": "Đây là một câu hỏi khớp gương về dân số; đơn giản thêm những ví dụ tổng hợp vào một tập dữ liệu bị sai lệch không giải quyết một khoảng cách thực sự đây, bởi vì câu hỏi quản trị cơ bản liệu dữ liệu ban đầu có phù hợp không bao giờ có câu trả lời."
+ },
+ "iii-dp-08": {
+  "a.text": "Một tập dữ liệu được kiểm tra để xác nhận nó không được thay đổi hoặc hỏng ở bất kỳ điểm nào giữa nguồn gốc ban đầu và sử dụng hiện tại của nó.",
+  "a.why": "Đây là một thuộc tính bảo vệ-khỏi-thay đổi, khác biệt từ liệu nội dung chính nó có chính xác hoặc đáng tin cậy hay không.",
+  "b.text": "Cùng một tập dữ liệu được kiểm tra riêng biệt để xác nhận nó vẫn chính xác và đáng tin cậy khi nó được chia sẻ và tái sử dụng trên các hệ thống và môi trường khác nhau.",
+  "b.why": "Điều này hỏi liệu nội dung chính nó có giữ được trên các bối cảnh hay không; một tập dữ liệu có thể hoàn toàn không được giả mạo trong khi vẫn cũ hoặc không nhất quán ở những gì nó thực sự nói."
+ },
+ "iii-dp-09": {
+  "a.text": "Tỷ lệ kết quả tích cực được so sánh giữa các nhóm được bảo vệ trên phân phối đầu ra thực sự, thế giới thực của mô hình.",
+  "a.why": "Số liệu này so sánh tỷ lệ kết quả tổng hợp giữa các nhóm trên dữ liệu vì nó thực sự đứng.",
+  "b.text": "Thuộc tính được bảo vệ của một ứng viên được lật trong khi mỗi đầu vào khác ở lại giống hệt nhau, và đầu ra được kiểm tra cho bất kỳ thay đổi nào.",
+  "b.why": "Điều này kiểm tra một hồ sơ duy nhất so với sinh đôi giả thuyết của nó, không phải tỷ lệ kết quả mức độ nhóm — một mô hình có thể vượt qua kiểm tra tổng hợp trong khi vẫn thất bại cái này cấp độ cá nhân."
+ },
+ "iii-dp-10": {
+  "a.text": "Giá trị trọng số bên trong mạng được cập nhật qua lan truyền ngược vì đào tạo giảm lỗi dự đoán.",
+  "a.why": "Đây là giá trị học mà xác định cách dữ liệu đầu vào được chuyển đổi thành đầu ra — chúng không tồn tại dạng cuối cùng cho đến khi đào tạo xảy ra.",
+  "b.text": "Tỷ lệ học tập được sửa chữa bởi đội trước khi đào tạo bao giờ bắt đầu, và ở lại không chạm trong khi mạng học.",
+  "b.why": "Đây là bộ trước để kiểm soát cách học xảy ra — đầu vào để đào tạo, không phải đầu ra của nó."
+ },
+ "iii-dp-11": {
+  "a.text": "Một mô hình dự đoán bán hàng thực hiện gần như hoàn hảo trên dữ liệu lịch sử nó đào tạo, sau đó tạo ra lỗi đáng kể dự đoán bán hàng cho các sản phẩm hoàn toàn mới.",
+  "a.why": "Mô hình ghi nhớ những điều kỳ quặc cụ thể cho dữ liệu đào tạo của nó chuyên tiếp học những mẫu chuyển — mạnh mẽ trên những gì quen thuộc, yếu ớt trên cái mới.",
+  "b.text": "Một mô hình chuyển rời bỏ với rất ít tham số và chỉ một số tính năng thực hiện kém ở cả dữ liệu nó đào tạo trên và trên khách hàng mới.",
+  "b.why": "Hiệu suất kém ở mọi nơi, bao gồm cả dữ liệu đào tạo chính nó, tín hiệu mô hình không bao giờ có đủ độ phức tạp để bắt mẫu ở nơi đầu tiên — chế độ thất bại đối diện từ ghi nhớ nó quá tốt."
+ },
+ "iii-dp-12": {
+  "a.text": "Một hệ thống nhận dạng tiếng nói được đào tạo trên chỉ một vài ngàn đoạn clip âm thanh đấu tranh để bắt được tính biến của tiếng nói thế giới thực.",
+  "a.why": "Điều này hỏi liệu có đủ dữ liệu hay không, đầy đủ, để học các mẫu có ý nghĩa ở tất cả — quá ít dữ liệu đây có nghĩa là mô hình không bao giờ có cơ hội để khái quát.",
+  "b.text": "Một AI y tế được đào tạo trên dữ liệu từ một quốc gia duy nhất thực hiện tốt trong thí điểm của nó, sau đó đấu tranh một khi mở rộng đến bệnh nhân với nền tảng di truyền khác nhau và hệ thống chăm sóc sức khỏe ở nơi khác.",
+  "b.why": "Điều này hỏi liệu một tập dữ liệu đó đủ cho một thí điểm có thể vẫn hỗ trợ sự mở rộng vào các dân số mới và bối cảnh — một câu hỏi khác biệt từ liệu có đủ dữ liệu cho thí điểm ở nơi đầu tiên hay không."
+ }
+}

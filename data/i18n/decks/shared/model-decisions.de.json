@@ -1,0 +1,45 @@
+{
+ "model-decisions": {
+  "hint": "Ziehe jede Situation auf die Antwort, die sie erfordert. Einige Antworten auf dem Board versuchen dich zu verlocken."
+ },
+ "model-decisions-01": {
+  "label": "Ein Assistent muss aus privaten Richtlinien antworten, die sich jede Woche ändern und die aktuelle Quelle zitieren.",
+  "sub": "Häufig Ändernde Richtlinien",
+  "why": "RAG ruft aktuelle private Beweise zur Anfragetime ab und unterstützt Zitationen. Kompromiss: Fine-Tuning kann Verhalten anpassen, aber es ist ein schlechter Mechanismus für häufig ändernde Tatsachen."
+ },
+ "model-decisions-02": {
+  "label": "Tausende von Beispielen zeigen einen stabilen Berichtstil, den das Basis-Modell nicht konsistent reproduziert.",
+  "sub": "Stabiles Spezialisten-Format",
+  "why": "Fine-Tuning ist für wiederkehrendes Verhalten passend, das von einem kuratierten Beispielsatz demonstriert wird. Kompromiss: Few-Shot-Prompting sollte noch versucht werden, wenn es Qualitätsanforderungen zu niedrigerer Komplexität erfüllt."
+ },
+ "model-decisions-03": {
+  "label": "Ein fähiges Modell muss fünf Felder in ein validiertes JSON-Objekt extrahieren; neues Wissen ist nicht erforderlich.",
+  "sub": "Strikte JSON-Extraktion",
+  "why": "Klare Anweisungen, Beispiele, ein Schema und Validierung adressieren Formatierung ohne Modellgewichte zu ändern. Kompromiss: Fine-Tuning wird angemessen, nur wenn prompt-basierte Extraktion wiederholt bei der erforderlichen Skala und Qualität fehlschlägt."
+ },
+ "model-decisions-04": {
+  "label": "Ein Modell muss spezialisierte Terminologie aus einem sehr großen beschriftungslosen wissenschaftlichen Corpus internalisieren.",
+  "sub": "Domänensprache im Maßstab",
+  "why": "Continued Pretraining passt die Sprachdarstellungen des Modells mit großen Datenmengen an. Kompromiss: RAG bleibt bevorzugt, wenn das Bedürfnis der Zugang zu ändernden Tatsachen statt tieferer Domänensprach-Anpassung ist."
+ },
+ "model-decisions-05": {
+  "label": "Das System muss eine Bestellung überprüfen, Genehmigung anfordern, eine Rückerstattungs-API aufrufen und das Ergebnis melden.",
+  "sub": "Aktions-nehmender Assistent",
+  "why": "Ein Tool-nutzender Agent kann Schritte orchestrieren, aber jedes Werkzeug braucht enge Berechtigungen, Validierung und Genehmigungstore. Kompromiss: Ein deterministischer Workflow ist sicherer, wenn die Sequenz fest ist und nicht modell-geleitete Planung erfordert."
+ },
+ "model-decisions-06": {
+  "label": "Ein Claims-System muss über eine Schadensfotografie zusammen mit der schriftlichen Vorfall-Beschreibung argumentieren.",
+  "sub": "Bild- und Text-Inspektion",
+  "why": "Ein multimodales Modell kann visuelle und textliche Eingaben gemeinsam interpretieren. Kompromiss: Getrennte Spezialisten-Vision und Text-Modelle können gewinnen, wenn unabhängige Ausgaben, Kontrolle oder niedrigere Kosten wichtiger sind."
+ },
+ "model-decisions-07": {
+  "label": "Zehn Millionen kurze Datensätze müssen nachts unter einem straffen Budget klassifiziert werden, nachdem Labels verfügbar sind.",
+  "sub": "Hochvolumige Einfache Klassifizierung",
+  "why": "Ein kleineres evaluiertes Klassifizierungsmodell kann angemessene Qualität mit viel niedrigeren Batch-Inferenz-Kosten liefern. Kompromiss: Ein Foundation-Modell kann Prototyping beschleunigen oder Labels erstellen, sollte aber seinen Produktions-Kosten durch gemessene Qualität verdienen."
+ },
+ "model-decisions-08": {
+  "label": "Veröffentlichte Regeln bestimmen vollständig Berechtigung und jede Entscheidung muss reproduzierbar und überprüfbar sein.",
+  "sub": "Genaue Berechtigungs-Richtlinie",
+  "why": "Exakte, komplette Regeln sollten direkt implementiert werden statt von einem probabilistischen Modell angenähert. Kompromiss: KI kann Dokument-Einnahme oder Erklärung unterstützen, ohne die maßgebliche Entscheidung zu besitzen."
+ }
+}

@@ -1,0 +1,37 @@
+{
+ "inference": {
+  "hint": "Look for the operational requirement: response time, request volume, device location, hosted access, or change between training and production."
+ },
+ "inference-01": {
+  "label": "Returns a prediction immediately for an interactive request where low latency matters.",
+  "why": "Returns a prediction immediately for an interactive request where low latency matters."
+ },
+ "inference-02": {
+  "label": "Processes many stored records together when an immediate response is unnecessary.",
+  "why": "Processes many stored records together when an immediate response is unnecessary."
+ },
+ "inference-03": {
+  "label": "Runs the model near the data source or device to reduce latency, bandwidth use, or connectivity dependence.",
+  "why": "Runs the model near the data source or device to reduce latency, bandwidth use, or connectivity dependence."
+ },
+ "inference-04": {
+  "label": "A hosted interface through which applications send inputs and receive model outputs.",
+  "why": "A hosted interface through which applications send inputs and receive model outputs."
+ },
+ "inference-05": {
+  "label": "The time between submitting an inference request and receiving its result.",
+  "why": "The time between submitting an inference request and receiving its result."
+ },
+ "inference-06": {
+  "label": "The number of inference requests or records processed in a period of time.",
+  "why": "The number of inference requests or records processed in a period of time."
+ },
+ "inference-07": {
+  "label": "The distribution of production inputs changes from the data used during training.",
+  "why": "The distribution of production inputs changes from the data used during training."
+ },
+ "inference-08": {
+  "label": "The relationship between inputs and the correct output changes over time.",
+  "why": "The relationship between inputs and the correct output changes over time."
+ }
+}

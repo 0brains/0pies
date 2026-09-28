@@ -1,0 +1,53 @@
+{
+ "terms": {
+  "hint": "प्रत्येक definition को term पर खींचो जो यह defines."
+ },
+ "terms-01": {
+  "label": "मानव intelligence से जुड़े कार्यों को perform करने वाली सिस्टम building का व्यापक क्षेत्र।",
+  "why": "AI umbrella क्षेत्र है: rule-based expert systems, computer vision, robotics, machine learning और generative मॉडल सभी AI हो सकते हैं। Machine learning एक तरीका है AI build करने के लिए, पूरे क्षेत्र के लिए synonym नहीं।"
+ },
+ "terms-02": {
+  "label": "AI का subset जिसमें systems केवल explicit rules पर rely किए बिना डेटा से पैटर्न सीखते हैं।",
+  "why": "उदाहरण के लिए, एक spam filter labeled मैसेज से पैटर्न infer कर सकता है बजाय developer के लिए हर spam rule को enumerate करने के लिए। Key exam cue डेटा या experience से सुधार है।"
+ },
+ "terms-03": {
+  "label": "ML का subset जो complex representations सीखने के लिए multi-layer neural networks का उपयोग करता है।",
+  "why": "एक vision model early layers में edges, middle layers में shapes, और later layers में objects सीख सकता है। यह व्यापक machine learning से अलग है deep neural networks के use द्वारा और आमतौर पर बड़े data और compute जरूरतों के द्वारा।"
+ },
+ "terms-04": {
+  "label": "AI जो text, images, audio, video या code जैसी नई सामग्री create करता है।",
+  "why": "एक text मॉडल email draft करता है और एक diffusion मॉडल image create करता है दोनों generative हैं क्योंकि वे नई output synthesize करते हैं। Existing email को spam की तरह predict करना discriminative classification है।"
+ },
+ "terms-05": {
+  "label": "learned representation जो inputs को predictions या generated outputs में map करता है।",
+  "why": "Training के बाद, model वह artifact है जो inference के लिए उपयोग की जाती है। उदाहरण के लिए, एक house-price model एक नई property की विशेषताओं पर learned संबंध को apply करता है अपनी कीमत का estimate करने के लिए।"
+ },
+ "terms-06": {
+  "label": "procedure जो patterns सीखने, model optimize करने या computation perform करने के लिए उपयोग की जाती है।",
+  "why": "Gradient descent एक learning algorithm है, जबकि trained network जो इसे produce करता है model है। Distinction process बनाम learned artifact है।"
+ },
+ "terms-07": {
+  "label": "input variable या measurable attribute जो model को supply किया जाता है।",
+  "why": "एक house-price मॉडल के लिए, floor area, postcode, और bedroom count features हैं क्योंकि वे model में evidence के रूप में enter करते हैं। Sale price predict करने के लिए label है, जबकि parameters आंतरिक values हैं model training के दौरान सीखते हैं।"
+ },
+ "terms-08": {
+  "label": "known target या desired answer जो supervised training उदाहरण से जुड़ा है।",
+  "why": "Spam detection में, प्रत्येक training email का spam या not-spam answer इसका label है। Label predict करने के लिए target है जो model सीखता है; features evidence हैं जो prediction make करने के लिए उपयोग किया जाता है।"
+ },
+ "terms-09": {
+  "label": "value, जैसे neural-network weight, training data से सीखा जाता है।",
+  "why": "एक neural-network weight automatically adjust होता है क्योंकि training error को minimize करता है। Parameters model द्वारा सीखे जाते हैं, learning rate या tree depth जैसे hyperparameters के विपरीत जो practitioners training से पहले या चारों ओर select करते हैं।"
+ },
+ "terms-10": {
+  "label": "training या model setting जो learning process के बाहर select किया जाता है, जैसे learning rate या tree depth।",
+  "why": "Examples learning rate, batch size, tree depth और regularization strength include हैं। ये settings training या model structure को control करते हैं और आमतौर पर validation डेटा के साथ select किए जाते हैं बजाय model weights के रूप में सीखे जाते हैं।"
+ },
+ "terms-11": {
+  "label": "process जो examples पर error reduce करने के लिए model parameters को adjust करता है।",
+  "why": "Training के दौरान, system outputs को learning signal के साथ compare करता है, error calculate करता है और parameters को update करता है। यह learning phase है; inference trained fixed model को नई inputs पर use करता है।"
+ },
+ "terms-12": {
+  "label": "trained model का use करके prediction, decision, embedding या generated result produce करने के लिए।",
+  "why": "एक deployed fraud model नए card transaction को score करता है inference perform कर रहा है। उस request के लिए कोई model learning required नहीं है; trained model पहले unseen input पर apply किया जा रहा है।"
+ }
+}

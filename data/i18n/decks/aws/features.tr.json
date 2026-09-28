@@ -1,0 +1,1401 @@
+{
+  "feat-000-00": {
+    "label": "Birden fazla sağlayıcıdan temel modelleri tek bir yönetilen hizmet aracılığıyla karşılaştır ve seç.",
+    "why": "Multi-provider model catalogue Amazon Bedrock'a ait ve şu işi sağlar: Birden fazla sağlayıcıdan temel modelleri tek bir yönetilen hizmet aracılığıyla karşılaştırıp seçme."
+  },
+  "feat-000-03": {
+    "label": "Aday temel modellerini kalite, güvenlik ve görev özel kriterlere karşı karşılaştır, sonra benimse.",
+    "why": "model evaluation Amazon Bedrock'a ait ve şu işi sağlar: Aday temel modellerini kalite, güvenlik ve görev özel kriterlere karşı karşılaştırıp benimseme."
+  },
+  "feat-000-05": {
+    "label": "Üretilen yanıtları, modeli yeniden eğitmeden alınan kurumsal bilgiye dayandır.",
+    "why": "Knowledge Bases for RAG Amazon Bedrock'a ait ve şu işi sağlar: Üretilen yanıtları, modeli yeniden eğitmeden alınan kurumsal bilgiye dayandırma."
+  },
+  "feat-000-07": {
+    "label": "Model girdilerine ve çıktılarına merkezi yönetilen güvenlik ilkeleri ve içerik denetim uygula.",
+    "why": "Guardrails for Amazon Bedrock Amazon Bedrock'a ait ve şu işi sağlar: Model girdilerine ve çıktılarına merkezi yönetilen güvenlik ilkeleri ve içerik denetim uygulama."
+  },
+  "feat-000-09": {
+    "label": "Temel model yeteneklerini programlı hizmet çağrıları aracılığıyla uygulamalara bağla.",
+    "why": "API-based integration Amazon Bedrock'a ait ve şu işi sağlar: Temel model yeteneklerini programlı hizmet çağrıları aracılığıyla uygulamalara bağlama."
+  },
+  "feat-000-11": {
+    "label": "Yeniden kullanılabilir talimat şablonları oluştur, varyantları test et ve versiyonları merkezi yönet.",
+    "why": "Prompt Management Amazon Bedrock'a ait ve şu işi sağlar: Yeniden kullanılabilir talimat şablonları oluşturma, varyantları test etme ve versiyonları merkezi yönetme."
+  },
+  "feat-000-12": {
+    "label": "İstemleri, modelleri, verileri ve uygulama mantığını görsel olarak çok adımlı üretken iş akışına bağla.",
+    "why": "Bedrock Flows Amazon Bedrock'a ait ve şu işi sağlar: İstemleri, modelleri, verileri ve uygulama mantığını görsel olarak çok adımlı üretken iş akışına bağlama."
+  },
+  "feat-000-14": {
+    "label": "Uygun üçüncü taraf modellerini yönetilen temel model platformu aracılığıyla keşfet ve dağıt.",
+    "why": "Bedrock Marketplace Amazon Bedrock'a ait ve şu işi sağlar: Uygun üçüncü taraf modellerini yönetilen temel model platformu aracılığıyla keşfetme ve dağıtma."
+  },
+  "feat-000-16": {
+    "label": "Modelin alan bilgisini geniş bir yazılı mülkiyet metni koleksiyonuyla genişlet.",
+    "why": "continued pre-training Amazon Bedrock'a ait ve şu işi sağlar: Modelin alan bilgisini geniş bir yazılı mülkiyet metni koleksiyonuyla genişletme."
+  },
+  "feat-001-00": {
+    "label": "Bir API çağrısında model, sistem istemi ve araçlarla yönetilen bir aracı döngüsü tanımla ve çağır.",
+    "why": "Harness Amazon Bedrock AgentCore'a ait ve şu işi sağlar: Bir API çağrısında model, sistem istemi ve araçlarla yönetilen bir aracı döngüsünü tanımlama ve çağırma."
+  },
+  "feat-001-03": {
+    "label": "API'ler, Lambda işlevleri ve hizmetleri yönetilen MCP uyumlu araçlara dönüştür.",
+    "why": "Gateway Amazon Bedrock AgentCore'a ait ve şu işi sağlar: API'ler, Lambda işlevleri ve hizmetleri yönetilen MCP uyumlu araçlara dönüştürme."
+  },
+  "feat-001-05": {
+    "label": "Python, JavaScript veya TypeScript'i yalıtılmış bir korumalı alanda çalıştır.",
+    "why": "Code Interpreter Amazon Bedrock AgentCore'a ait ve şu işi sağlar: Python, JavaScript veya TypeScript'i yalıtılmış bir korumalı alanda çalıştırma."
+  },
+  "feat-001-06": {
+    "label": "Güvenli yönetilen bir ortamda otomasyon çerçeveleri kullanarak web uygulamalarıyla etkileşim kur.",
+    "why": "Browser Amazon Bedrock AgentCore'a ait ve şu işi sağlar: Güvenli yönetilen bir ortamda otomasyon çerçeveleri kullanarak web uygulamalarıyla etkileşim kurma."
+  },
+  "feat-001-08": {
+    "label": "x402 protokolünü kullanarak ödünü gerektiren API'ler, MCP sunucuları ve içerik için aracı mikro işlemlerini etkinleştir.",
+    "why": "Payments Amazon Bedrock AgentCore'a ait ve şu işi sağlar: x402 protokolünü kullanarak ödünü gerektiren API'ler, MCP sunucuları ve içerik için aracı mikro işlemlerini etkinleştirme."
+  },
+  "feat-001-10": {
+    "label": "Kontrollü trafik deneylerini kullanarak sürümlü yapılandırma iyileştirmeleri oluştur ve test et.",
+    "why": "Optimization Amazon Bedrock AgentCore'a ait ve şu işi sağlar: Kontrollü trafik deneylerini kullanarak sürümlü yapılandırma iyileştirmelerini oluşturma ve test etme."
+  },
+  "feat-001-12": {
+    "label": "Aracıları, MCP sunucularını, araçları ve beceri setlerini merkezi katalogda yayınla, gözden geçir, onayla ve keşfet.",
+    "why": "Registry Amazon Bedrock AgentCore'a ait ve şu işi sağlar: Aracıları, MCP sunucularını, araçları ve beceri setlerini merkezi katalogda yayınlama, gözden geçirme, onaylama ve keşfetme."
+  },
+  "feat-002-01": {
+    "label": "Aracı uygulamalarını iki yaygın programlama ekosisteminden birinde oluştur.",
+    "why": "Python and TypeScript SDKs Strands Agents'a ait ve şu işi sağlar: Aracı uygulamalarını iki yaygın programlama ekosisteminden birinde oluşturma."
+  },
+  "feat-002-03": {
+    "label": "İşbirliği yapan veya çalışmayı birbirlerine aktaran uzmanlaşmış aracıları koordine et.",
+    "why": "multi-agent patterns Strands Agents'a ait ve şu işi sağlar: İşbirliği yapan veya çalışmayı birbirlerine aktaran uzmanlaşmış aracıları koordine etme."
+  },
+  "feat-003-01": {
+    "label": "Doğal dil talimatlarından yeni görsel varlıklar ve hareketli medya oluştur.",
+    "why": "image and video generation Amazon Nova'ya ait ve şu işi sağlar: Doğal dil talimatlarından yeni görsel varlıklar ve hareketli medya oluşturma."
+  },
+  "feat-003-02": {
+    "label": "Konuşulan dili anlayan veya üreten ses deneyimleri oluştur.",
+    "why": "speech models Amazon Nova'ya ait ve şu işi sağlar: Konuşulan dili anlayan veya üreten ses deneyimleri oluşturma."
+  },
+  "feat-003-04": {
+    "label": "Bu AWS model ailesine yönetilen temel model API'leri ve araçları aracılığıyla erişim sağla.",
+    "why": "Amazon Bedrock integration Amazon Nova'ya ait ve şu işi sağlar: Bu AWS model ailesine yönetilen temel model API'leri ve araçları aracılığıyla erişim sağlama."
+  },
+  "feat-004-01": {
+    "label": "Tanımlanmış uzmanlık, ton ve araç setleriyle proaktif şekilde çalışan uzmanlaşmış takım arkadaşları oluştur.",
+    "why": "Agents Amazon Quick'a ait ve şu işi sağlar: Tanımlanmış uzmanlık, ton ve araç setleriyle proaktif şekilde çalışan uzmanlaşmış takım arkadaşları oluşturma."
+  },
+  "feat-004-03": {
+    "label": "Soruları etkileşimli panolara, grafiklere, tahminlere ve veri keşfine dönüştür.",
+    "why": "Business Intelligence Amazon Quick'a ait ve şu işi sağlar: Soruları etkileşimli panolara, grafiklere, tahminlere ve veri keşfine dönüştürme."
+  },
+  "feat-004-05": {
+    "label": "Kod yazmadan veya BT talebinde bulunmadan etkileşimli araçlar oluştur ve paylaş.",
+    "why": "Build custom apps Amazon Quick'a ait ve şu işi sağlar: Kod yazmadan veya BT talebinde bulunmadan etkileşimli araçlar oluşturma ve paylaşma."
+  },
+  "feat-005-01": {
+    "label": "Bir çalışanın hangi bilgileri görebileceğine karar verirken kaynak sistemi erişim haklarına saygı duy.",
+    "why": "permissions-aware responses Amazon Q Business'a ait ve şu işi sağlar: Bir çalışanın hangi bilgileri görebileceğine karar verirken kaynak sistemi erişim haklarına saygı duyma."
+  },
+  "feat-006-00": {
+    "label": "Yeni kaynak kodu oluştur ve geliştiricilerin tanımadıkları uygulamaları anlamalarına yardımcı ol.",
+    "why": "Code generation and explanation Amazon Q Developer'a ait ve şu işi sağlar: Yeni kaynak kodu oluşturma ve geliştiricilerin tanımadıkları uygulamaları anlamalarına yardımcı olma."
+  },
+  "feat-006-02": {
+    "label": "Değişiklikleri yayımlanmadan önce bakım kusurları ve olası güvenlik açıklarına karşı incele.",
+    "why": "code reviews and security scanning Amazon Q Developer'a ait ve şu işi sağlar: Değişiklikleri yayımlanmadan önce bakım kusurları ve olası güvenlik açıklarına karşı inceleme."
+  },
+  "feat-006-04": {
+    "label": "Geliştirme sırasında bulut hizmeti yapılandırmalarını ve uygulama yaklaşımlarını öner.",
+    "why": "AWS resource guidance Amazon Q Developer'a ait ve şu işi sağlar: Geliştirme sırasında bulut hizmeti yapılandırmalarını ve uygulama yaklaşımlarını önerme."
+  },
+  "feat-007-00": {
+    "label": "Eski Microsoft uygulama yığınlarını ve çerçeveleri otomatik analiz ve değişikliklerle yükselt.",
+    "why": ".NET modernization AWS Transform'a ait ve şu işi sağlar: Eski Microsoft uygulama yığınlarını ve çerçeveleri otomatik analiz ve değişikliklerle yükseltme."
+  },
+  "feat-007-02": {
+    "label": "Sanallaştırılmış veri merkezi uygulama alanlarından uzaklaşmayı planlayıp çalıştır.",
+    "why": "VMware workload transformation AWS Transform'a ait ve şu işi sağlar: Sanallaştırılmış veri merkezi uygulama alanlarından uzaklaşmayı planlayıp çalıştırma."
+  },
+  "feat-007-04": {
+    "label": "Her dosyayı manuel olarak düzenlemek yerine büyük bir uygulama genelinde yinelenebilir kaynak değişiklikleri uygula.",
+    "why": "automated refactoring AWS Transform'a ait ve şu işi sağlar: Her dosyayı manuel olarak düzenlemek yerine büyük bir uygulama genelinde yinelenebilir kaynak değişiklikleri uygulama."
+  },
+  "feat-008-00": {
+    "label": "Üst düzey fikirleri yapılandırılmış gereksinimler, tasarımlar ve çalıştırılabilir görevlere dönüştür.",
+    "why": "Specs Kiro'ya ait ve şu işi sağlar: Üst düzey fikirleri yapılandırılmış gereksinimler, tasarımlar ve çalıştırılabilir görevlere dönüştürme."
+  },
+  "feat-008-02": {
+    "label": "Kök nedenleri teşhis et, hedeflenen düzeltmeler tasarla ve gerilemeye karşı koruma sağla.",
+    "why": "Bugfix Specs Kiro'ya ait ve şu işi sağlar: Kök nedenleri teşhis etme, hedeflenen düzeltmeler tasarlama ve gerilemeye karşı koruma sağlama."
+  },
+  "feat-008-04": {
+    "label": "Tanımlanmış geliştirme olayları gerçekleştiğinde istemleri veya kabuk komutlarını otomatik olarak çalıştır.",
+    "why": "Agent hooks Kiro'ya ait ve şu işi sağlar: Tanımlanmış geliştirme olayları gerçekleştiğinde istemleri veya kabuk komutlarını otomatik olarak çalıştırma."
+  },
+  "feat-009-00": {
+    "label": "Geliştirici başka yerde odaklanırken sınırlı geliştirme çalışmasını zaman uyumsuz olarak devam ettir.",
+    "why": "Background task execution Kiro autonomous agent'e ait ve şu işi sağlar: Geliştirici başka yerde odaklanırken sınırlı geliştirme çalışmasını zaman uyumsuz olarak devam ettirme."
+  },
+  "feat-009-02": {
+    "label": "Tamamlanan arka plan çalışmasını gözden geçirilebilir kaynak kontrol değişikliği olarak geri döndür.",
+    "why": "pull-request delivery Kiro autonomous agent'e ait ve şu işi sağlar: Tamamlanan arka plan çalışmasını gözden geçirilebilir kaynak kontrol değişikliği olarak geri döndürme."
+  },
+  "feat-010-01": {
+    "label": "Seçilen modeli, uygulamalarının çağırabileceği şekilde yönetilen altyapının arkasında yayınla.",
+    "why": "model deployment Amazon SageMaker AI JumpStart'a ait ve şu işi sağlar: Seçilen modeli, uygulamalarının çağırabileceği şekilde yönetilen altyapının arkasında yayınlama."
+  },
+  "feat-010-03": {
+    "label": "Önceden eğitilmiş topluluk ve açık şekilde dağıtılmış üretken modelleri yönetilen ML iş akışlarında dağıt.",
+    "why": "Foundation models Amazon SageMaker AI JumpStart'a ait ve şu işi sağlar: Önceden eğitilmiş topluluk ve açık şekilde dağıtılmış üretken modelleri yönetilen ML iş akışlarında dağıtma."
+  },
+  "feat-011-01": {
+    "label": "İçeriği anlamsal geri çekim, kümeleme veya benzerlik karşılaştırması için sayısal vektörlere dönüştür.",
+    "why": "embeddings Amazon Titan'a ait ve şu işi sağlar: İçeriği anlamsal geri çekim, kümeleme veya benzerlik karşılaştırması için sayısal vektörlere dönüştürme."
+  },
+  "feat-012-00": {
+    "label": "Denemeden kontrollü üretim işlemine kadar tam özel model yaşam döngüsünü yönet.",
+    "why": "Amazon SageMaker AI Amazon SageMaker AI'ya ait ve şu işi sağlar: Denemeden kontrollü üretim işlemine kadar tam özel model yaşam döngüsünü yönetme."
+  },
+  "feat-012-01": {
+    "label": "Altta yatan uygulama sunucularını yönetmeden eğitilmiş modelleri sun.",
+    "why": "managed hosting Amazon SageMaker AI'ya ait ve şu işi sağlar: Altta yatan uygulama sunucularını yönetmeden eğitilmiş modelleri sunma."
+  },
+  "feat-012-03": {
+    "label": "Geçen süreyi azaltmak için büyük modelleri birden fazla hızlandırıcı veya makine genelinde eğit.",
+    "why": "distributed training Amazon SageMaker AI'ya ait ve şu işi sağlar: Geçen süreyi azaltmak için büyük modelleri birden fazla hızlandırıcı veya makine genelinde eğitme."
+  },
+  "feat-012-05": {
+    "label": "Verileri otomatik olarak keşfet, algoritmaları seç, adayları ayarla ve açıklanabilir model yapılarını üret.",
+    "why": "SageMaker Autopilot Amazon SageMaker AI'ya ait ve şu işi sağlar: Verileri otomatik olarak keşfetme, algoritmaları seçme, adayları ayarlama ve açıklanabilir model yapılarını üretme."
+  },
+  "feat-012-07": {
+    "label": "Yeniden kullanılabilir model girdilerini eğitim ve düşük gecikme süreli çevrimiçi tahmin arasında tutarlı tut.",
+    "why": "SageMaker Feature Store Amazon SageMaker AI'ya ait ve şu işi sağlar: Yeniden kullanılabilir model girdilerini eğitim ve düşük gecikme süreli çevrimiçi tahmin arasında tutarlı tutma."
+  },
+  "feat-012-09": {
+    "label": "Üretim verisi kayması, kalite değişiklikleri, sapma kayması ve özellik-atıflandırma kaymalarını algıla.",
+    "why": "SageMaker Model Monitor Amazon SageMaker AI'ya ait ve şu işi sağlar: Üretim verisi kayması, kalite değişiklikleri, sapma kayması ve özellik-atıflandırma kaymalarını algılama."
+  },
+  "feat-012-11": {
+    "label": "Eğitim çalışmalarını, parametreleri, veri setlerini ve ortaya çıkan metrikleri kaydet ve karşılaştır.",
+    "why": "SageMaker Experiments Amazon SageMaker AI'ya ait ve şu işi sağlar: Eğitim çalışmalarını, parametreleri, veri setlerini ve ortaya çıkan metrikleri kaydedip karşılaştırma."
+  },
+  "feat-012-13": {
+    "label": "Kesintili istekler, sıralı yükler veya çevrimdışı veri setleri için yönetilen tahmin modlarını seç.",
+    "why": "serverless asynchronous and batch inference Amazon SageMaker AI'ya ait ve şu işi sağlar: Kesintili istekler, sıralı yükler veya çevrimdışı veri setleri için yönetilen tahmin modlarını seçme."
+  },
+  "feat-012-15": {
+    "label": "Veriye, analitiklere ve yapay zekaya, takımlarına bir yönetilen geliştirme ve işbirliği ortamı sağla.",
+    "why": "SageMaker Unified Studio Amazon SageMaker AI'ya ait ve şu işi sağlar: Veriye, analitiklere ve yapay zekaya, takımlarına bir yönetilen geliştirme ve işbirliği ortamı sağlama."
+  },
+  "feat-013-01": {
+    "label": "Tarayıcı tabanlı araçlarda not defterleriyle veya kaynak dosyalarıyla etkileşimli olarak geliştir.",
+    "why": "JupyterLab and Code Editor Amazon SageMaker AI Studio'ya ait ve şu işi sağlar: Tarayıcı tabanlı araçlarda not defterleriyle veya kaynak dosyalarıyla etkileşimli olarak geliştirme."
+  },
+  "feat-013-03": {
+    "label": "Geliştirilen modeli, tüketicilerin tahmin isteyebileceği bir ortama taşı.",
+    "why": "deployment Amazon SageMaker AI Studio'ya ait ve şu işi sağlar: Geliştirilen modeli, tüketicilerin tahmin isteyebileceği bir ortama taşıma."
+  },
+  "feat-014-00": {
+    "label": "Eğitim kodu yazmak yerine grafik iş akışı aracılığıyla tahmine dayalı modeller oluştur.",
+    "why": "Visual model building Amazon SageMaker AI Canvas'a ait ve şu işi sağlar: Eğitim kodu yazmak yerine grafik iş akışı aracılığıyla tahmine dayalı modeller oluşturma."
+  },
+  "feat-014-03": {
+    "label": "İş kullanıcıları için görsel bir arabirim aracılığıyla üretken yetenekleri deneyin.",
+    "why": "foundation-model access without writing ML code Amazon SageMaker AI Canvas'a ait ve şu işi sağlar: İş kullanıcıları için görsel bir arabirim aracılığıyla üretken yetenekleri deneme."
+  },
+  "feat-016-00": {
+    "label": "Eğitim örneklerini ek açıklamak için insanları, talimatları ve kalite kontrollerini koordine et.",
+    "why": "Managed human labeling workflows Amazon SageMaker AI Ground Truth'a ait ve şu işi sağlar: Eğitim örneklerini ek açıklamak için insanları, talimatları ve kalite kontrollerini koordine etme."
+  },
+  "feat-016-02": {
+    "label": "Denetlenen görevleri öğrenmek ve performansı ölçmek için gereken yerinde örnekler üret.",
+    "why": "labeled datasets for training and evaluation Amazon SageMaker AI Ground Truth'a ait ve şu işi sağlar: Denetlenen görevleri öğrenmek ve performansı ölçmek için gereken yerinde örnekler üretme."
+  },
+  "feat-017-01": {
+    "label": "Hesaplama açısından yoğun eğitim için hızlandırıcı kullanımını ve kurtarmayı iyileştir.",
+    "why": "infrastructure optimized for large-scale ML workloads Amazon SageMaker AI HyperPod'a ait ve şu işi sağlar: Hesaplama açısından yoğun eğitim için hızlandırıcı kullanımını ve kurtarmayı iyileştirme."
+  },
+  "feat-018-01": {
+    "label": "Üretken ve tahmine dayalı uygulamaların her ikisinde de insan onayı ve düzeltmesini gömü.",
+    "why": "Human review workflows Amazon Augmented AI (A2I)'ye ait ve şu işi sağlar: Üretken ve tahmine dayalı uygulamaların her ikisinde de insan onayı ve düzeltmesini gömüleme."
+  },
+  "feat-019-01": {
+    "label": "Bir insan görevini tanımlanmış beceri veya onay kriterlerini karşılayan insanlarla sınırla.",
+    "why": "custom worker qualifications Amazon Mechanical Turk'a ait ve şu işi sağlar: Bir insan görevini tanımlanmış beceri veya onay kriterlerini karşılayan insanlarla sınırlama."
+  },
+  "feat-020-00": {
+    "label": "Farklı şekillerde yazılan kayıtların aynı gerçek dünya kişisine veya kuruluşuna atıfta bulunduğunu belirle.",
+    "why": "Entity matching and resolution AWS Entity Resolution'a ait ve şu işi sağlar: Farklı şekillerde yazılan kayıtların aynı gerçek dünya kişisine veya kuruluşuna atıfta bulunduğunu belirleme."
+  },
+  "feat-021-00": {
+    "label": "Bir kuruluşun kendi bilgilerini artıracak harici olarak üretilen veri setlerine göz at.",
+    "why": "Third-party data catalogue AWS Data Exchange'e ait ve şu işi sağlar: Bir kuruluşun kendi bilgilerini artıracak harici olarak üretilen veri setlerine göz atma."
+  },
+  "feat-021-02": {
+    "label": "Abone olunan bilgileri ayrı bir transfer işlemi olmadan depolama ve analitik araçlarına erişilir hale getir.",
+    "why": "delivery to AWS data services AWS Data Exchange'e ait ve şu işi sağlar: Abone olunan bilgileri ayrı bir transfer işlemi olmadan depolama ve analitik araçlarına erişilir hale getirme."
+  },
+  "feat-022-01": {
+    "label": "Kümeleri yönetmeden sağlanan büyük veri flotu veya isteğe bağlı yürütme seçeneğini belirle.",
+    "why": "cluster and serverless deployment options Amazon EMR'ye ait ve şu işi sağlar: Kümeleri yönetmeden sağlanan büyük veri flotu veya isteğe bağlı yürütme seçeneğini belirleme."
+  },
+  "feat-023-00": {
+    "label": "Veri işleme sunucusu sağlamadan birden fazla kaynaktan bilgileri hazırla ve birleştir.",
+    "why": "Serverless data integration AWS Glue'ye ait ve şu işi sağlar: Veri işleme sunucusu sağlamadan birden fazla kaynaktan bilgileri hazırlayıp birleştirme."
+  },
+  "feat-023-02": {
+    "label": "Analitik ve ML araçlarının veri setlerini bulup anlaması için merkezi teknik meta verileri koru.",
+    "why": "AWS Glue Data Catalog AWS Glue'ye ait ve şu işi sağlar: Analitik ve ML araçlarının veri setlerini bulup anlaması için merkezi teknik meta verileri koruma."
+  },
+  "feat-023-04": {
+    "label": "Veri setleri için beklentileri tanımla ve bunları ihlal eden kayıtları veya boru hatlarını algıla.",
+    "why": "data quality rules and monitoring AWS Glue'ye ait ve şu işi sağlar: Veri setleri için beklentileri tanımlayıp bunları ihlal eden kayıtları veya boru hatlarını algılama."
+  },
+  "feat-024-01": {
+    "label": "Modellemeden önce veri setini anlamak için dağılımları, eksik değerleri ve anormallikleri hesapla.",
+    "why": "data profiling AWS Glue DataBrew'e ait ve şu işi sağlar: Modellemeden önce veri setini anlamak için dağılımları, eksik değerleri ve anormallikleri hesaplama."
+  },
+  "feat-025-00": {
+    "label": "Yönetilen analitik verilerine erişimi tek bir kontrol platformundan yönet.",
+    "why": "Centralized data-lake permissions AWS Lake Formation'a ait ve şu işi sağlar: Yönetilen analitik verilerine erişimi tek bir kontrol platformundan yönetme."
+  },
+  "feat-025-02": {
+    "label": "Kayıtlı analitik tablolara kontrollü takımlar arası veya hesaplar arası erişim sağla.",
+    "why": "governed table sharing AWS Lake Formation'a ait ve şu işi sağlar: Kayıtlı analitik tablolara kontrollü takımlar arası veya hesaplar arası erişim sağlama."
+  },
+  "feat-026-00": {
+    "label": "Arama kümesi yazılımını çalıştırmadan hızlı sorgu için belgeleri ve işletme olaylarını dizinle.",
+    "why": "Managed search and log analytics Amazon OpenSearch Service'e ait ve şu işi sağlar: Arama kümesi yazılımını çalıştırmadan hızlı sorgu için belgeleri ve işletme olaylarını dizinleme."
+  },
+  "feat-026-03": {
+    "label": "Anahtar sözcük geri çekilişini, büyük içerik dizinleri üzerinde düşük gecikme süreli benzerlik sorgularıyla birleştir.",
+    "why": "full-text plus high-throughput semantic search Amazon OpenSearch Service'e ait ve şu işi sağlar: Anahtar sözcük geri çekilişini, büyük içerik dizinleri üzerinde düşük gecikme süreli benzerlik sorgularıyla birleştirme."
+  },
+  "feat-027-00": {
+    "label": "Büyük analitik toplamaları verimli kılmak için değerleri sütuna göre depola.",
+    "why": "Columnar data warehousing Amazon Redshift'e ait ve şu işi sağlar: Büyük analitik toplamaları verimli kılmak için değerleri sütuna göre depolama."
+  },
+  "feat-027-02": {
+    "label": "Sağlanan kümeleri yönetmek yerine kapasitesi otomatik olarak yönetilen ambar sorguları çalıştır.",
+    "why": "serverless analytics Amazon Redshift'e ait ve şu işi sağlar: Sağlanan kümeleri yönetmek yerine kapasitesi otomatik olarak yönetilen ambar sorguları çalıştırma."
+  },
+  "feat-028-01": {
+    "label": "Gerçek veya tahmin edilen tüketim seçilen bir yüzdeyi veya tutarı aştığında hissedarlara bildir.",
+    "why": "threshold alerts AWS Budgets'a ait ve şu işi sağlar: Gerçek veya tahmin edilen tüketim seçilen bir yüzdeyi veya tutarı aştığında hissedarlara bildirme."
+  },
+  "feat-029-00": {
+    "label": "Ücretleri hizmet, hesap, Bölge, etiket veya diğer ödeme boyutuna göre böl.",
+    "why": "Cost and usage filtering AWS Cost Explorer'a ait ve şu işi sağlar: Ücretleri hizmet, hesap, Bölge, etiket veya diğer ödeme boyutuna göre bölme."
+  },
+  "feat-029-02": {
+    "label": "Son kullanım desenlerinden gelecekteki ücretleri tahmin et.",
+    "why": "cost forecasting AWS Cost Explorer'a ait ve şu işi sağlar: Son kullanım desenlerinden gelecekteki ücretleri tahmin etme."
+  },
+  "feat-030-01": {
+    "label": "Model eğitimi veya çıkarımı için özel donanım sağla.",
+    "why": "GPU and ML accelerator instances Amazon EC2'ye ait ve şu işi sağlar: Model eğitimi veya çıkarımı için özel donanım sağlama."
+  },
+  "feat-030-02": {
+    "label": "Sanal sunucu için işletim sistemi, ağ iletişimi, depolama ve yüklenmiş yazılım seçeneğini belirle.",
+    "why": "Amazon EC2 instance types Amazon EC2'ye ait ve şu işi sağlar: Sanal sunucu için işletim sistemi, ağ iletişimi, depolama ve yüklenmiş yazılım seçeneğini belirleme."
+  },
+  "feat-031-02": {
+    "label": "Sunucuyu sürekli çalıştırmak yerine istekler ve işlem süresi için ücret al.",
+    "why": "pay-per-use execution AWS Lambda'ya ait ve şu işi sağlar: Sunucuyu sürekli çalıştırmak yerine istekler ve işlem süresi için ücret alma."
+  },
+  "feat-032-01": {
+    "label": "Altta yatan ana bilgisayarları seçmeden veya yönetmeden paketlenmiş iş yüklerini çalıştır.",
+    "why": "AWS Fargate serverless containers Amazon Elastic Container Service (Amazon ECS)'e ait ve şu işi sağlar: Altta yatan ana bilgisayarları seçmeden veya yönetmeden paketlenmiş iş yüklerini çalıştırma."
+  },
+  "feat-033-00": {
+    "label": "AWS tarafından yönetilen altyapı bileşenlerini kullanırken standart konteyner kümesi API'sini kullan.",
+    "why": "Managed Kubernetes control plane Amazon Elastic Kubernetes Service (Amazon EKS)'e ait ve şu işi sağlar: AWS tarafından yönetilen altyapı bileşenlerini kullanırken standart konteyner kümesi API'sini kullanma."
+  },
+  "feat-033-02": {
+    "label": "Konteyner kümelerini bulut-yerel erişim, ağ ve izleme denetimleriyle bağla.",
+    "why": "AWS identity networking and observability integration Amazon Elastic Kubernetes Service (Amazon EKS)'e ait ve şu işi sağlar: Konteyner kümelerini bulut-yerel erişim, ağ ve izleme denetimleriyle bağlama."
+  },
+  "feat-034-01": {
+    "label": "İlişkisel verileri hata bölgeleri genelinde çoğalt ve depolamayı işlemden ayır.",
+    "why": "distributed fault-tolerant storage Amazon Aurora'ya ait ve şu işi sağlar: İlişkisel verileri hata bölgeleri genelinde çoğaltma ve depolamayı işlemden ayırma."
+  },
+  "feat-034-03": {
+    "label": "Gömülü değerleri AWS'nin yüksek performanslı ilişkisel motorunda depolamak için PostgreSQL uzantısını kullan.",
+    "why": "Aurora PostgreSQL with pgvector Amazon Aurora'ya ait ve şu işi sağlar: Gömülü değerleri AWS'nin yüksek performanslı ilişkisel motorunda depolamak için PostgreSQL uzantısını kullanma."
+  },
+  "feat-035-00": {
+    "label": "Kayıtları sabit ilişkisel satırlar yerine esnek iç içe nesneler olarak temsil et.",
+    "why": "Document-oriented data model Amazon DocumentDB (with MongoDB compatibility)'ye ait ve şu işi sağlar: Kayıtları sabit ilişkisel satırlar yerine esnek iç içe nesneler olarak temsil etme."
+  },
+  "feat-035-02": {
+    "label": "AWS'nin bir belge veritabanı için yedekli kopyaları ve kurtarma noktalarını koruyabilmesini sağla.",
+    "why": "managed replication and backups Amazon DocumentDB (with MongoDB compatibility)'ye ait ve şu işi sağlar: AWS'nin bir belge veritabanı için yedekli kopyaları ve kurtarma noktalarını koruyabilmesini sağlama."
+  },
+  "feat-035-04": {
+    "label": "Kavramsal olarak ilgili içeriği alırken tanıdık belge işlemlerini kullanarak iç içe kayıtları filtrele.",
+    "why": "$vectorSearch operator Amazon DocumentDB (with MongoDB compatibility)'ye ait ve şu işi sağlar: Kavramsal olarak ilgili içeriği alırken tanıdık belge işlemlerini kullanarak iç içe kayıtları filtreleme."
+  },
+  "feat-036-01": {
+    "label": "Talep arttıkça sunucusuz veritabanı trafiğini ve depolamayı dağıt.",
+    "why": "automatic horizontal scaling Amazon DynamoDB'ye ait ve şu işi sağlar: Talep arttıkça sunucusuz veritabanı trafiğini ve depolamayı dağıtma."
+  },
+  "feat-037-00": {
+    "label": "Yönetilen bir önbellekte yaygın olarak benimsenmiş bellek içi veri yapılarını ve istemcileri kullan.",
+    "why": "Valkey and Redis OSS compatibility Amazon ElastiCache'e ait ve şu işi sağlar: Yönetilen bir önbellekte yaygın olarak benimsenmiş bellek içi veri yapılarını ve istemcileri kullanma."
+  },
+  "feat-037-02": {
+    "label": "Gecikmesini ve maliyeti azaltmak için geçici uygulama durumunu veya model yanıtlarını yeniden kullan.",
+    "why": "session and inference-result caching Amazon ElastiCache'e ait ve şu işi sağlar: Gecikmesini ve maliyeti azaltmak için geçici uygulama durumunu veya model yanıtlarını yeniden kullanma."
+  },
+  "feat-038-01": {
+    "label": "Pahalı ilişkisel birleştirmeler olmadan varlıklar arasındaki birden fazla bağlantıyı verimli bir şekilde takip et.",
+    "why": "relationship traversal Amazon Neptune'e ait ve şu işi sağlar: Pahalı ilişkisel birleştirmeler olmadan varlıklar arasındaki birden fazla bağlantıyı verimli bir şekilde takip etme."
+  },
+  "feat-038-03": {
+    "label": "Gömülü benzerliğini son derece bağlı analitik grafik üzerinde algoritmalarla birleştir.",
+    "why": "Neptune Analytics vector search Amazon Neptune'ye ait ve şu işi sağlar: Gömülü benzerliğini son derece bağlı analitik grafik üzerinde algoritmalarla birleştirme."
+  },
+  "feat-039-00": {
+    "label": "Yönetilen bir hizmet içinde tanıdık ticari ve açık kaynak SQL teknolojileri arasından seçim yap.",
+    "why": "Multiple relational database engines Amazon Relational Database Service (Amazon RDS)'ye ait ve şu işi sağlar: Yönetilen bir hizmet içinde tanıdık ticari ve açık kaynak SQL teknolojileri arasından seçim yapma."
+  },
+  "feat-039-02": {
+    "label": "Esnek veritabanı işletimi için başka bir hata bölgesinde senkronize bir stanby koru.",
+    "why": "Multi-AZ high availability Amazon Relational Database Service (Amazon RDS)'ye ait ve şu işi sağlar: Esnek veritabanı işletimi için başka bir hata bölgesinde senkronize bir stanby koruma."
+  },
+  "feat-039-04": {
+    "label": "Ayrı bir arama deposu benimsemeden anlam vektörlerini kurulmuş tabloların ve işlemlerin yanında tut.",
+    "why": "RDS for PostgreSQL Amazon Relational Database Service (Amazon RDS)'ye ait ve şu işi sağlar: Ayrı bir arama deposu benimsemeden anlam vektörlerini kurulmuş tabloların ve işlemlerin yanında tutma."
+  },
+  "feat-040-01": {
+    "label": "Kuruluş bilgisi ve yazılım iletişim görevlerine üretken yardımcılar ailesini uygula.",
+    "why": "business and developer assistants Amazon Q'ya ait ve şu işi sağlar: Kuruluş bilgisi ve yazılım iletişim görevlerine üretken yardımcılar ailesini uygulama."
+  },
+  "feat-041-01": {
+    "label": "Kuruluş özel etiketler ve terminoloji için metin analiz eğit.",
+    "why": "custom NLP models for domain-specific extraction/classification Amazon Comprehend'e ait ve şu işi sağlar: Kuruluş özel etiketler ve terminoloji için metin analiz eğitme."
+  },
+  "feat-043-00": {
+    "label": "Doğal dil aracılığıyla etkileşim kuran sohbet ve telefon deneyimleri oluştur.",
+    "why": "Automatic speech recognition (ASR) Amazon Lex'e ait ve şu işi sağlar: Doğal dil aracılığıyla etkileşim kuran sohbet ve telefon deneyimleri oluşturma."
+  },
+  "feat-043-02": {
+    "label": "Konuşma durumunu izle ve bir talebini tamamlamak için gereken bilgileri topla.",
+    "why": "dialogue management Amazon Lex'e ait ve şu işi sağlar: Konuşma durumunu izleme ve bir talebini tamamlamak için gereken bilgileri toplama."
+  },
+  "feat-044-00": {
+    "label": "Yazılı içeriği uygulamalar ve erişilebilirlik için doğal seslendirmeli sesine dönüştür.",
+    "why": "Neural text-to-speech (NTTS) Amazon Polly'ye ait ve şu işi sağlar: Yazılı içeriği uygulamalar ve erişilebilirlik için doğal seslendirmeli sesine dönüştürme."
+  },
+  "feat-045-01": {
+    "label": "Konuşulan içeriği arama, analitik, başlıklar veya aşağı akış otomasyonuna besle.",
+    "why": "Streaming transcription Amazon Transcribe'ye ait ve şu işi sağlar: Konuşulan içeriği arama, analitik, başlıklar veya aşağı akış otomasyonuna besleme."
+  },
+  "feat-047-00": {
+    "label": "Tarama yapılmış veya dijital dosyalardan hem sözcükleri hem de anahtar değer yapısını oku.",
+    "why": "Document Analysis API Amazon Textract'a ait ve şu işi sağlar: Tarama yapılmış veya dijital dosyalardan hem sözcükleri hem de anahtar değer yapısını okuma."
+  },
+  "feat-048-00": {
+    "label": "Çalışanların veya müşterilerin sıradan dili kullanarak belgeleri sorgulamalarını sağla.",
+    "why": "Natural-language search across unstructured enterprise content Amazon Kendra'ya ait ve şu işi sağlar: Çalışanların veya müşterilerin sıradan dili kullanarak belgeleri sorgulama."
+  },
+  "feat-049-00": {
+    "label": "Görsel varlıkları, ortamları ve insanları tanımlamak için resim veya videoyı analiz et.",
+    "why": "Label detection Amazon Rekognition'a ait ve şu işi sağlar: Görsel varlıkları, ortamları ve insanları tanımlamak için resim veya videoyı analiz etme."
+  },
+  "feat-050-00": {
+    "label": "Etkileşim halindeyken davranışları ve tercihlerinden her kullanıcı için öğeleri sırala.",
+    "why": "Real-time recommendations Amazon Personalize'ye ait ve şu işi sağlar: Etkileşim halindeyken davranışları ve tercihlerinden her kullanıcı için öğeleri sıralama."
+  },
+  "feat-051-01": {
+    "label": "Tek bir sayı döndürmek yerine seçilen güven düzeylerinde olası gelecek değerlerin bir aralığını tahmin et.",
+    "why": "probabilistic forecasts and prediction intervals Amazon Forecast'a ait ve şu işi sağlar: Tek bir sayı döndürmek yerine seçilen güven düzeylerinde olası gelecek değerlerin bir aralığını tahmin etme."
+  },
+  "feat-052-01": {
+    "label": "Bir işleme veya hesap faaliyetine dolandırıcılık olasılığının sayısal olabilirliğini ata.",
+    "why": "event risk scores Amazon Fraud Detector'a ait ve şu işi sağlar: Bir işleme veya hesap faaliyetine dolandırıcılık olasılığının sayısal olabilirliğini atama."
+  },
+  "feat-053-00": {
+    "label": "Kabul edilebilir ürünlerin görünüşünü öğren ve olağan dışı kusurlar içeren resimleri işaretle.",
+    "why": "Visual anomaly detection Amazon Lookout for Vision'a ait ve şu işi sağlar: Kabul edilebilir ürünlerin görünüşünü öğrenme ve olağan dışı kusurlar içeren resimleri işaretleme."
+  },
+  "feat-053-02": {
+    "label": "Eğitilmiş görsel kalite kontrolünü fabrika ekipmanına yakın çalıştır.",
+    "why": "edge-device model deployment Amazon Lookout for Vision'a ait ve şu işi sağlar: Eğitilmiş görsel kalite kontrolünü fabrika ekipmanına yakın çalıştırma."
+  },
+  "feat-054-00": {
+    "label": "Sabit eşikler olmadan normal iş ölçüm davranışını öğren ve beklenmedik değişiklikleri yüzey.",
+    "why": "Automatic metric anomaly detection Amazon Lookout for Metrics'e ait ve şu işi sağlar: Sabit eşikler olmadan normal iş ölçüm davranışını öğrenme ve beklenmedik değişiklikleri yüzey çıkarma."
+  },
+  "feat-054-02": {
+    "label": "Bir iş ölçümündeki tespit edilen değişikliği en güçlü şekilde açıklayan boyutları sırala.",
+    "why": "root-cause contribution analysis Amazon Lookout for Metrics'e ait ve şu işi sağlar: Bir iş ölçümündeki tespit edilen değişikliği en güçlü şekilde açıklayan boyutları sıralama."
+  },
+  "feat-056-01": {
+    "label": "Yaygın yazılım güvenlik açıkları ve güvenli olmayan uygulamalar için öğrenilmiş ve kural tabanlı denetim uygula.",
+    "why": "security detector library Amazon CodeGuru Reviewer'a ait ve şu işi sağlar: Yaygın yazılım güvenlik açıkları ve güvenli olmayan uygulamalar için öğrenilmiş ve kural tabanlı denetim uygulama."
+  },
+  "feat-057-00": {
+    "label": "Yürütülen kodu, pahalı yöntemleri yerleştirmek ve işlem atıklarını azaltmak için profille.",
+    "why": "Continuous profiling Amazon CodeGuru Profiler'a ait ve şu işi sağlar: Yürütülen kodu, pahalı yöntemleri yerleştirmek ve işlem atıklarını azaltmak için profilleme."
+  },
+  "feat-058-01": {
+    "label": "Canlı bir konuşma sırasında iletişim merkezi personeline rehberlik ve ilgili bilgiler sun.",
+    "why": "real-time agent assistance Amazon Connect'e ait ve şu işi sağlar: Canlı bir konuşma sırasında iletişim merkezi personeline rehberlik ve ilgili bilgiler sunma."
+  },
+  "feat-058-03": {
+    "label": "İletişim talebini tahmin et ve işgücü kapsamını beklenen hacimle hizala.",
+    "why": "forecasting and scheduling Amazon Connect'e ait ve şu işi sağlar: İletişim talebini tahmin etme ve işgücü kapsamını beklenen hacimle hizalama."
+  },
+  "feat-059-00": {
+    "label": "Gelecekteki ürün gereksinimlerini tahmin etmek için geçmiş siparişleri ve sinyalleri kullan.",
+    "why": "Demand planning AWS Supply Chain'e ait ve şu işi sağlar: Gelecekteki ürün gereksinimlerini tahmin etmek için geçmiş siparişleri ve sinyalleri kullanma."
+  },
+  "feat-059-02": {
+    "label": "Planlama ve analiz için kurumsal sistemlerden işletme kayıtlarını birleştir.",
+    "why": "supply-chain data lake AWS Supply Chain'e ait ve şu işi sağlar: Planlama ve analiz için kurumsal sistemlerden işletme kayıtlarını birleştirme."
+  },
+  "feat-060-01": {
+    "label": "Yönetilen bir iş akışı aracılığıyla paylaşılan veri setlerine erişim isteme, onaylama ve denetim.",
+    "why": "governed data subscriptions Amazon DataZone'a ait ve şu işi sağlar: Yönetilen bir iş akışı aracılığıyla paylaşılan veri setlerine erişim isteme, onaylama ve denetleme."
+  },
+  "feat-061-00": {
+    "label": "Kod yazılmadan önce mimari belgeleri kuruluş gereksinimleri karşısında değerlendir.",
+    "why": "Design security review AWS Security Agent'e ait ve şu işi sağlar: Kod yazılmadan önce mimari belgeleri kuruluş gereksinimleri karşısında değerlendirme."
+  },
+  "feat-061-02": {
+    "label": "Uzmanlaşmış aracıları kullanarak web uygulamalarına ve API'lerine karşı çok adımlı saldırı senaryoları çalıştır.",
+    "why": "On-demand penetration testing AWS Security Agent'e ait ve şu işi sağlar: Uzmanlaşmış aracıları kullanarak web uygulamalarına ve API'lerine karşı çok adımlı saldırı senaryoları çalıştırma."
+  },
+  "feat-061-04": {
+    "label": "Yeniden üretilebilir istismar yolları, etki analizi ve uygulamaya hazır düzeltmeler geri döndür.",
+    "why": "Actionable fixes for confirmed vulnerabilities AWS Security Agent'e ait ve şu işi sağlar: Yeniden üretilebilir istismar yolları, etki analizi ve uygulamaya hazır düzeltmeler geri döndürme."
+  },
+  "feat-062-01": {
+    "label": "Telemetri, kod ve dağıtım verilerini bir üretim hatası neden oluştuğunu tanımlamak için ilişkilendir.",
+    "why": "Root cause analysis AWS DevOps Agent'e ait ve şu işi sağlar: Telemetri, kod ve dağıtım verilerini bir üretim hatası neden oluştuğunu tanımlamak için ilişkilendirme."
+  },
+  "feat-062-03": {
+    "label": "Hizmetleri ve kaynakları keşfet ve bunların ilişkilerinin dinamik topolojisini koru.",
+    "why": "Application Mapping AWS DevOps Agent'e ait ve şu işi sağlar: Hizmetleri ve kaynakları keşfetme ve bunların ilişkilerinin dinamik topolojisini koruma."
+  },
+  "feat-063-00": {
+    "label": "Bulut kontrol düzlemi eylemini kimin gerçekleştirdiğini, ne zaman olduğunu ve nereden kaydını tut.",
+    "why": "API and user activity history AWS CloudTrail'e ait ve şu işi sağlar: Bulut kontrol düzlemi eylemini kimin gerçekleştirdiğini, ne zaman olduğunu ve nereden kaydını tutma."
+  },
+  "feat-064-00": {
+    "label": "Sayısal ölçümleri, olay kayıtlarını ve istek yollarını bir izleme hizmetinde topla.",
+    "why": "Metrics logs and traces Amazon CloudWatch'a ait ve şu işi sağlar: Sayısal ölçümleri, olay kayıtlarını ve istek yollarını bir izleme hizmetinde toplama."
+  },
+  "feat-064-02": {
+    "label": "Süregelen üretim gözetimi için sistem sağlığını ve model davranışını görselleştir.",
+    "why": "dashboards and model observability Amazon CloudWatch'a ait ve şu işi sağlar: Süregelen üretim gözetimi için sistem sağlığını ve model davranışını görselleştirme."
+  },
+  "feat-065-01": {
+    "label": "Kaynak ayarlarını gerekli kuruluş koşullarına karşı sürekli değerlendir.",
+    "why": "compliance rules AWS Config'e ait ve şu işi sağlar: Kaynak ayarlarını gerekli kuruluş koşullarına karşı sürekli değerlendirme."
+  },
+  "feat-066-00": {
+    "label": "Büyük işletme kalitesi kategorilerinde en iyi uygulama bulguları al.",
+    "why": "Cost security performance and resilience recommendations AWS Trusted Advisor'a ait ve şu işi sağlar: Büyük işletme kalitesi kategorilerinde en iyi uygulama bulguları alma."
+  },
+  "feat-066-01": {
+    "label": "Düzeltmeyi hesap etkisine göre sıralanmış önerilere odakla.",
+    "why": "prioritized checks AWS Trusted Advisor'a ait ve şu işi sağlar: Düzeltmeyi hesap etkisine göre sıralanmış önerilere odaklama."
+  },
+  "feat-067-00": {
+    "label": "Bir mimarisini işletme üstünlüğü, güvenlik, güvenilirlik, performans, maliyet ve sürdürülebilirlik genelinde değerlendir.",
+    "why": "Six-pillar workload reviews AWS Well-Architected Tool'a ait ve şu işi sağlar: Bir mimarisini işletme üstünlüğü, güvenlik, güvenilirlik, performans, maliyet ve sürdürülebilirlik genelinde değerlendirme."
+  },
+  "feat-068-00": {
+    "label": "Kullanıcılara yakın konumlardan kaynağa her seferinde döndüğü yerine yinelenen istekleri sun.",
+    "why": "Global edge caching Amazon CloudFront'a ait ve şu işi sağlar: Kullanıcılara yakın konumlardan kaynağa her seferinde döndüğü yerine yinelenen istekleri sunma."
+  },
+  "feat-068-02": {
+    "label": "Web varlıklarını küresel bir ağ genelinde şifrelenmiş bağlantılar aracılığıyla dağıt.",
+    "why": "HTTPS content delivery Amazon CloudFront'a ait ve şu işi sağlar: Web varlıklarını küresel bir ağ genelinde şifrelenmiş bağlantılar aracılığıyla dağıtma."
+  },
+  "feat-069-01": {
+    "label": "Kaynak ve alt ağ trafiğini durum bilgili ve durumsuzu ağ kurallarıyla filtrele.",
+    "why": "security groups and network ACLs Amazon Virtual Private Cloud (Amazon VPC)'ye ait ve şu işi sağlar: Kaynak ve alt ağ trafiğini durum bilgili ve durumsuzu ağ kurallarıyla filtreleme."
+  },
+  "feat-070-00": {
+    "label": "Denetçiler veya müşteriler güvence kanıtı istediğinde AWS sertifikalarını ve raporlarını indir.",
+    "why": "On-demand compliance documents AWS Artifact'a ait ve şu işi sağlar: Denetçiler veya müşteriler güvence kanıtı istediğinde AWS sertifikalarını ve raporlarını indirme."
+  },
+  "feat-070-01": {
+    "label": "AWS kontrollerinin bağımsız değerlendirmelerini ve işletme etkinliğini gözden geçir.",
+    "why": "third-party audit reports AWS Artifact'a ait ve şu işi sağlar: AWS kontrollerinin bağımsız değerlendirmelerini ve işletme etkinliğini gözden geçirme."
+  },
+  "feat-071-00": {
+    "label": "Denetim kanıtını manuel olarak derlemek yerine haritalanmış kaynak ve faaliyeti kayıtlarını sürekli topla.",
+    "why": "Automated evidence collection AWS Audit Manager'a ait ve şu işi sağlar: Denetim kanıtını manuel olarak derlemek yerine haritalanmış kaynak ve faaliyeti kayıtlarını sürekli toplama."
+  },
+  "feat-071-02": {
+    "label": "Kontrol durumu ve destekleyici kanıtları denetçi hazır paketinde derle.",
+    "why": "assessment reports AWS Audit Manager'a ait ve şu işi sağlar: Kontrol durumu ve destekleyici kanıtları denetçi hazır paketinde derleme."
+  },
+  "feat-072-01": {
+    "label": "Bir kişi veya iş yükünün görevine yalnızca gerekli eylemleri ve kaynakları ver.",
+    "why": "least-privilege permissions AWS Identity and Access Management (IAM)'a ait ve şu işi sağlar: Bir kişi veya iş yükünün görevine yalnızca gerekli eylemleri ve kaynakları verme."
+  },
+  "feat-073-00": {
+    "label": "Sanal makineleri ve paketlenmiş yazılım yapılarını bilinen güvenlik açıkları için tara.",
+    "why": "Amazon EC2 and container image scanning Amazon Inspector'a ait ve şu işi sağlar: Sanal makineleri ve paketlenmiş yazılım yapılarını bilinen güvenlik açıkları için tarama."
+  },
+  "feat-073-02": {
+    "label": "İstismar edilebilirlik ve kaynak pozlama bağlamını kullanarak bir güvenlik açığını önceliklendir.",
+    "why": "risk-based findings Amazon Inspector'a ait ve şu işi sağlar: İstismar edilebilirlik ve kaynak pozlama bağlamını kullanarak bir güvenlik açığını önceliklendir."
+  },
+  "feat-074-01": {
+    "label": "Verileri veri anahtarıyla koruma altına alın, sonra bu anahtarı daha uzun ömürlü bir kök anahtar altında şifrele.",
+    "why": "envelope encryption AWS Key Management Service (AWS KMS)'ye ait ve şu işi sağlar: Verileri veri anahtarıyla koruma altına alıp sonra bu anahtarı daha uzun ömürlü bir kök anahtar altında şifreleme."
+  },
+  "feat-075-00": {
+    "label": "Nesne içeriğini kişisel, finansal, kimlik bilgisi veya düzenlenen bilgileri yerleştirmek için sınıflandır.",
+    "why": "Machine-learning sensitive-data discovery Amazon Macie'ye ait ve şu işi sağlar: Nesne içeriğini kişisel, finansal, kimlik bilgisi veya düzenlenen bilgileri yerleştirmek için sınıflandırma."
+  },
+  "feat-075-02": {
+    "label": "Hassas nesneler veya güvenli olmayan depolama ayarları tespit edildiğinde işlem alınabilir uyarıları yüzey.",
+    "why": "findings for exposed data Amazon Macie'ye ait ve şu işi sağlar: Hassas nesneler veya güvenli olmayan depolama ayarları tespit edildiğinde işlem alınabilir uyarıları yüzey çıkarma."
+  },
+  "feat-076-01": {
+    "label": "Desteklenen veritabanı veya uygulama parolalarını manuel güncellemeler olmadan bir program üzerinde değiştir.",
+    "why": "automatic credential rotation AWS Secrets Manager'a ait ve şu işi sağlar: Desteklenen veritabanı veya uygulama parolalarını manuel güncellemeler olmadan bir program üzerinde değiştirme."
+  },
+  "feat-077-00": {
+    "label": "Dosyaları, veri setlerini ve yapıları uzun vadeli bulut erişimi için yedekli olarak koru.",
+    "why": "Highly durable object storage Amazon Simple Storage Service (Amazon S3)'ye ait ve şu işi sağlar: Dosyaları, veri setlerini ve yapıları uzun vadeli bulut erişimi için yedekli olarak koruma."
+  },
+  "feat-077-02": {
+    "label": "Yaş ve erişim gereksinimlerine göre nesneleri otomatik olarak geçir veya sona erdir.",
+    "why": "lifecycle management Amazon Simple Storage Service (Amazon S3)'ye ait ve şu işi sağlar: Yaş ve erişim gereksinimlerine göre nesneleri otomatik olarak geçirme veya sona erdirme."
+  },
+  "feat-077-04": {
+    "label": "Ultra düşük gecikme süresi gerektirmeyen çok büyük gömülü koleksiyonlar için depolama ekonomisini önceliklendir.",
+    "why": "cost-optimized billion-scale vector storage Amazon Simple Storage Service (Amazon S3)'ye ait ve şu işi sağlar: Ultra düşük gecikme süresi gerektirmeyen çok büyük gömülü koleksiyonlar için depolama ekonomisini önceliklendirme."
+  },
+  "feat-078-01": {
+    "label": "Arşivlenen nesneleri geri yüklerken alım hızını fiyata göre değiştir.",
+    "why": "expedited to bulk retrieval options Amazon S3 Glacier'a ait ve şu işi sağlar: Arşivlenen nesneleri geri yüklerken alım hızını fiyata göre değiştirme."
+  },
+  "feat-079-00": {
+    "label": "Klinik alışverişi için tasarlanan, birlikte çalışabilir bir biçimde sağlık kayıtlarını koru.",
+    "why": "FHIR-enabled patient-data store AWS HealthLake'e ait ve şu işi sağlar: Klinik alışverişi için tasarlanan, birlikte çalışabilir bir biçimde sağlık kayıtlarını koruma."
+  },
+  "feat-080-00": {
+    "label": "Klinik konuşmaları sağlık hizmetleri için ayarlanmış kelime dağarcığı ile yazıya çevir.",
+    "why": "Medical speech recognition AWS HealthScribe'a ait ve şu işi sağlar: Klinik konuşmaları sağlık hizmetleri için ayarlanmış kelime dağarcığı ile yazıya çevirme."
+  },
+  "feat-080-02": {
+    "label": "Hastane konuşmasından tıbbi açıdan anlamlı kavramları tanımla.",
+    "why": "clinical term extraction AWS HealthScribe'a ait ve şu işi sağlar: Hastane konuşmasından tıbbi açıdan anlamlı kavramları tanımlama."
+  },
+  "feat-080-04": {
+    "label": "Gerekli uyum kontrolleri altında yapılandırıldığında düzenlenen sağlık hizmetleri iş yüklerini destekle.",
+    "why": "HIPAA-eligible processing AWS HealthScribe'a ait ve şu işi sağlar: Gerekli uyum kontrolleri altında yapılandırıldığında düzenlenen sağlık hizmetleri iş yüklerini destekleme."
+  },
+  "feat-082-00": {
+    "label": "Eğitilmiş sinir ağlarını tahmin ekonomisi için optimize edilmiş AWS silisiyumunda sun.",
+    "why": "Cost/performance-focused deep-learning and generative-AI inference AWS Inferentia / Inferentia2'ye ait ve şu işi sağlar: Eğitilmiş sinir ağlarını tahmin ekonomisi için optimize edilmiş AWS silisiyumunda sunma."
+  },
+  "feat-083-00": {
+    "label": "Eğitilmiş sinir ağı grafiklerini AWS makine öğrenimi hızlandırıcıları için optimize edilmiş talimatlar halinde çevir.",
+    "why": "Model compilation AWS Neuron SDK'ya ait ve şu işi sağlar: Eğitilmiş sinir ağı grafiklerini AWS makine öğrenimi hızlandırıcıları için optimize edilmiş talimatlar halinde çevirme."
+  },
+  "feat-083-02": {
+    "label": "Hızlandırıcı kullanımını ve yürütme davranışını inceleyerek performansı artır.",
+    "why": "profiling and debugging tools AWS Neuron SDK'ya ait ve şu işi sağlar: Hızlandırıcı kullanımını ve yürütme davranışını inceleyerek performansı artırma."
+  },
+  "feat-084-01": {
+    "label": "Eğitim iş yüklerini amaç için yapılmış AWS silisiyumunda derle ve optimize et.",
+    "why": "Neuron SDK support Amazon EC2 Trn1 / Trn2 instances'a ait ve şu işi sağlar: Eğitim iş yüklerini amaç için yapılmış AWS silisiyumunda derleme ve optimize etme."
+  },
+  "feat-085-00": {
+    "label": "Sinir ağı tahmini için özel olarak tasarlanan AWS hızlandırıcı nesilleri seçin.",
+    "why": "First- and second-generation Inferentia Amazon EC2 Inf1 / Inf2 instances'a ait ve şu işi sağlar: Sinir ağı tahmini için özel olarak tasarlanan AWS hızlandırıcı nesilleri seçme."
+  },
+  "feat-085-02": {
+    "label": "Eğitilmiş modelleri AWS tahmin hızlandırıcıları için derle ve ayarla.",
+    "why": "Neuron SDK support for inference Amazon EC2 Inf1 / Inf2 instances'a ait ve şu işi sağlar: Eğitilmiş modelleri AWS tahmin hızlandırıcıları için derleme ve ayarlama."
+  },
+  "feat-087-00": {
+    "label": "Talep gören geniş model eğitimi ve çıkarımı için geçerli yüksek uçlu hızlandırıcı mimarisini kullan.",
+    "why": "NVIDIA Blackwell GPUs Amazon EC2 P6 instances and UltraServers'a ait ve şu işi sağlar: Talep gören geniş model eğitimi ve çıkarımı için geçerli yüksek uçlu hızlandırıcı mimarisini kullanma."
+  },
+  "feat-087-02": {
+    "label": "Dağıtılmış hızlandırıcı trafiğini işlem düğümleri arasında düşük gecikme süresi ve yüksek aktarım hızıyla taşı.",
+    "why": "high-bandwidth EFA networking Amazon EC2 P6 instances and UltraServers'a ait ve şu işi sağlar: Dağıtılmış hızlandırıcı trafiğini işlem düğümleri arasında düşük gecikme süresi ve yüksek aktarım hızıyla taşıma."
+  },
+  "feat-088-01": {
+    "label": "Grafik, medya ve model sunma iş yükleri için daha yeni verimli hızlandırıcıları kullan.",
+    "why": "NVIDIA L4 GPUs on G6 instances Amazon EC2 G5 / G6 instances'a ait ve şu işi sağlar: Grafik, medya ve model sunma iş yükleri için daha yeni verimli hızlandırıcıları kullanma."
+  },
+  "feat-089-00": {
+    "label": "Geleneksel GPU eğitimi yerine ayrılmış derin öğrenme işlemcilerini kullan.",
+    "why": "Habana Gaudi accelerators Amazon EC2 DL1 instances'a ait ve şu işi sağlar: Geleneksel GPU eğitimi yerine ayrılmış derin öğrenme işlemcilerini kullanma."
+  },
+  "feat-089-01": {
+    "label": "Model öğrenmesini birden fazla uzmanlaşmış işlem düğümü genelinde koordine et.",
+    "why": "distributed deep-learning training Amazon EC2 DL1 instances'a ait ve şu işi sağlar: Model öğrenmesini birden fazla uzmanlaşmış işlem düğümü genelinde koordine etme."
+  },
+  "feat-090-00": {
+    "label": "Yapılandırmadan elastik bir bilimsel bilgi işlem ortamını tanımla ve yeniden üret.",
+    "why": "Infrastructure-as-code cluster creation AWS ParallelCluster'a ait ve şu işi sağlar: Yapılandırmadan elastik bir bilimsel bilgi işlem ortamını tanımlama ve yeniden üretme."
+  },
+  "feat-090-02": {
+    "label": "Sıralanmış işler için işçi düğümleri ekle ve talep düştüğünde boşta kapasiteyi kaldır.",
+    "why": "automatic compute scaling AWS ParallelCluster'a ait ve şu işi sağlar: Sıralanmış işler için işçi düğümleri ekleme ve talep düştüğünde boşta kapasiteyi kaldırma."
+  },
+  "feat-091-01": {
+    "label": "HPC ve model eğitimi tarafından kullanılan genel ileti geçme ve toplu kitaplıkları hızlandır.",
+    "why": "MPI and NCCL communication Elastic Fabric Adapter'a ait ve şu işi sağlar: HPC ve model eğitimi tarafından kullanılan genel ileti geçme ve toplu kitaplıkları hızlandırma."
+  },
+  "feat-092-00": {
+    "label": "Çevrimdışı işlem işini önceliklendir ve uygun kapasite sağlanana kadar tut.",
+    "why": "Managed job queues AWS Batch'e ait ve şu işi sağlar: Çevrimdışı işlem işini önceliklendir ve uygun kapasite sağlanana kadar tutma."
+  },
+  "feat-092-02": {
+    "label": "Sıralı boru hatlarını veya aynı toplu görevin birçok paralel varyasyonunu ifade et.",
+    "why": "job dependencies and array jobs AWS Batch'e ait ve şu işi sağlar: Sıralı boru hatlarını veya aynı toplu görevin birçok paralel varyasyonunu ifade etme."
+  },
+  "feat-094-00": {
+    "label": "Model öğrenimi ve tahmini için çerçeve hazır, tekrarlanabilir konteynerler çalıştır.",
+    "why": "Deep Learning Containers (DLCs) AWS Deep Learning Containers'a ait ve şu işi sağlar: Model öğrenimi ve tahmini için çerçeve hazır, tekrarlanabilir konteynerler çalıştırma."
+  },
+  "feat-095-00": {
+    "label": "Popüler dinamik derin öğrenme çerçevesine dayalı iş yükleri geliştir ve işlet.",
+    "why": "PyTorch on AWS PyTorch on AWS'ye ait ve şu işi sağlar: Popüler dinamik derin öğrenme çerçevesine dayalı iş yükleri geliştirme ve işletme."
+  },
+  "feat-097-00": {
+    "label": "Yönetilen eğitim ve bulut işlem ile açık model ekosistemini kullan.",
+    "why": "Hugging Face Deep Learning Containers Hugging Face on Amazon SageMaker'a ait ve şu işi sağlar: Yönetilen eğitim ve bulut işlem ile açık model ekosistemini kullanma."
+  },
+  "feat-098-01": {
+    "label": "Verileri araştır, sonuçları görselleştir ve yürütülebilir belgelerde model kodunda yinele.",
+    "why": "interactive data science Jupyter on AWS'ye ait ve şu işi sağlar: Verileri araştırma, sonuçları görselleştirme ve yürütülebilir belgelerde model kodunda yineleme."
+  },
+  "feat-099-00": {
+    "label": "Yönetilen bir yapay zeka yeteneğinin tasarlandığı ve değerlendirildiği senaryoları belgele.",
+    "why": "Intended use cases AWS AI Service Cards'a ait ve şu işi sağlar: Yönetilen bir yapay zeka yeteneğinin tasarlandığı ve değerlendirildiği senaryoları belirleme."
+  },
+  "feat-099-02": {
+    "label": "Yönetilen bir yapay zeka yeteneğini benimseyen takımlar için şeffaflık ve daha güvenli kullanım hakkında düşünceler sağla.",
+    "why": "responsible AI design guidance AWS AI Service Cards'a ait ve şu işi sağlar: Yönetilen bir yapay zeka yeteneğini benimseyen takımlar için şeffaflık ve daha güvenli kullanım hakkında düşünceler sağlama."
+  },
+  "feat-100-02": {
+    "label": "Diğer insanların deneyebilmesi için etkileşimli bir prototip yayınla.",
+    "why": "shareable applications Amazon PartyRock'a ait ve şu işi sağlar: Diğer insanların deneyebilmesi için etkileşimli bir prototip yayınlama."
+  },
+  "feat-100-03": {
+    "label": "Talimat ifadelerinin ve bağlamının deney aracılığıyla model çıktısını nasıl değiştirdiğini öğren.",
+    "why": "hands-on prompt engineering Amazon PartyRock'a ait ve şu işi sağlar: Talimat ifadelerinin ve bağlamının deney aracılığıyla model çıktısını nasıl değiştirdiğini öğrenme."
+  },
+  "feat-000-01": {
+    "label": "Üretim, gömülümler ve çok modlu iş yükleri için AWS tarafından geliştirilen temel model ailelerini kullan.",
+    "why": "Amazon Titan ve Amazon Nova modelleri Amazon Bedrock'a ait, ve bu işi etkinleştir: Üretim, gömülümler ve çok modlu iş yükleri için AWS tarafından geliştirilen temel model ailelerini kullan."
+  },
+  "feat-000-02": {
+    "label": "Altta yatan çıkarım altyapısını hazırlamadan veya yönetmeden model isteklerini çalıştır.",
+    "why": "sunucusuz yönetilen çıkarım Amazon Bedrock'a ait, ve bu işi etkinleştir: Altta yatan çıkarım altyapısını hazırlamadan veya yönetmeden model isteklerini çalıştır."
+  },
+  "feat-000-04": {
+    "label": "Bir temel modelin davranışını kuruluşa özgü örnekler ve gereksinimlerle uyarla.",
+    "why": "ince ayar ve özelleştirme Amazon Bedrock'a ait, ve bu işi etkinleştir: Bir temel modelin davranışını kuruluşa özgü örnekler ve gereksinimlerle uyarla."
+  },
+  "feat-000-06": {
+    "label": "Talimatlar üzerinde muhakeme yapan ve işlemleri veya veri kaynaklarını çağıran çok adımlı görevleri yönet.",
+    "why": "Amazon Bedrock için Ajanlar Amazon Bedrock'a ait, ve bu işi etkinleştir: Talimatlar üzerinde muhakeme yapan ve işlemleri veya veri kaynaklarını çağıran çok adımlı görevleri yönet."
+  },
+  "feat-000-08": {
+    "label": "Hassas istemleri ve müşteri bilgilerini model sağlayıcı eğitiminden izole tut.",
+    "why": "özel veri koruması Amazon Bedrock'a ait, ve bu işi etkinleştir: Hassas istemleri ve müşteri bilgilerini model sağlayıcı eğitiminden izole tut."
+  },
+  "feat-000-10": {
+    "label": "Daha küçük bir modele daha büyük bir öğretmen modelinden davranışı aktar, hizmet maliyetini ve gecikmeyi azalt.",
+    "why": "model damıtma Amazon Bedrock'a ait, ve bu işi etkinleştir: Daha küçük bir modele daha büyük bir öğretmen modelinden davranışı aktar, hizmet maliyetini ve gecikmeyi azalt."
+  },
+  "feat-000-13": {
+    "label": "Belgeleri, görüntüleri, ses ve videoyu yönetilen çok modlu işlemeyle yapılandırılmış içgörülere dönüştür.",
+    "why": "Bedrock Data Automation Amazon Bedrock'a ait, ve bu işi etkinleştir: Belgeleri, görüntüleri, ses ve videoyu yönetilen çok modlu işlemeyle yapılandırılmış içgörülere dönüştür."
+  },
+  "feat-000-15": {
+    "label": "Desteklenen harici özelleştirilmiş bir temel modeli yönetilen çıkarıma getir.",
+    "why": "Özel Model İçeri Aktarma Amazon Bedrock'a ait, ve bu işi etkinleştir: Desteklenen harici özelleştirilmiş bir temel modeli yönetilen çıkarıma getir."
+  },
+  "feat-000-17": {
+    "label": "İstek yüklerini, yanıtlarını ve çağırma meta verilerini denetim ve hata ayıklama için yakala.",
+    "why": "model çağırma günlüğü Amazon Bedrock'a ait, ve bu işi etkinleştir: İstek yüklerini, yanıtlarını ve çağırma meta verilerini denetim ve hata ayıklama için yakala."
+  },
+  "feat-001-01": {
+    "label": "Sunucusuz ölçeklendirme ve zaman uyumsuz yürütme desteği ile izole oturumlarında dinamik ajanları dağıt.",
+    "why": "Çalışma Zamanı Amazon Bedrock AgentCore'a ait, ve bu işi etkinleştir: Sunucusuz ölçeklendirme ve zaman uyumsuz yürütme desteği ile izole oturumlarında dinamik ajanları dağıt."
+  },
+  "feat-001-02": {
+    "label": "Kısa vadeli sohbet bağlamını ve oturumlar arasında devam eden uzun vadeli bilgiyi koru.",
+    "why": "Hafıza Amazon Bedrock AgentCore'a ait, ve bu işi etkinleştir: Kısa vadeli sohbet bağlamını ve oturumlar arasında devam eden uzun vadeli bilgiyi koru."
+  },
+  "feat-001-04": {
+    "label": "Ajanları mevcut kimlik doğrulama sağlayıcılarına bağla ve kullanıcıları taşımadan erişimi yönet.",
+    "why": "Kimlik Amazon Bedrock AgentCore'a ait, ve bu işi etkinleştir: Ajanları mevcut kimlik doğrulama sağlayıcılarına bağla ve kullanıcıları taşımadan erişimi yönet."
+  },
+  "feat-001-07": {
+    "label": "Yürütme yollarını takip et, ara çıktıları incele ve üretimdeki ajan performansını hata ayıkla.",
+    "why": "Gözlemlenebilirlik Amazon Bedrock AgentCore'a ait, ve bu işi etkinleştir: Yürütme yollarını takip et, ara çıktıları incele ve üretimdeki ajan performansını hata ayıkla."
+  },
+  "feat-001-09": {
+    "label": "Ajanların ve araçların oturumlar, izler ve aralıklar arasında görevleri ne kadar güvenilir bir şekilde tamamladığını ölç.",
+    "why": "Değerlendirmeler Amazon Bedrock AgentCore'a ait, ve bu işi etkinleştir: Ajanların ve araçların oturumlar, izler ve aralıklar arasında görevleri ne kadar güvenilir bir şekilde tamamladığını ölç."
+  },
+  "feat-001-11": {
+    "label": "Doğal dil veya Cedar kuralları ile araç çağrılarında deterministik sınırlar uygula.",
+    "why": "İlke Amazon Bedrock AgentCore'a ait, ve bu işi etkinleştir: Doğal dil veya Cedar kuralları ile araç çağrılarında deterministik sınırlar uygula."
+  },
+  "feat-002-00": {
+    "label": "Modelin talimatlardan işlemleri seçmesine ve sıralamasına izin ver, her yolu kodlamak yerine.",
+    "why": "Model odaklı ajan geliştirme Strands Agents'a ait, ve bu işi etkinleştir: Modelin talimatlardan işlemleri seçmesine ve sıralamasına izin ver, her yolu kodlamak yerine."
+  },
+  "feat-002-02": {
+    "label": "Bir ajana harici işlevler, hizmetler ve verilerine kontrollü erişim ver.",
+    "why": "araç entegrasyonu Strands Agents'a ait, ve bu işi etkinleştir: Bir ajana harici işlevler, hizmetler ve verilerine kontrollü erişim ver."
+  },
+  "feat-002-04": {
+    "label": "Model sağlayıcılarını değiştir, çevredeki ajan uygulamasını yeniden tasarlamadan.",
+    "why": "sağlayıcıdan bağımsız model desteği Strands Agents'a ait, ve bu işi etkinleştir: Model sağlayıcılarını değiştir, çevredeki ajan uygulamasını yeniden tasarlamadan."
+  },
+  "feat-003-00": {
+    "label": "AWS temel modellerini kullanarak yazılı istekleri ve görsel girdileri çözümle.",
+    "why": "Nova metni ve çok modlu modelleri Amazon Nova'ya ait, ve bu işi etkinleştir: AWS temel modellerini kullanarak yazılı istekleri ve görsel girdileri çözümle."
+  },
+  "feat-003-03": {
+    "label": "Genel bir modeli özel davranışlar, terminoloji veya kuruluşa özgü örneklere uyarla.",
+    "why": "model özelleştirmesi Amazon Nova'ya ait, ve bu işi etkinleştir: Genel bir modeli özel davranışlar, terminoloji veya kuruluşa özgü örneklere uyarla."
+  },
+  "feat-004-00": {
+    "label": "Ekip dosyalarını, kontrol panolarını, veri kaynaklarını ve bağlamı işbirlikçi çalışma alanlarına getir.",
+    "why": "Alanlar Amazon Quick'e ait, ve bu işi etkinleştir: Ekip dosyalarını, kontrol panolarını, veri kaynaklarını ve bağlamı işbirlikçi çalışma alanlarına getir."
+  },
+  "feat-004-02": {
+    "label": "İş verilerini, genel İnternet kaynaklarını ve üçüncü taraf veri setlerini profesyonel raporlara sentezle.",
+    "why": "Araştırma Amazon Quick'e ait, ve bu işi etkinleştir: İş verilerini, genel İnternet kaynaklarını ve üçüncü taraf veri setlerini profesyonel raporlara sentezle."
+  },
+  "feat-004-04": {
+    "label": "Basit veya çok adımlı iş akışlarını günlük uygulamalara bağlı halde oluştur.",
+    "why": "Otomat Amazon Quick'e ait, ve bu işi etkinleştir: Basit veya çok adımlı iş akışlarını günlük uygulamalara bağlı halde oluştur."
+  },
+  "feat-004-06": {
+    "label": "Tamamlanmış belgeleri, sunuşları, elektronik tabloları veya görüntüleri bir sohbet içinde üret.",
+    "why": "Cilalı çıktıları oluştur Amazon Quick'e ait, ve bu işi etkinleştir: Tamamlanmış belgeleri, sunuşları, elektronik tabloları veya görüntüleri bir sohbet içinde üret."
+  },
+  "feat-005-00": {
+    "label": "Kuruluş bilgilerini alıp bağlantılı kaynaklardan çalışan yanıtlarını sentezle.",
+    "why": "Kurumsal arama ve yanıtlar Amazon Q Business'e ait, ve bu işi etkinleştir: Kuruluş bilgilerini alıp bağlantılı kaynaklardan çalışan yanıtlarını sentezle."
+  },
+  "feat-005-02": {
+    "label": "Bir çalışan asistanının bağlantılı iş sistemlerinde onaylı işlemleri gerçekleştirmesine izin ver.",
+    "why": "Eklenti aracılığıyla işlemler Amazon Q Business'e ait, ve bu işi etkinleştir: Bir çalışan asistanının bağlantılı iş sistemlerinde onaylı işlemleri gerçekleştirmesine izin ver."
+  },
+  "feat-006-01": {
+    "label": "Çok adımlı uygulama işini, planlayabilen, düzenleyebilen, test edebilen ve yineleyebilen işlemler üstlen.",
+    "why": "ajantik yazılım geliştirme Amazon Q Developer'a ait, ve bu işi etkinleştir: Çok adımlı uygulama işini, planlayabilen, düzenleyebilen, test edebilen ve yineleyebilen işlemler üstlen."
+  },
+  "feat-006-03": {
+    "label": "Mevcut yazılımın büyük ölçekli yükseltmelerini veya taşınmasını hızlandır.",
+    "why": "uygulama dönüşümü Amazon Q Developer'a ait, ve bu işi etkinleştir: Mevcut yazılımın büyük ölçekli yükseltmelerini veya taşınmasını hızlandır."
+  },
+  "feat-006-05": {
+    "label": "Bulut arızalarını araştır ve sistem bağlamını kullanarak düzeltme işlemlerini öner.",
+    "why": "operasyonel sorun giderme Amazon Q Developer'a ait, ve bu işi etkinleştir: Bulut arızalarını araştır ve sistem bağlamını kullanarak düzeltme işlemlerini öner."
+  },
+  "feat-007-01": {
+    "label": "Eski ana bilgisayar iş yüklerini analiz et ve bakımı yapılabilir modern mimarilere dönüştür.",
+    "why": "ana bilgisayar modernleştirilmesi AWS Transform'a ait, ve bu işi etkinleştir: Eski ana bilgisayar iş yüklerini analiz et ve bakımı yapılabilir modern mimarilere dönüştür."
+  },
+  "feat-007-03": {
+    "label": "Eski bir kod tabanını incele ve düzenlemeden önce kanıta dayalı bir dönüşüm planı üret.",
+    "why": "kod analizi ve planlama AWS Transform'a ait, ve bu işi etkinleştir: Eski bir kod tabanını incele ve düzenlemeden önce kanıta dayalı bir dönüşüm planı üret."
+  },
+  "feat-007-05": {
+    "label": "Oluşturulan dönüşümleri doğrula ve hayati değişiklikler üzerinde uzman onayını koru.",
+    "why": "doğrulama ve insan gözetimi AWS Transform'a ait, ve bu işi etkinleştir: Oluşturulan dönüşümleri doğrula ve hayati değişiklikler üzerinde uzman onayını koru."
+  },
+  "feat-008-01": {
+    "label": "Gereksinimler öncelikli veya tasarım öncelikli iş akışları aracılığıyla yeni uygulama yeteneklerini planla.",
+    "why": "Özellik Spesifikasyonları Kiro'ya ait, ve bu işi etkinleştir: Gereksinimler öncelikli veya tasarım öncelikli iş akışları aracılığıyla yeni uygulama yeteneklerini planla."
+  },
+  "feat-008-03": {
+    "label": "Uzmanlaşmış görevleri paralel izole bağlam pencerelerine ata.",
+    "why": "Alt Ajanlar Kiro'ya ait, ve bu işi etkinleştir: Uzmanlaşmış görevleri paralel izole bağlam pencerelerine ata."
+  },
+  "feat-008-05": {
+    "label": "Sohbet, otomasyon ve başsız iş akışları için terminalden kodlama asistanını kullan.",
+    "why": "Kiro CLI Kiro'ya ait, ve bu işi etkinleştir: Sohbet, otomasyon ve başsız iş akışları için terminalden kodlama asistanını kullan."
+  },
+  "feat-009-01": {
+    "label": "Yazılım değişikliği yaparken proje kodunu ve talimatlarını bağlam olarak kullan.",
+    "why": "depo bilgili uygulama Kiro otonom ajanına ait, ve bu işi etkinleştir: Yazılım değişikliği yaparken proje kodunu ve talimatlarını bağlam olarak kullan."
+  },
+  "feat-010-00": {
+    "label": "Sıfırdan inşa etmek yerine gözden geçirilmiş önceden eğitilmiş modeller ve referans çözümlerle başla.",
+    "why": "Seçkin model ve çözüm kataloğu Amazon SageMaker AI JumpStart'a ait, ve bu işi etkinleştir: Sıfırdan inşa etmek yerine gözden geçirilmiş önceden eğitilmiş modeller ve referans çözümlerle başla."
+  },
+  "feat-010-02": {
+    "label": "Önceden eğitilmiş bir modelin adaptasyonunu görev özgü veriler ve ayarlarla kılavuzla.",
+    "why": "özelleştirme iş akışları Amazon SageMaker AI JumpStart'a ait, ve bu işi etkinleştir: Önceden eğitilmiş bir modelin adaptasyonunu görev özgü veriler ve ayarlarla kılavuzla."
+  },
+  "feat-011-00": {
+    "label": "Bir talimat veya bağlamdan doğal dil içeriği oluştur veya dönüştür.",
+    "why": "Metin üretimi Amazon Titan'a ait, ve bu işi etkinleştir: Bir talimat veya bağlamdan doğal dil içeriği oluştur veya dönüştür."
+  },
+  "feat-011-02": {
+    "label": "Seçilen model ailesi üyesi bu türleri destekliyorsa yeni görsel içeriği üret.",
+    "why": "seçilen modele bağlı olarak görüntü üretimi Amazon Titan'a ait, ve bu işi etkinleştir: Seçilen model ailesi üyesi bu türleri destekliyorsa yeni görsel içeriği üret."
+  },
+  "feat-012-02": {
+    "label": "Anında istek başına tahminler veya depolanmış kayıtlar için planlanan yüksek hacimli puanlama seç.",
+    "why": "gerçek zamanlı ve toplu çıkarım Amazon SageMaker AI'ye ait, ve bu işi etkinleştir: Anında istek başına tahminler veya depolanmış kayıtlar için planlanan yüksek hacimli puanlama seç."
+  },
+  "feat-012-04": {
+    "label": "Veri hazırlama, eğitim, değerlendirme, onay ve dağıtımı tekrarlanabilir ardışık düzenlerde bağla.",
+    "why": "iş akışı entegrasyonu Amazon SageMaker AI'ye ait, ve bu işi etkinleştir: Veri hazırlama, eğitim, değerlendirme, onay ve dağıtımı tekrarlanabilir ardışık düzenlerde bağla."
+  },
+  "feat-012-06": {
+    "label": "Model verilerini görsel hazırlama iş akışı aracılığıyla içeri aktar, profil oluştur, temizle ve dönüştür.",
+    "why": "SageMaker Data Wrangler Amazon SageMaker AI'ye ait, ve bu işi etkinleştir: Model verilerini görsel hazırlama iş akışı aracılığıyla içeri aktar, profil oluştur, temizle ve dönüştür."
+  },
+  "feat-012-08": {
+    "label": "Veri setleri veya tahminlerdeki önyargıyı ölç ve hangi girdilerin bir çıktıyı etkilediğini açıkla.",
+    "why": "SageMaker Clarify Amazon SageMaker AI'ye ait, ve bu işi etkinleştir: Veri setleri veya tahminlerdeki önyargıyı ölç ve hangi girdilerin bir çıktıyı etkilediğini açıkla."
+  },
+  "feat-012-10": {
+    "label": "İşleme, eğitim, değerlendirme ve onay adımları ile tekrarlanabilir model oluşturma iş akışlarını tanımla.",
+    "why": "SageMaker Pipelines Amazon SageMaker AI'ye ait, ve bu işi etkinleştir: İşleme, eğitim, değerlendirme ve onay adımları ile tekrarlanabilir model oluşturma iş akışlarını tanımla."
+  },
+  "feat-012-12": {
+    "label": "Model paketlerini versiyonla, onay durumunu takip et ve dağıtım yönünde promosyon kontrolünü sağla.",
+    "why": "SageMaker Model Kayıt Defteri Amazon SageMaker AI'ye ait, ve bu işi etkinleştir: Model paketlerini versiyonla, onay durumunu takip et ve dağıtım yönünde promosyon kontrolünü sağla."
+  },
+  "feat-012-14": {
+    "label": "Analitiği ve model geliştirme iş yükleri için analitik mağazalar arasında veri erişimini birleştir.",
+    "why": "SageMaker Lakehouse Amazon SageMaker AI'ye ait, ve bu işi etkinleştir: Analitiği ve model geliştirme iş yükleri için analitik mağazalar arasında veri erişimini birleştir."
+  },
+  "feat-013-00": {
+    "label": "ML ekiplerine veri setlerini keşfetmek, dönüştürmek ve hazırlamak için bir yönetilen yer ver.",
+    "why": "Veri hazırlama için merkezi çalışma alanı Amazon SageMaker AI Studio'ya ait, ve bu işi etkinleştir: ML ekiplerine veri setlerini keşfetmek, dönüştürmek ve hazırlamak için bir yönetilen yer ver."
+  },
+  "feat-013-02": {
+    "label": "Hazırlanan örneklerden model parametrelerini öğrenen işleri çalıştır.",
+    "why": "model eğitimi Amazon SageMaker AI Studio'ya ait, ve bu işi etkinleştir: Hazırlanan örneklerden model parametrelerini öğrenen işleri çalıştır."
+  },
+  "feat-013-04": {
+    "label": "Tekrarlanabilir makine öğrenmesi yaşam döngüsü etkinliklerini bir çalışma alanından koordine et ve yönet.",
+    "why": "ML iş akışı işlemleri Amazon SageMaker AI Studio'ya ait, ve bu işi etkinleştir: Tekrarlanabilir makine öğrenmesi yaşam döngüsü etkinliklerini bir çalışma alanından koordine et ve yönet."
+  },
+  "feat-014-01": {
+    "label": "Model hazır girdiler halinde ham bilgileri temizle, birleştir ve dönüştür.",
+    "why": "veri hazırlama Amazon SageMaker AI Canvas'a ait, ve bu işi etkinleştir: Model hazır girdiler halinde ham bilgileri temizle, birleştir ve dönüştür."
+  },
+  "feat-014-02": {
+    "label": "Kılavuzlu yapısız bir işlem aracılığıyla yeni kayıtlara eğitilmiş bir modeli uygula.",
+    "why": "tahmin iş akışları Amazon SageMaker AI Canvas'a ait, ve bu işi etkinleştir: Kılavuzlu yapısız bir işlem aracılığıyla yeni kayıtlara eğitilmiş bir modeli uygula."
+  },
+  "feat-015-00": {
+    "label": "Yerel kurulum olmadan hazır web çalışma alanında makine öğrenmesini dene.",
+    "why": "JupyterLab Amazon SageMaker AI Studio Lab'a ait, ve bu işi etkinleştir: Yerel kurulum olmadan hazır web çalışma alanında makine öğrenmesini dene."
+  },
+  "feat-016-01": {
+    "label": "İnsan çabasının modeli verimli bir şekilde iyileştirmesi için ek açı örnekleri işaretleme açısından öncelilendir.",
+    "why": "aktif öğrenme seçenekleri Amazon SageMaker AI Ground Truth'a ait, ve bu işi etkinleştir: İnsan çabasının modeli verimli bir şekilde iyileştirmesi için ek açı örnekleri işaretleme açısından öncelilendir."
+  },
+  "feat-017-00": {
+    "label": "Talep gören temel model eğitim işleri için esnek yönetilen işlem filosu sağla.",
+    "why": "Büyük modelleri eğitmek için özel olarak inşa edilen kümeler Amazon SageMaker AI HyperPod'a ait, ve bu işi etkinleştir: Talep gören temel model eğitim işleri için esnek yönetilen işlem filosu sağla."
+  },
+  "feat-018-00": {
+    "label": "Belirsiz veya önemli AI çıktılarını bir kişinin kararı için yükselt.",
+    "why": "İnsan döngüleri Amazon Augmented AI (A2I)'ye ait, ve bu işi etkinleştir: Belirsiz veya önemli AI çıktılarını bir kişinin kararı için yükselt."
+  },
+  "feat-019-00": {
+    "label": "Küçük işaretleme, doğrulama veya toplama işlerini isteğe bağlı iş gücüne dağıt.",
+    "why": "Kitle kaynaklı insan görevleri Amazon Mechanical Turk'e ait, ve bu işi etkinleştir: Küçük işaretleme, doğrulama veya toplama işlerini isteğe bağlı iş gücüne dağıt."
+  },
+  "feat-019-02": {
+    "label": "Gönderilen insan işinin güvenilirliğini iyileştirmek için fikir birliği, inceleme ve kabul kurallarını kullan.",
+    "why": "sonuç kalite kontrolleri Amazon Mechanical Turk'e ait, ve bu işi etkinleştir: Gönderilen insan işinin güvenilirliğini iyileştirmek için fikir birliği, inceleme ve kabul kurallarını kullan."
+  },
+  "feat-020-01": {
+    "label": "Yinelenen kimlikleri kaynaklar arasında birleştirilmiş bir profil halinde birleştir.",
+    "why": "Makine öğrenmesi tabanlı eşleştirme AWS Entity Resolution'a ait, ve bu işi etkinleştir: Yinelenen kimlikleri kaynaklar arasında birleştirilmiş bir profil halinde birleştir."
+  },
+  "feat-021-01": {
+    "label": "Bulut pazarı iş akışı aracılığıyla sağlayıcının veri setini kullanmaya yönelik süregelen hakları al.",
+    "why": "abonelik tabanlı veri erişimi AWS Data Exchange'e ait, ve bu işi etkinleştir: Bulut pazarı iş akışı aracılığıyla sağlayıcının veri setini kullanmaya yönelik süregelen hakları al."
+  },
+  "feat-022-00": {
+    "label": "Popüler dağıtılmış açık kaynak analitiği çerçeveleri ile büyük veri setlerini işle.",
+    "why": "Apache Spark ve Hadoop iş yükleri Amazon EMR'ye ait, ve bu işi etkinleştir: Popüler dağıtılmış açık kaynak analitiği çerçeveleri ile büyük veri setlerini işle."
+  },
+  "feat-022-02": {
+    "label": "Dağıtılmış dönüşümleri doğrudan bulut veri gölü içindeki nesnelere karşı çalıştır.",
+    "why": "Amazon S3'te verileri işleme Amazon EMR'ye ait, ve bu işi etkinleştir: Dağıtılmış dönüşümleri doğrudan bulut veri gölü içindeki nesnelere karşı çalıştır."
+  },
+  "feat-023-01": {
+    "label": "Kaynak kayıtlarını oku, şekillendir ve sonuçları hedef sistemine yaz.",
+    "why": "AWS Glue ETL işleri AWS Glue'ya ait, ve bu işi etkinleştir: Kaynak kayıtlarını oku, şekillendir ve sonuçları hedef sistemine yaz."
+  },
+  "feat-023-03": {
+    "label": "Yapıyı çıkarmak ve tabloları ve bölümleri kaydetmek için veri depoları otomatik olarak tara.",
+    "why": "şema keşfi için gezginler AWS Glue'ya ait, ve bu işi etkinleştir: Yapıyı çıkarmak ve tabloları ve bölümleri kaydetmek için veri depoları otomatik olarak tara."
+  },
+  "feat-024-00": {
+    "label": "Kaynak kayıtları programlama dönüşümleri yerine görsel bir arayüz aracılığıyla temizle ve şekillendir.",
+    "why": "Yapısız veri hazırlama AWS Glue DataBrew'e ait, ve bu işi etkinleştir: Kaynak kayıtları programlama dönüşümleri yerine görsel bir arayüz aracılığıyla temizle ve şekillendir."
+  },
+  "feat-024-02": {
+    "label": "Temizleme adımlarının sıralı bir setini kaydet ve bunu sonraki veri setlerine tutarlı bir şekilde uygula.",
+    "why": "yeniden kullanılabilir dönüşüm reçeteleri AWS Glue DataBrew'e ait, ve bu işi etkinleştir: Temizleme adımlarının sıralı bir setini kaydet ve bunu sonraki veri setlerine tutarlı bir şekilde uygula."
+  },
+  "feat-025-01": {
+    "label": "Tüm veri setini ortaya çıkarmak yerine veritabanı, tablo, sütun, satır veya hücre düzeyinde erişim ver.",
+    "why": "ince taneli erişim kontrolü AWS Lake Formation'a ait, ve bu işi etkinleştir: Tüm veri setini ortaya çıkarmak yerine veritabanı, tablo, sütun, satır veya hücre düzeyinde erişim ver."
+  },
+  "feat-026-01": {
+    "label": "Anlamsal olarak benzer öğeleri, anlamlarının sayısal temsillerini karşılaştırarak al.",
+    "why": "vektör araması Amazon OpenSearch Service'e ait, ve bu işi etkinleştir: Anlamsal olarak benzer öğeleri, anlamlarının sayısal temsillerini karşılaştırarak al."
+  },
+  "feat-026-02": {
+    "label": "İndekslenen operasyonel bilgileri görselleştirmeler ve izleme görünümleri aracılığıyla keşfet.",
+    "why": "kontrol panolar ve gözlemlenebilirlik Amazon OpenSearch Service'e ait, ve bu işi etkinleştir: İndekslenen operasyonel bilgileri görselleştirmeler ve izleme görünümleri aracılığıyla keşfet."
+  },
+  "feat-026-04": {
+    "label": "Hızlı bir aranabilir külliyatta sırada sırası ölçün hızlı sıralama egemen gereksinim olduğunda oluşturulan yanıtları temel.",
+    "why": "arama odaklı RAG alımı Amazon OpenSearch Service'e ait, ve bu işi etkinleştir: Hızlı bir aranabilir külliyatta sırada sırası ölçün hızlı sıralama egemen gereksinim olduğunda oluşturulan yanıtları temel."
+  },
+  "feat-027-01": {
+    "label": "Tanıdık ilişkisel sözdizimi ile büyük yapılandırılmış veri setlerini sorgula.",
+    "why": "Ölçekte SQL analitiği Amazon Redshift'e ait, ve bu işi etkinleştir: Tanıdık ilişkisel sözdizimi ile büyük yapılandırılmış veri setlerini sorgula."
+  },
+  "feat-028-00": {
+    "label": "Bir hesap, hizmet veya proje için beklenen harcama veya tüketim limitlerini tanımla.",
+    "why": "Özel maliyet ve kullanım bütçeleri AWS Budgets'e ait, ve bu işi etkinleştir: Bir hesap, hizmet veya proje için beklenen harcama veya tüketim limitlerini tanımla."
+  },
+  "feat-028-02": {
+    "label": "Öngörülen aylık sonu ücretlendirmelerini bir hedefle karşılaştırarak aşırı harcama başlamadan uyar.",
+    "why": "tahmin tabanlı bildirimler AWS Budgets'e ait, ve bu işi etkinleştir: Öngörülen aylık sonu ücretlendirmelerini bir hedefle karşılaştırarak aşırı harcama başlamadan uyar."
+  },
+  "feat-029-01": {
+    "label": "Bulut harcamasının önceki günler veya aylar içinde nasıl değiştiğini incele.",
+    "why": "tarihsel eğilim görselleştirmesi AWS Cost Explorer'a ait, ve bu işi etkinleştir: Bulut harcamasının önceki günler veya aylar içinde nasıl değiştiğini incele."
+  },
+  "feat-030-00": {
+    "label": "Bir iş yükü için sanal makine CPU, bellek, depolama ve ağ iletişimi oranlarını seç.",
+    "why": "Yapılandırılabilir örnek türleri Amazon EC2'ye ait, ve bu işi etkinleştir: Bir iş yükü için sanal makine CPU, bellek, depolama ve ağ iletişimi oranlarını seç."
+  },
+  "feat-031-00": {
+    "label": "Yüklemelere, API çağrılarına, planlara veya mesajlara yanıt olarak kod yürüt.",
+    "why": "Olayları tetikleyen işlevler AWS Lambda'ya ait, ve bu işi etkinleştir: Yüklemelere, API çağrılarına, planlara veya mesajlara yanıt olarak kod yürüt."
+  },
+  "feat-031-01": {
+    "label": "Olaylar gelirken eşzamanlı yürütme kapasitesini artıt veya azalt.",
+    "why": "otomatik ölçeklendirme AWS Lambda'ya ait, ve bu işi etkinleştir: Olaylar gelirken eşzamanlı yürütme kapasitesini artıt veya azalt."
+  },
+  "feat-032-00": {
+    "label": "Paketlenmiş uygulama görevlerini bir AWS yerel kontrol düzlemi aracılığıyla bir filosu üzerinde planlayıp yönet.",
+    "why": "Yönetilen kapsayıcı orkestrasyon Amazon Elastic Container Service (Amazon ECS)'ye ait, ve bu işi etkinleştir: Paketlenmiş uygulama görevlerini bir AWS yerel kontrol düzlemi aracılığıyla bir filosu üzerinde planlayıp yönet."
+  },
+  "feat-032-02": {
+    "label": "Kapsayıcı görevlerini müşteri kontrolü altındaki sanal makine kapasitesine yerleştir.",
+    "why": "Amazon EC2 başlatma seçeneği Amazon Elastic Container Service (Amazon ECS)'ye ait, ve bu işi etkinleştir: Kapsayıcı görevlerini müşteri kontrolü altındaki sanal makine kapasitesine yerleştir."
+  },
+  "feat-033-01": {
+    "label": "Ortak açık kaynak orkestrasyon arayüzünü hedef alan ekosistem araçlarını ve tezlerini çalıştır.",
+    "why": "Kubernetes API uyumluluğu Amazon Elastic Kubernetes Service (Amazon EKS)'ye ait, ve bu işi etkinleştir: Ortak açık kaynak orkestrasyon arayüzünü hedef alan ekosistem araçlarını ve tezlerini çalıştır."
+  },
+  "feat-034-00": {
+    "label": "AWS tarafından inşa edilen bir veritabanı motoru ile tanıdık açık kaynak ilişkisel sürücü ve araçları kullan.",
+    "why": "MySQL ve PostgreSQL uyumluluğu Amazon Aurora'ya ait, ve bu işi etkinleştir: AWS tarafından inşa edilen bir veritabanı motoru ile tanıdık açık kaynak ilişkisel sürücü ve araçları kullan."
+  },
+  "feat-034-02": {
+    "label": "İlişkisel veritabanı işlemlerini değişken talep için otomatik olarak ayarla.",
+    "why": "Aurora Serverless kapasitesi Amazon Aurora'ya ait, ve bu işi etkinleştir: İlişkisel veritabanı işlemlerini değişken talep için otomatik olarak ayarla."
+  },
+  "feat-034-04": {
+    "label": "İşlemleri ve yapılandırılmış uygulama kayıtlarını anlamsal en yakın komşu sorgularıyla bir yanda sakla.",
+    "why": "pgvector Amazon Aurora'ya ait, ve bu işi etkinleştir: İşlemleri ve yapılandırılmış uygulama kayıtlarını anlamsal en yakın komşu sorgularıyla bir yanda sakla."
+  },
+  "feat-035-01": {
+    "label": "Mevcut bir uygulamayı hareket ettirirken ortak belge veritabanı API'leri ve sürücülerini kullan.",
+    "why": "MongoDB iş yükü uyumluluğu Amazon DocumentDB (MongoDB uyumluluğu ile)'ye ait, ve bu işi etkinleştir: Mevcut bir uygulamayı hareket ettirirken ortak belge veritabanı API'leri ve sürücülerini kullan."
+  },
+  "feat-035-03": {
+    "label": "Gömülümleri tıp geçmişleri veya bilgi makaleleri gibi esnek kayıtlar yanında sakla ve benzerliklerini sorgula.",
+    "why": "JSON belgeleri için yerleşik vektör araması Amazon DocumentDB (MongoDB uyumluluğu ile)'ye ait, ve bu işi etkinleştir: Gömülümleri tıp geçmişleri veya bilgi makaleleri gibi esnek kayıtlar yanında sakla ve benzerliklerini sorgula."
+  },
+  "feat-036-00": {
+    "label": "İlişkisel katılım olmadan birincil anahtar tarafından esnek kayıtları verimli bir şekilde al.",
+    "why": "Anahtar değer ve belge modeli Amazon DynamoDB'ye ait, ve bu işi etkinleştir: İlişkisel katılım olmadan birincil anahtar tarafından esnek kayıtları verimli bir şekilde al."
+  },
+  "feat-036-02": {
+    "label": "Aşağı akış işlemesini tetiklemek için öğe değişikliklerinin sıralı bir kaydını yakala.",
+    "why": "DynamoDB Akışları Amazon DynamoDB'ye ait, ve bu işi etkinleştir: Aşağı akış işlemesini tetiklemek için öğe değişikliklerinin sıralı bir kaydını yakala."
+  },
+  "feat-037-01": {
+    "label": "Daha yavaş veritabanı çalışmasını önlemek için bellekten sık istenen değerleri sun.",
+    "why": "mikrosaniye gecikme önbelleğe alması Amazon ElastiCache'e ait, ve bu işi etkinleştir: Daha yavaş veritabanı çalışmasını önlemek için bellekten sık istenen değerleri sun."
+  },
+  "feat-038-00": {
+    "label": "Bağlantılı verileri etiketli ilişkilerle veya anlamsal üçlülerle modelle.",
+    "why": "Özellik grafiği ve RDF desteği Amazon Neptune'e ait, ve bu işi etkinleştir: Bağlantılı verileri etiketli ilişkilerle veya anlamsal üçlülerle modelle."
+  },
+  "feat-038-02": {
+    "label": "Anlamsal arama, öneriler veya temel için gerçekleri ve bağlantılarını temsil et.",
+    "why": "bilgi grafiği iş yükleri Amazon Neptune'e ait, ve bu işi etkinleştir: Anlamsal arama, öneriler veya temel için gerçekleri ve bağlantılarını temsil et."
+  },
+  "feat-038-04": {
+    "label": "Anlamsal eşleşmeleri ve varlıklar arasında açıklanabilir yolları kullanarak oluşturulan yanıtları temel.",
+    "why": "GraphRAG ilişki bağlamı Amazon Neptune'e ait, ve bu işi etkinleştir: Anlamsal eşleşmeleri ve varlıklar arasında açıklanabilir yolları kullanarak oluşturulan yanıtları temel."
+  },
+  "feat-039-01": {
+    "label": "Rutin ilişkisel veritabanı bakımını ve kurtarma noktası oluşturmayı AWS'ye devretti.",
+    "why": "otomatik yedeklemeler ve yamalar Amazon Relational Database Service (Amazon RDS)'ye ait, ve bu işi etkinleştir: Rutin ilişkisel veritabanı bakımını ve kurtarma noktası oluşturmayı AWS'ye devretti."
+  },
+  "feat-039-03": {
+    "label": "Geleneksel yönetilen PostgreSQL uygulamasına gömülüm depolaması ve en yakın komşu sorgularını ekle.",
+    "why": "pgvector'lü PostgreSQL için RDS Amazon Relational Database Service (Amazon RDS)'ye ait, ve bu işi etkinleştir: Geleneksel yönetilen PostgreSQL uygulamasına gömülüm depolaması ve en yakın komşu sorgularını ekle."
+  },
+  "feat-040-00": {
+    "label": "İstek yapan kimliğin görmesi yetkili olduğu bilgilerden sadece çalışan yanıtları oluştur.",
+    "why": "İzine duyarlı kurumsal yanıtlar Amazon Q'ya ait, ve bu işi etkinleştir: İstek yapan kimliğin görmesi yetkili olduğu bilgilerden sadece çalışan yanıtları oluştur."
+  },
+  "feat-040-02": {
+    "label": "Asistan yanıtlarını onaylanmış şirket depoları ve uygulamalarında temel.",
+    "why": "kuruluşsal verilere bağlantılar Amazon Q'ya ait, ve bu işi etkinleştir: Asistan yanıtlarını onaylanmış şirket depoları ve uygulamalarında temel."
+  },
+  "feat-041-00": {
+    "label": "Genel yapılandırılmamış metinden ortak dilbilim sinyallerini ve yapısını çıkar.",
+    "why": "Amazon Comprehend içgörüleri Amazon Comprehend'e ait, ve bu işi etkinleştir: Genel yapılandırılmamış metinden ortak dilbilim sinyallerini ve yapısını çıkar."
+  },
+  "feat-042-00": {
+    "label": "Sağlık açıklamalarında koşulları, ilaçları, testleri ve ilişkilerini tanımla.",
+    "why": "DetectEntitiesV2 Amazon Comprehend Medical'e ait, ve bu işi etkinleştir: Sağlık açıklamalarında koşulları, ilaçları, testleri ve ilişkilerini tanımla."
+  },
+  "feat-043-01": {
+    "label": "Bir ifadeden bir kullanıcının ne yapmaya çalıştığını çıkar.",
+    "why": "niyet tanıma Amazon Lex'e ait, ve bu işi etkinleştir: Bir ifadeden bir kullanıcının ne yapmaya çalıştığını çıkar."
+  },
+  "feat-043-03": {
+    "label": "Konuşma arayüzünü arka uç iş mantığı ve yerine getirme sistemlerine bağla.",
+    "why": "uygulama entegrasyonu Amazon Lex'e ait, ve bu işi etkinleştir: Konuşma arayüzünü arka uç iş mantığı ve yerine getirme sistemlerine bağla."
+  },
+  "feat-045-00": {
+    "label": "Önceden kaydedilmiş veya akış konuşmasını yazılı metne dönüştür.",
+    "why": "Toplu transkripsiyon Amazon Transcribe'ye ait, ve bu işi etkinleştir: Önceden kaydedilmiş veya akış konuşmasını yazılı metne dönüştür."
+  },
+  "feat-046-00": {
+    "label": "Yazılı içeriği diller arasında anlamı koruyarak dönüştür.",
+    "why": "Gerçek zamanlı çeviri Amazon Translate'e ait, ve bu işi etkinleştir: Yazılı içeriği diller arasında anlamı koruyarak dönüştür."
+  },
+  "feat-047-01": {
+    "label": "Düzenler, alanlar ve tablodaki değerlerin kullanılabilir kayıtlar halinde olması gereken alımı otomatlaştır.",
+    "why": "AnalyzeExpense API Amazon Textract'e ait, ve bu işi etkinleştir: Düzenler, alanlar ve tablodaki değerlerin kullanılabilir kayıtlar halinde olması gereken alımı otomatlaştır."
+  },
+  "feat-048-01": {
+    "label": "Çalışan alanı veya destek keşfi için ilgili kuruluş bilgilerini sırala.",
+    "why": "Akıllı arama Amazon Kendra'ya ait, ve bu işi etkinleştir: Çalışan alanı veya destek keşfi için ilgili kuruluş bilgilerini sırala."
+  },
+  "feat-049-01": {
+    "label": "Etiketli örnekleri kullanarak kuruluşa özgü nesneler için resim tanımayı öğret.",
+    "why": "Özel Etiketler Amazon Rekognition'a ait, ve bu işi etkinleştir: Etiketli örnekleri kullanarak kuruluşa özgü nesneler için resim tanımayı öğret."
+  },
+  "feat-051-00": {
+    "label": "Tarihsel gözlemlerden tahmini algoritmalarını seçip eğit, ML uzmanlığı gerektirmeden.",
+    "why": "Otomatik zaman serisi makine öğrenmesi Amazon Forecast'a ait, ve bu işi etkinleştir: Tarihsel gözlemlerden tahmini algoritmalarını seçip eğit, ML uzmanlığı gerektirmeden."
+  },
+  "feat-051-02": {
+    "label": "Hedef geçmiş ötesinde değişen sinyaller ve açıklayıcı niteliklerle gelecek tahminlerini iyileştir.",
+    "why": "ilişkili zaman serisi ve madde meta verisi Amazon Forecast'a ait, ve bu işi etkinleştir: Hedef geçmiş ötesinde değişen sinyaller ve açıklayıcı niteliklerle gelecek tahminlerini iyileştir."
+  },
+  "feat-052-00": {
+    "label": "Etiketli tarihsel olaylardan kuruluşa özgü şüpheli davranış modellerini öğren.",
+    "why": "Özel dolandırıcılık modelleri Amazon Fraud Detector'e ait, ve bu işi etkinleştir: Etiketli tarihsel olaylardan kuruluşa özgü şüpheli davranış modellerini öğren."
+  },
+  "feat-052-02": {
+    "label": "Model sonuçlarını ve iş koşullarını onayla, engelle veya gözden geçir gibi işlemlere çevir.",
+    "why": "kurallar ve sonuçlar Amazon Fraud Detector'e ait, ve bu işi etkinleştir: Model sonuçlarını ve iş koşullarını onayla, engelle veya gözden geçir gibi işlemlere çevir."
+  },
+  "feat-053-01": {
+    "label": "Kabul edilebilir ve kusurlu çıktı örneklerinden endüstriyel muayene modeli oluştur.",
+    "why": "normal ve kusurlu resim eğitimi Amazon Lookout for Vision'a ait, ve bu işi etkinleştir: Kabul edilebilir ve kusurlu çıktı örneklerinden endüstriyel muayene modeli oluştur."
+  },
+  "feat-054-01": {
+    "label": "Bir temel olay paylaşan birden fazla alışılmadık sinyali birleştir.",
+    "why": "ilişkili olay gruplandırması Amazon Lookout for Metrics'e ait, ve bu işi etkinleştir: Bir temel olay paylaşan birden fazla alışılmadık sinyali birleştir."
+  },
+  "feat-055-00": {
+    "label": "Olağan dışı uygulama davranışını bulup muhtemel güvenilirlik etkisini açıkla.",
+    "why": "Reaktif içgörüler Amazon DevOps Guru'ya ait, ve bu işi etkinleştir: Olağan dışı uygulama davranışını bulup muhtemel güvenilirlik etkisini açıkla."
+  },
+  "feat-056-00": {
+    "label": "Önerilen kaynak değişiklikleri incele ve birleştirmeden önce bakım yeterliliğini iyileştir.",
+    "why": "Otomatik kod incelemeler Amazon CodeGuru Reviewer'a ait, ve bu işi etkinleştir: Önerilen kaynak değişiklikleri incele ve birleştirmeden önce bakım yeterliliğini iyileştir."
+  },
+  "feat-056-02": {
+    "label": "Desteklenen kaynak kontrol projeleri üzerinde kod değişiklikleri gönderildikçe analiz çalıştır.",
+    "why": "depo entegrasyonu Amazon CodeGuru Reviewer'a ait, ve bu işi etkinleştir: Desteklenen kaynak kontrol projeleri üzerinde kod değişiklikleri gönderildikçe analiz çalıştır."
+  },
+  "feat-058-00": {
+    "label": "Bir ajan gerekli olmadan otomatik sesli veya sohbet etkileşimleri aracılığıyla müşteri ihtiyaçlarını çöz.",
+    "why": "Konuşmacı öz hizmet Amazon Connect'e ait, ve bu işi etkinleştir: Bir ajan gerekli olmadan otomatik sesli veya sohbet etkileşimleri aracılığıyla müşteri ihtiyaçlarını çöz."
+  },
+  "feat-058-02": {
+    "label": "Duygusal durum, konular, uyum ve hizmet kalitesi eğilimlerine karşı etkileşimleri analiz et.",
+    "why": "temas analitiği Amazon Connect'e ait, ve bu işi etkinleştir: Duygusal durum, konular, uyum ve hizmet kalitesi eğilimlerine karşı etkileşimleri analiz et."
+  },
+  "feat-058-04": {
+    "label": "Müşteri konuşmalarını ses ve dijital kanallar arasında tutarlı şekilde yönet.",
+    "why": "omni kanal müşteri etkileşimleri Amazon Connect'e ait, ve bu işi etkinleştir: Müşteri konuşmalarını ses ve dijital kanallar arasında tutarlı şekilde yönet."
+  },
+  "feat-059-01": {
+    "label": "Tesisler ve ortaklar arasında stok riskleri ve dengesizlikleri tanımla.",
+    "why": "envanter görünürlüğü ve içgörüleri AWS Supply Chain'e ait, ve bu işi etkinleştir: Tesisler ve ortaklar arasında stok riskleri ve dengesizlikleri tanımla."
+  },
+  "feat-060-00": {
+    "label": "İş açıklamaları ve mülkiyeti ile keşfedilebilir kuruluşsal veri ürünleri yayınla.",
+    "why": "İş veri kataloğu Amazon DataZone'a ait, ve bu işi etkinleştir: İş açıklamaları ve mülkiyeti ile keşfedilebilir kuruluşsal veri ürünleri yayınla."
+  },
+  "feat-060-02": {
+    "label": "Keşfi iyileştirmek için teknik şema bilgisinden yararlı katalog bağlamını üret.",
+    "why": "AI destekli meta veri açıklamaları Amazon DataZone'a ait, ve bu işi etkinleştir: Keşfi iyileştirmek için teknik şema bilgisinden yararlı katalog bağlamını üret."
+  },
+  "feat-061-01": {
+    "label": "Çıkış istekleri için ortak güvenlik açıkları ve kuruluşa özgü gereksinimler analiz et.",
+    "why": "Kod güvenliği incelemesi AWS Security Agent'a ait, ve bu işi etkinleştir: Çıkış istekleri için ortak güvenlik açıkları ve kuruluşa özgü gereksinimler analiz et."
+  },
+  "feat-061-03": {
+    "label": "Bulunan bir zayıflığın istismari yapılabilir olup olmadığını doğrulamak için bir uygulamayı kum havuzunda dağıt.",
+    "why": "Simüle edilen doğrulama AWS Security Agent'a ait, ve bu işi etkinleştir: Bulunan bir zayıflığın istismari yapılabilir olup olmadığını doğrulamak için bir uygulamayı kum havuzunda dağıt."
+  },
+  "feat-062-00": {
+    "label": "Bilet açma ve uyarı sistemlerinden olay analizini otomatik olarak başlat.",
+    "why": "Otomatik soruşturmalar AWS DevOps Agent'a ait, ve bu işi etkinleştir: Bilet açma ve uyarı sistemlerinden olay analizini otomatik olarak başlat."
+  },
+  "feat-062-02": {
+    "label": "Bir olayın nedenini belirledikten sonra çözüm, doğrulama ve geri alma işlemlerini sağla.",
+    "why": "Detaylı azaltma planları AWS DevOps Agent'a ait, ve bu işi etkinleştir: Bir olayın nedenini belirledikten sonra çözüm, doğrulama ve geri alma işlemlerini sağla."
+  },
+  "feat-062-04": {
+    "label": "Gelecekteki operasyonel önerileri iyileştirmek için geri bildirim ve geçmiş soruşturmaları kullan.",
+    "why": "Sürekli öğrenme AWS DevOps Agent'a ait, ve bu işi etkinleştir: Gelecekteki operasyonel önerileri iyileştirmek için geri bildirim ve geçmiş soruşturmaları kullan."
+  },
+  "feat-063-01": {
+    "label": "Etkinleştirilmiş her coğrafi alandan hesap etkinliğini merkezi bir hedefe sun.",
+    "why": "çok Bölge izleri AWS CloudTrail'e ait, ve bu işi etkinleştir: Etkinleştirilmiş her coğrafi alandan hesap etkinliğini merkezi bir hedefe sun."
+  },
+  "feat-063-02": {
+    "label": "Soruşturmalar ve uyum incelemeler için tahrifata dayanıklı etkinlik kayıtlarını koru.",
+    "why": "değişmez denetim kanıtı AWS CloudTrail'e ait, ve bu işi etkinleştir: Soruşturmalar ve uyum incelemeler için tahrifata dayanıklı etkinlik kayıtlarını koru."
+  },
+  "feat-064-01": {
+    "label": "Operasyonel bir ölçüm eşik üzerine geçtiğinde veya alışılmadık davranışı algıladığında yanıt ver.",
+    "why": "alarmlar ve otomatik işlemler Amazon CloudWatch'a ait, ve bu işi etkinleştir: Operasyonel bir ölçüm eşik üzerine geçtiğinde veya alışılmadık davranışı algıladığında yanıt ver."
+  },
+  "feat-065-00": {
+    "label": "Bir bulut kaynağının ayarlarının zaman içinde nasıl değiştiğini görmek.",
+    "why": "Yapılandırma geçmişi AWS Config'e ait, ve bu işi etkinleştir: Bir bulut kaynağının ayarlarının zaman içinde nasıl değiştiğini görmek."
+  },
+  "feat-065-02": {
+    "label": "Bulut varlıkları keşfet ve yapılandırmalarının nasıl birbirlerine bağlı olduğunu anla.",
+    "why": "kaynak ilişkisi envanteri AWS Config'e ait, ve bu işi etkinleştir: Bulut varlıkları keşfet ve yapılandırmalarının nasıl birbirlerine bağlı olduğunu anla."
+  },
+  "feat-066-02": {
+    "label": "Hesap meta verisi ve hizmet yapılandırması kullanarak bulut ortamı iyileştirmelerini gözden geçir.",
+    "why": "hesap düzeyi kılavuzluk AWS Trusted Advisor'a ait, ve bu işi etkinleştir: Hesap meta verisi ve hizmet yapılandırması kullanarak bulut ortamı iyileştirmelerini gözden geçir."
+  },
+  "feat-067-01": {
+    "label": "Bir iş yükünün önerilen mimarik uygulamalarını henüz karşılamadığı yerleri kaydet.",
+    "why": "belgelenen riskler AWS Well-Architected Tool'a ait, ve bu işi etkinleştir: Bir iş yükünün önerilen mimarik uygulamalarını henüz karşılamadığı yerleri kaydet."
+  },
+  "feat-067-02": {
+    "label": "İnceleme bulguları sırasını mimarik düzeltme işlemlerine dönüştür.",
+    "why": "iyileştirme planları AWS Well-Architected Tool'a ait, ve bu işi etkinleştir: İnceleme bulguları sırasını mimarik düzeltme işlemlerine dönüştür."
+  },
+  "feat-068-01": {
+    "label": "İçeriğe sahip uygulamayı veya depolama sisteminin doğrudan yük ve maruziyetini azalt.",
+    "why": "origin koruması Amazon CloudFront'a ait, ve bu işi etkinleştir: İçeriğe sahip uygulamayı veya depolama sisteminin doğrudan yük ve maruziyetini azalt."
+  },
+  "feat-069-00": {
+    "label": "İzole bir bulut ağını böl ve trafiğinin nereye seyahat edebileceğini kontrol et.",
+    "why": "Alt ağlar ve rota tabloları Amazon Virtual Private Cloud (Amazon VPC)'a ait, ve bu işi etkinleştir: İzole bir bulut ağını böl ve trafiğinin nereye seyahat edebileceğini kontrol et."
+  },
+  "feat-069-02": {
+    "label": "Genel İnternet trafiği göndermeden desteklenen bulut hizmetlerine özel olarak ulaş.",
+    "why": "VPC uçları ve AWS PrivateLink Amazon Virtual Private Cloud (Amazon VPC)'a ait, ve bu işi etkinleştir: Genel İnternet trafiği göndermeden desteklenen bulut hizmetlerine özel olarak ulaş."
+  },
+  "feat-070-02": {
+    "label": "Seçili bulut uyum sözleşmelerini kendi hizmet portalı aracılığıyla kabul et ve takip et.",
+    "why": "anlaşma yönetimi AWS Artifact'a ait, ve bu işi etkinleştir: Seçili bulut uyum sözleşmelerini kendi hizmet portalı aracılığıyla kabul et ve takip et."
+  },
+  "feat-071-01": {
+    "label": "Ortak standartlar ve yönetmeliklere hizalanmış kontrol setlerinden bir değerlendirme başlat.",
+    "why": "önceden inşa edilmiş uyum çerçeveleri AWS Audit Manager'a ait, ve bu işi etkinleştir: Ortak standartlar ve yönetmeliklere hizalanmış kontrol setlerinden bir değerlendirme başlat."
+  },
+  "feat-072-00": {
+    "label": "Kimlikleri temsil et ve bulut işlemleri izin veya reddeden belgeleri ekle.",
+    "why": "Kullanıcı rolleri ve ilkeler AWS Identity and Access Management (IAM)'e ait, ve bu işi etkinleştir: Kimlikleri temsil et ve bulut işlemleri izin veya reddeden belgeleri ekle."
+  },
+  "feat-072-02": {
+    "label": "Kalıcı anahtarlar yerine uygulamalar ve federe kimlikler için kısa süreli erişim kullan.",
+    "why": "geçici rol kimlik bilgileri AWS Identity and Access Management (IAM)'e ait, ve bu işi etkinleştir: Kalıcı anahtarlar yerine uygulamalar ve federe kimlikler için kısa süreli erişim kullan."
+  },
+  "feat-073-01": {
+    "label": "Sunucusuz işlev kodu paketleri ve bağımlılıkları güvenlik zayıflıkları için değerlen.",
+    "why": "AWS Lambda güvenlik açığı taraması Amazon Inspector'e ait, ve bu işi etkinleştir: Sunucusuz işlev kodu paketleri ve bağımlılıkları güvenlik zayıflıkları için değerlen."
+  },
+  "feat-074-00": {
+    "label": "İlkeleri, yaşam döngüsü ve kullanımı kuruluş tarafından kontrol edilen şifreleme anahtarları oluştur.",
+    "why": "Müşteri yönetilen anahtarlar AWS Key Management Service (AWS KMS)'e ait, ve bu işi etkinleştir: İlkeleri, yaşam döngüsü ve kullanımı kuruluş tarafından kontrol edilen şifreleme anahtarları oluştur."
+  },
+  "feat-074-02": {
+    "label": "Kriptografik materyali kimin kullanabileceğini kontrol et ve bunu yönetilen bir programa göre değiştir.",
+    "why": "anahtar ilkeleri ve otomatik döndürme AWS Key Management Service (AWS KMS)'e ait, ve bu işi etkinleştir: Kriptografik materyali kimin kullanabileceğini kontrol et ve bunu yönetilen bir programa göre değiştir."
+  },
+  "feat-075-01": {
+    "label": "Nesne depolaması kovaları genel erişim, şifreleme ve paylaşım riskleri için değerlen.",
+    "why": "S3 güvenlik duruşu değerlendirmesi Amazon Macie'ye ait, ve bu işi etkinleştir: Nesne depolaması kovaları genel erişim, şifreleme ve paylaşım riskleri için değerlen."
+  },
+  "feat-076-00": {
+    "label": "Parolaları, belirteçleri ve API kimlik bilgilerini kaynak kodunun ve düz metin yapılandırmasının dışında tut.",
+    "why": "Şifrelenen gizli depolama AWS Secrets Manager'a ait, ve bu işi etkinleştir: Parolaları, belirteçleri ve API kimlik bilgilerini kaynak kodunun ve düz metin yapılandırmasının dışında tut."
+  },
+  "feat-076-02": {
+    "label": "Her kimlik bilgisinin alınmasını açık olarak yetkili kimliklere kısıtla.",
+    "why": "ince taneli gizli erişim AWS Secrets Manager'a ait, ve bu işi etkinleştir: Her kimlik bilgisinin alınmasını açık olarak yetkili kimliklere kısıtla."
+  },
+  "feat-077-01": {
+    "label": "Nesne geçmişi ve gizliliği korurken hangi kimliklerin onu alabildiğini kontrol et.",
+    "why": "sürüm şifreleme ve erişim ilkeleri Amazon Simple Storage Service (Amazon S3)'e ait, ve bu işi etkinleştir: Nesne geçmişi ve gizliliği korurken hangi kimliklerin onu alabildiğini kontrol et."
+  },
+  "feat-077-03": {
+    "label": "Nesne depolamasında vektör kovaları ve endeksleri oluştur, muazzam ölçekte sunucusuz benzerlik sorguları için.",
+    "why": "Amazon S3 Vektörleri Amazon Simple Storage Service (Amazon S3)'e ait, ve bu işi etkinleştir: Nesne depolamasında vektör kovaları ve endeksleri oluştur, muazzam ölçekte sunucusuz benzerlik sorguları için."
+  },
+  "feat-078-00": {
+    "label": "Sık erişilmeyen kayıtları etkin nesne depolamasından daha düşük maliyette tut.",
+    "why": "Uzun vadeli arşiv depolama sınıfları Amazon S3 Glacier'a ait, ve bu işi etkinleştir: Sık erişilmeyen kayıtları etkin nesne depolamasından daha düşük maliyette tut."
+  },
+  "feat-078-02": {
+    "label": "Anında erişim gereksiz olduğunda uzun koruma dönemlerini ekonomik olarak karşıla.",
+    "why": "saklama odaklı maliyet optimizasyonu Amazon S3 Glacier'a ait, ve bu işi etkinleştir: Anında erişim gereksiz olduğunda uzun koruma dönemlerini ekonomik olarak karşıla."
+  },
+  "feat-079-01": {
+    "label": "Parçalanmış sağlık bilgilerini ortak bir modern şemaya normalleştir.",
+    "why": "FHIR R4 AWS HealthLake'e ait, ve bu işi etkinleştir: Parçalanmış sağlık bilgilerini ortak bir modern şemaya normalleştir."
+  },
+  "feat-080-01": {
+    "label": "Kaydedilmiş bir muayenede klinisyen ve hasta katkılarını ayırt et.",
+    "why": "konuşmacı rol tanımlaması AWS HealthScribe'ye ait, ve bu işi etkinleştir: Kaydedilmiş bir muayenede klinisyen ve hasta katkılarını ayırt et."
+  },
+  "feat-080-03": {
+    "label": "Profesyonel gözden geçirmek için yapılandırılmış muayene belgesini taslakla.",
+    "why": "ön klinik notlar AWS HealthScribe'ye ait, ve bu işi etkinleştir: Profesyonel gözden geçirmek için yapılandırılmış muayene belgesini taslakla."
+  },
+  "feat-081-00": {
+    "label": "Model parametreleri öğrenme maliyetini ve zamanını azaltmak için amaçlı inşa edilen AWS silikonunu kullan.",
+    "why": "AWS Trainium AWS Trainium'ya ait, ve bu işi etkinleştir: Model parametreleri öğrenme maliyetini ve zamanını azaltmak için amaçlı inşa edilen AWS silikonunu kullan."
+  },
+  "feat-082-01": {
+    "label": "İkinci nesil AWS çıkarım hızlandırıcılarını ortaya koyan örnek ailesini sağla.",
+    "why": "Amazon EC2 Inf2 örnekleri AWS Inferentia / Inferentia2'ye ait, ve bu işi etkinleştir: İkinci nesil AWS çıkarım hızlandırıcılarını ortaya koyan örnek ailesini sağla."
+  },
+  "feat-083-01": {
+    "label": "Ortak model geliştirme kütüphaneleri amaçlı inşa edilen AWS eğitim ve çıkarım çiplerinde kullan.",
+    "why": "çerçeve entegrasyonları AWS Neuron SDK'ya ait, ve bu işi etkinleştir: Ortak model geliştirme kütüphaneleri amaçlı inşa edilen AWS eğitim ve çıkarım çiplerinde kullan."
+  },
+  "feat-084-00": {
+    "label": "Farklı ölçeklerde uygun maliyetli model öğrenmesi için AWS hızlandırıcı neslini seç.",
+    "why": "Birinci ve ikinci nesil Trainium Amazon EC2 Trn1 / Trn2 örneklerine ait, ve bu işi etkinleştir: Farklı ölçeklerde uygun maliyetli model öğrenmesi için AWS hızlandırıcı neslini seç."
+  },
+  "feat-084-02": {
+    "label": "Büyük eşitlenmiş öğrenme işleri için hızlandırıcı örneklerini düşük gecikme sağ sitelemesi ile bağla.",
+    "why": "EFA ile dağıtılmış eğitim Amazon EC2 Trn1 / Trn2 örneklerine ait, ve bu işi etkinleştir: Büyük eşitlenmiş öğrenme işleri için hızlandırıcı örneklerini düşük gecikme sağ sitelemesi ile bağla."
+  },
+  "feat-085-01": {
+    "label": "Amaçlı inşa edilen çıkarım silikonunu kullanarak üretim tahminleri fiyatını azalt.",
+    "why": "uygun maliyetli model sunumu Amazon EC2 Inf1 / Inf2 örneklerine ait, ve bu işi etkinleştir: Amaçlı inşa edilen çıkarım silikonunu kullanarak üretim tahminleri fiyatını azalt."
+  },
+  "feat-086-00": {
+    "label": "En talep gören büyük model eğitimi ve sunumu iş yükleri için yüksek uç hızlandırıcıları kullan.",
+    "why": "NVIDIA H100 Tensor Core GPU'ları Amazon EC2 P5 örneklerine ait, ve bu işi etkinleştir: En talep gören büyük model eğitimi ve sunumu iş yükleri için yüksek uç hızlandırıcıları kullan."
+  },
+  "feat-087-01": {
+    "label": "Bir sunucuyu aşan modeller için çoklu GPU ana bilgisayarlarını sıkı bağlı bir sisteme birleştir.",
+    "why": "EC2 UltraServer ölçekleme sistemleri Amazon EC2 P6 örnekleri ve UltraServer'lara ait, ve bu işi etkinleştir: Bir sunucuyu aşan modeller için çoklu GPU ana bilgisayarlarını sıkı bağlı bir sisteme birleştir."
+  },
+  "feat-088-00": {
+    "label": "Genel ML çıkarımı ve görsel iş yükleri için maliyet bilinçli grafik hızlandırıcılarını kullan.",
+    "why": "G5 örnekleri üzerinde NVIDIA A10G GPU'ları Amazon EC2 G5 / G6 örneklerine ait, ve bu işi etkinleştir: Genel ML çıkarımı ve görsel iş yükleri için maliyet bilinçli grafik hızlandırıcılarını kullan."
+  },
+  "feat-088-02": {
+    "label": "Görsel uygulamalar ve ölçeklenebilir boyutlu üretim tahminlerini esnek GPU örneklerinde çalıştır.",
+    "why": "grafik ve ML çıkarımı iş yükleri Amazon EC2 G5 / G6 örneklerine ait, ve bu işi etkinleştir: Görsel uygulamalar ve ölçeklenebilir boyutlu üretim tahminlerini esnek GPU örneklerinde çalıştır."
+  },
+  "feat-089-02": {
+    "label": "Gaudi işlemcileri için kütüphaneler ve araçlarla iş yüklerini geliştir ve optimize et.",
+    "why": "SynapseAI yazılım yığını Amazon EC2 DL1 örneklerine ait, ve bu işi etkinleştir: Gaudi işlemcileri için kütüphaneler ve araçlarla iş yüklerini geliştir ve optimize et."
+  },
+  "feat-090-01": {
+    "label": "Tanıdık HPC programlama yazılımı aracılığıyla dağıtılmış işi sıraya ve ayırta.",
+    "why": "iş planlayıcı entegrasyonu AWS ParallelCluster'a ait, ve bu işi etkinleştir: Tanıdık HPC programlama yazılımı aracılığıyla dağıtılmış işi sıraya ve ayırta."
+  },
+  "feat-091-00": {
+    "label": "Dağıtılmış uygulamalar gecikmeyi azaltmak için ağ donanımı ile doğrudan iletişim kuran.",
+    "why": "İşletim sistemi baypas Elastic Fabric Adapter'a ait, ve bu işi etkinleştir: Dağıtılmış uygulamalar gecikmeyi azaltmak için ağ donanımı ile doğrudan iletişim kuran."
+  },
+  "feat-091-02": {
+    "label": "Bir öğrenme işi çok makine arasına yayıldığında gradyenleri verimli bir şekilde senkronize et.",
+    "why": "sıkı bağlı dağıtılmış eğitim Elastic Fabric Adapter'a ait, ve bu işi etkinleştir: Bir öğrenme işi çok makine arasına yayıldığında gradyenleri verimli bir şekilde senkronize et."
+  },
+  "feat-092-01": {
+    "label": "Sıraya alınan işleme işleri tarafından gerekli olan örnek kapasitesini sağla ve ölçeklendir.",
+    "why": "dinamik işlem ortamları AWS Batch'e ait, ve bu işi etkinleştir: Sıraya alınan işleme işleri tarafından gerekli olan örnek kapasitesini sağla ve ölçeklendir."
+  },
+  "feat-093-00": {
+    "label": "Ortak çerçeveler ve sürücüler önceden yapılandırılan sanal makineler başlat.",
+    "why": "Deep Learning AMI (DLAMI) AWS Deep Learning AMI'larına ait, ve bu işi etkinleştir: Ortak çerçeveler ve sürücüler önceden yapılandırılan sanal makineler başlat."
+  },
+  "feat-094-01": {
+    "label": "Aynı ML kapsayıcı yapılarını yönetilen ML, Kubernetes, kapsayıcılar veya sanal makineler arasında kullan.",
+    "why": "Amazon EKS dağıtması AWS Deep Learning Containers'a ait, ve bu işi etkinleştir: Aynı ML kapsayıcı yapılarını yönetilen ML, Kubernetes, kapsayıcılar veya sanal makineler arasında kullan."
+  },
+  "feat-096-00": {
+    "label": "Google'ın makine öğrenmesi çerçevesine dayalı iş yüklerini geliştir ve işlet.",
+    "why": "AWS'de TensorFlow TensorFlow on AWS'ye ait, ve bu işi etkinleştir: Google'ın makine öğrenmesi çerçevesine dayalı iş yüklerini geliştir ve işlet."
+  },
+  "feat-098-00": {
+    "label": "Not defteri sunucularını el ile saklamadan işbirlikçi etkileşimli bilişim geliştir ve işlet.",
+    "why": "Yönetilen not defteri ortamları AWS'de Jupyter'a ait, ve bu işi etkinleştir: Not defteri sunucularını el ile saklamadan işbirlikçi etkileşimli bilişim geliştir ve işlet."
+  },
+  "feat-098-02": {
+    "label": "Bulut veri setleri, eğitim işleri ve dağıtım araçlarına not defteri iş akışından erişim.",
+    "why": "Amazon SageMaker not defteri örnekleri AWS'de Jupyter'a ait, ve bu işi etkinleştir: Bulut veri setleri, eğitim işleri ve dağıtım araçlarına not defteri iş akışından erişim."
+  },
+  "feat-099-01": {
+    "label": "Bilinir kısıtlamalar ve bir hizmetin çıktı kalitesini değiştirebilecek koşullar açıkla.",
+    "why": "sınırlamalar ve performans faktörleri AWS AI Service Cards'a ait, ve bu işi etkinleştir: Bilinir kısıtlamalar ve bir hizmetin çıktı kalitesini değiştirebilecek koşullar açıkla."
+  },
+  "feat-100-00": {
+    "label": "Davranışı tanımlayıp isteme odaklı bileşenleri bağlayarak generatif bir uygulamayı oluştur.",
+    "why": "İstem tabanlı uygulama oluşturma Amazon PartyRock'a ait, ve bu işi etkinleştir: Davranışı tanımlayıp isteme odaklı bileşenleri bağlayarak generatif bir uygulamayı oluştur."
+  },
+  "feat-100-01": {
+    "label": "Yönetilen generatif modeller ile AWS'den yapısız öğrenme uygulaması gücü.",
+    "why": "Amazon Bedrock temel modelleri Amazon PartyRock'a ait, ve bu işi etkinleştir: Yönetilen generatif modeller ile AWS'den yapısız öğrenme uygulaması gücü."
+  },
+  "features": {
+    "hint": "Her işi gerçekleştiren yeteneğe sürükle. Açıkla ait olduğu hizmetin adını."
+  }
+}

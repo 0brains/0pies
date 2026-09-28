@@ -1,0 +1,74 @@
+{
+  "rf-01": {
+    "label": "Estabelece o processo de risco como: estabelecer escopo e contexto, identificar, analisar, avaliar, tratar, com monitorização e comunicação ao longo.",
+    "why": "Este é o processo de risco genérico em que cada outro documento de risco constrói. O seu vocabulário — probabilidade, consequência, tratamento, risco residual — é o que os documentos específicos de AI herdam."
+  },
+  "rf-02": {
+    "label": "Define risco como o efeito de incerteza nos objectivos, que pode ser positivo assim como negativo.",
+    "why": "A definição de risco inclusivo de lado-positivo é de ISO 31000, e é por que o padrão fala de objectivos em vez de danos."
+  },
+  "rf-03": {
+    "label": "É deliberadamente sector-agnóstico e tecnologia-agnóstico; diz nada sobre modelos, dados ou treino.",
+    "why": "A sua genericidade é o ponto e também o seu limite — é por que 23894 existe para dizer o que AI muda."
+  },
+  "rf-04": {
+    "label": "Molda gestão de risco como princípios, um framework e um processo, com compromisso de liderança como o primeiro requisito do framework.",
+    "why": "A estrutura de três-partes é a ideia organizadora de ISO 31000. Documentos específicos de AI adoptam-na em vez de substituir."
+  },
+  "rf-05": {
+    "label": "Fornece orientação sobre aplicação de um processo de risco genérico especificamente a inteligência artificial, incluindo fontes de risco específicas de AI.",
+    "why": "23894 é o documento de ponte: o processo de ISO 31000, com as fontes de risco particulares de AI e ciclo de vida anexadas. É orientação, não requisitos."
+  },
+  "rf-06": {
+    "label": "Descreve como actividades de gestão de risco mapeiam no ciclo de vida de sistema de AI, desde concepção através de aposentadoria.",
+    "why": "Orientação de gestão de risco mapeada em ciclo de vida de AI é a contribuição de 23894. Sendo orientação, não pode ser auditada contra, o que é onde 42001 entra."
+  },
+  "rf-07": {
+    "label": "Oferece fontes de risco de AI ilustrativas — qualidade de dados, opacidade, viés de automatização, uso não pretendido — como uma ajuda em vez de uma lista obrigatória.",
+    "why": "O catálogo de fontes de risco de AI é consultivo. Tratar-o como uma checklist de conformidade lê-se erroneamente o estado do documento."
+  },
+  "rf-08": {
+    "label": "É o companheiro específico de AI que explica o que muda quando a coisa cuja gestão de risco aprendes a partir de dados.",
+    "why": "Este é o propósito inteiro do documento: 31000 para AI. Se uma afirmação é sobre aplicar método de risco a AI sem impor requisitos, é 23894."
+  },
+  "rf-09": {
+    "label": "Especifica requisitos para estabelecer, implementar, manter e continuamente melhorar um sistema de gestão para AI.",
+    "why": "'Requisitos para um sistema de gestão' é linguagem de padrão de sistema de gestão: este é o certável, estruturado como ISO 27001."
+  },
+  "rf-10": {
+    "label": "Uma organização pode ser auditada por um corpo de certificação e emitida um certificado contra ele.",
+    "why": "Certabilidade é o discriminador mais limpo simples entre estes quatro. Nem o framework de NIST nem os documentos de orientação de ISO podem ser certificados contra."
+  },
+  "rf-11": {
+    "label": "Leva um Anexo A de controles e requer uma afirmação de aplicabilidade explicando quais são implementados.",
+    "why": "Anexo A mais uma afirmação de aplicabilidade é o padrão de sistema de gestão. É o que um auditor realmente anda através."
+  },
+  "rf-12": {
+    "label": "Requer uma política de AI, papéis definidos, objectivos, auditoria interna e revisão de gestão num ciclo de melhoria contínua.",
+    "why": "Auditoria interna e revisão de gestão são obrigações de sistema de gestão. Documentos de orientação recomendam; apenas o padrão de sistema de gestão requer."
+  },
+  "rf-13": {
+    "label": "Organiza trabalho de risco em quatro funções: Governar, Mapear, Medir e Gerir.",
+    "why": "As quatro funções são a estrutura de assinatura do RMF, com Governar a cortar através dos outros três em vez de os precedar."
+  },
+  "rf-14": {
+    "label": "Nomeia sete características de AI de confiança, incluindo válido e confiável, seguro, seguro e resiliente, e responsável e transparente.",
+    "why": "As sete características de confiabilidade são o framing de NIST. Documentos ISO falam de objectivos e controles em vez."
+  },
+  "rf-15": {
+    "label": "É explicitamente voluntário, desenvolvido por uma agência federal dos EUA sob uma direcção estatutária, e é acompanhado por um playbook companheiro.",
+    "why": "Voluntário, federal dos EUA, com playbook e perfis — nenhum dos quais descreve um padrão ISO."
+  },
+  "rf-16": {
+    "label": "Suporta perfis de uso que personalizam o framework para um sector particular ou caso de uso.",
+    "why": "Perfis são como o RMF é adaptado sem ser certificado. São a resposta a 'como aplicamos isto a nós' num framework voluntário."
+  },
+  "risk-frameworks": {
+    "hint": "Arrasta cada descrição para o framework a que pertence. Pergunta que tipo de documento é: risco genérico, orientação de risco específica de AI, um sistema de gestão certificável ou um framework voluntário.",
+    "note": "Apenas um destes quatro é certificável. Apenas um é federal dos EUA e voluntário. Confundir 'nós seguimos NIST AI RMF' com 'nós somos certificados' é o erro que este quadro existe para prevenir.",
+    "zones[0].def": "Princípios, framework e processo de gestão de risco genérico. Não específico de AI e não certificável.",
+    "zones[1].def": "Orientação aplicando ISO 31000 a AI. Consultivo: diz-te como risco de AI difere, não o que certificar.",
+    "zones[2].def": "Padrão de sistema de gestão de AI. Requisitos mais controles de Anexo A, e o único contra o qual uma organização pode ser certificada.",
+    "zones[3].def": "Framework voluntário dos EUA: quatro funções, sete características de confiança, nenhuma certificação."
+  }
+}

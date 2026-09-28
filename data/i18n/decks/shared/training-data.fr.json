@@ -1,0 +1,101 @@
+{
+ "training-data": {
+  "hint": "La distinction importante est le rôle des données, le format ou l'adéquation pour la population réelle ; ces détails déterminent ce qui peut être appris et si l'évaluation est fiable."
+ },
+ "training-data-01": {
+  "label": "La portion de données utilisée pour apprendre les paramètres du modèle.",
+  "why": "La portion de données utilisée pour apprendre les paramètres du modèle."
+ },
+ "training-data-02": {
+  "label": "Les données retenues lors du développement pour comparer les choix et affiner les hyperparamètres.",
+  "why": "Les données retenues lors du développement pour comparer les choix et affiner les hyperparamètres."
+ },
+ "training-data-03": {
+  "label": "Les données intactes à la fin pour estimer la performance sur les exemples invisibles.",
+  "why": "Les données intactes à la fin pour estimer la performance sur les exemples invisibles."
+ },
+ "training-data-04": {
+  "label": "Les exemples qui incluent la réponse cible requise pour l'apprentissage supervisé.",
+  "why": "Les exemples qui incluent la réponse cible requise pour l'apprentissage supervisé."
+ },
+ "training-data-05": {
+  "label": "Les exemples sans réponses cibles, souvent utilisés pour l'apprentissage non supervisé ou auto-supervisé.",
+  "why": "Les exemples sans réponses cibles, souvent utilisés pour l'apprentissage non supervisé ou auto-supervisé."
+ },
+ "training-data-06": {
+  "label": "Les données organisées en champs définis, lignes, colonnes ou enregistrements.",
+  "why": "Les données organisées en champs définis, lignes, colonnes ou enregistrements."
+ },
+ "training-data-07": {
+  "label": "Le contenu libre comme le texte, les images, l'audio et la vidéo.",
+  "why": "Le contenu libre comme le texte, les images, l'audio et la vidéo."
+ },
+ "training-data-08": {
+  "label": "Les exemples qui reflètent les personnes, les conditions et les cas que le modèle rencontrera en utilisation.",
+  "why": "Les exemples qui reflètent les personnes, les conditions et les cas que le modèle rencontrera en utilisation."
+ },
+ "training-data-09": {
+  "label": "Les informations indisponibles au moment de la prédiction pénètrent accidentellement dans l'entraînement et gonflent la performance mesurée.",
+  "why": "Les informations indisponibles au moment de la prédiction pénètrent accidentellement dans l'entraînement et gonflent la performance mesurée."
+ },
+ "training-data-10": {
+  "label": "Une classe cible apparaît beaucoup plus souvent qu'une autre, rendant la précision potentiellement trompeuse.",
+  "why": "Une classe cible apparaît beaucoup plus souvent qu'une autre, rendant la précision potentiellement trompeuse."
+ },
+ "training-data-11": {
+  "label": "Attacher des étiquettes de référence vérifiées à des exemples bruts pour qu'un modèle supervisé ait des réponses dont apprendre.",
+  "why": "La qualité des étiquettes plafonne la qualité du modèle : des étiquettes bruitées ou incohérentes enseignent au modèle la mauvaise correspondance, quelle que soit la quantité de données."
+ },
+ "training-data-12": {
+  "label": "La réponse correcte vérifiée à laquelle la prédiction du modèle est comparée pendant l'entraînement et l'évaluation.",
+  "why": "Sans réponse de référence fiable, ni la perte d'entraînement ni les métriques d'évaluation ne signifient quoi que ce soit : les deux se mesurent par rapport à elle."
+ },
+ "training-data-13": {
+  "label": "Créer des exemples d'entraînement supplémentaires en transformant les existants, comme retourner des images ou paraphraser du texte.",
+  "why": "Cela étend un petit jeu de données et enseigne l'invariance aux variations anodines, réduisant le surapprentissage sans collecter de nouvelles données."
+ },
+ "training-data-14": {
+  "label": "Des exemples générés artificiellement, utilisés quand les données réelles sont rares, sensibles ou dépourvues de cas rares.",
+  "why": "Elles comblent des lacunes que la collecte réelle ne peut pas couvrir (événements rares, enregistrements restreints par la confidentialité), mais héritent des hypothèses de leur générateur."
+ },
+ "training-data-15": {
+  "label": "Rééquilibrer un jeu de données biaisé en dupliquant ou en générant des exemples supplémentaires de la classe minoritaire.",
+  "why": "Cela donne à la classe rare assez de poids pour être apprise, au risque de surapprendre des exemples minoritaires répétés ou synthétiques."
+ },
+ "training-data-16": {
+  "label": "Rééquilibrer un jeu de données biaisé en écartant certains exemples de la classe majoritaire.",
+  "why": "Cela égalise l'influence des classes à peu de frais, mais jette au passage du signal réel de la classe majoritaire."
+ },
+ "training-data-17": {
+  "label": "Un attribut d'entrée individuel et mesurable, comme l'âge, la valeur d'un pixel ou le montant d'une transaction, dont le modèle apprend.",
+  "why": "Les modèles ne voient que les caractéristiques qu'on leur donne ; ce qui est inclus, et comment c'est encodé, délimite ce qui peut être appris."
+ },
+ "training-data-18": {
+  "label": "Transformer les entrées brutes en attributs plus informatifs, comme des ratios, des tranches ou des encodages, avant l'entraînement.",
+  "why": "De bonnes caractéristiques dérivées permettent à des modèles plus simples de capturer le motif ; de mauvaises forcent des modèles complexes à le redécouvrir dans le bruit."
+ },
+ "training-data-19": {
+  "label": "Faire tourner la tranche de données mise de côté pour que chaque exemple serve à la fois à l'entraînement et à l'évaluation.",
+  "why": "Faire la moyenne sur plusieurs plis mis de côté donne une estimation plus stable de la généralisation qu'une seule division, surtout sur de petits jeux de données."
+ },
+ "training-data-20": {
+  "label": "Des contrôles de complétude, d'exactitude, de cohérence et de fraîcheur appliqués avant que les données servent à l'entraînement.",
+  "why": "Les défauts se propagent en aval : un modèle entraîné sur des enregistrements incomplets ou incohérents encode ces défauts en comportement."
+ },
+ "training-data-21": {
+  "label": "Un biais systématique introduit quand la méthode de collecte favorise certaines personnes ou certains cas par rapport à d'autres.",
+  "why": "Un modèle ne peut être équitable qu'envers les cas qu'il a vus ; une collecte biaisée produit des prédictions biaisées, aussi bon soit l'algorithme."
+ },
+ "training-data-22": {
+  "label": "Un exemple extrême ou anormal qui se situe très loin du motif du reste des données.",
+  "why": "Une poignée de points extrêmes peut entraîner les paramètres et la mise à l'échelle ; décider s'il s'agit d'erreurs ou de cas réels change le modèle."
+ },
+ "training-data-23": {
+  "label": "Une division respectueuse de l'ordre où le modèle s'entraîne sur les périodes antérieures et est évalué sur les périodes ultérieures.",
+  "why": "Mélanger des séries temporelles laisse le modèle jeter un œil sur le futur, gonflant les scores ; une évaluation honnête doit respecter l'ordre d'arrivée."
+ },
+ "training-data-24": {
+  "label": "Une division qui garde les proportions de classes de chaque sous-ensemble identiques à celles du jeu de données complet.",
+  "why": "Des divisions aléatoires de données déséquilibrées peuvent priver entièrement un pli de la classe rare ; stratifier garde chaque évaluation représentative."
+ }
+}

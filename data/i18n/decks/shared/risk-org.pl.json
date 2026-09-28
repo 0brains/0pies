@@ -1,0 +1,74 @@
+{
+  "risk-org": {
+    "hint": "Przeciągnij każde zadanie na linię, która powinna je wykonywać. Test to niezależność: kto może się sam oceniać, a kto nie.",
+    "note": "Linie dotyczą niezależności, nie seniority lub liczby pracowników. Funkcja drugiej linii, która raportuje do zespołu, który nadzoruje, to funkcja pierwszej linii w innym mundurze.",
+    "zones[0].def": "Posiada i zarządza ryzykiem na co dzień: zespoły, które budują, wdrażają i operują systemem.",
+    "zones[1].def": "Ustala politykę, doradza, kwestionuje i monitoruje — ryzyko, zgodność, prawo, funkcję zarządzania AI. Niezależna od dostawy, nie od zarządzania.",
+    "zones[2].def": "Audyt wewnętrzny. Niezależna gwarancja dla zarządu, czy pierwsze dwie linie rzeczywiście działają.",
+    "zones[3].def": "Ustala łaknienie, przejmuje ostateczną odpowiedzialność i jest jedynym organem, który może zaakceptować ryzyko przekraczające delegowane limity."
+  },
+  "ro-01": {
+    "label": "Zespół inżynierski uruchamia pakiet oceny uczciwości przed promocją modelu do produkcji.",
+    "why": "Wykonywanie kontroli wewnątrz procesu dostawy to praca pierwszej linii. Zrobienie tego dobrze nie czyni tego gwarancją, bo zespół ocenia własny wynik."
+  },
+  "ro-02": {
+    "label": "Właściciel produktu rejestruje nowe ryzyko w rejestrze i proponuje terapię.",
+    "why": "Identyfikacja ryzyka i zarządzanie na co dzień siedzi z ludźmi najbliżej działania. Rejestr to ich do wypełnienia, nie funkcji ryzyka."
+  },
+  "ro-03": {
+    "label": "Zespół operacji monitoruje tablice dryfu produkcji i podnosi incydent, gdy progi zostały przekroczone.",
+    "why": "Operowanie kontrolą, w tym detektywną, to praca pierwszej linii. Druga linia pyta, czy próg jest właściwy; pierwsza linia działa, gdy się uruchomi."
+  },
+  "ro-04": {
+    "label": "Zespół nauki o danych dokumentuje ograniczenia modelu i zamierzone użycie na karcie modelu.",
+    "why": "Produkcja dokumentacji to działanie budowy. Przegląd, czy spełnia politykę, to zadanie innej linii."
+  },
+  "ro-05": {
+    "label": "Funkcja zarządzania AI pisze politykę definiującą, które przypadki użycia wymagają oceny wpływu.",
+    "why": "Ustalanie ram i standardów, którymi musi kierować się pierwsza linia, to definiujące działanie drugiej linii."
+  },
+  "ro-06": {
+    "label": "Zgodność przegląda ukończoną ocenę wpływu i kwestionuje ocenę pozostałego ryzyka zespołu.",
+    "why": "Niezależne kwestionowanie osądu pierwszej linii to druga linia. To doradczy i monitorujący, a nie gwarancja dla zarządu."
+  },
+  "ro-07": {
+    "label": "Prawo doradza, że proponowane wdrożenie wpada w obszar Załącznika III i dlatego przyciąga obowiązki wysokiego ryzyka.",
+    "why": "Porada specjalistyczna, która ogranicza, co może robić pierwsza linia, to druga linia. Decyzja o kontynuowaniu pozostaje pierwszej linii, zgodnie z polityką."
+  },
+  "ro-08": {
+    "label": "Funkcja ryzyka utrzymuje rejestr przedsiębiorstwa i raportuje łączną ekspozycję ryzyka AI na kierownictwu.",
+    "why": "Agregacja, nadzór i raportowanie w całej pierwszej linii to monitorowanie drugiej linii. Polega na danych pierwszej linii, dlatego istnieje trzecia linia."
+  },
+  "ro-09": {
+    "label": "Audyt wewnętrzny sprawdza, czy proces zatwierdzania modelu został przestrzegany dla każdego wydania w ostatnim roku.",
+    "why": "Testowanie, czy kontrole działały zgodnie z projektem, po fakcie i niezależnie, to mandat audytu wewnętrznego."
+  },
+  "ro-10": {
+    "label": "Niezależny przegląd raportuje do komisji audytu, że proces kwestionowania drugiej linii nie jest udokumentowany.",
+    "why": "Trzecia linia przeprowadza audyt drugiej linii tak samo jak pierwszej i raportuje do zarządu, a nie do kierownictwa — ta linia raportowania to co go czyni niezależnym."
+  },
+  "ro-11": {
+    "label": "Praca gwarancji jest planowana w cyklu opartym na ryzyku i jej zakres jest uzgodniony z komisją audytu, nie z audytowanymi zespołami.",
+    "why": "Zakres ustalony poza kierownictwem to cecha strukturalna, która oddziela audyt od przeglądu drugiej linii."
+  },
+  "ro-12": {
+    "label": "Przegląd stwierdza, że kontrola jest udokumentowana, ale nigdy rzeczywiście nie została wykonana, i raportuje to w górę.",
+    "why": "Znalezienie luki między udokumentowanym a operacyjnym efektem to wartość, którą audyt dodaje. Żadna z pierwszych dwóch linii nie jest umieszczona do raportowania przeciwko sobie."
+  },
+  "ro-13": {
+    "label": "Łaknienie ryzyka dla automatycznego podejmowania decyzji jest ustalane i publikowane.",
+    "why": "Łaknienie to stwierdzenie na poziomie zarządu, ile ryzyka organizacja będzie brać. Wszystko poniżej to kalibracja przeciwko niemu."
+  },
+  "ro-14": {
+    "label": "Pozostałe ryzyko przekraczające delegowany limit jest eskalowane i formalnie akceptowane na szczycie organizacji.",
+    "why": "Tylko organ posiadający autorytet może zaakceptować przekraczający limity. Akceptacja gdzie indziej to nie akceptacja; to niezarejestrowana ekspozycja."
+  },
+  "ro-15": {
+    "label": "Wyznaczony dyrektor jest wyznaczony dla systemu zarządzania AI, z autorytetem i zasobami, aby to zadziałało.",
+    "why": "Standardy systemów zarządzania wymagają nazwanej odpowiedzialności kierownictwa. Funkcja zarządzania bez właściciela kierowniczego ma odpowiedzialność bez autorytetu."
+  },
+  "ro-16": {
+    "label": "Decyzja jest podjęta, aby wycofać wdrażany system po tym, jak gwarancja raportuje, że jego ryzyko nie może być wprowadzone w łaknienie.",
+    "why": "Wycofanie wbrew interesowi handlowemu to decyzja, którą może podjąć tylko poziom odpowiedzialny, dlatego trasa eskalacji musi istnieć, zanim będzie potrzebna."
+  }
+}

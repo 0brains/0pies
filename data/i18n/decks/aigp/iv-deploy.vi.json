@@ -1,0 +1,95 @@
+{
+ "iv-deploy": {
+  "hint": "Kéo từng kịch bản vào lựa chọn nó gọi cho. Bảng chứa những bẫy được rút từ mọi trục — loại mô hình, cơ sở hạ tầng, và điều chỉnh — vì vậy hãy đọc để tìm ràng buộc thực tế, không chỉ từ vựng quen thuộc."
+ },
+ "iv-dm-01": {
+  "label": "Dịch thực tế trên các thiết bị cầm tay với kết nối kém ổn định.",
+  "sub": "Độ trễ được giới hạn, Khả năng ngoại tuyến",
+  "why": "Độ trễ và khả năng phục hồi ngoại tuyến vượt trội khả năng thô ở đây — một mô hình nhỏ gọn chạy cục bộ dịch tốt hơn một mô hình lớn hơn cần một kết nối trực tiếp. \"Các mô hình lớn luôn được yêu cầu cho thực tế\" là một bẫy phân tán được ghi lại: khả năng không đảm bảo độ trễ thấp khi mạng rơi."
+ },
+ "iv-dm-02": {
+  "label": "Câu trả lời phải phản ánh các hướng dẫn lâm sàng của tháng này vào thời điểm một bác sĩ lâm sàng hỏi — không phải ảnh chụp đào tạo quý trước.",
+  "sub": "Tươi ở Thời gian truy vấn",
+  "why": "Tươi ở bên ngoài các trọng số: kết nối mô hình với một nguồn hiện tại, được quản lý tại thời gian truy vấn giữ câu trả lời hiện tại mà không retraining. Nó không loại bỏ ảo giác — mô hình vẫn có thể đọc sai những gì nó truy vấn — và nó đánh đổi chi phí đào tạo cho một gánh nặng ops mới: bộ tập hợp cần tái lập chỉ mục liên tục để ở lại hiện tại."
+ },
+ "iv-dm-03": {
+  "label": "Đề nghị cho vay phải giống nhau cho input giống nhau và phải tuân theo chỉ các quy tắc chính sách tín dụng được viết — không có trường hợp nào có thể được quyết định theo cách khác.",
+  "sub": "Có thể tái tạo bằng quy tắc",
+  "why": "Khi kết quả phải được tái tạo hoàn hảo và có thể truy vết thành các quy tắc được mã hóa, một công cụ quy tắc if-then — không phải một mô hình xác suất — là phù hợp; một công cụ quy tắc không thể trôi dạo hoặc ảo giác theo cách của nó tới một câu trả lời khác nhau cho cùng input."
+ },
+ "iv-dm-04": {
+  "label": "Một lệnh cư trú nghiêm ngặt yêu cầu cơ quan quản lý phải có toàn bộ tầm nhìn cơ sở hạ tầng trên các bản ghi tài chính nhạy cảm.",
+  "sub": "Điều khiển Visible của cơ quan quản lý",
+  "why": "Giữ mô hình và dữ liệu bên trong môi trường của tổ chức tối đa hóa kiểm soát và tránh các câu hỏi chuyển nhượng xuyên biên giới mà cơ quan quản lý nếu không sẽ phải theo qua cơ sở hạ tầng của nhà cung cấp — sự đánh đổi là nhân viên trong nhà nặng hơn và gánh nặng kiểm toán. Trên một xếp hạng độ trễ-vs-oversight, on-premises vẫn vượt quá cạnh bất cứ khi nào tầm nhìn cơ quan quản lý tập trung quan trọng hơn so với gần gũi với nguồn dữ liệu."
+ },
+ "iv-dm-05": {
+  "label": "Lãnh đạo muốn một dịch vụ được quản lý để mở rộng quy mô phân tích hình ảnh nhanh chóng mà không xây dựng một trung tâm dữ liệu, và giả sử nhà cung cấp hiện nay sở hữu tất cả các rủi ro bảo mật.",
+  "sub": "Elastic, Nhưng ai là Rủi ro?",
+  "why": "Cloud là lệnh gọi đúng cho quy mô mà không sở hữu cơ sở hạ tầng — nhưng \"nhà cung cấp sở hữu bảo mật bây giờ\" là bẫy: dưới mô hình trách nhiệm chia sẻ, tổ chức triển khai vẫn trả lời về dữ liệu của nó, và một cấu hình sai của một phía bên cạnh khách hàng vẫn có thể gây ra sự vi phạm."
+ },
+ "iv-dm-06": {
+  "label": "Các kiosk trò chuyện đa ngôn ngữ tại các trạm kiểm soát biên giới có kết nối hạn chế và năng lượng hạn chế, và phản ứng phải ở gần ngay lập tức.",
+  "sub": "Không máy chủ, Không chờ",
+  "why": "Chạy mô hình trên chính thiết bị loại bỏ sự phụ thuộc vào kết nối bên ngoài những trạm kiểm soát này không thể đảm bảo một cách đáng tin cậy. Những gì lựa chọn chi phí này: đẩy suy luận ra cạnh đánh đổi các công cụ phát hiện trôi tập trung, vì vậy một hạm đội các thiết bị có thể yên tĩnh trôi dạo ra khỏi đặc tính với không có một bảng điều khiển duy nhất để bắt nó."
+ },
+ "iv-dm-07": {
+  "label": "Một mô hình độc quyền nhỏ retrains liên tục trên một luồng nội dung trực tiếp và phải giữ định điểm ảnh cục bộ trên hàng ngàn cửa hàng, không có vòng mạng.",
+  "sub": "Địa phương-Đầu tiên ở Quy mô hạm đội",
+  "why": "Điểm số cục bộ, ngoại tuyến cần mô hình trên thiết bị. Những gì lựa chọn chi phí này: giám sát và kiểm toán hiệu suất liên tục trở nên far khó khăn hơn khi quyết định được trải rộng trên một hạm đội rộng lớn, được phân tán vật lý thay vì một dịch vụ tập trung."
+ },
+ "iv-dm-08": {
+  "label": "Một công ty logistik tối ưu hóa chuỗi cung ứng muốn kiểm tra, sửa đổi và phân phối các trọng số của chính mô hình thay vì phụ thuộc vào lộ trình của một nhà cung cấp.",
+  "sub": "Kiểm tra nó tự mình",
+  "why": "Các trọng số mở mua tính minh bạch, tính linh hoạt và tự do khỏi lịch phát hành của một nhà cung cấp duy nhất — với chi phí của việc lấy lên kiểm tra giấy phép nội bộ, kiểm tra xuất xứ và kiểm tra bảo mật của chính bạn mà một nhà cung cấp nếu không sẽ mang."
+ },
+ "iv-dm-09": {
+  "label": "Một công ty truyền thông tự động hóa các bản tóm tắt video muốn SLA của nhà cung cấp, phản ứng sự cố, và bồi thường IP bao quanh bất kỳ mô hình nào nó gửi đi.",
+  "sub": "Hợp đồng-Backed, Không kiểm tra được",
+  "why": "Hỗ trợ được hợp đồng sao lưu và đảm bảo là toàn bộ điểm của việc đi độc quyền — nhưng sự thuận tiện đó có một chi phí chiến lược đã được đặt tên: chuyển đổi đi sau đó là khó khăn hơn khi các quy trình, lời nhắc và tích hợp được xây dựng xung quanh API của một nhà cung cấp, và khóa nhà cung cấp được ghi lại như là rủi ro chiến lược hàng đầu của con đường này."
+ },
+ "iv-dm-10": {
+  "label": "Một ngân hàng có hàng ngàn quyết định lịch sử được dán nhãn chứng minh hành vi tính điểm chuyên gia ổn định mà mô hình đa năng không tái tạo riêng của nó.",
+  "sub": "Được chứng minh, Không mô tả",
+  "why": "Đây là công cụ phù hợp cho một hành vi ổn định, được chứng minh nướng vào trọng số thông qua những ví dụ được quản lý. Nó không phải là một bản nâng cấp miễn phí: quản trị hiện coi kết quả là một hệ thống mới cần kiểm tra công bằng và độ mạnh mẽ của riêng nó và nó mang trách nhiệm pháp lý tăng so với sử dụng một mô hình được xây dựng sẵn của bên thứ ba."
+ },
+ "iv-dm-11": {
+  "label": "Một trình tạo dữ liệu tổng hợp được đào tạo thêm trên một lát cắt của các bản ghi sản xuất để đầu ra kiểm tra của nó cảm thấy thực tế đủ để QA tin tưởng.",
+  "sub": "Thực tế Borrowed Từ điều Thực tế",
+  "why": "Điều chỉnh mô hình cơ sở thêm trên dữ liệu của tổ chức riêng của nó là fine-tuning bởi định nghĩa. Rủi ro theo sau là cụ thể cho con đường này: đầu ra tổng hợp được tạo ra vẫn có thể mang dấu vết của các bản ghi sản xuất nhạy cảm gốc ngay cả sau khi ẩn danh, bởi vì thông tin bây giờ được nướng vào các trọng số, không ngồi trong một cơ sở dữ liệu có thể kiểm tra."
+ },
+ "iv-dm-12": {
+  "label": "Một bản thử nghiệm lọc lại sơ yếu cần khởi chạy quý này; không có thời gian hoặc ngân sách nhưng để retraining, chỉ để xác thực mô hình được cấp phép lại các kết quả thuê thực tế.",
+  "sub": "Nhanh, Phù hợp chưa được chứng minh",
+  "why": "Ngoài hộp là con đường nhanh nhất đến một bản thử nghiệm và tránh chi phí retraining — nhưng quản trị phải coi nó là rủi ro cao cho đến khi được chứng minh khác: dữ liệu huấn luyện của nhà cung cấp hoặc ranh giới quyết định có thể không phù hợp với miền này, vì vậy xác thực chống lại tiêu chuẩn hiệu suất và công bằng của tổ chức này, cộng với các điều khiển bù như xem xét con người, không phải không bắt buộc."
+ },
+ "iv-dm-13": {
+  "label": "Một hệ thống phát hiện gian lận phân loại các bản ghi giao dịch có cấu trúc; những rủi ro chính của nó là thiên vị chống lại các nhóm nhất định và độ chính xác yên tĩnh giảm khi các mẫu chi tiêu thay đổi.",
+  "sub": "Input có cấu trúc, Thất bại quen thuộc",
+  "why": "Dự đoán hoặc phân loại một danh mục đã biết từ các đặc trưng có cấu trúc là hồ sơ thất bại cổ điển — rủi ro sai lệch quen thuộc và trôi dạo mà kiểm tra công bằng và giám sát được xây dựng để bắt, riên biệt với chế độ thất bại của hệ thống tạo sinh là tự tin phát minh nội dung sai."
+ },
+ "iv-dm-14": {
+  "label": "Tiếp thị cần một công cụ dự thảo bản sao quảng cáo mới và hình ảnh chiến dịch từ một lời nhắc ngắn, không phải một công cụ phân loại hoặc tính điểm bất cứ điều gì đã tồn tại.",
+  "sub": "Nội dung mới, Không có bản án",
+  "why": "Tạo nội dung mới — văn bản, hình ảnh, mã — là hồ sơ lợi ích và rủi ro tạo sinh: output sai lầm thuyết phục, câu hỏi IP và nguồn gốc, và nhu cầu các vệ sĩ an toàn nội dung, riên biệt với chế độ thất bại của mô hình có cấu trúc là dự đoán."
+ },
+ "iv-dm-15": {
+  "label": "Người xem xét yêu cầu hệ thống cân nhắc một bức ảnh thiệt hại cùng với mô tả sự cố được viết trước khi gắn cờ một yêu cầu.",
+  "sub": "Hai kênh, một phán xét",
+  "why": "Cùng nhau giải thích một hình ảnh và văn bản — và có thể giải thích input nào lái output — là hồ sơ rủi ro và khả năng đa phương thức; một hệ thống chỉ văn bản chỉ không có kênh cho bức ảnh."
+ },
+ "iv-dm-16": {
+  "label": "Một chatbot hỗ trợ chỉ văn bản trả lời các câu hỏi của khách hàng và phải công bố nó là AI, trích dẫn nguồn, và leo thang các trường hợp nhạy cảm cho con người.",
+  "sub": "Một kênh, được công khai",
+  "why": "Văn bản trong, văn bản ra với công bố, trích dẫn và các điều khiển leo thang con người là hồ sơ quản trị mô hình ngôn ngữ — không có kênh đầu vào thứ hai để lý do, đó là những gì sẽ đẩy điều này về phía hồ sơ đa phương thức thay vì."
+ },
+ "iv-dm-17": {
+  "label": "Hai triệu bản ghi ngắn, có cấu trúc phải được tính điểm hàng đêm dưới một ngân sách tính toán chặt chẽ, sử dụng một số các tính năng được dán nhãn.",
+  "sub": "Nhiệm vụ hẹp, Ngân sách chặt chẽ",
+  "why": "Một mô hình nhỏ gọn, tính toán thấp dễ dàng hơn để giải thích, retrain nhanh chóng và chạy rẻ ở quy mô batch này — sự đánh đổi là nó có thể vật lộn khi môi trường trở nên phức tạp hơn hoặc biến động hơn những gì nó được xây dựng cho."
+ },
+ "iv-dm-18": {
+  "label": "Hệ thống phải tổng quát hóa trên nhiều lĩnh vực không quen thuộc từ ngày đầu tiên, không có thời gian để xây dựng hoặc dán nhãn một bộ dữ liệu theo từng lĩnh vực trước.",
+  "sub": "Chiều rộng Mua thông qua Quy mô",
+  "why": "Đào tạo trước trên quy mô rộng là những gì mua zero- và few-shot tổng quát hóa trên các lĩnh vực mà không ai có dữ liệu được dán nhãn cho nhưng — chi phí là một hệ thống lớn hơn, kém minh bạch cần quản trị tính toán riêng của nó, đánh giá an toàn và giám sát trôi dạo."
+ }
+}

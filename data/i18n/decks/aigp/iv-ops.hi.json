@@ -1,0 +1,105 @@
+{
+  "iv-ops": {
+    "hint": "ये सभी deployment-time duties हैं — system पहले से live है। पूछो कि कौन सी standing obligation scene को exercise कर रही है, न कि क्या कुछ गलत हुआ।",
+    "note": "Pre-release assurance (readiness reviews, testing इससे पहले कि कोई system कभी ship हो) एक different game को belong करता है। इस board पर सब कुछ go-live के बाद होता है, एक recurring या triggered basis पर।",
+    "zones[0].def": "Named, ongoing legal duty को track करना एक live system के performance, fairness और compliance को pre-set metrics और thresholds के विरुद्ध, escalation rules के साथ जब results उन्हें fall करते हैं बाहर। यह monitoring plan खुद है — न कि किसी एक metric के पीछे drift math, और न ही independent check जो बाद में verify करता है कि plan actually follow किया गया।",
+    "zones[1].def": "Controls जो एक deployed system के outputs या capabilities को stop करते हैं repurpose किए जाने से एक use, audience या population को जो original approval कभी नहीं covered — repurposing को forecasting करना और restrict करना इससे पहले कि यह happen करे, न कि react करना एक बार जब यह पहले से public है।",
+    "zones[2].def": "Pre-agreed content और channels जिसके लिए organization बताता है regulators, users और public को एक live system के बारे में — proactive (transparency notices, system cards) और reactive (acknowledging एक live problem) — internal investigation से distinct जो statements describe करते हैं।",
+    "zones[3].def": "Pre-written authority, triggers और restart criteria एक live system को पूरी तरह offline pull करने के लिए (deactivation) या restrict करने के लिए fewer regions या features को (localization) — एक stop-or-restrict decision documented conditions के साथ resume के लिए, न कि technical fix जो follow करता है।",
+    "zones[4].def": "तैयारी जो लोगों को जो एक live system operate करते हैं या इसके outputs पर rely करते हैं — role-specific instruction, simulated practice और logged attestation — ताकि वे एक wrong output को catch कर सकें और जानें कि कब इसे override करें, launch पर once delivered के बजाय एक cadence पर renewed।",
+    "zones[5].def": "Detecting, logging, triaging और closing live-system problems, severity से sized — एक minor logged complaint tracked एक pattern के लिए, through को एक formal response containment के साथ, root-cause analysis और corrective action।",
+    "zones[6].def": "Scheduled, independent verification कि एक live system के controls अभी भी hold करते हैं — recurring compliance reviews और adversarial testing चलाई गई launch के बाद, एक cadence पर या एक major change से tied — one-time readiness assessment से distinct run before एक system कभी ship करता है।"
+  },
+  "iv-ops-01": {
+    "label": "एक vendor quietly एक नया model version में swap करता है, team को कोई notice के साथ जिसने इसे deployed किया।",
+    "why": "Post-market monitoring एक standing legal duty है एक live system को track करने के लिए इसके baseline के विरुद्ध; एक unannounced version swap एक monitoring-plan failure है, Issue & incident management से distinct, जो केवल एक बार open करता है जब किसी को resulting harm का notice मिल जाता है।"
+  },
+  "iv-ops-02": {
+    "label": "एक quarterly review feature-distribution drift को track करता है, incoming-data quality problems, और latency/compute load — कभी नहीं original training set जिसके साथ model ship किया।",
+    "why": "Official calibration: production monitoring metrics data drift, data quality और latency/computational signals हैं — कभी नहीं historical training data। Setting जो track होता है यह zone की job है; independently re-checking कि plan actually follow किया गया Periodic audits & red teaming का है।"
+  },
+  "iv-ops-03": {
+    "label": "Escalation rules किसी भी metric को route करते हैं जो अपनी threshold को cross करता है directly एक named owner को, जो एक rollback या regulator notice को order कर सकता है।",
+    "why": "Monitoring plan names जो करता है कि क्या करता है एक बार जब threshold breach होता है; Issue & incident management केवल pick up करता है उसके बाद उस escalation fires, specific problem को record और triage करने के लिए जो यह names करता है।"
+  },
+  "iv-ops-04": {
+    "label": "एक scheduling tool built को shifts को staff करने के लिए quietly get re-aimed किया जाता है individual employees के performance को score करने पर।",
+    "why": "Repurposing को एक unapproved use के लिए consent protocols और use restrictions की जरूरत है इससे पहले कि यह happen करे; 'reasonably foreseeable misuse' duty providers और deployers को alike bind करता है, Issue & incident management से unlike, जो केवल engage करता है एक बार जब एक complaint पहले से surface हो गई।"
+  },
+  "iv-ops-05": {
+    "label": "Deployment में eighteen months, team एक scheduled second-order-thinking exercise चलाता है ongoing governance के part के रूप में, mapping करता है कि कौन else अब इस system के output को अपने workflow में plug कर रहा होगा।",
+    "why": "Forecasting repurposing और knock-on effects एक recurring post-deployment governance activity है, point-in-time impact assessment से broader और Periodic audits & red teaming के adversarial testing से different, जो probe करता है attack के लिए, lawful-looking reuse के लिए नहीं जो original approval कभी नहीं covered।"
+  },
+  "iv-ops-06": {
+    "label": "हर output जो API को छोड़ता है एक model-version tag लेता है और एक 'not validated for hiring or credit decisions' flag, और कोई भी new use case एक fresh review trigger करता है reuse allow करने के पहले।",
+    "why": "Provenance markers plus एक reuse-approval gate harm को compound करने से stop करते हैं another team के workflow में; control यह है कि कैसे outputs को travel करने दिया जाता है, External communications से distinct, जो बताया जाता है एक बार जब problem पहले से visible है outsiders को।"
+  },
+  "iv-ops-07": {
+    "label": "एक complaint एक wrong automated decision के बारे में रातों-रात viral हो जाता है।",
+    "why": "Publicly acknowledge at once कि issue known है और under investigation; waiting for Issue & incident management के internal root-cause work को finish करने के लिए पहले केवल reputational damage को compound करता है।"
+  },
+  "iv-ops-08": {
+    "label": "Public statement system के purpose और known limitations को disclose करता है, और method को stop करता है जो flagged decision को produced।",
+    "why": "Disclosure intended purpose, capabilities और limitations को cover करता है, लेकिन proprietary methods कोई भी public statement से बाहर रहते हैं — एक scope boundary पर जो यह zone says करता है, reuse-approval label से distinct जो Secondary-use control stamps एक output पर इससे पहले कि यह कभी travel करे।"
+  },
+  "iv-ops-09": {
+    "label": "Regulators को full evidence pack receive करते हैं — impact assessment, monitoring results, named corrective-action owners — जबकि public statement plain language में रहता है कोई technical root cause के साथ अभी तक।",
+    "why": "Same underlying record को यहाँ tailored per audience करता है: regulators को evidence मिलता है, public को accountability और next steps — कभी reverse नहीं, और कभी नहीं raw findings कि Periodic audits & red teaming exercise produced internal use के लिए।"
+  },
+  "iv-ops-10": {
+    "label": "Pre-written thresholds name करते हैं exactly कौन एक live system को offline pull कर सकता है, और criteria जो must पहले restart के लिए मिलना चाहिए।",
+    "why": "यह kill-switch protocol है: pre-agreed authority और restart criteria, Issue & incident management के immediate containment move से distinct, जो एक system को isolate करता है mid-problem के बिना इस zone के documented sign-off को resume के लिए जरूरत होने के बिना। Algorithmic methodology निर्णय में named non-factor है।"
+  },
+  "iv-ops-11": {
+    "label": "एक नया privacy law एक region में का मतलब है system वहाँ stop करता है चलाने से जबकि यह everywhere else चलता रहता है, एक pre-documented, reversible policy के तहत।",
+    "why": "Selective, jurisdiction-scoped restriction एक full kill switch से एक different move है, लेकिन यह zone दोनों ends को own करता है same control का — total stop और regional restriction — rather than splitting them across separate games।"
+  },
+  "iv-ops-12": {
+    "label": "एक predictive-maintenance system critical infrastructure को serve करता है को stages में phased out किया जाता है, एक human backup के साथ चलती रहती है जब तक transition complete नहीं होता।",
+    "why": "Graduated wind-down continuity planning के साथ यहाँ belong करता है क्योंकि trigger एक standing safety concern है एक schedule पर managed, Issue & incident management से unlike, जिसके containment step एक single problem respond करते हैं right now happening।"
+  },
+  "iv-ops-13": {
+    "label": "Clinicians confidence scores को misread करते रहते हैं, तो team simulation-based coaching को arrange करता है ongoing mentor pairing के साथ।",
+    "why": "Role-specific instruction hands-on practice और continued support के साथ addresses एक skills-and-confidence gap कि एक one-off certification exam केवल test knowledge, न कि build करता है; यह एक standing curriculum है, confidence-score display नहीं, जो एक product feature है।"
+  },
+  "iv-ops-14": {
+    "label": "Underwriters को बताया जाता है अपने judgment को model के initial recommendation पर apply करने के लिए इससे पहले कि यह final बन जाए।",
+    "why": "यह human-oversight habit है curriculum को instill करना है; एक right-to-appeal notice या एक feedback survey अधिक passive हैं और एक person के judgment को एक automated output के आगे put नहीं करते जिस तरह यह करता है।"
+  },
+  "iv-ops-15": {
+    "label": "System access को renew करने से पहले, हर reviewer एक scenario drill को complete करता है और एक attestation को sign करता है confirming वे tool के stated limits को समझते हैं।",
+    "why": "Mandatory, logged attestation tied renewed access को है जो इसे एक enforceable control बनाता है न कि एक one-time orientation से — evidence एक auditor check कर सकता है, Issue & incident management के reporting channels से unlike, जो exist करते हैं एक problem को surface करने के लिए, न कि beforehand readiness को certify करने के लिए।"
+  },
+  "iv-ops-16": {
+    "label": "Repeated low-severity mispredictions को logged और watched किया जाता है एक pattern के लिए जब तक कोई भी escalate न हो।",
+    "why": "यह lower-severity track है — logged, triaged और trended, escalating केवल अगर pattern persist करता है। Split higher-severity track से यह turn करता है harm के scale पर और legal exposure, न कि क्या एक mistake occurred में; यह यहाँ रहता है न कि moving को Periodic audits & red teaming, जो controls verify करता है एक schedule पर, न कि per-mistake basis पर।"
+  },
+  "iv-ops-17": {
+    "label": "Fraud detection wildly over-flagging legitimate transactions है; very first move system को offline pull करना है जब तक कोई भी root-cause work start नहीं करता।",
+    "why": "Containment — immediately system को isolate करना — यह zone के first response step है एक live problem के अंदर, Deactivation & localization से distinct, जो pre-agreed authority और documented restart criteria को own करता है जो एक shutdown lawful और reversible बनाते हैं first place में।"
+  },
+  "iv-ops-18": {
+    "label": "एक bias finding 1.8% पर बैठता है, 2% escalation trigger के just तहत — team formal response track को anyway open करता है क्योंकि affected group एक protected class है।",
+    "why": "Severity thresholds guide करते हैं लेकिन override judgment नहीं करते जब एक protected group affected है: finding को full formal-response track मिलता है न कि logged एक minor item के रूप में और left को trend के लिए, जो treatment एक sub-threshold, non-protected-class finding को get करता है।"
+  },
+  "iv-ops-19": {
+    "label": "Launch के twelve months बाद, एक outside crew jailbreak attempts को re-run करता है live assistant के विरुद्ध एक scheduled cadence पर।",
+    "why": "Recurring, scheduled adversarial testing deployment के बाद यह zone की discipline है; same technique का pre-release version — readiness assessment run एक बार इससे पहले कि एक system कभी ship करे — एक different game को belong करता है।"
+  },
+  "iv-ops-20": {
+    "label": "एक independent second-line team last quarter के automated decisions को sample करता है, fairness checks को hand से re-run करता है, और walk through करता है कि last escalation actually कैसे played out।",
+    "why": "Independence product team से plus re-performing checks न कि dashboard को trust करना यह है जो इसे separate करता है Post-market monitoring के अपने live review से, जो product team चलाता है और staff करता है।"
+  },
+  "iv-ops-21": {
+    "label": "Regulators expect करते हैं एक foundation-model provider को adversarial probing का fresh round document करने के लिए हर बार एक major version ship करता है, top पर जो भी पहले run करता है first launch से।",
+    "why": "Recurring re-testing tied एक material change को एक standing, deployment-time expectation है high-risk और general-purpose models के लिए — एक repeated obligation, न कि one-off gate crossed एक बार initial release पर।"
+  },
+  "iv-ops-22": {
+    "label": "एक system को offline pull करने से पहले, team पहले map करता है हर upstream feed और downstream process जो इस पर rely करता है, और confirm करता है एक fallback gap को take over करने के लिए ready है।",
+    "why": "यह planning step है जो happen करना चाहिए एक बार stop-or-restrict decision execute होने से पहले — Issue & incident management के containment से distinct, जो एक problem को react करता है already happening, और Post-market monitoring से, जो assume करता है system live रहता है।"
+  },
+  "iv-ops-23": {
+    "label": "एक बार जब एक system पूरी तरह retired हो, इसका data, models और decision logs preserved हैं न कि delete, तो एक regulator या auditor reconstruct कर सकता है जो system years बाद करता था।",
+    "why": "Preservation shutdown record का part है, owned by same authority जिसने system को offline pull किया — Issue & incident management के CAPA log से unlike, जो एक specific problem को track करता है, और Post-market monitoring से, जो केवल एक system को track करता है जबकि यह अभी live है।"
+  }
+}

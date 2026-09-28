@@ -1,0 +1,110 @@
+{
+ "i-uniq": {
+  "hint": "뭐가 정확히 실패하는지 물어봐요. 인간이 안 볼 수 있는 건지(Opacity), 아니면 완전한 접근권이 있어도 구조를 따라가지 못하는 건지(Complexity)? 시스템이 요청 없이 행동했는지(Autonomy), 아니면 한때 사람이 손으로 했던 task가 그냥 시스템으로 사라진 건지(Automation)? 더 배운 후 시스템이 변했는지(Adaptability), 아니면 결함이 배운 것 안에 구워져 있었는지(Data dependency)? 같은 입력이 다른 답을 주었는지(Probabilistic outputs), 아니면 작은 오류가 누군가 포착할 수 있는 것보다 빠르게 퍼져나갔는지(Speed & scale)?",
+  "note": "이게 exam의 canonical 8개 항목 roster예요. 8개 고정 zones는 대부분의 6개 card deals이 1-2개 zones를 비워둔다는 뜻이예요 — expected, bug 아니에요. Automation과 Autonomy는 느리게 할 가치가 있는 pair예요. Automation은 누가 손으로 일했는지(task replacement, over-reliance, workforce disruption)에 대한 거고, Autonomy는 누가 call을 하는지(independent decision without human sign-off)에 대한 거예요.",
+  "zones[0].def": "내부 논리가 보이지 않고 설명도 안 되어요. 만든 사람들한테도 말이에요 — visibility 실패예요. Complexity와는 달라요. Opacity는 뭐가 숨겨져 있는지 about이고, Complexity는 구조가 얼마나 복잡한지 about이어요.",
+  "zones[1].def": "시스템이 human approval 없이 결정하고 스스로 행동해요 — independence-of-action 위험이에요. Automation과는 다르긴 해요. Autonomy는 누가 call하는지 about인데, Automation은 누가 손으로 일했는지 about이어요.",
+  "zones[2].def": "Continual learning과 retraining이 시스템을 그 원래 목표에서 떨어지게 할 수 있고, 조용히 이미 가졌던 capabilities을 잃게 할 수 있어요.",
+  "zones[3].def": "AI가 한때 사람이 손으로 했던 task와 decision을 인수하고, 인간 팀이 할 수 있는 scale을 초과해요 — over-reliance and workforce-disruption 위험을 올려요. 시스템 자신의 independent judgment과는 구별돼요.",
+  "zones[4].def": "성능은 그만큼 좋아요. 뒤에 있는 training data만큼요 — 간격, shift, 그리고 시스템이 배운 것에서 inherit한 결함에 brittle이예요.",
+  "zones[5].def": "AI는 인간이 real time에 review할 수 있는 것보다 훨씬 빠르고 훨씬 많은 instance에 걸쳐 행동해요. 그래서 작은 오류가 누군가 알아차리기 전에 거대한 오류가 될 수 있어요.",
+  "zones[6].def": "결과는 fixed rule이 아니라 가능한 답의 distribution에서 나와요. 같은 input이 매번 다른 output을 할 수 있어요.",
+  "zones[7].def": "그렇게 많이 상호작용하는 layer와 parameter가 있어서 개발자들도 decision path를 trace할 수 없어요 — structural failure예요. Opacity와는 달라요. Complexity는 구조가 얼마나 복잡한지 about인데, Opacity는 뭐가 숨겨져 있는지 about이어요."
+ },
+ "i-uq-01": {
+  "label": "은행이 신경망이 이 loan 신청자를 거절한 이유를 regulator에게 말할 수 없어요.",
+  "why": "모델의 내부 논리에 대한 visibility가 없어요. Complexity와는 다르긴 해요. Complexity는 구조가 따라가기에 너무 복잡한데, Opacity는 전혀 안에 못 본다는 거예요."
+ },
+ "i-uq-02": {
+  "label": "senior manager가 warehouse-ordering 모델이 비용이 많이 드는 실수를 하면 나중에 왜 그런 일이 벌어졌는지 아무도 설명할 수 없을 거라고 경고해요.",
+  "why": "불평은 reasoning이 숨겨져 있다는 거고, 모델이 structurally intricate하다는 게 아니에요. 이 zone이 track하는 것과 같은 black-box gap이지, Complexity의 structural한 거 아니에요."
+ },
+ "i-uq-03": {
+  "label": "content moderator가 절대 공개되지 않은 rules 아래에서 post를 제거하고, poster는 어떤 rule이 적용되었는지 알아낼 방법이 없어요.",
+  "why": "존재하지만 영향을 받는 사람들에게 절대 surface되지 않는 rule은 이 zone의 정의하는 failure예요. Hidden reasoning이지, follow할 수 없을 정도로 structurally intricate한 구조가 아니예요."
+ },
+ "i-uq-04": {
+  "label": "자동 운전 car가 dense한 downtown traffic을 navigate하고 steering, braking, routing call을 모두 스스로 해요. 개입할 사람이 준비돼 있지 않아요.",
+  "why": "높은 independence of action이 높은 potential harm와 paired된 건 이 zone의 signature pairing이예요. Automation과는 달라요. Automation은 누가 손으로 일했는지 about인데, Autonomy는 누가 call하는지 about이어요."
+ },
+ "i-uq-05": {
+  "label": "trading bot은 millisecond 단위로 주식을 사고팔아요. 어떤 individual trade도 execute 전에 사람이 confirm하지 않아요.",
+  "why": "Human approval를 기다리지 않고 결정하고 행동하는 independence of action이 이 zone이 track하는 거예요. Trade가 빠르게 일어나든 안 하든 상관없어요. Automation과는 다르긴 해요. Automation은 사람이 손으로 trade를 했었는지에 대한 거지, 각각의 트레이드에 누가 sign off하는지가 아니예요."
+ },
+ "i-uq-06": {
+  "label": "hiring tool이 résumé를 screen하고 후보자를 interview나 rejection으로 옮겨요. Recruiter가 절대 call을 review하지 않아요.",
+  "why": "Concern은 decision이 human sign-off 없이 나갔다는 거예요 — control-and-accountability gap예요. Task가 사람이 손으로 하던 것에서 사라진 것과는 아니어요(그건 Automation 쪽이예요)."
+ },
+ "i-uq-07": {
+  "label": "recommender가 new product catalogue에 retrain한 후 조용히 이전에 가진 skills를 잃어버려요. Duplicate listings를 flagging하는 것처럼요.",
+  "why": "이건 catastrophic forgetting이예요. System이 new data에서 relearn할 때마다 그 original capabilities에서 drifting하는 risk-multiplier 버전이예요. 진짜 위험이지만 never a zone of its own이어요."
+ },
+ "i-uq-08": {
+  "label": "은행의 fraud-detection 시스템이 최근 transaction에 스스로 retrain하고 정상적인 purchase의 큰 numbers을 block하기 시작해요.",
+  "why": "Retrain한 후에 original goal에서 drift — governance 응답은 monitoring, update의 pre-deployment testing, drift tracking이예요. one-time launch review가 아니라요."
+ },
+ "i-uq-09": {
+  "label": "출시 6개월 후 dosage-recommendation tool의 suggestions가 조용히 shift해요. Labeling error를 포함하는 hospital data에 retrain했기 때문이예요.",
+  "why": "Retraining이나 new-data exposure 후에 behavior가 변하는 게 이 zone의 tell이예요. Fix는 continuous monitoring, drift detection, live로 가기 전의 approval gate예요."
+ },
+ "i-uq-10": {
+  "label": "call center의 ticket triage는 한때 사람이 각 request를 읽으면서 handle했는데, 이제 시스템이 start-to-finish로 resolve해요. 아무도 queue를 touching하지 않아요.",
+  "why": "이건 labor-replacement axis예요. 한때 사람이 손으로 execute했던 task가 이제 시스템이 volume으로 execute해요. Autonomy와는 달라요. Autonomy는 누가 call하는지 about인데, 여기는 누가 손으로 일하는지예요."
+ },
+ "i-uq-11": {
+  "label": "customer-service tool의 widespread rollout이 call center의 대부분 staff의 필요를 제거하고, local job market을 unsettle해요.",
+  "why": "Human labor를 replace하는 것에서의 workforce와 economic disruption이 이 zone의 societal cost예요. Autonomy의 control-and-accountability framing과는 다른 governance concern이예요."
+ },
+ "i-uq-12": {
+  "label": "claims system이 올바르게 수천 case를 resolve한 후 adjuster가 flagged denial을 double-check하는 걸 멈추고 그게 recommend하는 대로 approve하기 시작해요.",
+  "why": "시스템이 produce하는 것에 대한 over-reliance — rubber-stamping instead of critically reviewing — 이게 이 zone이 catch하기 존재하는 governance risk예요. System의 자신의 independent decision-making에 대한 human 응답이 아니예요. 그건 Autonomy의 위험이예요."
+ },
+ "i-uq-13": {
+  "label": "sentiment model은 training 중에 public opinion을 정확하게 predict했는데, major event가 training data가 절대 capture하지 않은 그런 일이 벌어진 후 wildly off로 가요.",
+  "why": "World가 training data가 capture한 것에서 shift될 때의 brittleness가 이 zone의 core failure예요. Model은 오직 좋아요. 배운 것만큼 좋아요."
+ },
+ "i-uq-14": {
+  "label": "skin-type predictor가 대부분 lighter skin tone에서 training photo를 배우고 다른 모든 사람에게 부정확한 조언을 줘요.",
+  "why": "Model은 training data에 represented된 population만큼 perform해요. Training data가 missing한 gap이예요. Structural이나 visibility 문제가 아니어요."
+ },
+ "i-uq-15": {
+  "label": "credit-scoring model이 identical financial profile을 가진 다른 사람들보다 immigrant applicant에게 loan을 더 높은 비율로 deny해요.",
+  "why": "Training data가 historical discrimination을 carry했고 model이 그걸 reproduce했어요. 이 zone에서 가장 systemic failure mode예요. Root cause를 fix하지 않고 model을 fix하면 untouched가 남아요."
+ },
+ "i-uq-16": {
+  "label": "한 product listing의 mispricing error가 millions of page에 replicate되고 아무도 알아차리기 전에요.",
+  "why": "Tiny error가 machine pace와 volume으로 multiplied되고 누군가 step in할 수 있기 전에 human review와 regulatory response를 outpace해요. 이 zone의 signature failure예요."
+ },
+ "i-uq-17": {
+  "label": "Surveillance camera가 entire city의 real-time video feed를 instantly process하고 per minute 당 thousands of 'unusual activity'를 flag해요.",
+  "why": "Human reviewer가 keep up할 수 있는 것을 넘는 volume과 pace가 이 zone의 위험을 다르게 만들어요. Problem은 system이 reasoning badly하는 게 아니라 throughput이예요."
+ },
+ "i-uq-18": {
+  "label": "hospital의 patient-deterioration tool이 continuous, high-volume prediction을 every ward에 걸쳐 실행해요. Single miscalibration이 hours 안에 system-wide alarm storm으로 snowball해요.",
+  "why": "Rapid, high-volume output이 단순한 miscalibration을 staff가 포착할 수 있기 전에 system-wide problem으로 turn하는 거예요. Throughput이 risk multiplier이고, underlying logic이 아니에요."
+ },
+ "i-uq-19": {
+  "label": "같은 prompt가 consecutive day에 다른 investment recommendation을 받아요. 요청에 대한 다른 게 없어요.",
+  "why": "Weighted spread of possible answer로부터 sample된 output보다는 one fixed rule을 follow하는 것이 specific result에 대한 definitive explanation을 주기 어렵게 만들어요. 근데 이건 audit이 불가능하다는 뜻은 아니예요. Recorded wrong answer가 있거든요."
+ },
+ "i-uq-20": {
+  "label": "한 system이 checkout page에서 항상 같은 order의 같은 sales tax를 계산해요. 같은 page의 두 번째 system은 매번 page가 reload될 때마다 약간 다른 product를 suggest해요.",
+  "why": "Tax engine은 deterministic — same output for same input 항상 — recommender는 매번 weighted spread의 possible output에서 draw해요. Only the second behavior가 이 zone에 속해요."
+ },
+ "i-uq-21": {
+  "label": "chatbot이 같은 dessert question을 3번 따로 묻고 3개 다른 답을 줘요. Each one은 one fixed rule을 따르지 않고 plausible option의 weighted list에서 drawn돼요.",
+  "why": "Weighted spread의 possible answer에서 sampling하는 게 이 zone이 govern하는 거예요. Fixed truth로 any one answer를 treating이 아니라 confidence calibration과 expectation setting이 fix예요."
+ },
+ "i-uq-22": {
+  "label": "Reviewer가 model의 millions of interacting parameter 중 어느 것이 actual로 specific decision을 drove했는지 더이상 trace할 수 없어요.",
+  "why": "이건 internal structure에 대한 거예요 — trace할 수 없을 정도로 많은 layer와 parameter —reasoning이 view에서 hidden되어 있다는 게 아니예요. 이건 Opacity와의 boundary예요. Opacity는 visibility problem인데, 여기는 structural한 거예요."
+ },
+ "i-uq-23": {
+  "label": "contract-analysis model이 한 번에 dozen jurisdiction을 weigh해야 돼요. Legal language와 requirement가 각각 다르고, 아무 single reviewer도 whole logic을 head에 hold할 수 없어요.",
+  "why": "Structural intricacy — trace end to end할 수 없을 정도로 많은 interacting factor — 이게 이 zone을 define하는 거예요. Model이 simply reasoning을 show하기를 refuse하는 것과는 달라요."
+ },
+ "i-uq-24": {
+  "label": "delivery-routing model의 optimization logic이 그렇게 intricate하게 grow해서 engineer가 더이상 troubleshoot할 수 없어요. 왜 그게 한 route를 다른 것보다 골랐는지 말이예요.",
+  "why": "그 사람들도 이해 못할 정도로 intricate한 intricacy가 이 zone이 track하는 structural failure예요. Opacity의 visibility failure의 twin예요. 명시적으로 stated돼서 둘이 절대 confused 안 돼요."
+ }
+}

@@ -1,0 +1,50 @@
+{
+ "rhp-01": {
+  "a.text": "A empresa adiciona validação de resultados e revisão humana a um modelo de sinistros, reduzindo a taxa de negações incorretas.",
+  "a.why": "A probabilidade do dano efetivamente diminui. A redução é o único tratamento que melhora a situação da pessoa afetada.",
+  "b.text": "A empresa compra uma apólice de seguro que cobre o custo de sinistros negados incorretamente, mantendo o modelo inalterado.",
+  "b.why": "O requerente é negado à mesma taxa; apenas a folha de balanço da empresa é protegida. O seguro nunca é um controlo."
+ },
+ "rhp-02": {
+  "a.text": "Após avaliação, a funcionalidade de inferência emocional é cancelada e removida do roadmap.",
+  "a.why": "A atividade para, então a exposição vai para zero. A prevenção é o único tratamento sem risco residual para registar.",
+  "b.text": "Após avaliação, a funcionalidade de inferência emocional é lançada com limiares de confiança, avaliação por subgrupo e revisão humana dos casos com baixa confiança.",
+  "b.why": "A atividade continua com menor probabilidade de dano. A mitigação substancial continua sendo redução, e o risco residual ainda precisa de um responsável."
+ },
+ "rhp-03": {
+  "a.text": "O pipeline de implementação recusa promover um modelo cuja avaliação de equidade regrediu além de um limiar.",
+  "a.why": "A regra executa em cada lançamento sem que ninguém escolha aplicá-la, então a pressão do prazo não pode erosionar isso.",
+  "b.text": "A lista de verificação de lançamento requer que o gestor de lançamento confirme que a avaliação de equidade não regrediu.",
+  "b.why": "Intenção idêntica, aplicada pela diligência humana. Esta é a situação mais comum de excesso de atribuição em avaliações de risco de IA."
+ },
+ "rhp-04": {
+  "a.text": "A capacidade do agente de emitir reembolsos é completamente removida do seu conjunto de ferramentas.",
+  "a.why": "Sem capacidade, sem modo de falha, e nada deixado para monitorizar. A eliminação é o nível superior porque retira todo o ramo da árvore de riscos.",
+  "b.text": "O agente mantém a sua ferramenta de reembolso, com um limite rígido de um reembolso por sessão e um limite de valor aplicado pela ferramenta.",
+  "b.why": "Uma restrição técnica forte que ainda deixa uma exposição delimitada — e deixa o próprio limite como algo que pode ser configurado incorretamente."
+ },
+ "rhp-05": {
+  "a.text": "O assistente deteta e bloqueia entradas com aparência confidencial antes de serem enviadas para o modelo.",
+  "a.why": "O sistema evita a divulgação independentemente do que o utilizador faz. O ónus está na parte capaz de o suportar.",
+  "b.text": "O assistente exibe um aviso pedindo aos utilizadores que não colem informações confidenciais.",
+  "b.why": "O mesmo risco, com o ónus transferido para o utilizador. Nível mais fraco, e frequentemente o único implementado."
+ },
+ "rhp-06": {
+  "a.text": "O comité de risco regista o risco residual, confirma que está dentro do apetite, designa um responsável e define uma data de revisão.",
+  "a.why": "A aceitação é uma decisão afirmativa com autoridade, um responsável e um ponto de revisão. Esse registo é o que a distingue da negligência.",
+  "b.text": "O risco residual é conhecido pela equipa de implementação, não está no registo de riscos, e ninguém acima da equipa foi informado.",
+  "b.why": "O silêncio não é aceitação. Sem a autoridade correta decidindo, não existe tratamento nenhum — apenas exposição que ninguém se apropriou."
+ },
+ "rhp-07": {
+  "a.text": "Um resumidor de geração livre sobre notas clínicas é substituído por um resumidor extrativo que apenas pode citar texto de origem.",
+  "a.why": "O mecanismo de fabricação é trocado por um incapaz de fabricar, enquanto o propósito sobrevive. Redesenho supera tuning.",
+  "b.text": "O mesmo resumidor de geração livre é mantido, com a temperatura reduzida e uma instrução de fundamentação adicionada ao prompt.",
+  "b.why": "O mecanismo que pode fabricar permanece intacto e meramente desencorajado. Útil, e estruturalmente mais fraco do que remover a capacidade."
+ },
+ "rhp-08": {
+  "a.text": "A recuperação aplica os direitos de acesso do utilizador requisitante, então documentos não autorizados nunca são devolvidos.",
+  "a.why": "O dano não pode ocorrer. A prevenção é o que reduz a probabilidade; tudo o resto reduz apenas a duração ou o impacto.",
+  "b.text": "Uma auditoria trimestral amostra respostas e relata quaisquer que citarem documentos que o utilizador não deveria ter visto.",
+  "b.why": "A divulgação já aconteceu, até três meses atrás. A detecção limita o impacto e é rotineiramente confundida com prevenção nos catálogos de controlo."
+ }
+}

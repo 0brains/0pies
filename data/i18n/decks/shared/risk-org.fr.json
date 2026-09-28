@@ -1,0 +1,74 @@
+{
+ "risk-org": {
+  "hint": "Déplacez chaque activité sur la ligne qui devrait l'exécuter. Le test est l'indépendance : qui peut corriger ses propres devoirs, et qui ne peut pas.",
+  "note": "Les lignes concernent l'indépendance, non la séniorité ou l'effectif. Une fonction de deuxième ligne qui rend compte à l'équipe qu'elle supervise est une fonction de première ligne portant un badge différent.",
+  "zones[0].def": "Possède et gère le risque au quotidien : les équipes qui construisent, déploient et exploitent le système.",
+  "zones[1].def": "Établit la politique, conseille, conteste et surveille — risque, conformité, droit, une fonction de gouvernance de l'IA. Indépendant de la livraison, pas de la gestion.",
+  "zones[2].def": "Audit interne. Assurance indépendante au conseil sur le fait que les deux premières lignes fonctionnent réellement.",
+  "zones[3].def": "Établit l'appétence, tient la responsabilité ultime, et est le seul organe qui peut accepter les risques au-delà des limites déléguées."
+ },
+ "ro-01": {
+  "label": "L'équipe d'ingénierie exécute la suite d'évaluation d'équité avant de promouvoir un modèle en production.",
+  "why": "L'exécution des contrôles dans le processus de livraison est un travail de première ligne. Le faire bien ne le rend pas assurance, car l'équipe évalue sa propre production."
+ },
+ "ro-02": {
+  "label": "Le propriétaire du produit enregistre un nouveau risque dans le registre et propose un traitement.",
+  "why": "L'identification des risques et la gestion au quotidien relèvent des personnes les plus proches de l'activité. Le registre leur appartient de le remplir, pas à la fonction risque."
+ },
+ "ro-03": {
+  "label": "L'équipe des opérations surveille les tableaux de bord de dérive de production et déclenche un incident lorsque les seuils sont dépassés.",
+  "why": "Exploiter un contrôle, y compris un contrôle détectif, est une première ligne. La deuxième ligne demande si le seuil est correct ; la première ligne agit quand il se déclenche."
+ },
+ "ro-04": {
+  "label": "L'équipe data science documente les limitations du modèle et l'usage prévu dans la fiche du modèle.",
+  "why": "Produire la documentation est une activité de construction. Vérifier si elle répond à la politique est le travail d'une autre ligne."
+ },
+ "ro-05": {
+  "label": "La fonction de gouvernance de l'IA rédige la politique définissant quels cas d'usage nécessitent une évaluation d'impact.",
+  "why": "Établir le cadre et les normes dans lesquels la première ligne doit travailler est l'activité de deuxième ligne définissante."
+ },
+ "ro-06": {
+  "label": "La conformité examine une évaluation d'impact complétée et conteste l'évaluation du risque résiduel de l'équipe.",
+  "why": "Le défi indépendant du jugement de la première ligne est la deuxième ligne. C'est consultatif et de surveillance, et ce n'est pas une assurance au conseil."
+ },
+ "ro-07": {
+  "label": "Le département juridique conseille qu'un déploiement proposé relève d'une zone Annex III et attire donc des obligations de haut risque.",
+  "why": "Les conseils spécialisés qui limitent ce que la première ligne peut faire sont de la deuxième ligne. La décision de procéder reste celle de la première ligne, dans le cadre de la politique."
+ },
+ "ro-08": {
+  "label": "La fonction risque maintient le registre d'entreprise et signale l'exposition cumulée aux risques d'IA à l'exécutif.",
+  "why": "L'agrégation, la surveillance et le reporting entre les premières lignes est de la surveillance de deuxième ligne. Elle repose sur les données de première ligne, ce qui est précisément pourquoi la troisième ligne existe."
+ },
+ "ro-09": {
+  "label": "L'audit interne examine si le processus d'approbation du modèle a été suivi pour chaque version de l'année dernière.",
+  "why": "Tester si les contrôles ont fonctionné comme prévu, rétrospectivement et indépendamment, est du ressort de l'audit interne."
+ },
+ "ro-10": {
+  "label": "Un examen indépendant rapporte au comité d'audit que le processus de défi de la deuxième ligne n'est pas documenté.",
+  "why": "La troisième ligne audite la deuxième ligne ainsi que la première, et rend compte au conseil plutôt qu'à la gestion — cette ligne de rapport est ce qui la rend indépendante."
+ },
+ "ro-11": {
+  "label": "Le travail d'assurance est planifié selon un cycle basé sur les risques et son champ d'application est convenu avec le comité d'audit, pas avec les équipes auditées.",
+  "why": "Le champ d'application défini en dehors de la gestion est la caractéristique structurelle qui sépare l'audit d'un examen de deuxième ligne."
+ },
+ "ro-12": {
+  "label": "Un examen conclut qu'un contrôle est documenté mais n'a jamais réellement été exécuté, et le signale vers le haut.",
+  "why": "Trouver l'écart entre l'efficacité documentée et opérationnelle est la valeur que l'audit ajoute. Aucune des deux premières lignes n'est positionnée pour l'auto-évaluer."
+ },
+ "ro-13": {
+  "label": "L'appétence pour les risques en matière de prise de décision automatisée est établie et publiée.",
+  "why": "L'appétence est une déclaration au niveau du conseil de la quantité de risque que l'organisation assumera. Tout ce qui suit est l'étalonnage par rapport à celle-ci."
+ },
+ "ro-14": {
+  "label": "Un risque résiduel dépassant la limite déléguée est escaladé et formellement accepté au sommet de l'organisation.",
+  "why": "Seul l'organe détenant l'autorité peut accepter au-delà des limites déléguées. L'acceptation ailleurs n'est pas l'acceptation ; c'est une exposition non enregistrée."
+ },
+ "ro-15": {
+  "label": "Un cadre responsable est désigné pour le système de gestion de l'IA, avec l'autorité et les ressources pour le faire fonctionner.",
+  "why": "Les normes de système de gestion exigent une responsabilité de leadership nommée. Une fonction de gouvernance sans propriétaire exécutif a une responsabilité sans autorité."
+ },
+ "ro-16": {
+  "label": "La décision est prise de retirer un système déployé après que l'assurance a rapporté que son risque ne peut pas être ramené dans l'appétence.",
+  "why": "Le retrait contre les intérêts commerciaux est une décision que seul le niveau responsable peut prendre, c'est pourquoi l'itinéraire d'escalade doit exister avant qu'il ne soit nécessaire."
+ }
+}

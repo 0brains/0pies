@@ -1,0 +1,62 @@
+{
+ "wp-01": {
+  "a.text": "support tickets에서 모든 product name, person, 그리고 date를 list해요.",
+  "a.why": "Entities는 누가/무엇이 언급되는지를 identify해요 — people, dates, organizations (histack: '특정한 것들을 categorizes').",
+  "b.text": "같은 tickets에서, customers가 positive, negative, 또는 neutral을 느끼는지 결정해요.",
+  "b.why": "Opinion polarity는 sentiment예요. 시험의 #1 confused pair (17 co-occurrences)예요."
+ },
+ "wp-02": {
+  "a.text": "agents이 conversation을 search할 수 있도록 call-center recording을 transcribe해요.",
+  "a.why": "Audio in, text out — recognition. 'Transcribe'는 giveaway verb예요.",
+  "b.text": "navigation app이 en-US-Ava neural voice를 사용해 turn-by-turn directions을 대중에게 읽어내보내요.",
+  "b.why": "Text in, audio out — synthesis. SSML 및 en-US-Ava:DragonHDLatestNeural 같은 voice names은 synthesis에만 속해요."
+ },
+ "wp-03": {
+  "a.text": "conference app이 French speaker를 listen하고 audience를 위해 live English captions를 produce해요.",
+  "a.why": "하나의 언어에서 speech를 recognizing하고 다른 것에서 render하는 것은 translation이에요. 이 pair의 시험 tell (audio-in, different-language-out)이에요.",
+  "b.text": "같은 app은 또한 front row의 hearing-impaired attendee를 위해 same-language French captions를 produce해요.",
+  "b.why": "Audio in, same-language text out은 plain speech-to-text예요. language crosses가 없으므로, translate할 것이 없어요."
+ },
+ "wp-04": {
+  "a.text": "photographed equipment label에 인쇄된 serial number를 extract해요.",
+  "a.why": "OCR/Read는 image에 present인 literal text를 extracts해요. 'extract readable text from an image'는 시험 stem이에요.",
+  "b.text": "사진이 show하는 것에 대한 one-sentence natural-language description을 generate해요.",
+  "b.why": "Captioning (VisualFeatures.CAPTION)은 scene을 describe해요. 그것은 그 내에서 text를 read하지 않아요."
+ },
+ "wp-05": {
+  "a.text": "scanning app이 photographed envelope의 printed address block을 structured text fields로 읽어요.",
+  "a.why": "OCR는 existing pixels을 text로 변환해요. input은 image이고 output은 text예요.",
+  "b.text": "design tool이 prompt 'a flat icon of a blue rocket'을 가져와 그것이 절대 존재하지 않았던 brand-new PNG를 produce해요.",
+  "b.why": "Image generation (client.images.generate with gpt-image-1 / DALL·E)은 반대 방향으로 실행돼요. text prompt in, synthesized pixels out. 이것은 시험의 direction-flip trap on this pair예요."
+ },
+ "wp-06": {
+  "a.text": "각각의 uploaded photo이 'defective part' 또는 'good part'인지 결정해요.",
+  "a.why": "Classification은 전체 image에 하나의 label을 assign해요.",
+  "b.text": "conveyor image의 모든 part이 sit하는 곳을 bounding boxes로 mark해요.",
+  "b.why": "Per-object bounding boxes는 시험의 detection을 위한 tell이에요. classic vision confusion이에요."
+ },
+ "wp-07": {
+  "a.text": "reviews의 batch에서 ['pricing', 'battery life', 'customer support']를 return해요.",
+  "a.why": "Key phrases는 important terms의 list를 반환해요. new prose는 written이 아니에요.",
+  "b.text": "같은 reviews를 condense하여 전반적인 feedback을 capturing하는 세 개의 fresh sentences로 만들어요.",
+  "b.why": "Summarization은 new condensed sentences를 write해요. output-shape contrast는 corpus가 test하는 것이에요(pair #14)."
+ },
+ "wp-08": {
+  "a.text": "lightweight app이 customer messages에서 모든 email address 및 phone number를 find하고 저장되기 전에 redact해야 해요.",
+  "a.why": "PII detection은 phone numbers 및 email addresses 같은 sensitive personal data를 identify하고 redact할 수 있는 전용 capability예요(시험은 이를 'the most direct privacy-focused capability'로 부르요).",
+  "b.text": "같은 app은 또한 messages에서 언급된 모든 person, organization, 그리고 location을 tag해 searchable index를 만들어요.",
+  "b.why": "Entity recognition은 people, places, organizations로의 categories에 걸쳐 더 넓은 extraction이에요. PII detection이 dedicated redaction-focused 기능이므로 이는 아니에요."
+ },
+ "wp-09": {
+  "a.text": "meeting transcript이 recorded audio의 각 section을 올바른 participant에게 attribute해야 해요.",
+  "a.why": "Diarization은 incoming audio 내에서 speakers를 identify하고 separate하며, transcript의 어느 부분을 누가 말했는지를 labeling해요(시험은 이를 'audio speaker attribution'으로 부르요).",
+  "b.text": "transcript가 finalized되면, narrator voice는 meeting summary를 podcast feed에 대해 대중에게 읽어내보내요.",
+  "b.why": "Synthesis는 text를 human-like voice output으로 변환해요. 이것은 existing audio를 diarizing하는 것과 반대의 pipeline stage예요."
+ },
+ "wp-10": {
+  "a.text": "developer는 hearing-impaired participants를 위해 video conference의 real time, same language에서 live audio captioning이 필요해요.",
+  "a.why": "Azure AI Speech는 live audio captioning을 위한 real-time speech-to-text pipeline을 제공해요. cross-language text conversion과는 구별되며, standard service예요.",
+  "b.text": "retailer는 written product descriptions를 English에서 20개의 다른 languages로 text로 convert해야 해요.",
+  "b.why": "Azure AI Translator는 text에 대한 languages 간의 neural machine translation을 제공해요. 시험의 contrast는 audio-pipeline service vs cross-language text service이며, workload overlap이 아니에요(pair #29)."
+ }
+}

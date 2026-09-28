@@ -1,0 +1,84 @@
+{
+ "iii-tb-01": {
+  "label": "Le tokenizer seul est testé pour gérer sans panne les entrées emoji.",
+  "why": "L'isolation d'un seul composant est tout le travail de cette discipline — le tokenizer traite l'entrée ou ne la traite pas, indépendamment de tout ce qui suit."
+ },
+ "iii-tb-02": {
+  "label": "Une fonction qui normalise la représentation de différents points de données est testée entièrement en isolation, avant d'être câblée à quoi que ce soit d'aval.",
+  "why": "Isoler un élément de base capte les erreurs quand elles coûtent le moins cher à corriger, avant qu'un défaut subtil ne s'étend sur des millions d'enregistrements et fausse discrètement les résultats — la discipline tient ici même si la fonction s'exécutera plus tard dans un pipeline plus large."
+ },
+ "iii-tb-03": {
+  "label": "Une routine de scoring personnalisée enfouie dans le pipeline est exécutée contre une poignée d'entrées connues et vérifiée ligne par ligne pour la bonne sortie, avant que le reste du système n'existe même pour l'appeler.",
+  "why": "Vérifier la sortie d'une routine contre des valeurs connues correctes, avant que le reste du système n'existe, est la porte la plus étroite et la plus précoce — distincte de la prochaine discipline, qui ne démarre que lorsque plusieurs pièces sont câblées ensemble."
+ },
+ "iii-tb-04": {
+  "label": "Le retriever, le modèle et l'interface utilisateur sont exercés ensemble bout à bout ; les défaillances émergentes n'apparaissent qu'à ce niveau.",
+  "why": "Les défaillances qui n'apparaissent qu'une fois que les composants s'exécutent ensemble sont la signature de cette discipline — aucune vérification d'un seul composant n'aurait pu les détecter."
+ },
+ "iii-tb-05": {
+  "label": "Les pièces d'un système d'inventaire passent proprement seules, puis tout recommence à sur-commander des produits liés à certains groupes démographiques une fois que chaque composant s'exécute ensemble.",
+  "why": "Le problème ne surgit que lorsque le système complet est combiné, donc la correction doit aussi être appliquée au niveau combiné — un examen composant par composant l'aurait complètement manqué."
+ },
+ "iii-tb-06": {
+  "label": "Un modèle d'approbation de crédit retourne des résultats différents sur du matériel différent, à cause de différences de précision en virgule flottante qui n'apparaissent que lorsque le système complet s'exécute bout à bout.",
+  "why": "L'écart est un sous-produit de la combinaison de composants sur du matériel réel — la réponse de gouvernance consiste à documenter la plage de variance et à définir des limites de décision acceptables, pas à la chasser de quelque pièce en isolation."
+ },
+ "iii-tb-07": {
+  "label": "Excellente précision sur les données sur lesquelles il a été entraîné, faible sur les enregistrements qu'il n'a jamais vus.",
+  "why": "C'est la vérification de généralisation — l'écart entre le comportement d'entraînement et le comportement sur des données jamais vues — distincte du test/ensemble de rétention, qui reste intact jusqu'à ce que le tuning soit terminé puis fournit l'estimation d'erreur finale et non biaisée du modèle."
+ },
+ "iii-tb-08": {
+  "label": "Un modèle atteint une précision quasi parfaite sur son ensemble d'entraînement, puis performe inconsistamment une fois que de nouveaux groupes de patients en dehors de cet ensemble sont traités.",
+  "why": "L'écart entre l'entraînement et les données non vues est exactement ce que cette discipline existe pour détecter ; une métrique d'équité comparerait plutôt les taux d'erreur entre groupes protégés sur le même ensemble de données, ce que ce scénario ne fait jamais."
+ },
+ "iii-tb-09": {
+  "label": "Les prédictions d'un modèle varient énormément selon la tranche des données d'entraînement qu'il voit ; une autre bouge à peine de la moyenne peu importe ce qu'on y met.",
+  "why": "Les grandes variations entre tranches d'entraînement par rapport à l'indifférence plate aux données sont les deux signatures d'échec que cette discipline observe pendant le développement, bien avant qu'on ne parle d'un nombre de performance final."
+ },
+ "iii-tb-10": {
+  "label": "La disparité de temps de réponse est mesurée entre régions utilisateur sous charge.",
+  "why": "L'équité du temps de traitement transforme une exigence métier/équité en une métrique mesurable, prédéfinie — distincte d'une vérification de retournement d'attribut protégé, qui observe le contenu de sortie, pas la latence."
+ },
+ "iii-tb-11": {
+  "label": "L'échantillonnage statistique et les vérifications d'analyse décisionnelle sont exécutés contre les sorties du système pour confirmer qu'elles respectent les cibles de précision et de fiabilité fixées au début du projet.",
+  "why": "L'échantillonnage statistique et l'analyse décisionnelle sont des façons reconnues de tester si un système d'IA responsable atteint ses cibles ; scorer un problème par probabilité fois gravité est un outil de priorisation de la gestion des risques, pas une façon de tester le système lui-même."
+ },
+ "iii-tb-12": {
+  "label": "Les chiffres de juste traitement et fiabilité qu'un projet a approuvés il y a des mois sont vérifiés contre ce que le système produit réellement aujourd'hui, en utilisant les mêmes mesures que tout le monde a acceptées.",
+  "why": "Tenir les résultats aux mesures convenues au départ, pas à n'importe quel chiffre qui semble le mieux, c'est ce qui tient cette discipline honnête et empêche les équipes de silencieusement échanger une mesure flatteuse."
+ },
+ "iii-tb-13": {
+  "label": "Un tiers enquête sur le fait qu'un dossier spécifique d'un patient était dans l'ensemble d'entraînement.",
+  "why": "Un tiers apprenant si un enregistrement spécifique était dans l'ensemble d'entraînement est une défaillance de test de sécurité — distincte du contrôle de généralisation, qui ne se soucie que de la précision sur les données non vues, pas qui était dans l'ensemble d'entraînement."
+ },
+ "iii-tb-14": {
+  "label": "Les vérifications de style pénétration recherchent des façons qu'un attaquant pourrait voler les poids du modèle ou reconstruire des pièces des données d'entraînement.",
+  "why": "Cibler le vol de poids et la reconstruction des données d'entraînement est une vue du point de vue d'un attaquant, distincte d'un contrôle de généralisation, qui ne considère jamais si quelqu'un essaie d'extraire quelque chose du modèle."
+ },
+ "iii-tb-15": {
+  "label": "Les testeurs de pénétration trouvent que des entrées soigneusement élaborées peuvent retourner le diagnostic d'un modèle déjà précis dans environ un cas sur huit.",
+  "why": "Des entrées adversariales élaborées causant une mauvaise classification est un résultat de test de sécurité ; la réponse de gouvernance consiste à le documenter comme une limitation connue et à ajouter une validation d'entrée et une détection d'anomalies, pas à l'écarter parce que la précision clinique atteint toujours la cible."
+ },
+ "iii-tb-16": {
+  "label": "Attribut protégé retourné, tout le reste maintenu constant, sortie observée.",
+  "why": "Observer si le retournement d'un attribut protégé seul change la sortie est une vérification de juste traitement contrefactuel — distincte d'une sonde d'inférence d'appartenance, qui demande si un enregistrement était dans l'ensemble d'entraînement."
+ },
+ "iii-tb-17": {
+  "label": "Le dossier de conformité d'un hôpital montre que des vérifications de juste traitement ont été exécutées et enregistrées, plus un enregistrement que les décisions pouvaient être expliquées aux examinateurs — preuve que l'organisation a satisfait à son devoir de diligence.",
+  "why": "Enregistrer que les vérifications de juste traitement et d'explication ont réellement été exécutées est ce qui les transforme en preuve réglementaire défendable — distincte d'un journal d'audit de sécurité, qui documente la résistance aux attaques, pas la qualité du juste traitement ou de l'explication."
+ },
+ "iii-tb-18": {
+  "label": "La décision d'un modèle est traduite en termes qu'un clinicien peut réellement utiliser, pas seulement un score de probabilité.",
+  "why": "Traduire une décision en termes qu'une partie prenante peut utiliser, plutôt que de la laisser comme un simple score de probabilité, est la moitié de cette zone qu'un modèle boîte noire peut encore manquer même après avoir passé chaque nombre de précision et de juste traitement."
+ },
+ "iii-testing": {
+  "hint": "Demande ce que la scène teste, pas juste les données qu'elle utilise. La validation ici signifie une seule chose : le modèle généralise-t-il au-delà de ce sur quoi il a été entraîné. L'ensemble de données qui fournit l'estimation d'erreur finale et non biaisée d'un modèle est un concept différent, testé de front dans Pipeline Twins.",
+  "note": "Ce sont des contrôles au moment du développement et avant la sortie. Ce qui se passe après qu'un système passe en direct et reste direct est un tableau différent.",
+  "zones[0].def": "Vérification d'un seul composant du pipeline en lui-même — un tokenizer, une fonction de normalisation, une routine de scoring — avant qu'il ne soit jamais câblé à quoi que ce soit d'autre. Capture les erreurs quand elles coûtent le moins cher à corriger.",
+  "zones[1].def": "Exercer les composants ensemble bout à bout, en observant les défaillances qui ne surgissent qu'une fois que les pièces sont combinées — incompatibilités, goulets, ou biais qu'aucun composant individuel n'a montré seul.",
+  "zones[2].def": "Vérification du fait que le modèle entraîné généralise au-delà des données sur lesquelles il a été entraîné : l'écart entre le comportement de l'ensemble d'entraînement et le comportement sur des données qu'il n'a jamais vues. Un contrôle au moment du développement contre le surapprentissage — pas le dernier mot du modèle sur la performance.",
+  "zones[3].def": "Mesure du système contre les mesures spécifiques, prédéfinies — précision, seuils de fiabilité et de juste traitement — qui traduisent les objectifs métier, éthiques et réglementaires du projet en chiffres que tout le monde a acceptés.",
+  "zones[4].def": "Test de savoir si le modèle peut être attaqué : poids volés, données d'entraînement reconstruites, sorties manipulées par des entrées élaborées. Résilience contre un compromis délibéré ou accidentel.",
+  "zones[5].def": "Vérification du fait que les résultats sont justes entre groupes protégés, et du fait qu'une décision peut être expliquée en termes significatifs pour les personnes qui doivent en dépendre."
+ }
+}

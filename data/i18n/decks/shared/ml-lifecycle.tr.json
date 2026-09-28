@@ -1,0 +1,25 @@
+{
+ "ml-lifecycle": {
+  "prompt": "Yaşam döngüsünü iş hedefinden üretime izlemesine göre sırayı koyun.",
+  "steps[0].label": "İş Hedefi Belirleme",
+  "steps[0].detail": "Aşağıdaki herşey bunu miras alıyor. İş hedefi olmadan modelin iyi olup olmadığını söylemek için hiçbir yol yok.",
+  "steps[1].label": "ML Problem Çerçeveleme",
+  "steps[1].detail": "Hedefi öğrenilebilir bir göreve çevir: neyin tahmin edildiği, nereden ve başarı olarak ne sayıldığı.",
+  "steps[2].label": "Veri Toplama",
+  "steps[2].detail": "Ham malzemeyi bir araya topla ve bağlantı ve izin verilen kullanımını güvenmek için oluşturulmadan önce belirle.",
+  "steps[3].label": "Veri Ön İşleme",
+  "steps[3].detail": "Temizle, katıl, tekrar deduplicate ve eksik değerleri işle, böylece model artefaktlar yerine sinyal öğrensin.",
+  "steps[4].label": "Özellik Mühendisliği",
+  "steps[4].detail": "Girdileri algoritmanın kullanabileceği temsillere şekille. Genellikle doğruluk üzerinde en büyük tek kaldıraç.",
+  "steps[5].label": "Model Eğitimi",
+  "steps[5].detail": "Eğitim bölümünde parametreleri uydur. Pahalı veri çalışmasından sonra, değil önce tekrarlamak için ucuz.",
+  "steps[6].label": "Hiperparametre Ayarlaması",
+  "steps[6].detail": "Model kendisi öğrenemeyeceği ayarlar için arayın, doğrulama verilerine karşı test değil değerlendir.",
+  "steps[7].label": "Model Değerlendirmesi",
+  "steps[7].detail": "Tutulan veriler ve iş metriğine karşı ölçü. Bu kapı, bir formalite değil.",
+  "steps[8].label": "Model Dağıtımı (Çıkarım ve Tahmin)",
+  "steps[8].detail": "Gerçek istekler için tahminleri sun, eğitim ile aynı ön işlem veya sonuçlar eşleşmeyecek.",
+  "steps[9].label": "Model İzlemesi",
+  "steps[9].detail": "Üretim içinde girdiler, çıktılar ve kaliteyi izle. Sapmanın ortaya çıktığı yer burası ve asla bitmez."
+ }
+}

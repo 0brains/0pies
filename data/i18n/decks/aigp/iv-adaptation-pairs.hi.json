@@ -1,0 +1,62 @@
+{
+  "iv-ap-01": {
+    "a.text": "संगठन के proprietary knowledge को additional training rounds के माध्यम से directly model के weights में train किया जाता है, model को जानता है का एक permanent part बन जाता है।",
+    "a.why": "Domain data को weights में bake करने का मतलब है कि model जो भी memorization या leakage risk उस data carries को inherit करता है — एक synthetic-data generator को इस तरह adapt किया गया production records पर अभी भी anonymization के बाद भी originals के traces leak कर सकता है, और student-specific data को इसी तरह use करने से अपना breach exposure create होता है।",
+    "b.text": "संगठन के proprietary knowledge को एक external, separately maintained store में रखा जाता है और केवल जब हर question पूछा जाता है तब ही pulled किया जाता है।",
+    "b.why": "इस knowledge के बारे में कुछ भी model द्वारा नहीं सीखा जाता — यह हर query के लिए fresh fetch किया जाता है, जो ठीक यही कारण है कि यह इस महीने के guidance को reflect कर सकता है single retraining run के बिना। यह adaptation choice यही determine करता है कि team को कौन सा assurance burden own करना पड़ेगा।"
+  },
+  "iv-ap-02": {
+    "a.text": "एक single answer ground करने के लिए current policy documents को fetch किया जाता है, जिसे एक human फिर पढ़ता है और act करता है।",
+    "a.why": "सिस्टम की job एक well-grounded answer produce करने पर बंद होती है; हर consequential action downstream अभी भी एक human का है।",
+    "b.text": "Multi-step task को अपने आप plan किया जाता है और booking और payment tools में actions execute किए जाते हैं, हर step में minimal human review के साथ।",
+    "b.why": "Action की autonomy, सिर्फ answer की autonomy नहीं, governance surface को यहाँ new बनाती है: जब एक deployer system को act करने देता है बजाय inform करने के, harmful या deceptive agent behavior के लिए direct accountability deployer पर आती है — इसके लिए action scoping, human-in-the-loop thresholds, और full action logs की जरूरत होती है, जिसकी एक purely retrieval-grounded assistant को कभी जरूरत नहीं है।"
+  },
+  "iv-ap-03": {
+    "a.text": "संगठन model के अपने weights और code को read, modify और redistribute कर सकता है, और इसे completely infrastructure पर चला सकता है जिसे यह control करता है।",
+    "a.why": "Inspectability पूरा trade है: तुम algorithm को audit कर सकते हो और एक vendor के roadmap पर depend करने से avoid कर सकते हो, लेकिन तुम licenses को check करने, training-data provenance और अपने security testing की internal burden को भी inherit करते हो।",
+    "b.text": "संगठन केवल एक API के माध्यम से model को call कर सकता है और कभी weights नहीं देखता, लेकिन vendor इसे support contracts, incident response और indemnities से back करता है।",
+    "b.why": "तुम inspection rights को contract-backed guarantees के लिए trade करते हो — और इस trade की strategic cost को इस path के top risk के रूप में record किया जाता है: एक बार जब workflows एक vendor के API के चारों ओर बनाए जाते हैं, बाद में दूर switch करना expensive हो जाता है।"
+  },
+  "iv-ap-04": {
+    "a.text": "Base model को compressed और reshaped किया जाता है — parameters pruned, precision reduced, एक lightweight adapter layered — edge या high-volume use के लिए cost और latency को cut करने के लिए।",
+    "a.why": "Artifact को इस तरह shrink या reshape करना quietly इसके decision boundaries को move कर सकता है और interpretability को reduce कर सकता है, इसलिए accuracy, fairness और robustness सभी को हर change के बाद re-check करना पड़ता है, unchanged carry over assume नहीं किया जा सकता।",
+    "b.text": "Vendor का model unmodified चलता है, ठीक वैसे ही ship किया गया, केवल human review और अन्य controls से backed जो इसके चारों ओर layered होते हैं।",
+    "b.why": "Artifact के बारे में कुछ नहीं changed है, इसलिए governance vendor के अपने documentation और compensating controls जैसे human review पर lean करता है न कि model की internals को re-validate करने पर।"
+  },
+  "iv-ap-05": {
+    "a.text": "एक credit-scoring system structured inputs से predict या classify करता है; इसके risks कुछ groups के विरुद्ध bias और accuracy हैं जो quietly degrade होती है जब underlying data drift करता है।",
+    "a.why": "Structured features से एक ज्ञात category को predict या classify करना यह profile का failure mode है — familiar bias और drift risks जो fairness testing और monitoring को catch करने के लिए built हैं।",
+    "b.text": "एक drafting assistant एक prompt से brand-new text, images या code produce करता है; इसके risks hallucination, copyright exposure और convincingly wrong output हैं।",
+    "b.why": "ऐसा content create करना जो पहले exist नहीं करता, एक completely अलग risk surface को open करता है — hallucination और provenance, न कि bias-and-drift profile जो एक prediction-only system को govern करती है।"
+  },
+  "iv-ap-06": {
+    "a.text": "एक vendor का model ठीक वैसे ही use किया जाता है जैसे delivered; team की job अपने performance और fairness standards के विरुद्ध validate करना और gaps को document करना है।",
+    "a.why": "Governance यहाँ लगभग पूरी तरह vendor transparency plus compensating controls पर lean करता है — team कभी model की internals को touch नहीं करता, इसलिए इसकी obligations validation और documentation पर बंद होती हैं।",
+    "b.text": "एक general-purpose model को organization के अपने labeled data पर retrain किया जाता है जब तक यह एक specific, desired behavior को reproduce नहीं करता।",
+    "b.why": "जिस क्षण एक organization model को retrain करता है, governance result को एक new system के रूप में treat करता है: fairness और robustness testing को scratch से repeat किया जाना चाहिए, और — एक vendor के model को delivered के रूप में use करने के compared — organization अब अपना increased legal liability carry करता है।"
+  },
+  "iv-ap-07": {
+    "a.text": "एक support chatbot written questions लेता है और केवल written answers produce करता है, कोई दूसरा input channel नहीं reason के लिए।",
+    "a.why": "Text-only in, text-only out — governance concerns यहाँ hallucination, biased phrasing और jailbreak-style prompt attacks हैं, जिनमें से कोई भी एक दूसरा modality involve नहीं करता।",
+    "b.text": "एक claims tool एक damage photograph को adjuster के written notes के साथ weigh करता है एक single combined judgment produce करने से पहले।",
+    "b.why": "Channels को combine करना एक risk add करता है जो एक text-only system कभी नहीं face करता: एक image और next में text के बीच false correlations, और show करने की जरूरत कि कौन सा input actually output को drive किया।"
+  },
+  "iv-ap-08": {
+    "a.text": "एक narrow classifier एक tight compute budget पर एक task handle करता है, quickly retrain करता है, और अपने outputs को inputs से trace करता है little effort के साथ।",
+    "a.why": "एक compact, narrow system re-test करने में सस्ता है और explain करने में आसान है — cost यह है कि एक बार जब environment उससे अधिक variable हो जाता है जिसके लिए यह build किया गया, underperform कर सकता है।",
+    "b.text": "एक broad foundation system कई tasks में generalize करता है जिसके लिए यह कभी specifically train नहीं किया गया, heavier compute governance और एक बड़ी attack surface की cost पर।",
+    "b.why": "Scale के माध्यम से खरीदी गई breadth का मतलब है कि system unfamiliar domains को zero-shot tackle कर सकता है, लेकिन इसे भी compute quotas, red-teaming और drift monitoring की जरूरत है जो एक narrow system को नहीं है।"
+  },
+  "iv-ap-09": {
+    "a.text": "हर source जिसे model एक session के दौरान drew किया गया, audit के लिए logged, और connected corpus से passing कोई भी personal data उससे पहले redact किया जाना चाहिए कि यह कभी model को show किया जाए।",
+    "a.why": "Audit logging और PII redaction एक external corpus में governance obligations हैं जो एक model के साथ live data pipeline attach के बिना exist ही नहीं करते — इस path की assurance burden weights में नहीं, plumbing में रहती है।",
+    "b.text": "Vendor का model ठीक वैसे ही use किया जाता है जैसे delivered, और एक working pilot के लिए fastest path चुना जाता है precisely क्योंकि कोई नया training data या pipeline पहले build होने की जरूरत नहीं है।",
+    "b.why": "Speed यहाँ पूरा appeal है — कोई retraining नहीं, कोई नया data plumbing नहीं — लेकिन governance इस speed को एक debt के रूप में treat करता है: model को high-risk assume किया जाता है जब तक इस organization के अपने performance और fairness standards के विरुद्ध validate नहीं किया जाता, क्योंकि इस deployment के साथ mind में build नहीं किया गया।"
+  },
+  "iv-ap-10": {
+    "a.text": "Same base model compression के बाद छोटा और चलाने में सस्ता आता है, बिना एक single नई fact जोड़े जाने के।",
+    "a.why": "यह path footprint को target करता है, knowledge को नहीं — लेकिन artifact को shrink या reshape करना अभी भी इसके decision boundaries को move कर सकता है, इसलिए accuracy और fairness को re-check करना पड़ता है भले ही कोई 'नया' सीखा नहीं गया।",
+    "b.text": "Same base model same size में आता है, लेकिन अब reliably एक specialist behavior को reproduce करता है जिसके पास कभी access नहीं था, curated examples से सीखा गया।",
+    "b.why": "यह path behavior और knowledge को target करता है, footprint को नहीं — और क्योंकि यह नई behavior organization के अपने data से सीखी गई, governance अब result को एक new system के रूप में treat करता है जिसके लिए testing की जरूरत है, न कि पुराने की एक resized copy।"
+  }
+}

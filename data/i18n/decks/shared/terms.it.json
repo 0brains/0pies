@@ -1,0 +1,53 @@
+{
+  "terms": {
+    "hint": "Trascina ogni definizione sul termine che definisce."
+  },
+  "terms-01": {
+    "label": "L'ampio campo della costruzione di sistemi che eseguono compiti associati all'intelligenza umana.",
+    "why": "L'AI è il campo ombrello: i sistemi esperti basati su regole, la visione artificiale, la robotica, l'apprendimento automatico e i modelli generativi possono tutti essere AI. L'apprendimento automatico è un modo per costruire AI, non un sinonimo dell'intero campo."
+  },
+  "terms-02": {
+    "label": "Un sottoinsieme di AI in cui i sistemi imparano i modelli dai dati invece di affidarsi solo alle regole esplicite.",
+    "why": "Ad esempio, un filtro spam può dedurre i modelli da messaggi etichettati piuttosto che richiedere a uno sviluppatore di enumerare ogni regola di spam. Il segno d'esame chiave è il miglioramento dai dati o dall'esperienza."
+  },
+  "terms-03": {
+    "label": "Un sottoinsieme di ML che utilizza reti neurali multistrato per imparare rappresentazioni complesse.",
+    "why": "Un modello di visione può imparare i bordi in strati iniziali, le forme in strati intermedi e gli oggetti in strati successivi. Si distingue dal machine learning più ampio per il suo uso di reti neurali profonde e tipicamente una necessità di dati e calcoli più grandi."
+  },
+  "terms-04": {
+    "label": "AI che crea nuovo contenuto come testo, immagini, audio, video o codice.",
+    "why": "Un modello di testo che elabora un'e-mail e un modello di diffusione che crea un'immagine sono generativi perché sintetizzano il nuovo output. Prevedere se un'e-mail esistente è spam è invece una classificazione discriminativa."
+  },
+  "terms-05": {
+    "label": "La rappresentazione imparata che mappa gli input alle previsioni o agli output generati.",
+    "why": "Dopo l'addestramento, il modello è l'artefatto utilizzato per l'inferenza. Ad esempio, un modello di prezzo della casa applica le relazioni apprese alle caratteristiche di una nuova proprietà per stimarne il prezzo."
+  },
+  "terms-06": {
+    "label": "La procedura utilizzata per imparare i modelli, ottimizzare un modello o eseguire un calcolo.",
+    "why": "La discesa del gradiente è un algoritmo di apprendimento, mentre la rete addestrata che produce è il modello. La distinzione è il processo rispetto all'artefatto imparato."
+  },
+  "terms-07": {
+    "label": "Una variabile di input o un attributo misurabile fornito a un modello.",
+    "why": "Per un modello di prezzo della casa, la superficie, il codice postale e il numero di camere da letto sono caratteristiche perché entrano nel modello come evidenza. Il prezzo di vendita è l'etichetta da prevedere, mentre i parametri sono valori interni che il modello impara durante l'addestramento."
+  },
+  "terms-08": {
+    "label": "La risposta target nota o desiderata allegata a un esempio di addestramento supervisionato.",
+    "why": "Nel rilevamento dello spam, la risposta di spam o non-spam di ogni e-mail di addestramento è la sua etichetta. Un'etichetta è l'obiettivo che il modello impara a prevedere; le caratteristiche sono le prove utilizzate per fare quella previsione."
+  },
+  "terms-09": {
+    "label": "Un valore, come un peso della rete neurale, imparato dai dati di addestramento.",
+    "why": "Un peso della rete neurale viene regolato automaticamente mentre l'addestramento riduce al minimo l'errore. I parametri vengono appresi dal modello, a differenza degli iperparametri come il tasso di apprendimento che i professionisti scelgono prima o durante l'addestramento."
+  },
+  "terms-10": {
+    "label": "Un'impostazione di addestramento o modello scelta al di fuori del processo di apprendimento, come il tasso di apprendimento o la profondità dell'albero.",
+    "why": "Gli esempi includono il tasso di apprendimento, la dimensione del batch, la profondità dell'albero e la forza di regolarizzazione. Queste impostazioni controllano l'addestramento o la struttura del modello e sono generalmente selezionate con i dati di convalida piuttosto che apprese come pesi del modello."
+  },
+  "terms-11": {
+    "label": "Il processo di regolazione dei parametri del modello per ridurre l'errore sugli esempi.",
+    "why": "Durante l'addestramento, il sistema confronta gli output con un segnale di apprendimento, calcola l'errore e aggiorna i parametri. Questa è la fase di apprendimento; l'inferenza utilizza il modello fisso risultante su nuovi input."
+  },
+  "terms-12": {
+    "label": "Utilizzare un modello addestrato per produrre una previsione, una decisione, un embedding o un risultato generato.",
+    "why": "Un modello di frode distribuito che valuta una nuova transazione con carta sta eseguendo l'inferenza. Nessun apprendimento del modello è richiesto per quella richiesta; il modello addestrato viene applicato a input precedentemente invisibile."
+  }
+}

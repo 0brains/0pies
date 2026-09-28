@@ -1,0 +1,74 @@
+{
+ "risk-rmf-functions": {
+  "hint": "Déplacez chaque activité sur sa fonction. Govern traverse tous ; Map établit le contexte, Measure quantifie, Manage agit.",
+  "note": "Govern n'est pas une phase qui se termine. Si une activité établit les conditions sous lesquelles les trois autres se produisent — culture, responsabilité, politique — c'est Govern, quand que cela se produise.",
+  "zones[0].def": "Cultiver une culture de gestion des risques : politiques, structures de responsabilité, rôles, capacités de la main-d'œuvre, surveillance des tiers. Coupe les trois autres.",
+  "zones[1].def": "Établir le contexte et encadrer les risques : objectif, cadre, acteurs, personnes touchées, capacités et limitations, interdépendances.",
+  "zones[2].def": "Analyser, évaluer, comparer et surveiller à l'aide de méthodes quantitatives et qualitatives, y compris les caractéristiques de fiabilité.",
+  "zones[3].def": "Allouer des ressources aux risques cartographiés et mesurés : prioriser, réagir, récupérer, communiquer, et agir sur les risques tiers et résiduels."
+ },
+ "rmf-01": {
+  "label": "L'organisation documente qui est responsable des décisions en matière de risque d'IA et à quel niveau chaque classe de décision peut être prise.",
+  "why": "Les structures de responsabilité sont l'activité GOVERN archétypale. Sans elles, les trois autres fonctions n'ont personne à qui rendre compte et personne pour escalader."
+ },
+ "rmf-02": {
+  "label": "Une politique d'IA est approuvée, alignée aux exigences légales, et son processus d'exception est défini.",
+  "why": "La politique et son itinéraire d'exception établissent les conditions sous lesquelles toute autre activité se produit. GOVERN est transversal, pas séquentiel."
+ },
+ "rmf-03": {
+  "label": "Le personnel travaillant sur les systèmes d'IA reçoit une formation spécifique au rôle et sa compétence est suivi.",
+  "why": "La capacité de la main-d'œuvre se situe carrément dans GOVERN. Un régime de mesure que personne n'est compétent pour exécuter produit des nombres sans assurance."
+ },
+ "rmf-04": {
+  "label": "Des processus sont établis pour surveiller les modèles et données tiers, y compris ce qui doit être obtenu des fournisseurs.",
+  "why": "GOVERN couvre explicitement la politique de surveillance des tiers. L'appliquer au risque d'un fournisseur spécifique sur un système spécifique est MANAGE."
+ },
+ "rmf-05": {
+  "label": "L'équipe documente l'objectif prévu du système, le cadre de déploiement et les catégories de personnes qu'il affectera.",
+  "why": "L'encadrement du contexte est tout l'intérêt du MAP. L'ignorer est comment un système est plus tard mesuré avec précision contre le mauvais objectif."
+ },
+ "rmf-06": {
+  "label": "Les capacités, limitations et hypothèses connues du système sont cataloguées, y compris où il ne doit pas être utilisé.",
+  "why": "MAP établit ce que le système est et n'est pas. La déclaration hors du champ d'application rédigée ici est ce par rapport à quoi l'évaluation et la surveillance sont jugées."
+ },
+ "rmf-07": {
+  "label": "Les parties prenantes internes et externes, y compris les communautés affectées, sont identifiées avec les bénéfices et les préjudices potentiels pour chacune.",
+  "why": "Identifier les parties impactées et encadrer les impacts potentiels est du MAP. Quantifier ces impacts est du MEASURE."
+ },
+ "rmf-08": {
+  "label": "Les interdépendances avec d'autres systèmes et les conséquences de la défaillance du composant IA sont tracées.",
+  "why": "MAP couvre le système dans son contexte plus large, y compris ce qui d'autre se casse quand il le fait. Un composant observé isolément est un risque cartographié manqué."
+ },
+ "rmf-09": {
+  "label": "Le système est comparé à des métriques définies de validité, fiabilité et robustesse avant la publication.",
+  "why": "MEASURE couvre l'évaluation par rapport aux caractéristiques de fiabilité à l'aide de méthodes répétables."
+ },
+ "rmf-10": {
+  "label": "La performance est évaluée séparément pour chaque sous-groupe démographique et la disparité est quantifiée.",
+  "why": "Analyser les biais nuisibles avec des méthodes quantitatives est du MEASURE. Décider quoi faire avec la disparité est du MANAGE."
+ },
+ "rmf-11": {
+  "label": "La surveillance continue équipe le système déployé pour la dérive des entrées et la dégradation de la qualité.",
+  "why": "MEASURE inclut la surveillance continue après le déploiement, pas seulement les tests pré-version. La détection de dérive se trouve ici."
+ },
+ "rmf-12": {
+  "label": "Les méthodes de test, d'évaluation, de vérification et de validation sont choisies, documentées, et leurs propres limitations sont enregistrées.",
+  "why": "MEASURE exige que l'approche de mesure elle-même soit évaluée. Une métrique avec des points aveugles non examinés est une fausse assurance."
+ },
+ "rmf-13": {
+  "label": "Les risques sont classés par impact et les ressources sont allouées aux plus élevés en premier.",
+  "why": "La priorisation et l'allocation des ressources entre les risques cartographiés et mesurés est la définition de MANAGE."
+ },
+ "rmf-14": {
+  "label": "Un plan de réponse est mis en place couvrant le confinement des incidents, la récupération et la communication en cas de défaillance du modèle.",
+  "why": "MANAGE couvre la réaction à, la récupération à partir de et la communication concernant les incidents. Rédiger le plan est du MANAGE ; exercer la capacité est du GOVERN."
+ },
+ "rmf-15": {
+  "label": "Le risque résiduel après atténuation est documenté et communiqué au déploiement du système.",
+  "why": "MANAGE traite explicitement du risque résiduel, y compris en informant les utilisateurs en aval de ce qui reste. Le risque résiduel non documenté est transféré par accident."
+ },
+ "rmf-16": {
+  "label": "Une décision est prise de désactiver un modèle déployé dont le risque ne peut plus être ramené dans la tolérance.",
+  "why": "Remplacer ou désactiver un système est une réponse de MANAGE. Avoir un itinéraire défini vers la retraite est ce qui le rend possible."
+ }
+}

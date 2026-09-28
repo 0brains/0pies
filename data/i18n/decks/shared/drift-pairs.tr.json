@@ -1,0 +1,50 @@
+{
+ "dp-01": {
+  "a.text": "Kredi modeli yeni bir bölgeden başvurucu bir dalgasını görür. Herhangi bir gelir, istihdam ve tarih profili için, varsayılan oranları model bekler tam.",
+  "a.why": "Girdiler yeni bölgeye taşındı ama kural sağlam. Daha temsili eğitim veriyi düzeltir; yeni kural gerekli değildir.",
+  "b.text": "Kredi modeli yeni bir bölgeden başvurucu aynı dalgasını görür. Aynı gelir, istihdam ve tarih profili için, varsayılan oranları çift model bekler var.",
+  "b.why": "Aynı girdiler şimdi farklı sonuçlar üretir, böylece P(Y|X) değişti. Girdileri yeniden dengele hiçbir miktarı tutma değişmiş ilişki düzeltir."
+ },
+ "dp-02": {
+  "a.text": "Fiyatlandırma modelin hata Salı atlar. Araştırma, rakibin o sabah agresif indirim kampanya başlatılan bulur.",
+  "a.why": "Gerçek dünyada değişiklik modeli kodlar ilişki değişti. Değişim sonrası veri yeniden eğitme doğru cevap.",
+  "b.text": "Fiyatlandırma modelin hata Salı atlar. Araştırma, gece ETL iş daha önce net fiyat tutmuş alana liste fiyatı yazmaya başladı bulur.",
+  "b.why": "Fiyatlandırma davranış hakkında hiçbir şey değişti — modeli aynı adı altında farklı bir miktar beslemesi. Yeniden eğitme buraya kusuru katmanı ve gizler."
+ },
+ "dp-03": {
+  "a.text": "Altı ay üzerinden bir sahtekarlık modeli düşer, eski saldırı deseni yavaş yeni tarafından değiştirildi. Süre boyunca, her iki desenler hacim tıp.",
+  "a.why": "İki farklı kavram zaman örtüşen, karışım ağırlık hareket. Bir model bir kavram başına tutma topluluk bunu iyi işler.",
+  "b.text": "Altı ay üzerinden bir sahtekarlık modeli düşer, saldırıdı olarak saldırıcılar işlem boyutları yukarı adım adım ayarlanmış, hiçbir belirgin eski ve yeni desen herhangi bir noktada. Süre boyunca, her iki desenleri hacim tıp.",
+  "b.why": "Bir kavram aracılığıyla ara durumlar somuklama. Yeniden eğitme penceresini yuvarlama izler; kavram anahtarlaması makine arasında geçiş için hiçbir şey yok."
+ },
+ "dp-04": {
+  "a.text": "Bir tarama modeli yeni bir kliniklerde dağıtılır. Hastalar eğitim nüfusu daha genç ve sağlıklı, ve hastalık prevalans değişiyor.",
+  "a.why": "Özellik dağıtımı hareket sonuç karışımı değil. Endişe, ince kaplı giriş bölgelerine extrapolasyon.",
+  "b.text": "Bir tarama modeli yeni bir kliniklerde dağıtılır. Hastalar eğitim nüfusu demografi baktı özdeş, ama hastalık taşıyı çeyrek idi.",
+  "b.why": "P(Y) P(X|Y) sağlam hareket ilçesinde, böylece modelin sıralaması hala çalışır ama olasılıkları sistematik olarak çok yüksek. Önceki düzeltme, yeniden eğitme değildir."
+ },
+ "dp-05": {
+  "a.text": "Koleksiyonlar modelin yüksek risk skorların payı bir ay %12'den %25'e yükselir. Sonuçlar gözlemle doksan gün aldığı, böylece hiçbir bu kohort henüz mevcuttur.",
+  "a.why": "Etiket olmadan çıkış dağıtım değişiklik, araştırma için bir sinyal, bir bulgu değildir. Bu gerçekten riskli nüfus doğru yanıt olabilir.",
+  "b.text": "Koleksiyonlar modelin yüksek risk skorların payı bir ay %12'den %25'e yükselir ve doksan gün taşıdı çözümlü kohort, kesinlik aşağı 18 puan.",
+  "b.why": "Etiketler ulaştığı ve kalite gerçekten düştü. Yalnızca şimdi histogram şekli yerine delile yeniden eğitme avukat."
+ },
+ "dp-06": {
+  "a.text": "Lojistik modelin doğruluk her yıl Noel öncesi bir hafta çöker ve hemen sonra kurtarır.",
+  "a.why": "Bilinen kavram bir döngü üzerinde gelir. Emeklilik hiçbir şey: mevsimsel modeli tutmak ve bağlam seçin.",
+  "b.text": "Lojistik modelin doğruluk, ulusal teslimat yönetmeliği kalıcı değişikliği sonra bir hafta çöker ve asla kurtarır.",
+  "b.why": "Ani, tek yönlü değişiklik dönüş olmadan. Öncesi modeli başka kullanım ve öncesi veri yeniden eğitme sınırlı değeri."
+ },
+ "dp-07": {
+  "a.text": "Moderasyon takımı rehberlik yazı yeniden böylece sınırda içerik kategorisi şimdi etiketli 'ihlal' nereye daha önce 'kabul edilebilir' idi. Gelen içerik değişiyor.",
+  "a.why": "Aynı girdileri, farklı etiketleri: eşleme yeniden tanımlandı. Her tarihsel etiket eski rehberliğin altında, şimdi eğitim amacı için kısmen yanlış.",
+  "b.text": "Moderasyon takımın rehberi değişiyor ama viral trend anlamı ihlal içeriği %2 kuyruk %9 yükselir.",
+  "b.why": "Kural istikrarlı; sonuç karışımı taşındı. Eşik ve kapasite planlama dikkat gerekiyor, modelin öğrenilen sınır değildir."
+ },
+ "dp-08": {
+  "a.text": "Puanlar yeni bir model sürümü serbest bırakıldığında gün değişir. Sabit bir referans örnek, her iki sürüm üzerinden yeniden oynatılan, tam kaydırma tekrar üretir.",
+  "a.why": "Aynı girdileri farklı çıkışları üretir modele değişikliği yalıtır. Bu serbest bırakılan sabit giriş altın referans örnek beklenen kullanımıdır.",
+  "b.text": "Puanlar yeni bir model sürümü serbest bırakıldığında gün değişir. Aynı sabit referans örnek, her iki sürüm üzerinden yeniden oynatılan, özdeş çıkışlar üretir.",
+  "b.why": "Sabit girdiler üzerinde model provably değişiyor, canlı girdileri değişmeli — ve aynı gün tesadüf dağıtılan veri-tarafı değişiklikler, dünya değildir işaret."
+ }
+}

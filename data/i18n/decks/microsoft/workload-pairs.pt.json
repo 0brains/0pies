@@ -1,0 +1,62 @@
+{
+  "wp-01": {
+    "a.text": "A partir de bilhetes de suporte, listar cada nome de produto, pessoa e data mencionada.",
+    "a.why": "Entidades identificam quem/o que é mencionado — pessoas, datas, organizações (histack: 'categoriza coisas específicas').",
+    "b.text": "Dos mesmos bilhetes, determinar se os clientes se sentem positivos, negativos ou neutros.",
+    "b.why": "Polaridade de opinião é sentimento — o par confundido #1 do exame (17 co-ocorrências)."
+  },
+  "wp-02": {
+    "a.text": "Transcrever uma gravação do centro de chamadas para que os agentes possam pesquisar a conversa.",
+    "a.why": "Áudio em, texto fora — reconhecimento. 'Transcrever' é o verbo revelador.",
+    "b.text": "Uma aplicação de navegação lê instruções turno por turno em voz alta com a voz neural en-US-Ava.",
+    "b.why": "Texto em, áudio fora — síntese. SSML e nomes de voz como en-US-Ava:DragonHDLatestNeural pertencem apenas a síntese."
+  },
+  "wp-03": {
+    "a.text": "Uma aplicação de conferência escuta um orador francês e produz legendas inglesas em direto para o público.",
+    "a.why": "Reconhecer fala num idioma e renderizá-la noutro é tradução — o indicador do exame para este par (áudio-em, saída-em-idioma-diferente).",
+    "b.text": "A mesma aplicação também produz legendas francesas do mesmo idioma para um assistente com deficiência auditiva na frente.",
+    "b.why": "Áudio em, texto do mesmo idioma é fala-em-texto simples; nenhum idioma cruza, não há nada para traduzir."
+  },
+  "wp-04": {
+    "a.text": "Extrair o número de série impresso numa etiqueta de equipamento fotografada.",
+    "a.why": "OCR/Leitura extrai o texto literal presente na imagem — 'extrair texto legível de uma imagem' é o talo do exame.",
+    "b.text": "Gerar uma descrição de linguagem natural de uma frase do que a foto mostra.",
+    "b.why": "Legendagem (VisualFeatures.CAPTION) descreve a cena — não lê texto dentro dela."
+  },
+  "wp-05": {
+    "a.text": "Uma aplicação de digitalização lê o bloco de endereço impresso de um envelope fotografado em campos de texto estruturado.",
+    "a.why": "OCR converte pixels existentes em texto — a entrada é uma imagem, a saída é texto.",
+    "b.text": "Uma ferramenta de desenho recebe o prompt 'um ícone plano de um foguete azul' e produz um PNG totalmente novo que nunca existiu antes.",
+    "b.why": "Geração de imagem (client.images.generate com gpt-image-1 / DALL·E) executa na direção oposta — prompt de texto em, pixels sintetizados fora — a armadilha de inversão de direção do exame neste par."
+  },
+  "wp-06": {
+    "a.text": "Decidir se cada foto carregada é 'peça defeituosa' ou 'peça boa'.",
+    "a.why": "Classificação atribui um rótulo a toda a imagem.",
+    "b.text": "Marcar onde cada peça fica na imagem de correia transportadora com caixas delimitadoras.",
+    "b.why": "Caixas delimitadoras por objeto é o indicador do exame para detecção — a confusão clássica de visão."
+  },
+  "wp-07": {
+    "a.text": "Devolver ['preço', 'duração da bateria', 'atendimento ao cliente'] a partir de um lote de avaliações.",
+    "a.why": "Frases-chave devolvem uma lista de termos importantes — nenhuma prosa nova é escrita.",
+    "b.text": "Condensar as mesmas avaliações em três frases novas capturando o feedback geral.",
+    "b.why": "Resumição escreve frases condensadas novas — o contraste de forma de saída que o corpus testa (par #14)."
+  },
+  "wp-08": {
+    "a.text": "Uma aplicação leve deve encontrar e redigir cada endereço de email e número de telefone nas mensagens do cliente antes de armazená-las.",
+    "a.why": "Deteção de PII é a capacidade dedicada que identifica e pode redigir dados pessoais sensíveis como números de telefone e endereços de email (o exame o chama 'a capacidade mais diretamente focada em privacidade').",
+    "b.text": "A mesma aplicação também marca cada pessoa, organização e local mencionado nas mensagens para um índice consultável.",
+    "b.why": "Reconhecimento de entidade é extração mais ampla através de categorias — pessoas, lugares, organizações — não a funcionalidade focada em redação de deteção de PII."
+  },
+  "wp-09": {
+    "a.text": "Uma transcrição de reunião deve atribuir cada seção do áudio gravado ao participante correto.",
+    "a.why": "Diarização identifica e separa falantes dentro do áudio de entrada, rotulando quem falou cada porção da transcrição (o exame o chama 'atribuição de fala de áudio').",
+    "b.text": "Uma vez que a transcrição é finalizada, uma voz de narrador lê o resumo da reunião em voz alta para um feed de podcast.",
+    "b.why": "Síntese converte texto em saída de voz semelhante ao humano — o estágio de pipeline oposto de diarizar áudio existente."
+  },
+  "wp-10": {
+    "a.text": "Um programador precisa de legendagem de áudio em direto de uma conferência de vídeo em tempo real, mesmo idioma, para participantes com deficiência auditiva.",
+    "a.why": "Azure AI Speech fornece o pipeline de fala-em-texto em tempo real para áudio em direto — o serviço padrão para legendagem, distinto de conversão de texto entre idiomas.",
+    "b.text": "Um retalhista precisa de converter descrições de produto escrito do inglês para 20 outros idiomas como texto.",
+    "b.why": "Azure AI Translator fornece tradução automática neural entre idiomas para texto — o contraste do exame é serviço de pipeline de áudio vs serviço de texto entre idiomas, não uma sobreposição de carga de trabalho (par #29)."
+  }
+}

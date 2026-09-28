@@ -1,0 +1,50 @@
+{
+  "rp-01": {
+    "a.text": "La valutazione valuta l'esposizione da un modello di decisione automatizzato come se nessuno dei meccanismi di revisione, soglia o ricorso esistesse.",
+    "a.why": "Il rischio inerente è la posizione lorda prima dei controlli. Esiste per dimensionare lo sforzo di controllo, e non è mai ciò che viene accettato.",
+    "b.text": "La valutazione valuta lo stesso modello con revisione, soglie e ricorsi che funzionano come progettato, e segnala ciò che rimane.",
+    "b.why": "Il rischio residuo è ciò contro cui la firma è effettivamente contraria. Accettare rispetto alla cifra inerente sovrastima ciò che l'organizzazione ha concordato di sostenere."
+  },
+  "rp-02": {
+    "a.text": "Il consiglio dichiara che l'organizzazione non perseguirà applicazioni di AI che prendono decisioni consequenziali su individui senza revisione umana.",
+    "a.why": "L'appetito è la dichiarazione ampia e prospettica di quale rischio l'organizzazione è disposta a correre nel perseguimento dei suoi obiettivi.",
+    "b.text": "La politica afferma che un modello può entrare in produzione solo se la disparità di accuratezza del sottogruppo è inferiore a quattro punti percentuali.",
+    "b.why": "La tolleranza è il limite misurabile che operazionalizza l'appetito. L'appetito senza tolleranza non può essere testato; la tolleranza senza appetito è arbitraria."
+  },
+  "rp-03": {
+    "a.text": "Il modello può produrre testo fluente e sicuro che è fattualmente sbagliato.",
+    "a.why": "Un pericolo è il potenziale intrinseco di causare danno. È una proprietà della cosa e non dipende dalla distribuzione.",
+    "b.text": "Perché il modello redige istruzioni di dimissione del paziente lette da non specialisti, gli errori sicuri possono portare all'uso errato di farmaci.",
+    "b.why": "Il rischio combina il pericolo con l'esposizione e la conseguenza in un contesto. Lo stesso pericolo è un rischio diverso in una distribuzione diversa — motivo per cui i tier si allegano all'uso."
+  },
+  "rp-04": {
+    "a.text": "La convalida dell'input rifiuta le richieste contenenti modelli che il sistema non è autorizzato a elaborare.",
+    "a.why": "I controlli preventivi agiscono sulla probabilità, prima dell'evento. Sono l'unico tipo che può portare una probabilità in modo significativo verso zero.",
+    "b.text": "Un rapporto settimanale elenca le richieste che sono state elaborate nonostante rientrassero al di fuori delle categorie autorizzate.",
+    "b.why": "I controlli di rilevamento agiscono sulla durata e sull'impatto dopo il fatto. Un registro che elenca i controlli di rilevamento come mitigazione della probabilità sovrastima la sua posizione."
+  },
+  "rp-05": {
+    "a.text": "Il team di governance dell'AI esamina la valutazione di impatto del team di delivery e sfida le sue conclusioni, riferendo al chief risk officer.",
+    "a.why": "Indipendente dalla delivery ma ancora all'interno del management. La seconda linea consiglia, sfida e monitora; non può fornire assicurazione su se stessa.",
+    "b.text": "Una funzione di revisione esamina se quelle revisioni di governance sono state condotte come la politica richiede, e riferisce al comitato di audit.",
+    "b.why": "Il rapporto al consiglio piuttosto che al management è la differenza strutturale. Senza di essa, l'assicurazione è auto-valutazione con una carta intestata diversa."
+  },
+  "rp-06": {
+    "a.text": "Il team aggiunge un gate di valutazione automatizzato che blocca i rilasci che non superano la soglia di robustezza.",
+    "a.why": "La probabilità diminuisce perché un rilascio in fallimento non può essere distribuito. Qualcosa del rischio stesso è cambiato.",
+    "b.text": "Il team aggiunge un dashboard mostrando i punteggi di robustezza, e si impegna a esaminarli mensilmente senza gating.",
+    "b.why": "Osservare un rischio non lo sta trattando. Il monitoraggio più una decisione di non gating è ritenzione con migliore visibilità — legittimo, a patto che sia registrato come accettazione."
+  },
+  "rp-07": {
+    "a.text": "Un modello di uso generale che supera la soglia di calcolo deve sottoporsi a test avversariali e segnalare incidenti gravi.",
+    "a.why": "I compiti di rischio sistemico GPAI si allegano al modello indipendentemente da qualsiasi uso a valle, motivo per cui si trovano al di fuori della piramide dei rischi.",
+    "b.text": "Un distributore che utilizza lo stesso modello per selezionare candidati di lavoro deve soddisfare gli obblighi ad alto rischio per la distribuzione.",
+    "b.why": "Il tier segue lo scopo. Un modello può contemporaneamente portare compiti a livello di modello e sedersi in diversi tier di uso."
+  },
+  "rp-08": {
+    "a.text": "Un contratto rende il fornitore responsabile del costo dei danni derivanti da difetti nel modello fornito.",
+    "a.why": "La conseguenza finanziaria si muove. Questo è un trattamento legittimo e non cambia nulla sulla probabilità del danno.",
+    "b.text": "L'autorità di regolamentazione ritiene responsabile l'azienda distributrice per i risultati delle decisioni che prende con il modello del fornitore.",
+    "b.why": "La responsabilità normativa in genere non può essere contrattata. Assumere che una indennità la copra è la versione più costosa di questa confusione."
+  }
+}

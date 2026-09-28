@@ -1,0 +1,43 @@
+{
+ "iv-rl-01": {
+  "prompt": "Zamów kroki odpowiedzialnego wycofania się z żywego systemu sztucznej inteligencji.",
+  "steps[0].label": "Oceń zależności + opcje fallback",
+  "steps[0].detail": "Zanim cokolwiek żywego nie dotkniesz, mapa co uzależnia się od systemu — źródła danych nadrzędne, procesy podrzędne, przepływy pracy innych zespołów — i potwierdź fallback istnieje, aby emerytura nie tworzy przerwy (SG).",
+  "steps[1].label": "Powiadom interesariuszy + plan kontrolowanej deaktywacji",
+  "steps[1].detail": "Pierwszym krokiem w napędzanej emeryturze jest powiedzenie ludzi dotknięta i budowanie planu deaktywacji, nie po prostu przerzucenie przełącznika (SG).",
+  "steps[2].label": "Gradualna deaktywacja z zapamiętywaniem człowieka",
+  "steps[2].detail": "Dla krytycznej infrastruktury, wind down w etapach zamiast od razu, z fallback uruchomionym przez człowieka obejmującym lukę — ta sama dyscyplina używana dla krytycznych systemów ogólnie.",
+  "steps[3].label": "Archiwum, nie usuwaj, dla prawnie/audytu",
+  "steps[3].detail": "Zachowaj dane wycofanego systemu, modele i logów zamiast ich usuwać — regulatorzy i audytorzy mogą potrzebować zrekonstruować co system zrobił i dlaczego, długo po tym, jak zatrzymuje się uruchamianie (SG).",
+  "steps[4].label": "Rekord jak badanie czarnej skrzynki, z nazwanymi decyzjodawcami",
+  "steps[4].detail": "Zaloguj dokładny wyzwalacz, kto autoryzował zamknięcie i racjonalność emeryty w tym samym stylu dowodowym co badanie incydentu — pojedyncze audytowalne źródło prawdy nazwie kto miał uprawnienia do działania (SG)."
+ },
+ "iv-rl-02": {
+  "prompt": "Zamów odpowiedź na żywy incydent sztucznej inteligencji od pierwszego wykrycia do zamknięcia pętli.",
+  "steps[0].label": "Wykryj",
+  "steps[0].detail": "Alert, sygnał monitorowania lub skarga powierzchni, że coś nie działa — to rozpoczyna zegar dla wszystko, co następuje.",
+  "steps[1].label": "Zawierać / kwarantanna pierwsza",
+  "steps[1].detail": "Zanim badania przyczyn lub zmniejszą komunikację, stop bezpieczeństwo rozprzestrzeniają się: kwarantanna model i powiadom prawnego/zgodności natychmiast. Zawierać się bije dochodzenia, odzyskiwania lub komunikacji jako bardzo następny ruch — przeskok prawy do analizy głównej przyczyny, gdy system kontynuuje powoduje zranienie jest zanotowany egzamin pułapka.",
+  "steps[2].label": "Powiadom prawnego/zgodności (+72-godzinny zegar naruszenia, gdzie dane osobowe)",
+  "steps[2].detail": "Gdzie incydent obejmuje dane osobowe, RODO kontroler musi powiadomić organ nadzorczy w ciągu 72 godzin od dowiedzenia się naruszenia — procedury odpowiadania incydentom i powiadomienia muszą być zbudowane do trafienia, że termin, nie traktowany jako techniczny pomysł (SG).",
+  "steps[3].label": "Przyczyna główna (Pięć Why / analiza drzewa usterek)",
+  "steps[3].detail": "Użyj formalnej struktury analizy — metoda 'Pięć Why' lub analiza drzewa usterek — aby przejść do głębi od podstawowej przyczyny zamiast zatrzymać się na objawach powierzchni (SG).",
+  "steps[4].label": "CAPA",
+  "steps[4].detail": "Zarejestruj akcje korekcyjne i zapobiegawcze w centralnym systemie z przypisanymi właścicielami, terminy i kroki weryfikacji, więc główna przyczyna jest faktycznie zamknięta, nie po prostu zdiagnozowana.",
+  "steps[5].label": "Retrospektywny bez winy + proaktywne ujawnienie z lekcjami nauczonych",
+  "steps[5].detail": "Uruchom cross-funkcjonalny, recenzę bez winy to, co się stało i dlaczego, i proaktywnie ujawnij szczegóły techniczne i lekcje nauczonych zamiast czekania na pytanie — to co zmienia łatkę symptom w udokumentowany, obronialny poprawa."
+ },
+ "iv-rl-03": {
+  "prompt": "Zamów kroki dla bezpiecznego przeniesienia deaktywowanego systemu z powrotem do trybu online.",
+  "steps[0].label": "Zweryfikuj poprawkę",
+  "steps[0].detail": "Potwierdź konkretny defekt, który wyzwolił deaktywację faktycznie był skorygowany zanim cokolwiek innego rusza się naprzód — wznowienie zależy od poprawek będących weryfikowanymi, nie tylko próbowanymi (SG).",
+  "steps[1].label": "Ponownie przetestuj z rygorem pierwszego wydania",
+  "steps[1].detail": "Umieść system naprawiony przez ten sam pełny testowanie stał przed oryginalnym uruchomieniu — wydajność, solidność, bezpieczeństwo, sprawiedliwość — ponowne testowanie potwierdza bezpieczeństwo i zgodność od nowa, to nie dostaje skrót, ponieważ system już został uruchomiony (SG).",
+  "steps[2].label": "Cross-funkcjonalne zatwierdzenie",
+  "steps[2].detail": "System wznawia się jedynie raz cross-funkcjonalne zespoły — nie jeden inżynier lub lider zespołu — zatwierdzą ponownie uruchomienie, zamykając pętlę, która rozpoczęła się od nazwanych decyzjodawców autoryzacji zamknięcia.",
+  "steps[3].label": "Etapowy canary/blue-green ponownie uruchomić za flagi funkcji",
+  "steps[3].detail": "Przynieś system z powrotem stopniowo — canary wydania lub blue-green wdrażania bramy przez flagi funkcji — tak ekspozycja może być wielkie natychmiast, jeśli problem powraca, zamiast przerzucania każdego użytkownika z powrotem na raz (SG).",
+  "steps[4].label": "Okno monitorowania wysokości",
+  "steps[4].detail": "Obejrzyj system ponownie uruchomiony bardziej ściśle niż operacja w stanie ustalanym dla określonego okna potem, więc powtórzenie jest złapane natychmiast zamiast na następnej zaplanowanej recenzji."
+ }
+}

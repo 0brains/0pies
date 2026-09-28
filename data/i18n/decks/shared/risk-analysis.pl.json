@@ -1,0 +1,83 @@
+{
+ "ra-01": {
+  "label": "Każde ryzyko jest oceniane 1–5 dla prawdopodobieństwa i 1–5 dla konsekwencji, a iloczyn decyduje, gdzie siedzi w rejestrze.",
+  "why": "Siatka punktacji to standardowe urządzenie priorytetyzacji. Jej słabością jest to, że zmusza rzadkie katastrofalne ryzyko i częste trywialne w tę samą komórkę."
+ },
+ "ra-02": {
+  "label": "Zagrożenia są wykreślane na siatce czerwona/bursztyn/zielona, aby komisja mogła na pierwszy rzut oka zobaczyć, które wymaga uwagi w pierwszej kolejności.",
+  "why": "Mapa ciepła to narzędzie komunikacyjne zbudowane na tych samych dwóch osiach. Jest do triage, a nie do zrozumienia przyczynowości."
+ },
+ "ra-03": {
+  "label": "Metoda jest krytykowana za sugerowanie precyzji, której nie ma, gdy podstawowe prawdopodobieństwa są zgadywankami.",
+  "why": "Oceny porządkowe pomnożone razem tworzą liczby, które wyglądają na ilościowe i nie są. Wiedza to zatrzymuje 12 przed byciu traktowanym dwa razy za 6."
+ },
+ "ra-04": {
+  "label": "Jedno górne zdarzenie jest umieszczone w środku, ze ścieżkami zagrożeń i barierami prewencyjnymi narysowanymi po jego lewej stronie i ścieżkami konsekwencji z łagodzącymi barierami po prawej.",
+  "why": "Podział lewo/prawo wokół jednego zdarzenia to definiujący kształt diagramu i czyni rozróżnienie prewencyjne/łagodzące widocznym, a nie zakładanym."
+ },
+ "ra-05": {
+  "label": "Analiza wyjaśnia, że trzy z czterech barier po lewej stronie to ta sama kontrola liczona trzy razy.",
+  "why": "Odsłanianie wspólnych barier tryb jest dokładnie tym, do czego diagram jest dobry. Rejestr kontroli wymieniony jako tekst ukrywa tę zależność."
+ },
+ "ra-06": {
+  "label": "Czynniki eskalacji są rysowane przeciwko każdej barierze, pokazując warunki, w których ta bariera przestaje działać.",
+  "why": "Czynniki eskalacji i ich własne kontrole są częścią metody bowtie. To jak diagram unika założenia, że bariery są zawsze skuteczne."
+ },
+ "ra-07": {
+  "label": "Każdy komponent jest zbadany po kolei dla sposobów, w jakie może zawieść, a każdy sposób awarii jest oceniany pod względem ważności, prawdopodobieństwa wystąpienia i prawdopodobieństwa wykrycia.",
+  "why": "Wynik trzyczynnikowy produkujący numer priorytetu ryzyka to podpis FMEA. To bottom-up, od komponentu do efektu."
+ },
+ "ra-08": {
+  "label": "Awaria, która jest ważna, ale niezawodnie wykryta przed dotarciem do użytkownika, jest niżej oceniana niż ta, która jest cicha.",
+  "why": "Wykrywalność jako jawna trzecia oś jest unikalna dla FMEA wśród tych technik, i dlatego ciche awarie zajmują tak wysoki ranking — co pasuje do trybów awarii ML."
+ },
+ "ra-09": {
+  "label": "Analiza jest krytykowana za obsługę kombinacji jednoczesnych awarii źle, ponieważ rozważa każdy sposób awarii samodzielnie.",
+  "why": "Orientacja na pojedynczy punkt awarii to znane ograniczenie FMEA. Użyj go z techniką, która modeluje kombinacje, nie zamiast jednej."
+ },
+ "ra-10": {
+  "label": "Przegląd zdarzenia wyciąga wniosek, że żadna pojedyncza obrona nie zawaliła się katastrofalnie; cztery częściowe słabości przypadkowo wyrównały się w ten dzień.",
+  "why": "Wyrównanie dziur w warstwach to centralne twierdzenie modelu, i dlatego 'kto popełnił błąd' zwykle to złe pierwsze pytanie."
+ },
+ "ra-11": {
+  "label": "Model rozróżnia aktywne awarie na ostrym końcu od warunków utajonych tworzonych znacznie wcześniej przez decyzje projektowe i zarządcze.",
+  "why": "Rozróżnienie aktywne/utajone to Reason, i to co kieruje uwagę do decyzji, które wstępnie załadowały awarię."
+ },
+ "ra-12": {
+  "label": "Ramka ostrzega, że dodanie kolejnej warstwy obrony daje mniej ochrony niż oczekiwano, jeśli dziury nowej warstwy znajdują się w tym samym miejscu.",
+  "why": "Skorelowane obrony to pułapka. Dwaj recenzenci używający tej samej błędnej listy kontrolnej to jedna warstwa, nie dwie."
+ },
+ "ra-13": {
+  "label": "Ocena rozdziela szkody alokacji, gdzie okazje lub zasoby są wstrzymywane, od szkód reprezentacji, gdzie grupa jest lekceważona lub wymazana.",
+  "why": "Podział alokacyjny/reprezentacyjny jest fundamentalny, a szkoda reprezentacji to ta, która przesuwana przesunięcia poprzez oceny kierowane przez metryki dokładności."
+ },
+ "ra-14": {
+  "label": "Ocena notuje, że system działa miernie gorzej dla jednej grupy, chociaż żadna decyzja im nie jest odrzucona.",
+  "why": "Szkoda jakości usług to odrębna kategoria. Bez taksonomii ją nazywającej, to odkrycie zwykle jest archiwizowane jako problem dokładności i depriorytetyzowane."
+ },
+ "ra-15": {
+  "label": "Metoda istnieje, aby zatrzymać ocenę pokrywającą tylko szkody, które przypadają posiadać metrykę dołączoną.",
+  "why": "Wyliczanie kategorii najpierw, a następnie poszukiwanie pomiaru, to to, co utrzymuje godności i społeczne szkody w zakresie, a nie poza nim."
+ },
+ "ra-16": {
+  "label": "Ryzyko jest oceniane dwukrotnie: raz tak, jakby nie istniały żadne kontrole, i raz z kontrolami działającymi zaprojektowanymi.",
+  "why": "Parowanie przed i po to cała technika. Różnica to baza dowodów, czy kontrola jest warta swojego kosztu."
+ },
+ "ra-17": {
+  "label": "Stwierdzono, że kontrola zmniejsza wynik o prawie nic, co staje się argumentem za jej usunięciem i wydatkowanie wysiłku gdzie indziej.",
+  "why": "Porównywanie dwóch ocen to jak kontrole, które istnieją tylko w celu wymienia się identyfikuje. Kontrola bez delty to teatr."
+ },
+ "ra-18": {
+  "label": "Rejestr notuje poziom pozostały po leczeniu, i to ten poziom, który musi siedzieć w ramach apetytu przed podpisaniem.",
+  "why": "Ryzyko rezydualnym to co się przyjmuje; ryzyko nieodłączne to tylko kiedykolwiek kontekst. Akceptowanie w stosunku do liczby nieodłącznej to błąd kategorii."
+ },
+ "risk-analysis": {
+  "hint": "Przeciągnij każdy opis na jego technikę. Zapytaj, co metoda jest faktycznie zbudowana do ujawnienia — ranking, ścieżka przyczynowa, tryb awarii czy pomiar.",
+  "zones[0].def": "Oceń prawdopodobieństwo i konsekwencję, wykreśl na siatce, użyj do priorytetyzacji. Szybkie, grube i domyślne w większości rejestrów.",
+  "zones[1].def": "Jedno zdarzenie pośrodku; przyczyny i bariery prewencyjne po lewej, konsekwencje i bariery łagodzące po prawej.",
+  "zones[2].def": "Pracuj od dołu do góry od każdego sposobu awarii komponentu do ich efektów, punktując ważność, wystąpienie i wykrywalność.",
+  "zones[3].def": "Szkoda występuje, gdy otwory w kolejnych warstwach obrony wyrównują się. Wyjaśnia, dlaczego wyjaśnienia przyczyny pojedynczej incydentów zwykle się nie mylą.",
+  "zones[4].def": "Wylicz kategorie szkód — alokacyjne, reprezentacyjne, jakość usług, godność, społeczne — aby ocena nie była ograniczona do tego, co jest łatwe do pomiaru.",
+  "zones[5].def": "Oceń ryzyko przed kontrolami i ponownie po nich. Luka to co kontrole faktycznie kupują."
+ }
+}

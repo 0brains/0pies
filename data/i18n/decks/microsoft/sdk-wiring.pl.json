@@ -1,0 +1,106 @@
+{
+ "sw-001": {
+  "label": "Połącz swój kod z projektem Foundry za pomocą punktu końcowego i poświadczenia (pakiet azure-ai-projects)",
+  "why": "AIProjectClient(endpoint, credential) to punkt wejścia projektu; get_openai_client() się od niego wiesza — usuń uwierzytelnianie i ta linia się łamie."
+ },
+ "sw-002": {
+  "label": "Wyślij listę wiadomości do wdrożonego modelu i zwróć choices[0].message.content",
+  "why": "chat.completions.create(model=DEPLOYMENT_NAME, messages=[…]) to rozmowa czatu — i model= bierze nazwę wdrożenia, nie nazwę modelu bazowego (pułapka histack #5)."
+ },
+ "sw-003": {
+  "label": "Przechowuje klucz zasobu Speech, region i nazwę głosu syntezy",
+  "why": "SpeechConfig(key, region) jest konfigurowany jako pierwszy (np. speech_synthesis_voice_name='en-US-Ava:DragonHDLatestNeural'); AudioConfig obsługuje urządzenia, nie poświadczenia."
+ },
+ "sw-004": {
+  "label": "Wyślij pytanie głosowe użytkownika jako wbudowane dane audio w zawartość wiadomości",
+  "why": "Wejście MÓWIONE wchodzi w części zawartości wiadomości jako input_audio; bliźniak ustawień odpowiedzi to udokumentowana pułapka."
+ },
+ "sw-005": {
+  "label": "Poproś model, aby odpowiedział głosowym audio: głos \"alloy\", format \"wav\"",
+  "why": "Wyjście MÓWIONE jest żądane poprzez modalities=[\"text\",\"audio\"] plus audio={\"voice\":\"alloy\",\"format\":\"wav\"} na wywołaniu multimodalnym — dokładna ładunek egzaminu."
+ },
+ "sw-006": {
+  "label": "Dołącz zdjęcie (URL lub base64) do wiadomości czatu, aby wdrożony gpt-4o mógł je opisać",
+  "why": "Wejście wizualne podróżuje jako części zawartości image_url / base64 do wdrożenia multimodalnego — nie poprzez Speech SDK, co to inny serwis i punkt końcowy (para #23)."
+ },
+ "sw-007": {
+  "label": "Łączy istniejącego klienta projektu z klientem kompatybilnym z OpenAI używanym do wywołań Responses i Conversations",
+  "why": "project.get_openai_client() to metoda instancji wywoływana na obiekcie projektu; pułapka egzaminu to wywoływanie go na klasie zamiast."
+ },
+ "sw-008": {
+  "label": "Wywoływane raz, zaraz po zbudowaniu klienta projektu, przed pierwszym żądaniem Responses lub Conversations",
+  "why": "To most runtime, który zwraca klienta o kształcie OpenAI; obiekt poświadczenia tylko uwierzytelnia klienta projektu, nigdy nie zwraca klienta czatu."
+ },
+ "sw-009": {
+  "label": "Przekazany z zerowymi argumentami jako wartość credential= , aby aplikacja uwierzytelniała się poprzez podpisaną tożsamość Azure, bez żadnego klucza wpisanego gdziekolwiek",
+  "why": "DefaultAzureCredential() to bezkluczowy obiekt poświadczeń Entra ID; AIProjectClient to to, co go konsumuje, a azure-ai-projects to tylko nazwa pakietu, nie obiekt runtime."
+ },
+ "sw-010": {
+  "label": "Obiekt, który az login konfiguruje: klient automatycznie rozwiązuje twoją podpisaną tożsamość od niego w czasie wezwania, bez kluczy API zmiennych środowiskowych",
+  "why": "Quickstart pary az login z tym obiektem poświadczeń; get_openai_client tylko zwraca klienta czatu i nie ma nic wspólnego z uwierzytelnianiem."
+ },
+ "sw-011": {
+  "label": "Pakiet pip, który instalujesz przed napisaniem jakiegokolwiek kodu klienta projektu, na podstawie bardzo pierwszego polecenia konfiguracji quickstart",
+  "why": "\"Który pakiet powinieneś zainstalować dla klienta projektu?\" to klasyczne pytanie egzaminu — odpowiedź to azure-ai-projects, nie SDK wyszukiwania czy języka."
+ },
+ "sw-012": {
+  "label": "Wymieniony obok az login w krokach konfiguracji quickstart, przypięty do wersji minimalnej (>=2.0.0) przed każdym uruchomieniem kodu klienta",
+  "why": "Udokumentowana wytyczna quickstart instaluje azure-ai-projects>=2.0.0 i uruchamia az login — pakiety Vision i Search nie mają związku z klientem projektu."
+ },
+ "sw-013": {
+  "label": "Skonstruowany z punktem końcowym i AzureKeyCredential przed wszelkimi wezwaniami ekstrakcji frazy kluczowej lub sentymenty na zwykłym tekście",
+  "why": "TextAnalyticsClient(endpoint, credential) ujawnia .extract_key_phrases()/.analyze_sentiment() na surowym tekście; dwaj pozostali klienci celują w dokumenty multimodalne i obrazy w zupełnie innych punktach końcowych."
+ },
+ "sw-014": {
+  "label": "Niezależnie od typu klienta, który ujawnia analyze_sentiment(documents), aby znaczenie każdego dokumentu w ogóle zostało wydrukowane z powrotem",
+  "why": "Analiza sentymuntu i ekstrakcja frazy kluczowej to metody tekstu AI Language na tym kliencie; dwaj pozostali działają na dokumentach multimodalnych lub żywo audio, nie na zwykłym tekście."
+ },
+ "sw-015": {
+  "label": "Ustaw na słuchanie z domyślnego mikrofonu komputera zamiast zapisanego pliku, a następnie przekaż go do rozpoznawacza jako jego źródło audio",
+  "why": "AudioConfig(use_default_microphone=True) wybiera urządzenie wejścia; SpeechConfig zamiast tego przechowuje klucz subskrypcji/region, a SpeechRecognizer to klasa, w którą wchodzi ten obiekt, nie sam selektor urządzenia."
+ },
+ "sw-016": {
+  "label": "Zbudowany z zapisanej nazwy pliku, aby rozpoznawacz czytał mowę z testowego pliku WAV zamiast żywego mikrofonu",
+  "why": "AudioConfig(filename=…) to źródło urządzenia wspierane przez pliki; SpeechConfig nosi poświadczenia i nazwę głosu, a SpeechSynthesizer odgrywa audio zamiast go czytać."
+ },
+ "sw-017": {
+  "label": "Podane zarówno konfig mowy, jak i konfig audio, a następnie wywoływane, aby przechwycić dokładnie jedno krótkie wypowiadane wyrażenie i zatrzymać się",
+  "why": "To jest klasa, której recognize_once_async() przechwytuje jedno wyrażenie; SpeechSynthesizer zamiast tego mówi tekst, a AudioConfig tylko drucuje urządzenie wejścia."
+ },
+ "sw-018": {
+  "label": "Jego asynchroniczny system jednego wyrażenia zwraca obiekt wyniku, którego .text zawiera transkrypcję tego, co mikrofon właśnie usłyszał",
+  "why": "Klasa zamiany mowy na tekst zwraca result.text z rozpoznania żywego audio; syntezator zamiast tego mówi, a klient Language tylko kiedykolwiek pracuje z tekstem, który został już transkrybowany."
+ },
+ "sw-019": {
+  "label": "Bierze konfigurację mowy z już ustawioną nazwą głosu, a następnie zmienia ciąg tekstowy w wyjście mówiące poprzez głośnik",
+  "why": "Metoda speak_text_async() tej klasy odgrywa ciąg na głos za pomocą skonfigurowanego głosu; rozpoznawacz zamiast tego konwertuje mowę na tekst, a AudioConfig tylko wybiera urządzenie."
+ },
+ "sw-020": {
+  "label": "Po tym, jak rozpoznawacz produkuje transkrypcję tekstową, ten drugi obiekt czyta ten sam ciąg na głos ze swoim własnym asynchronicznym wezwaniem mówienia",
+  "why": "Odtwarzanie zamiany tekstu na mowę rozpoznanej odpowiedzi to praca tej klasy; rozpoznawacz już produkuje tekst, a SpeechConfig tylko przechowuje poświadczenia i nazwę głosu, którego używa."
+ },
+ "sw-021": {
+  "label": "Skonstruowany z punktem końcowym i kluczem, a następnie jego jedno wezwanie analizuje adres URL obrazu dla funkcji READ visual, aby wyciągnąć tekst ze zdjęcia",
+  "why": "Wezwanie .analyze(image_url=…, visual_features=[…]) tego klienta Vision uruchamia OCR na ogólnych obrazach; ContentUnderstandingClient zamiast tego zwraca badacz z bardzo innego, asynchronicznego kształtu wezwania."
+ },
+ "sw-022": {
+  "label": "Jego wezwanie captioning-plus-OCR bierze obraz po adresie URL zamiast surowych bajtów, żądając zarówno funkcji CAPTION, jak i READ w jednym przebiegu",
+  "why": "Metoda analizy tego klienta Vision po adresie URL zwraca ustalane wstępnie funkcje, takie jak nagłówek i czytanie; nie ma kroku badacza i żadnego związku z przechwytywaniem mowy w ogóle."
+ },
+ "sw-023": {
+  "label": "Klient, który aplikacja tworzy jako pierwszy, gdy wyśle adresy URL dokumentów do ekstraktyzacji i przeczyta ze powrotem ustrukturyzowane wyniki",
+  "why": "\"Który klient powinna aplikacja utworzyć jako pierwszy?\" dla aplikacji Content Understanding to ta klasa — dwaj pozostali to osobne serwisy z osobnymi punktami końcowymi dla zwykłego tekstu i ogólnych obrazów odpowiednio."
+ },
+ "sw-024": {
+  "label": "Jego długotrwałe wezwanie analizy zwraca badacz; wywoływanie .result() na tym badaczu to sposób, w jaki aplikacja czeka na ostateczny wyodrębniony wynik",
+  "why": "begin_analyze() plus poller.result() to asynchroniczny wzorzec badacza tego klienta; analyze() klienta Vision jest synchroniczny, a metody klienta Language biorą dokumenty bezpośrednio bez badania."
+ },
+ "sw-025": {
+  "label": "Żądanie generowania obrazu, którego pole odpowiedzi b64_json zawiera rzeczywiste dane pikseli, które dekodują, a nie pole url",
+  "why": "Wdrożenie GPT-image-1 zwraca bajty wygenerowanego obrazu w response.data[0].b64_json; wezwanie uzupełnień zwraca wybory tekstu, a klient Vision tylko analizuje obraz, który już istnieje."
+ },
+ "sw-026": {
+  "label": "Ustaw tło na przezroczyste i poproś o wyjście PNG w tym żądaniu zamiany tekstu na obraz, aby uzyskać przezroczyste tło",
+  "why": "Przezroczyste tło plus wyjście PNG to parametry generowania serii GPT-image-1; nic w analizie Vision ani wezwaniach uzupełniania czatu tego nie akceptuje."
+ }
+}

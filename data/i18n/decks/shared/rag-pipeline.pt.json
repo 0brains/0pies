@@ -1,0 +1,21 @@
+{
+  "rag-pipeline": {
+    "prompt": "Ordena os estágios a partir de ingestão até uma resposta fundamentada e citada.",
+    "steps[0].label": "Ingerir Documentos de Fonte Fidedigna",
+    "steps[0].detail": "Recuperação pode apenas sempre trazer o que foi ingerido. Selecção de fonte é uma decisão de governança, não uma de plumbing.",
+    "steps[1].label": "Limpar, Dividir e Anexar Metadados",
+    "steps[1].detail": "Chunking decide qual é uma unidade recuperável; metadados é o que mais tarde torna filtragem e atribuição possível.",
+    "steps[2].label": "Criar Embeddings para Cada Chunk",
+    "steps[2].detail": "Texto torna-se vetores. O modelo de embedding escolhido aqui constrange tudo o que o retriever pode distinguir.",
+    "steps[3].label": "Armazenar Chunks e Vetores num Índice",
+    "steps[3].detail": "O índice torna busca de similaridade tratável. Controles de acesso pertencem aqui, não apenas na resposta.",
+    "steps[4].label": "Embebed e Interpretar a Query do Utilizador",
+    "steps[4].detail": "A query é embutida pelo mesmo modelo que os chunks, ou os dois vivem em espaços incomparáveis.",
+    "steps[5].label": "Recuperar, Filtrar e Reranking de Evidência",
+    "steps[5].detail": "Recall decide se a passagem certa está disponível sequer; ranking decide se sobrevive ao orçamento de contexto.",
+    "steps[6].label": "Construir um Prompt com Evidência e Instruções",
+    "steps[6].detail": "A evidência recuperada é colocada no prompt com instruções sobre como utilizá-la e quando recusar.",
+    "steps[7].label": "Gerar, Validar e Citar a Resposta Fundamentada",
+    "steps[7].detail": "O modelo responde a partir da evidência fornecida e cita-a, então um leitor pode verificar em vez de confiar."
+  }
+}

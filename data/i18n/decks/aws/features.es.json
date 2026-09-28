@@ -1,0 +1,1401 @@
+{
+  "feat-000-00": {
+    "label": "Comparar y elegir modelos fundacionales de múltiples proveedores a través de un servicio administrado.",
+    "why": "Multi-provider model catalogue pertenece a Amazon Bedrock, y habilita esta tarea: Comparar y elegir modelos fundacionales de múltiples proveedores a través de un servicio administrado."
+  },
+  "feat-000-03": {
+    "label": "Evaluar modelos fundacionales candidatos contra criterios de calidad, seguridad y específicos de tareas antes de su adopción.",
+    "why": "model evaluation pertenece a Amazon Bedrock, y habilita esta tarea: Evaluar modelos fundacionales candidatos contra criterios de calidad, seguridad y específicos de tareas antes de su adopción."
+  },
+  "feat-000-05": {
+    "label": "Fundamentar respuestas generadas en información empresarial recuperada sin reentrenamiento del modelo.",
+    "why": "Knowledge Bases for RAG pertenece a Amazon Bedrock, y habilita esta tarea: Fundamentar respuestas generadas en información empresarial recuperada sin reentrenamiento del modelo."
+  },
+  "feat-000-07": {
+    "label": "Aplicar políticas de seguridad administradas centralmente y controles de contenido a entradas y salidas de modelos.",
+    "why": "Guardrails for Amazon Bedrock pertenece a Amazon Bedrock, y habilita esta tarea: Aplicar políticas de seguridad administradas centralmente y controles de contenido a entradas y salidas de modelos."
+  },
+  "feat-000-09": {
+    "label": "Conectar las capacidades de modelos fundacionales a aplicaciones a través de llamadas de servicio programáticas.",
+    "why": "API-based integration pertenece a Amazon Bedrock, y habilita esta tarea: Conectar las capacidades de modelos fundacionales a aplicaciones a través de llamadas de servicio programáticas."
+  },
+  "feat-000-11": {
+    "label": "Crear plantillas de instrucciones reutilizables, probar variantes y rastrear versiones centralmente.",
+    "why": "Prompt Management pertenece a Amazon Bedrock, y habilita esta tarea: Crear plantillas de instrucciones reutilizables, probar variantes y rastrear versiones centralmente."
+  },
+  "feat-000-12": {
+    "label": "Conectar visualmente prompts, modelos, datos y lógica de aplicación en un flujo de trabajo generativo multietapa.",
+    "why": "Bedrock Flows pertenece a Amazon Bedrock, y habilita esta tarea: Conectar visualmente prompts, modelos, datos y lógica de aplicación en un flujo de trabajo generativo multietapa."
+  },
+  "feat-000-14": {
+    "label": "Descubrir e implementar modelos de terceros elegibles a través de la plataforma de modelos fundacionales administrada.",
+    "why": "Bedrock Marketplace pertenece a Amazon Bedrock, y habilita esta tarea: Descubrir e implementar modelos de terceros elegibles a través de la plataforma de modelos fundacionales administrada."
+  },
+  "feat-000-16": {
+    "label": "Ampliar el conocimiento de dominio de un modelo usando un gran conjunto de texto propietario sin etiquetar.",
+    "why": "continued pre-training pertenece a Amazon Bedrock, y habilita esta tarea: Ampliar el conocimiento de dominio de un modelo usando un gran conjunto de texto propietario sin etiquetar."
+  },
+  "feat-001-00": {
+    "label": "Definir e invocar un bucle de agente administrado con un modelo, prompt del sistema y herramientas en una sola llamada a API.",
+    "why": "Harness pertenece a Amazon Bedrock AgentCore, y habilita esta tarea: Definir e invocar un bucle de agente administrado con un modelo, prompt del sistema y herramientas en una sola llamada a API."
+  },
+  "feat-001-03": {
+    "label": "Convertir APIs, funciones Lambda y servicios en herramientas compatibles con MCP gobernadas.",
+    "why": "Gateway pertenece a Amazon Bedrock AgentCore, y habilita esta tarea: Convertir APIs, funciones Lambda y servicios en herramientas compatibles con MCP gobernadas."
+  },
+  "feat-001-05": {
+    "label": "Ejecutar Python, JavaScript o TypeScript dentro de un sandbox aislado.",
+    "why": "Code Interpreter pertenece a Amazon Bedrock AgentCore, y habilita esta tarea: Ejecutar Python, JavaScript o TypeScript dentro de un sandbox aislado."
+  },
+  "feat-001-06": {
+    "label": "Interactuar con aplicaciones web en un entorno administrado seguro usando marcos de automatización.",
+    "why": "Browser pertenece a Amazon Bedrock AgentCore, y habilita esta tarea: Interactuar con aplicaciones web en un entorno administrado seguro usando marcos de automatización."
+  },
+  "feat-001-08": {
+    "label": "Habilitar microtransacciones de agentes para APIs pagadas, servidores MCP y contenido usando el protocolo x402.",
+    "why": "Payments pertenece a Amazon Bedrock AgentCore, y habilita esta tarea: Habilitar microtransacciones de agentes para APIs pagadas, servidores MCP y contenido usando el protocolo x402."
+  },
+  "feat-001-10": {
+    "label": "Generar y probar mejoras de configuración versionadas usando experimentos de tráfico controlado.",
+    "why": "Optimization pertenece a Amazon Bedrock AgentCore, y habilita esta tarea: Generar y probar mejoras de configuración versionadas usando experimentos de tráfico controlado."
+  },
+  "feat-001-12": {
+    "label": "Publicar, revisar, aprobar y descubrir agentes, servidores MCP, herramientas y habilidades en un catálogo central.",
+    "why": "Registry pertenece a Amazon Bedrock AgentCore, y habilita esta tarea: Publicar, revisar, aprobar y descubrir agentes, servidores MCP, herramientas y habilidades en un catálogo central."
+  },
+  "feat-002-01": {
+    "label": "Construir aplicaciones de agentes en cualquiera de dos ecosistemas de programación ampliamente utilizados.",
+    "why": "Python and TypeScript SDKs pertenece a Strands Agents, y habilita esta tarea: Construir aplicaciones de agentes en cualquiera de dos ecosistemas de programación ampliamente utilizados."
+  },
+  "feat-002-03": {
+    "label": "Coordinar agentes especializados que colaboran o transfieren trabajo entre sí.",
+    "why": "multi-agent patterns pertenece a Strands Agents, y habilita esta tarea: Coordinar agentes especializados que colaboran o transfieren trabajo entre sí."
+  },
+  "feat-003-01": {
+    "label": "Crear nuevos activos visuales y medios en movimiento a partir de instrucciones en lenguaje natural.",
+    "why": "image and video generation pertenece a Amazon Nova, y habilita esta tarea: Crear nuevos activos visuales y medios en movimiento a partir de instrucciones en lenguaje natural."
+  },
+  "feat-003-02": {
+    "label": "Construir experiencias de voz que comprendan o produzcan lenguaje hablado.",
+    "why": "speech models pertenece a Amazon Nova, y habilita esta tarea: Construir experiencias de voz que comprendan o produzcan lenguaje hablado."
+  },
+  "feat-003-04": {
+    "label": "Acceder a esta familia de modelos AWS a través de APIs de modelos fundacionales administradas y herramientas.",
+    "why": "Amazon Bedrock integration pertenece a Amazon Nova, y habilita esta tarea: Acceder a esta familia de modelos AWS a través de APIs de modelos fundacionales administradas y herramientas."
+  },
+  "feat-004-01": {
+    "label": "Crear compañeros especializados con experiencia definida, tono y conjuntos de herramientas que funcionen de forma proactiva.",
+    "why": "Agents pertenece a Amazon Quick, y habilita esta tarea: Crear compañeros especializados con experiencia definida, tono y conjuntos de herramientas que funcionen de forma proactiva."
+  },
+  "feat-004-03": {
+    "label": "Convertir preguntas en tableros interactivos, gráficos, pronósticos y exploración de datos.",
+    "why": "Business Intelligence pertenece a Amazon Quick, y habilita esta tarea: Convertir preguntas en tableros interactivos, gráficos, pronósticos y exploración de datos."
+  },
+  "feat-004-05": {
+    "label": "Crear y compartir herramientas interactivas sin escribir código ni presentar una solicitud de TI.",
+    "why": "Build custom apps pertenece a Amazon Quick, y habilita esta tarea: Crear y compartir herramientas interactivas sin escribir código ni presentar una solicitud de TI."
+  },
+  "feat-005-01": {
+    "label": "Respetar los derechos de acceso del sistema de origen al decidir qué información puede ver un empleado.",
+    "why": "permissions-aware responses pertenece a Amazon Q Business, y habilita esta tarea: Respetar los derechos de acceso del sistema de origen al decidir qué información puede ver un empleado."
+  },
+  "feat-006-00": {
+    "label": "Crear nuevo código fuente y ayudar a los desarrolladores a entender implementaciones desconocidas.",
+    "why": "Code generation and explanation pertenece a Amazon Q Developer, y habilita esta tarea: Crear nuevo código fuente y ayudar a los desarrolladores a entender implementaciones desconocidas."
+  },
+  "feat-006-02": {
+    "label": "Inspeccionar cambios en busca de defectos de mantenibilidad y vulnerabilidades potenciales antes del lanzamiento.",
+    "why": "code reviews and security scanning pertenece a Amazon Q Developer, y habilita esta tarea: Inspeccionar cambios en busca de defectos de mantenibilidad y vulnerabilidades potenciales antes del lanzamiento."
+  },
+  "feat-006-04": {
+    "label": "Recomendar configuraciones de servicios en la nube y enfoques de implementación durante el desarrollo.",
+    "why": "AWS resource guidance pertenece a Amazon Q Developer, y habilita esta tarea: Recomendar configuraciones de servicios en la nube y enfoques de implementación durante el desarrollo."
+  },
+  "feat-007-00": {
+    "label": "Actualizar pilas y marcos de aplicaciones de Microsoft más antiguos con análisis y cambios automatizados.",
+    "why": ".NET modernization pertenece a AWS Transform, y habilita esta tarea: Actualizar pilas y marcos de aplicaciones de Microsoft más antiguos con análisis y cambios automatizados."
+  },
+  "feat-007-02": {
+    "label": "Planificar y ejecutar la migración desde patrimonios de aplicaciones de centro de datos virtualizados.",
+    "why": "VMware workload transformation pertenece a AWS Transform, y habilita esta tarea: Planificar y ejecutar la migración desde patrimonios de aplicaciones de centro de datos virtualizados."
+  },
+  "feat-007-04": {
+    "label": "Aplicar cambios de código fuente repetibles en una aplicación grande en lugar de editar cada archivo manualmente.",
+    "why": "automated refactoring pertenece a AWS Transform, y habilita esta tarea: Aplicar cambios de código fuente repetibles en una aplicación grande en lugar de editar cada archivo manualmente."
+  },
+  "feat-008-00": {
+    "label": "Transformar ideas de alto nivel en requisitos estructurados, diseños y tareas ejecutables.",
+    "why": "Specs pertenece a Kiro, y habilita esta tarea: Transformar ideas de alto nivel en requisitos estructurados, diseños y tareas ejecutables."
+  },
+  "feat-008-02": {
+    "label": "Diagnosticar causas raíz, diseñar correcciones dirigidas y protegerse contra regresiones.",
+    "why": "Bugfix Specs pertenece a Kiro, y habilita esta tarea: Diagnosticar causas raíz, diseñar correcciones dirigidas y protegerse contra regresiones."
+  },
+  "feat-008-04": {
+    "label": "Ejecutar prompts o comandos de shell automáticamente cuando ocurran eventos de desarrollo definidos.",
+    "why": "Agent hooks pertenece a Kiro, y habilita esta tarea: Ejecutar prompts o comandos de shell automáticamente cuando ocurran eventos de desarrollo definidos."
+  },
+  "feat-009-00": {
+    "label": "Continuar trabajo de desarrollo acotado de forma asincrónica mientras el desarrollador se enfoca en otras cosas.",
+    "why": "Background task execution pertenece a Kiro autonomous agent, y habilita esta tarea: Continuar trabajo de desarrollo acotado de forma asincrónica mientras el desarrollador se enfoca en otras cosas."
+  },
+  "feat-009-02": {
+    "label": "Devolver trabajo de fondo completado como cambio de control de código fuente revisable.",
+    "why": "pull-request delivery pertenece a Kiro autonomous agent, y habilita esta tarea: Devolver trabajo de fondo completado como cambio de control de código fuente revisable."
+  },
+  "feat-010-01": {
+    "label": "Publicar un modelo seleccionado detrás de infraestructura administrada para que las aplicaciones puedan invocarlo.",
+    "why": "model deployment pertenece a Amazon SageMaker AI JumpStart, y habilita esta tarea: Publicar un modelo seleccionado detrás de infraestructura administrada para que las aplicaciones puedan invocarlo."
+  },
+  "feat-010-03": {
+    "label": "Implementar modelos generativos entrenados previamente de la comunidad y distribuidos abiertamente dentro de flujos de trabajo de aprendizaje automático administrados.",
+    "why": "Foundation models pertenece a Amazon SageMaker AI JumpStart, y habilita esta tarea: Implementar modelos generativos entrenados previamente de la comunidad y distribuidos abiertamente dentro de flujos de trabajo de aprendizaje automático administrados."
+  },
+  "feat-011-01": {
+    "label": "Convertir contenido en vectores numéricos para recuperación semántica, agrupación o comparación de similitud.",
+    "why": "embeddings pertenece a Amazon Titan, y habilita esta tarea: Convertir contenido en vectores numéricos para recuperación semántica, agrupación o comparación de similitud."
+  },
+  "feat-012-00": {
+    "label": "Administrar el ciclo de vida completo del modelo personalizado desde experimentación hasta operación controlada en producción.",
+    "why": "Amazon SageMaker AI pertenece a Amazon SageMaker AI, y habilita esta tarea: Administrar el ciclo de vida completo del modelo personalizado desde experimentación hasta operación controlada en producción."
+  },
+  "feat-012-01": {
+    "label": "Servir modelos entrenados sin administrar los servidores de aplicación subyacentes.",
+    "why": "managed hosting pertenece a Amazon SageMaker AI, y habilita esta tarea: Servir modelos entrenados sin administrar los servidores de aplicación subyacentes."
+  },
+  "feat-012-03": {
+    "label": "Entrenar modelos grandes en múltiples aceleradores o máquinas para reducir el tiempo transcurrido.",
+    "why": "distributed training pertenece a Amazon SageMaker AI, y habilita esta tarea: Entrenar modelos grandes en múltiples aceleradores o máquinas para reducir el tiempo transcurrido."
+  },
+  "feat-012-05": {
+    "label": "Explorar datos automáticamente, seleccionar algoritmos, ajustar candidatos y producir artefactos de modelo explicables.",
+    "why": "SageMaker Autopilot pertenece a Amazon SageMaker AI, y habilita esta tarea: Explorar datos automáticamente, seleccionar algoritmos, ajustar candidatos y producir artefactos de modelo explicables."
+  },
+  "feat-012-07": {
+    "label": "Mantener entradas de modelo reutilizables consistentes entre entrenamiento y predicción en línea de baja latencia.",
+    "why": "SageMaker Feature Store pertenece a Amazon SageMaker AI, y habilita esta tarea: Mantener entradas de modelo reutilizables consistentes entre entrenamiento y predicción en línea de baja latencia."
+  },
+  "feat-012-09": {
+    "label": "Detectar cambio de datos en producción, cambios de calidad, cambios de sesgo y cambios de atribución de características.",
+    "why": "SageMaker Model Monitor pertenece a Amazon SageMaker AI, y habilita esta tarea: Detectar cambio de datos en producción, cambios de calidad, cambios de sesgo y cambios de atribución de características."
+  },
+  "feat-012-11": {
+    "label": "Registrar y comparar ejecuciones de entrenamiento, parámetros, conjuntos de datos y métricas resultantes.",
+    "why": "SageMaker Experiments pertenece a Amazon SageMaker AI, y habilita esta tarea: Registrar y comparar ejecuciones de entrenamiento, parámetros, conjuntos de datos y métricas resultantes."
+  },
+  "feat-012-13": {
+    "label": "Elegir modos de predicción administrados para solicitudes intermitentes, cargas en cola o conjuntos de datos sin conexión.",
+    "why": "serverless asynchronous and batch inference pertenece a Amazon SageMaker AI, y habilita esta tarea: Elegir modos de predicción administrados para solicitudes intermitentes, cargas en cola o conjuntos de datos sin conexión."
+  },
+  "feat-012-15": {
+    "label": "Dar a los equipos de datos, análisis e IA un único ambiente gobernado de desarrollo y colaboración.",
+    "why": "SageMaker Unified Studio pertenece a Amazon SageMaker AI, y habilita esta tarea: Dar a los equipos de datos, análisis e IA un único ambiente gobernado de desarrollo y colaboración."
+  },
+  "feat-013-01": {
+    "label": "Desarrollar interactivamente con notebooks o archivos de código en herramientas basadas en navegador.",
+    "why": "JupyterLab and Code Editor pertenece a Amazon SageMaker AI Studio, y habilita esta tarea: Desarrollar interactivamente con notebooks o archivos de código en herramientas basadas en navegador."
+  },
+  "feat-013-03": {
+    "label": "Mover un modelo desarrollado a un ambiente donde los consumidores pueden solicitar predicciones.",
+    "why": "deployment pertenece a Amazon SageMaker AI Studio, y habilita esta tarea: Mover un modelo desarrollado a un ambiente donde los consumidores pueden solicitar predicciones."
+  },
+  "feat-014-00": {
+    "label": "Crear modelos predictivos a través de un flujo de trabajo gráfico en lugar de escribir código de entrenamiento.",
+    "why": "Visual model building pertenece a Amazon SageMaker AI Canvas, y habilita esta tarea: Crear modelos predictivos a través de un flujo de trabajo gráfico en lugar de escribir código de entrenamiento."
+  },
+  "feat-014-03": {
+    "label": "Experimentar con capacidades generativas a través de una interfaz visual para usuarios empresariales.",
+    "why": "foundation-model access without writing ML code pertenece a Amazon SageMaker AI Canvas, y habilita esta tarea: Experimentar con capacidades generativas a través de una interfaz visual para usuarios empresariales."
+  },
+  "feat-016-00": {
+    "label": "Coordinar personas, instrucciones y controles de calidad para anotar ejemplos de entrenamiento.",
+    "why": "Managed human labeling workflows pertenece a Amazon SageMaker AI Ground Truth, y habilita esta tarea: Coordinar personas, instrucciones y controles de calidad para anotar ejemplos de entrenamiento."
+  },
+  "feat-016-02": {
+    "label": "Producir ejemplos de verdad fundamental necesarios para aprender tareas supervisadas y medir el desempeño.",
+    "why": "labeled datasets for training and evaluation pertenece a Amazon SageMaker AI Ground Truth, y habilita esta tarea: Producir ejemplos de verdad fundamental necesarios para aprender tareas supervisadas y medir el desempeño."
+  },
+  "feat-017-01": {
+    "label": "Mejorar la utilización del acelerador y recuperación para entrenamiento computacionalmente intensivo.",
+    "why": "infrastructure optimized for large-scale ML workloads pertenece a Amazon SageMaker AI HyperPod, y habilita esta tarea: Mejorar la utilización del acelerador y recuperación para entrenamiento computacionalmente intensivo."
+  },
+  "feat-018-01": {
+    "label": "Incrustar aprobación humana y corrección tanto en aplicaciones generativas como predictivas.",
+    "why": "Human review workflows pertenece a Amazon Augmented AI (A2I), y habilita esta tarea: Incrustar aprobación humana y corrección tanto en aplicaciones generativas como predictivas."
+  },
+  "feat-019-01": {
+    "label": "Restringir una tarea humana a personas que cumplan criterios de habilidades o aprobación definidos.",
+    "why": "custom worker qualifications pertenece a Amazon Mechanical Turk, y habilita esta tarea: Restringir una tarea humana a personas que cumplan criterios de habilidades o aprobación definidos."
+  },
+  "feat-020-00": {
+    "label": "Determinar cuándo registros escritos de manera diferente se refieren a la misma persona u organización del mundo real.",
+    "why": "Entity matching and resolution pertenece a AWS Entity Resolution, y habilita esta tarea: Determinar cuándo registros escritos de manera diferente se refieren a la misma persona u organización del mundo real."
+  },
+  "feat-021-00": {
+    "label": "Examinar conjuntos de datos producidos externamente que pueden aumentar la información propia de una organización.",
+    "why": "Third-party data catalogue pertenece a AWS Data Exchange, y habilita esta tarea: Examinar conjuntos de datos producidos externamente que pueden aumentar la información propia de una organización."
+  },
+  "feat-021-02": {
+    "label": "Poner la información suscrita a disposición de herramientas de almacenamiento y análisis sin un proceso de transferencia separado.",
+    "why": "delivery to AWS data services pertenece a AWS Data Exchange, y habilita esta tarea: Poner la información suscrita a disposición de herramientas de almacenamiento y análisis sin un proceso de transferencia separado."
+  },
+  "feat-022-01": {
+    "label": "Elegir entre flota de big data aprovisionada o ejecución bajo demanda sin administrar clústeres.",
+    "why": "cluster and serverless deployment options pertenece a Amazon EMR, y habilita esta tarea: Elegir entre flota de big data aprovisionada o ejecución bajo demanda sin administrar clústeres."
+  },
+  "feat-023-00": {
+    "label": "Preparar y combinar información de múltiples fuentes sin aprovisionar servidores de procesamiento de datos.",
+    "why": "Serverless data integration pertenece a AWS Glue, y habilita esta tarea: Preparar y combinar información de múltiples fuentes sin aprovisionar servidores de procesamiento de datos."
+  },
+  "feat-023-02": {
+    "label": "Mantener metadatos técnicos centralizados para que las herramientas de análisis e IA puedan encontrar y entender conjuntos de datos.",
+    "why": "AWS Glue Data Catalog pertenece a AWS Glue, y habilita esta tarea: Mantener metadatos técnicos centralizados para que las herramientas de análisis e IA puedan encontrar y entender conjuntos de datos."
+  },
+  "feat-023-04": {
+    "label": "Definir expectativas para conjuntos de datos y detectar registros o canalizaciones que las violen.",
+    "why": "data quality rules and monitoring pertenece a AWS Glue, y habilita esta tarea: Definir expectativas para conjuntos de datos y detectar registros o canalizaciones que las violen."
+  },
+  "feat-024-01": {
+    "label": "Calcular distribuciones, valores faltantes y anomalías para entender un conjunto de datos antes del modelado.",
+    "why": "data profiling pertenece a AWS Glue DataBrew, y habilita esta tarea: Calcular distribuciones, valores faltantes y anomalías para entender un conjunto de datos antes del modelado."
+  },
+  "feat-025-00": {
+    "label": "Administrar el acceso a datos analíticos gobernados desde un único plano de control.",
+    "why": "Centralized data-lake permissions pertenece a AWS Lake Formation, y habilita esta tarea: Administrar el acceso a datos analíticos gobernados desde un único plano de control."
+  },
+  "feat-025-02": {
+    "label": "Proporcionar acceso controlado entre equipos o cuentas a tablas analíticas registradas.",
+    "why": "governed table sharing pertenece a AWS Lake Formation, y habilita esta tarea: Proporcionar acceso controlado entre equipos o cuentas a tablas analíticas registradas."
+  },
+  "feat-026-00": {
+    "label": "Indexar documentos y eventos operacionales para consultas rápidas sin operar el software del clúster de búsqueda.",
+    "why": "Managed search and log analytics pertenece a Amazon OpenSearch Service, y habilita esta tarea: Indexar documentos y eventos operacionales para consultas rápidas sin operar el software del clúster de búsqueda."
+  },
+  "feat-026-03": {
+    "label": "Combinar recuperación por palabras clave con consultas de similitud de baja latencia en grandes índices de contenido.",
+    "why": "full-text plus high-throughput semantic search pertenece a Amazon OpenSearch Service, y habilita esta tarea: Combinar recuperación por palabras clave con consultas de similitud de baja latencia en grandes índices de contenido."
+  },
+  "feat-027-00": {
+    "label": "Almacenar valores por columna para que las agregaciones analíticas grandes sean eficientes.",
+    "why": "Columnar data warehousing pertenece a Amazon Redshift, y habilita esta tarea: Almacenar valores por columna para que las agregaciones analíticas grandes sean eficientes."
+  },
+  "feat-027-02": {
+    "label": "Ejecutar consultas de almacén de datos con capacidad administrada automáticamente en lugar de mantener clústeres aprovisionados.",
+    "why": "serverless analytics pertenece a Amazon Redshift, y habilita esta tarea: Ejecutar consultas de almacén de datos con capacidad administrada automáticamente en lugar de mantener clústeres aprovisionados."
+  },
+  "feat-028-01": {
+    "label": "Notificar a las partes interesadas cuando el consumo real o pronosticado cruce un porcentaje o cantidad elegidos.",
+    "why": "threshold alerts pertenece a AWS Budgets, y habilita esta tarea: Notificar a las partes interesadas cuando el consumo real o pronosticado cruce un porcentaje o cantidad elegidos."
+  },
+  "feat-029-00": {
+    "label": "Desglosar cargos por servicio, cuenta, región, etiqueta u otra dimensión de facturación.",
+    "why": "Cost and usage filtering pertenece a AWS Cost Explorer, y habilita esta tarea: Desglosar cargos por servicio, cuenta, región, etiqueta u otra dimensión de facturación."
+  },
+  "feat-029-02": {
+    "label": "Estimar cargos futuros a partir de patrones de uso recientes.",
+    "why": "cost forecasting pertenece a AWS Cost Explorer, y habilita esta tarea: Estimar cargos futuros a partir de patrones de uso recientes."
+  },
+  "feat-030-01": {
+    "label": "Aprovisionar hardware especializado para entrenamiento o inferencia de modelos.",
+    "why": "GPU and ML accelerator instances pertenece a Amazon EC2, y habilita esta tarea: Aprovisionar hardware especializado para entrenamiento o inferencia de modelos."
+  },
+  "feat-030-02": {
+    "label": "Elegir el sistema operativo, red, almacenamiento y software instalado para un servidor virtual.",
+    "why": "Amazon EC2 instance types pertenece a Amazon EC2, y habilita esta tarea: Elegir el sistema operativo, red, almacenamiento y software instalado para un servidor virtual."
+  },
+  "feat-031-02": {
+    "label": "Cobrar por solicitudes y duración de computación en lugar de ejecutar continuamente un servidor.",
+    "why": "pay-per-use execution pertenece a AWS Lambda, y habilita esta tarea: Cobrar por solicitudes y duración de computación en lugar de ejecutar continuamente un servidor."
+  },
+  "feat-032-01": {
+    "label": "Ejecutar cargas de trabajo empaquetadas sin seleccionar ni administrar los hosts subyacentes.",
+    "why": "AWS Fargate serverless containers pertenece a Amazon Elastic Container Service (Amazon ECS), y habilita esta tarea: Ejecutar cargas de trabajo empaquetadas sin seleccionar ni administrar los hosts subyacentes."
+  },
+  "feat-033-00": {
+    "label": "Usar la API de clúster de contenedores estándar mientras AWS opera sus componentes de coordinación centrales.",
+    "why": "Managed Kubernetes control plane pertenece a Amazon Elastic Kubernetes Service (Amazon EKS), y habilita esta tarea: Usar la API de clúster de contenedores estándar mientras AWS opera sus componentes de coordinación centrales."
+  },
+  "feat-033-02": {
+    "label": "Conectar clústeres de contenedores con controles nativos en la nube de acceso, red y monitoreo.",
+    "why": "AWS identity networking and observability integration pertenece a Amazon Elastic Kubernetes Service (Amazon EKS), y habilita esta tarea: Conectar clústeres de contenedores con controles nativos en la nube de acceso, red y monitoreo."
+  },
+  "feat-034-01": {
+    "label": "Replicar datos relacionales en zonas de falla mientras se separa el almacenamiento del cálculo.",
+    "why": "distributed fault-tolerant storage pertenece a Amazon Aurora, y habilita esta tarea: Replicar datos relacionales en zonas de falla mientras se separa el almacenamiento del cálculo."
+  },
+  "feat-034-03": {
+    "label": "Usar una extensión de PostgreSQL para almacenar embeddings en el motor relacional de alto rendimiento de AWS.",
+    "why": "Aurora PostgreSQL with pgvector pertenece a Amazon Aurora, y habilita esta tarea: Usar una extensión de PostgreSQL para almacenar embeddings en el motor relacional de alto rendimiento de AWS."
+  },
+  "feat-035-00": {
+    "label": "Representar registros como objetos anidados flexibles en lugar de filas relacionales fijas.",
+    "why": "Document-oriented data model pertenece a Amazon DocumentDB (with MongoDB compatibility), y habilita esta tarea: Representar registros como objetos anidados flexibles en lugar de filas relacionales fijas."
+  },
+  "feat-035-02": {
+    "label": "Permitir que AWS mantenga copias redundantes y puntos de recuperación para una base de datos de documentos.",
+    "why": "managed replication and backups pertenece a Amazon DocumentDB (with MongoDB compatibility), y habilita esta tarea: Permitir que AWS mantenga copias redundantes y puntos de recuperación para una base de datos de documentos."
+  },
+  "feat-035-04": {
+    "label": "Filtrar registros anidados con operaciones de documento familiares mientras también se recupera contenido conceptualmente relacionado.",
+    "why": "$vectorSearch operator pertenece a Amazon DocumentDB (with MongoDB compatibility), y habilita esta tarea: Filtrar registros anidados con operaciones de documento familiares mientras también se recupera contenido conceptualmente relacionado."
+  },
+  "feat-036-01": {
+    "label": "Distribuir el tráfico y el almacenamiento de base de datos sin servidor a medida que crece la demanda.",
+    "why": "automatic horizontal scaling pertenece a Amazon DynamoDB, y habilita esta tarea: Distribuir el tráfico y el almacenamiento de base de datos sin servidor a medida que crece la demanda."
+  },
+  "feat-037-00": {
+    "label": "Usar estructuras de datos en memoria ampliamente adoptadas y clientes en una caché administrada.",
+    "why": "Valkey and Redis OSS compatibility pertenece a Amazon ElastiCache, y habilita esta tarea: Usar estructuras de datos en memoria ampliamente adoptadas y clientes en una caché administrada."
+  },
+  "feat-037-02": {
+    "label": "Reutilizar estado de aplicación transitorio o respuestas de modelo para reducir latencia y costo.",
+    "why": "session and inference-result caching pertenece a Amazon ElastiCache, y habilita esta tarea: Reutilizar estado de aplicación transitorio o respuestas de modelo para reducir latencia y costo."
+  },
+  "feat-038-01": {
+    "label": "Seguir múltiples enlaces entre entidades de manera eficiente sin costosos joins relacionales.",
+    "why": "relationship traversal pertenece a Amazon Neptune, y habilita esta tarea: Seguir múltiples enlaces entre entidades de manera eficiente sin costosos joins relacionales."
+  },
+  "feat-038-03": {
+    "label": "Combinar similitud de embedding con algoritmos sobre un gráfico analítico altamente conectado.",
+    "why": "Neptune Analytics vector search pertenece a Amazon Neptune, y habilita esta tarea: Combinar similitud de embedding con algoritmos sobre un gráfico analítico altamente conectado."
+  },
+  "feat-039-00": {
+    "label": "Elegir entre tecnologías SQL comerciales y de código abierto bien conocidas en un servicio administrado.",
+    "why": "Multiple relational database engines pertenece a Amazon Relational Database Service (Amazon RDS), y habilita esta tarea: Elegir entre tecnologías SQL comerciales y de código abierto bien conocidas en un servicio administrado."
+  },
+  "feat-039-02": {
+    "label": "Mantener un standby sincronizado en otra zona de falla para operación resiliente de base de datos.",
+    "why": "Multi-AZ high availability pertenece a Amazon Relational Database Service (Amazon RDS), y habilita esta tarea: Mantener un standby sincronizado en otra zona de falla para operación resiliente de base de datos."
+  },
+  "feat-039-04": {
+    "label": "Mantener vectores semánticos junto a tablas y transacciones establecidas sin adoptar un almacén de búsqueda separado.",
+    "why": "RDS for PostgreSQL pertenece a Amazon Relational Database Service (Amazon RDS), y habilita esta tarea: Mantener vectores semánticos junto a tablas y transacciones establecidas sin adoptar un almacén de búsqueda separado."
+  },
+  "feat-040-01": {
+    "label": "Aplicar una familia de asistentes generativos a tareas de conocimiento organizacional y entrega de software.",
+    "why": "business and developer assistants pertenece a Amazon Q, y habilita esta tarea: Aplicar una familia de asistentes generativos a tareas de conocimiento organizacional y entrega de software."
+  },
+  "feat-041-01": {
+    "label": "Entrenar análisis de texto para etiquetas y terminología específicas de la organización.",
+    "why": "custom NLP models for domain-specific extraction/classification pertenece a Amazon Comprehend, y habilita esta tarea: Entrenar análisis de texto para etiquetas y terminología específicas de la organización."
+  },
+  "feat-043-00": {
+    "label": "Crear experiencias de chat y teléfono que interactúen a través del lenguaje natural.",
+    "why": "Automatic speech recognition (ASR) pertenece a Amazon Lex, y habilita esta tarea: Crear experiencias de chat y teléfono que interactúen a través del lenguaje natural."
+  },
+  "feat-043-02": {
+    "label": "Rastrear el estado conversacional y recopilar la información necesaria para completar una solicitud.",
+    "why": "dialogue management pertenece a Amazon Lex, y habilita esta tarea: Rastrear el estado conversacional y recopilar la información necesaria para completar una solicitud."
+  },
+  "feat-044-00": {
+    "label": "Convertir contenido escrito en audio que suena natural para aplicaciones y accesibilidad.",
+    "why": "Neural text-to-speech (NTTS) pertenece a Amazon Polly, y habilita esta tarea: Convertir contenido escrito en audio que suena natural para aplicaciones y accesibilidad."
+  },
+  "feat-045-01": {
+    "label": "Alimentar contenido hablado en búsqueda, análisis, subtítulos o automatización posterior.",
+    "why": "Streaming transcription pertenece a Amazon Transcribe, y habilita esta tarea: Alimentar contenido hablado en búsqueda, análisis, subtítulos o automatización posterior."
+  },
+  "feat-047-00": {
+    "label": "Leer tanto palabras como estructura clave-valor de archivos digitales o escaneados.",
+    "why": "Document Analysis API pertenece a Amazon Textract, y habilita esta tarea: Leer tanto palabras como estructura clave-valor de archivos digitales o escaneados."
+  },
+  "feat-048-00": {
+    "label": "Permitir que empleados o clientes hagan preguntas sobre documentos usando lenguaje ordinario.",
+    "why": "Natural-language search across unstructured enterprise content pertenece a Amazon Kendra, y habilita esta tarea: Permitir que empleados o clientes hagan preguntas sobre documentos usando lenguaje ordinario."
+  },
+  "feat-049-00": {
+    "label": "Analizar imágenes o video para identificar entidades visuales, ambientes y personas.",
+    "why": "Label detection pertenece a Amazon Rekognition, y habilita esta tarea: Analizar imágenes o video para identificar entidades visuales, ambientes y personas."
+  },
+  "feat-050-00": {
+    "label": "Clasificar elementos para cada usuario a partir de su comportamiento y preferencias mientras interactúan.",
+    "why": "Real-time recommendations pertenece a Amazon Personalize, y habilita esta tarea: Clasificar elementos para cada usuario a partir de su comportamiento y preferencias mientras interactúan."
+  },
+  "feat-051-01": {
+    "label": "Estimar un rango de valores futuros posibles en niveles de confianza elegidos en lugar de devolver solo un número.",
+    "why": "probabilistic forecasts and prediction intervals pertenece a Amazon Forecast, y habilita esta tarea: Estimar un rango de valores futuros posibles en niveles de confianza elegidos en lugar de devolver solo un número."
+  },
+  "feat-052-01": {
+    "label": "Asignar una probabilidad numérica de fraude a una transacción o actividad de cuenta.",
+    "why": "event risk scores pertenece a Amazon Fraud Detector, y habilita esta tarea: Asignar una probabilidad numérica de fraude a una transacción o actividad de cuenta."
+  },
+  "feat-053-00": {
+    "label": "Aprender la apariencia de productos aceptables e indicar imágenes que contengan defectos inusuales.",
+    "why": "Visual anomaly detection pertenece a Amazon Lookout for Vision, y habilita esta tarea: Aprender la apariencia de productos aceptables e indicar imágenes que contengan defectos inusuales."
+  },
+  "feat-053-02": {
+    "label": "Ejecutar inspección de calidad visual entrenada cerca del equipo de fábrica.",
+    "why": "edge-device model deployment pertenece a Amazon Lookout for Vision, y habilita esta tarea: Ejecutar inspección de calidad visual entrenada cerca del equipo de fábrica."
+  },
+  "feat-054-00": {
+    "label": "Aprender el comportamiento de medidas comerciales normales y exponer cambios inesperados sin umbrales fijos.",
+    "why": "Automatic metric anomaly detection pertenece a Amazon Lookout for Metrics, y habilita esta tarea: Aprender el comportamiento de medidas comerciales normales y exponer cambios inesperados sin umbrales fijos."
+  },
+  "feat-054-02": {
+    "label": "Clasificar dimensiones que explican más fuertemente un cambio detectado en una medida comercial.",
+    "why": "root-cause contribution analysis pertenece a Amazon Lookout for Metrics, y habilita esta tarea: Clasificar dimensiones que explican más fuertemente un cambio detectado en una medida comercial."
+  },
+  "feat-056-01": {
+    "label": "Aplicar verificaciones aprendidas y basadas en reglas para vulnerabilidades de software comunes y prácticas inseguras.",
+    "why": "security detector library pertenece a Amazon CodeGuru Reviewer, y habilita esta tarea: Aplicar verificaciones aprendidas y basadas en reglas para vulnerabilidades de software comunes y prácticas inseguras."
+  },
+  "feat-057-00": {
+    "label": "Perfilar código en ejecución para localizar métodos costosos y reducir el desperdicio de computación.",
+    "why": "Continuous profiling pertenece a Amazon CodeGuru Profiler, y habilita esta tarea: Perfilar código en ejecución para localizar métodos costosos y reducir el desperdicio de computación."
+  },
+  "feat-058-01": {
+    "label": "Mostrar orientación e información relevante al personal del centro de contacto durante una conversación en vivo.",
+    "why": "real-time agent assistance pertenece a Amazon Connect, y habilita esta tarea: Mostrar orientación e información relevante al personal del centro de contacto durante una conversación en vivo."
+  },
+  "feat-058-03": {
+    "label": "Predecir la demanda de contacto y alinear la cobertura de la fuerza de trabajo con el volumen esperado.",
+    "why": "forecasting and scheduling pertenece a Amazon Connect, y habilita esta tarea: Predecir la demanda de contacto y alinear la cobertura de la fuerza de trabajo con el volumen esperado."
+  },
+  "feat-059-00": {
+    "label": "Usar pedidos históricos y señales para estimar requisitos de productos futuros.",
+    "why": "Demand planning pertenece a AWS Supply Chain, y habilita esta tarea: Usar pedidos históricos y señales para estimar requisitos de productos futuros."
+  },
+  "feat-059-02": {
+    "label": "Unificar registros operacionales de sistemas empresariales para planificación y análisis.",
+    "why": "supply-chain data lake pertenece a AWS Supply Chain, y habilita esta tarea: Unificar registros operacionales de sistemas empresariales para planificación y análisis."
+  },
+  "feat-060-01": {
+    "label": "Solicitar, aprobar y auditar acceso a conjuntos de datos compartidos a través de un flujo de trabajo administrado.",
+    "why": "governed data subscriptions pertenece a Amazon DataZone, y habilita esta tarea: Solicitar, aprobar y auditar acceso a conjuntos de datos compartidos a través de un flujo de trabajo administrado."
+  },
+  "feat-061-00": {
+    "label": "Evaluar documentos de arquitectura contra requisitos organizacionales antes de escribir código.",
+    "why": "Design security review pertenece a AWS Security Agent, y habilita esta tarea: Evaluar documentos de arquitectura contra requisitos organizacionales antes de escribir código."
+  },
+  "feat-061-02": {
+    "label": "Usar agentes especializados para ejecutar escenarios de ataque multietapa contra aplicaciones web e interfaces de programación.",
+    "why": "On-demand penetration testing pertenece a AWS Security Agent, y habilita esta tarea: Usar agentes especializados para ejecutar escenarios de ataque multietapa contra aplicaciones web e interfaces de programación."
+  },
+  "feat-061-04": {
+    "label": "Devolver rutas de exploit reproducibles, análisis de impacto y correcciones listas para implementar.",
+    "why": "Actionable fixes for confirmed vulnerabilities pertenece a AWS Security Agent, y habilita esta tarea: Devolver rutas de exploit reproducibles, análisis de impacto y correcciones listas para implementar."
+  },
+  "feat-062-01": {
+    "label": "Correlacionar telemetría, código y datos de implementación para identificar por qué ocurrió un fallo en producción.",
+    "why": "Root cause analysis pertenece a AWS DevOps Agent, y habilita esta tarea: Correlacionar telemetría, código y datos de implementación para identificar por qué ocurrió un fallo en producción."
+  },
+  "feat-062-03": {
+    "label": "Descubrir servicios y recursos y mantener una topología dinámica de sus relaciones.",
+    "why": "Application Mapping pertenece a AWS DevOps Agent, y habilita esta tarea: Descubrir servicios y recursos y mantener una topología dinámica de sus relaciones."
+  },
+  "feat-063-00": {
+    "label": "Registrar quién realizó una acción del plano de control en la nube, cuándo ocurrió y desde dónde.",
+    "why": "API and user activity history pertenece a AWS CloudTrail, y habilita esta tarea: Registrar quién realizó una acción del plano de control en la nube, cuándo ocurrió y desde dónde."
+  },
+  "feat-064-00": {
+    "label": "Recopilar mediciones numéricas, registros de eventos y rutas de solicitud en un servicio de monitoreo.",
+    "why": "Metrics logs and traces pertenece a Amazon CloudWatch, y habilita esta tarea: Recopilar mediciones numéricas, registros de eventos y rutas de solicitud en un servicio de monitoreo."
+  },
+  "feat-064-02": {
+    "label": "Visualizar la salud del sistema y el comportamiento del modelo para supervisión de producción continua.",
+    "why": "dashboards and model observability pertenece a Amazon CloudWatch, y habilita esta tarea: Visualizar la salud del sistema y el comportamiento del modelo para supervisión de producción continua."
+  },
+  "feat-065-01": {
+    "label": "Evaluar continuamente las configuraciones de recursos contra condiciones organizacionales requeridas.",
+    "why": "compliance rules pertenece a AWS Config, y habilita esta tarea: Evaluar continuamente las configuraciones de recursos contra condiciones organizacionales requeridas."
+  },
+  "feat-066-00": {
+    "label": "Recibir hallazgos de mejores prácticas en grandes categorías de calidad operacional.",
+    "why": "Cost security performance and resilience recommendations pertenece a AWS Trusted Advisor, y habilita esta tarea: Recibir hallazgos de mejores prácticas en grandes categorías de calidad operacional."
+  },
+  "feat-066-01": {
+    "label": "Enfoque de remediación en recomendaciones clasificadas por su impacto potencial en la cuenta.",
+    "why": "prioritized checks pertenece a AWS Trusted Advisor, y habilita esta tarea: Enfoque de remediación en recomendaciones clasificadas por su impacto potencial en la cuenta."
+  },
+  "feat-067-00": {
+    "label": "Evaluar una arquitectura en excelencia operacional, seguridad, confiabilidad, desempeño, costo y sostenibilidad.",
+    "why": "Six-pillar workload reviews pertenece a AWS Well-Architected Tool, y habilita esta tarea: Evaluar una arquitectura en excelencia operacional, seguridad, confiabilidad, desempeño, costo y sostenibilidad."
+  },
+  "feat-068-00": {
+    "label": "Servir solicitudes repetidas desde ubicaciones cercanas a usuarios en lugar de regresar al origen cada vez.",
+    "why": "Global edge caching pertenece a Amazon CloudFront, y habilita esta tarea: Servir solicitudes repetidas desde ubicaciones cercanas a usuarios en lugar de regresar al origen cada vez."
+  },
+  "feat-068-02": {
+    "label": "Distribuir activos web sobre conexiones encriptadas a través de una red global.",
+    "why": "HTTPS content delivery pertenece a Amazon CloudFront, y habilita esta tarea: Distribuir activos web sobre conexiones encriptadas a través de una red global."
+  },
+  "feat-069-01": {
+    "label": "Filtrar el tráfico de recursos y subredes con reglas de red con estado y sin estado.",
+    "why": "security groups and network ACLs pertenece a Amazon Virtual Private Cloud (Amazon VPC), y habilita esta tarea: Filtrar el tráfico de recursos y subredes con reglas de red con estado y sin estado."
+  },
+  "feat-070-00": {
+    "label": "Descargar certificaciones y reportes de AWS cuando auditores o clientes soliciten evidencia de garantía.",
+    "why": "On-demand compliance documents pertenece a AWS Artifact, y habilita esta tarea: Descargar certificaciones y reportes de AWS cuando auditores o clientes soliciten evidencia de garantía."
+  },
+  "feat-070-01": {
+    "label": "Revisar evaluaciones independientes de controles de AWS y efectividad operacional.",
+    "why": "third-party audit reports pertenece a AWS Artifact, y habilita esta tarea: Revisar evaluaciones independientes de controles de AWS y efectividad operacional."
+  },
+  "feat-071-00": {
+    "label": "Recopilar registros de recursos y actividad continuamente en lugar de ensamblar prueba de auditoría manualmente.",
+    "why": "Automated evidence collection pertenece a AWS Audit Manager, y habilita esta tarea: Recopilar registros de recursos y actividad continuamente en lugar de ensamblar prueba de auditoría manualmente."
+  },
+  "feat-071-02": {
+    "label": "Compilar estado de control y evidencia de apoyo en un paquete listo para el auditor.",
+    "why": "assessment reports pertenece a AWS Audit Manager, y habilita esta tarea: Compilar estado de control y evidencia de apoyo en un paquete listo para el auditor."
+  },
+  "feat-072-01": {
+    "label": "Otorgar solo las acciones y recursos necesarios para la tarea de una persona o carga de trabajo.",
+    "why": "least-privilege permissions pertenece a AWS Identity and Access Management (IAM), y habilita esta tarea: Otorgar solo las acciones y recursos necesarios para la tarea de una persona o carga de trabajo."
+  },
+  "feat-073-00": {
+    "label": "Verificar máquinas virtuales y artefactos de software empaquetados en busca de vulnerabilidades conocidas.",
+    "why": "Amazon EC2 and container image scanning pertenece a Amazon Inspector, y habilita esta tarea: Verificar máquinas virtuales y artefactos de software empaquetados en busca de vulnerabilidades conocidas."
+  },
+  "feat-073-02": {
+    "label": "Priorizar una vulnerabilidad usando contexto de explotabilidad y exposición de recursos.",
+    "why": "risk-based findings pertenece a Amazon Inspector, y habilita esta tarea: Priorizar una vulnerabilidad usando contexto de explotabilidad y exposición de recursos."
+  },
+  "feat-074-01": {
+    "label": "Proteger datos con una clave de datos y luego encriptar esa clave bajo una clave raíz de vida más larga.",
+    "why": "envelope encryption pertenece a AWS Key Management Service (AWS KMS), y habilita esta tarea: Proteger datos con una clave de datos y luego encriptar esa clave bajo una clave raíz de vida más larga."
+  },
+  "feat-075-00": {
+    "label": "Clasificar contenido de objetos para localizar información personal, financiera, de credencial o regulada.",
+    "why": "Machine-learning sensitive-data discovery pertenece a Amazon Macie, y habilita esta tarea: Clasificar contenido de objetos para localizar información personal, financiera, de credencial o regulada."
+  },
+  "feat-075-02": {
+    "label": "Mostrar alertas viables cuando se detecten objetos sensibles o configuraciones de almacenamiento inseguras.",
+    "why": "findings for exposed data pertenece a Amazon Macie, y habilita esta tarea: Mostrar alertas viables cuando se detecten objetos sensibles o configuraciones de almacenamiento inseguras."
+  },
+  "feat-076-01": {
+    "label": "Reemplazar contraseñas de base de datos o aplicación compatibles en un cronograma sin actualización manual.",
+    "why": "automatic credential rotation pertenece a AWS Secrets Manager, y habilita esta tarea: Reemplazar contraseñas de base de datos o aplicación compatibles en un cronograma sin actualización manual."
+  },
+  "feat-077-00": {
+    "label": "Persistir archivos, conjuntos de datos y artefactos de forma redundante para acceso en la nube a largo plazo.",
+    "why": "Highly durable object storage pertenece a Amazon Simple Storage Service (Amazon S3), y habilita esta tarea: Persistir archivos, conjuntos de datos y artefactos de forma redundante para acceso en la nube a largo plazo."
+  },
+  "feat-077-02": {
+    "label": "Transicionar o expirar objetos automáticamente a medida que cambian su antigüedad y necesidades de acceso.",
+    "why": "lifecycle management pertenece a Amazon Simple Storage Service (Amazon S3), y habilita esta tarea: Transicionar o expirar objetos automáticamente a medida que cambian su antigüedad y necesidades de acceso."
+  },
+  "feat-077-04": {
+    "label": "Priorizar la economía de almacenamiento para colecciones de vectores muy grandes que no requieren latencia ultra baja.",
+    "why": "cost-optimized billion-scale vector storage pertenece a Amazon Simple Storage Service (Amazon S3), y habilita esta tarea: Priorizar la economía de almacenamiento para colecciones de vectores muy grandes que no requieren latencia ultra baja."
+  },
+  "feat-078-01": {
+    "label": "Intercambiar velocidad de recuperación contra precio al restaurar objetos archivados.",
+    "why": "expedited to bulk retrieval options pertenece a Amazon S3 Glacier, y habilita esta tarea: Intercambiar velocidad de recuperación contra precio al restaurar objetos archivados."
+  },
+  "feat-079-00": {
+    "label": "Persistir registros de salud en un formato interoperable diseñado para intercambio clínico.",
+    "why": "FHIR-enabled patient-data store pertenece a AWS HealthLake, y habilita esta tarea: Persistir registros de salud en un formato interoperable diseñado para intercambio clínico."
+  },
+  "feat-080-00": {
+    "label": "Transcribir conversaciones clínicas con vocabulario ajustado para la salud.",
+    "why": "Medical speech recognition pertenece a AWS HealthScribe, y habilita esta tarea: Transcribir conversaciones clínicas con vocabulario ajustado para la salud."
+  },
+  "feat-080-02": {
+    "label": "Identificar conceptos médicamente significativos de una conversación paciente-clínico.",
+    "why": "clinical term extraction pertenece a AWS HealthScribe, y habilita esta tarea: Identificar conceptos médicamente significativos de una conversación paciente-clínico."
+  },
+  "feat-080-04": {
+    "label": "Apoyar cargas de trabajo de salud reguladas cuando se configura bajo los controles de cumplimiento requeridos.",
+    "why": "HIPAA-eligible processing pertenece a AWS HealthScribe, y habilita esta tarea: Apoyar cargas de trabajo de salud reguladas cuando se configura bajo los controles de cumplimiento requeridos."
+  },
+  "feat-082-00": {
+    "label": "Servir redes neurales entrenadas en silicio AWS optimizadas para economía de predicción.",
+    "why": "Cost/performance-focused deep-learning and generative-AI inference pertenece a AWS Inferentia / Inferentia2, y habilita esta tarea: Servir redes neurales entrenadas en silicio AWS optimizadas para economía de predicción."
+  },
+  "feat-083-00": {
+    "label": "Traducir gráficos de redes neurales entrenadas en instrucciones optimizadas para aceleradores de aprendizaje automático de AWS.",
+    "why": "Model compilation pertenece a AWS Neuron SDK, y habilita esta tarea: Traducir gráficos de redes neurales entrenadas en instrucciones optimizadas para aceleradores de aprendizaje automático de AWS."
+  },
+  "feat-083-02": {
+    "label": "Inspeccionar la utilización del acelerador y el comportamiento de ejecución para mejorar el desempeño.",
+    "why": "profiling and debugging tools pertenece a AWS Neuron SDK, y habilita esta tarea: Inspeccionar la utilización del acelerador y el comportamiento de ejecución para mejorar el desempeño."
+  },
+  "feat-084-01": {
+    "label": "Compilar y optimizar cargas de trabajo de entrenamiento para silicio AWS de propósito específico.",
+    "why": "Neuron SDK support pertenece a Amazon EC2 Trn1 / Trn2 instances, y habilita esta tarea: Compilar y optimizar cargas de trabajo de entrenamiento para silicio AWS de propósito específico."
+  },
+  "feat-085-00": {
+    "label": "Elegir generaciones de aceleradores AWS diseñadas específicamente para predicción de redes neurales.",
+    "why": "First- and second-generation Inferentia pertenece a Amazon EC2 Inf1 / Inf2 instances, y habilita esta tarea: Elegir generaciones de aceleradores AWS diseñadas específicamente para predicción de redes neurales."
+  },
+  "feat-085-02": {
+    "label": "Compilar y ajustar modelos entrenados para aceleradores de predicción de AWS.",
+    "why": "Neuron SDK support for inference pertenece a Amazon EC2 Inf1 / Inf2 instances, y habilita esta tarea: Compilar y ajustar modelos entrenados para aceleradores de predicción de AWS."
+  },
+  "feat-087-00": {
+    "label": "Usar una arquitectura de acelerador de gama alta actual para entrenamiento e inferencia de modelos grandes exigentes.",
+    "why": "NVIDIA Blackwell GPUs pertenece a Amazon EC2 P6 instances and UltraServers, y habilita esta tarea: Usar una arquitectura de acelerador de gama alta actual para entrenamiento e inferencia de modelos grandes exigentes."
+  },
+  "feat-087-02": {
+    "label": "Mover tráfico de acelerador distribuido con baja latencia y alto rendimiento entre nodos de computación.",
+    "why": "high-bandwidth EFA networking pertenece a Amazon EC2 P6 instances and UltraServers, y habilita esta tarea: Mover tráfico de acelerador distribuido con baja latencia y alto rendimiento entre nodos de computación."
+  },
+  "feat-088-01": {
+    "label": "Usar aceleradores más eficientes y nuevos para gráficos, medios y cargas de trabajo de servicio de modelos.",
+    "why": "NVIDIA L4 GPUs on G6 instances pertenece a Amazon EC2 G5 / G6 instances, y habilita esta tarea: Usar aceleradores más eficientes y nuevos para gráficos, medios y cargas de trabajo de servicio de modelos."
+  },
+  "feat-089-00": {
+    "label": "Usar procesadores de aprendizaje profundo dedicados como alternativa al entrenamiento de GPU convencional.",
+    "why": "Habana Gaudi accelerators pertenece a Amazon EC2 DL1 instances, y habilita esta tarea: Usar procesadores de aprendizaje profundo dedicados como alternativa al entrenamiento de GPU convencional."
+  },
+  "feat-089-01": {
+    "label": "Coordinar el aprendizaje del modelo en múltiples nodos de computación especializados.",
+    "why": "distributed deep-learning training pertenece a Amazon EC2 DL1 instances, y habilita esta tarea: Coordinar el aprendizaje del modelo en múltiples nodos de computación especializados."
+  },
+  "feat-090-00": {
+    "label": "Definir y reproducir un ambiente de computación científica elástica desde la configuración.",
+    "why": "Infrastructure-as-code cluster creation pertenece a AWS ParallelCluster, y habilita esta tarea: Definir y reproducir un ambiente de computación científica elástica desde la configuración."
+  },
+  "feat-090-02": {
+    "label": "Agregar nodos de trabajo para trabajos en cola y eliminar capacidad ociosa cuando la demanda disminuye.",
+    "why": "automatic compute scaling pertenece a AWS ParallelCluster, y habilita esta tarea: Agregar nodos de trabajo para trabajos en cola y eliminar capacidad ociosa cuando la demanda disminuye."
+  },
+  "feat-091-01": {
+    "label": "Acelerar bibliotecas comunes de paso de mensajes y colectivas utilizadas por HPC y entrenamiento de modelos.",
+    "why": "MPI and NCCL communication pertenece a Elastic Fabric Adapter, y habilita esta tarea: Acelerar bibliotecas comunes de paso de mensajes y colectivas utilizadas por HPC y entrenamiento de modelos."
+  },
+  "feat-092-00": {
+    "label": "Priorizar y mantener offline el trabajo de computación hasta que haya capacidad adecuada disponible.",
+    "why": "Managed job queues pertenece a AWS Batch, y habilita esta tarea: Priorizar y mantener offline el trabajo de computación hasta que haya capacidad adecuada disponible."
+  },
+  "feat-092-02": {
+    "label": "Expresar canalizaciones ordenadas o muchas variaciones paralelas de la misma tarea de lote.",
+    "why": "job dependencies and array jobs pertenece a AWS Batch, y habilita esta tarea: Expresar canalizaciones ordenadas o muchas variaciones paralelas de la misma tarea de lote."
+  },
+  "feat-094-00": {
+    "label": "Ejecutar contenedores reproducibles listos para el marco para aprendizaje de modelos y predicción.",
+    "why": "Deep Learning Containers (DLCs) pertenece a AWS Deep Learning Containers, y habilita esta tarea: Ejecutar contenedores reproducibles listos para el marco para aprendizaje de modelos y predicción."
+  },
+  "feat-095-00": {
+    "label": "Desarrollar y operar cargas de trabajo basadas en el marco de aprendizaje profundo dinámico popular.",
+    "why": "PyTorch on AWS pertenece a PyTorch on AWS, y habilita esta tarea: Desarrollar y operar cargas de trabajo basadas en el marco de aprendizaje profundo dinámico popular."
+  },
+  "feat-097-00": {
+    "label": "Usar un ecosistema de modelo abierto junto con entrenamiento administrado y computación en la nube.",
+    "why": "Hugging Face Deep Learning Containers pertenece a Hugging Face on Amazon SageMaker, y habilita esta tarea: Usar un ecosistema de modelo abierto junto con entrenamiento administrado y computación en la nube."
+  },
+  "feat-098-01": {
+    "label": "Explorar datos, visualizar resultados e iterar en código de modelo en documentos ejecutables.",
+    "why": "interactive data science pertenece a Jupyter on AWS, y habilita esta tarea: Explorar datos, visualizar resultados e iterar en código de modelo en documentos ejecutables."
+  },
+  "feat-099-00": {
+    "label": "Documentar los escenarios para los que fue diseñada y evaluada una capacidad de IA administrada.",
+    "why": "Intended use cases pertenece a AWS AI Service Cards, y habilita esta tarea: Documentar los escenarios para los que fue diseñada y evaluada una capacidad de IA administrada."
+  },
+  "feat-099-02": {
+    "label": "Proporcionar transparencia y consideraciones de uso más seguro para equipos que adoptan una capacidad de IA administrada.",
+    "why": "responsible AI design guidance pertenece a AWS AI Service Cards, y habilita esta tarea: Proporcionar transparencia y consideraciones de uso más seguro para equipos que adoptan una capacidad de IA administrada."
+  },
+  "feat-100-02": {
+    "label": "Publicar un prototipo interactivo para que otras personas puedan probarlo.",
+    "why": "shareable applications pertenece a Amazon PartyRock, y habilita esta tarea: Publicar un prototipo interactivo para que otras personas puedan probarlo."
+  },
+  "feat-100-03": {
+    "label": "Aprenda cómo el lenguaje de instrucciones y el contexto cambian la salida del modelo a través de la experimentación.",
+    "why": "hands-on prompt engineering pertenece a Amazon PartyRock, y habilita esta tarea: Aprenda cómo el lenguaje de instrucciones y el contexto cambian la salida del modelo a través de la experimentación."
+  },
+  "feat-000-01": {
+    "label": "Usar familias de modelos de base desarrollados por AWS para generación, incrustaciones y cargas de trabajo multimodales.",
+    "why": "Amazon Titan y los modelos Amazon Nova pertenecen a Amazon Bedrock, y permiten esta tarea: Usar familias de modelos de base desarrollados por AWS para generación, incrustaciones y cargas de trabajo multimodales."
+  },
+  "feat-000-02": {
+    "label": "Ejecutar solicitudes de modelo sin provisionar ni gestionar la infraestructura de inferencia subyacente.",
+    "why": "la inferencia gestionada sin servidor pertenece a Amazon Bedrock, y permite esta tarea: Ejecutar solicitudes de modelo sin provisionar ni gestionar la infraestructura de inferencia subyacente."
+  },
+  "feat-000-04": {
+    "label": "Adaptar el comportamiento de un modelo de base con ejemplos y requisitos específicos de la organización.",
+    "why": "el ajuste fino y la personalización pertenecen a Amazon Bedrock, y permiten esta tarea: Adaptar el comportamiento de un modelo de base con ejemplos y requisitos específicos de la organización."
+  },
+  "feat-000-06": {
+    "label": "Orquestar tareas multisalto que razonan sobre instrucciones e invocan acciones o fuentes de datos.",
+    "why": "Agents for Amazon Bedrock pertenece a Amazon Bedrock, y permite esta tarea: Orquestar tareas multisalto que razonan sobre instrucciones e invocan acciones o fuentes de datos."
+  },
+  "feat-000-08": {
+    "label": "Mantener los mensajes confidenciales y la información del cliente aislados del entrenamiento del proveedor del modelo.",
+    "why": "la protección de datos privados pertenece a Amazon Bedrock, y permite esta tarea: Mantener los mensajes confidenciales y la información del cliente aislados del entrenamiento del proveedor del modelo."
+  },
+  "feat-000-10": {
+    "label": "Transferir comportamiento de un modelo maestro más grande a un modelo más pequeño para reducir costo y latencia de servicio.",
+    "why": "la destilación de modelo pertenece a Amazon Bedrock, y permite esta tarea: Transferir comportamiento de un modelo maestro más grande a un modelo más pequeño para reducir costo y latencia de servicio."
+  },
+  "feat-000-13": {
+    "label": "Convertir documentos, imágenes, audio y video en información estructurada con procesamiento multimodal gestionado.",
+    "why": "Bedrock Data Automation pertenece a Amazon Bedrock, y permite esta tarea: Convertir documentos, imágenes, audio y video en información estructurada con procesamiento multimodal gestionado."
+  },
+  "feat-000-15": {
+    "label": "Llevar un modelo de base personalizado externo admitido a inferencia gestionada.",
+    "why": "Custom Model Import pertenece a Amazon Bedrock, y permite esta tarea: Llevar un modelo de base personalizado externo admitido a inferencia gestionada."
+  },
+  "feat-000-17": {
+    "label": "Capturar cargas de solicitud, respuestas y metadatos de invocación para auditoría y depuración.",
+    "why": "el registro de invocación de modelo pertenece a Amazon Bedrock, y permite esta tarea: Capturar cargas de solicitud, respuestas y metadatos de invocación para auditoría y depuración."
+  },
+  "feat-001-01": {
+    "label": "Desplegar agentes dinámicos en sesiones aisladas con escalado sin servidor y soporte de ejecución asincrónica.",
+    "why": "Runtime pertenece a Amazon Bedrock AgentCore, y permite esta tarea: Desplegar agentes dinámicos en sesiones aisladas con escalado sin servidor y soporte de ejecución asincrónica."
+  },
+  "feat-001-02": {
+    "label": "Retener el contexto de conversación a corto plazo y el conocimiento a largo plazo que persiste en las sesiones.",
+    "why": "Memory pertenece a Amazon Bedrock AgentCore, y permite esta tarea: Retener el contexto de conversación a corto plazo y el conocimiento a largo plazo que persiste en las sesiones."
+  },
+  "feat-001-04": {
+    "label": "Conectar agentes a proveedores de autenticación existentes y gestionar el acceso sin migrar usuarios.",
+    "why": "Identity pertenece a Amazon Bedrock AgentCore, y permite esta tarea: Conectar agentes a proveedores de autenticación existentes y gestionar el acceso sin migrar usuarios."
+  },
+  "feat-001-07": {
+    "label": "Rastrear rutas de ejecución, inspeccionar salidas intermedias y depurar el rendimiento del agente en producción.",
+    "why": "Observability pertenece a Amazon Bedrock AgentCore, y permite esta tarea: Rastrear rutas de ejecución, inspeccionar salidas intermedias y depurar el rendimiento del agente en producción."
+  },
+  "feat-001-09": {
+    "label": "Medir la fiabilidad con la que los agentes y herramientas completan tareas en sesiones, trazas y ámbitos.",
+    "why": "Evaluations pertenece a Amazon Bedrock AgentCore, y permite esta tarea: Medir la fiabilidad con la que los agentes y herramientas completan tareas en sesiones, trazas y ámbitos."
+  },
+  "feat-001-11": {
+    "label": "Aplicar límites deterministas en llamadas de herramientas con reglas de lenguaje natural o Cedar.",
+    "why": "Policy pertenece a Amazon Bedrock AgentCore, y permite esta tarea: Aplicar límites deterministas en llamadas de herramientas con reglas de lenguaje natural o Cedar."
+  },
+  "feat-002-00": {
+    "label": "Permitir que el modelo elija y secuencie acciones a partir de instrucciones en lugar de codificar cada ruta.",
+    "why": "Model-driven agent development pertenece a Strands Agents, y permite esta tarea: Permitir que el modelo elija y secuencie acciones a partir de instrucciones en lugar de codificar cada ruta."
+  },
+  "feat-002-02": {
+    "label": "Dar a un agente acceso controlado a funciones externas, servicios y datos.",
+    "why": "tool integration pertenece a Strands Agents, y permite esta tarea: Dar a un agente acceso controlado a funciones externas, servicios y datos."
+  },
+  "feat-002-04": {
+    "label": "Cambiar proveedores de modelos sin rediseñar la aplicación de agente circundante.",
+    "why": "provider-independent model support pertenece a Strands Agents, y permite esta tarea: Cambiar proveedores de modelos sin rediseñar la aplicación de agente circundante."
+  },
+  "feat-003-00": {
+    "label": "Razonar sobre mensajes escritos e entradas visuales usando modelos de base de AWS.",
+    "why": "Nova text and multimodal models pertenece a Amazon Nova, y permite esta tarea: Razonar sobre mensajes escritos e entradas visuales usando modelos de base de AWS."
+  },
+  "feat-003-03": {
+    "label": "Adaptar un modelo general a comportamiento especializado, terminología o ejemplos organizacionales.",
+    "why": "model customization pertenece a Amazon Nova, y permite esta tarea: Adaptar un modelo general a comportamiento especializado, terminología o ejemplos organizacionales."
+  },
+  "feat-004-00": {
+    "label": "Llevar archivos de equipo, paneles de control, fuentes de datos y contexto a áreas de trabajo colaborativas.",
+    "why": "Spaces pertenece a Amazon Quick, y permite esta tarea: Llevar archivos de equipo, paneles de control, fuentes de datos y contexto a áreas de trabajo colaborativas."
+  },
+  "feat-004-02": {
+    "label": "Sintetizar datos empresariales, fuentes de internet pública y conjuntos de datos de terceros en informes profesionales.",
+    "why": "Research pertenece a Amazon Quick, y permite esta tarea: Sintetizar datos empresariales, fuentes de internet pública y conjuntos de datos de terceros en informes profesionales."
+  },
+  "feat-004-04": {
+    "label": "Crear flujos de trabajo simples o multisalto conectados a aplicaciones cotidianas.",
+    "why": "Automate pertenece a Amazon Quick, y permite esta tarea: Crear flujos de trabajo simples o multisalto conectados a aplicaciones cotidianas."
+  },
+  "feat-004-06": {
+    "label": "Producir documentos terminados, presentaciones, hojas de cálculo o imágenes dentro de una conversación.",
+    "why": "Create polished deliverables pertenece a Amazon Quick, y permite esta tarea: Producir documentos terminados, presentaciones, hojas de cálculo o imágenes dentro de una conversación."
+  },
+  "feat-005-00": {
+    "label": "Recuperar información organizacional y sintetizar respuestas del lugar de trabajo desde fuentes conectadas.",
+    "why": "Enterprise search and answers pertenece a Amazon Q Business, y permite esta tarea: Recuperar información organizacional y sintetizar respuestas del lugar de trabajo desde fuentes conectadas."
+  },
+  "feat-005-02": {
+    "label": "Permitir que un asistente del lugar de trabajo realice operaciones aprobadas en sistemas empresariales conectados.",
+    "why": "actions through plugins pertenece a Amazon Q Business, y permite esta tarea: Permitir que un asistente del lugar de trabajo realice operaciones aprobadas en sistemas empresariales conectados."
+  },
+  "feat-006-01": {
+    "label": "Delegar trabajo de implementación multisalto que pueda planificar, editar, probar e iterar.",
+    "why": "agentic software development pertenece a Amazon Q Developer, y permite esta tarea: Delegar trabajo de implementación multisalto que pueda planificar, editar, probar e iterar."
+  },
+  "feat-006-03": {
+    "label": "Acelerar actualizaciones o migraciones a gran escala del software existente.",
+    "why": "application transformation pertenece a Amazon Q Developer, y permite esta tarea: Acelerar actualizaciones o migraciones a gran escala del software existente."
+  },
+  "feat-006-05": {
+    "label": "Investigar fallos en la nube y sugerir acciones correctivas usando contexto del sistema.",
+    "why": "operational troubleshooting pertenece a Amazon Q Developer, y permite esta tarea: Investigar fallos en la nube y sugerir acciones correctivas usando contexto del sistema."
+  },
+  "feat-007-01": {
+    "label": "Analizar y transformar cargas de trabajo heredadas de host en arquitecturas modernas mantenibles.",
+    "why": "mainframe modernization pertenece a AWS Transform, y permite esta tarea: Analizar y transformar cargas de trabajo heredadas de host en arquitecturas modernas mantenibles."
+  },
+  "feat-007-03": {
+    "label": "Inspeccionar una base de código heredada y producir un plan de transformación basado en evidencia antes de editar.",
+    "why": "code analysis and planning pertenece a AWS Transform, y permite esta tarea: Inspeccionar una base de código heredada y producir un plan de transformación basado en evidencia antes de editar."
+  },
+  "feat-007-05": {
+    "label": "Verificar transformaciones generadas y retener aprobación experta sobre cambios consecuentes.",
+    "why": "validation and human oversight pertenece a AWS Transform, y permite esta tarea: Verificar transformaciones generadas y retener aprobación experta sobre cambios consecuentes."
+  },
+  "feat-008-01": {
+    "label": "Planificar nuevas capacidades de aplicación a través de flujos de trabajo basados en requisitos o diseño.",
+    "why": "Feature Specs pertenece a Kiro, y permite esta tarea: Planificar nuevas capacidades de aplicación a través de flujos de trabajo basados en requisitos o diseño."
+  },
+  "feat-008-03": {
+    "label": "Delegar tareas especializadas en ventanas de contexto aisladas paralelas.",
+    "why": "Subagents pertenece a Kiro, y permite esta tarea: Delegar tareas especializadas en ventanas de contexto aisladas paralelas."
+  },
+  "feat-008-05": {
+    "label": "Usar el asistente de codificación desde una terminal para chat, automatización y flujos de trabajo sin interfaz.",
+    "why": "Kiro CLI pertenece a Kiro, y permite esta tarea: Usar el asistente de codificación desde una terminal para chat, automatización y flujos de trabajo sin interfaz."
+  },
+  "feat-009-01": {
+    "label": "Usar código del proyecto e instrucciones como contexto al realizar un cambio de software.",
+    "why": "repository-aware implementation pertenece a Kiro autonomous agent, y permite esta tarea: Usar código del proyecto e instrucciones como contexto al realizar un cambio de software."
+  },
+  "feat-010-00": {
+    "label": "Comenzar desde modelos preentrenados revisados y soluciones de referencia en lugar de construir desde cero.",
+    "why": "Curated model and solution catalogue pertenece a Amazon SageMaker AI JumpStart, y permite esta tarea: Comenzar desde modelos preentrenados revisados y soluciones de referencia en lugar de construir desde cero."
+  },
+  "feat-010-02": {
+    "label": "Guiar la adaptación de un modelo preentrenado con datos y configuraciones específicas de la tarea.",
+    "why": "customization workflows pertenece a Amazon SageMaker AI JumpStart, y permite esta tarea: Guiar la adaptación de un modelo preentrenado con datos y configuraciones específicas de la tarea."
+  },
+  "feat-011-00": {
+    "label": "Crear o transformar contenido de lenguaje natural a partir de una instrucción o contexto.",
+    "why": "Text generation pertenece a Amazon Titan, y permite esta tarea: Crear o transformar contenido de lenguaje natural a partir de una instrucción o contexto."
+  },
+  "feat-011-02": {
+    "label": "Producir contenido visual nuevo cuando el miembro elegido de la familia de modelos admite esa modalidad.",
+    "why": "image generation depending on model selected pertenece a Amazon Titan, y permite esta tarea: Producir contenido visual nuevo cuando el miembro elegido de la familia de modelos admite esa modalidad."
+  },
+  "feat-012-02": {
+    "label": "Elegir predicciones inmediatas por solicitud o puntuación de alto volumen programada para registros almacenados.",
+    "why": "real-time and batch inference pertenece a Amazon SageMaker AI, y permite esta tarea: Elegir predicciones inmediatas por solicitud o puntuación de alto volumen programada para registros almacenados."
+  },
+  "feat-012-04": {
+    "label": "Conectar preparación de datos, entrenamiento, evaluación, aprobación e implementación en canalizaciones repetibles.",
+    "why": "workflow integration pertenece a Amazon SageMaker AI, y permite esta tarea: Conectar preparación de datos, entrenamiento, evaluación, aprobación e implementación en canalizaciones repetibles."
+  },
+  "feat-012-06": {
+    "label": "Importar, perfilar, limpiar y transformar datos de modelo a través de un flujo de trabajo de preparación visual.",
+    "why": "SageMaker Data Wrangler pertenece a Amazon SageMaker AI, y permite esta tarea: Importar, perfilar, limpiar y transformar datos de modelo a través de un flujo de trabajo de preparación visual."
+  },
+  "feat-012-08": {
+    "label": "Medir el sesgo en conjuntos de datos o predicciones y explicar qué entradas influyeron en una salida.",
+    "why": "SageMaker Clarify pertenece a Amazon SageMaker AI, y permite esta tarea: Medir el sesgo en conjuntos de datos o predicciones y explicar qué entradas influyeron en una salida."
+  },
+  "feat-012-10": {
+    "label": "Definir flujos de trabajo repetibles de construcción de modelos con pasos de procesamiento, entrenamiento, evaluación y aprobación.",
+    "why": "SageMaker Pipelines pertenece a Amazon SageMaker AI, y permite esta tarea: Definir flujos de trabajo repetibles de construcción de modelos con pasos de procesamiento, entrenamiento, evaluación y aprobación."
+  },
+  "feat-012-12": {
+    "label": "Versionar paquetes de modelo, rastrear estado de aprobación y controlar la promoción hacia la implementación.",
+    "why": "SageMaker Model Registry pertenece a Amazon SageMaker AI, y permite esta tarea: Versionar paquetes de modelo, rastrear estado de aprobación y controlar la promoción hacia la implementación."
+  },
+  "feat-012-14": {
+    "label": "Unificar el acceso a datos en tiendas analíticas para cargas de trabajo de análisis y desarrollo de modelos.",
+    "why": "SageMaker Lakehouse pertenece a Amazon SageMaker AI, y permite esta tarea: Unificar el acceso a datos en tiendas analíticas para cargas de trabajo de análisis y desarrollo de modelos."
+  },
+  "feat-013-00": {
+    "label": "Dar a los equipos de ML un lugar gestionado para explorar, transformar y preparar conjuntos de datos.",
+    "why": "Central workspace for data preparation pertenece a Amazon SageMaker AI Studio, y permite esta tarea: Dar a los equipos de ML un lugar gestionado para explorar, transformar y preparar conjuntos de datos."
+  },
+  "feat-013-02": {
+    "label": "Ejecutar trabajos que aprenden parámetros de modelo a partir de ejemplos preparados.",
+    "why": "model training pertenece a Amazon SageMaker AI Studio, y permite esta tarea: Ejecutar trabajos que aprenden parámetros de modelo a partir de ejemplos preparados."
+  },
+  "feat-013-04": {
+    "label": "Coordinar y gestionar actividades del ciclo de vida del aprendizaje automático repetibles desde un espacio de trabajo.",
+    "why": "ML workflow operations pertenece a Amazon SageMaker AI Studio, y permite esta tarea: Coordinar y gestionar actividades del ciclo de vida del aprendizaje automático repetibles desde un espacio de trabajo."
+  },
+  "feat-014-01": {
+    "label": "Limpiar, combinar y transformar información sin procesar en entradas listas para el modelo.",
+    "why": "data preparation pertenece a Amazon SageMaker AI Canvas, y permite esta tarea: Limpiar, combinar y transformar información sin procesar en entradas listas para el modelo."
+  },
+  "feat-014-02": {
+    "label": "Aplicar un modelo entrenado a nuevos registros a través de un proceso guiado sin código.",
+    "why": "prediction workflows pertenece a Amazon SageMaker AI Canvas, y permite esta tarea: Aplicar un modelo entrenado a nuevos registros a través de un proceso guiado sin código."
+  },
+  "feat-015-00": {
+    "label": "Experimentar con aprendizaje automático en un espacio de trabajo web listo para usar sin configuración local.",
+    "why": "JupyterLab pertenece a Amazon SageMaker AI Studio Lab, y permite esta tarea: Experimentar con aprendizaje automático en un espacio de trabajo web listo para usar sin configuración local."
+  },
+  "feat-016-01": {
+    "label": "Priorizar ejemplos inciertos para anotación para que el esfuerzo humano mejore el modelo de manera eficiente.",
+    "why": "active-learning options pertenece a Amazon SageMaker AI Ground Truth, y permite esta tarea: Priorizar ejemplos inciertos para anotación para que el esfuerzo humano mejore el modelo de manera eficiente."
+  },
+  "feat-017-00": {
+    "label": "Proporcionar flotes de computación gestionada resiliente para trabajos de entrenamiento de modelos de base exigentes.",
+    "why": "Purpose-built clusters for training large models pertenece a Amazon SageMaker AI HyperPod, y permite esta tarea: Proporcionar flotes de computación gestionada resiliente para trabajos de entrenamiento de modelos de base exigentes."
+  },
+  "feat-018-00": {
+    "label": "Escalar resultados inciertos o consecuentes de IA para la decisión de una persona.",
+    "why": "Human loops pertenece a Amazon Augmented AI (A2I), y permite esta tarea: Escalar resultados inciertos o consecuentes de IA para la decisión de una persona."
+  },
+  "feat-019-00": {
+    "label": "Distribuir trabajos pequeños de anotación, validación o recopilación a una fuerza laboral bajo demanda.",
+    "why": "Crowdsourced human tasks pertenece a Amazon Mechanical Turk, y permite esta tarea: Distribuir trabajos pequeños de anotación, validación o recopilación a una fuerza laboral bajo demanda."
+  },
+  "feat-019-02": {
+    "label": "Usar consenso, revisión y reglas de aceptación para mejorar la fiabilidad del trabajo humano presentado.",
+    "why": "result quality controls pertenece a Amazon Mechanical Turk, y permite esta tarea: Usar consenso, revisión y reglas de aceptación para mejorar la fiabilidad del trabajo humano presentado."
+  },
+  "feat-020-01": {
+    "label": "Combinar identidades duplicadas en fuentes en un perfil consolidado.",
+    "why": "Machine learning-based matching pertenece a AWS Entity Resolution, y permite esta tarea: Combinar identidades duplicadas en fuentes en un perfil consolidado."
+  },
+  "feat-021-01": {
+    "label": "Adquirir derechos continuos para usar un conjunto de datos del proveedor a través de un flujo de trabajo de mercado en la nube.",
+    "why": "subscription-based data access pertenece a AWS Data Exchange, y permite esta tarea: Adquirir derechos continuos para usar un conjunto de datos del proveedor a través de un flujo de trabajo de mercado en la nube."
+  },
+  "feat-022-00": {
+    "label": "Procesar conjuntos de datos grandes con marcos de análisis de código abierto populares distribuidos.",
+    "why": "Apache Spark and Hadoop workloads pertenece a Amazon EMR, y permite esta tarea: Procesar conjuntos de datos grandes con marcos de análisis de código abierto populares distribuidos."
+  },
+  "feat-022-02": {
+    "label": "Ejecutar transformaciones distribuidas directamente contra objetos en un lago de datos en la nube.",
+    "why": "processing data in Amazon S3 pertenece a Amazon EMR, y permite esta tarea: Ejecutar transformaciones distribuidas directamente contra objetos en un lago de datos en la nube."
+  },
+  "feat-023-01": {
+    "label": "Leer registros de origen, reformatearlos y escribir los resultados en un sistema objetivo.",
+    "why": "AWS Glue ETL jobs pertenece a AWS Glue, y permite esta tarea: Leer registros de origen, reformatearlos y escribir los resultados en un sistema objetivo."
+  },
+  "feat-023-03": {
+    "label": "Escanear almacenes de datos automáticamente para inferir estructura y registrar tablas y particiones.",
+    "why": "crawlers for schema discovery pertenece a AWS Glue, y permite esta tarea: Escanear almacenes de datos automáticamente para inferir estructura y registrar tablas y particiones."
+  },
+  "feat-024-00": {
+    "label": "Limpiar y reformatear registros de origen a través de una interfaz visual en lugar de transformaciones de programación.",
+    "why": "No-code data preparation pertenece a AWS Glue DataBrew, y permite esta tarea: Limpiar y reformatear registros de origen a través de una interfaz visual en lugar de transformaciones de programación."
+  },
+  "feat-024-02": {
+    "label": "Guardar un conjunto ordenado de pasos de limpieza y aplicarlo constantemente a conjuntos de datos posteriores.",
+    "why": "reusable transformation recipes pertenece a AWS Glue DataBrew, y permite esta tarea: Guardar un conjunto ordenado de pasos de limpieza y aplicarlo constantemente a conjuntos de datos posteriores."
+  },
+  "feat-025-01": {
+    "label": "Otorgar acceso a nivel de base de datos, tabla, columna, fila o celda en lugar de exponer un conjunto de datos completo.",
+    "why": "fine-grained access control pertenece a AWS Lake Formation, y permite esta tarea: Otorgar acceso a nivel de base de datos, tabla, columna, fila o celda en lugar de exponer un conjunto de datos completo."
+  },
+  "feat-026-01": {
+    "label": "Recuperar elementos semánticamente similares comparando representaciones numéricas de su significado.",
+    "why": "vector search pertenece a Amazon OpenSearch Service, y permite esta tarea: Recuperar elementos semánticamente similares comparando representaciones numéricas de su significado."
+  },
+  "feat-026-02": {
+    "label": "Explorar información operacional indexada a través de visualizaciones y vistas de monitoreo.",
+    "why": "dashboards and observability pertenece a Amazon OpenSearch Service, y permite esta tarea: Explorar información operacional indexada a través de visualizaciones y vistas de monitoreo."
+  },
+  "feat-026-04": {
+    "label": "Fundamentar respuestas generadas cuando la clasificación rápida en un corpus buscable grande es el requisito dominante.",
+    "why": "search-heavy RAG retrieval pertenece a Amazon OpenSearch Service, y permite esta tarea: Fundamentar respuestas generadas cuando la clasificación rápida en un corpus buscable grande es el requisito dominante."
+  },
+  "feat-027-01": {
+    "label": "Consultar conjuntos de datos estructurados grandes con sintaxis relacional familiar.",
+    "why": "SQL analytics at scale pertenece a Amazon Redshift, y permite esta tarea: Consultar conjuntos de datos estructurados grandes con sintaxis relacional familiar."
+  },
+  "feat-028-00": {
+    "label": "Definir límites de gasto o consumo esperados para una cuenta, servicio o proyecto.",
+    "why": "Custom cost and usage budgets pertenece a AWS Budgets, y permite esta tarea: Definir límites de gasto o consumo esperados para una cuenta, servicio o proyecto."
+  },
+  "feat-028-02": {
+    "label": "Advertir antes de que ocurra gasto excesivo comparando los cargos de fin de mes predichos con un objetivo.",
+    "why": "forecast-based notifications pertenece a AWS Budgets, y permite esta tarea: Advertir antes de que ocurra gasto excesivo comparando los cargos de fin de mes predichos con un objetivo."
+  },
+  "feat-029-01": {
+    "label": "Inspeccionar cómo cambió el gasto en la nube durante días o meses anteriores.",
+    "why": "historical trend visualization pertenece a AWS Cost Explorer, y permite esta tarea: Inspeccionar cómo cambió el gasto en la nube durante días o meses anteriores."
+  },
+  "feat-030-00": {
+    "label": "Seleccionar CPU, memoria, almacenamiento y proporciones de red de máquina virtual para una carga de trabajo.",
+    "why": "Configurable instance types pertenece a Amazon EC2, y permite esta tarea: Seleccionar CPU, memoria, almacenamiento y proporciones de red de máquina virtual para una carga de trabajo."
+  },
+  "feat-031-00": {
+    "label": "Ejecutar código en respuesta a cargas, llamadas a API, programas o mensajes.",
+    "why": "Event-triggered functions pertenece a AWS Lambda, y permite esta tarea: Ejecutar código en respuesta a cargas, llamadas a API, programas o mensajes."
+  },
+  "feat-031-01": {
+    "label": "Aumentar o disminuir la capacidad de ejecución concurrente a medida que llegan eventos.",
+    "why": "automatic scaling pertenece a AWS Lambda, y permite esta tarea: Aumentar o disminuir la capacidad de ejecución concurrente a medida que llegan eventos."
+  },
+  "feat-032-00": {
+    "label": "Programar y operar tareas de aplicación empaquetadas en una flota a través de un plano de control nativo de AWS.",
+    "why": "Managed container orchestration pertenece a Amazon Elastic Container Service (Amazon ECS), y permite esta tarea: Programar y operar tareas de aplicación empaquetadas en una flota a través de un plano de control nativo de AWS."
+  },
+  "feat-032-02": {
+    "label": "Colocar tareas de contenedor en capacidad de máquina virtual controlada por el cliente.",
+    "why": "Amazon EC2 launch option pertenece a Amazon Elastic Container Service (Amazon ECS), y permite esta tarea: Colocar tareas de contenedor en capacidad de máquina virtual controlada por el cliente."
+  },
+  "feat-033-01": {
+    "label": "Ejecutar herramientas de ecosistema y manifiestos que apunten a la interfaz de orquestación de código abierto común.",
+    "why": "Kubernetes API compatibility pertenece a Amazon Elastic Kubernetes Service (Amazon EKS), y permite esta tarea: Ejecutar herramientas de ecosistema y manifiestos que apunten a la interfaz de orquestación de código abierto común."
+  },
+  "feat-034-00": {
+    "label": "Usar controladores y herramientas relacionales de código abierto familiares con un motor de base de datos construido por AWS.",
+    "why": "MySQL and PostgreSQL compatibility pertenece a Amazon Aurora, y permite esta tarea: Usar controladores y herramientas relacionales de código abierto familiares con un motor de base de datos construido por AWS."
+  },
+  "feat-034-02": {
+    "label": "Ajustar la computación de la base de datos relacional automáticamente para demanda variable.",
+    "why": "Aurora Serverless capacity pertenece a Amazon Aurora, y permite esta tarea: Ajustar la computación de la base de datos relacional automáticamente para demanda variable."
+  },
+  "feat-034-04": {
+    "label": "Mantener transacciones y registros de aplicación estructurados junto a consultas de vecino más cercano semántico.",
+    "why": "pgvector pertenece a Amazon Aurora, y permite esta tarea: Mantener transacciones y registros de aplicación estructurados junto a consultas de vecino más cercano semántico."
+  },
+  "feat-035-01": {
+    "label": "Usar API y controladores de base de datos de documentos comunes al mover una aplicación existente.",
+    "why": "MongoDB workload compatibility pertenece a Amazon DocumentDB (with MongoDB compatibility), y permite esta tarea: Usar API y controladores de base de datos de documentos comunes al mover una aplicación existente."
+  },
+  "feat-035-03": {
+    "label": "Almacenar incrustaciones junto a registros flexibles como historiales médicos o artículos de conocimiento y consultar su similitud.",
+    "why": "native vector search for JSON documents pertenece a Amazon DocumentDB (with MongoDB compatibility), y permite esta tarea: Almacenar incrustaciones junto a registros flexibles como historiales médicos o artículos de conocimiento y consultar su similitud."
+  },
+  "feat-036-00": {
+    "label": "Recuperar registros flexibles de manera eficiente por clave principal sin uniones relacionales.",
+    "why": "Key-value and document model pertenece a Amazon DynamoDB, y permite esta tarea: Recuperar registros flexibles de manera eficiente por clave principal sin uniones relacionales."
+  },
+  "feat-036-02": {
+    "label": "Capturar un registro ordenado de cambios de artículo para desencadenar procesamiento descendente.",
+    "why": "DynamoDB Streams pertenece a Amazon DynamoDB, y permite esta tarea: Capturar un registro ordenado de cambios de artículo para desencadenar procesamiento descendente."
+  },
+  "feat-037-01": {
+    "label": "Servir valores solicitados frecuentemente desde la memoria para evitar trabajo de base de datos más lento.",
+    "why": "microsecond-latency caching pertenece a Amazon ElastiCache, y permite esta tarea: Servir valores solicitados frecuentemente desde la memoria para evitar trabajo de base de datos más lento."
+  },
+  "feat-038-00": {
+    "label": "Modelar datos conectados con relaciones etiquetadas o triples semánticos.",
+    "why": "Property graph and RDF support pertenece a Amazon Neptune, y permite esta tarea: Modelar datos conectados con relaciones etiquetadas o triples semánticos."
+  },
+  "feat-038-02": {
+    "label": "Representar hechos y sus conexiones para búsqueda semántica, recomendaciones o fundamentación.",
+    "why": "knowledge graph workloads pertenece a Amazon Neptune, y permite esta tarea: Representar hechos y sus conexiones para búsqueda semántica, recomendaciones o fundamentación."
+  },
+  "feat-038-04": {
+    "label": "Fundamentar una respuesta generada usando coincidencias semánticas y rutas explicables entre entidades.",
+    "why": "GraphRAG relationship context pertenece a Amazon Neptune, y permite esta tarea: Fundamentar una respuesta generada usando coincidencias semánticas y rutas explicables entre entidades."
+  },
+  "feat-039-01": {
+    "label": "Delegar mantenimiento de base de datos relacional rutinario y creación de punto de recuperación a AWS.",
+    "why": "automated backups and patching pertenece a Amazon Relational Database Service (Amazon RDS), y permite esta tarea: Delegar mantenimiento de base de datos relacional rutinario y creación de punto de recuperación a AWS."
+  },
+  "feat-039-03": {
+    "label": "Agregar almacenamiento de incrustación y consultas de vecino más cercano a una aplicación PostgreSQL gestionada convencional.",
+    "why": "RDS for PostgreSQL with pgvector pertenece a Amazon Relational Database Service (Amazon RDS), y permite esta tarea: Agregar almacenamiento de incrustación y consultas de vecino más cercano a una aplicación PostgreSQL gestionada convencional."
+  },
+  "feat-040-00": {
+    "label": "Generar respuestas del lugar de trabajo solo a partir de información que la identidad solicitante está autorizada a ver.",
+    "why": "Permissions-aware enterprise answers pertenece a Amazon Q, y permite esta tarea: Generar respuestas del lugar de trabajo solo a partir de información que la identidad solicitante está autorizada a ver."
+  },
+  "feat-040-02": {
+    "label": "Fundamentar respuestas del asistente en repositorios y aplicaciones de empresa aprobadas.",
+    "why": "connections to organizational data pertenece a Amazon Q, y permite esta tarea: Fundamentar respuestas del asistente en repositorios y aplicaciones de empresa aprobadas."
+  },
+  "feat-041-00": {
+    "label": "Extraer señales lingüísticas comunes y estructura del texto general desestructurado.",
+    "why": "Amazon Comprehend insights pertenece a Amazon Comprehend, y permite esta tarea: Extraer señales lingüísticas comunes y estructura del texto general desestructurado."
+  },
+  "feat-042-00": {
+    "label": "Identificar condiciones, medicamentos, pruebas y sus relaciones en narrativas sanitarias.",
+    "why": "DetectEntitiesV2 pertenece a Amazon Comprehend Medical, y permite esta tarea: Identificar condiciones, medicamentos, pruebas y sus relaciones en narrativas sanitarias."
+  },
+  "feat-043-01": {
+    "label": "Inferir qué intenta lograr un usuario a partir de una expresión.",
+    "why": "intent recognition pertenece a Amazon Lex, y permite esta tarea: Inferir qué intenta lograr un usuario a partir de una expresión."
+  },
+  "feat-043-03": {
+    "label": "Conectar una interfaz conversacional a lógica empresarial de fondo y sistemas de cumplimiento.",
+    "why": "application integration pertenece a Amazon Lex, y permite esta tarea: Conectar una interfaz conversacional a lógica empresarial de fondo y sistemas de cumplimiento."
+  },
+  "feat-045-00": {
+    "label": "Convertir discurso pregrabado o en tiempo real en texto escrito.",
+    "why": "Batch transcription pertenece a Amazon Transcribe, y permite esta tarea: Convertir discurso pregrabado o en tiempo real en texto escrito."
+  },
+  "feat-046-00": {
+    "label": "Convertir contenido escrito entre idiomas mientras se preserva el significado.",
+    "why": "Real-time translation pertenece a Amazon Translate, y permite esta tarea: Convertir contenido escrito entre idiomas mientras se preserva el significado."
+  },
+  "feat-047-01": {
+    "label": "Automatizar la ingesta donde diseños, campos y valores tabulares deben convertirse en registros utilizables.",
+    "why": "AnalyzeExpense API pertenece a Amazon Textract, y permite esta tarea: Automatizar la ingesta donde diseños, campos y valores tabulares deben convertirse en registros utilizables."
+  },
+  "feat-048-01": {
+    "label": "Clasificar información organizacional relevante para descubrimiento laboral o de soporte.",
+    "why": "Intelligent search pertenece a Amazon Kendra, y permite esta tarea: Clasificar información organizacional relevante para descubrimiento laboral o de soporte."
+  },
+  "feat-049-01": {
+    "label": "Enseñar reconocimiento de imagen para objetos específicos de la organización usando ejemplos etiquetados.",
+    "why": "Custom Labels pertenece a Amazon Rekognition, y permite esta tarea: Enseñar reconocimiento de imagen para objetos específicos de la organización usando ejemplos etiquetados."
+  },
+  "feat-051-00": {
+    "label": "Seleccionar y entrenar algoritmos de pronóstico a partir de observaciones históricas sin requerir experiencia en ML.",
+    "why": "Automated time-series machine learning pertenece a Amazon Forecast, y permite esta tarea: Seleccionar y entrenar algoritmos de pronóstico a partir de observaciones históricas sin requerir experiencia en ML."
+  },
+  "feat-051-02": {
+    "label": "Mejorar estimaciones futuras con señales cambiantes y atributos descriptivos más allá del historial objetivo.",
+    "why": "related time-series and item metadata pertenece a Amazon Forecast, y permite esta tarea: Mejorar estimaciones futuras con señales cambiantes y atributos descriptivos más allá del historial objetivo."
+  },
+  "feat-052-00": {
+    "label": "Aprender patrones específicos de la organización de comportamiento sospechoso a partir de eventos históricos etiquetados.",
+    "why": "Custom fraud models pertenece a Amazon Fraud Detector, y permite esta tarea: Aprender patrones específicos de la organización de comportamiento sospechoso a partir de eventos históricos etiquetados."
+  },
+  "feat-052-02": {
+    "label": "Traducir resultados de modelo y condiciones empresariales en acciones como aprobar, bloquear o revisar.",
+    "why": "rules and outcomes pertenece a Amazon Fraud Detector, y permite esta tarea: Traducir resultados de modelo y condiciones empresariales en acciones como aprobar, bloquear o revisar."
+  },
+  "feat-053-01": {
+    "label": "Construir un modelo de inspección industrial a partir de ejemplos de salida aceptable y defectuosa.",
+    "why": "normal and defective image training pertenece a Amazon Lookout for Vision, y permite esta tarea: Construir un modelo de inspección industrial a partir de ejemplos de salida aceptable y defectuosa."
+  },
+  "feat-054-01": {
+    "label": "Combinar señales inusuales simultáneas que pueden compartir un incidente subyacente.",
+    "why": "related-event grouping pertenece a Amazon Lookout for Metrics, y permite esta tarea: Combinar señales inusuales simultáneas que pueden compartir un incidente subyacente."
+  },
+  "feat-055-00": {
+    "label": "Encontrar comportamiento inusual de aplicación y explicar el probable impacto en la fiabilidad.",
+    "why": "Reactive insights pertenece a Amazon DevOps Guru, y permite esta tarea: Encontrar comportamiento inusual de aplicación y explicar el probable impacto en la fiabilidad."
+  },
+  "feat-056-00": {
+    "label": "Inspeccionar cambios de origen propuestos y recomendar mejoras de mantenibilidad antes de fusionar.",
+    "why": "Automated code reviews pertenece a Amazon CodeGuru Reviewer, y permite esta tarea: Inspeccionar cambios de origen propuestos y recomendar mejoras de mantenibilidad antes de fusionar."
+  },
+  "feat-056-02": {
+    "label": "Ejecutar análisis contra proyectos de control de origen admitidos a medida que se envían cambios de código.",
+    "why": "repository integration pertenece a Amazon CodeGuru Reviewer, y permite esta tarea: Ejecutar análisis contra proyectos de control de origen admitidos a medida que se envían cambios de código."
+  },
+  "feat-058-00": {
+    "label": "Resolver las necesidades del cliente a través de interacciones automatizadas de voz o chat antes de que sea necesario un agente.",
+    "why": "Conversational self-service pertenece a Amazon Connect, y permite esta tarea: Resolver las necesidades del cliente a través de interacciones automatizadas de voz o chat antes de que sea necesario un agente."
+  },
+  "feat-058-02": {
+    "label": "Analizar interacciones por sentimiento, temas, cumplimiento y tendencias de calidad del servicio.",
+    "why": "contact analytics pertenece a Amazon Connect, y permite esta tarea: Analizar interacciones por sentimiento, temas, cumplimiento y tendencias de calidad del servicio."
+  },
+  "feat-058-04": {
+    "label": "Gestionar conversaciones de clientes de manera consistente en canales de voz y digitales.",
+    "why": "omnichannel customer interactions pertenece a Amazon Connect, y permite esta tarea: Gestionar conversaciones de clientes de manera consistente en canales de voz y digitales."
+  },
+  "feat-059-01": {
+    "label": "Identificar riesgos de existencias e desequilibrios en instalaciones y socios.",
+    "why": "inventory visibility and insights pertenece a AWS Supply Chain, y permite esta tarea: Identificar riesgos de existencias e desequilibrios en instalaciones y socios."
+  },
+  "feat-060-00": {
+    "label": "Publicar productos de datos organizacionales descubribles con descripciones empresariales y propiedad.",
+    "why": "Business data catalogue pertenece a Amazon DataZone, y permite esta tarea: Publicar productos de datos organizacionales descubribles con descripciones empresariales y propiedad."
+  },
+  "feat-060-02": {
+    "label": "Generar contexto de catálogo útil a partir de información de esquema técnico para mejorar el descubrimiento.",
+    "why": "AI-assisted metadata descriptions pertenece a Amazon DataZone, y permite esta tarea: Generar contexto de catálogo útil a partir de información de esquema técnico para mejorar el descubrimiento."
+  },
+  "feat-061-01": {
+    "label": "Analizar solicitudes de incorporación de cambios en busca de vulnerabilidades comunes y requisitos específicos de la organización.",
+    "why": "Code security review pertenece a AWS Security Agent, y permite esta tarea: Analizar solicitudes de incorporación de cambios en busca de vulnerabilidades comunes y requisitos específicos de la organización."
+  },
+  "feat-061-03": {
+    "label": "Desplegar una aplicación en un espacio aislado para confirmar si una debilidad descubierta es explotable.",
+    "why": "Simulated validation pertenece a AWS Security Agent, y permite esta tarea: Desplegar una aplicación en un espacio aislado para confirmar si una debilidad descubierta es explotable."
+  },
+  "feat-062-00": {
+    "label": "Lanzar análisis de incidentes automáticamente a partir de sistemas de entradas y alarmas.",
+    "why": "Automated investigations pertenece a AWS DevOps Agent, y permite esta tarea: Lanzar análisis de incidentes automáticamente a partir de sistemas de entradas y alarmas."
+  },
+  "feat-062-02": {
+    "label": "Proporcionar acciones de resolución, validación e reversión después de identificar la causa de un incidente.",
+    "why": "Detailed mitigation plans pertenece a AWS DevOps Agent, y permite esta tarea: Proporcionar acciones de resolución, validación e reversión después de identificar la causa de un incidente."
+  },
+  "feat-062-04": {
+    "label": "Usar comentarios e investigaciones anteriores para refinar recomendaciones operativas futuras.",
+    "why": "Continuous learning pertenece a AWS DevOps Agent, y permite esta tarea: Usar comentarios e investigaciones anteriores para refinar recomendaciones operativas futuras."
+  },
+  "feat-063-01": {
+    "label": "Entregar actividad de cuenta desde cada área geográfica habilitada a un destino central.",
+    "why": "multi-Region trails pertenece a AWS CloudTrail, y permite esta tarea: Entregar actividad de cuenta desde cada área geográfica habilitada a un destino central."
+  },
+  "feat-063-02": {
+    "label": "Retener registros de actividad resistentes a la manipulación para investigaciones y revisiones de cumplimiento.",
+    "why": "immutable audit evidence pertenece a AWS CloudTrail, y permite esta tarea: Retener registros de actividad resistentes a la manipulación para investigaciones y revisiones de cumplimiento."
+  },
+  "feat-064-01": {
+    "label": "Responder cuando una medida operacional cruza un umbral o detecta comportamiento anómalo.",
+    "why": "alarms and automated actions pertenece a Amazon CloudWatch, y permite esta tarea: Responder cuando una medida operacional cruza un umbral o detecta comportamiento anómalo."
+  },
+  "feat-065-00": {
+    "label": "Ver cómo cambió la configuración de un recurso en la nube a lo largo del tiempo.",
+    "why": "Configuration history pertenece a AWS Config, y permite esta tarea: Ver cómo cambió la configuración de un recurso en la nube a lo largo del tiempo."
+  },
+  "feat-065-02": {
+    "label": "Descubrir activos en la nube y comprender cómo sus configuraciones dependen unos de otros.",
+    "why": "resource relationship inventory pertenece a AWS Config, y permite esta tarea: Descubrir activos en la nube y comprender cómo sus configuraciones dependen unos de otros."
+  },
+  "feat-066-02": {
+    "label": "Revisar mejoras del entorno de nube usando metadatos de cuenta y configuración de servicio.",
+    "why": "account-level guidance pertenece a AWS Trusted Advisor, y permite esta tarea: Revisar mejoras del entorno de nube usando metadatos de cuenta y configuración de servicio."
+  },
+  "feat-067-01": {
+    "label": "Registrar dónde una carga de trabajo aún no cumple con prácticas arquitectónicas recomendadas.",
+    "why": "documented risks pertenece a AWS Well-Architected Tool, y permite esta tarea: Registrar dónde una carga de trabajo aún no cumple con prácticas arquitectónicas recomendadas."
+  },
+  "feat-067-02": {
+    "label": "Convertir hallazgos de revisión en un conjunto ordenado de acciones de remediación de arquitectura.",
+    "why": "improvement plans pertenece a AWS Well-Architected Tool, y permite esta tarea: Convertir hallazgos de revisión en un conjunto ordenado de acciones de remediación de arquitectura."
+  },
+  "feat-068-01": {
+    "label": "Reducir la carga directa y la exposición de la aplicación o del sistema de almacenamiento que posee el contenido.",
+    "why": "origin protection pertenece a Amazon CloudFront, y permite esta tarea: Reducir la carga directa y la exposición de la aplicación o del sistema de almacenamiento que posee el contenido."
+  },
+  "feat-069-00": {
+    "label": "Dividir una red de nube aislada y controlar dónde puede viajar su tráfico.",
+    "why": "Subnets and route tables pertenece a Amazon Virtual Private Cloud (Amazon VPC), y permite esta tarea: Dividir una red de nube aislada y controlar dónde puede viajar su tráfico."
+  },
+  "feat-069-02": {
+    "label": "Alcanzar servicios en la nube admitidos de forma privada sin enviar tráfico a través de la internet pública.",
+    "why": "VPC endpoints and AWS PrivateLink pertenece a Amazon Virtual Private Cloud (Amazon VPC), y permite esta tarea: Alcanzar servicios en la nube admitidos de forma privada sin enviar tráfico a través de la internet pública."
+  },
+  "feat-070-02": {
+    "label": "Aceptar y rastrear acuerdos de cumplimiento de nube seleccionados a través de un portal de autoservicio.",
+    "why": "agreement management pertenece a AWS Artifact, y permite esta tarea: Aceptar y rastrear acuerdos de cumplimiento de nube seleccionados a través de un portal de autoservicio."
+  },
+  "feat-071-01": {
+    "label": "Iniciar una evaluación a partir de conjuntos de controles alineados a estándares y regulaciones comunes.",
+    "why": "prebuilt compliance frameworks pertenece a AWS Audit Manager, y permite esta tarea: Iniciar una evaluación a partir de conjuntos de controles alineados a estándares y regulaciones comunes."
+  },
+  "feat-072-00": {
+    "label": "Representar identidades y adjuntar documentos que permitan o denieguen acciones en la nube.",
+    "why": "Users roles and policies pertenece a AWS Identity and Access Management (IAM), y permite esta tarea: Representar identidades y adjuntar documentos que permitan o denieguen acciones en la nube."
+  },
+  "feat-072-02": {
+    "label": "Usar acceso de corta duración para aplicaciones e identidades federadas en lugar de claves permanentes.",
+    "why": "temporary role credentials pertenece a AWS Identity and Access Management (IAM), y permite esta tarea: Usar acceso de corta duración para aplicaciones e identidades federadas en lugar de claves permanentes."
+  },
+  "feat-073-01": {
+    "label": "Evaluar paquetes de código de función sin servidor y dependencias en busca de debilidades de seguridad.",
+    "why": "AWS Lambda vulnerability scanning pertenece a Amazon Inspector, y permite esta tarea: Evaluar paquetes de código de función sin servidor y dependencias en busca de debilidades de seguridad."
+  },
+  "feat-074-00": {
+    "label": "Crear claves de cifrado cuyas políticas, ciclo de vida y uso son controlados por la organización.",
+    "why": "Customer managed keys pertenece a AWS Key Management Service (AWS KMS), y permite esta tarea: Crear claves de cifrado cuyas políticas, ciclo de vida y uso son controlados por la organización."
+  },
+  "feat-074-02": {
+    "label": "Controlar quién puede usar material criptográfico y reemplazarlo en un cronograma gestionado.",
+    "why": "key policies and automatic rotation pertenece a AWS Key Management Service (AWS KMS), y permite esta tarea: Controlar quién puede usar material criptográfico y reemplazarlo en un cronograma gestionado."
+  },
+  "feat-075-01": {
+    "label": "Evaluar depósitos de almacenamiento de objetos en busca de acceso público, cifrado y riesgos de compartir.",
+    "why": "S3 security posture evaluation pertenece a Amazon Macie, y permite esta tarea: Evaluar depósitos de almacenamiento de objetos en busca de acceso público, cifrado y riesgos de compartir."
+  },
+  "feat-076-00": {
+    "label": "Mantener contraseñas, tokens y credenciales de API fuera del código fuente y configuración de texto plano.",
+    "why": "Encrypted secret storage pertenece a AWS Secrets Manager, y permite esta tarea: Mantener contraseñas, tokens y credenciales de API fuera del código fuente y configuración de texto plano."
+  },
+  "feat-076-02": {
+    "label": "Restringir la recuperación de cada credencial a identidades explícitamente autorizadas.",
+    "why": "fine-grained secret access pertenece a AWS Secrets Manager, y permite esta tarea: Restringir la recuperación de cada credencial a identidades explícitamente autorizadas."
+  },
+  "feat-077-01": {
+    "label": "Proteger el historial de objetos y la confidencialidad mientras se controla qué identidades pueden recuperarlo.",
+    "why": "versioning encryption and access policies pertenece a Amazon Simple Storage Service (Amazon S3), y permite esta tarea: Proteger el historial de objetos y la confidencialidad mientras se controla qué identidades pueden recuperarlo."
+  },
+  "feat-077-03": {
+    "label": "Crear depósitos y índices de vectores en almacenamiento de objetos para consultas de similitud sin servidor a escala masiva.",
+    "why": "Amazon S3 Vectors pertenece a Amazon Simple Storage Service (Amazon S3), y permite esta tarea: Crear depósitos y índices de vectores en almacenamiento de objetos para consultas de similitud sin servidor a escala masiva."
+  },
+  "feat-078-00": {
+    "label": "Retener registros a los que se accede con poca frecuencia a un costo menor que el almacenamiento de objetos activos.",
+    "why": "Long-term archival storage classes pertenece a Amazon S3 Glacier, y permite esta tarea: Retener registros a los que se accede con poca frecuencia a un costo menor que el almacenamiento de objetos activos."
+  },
+  "feat-078-02": {
+    "label": "Cumplir períodos de preservación largos económicamente cuando el acceso inmediato es innecesario.",
+    "why": "retention-focused cost optimization pertenece a Amazon S3 Glacier, y permite esta tarea: Cumplir períodos de preservación largos económicamente cuando el acceso inmediato es innecesario."
+  },
+  "feat-079-01": {
+    "label": "Normalizar información de salud fragmentada en un esquema moderno común.",
+    "why": "FHIR R4 pertenece a AWS HealthLake, y permite esta tarea: Normalizar información de salud fragmentada en un esquema moderno común."
+  },
+  "feat-080-01": {
+    "label": "Distinguir contribuciones de clínico y paciente en un encuentro registrado.",
+    "why": "speaker role identification pertenece a AWS HealthScribe, y permite esta tarea: Distinguir contribuciones de clínico y paciente en un encuentro registrado."
+  },
+  "feat-080-03": {
+    "label": "Redactar documentación de encuentro estructurada para revisión profesional.",
+    "why": "preliminary clinical notes pertenece a AWS HealthScribe, y permite esta tarea: Redactar documentación de encuentro estructurada para revisión profesional."
+  },
+  "feat-081-00": {
+    "label": "Usar silicio construido por AWS para reducir el costo y el tiempo de aprendizaje de parámetros de modelo.",
+    "why": "AWS Trainium pertenece a AWS Trainium, y permite esta tarea: Usar silicio construido por AWS para reducir el costo y el tiempo de aprendizaje de parámetros de modelo."
+  },
+  "feat-082-01": {
+    "label": "Proporcionar la familia de instancias que expone aceleradores de inferencia de segunda generación de AWS.",
+    "why": "Amazon EC2 Inf2 instances pertenece a AWS Inferentia / Inferentia2, y permite esta tarea: Proporcionar la familia de instancias que expone aceleradores de inferencia de segunda generación de AWS."
+  },
+  "feat-083-01": {
+    "label": "Usar bibliotecas de desarrollo de modelo comunes con chips de entrenamiento e inferencia construidos por AWS.",
+    "why": "framework integrations pertenece a AWS Neuron SDK, y permite esta tarea: Usar bibliotecas de desarrollo de modelo comunes con chips de entrenamiento e inferencia construidos por AWS."
+  },
+  "feat-084-00": {
+    "label": "Elegir generaciones de acelerador de AWS para aprendizaje de modelo rentable a diferentes escalas.",
+    "why": "First- and second-generation Trainium pertenece a Amazon EC2 Trn1 / Trn2 instances, y permite esta tarea: Elegir generaciones de acelerador de AWS para aprendizaje de modelo rentable a diferentes escalas."
+  },
+  "feat-084-02": {
+    "label": "Conectar instancias de acelerador con redes de baja latencia para trabajos de aprendizaje grandes sincronizados.",
+    "why": "distributed training with EFA pertenece a Amazon EC2 Trn1 / Trn2 instances, y permite esta tarea: Conectar instancias de acelerador con redes de baja latencia para trabajos de aprendizaje grandes sincronizados."
+  },
+  "feat-085-01": {
+    "label": "Reducir el precio de predicciones de producción usando silicio de inferencia construido con propósito.",
+    "why": "cost-efficient model serving pertenece a Amazon EC2 Inf1 / Inf2 instances, y permite esta tarea: Reducir el precio de predicciones de producción usando silicio de inferencia construido con propósito."
+  },
+  "feat-086-00": {
+    "label": "Usar aceleradores de gama alta para las cargas de trabajo de entrenamiento y servicio de modelo grande más exigentes.",
+    "why": "NVIDIA H100 Tensor Core GPUs pertenece a Amazon EC2 P5 instances, y permite esta tarea: Usar aceleradores de gama alta para las cargas de trabajo de entrenamiento y servicio de modelo grande más exigentes."
+  },
+  "feat-087-01": {
+    "label": "Combinar múltiples hosts de GPU en un sistema estrechamente conectado para modelos que exceden un servidor.",
+    "why": "EC2 UltraServer scale-up systems pertenece a Amazon EC2 P6 instances and UltraServers, y permite esta tarea: Combinar múltiples hosts de GPU en un sistema estrechamente conectado para modelos que exceden un servidor."
+  },
+  "feat-088-00": {
+    "label": "Usar aceleradores de gráficos conscientes de costos para inferencia de ML general y cargas de trabajo visuales.",
+    "why": "NVIDIA A10G GPUs on G5 instances pertenece a Amazon EC2 G5 / G6 instances, y permite esta tarea: Usar aceleradores de gráficos conscientes de costos para inferencia de ML general y cargas de trabajo visuales."
+  },
+  "feat-088-02": {
+    "label": "Ejecutar aplicaciones visuales y predicciones de producción de tamaño moderado en instancias de GPU flexibles.",
+    "why": "graphics and ML inference workloads pertenece a Amazon EC2 G5 / G6 instances, y permite esta tarea: Ejecutar aplicaciones visuales y predicciones de producción de tamaño moderado en instancias de GPU flexibles."
+  },
+  "feat-089-02": {
+    "label": "Desarrollar y optimizar cargas de trabajo con las bibliotecas y herramientas para procesadores Gaudi.",
+    "why": "SynapseAI software stack pertenece a Amazon EC2 DL1 instances, y permite esta tarea: Desarrollar y optimizar cargas de trabajo con las bibliotecas y herramientas para procesadores Gaudi."
+  },
+  "feat-090-01": {
+    "label": "Encolar y asignar trabajo distribuido a través de software de programación de HPC familiar.",
+    "why": "job scheduler integration pertenece a AWS ParallelCluster, y permite esta tarea: Encolar y asignar trabajo distribuido a través de software de programación de HPC familiar."
+  },
+  "feat-091-00": {
+    "label": "Permitir que las aplicaciones distribuidas se comuniquen directamente con el hardware de red para reducir la latencia.",
+    "why": "Operating-system bypass pertenece a Elastic Fabric Adapter, y permite esta tarea: Permitir que las aplicaciones distribuidas se comuniquen directamente con el hardware de red para reducir la latencia."
+  },
+  "feat-091-02": {
+    "label": "Sincronizar gradientes de manera eficiente cuando un trabajo de aprendizaje abarca muchas máquinas.",
+    "why": "tightly coupled distributed training pertenece a Elastic Fabric Adapter, y permite esta tarea: Sincronizar gradientes de manera eficiente cuando un trabajo de aprendizaje abarca muchas máquinas."
+  },
+  "feat-092-01": {
+    "label": "Provisionar y escalar la capacidad de instancia requerida por trabajos de procesamiento en cola.",
+    "why": "dynamic compute environments pertenece a AWS Batch, y permite esta tarea: Provisionar y escalar la capacidad de instancia requerida por trabajos de procesamiento en cola."
+  },
+  "feat-093-00": {
+    "label": "Lanzar máquinas virtuales con marcos comunes y controladores ya configurados.",
+    "why": "Deep Learning AMI (DLAMI) pertenece a AWS Deep Learning AMIs, y permite esta tarea: Lanzar máquinas virtuales con marcos comunes y controladores ya configurados."
+  },
+  "feat-094-01": {
+    "label": "Usar los mismos artefactos de contenedor de ML en ML gestionado, Kubernetes, contenedores o máquinas virtuales.",
+    "why": "Amazon EKS deployment pertenece a AWS Deep Learning Containers, y permite esta tarea: Usar los mismos artefactos de contenedor de ML en ML gestionado, Kubernetes, contenedores o máquinas virtuales."
+  },
+  "feat-096-00": {
+    "label": "Desarrollar y operar cargas de trabajo basadas en el marco de aprendizaje automático de Google.",
+    "why": "TensorFlow on AWS pertenece a TensorFlow on AWS, y permite esta tarea: Desarrollar y operar cargas de trabajo basadas en el marco de aprendizaje automático de Google."
+  },
+  "feat-098-00": {
+    "label": "Lanzar computación interactiva colaborativa sin mantener manualmente servidores de portátiles.",
+    "why": "Managed notebook environments pertenece a Jupyter on AWS, y permite esta tarea: Lanzar computación interactiva colaborativa sin mantener manualmente servidores de portátiles."
+  },
+  "feat-098-02": {
+    "label": "Acceder a conjuntos de datos en la nube, trabajos de entrenamiento y herramientas de implementación desde un flujo de trabajo de portátil.",
+    "why": "Amazon SageMaker notebook instances pertenece a Jupyter on AWS, y permite esta tarea: Acceder a conjuntos de datos en la nube, trabajos de entrenamiento y herramientas de implementación desde un flujo de trabajo de portátil."
+  },
+  "feat-099-01": {
+    "label": "Explicar restricciones conocidas y condiciones que pueden cambiar la calidad de salida del servicio.",
+    "why": "limitations and performance factors pertenece a AWS AI Service Cards, y permite esta tarea: Explicar restricciones conocidas y condiciones que pueden cambiar la calidad de salida del servicio."
+  },
+  "feat-100-00": {
+    "label": "Crear una aplicación generativa describiendo comportamiento y conectando componentes impulsados por solicitud.",
+    "why": "Prompt-based app building pertenece a Amazon PartyRock, y permite esta tarea: Crear una aplicación generativa describiendo comportamiento y conectando componentes impulsados por solicitud."
+  },
+  "feat-100-01": {
+    "label": "Impulsar una aplicación de aprendizaje sin código con modelos generativos gestionados de AWS.",
+    "why": "Amazon Bedrock foundation models pertenece a Amazon PartyRock, y permite esta tarea: Impulsar una aplicación de aprendizaje sin código con modelos generativos gestionados de AWS."
+  },
+  "features": {
+    "hint": "Arrastra cada trabajo a la capacidad que lo realiza. La revelación nombra el servicio al que pertenece."
+  }
+}

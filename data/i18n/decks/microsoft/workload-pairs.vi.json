@@ -1,0 +1,62 @@
+{
+ "wp-01": {
+  "a.text": "Từ vé hỗ trợ, liệt kê mọi tên sản phẩm, người và ngày được đề cập.",
+  "a.why": "Các thực thể xác định ai/cái được đề cập — mọi người, ngày, tổ chức (histack: 'phân loại những thứ cụ thể').",
+  "b.text": "Từ cùng các vé, xác định liệu khách hàng cảm thấy tích cực, tiêu cực hoặc trung lập.",
+  "b.why": "Cực tính ý kiến ​​là cảm tính — cặp nhầm lẫn # 1 của bài thi (17 đồng xuất hiện)."
+ },
+ "wp-02": {
+  "a.text": "Chuyển lại ghi âm trung tâm cuộc gọi để các tác nhân có thể tìm kiếm cuộc trò chuyện.",
+  "a.why": "Âm thanh vào, văn bản ra — nhận dạng. 'Chuyển lại' là động từ cấp.",
+  "b.text": "Ứng dụng điều hướng đọc các chỉ dẫn rẽ một cách đúng lúc to rõ ràng bằng giọng nói thần kinh en-US-Ava.",
+  "b.why": "Văn bản vào, âm thanh ra — tổng hợp. SSML và tên giọng nói như en-US-Ava:DragonHDLatestNeural thuộc về tổng hợp chỉ."
+ },
+ "wp-03": {
+  "a.text": "Ứng dụng hội nghị lắng nghe người nói tiếng Pháp và tạo ra chú thích tiếng Anh trực tiếp cho khán giả.",
+  "a.why": "Nhận dạng giọng nói bằng một ngôn ngữ và kết xuất nó bằng ngôn ngữ khác là dịch — điều báo hiệu bài thi cho cặp này (âm thanh vào, đầu ra khác ngôn ngữ).",
+  "b.text": "Ứng dụng tương tự cũng tạo ra chú thích tiếng Pháp cùng ngôn ngữ cho khán giả khiếm thính ở hàng đầu.",
+  "b.why": "Âm thanh vào, văn bản cùng ngôn ngữ ra là giọng nói-to-text thông thường; không có ngôn ngữ nào vượt qua, vì vậy không có gì để dịch."
+ },
+ "wp-04": {
+  "a.text": "Trích xuất số sê-ri in trên một nhãn thiết bị được chụp ảnh.",
+  "a.why": "OCR/Đọc trích xuất văn bản chữ nghĩa có trong hình ảnh — 'trích xuất văn bản có thể đọc được từ hình ảnh' là thân cây bài thi.",
+  "b.text": "Tạo mô tả một câu ngôn ngữ tự nhiên về những gì bức ảnh cho thấy.",
+  "b.why": "Chú thích (VisualFeatures.CAPTION) mô tả cảnh — nó không đọc văn bản trong nó."
+ },
+ "wp-05": {
+  "a.text": "Ứng dụng quét đọc khối địa chỉ in từ một phong bì được chụp ảnh vào các trường văn bản có cấu trúc.",
+  "a.why": "OCR chuyển đổi pixel hiện có thành văn bản — đầu vào là hình ảnh, đầu ra là văn bản.",
+  "b.text": "Công cụ thiết kế lấy lời nhắc 'một biểu tượng phẳng của một tên lửa xanh' và tạo ra PNG mới một cách chính xác không bao giờ tồn tại trước đây.",
+  "b.why": "Tạo hình ảnh (client.images.generate với gpt-image-1 / DALL·E) chạy theo hướng ngược lại — lời nhắc văn bản vào, pixel được tổng hợp ra — bẫy lật hướng bài thi trên cặp này."
+ },
+ "wp-06": {
+  "a.text": "Quyết định liệu mỗi ảnh được tải lên là 'bộ phận bị lỗi' hoặc 'bộ phận tốt'.",
+  "a.why": "Phân loại gán một nhãn cho toàn bộ hình ảnh.",
+  "b.text": "Đánh dấu nơi mỗi bộ phận ngồi trên hình ảnh băng chuyền bằng hộp giới hạn.",
+  "b.why": "Hộp giới hạn cho mỗi đối tượng là điều báo hiệu bài thi cho việc phát hiện — nhầm lẫn thị giác kinh điển."
+ },
+ "wp-07": {
+  "a.text": "Trả về ['giá cả', 'thời lượng pin', 'hỗ trợ khách hàng'] từ một loạt bài đánh giá.",
+  "a.why": "Cụm từ khóa trả về một danh sách các điều khoản quan trọng — không có văn bản mới nào được viết.",
+  "b.text": "Cô đặc cùng các bài đánh giá thành ba câu tươi mới nắm bắt phản hồi chung chung.",
+  "b.why": "Tóm tắt viết các câu được nén mới — sự tương phản hình dạng đầu ra mà corpus kiểm tra (pair #14)."
+ },
+ "wp-08": {
+  "a.text": "Một ứng dụng nhẹ phải tìm và đỏa mọi địa chỉ email và số điện thoại trong tin nhắn khách hàng trước khi lưu trữ chúng.",
+  "a.why": "Phát hiện PII là khả năng chuyên dụng xác định và có thể đỏa dữ liệu cá nhân nhạy cảm như số điện thoại và địa chỉ email (bài thi gọi nó 'khả năng tập trung quyền riêng tư trực tiếp nhất').",
+  "b.text": "Ứng dụng tương tự cũng gắn thẻ mọi người, tổ chức và vị trí được đề cập trong các thông báo cho một chỉ mục có thể tìm kiếm.",
+  "b.why": "Nhận dạng thực thể là trích xuất rộng hơn trên các danh mục — mọi người, nơi, tổ chức — không phải tính năng tập trung đỏa mà Phát hiện PII là."
+ },
+ "wp-09": {
+  "a.text": "Bản ghi phiên họp phải gán mỗi phần của âm thanh được ghi lại cho người tham gia chính xác.",
+  "a.why": "Diarization xác định và tách những người nói trong âm thanh đến, gắn nhãn ai nói mỗi phần bản ghi (bài thi gọi nó 'quy tính loa âm thanh').",
+  "b.text": "Khi bản ghi chép được hoàn thành, một giọng người kể sự kiện đọc tóm tắt cuộc họp to rõ ràng cho một nguồn cấp dữ liệu podcast.",
+  "b.why": "Tổng hợp chuyển đổi văn bản thành đầu ra giọng nói tự nhiên — đường dẫn đối lập từ diarizing âm thanh hiện có."
+ },
+ "wp-10": {
+  "a.text": "Nhà phát triển cần chú thích audio trực tiếp của hội nghị video trong thời gian thực, cùng ngôn ngữ, cho những người tham gia khiếm thính.",
+  "a.why": "Azure AI Speech cung cấp đường dẫn speech-to-text thời gian thực cho âm thanh trực tiếp — dịch vụ tiêu chuẩn cho chú thích, khác biệt với chuyển đổi văn bản xuyên ngôn ngữ.",
+  "b.text": "Nhà bán lẻ cần chuyển đổi mô tả sản phẩm được viết từ tiếng Anh thành 20 ngôn ngữ khác dưới dạng văn bản.",
+  "b.why": "Azure AI Translator cung cấp dịch máy thần kinh giữa các ngôn ngữ cho văn bản — tương phản bài thi là dịch vụ đường dẫn âm thanh so với dịch vụ văn bản xuyên ngôn ngữ, không phải chồng lấp công việc (pair #29)."
+ }
+}

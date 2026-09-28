@@ -1,0 +1,57 @@
+{
+  "prompting": {
+    "hint": "Este concepto cambia instrucciones, contexto, muestreo, restricciones de salida, o resistencia a ataques en tiempo de solicitud sin reentrenar el modelo a menos que la pista explícitamente lo diga."
+  },
+  "prompting-01": {
+    "label": "Divide una tarea compleja en pasos más pequeños explícitos cuyas salidas pueden ser verificadas.",
+    "why": "Divide una tarea compleja en pasos más pequeños explícitos cuyas salidas pueden ser verificadas."
+  },
+  "prompting-02": {
+    "label": "Pide a un modelo que ejecute una tarea sin proporcionar ejemplos.",
+    "why": "Pide a un modelo que ejecute una tarea sin proporcionar ejemplos."
+  },
+  "prompting-03": {
+    "label": "Proporciona un pequeño número de ejemplos para guiar el comportamiento y formato de salida.",
+    "why": "Proporciona un pequeño número de ejemplos para guiar el comportamiento y formato de salida."
+  },
+  "prompting-04": {
+    "label": "Define comportamiento de aplicación de alta prioridad, límites, rol, y requisitos de respuesta.",
+    "why": "Define comportamiento de aplicación de alta prioridad, límites, rol, y requisitos de respuesta."
+  },
+  "prompting-05": {
+    "label": "Una unidad de texto procesada por un modelo de lenguaje; los recuentos de tokens afectan la capacidad de contexto, latencia y costo.",
+    "why": "Una unidad de texto procesada por un modelo de lenguaje; los recuentos de tokens afectan la capacidad de contexto, latencia y costo."
+  },
+  "prompting-06": {
+    "label": "La cantidad máxima combinada de tokens de entrada y generados que un modelo puede procesar en una solicitud.",
+    "why": "La cantidad máxima combinada de tokens de entrada y generados que un modelo puede procesar en una solicitud."
+  },
+  "prompting-07": {
+    "label": "Controla la aleatoriedad del muestreo; valores más bajos favorecen salida más repetible y valores más altos aumentan variación.",
+    "why": "Controla la aleatoriedad del muestreo; valores más bajos favorecen salida más repetible y valores más altos aumentan variación."
+  },
+  "prompting-08": {
+    "label": "Limita el muestreo al conjunto más pequeño de tokens probables cuya probabilidad acumulada alcanza un umbral.",
+    "why": "Limita el muestreo al conjunto más pequeño de tokens probables cuya probabilidad acumulada alcanza un umbral."
+  },
+  "prompting-09": {
+    "label": "Limita la longitud de respuesta para controlar riesgo de truncamiento, latencia y gasto.",
+    "why": "Limita la longitud de respuesta para controlar riesgo de truncamiento, latencia y gasto."
+  },
+  "prompting-10": {
+    "label": "Restringe una respuesta a un esquema como JSON así el software descendente puede validarla y consumirla.",
+    "why": "Restringe una respuesta a un esquema como JSON así el software descendente puede validarla y consumirla."
+  },
+  "prompting-11": {
+    "label": "La entrada maliciosa intenta anular instrucciones o manipular un modelo y sus herramientas conectadas.",
+    "why": "La entrada maliciosa intenta anular instrucciones o manipular un modelo y sus herramientas conectadas."
+  },
+  "prompting-12": {
+    "label": "Ejemplos de entrenamiento corrupto o adversarial manipulan lo que aprende un modelo.",
+    "why": "Ejemplos de entrenamiento corrupto o adversarial manipulan lo que aprende un modelo."
+  },
+  "prompting-13": {
+    "label": "Intenta eludir protecciones de seguridad para generar contenido restringido.",
+    "why": "Intenta eludir protecciones de seguridad para generar contenido restringido."
+  }
+}

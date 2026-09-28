@@ -1,0 +1,110 @@
+{
+ "drift-01": {
+  "label": "Một mô hình cho vay được huấn luyện trên những người nộp đơn từ 25–60 tuổi. Sau một chiến dịch tiếp thị vào thị trường sinh viên, một phần ba đơn đăng ký hiện đến từ những người dưới 25 tuổi. Hành vi thanh toán cho bất kỳ hồ sơ nào cũng không thay đổi.",
+  "why": "Hỗn hợp đầu vào chuyển sang một vùng dữ liệu huấn luyện hầu như không bao gồm, nhưng mối quan hệ giữa hồ sơ và thanh toán vẫn nguyên vẹn. Đó là P(X) chuyển động với P(Y|X) được giữ — covariate drift, và cách sửa chữa là bao gồm, không phải một quy tắc mới."
+ },
+ "drift-02": {
+  "label": "Một mô hình nhận dạng tiếng nói được huấn luyện chủ yếu trên các bản ghi phòng thu hiện nhận được một phần lớn các cuộc gọi từ điện thoại di động ở những con đường ồn ào. Các từ vẫn có nghĩa là chúng có nghĩa.",
+  "why": "Điều kiện âm thanh là một thuộc tính đầu vào. Ánh xạ từ âm thanh đến văn bản chưa thay đổi; model chỉ đơn giản là hoạt động bên ngoài vùng đầu vào mà nó đã học tốt."
+ },
+ "drift-03": {
+  "label": "Một mô hình nhu cầu được xây dựng trên các cửa hàng của một quốc gia được triển khai đến ba quốc gia nữa. Các sản phẩm, các mùa và logic mua sắm là như nhau; hồ sơ cửa hàng thì không.",
+  "why": "Đây là trường hợp sách giáo khoa của phân phối huấn luyện không bao gồm phân phối triển khai. Không có gì về cách nhu cầu được tạo ra thay đổi — chỉ là những đầu vào nào được nhìn thấy."
+ },
+ "drift-04": {
+  "label": "Độ chính xác của mô hình gian lận sụp đổ trong một tuần. Những nhà điều tra phát hiện một kỹ thuật tấn công mới bắt đầu vào một ngày cụ thể và hiện là mẫu chiếm ưu thế.",
+  "why": "Các giá trị tính năng giống nhau có nghĩa là hợp pháp tháng trước hiện có nghĩa là gian lận. P(Y|X) thay đổi, và nó thay đổi tại một thời điểm — một sự thay đổi khái niệm đột ngột, không phải sự thay đổi ở những người giao dịch."
+ },
+ "drift-05": {
+  "label": "Một mô hình định giá suy giảm trong một đêm khi một cơ quan quản lý có giới hạn một khoản phí mà model đã học được để coi như một tín hiệu mạnh mẽ về phân khúc khách hàng.",
+  "why": "Một thay đổi quy tắc bên ngoài dữ liệu ngay lập tức dây lại những gì tính năng có nghĩa là. Huấn luyện lại trên dữ liệu sau thay đổi là cách sửa chữa; không có gì về dữ liệu trước thay đổi có thể khôi phục."
+ },
+ "drift-06": {
+  "label": "Một bộ phân loại nội dung ổn định cho đến khi thay đổi chính sách nền tảng có hiệu lực vào ngày đầu tiên của tháng, sau đó nhãn 'chấp nhận được' của nó không còn khớp với quyết định của người điều hành nữa.",
+  "why": "Bản thân định nghĩa mục tiêu được xác định lại vào một ngày. Các tính năng không thay đổi; sự thật mặt đất chuyển động dưới chúng."
+ },
+ "drift-07": {
+  "label": "Trong tám tháng, độ chính xác của mô hình churn trượt khi kế hoạch mới của đối thủ cạnh tranh được ngày càng nhiều khách hàng áp dụng. Cả động lực churn cũ và mới đều có thể nhìn thấy trong dữ liệu xuyên suốt.",
+  "why": "Hai chế độ hiện tồn tại, với chế độ mới chiếm một phần ngày càng tăng của các trường hợp. Hỗn hợp theo thời gian này là chữ ký của drift dần dần, và đó là lý do tại sao không thể tìm thấy một điểm thay đổi duy nhất."
+ },
+ "drift-08": {
+  "label": "Một mô hình đề xuất suy giảm từ từ khi một nhóm người dùng lớn tuổi hơn được dần dần thay thế bằng một nhóm trẻ hơn có hương vị khác nhau. Trong một thời gian dài, cả hai hành vi đều có mặt.",
+  "why": "Hai dân số có hai quy tắc đầu vào đến kết quả khác nhau chồng chéo lên nhau trong quá trình chuyển đổi. Phát hiện muộn chính vì không có tuần nào trông bất thường."
+ },
+ "drift-09": {
+  "label": "Một bộ lọc thư rác yếu đi trong năm khi những người gửi di chuyển từ một họ mẫu sang họ khác, với một thời gian dài khi cả hai mẫu đều đến với số lượng lớn.",
+  "why": "Các khái niệm cũ và mới đều hoạt động trong quá trình chuyển đổi. So sánh nó với drift tăng dần, nơi không có hai chế độ, chỉ một chế độ tiếp tục chuyển động."
+ },
+ "drift-10": {
+  "label": "Lỗi của mô hình thời gian giao hàng tăng đều đặn tháng sau tháng khi tắc nghẽn giao thông tệ hơn một chút. Không có điểm nào mà hành vi nhảy và không có chế độ trước đó để quay lại.",
+  "why": "Mối quan hệ đang đi liên tục qua các trạng thái trung gian thay vì xen kẽ giữa hai chế độ xác định. Huấn luyện lại cửa sổ lăn phù hợp với điều này; phát hiện điểm thay đổi sẽ không tìm thấy gì."
+ },
+ "drift-11": {
+  "label": "Một mô hình chất lượng dựa trên cảm biến trôi khi các thành phần của máy mài mòn, suy giảm một phần trăm mỗi tuần mà không có sự gián đoạn.",
+  "why": "Mài mòn vật lý chuyển động ánh xạ đầu vào đến kết quả một cách trơn tru và đơn điệu. Mỗi tuần là một khái niệm hơi mới, không phải hỗn hợp của một cái cũ và một cái mới."
+ },
+ "drift-12": {
+  "label": "Độ chính xác chủ đề của một mô hình ngôn ngữ suy giảm tháng này sang tháng khác khi từ vựng và cách sử dụng phát triển, không có sự kiện nào chịu trách nhiệm.",
+  "why": "Chuyển động liên tục, có hướng của khái niệm mà không có điểm thay đổi và không có sự trở lại. Cách sửa chữa là một chu kỳ làm mới, không phải ngưỡng báo động."
+ },
+ "drift-13": {
+  "label": "Một mô hình dự báo bán lẻ thất bại mỗi tháng 12, phục hồi vào tháng 1 và lại thất bại vào tháng 12 năm sau.",
+  "why": "Một khái niệm đã được nhìn thấy trước đây quay trở lại theo chu kỳ. Phản ứng đúng là mô hình mùa vụ hoặc giữ mô hình mùa vụ, không phải huấn luyện lại trong hoảng loạn mỗi mùa đông."
+ },
+ "drift-14": {
+  "label": "Lỗi của mô hình nhu cầu năng lượng theo mẫu ngày trong tuần/cuối tuần lặp lại vô thời hạn.",
+  "why": "Các chế độ xen kẽ đều được biết đến và cả hai đều quay lại. Huấn luyện lại chỉ trên cửa sổ gần nhất sẽ làm cho model vĩnh viễn sai cho bất kỳ chế độ nào nó vừa thấy."
+ },
+ "drift-15": {
+  "label": "Một mô hình lập lịch suy giảm trong mỗi kỳ nghỉ học và trở về bình thường sau đó, năm sau năm.",
+  "why": "Bối cảnh tái diễn. Giữ lại và chọn lại các mô hình lịch sử cho mỗi bối cảnh tốt hơn loại bỏ chúng, vì khái niệm cũ được đảm bảo sẽ quay lại."
+ },
+ "drift-16": {
+  "label": "Tỷ lệ dương tính của mô hình sàng lọc bệnh tật giảm mạnh sau một chiến dịch tiêm chủng thành công. Các triệu chứng vẫn chỉ ra bệnh tật chính xác như trước đây.",
+  "why": "Tỷ lệ mắc bệnh suy giảm — P(Y) chuyển động — trong khi P(X|Y) được giữ. Các ngưỡng và bất kỳ hiệu chuẩn phụ thuộc trước cần điều chỉnh; mối quan hệ đã học không."
+ },
+ "drift-17": {
+  "label": "Một mô hình gian lận được huấn luyện khi 3% giao dịch là gian lận hiện hoạt động ở nơi 0,5% có, vì các kiểm soát được giới thiệu ở nơi khác. Giao dịch gian lận trông như nhau như mọi khi.",
+  "why": "Tỷ lệ cơ sở thay đổi, vì vậy mọi xác suất model phát hành đều được hiệu chuẩn sai ngay cả khi phân biệt của nó không bị ảnh hưởng. Sửa chữa trước đó mà không cần huấn luyện lại."
+ },
+ "drift-18": {
+  "label": "Một bộ phân loại khiếm khuyết được chuyển từ một dây chuyền thí điểm có tỷ lệ khuyết 20% sang một dây chuyền trưởng thành có 2%. Các khiếm khuyết xuất hiện giống hệt nhau trên cả hai.",
+  "why": "Chỉ trước đó lớp thay đổi. Đọc điều này dưới dạng covariate drift dẫn đến công việc tính năng vô ích; đọc nó là label shift dẫn đến hiệu chuẩn ngưỡng thực sự hoạt động."
+ },
+ "drift-19": {
+  "label": "Giám sát cho thấy phần quyết định 'chấp thuận' tăng từ 61% đến 78% trong sáu tuần. Không nhãn nào đã đến, vì vậy không thể đo chất lượng.",
+  "why": "Phân phối đầu ra chuyển động. Đó là một cảnh báo, không phải chẩn đoán: nó có thể được gây ra bởi covariate drift, label shift, một đầu vào bị hỏng, hoặc một dân số thực sự thay đổi. Đó là những gì bạn quan sát khi nhãn bị trễ."
+ },
+ "drift-20": {
+  "label": "Xác suất dự đoán trung bình của model tăng đều đặn trong khi phân phối tính năng đầu vào trông ổn định trên mọi biểu đồ.",
+  "why": "Đầu ra chuyển động mà không có chuyển động đầu vào có thể nhìn thấy thường có nghĩa là chuyển động nằm trong tương tác tính năng hoặc một tính năng mà không ai giám sát. Phát hiện là có thật; nguyên nhân vẫn chưa được xác định."
+ },
+ "drift-21": {
+  "label": "Sau khi phiên bản model được triển khai, phân phối điểm thay đổi đáng chú ý ngay cả khi dữ liệu đến giống hệt với tuần trước.",
+  "why": "Cùng một đầu vào, các đầu ra khác nhau có nghĩa là thay đổi nằm trong model, không phải thế giới. Drift dự đoán từ phiên bản đến phiên bản là lý do tại sao phiên bản mới được so sánh trên một mẫu tham chiếu cố định."
+ },
+ "drift-22": {
+  "label": "Giá trị trung bình của tính năng doanh thu giảm xuống một phần ba giá trị thường lệ của nó trong một đêm. Một đội ngũ hạ lưu chuyển đổi trường từ xu sang toàn bộ đơn vị cùng đêm đó.",
+  "why": "Thế giới không thay đổi; đơn vị đó. Huấn luyện lại ở đây sẽ dạy model để coi các giá trị bị hỏng là bình thường và làm cho sự sửa chữa cuối cùng trông giống như một hồi quy mới."
+ },
+ "drift-23": {
+  "label": "Một tính năng phân loại đột nhiên hiển thị 40% nulls. Thay đổi schema đổi tên cột nguồn và lần kết hợp bây giờ bỏ lỡ.",
+  "why": "Một khiếm khuyết đường ống trình bày chính xác giống như sudden drift trên bảng điều khiển drift. Dấu hiệu là thay đổi trùng khớp với sự kiện triển khai hoặc schema thay vì bất cứ điều gì trên thế giới."
+ },
+ "drift-24": {
+  "label": "Đầu vào của model thay đổi ngay khi một nhà cung cấp thay đổi mặc định API, thay thế im lặng các giá trị bị thiếu bằng zero thay vì bỏ qua chúng.",
+  "why": "Các số không có nghĩa là 'thiếu' được đọc bởi model như một giá trị thực, cực kỳ. Cách sửa chữa là thực thi hợp đồng hạ lưu và ngữ nghĩa null, không bao giờ huấn luyện lại."
+ },
+ "drift-types": {
+  "hint": "Kéo mỗi triệu chứng sản xuất vào loại drift nó mô tả. Câu hỏi luôn là phân phối nào chuyển động — các đầu vào, nhãn, đầu ra, hoặc mối quan hệ giữa chúng.",
+  "note": "Một sự phá vỡ dữ liệu hạ lưu nhận được một vùng riêng của nó vì nó trông giống hệt như drift thực trên mọi bảng điều khiển, và phản ứng chính xác là phản ứng ngược lại: sửa chữa nguồn cấp, không bao giờ huấn luyện lại trên nó.",
+  "zones[0].def": "P(X) chuyển động. Các đầu vào trông khác nhau, nhưng quy tắc ánh xạ các đầu vào thành kết quả vẫn giữ.",
+  "zones[1].def": "P(Y|X) thay đổi đột ngột tại một thời điểm. Quy tắc cũ ngừng áp dụng trong một đêm.",
+  "zones[2].def": "Các quy tắc cũ và mới hiện tồn tại, với quy tắc mới xuất hiện trong một phần ngày càng tăng của các trường hợp.",
+  "zones[3].def": "Bản thân quy tắc chuyển động liên tục thông qua các trạng thái trung gian thay vì chuyển đổi giữa hai.",
+  "zones[4].def": "Một quy tắc đã được nhìn thấy trước đây quay trở lại theo chu kỳ. Mùa vụ là trường hợp phổ biến.",
+  "zones[5].def": "P(Y) chuyển động — hỗn hợp kết quả thay đổi — trong khi các tính năng được đưa ra kết quả hành động như trước.",
+  "zones[6].def": "Phân phối đầu ra của model chuyển động. Nó là triệu chứng, có thể quan sát được mà không cần bất kỳ nhãn nào, không phải chẩn đoán.",
+  "zones[7].def": "Không có gì trên thế giới thay đổi. Đường ống, schema, đơn vị hoặc mặc định thay đổi, và model đang được cung cấp đầu vào bị hỏng."
+ }
+}

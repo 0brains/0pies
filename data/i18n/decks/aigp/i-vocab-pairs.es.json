@@ -1,0 +1,62 @@
+{
+ "i-vp-01": {
+  "a.text": "Un sistema de visión continúa clasificando correctamente en imágenes perturbadas adversarialmente.",
+  "a.why": "Resistir entrada hostil o novedosa mientras se mantiene precisión y funcionalidad es el trabajo completo de este lado, el modelo nunca sale de su banda de desempeño normal.",
+  "b.text": "Después de entradas de sensor degradadas, el sistema vuelve a sus límites de desempeño especificados.",
+  "b.why": "Mantener desempeño dentro de límites aceptables definidos a pesar de condiciones reales o adversariales, y recuperarse a ellos, es la otra mitad, un sistema puede ser resiliente sin jamás enfrentar un ataque deliberado."
+ },
+ "i-vp-02": {
+  "a.text": "Un clip de audio sintético de un oficial público es fabricado y propagado con el objetivo deliberado de causar daño.",
+  "a.why": "Fabricación deliberada con intención de causar daño es la característica definitoria, el mismo contenido falso compartido por alguien que cree que es real pertenece al otro lado.",
+  "b.text": "Un blogger comparte un video deepfake creyendo que es auténtico, luego corrige el registro una vez que la fabricación sale a la luz.",
+  "b.why": "Sin intención de engañar: el que lo compartió creyó que el contenido era verdadero, es lo que separa esto del lado de daño deliberado del par."
+ },
+ "i-vp-03": {
+  "a.text": "Grandes números de viajes falsos de tarifa baja son inyectados en el conjunto de datos de entrenamiento del modelo de predicción de tarifa de una sola fuente.",
+  "a.why": "Corromper lo que el modelo aprende, antes de que sea siquiera desplegado, es un ataque en tiempo de entrenamiento, el otro lado ocurre después de que el modelo ya está en vivo.",
+  "b.text": "Un usuario malicioso elabora datos de entrada que engañan a un modelo de triaje ya desplegado para etiquetar casos urgentes como no urgentes.",
+  "b.why": "Engañar las salidas de un modelo en vivo con entradas elaboradas en tiempo de inferencia es la otra mitad del par: los datos de entrenamiento del modelo nunca fueron tocados."
+ },
+ "i-vp-04": {
+  "a.text": "La documentación divulga qué datos y lógica entraron en la construcción del sistema, antes de que alguien pregunte sobre un resultado específico.",
+  "a.why": "Esto es apertura sobre el diseño y datos del sistema, una propiedad del sistema como un todo, no de ninguna decisión individual.",
+  "b.text": "Un solicitante específico pregunta por qué su caso fue decidido de la manera que fue, y la organización puede recorrer esa salida en términos que una persona puede seguir.",
+  "b.why": "La calibración oficial es que una decisión es explicable cuando su entrada, salida y funcionamiento son comprensibles para los seres humanos, una propiedad por decisión, distinta de la apertura de sistema completo de Transparencia."
+ },
+ "i-vp-05": {
+  "a.text": "Datos confidenciales de pacientes se vuelven públicamente accesibles porque un depósito de almacenamiento en la nube fue mal configurado, sin atacante involucrado.",
+  "a.why": "Exposición involuntaria a través de mala configuración, no actividad maliciosa, es lo que establece este lado.",
+  "b.text": "Un actor externo deliberadamente elude controles de acceso para obtener el mismo tipo de datos.",
+  "b.why": "Acceso deliberado no autorizado por un actor malicioso es la otra mitad, la misma categoría de daño, la causa opuesta."
+ },
+ "i-vp-06": {
+  "a.text": "Un detector de defectos de fabricación alcanza precisión casi perfecta en las fotos exactas de línea de producción en las que fue entrenado, luego se pierde grietas obvias en fotos de una línea de fábrica diferente.",
+  "a.why": "Excelente en el conjunto de entrenamiento y pobre en cualquier cosa nueva es la firma de este lado, el modelo memorizó las fotos específicas en lugar de aprender cómo realmente se ve una grieta.",
+  "b.text": "Un detector de defectos construido con solo un par de filtros de imagen básicos y sin capas más profundas se pierde grietas incluso en las fotos exactas en las que fue entrenado.",
+  "b.why": "Pobre desempeño en todos lados, incluyendo en los datos de entrenamiento en sí mismo, señala que el modelo nunca tuvo suficiente complejidad para capturar el patrón en primer lugar."
+ },
+ "i-vp-07": {
+  "a.text": "Un radiólogo deja de verificar doble las llamadas de bajo riesgo de una herramienta de triaje de escaneo después de meses de señales precisas, y comienza a firmar lo que sea que etiquete como benigno.",
+  "a.why": "Dependencia excesiva en salidas de IA sin supervisión humana crítica es el mecanismo de este lado, un fallo humano de mantener la verificación, no un defecto cocido en los datos.",
+  "b.text": "Una herramienta de contratación entrenada en registros de contratación pasados rechaza más candidatos de grupos minoritarios, porque esos registros ya reflejaban quién fue contratado antes.",
+  "b.why": "El defecto es heredado de los datos de entrenamiento en sí, llevando adelante patrones de un pasado discriminatorio, distinto de confiar excesivamente en la salida de una herramienta una vez que ya está desplegada."
+ },
+ "i-vp-08": {
+  "a.text": "Un auto autónomo decide independientemente la mejor ruta a una dirección que el conductor proporciona, pero no hace nada fuera de esa tarea.",
+  "a.why": "Operar dentro de un único dominio de tarea limitada, sin importar cuán capaz sea en esa tarea, es lo que mantiene un sistema en este lado de la línea.",
+  "b.text": "El mismo auto también necesitaría razonar, aprender y actuar en cualquier tarea que un humano pudiera, no solo conducir, para contar como esto en lugar.",
+  "b.why": "Capacidad cognitiva humana completa en dominios, no solo sobresalir en una tarea, es lo que el otro lado requiere, y permanece teórico."
+ },
+ "i-vp-09": {
+  "a.text": "Un comité de gobernanza que compara dos proveedores pregunta cuántos miles de millones de valores de peso cada red terminó teniendo una vez que el entrenamiento se completó.",
+  "a.why": "Esta es la línea definitoria que este par prueba: un valor interno que el entrenamiento mismo descubre y ajusta, que no existe en forma final hasta que el entrenamiento está terminado.",
+  "b.text": "El mismo comité pregunta por separado qué velocidad de aprendizaje y tamaño de lote el equipo de ingeniería fijó antes de que el entrenamiento jamás comenzara.",
+  "b.why": "Estas son opciones que una persona toma por adelantado para controlar cómo se ejecuta el entrenamiento, entradas que el equipo establece, no valores que el entrenamiento descubre por sí mismo."
+ },
+ "i-vp-10": {
+  "a.text": "Un modelo de bosque aleatorio aprende a trazar la línea entre transacciones fraudulentas y legítimas.",
+  "a.why": "Aprender el límite entre clases existentes, en lugar de producir nuevos ejemplos, es el trabajo de este lado.",
+  "b.text": "Un modelo diferente, dado el mismo historial de transacciones, produce registros de transacciones sintéticas completamente nuevos que nunca ocurrieron.",
+  "b.why": "Producir contenido nuevo en lugar de clasificar entradas existentes es la otra mitad del par."
+ }
+}

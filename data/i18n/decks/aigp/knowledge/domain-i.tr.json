@@ -1,0 +1,101 @@
+{
+  "I-roles": {
+    "prompt": "Her görevi (veya iddia edilen görevi) ait olduğu role atayın. Bazıları hiç kimseye ait değildir."
+  },
+  "d1-case-charter": {
+    "brief": "Solvix Underwriting, bölgesel bankalar için tarımsal kredi riskini puanlayan küçük bir tahmine dayalı analitik başlangıçıdır. Şimdiye kadar yönetişim, iki kurucu tarafından kahve üzerinde anlaşılan şeydir. Büyük bir reasürans ortağı çok yıllı bir veri paylaşımı anlaşması imzalamak üzere olup, durum tespiti ekibi kalem kağıda değmeden önce 'gerçek bir yönetişim programı' görmek istiyor. Bunu oluşturmak için sen getirildin — ve on sekiz ay sonra, Solvix'in sigortacılık motoru AB, Kuzey Amerika ve Güneydoğu Asya'daki bankalarının kredi riski ekiplerine lisanslandıktan sonra çalışmaya devam etmesini sağlamak için.",
+    "steps[0].why": "Saymadığın şeyi yönetemezsin: bir AI envanteri, kimin yönettiğine karar vermeden, kimseyi eğitmeden veya bunun hakkında bir politika yazmadan önce neyin yönetilmesi gerektiğini söyleyen gerçek temeldir. CAIO işe almak veya bu temel olmadan personeli eğitmek, insanları harekete geçirir ve üzerinde harekete geçilecek somut bir şey olmadan, ve önce bir politika taslaklandırmanız Solvix'in gerçek AI ayak izinden ziyade tahmini temele alan bir belge üretir.",
+    "steps[1].why": "Hafif, ilke tabanlı bir tüzük, orantılı yönetişimin işlemede — kurucu ların zaten inanması şeyi, Solvix'in henüz ihtiyaç duymadığı bir bürokrasi katmanı eklemeden belgeli ve tekrarlanabilir bir şeye çevirir. Tam bir CAGO işe alımı erken harcamadır, dışarıdan temini kurucu ların inşa etmesi gereken kurumsal bilgiyi teslim eder, ve reasürensin kurumsal ölçekli ERM çerçevesini kopyalamak, küçük bir ekibi boyutunun on katı bir şirket için inşa edilmiş sürece gömmek olurdu.",
+    "steps[2].why": "Federasyon, tam olarak bu gerilim için inşa edilmiş yapıdır: merkezden tutarlı bir ilkeler seti, her bölgenin özellikleri kendi düzenleyici ve kültürel ortamına uyarlamak için yer. Tek bir küresel politika yerel hukuku esnetmek için çok katı, tam bölgesel özerklik bütün programı tutarlı tutan merkezi gözetimi kaybeder, ve paylaşılan proje sahipliğinin bir matrisi tam olarak düzenleyicinin gelip kimin imza attığını sorduğunda bir kredi riski modeline ihtiyaç duyan hesap verilebilirliği belirsizleştirir.",
+    "steps[3].why": "Her teknik çalışanın bir model inşacı olarak yeniden araç kullanmasını beklemek, role özgü eğitim değildir, bu bir personel sayısı fantezisidir — çoğu teknik personel AI sistemine dokunur, hiçbir zaman bir tane inşa etmeye ihtiyaç duymadan, ve eğitim bu gerçeğe uymalıdır. Diğer üçü gerçek bir programın meşru, tamamlayıcı parçalarıdır: gerçek rol ve yönetişim yapısına kapsamlı eğitim, kültür inşası etik parçası, ve modelin çıktılarına güvenen insanlar için son kullanıcı eğitimi."
+  },
+  "d1-case-policies": {
+    "brief": "Verdant Health Analytics, yıllar boyunca olgun bir gizlilik uyumluluğu programı yürütmüştür — ihlal protokolleri, sabit bir PIA süreci, satıcı sözleşmeleri — hepsi orijinal SaaS ürünü etrafında inşa edilmiş olup, yalnızca müşterilerin doğrudan verdiği sağlık kayıtlarını saklayıp işlemişti. Verdant şimdi bu aynı ürüne üretken-AI klinik-dokümantasyon asistanı yerleştiriyor ve uyumluluğu takımı mevcut yığını sıfırdan paralel bir tane inşa etmek yerine olabildiğince çok yeniden kullanmak istiyor. Bu sırada Mühendislik, hasta notlarını zaman kazanmak için halka açık chatbot'lara yapıştırmak isteyen hekimlerin taleplerini zaten alıyor.",
+    "steps[0].why": "PIA, zaten bir AI sisteminin ortaya çıkardığı soruları sorun etmek için inşa edilmiştir — ne veri giriş, sonuç olarak bireylere ne olur — bu nedenle eğitim, adalet ve açıklayabilirliği kapsayacak şekilde genişletmek doğal bir uyum, yeniden inşa değildir. Penetrasyon testi teknik içeri girme direncini kontrol eder, algoritmik önyargı veya yasallığı değil; transfer değerlendirmeleri dar çapraz sınır sorusuna cevap verir; ve personel eğitimi farkındalık oluşturur ancak sistem özgü risk hiç çıkarılmaz.",
+    "steps[1].why": "Eski bir politika statik, doğrudan veri akışları için yazılmıştır — ne toplanmış, nerede saklanır — ve bir modelin kendi çıktıları ve sonuçları ikinci, türemiş veri seti olduğunu hiçbir zaman öngörmedi ve ham kaydı uygun şekilde anonimleştirilmiş birini yeniden tanımlamak için çapraz referans yapılabilir. DPA, adlandırılmış DPO ve ihlal bildirimi saati tümü genel gizlilik programı hijyenidir, herhangi bir BT sistemi ihtiyaç duyduğu; hiçbiri bu senaryonun işaret ettiği AI'ya özgü delik değildir.",
+    "steps[2].why": "Her dakika hekimler hasta notlarını halka açık bir araca yapıştırdığında, bu metin Verdant'ın kontrolünü tamamen bırakabilir — satıcının kendi eğitimi, günlüğe kaydedilmiş veya açıklanmış için kullanılır — yasaklamanın gerçekten önlediği somut hasar budur. Para kazanma stratejisi ve işe alma maliyetleri hiçbir gizlilik riski değildir ve 'henüz eğitim için zaman yok' geçici bir kaynak boşluğunu tanımlar, PHI sızıntısının aracı tamamen bloke etmeyi haklı çıkaracak kadar tehlikeli bir neden değil.",
+    "steps[3].why": "AI kurallarını mevcut gizlilik, güvenlik ve etik politikalarına katlama yönetişimi birleştirilmiş tutar ve kuruluşun sessizce ayrılabilecek iki standart seti çalıştırmasını önler — düzenleyiciler ve denetçiler AI'nın diğer her şeyle aynı hesap verilebilirlik yapısının altında oturmasını bekler. Düzenleyici sinyal argümanı doğrudur ancak kendi başına davayı taşıyacak kadar dar, ve tek başına bir belge için ayrıntı ve hız argümanları uzun vadeli uyumu kısa vadeli kolaylık için takas eder, bu tam olarak entegrasyonun önlemesi amaçlanan siloları oluşturan şeydir."
+  },
+  "d1-case-vendor-file": {
+    "brief": "Bramwell Mutual'ın talepler bölümü, gelen sigorta taleplerini sıralamak için üçüncü taraf AI satıcılarını değerlendiriyor. İki finalist sözleşme incelemesine ulaştı ve üçüncü satıcının modeli zaten HR ekibi için özgeçmiş tarama pilot projesinin başında sezon için gözlenişindedir. Yönetişim dosyayı çalıştırması istenir: her satıcı aslında ne kadar inceleme ihtiyacı duyar, biri işini göstermek istemediğinde ne yapılır, en iyi model Bramwell'in kendi güvenlik çubuğunu karşılamadığında ne yapılır, ve herhangi biri canlı gitmeden önce belgeler ne aittir.",
+    "steps[0].why": "Üçüncü taraf AI risk yönetimi, iç risk yönetimi ile aynı şekilde çalışır: risk orantılı çaba, imzalamada bir kez değil devam eden temele göre kontrol edilmiş. Her satıcı için kapsamlı altı aylık denetim aşırı ve ölçeklenebilir değil, finansal istikrar tek başına bir AI sisteminin neden olabileceği gerçek hasarı görmezden gelir, ve teknik riski etik riskten ayırma (ikincisini sözleşme metinine bırakarak) aynı değerlendirmenin iki yarısını ilgisiz muamelesi yapıyor.",
+    "steps[1].why": "Politika, satın almadan önce bir risk değerlendirmesi gerçekleşmesi gerektiğini söylüyorsa ve satıcının reddi bu değerlendirmeyi imkansız hale getiriyorsa, yine de ilerleme kuruluşun kendi yönetişim çerçevesini kırar — savunulabilir hamle, yürüyüp gitmektir. İç izleme, hiçbir zaman gerçekleşmeyenden daha zayıf bir ikameleme değerlendirilmesi, bir politika istisnası oymak her gelecekteki satıcı için politikayı baltalıyor, ve bir tazminat maddesi finansal yükümlülüğü değiştirebilir ancak Bramwell'in bırakıldığı operasyonel ve etik kör noktayı doldurmak için hiçbir şey yapmaz.",
+    "steps[2].why": "Sandbox, tam olarak bu durum için inşa edilmiş telafi kontrolüdür — Bramwell'in modelin performansını yakalarken güvenlik çubuğunu doğrudan karşılamayan bir satıcı tarafından oluşturulan maruziyeti içermeye izin verir. Gerekliliği feragat etmek veya 'itibar görmüş' satıcılar için sabit bir istisna yazmak, her zaman güvenlik standardını aşındırıyor, yürütme bloğu çalışılabilir bir koşum sorununu çalışmaz muamelesi ve Bramwell'e hiçbir savunulabilir neden için gerçekten üstün bir modelin maliyeti olabilir.",
+    "steps[3].why": "AI riski, bir kerelik IP denetimi veya statik SLA'nın varsaydığı şekilde hareketsiz oturmaz — özgeçmiş-tarama modeli imzalamadan aylar sonra yanlı sonuçlara drift edebilir, bu nedenle sözleşmenin performansı belgeleme için sürekli bir yükümlülüğü ve sistem sürdüğü zaman kapatma planı ihtiyaç duyar. Açık kaynak envanteri kullanışlı bir kerelik IP kontrolüdür, kaynak kodu ve eğitim verisi erişimi genellikle satıcılarla başlangıç ve izleme sağlamsa gereksizdir, ve doğruluk ve gecikme süresi bir SLA'sı anlık görüntüyü yakalar, sözleşmenin ömrü boyunca gerçekten biriken devam eden drift ve adalet riski değil."
+  },
+  "i-rl-01": {
+    "text": "Eğitim verilerini seçer ve serbest bırakmadan önce önyargı testlerini çalıştırır, sonra sistem işletecek kişiler için nasıl çalıştığını belgeler",
+    "why": "İnşa aşaması görevleri — veriye kürasyonu, serbest bırakmadan önce adalet testi ve operatörler için dokümantasyon — sistemi inşa eden kimse ile otururlar. Bu, işletim kuruluşunun sistem canlı olduktan sonra çalıştırdığı devam eden, bağlama uygun izlemeden farklı."
+  },
+  "i-rl-02": {
+    "text": "Eğitim yapılırken doğrudan modele önyargı testi araçlarını ve açıklanabilirlik özelliklerini gömüyor, sonra doğruluğu adalet karşısında nasıl takas edeceğini seçiyor",
+    "why": "Modelin kendisine inşa edilmiş teknik korumalar — 'tasarım yoluyla yönetişim' — sistem hiç canlı bir ortama ulaşmadan önce yapılan mimarı ve eğitim hakkında bir inşa zamanı seçimidir."
+  },
+  "i-rl-03": {
+    "text": "Eğitim verilerinin nereden geldiğini kaydeder ve belirli bir model mimarisinin alternatiflerin üzerinde neden seçildiğini açıklar",
+    "why": "Veri soyçekmesi ve tasarım gerekçesi kayıtları inşa işleminin yapılarıdır — sistem var olmadan yapılan seçimleri açıklarlar, çalıştıktan sonra nasıl performans gösterdiğini değil."
+  },
+  "i-rl-04": {
+    "text": "Kendi işletim bağlamında canlı performans ve driftini izler ve doğruluğu devam eden temele göre denetler",
+    "why": "Belirli bir bağlamda operasyonel bütünlük, buradaki ayırt edici görevdir — model arkasındaki tasarım seçimleri değil, bu bağlama ulaşmadan önce onu inşa eden kimseye aittir."
+  },
+  "i-rl-05": {
+    "text": "Modeli üretim ortamına entegre eder ve orada çalıştığında izleyecek izlemeyi ayarlar",
+    "why": "Sistemi üretimde ayağa kaldırıp enstrüman etmek, modeli ilk yerde üreten eğitim ve testingden ayrı bir operasyonel eylemdir."
+  },
+  "i-rl-06": {
+    "text": "Doğrulanmamış bir üçüncü taraf sistem önce bağımsız doğrulama olmadan bir hastanenin bakım yoluna konulduğunda birincil yükümlülüğü taşır",
+    "why": "Sorumluluk doğrulanmamış bir sistemi canlı bir ortama koymak kararını takip eder, bu işletim kuruluşunun aramasıdır — orijinal inşacı kullanmadan önce doğrulamayı atlamayı seçen kişi değildir."
+  },
+  "i-rl-07": {
+    "text": "Gerçek dünya durumlarda AI sistemi ile etkileşim kurar ve bir şey yanlış gittiğini fark eden kişi genellikle ilkdir",
+    "why": "Canlı sonuca yakınlık — önyargı, hatalar veya drift gerçekten gerçekleşirken fark etmek — ön hat rolüdür, sistemi bütünü olarak çalıştıran ve izleyen kuruluştan farklı."
+  },
+  "i-rl-08": {
+    "text": "Sistemin tavsiyesini yorumlar ve buna dayanarak son, bilinçli kararı alır",
+    "why": "Belirli bir çıkışa hüküm uygulamak ve onunla ne yapılacağına karar vermek, yaşam döngüsünün başka yerlerinde gerçekleşen operasyonel izleme veya tasarım çalışması değil, bir kullanım noktası eylemidir."
+  },
+  "i-rl-09": {
+    "text": "Bir takım AI özelliğini hızlı gönderilerek istediğinde ancak başka takım hakkında düzenleyici endişeler yükselttiğinde yükseltme noktası olarak hizmet eder",
+    "why": "Rakip işlevsel çıkarları gün geçtikçe uzlaştırmak operasyonel, işlevler arası bir işdir — yüksek etkili kullanım durumlarının uzmanlaşmış ahlaki ve sosyal incelemesinden daha dar kapsamda ve kuruluşun en üstü gibi kurumsal risk iştahını ayarlamaz."
+  },
+  "i-rl-10": {
+    "text": "Birkaç rakip AI teklif hangisinin ilk olarak kaynak aldığına karar verir, risk düzeyini stratejik öncelik ve mevcut kaynaklara karşı tartar",
+    "why": "Kullanım durumlarını risk ve kaynaklara karşı önceliklendirmek, devam eden, işlevler arası bir işletim kararıdır — uzmanlaşmış bir kuruluşun tek bir yüksek etkili duruma verdiği tek seferlik ahlaki incelemeden farklı ve bütün programı finanse eden üst düzey iştah ayarından farklı."
+  },
+  "i-rl-11": {
+    "text": "Önerilen bir kullanım durumu için yalnızca 'bunu inşa edebilir miyiz?' yerine 'bu sistemi hiç inşa etmeli miyiz?' soruyor",
+    "why": "Bir kullanım durumunun doğru olup olmadığını, sadece izin verilebilir olup olmadığını tartmak, uzmanlaşmış ahlak ve sosyal incelemedir — işlevler arası bir kuruluşun tüm teklifler arasında çalıştırdığı operasyonel önceliklendirmeden daha dar ve daha derin."
+  },
+  "i-rl-12": {
+    "text": "Onaylanmadan önce bir işe alma aracı için önyargı denetimleri ve düzeltici önlemleri talep eder, adaleti belirli grupların zararına karşı tartınız",
+    "why": "Korunan bir nüfusa orantısız zararın bağımsız incelemesi, uzmanlaşmış etik incelemesi işlevdir — işlevler arası komitenin daha geniş operasyonel imzasından farklı."
+  },
+  "i-rl-13": {
+    "text": "Bir teklifin kuruluşun belirtilen değerlerine uyup uymadığı hakkında bağımsız tavsiye sağlar, zaten teknik olarak yasal olsa bile durumlar bile",
+    "why": "Yasal çubuğu temizleyen ancak halkın güvenine ilişkin soruları yine de gündeme getiren gri bir alanı yargılamak, tam olarak uzmanlaşmış ahlak kuruluşu yasal veya operasyonel imzadan ayrı olarak var olan yansıtıcı işlevdir."
+  },
+  "i-rl-14": {
+    "text": "Kuruluşun AI risk iştahını ayarlar ve genel stratejinin yenilik hızını mı yoksa katı uyumu mu destekleyip desteklemediğine karar verir",
+    "why": "Tüm kuruluş arasında risk için ton ve tolerans ayarlamak, herhangi bir tek gözden geçirme kuruluşunun üstünde oturur — komiteler ve kurullar burada belirlenen iştahı içinde çalışırlar, başka türlü değil."
+  },
+  "i-rl-15": {
+    "text": "Genel yönetişim çerçevesini onaylar ve onu finanse eden bütçeyi tahsis eder",
+    "why": "Çerçevenin kendisini onaylamak ve fonlamak, meşruiyet ve kaynak kullanımının en iyi kuruluş eylemidir, onu finanse eden kuruluşlar tarafından o çerçevenin gün geçtikçe işletiminden farklı."
+  },
+  "i-rl-16": {
+    "text": "AI stratejisinin endüstri standartları ve düzenleyici gereklilikler gibi harici beklentilerle uyumlu olup olmadığını onaylar, yalnızca dahili işletme hedefleri ile değil",
+    "why": "Kuruluşun genel yönünü dış dünya ile uyumlu hale getirmek, yasal ve risk ekiplerinin bu yönün altında yaptığı operasyonel uyumluluğu kontrol etmekten farklı, tepe noktasında stratejik bir eylemdir."
+  },
+  "i-rl-17": {
+    "text": "Bir sistemin kimin yönettiğine teslim edildikten sonra bile düzenlemelere uygunluğundan tam olarak sorumlu kalır",
+    "why": "Belgeli yanlış: orijinal inşacı işletim başka bir role geçtiğinde tam olarak sorumlu kalır. Sorumluluk paylaşılır ve her rolün gerçek sorumluluklarını takip eder — işletim kuruluşu sistemi işletmekten kaynaklanan sorumluluğu üstlenir."
+  },
+  "i-rl-18": {
+    "text": "AI geliştirme yaşam döngüsü içinde sabit bir katılımcı olarak oturur, sonrakine devam etmeden önce her aşamayı onaylar",
+    "why": "Belgeli yanlış: bu harici gözetim kuruluşlarını tanımlar ve dışarıdan gözetim/uygulama, veri mimarları, sosyo-kültürel ve teknik uzmanlar ve yasal/gizlilik uzmanlarının yanında yaşam döngüsü aşamalarının içinde katılımcı olmasıyla aynı değildir."
+  },
+  "roles-lifecycle": {
+    "prompt": "Her görevi (veya iddia edilen görevi) ait olduğu role atayın. Bazıları hiç kimseye ait değildir."
+  }
+}

@@ -1,0 +1,101 @@
+{
+  "I-roles": {
+    "prompt": "Ordne jede Aufgabe (oder angebliche Aufgabe) der Rolle zu, zu der sie tatsächlich gehört. Einige gehören zu niemand."
+  },
+  "d1-case-charter": {
+    "brief": "Solvix Underwriting ist ein kleines Startup für Vorhersageanalytik, das Risiken bei Agrarfinanzierungen für Regionalbanken bewertet. Die Governance hat bislang aus Vereinbarungen zwischen den beiden Gründern über Kaffee bestanden. Ein großer Rückversicherer steht kurz vor der Unterzeichnung eines mehrjährigen Datenaustauschabkommens, möchte aber von der Due-Diligence-Abteilung 'ein echtes Governance-Programm' sehen, bevor Unterschriften geleistet werden. Du wirst engagiert, um es aufzubauen – und achtzehn Monate später, um es weiterhin funktionsfähig zu halten, nachdem Solvix' Underwriting-Engine an Kreditrisiko-Teams bei Banken in der EU, Nordamerika und Südostasien lizenziert wird.",
+    "steps[0].why": "Du kannst nicht regeln, was du nicht gezählt hast: Ein AI-Inventar ist die faktische Grundlage, die dir sagt, was reguliert werden muss, bevor du entscheiden kannst, wer es regelt, wer darin geschult wird oder wie eine Richtlinie dazu aussieht. Die Einstellung eines Chief AI Officer oder Mitarbeiterschulung ohne diese Grundlage bringt Menschen in Bewegung ohne konkrete Handlungsgrundlage, und das Schreiben einer Richtlinie zuerst führt zu einem Dokument, das auf Vermutungen statt auf Solvix' tatsächlichem AI-Fußabdruck basiert.",
+    "steps[1].why": "Eine leichte, prinzipiengestützte Charter ist proportionale Governance in Aktion – sie verwandelt das, woran die Gründer bereits glauben, in etwas Dokumentiertes und Wiederholbares ohne die Bürokratie-Schicht, die Solvix in diesem Stadium nicht benötigt. Die Einstellung eines Chief AI Governance Officer ist verfrühte Ausgabe, Outsourcing ergibt das institutionelle Wissen auf, das die Gründer aufbauen sollten, und das Kopieren des Governance-Rahmens der Versicherer würde ein kleines Team unter den Prozessen der doppelten Größe begraben.",
+    "steps[2].why": "Dezentralisierung ist die Struktur, die genau für diese Spannung gebaut ist: ein konsistenter Satz von Prinzipien vom Zentrum aus, mit Platz für jede Region, Besonderheiten ihrer eigenen regulatorischen und kulturellen Landschaft anzupassen. Eine einzige globale Richtlinie ist zu starr für lokale Gesetze, vollständige regionale Eigenständigkeit verliert die zentrale Kontrolle, die das gesamte Programm kohärent hält, und eine Matrix geteilter Projektverantwortung trübt genau die Rechenschaftspflicht, die ein Kreditrisiko-Modell braucht, wenn ein Regulator fragt, wer unterzeichnet hat.",
+    "steps[3].why": "Zu erwarten, dass jeder technische Mitarbeiter sich zu einem Modellbauer umschulen wird, ist keine rollenspezifische Schulung, es ist ein Kopfzahl-Fantasy – die meisten technischen Mitarbeiter berühren das AI-System, ohne es je zu bauen, und Schulung sollte dieser Realität entsprechen. Die anderen drei sind legale, komplementäre Teile eines echten Programms: Schulung, die auf tatsächliche Rolle und Governance-Struktur abgestimmt ist, ein Ethik-Kurs zur Kulturbildung, und Endbenutzerschulung für Menschen, die sich auf die Modellausgaben verlassen."
+  },
+  "d1-case-policies": {
+    "brief": "Verdant Health Analytics hat seit Jahren ein reifes Privacy-Compliance-Programm durchgeführt – Breach-Protokolle, ein kontinuierlicher Privacy Impact Assessment-Prozess, Vendor-Verträge – alles um sein ursprüngliches SaaS-Produkt herum gebaut, das nur Gesundheitsdaten speichert und verarbeitet, die Kunden direkt zur Verfügung gestellt haben. Verdant integriert jetzt einen generativen AI-Klinik-Dokumentations-Assistenten in dieses Produkt und die Compliance-Abteilung möchte so viel des vorhandenen Stacks wiederverwenden wie möglich, anstatt von Grund auf einen neuen zu bauen. Engineering erhält währenddessen bereits Anfragen von Klinikern, die Patientendaten in öffentliche Chatbots kopieren möchten, um Zeit zu sparen.",
+    "steps[0].why": "Ein Privacy Impact Assessment wird bereits gebaut, um genau die Fragen zu stellen, die ein AI-System aufwirft – welche Daten gehen rein, was passiert mit Einzelpersonen als Ergebnis – also das Erweitern es um Schulung, Fairness und Erklärbarkeit ist eine natürliche Anpassung, nicht ein Neuaufbau. Penetrationstests prüfen technische Eindringtechnik-Resistenz, nicht algorithmischen Bias oder Legalität; Übertragungsbewertungen beantworten eine schmalere Frage der Grenzüberschreitung; und Mitarbeiterschulung schärft das Bewusstsein, aber erfasst kein systemspezifisches Risiko.",
+    "steps[1].why": "Eine Legacy-Richtlinie ist für statische, direkte Datenflüsse geschrieben – was gesammelt wird, wo es gespeichert wird – und antizipiert nie, dass die eigenen Ausgaben und Schlussfolgerungen des Modells ein zweiter, abgeleiteter Datensatz sind, der zurück-referenziert werden kann, um jemanden wieder zu identifizieren, dessen Rohdaten ordnungsgemäß anonymisiert waren. Ein Data Protection Agreement, ein benannter Datenschutzbeauftragter und eine Breach-Benachrichtigungsfrist sind alle generische Hygiene von Privacy-Programmen, die jedes IT-System benötigt; keine davon ist das AI-spezifische Loch, auf das dieses Szenario hinweist.",
+    "steps[2].why": "Jede Minute, in der Kliniker Patientendaten in ein öffentliches Tool kopieren, kann dieser Text Verdants Kontrolle vollständig verlassen – zum Training des Vendors verwendet, protokolliert oder offengelegt werden – was der konkrete Schaden ist, den ein Verbot tatsächlich verhindert. Monetisierungsstrategie und Einstellungskosten sind überhaupt keine Privacy-Risiken, und 'noch keine Zeit zum Trainieren' beschreibt eine vorübergehende Ressourcenlücke, nicht einen Grund, warum ein Leck von PHI gefährlich genug ist, um das Tool zu blocken.",
+    "steps[3].why": "AI-Regeln in die bestehenden Privacy-, Security- und Ethical-Richtlinien einzufalten hält die Governance einheitlich und verhindert, dass die Organisation zwei Sätze Standards laufen lässt, die leise auseinanderdriften können – Regulierer und Auditors erwarten, dass AI unter derselben Rechenschaftsstruktur sitzt wie alles andere. Das Regulator-Signalisierungs-Argument ist wahr, aber zu eng, um den Fall allein zu tragen, und beide das Detail und die Schnelligkeitsargumente für ein eigenständiges Dokument handeln langfristige Kohärenz für kurzfristige Bequemlichkeit, was genau das ist, was die Silos schafft, die Integration vermeiden sollte."
+  },
+  "d1-case-vendor-file": {
+    "brief": "Bramwell Mutual's Claims-Abteilung bewertet KI-Anbieter von Drittanbietern, um eingehende Versicherungsansprüche zu priorisieren. Zwei Finalisten haben es zu Vertragsüberprüfung geschafft, und das Modell eines dritten Vendors wird bereits für das Resume-Screening-Pilot der HR-Abteilung nächstes Quartal beäugt. Governance wird aufgefordert, die Datei zu durchlaufen: wie viel Prüfung jeder Vendor tatsächlich benötigt, was zu tun ist, wenn einer nicht seine Arbeit zeigt, was zu tun ist, wenn das beste Modell Bramwell's eigene Security-Anforderungen nicht erfüllt, und was in die Dokumentation gehört, bevor einer live geht.",
+    "steps[0].why": "Das Risikomanagement für KI von Drittanbietern funktioniert wie das interne Risikomanagement: Anstrengungen proportional zum Risiko, kontinuierlich geprüft anstatt einmal bei der Unterzeichnung. Eine Blanko-Audit zweimal pro Jahr für jeden Vendor ist übertrieben und nicht skalierbar, finanzielle Stabilität allein ignoriert den tatsächlichen Schaden, den ein AI-System verursachen kann, und das Aufteilen von technischem Risiko von ethischem Risiko (das Letztere Vertragstext überlassen) behandelt zwei Hälften derselben Bewertung, als wären sie nicht zusammenhängend.",
+    "steps[1].why": "Wenn die Richtlinie sagt, dass eine Risikobewertung vor der Beschaffung stattfinden muss, und der Vendor's Weigerung macht diese Bewertung unmöglich, dann kann die Organisation ihren eigenen Governance-Rahmen brechen – der zu verteidigende Schritt ist zu gehen. Internes Monitoring ist ein schwacher Ersatz für die Bewertung, die nie stattgefunden hat, das Schnitzen aus einer Richtlinienausnahme untergräbt die Richtlinie für jeden zukünftigen Vendor, und eine Entschädigungsklausel kann finanzielle Haftung verschieben, aber füllt nicht das operationelle und ethische Blindnis auf, das Bramwell übrig bleibt.",
+    "steps[2].why": "Eine Sandbox ist die kompensierte Kontrolle, die genau für diese Situation gebaut ist – sie lässt Bramwell die Modellleistung erfassen, während die Exposition aus einem Vendor, der die Security-Anforderung nicht erfüllen kann, begrenzt wird. Das Verzeihen der Anforderung oder das Schreiben einer fortlaufenden Ausnahme für 'reputable' Vendors erodiert beide den Security-Standard für alle anderen, während ein absolutes Verbot ein zu lösendes Eindämmungsproblem als unlösbar behandelt und Bramwell möglicherweise ein wirklich überlegenes Modell kostet, für keinen verteidigbaren Grund.",
+    "steps[3].why": "AI-Risiko sitzt nicht still, wie ein einmaliger IP-Audit oder ein statisches Service Level Agreement annimmt – ein Resume-Screening-Modell kann sich Monate nach der Unterzeichnung in biased Ergebnisse verwandeln, also braucht der Vertrag eine kontinuierliche Verpflichtung, die Leistung weiterhin zu dokumentieren, und einen Plan zum Abbau des Systems, wenn es nicht mehr fit ist. Das Open-Source-Inventar ist eine nützliche einmalige IP-Prüfung, Quellcode- und Trainingsdaten-Zugriff ist oft ein Nicht-Starter bei Vendors und unnötig, wenn das Monitoring solide ist, und eine SLA zu Genauigkeit und Latenz erfasst einen Schnappschuss, nicht das kontinuierliche Driften und Fairness-Risiko, das tatsächlich über die Lebensdauer des Vertrags akkumuliert."
+  },
+  "i-rl-01": {
+    "text": "Wählt die Trainingsdaten aus und führt Pre-Release-Bias-Tests durch, dann dokumentiert, wie das System für die Personen funktioniert, die es bedienen werden",
+    "why": "Aufgaben auf Build-Stufe – Auswahl der Daten, Fairness-Tests vor der Freigabe und Dokumentation für Operatoren – sitzen bei wer auch immer das System baut. Dies unterscheidet sich von dem kontinuierlichen, kontextgebundenen Monitoring, das die Betriebsorganisation durchführt, sobald das System live ist."
+  },
+  "i-rl-02": {
+    "text": "Integriert Bias-Test-Tools und Erklärbarkeits-Features direkt in das Modell während seiner Schulung, dann wählt, wie man Genauigkeit gegen Fairness abwägt",
+    "why": "Technische Schutzmaßnahmen, die in das Modell selbst eingebaut sind – 'Governance by Design' – sind eine Build-Zeit-Entscheidung über Architektur und Training, die getroffen wird, bevor das System je eine Live-Umgebung erreicht."
+  },
+  "i-rl-03": {
+    "text": "Zeichnet auf, wo die Trainingsdaten herkommen und erklärt, warum eine bestimmte Modellarchitektur gegenüber den Alternativen gewählt wurde",
+    "why": "Datenlineage und Design-Rationale-Aufzeichnungen sind Artefakte des Build-Prozesses selbst – sie erklären Entscheidungen, die getroffen wurden, bevor das System existiert, nicht wie es läuft, wenn es in Betrieb ist."
+  },
+  "i-rl-04": {
+    "text": "Überwacht Live-Leistung und Driften in ihrem eigenen Betriebskontext und audiert Genauigkeit kontinuierlich",
+    "why": "Betriebsintegrität in einem bestimmten Kontext ist die unterscheidbare Aufgabe hier – nicht die Design-Entscheidungen hinter dem Modell, die bei der Person liegen, die es gebaut hat, bevor es diesen Kontext je erreicht hat."
+  },
+  "i-rl-05": {
+    "text": "Integriert das Modell in eine Produktionsumgebung und richtet das Monitoring ein, das es beobachten wird, wenn es dort läuft",
+    "why": "Das System in der Produktion hochfahren und es instrumentieren ist eine operative Handlung, unterschiedlich von dem Training und Testen, das das Modell hervorgebracht hat."
+  },
+  "i-rl-06": {
+    "text": "Trägt die Haupthaftung, wenn ein nicht validiertes Drittanbieter-System in die Pflege-Route eines Krankenhauses ohne vorherige unabhängige Validierung gesetzt wird",
+    "why": "Die Haftung folgt der Entscheidung, ein nicht validiertes System in eine Live-Umgebung zu setzen, das ist die Entscheidung der Betriebsorganisation – der ursprüngliche Builder ist nicht der, der sich entschieden hat, Validierung vor der Nutzung zu überspringen."
+  },
+  "i-rl-07": {
+    "text": "Interagiert mit dem AI-System in realen Situationen und ist oft der erste, der merkt, dass etwas schief gelaufen ist",
+    "why": "Nähe zum Live-Ergebnis – Bias, Fehler oder Driften bemerken, wie es tatsächlich passiert – ist die Front-Line-Rolle, unterschiedlich von der Organisation, die das System als Ganzes überwacht."
+  },
+  "i-rl-08": {
+    "text": "Interpretiert die Systemempfehlung und trifft die finale, informierte Entscheidung basierend darauf",
+    "why": "Urteilskraft auf eine bestimmte Ausgabe anwenden und entscheiden, was damit zu tun ist, ist eine Point-of-Use-Handlung, nicht das operative Monitoring oder Design-Arbeit, die anderswo im Lebenszyklus passiert."
+  },
+  "i-rl-09": {
+    "text": "Dient als Eskalationspunkt, wenn ein Team ein AI-Feature schnell ausliefern möchte, aber ein anderes Team regulatorische Bedenken dagegen aufwirft",
+    "why": "Das Ausgleichen konkurrierender funktionaler Interessen Tag für Tag ist eine operative, funktionsübergreifende Aufgabe – enger im Umfang als die spezialisierte moralisch-gesellschaftliche Überprüfung hochimpact-Anwendungsfälle, und es setzt nicht den Unternehmens-Risikoappetit, wie die Spitze der Organisation es tut."
+  },
+  "i-rl-10": {
+    "text": "Entscheidet, welche von mehreren konkurrierenden AI-Vorschlägen zuerst finanziert werden, Risikostufe gegen strategische Priorität und verfügbare Ressourcen abwägend",
+    "why": "Priorisierung von Anwendungsfällen gegen Risiko und Ressourcen ist eine kontinuierliche, funktionsübergreifende Betriebsentscheidung – unterscheidbar von der einmaligen moralischen Überprüfung, die ein spezialisiertes Gremium einem Einzelfall gibt, und unterscheidbar von der Top-Level-Appettit-Einstellung, die das gesamte Programm finanziert."
+  },
+  "i-rl-11": {
+    "text": "Fragt 'sollten wir dieses System überhaupt bauen?' anstatt nur 'können wir es bauen?' für einen vorgeschlagenen Anwendungsfall",
+    "why": "Abwägen, ob ein Anwendungsfall richtig ist, nicht nur erlaubt, ist die spezialisierte moralisch-gesellschaftliche Überprüfung – enger und tiefer als die operative Priorisierung, die ein funktionsübergreifendes Gremium über alle Vorschläge durchführt."
+  },
+  "i-rl-12": {
+    "text": "Verlangt Bias-Audits und Korrekturmaßnahmen für ein Einstellungstool, bevor es genehmigt wird, Fairness gegen Schaden an bestimmten Gruppen abwägend",
+    "why": "Unabhängige Überprüfung von unverhältnismäßigem Schaden an einer geschützten Bevölkerung ist die spezialisierte ethische Überprüfungsfunktion – unterscheidbar von der breiteren operativen Genehmigung des funktionsübergreifenden Komitees."
+  },
+  "i-rl-13": {
+    "text": "Bietet unabhängige Beratung darüber, ob ein Vorschlag zu den erklärten Werten der Organisation passt, sogar in Fällen, in denen er bereits rechtlich zulässig ist",
+    "why": "Das Beurteilen einer Grauzone, die die Rechtsgrundlage klärt, aber immer noch Fragen des öffentlichen Vertrauens aufwirft, ist genau die reflektive Funktion, für die ein spezialisierter moralischer Körper existiert, getrennt von legaler oder operativer Genehmigung."
+  },
+  "i-rl-14": {
+    "text": "Legt den AI-Risikoappetit der Organisation fest und entscheidet, ob die Gesamtstrategie Innovationsgeschwindigkeit oder strikte Compliance bevorzugt",
+    "why": "Das Setzen des Tons und der Toleranz für Risiko über die gesamte Organisation sitzt über jedem einzelnen Überprüfungs-Gremium – Komitees und Boards operieren innerhalb des Appetits, der hier gesetzt wird, nicht umgekehrt."
+  },
+  "i-rl-15": {
+    "text": "Genehmigt den Gesamtgovernance-Rahmen und verteilt das Budget, das ihn finanziert",
+    "why": "Das Genehmigen und Finanzieren des Rahmens selbst ist eine Handlung von oben der Organisation um Legitimität und Ressourcen zu geben, unterscheidbar von dem täglichen Betrieb dieses Rahmens durch die Körper, die er finanziert."
+  },
+  "i-rl-16": {
+    "text": "Bestätigt, dass die AI-Strategie mit externen Erwartungen wie Industriestandards und regulatorischen Anforderungen übereinstimmt, nicht nur mit internen Geschäftszielen",
+    "why": "Das Ausrichten der Gesamtausrichtung der Organisation mit der Außenwelt ist eine strategische Handlung oben, unterscheidbar von der operativen Compliance-Prüfung, die juristische und Risiko-Teams darunter durchführen."
+  },
+  "i-rl-17": {
+    "text": "Bleibt vollständig haftbar für die Compliance eines Systems mit Regulierungen, sogar nachdem es an wer es jetzt betreibt abgegeben wurde",
+    "why": "Dokumentiert falsch: der ursprüngliche Builder bleibt nicht vollständig haftbar, sobald der Betrieb an eine andere Rolle übergeht. Die Haftung wird geteilt und folgt jeder Rolle's tatsächlichen Verantwortlichkeiten – die Betriebsorganisation übernimmt die Haftung, die mit dem Betrieb des Systems kommt."
+  },
+  "i-rl-18": {
+    "text": "Sitzt innerhalb des AI-Entwicklungs-Lebenszyklus als kontinuierlicher Teilnehmer, genehmigt jede Phase, bevor die nächste beginnen kann",
+    "why": "Dokumentiert falsch: dies beschreibt externe Überprüfungs-Gremien, und Überprüfung/Durchsetzung von außen ist nicht dasselbe wie ein engagierter Teilnehmer innerhalb der Lebenszyklus-Stufen selbst, neben Datenarchitekten, soziokulturell und technischen Experten, und rechts-/Datenschutz-Spezialisten."
+  },
+  "roles-lifecycle": {
+    "prompt": "Ordne jede Aufgabe (oder angebliche Aufgabe) der Rolle zu, zu der sie tatsächlich gehört. Einige gehören zu niemand."
+  }
+}

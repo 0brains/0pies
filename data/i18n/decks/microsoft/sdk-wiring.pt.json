@@ -1,0 +1,106 @@
+{
+  "sw-001": {
+    "label": "Conecta o teu código a um projeto Foundry usando um ponto de terminação e credencial (pacote azure-ai-projects)",
+    "why": "AIProjectClient(endpoint, credential) é o ponto de entrada do projeto; get_openai_client() liga-se a ele — remove a autenticação e esta é a linha que quebra."
+  },
+  "sw-002": {
+    "label": "Envia a lista de mensagens para um modelo implementado e devolve choices[0].message.content",
+    "why": "chat.completions.create(model=DEPLOYMENT_NAME, messages=[…]) é a chamada de chat — e model= recebe o nome da implementação, não o nome do modelo base (armadilha histack #5)."
+  },
+  "sw-003": {
+    "label": "Contém a tua chave de recurso Speech e região, e o nome da voz de síntese",
+    "why": "SpeechConfig(key, region) é configurado primeiro (p.ex. speech_synthesis_voice_name='en-US-Ava:DragonHDLatestNeural'); AudioConfig gere dispositivos, não credenciais."
+  },
+  "sw-004": {
+    "label": "Envia a pergunta falada do utilizador como dados de áudio inline dentro do conteúdo da mensagem",
+    "why": "Entrada falada vai em partes de conteúdo de mensagem como input_audio; o gémeo de configurações de resposta é a armadilha documentada."
+  },
+  "sw-005": {
+    "label": "Pede ao modelo para responder com áudio falado: voz 'alloy', formato 'wav'",
+    "why": "Saída falada é solicitada via modalities=['text','audio'] mais audio={'voice':'alloy','format':'wav'} na chamada multimodal — a carga útil exata do exame."
+  },
+  "sw-006": {
+    "label": "Incluir uma foto (URL ou base64) numa mensagem de chat para que o gpt-4o implementado possa descrevê-la",
+    "why": "Entrada visual viaja como partes de conteúdo image_url / base64 para uma implementação multimodal — não através do Vision SDK, que é um serviço diferente e ponto de terminação (par #23)."
+  },
+  "sw-007": {
+    "label": "Conecta um cliente de projeto existente ao cliente compatível com OpenAI usado para chamadas Responses e Conversations",
+    "why": "project.get_openai_client() é um método de instância chamado no objeto de projeto; a armadilha do exame é chamá-lo na classe em si."
+  },
+  "sw-008": {
+    "label": "Chamado uma vez, logo após o cliente de projeto ser construído, antes do primeiro pedido Responses ou Conversations sair",
+    "why": "É a ponte de tempo de execução que devolve o cliente em formato OpenAI; o objeto credencial apenas autentica o cliente de projeto, nunca devolve um cliente de chat."
+  },
+  "sw-009": {
+    "label": "Passado sem argumentos como o valor credential= para que a aplicação se autentique via identidade Azure assinada, sem nenhuma chave digitada",
+    "why": "DefaultAzureCredential() é o objeto credencial Entra ID sem chave; AIProjectClient é o que o consome, e azure-ai-projects é apenas o nome do pacote, não um objeto de tempo de execução."
+  },
+  "sw-010": {
+    "label": "O objeto que az login configura: o cliente resolve a tua identidade assinada a partir dele automaticamente no tempo de chamada, nenhuma chave API de ambiente necessária",
+    "why": "O quickstart emparelha az login com este objeto credencial; get_openai_client apenas devolve um cliente de chat e nada tem a ver com autenticação."
+  },
+  "sw-011": {
+    "label": "O pacote pip que instalas antes de escrever qualquer código de cliente de projeto Foundry, pelo comando de configuração muito primeiro do quickstart",
+    "why": "'Qual pacote deves instalar para o cliente de projeto?' é um talo do exame clássico — a resposta é azure-ai-projects, não os SDKs de pesquisa ou idioma."
+  },
+  "sw-012": {
+    "label": "Listado juntamente com az login nas etapas de configuração do quickstart, preso a uma versão mínima (>=2.0.0) antes de qualquer código de cliente executar",
+    "why": "A orientação de quickstart documentada instala azure-ai-projects>=2.0.0 e executa az login — os pacotes Vision e Search não estão relacionados com o cliente de projeto."
+  },
+  "sw-013": {
+    "label": "Construído com um ponto de terminação e um AzureKeyCredential antes de qualquer chamada de frase-chave ou sentimento poder executar contra texto simples",
+    "why": "TextAnalyticsClient(endpoint, credential) expõe.extract_key_phrases()/.analyze_sentiment() em texto bruto; os outros dois clientes visam documentos multimodais e imagens em pontos de terminação totalmente diferentes."
+  },
+  "sw-014": {
+    "label": "Qualquer tipo de cliente que exponha analyze_sentiment(documents) para que o sentimento geral de cada documento seja impresso de volta",
+    "why": "Extração de sentimento e frase-chave são métodos de análise textual de Linguagem de IA neste cliente; os outros dois funcionam em documentos multimodais ou áudio em direto, não texto simples."
+  },
+  "sw-015": {
+    "label": "Definir para escutar do microfone padrão do computador em vez de um ficheiro guardado, depois entregue ao reconhecedor como sua fonte de áudio",
+    "why": "AudioConfig(use_default_microphone=True) escolhe o dispositivo de entrada; SpeechConfig contém a chave de subscrição/região, e SpeechRecognizer é a classe para a qual este objeto é passado, não o selector de dispositivo em si."
+  },
+  "sw-016": {
+    "label": "Construído a partir de um nome de ficheiro guardado para que um reconhecedor leia fala a partir de um ficheiro WAV de teste em vez de um microfone em direto",
+    "why": "AudioConfig(filename=…) é a fonte de dispositivo com ficheiro; SpeechConfig transporta credenciais e nome de voz, e SpeechSynthesizer toca áudio em vez de lê-lo."
+  },
+  "sw-017": {
+    "label": "Dado tanto uma configuração de fala como uma configuração de áudio, depois chamado para capturar exatamente uma curta expressão falada e parar",
+    "why": "Esta é a classe cuja recognize_once_async() captura uma única expressão; SpeechSynthesizer fala texto, e AudioConfig apenas conecta o dispositivo de entrada."
+  },
+  "sw-018": {
+    "label": "A sua chamada assíncrona de expressão única devolve um objeto de resultado cuja.text contém a transcrição do que o microfone acabou de ouvir",
+    "why": "A classe de fala-em-texto devolve result.text a partir de reconhecimento de áudio em direto; o sintetizador fala em vez de escutar, e o cliente de Idioma apenas trabalha com texto que já foi transcrito."
+  },
+  "sw-019": {
+    "label": "Recebe uma configuração de fala com o nome de voz já definido, depois transforma uma cadeia de texto em saída falada através do altifalante",
+    "why": "O speak_text_async() desta classe toca uma cadeia em voz alta usando a voz configurada; o reconhecedor transforma fala em texto, e AudioConfig apenas seleciona um dispositivo."
+  },
+  "sw-020": {
+    "label": "Depois de um reconhecedor produzir uma transcrição textual, este segundo objeto lê essa mesma cadeia de volta em voz alta com a sua própria chamada assíncrona de fala",
+    "why": "A reprodução de texto-para-fala da resposta reconhecida é o trabalho desta classe; o reconhecedor já produziu o texto, e SpeechConfig apenas armazena credenciais e o nome de voz que usa."
+  },
+  "sw-021": {
+    "label": "Construído com um ponto de terminação e chave, depois a sua chamada única analisa um URL de imagem para a funcionalidade visual READ para extrair texto de uma foto",
+    "why": "O cliente Vision.analyze(image_url=…, visual_features=[…]) desta chamada executa OCR em imagens gerais; ContentUnderstandingClient devolve um poller de uma forma de chamada muito diferente e assíncrona."
+  },
+  "sw-022": {
+    "label": "A sua chamada de legendagem-mais-OCR recebe a imagem por URL em vez de bytes brutos, solicitando recursos CAPTION e READ numa única passagem",
+    "why": "O método de análise por URL deste cliente Vision devolve recursos pré-construídos fixos como legenda e leitura; não tem etapa de sondagem e nenhuma relação com captura de fala."
+  },
+  "sw-023": {
+    "label": "O cliente que uma aplicação cria primeiro quando vai enviar URLs de documentos para extração e ler resultados estruturados de volta",
+    "why": "'Qual cliente deve a aplicação criar primeiro?' para uma aplicação Content Understanding é esta classe — os outros dois são serviços separados com pontos de terminação separados para texto simples e imagens gerais respetivamente."
+  },
+  "sw-024": {
+    "label": "A sua chamada de análise de longa duração devolve um poller; chamar.result() nesse poller é como a aplicação aguarda a saída final extraída",
+    "why": "begin_analyze() mais poller.result() é o padrão de sondagem assíncrono deste cliente; analyze() do cliente Vision é síncrono, e os métodos do cliente de Idioma recebem documentos diretamente sem sondagem."
+  },
+  "sw-025": {
+    "label": "O pedido de geração de imagem cuja campo de resposta b64_json contém os dados de pixels reais que decodificas, não um campo url",
+    "why": "Uma implementação GPT-image-1 devolve bytes de imagem gerada em response.data[0].b64_json; uma chamada de conclusões devolve escolhas de texto, e o cliente Vision apenas analisa uma imagem que já existe."
+  },
+  "sw-026": {
+    "label": "Definir fundo como transparente e solicitar saída PNG neste pedido texto-para-imagem para obter um fundo transparente",
+    "why": "Fundo transparente mais saída PNG são parâmetros de geração da série GPT-image-1; nada nas chamadas de análise Vision ou conclusão de chat os aceita."
+  }
+}

@@ -1,0 +1,62 @@
+{
+ "wp-01": {
+  "a.text": "Z biletów wsparcia wymień każdą nazwę produktu, osobę i datę wspomnianą.",
+  "a.why": "Jednostki identyfikują, kto/co jest wymieniony — osoby, daty, organizacje (histack: 'kategoryzuje określone rzeczy').",
+  "b.text": "Z tych samych biletów określ, czy klienci czują się pozytywnie, negatywnie czy neutralnie.",
+  "b.why": "Polarność opinii to sentyment — najpierw pomyłka egzaminu (17 współ-występowania)."
+ },
+ "wp-02": {
+  "a.text": "Transkrybuj nagranie call center, aby agenci mogli przeszukiwać rozmowę.",
+  "a.why": "Audio wejście, wyjście tekstu — rozpoznawanie. 'Transkrybuj' to czasownik chytrości.",
+  "b.text": "Aplikacja nawigacyjna czyta się kierownictwo skrętów na głos z neuronowym głosem en-US-Ava.",
+  "b.why": "Tekst wejście, audio wyjście — synteza. SSML i nazwy głosów, takie jak en-US-Ava:DragonHDLatestNeural należą wyłącznie do syntezy."
+ },
+ "wp-03": {
+  "a.text": "Aplikacja konferencyjna słucha французyzмецкого mówiącego i produkuje bezpośrednie napisy angielskie dla publiczności.",
+  "a.why": "Rozpoznawanie mowy w jednym języku i renderowanie jej w innym to tłumaczenie — opowiadanie egzaminu dla tej pary (audio-in, inny-język-out).",
+  "b.text": "Ta sama aplikacja również produkuje napisy francuskie w tym samym języku dla uczestnika z upośledzeniem słuchu w przednim rzędzie.",
+  "b.why": "Audio wejście, tekstowe wyjście w tym samym języku to zwyka zamiana mowy na tekst; żaden język się nie przecina, więc nie ma nic do tłumaczenia."
+ },
+ "wp-04": {
+  "a.text": "Wyodrębnij numer seryjny wydrukowany na sfosfotografowanej etykiecie sprzętu.",
+  "a.why": "OCR/Read ekstrahuje dosłowny tekst obecny na obrazie — 'wyodrębnij czytany tekst z obrazu' to gąbka egzaminu.",
+  "b.text": "Wygeneruj jednoznaczny naturalny opis tego, co pokazuje zdjęcie.",
+  "b.why": "Podpisy (VisualFeatures.CAPTION) opisują scenę — nie czytają tekstu w niej."
+ },
+ "wp-05": {
+  "a.text": "Aplikacja skanująca czyta drukowany blok adresu ze sfosfotografowanej koperty do pól tekstu strukturyzowanego.",
+  "a.why": "OCR konwertuje istniejące piksele na tekst — wejście to obraz, wyjście to tekst.",
+  "b.text": "Narzędzie projektowania bierze podpowiedź 'ikona płaska błękitnej rakiety' i produkuje zupełnie nowy PNG, który nigdy nie istniał wcześniej.",
+  "b.why": "Generowanie obrazu (client.images.generate z gpt-image-1 / DALL·E) idzie w odwrotnym kierunku — podpowiedź tekstowa wejście, syntetyczne piksele wyjście — pułapka odwrócenia kierunku egzaminu na tej parze."
+ },
+ "wp-06": {
+  "a.text": "Zdecyduj, czy każde przesłane zdjęcie to 'część defektywna' czy 'dobra część'.",
+  "a.why": "Klasyfikacja przypisuje jedną etykietę całemu obrazowi.",
+  "b.text": "Zaznacz, gdzie każda część siedzi na obrazie przenośnika za pomocą pól ograniczających.",
+  "b.why": "Pola ograniczające na obiekt to opowiadanie egzaminu dla detekcji — klasyczna pomyłka widzenia."
+ },
+ "wp-07": {
+  "a.text": "Zwróć ['pricing', 'battery life', 'customer support'] z partii recenzji.",
+  "a.why": "Frazy kluczowe zwracają listę ważnych warunków — żaden nowy tekst nie jest napisany.",
+  "b.text": "Skondenuj te same recenzje w trzy świeże zdania przechwycujące ogólne opinie.",
+  "b.why": "Podsumowanie pisze nowe skondenowane zdania — kontrast kształtu wyniku korpusu testuje (para #14)."
+ },
+ "wp-08": {
+  "a.text": "Lekka aplikacja musi znaleźć i redagować każdy adres e-mail i numer telefonu w wiadomościach klienta przed ich przechowaniem.",
+  "a.why": "PII detection to dedykowana możliwość, która identyfikuje i może redagować wrażliwe dane osobowe, takie jak numery telefonów i adresy e-mail (egzamin to 'najbardziej bezpośrednia możliwość skoncentrowana na prywatności').",
+  "b.text": "Ta sama aplikacja również oznacza każdą osobę, organizację i lokalizację wymienioną w wiadomościach dla przeszukiwanego indeksu.",
+  "b.why": "Rozpoznawanie bytów jest szerzej ekstrakcją w kategoriach — osoby, miejsca, organizacje — nie dedykowaną cechą redakcji skupioną na PII detection."
+ },
+ "wp-09": {
+  "a.text": "Transkrypcja spotkania musi przypisać każdą sekcję nagranych audio do prawidłowego uczestnika.",
+  "a.why": "Diaryzacja identyfikuje i oddziela mówców w przychodzącym audio, oznaczając, kto mówił każdą część transkrypcji (egzamin to 'audio speaker attribution').",
+  "b.text": "Po sfinalizowaniu transkrypcji narratorek głos czyta podsumowanie spotkania na głos dla kanału podcastu.",
+  "b.why": "Synteza konwertuje tekst na wyjście głosu podobnego do człowieka — odwrócony etap rurociągu z diaryzacji istniejącego audio."
+ },
+ "wp-10": {
+  "a.text": "Programista potrzebuje napisy live audio wideo konferencji w czasie rzeczywistym, ten sam język, dla uczestników z upośledzeniami słuchu.",
+  "a.why": "Azure AI Speech zapewnia rurociąg zamiany mowy na tekst w czasie rzeczywistym dla podpisów — odrębny od konwersji tekstu między językami.",
+  "b.text": "Sprzedawca detaliczny musi konwertować pisane opisy produktów z angielskiego na 20 innych języków jako tekst.",
+  "b.why": "Azure AI Translator zapewnia neuronowe tłumaczenie maszynowe między językami dla tekstu — kontrast egzaminu to usługa rurociągu audio vs usługa tekstu między językami, nie nakładanie się obciążenia (para #29)."
+ }
+}

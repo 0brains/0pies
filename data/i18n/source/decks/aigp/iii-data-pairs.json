@@ -1,0 +1,74 @@
+{
+ "iii-dp-01": {
+  "a.text": "Used during development to tune hyperparameters and catch overfitting between training rounds.",
+  "a.why": "This role is repeatable and iterative — the model gets tuned against it over and over, which is exactly why it can never also stand in for the final verdict.",
+  "b.text": "Frozen and untouched until all tuning is complete, then run once to supply the model's final, unbiased error estimate.",
+  "b.why": "Evaluating the final model on the set it was tuned against — the recorded exam trap — produces a biased estimate. Only a set the tuning process never touched can give an unbiased final number."
+ },
+ "iii-dp-02": {
+  "a.text": "The exact ETL script version used to aggregate a churn model's features is logged at every transformation step, from raw table to final feature.",
+  "a.why": "This tracks the journey — every transformation a dataset passes through — and the transformation-script version is the single most critical piece of that metadata for reproducibility and drift debugging.",
+  "b.text": "Before any transformation happens, the dataset's original source, custody chain and collection conditions are recorded to establish its authenticity.",
+  "b.why": "This is the birth certificate — origin and custody — not the record of what was subsequently done to the data; that record belongs to the other side of this pair."
+ },
+ "iii-dp-03": {
+  "a.text": "Calibrated mathematical noise is added during training so no single training record can be shown to have more than a negligible effect on the model's output.",
+  "a.why": "This is a mathematical guarantee about influence, not about where data physically travels — it applies whether or not data ever leaves its source.",
+  "b.text": "Each hospital trains locally on its own patient records, and only the resulting updates — never the raw records — travel to a central server for aggregation.",
+  "b.why": "What's protected here is which data leaves the site, not how much any single record can be inferred from an output — the raw records never travel, full stop."
+ },
+ "iii-dp-04": {
+  "a.text": "A standardized document lays out a dataset's motivation, composition, collection process and recommended uses, before any model is trained on it.",
+  "a.why": "This documents the raw material itself, independent of any model that will later be trained on it.",
+  "b.text": "A single version's purpose, its training/validation/test data, its performance metrics and its known limitations are summarized for whoever decides whether to deploy it.",
+  "b.why": "This is scoped to one specific version, not the dataset behind it — a nutrition label for the trained artifact, distinct from the dataset-level scope of the other side."
+ },
+ "iii-dp-05": {
+  "a.text": "An attacker works backward from a system's outputs to reconstruct approximations of the actual records it was trained on.",
+  "a.why": "This attack recovers training data content from what the system produces — reconstruction, not a yes/no check.",
+  "b.text": "An attacker reconstructs nothing, only confirms whether one specific person's data was included in the training set at all.",
+  "b.why": "This attack answers a binary set-membership question; it never recovers the record's content the way the other side does."
+ },
+ "iii-dp-06": {
+  "a.text": "An EU resident withdraws consent, and the company must erase their personal records from its systems.",
+  "a.why": "This removes the raw data itself in response to a rights request — an argument that the data helps train the model does not override the erasure right once consent is withdrawn.",
+  "b.text": "Even after the offending records are gone, the model itself must be corrected because it already learned patterns from data that should never have been used.",
+  "b.why": "This removes what a model absorbed from improperly used data — a distinct remedy, because the model can retain the effect long after the underlying records are erased."
+ },
+ "iii-dp-07": {
+  "a.text": "A documented assessment links the data's characteristics and coverage to the model's specific intended context of use.",
+  "a.why": "This is about matching data to a particular use, not the data's age or volume — a large, recent dataset can still fail this check if it was never assessed against the actual use case.",
+  "b.text": "The dataset is checked to confirm it mirrors the population the model will actually be applied to — treated as the single most important bias mitigator in the whole pipeline.",
+  "b.why": "This is a mirror-match question about the population; simply augmenting a skewed dataset with synthetic examples does not resolve a genuine gap here, because the underlying governance question of whether the original data was appropriate never got answered."
+ },
+ "iii-dp-08": {
+  "a.text": "A dataset is checked to confirm it hasn't been altered or corrupted at any point between its original source and its current use.",
+  "a.why": "This is a protection-from-alteration property, distinct from whether the content itself is accurate or reliable.",
+  "b.text": "The same dataset is separately checked to confirm it stays accurate and reliable when it's shared and reused across different systems and environments.",
+  "b.why": "This asks whether the content itself holds up across contexts; a dataset can be perfectly untampered with while still being stale or inconsistent in what it actually says."
+ },
+ "iii-dp-09": {
+  "a.text": "The rate of positive outcomes is compared across protected groups on the model's actual, real-world output distribution.",
+  "a.why": "This metric compares aggregate outcome rates between groups on data as it actually stands.",
+  "b.text": "One applicant's protected attribute is flipped while every other input stays identical, and the output is checked for any change.",
+  "b.why": "This tests a single record against its own hypothetical twin, not group-level outcome rates — a model can pass the aggregate check while still failing this individual-level one."
+ },
+ "iii-dp-10": {
+  "a.text": "Weight values inside the network are updated through backpropagation as training reduces prediction error.",
+  "a.why": "These are learned values that determine how input data is transformed into output — they don't exist in final form until training happens.",
+  "b.text": "The learning rate is fixed by the team before training ever starts, and stays untouched while the network learns.",
+  "b.why": "These are set in advance to control how learning happens — inputs to training, not outputs of it."
+ },
+ "iii-dp-11": {
+  "a.text": "A sales-prediction model performs almost perfectly on the historical data it trained on, then makes significant errors predicting sales for genuinely new products.",
+  "a.why": "The model memorized quirks specific to its training data rather than learning patterns that transfer — strong on the familiar, weak on the new.",
+  "b.text": "A churn model with very few parameters and only a handful of features performs poorly on both the data it trained on and on new customers.",
+  "b.why": "Poor performance everywhere, including on the training data itself, signals the model never had enough complexity to capture the pattern in the first place — the opposite failure mode from memorizing it too well."
+ },
+ "iii-dp-12": {
+  "a.text": "A voice-recognition system trained on only a few thousand audio clips struggles to capture the variability of real-world speech.",
+  "a.why": "This asks whether there's enough data, full stop, to learn meaningful patterns at all — too little data here means the model never had a chance to generalize.",
+  "b.text": "A medical AI trained on data from a single country performs well in its pilot, then struggles once expanded to patients with different genetic backgrounds and healthcare systems elsewhere.",
+  "b.why": "This asks whether a dataset that was enough for a pilot can still support expansion into new populations and contexts — a distinct question from whether there was enough data for the pilot in the first place."
+ }
+}

@@ -1,0 +1,106 @@
+{
+ "sw-001": {
+  "label": "使用端点和凭证连接你的代码到 Foundry 项目（包 azure-ai-projects）",
+  "why": "AIProjectClient(endpoint, credential) 是项目入口点；get_openai_client() 挂在它上面——移除身份验证，这就是断裂的行。"
+ },
+ "sw-002": {
+  "label": "将消息列表发送到已部署的模型并返回 choices[0].message.content",
+  "why": "chat.completions.create(model=DEPLOYMENT_NAME, messages=[…]) 是聊天调用——model= 接受部署名称，不是基础模型名称（histack 陷阱 #5）。"
+ },
+ "sw-003": {
+  "label": "保存你的 Speech 资源密钥和区域，以及合成语音名称",
+  "why": "SpeechConfig(key, region) 首先被配置（例如 speech_synthesis_voice_name='en-US-Ava:DragonHDLatestNeural'）；AudioConfig 处理设备，不是凭证。"
+ },
+ "sw-004": {
+  "label": "将用户的语音问题作为内联音频数据发送到消息内容内",
+  "why": "语音输入进入消息内容部分作为 input_audio；响应设置对应项是文档陷阱。"
+ },
+ "sw-005": {
+  "label": "要求模型用语音音频回答：声音\"alloy\"、格式\"wav\"",
+  "why": "语音输出通过在多模式调用上的 modalities=[\"text\",\"audio\"] 加上 audio={\"voice\":\"alloy\",\"format\":\"wav\"} 请求——考试的准确有效载荷。"
+ },
+ "sw-006": {
+  "label": "在聊天消息中包含照片（URL 或 base64），以便已部署的 gpt-4o 可以描述它",
+  "why": "视觉输入作为 image_url / base64 内容部分传递给多模式部署——不是通过 Vision SDK，这是不同的服务和端点（配对 #23）。"
+ },
+ "sw-007": {
+  "label": "将现有项目客户端桥接到用于 Responses 和 Conversations 调用的 OpenAI 兼容客户端",
+  "why": "project.get_openai_client() 是在项目对象上调用的实例方法；考试的陷阱是在类本身上调用它而不是。"
+ },
+ "sw-008": {
+  "label": "在项目客户端构建后立即调用一次，在第一个 Responses 或 Conversations 请求出去前",
+  "why": "这是返回 OpenAI 形状客户端的运行时桥；凭证对象只认证项目客户端，它从不返回聊天客户端。"
+ },
+ "sw-009": {
+  "label": "作为 credential= 值使用零参数传递，以便应用通过登录的 Azure 身份进行身份验证，没有任何地方键入密钥",
+  "why": "DefaultAzureCredential() 是无密钥的 Entra ID 凭证对象；AIProjectClient 是消费它的，azure-ai-projects 只是包名，不是运行时对象。"
+ },
+ "sw-010": {
+  "label": "az login 设置的对象：客户端在调用时自动从它解析你的登录身份，不需要环境 API 密钥",
+  "why": "快速入门将 az login 与此凭证对象配对；get_openai_client 只返回聊天客户端，与身份验证无关。"
+ },
+ "sw-011": {
+  "label": "在编写任何 Foundry 项目客户端代码前安装的 pip 包，根据快速入门的第一个设置命令",
+  "why": "\"为项目客户端应该安装哪个包？\"是经典考试题——答案是 azure-ai-projects，不是搜索或语言 SDK。"
+ },
+ "sw-012": {
+  "label": "在快速入门设置步骤中与 az login 一起列出，在任何客户端代码运行前钉住最小版本 (>=2.0.0)",
+  "why": "文档化的快速入门指导安装 azure-ai-projects>=2.0.0 并运行 az login——Vision 和 Search 包与项目客户端无关。"
+ },
+ "sw-013": {
+  "label": "在任何关键短语或情感调用可以针对纯文本运行前，用端点和 AzureKeyCredential 构建",
+  "why": "TextAnalyticsClient(endpoint, credential) 公开 .extract_key_phrases()/.analyze_sentiment() 在原始文本上；其他两个客户端在完全不同的端点针对多模式文档和图像。"
+ },
+ "sw-014": {
+  "label": "无论哪种客户端类型公开 analyze_sentiment(documents)，以便每个文档的整体情感被打印回来",
+  "why": "情感和关键短语提取是此客户端上的 AI Language 文本分析方法；其他两个操作多模式文档或实时音频，不是纯文本。"
+ },
+ "sw-015": {
+  "label": "设置为从计算机的默认麦克风而不是保存的文件监听，然后作为其音频源交给识别器",
+  "why": "AudioConfig(use_default_microphone=True) 选择输入设备；SpeechConfig 反而持有订阅密钥/区域，SpeechRecognizer 是此对象被传入的类，不是设备选择器本身。"
+ },
+ "sw-016": {
+  "label": "从保存的文件名构建，以便识别器从测试 WAV 文件而不是实时麦克风读取语音",
+  "why": "AudioConfig(filename=…) 是文件后退设备源；SpeechConfig 携带凭证和声音名称，SpeechSynthesizer 播放音频而不是读取。"
+ },
+ "sw-017": {
+  "label": "给定语音配置和音频配置，然后调用以捕获恰好一个短语音话语并停止",
+  "why": "这是其 recognize_once_async() 捕获单个话语的类；SpeechSynthesizer 反而说话，AudioConfig 只连接输入设备。"
+ },
+ "sw-018": {
+  "label": "其单语音话语异步调用返回结果对象，其 .text 持有麦克风刚刚听到的转录文本",
+  "why": "语音转文本类从识别实时音频返回 result.text；合成器反而说话，Language 客户端只对已经转录的文本起作用。"
+ },
+ "sw-019": {
+  "label": "接受已设置声音名称的语音配置，然后通过扬声器将文本字符串转换为语音输出",
+  "why": "此类的 speak_text_async() 使用配置的声音大声播放字符串；识别器反而将语音转换为文本，AudioConfig 只选择设备。"
+ },
+ "sw-020": {
+  "label": "识别器生成文本转录后，这个第二个对象读出相同的字符串，用其自己的异步语音调用大声播放",
+  "why": "识别回复的文本转语音播放是此类的工作；识别器已经生成文本，SpeechConfig 只存储凭证和它使用的声音名称。"
+ },
+ "sw-021": {
+  "label": "用端点和密钥构建，然后其单个调用分析图像 URL 的 READ 视觉特征以拉取照片中的文本",
+  "why": "此 Vision 客户端的 .analyze(image_url=…, visual_features=[…]) 调用在一般图像上运行 OCR；ContentUnderstandingClient 反而从非常不同的异步调用形状返回轮询器。"
+ },
+ "sw-022": {
+  "label": "其字幕加 OCR 调用取图像的 URL 而不是原始字节，在一次传递中请求 CAPTION 和 READ 特征",
+  "why": "此 Vision 客户端的按 URL 分析方法返回固定预构建特征如字幕和读取；它没有轮询步骤，与语音捕获完全无关。"
+ },
+ "sw-023": {
+  "label": "应用在发送文档 URL 以进行提取并读回结构化结果时首先创建的客户端",
+  "why": "\"Content Understanding 应用首先应该创建哪个客户端？\"是此类——其他两个是具有不同端点的纯文本和一般图像的分离服务。"
+ },
+ "sw-024": {
+  "label": "其长时间运行分析调用返回轮询器；在该轮询器上调用 .result() 是应用等待最终提取输出的方式",
+  "why": "begin_analyze() 加上 poller.result() 是此客户端的异步轮询模式；Vision 客户端的 analyze() 是同步的，Language 客户端的方法直接获取文档而没有轮询。"
+ },
+ "sw-025": {
+  "label": "其响应字段 b64_json 持有你解码的实际像素数据的 GPT 图像生成请求，不是 url 字段",
+  "why": "GPT 图像 1 部署在 response.data[0].b64_json 中返回生成的图像字节；完成调用返回文本选择，Vision 客户端只分析已经存在的图像。"
+ },
+ "sw-026": {
+  "label": "设置背景为透明并在此文本到图像请求中请求 PNG 输出以获得透明背景",
+  "why": "透明背景加 PNG 输出是 GPT 图像 1 系列生成参数；Vision 分析或聊天完成调用中的任何内容都不接受它们。"
+ }
+}

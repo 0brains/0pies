@@ -1,0 +1,62 @@
+{
+ "wp-01": {
+  "a.text": "Destek biletlerinden, her ürün adı, kişi ve tarih sakla.",
+  "a.why": "Varlıklar kimin/ne bahsedilip söylenenleri tanımlarlar — insanlar, tarihler, kuruluşlar (histack: 'belirli şeyleri kategorize eder').",
+  "b.text": "Aynı biletlerden, müşteri duygusu olumlu, olumsuz veya tarafsız olup olmadığını belirle.",
+  "b.why": "Görüş polaritesi duygu — sınavın #1 kafa karışıklığı çiftliği (17 eş-oluş)."
+ },
+ "wp-02": {
+  "a.text": "Arama aracısının söyleyişi bulabilir, çağrı merkezi kaydı transkript et.",
+  "a.why": "Ses giriş, metin çıkış — tanıma. 'Transkript' maskeleme fiiline göre çalış.",
+  "b.text": "Bir navigasyon uygulaması en-ABD-Ava sinir sesi ile döner yolu yüksek sesle okur.",
+  "b.why": "Metin giriş, ses çıkış — sentez. SSML ve en-ABD-Ava:DragonHDLatestNeural gibi ses adları yalnızca senteze aittir."
+ },
+ "wp-03": {
+  "a.text": "Konferans uygulaması Fransızca konuşmacı dinler ve seyirciler için canlı İngilizce altyazısı üretir.",
+  "a.why": "Bir dilde konuşmayı tanıyıp başka dilde işlemek tercüme demektir — bu çiftin sınav söylenti (ses giriş, farklı dil çıkış).",
+  "b.text": "Aynı uygulama da ön sırada işitme engelli bir katılımcı için aynı dil Fransız altyazı üretir.",
+  "b.why": "Ses giriş, aynı dil metin çıkış, düz konuşma-metin; hiçbir dil geçiş var, yani hiçbir şey çevirme yok."
+ },
+ "wp-04": {
+  "a.text": "Fotoğraflanmış ekipman etiketi üzerinde yazdırılan seri numarasını çek.",
+  "a.why": "OCR/Oku, görüntüde mevcut olan harfi metni çıkarır — 'görüntüden okunabilir metni çıkar' sınav sapı.",
+  "b.text": "Fotoğrafın gösterdiği tek cümle doğal dil açıklaması üret.",
+  "b.why": "Altyazı (VisualFeatures.CAPTION) sahneyi açıklar — içinde metin okumuyor."
+ },
+ "wp-05": {
+  "a.text": "Tarama uygulaması yapılandırılmış metin alanlarında fotoğraflanmış zarf adres bloğunu okur.",
+  "a.why": "OCR mevcut pikselleri metne çevirir — giriş görüntü, çıkış metin.",
+  "b.text": "Bir tasarım aracı 'düz mavi roket simgesi' yaratılan istemini alıp hiç var olmayan markaya yeni PNG üretir.",
+  "b.why": "Görüntü oluşturma (client.images.generate gpt-image-1 / DALL·E ile) ters yöne çalışır — metin istem giriş, sentez pikselleri çıkış — bu çiftte yön çevirme tuzağı."
+ },
+ "wp-06": {
+  "a.text": "Yüklenen her fotoğraf 'kusurlu parça' veya 'iyi parça' olup olmadığına karar ver.",
+  "a.why": "Sınıflandırma bütün görüntüye bir etiket atar.",
+  "b.text": "Taşıyıcı görüntüsündeki her parça sınırlayan kutu ile işaretle.",
+  "b.why": "Nesne başına sınırlayan kutu, sınav söylenişi algılama — klasik vizyon kafa karışıklığıdır."
+ },
+ "wp-07": {
+  "a.text": "İncelemelerin bir grubundan ['fiyatlandırma', 'pil ömrü', 'müşteri desteği'] döndür.",
+  "a.why": "Anahtar cümleler önemli terimler listesini döndürür — hiçbir yeni düz yazılı yazılmaz.",
+  "b.text": "Aynı incelemeleri genel geribildirim yakalayan üç taze cümleyle özet tutuştur.",
+  "b.why": "Özet yeni sıkıştırılmış cümle yazar — çıkış şekli karşıtı corpus testler (çift #14)."
+ },
+ "wp-08": {
+  "a.text": "Hafif bir uygulama, müşteri iletilerinde tutulmadan her e-posta adresini ve telefon numarasını bulup silmeli.",
+  "a.why": "KBV algılaması, telefon numaraları ve e-posta adresleri gibi hassas kişisel veriyi tanımlamaya ve silebilen adanmış yetenek (sınav 'en doğrudan gizlilik odaklı yetenek' çağırır).",
+  "b.text": "Aynı uygulama iletilerde bahsedilen her insanı, kuruluşu ve yeri bir aranabilir endeks etiketi için etiketler.",
+  "b.why": "Varlık tanıma kategoriler arasında geniş çıkarma — insanlar, yerleri, kuruluşlar — KBV algılaması adanmış silme odaklı özelliğinin değildir."
+ },
+ "wp-09": {
+  "a.text": "Bir toplantı transkripti, kaydedilen sesin her bölümünü doğru katılımcıyı iletişim.",
+  "a.why": "Diarization, gelen ses içinde konuşmacıları tanımlar ve ayırır, transkriptin kimin konuştuğu etiket (sınav 'ses konuşmacı atfı' çağırır).",
+  "b.text": "Transkript bitince, anlatıcı ses toplantı özet podcast beslemesi için yüksek sesle okur.",
+  "b.why": "Sentez metni insan benzeri ses çıktısı olarak çevirir — varolan sesin diarize edilmesinden ters hat aşaması."
+ },
+ "wp-10": {
+  "a.text": "Bir geliştirici bir video konferansının gerçek zamanlı, aynı dil, işitme engelliler katılımcılar için canlı ses altyazısını gerekiyor.",
+  "a.why": "Azure AI Konuşma canlı konuşma-metin hattını sağlar — altyazı için standart hizmettir, çapraz dil metin dönüştürmesinden farklı.",
+  "b.text": "Bir perakendeci yazılı ürün açıklamalarını İngilizce'den 20 diğer dile metin olarak dönüştürmek gerekiyor.",
+  "b.why": "Azure AI Tercüman metin için diller arasında sinir makine çevirisi sağlar — sınav karşıtı ses hattı hizmet vs çapraz dil metin hizmet, iş yükü çakışma değil (çift #29)."
+ }
+}

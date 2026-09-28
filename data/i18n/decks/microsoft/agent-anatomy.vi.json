@@ -1,0 +1,84 @@
+{
+ "ag-001": {
+  "label": "\"Bạn là một agent hỗ trợ lịch sự; hãy chuyển bất kỳ vấn đề liên quan đến hoàn tiền\" — được đặt một lần khi agent được tạo",
+  "why": "Trường instructions xác định hành vi lâu dài tại thời điểm tạo — khái niệm agent được nhấn mạnh nhất của tài liệu học tập, khác biệt với trạng thái chat thời gian chạy."
+ },
+ "ag-002": {
+  "label": "Cho phép agent gọi các hàm hoặc API bên ngoài để thực hiện các hành động",
+  "why": "Gọi hàm / công cụ cho phép mô hình hoạt động ngoài văn bản — khả năng phân biệt một agent khỏi cuộc gọi chat thuần."
+ },
+ "ag-003": {
+  "label": "gpt-4o được triển khai mà agent sử dụng để lý luận — được tham chiếu bằng tên triển khai của nó",
+  "why": "Một agent = mô hình + instructions + công cụ; mô hình là một triển khai, và {\"deployment\":{\"model\":AGENT_NAME}} là câu trả lời sai chính tắc."
+ },
+ "ag-004": {
+  "label": "Các tập tin nền tảng và nguồn dữ liệu mà agent có thể tìm kiếm để trả lời từ nội dung của bạn",
+  "why": "Kiến thức gắn dữ liệu của bạn vào agent để câu trả lời được nền tảng trong đó — một phần của cấu trúc agent mà hướng dẫn học tập đặt tên cho Task 2.1."
+ },
+ "ag-005": {
+  "label": "Mang tin nhắn người dùng và trợ lý của một cuộc hội thoại đang diễn ra tại thời gian chạy",
+  "why": "Các luồng/cuộc hội thoại giữ trạng thái chat thời gian chạy — được tạo cho mỗi phiên bởi ứng dụng khách, không phải lúc định nghĩa agent."
+ },
+ "ag-006": {
+  "label": "Lệnh gọi xử lý cuộc hội thoại và tạo ra đầu ra tiếp theo của agent",
+  "why": "Một run (openai.responses.create / create run) thực hiện agent so với luồng — lớp thứ ba khác biệt: định nghĩa vs phiên vs lệnh gọi."
+ },
+ "ag-007": {
+  "label": "Văn bản nhân vật ngôn ngữ tự nhiên được cung cấp bên trong PromptAgentDefinition cùng với tên mô hình, khi agent được xác định lần đầu tiên trong mã",
+  "why": "PromptAgentDefinition(model=MODEL_NAME, instructions=...) đặt cả hai trường tại thời điểm định nghĩa, nhưng chỉ văn bản nhân vật hình thành cách agent hoạt động — tên mô hình bên cạnh nó là một thành phần riêng."
+ },
+ "ag-008": {
+  "label": "Định dạng mọi phản hồi dưới dạng danh sách được đánh số giới hạn năm mục — được sửa khi agent được tạo ra, không được chọn cho mỗi câu hỏi",
+  "why": "Quy tắc định dạng đứng được nằm ở thời điểm tạo là hành vi, không phải hành động bên ngoài — nó không gọi bất kỳ thứ gì ngoài văn bản, đó là những gì phân biệt nó với Công cụ."
+ },
+ "ag-009": {
+  "label": "Hoán đổi công cụ lý luận từ gpt-4o-mini thành gpt-5-mini mà không chạm đến nhân vật của agent hoặc các công cụ đính kèm của nó",
+  "why": "Chỉ công cụ lý luận được triển khai thay đổi ở đây; nhân vật và dây chuyền công cụ ở lại cố định — một bài kiểm tra sạch sẽ xem liệu triển khai có phải là một lớp riêng biệt từ các thành phần khác của agent hay không."
+ },
+ "ag-010": {
+  "label": "Định danh triển khai được chuyển bên trong PromptAgentDefinition cùng với văn bản nhân vật, khi agent được xác định lần đầu tiên trong mã",
+  "why": "Cùng lệnh gọi PromptAgentDefinition() như văn bản nhân vật, nhưng tham số này đặt tên công cụ lý luận được triển khai mà agent gọi — một tham chiếu triển khai, không phải chính hành vi."
+ },
+ "ag-011": {
+  "label": "Bật tìm kiếm web trực tiếp để agent có thể kéo thông tin hiện tại ngoài những gì được lưu trữ trong dữ liệu huấn luyện của nó",
+  "why": "Tìm kiếm web được mở từ danh sách công cụ cổng thông tin Foundry (Build > Tools) cùng với bộ thông dịch mã và tìm kiếm tệp — khả năng bên ngoài trực tiếp, không nội dung tĩnh được đính kèm."
+ },
+ "ag-012": {
+  "label": "Cho phép agent chạy mã được tạo để tính toán kết quả thay vì chỉ mô tả các bước tính toán",
+  "why": "Thực thi mã là một trong những khả năng danh sách, cùng với tìm kiếm web và tìm kiếm tệp, cho phép agent hoạt động ngoài việc tạo văn bản — công cụ lý luận không bao giờ thực thi mã trực tiếp."
+ },
+ "ag-013": {
+  "label": "Kết nối một chỉ mục Azure AI Search hiện có để câu trả lời của agent trích dẫn nội dung được lập chỉ mục của bạn thay vì đoán",
+  "why": "Một chỉ mục tìm kiếm được đính kèm là nội dung tĩnh mà agent truy xuất từ để nền tảng câu trả lời của nó — khác biệt với một công cụ như tìm kiếm web, nó tiếp cận một khả năng bên ngoài trực tiếp thay vì dữ liệu của chính bạn."
+ },
+ "ag-014": {
+  "label": "Thêm tài liệu chính sách công ty cho agent để tìm kiếm — được cấu hình trong sân chơi Agents cùng với văn bản nhân vật và công cụ đính kèm của nó — trước khi kiểm tra hành vi nhiều lượt",
+  "why": "Sân chơi Agents cấu hình ba bề mặt khác biệt cạnh nhau — nhân vật, công cụ và tài liệu đính kèm — và thẻ này là thẻ nội dung được đính kèm: dữ liệu mà agent nền tảng câu trả lời trong, không phải một hành động nó thực hiện."
+ },
+ "ag-015": {
+  "label": "openai.conversations.create() được gọi bởi ứng dụng khách trước khi lượt đầu tiên được gửi đến agent",
+  "why": "Tạo đối tượng cuộc hội thoại diễn ra trước bất kỳ tin nhắn nào được gửi — nó mở thùng chứa thời gian chạy mà các lượt sau ghi vào, khác biệt với cuộc gọi thực sự tạo ra trả lời."
+ },
+ "ag-016": {
+  "label": "Dòng thời gian không bị gián đoạn duy nhất cho phép agent tham chiếu một điều mà người dùng nói ba câu hỏi trước, mà không cần những tin nhắn đó được gửi lại bằng tay mỗi lần",
+  "why": "Lịch sử chat thời gian chạy tích lũy là trạng thái phiên, không phải hành vi agent — nó phát triển trên mỗi cuộc hội thoại, không giống như quy tắc nhân vật cố định một lần tại thời điểm định nghĩa."
+ },
+ "ag-017": {
+  "label": "openai.responses.create() là lệnh gọi thực sự gửi tin nhắn mới nhất của người dùng và trả lại câu trả lời của agent",
+  "why": "Đây là bước gọi — đó là những gì thực sự xử lý cuộc hội thoại và tạo ra kết quả, khác biệt với openai.conversations.create(), chỉ mở thùng chứa những tin nhắn sống."
+ },
+ "ag-018": {
+  "label": "Tham số extra_body={\"agent_reference\": {...}} bên trong cùng lệnh gọi đó, cho hệ thống biết định nghĩa agent nào để thực hiện so với cuộc hội thoại",
+  "why": "agent_reference là siêu dữ liệu trên mỗi lệnh gọi responses.create(), không phải một thuộc tính agent cố định — kỳ thi vẽ sự phân biệt này một cách rõ ràng so với tên triển khai được nằm vào định nghĩa của chính agent."
+ },
+ "agent-anatomy": {
+  "hint": "Hỏi lớp nào công việc thuộc về: cố định khi tạo (hướng dẫn), bản thân công cụ lý luận (mô hình), một hành động ngoài văn bản (công cụ), dữ liệu đính kèm để nền tảng câu trả lời (kiến thức), trạng thái tích lũy của một cuộc hội thoại (luồng), hoặc lệnh gọi duy nhất tạo ra đầu ra (chạy).",
+  "note": "Cả hướng dẫn và công cụ đều được cấu hình tại thời điểm thiết kế — sự phân biệt là liệu thẻ là quy tắc hành vi (hướng dẫn) hay khả năng bên ngoài mà agent gọi (công cụ). Luồng và chạy cả hai sống tại thời gian chạy — sự phân biệt là liệu thẻ có phải là thùng chứa giữ tin nhắn (luồng) hay lệnh gọi tạo ra tin nhắn tiếp theo (chạy).",
+  "zones[0].def": "Hành vi lâu dài, nhân vật và quy tắc được đặt khi agent được xác định — không được chọn cho mỗi cuộc hội thoại.",
+  "zones[1].def": "Mô hình được triển khai — được tham chiếu bằng tên triển khai — mà agent lý luận với.",
+  "zones[2].def": "Hàm, API và các hành động khác mà agent có thể gọi ngoài việc tạo văn bản.",
+  "zones[3].def": "Tập tin, chỉ mục và các nguồn dữ liệu khác mà agent có thể tìm kiếm để nền tảng câu trả lời của nó.",
+  "zones[4].def": "Lịch sử tin nhắn thời gian chạy của một cuộc hội thoại đang diễn ra, được tạo cho mỗi phiên.",
+  "zones[5].def": "Lệnh gọi thực thi agent so với luồng và tạo ra đầu ra tiếp theo của nó."
+ }
+}

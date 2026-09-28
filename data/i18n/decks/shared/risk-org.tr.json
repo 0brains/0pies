@@ -1,0 +1,74 @@
+{
+ "risk-org": {
+  "hint": "Her etkinliği onu gerçekleştirmesi gereken satıra sürükleyin. Test, bağımsızlıktır: kendi ödevini kim işaretleyebilir ve kim yapamaz.",
+  "note": "Satırlar kıdem veya insan kaynağından değil bağımsızlıkla ilgilidir. Gözlemci yaptığı takıma rapor veren ikinci satır işlevi, farklı bir rozet giyen birinci satır işlevidir.",
+  "zones[0].def": "Riski günlük olarak sahiplenir ve yönetir: sistemi kuran, dağıtan ve işleten takımlar.",
+  "zones[1].def": "Politika belirler, tavsiye verir, meydan okur ve izler—risk, uyum, hukuki, bir AI yönetişim işlevi. Teslimatından bağımsız, yönetiminden değil.",
+  "zones[2].def": "Dahili denetim. Yönetim kuruluna ilk iki satırın gerçekten işe yarayıp yaramadığı hakkında bağımsız güvence.",
+  "zones[3].def": "İştahı belirler, nihai sorumluluk alır ve devredilen sınırların ötesinde riski kabul edebilecek tek kuruluştur."
+ },
+ "ro-01": {
+  "label": "Mühendislik takımı, modeli üretime yükseltmeden önce adillik değerlendirmesi paketini çalıştırır.",
+  "why": "Teslimat işlemi içinde kontroller yürütmek birinci satır işidir. Bunu iyi yapmak onu güvence haline getirmez, çünkü takım kendi çıktısını değerlendirir."
+ },
+ "ro-02": {
+  "label": "Ürün sahibi, risk kaydında yeni bir risk kaydeder ve bir tedavi önerir.",
+  "why": "Risk tanımlama ve günlük yönetim etkinliğe en yakın olan kişilerin yanında yer alır. Kayıt, risk işlevinin değil onlarının doldurması gereken şeydir."
+ },
+ "ro-03": {
+  "label": "Operasyon takımı, üretim kayma gösterge panolarını izler ve eşikler ihlal edildiğinde bir olay bildiri yükseltir.",
+  "why": "Dedektif kontrol de dahil olmak üzere bir kontrol işletmek birinci satır işidir. İkinci satır eşiğin doğru olup olmadığını sorar; birinci satır tetiklendiğinde harekete geçer."
+ },
+ "ro-04": {
+  "label": "Veri bilimi takımı, model limitasyonlarını ve amaçlandığı kullanımı model kartında belgelir.",
+  "why": "Belgeleme üretimi inşaat etkinliğidir. Politikayı karşılayıp karşılamadığını gözden geçirmek farklı bir satırın işidir."
+ },
+ "ro-05": {
+  "label": "AI yönetişim işlevi, hangi kullanım durumlarının etki değerlendirmesini gerektirdiğini tanımlayan politikayı yazar.",
+  "why": "Çerçeve ve standartları belirlemek birinci satırın içinde çalışması gereken tanımlayıcı ikinci satır etkinliğidir."
+ },
+ "ro-06": {
+  "label": "Uyum, tamamlanmış etki değerlendirmesini gözden geçirir ve takımın kalıntı risk derecelendirmesine karşı çıkar.",
+  "why": "Teslimat yargısına bağımsız meydan okuma ikinci satırdır. Danışman ve izlemedir ve yönetim kuruluna güvence değildir."
+ },
+ "ro-07": {
+  "label": "Hukuk, önerilen bir dağıtımın, Annex III alanına girdiğini ve bu nedenle yüksek risk yükümlülüklerini çektiğini tavsiye eder.",
+  "why": "Birinci satırın ne yapabileceğini sınırlayan uzman tavsiyesi ikinci satırdır. Dağıtım kararı birinci satırda kalır, politika içinde."
+ },
+ "ro-08": {
+  "label": "Risk işlevi, kurumsal kaydını korur ve yönetim kurulu başkanına toplu AI risk maruziyetini raporlar.",
+  "why": "Birinci satır genelinde toplama, denetim ve raporlama ikinci satır izlemesidir. Birinci satır verilerine dayanır, bu tam da üçüncü satırın neden var olduğudur."
+ },
+ "ro-09": {
+  "label": "Dahili denetim, geçen yıl içindeki her sürüm için model onay işlemi izlenip izlenmediğini inceler.",
+  "why": "Kontrollerin tasarlanmış şekilde işleyip işlemediğini test etmek, geriye dönük ve bağımsız olarak dahili denetimin görevidir."
+ },
+ "ro-10": {
+  "label": "Bağımsız inceleme, denetim komitesine ikinci satırın meydan okuma işleminin kanıtlanmadığını raporlar.",
+  "why": "Üçüncü satır, ikinci satırı ve birinci satırı da denetler ve yönetimden ziyade yönetim kuruluna rapor verir—bu rapor satırı onu bağımsız yapan şeydir."
+ },
+ "ro-11": {
+  "label": "Güvence işi risk temelli bir döngüde planlanır ve kapsamı denetlenen takımlarla değil denetim komitesi ile kararlaştırılır.",
+  "why": "Yönetim dışında belirlenen kapsam, denetimi ikinci satır incelemesinden ayıran yapısal özelliktir."
+ },
+ "ro-12": {
+  "label": "Bir inceleme, kontrolün belgelenmiş olduğu ancak asla fiilen gerçekleştirilmediğini bulur ve yukarı rapor eder.",
+  "why": "Belgelenen ve işletme etkinliği arasındaki boşluğu bulmak denetimin eklediği değerdir. Ne birinci ne de ikinci satırlar kendine karşı rapor vermek için konumlandırılmıştır."
+ },
+ "ro-13": {
+  "label": "Otomatik karar verme için risk iştahı belirlenmiş ve yayınlanmıştır.",
+  "why": "İştah, kuruluşun ne kadar riski alacağının yönetim kurulu seviyesi ifadesidir. Aşağıdakilerin her şeyi buna karşı kalibrasyondur."
+ },
+ "ro-14": {
+  "label": "Devredilen sınırı aşan kalıntı risk yükseltilir ve kuruluşun en üstünde resmi olarak kabul edilir.",
+  "why": "Yalnızca yetkiyi tutan kuruluş devredilen sınırların ötesinde kabul edebilir. Başka yerde kabul hiçbir kabul değildir; bu kaydedilmeyen maruziyettir."
+ },
+ "ro-15": {
+  "label": "AI yönetim sistemi için hesap veren bir yönetici adlandırılır, işi yapmak için otorite ve kaynaklar ile.",
+  "why": "Yönetim sistemi standartları adlandırılmış liderlik sorumluluğu gerektirir. Yönetim sahibi olmayan bir yönetişim işlevi sorumluluk olmayan otorite vardır."
+ },
+ "ro-16": {
+  "label": "Güvence, riski iştah içinde getiremeyeceğini bildirdikten sonra dağıtılmış sistemi geri çekmek kararı alınır.",
+  "why": "Ticari çıkara karşı çekilme kararı yalnızca hesap verebilir seviye alabilir, bu nedenle yükseltme yolu gerekli olmadan önce var olması gerekir."
+ }
+}

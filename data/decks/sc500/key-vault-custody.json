@@ -1,0 +1,237 @@
+{
+  "id": "key-vault-custody",
+  "runner": "board",
+  "title": "Chain of Custody",
+  "blurb": "Twenty-four real vault incidents land on your desk: a leaked client secret on a VM disk, a purge nobody could undo, a checkout certificate that died at 2am. Sort each one into the Key Vault mechanism that actually closes it.",
+  "source": "Microsoft Learn: About Azure Key Vault; Azure RBAC for Key Vault data plane; Azure RBAC vs access policies (legacy); Key Vault soft-delete overview; Configure network security for Azure Key Vault; Configure cryptographic key auto-rotation; About Key Vault keys, secrets and certificates; Secure your Azure Key Vault; Microsoft Defender for Key Vault; Defender for Cloud secrets scanning · SC-500 outline 1.2",
+  "asOf": "2026-08",
+  "area": "1.2",
+  "hint": "Ask what the scene is actually failing at. If a principal holds the wrong permissions, or the wrong authorization system is deciding them, it is Permission model. If the workload is carrying a stored credential at all, it is Managed identity, even when a role assignment is part of the fix. If something was deleted and the argument is about getting it back or blocking the erasure, it is Recovery guards. If the argument is about where the private key material physically lives and whether it can leave, it is Key protection. If the material is fine but stale, expiring, or overdue for a new version, it is Lifecycle policy. If the caller is authorized and still cannot reach the vault from where it sits, or an unwanted caller could reach it at all, it is Network limits. Two traps: an authorized-but-blocked request looks like a permissions bug and is not, and a rotation that never happened looks like a recovery problem and is not."
+  ,
+  "zones": [
+    {
+      "key": "Permission model",
+      "name": "Permission model",
+      "def": "Who is authorized on the vault and by which authorization system: Azure RBAC role assignments on the data plane versus the legacy per-vault access policy list, role choice and scope, and the Contributor self-grant risk. Distinguish from Managed identity, which decides what identity the caller presents rather than which permissions that identity holds; and from Network limits, which never changes authorization at all, only the origin a request may arrive from."
+    },
+    {
+      "key": "Managed identity",
+      "name": "Managed identity",
+      "def": "Removing stored credentials from a workload by giving it an Entra identity Azure manages: system-assigned or user-assigned identities for App Service, virtual machines, functions, and federated workload identity for Kubernetes pods. Distinguish from Permission model, which grants that identity its role once it exists; the tell here is a client secret, certificate, or connection string sitting in code, config, or an environment variable."
+    },
+    {
+      "key": "Recovery guards",
+      "name": "Recovery guards",
+      "def": "What happens after something is deleted: soft delete retention of 7 to 90 days, purge protection blocking permanent erasure until the window passes, recovering deleted vaults and objects, and the name reservation during retention. Distinguish from Permission model, which decides who may issue the delete or purge in the first place, and from Lifecycle policy, which governs the scheduled replacement of live material rather than the rescue of dead material."
+    },
+    {
+      "key": "Key protection",
+      "name": "Key protection",
+      "def": "Where key material lives and whether it can ever leave: Standard tier software-protected keys validated to FIPS 140 Level 1 against Premium tier HSM-protected keys on FIPS 140-3 Level 3 validated hardware, Managed HSM pools, and exportable versus non-exportable certificate keys. Distinguish from Lifecycle policy, which changes key material on a schedule but says nothing about the hardware boundary around it."
+    },
+    {
+      "key": "Lifecycle policy",
+      "name": "Lifecycle policy",
+      "def": "Keeping material fresh on a schedule: key rotation policy with a rotate trigger after creation or before expiry, expiry dates, near-expiry Event Grid notification, certificate autorenew with an onboarded issuer, certificate contacts, and Azure Policy governance of rotation intervals. Distinguish from Key protection, which is about the hardware boundary, and from Recovery guards, which only matters once something has already been deleted."
+    },
+    {
+      "key": "Network limits",
+      "name": "Network limits",
+      "def": "Where a data-plane request may originate: firewall default action of Deny, IPv4 and CIDR rules, virtual network rules over the Key Vault service endpoint, the trusted Microsoft services bypass, disabled public access with private endpoints, and Network Security Perimeter. Distinguish from Permission model, which decides who is authorized; these rules can block a fully authorized caller, and they never apply to control plane calls."
+    }
+  ],
+  "items": [
+    {
+      "id": "key-01",
+      "label": "A retail analytics vault still runs on the legacy access policy model. A developer who holds Contributor on the resource group opens the vault, adds a policy entry for her own account granting Get and List on every secret, and reads the payment gateway credentials. Nothing about the vault's network or key material changed.",
+      "sub": "Which mechanism closes this?",
+      "answer": "Permission model",
+      "why": "Contributor is a control plane role, and on a vault using access policies it lets the holder write themselves a data plane grant. Moving the vault to Azure RBAC breaks that path, because granting data access then requires Owner or User Access Administrator and can be made time-bound through Privileged Identity Management. Network limits is the tempting neighbour and is wrong: the developer was already inside the tenant and a firewall rule would not have stopped a legitimate portal session from an allowed address.",
+      "citation": "Learn: Azure RBAC vs access policies (legacy) · outline 1.2"
+    },
+    {
+      "id": "key-02",
+      "label": "A payments microservice at a food delivery company needs one thing from kv-pay-prod: the read of a single database connection string. The platform engineer assigned Key Vault Administrator because it was the first entry in the role picker, so the service can also create, delete and purge keys and certificates.",
+      "sub": "Which mechanism closes this?",
+      "answer": "Permission model",
+      "why": "Key Vault Secrets User is the least-privilege built-in role for reading secret contents, and it should be assigned at vault scope rather than object scope, since Microsoft recommends one vault per application per environment instead of per-secret assignments. Managed identity is the near miss: the service may already authenticate perfectly well as a managed identity, and the defect is the size of the grant attached to that identity, not the identity itself.",
+      "citation": "Learn: Key Vault data plane RBAC roles · outline 1.2"
+    },
+    {
+      "id": "key-03",
+      "label": "A retail bank's cloud operations group wants exactly two named engineers able to permanently remove soft-deleted vaults in the sandbox subscription. Today every subscription Owner can issue that irreversible POST, and one did it by accident last quarter.",
+      "sub": "Which mechanism closes this?",
+      "answer": "Permission model",
+      "why": "Permanent removal of a soft-deleted vault is gated by the Key Vault Purge Operator built-in role, so this is a role assignment problem: grant that role to the two engineers and stop handing out subscription Owner. Recovery guards is the neighbour to reject here, because purge protection would block every purge for the whole retention window rather than narrowing the operation to two trusted people, which is not what the group asked for.",
+      "citation": "Learn: Azure Key Vault soft-delete overview, Permitted purge · outline 1.2"
+    },
+    {
+      "id": "key-04",
+      "label": "A hospital IT team flips a long-standing vault from access policies to Azure RBAC on a Friday afternoon. By Saturday morning the radiology imaging service is failing every secret read, even though its firewall rules, private endpoint and managed identity are all untouched.",
+      "sub": "Which mechanism closes this?",
+      "answer": "Permission model",
+      "why": "Switching the vault to the Azure RBAC permission model invalidates every existing access policy entry at once, so any principal without an equivalent role assignment loses data plane access immediately. The fix is to assign the imaging service the matching role, such as Key Vault Secrets User. Network limits is the wrong read even though the symptom is a refused call: the scene states the network path was not changed, and firewall denials would have hit every caller, not only the ones that relied on a policy entry.",
+      "citation": "Learn: Key Vault data plane RBAC roles · outline 1.2"
+    },
+    {
+      "id": "key-05",
+      "label": "A logistics firm's App Service reads its warehouse database password from an application setting that holds the client secret of an app registration. That client secret expires every twelve months, and the last two renewals each caused a night of failed shipments.",
+      "sub": "Which mechanism closes this?",
+      "answer": "Managed identity",
+      "why": "Microsoft's guidance for every app and service connection to a vault is a managed identity, which removes the hard-coded credential entirely and takes the expiry outage with it. Lifecycle policy is the seductive wrong answer: rotating the app registration secret more cleverly still leaves a credential in configuration, so it treats the symptom rather than deleting the class of failure.",
+      "citation": "Learn: Secure your Azure Key Vault, Identity and access management · outline 1.2"
+    },
+    {
+      "id": "key-06",
+      "label": "A pharmaceutical data science team runs Databricks jobs that reach kv-model-prod. Authentication happens with a service principal certificate that one of them pasted into a shared notebook cell so the whole team could rerun the job.",
+      "sub": "Which mechanism closes this?",
+      "answer": "Managed identity",
+      "why": "The credential is the problem, not the permissions: a managed identity lets the compute authenticate to Microsoft Entra ID with no material stored anywhere a notebook can leak it. Permission model is the near neighbour and is insufficient on its own, because tightening the role on that service principal still leaves an exportable certificate pasted into a document that anyone with workspace access can copy.",
+      "citation": "Learn: Secure your Azure Key Vault, Identity and access management · outline 1.2"
+    },
+    {
+      "id": "key-07",
+      "label": "An online education platform runs its API on Azure Kubernetes Service. Every pod mounts a ConfigMap containing an application client id and secret so the container can call the vault at startup, and that pair is baked into the deployment manifest in git.",
+      "sub": "Which mechanism closes this?",
+      "answer": "Managed identity",
+      "why": "Federating the pod's Kubernetes service account to a user-assigned managed identity lets the container acquire a token with no secret in the manifest or the cluster. Network limits is the plausible-sounding wrong zone: putting the vault behind a private endpoint reachable only from the cluster subnet is a good second control, but the committed secret would remain valid for anyone who can reach the vault from inside that boundary.",
+      "citation": "Learn: Secure your Azure Key Vault, Identity and access management · outline 1.2"
+    },
+    {
+      "id": "key-08",
+      "label": "At a water utility, an agentless Defender CSPM scan of the ETL virtual machine disks reports a plaintext Microsoft Entra client secret sitting in an environment file, and a cloud security explorer query ties that machine to the app registration holding a role on the vault that stores the SCADA reporting credentials.",
+      "sub": "Which mechanism closes this?",
+      "answer": "Managed identity",
+      "why": "Machine secrets scanning surfaced the exposure, though an Entra client secret finding is reviewed through the inventory and cloud security explorer rather than through attack path analysis, which only covers a subset of secret types. The remediation is to stop the virtual machine from holding a credential at all and let it authenticate with its own managed identity. Permission model is the wrong destination: revoking the compromised app registration's role is necessary cleanup, yet the next deployment will plant another secret in the same file unless the authentication method changes.",
+      "citation": "Learn: Protecting secrets in Defender for Cloud · outline 1.2"
+    },
+    {
+      "id": "key-09",
+      "label": "A media company's contractor deletes a resource group during a tidy-up sprint. It contained the vault holding the customer-managed key wrapping a storage account, and within the hour the archive storage account starts returning errors on every read.",
+      "sub": "Which mechanism closes this?",
+      "answer": "Recovery guards",
+      "why": "Soft delete keeps the vault recoverable for the retention window, and purge protection is exactly why most Azure services that integrate with Key Vault, storage among them, require it before they will trust a customer-managed key. Note that recovering a soft-deleted vault does not restore its role assignments or Event Grid subscriptions, which must be recreated. Permission model is the neighbour to reject: tightening who can delete resource groups reduces the odds but gives you nothing once the deletion has happened.",
+      "citation": "Learn: Azure Key Vault soft-delete overview · outline 1.2"
+    },
+    {
+      "id": "key-10",
+      "label": "A compliance officer at an insurance broker asks for the deleted-object retention on a production vault to be dropped from ninety days to seven, to match a data minimisation commitment. The vault was created eight months ago with the defaults.",
+      "sub": "Which mechanism closes this?",
+      "answer": "Recovery guards",
+      "why": "The retention interval can be set anywhere from seven to ninety days, but only at vault creation, and it cannot be changed afterwards, so honouring the request means standing up a new vault with the shorter interval and migrating objects. The same interval governs both soft delete and purge protection. Lifecycle policy is the wrong zone: rotation and expiry intervals are freely editable on a live key, which is precisely what makes the immovable retention setting worth remembering.",
+      "citation": "Learn: Key Vault soft-delete behavior · outline 1.2"
+    },
+    {
+      "id": "key-11",
+      "label": "A junior engineer at a gaming studio tears down a test vault named kv-match-eu and immediately reruns the deployment template. Azure refuses to create the vault, reporting that the name is unavailable, although nothing by that name is visible in the subscription.",
+      "sub": "Which mechanism closes this?",
+      "answer": "Recovery guards",
+      "why": "A soft-deleted vault reserves its name in that location for the whole retention interval, and its DNS record is kept too, so the name cannot be reused until it is recovered or purged. Permission model is the tempting misread, since the error looks like a rights problem, but no role assignment will free a name that the soft-delete proxy resource is still holding.",
+      "citation": "Learn: Key Vault soft-delete retention window · outline 1.2"
+    },
+    {
+      "id": "key-12",
+      "label": "Three days after a release, a fintech support engineer discovers that a cleanup script removed the secret holding the settlement file signing password. The vault has soft delete on and purge protection on, and the secret is nowhere in the normal secrets list.",
+      "sub": "Which mechanism closes this?",
+      "answer": "Recovery guards",
+      "why": "A deleted secret sits in the soft-deleted state where it can only be listed, recovered, or purged, so a suitably privileged principal recovers it and the old value comes back with its versions intact. Purge protection guarantees the script could not have destroyed it outright. Lifecycle policy is the wrong zone: setting up rotation would give the application a new signing password, which is not the same as restoring the one the settlement files were signed with.",
+      "citation": "Learn: Azure Key Vault soft-delete overview, Key vault object recovery · outline 1.2"
+    },
+    {
+      "id": "key-13",
+      "label": "An insurer's external auditor will only accept cryptographic material that is generated inside and never leaves hardware validated to FIPS 140-3 Level 3. The team's vault is on the Standard tier, and the key was generated by the service in software.",
+      "sub": "Which mechanism closes this?",
+      "answer": "Key protection",
+      "why": "The Premium tier offers HSM-protected key types generated in FIPS 140-3 Level 3 validated hardware, while Standard tier keys are protected by software modules validated to FIPS 140 Level 1, so the tier and key type are what the auditor is really testing. Lifecycle policy is the plausible distractor: rotating the software key on a strict schedule produces fresh material that is still not inside an HSM boundary.",
+      "citation": "Learn: About Azure Key Vault, service tiers · outline 1.2"
+    },
+    {
+      "id": "key-14",
+      "label": "A government agency's architect proposes moving everything, keys, secrets and TLS certificates alike, out of the team's vaults and into a single Managed HSM pool so all custody sits on single-tenant hardware. The migration plan lists the connection strings first.",
+      "sub": "Which mechanism closes this?",
+      "answer": "Key protection",
+      "why": "A Managed HSM pool supports HSM-protected keys only, addressed under a managedhsm.azure.net endpoint; secrets and certificates are vault object types and have no home there, so the keys move and the rest stays in a Premium vault. Permission model is the neighbour some players reach for because Managed HSM uses its own local access control rather than vault RBAC, but the flaw in this plan is object type support, not authorization.",
+      "citation": "Learn: Key Vault object types and their uses · outline 1.2"
+    },
+    {
+      "id": "key-15",
+      "label": "A payments processor's certificate policy for its client authentication certificate marks the key as exportable, because an integration partner once asked for the PFX. Security now requires that the private key can never be retrieved from the vault by anyone, including the certificate owner.",
+      "sub": "Which mechanism closes this?",
+      "answer": "Key protection",
+      "why": "Exportability is a property of the certificate policy's key configuration: with a non-exportable policy the private key is not returned when the addressable secret is read, and HSM key types are non-exportable by definition, while exportable keys are only allowed for RSA and EC. Permission model is the near miss, because the private key is pulled by reading the certificate's addressable secret, so revoking that read from today's holders narrows who can fetch the PFX without changing the fact that the vault will still hand it over to whoever holds the right role tomorrow.",
+      "citation": "Learn: About Azure Key Vault certificates, Exportable or non-exportable key · outline 1.2"
+    },
+    {
+      "id": "key-16",
+      "label": "A defence supplier's crypto standard says the wrapping key for its classified build artefacts must originate inside validated hardware. Today an engineer generates the RSA key on a hardened workstation and imports it into the vault over the data plane.",
+      "sub": "Which mechanism closes this?",
+      "answer": "Key protection",
+      "why": "Creating the key directly in a Premium vault or a Managed HSM as an HSM-protected type means the private material is generated within the hardware boundary and never exists outside it, which import can never claim. Lifecycle policy is the wrong zone and also the practical trap: a key imported from a local HSM cannot use Key Vault automated rotation at all, which is a consequence of this choice rather than the control that fixes it.",
+      "citation": "Learn: About Azure Key Vault, securely store secrets and keys · outline 1.2"
+    },
+    {
+      "id": "key-17",
+      "label": "A telecoms operator's storage encryption key has carried the same version since it was created in 2023. The internal audit standard says encryption keys must be replaced at least every two years, and the auditor also wants standing evidence of any key in the subscription that has drifted from that rule.",
+      "sub": "Which mechanism closes this?",
+      "answer": "Lifecycle policy",
+      "why": "A key rotation policy with a rotate action triggered a set time after creation produces new key versions automatically, and the built-in Azure Policy definition requiring keys to have a rotation policy within a stated maximum number of days supplies the fleet-wide evidence, reporting compliance rather than blocking anything, since its effect is Audit or Disabled. Managing the policy needs the Key Vault Crypto Officer role. Key protection is the wrong zone: the hardware protecting the key is not what the two-year clock is about.",
+      "citation": "Learn: Key Vault cryptographic key auto-rotation · outline 1.2"
+    },
+    {
+      "id": "key-18",
+      "label": "A stock exchange imports its market data signing key from an on-premises HSM, so Key Vault cannot generate new versions for it. The custody team wants a reliable thirty-day warning before the key's expiration date so they can run their manual ceremony.",
+      "sub": "Which mechanism closes this?",
+      "answer": "Lifecycle policy",
+      "why": "The rotation policy's notification time raises a near-expiry event through Event Grid, which is the documented pattern when automated rotation is unavailable, such as for a key imported from a local HSM; it needs an expiry time on the policy and an expiration date on the key. Recovery guards is the wrong zone: soft delete would help if the key were deleted, but an expired key is still present, merely inoperable for new operations.",
+      "citation": "Learn: Configure cryptographic key auto-rotation, Configure key near expiry notification · outline 1.2"
+    },
+    {
+      "id": "key-19",
+      "label": "A grocery retailer's public checkout site goes dark at two in the morning when its TLS certificate expires. DigiCert is already onboarded as an issuer object in the vault, but this certificate was imported by hand, its policy carries no lifetime actions, and nobody ever populated the vault's certificate contacts.",
+      "sub": "Which mechanism closes this?",
+      "answer": "Lifecycle policy",
+      "why": "A certificate policy with an autorenew lifetime action against an onboarded partner issuer renews the certificate before expiry, and the emailContacts lifetime action sends the notification to the certificate contacts, which are set once on the vault and shared by every certificate in it rather than configured per policy. Key protection is the neighbour to reject: whether the key is HSM-backed or software-backed had no bearing on the outage, because an expired certificate fails validation regardless of where its key lives.",
+      "citation": "Learn: About Azure Key Vault certificates, Certificate policy · outline 1.2"
+    },
+    {
+      "id": "key-20",
+      "label": "A SaaS billing platform's service account password is stored as a secret and changed by hand once a year, always during a maintenance window because the application caches it at startup. The team wants continuous rotation with no downtime, and the target system supports a second credential.",
+      "sub": "Which mechanism closes this?",
+      "answer": "Lifecycle policy",
+      "why": "Automated secret rotation is the documented data protection practice, and the two-credential pattern lets the new password be provisioned and adopted before the old one is retired, so no window is needed. Managed identity is the neighbour worth naming: where the target service supports Entra authentication, a managed identity removes the password altogether, but this scene states the platform needs a stored credential, so the control is rotation.",
+      "citation": "Learn: Secure your Azure Key Vault, Data protection · outline 1.2"
+    },
+    {
+      "id": "key-21",
+      "label": "Defender for Key Vault raises an alert that a vault holding a courier firm's API credentials was successfully reached from an address that threat intelligence flags as suspicious. The vault was created with defaults, so its firewall was never turned on and any address on the internet can call the data plane endpoint.",
+      "sub": "Which mechanism closes this?",
+      "answer": "Network limits",
+      "why": "The documented response to an alert from an unrecognised address is to enable the Key Vault firewall and admit only trusted networks and resources, which shrinks the reachable surface from the whole internet to a named set of origins. Permission model matters too, since the credentials should be rotated and the principal's rights reviewed, but only network rules address the fact that the endpoint was answering strangers. Remember these rules bind data plane calls only; control plane operations such as an ARM template deployment are not filtered by them.",
+      "citation": "Learn: Overview of Microsoft Defender for Key Vault; Configure network security for Azure Key Vault · outline 1.2"
+    },
+    {
+      "id": "key-22",
+      "label": "A university's research virtual machines are rebuilt from images every few days and come back with different public addresses each time. An operator has been pasting the new address into the vault's firewall allow list after every rebuild, and the batch jobs fail whenever he forgets.",
+      "sub": "Which mechanism closes this?",
+      "answer": "Network limits",
+      "why": "For resources with changing addresses, the documented approach is a virtual network rule: enable the Microsoft.KeyVault service endpoint on the subnet, add the subnet as a network rule, and set the default action to Deny, so machine identity on the network replaces address bookkeeping. Note that private address ranges cannot be used in IP rules at all. Managed identity is the wrong zone: the jobs already authenticate fine, and it is the origin of their requests being refused, not their credentials.",
+      "citation": "Learn: Configure network security for Azure Key Vault, virtual networks · outline 1.2"
+    },
+    {
+      "id": "key-23",
+      "label": "A fashion retailer disables public access on its production vault and wires up a private endpoint from the application virtual network. The web tier is happy, but the Azure DevOps release pipeline that fetched deployment secrets now fails on every run, while the trusted Azure services that use the vault carry on untouched.",
+      "sub": "Which mechanism closes this?",
+      "answer": "Network limits",
+      "why": "Disabling public access still lets trusted Microsoft services through the bypass without a private endpoint, but Azure DevOps is deliberately not on the trusted services list because customers run their own code on it, so the pipeline needs a private endpoint path such as a self-hosted agent inside the network. Permission model is the misdiagnosis to avoid: the pipeline's service connection is authorized exactly as before, and the refusal happens before authorization is ever considered.",
+      "citation": "Learn: Configure network security for Azure Key Vault, public access disabled · outline 1.2"
+    },
+    {
+      "id": "key-24",
+      "label": "A public sector tenant associates its vaults with a Network Security Perimeter and moves it from transition mode into enforced mode. A first-party Azure service that had been relying on the trusted Microsoft services bypass immediately starts getting denied, even though the bypass checkbox is still ticked on the vault.",
+      "sub": "Which mechanism closes this?",
+      "answer": "Network limits",
+      "why": "Once a vault sits inside an enforced perimeter, the perimeter rules override the vault's own public network access setting and the trusted services bypass with it, so the service needs an explicit inbound access rule on the perimeter; private endpoint traffic is the one category exempt from perimeter rules. Permission model is the wrong instinct here because the denial is a perimeter decision made on network and subscription attributes, not on any role the service holds.",
+      "citation": "Learn: Key Vault network security perimeter · outline 1.2"
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+{
+ "services": {
+  "hint": "Ziehe jeden Zweck auf den Dienst, der ihn erfüllt."
+ },
+ "svc-001": {
+  "label": "Erstelle automatisch ein Untertitel und Tags für ein hochgeladenes Produktfoto",
+  "why": "Azure AI Vision's Bild-Analyse-Funktion extrahiert Bildunterschriften, Tags und Objekte direkt aus Bildern."
+ },
+ "svc-002": {
+  "label": "Wandle einen aufgezeichneten Kundensupport-Anruf in ein schriftliches Transkript um",
+  "why": "Azure AI Speech's Sprach-zu-Text-Erkennung konvertiert gesprochenes Audio in Text."
+ },
+ "svc-003": {
+  "label": "Entscheide, ob Hunderte von Produktbewertungen positiv oder negativ sind",
+  "why": "Azure AI Language's Sentiment-Analyse bewertet Text als positiv, negativ, neutral oder gemischt."
+ },
+ "svc-004": {
+  "label": "Übersetze ein eingehendes Support-Ticket von Japanisch zu Englisch",
+  "why": "Azure AI Translator führt Text-Übersetzung über Dutzende von Sprachen in Echtzeit aus."
+ },
+ "svc-005": {
+  "label": "Ziehe den Anbieter-Namen, Rechnungs-Nummer und Gesamtbetrag aus einem gescannten Rechnungs-Bild",
+  "why": "Das vordefinierte Rechnungs-Modell extrahiert deterministisch bekannte Felder aus Standard-Formulartypen wie Rechnungen und Quittungen."
+ },
+ "svc-006": {
+  "label": "Beschreibe die gewünschten Felder in Klarsprache und bekomme strukturierte JSON aus einem Mix von Dokumenten, Fotos und Anruf-Aufzeichnungen zurück",
+  "why": "Content Understanding lässt dich ein Analyzer in natürlicher Sprache definieren und über Multimodal-Eingabe nachdenken, um strukturierte JSON zurückzugeben, anders als Document Intelligence's feste vordefinierte Formulare."
+ },
+ "svc-007": {
+  "label": "Trainiere ein Modell, um einen bestimmten Fehler auf deiner Fabrik-Montage-Zeile zu erkennen",
+  "why": "Custom Vision lässt dich ein Bild-Klassifizierer oder Objekt-Detektor auf deinen eigenen beschrifteten Bildern für ein enges, benutzerdefiniertes Aufgabe trainieren."
+ },
+ "svc-008": {
+  "label": "Überprüfe eine Person-Identität, indem ein Selfie gegen ihr ID-Foto verglichen wird",
+  "why": "Azure AI Face bietet Gesicht-Erkennung, Überprüfung und Lebendigkeits-Überprüfungs-Fähigkeiten für Identitäts-Szenarien."
+ },
+ "svc-009": {
+  "label": "Blockiere automatisch hasserfüllte oder gewalttätige Text, bevor sie App-Nutzer erreichen",
+  "why": "Content Safety analysiert Text und Bilder auf schädlich-Inhalts-Kategorien und Schweregrad, dann flaggt oder blockiert sie."
+ },
+ "svc-010": {
+  "label": "Erkenne einen ungewöhnlichen Spike in einem Sensor's Zeit-Reihen-Ablesungen",
+  "why": "Anomaly Detector wendet Zeit-Reihen-Analyse an, um Datenpunkte zu flaggen, die von erwarteten Mustern abweichen."
+ },
+ "svc-011": {
+  "label": "Lass Mitarbeiter Klarsprache-Suche über Tausende von internen Dokumenten ausführen",
+  "why": "Azure AI Search indiziert und bereichert Inhalte, damit Nutzer sie mit Stichwort- und semantischer Suche abfragen können."
+ },
+ "svc-012": {
+  "label": "Extrahiere Stichwörter, Gesichter und Szenen-Übergänge aus einem hochgeladenen Trainings-Video",
+  "why": "Video Indexer analysiert aufgezeichnetes Video und Audio, um Gesichter, Stichwörter, Themen und Szenen an die Oberfläche zu fördern."
+ },
+ "svc-013": {
+  "label": "Stelle GPT-4o in deinem eigenen Azure-Mandanten bereit, um Kundensuport-Antworten zu entwerfen",
+  "why": "Azure OpenAI Service hostet OpenAI's Modelle, wie GPT-4o, als ein Enterprise-Azure-Ressource mit deiner eigenen Bereitstellung, Quote und Content-Filter."
+ },
+ "svc-014": {
+  "label": "Ein Ort, um ein Modell einzusetzen, einen Agenten zu bauen und ihn zu bewerten, bevor er versendet wird",
+  "why": "Microsoft Foundry ist die einheitliche Plattform, die den Modell-Katalog, Portal, SDK und Agent Service zum Bauen und Einsetzen von KI-Lösungen kombiniert."
+ },
+ "svc-015": {
+  "label": "Gebe ein Modell Datei-Suche, Code-Interpretierer und Funktion-Aufrufs-Werkzeuge, damit es über mehrere Kurven wirken kann",
+  "why": "Foundry Agent Service baut beständige Agenten, die ein Modell, Anleitung, Werkzeuge und Threads für Multi-Schritt, zustandsfähige Aufgaben kombinieren, nicht ein einzeln zustandsloser Chat-Aufruf."
+ },
+ "svc-016": {
+  "label": "Trainiere, Verfolge und Verwalte ein klassisch ML Modell durch ein vollständig Experiment Pipeline",
+  "why": "Azure Machine Learning ist Microsofts gewährte Plattform zum Trainieren traditionell ML Modell, Verfolgung und MLOps, unterschiedlich von Foundry's generativ-KI-Fokus."
+ }
+}

@@ -1,0 +1,57 @@
+{
+ "prompting": {
+  "hint": "Dieses Konzept ändert Anweisungen, Kontext, Sampling, Ausgabebeschränkungen oder Angriffsresistenz zur Anfragetime, ohne das Modell umzutrainieren, es sei denn, der Hinweis sagt explizit anders."
+ },
+ "prompting-01": {
+  "label": "Bricht eine komplexe Aufgabe in explizite kleinere Schritte auf, deren Ausgaben überprüft werden können.",
+  "why": "Bricht eine komplexe Aufgabe in explizite kleinere Schritte auf, deren Ausgaben überprüft werden können."
+ },
+ "prompting-02": {
+  "label": "Bittet ein Modell, eine Aufgabe auszuführen, ohne Beispiele bereitzustellen.",
+  "why": "Bittet ein Modell, eine Aufgabe auszuführen, ohne Beispiele bereitzustellen."
+ },
+ "prompting-03": {
+  "label": "Bietet eine kleine Anzahl von Beispielen zur Anleitung von Verhalten und Ausgabeformat.",
+  "why": "Bietet eine kleine Anzahl von Beispielen zur Anleitung von Verhalten und Ausgabeformat."
+ },
+ "prompting-04": {
+  "label": "Definiert hohe Prioritäts-Anwendungsverhalten, Grenzen, Rolle und Antwortanforderungen.",
+  "why": "Definiert hohe Prioritäts-Anwendungsverhalten, Grenzen, Rolle und Antwortanforderungen."
+ },
+ "prompting-05": {
+  "label": "Eine Texteinheit, die von einem Sprachmodell verarbeitet wird; Token-Zählungen beeinflussen Kontextkapazität, Latenz und Kosten.",
+  "why": "Eine Texteinheit, die von einem Sprachmodell verarbeitet wird; Token-Zählungen beeinflussen Kontextkapazität, Latenz und Kosten."
+ },
+ "prompting-06": {
+  "label": "Die maximale kombinierte Menge an Input- und generierten Tokens, die ein Modell in einer Anfrage verarbeiten kann.",
+  "why": "Die maximale kombinierte Menge an Input- und generierten Tokens, die ein Modell in einer Anfrage verarbeiten kann."
+ },
+ "prompting-07": {
+  "label": "Kontrolliert Sampling-Zufälligkeit; niedrigere Werte begünstigen wiederholbarere Ausgabe und höhere Werte erhöhen Variation.",
+  "why": "Kontrolliert Sampling-Zufälligkeit; niedrigere Werte begünstigen wiederholbarere Ausgabe und höhere Werte erhöhen Variation."
+ },
+ "prompting-08": {
+  "label": "Begrenzt das Sampling auf die kleinste Menge wahrscheinlicher Tokens, deren kumulative Wahrscheinlichkeit einen Schwellen erreicht.",
+  "why": "Begrenzt das Sampling auf die kleinste Menge wahrscheinlicher Tokens, deren kumulative Wahrscheinlichkeit einen Schwellen erreicht."
+ },
+ "prompting-09": {
+  "label": "Begrenzt die Antwortverlängerung zur Kontrolle von Kürzungsrisiko, Latenz und Kosten.",
+  "why": "Begrenzt die Antwortverlängerung zur Kontrolle von Kürzungsrisiko, Latenz und Kosten."
+ },
+ "prompting-10": {
+  "label": "Zwingt eine Antwort zu einem Schema wie JSON, damit Downstream-Software sie validieren und verbrauchen kann.",
+  "why": "Zwingt eine Antwort zu einem Schema wie JSON, damit Downstream-Software sie validieren und verbrauchen kann."
+ },
+ "prompting-11": {
+  "label": "Bösartige Eingabe versucht, Anweisungen zu überschreiben oder ein Modell und seine verbundenen Werkzeuge zu manipulieren.",
+  "why": "Bösartige Eingabe versucht, Anweisungen zu überschreiben oder ein Modell und seine verbundenen Werkzeuge zu manipulieren."
+ },
+ "prompting-12": {
+  "label": "Beschädigte oder gegnerische Trainingsbeispiele manipulieren, was ein Modell lernt.",
+  "why": "Beschädigte oder gegnerische Trainingsbeispiele manipulieren, was ein Modell lernt."
+ },
+ "prompting-13": {
+  "label": "Versuche, Sicherheitsschutzvorrichtungen zu umgehen, um eingeschränkte Inhalte zu generieren.",
+  "why": "Versuche, Sicherheitsschutzvorrichtungen zu umgehen, um eingeschränkte Inhalte zu generieren."
+ }
+}

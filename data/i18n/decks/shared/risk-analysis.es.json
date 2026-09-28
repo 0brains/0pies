@@ -1,0 +1,83 @@
+{
+  "ra-01": {
+    "label": "Cada riesgo se puntúa 1–5 para probabilidad y 1–5 para consecuencia, y el producto decide dónde se sitúa en el registro.",
+    "why": "La cuadrícula de puntuación es el dispositivo de priorización estándar. Su debilidad es que aplana un riesgo raro catastrófico y uno trivial frecuente en la misma celda."
+  },
+  "ra-02": {
+    "label": "Los riesgos se trazan en una cuadrícula rojo/ámbar/verde para que el comité pueda ver de un vistazo cuáles necesitan atención primero.",
+    "why": "El mapa de calor es una herramienta de comunicación construida en los mismos dos ejes. Es para triage, no para entender causalidad."
+  },
+  "ra-03": {
+    "label": "El método es criticado por implicar precisión que no tiene cuando las probabilidades subyacentes son conjeturas.",
+    "why": "Las puntuaciones ordinales multiplicadas juntas producen números que se ven cuantitativos y no lo son. Saber esto es lo que evita que un 12 se trate como el doble de 6."
+  },
+  "ra-04": {
+    "label": "Un único evento superior se coloca en el centro, con rutas de amenaza y barreras preventivas dibujadas a su izquierda y rutas de consecuencia con barreras mitigantes a su derecha.",
+    "why": "La división izquierda/derecha alrededor de un evento es la forma definidora del diagrama, y hace visible la distinción preventiva/mitigante en lugar de asumida."
+  },
+  "ra-05": {
+    "label": "El análisis hace obvio que tres de las cuatro barreras de la izquierda son el mismo control contado tres veces.",
+    "why": "Exponer barreras de modo común es exactamente para lo que el diagrama es bueno. Un registro de controles listados como texto oculta esa dependencia."
+  },
+  "ra-06": {
+    "label": "Los factores de escalación se dibujan contra cada barrera, mostrando las condiciones bajo las cuales esa barrera deja de funcionar.",
+    "why": "Los factores de escalación y sus propios controles son parte del método bowtie. Son cómo el diagrama evita asumir que las barreras siempre son efectivas."
+  },
+  "ra-07": {
+    "label": "Cada componente se examina por turno para los modos en que puede fallar, y cada falla se puntúa para severidad, probabilidad de ocurrencia y probabilidad de detección.",
+    "why": "La puntuación de tres factores que produce un número de prioridad de riesgo es la firma de FMEA. Es de abajo hacia arriba, del componente al efecto."
+  },
+  "ra-08": {
+    "label": "Una falla que es severa pero se detecta confiablemente antes de que llegue a un usuario puntúa más bajo que una que es silenciosa.",
+    "why": "La detectabilidad como un tercer eje explícito es único a FMEA entre estas técnicas, y es por eso que las fallas silenciosas clasifican tan alto — lo que se adapta bien a los modos de falla de ML."
+  },
+  "ra-09": {
+    "label": "El análisis es criticado por manejar mal las combinaciones de fallos simultáneos, ya que considera cada modo de falla por sí solo.",
+    "why": "La orientación de punto único de falla es la limitación conocida de FMEA. Úsalo con una técnica que modele combinaciones, no en lugar de una."
+  },
+  "ra-10": {
+    "label": "Una revisión de incidente concluye que ninguna defensa única falló catastróficamente; cuatro debilidades parciales sucedieron alinearse el día.",
+    "why": "La alineación de agujeros entre capas es la afirmación central del modelo, y es por eso que 'quién cometió el error' es usualmente la pregunta incorrecta primero."
+  },
+  "ra-11": {
+    "label": "El modelo distingue fallos activos en el extremo afilado de condiciones latentes creadas mucho antes por decisiones de diseño y gestión.",
+    "why": "La distinción activo/latente es de Reason, y es lo que dirige la atención a las decisiones que precargaron la falla."
+  },
+  "ra-12": {
+    "label": "El encuadre advierte que agregar otra capa de defensa proporciona menos protección de lo esperado si los agujeros de la nueva capa están en el mismo lugar.",
+    "why": "Las defensas correlacionadas son la trampa. Dos revisores usando la misma lista de verificación defectuosa son una capa, no dos."
+  },
+  "ra-13": {
+    "label": "La evaluación separa daños de asignación, donde se retienen oportunidades o recursos, de daños de representación, donde un grupo es denigrado o borrado.",
+    "why": "La división asignativa/representativa es fundamental, y el daño representativo es el que se cuela en evaluaciones impulsadas por métricas de precisión."
+  },
+  "ra-14": {
+    "label": "La evaluación registra que un sistema funciona mediblemente peor para un grupo aunque ninguna decisión está siendo negada a ellos.",
+    "why": "El daño de calidad de servicio es una categoría distinta. Sin una taxonomía nombrándolo, este hallazgo tiende a ser archivado como un problema de precisión y deprioritizado."
+  },
+  "ra-15": {
+    "label": "El método existe para detener que la evaluación cubra solo los daños que suceden tener una métrica adjunta.",
+    "why": "Enumerar categorías primero, luego buscar medición, es lo que mantiene daños dignarios y sociales en alcance en lugar de fuera de él."
+  },
+  "ra-16": {
+    "label": "El riesgo se evalúa dos veces: una como si ningún control existiera, y una con los controles operando como se diseñó.",
+    "why": "El emparejamiento antes y después es la técnica completa. La diferencia es la base de evidencia para si un control vale su costo."
+  },
+  "ra-17": {
+    "label": "Se encuentra que un control reduce la puntuación casi nada, lo que se convierte en el argumento para removerlo y gastar el esfuerzo en otro lugar.",
+    "why": "Comparar las dos evaluaciones es cómo los controles que existen solo para ser listados se identifican. Un control sin delta es teatro."
+  },
+  "ra-18": {
+    "label": "El registro registra el nivel restante después del tratamiento, y este es el nivel que debe estar dentro del apetito antes de la firma.",
+    "why": "El riesgo residual es lo que es aceptado; el riesgo inherente es solo contexto. Aceptar contra la figura inherente es un error de categoría."
+  },
+  "risk-analysis": {
+    "hint": "Arrastra cada descripción a su técnica. Pregúntate qué es lo que el método está realmente construido para revelar — un ranking, una ruta causal, un modo de falla, o una medición.",
+    "zones[0].def": "Califica probabilidad y consecuencia, traza en una cuadrícula, úsalo para priorizar. Rápido, grueso, y el predeterminado en la mayoría de registros.",
+    "zones[1].def": "Un evento en el medio; causas y barreras preventivas a la izquierda, consecuencias y barreras mitigantes a la derecha.",
+    "zones[2].def": "Trabaja de abajo hacia arriba desde los modos de falla de cada componente a sus efectos, puntuando severidad, ocurrencia y detectabilidad.",
+    "zones[3].def": "El daño ocurre cuando los agujeros en capas sucesivas de defensa se alinean. Explica por qué las explicaciones de causa única de incidentes son usualmente incorrectas.",
+    "zones[4].def": "Enumera categorías de daño — asignativo, representativo, calidad de servicio, dignitario, social — así que la evaluación no está limitada a lo que es fácil de medir.",
+    "zones[5].def": "Evalúa riesgo antes de controles y de nuevo después de ellos. La brecha es lo que los controles realmente están comprando."
+  }
+}

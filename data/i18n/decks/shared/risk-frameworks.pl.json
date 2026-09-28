@@ -1,0 +1,74 @@
+{
+ "rf-01": {
+  "label": "Określa proces ryzyka jako: ustalić zakres i kontekst, zidentyfikować, analizować, oceniać, leczyć, z monitorowaniem i komunikacją w całym.",
+  "why": "To generyczny proces ryzyka każdy inny dokument ryzyka buduje na. Jego słownictwo — prawdopodobieństwo, konsekwencja, leczenie, ryzyko rezydualnym — to co AI-specyficzne dokumenty dziedziczą."
+ },
+ "rf-02": {
+  "label": "Definiuje ryzyko jako efekt niepewności na cele, które mogą być pozytywne, jak również negatywne.",
+  "why": "Górna strona włącz definicja ryzyka to ISO 31000, i dlatego standard mówi o celach, a nie szkodach."
+ },
+ "rf-03": {
+  "label": "Jest celowo agnostyka sektorowa i technologia agnostyka; mówi nic o modelach, danych lub treningu.",
+  "why": "Jego ogólność jest punktem i również jego limit — to dlaczego 23894 istnieje, aby powiedzieć, co zmienia AI."
+ },
+ "rf-04": {
+  "label": "Ramy zarządzania ryzykiem jako zasady, ramy i proces, z zobowiązaniem przywództwa jako pierwszy wymóg ramy.",
+  "why": "Struktura trójczęściowa to organizująca idea ISO 31000. Dokumenty specyficzne dla AI przyjmują to, a nie zastępują."
+ },
+ "rf-05": {
+  "label": "Zawiera wytyczne do zastosowania generycznego procesu ryzyka specjalnie do sztucznej inteligencji, w tym źródła ryzyka specyficzne dla AI.",
+  "why": "23894 to dokument mostka: proces ISO 31000 ze szczególnymi źródłami ryzyka AI i cyklem życia dołączonymi. To wytyczne, nie wymagania."
+ },
+ "rf-06": {
+  "label": "Opisuje, jak działania zarządzania ryzykiem mapują na cykl życia systemu AI, od powstania do emerytury.",
+  "why": "Wytyczne dotyczące ryzyka AI mapowane na cykl życia to wkład 23894. Będąc wytyczną, nie może być poddana audytowi, co jest tam 42001 wchodzą."
+ },
+ "rf-07": {
+  "label": "Oferuje ilustracyjne źródła ryzyka AI — jakość danych, nieprzezroczystość, błąd automatyzacji, niezamierzone użycie — jako pomoc, a nie obowiązkowa lista.",
+  "why": "Katalog źródeł ryzyka AI jest doradczy. Traktowanie go jako listy kontrolnej zgodności nie odczyta status dokumentu."
+ },
+ "rf-08": {
+  "label": "Jest towarzyszem specyficznym dla AI, który wyjaśnia, co się zmienia, gdy rzecz, którą zarządzasz ryzykiem, uczy się z danych.",
+  "why": "To całej dokumentu cel: 31000 do AI. Jeśli oświadczenie dotyczy zastosowania metody ryzyka do AI bez nakładania wymagań, to 23894."
+ },
+ "rf-09": {
+  "label": "Specyfikacje wymagania do ustanowienia, wdrażania, utrzymania i ciągłego doskonalenia systemu zarządzania dla AI.",
+  "why": "'Wymagania do systemu zarządzania' to język standard systemu zarządzania: to certyfikowany, strukturalny jak ISO 27001."
+ },
+ "rf-10": {
+  "label": "Organizacja może być poddana audytowi przez organ certifikacji i wydana certyfikat przed jej.",
+  "why": "Certyfikowalność to pojedynczy czystszy dyskryminator wśród tych czterech. Ani rama NIST ani dokumenty wytycznych ISO mogą być certyfikowane przed sobą."
+ },
+ "rf-11": {
+  "label": "Niesie Annex A kontroli i wymaga oświadczenia zastosowania wyjaśniającego, które są wdrażane.",
+  "why": "Annex A plus oświadczenie o zastosowaniu to wzór systemu zarządzania. To co audytor faktycznie przechodzi."
+ },
+ "rf-12": {
+  "label": "Wymaga polityki AI, zdefiniowanych ról, celów, audytu wewnętrznego i przeglądu zarządzania na cyklu ciągłego doskonalenia.",
+  "why": "Audyt wewnętrzny i przegląd zarządzania to zobowiązania systemu zarządzania. Dokumenty wytycznych zalecają; tylko standard systemu zarządzania wymaga."
+ },
+ "rf-13": {
+  "label": "Organizuje pracę ryzyka w cztery funkcje: Govern, Map, Measure and Manage.",
+  "why": "Cztery funkcje to podpis RMF, z Govern przecinającym inne trzy zamiast poprzedzającymi je."
+ },
+ "rf-14": {
+  "label": "Nazwy siedem charakterystyk godnych zaufania AI, w tym ważne i niezawodne, bezpieczne, bezpieczne i odporne, oraz odpowiedzialne i przejrzyste.",
+  "why": "Siedem charakterystyk godności zaufania to rama NIST. Dokumenty ISO mówią o celach i kontrolach zamiast."
+ },
+ "rf-15": {
+  "label": "Jest wyraźnie dobrowolne, opracowane przez agencję federalną US pod kierunkiem statutowym i towarzyszy mu playbook towarzysz.",
+  "why": "Dobrowolne, US federal, z playbook i profile — żaden z nich nie opisuje standardu ISO."
+ },
+ "rf-16": {
+  "label": "Wspiera profile użytkownika, które dostosowują ramy do konkretnego sektora lub przypadku użytku.",
+  "why": "Profile to jak RMF jest dostosowywany bez certyfikacji. To odpowiedź na 'jak to do nas mamy' w dobrowolnym ramach."
+ },
+ "risk-frameworks": {
+  "hint": "Przeciągnij każdy opis na ramy, do których należy. Zapytaj, jakim typem dokumentu jest: generyczne ryzyko, wytyczne ryzyka specyficzne dla AI, system zarządzania certyfikowalny czy dobrowolny ramy.",
+  "note": "Tylko jeden z tych czterech jest certyfikowalny. Tylko jeden jest US federalny i dobrowolny. Mylenie 'śledz NIST AI RMF' z 'jesteśmy certyfikowani' to błąd ta tablica istnieje, aby zapobiec.",
+  "zones[0].def": "Generyczne zasady zarządzania ryzykiem, ramy i proces. Nie specyficzne dla AI i nie certyfikowalny.",
+  "zones[1].def": "Wytyczne stosujące ISO 31000 do AI. Doradczy: mówi, jak AI ryzyko różni się, nie co certyfikować.",
+  "zones[2].def": "Standard systemu zarządzania AI. Wymagania plus Annex A kontroli, i ten organizacja może być certyfikowana przed.",
+  "zones[3].def": "Dobrowolny ramy US: cztery funkcje, siedem charakterystyk godności zaufania, brak certyfikacji."
+ }
+}

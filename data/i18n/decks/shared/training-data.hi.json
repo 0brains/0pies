@@ -1,0 +1,101 @@
+{
+ "training-data": {
+  "hint": "महत्वपूर्ण अंतर डेटा की भूमिका, प्रारूप या वास्तविक population के लिए fitness है; ये विवरण यह निर्धारित करते हैं कि क्या सीखा जा सकता है और क्या मूल्यांकन trustworthy है।"
+ },
+ "training-data-01": {
+  "label": "डेटा का वह भाग जिसका उपयोग model parameters सीखने के लिए किया जाता है।",
+  "why": "डेटा का वह भाग जिसका उपयोग model parameters सीखने के लिए किया जाता है।"
+ },
+ "training-data-02": {
+  "label": "Development के दौरान उपयोग किया जाने वाला held-out डेटा विकल्पों की तुलना करने और hyperparameters को tune करने के लिए।",
+  "why": "Development के दौरान उपयोग किया जाने वाला held-out डेटा विकल्पों की तुलना करने और hyperparameters को tune करने के लिए।"
+ },
+ "training-data-03": {
+  "label": "Untouched डेटा end पर unseen उदाहरणों पर performance का estimate करने के लिए उपयोग किया जाता है।",
+  "why": "Untouched डेटा end पर unseen उदाहरणों पर performance का estimate करने के लिए उपयोग किया जाता है।"
+ },
+ "training-data-04": {
+  "label": "Examples जिनमें supervised learning के लिए required target answer है।",
+  "why": "Examples जिनमें supervised learning के लिए required target answer है।"
+ },
+ "training-data-05": {
+  "label": "Examples जिनमें target answers नहीं हैं, अक्सर unsupervised या self-supervised learning के लिए उपयोग किए जाते हैं।",
+  "why": "Examples जिनमें target answers नहीं हैं, अक्सर unsupervised या self-supervised learning के लिए उपयोग किए जाते हैं।"
+ },
+ "training-data-06": {
+  "label": "डेटा defined fields, rows, columns या records में organized होता है।",
+  "why": "डेटा defined fields, rows, columns या records में organized होता है।"
+ },
+ "training-data-07": {
+  "label": "Free-form सामग्री जैसे text, images, audio और video।",
+  "why": "Free-form सामग्री जैसे text, images, audio और video।"
+ },
+ "training-data-08": {
+  "label": "Examples जो लोग, conditions और cases को reflect करते हैं जो model use में मिलेंगे।",
+  "why": "Examples जो लोग, conditions और cases को reflect करते हैं जो model use में मिलेंगे।"
+ },
+ "training-data-09": {
+  "label": "Information जो prediction समय पर available नहीं है accidentally training में enter होता है और measured performance को inflate करता है।",
+  "why": "Information जो prediction समय पर available नहीं है accidentally training में enter होता है और measured performance को inflate करता है।"
+ },
+ "training-data-10": {
+  "label": "एक target class दूसरे की तुलना में बहुत अधिक बार दिखाई देता है, जिससे accuracy potentially misleading बन जाता है।",
+  "why": "एक target class दूसरे की तुलना में बहुत अधिक बार दिखाई देता है, जिससे accuracy potentially misleading बन जाता है।"
+ },
+ "training-data-11": {
+  "label": "Raw examples पर ground-truth tags जोड़ना ताकि supervised model के पास सीखने के लिए उत्तर हों।",
+  "why": "Label की गुणवत्ता model की गुणवत्ता की सीमा तय करती है: noisy या असंगत tags model को गलत mapping सिखाते हैं, चाहे डेटा कितना भी हो।"
+ },
+ "training-data-12": {
+  "label": "वह सत्यापित सही उत्तर जिससे training और evaluation के दौरान model की prediction की तुलना की जाती है।",
+  "why": "भरोसेमंद reference उत्तर के बिना न training loss का कोई अर्थ है न evaluation metrics का — दोनों उसी के सापेक्ष मापे जाते हैं।"
+ },
+ "training-data-13": {
+  "label": "मौजूदा examples को बदलकर अतिरिक्त training examples बनाना, जैसे images को flip करना या text को paraphrase करना।",
+  "why": "यह छोटे dataset को बढ़ाता है और हानिरहित variation के प्रति invariance सिखाता है, नया डेटा एकत्र किए बिना overfitting कम करता है।"
+ },
+ "training-data-14": {
+  "label": "कृत्रिम रूप से generate किए गए examples जो तब उपयोग होते हैं जब वास्तविक डेटा दुर्लभ, संवेदनशील या दुर्लभ मामलों से रहित हो।",
+  "why": "यह उन कमियों को भरता है जिन्हें वास्तविक collection नहीं भर सकता — दुर्लभ घटनाएँ, privacy-प्रतिबंधित records — लेकिन अपने generator की मान्यताएँ विरासत में लेता है।"
+ },
+ "training-data-15": {
+  "label": "Minority-class examples को duplicate या generate करके एक skewed dataset को फिर से संतुलित करना।",
+  "why": "यह दुर्लभ class को सीखे जाने लायक वज़न देता है, लेकिन दोहराए गए या synthetic minority examples पर overfitting का जोखिम रहता है।"
+ },
+ "training-data-16": {
+  "label": "कुछ majority-class examples को हटाकर एक skewed dataset को फिर से संतुलित करना।",
+  "why": "यह class के प्रभाव को सस्ते में बराबर करता है, लेकिन इस प्रक्रिया में majority class का वास्तविक signal फेंक देता है।"
+ },
+ "training-data-17": {
+  "label": "एक व्यक्तिगत मापने योग्य input attribute, जैसे उम्र, pixel value या transaction राशि, जिससे model सीखता है।",
+  "why": "Models केवल वही features देखते हैं जो उन्हें दिए जाते हैं; क्या शामिल है और कैसे encode किया गया है, यह तय करता है कि क्या सीखा जा सकता है।"
+ },
+ "training-data-18": {
+  "label": "Training से पहले raw inputs को अधिक जानकारीपूर्ण attributes में बदलना, जैसे ratios, buckets या encodings।",
+  "why": "अच्छे derived features सरल models को pattern पकड़ने देते हैं; खराब features जटिल models को noise से उसे फिर से खोजने पर मजबूर करते हैं।"
+ },
+ "training-data-19": {
+  "label": "यह बदलते रहना कि डेटा का कौन सा हिस्सा hold out किया जाए ताकि हर example training और evaluation दोनों में उपयोग हो।",
+  "why": "कई held-out folds पर औसत लेना single split की तुलना में generalisation का अधिक स्थिर अनुमान देता है, खासकर छोटे datasets पर।"
+ },
+ "training-data-20": {
+  "label": "Training में डेटा उपयोग होने से पहले completeness, accuracy, consistency और freshness की जाँच।",
+  "why": "दोष downstream बहते हैं: अधूरे या असंगत records पर train किया गया model उन दोषों को व्यवहार के रूप में encode करता है।"
+ },
+ "training-data-21": {
+  "label": "व्यवस्थित skew जो तब आता है जब collection की विधि कुछ लोगों या मामलों का पक्ष लेती है।",
+  "why": "Model केवल उन्हीं मामलों के प्रति निष्पक्ष हो सकता है जो उसने देखे हैं; skewed collection से skewed predictions मिलती हैं, algorithm चाहे कितना भी अच्छा हो।"
+ },
+ "training-data-22": {
+  "label": "एक चरम या असामान्य example जो बाकी डेटा के pattern से बहुत दूर होता है।",
+  "why": "मुट्ठी भर चरम बिंदु parameters और scaling को खींच सकते हैं; यह तय करना कि वे त्रुटियाँ हैं या वास्तविक मामले, model को बदल देता है।"
+ },
+ "training-data-23": {
+  "label": "एक क्रम-सचेत split जिसमें model पहले की अवधियों पर train होता है और बाद की अवधियों पर evaluate किया जाता है।",
+  "why": "Time series को shuffle करने से model भविष्य में झाँक लेता है और scores बढ़ जाते हैं; ईमानदार evaluation को आगमन के क्रम का सम्मान करना चाहिए।"
+ },
+ "training-data-24": {
+  "label": "एक ऐसा split जो हर subset के class अनुपात को पूरे dataset के समान रखता है।",
+  "why": "असंतुलित डेटा के random splits किसी fold को दुर्लभ class से पूरी तरह वंचित कर सकते हैं; stratify करने से हर evaluation प्रतिनिधि बना रहता है।"
+ }
+}

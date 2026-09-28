@@ -1,0 +1,106 @@
+{
+  "pd-001": {
+    "label": "Tu as besoin d'une sortie cohérente et reproductible de la même requête à chaque exécution",
+    "why": "L'indice exact de l'examen de histack : « sortie cohérente, reproductible » → température basse. Il redimensionne toute la distribution de probabilité ; règle-la ou top_p, pas les deux."
+  },
+  "pd-002": {
+    "label": "Limite l'échantillonnage au plus petit ensemble de jetons dont la probabilité cumulée atteint un seuil défini",
+    "why": "Échantillonnage noyau — top_p tronque l'ensemble de candidats, tandis que la température remodèle toute la distribution (paire confuse de corpus n°5)."
+  },
+  "pd-003": {
+    "label": "Les réponses continuent à se couper à mi-phrase — tu as besoin de réponses complètes",
+    "why": "max_tokens plafonne uniquement la longueur de sortie — le piège de paramètre le plus fréquent de l'examen est de l'offrir comme contrôle d'aléatoire (paire n°4)."
+  },
+  "pd-004": {
+    "label": "Le modèle continue de répéter une phrase ; pénalise les jetons proportionnellement à la fréquence de leur apparition",
+    "why": "La pénalité de fréquence s'adapte au nombre de répétitions (répétition) ; la pénalité de présence tire une fois qu'un jeton a apparaissait du tout (nouveauté de sujet) — paire de corpus n°6."
+  },
+  "pd-005": {
+    "label": "Les images marketing générées semblent rugueuses — demande la tranche de fidélité de rendu plus élevée",
+    "why": "La charge utile de gpt-image-1 prend prompt, size, quality (y compris la valeur piège « high ») et n — la qualité contrôle la fidélité, la taille contrôle les dimensions."
+  },
+  "pd-006": {
+    "label": "Voir la progression de l'image plus tôt pendant qu'une grande génération s'affiche",
+    "why": "Streaming partial_images sur le chemin images/generations retourne la sortie progressive — la tige « voir la progression de l'image plus tôt » de l'examen verbatim."
+  },
+  "pd-007": {
+    "label": "Le bouton d'aléatoire qui remodèle toute la distribution de probabilité de jeton avant l'échantillonnage, pas seulement la tranche supérieure",
+    "why": "La température met à l'échelle les logits dans toute la distribution ; top_p remodèle à la place par masse de probabilité cumulée — même intuition « créativité », mécanisme différent."
+  },
+  "pd-008": {
+    "label": "L'équipe veut que le modèle ne considère jamais que la tranche la plus probable de candidats de prochain jeton, coupant la queue longue",
+    "why": "L'échantillonnage noyau (top_p) limite les candidats à une tranche de probabilité cumulée ; la température remodèle les probabilités mais ne supprime jamais les candidats complètement."
+  },
+  "pd-009": {
+    "label": "Un plafond dur sur le nombre de jetons qu'une seule réponse peut générer, peu importe ce qu'il dit",
+    "why": "max_tokens est un plafond de longueur appliqué pendant la génération ; une séquence d'arrêt arrête plutôt la génération tôt uniquement quand une chaîne spécifique apparaît — déclencheur différent, même objectif « sortie plus courte »."
+  },
+  "pd-010": {
+    "label": "Dissuade le modèle de réutiliser le même mot ou phrase plusieurs fois — plus il répète, plus la riposte est dure",
+    "why": "La pénalité de fréquence s'adapte à la fréquence d'apparition d'un jeton ; la pénalité de présence applique une pénalité fixe dès qu'un jeton apparaît une fois — proportionnel au nombre vs binaire."
+  },
+  "pd-011": {
+    "label": "La transcription de chat ne revisit jamais les sujets antérieurs — le modèle dérive toujours vers de nouveaux sujets au lieu de revenir à ce qu'il couvrait déjà",
+    "why": "Une pénalité de présence élevée tire l'instant qu'un jeton a apparaissait une fois, poussant le modèle vers de nouveaux sujets ; la pénalité de fréquence s'adapte au nombre de répétitions et freine principalement la répétition littérale, non la dérive de sujet."
+  },
+  "pd-012": {
+    "label": "Applique la même pénalité fixe à tout jeton qui a montré en tout dans la réponse jusqu'à présent, peu importe combien de fois",
+    "why": "La pénalité de présence est binaire par jeton (apparu ou non) ; la pénalité de fréquence croît à la place avec le nombre de répétitions — la distinction de paire confuse de l'examen entre les deux paramètres de pénalité."
+  },
+  "pd-013": {
+    "label": "La génération doit s'arrêter l'instant où le modèle écrit une chaîne de marqueur spécifique, sans attendre d'atteindre le plafond de longueur",
+    "why": "Une séquence d'arrêt est un déclencheur de chaîne littérale qui arrête la génération tôt ; max_tokens applique uniquement un plafond de longueur et n'a aucune conscience du texte spécifique."
+  },
+  "pd-014": {
+    "label": "Un texte spécifique que le modèle est dit de traiter comme un marqueur de fin, afin que la sortie s'arrête l'instant où ce texte est produit",
+    "why": "Les séquences d'arrêt se déclenchent sur la correspondance du contenu de texte ; ni max_tokens ni la pénalité de fréquence n'inspectent le texte généré lui-même — l'un compte les jetons, l'autre compte les répétitions."
+  },
+  "pd-015": {
+    "label": "La latence doit rester prévisible à volume de demande élevé et soutenu, et l'équipe va bien en payant le coût horaire réservé pour le garantir",
+    "why": "Le débit approvisionné (PTU) réserve la capacité dédiée pour une latence prévisible à grande échelle ; le déploiement standard est à la carte avec débit variable sous charge, et la capacité (TPM) est seulement le cadran de quota, pas le type de déploiement lui-même."
+  },
+  "pd-016": {
+    "label": "Capacité de modèle réservée et dédiée achetée à l'avance afin que le débit ne fluctue pas avec le trafic des locataires partagés",
+    "why": "PTU est le modèle de déploiement à capacité réservée ; Standard partage la capacité et facture par jeton avec débit variable, tandis que la capacité (TPM) définit simplement le quota sur le type de déploiement choisi."
+  },
+  "pd-017": {
+    "label": "Le trafic vers l'application de support client est imprévisible et en rafales, et l'équipe veut la facturation à la carte au lieu de la capacité horaire réservée",
+    "why": "La tarification à la carte sous charge variable est le déploiement standard (le scénario exact de l'examen) ; PTU facture plutôt à l'heure pour la capacité réservée quel que soit l'usage réel."
+  },
+  "pd-018": {
+    "label": "Les factures par jeton consommé plutôt que par heure de calcul réservé, avec un débit qui peut varier sous charge partagée",
+    "why": "Standard est la facturation basée sur la consommation avec débit variable ; PTU échange cette variabilité pour une réservation horaire fixe, et la capacité (TPM) est le paramètre de quota en couches sur l'un ou l'autre modèle."
+  },
+  "pd-019": {
+    "label": "Un déploiement continue à atteindre l'étranglement sous charge de pointe, l'équipe déplace donc le quota de débit de rechange d'un autre déploiement sous-utilisé",
+    "why": "Le quota de débit par déploiement peut être réaffecté entre les déploiements (le scénario documenté de l'examen) ; PTU et Standard décrivent le modèle de facturation/réservation du déploiement, pas son cadran de quota."
+  },
+  "pd-020": {
+    "label": "Le cadran qui définit une limite supérieure au débit total qu'un déploiement peut traiter chaque minute, indépendamment de la longueur d'une seule réponse",
+    "why": "La capacité (TPM) étouffe au niveau du déploiement sur tous les tokens de demande mesurés par minute ; max_tokens plafonne la longueur d'une seule réponse et n'a rien à voir avec la limitation du débit."
+  },
+  "pd-021": {
+    "label": "La demande d'image bannière continue de retourner un petit carré quand la disposition a besoin d'un canevas rectangular large",
+    "why": "la taille définit les dimensions en pixels (p. ex. un format large au lieu de 1024x1024) ; la qualité contrôle la fidélité du rendu et n contrôle le nombre d'images — ni l'un ni l'autre ne change la forme du canevas."
+  },
+  "pd-022": {
+    "label": "Le champ de demande qui définit les dimensions en pixels de l'image générée, par exemple 1024×1024",
+    "why": "la taille est le champ dimensions dans la charge utile images/generations ; la qualité régit plutôt la fidélité du rendu, et partial_images contrôle la transmission progressive, pas les dimensions finales du canevas."
+  },
+  "pd-023": {
+    "label": "Le champ qui accepte la tranche de fidélité « high » afin que les détails fins se rendent plus nettement, séparé de la taille de l'image",
+    "why": "qualité (y compris la valeur piège documentée « high ») contrôle la fidélité du rendu ; la taille contrôle les dimensions et n contrôle le nombre d'images que le retour obtient — trois cadrans indépendants sur la même demande."
+  },
+  "pd-024": {
+    "label": "Une requête doit retourner quatre variations d'image séparées pour choisir entre, dans une seule demande",
+    "why": "n définit le nombre d'images que la demande retourne (p. ex. n=4) ; la taille et la qualité façonnent chaque image individuelle mais ne changent pas le nombre de retours."
+  },
+  "pd-025": {
+    "label": "Le paramètre qui définit le nombre de variations d'image qu'un seul appel images/generations retourne",
+    "why": "n est le champ de nombre d'images ; partial_images envoie plutôt les aperçus progressifs d'une seule image pendant le rendu, et la taille ne définit que les dimensions de cette image."
+  },
+  "pd-026": {
+    "label": "Combiné avec la transmission, ce champ définit le nombre de cadres d'aperçu progressif envoyés avant la fin de l'image finale",
+    "why": "partial_images (utilisé avec stream=True) définit le nombre de cadres d'aperçu progressif pendant le rendu ; n définit plutôt le nombre d'images finales séparées retournées, et la qualité définit la fidélité, pas la cadence d'aperçu."
+  }
+}

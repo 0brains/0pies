@@ -1,0 +1,43 @@
+{
+ "iv-rl-01": {
+  "prompt": "Ordne die Schritte zum verantwortungsvoll Zurücktreten ein live KI-System.",
+  "steps[0].label": "Beurteile Abhängigkeiten + Fallback-Optionen",
+  "steps[0].detail": "Bevor irgendetwas Live berührend, Karte das, das vom System abhängt — Vorgelagert-Daten-Zuführungen, Nachgelagert-Prozesse, andere Teams' Workflows — und bestätigen ein Fallback existiert daher Pensionierung nicht ein Ausfall schafft (SG).",
+  "steps[1].label": "Benachrichtige Stakeholder + Plan kontrolliert Deactivation",
+  "steps[1].detail": "Das erste Schritt in ein getrieben Pensionierung ist die Leute betroffend zu sagen und ein Deactivation-Plan zu bauen, nicht einfach Schalten einen Schalter um (SG).",
+  "steps[2].label": "Absolvierte Deactivation mit Human-Backup",
+  "steps[2].detail": "Für kritische Infrastruktur, Wind unten in Stadien, anstatt alles auf eins, mit ein Mensch-Lauf Fallback, daß die Lücke erfasst — die gleiche Disziplin genutzt für kritisch Systeme allgemein.",
+  "steps[3].label": "Archiv, nicht Lösch, für rechtlich/Audit",
+  "steps[3].detail": "Bewahre das zurückgetreten System's Daten, Modelle und Protokolle, anstatt sie zu löschen — Regulatoren und Auditoren möglichkeit müssen rekonstruieren das, das System tat und warum, lange nachdem es Stopps läuft (SG).",
+  "steps[4].label": "Aufzeichnung, wie ein Black-Box-Untersuchung, mit benannt Entscheidungs-Macher",
+  "steps[4].detail": "Protokoll der genau Auslöser, Wer genehmigt die Stilllegung, und Pensionierung-Rationalität in der gleich Beweismittel-Stil wie ein Zwischenfall-Untersuchung — ein einzeln auditable Quelle-Wahrheit Benennung wer der Autorität hatte handeln (SG)."
+ },
+ "iv-rl-02": {
+  "prompt": "Ordne die Antwort zu ein live KI-Zwischenfall von zuerst Erkennend bis Abschließend die Schleife.",
+  "steps[0].label": "Erkenne",
+  "steps[0].detail": "Ein Alarm, eine Überwachungs-Signal, oder ein Beschwerde-Oberfläche, daß das etwas ist Falsch — dies fängt die Uhr an alles, daß folgt.",
+  "steps[1].label": "Enthalten / Quarantäne zuerst",
+  "steps[1].detail": "Bevor Untersuchungs-Ursachen oder Entwurf-Mitteilungen, Stoppt Schaden-Ausbreitung: Quarantäne das Modell und Benachrichtige rechtlich/Überprüfung sofort. Enthalten schlägt Untersuchung, Erholung oder Kommunikation als die sehr nächste Bewegung — springend gerade zu Root-Cause-Analyse während das System Stopps Schaden verursachen ist der aufgezeichnet Examen-Falle.",
+  "steps[2].label": "Benachrichtige rechtlich/Überprüfung (+72-Stunden-Durchsatz-Uhr wo persönlich Daten)",
+  "steps[2].detail": "Wo der Zwischenfall persönlich Daten beinhaltet, ein DSGVO-Kontrolleur muß die Aufsichts-Autorität innerhalb von 72 Stunden von zuerst bewusst der Durchsatz benachrichtigen — Zwischenfall-Antwort und Benachrichtigungs-Verfahren müssen gebaut werden, um jene Deadline zu treffen, nicht behandelt als ein technisch Nachdenken (SG).",
+  "steps[3].label": "Root-Cause (Fünf Warum's / Fehler-Baum)",
+  "steps[3].detail": "Nutze ein formell Analyse-Rahmen — die 'Fünf Warum's' Methode oder Fehler-Baum-Analyse — zum Bohren unten zum zugrundeliegend Ursache, anstatt am oberflächlich-Ebene Symptom zu stoppen (SG).",
+  "steps[4].label": "CAPA",
+  "steps[4].detail": "Aufzeichnung-Korrigierend und Präventiv-Handlungen in ein zentral System mit zugeordnend Besitzer, Termin-Frist und Verifikations-Schritte, daher die Root-Grund ist tatsächlich geschlossen, nicht nur diagnostiziert.",
+  "steps[5].label": "Schuldlos Retrospektiv + Proaktiv Enthüllung mit Lektionen Erlernt",
+  "steps[5].detail": "Laufe ein Cross-Funktional, schuldlos Überprüfung von das, was geschah und warum, und proaktiv enthülle technisch Details und Lektionen erlernt, anstatt zu warten zu sein gefragt — dies ist das, was ein gepatchtes Symptom zu ein dokumentiert, verteidigende Verbesserung dreht."
+ },
+ "iv-rl-03": {
+  "prompt": "Ordne die Schritte zum sicher Bringen ein Deactivated-System zurück Online.",
+  "steps[0].label": "Verifiziere die Reparatur",
+  "steps[0].detail": "Bestätigen der spezifisch Defekt, daß die Deactivation ausgelöst hat, tatsächlich worden korrigiert bevor alles sonst Fortschritte — Wiederaufnahme hängt von Reparaturen ab, daß verifiziert werden, nicht einfach versucht (SG).",
+  "steps[1].label": "Re-Testung mit Erste-Freigabe-Strenge",
+  "steps[1].detail": "Setze die repariert System durch die gleich voll Test, daß es vor seiner ursprünglich Start — Leistung, Robustheit, Sicherheit, Fairness — Neutest bestätigt Sicherheit und Überprüfung von Kratzer, es erhalten nicht ein Abkürzung weil das System hat vor gelaufen (SG).",
+  "steps[2].label": "Cross-Funktional-Genehmigung",
+  "steps[2].detail": "Das System wiederaufgenommen nur, einmal Cross-Funktional-Teams — nicht ein einzeln Ingenieur oder Team-Führung — genehmigen den Neustart, Abschließend die Schleife, daß angefangen mit benannt Entscheidungs-Macher die Stilllegung genehmigend.",
+  "steps[3].label": "Stufenweise Kanarienvogel/Blau-Grün Re-Rollout hinter Feature-Flaggen",
+  "steps[3].detail": "Bringt das System schrittweise zurück — ein Kanarienvogel-Freigabe oder Blau-Grün-Bereitstellung geportet von Feature-Flaggen — daher Aussetzung kann instant dialed zurück wenn das Problem wiederauftaucht, anstatt jeder Nutzer flipping zurück auf eins (SG).",
+  "steps[4].label": "Erhöhte Überwachungs-Fenster",
+  "steps[4].detail": "Beobachte das neugestartet System mehr eng als Bestand-Zustand Betrieb für ein definierten Fenster nachdem, daher ein Wiederholung ist erfasst sofort, anstatt bei die nächst geplante Überprüfung."
+ }
+}

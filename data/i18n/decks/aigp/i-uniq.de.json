@@ -1,0 +1,110 @@
+{
+ "i-uniq": {
+  "hint": "Frage, was genau fehlschlägt: Kann ein Mensch nicht rein sehen (Opazität) oder nicht die Struktur folgen, selbst mit vollständigem Zugang (Komplexität)? Hat das System ohne gefragt zu werden gehandelt (Autonomie) oder ist eine Aufgabe, die eine Person von Hand machte, einfach ins System verschwunden (Automatisierung)? Hat sich das System nach dem Lernen verändert (Anpassungsfähigkeit) oder war der Fehler in das eingeprägt, was es gelernt hat (Datenabhängigkeit)? Gab das gleiche Input ein anderes Antwort (Probabilistische Outputs) oder verbreitete sich ein kleiner Fehler schneller als jeder fangen konnte (Geschwindigkeit & Skala)?",
+  "note": "Das ist die kanonische acht-Punkte-Roster der Prüfung. Acht feste Zonen bedeutet, dass die meisten Sechs-Karten-Deals eine oder zwei Zonen leer hinterlassen – erwartet, kein Fehler. Automatisierung und Autonomie sind das Paar, über das es sich am meisten lohnt, zu verlangsamen: Automatisierung ist darüber, wessen Hände die Arbeit machten (Aufgabe-Ersatz, Überabhängigkeit, Arbeitskraft-Störung); Autonomie ist darüber, wer die Entscheidung trifft (unabhängige Entscheidungen ohne menschliche Genehmigung).",
+  "zones[0].def": "Interne Logik, die nicht gesehen oder erklärt werden kann, selbst von den Menschen, die sie gebaut haben – ein Sichtbarkeitsfehler. Unterschiedlich von Komplexität: Opazität ist darüber, was aus der Sicht versteckt ist, nicht darüber, wie intricate die Struktur ist.",
+  "zones[1].def": "Das System entscheidet und handelt auf eigene Faust, ohne dass ein Mensch diese spezifische Aktion genehmigt – ein Unabhängigkeits-Handlungsrisiko. Unterschiedlich von Automatisierung: Autonomie ist darüber, wer die Entscheidung trifft, nicht wessen Hände die Arbeit machten.",
+  "zones[2].def": "Kontinuierliches Lernen und Umschulung können ein System von seinen ursprünglichen Zielen abdriften lassen oder es still Fähigkeiten verlieren lassen, die es bereits hatte.",
+  "zones[3].def": "KI übernimmt Aufgaben und Entscheidungen, die eine Person von Hand tätigen sollte, in einer Skala, die kein menschliches Team erreichen könnte – Überabhängigkeits- und Arbeitskraft-Störungsrisiken erhoben, die vom eigenen unabhängigen Urteil des Systems unterschiedlich sind.",
+  "zones[4].def": "Performance ist nur so gut wie die Trainingsdaten dahinter – spröde gegen Lücken, Verschiebungen und Fehler, die von dem, was das System gelernt hat, geerbt werden.",
+  "zones[5].def": "KI handelt weit schneller und über weit mehr Instanzen hinweg, als Menschen in Echtzeit überprüfen können, also kann ein kleiner Fehler ein massiver werden, bevor jemand bemerkt.",
+  "zones[6].def": "Ergebnisse werden aus einer Verteilung möglicher Antworten gezogen statt aus festen Regeln, so dass die gleiche Eingabe jedes Mal einen anderen Output ergeben kann.",
+  "zones[7].def": "So viele wechselwirkende Schichten und Parameter, dass selbst Entwickler den Entscheidungsweg nicht verfolgen können – ein struktureller Fehler. Unterschiedlich von Opazität: Komplexität ist darüber, wie intricate die Struktur ist, nicht darüber, was aus der Sicht versteckt ist."
+ },
+ "i-uq-01": {
+  "label": "Eine Bank kann dem Regulierer nicht sagen, warum sein neuronales Netzwerk diesen Kreditantragsteller abgelehnt hat.",
+  "why": "Keine Sicht in die Modell-interne Logik – unterschiedlich von Komplexität, die eine Struktur ist, die zu intricate um zu folgen, nicht eine Unfähigkeit zu sehen rein überhaupt."
+ },
+ "i-uq-02": {
+  "label": "Ein Senior Manager warnt, dass wenn das Lagerbestands-Modell einen teuren Fehler macht, niemand danach erklären kann, warum es passiert ist.",
+  "why": "Die Beschwerde ist, dass der Grund verborgen ist, nicht dass das Modell strukturell intricate ist – die gleiche Black-Box-Lücke, die diese Zone verfolgt, nicht die strukturelle von Komplexität."
+ },
+ "i-uq-03": {
+  "label": "Ein Content-Moderator entfernt einen Beitrag unter Regeln, die nie veröffentlicht wurden, und der Poster hat keine Möglichkeit herauszufinden, welche Regel angewendet wurde.",
+  "why": "Regeln, die existieren aber nie den betroffenen Menschen angezeigt werden ist der definierende Fehler dieser Zone – verborgener Grund, nicht eine Struktur zu intricate um zu folgen."
+ },
+ "i-uq-04": {
+  "label": "Ein autonomes Auto navigiert dichtem urbanen Verkehr und macht jeden Lenk-, Brems- und Routing-Anruf selbst, ohne dass jemand zum Eingreifen bereit ist.",
+  "why": "Hohe Unabhängigkeit der Aktion gekoppelt mit hohem möglichem Schaden ist diese Zones charakteristische Paarung – unterschiedlich von Automatisierung, die darüber ist, wessen Hände die Arbeit machten, nicht wer die Entscheidung trifft."
+ },
+ "i-uq-05": {
+  "label": "Ein Handels-Bot kauft und verkauft Anteile in Millisekunden; keine Person bestätigt einen einzelnen Handel vor seiner Ausführung.",
+  "why": "Unabhängigkeit der Aktion – entscheiden und handeln, ohne auf menschliche Genehmigung zu warten – ist das, was diese Zone verfolgt, unabhängig davon ob der Handel auch schnell passiert. Unterschiedlich von Automatisierung, die darüber ist, ob eine Person Trades von Hand platziert hat überhaupt, nicht darüber wer jedem signiert."
+ },
+ "i-uq-06": {
+  "label": "Ein Recruiting-Werkzeug gescreente Lebensläufe und verschiebe Kandidaten zu Interviews oder Ablehnung ohne einen Recruiter jemals den Anruf überprüft.",
+  "why": "Die Sorge ist, dass eine Entscheidung ohne menschliche Genehmigung raus ist – ein Kontroll- und Verantwortungslücke, nicht das Verschwinden einer Aufgabe, die eine Person von Hand machte (das ist die Automatisierungs-Seite dieses Paares)."
+ },
+ "i-uq-07": {
+  "label": "Nachdem der Empfehler auf dem neuen Produktkatalog umgeschult wird, verliert er still Fähigkeiten, die er hatte, wie das Kennzeichnen doppelter Auflistungen.",
+  "why": "Das ist katastrophales Vergessen – die Risiko-Multiplikator-Version eines Systems, das von seinen ursprünglichen Fähigkeiten abdriftet, jedes Mal wenn es von neuen Daten erneut lernt; ein echtes Risiko, aber nie eine Zone von allein."
+ },
+ "i-uq-08": {
+  "label": "Das Betrugserkennung-System einer Bank trainiert sich selbst auf neuesten Transaktionen und beginnt, große Mengen legitimer Käufe zu blockieren.",
+  "why": "Abdriften weg von dem ursprünglichen Ziel nach Umschulung – die Governance-Antwort ist Überwachung, Vor-Bereitstellungs-Testung von Updates und Abdrift-Verfolgung, nicht eine einmalige Überprüfung vor Starten."
+ },
+ "i-uq-09": {
+  "label": "Sechs Monate nach dem Starten haben sich die Vorschläge eines Dosierungs-Empfehlungs-Werkzeugs still verschoben, weil es auf Krankenhausdaten mit Beschriftungsfehlern umgeschult wurde.",
+  "why": "Verhalten, das sich nach Umschulung oder neuer Datenverlagerung verändert, ist diese Zones Zeichen; die Reparatur ist kontinuierliche Überwachung, Abdrift-Detektion und Genehmigungstore vor einem aktualisierten Modell gehen Live."
+ },
+ "i-uq-10": {
+  "label": "Ein Call-Center-Ticket-Triage, früher von einer Person durchgefürt, die jeden Request las, wird jetzt von Anfang bis Ende vom System gelöst, ohne dass jemand die Warteschlange anfasst.",
+  "why": "Das ist die Arbeitsplatz-Ersatz-Achse – eine Aufgabe, die eine Person von Hand ausgeführt, wird jetzt vom System in Volumen ausgeführt. Unterschiedlich von Autonomie, die darüber ist, wer die Entscheidung trifft, nicht wessen Hände die Arbeit machen."
+ },
+ "i-uq-11": {
+  "label": "Weitverbreitet Rollout eines Kundendienst-Werkzeugs entfernt die Notwendigkeit der meisten Call-Center-Mitarbeiter, was den lokalen Jobmarkt unstabil macht.",
+  "why": "Arbeitskraft und wirtschaftliche Störung vom Ersetzen von menschlicher Arbeit ist diese Zones gesellschaftliche Kosten – ein Governance-Anliegen unterschiedlich von Autonomies Kontroll-und Verantwortungs-Framing."
+ },
+ "i-uq-12": {
+  "label": "Nachdem das Anspruch-System Tausende Fälle in einer Reihe richtig gelöst hat, stoppen Prüfer das Doppel-Überprüfung ihrer gekennzeichneten Ablehnungen und fangen an, Was es empfiehlt zu genehmigen.",
+  "why": "Überabhängigkeit auf das, was das System produziert – Gummistempel statt Kritische Überprüfung – ist das Governance-Risiko, das diese Zone existiert zu fangen; es ist eine menschliche Antwort auf Aufgabe-Ersatz, nicht auf die eigene unabhängige Entscheidungsfindung des Systems, die Autonomies Risiko ist."
+ },
+ "i-uq-13": {
+  "label": "Ein Stimmungs-Modell, das öffentliche Meinung während des Trainings genau vorhersagte, geht wild aus in einem großen Ereignis, das die Trainingsdaten nie erfasst.",
+  "why": "Sprödheit, wenn die Welt sich von dem abdriftet, was die Trainingsdaten erfasst, ist diese Zones Kern-Fehler – das Modell ist nur so gut wie das, was es gelernt hat."
+ },
+ "i-uq-14": {
+  "label": "Ein Hauttyp-Prädiktor lernt größtenteils von helleren Hauttönen in seine Trainingsfotos und gibt ungenaue Ratschläge zu jedem anderen.",
+  "why": "Das Modell ist so gut wie die Bevölkerung, die in seine Trainingsdaten vertreten – ein Abfall in das, was es gelernt hat, nicht ein strukturelles oder Sichtbarkeitsproblem."
+ },
+ "i-uq-15": {
+  "label": "Ein Kreditbewertungs-Modell lehnt Darlehen an Immigranten bei höheren Quoten als anderen mit identischen finanziellen Profilen ab.",
+  "why": "Die Trainingsdaten trugen historiese Diskriminierung vor, und das Modell reproduzierte es – der systematischste Fehler-Modus dieser Zone, weil das Reparieren des Modells ohne das Reparieren der Daten die Wurzelursache unberührt lässt."
+ },
+ "i-uq-16": {
+  "label": "Ein Preisfehler auf einen Produktauflistung repliziert sich über Millionen Seiten, bevor ein Mensch bemerkt.",
+  "why": "Ein winziger Fehler, vervielfacht bei Machine-Geschwindigkeit und Volumen, outraces menschliche Überprüfung und behördliche Antwort bevor jeder eingreifen kann – der charakteristische Fehler dieser Zones."
+ },
+ "i-uq-17": {
+  "label": "Überwachungskameras verarbeiten sofort einen gesamten Stadt-Echtzeit-Video-Fluss, kennzeichnend Tausende ‚ungewöhnliche Aktivitäten' pro Minute.",
+  "why": "Volumen und Geschwindigkeit jenseits dessen, was jeder menschliche Überprüfer mithalten könnte, ist das, was dieses Zones Risiko anders macht von einem System, das lediglich schlecht denkt – das Problem ist Durchsatz, nicht Logik."
+ },
+ "i-uq-18": {
+  "label": "Ein Krankenhaus-Patienten-Verschlechterungs-Werkzeug läuft kontinuierliche hochvolumige Prognosen über jede Station, und eine einzige Kalibrierabweichung schneeballt sich in einen systemweiten Alarm-Sturm innerhalb von Stunden.",
+  "why": "Schnell, hochvolumigu Output wendet einen kleinen Kalibrierabweichung in ein systemweites Problem bevor Personal fangen kann – Durchsatz ist der Risiko-Multiplikator hier, nicht die unterliegende Logik."
+ },
+ "i-uq-19": {
+  "label": "Die gleiche Frage bekommt eine andere Investitions-Empfehlung an aufeinanderfolgenden Tagen, mit nichts anders über den Request verändert.",
+  "why": "Outputs beprobt von einer gewichteten Ausbreitng möglicher Antworten statt eine feste Regel erschwert, eine definitive Erklärung für ein spezifisches Resultat zu geben – aber das bedeutet nicht, dass Audits unmöglich sind, ein aufgezeichnete Falschantwort."
+ },
+ "i-uq-20": {
+  "label": "Ein System auf einer Kasse-Seite berechnet immer die gleiche Umsatzsteuer für die gleiche Bestellung; ein zweites System auf der gleichen Seite empfiehlt geringfügig verschiedene Produkte jedes Mal, wenn die Seite nachlädt.",
+  "why": "Der Steuer-Motor ist deterministisch – immer die gleiche Output für die gleiche Input – während der Empfehler von einer gewichteten Ausbreitung möglicher Outputs zeichnet jedes Mal; nur das zweite Verhalten gehört zu dieser Zone."
+ },
+ "i-uq-21": {
+  "label": "Ein Chatbot, der die gleiche Dessert-Frage drei getrennte Zeiten gefragt wird, gibt drei verschiedene Antworten, jeweils eine von einer gewichteten Liste plausibel Optionen gezogen.",
+  "why": "Entnahme von einer gewichteten Ausbreitung möglicher Antworten statt folgende ein rigoroses Pfad ist genau das, was diese Zone regiert – die Reparatur ist Konfidenz-Kalibrierung und Erwartungen-Setzen, nicht jede Antwort behandeln als die feste Wahrheit."
+ },
+ "i-uq-22": {
+  "label": "Überprüfer geben zu, dass sie nicht mehr verfolgen können, welche des Modells Millionen Parameter wechselwirkend tatsächlich ein spezifisches Entscheidung trieb.",
+  "why": "Das ist darüber interne Struktur – zu viele Schichten und Parameter zu folgen – nicht darüber ob der Grund aus der Sicht verborgen; das ist die Grenze mit Opazität, die ein Sichtbarkeitsproblem, nicht ein strukturelles ist."
+ },
+ "i-uq-23": {
+  "label": "Ein Vertrag-Analyse-Modell muss Legale Sprache und Anforderungen wiegen, die sich über einem Dutzend Gerichtsbarkeiten auf einmal unterscheiden, und keine einzelne Überprüfer kann die ganze Logik in ihren Kopf halten.",
+  "why": "Strukturelle Intricatheit – zu viele wechselwirkende Faktoren zum Ende-Enden verfolgen – ist das, was diese Zone definiert, unterschiedlich von einem Modell, das einfach seinen Grund anzeigt überhaupt nicht."
+ },
+ "i-uq-24": {
+  "label": "Ein Lieferungs-Routing-Modell Optimierungs-Logik ist so intricate geworden, dass Ingenieure nicht mehr troubleshoot können warum es ein Route über eine andere wählte.",
+  "why": "Intricatheit, die sogar die Menschen besiegt, die es bauten, ist der strukturelle Fehler diese Zone verfolgt – der Twin von Opazitäts Sichtbarkeitsfehler, explizit gesagt, so die zwei sind nie verwirrt."
+ }
+}

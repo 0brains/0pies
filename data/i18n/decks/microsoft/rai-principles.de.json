@@ -1,0 +1,132 @@
+{
+ "rai-001": {
+  "label": "Ein Kreditmodell lehnt Bewerber aus einer Nachbarschaft deutlich häufiger ab",
+  "why": "Verzerrte Ergebnisse zwischen demografischen Gruppen ist das klassische Fairness-Szenario — gemindert durch Fairness-Bewertungen und ausgewogene, repräsentative Trainingsdaten."
+ },
+ "rai-002": {
+  "label": "Ein Chatbot muss schädliche Inhalte ablehnen und stabil bleiben, wenn Nutzer riskante Prompts einreichen",
+  "why": "Konsistentes, getestetes Verhalten und reduzierte unsichere Ausgaben bei gegnerischen Eingaben ist Zuverlässigkeit & Sicherheit; Content-Filter und Modellbewertung sind seine Azure-Hebel."
+ },
+ "rai-003": {
+  "label": "Biete Bildunterschriften für Audio und mehrsprachige Unterstützung, damit jeder den Assistenten nutzen kann",
+  "why": "Nutzbar und zugänglich für alle Menschen über mehrere Interaktionsmethoden ist Inklusivität — die Prüfungsfalle ‚eine Interaktionsmethode für alle Nutzer erforderlich' ist ihr Gegenteil."
+ },
+ "rai-004": {
+  "label": "Führe Prüfprotokolle über das Handeln der KI und die Genehmigung der Entscheidungen",
+  "why": "Menschliche Aufsicht, Governance und klare Verantwortung für Ergebnisse — Audit-Protokolle und Missbrauchsüberwachung — ist Rechenschaftspflicht, nicht Transparenz (die ist Offenlegung)."
+ },
+ "rai-005": {
+  "label": "Modellkarten werden für jedes bereitgestellte Modell veröffentlicht und geben Fähigkeiten und Grenzen an",
+  "why": "Mitteilen, was ein System KANN und NICHT kann, ist Transparenz; Modellkarten sind das Azure-Feature, auf das diese abgebildet wird. Grenzen zu verbergen verstößt gegen das Prinzip."
+ },
+ "rai-006": {
+  "label": "Verwaltete Identitäten und private Endpunkte, damit Kundendaten niemals in Antworten oder Logs austreten",
+  "why": "Datenschutz, PII-Governance und Zugriffskontrolle entsprechen Datenschutz & Sicherheit — verwaltete Identitäten und private Endpunkte sind die zugeordneten Azure-Features."
+ },
+ "rai-007": {
+  "label": "Ein Einstellungsmodell stuft kontinuierlich Kandidaten aus einer Altersgruppe niedriger ein, auch wenn ihre Qualifikationen vergleichbar sind",
+  "why": "Ungleiches Scoring durch ein geschütztes Merkmal trotz gleicher Qualifikationen ist ein Problem differenzieller Ergebnisse, nicht ein Zugriffsproblem — das macht es zu Fairness, nicht Inklusivität."
+ },
+ "rai-008": {
+  "label": "Ein Gesichtserkennungsmodell, trainiert auf einem Datensatz mit viel weniger Bildern einer ethnischen Gruppe, erzeugt eine viel höhere Fehlerrate für diese Gruppe",
+  "why": "Unterrepräsentation in Trainingsdaten führt zu einer systematischen Genauigkeitslücke zwischen Gruppen — das ist ein Fairness-Problem — es werden keine Daten offengelegt, daher ist es nicht Datenschutz & Sicherheit."
+ },
+ "rai-009": {
+  "label": "Ein Einstellungswerkzeug stuft Kandidaten aus bestimmten Universitäten niedriger ein, unabhängig von ihren tatsächlichen Qualifikationen, und benachteiligt systematisch einen Bewerber-Pool",
+  "why": "Eine Proxy-Variable (Universität), die konsistenten Nachteil für eine Bewerbergruppe erzeugt, ist Fairness, auch wenn kein demografisches Attribut direkt verwendet wird."
+ },
+ "rai-010": {
+  "label": "Vergleiche die Fehlerquote und Genehmigungsquote des Modells nebeneinander über demografische Gruppen, bevor es eingeführt wird",
+  "why": "Fairness-Bewertungen sind die Azure-Hebel-Karte für Fairness — unterschiedlich von Content-Filtern (Zuverlässigkeit & Sicherheit) oder Audit-Protokollen (Rechenschaftspflicht)."
+ },
+ "rai-011": {
+  "label": "Ein Moderationspipeline übersieht manchmal schädliche Inhalte und blockiert gelegentlich tatsächlich sichere Inhalte",
+  "why": "Inkonsistente Erkennungsqualität unter normalen Betriebsbedingungen ist ein Leistungsproblem, nicht ein Datenofenlegungs- oder Offenlegungsproblem — das ist Zuverlässigkeit & Sicherheit."
+ },
+ "rai-012": {
+  "label": "Ein KI-Tool, das medizinische Notizen für Kliniker zusammenfasst, muss vorhersehbar verhalten, auch bei unerwarteter oder grenzwertiger Eingabe, da klinische Entscheidungen davon abhängen",
+  "why": "Hochgradig vorhersehbares Verhalten bei unerwarteter Eingabe ist das Zuverlässigkeits- & Sicherheitsanliegen — das Risiko hier ist das System-Fehler, nicht wer wird unfair behandelt."
+ },
+ "rai-013": {
+  "label": "Ein Team testet, wie ein KI-System unter unerwarteten oder gegnerischen Bedingungen verhält, bevor es eingeführt wird, und überprüft, dass es sicher abbaut, nicht unvorhersehbar fehlschlägt",
+  "why": "Prä-Release-Testung gegen gegnerische und Grenzfallbedingungen ist die direkte Definition von Zuverlässigkeit & Sicherheit, unterschiedlich von Rechenschaftsplicht der Nachkontrolle."
+ },
+ "rai-014": {
+  "label": "Konfiguriere Content-Filter und führe automatisierte Red-Team-Bewertungen auf einem bereitgestellten Modell aus, um schädliche oder minderwertige Ausgaben zu fangen, bevor echte Nutzer sie sehen",
+  "why": "Content-Filter und automatisierte Bewertung sind der Azure-Hebel für Zuverlässigkeit & Sicherheit, nicht Rechenschaftspflicht — Rechenschaftspflicht dreht sich darum, wer genehmigt, nicht was das Modell ausgibt."
+ },
+ "rai-015": {
+  "label": "Ein Customer-Support-Chatbot kann Kontonummern und andere persönliche Daten erhalten, die direkt in Nutzer-Prompts eingegeben werden",
+  "why": "Persönliche Daten, die durch Prompts fließen, ist ein Datenbelastungsrisiko, gemindert durch Redaktion und Zugriffskontrolle — das definierende Anliegen von Datenschutz & Sicherheit."
+ },
+ "rai-016": {
+  "label": "Eine KI-Assistent verarbeitet Mitarbeiter-HR-Dokumente, und das Team muss das Risiko verringern, dass diese Daten zu nicht autorisierten Parteien lecken",
+  "why": "Beschränkung, wer auf sensible gespeicherte Daten zugreifen kann, ist Datenschutz & Sicherheit, nicht Rechenschaftspflicht — Rechenschaftspflicht dreht sich um Verantwortung für Entscheidungen, nicht Zugriffskontrolle."
+ },
+ "rai-017": {
+  "label": "Eine Schule plant, einen KI-Tutor einzuführen, der private Studentenunterhaltungen verarbeitet, und muss überprüfen, wie diese Daten gespeichert und geschützt werden, bevor breite Einführung",
+  "why": "Überprüfung von Speicherung und Schutz persönlicher Gesprächsdaten vor Einführung ist eine Datenschutz- & Sicherheitsüberprüfung, unterschiedlich von einer Transparenz-Überprüfung offenbarter Fähigkeiten."
+ },
+ "rai-018": {
+  "label": "Eine KI-Anwendung ist so konfiguriert, dass sie nur die spezifischen Gesprächsfelder erfasst und behält, die sie tatsächlich benötigt, und den Rest nach einem festen Aufbewahrungsfenster löscht",
+  "why": "Datenminiaturisierung und Aufbewahrungsgrenzen reduzieren, wie viele persönliche Daten existieren, um in erster Linie offengelegt zu werden — ein unterschiedlicher Datenschutz- & Sicherheitshebel von Zugriffskontrollmechanismen wie verwaltete Identitäten."
+ },
+ "rai-019": {
+  "label": "Ein KI-Helpdesk wird für eine globale Belegschaft gebaut und muss gut funktionieren für Menschen, die unterschiedliche Sprachen sprechen und unterschiedliche Geräte verwenden",
+  "why": "Auslegung für eine Reihe von Sprachen und Geräten, damit jeder das System nutzen kann, ist Inklusivität — das Anliegen ist, wer das System aufrufen kann, nicht wer wird anders bewertet."
+ },
+ "rai-020": {
+  "label": "Ein Übersetzungsassistent geht davon aus, dass alle Nutzer Audio-Antworten klar hören können, ignoriert Menschen mit Hörstörungen",
+  "why": "Eine Zugänglichkeits-Designlücke, die Nutzer mit einer Behinderung ausschließt, ist Inklusivität, nicht Fairness — Fairness dreht sich um differentielle Modell-Ergebnisse über Gruppen, nicht nutzbares Design."
+ },
+ "rai-021": {
+  "label": "Ein KI-Kiosk muss auf einer lauten Fabrikfläche genauso gut funktionieren wie in einem ruhigen Büro, da einige Nutzer sich nicht nur auf Spracheingabe in beiden Einstellungen verlassen können",
+  "why": "Unterstützung unterschiedlicher physikalischer Umgebungen und Interaktionsbedürfnisse, damit der Kiosk für jeden nutzbar bleibt, ist Inklusivität."
+ },
+ "rai-022": {
+  "label": "Eine sprachgesteuerte KI-App wird verbessert, damit sie besser für Menschen mit unterschiedlichen Akzenten, körperlichen Fähigkeiten und Interaktionsbedürfnissen funktioniert",
+  "why": "Erweiterung, wem das System gut dient, über Akzente und Fähigkeiten, ist die direkte Definition von Inklusivität."
+ },
+ "rai-023": {
+  "label": "Den Nutzern wird im Voraus mitgeteilt, dass sie mit einem KI-Assistenten sprechen, nicht mit einem Menschen, bevor das Gespräch beginnt",
+  "why": "Offenbaren, dass eine Interaktion mit KI erfolgt, ist der Kern von Transparenz — es dreht sich darum, was Nutzer mitgeteilt werden, nicht wer antwortet, wenn etwas schiefgeht (Rechenschaftspflicht)."
+ },
+ "rai-024": {
+  "label": "Eine KI-generierte Zusammenfassung in einer Suchergebnisseite trägt ein sichtbares Label, überall wo sie auf der Seite erscheint, nicht nur in einem einmaligen Pop-up beim ersten Besuch",
+  "why": "Laufende, Kontext-Kennzeichnung von KI-generiertem Inhalt ist ein anderer Mechanismus als eine einmalige Vorabmitteilung (rai-023) oder eine schriftliche Modellkarte (rai-005) — der Unterscheidung gegen Rechenschaftspflicht ist, dass dies, worüber die Seite zeigt, nicht wer den Ergebnis besitzt."
+ },
+ "rai-025": {
+  "label": "Ein Kreditantragsteller, der abgelehnt wird, fragt nach den spezifischen Gründen hinter dieser Entscheidung, und die Bank muss auf die Faktoren hinweisen, die das Ergebnis für ihn vorantrieben",
+  "why": "Eine bereits getroffene Entscheidung dem betroffenen zu erklären, ist Transparenz — unterschiedlich von Rechenschaftspflicht, die sich darum dreht, wer antwortet für den Entscheidungsprozess, nicht über ein bestimmtes Ergebnis zur betroffenen Person zu erklären."
+ },
+ "rai-026": {
+  "label": "Ein generatives KI-Assistent zeigt die spezifischen Quell-Dokumente, auf die es sich bezieht, damit ein Nutzer die Grundlage für die Antwort überprüfen kann, bevor er ihr vertraut",
+  "why": "Oberflächliche Anker-Quellen hinter einer Antwort ermöglichen Nutzern, sie selbst zu überprüfen — eine Rückverfolgbarkeitswinkel unterschiedlich von offenbarten allgemeinen Fähigkeiten/Grenzen (rai-005) oder erklärter einzelner Entscheidung (rai-025)."
+ },
+ "rai-027": {
+  "label": "Eine Bank gestaltet ihre Kreditempfehlungs-KI, damit ein menschlicher Reviewer, nicht das Modell selbst, die letzte Entscheidung in eskalierter Fällen trifft",
+  "why": "Haltung eines benannten Menschen als letzte Autorität über gewichtige Entscheidungen ist Rechenschaftspflicht — die Fangkarte behandelt das KI-System selbst als letzte Autorität, die Rechenschaftspflicht ausdrücklich ablehnt."
+ },
+ "rai-028": {
+  "label": "Auch wenn ein Unternehmen einen KI-Dienst nutzt, der von jemand anderem gebaut wurde, bleibt das Unternehmen verantwortlich für, wie diese Lösung in seinen eigenen Operationen genutzt und regiert wird",
+  "why": "Verantwortung für Governance wird nicht einfach übertragen, nur weil das zugrunde liegende Modell oder Dienst von einem Anbieter verwaltet wird — diese nicht übertragbare Eigenschaft ist Rechenschaftspflicht."
+ },
+ "rai-029": {
+  "label": "Ein Team fragt, wer verantwortlich ist, wenn das KI-System ein schädliches oder falsches Ergebnis erzeugt, und definiert einen Eskalationspfad, bevor es eingeführt wird",
+  "why": "Verantwortung zuweisen und einen Eskalationspfad für wenn Dinge schiefgehen ist Rechenschaftspflicht — es dreht sich darum, wem die Ergebnisse gehören, nicht das, was das System offenbart (Transparenz)."
+ },
+ "rai-030": {
+  "label": "Bevor ein neues KI-Feature eingeführt werden kann, muss ein benannter Risiko-Besitzer es genehmigen, und das Feature wird ohne dokumentierte Genehmigung blockiert",
+  "why": "Ein Vor-Launch-Genehmigungstor, das an einen benannten Besitzer gebunden ist, ist ein System-weiter Governance-Kontrollpunkt, unterschiedlich von rai-027's Pro-Fall-menschliche Außerkraftsetzung einer einzelnen Entscheidung und von rai-028's Anbieter-Verantwortungspunkt."
+ },
+ "rai-principles": {
+  "hint": "Ziehe jede Karte auf das Prinzip, dem sie gehört. Frage, was sich tatsächlich ändert: wer wird unterschiedlich behandelt (Fairness), ob das System sich verhält und unter Belastung bestehen bleibt (Zuverlässigkeit & Sicherheit), ob Daten oder Zugriff offengelegt werden (Datenschutz & Sicherheit), wer kann es überhaupt nutzen (Inklusivität), was werden die Nutzer darüber mitgeteilt (Transparenz), oder wer antwortet danach (Rechenschaftspflicht).",
+  "note": "Mehrere Karten können zwei Zonen entsprechen. Der Tie-Break ist immer das, um das es im Szenario tatsächlich geht — differenzielles Ergebnis, System-Verhalten, Datenbelastung, Nutzbares, Offenlegung, oder Eigenschaft.",
+  "zones[0].def": "KI-Systeme sollten alle Menschen fair behandeln und Verzerrung und ungleiche Ergebnisse über demografische Gruppen vermeiden.",
+  "zones[1].def": "KI-Systeme sollten konsistent unter erwarteten und gegnerischen Bedingungen durchführen und vermeiden unbeabsichtigter Schaden.",
+  "zones[2].def": "KI-Systeme sollten persönliche Daten und Prompts/Ausgaben vor unberechtigtem Zugriff, Erfassung oder Nutzung schützen.",
+  "zones[3].def": "KI-Systeme sollten alle befähigen und einbinden, einschließlich Menschen mit verschiedenen Fähigkeiten, Sprachen und Bedürfnissen.",
+  "zones[4].def": "KI-Systeme sollten verständlich sein — Menschen sollten wissen, dass sie mit KI interagieren, und ihre Fähigkeiten und Grenzen kennen.",
+  "zones[5].def": "Menschen, die KI-Systeme gestalten und bereitstellen, bleiben verantwortlich dafür, wie diese Systeme gebaut, betrieben und überwacht werden."
+ }
+}

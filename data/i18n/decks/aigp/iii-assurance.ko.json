@@ -1,0 +1,84 @@
+{
+ "iii-ab-01": {
+  "label": "Independent reviewer가 product team에서 organizationally separate해요. ISO/IEC 42001에 대해 fairness distribution과 data-provenance record를 check해요. Sign-off 전에 말이요.",
+  "why": "Build team에서의 independence plus documented evidence trail이 이 discipline의 signature예요. Red teaming과는 다르긴 해요. Red teaming에서도 independence를 use하지만 paperwork review보다는 system을 attack하려고 해요."
+ },
+ "iii-ab-02": {
+  "label": "Most crucial output이 benchmark score가 아니라 prioritized list of non-conformity를 제공해요. Each one이 named owner를 가지고 있고 remediation deadline도 있어요.",
+  "why": "Audit의 deliverable은 paper trail에 대한 gap-and-fix ledger예요. Threat modeling의 abuse-case catalog과는 다르게 어떤 일이 벌어질 수 있는지를 list하는 것보다 이미 뭐가 잘못되었는지를 list해요."
+ },
+ "iii-ab-03": {
+  "label": "Scheduled launch 일주일 전에 technical file의 final internal review가 earlier uniform-sample testing이 miss한 fairness gap을 turn up해요.",
+  "why": "Reviewing the record after the fact를 catch하는 게 뭐가 testing miss했는지가 이 discipline의 job이예요. Earlier testing과 run이 closed인 any red-team exercise는 자신의 zone에 belong해요."
+ },
+ "iii-ab-04": {
+  "label": "Hired specialist가 jailbreak prompt를 chain해서 launch 전에 guardrail을 get past해요. Finding이 risk register에 feed되고 fixed되면 re-tested돼요.",
+  "why": "Simulating realistic misuse end-to-end가 discipline의 job이예요. Pen test는 오직 infrastructure를 probe해요. Audit은 resulting report를 review할 건데 exploit을 go find하진 않아요."
+ },
+ "iii-ab-05": {
+  "label": "Tester가 customer-service chatbot을 push해요. Social-engineering framing, prompt injection, edge-case misuse scenario로요. Ordinary QA script는 절대 try하지 않을 거 말이에요.",
+  "why": "Multi-perspective adversarial simulation이 technical attack을 misuse framing과 combine하는 게 이 discipline의 가장 큰 governance value예요. Component-level probe of one API endpoint은 next zone에 stay해요."
+ },
+ "iii-ab-06": {
+  "label": "Rare-condition failure가 specific weather와 lighting condition에서만 show up되는데 pre-launch adversarial testing 중에 surface돼요. Release가 scenario가 fixed되고 revalidated될 때까지 delay돼요. 아무리 rare the trigger여도 말이에요.",
+  "why": "Live adversarial testing이 이 failure를 first place에서 surface한 거예요. Threat-modeling exercise는 paper에서 hypothetical scenario로만 flag했을 거예요. 절대 actually run하지 않았을 거 말이에요."
+ },
+ "iii-ab-07": {
+  "label": "Asset, trust boundary, abuse case가 architecture diagram에서 enumerate돼요. Design time에서 말이에요. Test가 before any run돼요.",
+  "why": "Structured anticipation on paper with no live attacking이 이 discipline을 preventive rather than diagnostic하게 만들어요. 누군가가 actually try the jailbreak하는 순간 work가 red teaming으로 move해요."
+ },
+ "iii-ab-08": {
+  "label": "Design review가 possible adversary, goal, capability를 list해요. Alongside each abuse case를 safeguard하는 거 말이에요. Live attack은 yet attempted돼요.",
+  "why": "Named-owner, mitigation-linked catalog이 여기의 deliverable이예요. Security testing과는 distinct해요. Security testing은 specific safeguard이 actually working하는지를 confirm할 필요가 있으면 오직 start돼요."
+ },
+ "iii-ab-09": {
+  "label": "Map이 catalog해요. Which dataset, library, pre-trained weight를 supply chain을 따라 tamper할 수 있는지를 말이에요. 그리고 각 safeguard마다 owner를 name해요. Exercise가 system ship 전에 일어나요.",
+  "why": "Cataloging what could be tampered with가 anticipation이지 verification이 아니예요. Compromised library를 dependency scan이 actually caught하는 것을 confirm하는 게 different, hands-on discipline이예요."
+ },
+ "iii-ab-10": {
+  "label": "Pen tester가 serving API와 admin console을 hit해요. Misconfiguration과 weak authentication을 말이에요. Dependency scan이 outdated library를 flag해요. Rate limit이 simulated load 아래에서 check돼요.",
+  "why": "Hands-on probing of specific, already-identified component가 defense를 actually work한다는 걸 confirm해요. Threat modeling은 오직 이 weak point가 어디에 있을 수 있는지를 map했고, 절대 check를 run하지 않았어요."
+ },
+ "iii-ab-11": {
+  "label": "Line-by-line review of preprocessing pipeline이 injection risk와 exposed secret을 check해요. Inventory가 every library와 dataset를 track해요. Release가 depend하는 거 말이에요.",
+  "why": "Confirming that specific, named component이 hardened된 건 red teaming의 full-stack, end-to-end misuse simulation보다 narrower해요. Discipline이 one component at a time 안에 stay해요."
+ },
+ "iii-ab-12": {
+  "label": "API pen-test와 dependency-scan finding이 severity, owner, re-test deadline과 함께 logged돼요. Release가 그들이 close될 때까지 sign off할 수 없어요.",
+  "why": "Probe, patch, re-test이 이 discipline의 operating loop이고 defined component에 대한 거예요. Audit은 대신에 그 loop이 일어났는지를 review할 거예요. 그걸 run하진 않을 거예요."
+ },
+ "iii-ab-13": {
+  "label": "Weekly shadow evaluation이 recent traffic를 reference model에 대해 replay해요. Monthly fairness check이 launch plan이 set out한 cadence에서 run돼요.",
+  "why": "이게 monitoring plan의 technical cadence-and-dashboard side예요. Standing legal duty를 run하는 거 once system이 live이면 different board entirely에 belong해요."
+ },
+ "iii-ab-14": {
+  "label": "Product team의 own dashboard가 calibration과 latency를 track해요. Validated baseline에 대해 running weekly cadence에서 말이요. Fairness disparity ratio도 refresh돼요. Them과 함께 automatically말이요.",
+  "why": "Continuous, automated feed owned by team that built system이 이 zone의 texture예요. Same check을 대신 organizationally separate reviewer가 run하면 scheduled visit에서 live feed보다는 그건 audit이예요."
+ },
+ "iii-ab-15": {
+  "label": "Automated telemetry가 anomalous traffic pattern과 crafted input을 watch해요. Model을 confuse하려고 meant한 거 말이에요. Alert raise해요 threshold를 cross하면요.",
+  "why": "Automated, always-on watch가 이 zone의 texture예요. Scheduled, hands-on probe of same interface to confirm defense hold하는 거는 pen-testing discipline이예요."
+ },
+ "iii-ab-16": {
+  "label": "Pre-launch pilot during with small real user group에서 real-world harm이 confirmed돼요. Moment it은 containment begin immediately: isolate first, investigate second. GDPR 72-hour notification clock이 already running이예요.",
+  "why": "Confirmed harm이 이 discipline의 trigger이고, gated pilot에서든지 fully live 상태에서든지 말이예요. Pattern of low-severity misprediction still being logged and watched for trend이 그 line을 아직 cross하지 않았어요. Routine issue tracking에 stay해요."
+ },
+ "iii-ab-17": {
+  "label": "Mid-pilot에서 general availability 전에 customer-service chatbot이 issue해요. Unsafe medical guidance를 trial user 중 한 명에게 말이예요. Finding이 formal playbook을 trigger해요. Severity tag, clear escalation role, root-cause analysis이 case가 close되기 전에 finish돼야 해요.",
+  "why": "Formal, time-boxed machinery — severity, ownership, defined close-out — spin up하는 거 moment harm이 actually land할 때예요. Real person위에서 말이예요. Pilot이거나 없거나. Scheduled record review of audit와는 달라요. Nothing이 wrong돼야 할 수도 있어요."
+ },
+ "iii-ab-18": {
+  "label": "Pilot가 general availability로 convert되기 전에 blameless retrospective on confirmed-harm case가 still assign concrete fix예요. Retraining on corrected data, tighter rate limit, updated model card 말이에요. Evidence가 forensic을 위해 preserved돼요.",
+  "why": "Turning confirmed harm을 durable fix과 preserved evidence trail로 close하는 거는 이 discipline의 loop예요. Gated pilot나 full production에서든지 harm이 surface했는지 상관없이 말이예요. Feeding finding into risk register는 아직 harm이 occur하지 않았을 때 threat modeling의 job이예요."
+ },
+ "iii-assurance": {
+  "hint": "이들은 pre-release, development-cycle check예요. Ask what stage the scene은 in: paper catalog before any test run이 threat modeling이고. Live attempt to break system이 red teaming이고. Independent reviewer가 evidence trail을 checking하는 거는 audit이예요.",
+  "note": "Everything on this board가 launch 전이나 during the readiness decision에서 일어나요. What live system이 launch 후에 recurring basis에서 그 operator에게 owe하는 거는 different board예요.",
+  "zones[0].def": "Independent reviewer가 organizationally separate해요. Team이 build한 거에서 말이예요. Technical file을 check해요 — data provenance, testing record, impact assessment — named standard나 policy에 대해. Produce해요. Report of gap with owner와 deadline. Evidence trail이지 live attack이 아니예요.",
+  "zones[1].def": "Specialist이 simulate해요. Realistic adversary나 misuse scenario end-to-end를 말이예요. Jailbreak, prompt injection, social engineering, edge-case abuse를 말이예요. See how whole system hold up under pressure를 말이예요. Feed back what they find을 remediation plan 안에 예요. Re-tested돼요.",
+  "zones[2].def": "Structured, paper-based exercise at design time before any test run. Catalog what need protecting을 enumerate하고. Who might attack it을 말이예요. Which abuse case matter most를 말이예요. Produce해요. List of risk와 named mitigation. Live attempt to exploit이 아니예요.",
+  "zones[3].def": "Hands-on probing of specific, already-identified component — serving API, dependency, pipeline's code — confirm defense가 actually present하고 correctly configured되어 있는지 말이예요. Distinct해요. Full-system adversarial simulation이나 paper catalog of what could go wrong보다요.",
+  "zones[4].def": "Technical cadence of check — scheduled evaluation, tracked metric, automated alert — get built하고 rehearse돼요. Monitoring plan이 come together할 때 말이예요. Dashboard와 detector자신이지 standing legal duty to run them이 아니예요. Once system이 live일 때.",
+  "zones[5].def": "Formal, time-boxed machinery — containment first, then root-cause analysis, then corrective action — activate돼요. Moment scene이 confirmed real-world harm involve할 때 말이예요. Routine finding still being logged와 watched가 아니고."
+ }
+}

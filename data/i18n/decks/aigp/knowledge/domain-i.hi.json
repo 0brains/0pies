@@ -1,0 +1,101 @@
+{
+ "I-roles": {
+  "prompt": "प्रत्येक कर्तव्य (या दावा किया गया कर्तव्य) को उस भूमिका के लिए असाइन करें जिससे वह वास्तव में संबंधित है। कुछ किसी को भी नहीं हैं।"
+ },
+ "d1-case-charter": {
+  "brief": "Solvix Underwriting एक छोटी सी predictive-analytics startup है जो क्षेत्रीय बैंकों के लिए कृषि-उधार जोखिम को स्कोर करती है। अभी तक शासन जो भी दोनों संस्थापकों ने कॉफी पर सहमति दी है। एक बड़ी reinsurance partner एक बहु-वर्षीय डेटा-साझाकरण समझौते पर हस्ताक्षर करने वाला है लेकिन इसकी diligence टीम स्याही काग़ज़ पर लगने से पहले 'एक वास्तविक शासन कार्यक्रम' देखना चाहती है। तुम्हें इसे बनाने के लिए लाया जाता है — और, अठारह महीने बाद, इसे काम करते रहने के लिए जब Solvix की underwriting engine को पूरे EU, उत्तरी अमेरिका और दक्षिण पूर्व एशिया के बैंकों की credit-risk टीमों को लाइसेंस दिया जाता है।",
+  "steps[0].why": "तुम जो नहीं गिनते हो उसे शासित नहीं कर सकते: एक AI इन्वेंटरी वास्तविक आधार है जो तुम्हें बताता है कि शासन से पहले क्या की आवश्यकता है, यह निर्णय लें कि कौन शासन करता है, किसी को प्रशिक्षित करें, या इसके बारे में एक नीति लिखें। CAIO को किराए पर लेना या कर्मचारियों को प्रशिक्षित करना बिना ठोस के लोगों को गति में डालता है, और पहली नीति ड्राफ्ट करना एक दस्तावेज़ तैयार करता है जो Solvix के वास्तविक AI footprint के बजाय अनुमान के अनुरूप है।",
+  "steps[1].why": "एक हल्का, सिद्धांत-आधारित charter आनुपातिक शासन कार्य में है — यह जो संस्थापक पहले से ही मानते हैं उसे कुछ दस्तावेज़ित और दोहराए जा सकने वाले में बदल देता है बिना एक bureaucracy परत जोड़े जिसकी Solvix को अभी तक आवश्यकता नहीं है। एक पूर्ण CAGO नियुक्ति है premature खर्च, आउटसोर्सिंग संस्थापकों को निर्माण करने वाली संस्थागत ज्ञान को आत्मसमर्पण करता है, और reinsurer की enterprise-scale ERM framework की प्रतिलिपि एक छोटी टीम को अपने आकार के दस गुना बड़ी कंपनी के लिए बनाई गई process में दफन कर देगी।",
+  "steps[2].why": "Federation बिल्कुल इस tension के लिए बनाई गई संरचना है: केंद्र से सिद्धांतों का एक सुसंगत सेट, प्रत्येक क्षेत्र को अपने स्वयं के regulatory और सांस्कृतिक परिदृश्य के लिए विशिष्ट को अनुकूलित करने के लिए जगह के साथ। एक single global policy स्थानीय कानून के लिए बहुत कठोर है flex, पूरी क्षेत्रीय autonomy central oversight खो देता है जो पूरे कार्यक्रम को सुसंगत रखता है, और shared project ownership का एक matrix बिल्कुल accountability को धुंधला करता है जिसे एक credit-risk model को चाहिए जब एक regulator पूछता है कि किसने sign off किया।",
+  "steps[3].why": "हर तकनीकी कर्मचारी को model builder के रूप में retool करने की अपेक्षा करना role-specific प्रशिक्षण नहीं है, यह एक headcount fantasy है — अधिकांश तकनीकी कर्मचारी कभी भी एक बनाए बिना AI system को छूते हैं, और प्रशिक्षण उस reality से match होना चाहिए। अन्य तीन एक वास्तविक कार्यक्रम के वैध, पूरक टुकड़े हैं: वास्तविक भूमिका और शासन संरचना के लिए scoped प्रशिक्षण, एक culture-building ethics ट्रैक, और मॉडल के outputs पर निर्भर लोगों के लिए end-user शिक्षा।"
+ },
+ "d1-case-policies": {
+  "brief": "Verdant Health Analytics ने वर्षों से एक परिपक्व privacy compliance कार्यक्रम चलाया है — breach प्रोटोकॉल, एक standing PIA process, vendor अनुबंध — सब अपने मूल SaaS product के चारों ओर बनाया गया, जो केवल ग्राहकों द्वारा सीधे दिए गए health records को store और process करता है। Verdant अब उस same product में एक generative-AI clinical-documentation सहायक को embed कर रहा है, और compliance टीम आइए अपने existing stack का जितना संभव हो reuse करना चाहती है बजाय एक समानांतर एक शुरू से build करने के। Engineering, इस बीच, पहले से ही clinicians से अनुरोध fielding है जो patient नोट्स को time बचाने के लिए public chatbots में paste करना चाहते हैं।",
+  "steps[0].why": "एक PIA पहले से ही बनाया गया है बिल्कुल वह प्रश्न पूछने के लिए जो एक AI system उठाता है — क्या डेटा अंदर जाता है, व्यक्तियों के साथ क्या होता है — इसलिए इसे training, fairness और explainability को cover करने के लिए extend करना एक natural fit है, एक rebuild नहीं। Penetration testing तकनीकी intrusion resistance check करता है, algorithmic bias या legality नहीं; transfer मूल्यांकन एक narrower cross-border प्रश्न का उत्तर देता है; और कर्मचारी प्रशिक्षण awareness बनाता है लेकिन कोई system-specific जोखिम surface नहीं करता।",
+  "steps[1].why": "एक legacy नीति static, direct डेटा flows के लिए लिखी गई है — क्या collected है, यह कहाँ stored है — और कभी anticipate नहीं किया कि एक model के अपने outputs और inferences एक second, derived डेटासेट हैं जिसे किसी को re-identify करने के लिए back में cross-referenced किया जा सकता है जिसका raw record properly anonymized था। एक DPA, एक named DPO और एक breach-notification घड़ी सभी generic privacy-program hygiene हैं किसी भी IT system को चाहिए; none उन्हें AI-specific छेद है जो यह scenario point कर रहा है।",
+  "steps[2].why": "हर minute clinicians एक public tool में patient नोट्स paste करते हैं, वह text Verdant के control से पूरी तरह छोड़ सकता है — vendor के अपने प्रशिक्षण के लिए उपयोग किया जाता है, logged, या exposed — जो concrete harm एक prohibition वास्तव में preventing है। Monetization strategy और hiring लागत privacy जोखिम बिल्कुल नहीं हैं, और 'अभी तक train करने का time नहीं है' एक temporary resourcing gap describe करता है, PHI के एक leak के लिए एक कारण नहीं है जो tool को outright blocking को justify करने के लिए खतरनाक है।",
+  "steps[3].why": "AI नियमों को existing privacy, security और ethics नीतियों में folding करने से शासन unified रहता है और संगठन को दो sets of मानकों running से बचाता है जो quietly drift apart कर सकते हैं — regulators और auditors expect करते हैं कि AI same accountability structure के अंतर्गत बैठे जैसे कि बाकी सब कुछ। Regulator-signaling argument सत्य है लेकिन case को अपने आप पर ले जाने के लिए बहुत narrow है, और एक standalone document के लिए दोनों detail और speed arguments long-term cohesion को trade करते हैं short-term convenience के लिए, जो बिल्कुल है कि क्या creates the silos integration meant छोड़ने के लिए।"
+ },
+ "d1-case-vendor-file": {
+  "brief": "Bramwell Mutual की claims division incoming insurance claims को triage करने के लिए third-party AI vendors को evaluate कर रहा है। दो finalists contract review तक बने हुए हैं, और एक third vendor की model पहले से ही HR team के resume-screening pilot के लिए अगली quarter को eyed जा रहा है। Governance को file को run करने के लिए कहा जाता है: कितना scrutiny प्रत्येक vendor को वास्तव में चाहिए, एक जब नहीं करेगा तो क्या करें show अपना काम, यदि best model Bramwell की अपनी security bar को पूरा नहीं करता तो क्या करें, और कागजी कार्य में क्या belongs किसी भी के live जाने से पहले।",
+  "steps[0].why": "Third-party AI जोखिम प्रबंधन same तरह काम करता है internal जोखिम प्रबंधन करता है: प्रयास proportional जोखिम के लिए, एक बार signing पर नहीं बल्कि एक ongoing basis पर checked। हर vendor के लिए एक blanket biannual audit excessive है और scalable नहीं है, financial stability अकेला actual harm को ignore करता है एक AI system कर सकता है, और technical जोखिम को ethical जोखिम से splitting (छोड़ contract text के लिए बाद वाले) same evaluation के दो halves treat करता है जैसे वे unrelated थे।",
+  "steps[1].why": "यदि policy कहता है एक जोखिम मूल्यांकन procurement से पहले होना चाहिए और vendor की refusal उस मूल्यांकन को impossible बनाता है, anyway proceed करना संगठन की अपनी governance framework को तोड़ता है — defensible move walk away है। Internal मॉनिटरिंग एक weak substitute है उस मूल्यांकन के लिए जो कभी नहीं हुआ; एक policy exception carve out करना policy को हर future vendor के लिए undermines करता है, और एक indemnification clause financial liability को shift कर सकता है लेकिन operational और ethical blind spot भरने के लिए कुछ नहीं करता Bramwell साथ है।",
+  "steps[2].why": "एक sandbox compensating control है यह situation के लिए बिल्कुल built — यह Bramwell को model के performance को capture करने देता है जबकि exposure को containing करता है एक vendor द्वारा created जो security bar को directly meet नहीं कर सकता। Requirement को waive करना या 'reputable' vendors के लिए एक standing exception लिखना दोनों security standard को everyone else के लिए erode करते हैं, जबकि एक outright block एक workable containment समस्या को एक unworkable के रूप में treats करता है और Bramwell को genuinely superior model के लिए defensible कारण के बिना cost कर सकता है।",
+  "steps[3].why": "AI जोखिम still नहीं बैठता जैसे एक one-time IP audit या एक static SLA assume करता है — एक resume-screening model signing के महीनों बाद biased outcomes में drift कर सकता है, इसलिए contract को standing obligation चाहिए performance को documenting keep करने के लिए और एक plan है system को wind down करने के लिए जब यह अब purpose के लिए fit नहीं है। Open-source inventory एक useful one-time IP check है, source-code-and-training-data access अक्सर एक non-starter है vendors के साथ और unnecessary है यदि monitoring solid है, और एक SLA on accuracy और latency एक snapshot capture करता है, actual ongoing drift और fairness जोखिम नहीं जो वास्तव में accumulate contract के life पर।"
+ },
+ "i-rl-01": {
+  "text": "Training डेटा को select करता है और pre-release bias tests चलाता है, फिर documents करता है कि उन लोगों के लिए system कैसे काम करता है जो इसे operate करेंगे",
+  "why": "Build-stage कर्तव्य — डेटा को curating, release से पहले fairness testing, और operators के लिए documentation — उसके साथ बैठते हैं जो system build करता है। यह ongoing, in-context मॉनिटरिंग से distinct है जो operating organization चलाता है एक बार system live होने के बाद।"
+ },
+ "i-rl-02": {
+  "text": "Model को train किए जाते हुए directly में bias-testing tools और explainability features को embeds करता है, फिर accuracy के against fairness को trade off करना choose करता है",
+  "why": "Technical safeguards जो model में built हैं — 'governance by design' — एक build-time choice architecture और training के बारे में है, system कभी एक live environment तक पहुंचने से पहले किया जाता है।"
+ },
+ "i-rl-03": {
+  "text": "Records करता है training डेटा कहाँ से आया और explains करता है कि एक particular model architecture को alternatives पर क्यों choose किया गया",
+  "why": "Data lineage और design-rationale records build process की artifacts हैं — वे explain choices जो system exist करने से पहले किए गए हैं, यह कैसे perform करता है एक बार running नहीं है।"
+ },
+ "i-rl-04": {
+  "text": "Live performance को monitors करता है और drift को अपने अपने operating context में और audits करता है accuracy एक ongoing basis पर",
+  "why": "Operational integrity एक specific context में distinguishing कर्तव्य है — model के पीछे design choices नहीं, जो जो उसे build करता है उसके साथ belong करते हैं इससे पहले कि यह कभी इस context तक पहुंचे।"
+ },
+ "i-rl-05": {
+  "text": "Model को एक production environment में integrates करता है और मॉनिटरिंग को sets up करता है जो इसे once running अलर्ट करेगा",
+  "why": "Production में system को standing up करना और instrumentation एक operational act है, training और testing से अलग जो model को produced किया।"
+ },
+ "i-rl-06": {
+  "text": "Primary liability को carries करता है जब एक unvalidated third-party system को एक hospital की care pathway में डाल दिया जाता है independent validation के बिना पहले",
+  "why": "Liability decision को follow करता है एक unvalidated system को एक live setting में डालने का, जो operating organization की call है — original builder नह है जो validation skip करने को choose किया था use से पहले।"
+ },
+ "i-rl-07": {
+  "text": "AI system के साथ real-world situations में interacts करता है और कुछ गलत हुआ तो अक्सर पहला notice करता है",
+  "why": "Live outcome — bias, errors, या drift को notice करना जैसा कि यह वास्तव में होता है को — front-line role है, organization से distinct जो system को operate और monitor करता है एक पूरे के रूप में।"
+ },
+ "i-rl-08": {
+  "text": "System की recommendation को interprets करता है और अंतिम, informed decision को इसके आधार पर बनाता है",
+  "why": "एक specific output के लिए judgment apply करना और decide करना कि इसके साथ क्या करना है एक point-of-use act है, operational monitoring या design काम नहीं जो lifecycle में कहीं और होता है।"
+ },
+ "i-rl-09": {
+  "text": "Escalation point के रूप में serves करता है जब एक team एक AI feature quickly ship करना चाहता है लेकिन दूसरी team इसके बारे में regulatory चिंताएं raise करती है",
+  "why": "Competing functional interests को reconcile करना day to day एक operational, cross-functional काम है — high-impact use cases के specialized moral-and-societal review से narrower scope में, और यह enterprise जोखिम appetite को set नहीं करता जैसे organization के top करता है।"
+ },
+ "i-rl-10": {
+  "text": "Decides करता है कि कई competing AI proposals में से कौन से resourced first को सकते हैं, जोखिम level को strategic priority और available resources के against weigh करते हुए",
+  "why": "Use cases को prioritize करना against जोखिम और resources एक standing, cross-functional operating decision है — specialized body एक single high-impact case को देता है से distinct moral review, और top-level appetite-setting से distinct जो पूरे program को fund करता है।"
+ },
+ "i-rl-11": {
+  "text": "Asks करता है 'क्या हमें यह system बिल्कुल build करना चाहिए?' एक proposed use case के लिए केवल 'क्या हम इसे build कर सकते हैं?' के बजाय",
+  "why": "Weighing करना कि क्या एक use case सही है, केवल permissible नहीं है, specialized moral-and-societal review है — narrower और deeper सभी proposals पर एक cross-functional body जो operational prioritization चलाता है।"
+ },
+ "i-rl-12": {
+  "text": "Requires करता है bias audits और एक hiring tool के लिए corrective measures इससे पहले कि यह approved हो, fairness को particular groups के harm के against weigh करते हुए",
+  "why": "Disproportionate harm को protected population के लिए independent review specialized ethical-review function है — cross-functional committee के broader operational sign-off से distinct।"
+ },
+ "i-rl-13": {
+  "text": "Provides करता है independent advice कि क्या एक proposal organization के stated values को fit करता है, cases में भी जहाँ यह पहले से ही technically legal है",
+  "why": "Judging करना एक gray area जो legal bar को clear करता है लेकिन फिर भी public trust के questions को raise करता है बिल्कुल reflective function है एक specialized moral body exist करता है, legal या operational sign-off से अलग।"
+ },
+ "i-rl-14": {
+  "text": "Sets करता है organization की AI जोखिम appetite और decides करता है कि क्या overall strategy innovation speed या strict compliance को favor करता है",
+  "why": "Setting करना tone और tolerance को जोखिम के लिए पूरे organization पर बैठता है कोई भी single review body — committees और boards within appetite जो यहाँ set होता है को operate करते हैं, दूसरे तरीके से नहीं।"
+ },
+ "i-rl-15": {
+  "text": "Approves करता है overall governance framework को और allocates करता है budget जो इसे fund करता है",
+  "why": "Approving करना और framework को fund करना एक top-of-organization act है legitimacy और resourcing का, day-to-day operation से distinct उस framework को bodies द्वारा fund यह करता है।"
+ },
+ "i-rl-16": {
+  "text": "Confirms करता है AI strategy external expectations को align करता है जैसे कि industry standards और regulatory requirements, केवल internal business goals नहीं",
+  "why": "Aligning करना organization की overall direction को outside world के साथ एक strategic act है top पर, operational compliance-checking से distinct जो legal और जोखिम teams उस direction के अंदर carry करते हैं।"
+ },
+ "i-rl-17": {
+  "text": "Remains fully liable एक system के compliance के लिए regulations के साथ भी इसके बाद कि यह जो अब इसे चलाता है उसे handed over हो गया हो",
+  "why": "Documented false: original builder remain fully liable नहीं करता एक बार operation दूसरी भूमिका को pass होने के बाद। Liability shared है और प्रत्येक role की actual responsibilities को track करता है — operating organization liability लेता है जो operating system के साथ आता है।"
+ },
+ "i-rl-18": {
+  "text": "Sits inside AI development lifecycle में एक standing participant के रूप में, approving प्रत्येक phase को इससे पहले कि अगला एक proceed कर सके",
+  "why": "Documented false: यह external oversight bodies को describe करता है, और oversight/enforcement outside से same नहीं है जैसे data architects, socio-cultural और technical experts, और legal/privacy specialists के साथ lifecycle stages में एक engaged participant होने के लिए।"
+ },
+ "roles-lifecycle": {
+  "prompt": "प्रत्येक कर्तव्य (या दावा किया गया कर्तव्य) को उस भूमिका के लिए असाइन करें जिससे वह वास्तव में संबंधित है। कुछ किसी को भी नहीं हैं।"
+ }
+}

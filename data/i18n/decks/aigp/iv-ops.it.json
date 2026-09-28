@@ -1,0 +1,105 @@
+{
+  "iv-ops": {
+    "hint": "Questi sono tutti doveri al momento della distribuzione — il sistema è già online. Chiedi quale obbligo permanente la scena sta esercitando, non se qualcosa è andato storto.",
+    "note": "L'assicurazione pre-rilascio (revisioni di preparazione, test prima che un sistema sia mai spedito) appartiene a un gioco diverso. Tutto su questa tavola accade dopo il go-live, su base ricorrente o attivata.",
+    "zones[0].def": "Il dovere legale nominato e continuo di tracciare le prestazioni del sistema live, l'equità e la conformità rispetto alle metriche e alle soglie preimpostate, con regole di escalation per quando i risultati escono dai limiti. È il piano di monitoraggio stesso — non la matematica del drift dietro nessuna singola metrica, e non il controllo indipendente che in seguito verifica che il piano sia stato effettivamente seguito.",
+    "zones[1].def": "Controlli che impediscono che gli output o le capacità di un sistema distribuito vengano riutilizzati a un uso, pubblico o popolazione che l'approvazione originale non ha mai coperto — prevedere il riutilizzo e limitarlo prima che accada, non reagire una volta che è già pubblico.",
+    "zones[2].def": "Contenuto pre-concordato e canali per ciò che l'organizzazione dice ai regolatori, agli utenti e al pubblico su un sistema live — proattivo (avvisi di trasparenza, schede di sistema) e reattivo (riconoscere un problema live) — distinto dall'indagine interna che le dichiarazioni descrivono.",
+    "zones[3].def": "Autorità preacordata, trigger e criteri di riavvio per estrarre un sistema live completamente offline (disattivazione) o limitarlo a meno regioni o caratteristiche (localizzazione) — una decisione stop-or-restrict con condizioni documentate per riprendere, non la correzione tecnica che la segue.",
+    "zones[4].def": "Preparare le persone che gestiscono un sistema live o dipendono dai suoi output — istruzione specifica al ruolo, pratica simulata e attestazione registrata — in modo che possano intercettare un output sbagliato e sapere quando eseguire l'override, rinnovato su una cadenza piuttosto che consegnato una volta al lancio.",
+    "zones[5].def": "Rilevamento, registrazione, triaging e chiusura di problemi di sistema live, dimensionati per gravità — da un reclamo registrato minore seguito per un modello, fino a una risposta formale con contenimento, analisi delle cause profonde e azione correttiva.",
+    "zones[6].def": "Verifica programmata e indipendente che i controlli di un sistema live ancora tengono — test di conformità ricorrente e test avversariali eseguiti dopo il lancio, su una cadenza o legati a un grande cambiamento — distinto dalla valutazione di preparazione una tantum eseguita prima che un sistema sia mai spedito."
+  },
+  "iv-ops-01": {
+    "label": "Un fornitore silenziosamente scambia una nuova versione del modello, senza notifica al team che lo ha distribuito.",
+    "why": "Il monitoraggio post-mercato è un dovere legale permanente di tracciare un sistema live rispetto alla sua baseline; uno scambio di versione non annunciato è un fallimento del piano di monitoraggio, distinto dalla gestione dei problemi e degli incident, che aprono solo un file una volta che qualcuno ha notato il danno risultante."
+  },
+  "iv-ops-02": {
+    "label": "Una revisione trimestrale traccia il drift di distribuzione delle caratteristiche, i problemi di qualità dei dati in entrata e il carico di latenza/calcolo — mai il set di addestramento originale con cui il modello è stato spedito.",
+    "why": "Calibrazione ufficiale: le metriche di monitoraggio di produzione sono drift dei dati, qualità dei dati e segnali di latenza/computazionali — mai i dati di addestramento storici. Impostare cosa viene tracciato è il lavoro di questa zona; ri-controllare indipendentemente che il piano sia stato effettivamente seguito è il lavoro dei test avversariali e del raudit periodico."
+  },
+  "iv-ops-03": {
+    "label": "Le regole di escalation instradano qualsiasi metrica che supera la sua soglia direttamente a un proprietario nominato, che può ordinare un rollback o un avviso al regolatore.",
+    "why": "Il piano di monitoraggio nomina chi agisce e cosa fanno una volta che una soglia è superata; la gestione dei problemi e degli incident raccoglie solo dopo che questa escalation si attiva, per registrare e triaging il problema specifico che nomina."
+  },
+  "iv-ops-04": {
+    "label": "Uno strumento di pianificazione costruito per staffare turni silenziosamente viene reindirizzato a valutare le prestazioni dei singoli dipendenti.",
+    "why": "Il riutilizzo a un uso non approvato richiede protocolli di consenso e restrizioni di utilizzo prima che accada; il dovere di \"abuso ragionevolmente prevedibile\" vincolava sia i fornitori che gli sviluppatori, a differenza della gestione dei problemi e degli incident, che si impegna solo una volta che un reclamo è già emerso."
+  },
+  "iv-ops-05": {
+    "label": "Diciotto mesi nella distribuzione, il team esegue un esercizio programmato di pensiero di secondo ordine come parte della governance in corso, mappando chi altro potrebbe ora collegare l'output di questo sistema nel proprio flusso di lavoro.",
+    "why": "Prevedere il riutilizzo e gli effetti di secondo ordine è un'attività di governance post-distribuzione ricorrente, più ampia di una valutazione di impatto point-in-time e diversa dal test avversariale dei test avversariali del raudit periodico, che sonda per l'attacco, non per il riutilizzo di apparenza legale che l'approvazione originale non ha mai coperto."
+  },
+  "iv-ops-06": {
+    "label": "Ogni output che lascia l'API porta un tag di versione del modello e un flag \"non convalidato per decisioni di assunzione o credito\", e qualsiasi nuovo caso di utilizzo attiva una revisione fresca prima che il riutilizzo sia consentito.",
+    "why": "I marcatori di provenienza più un cancello di approvazione del riutilizzo impediscono il compounding del danno attraverso il flusso di lavoro di un altro team; il controllo vive in come gli output possono viaggiare, distinto dalle comunicazioni esterne, che è ciò che viene detto una volta che un problema è già visibile agli estranei."
+  },
+  "iv-ops-07": {
+    "label": "Un reclamo su una decisione automatizzata sbagliata diventa virale durante la notte.",
+    "why": "Riconoscere pubblicamente subito che il problema è noto e sotto indagine; aspettare che il lavoro di root-cause interno della gestione dei problemi e degli incident sia terminato prima compone solo il danno reputazionale."
+  },
+  "iv-ops-08": {
+    "label": "La dichiarazione pubblica divulga lo scopo del sistema e le limitazioni note, e si ferma prima del metodo che ha prodotto la decisione segnalata.",
+    "why": "La divulgazione copre lo scopo previsto, le capacità e le limitazioni, ma i metodi proprietari rimangono fuori da qualsiasi dichiarazione pubblica — un confine di ambito su ciò che questa zona dice, distinto dall'etichetta di approvazione del riutilizzo che il controllo di utilizzo secondario appone su un output prima che viaggi."
+  },
+  "iv-ops-09": {
+    "label": "I regolatori ricevono il pacchetto completo di prove — valutazione dell'impatto, risultati di monitoraggio, proprietari di azioni correttive nominati — mentre la dichiarazione pubblica rimane in linguaggio semplice senza causa profonda tecnica ancora.",
+    "why": "Lo stesso record sottostante viene personalizzato per pubblico qui: i regolatori ottengono prove, il pubblico ottiene responsabilità e prossimi passaggi — mai il contrario, e mai i risultati grezzi che un esercizio di test avversariale e audit periodico ha prodotto per solo uso interno."
+  },
+  "iv-ops-10": {
+    "label": "Le soglie preacordate nominano esattamente chi può estrarre un sistema live offline, e i criteri che devono essere soddisfatti prima che riavvii.",
+    "why": "Questo è il protocollo del kill-switch: autorità preacordata e criteri di riavvio, distinto dal primo passo di contenimento della gestione dei problemi e degli incident, che isola un sistema a metà problema senza aver bisogno dell'approvazione documentata di questa zona per riprendere. La metodologia algoritmica è il fattore non nominato nella decisione."
+  },
+  "iv-ops-11": {
+    "label": "Una nuova legge sulla privacy in una regione significa che il sistema smette di funzionare lì mentre continua a funzionare ovunque, sotto una politica reversibile pre-documentata.",
+    "why": "La restrizione selettiva, limitata alla giurisdizione è una mossa diversa da un kill-switch completo, ma questa zona possiede entrambe le estremità dello stesso controllo — arresto totale e restrizione regionale — piuttosto che dividerli tra giochi separati."
+  },
+  "iv-ops-12": {
+    "label": "Un sistema di manutenzione predittiva che serve infrastrutture critiche viene eliminato gradualmente in fasi, con un backup gestito da umani che lo affianca fino al completamento della transizione.",
+    "why": "La disattivazione graduale con pianificazione della continuità appartiene qui perché il trigger è una preoccupazione di sicurezza permanente gestita su una pianificazione, a differenza della gestione dei problemi e degli incident, il cui passo di contenimento risponde a un singolo problema che accade proprio adesso."
+  },
+  "iv-ops-13": {
+    "label": "I clinici continuano a fraintendere i punteggi di confidenza dell'IA, quindi il team organizza coaching basato su simulazione con abbinamento di mentore continuo.",
+    "why": "L'istruzione specifica del ruolo con pratica pratica e supporto continuo affronta un divario di competenze e fiducia che un esame di certificazione una tantum avrebbe solo testato la conoscenza contro, non costruito; questo è un curriculum permanente, non la visualizzazione del punteggio di confidenza stesso, che è una caratteristica del prodotto."
+  },
+  "iv-ops-14": {
+    "label": "Agli assicuratori viene detto di applicare il loro giudizio alla raccomandazione iniziale del modello prima che diventi finale.",
+    "why": "Questo è l'abito di supervisione umana che il curriculum è inteso da instillare; un diritto di appello notifica o un sondaggio di feedback sono più passivi e non mettono il giudizio di una persona davanti all'output automatizzato come questo fa."
+  },
+  "iv-ops-15": {
+    "label": "Prima di rinnovare l'accesso al sistema, ogni revisore completa un'esercitazione di scenario e firma un'attestazione confermando che comprendono i limiti dichiarati dello strumento.",
+    "why": "L'attestazione obbligatoria e registrata legata all'accesso rinnovato è ciò che rende questo un controllo esecutivo piuttosto che un orientamento una tantum — prova che un revisore può verificare, a differenza dei canali di segnalazione della gestione dei problemi e degli incident, che esistono per far emergere un problema, non per certificare la preparazione in anticipo."
+  },
+  "iv-ops-16": {
+    "label": "Le previsioni basse ripetute ottengono registrate e osservate per un modello prima che chiunque escalat.",
+    "why": "Questo è il percorso di gravità inferiore — registrato, triaging e trend, escalating solo se il modello persiste. La divisione dal percorso di gravità superiore si attiva sulla scala di danno e l'esposizione legale, non su se un errore è accaduto; rimane qui piuttosto che passare al test avversariale e audit periodico, che verifica i controlli su una pianificazione, non per errore per errore."
+  },
+  "iv-ops-17": {
+    "label": "Il rilevamento frodi è incredibilmente over-flagging transazioni legittime; il primo movimento è estrarre il sistema offline prima che chiunque inizi il lavoro di root-cause.",
+    "why": "Il contenimento — isolamento immediato del sistema — è il primo passo di risposta di questa zona all'interno di un problema live, distinto dalla disattivazione e dalla localizzazione, che possiede l'autorità preacordata e i criteri di riavvio documentati che rendono un arresto legale e reversibile in primo luogo."
+  },
+  "iv-ops-18": {
+    "label": "Un risultato di bias si siede all'1,8%, appena sotto la soglia di escalation del 2% — il team apre la traccia di risposta formale comunque perché il gruppo interessato è una classe protetta.",
+    "why": "Le soglie di gravità guidano ma non ignorano il giudizio quando un gruppo protetto è interessato: il risultato ottiene la traccia di risposta formale completa piuttosto che essere registrato come un elemento minore e lasciato a trend, che è il trattamento che un risultato sub-soglia, non classe protetta avrebbe ottenuto."
+  },
+  "iv-ops-19": {
+    "label": "Dodici mesi dopo il lancio, un equipaggio esterno ri-esegue i tentativi di jailbreak contro l'assistente live su una cadenza programmata.",
+    "why": "Il test avversariale ricorrente e programmato dopo la distribuzione è la disciplina di questa zona; la versione pre-rilascio della stessa tecnica — la valutazione di preparazione eseguita prima che un sistema sia mai spedito — appartiene a un gioco diverso interamente."
+  },
+  "iv-ops-20": {
+    "label": "Un team di seconda linea indipendente campiona le decisioni automatizzate dell'ultimo trimestre, ri-esegue manualmente i controlli di equità e esamina come l'ultimo escalation ha effettivamente giocato.",
+    "why": "L'indipendenza dal team di prodotto più la ri-esecuzione dei controlli piuttosto che fidarsi del dashboard è ciò che separa questo dal proprio controllo live di monitoraggio post-mercato, che il team di prodotto esegue e organizza."
+  },
+  "iv-ops-21": {
+    "label": "I regolatori si aspettano che un fornitore di modello di base documenti un turno nuovo di sondaggio avversariale ogni volta che una versione principale viene spedita, in cima a qualsiasi cosa che è stata eseguita prima del primo lancio.",
+    "why": "Il re-testing ricorrente legato a un cambiamento materiale è un'aspettativa di distribuzione permanente per i modelli ad alto rischio e per uso generale — un obbligo ripetuto, non il gate una tantum attraversato una volta al rilascio iniziale."
+  },
+  "iv-ops-22": {
+    "label": "Prima che un sistema sia mai estratto offline, il team primo mappa ogni alimentazione upstream e ogni processo downstream che dipende da esso, e conferma che un fallback è pronto a prendere il divario.",
+    "why": "Questo è il passo di pianificazione che ha bisogno di accadere prima che una decisione stop-or-restrict sia eseguita — distinto dal contenimento della gestione dei problemi e degli incident, che reagisce a un problema già accadendo, e dal monitoraggio post-mercato, che assume il sistema rimane live."
+  },
+  "iv-ops-23": {
+    "label": "Una volta che un sistema è completamente ritirato, i suoi dati, modelli e log di decisione vengono conservati piuttosto che cancellati, in modo che un regolatore o revisore possa ricostruire cosa ha fatto anni dopo.",
+    "why": "La conservazione è parte del record di arresto stesso, posseduta dalla stessa autorità che ha estratto il sistema offline — a differenza del log CAPA della gestione dei problemi e degli incident, che traccia le correzioni a un problema specifico, e a differenza del monitoraggio post-mercato, che traccia solo un sistema mentre è ancora live."
+  }
+}

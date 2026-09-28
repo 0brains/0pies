@@ -1,0 +1,110 @@
+{
+  "drift-01": {
+    "label": "Un modelo de préstamo se entrenó con solicitantes de 25–60 años. Tras una campaña de marketing dirigida al mercado estudiantil, ahora un tercio de las solicitudes proviene de menores de 25 años. El comportamiento de reembolso para cualquier perfil no ha cambiado.",
+    "why": "La mezcla de entrada se desplazó a una región apenas cubierta por los datos de entrenamiento, pero la relación entre perfil y reembolso se mantiene. Es decir, P(X) se desplaza con P(Y|X) constante — drift de covariables, y la solución es cobertura, no una nueva regla."
+  },
+  "drift-02": {
+    "label": "Un modelo de habla entrenado principalmente con grabaciones de estudio ahora recibe una gran proporción de llamadas desde teléfonos móviles en calles ruidosas. Las palabras siguen significando lo que significaban.",
+    "why": "Las condiciones acústicas son una propiedad de entrada. La asignación de audio a texto no ha cambiado; el modelo simplemente está operando fuera de la región de entrada en la que aprendió bien."
+  },
+  "drift-03": {
+    "label": "Un modelo de demanda construido con tiendas de un país se implementa en tres países más. Los productos, las estaciones y la lógica de compra son iguales; los perfiles de tienda no.",
+    "why": "Este es el caso de manual de que la distribución de entrenamiento no cubre la distribución de implementación. Nada sobre cómo se genera la demanda cambió — solo qué entradas se están viendo."
+  },
+  "drift-04": {
+    "label": "La precisión de un modelo de fraude se desmorona en una sola semana. Los investigadores encuentran una nueva técnica de ataque que comenzó en una fecha específica y ahora es el patrón dominante.",
+    "why": "Los mismos valores de características que significaban legítimo el mes pasado ahora significan fraude. P(Y|X) cambió, y cambió en un momento en el tiempo — un cambio de concepto abrupto, no un desplazamiento en quién está transaccionando."
+  },
+  "drift-05": {
+    "label": "Un modelo de precios se degrada de la noche a la mañana cuando un regulador limita una tarifa que el modelo había aprendido a tratar como una fuerte señal del segmento de cliente.",
+    "why": "Un cambio de regla externo a los datos reajusta instantáneamente lo que significa la característica. El reentrenamiento en datos posteriores al cambio es la solución; nada sobre los datos anteriores al cambio es recuperable."
+  },
+  "drift-06": {
+    "label": "Un clasificador de contenido funciona bien hasta que un cambio de política de plataforma entra en vigencia el primer día del mes, después del cual su etiqueta 'aceptable' ya no coincide con las decisiones de los moderadores.",
+    "why": "La propia definición del objetivo se redefinió en una fecha. Las características no cambian; la verdad fundamental se desplazó bajo ellas."
+  },
+  "drift-07": {
+    "label": "Durante ocho meses, la precisión de un modelo de abandono disminuye a medida que el nuevo plan de un competidor es adoptado por más y más clientes. Ambas dinámicas de abandono, la antigua y la nueva, son visibles en los datos en todo momento.",
+    "why": "Dos regímenes coexisten, con el más nuevo tomando una proporción cada vez mayor de casos. Esa mezcla en el tiempo es la firma del drift gradual, y es por eso que no se puede encontrar un único punto de cambio."
+  },
+  "drift-08": {
+    "label": "Un modelo de recomendación se degrada lentamente a medida que una cohorte más antigua de usuarios es progresivamente reemplazada por una más joven con gustos diferentes. Durante un largo período ambos comportamientos están presentes.",
+    "why": "Dos poblaciones con dos reglas de entrada a resultado diferentes se solapan durante la transición. La detección es tardía precisamente porque ninguna semana individual se ve anómala."
+  },
+  "drift-09": {
+    "label": "Un filtro de spam se debilita durante un año a medida que los remitentes migran de una familia de plantilla a otra, con un largo período en el que ambas plantillas llegan en cantidad.",
+    "why": "Conceptos antiguos y nuevos están ambos activos durante el cambio. Compáralo con el drift incremental, donde no hay dos regímenes, solo uno que sigue moviéndose."
+  },
+  "drift-10": {
+    "label": "El error de un modelo de tiempo de entrega crece constantemente mes tras mes a medida que la congestión del tráfico empeora un poco a la vez. No hay un punto en el que el comportamiento salte ni un régimen anterior al que regresar.",
+    "why": "La relación está pasando continuamente a través de estados intermedios en lugar de alternarse entre dos regímenes definidos. El reentrenamiento con ventana móvil es adecuado para esto; la detección de punto de cambio no encontrará nada."
+  },
+  "drift-11": {
+    "label": "Un modelo de calidad basado en sensores se desplaza a medida que los componentes de una máquina se desgastan, degradándose una fracción de porcentaje por semana sin discontinuidad.",
+    "why": "El desgaste físico mueve la asignación de entrada a resultado de manera suave y monótona. Cada semana es un concepto ligeramente nuevo, no una mezcla de uno antiguo y uno nuevo."
+  },
+  "drift-12": {
+    "label": "La precisión temática de un modelo de lenguaje se erosiona mes tras mes a medida que el vocabulario y el uso evolucionan, sin que un único evento sea responsable.",
+    "why": "Movimiento continuo y direccional del concepto sin punto de cambio ni regreso. El remedio es un ciclo de actualización, no un umbral de alarma."
+  },
+  "drift-13": {
+    "label": "Un modelo de pronóstico minorista falla cada diciembre, se recupera en enero y falla nuevamente el diciembre siguiente.",
+    "why": "Un concepto previamente visto regresa en un ciclo. La respuesta correcta es modelar la estacionalidad o mantener el modelo estacional, no reentrenar en pánico cada invierno."
+  },
+  "drift-14": {
+    "label": "Los errores de un modelo de demanda de energía siguen un patrón de entre semana/fin de semana que se repite indefinidamente.",
+    "why": "Los regímenes alternos son ambos conocidos y ambos regresan. El reentrenamiento solo en la ventana más reciente haría el modelo permanentemente incorrecto para cualquiera que sea el régimen que vio por último."
+  },
+  "drift-15": {
+    "label": "Un modelo de personal se degrada durante cada vacación escolar y vuelve a la normalidad después, año tras año.",
+    "why": "Contexto recurrente. Mantener y reseleccionar modelos históricos por contexto supera descartarlos, porque el concepto antiguo está garantizado que regresará."
+  },
+  "drift-16": {
+    "label": "La tasa positiva de un modelo de detección de enfermedades cae bruscamente después de una campaña de vacunación exitosa. Los síntomas siguen indicando la enfermedad exactamente como antes.",
+    "why": "La prevalencia del resultado cayó — P(Y) se movió — mientras P(X|Y) se mantuvo. Los umbrales y cualquier calibración dependiente de priores necesitan ajuste; la relación aprendida no."
+  },
+  "drift-17": {
+    "label": "Un modelo de fraude entrenado cuando el 3% de las transacciones eran fraudulentas ahora opera donde el 0.5% lo son, debido a controles introducidos en otro lugar. Las transacciones fraudulentas se ven iguales que siempre.",
+    "why": "La tasa base cambió, así que cada probabilidad que emite el modelo está mal calibrada aunque su discriminación no se vea afectada. La corrección previa lo arregla sin reentrenamiento."
+  },
+  "drift-18": {
+    "label": "Un clasificador de defectos se mueve de una línea piloto con una tasa de defectos del 20% a una línea madura con el 2%. Los defectos se presentan idénticamente en ambas.",
+    "why": "Solo el anterior de clase cambió. Leer esto como drift de covariables conduce a trabajo de características inútil; leerlo como cambio de etiqueta conduce a una recalibración de umbral que realmente funciona."
+  },
+  "drift-19": {
+    "label": "El monitoreo muestra que la proporción de decisiones de 'aprobación' sube del 61% al 78% en seis semanas. Aún no han llegado etiquetas, así que la calidad no se puede medir.",
+    "why": "La distribución de salida se desplazó. Eso es una alerta, no un diagnóstico: puede ser causado por drift de covariables, cambio de etiqueta, un feed roto, o una población genuinamente cambiada. Es lo que observas cuando las etiquetas están retrasadas."
+  },
+  "drift-20": {
+    "label": "La probabilidad predicha promedio de un modelo aumenta constantemente mientras las distribuciones de características de entrada se ven estables en cada gráfico.",
+    "why": "Salidas moviéndose sin movimiento de entrada visible generalmente significa que el movimiento está en una interacción de características o una característica que nadie está monitoreando. El hallazgo es real; la causa aún no se identifica."
+  },
+  "drift-21": {
+    "label": "Después de que se implementa una versión de modelo, la distribución de puntuaciones se desplaza notablemente aunque los datos entrantes son idénticos a los de la semana pasada.",
+    "why": "Las mismas entradas, diferentes salidas significa que el cambio está en el modelo, no en el mundo. El drift de predicción de versión a versión es la razón por la que una nueva versión se compara en una muestra de referencia fija."
+  },
+  "drift-22": {
+    "label": "La media de una característica de ingresos cae a un tercio de su valor habitual de la noche a la mañana. Un equipo ascendente cambió el campo de centavos a unidades completas la misma noche.",
+    "why": "El mundo no cambió; la unidad sí. El reentrenamiento aquí enseñaría al modelo a tratar valores corrupted como normales y hacer que el eventual arreglo se vea como una nueva regresión."
+  },
+  "drift-23": {
+    "label": "Una característica categórica de repente muestra el 40% de nulos. Un cambio de esquema renombró la columna de origen y la unión ahora falla.",
+    "why": "Un defecto de pipeline se presenta exactamente como drift abrupto en un panel de drift. La señal es que el cambio coincide con un despliegue o evento de esquema en lugar de cualquier cosa en el mundo."
+  },
+  "drift-24": {
+    "label": "Las entradas de un modelo se desplazan en el momento en que un proveedor cambia un API default, reemplazando silenciosamente los valores faltantes con cero en lugar de omitirlos.",
+    "why": "Los ceros que significan 'faltante' son leídos por el modelo como un valor real y extremo. La solución es cumplimiento de contrato ascendente y semántica nula, nunca un reentrenamiento."
+  },
+  "drift-types": {
+    "hint": "Arrastra cada síntoma de producción al tipo de drift que describe. La pregunta es siempre qué distribución se movió — las entradas, las etiquetas, las salidas, o la relación entre ellas.",
+    "note": "Un quiebre de datos ascendente obtiene su propia zona porque se ve idéntico al drift real en cada panel, y la respuesta correcta es la opuesta: arregla el feed, nunca reentres en él.",
+    "zones[0].def": "P(X) se mueve. Las entradas se ven diferentes, pero la regla que mapea entradas a resultados aún se mantiene.",
+    "zones[1].def": "P(Y|X) cambia abruptamente en un punto en el tiempo. La regla antigua deja de aplicarse de la noche a la mañana.",
+    "zones[2].def": "Las reglas antigua y nueva coexisten, con la nueva apareciendo en una proporción cada vez mayor de casos.",
+    "zones[3].def": "La regla en sí se mueve continuamente a través de estados intermedios en lugar de alternarse entre dos.",
+    "zones[4].def": "Una regla previamente vista regresa en un ciclo. La estacionalidad es el caso común.",
+    "zones[5].def": "P(Y) se mueve — la mezcla de resultados cambia — mientras las características dadas el resultado se comportan como antes.",
+    "zones[6].def": "La distribución de salida del modelo se mueve. Es un síntoma, observable sin etiquetas, no un diagnóstico.",
+    "zones[7].def": "Nada en el mundo cambió. Un pipeline, esquema, unidad o default cambió, y el modelo está siendo alimentado con entrada corrupta."
+  }
+}

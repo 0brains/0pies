@@ -1,0 +1,228 @@
+{
+ "id": "storage-exposure",
+ "runner": "board",
+ "title": "Left Open",
+ "blurb": "Twenty-three storage accounts have a door propped open somewhere. Read each scene and drop it on the control that actually closes that door, not the one that merely sounds adjacent.",
+ "source": "Microsoft Learn: Authorize access to data in Azure Storage, Grant limited access with shared access signatures, Prevent Shared Key authorization, Azure Storage firewall rules and network access, Trusted Azure services, Create a virtual network rule, Azure Storage encryption for data at rest, Customer-managed keys for account encryption, Security recommendations for Blob storage, What is Microsoft Defender for Storage, Malware scanning configuration · SC-500 outline 2.1",
+ "asOf": "2026-08",
+ "area": "2.1",
+ "hint": "Ask what the exposed thing actually is. If a signed URL is doing the harm, look at the token itself: its permission set, its expiry, whether a stored access policy exists to revoke it. If no credential is involved at all and a stranger with the URL simply reads the blob, that is anonymous access. If the credential is fine but the request arrives from a network you never intended to serve, you are in network boundary territory. If the concern is who holds and can revoke the key that wraps the data at rest, that is encryption and key custody. If the argument is about which authorization model the account will even accept, or whether an identity rather than a shared secret is on the request, that is Entra authorization versus the account key. And if nothing is being blocked at all, only noticed after the fact, that is Defender for Storage.",
+ "zones": [
+  {
+   "key": "SAS scope",
+   "name": "SAS scope",
+   "def": "The signed token itself is too generous or lives too long: permissions wider than the job needs, an expiry months out, no stored access policy to revoke it against, no account-level SAS expiration policy. Distinct from Entra authorization, which is about whether the account accepts Shared Key at all rather than how a single issued token is shaped, and from Anonymous access, where there is no token on the request at all."
+  },
+  {
+   "key": "Anonymous access",
+   "name": "Anonymous access",
+   "def": "Blob data readable with no credential of any kind, because the container or the account still permits public read. Distinct from SAS scope, where a signed token is present and merely too broad, and from Network boundary, which would still let an anonymous reader inside the allowed network straight through to the data."
+  },
+  {
+   "key": "Network boundary",
+   "name": "Network boundary",
+   "def": "Where the request may originate from: firewall default action, IP rules, virtual network rules riding on a service endpoint, private endpoints, resource instance rules and trusted-service exceptions. Distinct from Entra authorization, which decides whether a caller is allowed once it arrives, and from SAS scope, since a token restricted to an IP still cannot reach past a firewall that blocks the source."
+  },
+  {
+   "key": "Encryption keys",
+   "name": "Encryption keys",
+   "def": "Custody of the keys protecting data at rest: Microsoft-managed versus customer-managed keys in Key Vault or Managed HSM, key version rotation, disabling a key to cut access, infrastructure encryption for a second layer. Distinct from Entra authorization, which governs the data-plane credential rather than the key wrapping the stored bytes, and from SAS scope, which never touches encryption."
+  },
+  {
+   "key": "Entra authorization",
+   "name": "Entra authorization",
+   "def": "Which authorization model the account honours and who the caller is: disallowing Shared Key, managed identities, Azure RBAC role assignments scoped to a container, Conditional Access reaching the data plane. Distinct from SAS scope, which trims a token that is still ultimately signed by the account key, and from Network boundary, which never asks who the caller is."
+  },
+  {
+   "key": "Defender detection",
+   "name": "Defender detection",
+   "def": "Nothing is being prevented; something needs to be noticed. Defender for Storage activity monitoring, sensitive data threat detection, on-upload and on-demand malware scanning, and Event Grid driven response to a malicious blob. Distinct from every preventive zone here: choose this only when the scene asks for an alert, a scan verdict or a detection, not a door being shut."
+  }
+ ],
+ "items": [
+  {
+   "id": "sto-01",
+   "label": "A haulage broker gives every partner carrier the same blob URL. The token on it carries read, write, delete and list across the whole container and does not lapse until the end of the financial year. One carrier has since been acquired by a competitor and nobody can pull the URL back.",
+   "sub": "Which control closes this?",
+   "answer": "SAS scope",
+   "why": "This is an ad hoc service SAS with excessive permissions and a long validity, and because it references no stored access policy there is no way to revoke it short of regenerating the account key. Binding a service SAS to a stored access policy on the container gives you a revocation lever, and the permission set should be trimmed to what a carrier actually does. It is tempting to file this under Entra authorization, but that zone is about whether the account accepts Shared Key at all; here the issue is the shape and revocability of one issued token.",
+   "citation": "Learn: Azure Storage shared access signatures · outline 2.1"
+  },
+  {
+   "id": "sto-02",
+   "label": "A pathology lab's developers mint tokens by hand from the portal whenever a courier integration breaks. Several currently in circulation run for nine months. Nobody sees any warning when they generate them and no log entry flags the length.",
+   "sub": "Which control closes this?",
+   "answer": "SAS scope",
+   "why": "A SAS expiration policy on the storage account sets a recommended upper bound on validity, so a developer generating a service SAS or account SAS past that interval gets a warning, and with Azure Monitor logging turned on the event lands in the storage logs. The nearest wrong zone is Defender detection, which watches how tokens are used rather than how long they were minted for, so it would not surface the over-long expiry at generation time.",
+   "citation": "Learn: Azure Storage shared access signatures · outline 2.1"
+  },
+  {
+   "id": "sto-03",
+   "label": "A university research group needs to cut off a departing postdoc's download link today. The link was issued against a stored access policy on the container, and the security lead is preparing to regenerate both account keys and break eleven other integrations.",
+   "sub": "Which control closes this?",
+   "answer": "SAS scope",
+   "why": "The whole point of a stored access policy is that you can delete it, rename it or push its expiry into the past to invalidate every service SAS bound to it, without cycling the account keys and taking down unrelated clients. Choosing Entra authorization here would be the wrong reflex: rotating or disallowing the account key is the heavy-handed alternative this policy exists to avoid.",
+   "citation": "Learn: Azure Storage shared access signatures · outline 2.1"
+  },
+  {
+   "id": "sto-04",
+   "label": "A ticketing startup embeds a download link in confirmation emails. The link is plain HTTP, the token grants read and write on the customer's receipt blob, and the mobile app talks to it over hotel and airport wifi.",
+   "sub": "Which control closes this?",
+   "answer": "SAS scope",
+   "why": "A SAS carried over an unencrypted channel can be lifted in transit and replayed by whoever captures it, so the token should be restricted to HTTPS and cut down to read only for a receipt. Do not reach for Network boundary: firewall and virtual network rules govern which source addresses may connect, and they do nothing about a token intercepted between a phone and the public endpoint.",
+   "citation": "Learn: Security recommendations for Blob storage · outline 2.1"
+  },
+  {
+   "id": "sto-05",
+   "label": "A district council publishes planning drawings from a blob container. Six months ago somebody flipped the container's public access level so the drawings would load in the website without code changes. A journalist has now found draft valuation spreadsheets in the same container by guessing filenames.",
+   "sub": "Which control closes this?",
+   "answer": "Anonymous access",
+   "why": "Anonymous read access on a container grants read-only rights over those blobs to any client on the internet, with no credential presented, and the storage logs can only record the request as anonymous because there is no principal behind it. The fix is to disable anonymous access and serve the drawings through a scoped user delegation SAS or a front end. It is not SAS scope, because no token exists on these requests at all, and trimming a token you never issued closes nothing.",
+   "citation": "Learn: Authorize access to data in Azure Storage · outline 2.1"
+  },
+  {
+   "id": "sto-06",
+   "label": "A games studio hosts patch notes publicly. The access level was set at container scope rather than blob scope, so anyone can enumerate the full object list, including a build artefact a producer dropped there by mistake last Tuesday.",
+   "sub": "Which control closes this?",
+   "answer": "Anonymous access",
+   "why": "Container-level public access permits listing as well as reading, so an unauthenticated visitor discovers objects nobody advertised. Disabling anonymous access for the account and serving public assets through a controlled path removes the enumeration entirely. Filing this under Defender detection would only get you an alert about unusual reads after the artefact had already been taken.",
+   "citation": "Learn: Security recommendations for Blob storage · outline 2.1"
+  },
+  {
+   "id": "sto-07",
+   "label": "A retail group's platform team finds that any engineer with Contributor on a resource group can flip a new container to public read, because the parent storage accounts still permit blob anonymous access at the account level.",
+   "sub": "Which control closes this?",
+   "answer": "Anonymous access",
+   "why": "Disallowing anonymous access at the account level is the switch that makes container-level public settings unreachable, which is why Microsoft recommends turning it off across all accounts rather than policing containers one at a time. The nearest wrong answer is Entra authorization, which constrains how authenticated callers prove themselves and leaves an unauthenticated public container just as readable.",
+   "citation": "Learn: Authorize access to data in Azure Storage · outline 2.1"
+  },
+  {
+   "id": "sto-08",
+   "label": "A fintech sets the storage account's public network access to deny and adds the app subnet under virtual networks. The API still returns 403 on every blob read. The subnet has no service endpoint configured for storage.",
+   "sub": "Which control closes this?",
+   "answer": "Network boundary",
+   "why": "A virtual network rule only carries traffic once the subnet has the Microsoft.Storage service endpoint enabled; the portal adds it for you when you pick the subnet, but PowerShell and the CLI expect you to create it yourself. Nothing about the app's credential is wrong here, so Entra authorization is the wrong shelf even though the symptom is a 403.",
+   "citation": "Learn: Azure Storage virtual network rules · outline 2.1"
+  },
+  {
+   "id": "sto-09",
+   "label": "A pharma company's analytics subnet sits in North Europe while the storage account it reads lives in West Europe. The subnet has the Microsoft.Storage service endpoint enabled and a rule was added, yet requests are still refused.",
+   "sub": "Which control closes this?",
+   "answer": "Network boundary",
+   "why": "The Microsoft.Storage endpoint reaches only those accounts sitting in the virtual network's own region; crossing regions requires the Microsoft.Storage.Global endpoint instead, and a subnet may carry only one of the two at a time, so the existing one has to be removed first. This is not Encryption keys or Entra authorization: the credential and the key custody are both irrelevant to a regionally scoped endpoint.",
+   "citation": "Learn: Azure Storage network firewall settings · outline 2.1"
+  },
+  {
+   "id": "sto-10",
+   "label": "After a security review, a broadcaster's diagnostic settings stop landing in the archive account. The account was locked down to a handful of subnets last week, and Azure Monitor writes resource logs from outside any network the team controls.",
+   "sub": "Which control closes this?",
+   "answer": "Network boundary",
+   "why": "Services that operate outside your network boundary need a network security exception so trusted Azure services such as Azure Monitor can write logs and metrics into a firewalled account, and they authenticate strongly when they do. Reaching for Entra authorization does not help, because the platform service is already authenticating; it is the source network that is being refused.",
+   "citation": "Learn: Azure Storage trusted service exceptions · outline 2.1"
+  },
+  {
+   "id": "sto-11",
+   "label": "An insurer adds forty subnet rules and a dozen on-premises NAT ranges to a claims storage account, then discovers during a penetration test that a laptop on a coffee shop network still reaches the blob endpoint. The account's default action was never changed from allow.",
+   "sub": "Which control closes this?",
+   "answer": "Network boundary",
+   "why": "Allow rules do nothing until the account's default action is switched to deny; while it stays on allow, every rule they wrote is decoration and the public endpoint answers everyone. Before flipping it, they must confirm allowed networks or a private endpoint are in place so the application keeps working. Anonymous-access is the tempting neighbour, but the tester still had to authenticate; only the network filter was inert.",
+   "citation": "Learn: Azure Storage virtual network rules · outline 2.1"
+  },
+  {
+   "id": "sto-12",
+   "label": "A defence supplier's architecture board rules that traffic to the archive account must never traverse the public endpoint at all, and that name resolution inside the virtual network must return an address from their own space.",
+   "sub": "Which control closes this?",
+   "answer": "Network boundary",
+   "why": "A private endpoint assigns a private IP from the virtual network to the storage account so traffic rides a private link rather than the public endpoint, which is stronger than a service endpoint where the account is still reached at its public address from an allowed subnet. Encryption-keys is a different assurance entirely: it protects bytes at rest, not the path the request travels.",
+   "citation": "Learn: Security recommendations for Blob storage · outline 2.1"
+  },
+  {
+   "id": "sto-13",
+   "label": "A hospital trust must show auditors that the keys protecting patient imaging are held in its own vault, rotated on an annual schedule, and rotated without anyone editing application code or changing blob URLs.",
+   "sub": "Which control closes this?",
+   "answer": "Encryption keys",
+   "why": "Customer-managed keys in Azure Key Vault or Managed HSM wrap the account's root encryption key, and if you leave the key version out of the configuration, Azure Storage checks the vault daily and picks up new versions on its own, so rotation never touches the application. Sas-scope is unrelated; rotating a SAS is not rotating an encryption key, and the auditors are asking about key custody.",
+   "citation": "Learn: Customer-managed keys for Azure Storage encryption · outline 2.1"
+  },
+  {
+   "id": "sto-14",
+   "label": "During a suspected compromise at a payments processor, the incident lead needs every read and write against one storage account to stop within minutes, while leaving the data itself in place for the forensics team.",
+   "sub": "Which control closes this?",
+   "answer": "Encryption keys",
+   "why": "Disabling the customer-managed key in the vault revokes the account's ability to unwrap its encryption key, and calls that read or write a resource or its metadata then fail with 403 for every user until access is restored. Choosing Network boundary would only block one set of source networks and would not stop a caller you had already permitted.",
+   "citation": "Learn: Customer-managed keys for Azure Storage encryption · outline 2.1"
+  },
+  {
+   "id": "sto-15",
+   "label": "A national archive's risk register asks what happens if a single cipher implementation or a single key is ever broken. The team wants the stored objects protected twice over, with different algorithms and different keys at the service and platform layers.",
+   "sub": "Which control closes this?",
+   "answer": "Encryption keys",
+   "why": "Infrastructure encryption adds a second 256-bit AES layer beneath the service-level encryption, using a separate Microsoft-managed key and a different algorithm, and it has to be chosen when the account is created. It is not Entra authorization: no credential change addresses the failure of a cipher, and the service layer can still use customer-managed keys alongside it.",
+   "citation": "Learn: Azure Storage encryption for data at rest · outline 2.1"
+  },
+  {
+   "id": "sto-16",
+   "label": "A telecoms operator turns on customer-managed keys for an existing account and reports success to compliance. A later review finds the queue and table data in that same account is still wrapped by the platform's own key.",
+   "sub": "Which control closes this?",
+   "answer": "Encryption keys",
+   "why": "Blob and file data is always covered once customer-managed keys are configured, but queue and table data is only brought under that key if the account was created with support for an account-scoped encryption key, so an existing account cannot be retrofitted. The vault itself must also carry soft delete and purge protection. Defender-detection would tell you about odd access to those queues, not about which key protects them.",
+   "citation": "Learn: Customer-managed keys for Azure Storage encryption · outline 2.1"
+  },
+  {
+   "id": "sto-17",
+   "label": "A grocery chain's platform audit finds five separate applications, two build pipelines and a contractor's laptop all authenticating to one storage account with the same primary key. The storage logs show requests but cannot attribute any of them to a particular application.",
+   "sub": "Which control closes this?",
+   "answer": "Entra authorization",
+   "why": "Anyone holding the account key can authorize any request against the account and effectively reaches all the data, and Shared Key requests carry no distinguishing principal, so least privilege and attribution both collapse. Moving each caller to a managed identity with a scoped RBAC role, then disallowing Shared Key, restores both. Sas-scope would only narrow tokens that are themselves still signed by that same key.",
+   "citation": "Learn: Azure Storage Shared Key disablement · outline 2.1"
+  },
+  {
+   "id": "sto-18",
+   "label": "A law firm wants access to blob data to require a compliant, managed device, enforced by the same policy engine that already gates its mailboxes. The storage account currently permits both Entra credentials and the account key.",
+   "sub": "Which control closes this?",
+   "answer": "Entra authorization",
+   "why": "Conditional Access policies can only protect a storage account once Shared Key authorization is disallowed, because a request bearing the account key never presents an Entra token for a policy to evaluate. Network-boundary is the near miss here: an IP rule can approximate a corporate network but says nothing about device compliance or the signing-in principal.",
+   "citation": "Learn: Azure Storage Shared Key disablement · outline 2.1"
+  },
+  {
+   "id": "sto-19",
+   "label": "Two web apps at a travel operator both write to one storage account, and each must be able to read back only the container it owns. Today both hold the same connection string in app settings.",
+   "sub": "Which control closes this?",
+   "answer": "Entra authorization",
+   "why": "Give each app a managed identity and assign a data role such as Storage Blob Data Contributor at the scope of its own container, so the boundary is enforced by RBAC rather than by hoping each app stays in its lane. A per-app SAS would put the separation back into a token that expires and can leak, which is why SAS scope is the weaker answer for a long-lived Azure-hosted workload.",
+   "citation": "Learn: Authorize access to data in Azure Storage · outline 2.1"
+  },
+  {
+   "id": "sto-20",
+   "label": "An energy firm disallows Shared Key across its estate. Overnight, the finance team can no longer open the Azure file share they use daily from the portal, and a Cloud Shell session loses its persisted files.",
+   "sub": "Which control closes this?",
+   "answer": "Entra authorization",
+   "why": "The portal reaches Azure file shares with Shared Key by default and Cloud Shell keeps its home directory in a file share, so disallowing the key breaks both unless identity-based access to file data is set up with the right RBAC assignments first, or those workloads are moved to a separate account. This is a consequence of the authorization model, not a firewall symptom, so Network boundary would send you hunting the wrong blade.",
+   "citation": "Learn: Azure Storage Shared Key disablement · outline 2.1"
+  },
+  {
+   "id": "sto-21",
+   "label": "At 03:00 a media company's archive account serves eleven gigabytes to an address that has never touched it before, routed through a Tor exit node. Nobody notices until the egress bill lands three weeks later.",
+   "sub": "Which control closes this?",
+   "answer": "Defender detection",
+   "why": "Activity monitoring in the Defender for Storage plan continuously reads control and data plane telemetry, matches sources against Microsoft threat intelligence including Tor exit nodes, and raises an alert on exfiltration-shaped behaviour without any diagnostic logging being turned on first. Network-boundary is the preventive cousin: useful, but the scene asks to be told, not to be walled off.",
+   "citation": "Learn: What is Microsoft Defender for Storage · outline 2.1"
+  },
+  {
+   "id": "sto-22",
+   "label": "A recruitment platform lets the public upload CVs and portfolios straight into a blob container, and a downstream pipeline opens every file. The security lead wants each object checked for known malicious content as it lands, with a predictable monthly spend.",
+   "sub": "Which control closes this?",
+   "answer": "Defender detection",
+   "why": "On-upload malware scanning in the Defender for Storage plan runs uploaded objects through Microsoft Defender Antivirus, is billed per gigabyte scanned, and carries a per-account monthly cap that defaults to ten thousand gigabytes of uploaded blobs so costs stay bounded. Two things get confused here. Hash reputation analysis is offered in every plan, not just this one, but it merely matches the hash of a newly uploaded object against known malware and skips paths such as SMB file shares and blobs assembled with Put Block, so it is not the control the lead is asking for; full content scanning on upload is. And SAS scope is the wrong shelf altogether, since trimming the uploaders' tokens says nothing about what is inside the files they legitimately upload.",
+   "citation": "Learn: What is Microsoft Defender for Storage · outline 2.1"
+  },
+  {
+   "id": "sto-23",
+   "label": "A logistics customer portal accepts supplier invoices as PDFs. Compliance insists an infected upload must be moved out of the live container automatically within minutes rather than waiting for an analyst to read an alert queue.",
+   "sub": "Which control closes this?",
+   "answer": "Defender detection",
+   "why": "Malware scanning results can be published to Azure Event Grid, and a Function or Logic App subscribed to that event can delete or quarantine the offending blob in near real time. Anonymous-access is the wrong shelf entirely here: the uploads are authenticated and expected, and the exposure is the content of the file rather than who can read it.",
+   "citation": "Learn: Configure malware scanning in Defender for Storage · outline 2.1"
+  }
+ ]
+}

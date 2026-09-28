@@ -1,0 +1,45 @@
+{
+  "fit-tuning": {
+    "hint": "Compara desempenho de treino com desempenho de validação ou teste: ambos pobres sugerem underfitting, enquanto um grande intervalo de treino-para-validação sugere overfitting."
+  },
+  "fit-tuning-01": {
+    "label": "O modelo captura padrões úteis e tem desempenho similar em dados de treino e dados não vistos.",
+    "why": "O modelo captura padrões úteis e tem desempenho similar em dados de treino e dados não vistos."
+  },
+  "fit-tuning-02": {
+    "label": "O modelo tem desempenho muito bom em dados de treino mas desempenho fraco em dados não vistos.",
+    "why": "O modelo tem desempenho muito bom em dados de treino mas desempenho fraco em dados não vistos."
+  },
+  "fit-tuning-03": {
+    "label": "O modelo é demasiado simples ou insuficientemente treinado e tem desempenho fraco até em dados de treino.",
+    "why": "O modelo é demasiado simples ou insuficientemente treinado e tem desempenho fraco até em dados de treino."
+  },
+  "fit-tuning-04": {
+    "label": "A sobresimplificação sistemática causa erro consistente e está vulgarmente associada com underfitting.",
+    "why": "A sobresimplificação sistemática causa erro consistente e está vulgarmente associada com underfitting."
+  },
+  "fit-tuning-05": {
+    "label": "O modelo é excessivamente sensível à sua amostra de treino e está vulgarmente associado com overfitting.",
+    "why": "O modelo é excessivamente sensível à sua amostra de treino e está vulgarmente associado com overfitting."
+  },
+  "fit-tuning-06": {
+    "label": "Uma restrição ou penalidade que desencoraja complexidade excessiva e pode reduzir overfitting.",
+    "why": "Uma restrição ou penalidade que desencoraja complexidade excessiva e pode reduzir overfitting."
+  },
+  "fit-tuning-07": {
+    "label": "Divisões treino-validação repetidas utilizadas para estimar quão consistentemente um modelo generaliza.",
+    "why": "Divisões treino-validação repetidas utilizadas para estimar quão consistentemente um modelo generaliza."
+  },
+  "fit-tuning-08": {
+    "label": "Um hiperparâmetro que controla o tamanho de cada actualização de optimização.",
+    "why": "Um hiperparâmetro que controla o tamanho de cada actualização de optimização."
+  },
+  "fit-tuning-09": {
+    "label": "Uma passagem completa através do conjunto de dados de treino.",
+    "why": "Uma passagem completa através do conjunto de dados de treino."
+  },
+  "fit-tuning-10": {
+    "label": "O número de exemplos de treino utilizados para calcular uma actualização de parâmetro.",
+    "why": "O número de exemplos de treino utilizados para calcular uma actualização de parâmetro."
+  }
+}

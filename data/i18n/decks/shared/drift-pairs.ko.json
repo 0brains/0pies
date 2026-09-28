@@ -1,0 +1,50 @@
+{
+ "dp-01": {
+  "a.text": "credit model이 new region에서 applicants의 wave를 sees해요. given income, employment, 그리고 history profile에 대해, default rates는 정확히 model이 expects하는 것이에요.",
+  "a.why": "inputs는 new territory로 moved되었지만 rule은 intact해요. More representative training data가 그것을 fixes해요. new rule은 필요하지 않아요.",
+  "b.text": "credit model이 같은 new region에서 applicants의 wave를 sees해요. identical income, employment, 그리고 history profile에 대해, default rates는 거기에서 model이 expects하는 것의 two times예요.",
+  "b.why": "Identical inputs는 이제 different outcomes을 produce하므로, P(Y|X)는 changed했어요. Input mix를 rebalancing하는 amount는 더 이상 hold되지 않는 relationship을 fix하지 않을 거예요."
+ },
+ "dp-02": {
+  "a.text": "credit model이 같은 new region에서 applicants의 wave를 sees해요. identical income, employment, 그리고 history profile에 대해, default rates는 거기에서 model이 expects하는 것의 two times예요.",
+  "a.why": "Identical inputs는 이제 different outcomes을 produce하므로, P(Y|X)는 changed했어요. Input mix를 rebalancing하는 amount는 더 이상 hold되지 않는 relationship을 fix하지 않을 거예요.",
+  "b.text": "credit model의 error는 Tuesday에 jumps해요. Investigation은 그 아침에 competitor가 aggressive discount campaign을 launched했음을 finds해요.",
+  "b.why": "World의 real change는 model이 encodes하는 relationship을 altered했어요. Post-change data에 retraining하는 것이 correct response예요."
+ },
+ "dp-03": {
+  "a.text": "six months에 걸쳐 fraud model이 degrades하여 old attack pattern이 progressively new one으로 replaced돼요. Period 전체에 걸쳐, 둘 다 patterns는 volume에 arrive해요.",
+  "a.why": "Two distinct concepts이 time에서 overlapping하며, mixture weight은 moving해요. Per concept를 keeping하는 ensemble은 이것을 handle하는 데 well해요.",
+  "b.text": "six months에 걸쳐 fraud model이 degrades하여 attackers는 continuously transaction sizes를 small steps에서 upward로 adjust해요. 어느 point에서든 old 또는 new pattern은 없어요.",
+  "b.why": "하나의 concept이 smoothly intermediate states를 통해 moving해요. Rolling retraining window는 그것을 track해요. concept-switching machinery는 switch할 것이 없어요."
+ },
+ "dp-04": {
+  "a.text": "screening model이 new clinic에 deployed돼요. Patients는 training population보다 younger 및 fitter이며, disease prevalence는 unchanged예요.",
+  "a.why": "Feature distribution은 moved했지만 outcome mix는 하지 않았어요. Concern은 thinly-covered input regions로의 extrapolation이에요.",
+  "b.text": "screening model이 new clinic에 deployed돼요. Patients는 demographically identical로 training population을 look해요. 하지만 disease prevalence는 quarter of what it was예요.",
+  "b.why": "P(Y)는 moved했지만 P(X|Y)는 intact이므로, model의 ranking은 still works하지만 그것의 probabilities는 systematically too high예요. Prior correction, retraining이 아니에요."
+ },
+ "dp-05": {
+  "a.text": "collections model의 high-risk scores의 share는 month에서 12%에서 25%로 rise해요. Outcomes는 observe하는 데 ninety days가 필요하므로, 이 cohort에 대해 available인 none은 아직 없어요.",
+  "a.why": "Output-distribution change with no labels은 investigate하는 signal이며, finding이 아니에요. 이것은 genuinely riskier population에 correct response일 수 있어요.",
+  "b.text": "collections model의 high-risk scores의 share는 month에서 12%에서 25%로 rise해요. 그리고 ninety days ago에서의 cohort는 이제 precision down 18 points로 resolved했어요.",
+  "b.why": "Labels은 arrived했으며 quality는 actually fallen했어요. 오직 이제 evidence on retraining이 justified이며 histogram의 shape가 아니라예요."
+ },
+ "dp-06": {
+  "a.text": "logistics model의 accuracy는 every year의 Christmas 전의 fortnight에서 collapses하고 immediately afterwards에 recovers해요.",
+  "a.why": "Known concept이 cycle에서 comes back해요. Retire nothing: seasonal model을 keep하고 context로 select해요.",
+  "b.text": "logistics model의 accuracy는 permanent change를 national delivery regulations으로 collapses되고, never recovers해요.",
+  "b.why": "Abrupt, one-way change이 no return인 해요. Pre-change model은 no further use를 가졌으며 pre-change data는 retraining를 위해 limited value를 가져요."
+ },
+ "dp-07": {
+  "a.text": "moderation team이 guidance를 rewrites하여 borderline content의 category는 이제 previously 'acceptable'이었던 곳에서 'violating'로 labeled돼요. Arriving content는 unchanged예요.",
+  "a.why": "Same inputs, different labels. mapping은 redefined돼요. Every historical label under old guidance는 이제 training purposes를 위해 partly wrong이에요.",
+  "b.text": "moderation team의 guidance는 unchanged이며, viral trend는 genuinely violating content이 2%에서 9%의 queue로 rise한다는 의미예요.",
+  "b.why": "Rule은 stable해요. Outcomes의 mix는 moved했어요. Thresholds 및 capacity planning은 attention이 필요해요. model의 learned boundary는 아니에요."
+ },
+ "dp-08": {
+  "a.text": "Scores는 new model version이 released되는 day에 shift해요. Fixed reference sample, replayed through both versions, reproduces shift exactly해요.",
+  "a.why": "Identical inputs이 different outputs을 producing하는 것이 isolates change를 model로 해요. 이것은 release에서 fixed reference sample의 expected use예요.",
+  "b.text": "Scores는 new model version이 released되는 day에 shift해요. 같은 fixed reference sample, replayed through both versions, produces identical outputs해요.",
+  "b.why": "Model이 fixed inputs에서 provably unchanged라면, live inputs은 must have changed했습니다. Same-day coincidence는 world의 deploy의 data-side changes를 points해요. model의 아니라예요."
+ }
+}

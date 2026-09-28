@@ -1,0 +1,74 @@
+{
+ "risk-treatment": {
+  "hint": "Arrasta cada decisão para a opção de tratamento que representa. Pergunta o que aconteceu ao próprio risco, não quanto trabalho a resposta levou.",
+  "note": "Tratamento responde 'o que estamos a fazer sobre este risco'. É um eixo diferente de força de controlo, que responde 'quão eficaz é a redução'. Comprar seguro é uma decisão de tratamento forte e nenhum controlo nada.",
+  "zones[0].def": "Não empreender, ou parar de empreender, a atividade que dá origem ao risco. A exposição vai para zero porque a atividade vai para zero.",
+  "zones[1].def": "Manter a atividade mas agir sobre probabilidade ou impacto. A maioria dos controlos vivem aqui, e o risco residual sempre permanece.",
+  "zones[2].def": "Mover a consequência financeira ou legal para outra parte. O risco é intocado; apenas quem paga muda.",
+  "zones[3].def": "Reter o risco conscientemente, ao nível de autoridade autorizada a aceitá-lo, e registar a decisão."
+ },
+ "rt-01": {
+  "label": "Após uma avaliação de risco, a empresa cancela a sua funcionalidade de reconhecimento de emoção para monitorização de local de trabalho inteiramente.",
+  "why": "A própria atividade é abandonada, então a exposição desaparece em vez de ser gerida. A prevenção é o único tratamento que remove um risco em vez de encolhê-lo."
+ },
+ "rt-02": {
+  "label": "Um modelo de fornecedor requereria processar dados biométricos para os quais a empresa não tem base legal, então a empresa retira-se da aquisição.",
+  "why": "Recusar-se a avançar é uma decisão de tratamento, não a ausência de uma. Geralmente é a resposta correta quando o risco é inaceitável em qualquer nível residual."
+ },
+ "rt-03": {
+  "label": "Um banco decide não implementar um modelo de decisão automatizada na única jurisdição onde não poderia cumprir o requisito de contestabilidade.",
+  "why": "Escopificar a atividade fora de uma jurisdição remove a exposição lá. A prevenção parcial por âmbito é ainda prevenção."
+ },
+ "rt-04": {
+  "label": "Uma equipa abandona uma funcionalidade planeada que teria inferido estado de saúde do histórico de compra, julgando nenhuma mitigação suficiente.",
+  "why": "Quando nenhum controlo traz risco residual dentro da tolerância, a prevenção é a opção restante. O indicador é que a atividade para, não que é observada mais de perto."
+ },
+ "rt-05": {
+  "label": "Limiares de confiança são introduzidos para que casos incertos sejam encaminhados para um revisor treinado em vez de serem auto-decididos.",
+  "why": "A atividade continua com menor probabilidade de uma decisão errada não revista. O risco residual permanece — revisores são falíveis — que é a assinatura de redução."
+ },
+ "rt-06": {
+  "label": "O corpus de treino é rebalanceado e o modelo é re-avaliado por subgrupo antes do lançamento.",
+  "why": "Isto reduz a probabilidade de desempenho disparatado sem eliminá-lo. Melhoria mensurável com exposição residual é redução, não prevenção."
+ },
+ "rt-07": {
+  "label": "Limites de taxa, filtros de saída e um kill switch são adicionados a um assistente virado para o cliente.",
+  "why": "Cada medida ataca probabilidade ou impacto enquanto o serviço continua a executar. Note que o kill switch reduz impacto em vez de probabilidade — ambos contam."
+ },
+ "rt-08": {
+  "label": "Model cards, resultados de avaliação e limitações conhecidas são publicados para que implementadores possam usar o sistema dentro do seu envelope testado.",
+  "why": "Reduzir uso indevido por informar o implementador é uma redução genuína, se fraca. A sua fraqueza é uma questão de força de controlo, não classificação de tratamento."
+ },
+ "rt-09": {
+  "label": "A empresa compra seguro de responsabilidade de IA específico cobrindo reclamações originária de decisões automatizadas.",
+  "why": "A consequência financeira move para a seguradora enquanto o modelo se comporta exatamente como antes. O seguro nunca reduz a probabilidade de dano e não é um controlo."
+ },
+ "rt-10": {
+  "label": "Um contrato torna o fornecedor de modelo responsável pelos danos causados por defeitos no sistema fornecido.",
+  "why": "A indenidade contratual realoca custo entre partes. O indivíduo afetado não é melhor protegido, o que é por que reguladores não tratam como mitigação."
+ },
+ "rt-11": {
+  "label": "Uma atividade de processamento de risco elevado é externalizada para um fornecedor especialista sob um contrato tornando-os responsáveis por falhas de conformidade.",
+  "why": "A externalização desloca consequência operacional e financeira, apesar de raramente responsabilidade regulatória — uma distinção que apanha as pessoas."
+ },
+ "rt-12": {
+  "label": "O implementador negocia uma garantia e indenidade limitada para reclamações de IP de terceiros originária de saída gerada.",
+  "why": "A exposição é precificada e deslocada em vez de diminuída. Um limite significa que a transferência é parcial, que vale a pena registar no registo de risco."
+ },
+ "rt-13": {
+  "label": "Um pequeno risco residual de um erro de formatação de baixa severidade é documentado, assinado pelo product owner, e revista anualmente.",
+  "why": "Retenção informada, autorizada e registada é aceitação. A aceitação é uma decisão com um responsável e uma data de revisão, não silêncio."
+ },
+ "rt-14": {
+  "label": "O comité de risco regista que o risco residual da implementação está dentro do apetite declarado e nenhuma ação adicional é necessária este ciclo.",
+  "why": "Retenção explícita ao nível de autoridade autorizado a reter. Se ninguém no nível correto disse sim, o risco não é aceite — é meramente não gerido."
+ },
+ "rt-15": {
+  "label": "Uma limitação conhecida com uma solução alternativa documentada é agendada para revisão no próximo refresh de modelo em vez de ser consertada agora.",
+  "why": "Retenção com limite de tempo com um ponto de revisão é aceitação. A solução alternativa não o torna redução, porque o próprio risco não mudou nesse ínterim."
+ },
+ "rt-16": {
+  "label": "O conselho nota que o custo de mitigação adicional excede a perda esperada e direciona que o risco residual seja retido e monitorizado.",
+  "why": "Uma decisão de retenção justificada por custo ao nível de conselho, com monitorização anexada. Monitorização não é um controlo aqui — deteta, não previne."
+ }
+}

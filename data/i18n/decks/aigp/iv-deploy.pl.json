@@ -1,0 +1,95 @@
+{
+ "iv-deploy": {
+  "hint": "Przeciągnij każdy scenariusz na wybór, który wymaga. Tablica zawiera przynęty rysowane z każdej osi — typ modelu, infrastruktura i adaptacja — więc czytaj pod kątem rzeczywistego ograniczenia, a nie tylko znajomego słownictwa."
+ },
+ "iv-dm-01": {
+  "label": "Tłumaczenie w czasie rzeczywistym na urządzeniach ręcznych z przerywanym połączeniem.",
+  "sub": "Opóźnienie-Ograniczone, Zdolne-Offline",
+  "why": "Opóźnienie i odporność offline pokonywają surową możliwość tutaj — kompaktowy model, który biegnie lokalnie przebija większy model, który potrzebuje połączenia na żywo. \"Duże modele są zawsze wymagane do rzeczywistego czasu\" jest zarejestrowaną fałszywą przynętą: możliwość nie gwarantuje niskiego opóźnienia raz sieć spada."
+ },
+ "iv-dm-02": {
+  "label": "Odpowiedzi muszą odzwierciedlać wytyczne kliniczne tego miesiąca w momencie, gdy lekarz pyta — nie snapshot treningu z zeszłego kwartału.",
+  "sub": "Świeżość w Czasie Zapytania",
+  "why": "Świeżość żyje poza wagami: podłączenie modelu do bieżącego, wyselekcjonowanego źródła w czasie zapytania utrzymuje odpowiedzi bieżące bez retrenningu. Nie eliminuje to halucynacji — model może nadal źle przeczytać to, co pobrał — a wymiany treningu kosztują nowy obowiązek ops: korpus wymaga ciągłego ponownego indeksowania, aby pozostać bieżący."
+ },
+ "iv-dm-03": {
+  "label": "Oferty pożyczek muszą być identyczne dla identycznych danych wejściowych i muszą następować tylko napisanym regułom polityki kredytowej — żaden przypadek nie może być decydowany innym sposobem.",
+  "sub": "Reproducible przez Regułę",
+  "why": "Gdy wyniki muszą być idealnie odtwarzalne i śledzone do kodyfikowanych reguł, silnik reguł if-then — a nie probabilistyczny model — to właściwe dopasowanie; silnik reguł nie może dryfować ani halucynować jego sposób na inną odpowiedź dla tych samych danych wejściowych."
+ },
+ "iv-dm-04": {
+  "label": "Ścisły mandat rezydencji wymaga od regulatora pełnej widoczności infrastruktury ponad wrażliwymi rejestrami finansowymi.",
+  "sub": "Kontrola Widoczna Dla Regulatora",
+  "why": "Utrzymanie modelu i danych wewnątrz własnego środowiska organizacji maksymalizuje kontrolę i omija pytania transferu między granicami, które regulator musiałby ścigać przez infrastrukturę dostawcy — kompromis jest cięższą kadrą in-house i obciążeniem audytu. Na rankingu latencji-vs-nadzoru, premises on-premises nadal pokonuje krawędzowy zawsze, gdy scentralizowana widoczność regulatora ma większe znaczenie niż bliskość do źródła danych."
+ },
+ "iv-dm-05": {
+  "label": "Kierownictwo chce zarządzanej usługi do skalowania analizy obrazu szybko bez budowania centrum danych, i zakłada, że dostawca teraz posiada całe ryzyko bezpieczeństwa.",
+  "sub": "Elastyczne, Ale Czyje Ryzyko?",
+  "why": "Chmura to właściwe wezwanie do skali bez posiadania infrastruktury — ale \"dostawca teraz posiada bezpieczeństwo\" to pułapka: pod modelem wspólnej odpowiedzialności, wdrażająca organizacja nadal odpowiada za swoje własne dane, a pojedyncze błędne skonfigurowanie po stronie klienta może wciąż spowodować naruszenie."
+ },
+ "iv-dm-06": {
+  "label": "Wielojęzyczne kioski czatowe na przejściach granicznych mają ograniczone połączenie i ograniczoną moc, a odpowiedzi muszą pozostać bliskie natychmiastowe.",
+  "sub": "Brak Serwera, Brak Czekania",
+  "why": "Uruchamianie modelu na samym urządzeniu usuwa zależność od zewnętrznego połączenia, które te przejścia nie mogą niezawodnie gwarantować. Co ten wybór cię kosztuje: przesunięcie wnioskowania do krawędzi handluje centralizowanymi narzędziami wykrywania dryfu, więc flota urządzeń może cicho dryfować z wykresu bez jednego pulpitu, aby go złapać."
+ },
+ "iv-dm-07": {
+  "label": "Mały własnościowy model szkolny się nieustannie na żywym strumieniu zawartości i musi utrzymywać zdjęcia punktacji lokalnie na całych tysiącach sklepów, bez rundy sieciowej.",
+  "sub": "Lokal-Pierwszy na Skalę Floty",
+  "why": "Lokalny zapis offline wymaga model na urządzeniu. Co ten wybór cię kosztuje: monitorowanie i audyt wydajności konsekwentnie staje się znacznie trudniej, gdy decyzje są rozłożone na ogromną, fizycznie rozproszoną flotę zamiast jednej scentralizowanej usługi."
+ },
+ "iv-dm-08": {
+  "label": "Firma logistyki optymalizująca swój łańcuch dostaw chce badać, modyfikować i rozpowszechniać wagi i kod modelu zamiast polegać na harmonogramie wdrażania jednego dostawcy.",
+  "sub": "Badaj to Sam",
+  "why": "Otwarte wagi kupują przejrzystość, elastyczność i wolność od harmonogramu wydań jednego dostawcy — kosztem przejęcia wewnętrznego przeglądu licencji, sprawdzenia pochodzenia i własnych testów bezpieczeństwa, które dostawca inny nosiłby."
+ },
+ "iv-dm-09": {
+  "label": "Firma medialna automatyzująca streszczenia wideo chce SLA dostawcy, reagowanie na incydenty i indemnity IP wspierające cokolwiek modeluje wysyła się z.",
+  "sub": "Wspierane Kontraktem, Nie Badalne",
+  "why": "Wsparcie wspierane kontraktem i gwarancje to całe znaczenie przejścia na własnościowe — ale ta wygoda ma nazwane ryzyko strategiczne: przełączanie się później jest trudniejsze, gdy przepływy pracy, podpowiedzi i integracje są zbudowane wokół API jednego dostawcy, a blokada dostawcy jest zarejestrowana jako główne ryzyko strategiczne tej ścieżki."
+ },
+ "iv-dm-10": {
+  "label": "Bank ma tysiące etykietowanych decyzji historycznych, które demonstrują stabilne, specjalistyczne zachowanie punktacji, które model ogólnego przeznaczenia nie reprodukuje samodzielnie.",
+  "sub": "Wykazany, Nie Opisany",
+  "why": "To właściwe narzędzie dla stabilnego, wykazanego zachowania wpieczanego w wagi poprzez wyselekcjonowane przykłady. To nie jest bezpłatna aktualizacja: zarządzanie teraz traktuje wynik jako nowy system potrzebujący własnego ponownego testowania sprawiedliwości i solidności, i nosi zwiększoną odpowiedzialność prawną w stosunku do korzystania z modelu innej strony jako-is."
+ },
+ "iv-dm-11": {
+  "label": "Generator danych syntetycznych jest trenowany dalej na selekcji rekordów produkcyjnych, więc jego wyjście testowe wydaje się wystarczająco realistyczne, aby QA zaufało.",
+  "sub": "Realizm Pożyczony Od Rzeczywistej Rzeczy",
+  "why": "Adaptacja modelu bazowego dalej na własnych danych organizacji to fine-tuning z definicji. Ryzyko, które następuje jest specyficzne dla tej ścieżki: wygenerowane wyjście syntetyczne może nadal niosą ślady oryginalnych wrażliwych rekordów produkcyjnych nawet po anonimizacji, ponieważ informacja jest teraz wpieczana w wagi, a nie siedzi w sprawdzalnej bazie danych."
+ },
+ "iv-dm-12": {
+  "label": "Pilot przesiewania wznowienia musi uruchomić się w tym kwartale; nie ma czasu ani budżetu jeszcze do retrenningu, tylko do walidacji licencjonowanego modelu względem rzeczywistych wyników zatrudnienia.",
+  "sub": "Szybka, Nieudowodniona Dopasowanie",
+  "why": "Out-of-the-box to najszybsza ścieżka do pilota i unika kosztu retrenningu — ale zarządzanie musi traktować go jako wysokie ryzyko, aż udowodni inny: dane treningowe dostawcy lub granice decyzji mogą nie pasować do tej domeny, więc walidacja względem własnych standardów wydajności i sprawiedliwości tej organizacji, plus kontroli wyrównawczych, takich jak przegląd człowieka, nie jest opcjonalna."
+ },
+ "iv-dm-13": {
+  "label": "System wykrywania oszustw klasyfikuje strukturalne rekordy transakcji; jego główne zagrożenia to stronniczość wobec pewnych grup i dokładność, która skrycie się pogarsza w miarę zmiany wzorców wydatków.",
+  "sub": "Strukturowane Wejście, Znane Niepowodzenie",
+  "why": "Przewidywanie lub klasyfikacja znanej kategorii ze strukturalnych cech to klasyczny profil awarii — znane zagrożenia stronniczości i dryfu, które testy sprawiedliwości i monitorowanie są zbudowane do złapania, wyraźnie różne od profilu trybu awaryjnego systemu generatywnego o pewnym wymyślaniu niewłaściwej zawartości."
+ },
+ "iv-dm-14": {
+  "label": "Marketing potrzebuje narzędzia, które redaguje nową kopię reklamy i obrazy kampanii z krótkiej podpowiedzi, a nie tego, który klasyfikuje lub punktuje cokolwiek, co już istnieje.",
+  "sub": "Nowa Zawartość, Nie Werdykt",
+  "why": "Tworzenie nowej zawartości — tekst, obrazy, kod — to generacyjny profil korzyści-i-ryzyka: przekonujące złe dane wyjściowe, IP i kwestie pochodzenia, oraz potrzeba zabezpieczeń bezpieczeństwa zawartości, wyraźnie różne od modów klasycznych strukturalnego przewidywania."
+ },
+ "iv-dm-15": {
+  "label": "Recenzent roszczeń wymaga system waży fotografię uszkodzenia razem z pisanym opisem incydentu przed oflagowaniem roszczenia.",
+  "sub": "Dwa Kanały, Jeden Osąd",
+  "why": "Wspólna interpretacja obrazu i tekstu razem — i bycie w stanie wyjaśnić, które wejście napędzało dane wyjściowe — to multimodalny profil ryzyka i możliwości; system tylko tekstu po prostu nie ma kanału dla fotografii."
+ },
+ "iv-dm-16": {
+  "label": "Tylko tekstowy czatbot wsparcia odpowiada na pytania klientów i musi ujawnić, że jest sztuczną inteligencją, cytować źródła i eskalować wrażliwe przypadki do człowieka.",
+  "sub": "Jeden Kanał, Ujawniony",
+  "why": "Tekst w, tekst na wyjściu z ujawnieniem, cytatem i kontrolami eskalacji człowieka to profil zarządzania modelem języka — nie ma drugiego kanału wejściowego do rozumowania, co byłoby to push w kierunku profilu multimodalnego zamiast."
+ },
+ "iv-dm-17": {
+  "label": "Dwa miliony krótkich, strukturalnych rekordów muszą być punktowane nocą w ramach ciasnego budżetu obliczeniowego, używając paru już etykietowanych cech.",
+  "sub": "Wąskie Zadanie, Ciasny Budżet",
+  "why": "Wąski model niskiego obliczenia jest łatwiej wyjaśnić, szybko retrein i uruchomić tanio na tej skali partii — kompromis jest taki, że może walczyć raz środowisko staje się bardziej złożone lub zmienne niż to, dla którego został zbudowany."
+ },
+ "iv-dm-18": {
+  "label": "System musi uogólniać wiele nieznanych domen od dnia pierwszego, bez czasu na budowanie lub etykietowanie dataset per-domeny.",
+  "sub": "Szerokość Kupiona Przez Skalę",
+  "why": "Szerokie pretraining to co kupuje zero- i few-shot uogólnianie na domeny nikt nie ma etykietowanych danych dla jeszcze — koszt to większy, mniej przejrzysty system, który potrzebuje własnego zarządzania obliczeniami, oceny bezpieczeństwa i monitorowania dryfu."
+ }
+}

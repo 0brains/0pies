@@ -1,0 +1,96 @@
+<!-- Secure the Perimeter board (siegeBoard scene, original artwork for this lab).
+     Inner-SVG content only, same convention as world-map-paths.svg: the engine
+     wraps it in an <svg class="sg-svg"> whose viewBox comes from the deck's
+     scene.viewBox. Canonical viewBox: 0 0 1000 560. All presentation comes from
+     the sg-* classes themed in lab.html; no fills, no scripts, no external
+     references. Layout: internet edge (left), edge router, perimeter firewall
+     slot, DMZ (web server + mail relay), inner firewall slot, LAN (core switch,
+     endpoints, server rack). Point-target drop seats are drawn by the engine at
+     deck-authored coordinates; the two dashed slots below only hint at the
+     classic firewall positions. -->
+<g class="sg-scene-art" aria-hidden="true">
+  <!-- trunk wiring, drawn first so zones and nodes sit on top -->
+  <polyline class="sg-wire" points="168,280 222,280"/>
+  <polyline class="sg-wire" points="286,280 400,280"/>
+  <polyline class="sg-wire" points="400,280 480,280"/>
+  <polyline class="sg-wire" points="480,280 480,232"/>
+  <polyline class="sg-wire" points="480,280 480,318"/>
+  <polyline class="sg-wire" points="480,280 630,280"/>
+  <polyline class="sg-wire" points="630,280 726,280"/>
+  <polyline class="sg-wire" points="796,280 830,280 830,166 872,166"/>
+  <polyline class="sg-wire" points="830,280 830,398 858,398"/>
+
+  <!-- INTERNET -->
+  <rect class="sg-zone" x="18" y="186" width="150" height="188" rx="6"/>
+  <text class="sg-zlab" x="93" y="172" text-anchor="middle">INTERNET</text>
+  <circle class="sg-glyph" cx="93" cy="272" r="36"/>
+  <ellipse class="sg-glyph" cx="93" cy="272" rx="16" ry="36"/>
+  <line class="sg-glyph" x1="57" y1="272" x2="129" y2="272"/>
+  <line class="sg-glyph" x1="62" y1="252" x2="124" y2="252"/>
+  <line class="sg-glyph" x1="62" y1="292" x2="124" y2="292"/>
+  <text class="sg-nlab" x="93" y="342" text-anchor="middle">untrusted</text>
+
+  <!-- edge router -->
+  <rect class="sg-node" x="222" y="252" width="64" height="56" rx="5"/>
+  <polyline class="sg-glyph" points="234,272 250,272 244,264"/>
+  <polyline class="sg-glyph" points="250,272 244,280"/>
+  <polyline class="sg-glyph" points="274,288 258,288 264,280"/>
+  <polyline class="sg-glyph" points="258,288 264,296"/>
+  <text class="sg-nlab" x="254" y="330" text-anchor="middle">EDGE ROUTER</text>
+
+  <!-- perimeter firewall slot -->
+  <line class="sg-slot" x1="350" y1="216" x2="350" y2="248"/>
+  <line class="sg-slot" x1="350" y1="312" x2="350" y2="344"/>
+  <text class="sg-nlab" x="350" y="204" text-anchor="middle">FW SLOT</text>
+
+  <!-- DMZ -->
+  <rect class="sg-zone" x="400" y="88" width="230" height="392" rx="6"/>
+  <text class="sg-zlab" x="418" y="122" text-anchor="start">DMZ</text>
+  <!-- web server -->
+  <rect class="sg-node" x="450" y="158" width="60" height="74" rx="4"/>
+  <line class="sg-glyph" x1="458" y1="176" x2="502" y2="176"/>
+  <line class="sg-glyph" x1="458" y1="194" x2="502" y2="194"/>
+  <line class="sg-glyph" x1="458" y1="212" x2="502" y2="212"/>
+  <circle class="sg-glyph" cx="496" cy="168" r="2"/>
+  <text class="sg-nlab" x="480" y="150" text-anchor="middle">WEB SERVER</text>
+  <!-- mail relay -->
+  <rect class="sg-node" x="450" y="318" width="60" height="52" rx="4"/>
+  <polyline class="sg-glyph" points="456,326 480,346 504,326"/>
+  <text class="sg-nlab" x="480" y="392" text-anchor="middle">MAIL RELAY</text>
+
+  <!-- inner firewall slot -->
+  <line class="sg-slot" x1="665" y1="216" x2="665" y2="248"/>
+  <line class="sg-slot" x1="665" y1="312" x2="665" y2="344"/>
+  <text class="sg-nlab" x="665" y="204" text-anchor="middle">FW SLOT</text>
+
+  <!-- LAN -->
+  <rect class="sg-zone" x="700" y="60" width="282" height="452" rx="6"/>
+  <text class="sg-zlab" x="718" y="94" text-anchor="start">LAN</text>
+  <!-- core switch -->
+  <rect class="sg-node" x="726" y="258" width="70" height="44" rx="4"/>
+  <circle class="sg-glyph" cx="740" cy="280" r="3"/>
+  <circle class="sg-glyph" cx="754" cy="280" r="3"/>
+  <circle class="sg-glyph" cx="768" cy="280" r="3"/>
+  <circle class="sg-glyph" cx="782" cy="280" r="3"/>
+  <text class="sg-nlab" x="761" y="322" text-anchor="middle">CORE SWITCH</text>
+  <!-- endpoints -->
+  <rect class="sg-node" x="872" y="120" width="40" height="28" rx="3"/>
+  <line class="sg-glyph" x1="892" y1="148" x2="892" y2="156"/>
+  <line class="sg-glyph" x1="882" y1="156" x2="902" y2="156"/>
+  <rect class="sg-node" x="922" y="120" width="40" height="28" rx="3"/>
+  <line class="sg-glyph" x1="942" y1="148" x2="942" y2="156"/>
+  <line class="sg-glyph" x1="932" y1="156" x2="952" y2="156"/>
+  <rect class="sg-node" x="897" y="176" width="40" height="28" rx="3"/>
+  <line class="sg-glyph" x1="917" y1="204" x2="917" y2="212"/>
+  <line class="sg-glyph" x1="907" y1="212" x2="927" y2="212"/>
+  <text class="sg-nlab" x="917" y="236" text-anchor="middle">ENDPOINTS</text>
+  <!-- server rack -->
+  <rect class="sg-node" x="858" y="330" width="84" height="142" rx="4"/>
+  <line class="sg-glyph" x1="866" y1="354" x2="934" y2="354"/>
+  <line class="sg-glyph" x1="866" y1="378" x2="934" y2="378"/>
+  <line class="sg-glyph" x1="866" y1="402" x2="934" y2="402"/>
+  <line class="sg-glyph" x1="866" y1="426" x2="934" y2="426"/>
+  <line class="sg-glyph" x1="866" y1="450" x2="934" y2="450"/>
+  <circle class="sg-glyph" cx="928" cy="342" r="2"/>
+  <text class="sg-nlab" x="900" y="492" text-anchor="middle">SERVER RACK</text>
+</g>

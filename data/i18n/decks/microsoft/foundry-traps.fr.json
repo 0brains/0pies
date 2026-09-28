@@ -1,0 +1,74 @@
+{
+  "ft-01": {
+    "a.text": "L'équipe de plate-forme a besoin d'un seul endroit pour gérer la sécurité, les connexions, le calcul et les quota partagés pour toutes les équipes IA.",
+    "a.why": "Le hub est le conteneur de collaboration et de gouvernance de haut niveau avec des ressources partagées — piège histack #3.",
+    "b.text": "Une équipe de produit a besoin de l'endroit où ses déploiements, agents, données et évaluations vivent réellement.",
+    "b.why": "Un projet vit à l'intérieur d'un hub et c'est où tu construis réellement — déploiements, agents, données, évaluations."
+  },
+  "ft-02": {
+    "a.text": "Ton code passe « chat-app-prod » — le nom personnalisé choisi au moment du déploiement — comme l'argument du modèle dans chat.completions.create.",
+    "a.why": "Le nom de déploiement — pas le nom du modèle de base — est ce que ton code appelle (piège exact de histack ; paire de corpus n°19).",
+    "b.text": "Le catalogue Foundry répertorie gpt-4o avec ses scores de référence avant que quoi que ce soit ne soit déployé.",
+    "b.why": "gpt-4o est l'identifiant du modèle de base dans le catalogue ; il ne devient appelable que via un déploiement nommé."
+  },
+  "ft-03": {
+    "a.text": "Un développeur configure le client avec l'adresse HTTPS de la ressource Foundry, lue à partir d'une variable d'environnement, afin que chaque requête sache quelle ressource sur Azure atteindre.",
+    "a.why": "Le point de terminaison (azure_endpoint) est l'adresse de ressource que le SDK cible — il identifie où l'appel est envoyé, pas qui est autorisé à l'envoyer.",
+    "b.text": "Un développeur déplace un secret hors du fichier source dans une variable d'environnement séparée, afin que l'identifiant de connexion qui prouve l'identité de l'appelant ne soit jamais codé en dur.",
+    "b.why": "L'identifiant de connexion est passé comme api_key (os.getenv('AZURE_OPENAI_KEY')) et authentifie l'appelant — une habitude de confidentialité et de sécurité distincte du routage."
+  },
+  "ft-04": {
+    "a.text": "Une ressource Foundry est créée une fois avec un nom, des instructions et des outils attachés, puis référencée dans de nombreux tours ultérieurs par des demandes de suivi utilisant la même conversation.",
+    "a.why": "Un agent est une ressource nommée, persistante — créé via PromptAgentDefinition avec instructions et outils, puis invoqué à plusieurs reprises.",
+    "b.text": "Un script envoie messages=[{'role': 'user', 'content': 'Résume ce cas.'}] et obtient une seule réponse d'une demande d'achèvement simple, sans rien enregistré sur le serveur et sans thread ou outils impliqués.",
+    "b.why": "Un simple chat.completions.create est une seule demande sans état — aucune instruction persistée, aucun outil ou identité ne survit entre les appels."
+  },
+  "ft-05": {
+    "a.text": "« Retourne toujours les détails des clients dans une forme JSON fixe et réponds uniquement aux questions de politique RH » — une règle persistante pour chaque tour.",
+    "a.why": "La persona, le ton, les règles et les garde-fous appartiennent au message système — la distinction « la plus testée » de histack ; la mauvaise réponse plantée met le comportement dans le message de l'utilisateur ou les paramètres de déploiement.",
+    "b.text": "« Résume mon rapport d'absence de ce trimestre pour moi » — une seule demande, ce tour uniquement.",
+    "b.why": "Le message de l'utilisateur porte la demande de ce tour ; les réponses du modèle antérieur rejouées pour la mémoire sont des messages de l'assistant."
+  },
+  "ft-06": {
+    "a.text": "Après le déploiement d'un modèle, un développeur tape une requête directement dans le portail Foundry et lit la réponse à l'écran sans écrire une seule ligne de Python.",
+    "a.why": "Le terrain de jeu est l'environnement sans code à la demande de Foundry pour le prototypage et la validation rapides avant l'existence d'un code de production.",
+    "b.text": "Le même développeur copie l'extrait de l'onglet Code, qui construit un client AzureOpenAI et appelle chat.completions.create à partir d'un fichier Python que l'application exécutera réellement.",
+    "b.why": "L'onglet Code te donne le modèle d'accès programmatique — l'appel SDK est ce qui s'envoie, pas la session du portail qui l'a validée."
+  },
+  "ft-07": {
+    "a.text": "Un agent de requête est configuré pour toujours répondre avec un ton formel et refuser de discuter de la tarification des concurrents, peu importe ce que l'utilisateur demande.",
+    "a.why": "La persona et les règles de comportement fournies à PromptAgentDefinition sont des instructions — elles façonnent la façon dont l'agent répond, pas ce qu'il peut faire.",
+    "b.text": "Le même agent dispose de la recherche Web et de la recherche de fichiers pour pouvoir chercher des informations en direct au lieu de s'appuyer uniquement sur ce qu'il sait déjà.",
+    "b.why": "La recherche Web et la recherche de fichiers sont attachées à partir du catalogue Build > Tools — les capacités que l'agent peut invoquer, séparées de ses instructions."
+  },
+  "ft-08": {
+    "a.text": "Le modèle doit toujours répondre dans le style maison de ta firme, appris à partir de 5 000 exemples antérieurs.",
+    "a.why": "L'ajustement fin réentraîne les poids sur des exemples — l'outil pour un changement durable de style/comportement.",
+    "b.text": "Le modèle doit répondre à partir de la liste de prix de ce mois, qui change hebdomadairement, sans réentraînement.",
+    "b.why": "RAG injecte les données d'organisation actuelles récupérées à l'inférence — « nourrir le modèle avec tes propres données pour que les réponses restent exactes »."
+  },
+  "ft-09": {
+    "a.text": "Une charge de travail par lot a besoin d'une capacité de traitement prévisible et garantie à un coût horaire fixe, réservée à l'avance quel que soit le nombre de jetons réellement envoyés.",
+    "a.why": "PTU réserve la capacité horaire dédiée pour le débit prévisible et le volume élevé — tu paies pour la réservation, pas par jeton.",
+    "b.text": "Une application de chat interactive a un trafic imprévisible et a besoin d'une facturation à la carte avec des options de traitement régional, de zone de données ou mondiaux, plutôt que la capacité réservée horaire.",
+    "b.why": "Le déploiement standard est l'option préférée offrant la gamme la plus large de capacités et la tarification élastique à la carte — le contraste de déploiement le plus testé de l'examen (paire n°27)."
+  },
+  "ft-10": {
+    "a.text": "Tu as écrit un schéma de champ personnalisé pour les contrats de fournisseurs et tu dois l'enregistrer avant que tout document ne soit traité.",
+    "a.why": "La création/définition de l'analyseur à partir d'un schéma de champ est une configuration, non une exécution.",
+    "b.text": "L'analyseur existe déjà ; le code l'exécute par rapport à une URL de contrat et interroge le résultat structuré.",
+    "b.why": "L'exécution est begin_analyze(analyzer_id=…, inputs=[AnalysisInput(url=…)]) — l'échange de nom de méthode rapproché documenté par le corpus (paire n°26)."
+  },
+  "ft-11": {
+    "a.text": "Décris les champs que tu veux en langage naturel et extrait-les d'un mélange de PDF, d'images et d'audio de réunion en JSON structuré.",
+    "a.why": "CU te permet de décrire les champs en langage naturel tandis qu'un LLM raisonne sur l'entrée multimodale — indice de histack : « entrée libre ou non-document ».",
+    "b.text": "Extrait les totaux d'un grand volume de factures et de reçus standard en utilisant un modèle prêt à l'emploi.",
+    "b.why": "Extraction déterministe à partir de types de formulaires connus — factures, reçus, ID, cartes de visite. « Le piège d'extraction », le préféré de histack."
+  },
+  "ft-12": {
+    "a.text": "Une équipe de détail envoie des photos d'étagères et obtient en retour les champs de produit structurés tels que le nom, le prix et la quantité, définis par ton propre schéma.",
+    "a.why": "Content Understanding transforme l'entrée brute, non structurée ou multimodale en la sortie structurée spécifique qu'un schéma demande.",
+    "b.text": "Un chatbot RAG a besoin d'une base de connaissances qu'il peut interroger par similarité sémantique afin qu'un modèle de chat puisse enraciner ses réponses dans les passages récupérés.",
+    "b.why": "Azure AI Search indexe le contenu — souvent via des intégrations — et le récupère au moment de la requête ; les modèles RAG associent un modèle de chat avec AI Search pour l'enracinement, un travail différent de l'extraction de champs d'un document."
+  }
+}

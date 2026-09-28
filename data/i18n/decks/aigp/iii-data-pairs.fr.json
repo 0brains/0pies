@@ -1,0 +1,74 @@
+{
+ "iii-dp-01": {
+  "a.text": "Utilisé pendant le développement pour affiner les hyperparamètres et détecter le surapprentissage entre les cycles de formation.",
+  "a.why": "Ce rôle est répétable et itératif — le modèle est affiné par rapport à lui plusieurs fois, ce qui est exactement pourquoi il ne peut jamais aussi se présenter comme le verdict final.",
+  "b.text": "Gelé et intouché jusqu'à ce que tous les réglages fins soient terminés, puis exécuté une fois pour fournir l'estimation d'erreur finale et impartiale du modèle.",
+  "b.why": "Évaluer le modèle final sur l'ensemble sur lequel il a été affiné — le piège d'examen enregistré — produit une estimation biaisée. Seul un ensemble que le processus de réglage fin n'a jamais touché peut donner un nombre final impartial."
+ },
+ "iii-dp-02": {
+  "a.text": "La version de script ETL exacte utilisée pour agréger les caractéristiques d'un modèle de désabonnement est enregistrée à chaque étape de transformation, de la table brute à la caractéristique finale.",
+  "a.why": "Cela suit le voyage — chaque transformation qu'un ensemble de données passe — et la version du script de transformation est l'élément unique le plus critique de ces métadonnées pour la reproductibilité et le dépannage de la dérive.",
+  "b.text": "Avant que la transformation ne se produise, la source originale de l'ensemble de données, la chaîne de garde et les conditions de collection sont enregistrées pour établir son authenticité.",
+  "b.why": "C'est le certificat de naissance — origine et garde — pas le dossier de ce qui s'est ensuite passé avec les données ; ce dossier appartient à l'autre côté de cette paire."
+ },
+ "iii-dp-03": {
+  "a.text": "Le bruit mathématique calibré est ajouté pendant l'entraînement de sorte qu'aucun seul dossier d'entraînement ne puisse pas avoir d'effet plus qu'une influence négligeable sur la sortie du modèle.",
+  "a.why": "C'est une garantie mathématique d'influence, pas où les données voyagent physiquement — cela s'applique que les données quittent ou non leur source.",
+  "b.text": "Chaque hôpital s'entraîne localement sur ses propres dossiers patients, et seules les mises à jour résultantes — jamais les dossiers bruts — se déplacent vers un serveur central pour agrégation.",
+  "b.why": "Ce qui est protégé ici sont les données qui quittent le site, pas combien un seul dossier peut être déduit d'une sortie — les dossiers bruts ne voyagent jamais, point final."
+ },
+ "iii-dp-04": {
+  "a.text": "Un document standardisé expose la motivation, la composition, le processus de collecte et les usages recommandés d'un ensemble de données, avant l'entraînement d'un modèle sur celui-ci.",
+  "a.why": "Cela documente la matière première elle-même, indépendamment de tout modèle qui sera formé plus tard sur elle.",
+  "b.text": "L'objectif d'une seule version, ses données d'entraînement/validation/test, ses mesures de performance et ses limitations connues sont résumés pour qui décide si la déployer.",
+  "b.why": "C'est limité à une version spécifique, pas l'ensemble de données qui la sous-tend — une étiquette de nutrition pour l'artefact entraîné, distinct de la portée au niveau de l'ensemble de données de l'autre côté."
+ },
+ "iii-dp-05": {
+  "a.text": "Un attaquant travaille rétroactivement à partir des résultats d'un système pour reconstituer des approximations des dossiers réels sur lesquels il a été entraîné.",
+  "a.why": "Cette attaque récupère le contenu des données d'entraînement à partir de ce que le système produit — reconstruction, pas une vérification oui/non.",
+  "b.text": "Un attaquant ne reconstruit rien, confirme seulement si les données d'une personne spécifique ont été incluses dans l'ensemble d'entraînement du tout.",
+  "b.why": "Cette attaque répond à une question d'adhésion à l'ensemble binaire ; elle ne récupère jamais le contenu du dossier comme l'autre côté le fait."
+ },
+ "iii-dp-06": {
+  "a.text": "Un résident de l'UE retire son consentement, et l'entreprise doit effacer ses dossiers personnels de ses systèmes.",
+  "a.why": "Cela supprime les données brutes elles-mêmes en réponse à une demande de droits — un argument que les données aident à entraîner le modèle ne remplace pas le droit d'effacement une fois le consentement retiré.",
+  "b.text": "Même après que les dossiers offensants soient partis, le modèle lui-même doit être corrigé parce qu'il a déjà appris les motifs des données qui n'auraient jamais dû être utilisées.",
+  "b.why": "Cela supprime ce qu'un modèle a absorbé à partir de données utilisées de manière inappropriée — un recours distinct, parce que le modèle peut conserver l'effet longtemps après que les dossiers sous-jacents soient effacés."
+ },
+ "iii-dp-07": {
+  "a.text": "Une évaluation documentée lie les caractéristiques et la couverture des données au contexte d'utilisation spécifique et prévu du modèle.",
+  "a.why": "C'est à propos de correspondre les données à un usage particulier, pas l'âge ou le volume des données — un grand ensemble de données récent peut toujours échouer ce contrôle s'il n'a jamais été évalué par rapport au cas d'usage réel.",
+  "b.text": "L'ensemble de données est vérifié pour confirmer qu'il reflète la population à laquelle le modèle sera réellement appliqué — traité comme le mitigateur de parti pris le plus important de tout le pipeline.",
+  "b.why": "C'est une question de correspondance des miroirs sur la population ; simplement augmenter un ensemble de données biaisé avec des exemples synthétiques ne résout pas une véritable lacune ici, parce que la question de gouvernance sous-jacente de si les données originales étaient appropriées n'a jamais obtenu de réponse."
+ },
+ "iii-dp-08": {
+  "a.text": "Un ensemble de données est vérifié pour confirmer qu'il n'a pas été altéré ou corrompu à tout moment entre sa source originale et son usage actuel.",
+  "a.why": "C'est une propriété de protection contre l'altération, distinct de si le contenu lui-même est exact ou fiable.",
+  "b.text": "Le même ensemble de données est séparément vérifié pour confirmer qu'il reste exact et fiable quand il est partagé et réutilisé sur différents systèmes et environnements.",
+  "b.why": "Cela demande si le contenu lui-même tient dans les contextes ; un ensemble de données peut être parfaitement intact tout en étant périmé ou incohérent dans ce qu'il dit réellement."
+ },
+ "iii-dp-09": {
+  "a.text": "Le taux de résultats positifs est comparé entre les groupes protégés sur la distribution de sortie réelle et du monde réel du modèle.",
+  "a.why": "Cette métrique compare les taux de résultats agrégés entre les groupes sur les données comme elles sont réellement.",
+  "b.text": "L'attribut protégé d'une demande est basculé tandis que chaque autre entrée reste identique, et la sortie est vérifiée pour tout changement.",
+  "b.why": "Cela teste un seul dossier par rapport à son propre jumeau hypothétique, pas les taux de résultats au niveau du groupe — un modèle peut passer le contrôle agrégé tout en échouant ce contrôle au niveau individuel."
+ },
+ "iii-dp-10": {
+  "a.text": "Les valeurs de poids à l'intérieur du réseau sont mises à jour par rétropropagation à mesure que l'entraînement réduit l'erreur de prédiction.",
+  "a.why": "Ce sont des valeurs apprises qui déterminent comment les données d'entrée sont transformées en sortie — elles n'existent pas en forme finale jusqu'à ce que l'entraînement se produise.",
+  "b.text": "Le taux d'apprentissage est fixé par l'équipe avant l'entraînement ne commence jamais, et reste intouché tandis que le réseau apprend.",
+  "b.why": "Ce sont définis à l'avance pour contrôler comment l'apprentissage se produit — entrées d'entraînement, pas résultats."
+ },
+ "iii-dp-11": {
+  "a.text": "Un modèle de prédiction des ventes fonctionne presque parfaitement sur les données historiques sur lesquelles il a été entraîné, puis fait des erreurs significatives en prédisant les ventes de produits réellement nouveaux.",
+  "a.why": "Le modèle a mémorisé les bizarreries spécifiques à ses données d'entraînement plutôt que d'apprendre les motifs qui se transfèrent — fort sur le familier, faible sur le nouveau.",
+  "b.text": "Un modèle de désabonnement avec très peu de paramètres et seulement une poignée de caractéristiques fonctionne mal sur les données sur lesquelles il a été entraîné et sur les nouveaux clients.",
+  "b.why": "Les mauvaises performances partout, y compris sur les données d'entraînement elles-mêmes, signalent que le modèle n'a jamais eu assez de complexité pour capturer le motif en premier lieu — le mode d'échec opposé de le mémoriser trop bien."
+ },
+ "iii-dp-12": {
+  "a.text": "Un système de reconnaissance vocale entraîné sur seulement quelques milliers de clips audio lutte pour capturer la variabilité du discours du monde réel.",
+  "a.why": "Cela demande s'il y a assez de données, période, pour apprendre les motifs significatifs du tout — trop peu de données ici signifient que le modèle n'a jamais eu la chance de généraliser.",
+  "b.text": "Une IA médicale entraînée sur des données d'un seul pays fonctionne bien dans son pilote, puis lutte une fois étendue à des patients avec des antécédents génétiques différents et des systèmes de santé ailleurs.",
+  "b.why": "Cela demande si un ensemble de données qui était suffisant pour un pilote peut toujours supporter l'expansion dans de nouvelles populations et contextes — une question distincte de si assez de données existaient pour le pilote en premier lieu."
+ }
+}

@@ -1,0 +1,108 @@
+{
+ "cu-001": {
+  "label": "인보이스 PDF를 분석하고 추출된 공급업체, 총액, 만기일 필드를 읽어요",
+  "sub": "prebuilt-invoice",
+  "why": "prebuilt-invoice는 인보이스 문서에서 구조화된 필드를 추출해요 — 시험에서 가장 많이 테스트되는 사전 구축 분석기(7회 언급)예요"
+ },
+ "cu-002": {
+  "label": "자연어로 자신만의 필드 스키마를 정의하고 계약에서 그 필드들을 추출해요",
+  "sub": "custom analyzer via begin_create_analyzer",
+  "why": "커스텀 분석기는 설명하는 필드 스키마로부터 구축돼요 — CU의 평문 필드 설명이 Document Intelligence 사전 구축 모델과 구분되는 거예요"
+ },
+ "cu-003": {
+  "label": "촬영된 장비 라벨에서 텍스트와 식별된 객체를 추출해요",
+  "sub": "prebuilt-image",
+  "why": "prebuilt-image는 다른 모든 모달리티의 분석기 워크플로우와 동일한 방식으로 사진에서 텍스트와 객체를 추출해요"
+ },
+ "cu-004": {
+  "label": "기록된 지원 전화에서 전사본, 요약, 스피커 분석을 가져와요",
+  "sub": "prebuilt-audio",
+  "why": "CU의 오디오 분석기는 전사본, 요약, 스피커를 반환해요 — 음성 합성이 아니라 추출이에요"
+ },
+ "cu-005": {
+  "label": "기록된 교육 세션을 분할하고 해당 전사본과 시각적 이벤트를 인덱싱해서 검색할 수 있게 해요",
+  "sub": "prebuilt-videoSearch",
+  "why": "비디오 분석기는 분할, 전사본, 시각적 이벤트를 반환해요; *Search 변수는 콘텐츠를 검색 준비 상태로 만들어요 — Azure AI Search가 CU가 추출한 것을 인덱싱해요"
+ },
+ "cu-006": {
+  "label": "텍스트, 테이블, 선택 표시를 문서 구조와 함께 반환해요 — 필드 의미론은 없어요",
+  "sub": "prebuilt-layout",
+  "why": "레이아웃은 텍스트, 테이블, 선택 표시, 구조를 추출해요; Read 스타일 OCR은 텍스트만이에요 — histack의 CU Read-vs-Layout 구분이에요"
+ },
+ "cu-007": {
+  "label": "미리 정의된 필드 스키마로 시작하지 않고 느슨한 키-값 쌍을 다양한 공급업체 형식에서 추출해야 해요",
+  "sub": "prebuilt-documentFields",
+  "why": "prebuilt-documentFields는 도메인 특정 스키마 없이 문서에서 일반 키-값 쌍을 추출해요 — 사전 구축 인보이스의 고정된 인보이스 필드와 달라요"
+ },
+ "cu-008": {
+  "label": "새로운 형식의 커스텀 분석기를 구축하기 전에, Content Understanding에 필드 스키마를 제안하도록 요청한 다음 제안된 것을 기반으로 일반 문서 분석기의 새로운 분석기로 설정해요",
+  "sub": "prebuilt-documentFieldSchema → prebuilt-document",
+  "why": "prebuilt-documentFieldSchema는 아직 스키마를 적용하지 않은 문서 형식에 대한 필드를 제안해요; prebuilt-document는 새로운 커스텀 문서 분석기를 정의할 때 사용되는 base_analyzer_id예요 — 같은 커스텀 구축 워크플로우의 두 가지 서로 다른 아이디예요"
+ },
+ "cu-009": {
+  "label": "Python 빠른 시작을 제품 사진에 대해 실행하고 결과의 Summary 필드에서 생성된 설명을 읽어요",
+  "sub": "prebuilt-imageSearch",
+  "why": "prebuilt-imageSearch는 설명적 이미지 출력에 대한 빠른 시작 분석기예요 — 결과가 자연어 설명을 보유한 Summary 필드를 드러내요"
+ },
+ "cu-010": {
+  "label": "대시보드 스크린샷 배치에서 차트의 제목과 ChartType 필드를 추출하는 커스텀 분석기를 구축해요",
+  "sub": "custom analyzer via base_analyzer_id=\"prebuilt-image\"",
+  "why": "커스텀 이미지 분석기는 base_analyzer_id를 prebuilt-image로 설정한 다음 필드 스키마를 계층화해요 — 차트와 스크린샷 추출의 문서화된 패턴이에요"
+ },
+ "cu-011": {
+  "label": "소매 감사에서 선반 사진을 분석하고 제품 수, 브랜드 존재, 품절 지표 같은 구조화된 필드를 반환해요",
+  "sub": "prebuilt-image",
+  "why": "Content Understanding의 이미지 분석기는 사진에서 스키마 정의 구조화된 필드를 직접 반환해요 — 시험이 직접 테스트하는 소매 선반 감사 시나리오예요"
+ },
+ "cu-012": {
+  "label": "analyzer_id=\"prebuilt-image\"로 begin_analyze를 호출하는 Python 클라이언트를 연결해서 사진 URL에 대해 실행한 다음 결과에서 감지된 객체를 읽어요",
+  "sub": "prebuilt-image",
+  "why": "begin_analyze(analyzer_id=..., inputs=[AnalysisInput(url=...)])은 모달리티 전체에 걸쳐 동일한 호출 패턴이에요 — 분석기 아이디만 변하고, prebuilt-image는 검색이 아닌 직접 이미지 분석기예요"
+ },
+ "cu-013": {
+  "label": "호출 녹음 URL에 대해 analyzer_id=\"prebuilt-audioSearch\"로 begin_analyze를 호출하는 경량 Python 클라이언트를 연결해서 검색 인덱싱을 준비하는 전사본과 요약을 다시 가져와요",
+  "sub": "prebuilt-audioSearch",
+  "why": "prebuilt-audioSearch는 SDK 빠른 시작 코드 조각의 문서화된 분석기 아이디예요 — *Search 접미사는 RAG 검색 준비 없이 직접 추출을 하는 prebuilt-audio와 달리 검색/RAG 검색을 위해 준비된 출력을 표시해요"
+ },
+ "cu-014": {
+  "label": "팟캐스트 에피소드 배치에서 스피커 표시되고 정확히 시간 기록된 전사 구절을 추출해요",
+  "sub": "transcriptPhrases",
+  "why": "transcriptPhrases는 스피커 식별과 타이밍 정보를 담는 출력 필드예요 — 분석기 아이디 자체와는 별개인 직접 오디오 추출 출력이에요"
+ },
+ "cu-015": {
+  "label": "팟캐스트 MP3를 Content Understanding에 제출할 때 contents 객체의 kind가 비디오 입력에 사용되는 것과 같은 값으로 설정되는 것을 인식해요",
+  "sub": "kind: \"audioVisual\"",
+  "why": "오디오 전용 및 비디오 입력 모두 contents 스키마에서 kind: \"audioVisual\"을 사용해요 — 별개의 'audio' kind를 기대하는 누구나 실수할 공유 값이에요"
+ },
+ "cu-016": {
+  "label": "음성 사서함에서 구조화된 전사본을 추출하는 것이 텍스트가 음성으로 전환되는 것이 아닌 음성이 텍스트로 캡처되는 것임을 확인해요",
+  "why": "CU의 오디오 분석기는 기존 음성을 구조화된 출력으로 필사해요 — 절대 새로운 음성 출력을 합성하지 않아요. 그 역할은 Azure AI Speech에 속해요. Content Understanding이 아니에요"
+ },
+ "cu-017": {
+  "label": "업로드된 기록된 제품 데모를 모든 다운스트림 처리가 실행되기 전에 논리적 장면 분할로 분할해요",
+  "sub": "enableSegment",
+  "why": "enableSegment는 영상을 장면 같은 논리적 분할로 나누는 분석기 스키마 속성이에요 — 오디오 또는 문서 분석기가 아닌 비디오 분석기 컨트롤이에요"
+ },
+ "cu-018": {
+  "label": "마케팅 클립을 분석한 후, 전사본과 시각적 콘텐츠의 구조화된 마크다운 요약을 읽어요",
+  "sub": "prebuilt-videoSearch",
+  "why": "prebuilt-videoSearch 결과는 분할당 전사본과 시각적 콘텐츠를 요약하는 마크다운 필드를 드러내요 — SDK의 비디오 읽기 문서화된 필드예요"
+ },
+ "cu-019": {
+  "label": "업로드된 녹음에서 키프레임과 시각적 이벤트를 추출하는 것이 새로운 프레임을 생성하는 대신 이미 존재하는 영상에서 작동함을 확인해요",
+  "why": "CU의 분석기는 이미 존재하는 영상에서 키프레임, 전사본, 시각적 이벤트를 추출해요 — 합성 프레임을 생성하지 않아요; 그건 완전히 다른 AI 서비스 범주예요"
+ },
+ "cu-020": {
+  "label": "analyzer_id=\"prebuilt-videoSearch\"로 begin_analyze를 호출하는 Python 클라이언트를 연결해서 업로드된 MP4 URL에 대해 실행해요",
+  "sub": "prebuilt-videoSearch",
+  "why": "begin_analyze(analyzer_id=\"prebuilt-videoSearch\", inputs=[AnalysisInput(url=...)])은 비디오 추출을 시작하기 위한 문서화된 SDK 패턴이에요"
+ },
+ "cu-modality-grid": {
+  "hint": "소스 파일이 실제로 무엇인지 묻고, 정확한 사전 구축 분석기 아이디에 대해 sub 라인을 확인해요 — 아이디 자체가 모달리티(document/image/audio/video)의 이름을 지어요. Search 접미사가 있는 아이디는 모달리티를 바꾸기보다는 인덱싱을 위해 출력을 준비해요",
+  "note": "Content Understanding은 항상 추출해요 — 절대 생성하거나 인덱싱하지 않아요. Azure AI Search로 추출하는 것은 다운스트림 단계이고, CU 자체가 하는 게 아니에요",
+  "zones[0].def": "PDF, 인보이스, 계약, 자유 형식 서류로 Content Understanding이 구조화된 필드, 테이블, 텍스트로 바꿔요",
+  "zones[1].def": "사진, 스크린샷, 차트로 Content Understanding이 구조화된 필드, 설명, 감지된 객체로 바꿔요",
+  "zones[2].def": "기록된 음성 — 통화, 팟캐스트, 음성 사서함 — Content Understanding이 전사본, 요약, 스피커 라벨로 바꿔요",
+  "zones[3].def": "기록된 영상으로 Content Understanding이 분할하고, 필사하고, 검색을 위해 준비해요"
+ }
+}

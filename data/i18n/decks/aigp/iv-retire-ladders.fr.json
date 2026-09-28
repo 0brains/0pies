@@ -1,0 +1,43 @@
+{
+ "iv-rl-01": {
+  "prompt": "Ordonne les étapes pour retirer responsablement un système d'IA en direct.",
+  "steps[0].label": "Évalue les dépendances + options de secours",
+  "steps[0].detail": "Avant de toucher quoi que ce soit en direct, cartographie ce qui compte sur le système — les flux de données en amont, les processus en aval, les workflows d'autres équipes — et confirme un secours existe donc la retraite ne crée pas une panne (SG).",
+  "steps[1].label": "Notifie les parties prenantes + plan de désactivation contrôlée",
+  "steps[1].detail": "La première étape dans une retraite conduite est de dire aux personnes affectées et de construire un plan de désactivation, pas simplement de basculer un interrupteur (SG).",
+  "steps[2].label": "Désactivation progressive avec sauvegarde humaine",
+  "steps[2].detail": "Pour l'infrastructure critique, diminue par étapes plutôt que tout à la fois, avec une alternative humaine-exécutée couvrant l'écart — la même discipline utilisée pour les systèmes critiques généralement.",
+  "steps[3].label": "Archive, pas supprime, pour légal/audit",
+  "steps[3].detail": "Préserve les données du système retiré, modèles, et journaux plutôt que de les supprimer — les régulateurs et auditeurs peuvent avoir besoin de reconstruire ce que le système a fait et pourquoi, longtemps après qu'il cesse de s'exécuter (SG).",
+  "steps[4].label": "Enregistre comme une enquête de boîte noire, avec des décideurs nommés",
+  "steps[4].detail": "Enregistre le déclencheur exact, qui a autorisé l'arrêt, et la raison de retraite dans le même style de preuve qu'une enquête d'incident — une source unique de vérité vérifiable nommant qui avait l'autorité d'agir (SG)."
+ },
+ "iv-rl-02": {
+  "prompt": "Ordonne la réponse à un incident d'IA en direct de la première détection à la fermeture de la boucle.",
+  "steps[0].label": "Détecte",
+  "steps[0].detail": "Une alerte, un signal de surveillance, ou une plainte surgit que quelque chose va mal — cela démarre le chronomètre sur tout ce qui suit.",
+  "steps[1].label": "Contient / met en quarantaine d'abord",
+  "steps[1].detail": "Avant d'enquêter sur les causes ou de rédiger les communications, arrête le préjudice de se propager : mets le modèle en quarantaine et notifie immédiatement juridique/conformité. Le confinement bats l'enquête, la récupération, ou la communication comme le prochain mouvement très — aller droit à l'analyse de cause racine tandis que le système continue de causer du préjudice est le piège d'examen enregistré.",
+  "steps[2].label": "Notifie juridique/conformité (+calendrier de violation de 72 heures où données personnelles)",
+  "steps[2].detail": "Quand l'incident implique des données personnelles, un contrôleur RGPD doit notifier l'autorité de surveillance dans les 72 heures de devenir conscient de la violation — les procédures de réponse à l'incident et notification doivent être construites pour atteindre ce calendrier, pas traité comme une réflexion technique (SG).",
+  "steps[3].label": "Cause racine (Cinq Pourquois / Arbre de pannes)",
+  "steps[3].detail": "Utilise un cadre d'analyse formelle — la méthode « Cinq Pourquois » ou l'analyse d'arbre de pannes — pour creuser jusqu'à la cause sous-jacente au lieu de s'arrêter au symptôme de surface (SG).",
+  "steps[4].label": "CAPA",
+  "steps[4].detail": "Enregistre les actions correctives et préventives dans un système central avec les propriétaires assignés, les échéances, et les étapes de vérification, donc la cause racine est réellement fermée, pas seulement diagnostiquée.",
+  "steps[5].label": "Rétrospective sans reproche + divulgation proactive avec leçons apprises",
+  "steps[5].detail": "Exécute une examen sans reproche interfonctionnelle de ce qui s'est passé et pourquoi, et divulgue proactivement les détails techniques et les leçons apprises plutôt que d'attendre qu'on te demande — c'est ce qui transforme un symptôme corrigé en une amélioration documentée, défendable."
+ },
+ "iv-rl-03": {
+  "prompt": "Ordonne les étapes pour ramener en toute sécurité un système désactivé en ligne.",
+  "steps[0].label": "Vérifie la correction",
+  "steps[0].detail": "Confirme le défaut spécifique qui a déclenché la désactivation a réellement été corrigé avant quoi que ce soit d'autre ne bouge en avant — la reprise dépend des corrections étant vérifiées, pas simplement tentées (SG).",
+  "steps[1].label": "Re-teste avec la rigueur de première sortie",
+  "steps[1].detail": "Mets le système fixé à travers les mêmes tests complets qu'il a fait face avant son lancement original — performance, robustesse, sécurité, juste traitement — le ré-test confirme la sécurité et la conformité à partir de zéro, ce n'est pas un raccourci parce que le système a fonctionné avant (SG).",
+  "steps[2].label": "Approbation interfonctionnelle",
+  "steps[2].detail": "Le système reprend uniquement une fois que les équipes interfonctionnelles — pas un seul ingénieur ou leader d'équipe — approuvent le redémarrage, fermant la boucle qui a commencé avec les décideurs nommés autorisant l'arrêt.",
+  "steps[3].label": "Redéploiement de canari/bleu-vert progressif derrière les drapeaux de caractéristique",
+  "steps[3].detail": "Ramène le système progressivement — une sortie canari ou un déploiement bleu-vert gardé par les drapeaux de caractéristique — donc l'exposition peut être remboîtée à l'instant si le problème resurface, plutôt que de basculer chaque utilisateur en arrière à la fois (SG).",
+  "steps[4].label": "Fenêtre de surveillance augmentée",
+  "steps[4].detail": "Observe le système redémarré plus étroitement que l'opération à l'état stable pour une fenêtre définie après, donc une récurrence est attrapée immédiatement plutôt qu'au prochain examen programmé."
+ }
+}

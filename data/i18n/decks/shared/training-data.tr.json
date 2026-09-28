@@ -1,0 +1,101 @@
+{
+ "training-data": {
+  "hint": "Önemli ayırım verinin rolü, biçim veya gerçek popülasyon uygunluğu; bu detaylar hangi olabilir öğrenilmiş ve değerlendirme güvenilir belirler."
+ },
+ "training-data-01": {
+  "label": "Model parametreleri öğrenmek için kullanılan veriler bölümü.",
+  "why": "Model parametreleri öğrenmek için kullanılan veriler bölümü."
+ },
+ "training-data-02": {
+  "label": "Geliştirme sırasında seçimleri karşılaştırma ve hiperparametreler ayarlamak için kullanılan tutulan veriler.",
+  "why": "Geliştirme sırasında seçimleri karşılaştırma ve hiperparametreler ayarlamak için kullanılan tutulan veriler."
+ },
+ "training-data-03": {
+  "label": "Son görülmemiş örnekler performans tahmin etmek için sonunda dokunulmamış veriler.",
+  "why": "Son görülmemiş örnekler performans tahmin etmek için sonunda dokunulmamış veriler."
+ },
+ "training-data-04": {
+  "label": "Denetim öğrenme için gerekli hedef cevap içeren örnekler.",
+  "why": "Denetim öğrenme için gerekli hedef cevap içeren örnekler."
+ },
+ "training-data-05": {
+  "label": "Cevap hedef olmayan örnekler, sıklıkla denetimsiz veya kendi kendine denetim öğrenme için kullanılan.",
+  "why": "Cevap hedef olmayan örnekler, sıklıkla denetimsiz veya kendi kendine denetim öğrenme için kullanılan."
+ },
+ "training-data-06": {
+  "label": "Tanımlanmış alanlar, satırlar, sütunlar veya kayıtlara organize veriler.",
+  "why": "Tanımlanmış alanlar, satırlar, sütunlar veya kayıtlara organize veriler."
+ },
+ "training-data-07": {
+  "label": "Metin, görüntüler, ses ve video gibi serbest form içerik.",
+  "why": "Metin, görüntüler, ses ve video gibi serbest form içerik."
+ },
+ "training-data-08": {
+  "label": "Kişiler, koşullar ve kullanımda model karşılaşacağı durumlar yansıtan örnekler.",
+  "why": "Kişiler, koşullar ve kullanımda model karşılaşacağı durumlar yansıtan örnekler."
+ },
+ "training-data-09": {
+  "label": "Bilgisi tahmin zamanı kazara girmez eğitim ve ölçülen performans şişirir.",
+  "why": "Bilgisi tahmin zamanı kazara girmez eğitim ve ölçülen performans şişirir."
+ },
+ "training-data-10": {
+  "label": "Bir hedef sınıf çok daha sık başka görünür, doğruluğu kaçırıcı yapı potansiyeli.",
+  "why": "Bir hedef sınıf çok daha sık başka görünür, doğruluğu kaçırıcı yapı potansiyeli."
+ },
+ "training-data-11": {
+  "label": "Denetimli bir modelin öğrenecek yanıtları olması için ham örneklere doğru referans etiketleri eklemek.",
+  "why": "Etiket kalitesi model kalitesini sınırlar: gürültülü veya tutarsız etiketler, ne kadar veri olursa olsun modele yanlış eşlemeyi öğretir."
+ },
+ "training-data-12": {
+  "label": "Eğitim ve değerlendirme sırasında modelin tahmininin karşılaştırıldığı doğrulanmış doğru yanıt.",
+  "why": "Güvenilir bir referans yanıt olmadan ne eğitim kaybı ne de değerlendirme metrikleri bir anlam taşır — ikisi de ona göre ölçülür."
+ },
+ "training-data-13": {
+  "label": "Görüntüleri çevirmek veya metni başka sözcüklerle ifade etmek gibi dönüşümlerle mevcut örneklerden ek eğitim örnekleri üretmek.",
+  "why": "Küçük bir veri kümesini genişletir ve zararsız varyasyonlara karşı değişmezlik öğretir; yeni veri toplamadan aşırı öğrenmeyi azaltır."
+ },
+ "training-data-14": {
+  "label": "Gerçek veri kıt, hassas veya nadir durumlardan yoksun olduğunda kullanılan yapay olarak üretilmiş örnekler.",
+  "why": "Gerçek veri toplamanın kapatamadığı boşlukları doldurur — nadir olaylar, gizlilikle korunan kayıtlar — ama üretecinin varsayımlarını miras alır."
+ },
+ "training-data-15": {
+  "label": "Azınlık sınıfı örneklerini çoğaltarak veya yenilerini üreterek çarpık bir veri kümesini yeniden dengelemek.",
+  "why": "Nadir sınıfa öğrenilebilecek kadar ağırlık verir; tekrarlanan veya sentetik azınlık örneklerine aşırı uyum riski taşır."
+ },
+ "training-data-16": {
+  "label": "Çoğunluk sınıfı örneklerinin bir kısmını atarak çarpık bir veri kümesini yeniden dengelemek.",
+  "why": "Sınıfların etkisini ucuza eşitler, ama bu sırada çoğunluk sınıfından gelen gerçek sinyali çöpe atar."
+ },
+ "training-data-17": {
+  "label": "Modelin öğrendiği, yaş, piksel değeri veya işlem tutarı gibi tek tek ölçülebilir girdi öznitelikleri.",
+  "why": "Modeller yalnızca kendilerine verilen öznitelikleri görür; neyin dahil edildiği ve nasıl kodlandığı, öğrenilebilecek olanın sınırını çizer."
+ },
+ "training-data-18": {
+  "label": "Ham girdileri eğitimden önce oranlar, aralıklar veya kodlamalar gibi daha bilgilendirici özniteliklere dönüştürmek.",
+  "why": "İyi türetilmiş öznitelikler daha basit modellerin örüntüyü yakalamasını sağlar; kötüleri, karmaşık modelleri örüntüyü gürültüden yeniden keşfetmeye zorlar."
+ },
+ "training-data-19": {
+  "label": "Her örneğin hem eğitimde hem değerlendirmede kullanılması için dışarıda tutulan veri diliminin dönüşümlü seçilmesi.",
+  "why": "Birkaç dışarıda tutulan katman üzerinden ortalama almak, özellikle küçük veri kümelerinde, tek bir bölmeden daha kararlı bir genelleme tahmini verir."
+ },
+ "training-data-20": {
+  "label": "Veri eğitimde kullanılmadan önce uygulanan eksiksizlik, doğruluk, tutarlılık ve güncellik kontrolleri.",
+  "why": "Kusurlar akış boyunca ilerler: eksik veya tutarsız kayıtlarla eğitilen bir model bu kusurları davranış olarak kodlar."
+ },
+ "training-data-21": {
+  "label": "Toplama yönteminin bazı kişileri veya durumları kayırmasıyla ortaya çıkan sistematik çarpıklık.",
+  "why": "Bir model yalnızca gördüğü durumlara adil olabilir; çarpık toplama, algoritma ne kadar iyi olursa olsun çarpık tahminler üretir."
+ },
+ "training-data-22": {
+  "label": "Verinin geri kalanının örüntüsünün çok dışında kalan uç veya anormal bir örnek.",
+  "why": "Bir avuç uç nokta parametreleri ve ölçeklemeyi sürükleyebilir; bunların hata mı gerçek durum mu olduğuna karar vermek modeli değiştirir."
+ },
+ "training-data-23": {
+  "label": "Modelin önceki dönemlerde eğitilip sonraki dönemlerde değerlendirildiği, sıralamayı gözeten bir bölme.",
+  "why": "Zaman serilerini karıştırmak modelin geleceğe bakmasına izin verir ve skorları şişirir; dürüst değerlendirme verinin geliş sırasına saygı göstermelidir."
+ },
+ "training-data-24": {
+  "label": "Her alt kümenin sınıf oranlarını tüm veri kümesininkiyle aynı tutan bir bölme.",
+  "why": "Dengesiz verinin rastgele bölünmesi bir katmanı nadir sınıftan tamamen yoksun bırakabilir; tabakalama her değerlendirmeyi temsili tutar."
+ }
+}

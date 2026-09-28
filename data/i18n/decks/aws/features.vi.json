@@ -1,0 +1,1401 @@
+{
+  "feat-000-00": {
+    "label": "So sánh và chọn mô hình nền tảng từ nhiều nhà cung cấp thông qua một dịch vụ được quản lý.",
+    "why": "Multi-provider model catalogue thuộc Amazon Bedrock, và kích hoạt công việc: So sánh và chọn mô hình nền tảng từ nhiều nhà cung cấp thông qua một dịch vụ được quản lý."
+  },
+  "feat-000-03": {
+    "label": "So sánh các mô hình nền tảng ứng cử viên dựa trên chất lượng, an toàn và các tiêu chí dành riêng cho nhiệm vụ trước khi áp dụng.",
+    "why": "model evaluation thuộc Amazon Bedrock, và kích hoạt công việc: So sánh các mô hình nền tảng ứng cử viên dựa trên chất lượng, an toàn và các tiêu chí dành riêng cho nhiệm vụ trước khi áp dụng."
+  },
+  "feat-000-05": {
+    "label": "Làm cho các phản hồi được tạo dựa trên thông tin doanh nghiệp được truy xuất mà không cần đào tạo lại mô hình.",
+    "why": "Knowledge Bases for RAG thuộc Amazon Bedrock, và kích hoạt công việc: Làm cho các phản hồi được tạo dựa trên thông tin doanh nghiệp được truy xuất mà không cần đào tạo lại mô hình."
+  },
+  "feat-000-07": {
+    "label": "Áp dụng các chính sách an toàn được quản lý tập trung và các biện pháp kiểm soát nội dung cho đầu vào và đầu ra của mô hình.",
+    "why": "Guardrails for Amazon Bedrock thuộc Amazon Bedrock, và kích hoạt công việc: Áp dụng các chính sách an toàn được quản lý tập trung và các biện pháp kiểm soát nội dung cho đầu vào và đầu ra của mô hình."
+  },
+  "feat-000-09": {
+    "label": "Kết nối khả năng của mô hình nền tảng với ứng dụng thông qua các lệnh gọi dịch vụ theo chương trình.",
+    "why": "API-based integration thuộc Amazon Bedrock, và kích hoạt công việc: Kết nối khả năng của mô hình nền tảng với ứng dụng thông qua các lệnh gọi dịch vụ theo chương trình."
+  },
+  "feat-000-11": {
+    "label": "Tạo các mẫu hướng dẫn có thể tái sử dụng, kiểm tra các biến thể và theo dõi các phiên bản tập trung.",
+    "why": "Prompt Management thuộc Amazon Bedrock, và kích hoạt công việc: Tạo các mẫu hướng dẫn có thể tái sử dụng, kiểm tra các biến thể và theo dõi các phiên bản tập trung."
+  },
+  "feat-000-12": {
+    "label": "Kết nối trực quan các lời nhắc, mô hình, dữ liệu và logic ứng dụng thành một quy trình tạo đa bước.",
+    "why": "Bedrock Flows thuộc Amazon Bedrock, và kích hoạt công việc: Kết nối trực quan các lời nhắc, mô hình, dữ liệu và logic ứng dụng thành một quy trình tạo đa bước."
+  },
+  "feat-000-14": {
+    "label": "Khám phá và triển khai các mô hình của bên thứ ba đủ điều kiện thông qua nền tảng mô hình nền tảng được quản lý.",
+    "why": "Bedrock Marketplace thuộc Amazon Bedrock, và kích hoạt công việc: Khám phá và triển khai các mô hình của bên thứ ba đủ điều kiện thông qua nền tảng mô hình nền tảng được quản lý."
+  },
+  "feat-000-16": {
+    "label": "Mở rộng kiến thức về miền của mô hình bằng cách sử dụng một phần lớn văn bản độc quyền không được gắn nhãn.",
+    "why": "continued pre-training thuộc Amazon Bedrock, và kích hoạt công việc: Mở rộng kiến thức về miền của mô hình bằng cách sử dụng một phần lớn văn bản độc quyền không được gắn nhãn."
+  },
+  "feat-001-00": {
+    "label": "Xác định và gọi một vòng lặp tác nhân được quản lý với một mô hình, lời nhắc hệ thống và các công cụ trong một lệnh gọi API.",
+    "why": "Harness thuộc Amazon Bedrock AgentCore, và kích hoạt công việc: Xác định và gọi một vòng lặp tác nhân được quản lý với một mô hình, lời nhắc hệ thống và các công cụ trong một lệnh gọi API."
+  },
+  "feat-001-03": {
+    "label": "Chuyển đổi API, hàm Lambda và các dịch vụ thành các công cụ tương thích với MCP được quản lý.",
+    "why": "Gateway thuộc Amazon Bedrock AgentCore, và kích hoạt công việc: Chuyển đổi API, hàm Lambda và các dịch vụ thành các công cụ tương thích với MCP được quản lý."
+  },
+  "feat-001-05": {
+    "label": "Thực thi Python, JavaScript hoặc TypeScript bên trong một hộp cát bị cô lập.",
+    "why": "Code Interpreter thuộc Amazon Bedrock AgentCore, và kích hoạt công việc: Thực thi Python, JavaScript hoặc TypeScript bên trong một hộp cát bị cô lập."
+  },
+  "feat-001-06": {
+    "label": "Tương tác với các ứng dụng web trong một môi trường được quản lý an toàn bằng cách sử dụng các khuôn khổ tự động hóa.",
+    "why": "Browser thuộc Amazon Bedrock AgentCore, và kích hoạt công việc: Tương tác với các ứng dụng web trong một môi trường được quản lý an toàn bằng cách sử dụng các khuôn khổ tự động hóa."
+  },
+  "feat-001-08": {
+    "label": "Kích hoạt các giao dịch vi tính cho các API trả phí, máy chủ MCP và nội dung bằng cách sử dụng giao thức x402.",
+    "why": "Payments thuộc Amazon Bedrock AgentCore, và kích hoạt công việc: Kích hoạt các giao dịch vi tính cho các API trả phí, máy chủ MCP và nội dung bằng cách sử dụng giao thức x402."
+  },
+  "feat-001-10": {
+    "label": "Tạo và kiểm tra các cải tiến cấu hình được phiên bản hóa bằng cách sử dụng các thử nghiệm lưu lượng được kiểm soát.",
+    "why": "Optimization thuộc Amazon Bedrock AgentCore, và kích hoạt công việc: Tạo và kiểm tra các cải tiến cấu hình được phiên bản hóa bằng cách sử dụng các thử nghiệm lưu lượng được kiểm soát."
+  },
+  "feat-001-12": {
+    "label": "Xuất bản, xem xét, phê duyệt và khám phá các tác nhân, máy chủ MCP, công cụ và kỹ năng trong một danh mục tập trung.",
+    "why": "Registry thuộc Amazon Bedrock AgentCore, và kích hoạt công việc: Xuất bản, xem xét, phê duyệt và khám phá các tác nhân, máy chủ MCP, công cụ và kỹ năng trong một danh mục tập trung."
+  },
+  "feat-002-01": {
+    "label": "Xây dựng các ứng dụng tác nhân trong một trong hai ekosystem lập trình được sử dụng rộng rãi.",
+    "why": "Python and TypeScript SDKs thuộc Strands Agents, và kích hoạt công việc: Xây dựng các ứng dụng tác nhân trong một trong hai ekosystem lập trình được sử dụng rộng rãi."
+  },
+  "feat-002-03": {
+    "label": "Phối hợp các tác nhân chuyên biệt cộng tác hoặc chuyển công việc cho nhau.",
+    "why": "multi-agent patterns thuộc Strands Agents, và kích hoạt công việc: Phối hợp các tác nhân chuyên biệt cộng tác hoặc chuyển công việc cho nhau."
+  },
+  "feat-003-01": {
+    "label": "Tạo các tài sản hình ảnh và phương tiện truyền thông mới từ các hướng dẫn ngôn ngữ tự nhiên.",
+    "why": "image and video generation thuộc Amazon Nova, và kích hoạt công việc: Tạo các tài sản hình ảnh và phương tiện truyền thông mới từ các hướng dẫn ngôn ngữ tự nhiên."
+  },
+  "feat-003-02": {
+    "label": "Xây dựng các trải nghiệm giọng nói hiểu hoặc tạo ra ngôn ngữ nói.",
+    "why": "speech models thuộc Amazon Nova, và kích hoạt công việc: Xây dựng các trải nghiệm giọng nói hiểu hoặc tạo ra ngôn ngữ nói."
+  },
+  "feat-003-04": {
+    "label": "Truy cập họ mô hình AWS này thông qua các API mô hình nền tảng được quản lý và các công cụ.",
+    "why": "Amazon Bedrock integration thuộc Amazon Nova, và kích hoạt công việc: Truy cập họ mô hình AWS này thông qua các API mô hình nền tảng được quản lý và các công cụ."
+  },
+  "feat-004-01": {
+    "label": "Tạo các đồng đội chuyên biệt với chuyên môn, tông và bộ công cụ xác định hoạt động chủ động.",
+    "why": "Agents thuộc Amazon Quick, và kích hoạt công việc: Tạo các đồng đội chuyên biệt với chuyên môn, tông và bộ công cụ xác định hoạt động chủ động."
+  },
+  "feat-004-03": {
+    "label": "Chuyển đổi câu hỏi thành bảng điều khiển tương tác, biểu đồ, dự báo và khám phá dữ liệu.",
+    "why": "Business Intelligence thuộc Amazon Quick, và kích hoạt công việc: Chuyển đổi câu hỏi thành bảng điều khiển tương tác, biểu đồ, dự báo và khám phá dữ liệu."
+  },
+  "feat-004-05": {
+    "label": "Tạo và chia sẻ các công cụ tương tác mà không cần viết mã hoặc gửi yêu cầu IT.",
+    "why": "Build custom apps thuộc Amazon Quick, và kích hoạt công việc: Tạo và chia sẻ các công cụ tương tác mà không cần viết mã hoặc gửi yêu cầu IT."
+  },
+  "feat-005-01": {
+    "label": "Tôn trọng quyền truy cập hệ thống nguồn khi quyết định thông tin nào mà nhân viên có thể xem.",
+    "why": "permissions-aware responses thuộc Amazon Q Business, và kích hoạt công việc: Tôn trọng quyền truy cập hệ thống nguồn khi quyết định thông tin nào mà nhân viên có thể xem."
+  },
+  "feat-006-00": {
+    "label": "Tạo mã nguồn mới và giúp các nhà phát triển hiểu các quá trình triển khai không quen thuộc.",
+    "why": "Code generation and explanation thuộc Amazon Q Developer, và kích hoạt công việc: Tạo mã nguồn mới và giúp các nhà phát triển hiểu các quá trình triển khai không quen thuộc."
+  },
+  "feat-006-02": {
+    "label": "Kiểm tra các thay đổi để phát hiện lỗi bảo trì và các lỗ hổng tiềm ẩn trước khi phát hành.",
+    "why": "code reviews and security scanning thuộc Amazon Q Developer, và kích hoạt công việc: Kiểm tra các thay đổi để phát hiện lỗi bảo trì và các lỗ hổng tiềm ẩn trước khi phát hành."
+  },
+  "feat-006-04": {
+    "label": "Đề xuất các cấu hình dịch vụ đám mây và các phương pháp triển khai trong quá trình phát triển.",
+    "why": "AWS resource guidance thuộc Amazon Q Developer, và kích hoạt công việc: Đề xuất các cấu hình dịch vụ đám mây và các phương pháp triển khai trong quá trình phát triển."
+  },
+  "feat-007-00": {
+    "label": "Nâng cấp các ngăn xếp ứng dụng và khuôn khổ Microsoft cũ hơn với các phân tích tự động và thay đổi.",
+    "why": ".NET modernization thuộc AWS Transform, và kích hoạt công việc: Nâng cấp các ngăn xếp ứng dụng và khuôn khổ Microsoft cũ hơn với các phân tích tự động và thay đổi."
+  },
+  "feat-007-02": {
+    "label": "Lên kế hoạch và thực hiện di chuyển khỏi các hạ tầng ứng dụng trung tâm dữ liệu được ảo hóa.",
+    "why": "VMware workload transformation thuộc AWS Transform, và kích hoạt công việc: Lên kế hoạch và thực hiện di chuyển khỏi các hạ tầng ứng dụng trung tâm dữ liệu được ảo hóa."
+  },
+  "feat-007-04": {
+    "label": "Áp dụng các thay đổi nguồn có thể lặp lại trong một ứng dụng lớn thay vì chỉnh sửa từng tệp theo cách thủ công.",
+    "why": "automated refactoring thuộc AWS Transform, và kích hoạt công việc: Áp dụng các thay đổi nguồn có thể lặp lại trong một ứng dụng lớn thay vì chỉnh sửa từng tệp theo cách thủ công."
+  },
+  "feat-008-00": {
+    "label": "Chuyển đổi ý tưởng cấp cao thành các yêu cầu, thiết kế và nhiệm vụ có thể thực thi được.",
+    "why": "Specs thuộc Kiro, và kích hoạt công việc: Chuyển đổi ý tưởng cấp cao thành các yêu cầu, thiết kế và nhiệm vụ có thể thực thi được."
+  },
+  "feat-008-02": {
+    "label": "Chẩn đoán nguyên nhân gốc, thiết kế các sửa chữa có mục tiêu và bảo vệ chống lại sự suy thoái.",
+    "why": "Bugfix Specs thuộc Kiro, và kích hoạt công việc: Chẩn đoán nguyên nhân gốc, thiết kế các sửa chữa có mục tiêu và bảo vệ chống lại sự suy thoái."
+  },
+  "feat-008-04": {
+    "label": "Chạy các lời nhắc hoặc lệnh shell tự động khi các sự kiện phát triển xác định xảy ra.",
+    "why": "Agent hooks thuộc Kiro, và kích hoạt công việc: Chạy các lời nhắc hoặc lệnh shell tự động khi các sự kiện phát triển xác định xảy ra."
+  },
+  "feat-009-00": {
+    "label": "Tiếp tục công việc phát triển được giới hạn không đồng bộ trong khi nhà phát triển tập trung vào nơi khác.",
+    "why": "Background task execution thuộc Kiro autonomous agent, và kích hoạt công việc: Tiếp tục công việc phát triển được giới hạn không đồng bộ trong khi nhà phát triển tập trung vào nơi khác."
+  },
+  "feat-009-02": {
+    "label": "Trả lại công việc nền hoàn thành dưới dạng thay đổi kiểm soát nguồn có thể xem xét.",
+    "why": "pull-request delivery thuộc Kiro autonomous agent, và kích hoạt công việc: Trả lại công việc nền hoàn thành dưới dạng thay đổi kiểm soát nguồn có thể xem xét."
+  },
+  "feat-010-01": {
+    "label": "Xuất bản một mô hình được chọn phía sau cơ sở hạ tầng được quản lý để các ứng dụng có thể gọi nó.",
+    "why": "model deployment thuộc Amazon SageMaker AI JumpStart, và kích hoạt công việc: Xuất bản một mô hình được chọn phía sau cơ sở hạ tầng được quản lý để các ứng dụng có thể gọi nó."
+  },
+  "feat-010-03": {
+    "label": "Triển khai các mô hình tạo sinh được đào tạo sẵn và được phân phối công khai trong các quy trình ML được quản lý.",
+    "why": "Foundation models thuộc Amazon SageMaker AI JumpStart, và kích hoạt công việc: Triển khai các mô hình tạo sinh được đào tạo sẵn và được phân phối công khai trong các quy trình ML được quản lý."
+  },
+  "feat-011-01": {
+    "label": "Chuyển đổi nội dung thành các vectơ số cho truy xuất ngữ nghĩa, phân cụm hoặc so sánh tương tự.",
+    "why": "embeddings thuộc Amazon Titan, và kích hoạt công việc: Chuyển đổi nội dung thành các vectơ số cho truy xuất ngữ nghĩa, phân cụm hoặc so sánh tương tự."
+  },
+  "feat-012-00": {
+    "label": "Quản lý vòng đời mô hình tùy chỉnh hoàn chỉnh từ thử nghiệm đến hoạt động sản xuất được kiểm soát.",
+    "why": "Amazon SageMaker AI thuộc Amazon SageMaker AI, và kích hoạt công việc: Quản lý vòng đời mô hình tùy chỉnh hoàn chỉnh từ thử nghiệm đến hoạt động sản xuất được kiểm soát."
+  },
+  "feat-012-01": {
+    "label": "Phục vụ các mô hình được đào tạo mà không cần quản lý các máy chủ ứng dụng bên dưới.",
+    "why": "managed hosting thuộc Amazon SageMaker AI, và kích hoạt công việc: Phục vụ các mô hình được đào tạo mà không cần quản lý các máy chủ ứng dụng bên dưới."
+  },
+  "feat-012-03": {
+    "label": "Đào tạo các mô hình lớn trên nhiều bộ tăng tốc hoặc máy để giảm thời gian trôi qua.",
+    "why": "distributed training thuộc Amazon SageMaker AI, và kích hoạt công việc: Đào tạo các mô hình lớn trên nhiều bộ tăng tốc hoặc máy để giảm thời gian trôi qua."
+  },
+  "feat-012-05": {
+    "label": "Tự động khám phá dữ liệu, chọn thuật toán, điều chỉnh ứng cử viên và tạo ra các tạo tác mô hình có thể giải thích được.",
+    "why": "SageMaker Autopilot thuộc Amazon SageMaker AI, và kích hoạt công việc: Tự động khám phá dữ liệu, chọn thuật toán, điều chỉnh ứng cử viên và tạo ra các tạo tác mô hình có thể giải thích được."
+  },
+  "feat-012-07": {
+    "label": "Giữ cho đầu vào mô hình có thể tái sử dụng nhất quán giữa huấn luyện và dự đoán trực tuyến độ trễ thấp.",
+    "why": "SageMaker Feature Store thuộc Amazon SageMaker AI, và kích hoạt công việc: Giữ cho đầu vào mô hình có thể tái sử dụng nhất quán giữa huấn luyện và dự đoán trực tuyến độ trễ thấp."
+  },
+  "feat-012-09": {
+    "label": "Phát hiện độ lệch dữ liệu sản xuất, thay đổi chất lượng, lệch thiên độ lệch và lệch thuộc tính tính năng.",
+    "why": "SageMaker Model Monitor thuộc Amazon SageMaker AI, và kích hoạt công việc: Phát hiện độ lệch dữ liệu sản xuất, thay đổi chất lượng, lệch thiên độ lệch và lệch thuộc tính tính năng."
+  },
+  "feat-012-11": {
+    "label": "Ghi lại và so sánh các lần chạy huấn luyện, tham số, bộ dữ liệu và số liệu kết quả.",
+    "why": "SageMaker Experiments thuộc Amazon SageMaker AI, và kích hoạt công việc: Ghi lại và so sánh các lần chạy huấn luyện, tham số, bộ dữ liệu và số liệu kết quả."
+  },
+  "feat-012-13": {
+    "label": "Chọn các chế độ dự đoán được quản lý cho các yêu cầu tạm thời, tải trọng sắp xếp hàng đợi hoặc bộ dữ liệu ngoại tuyến.",
+    "why": "serverless asynchronous and batch inference thuộc Amazon SageMaker AI, và kích hoạt công việc: Chọn các chế độ dự đoán được quản lý cho các yêu cầu tạm thời, tải trọng sắp xếp hàng đợi hoặc bộ dữ liệu ngoại tuyến."
+  },
+  "feat-012-15": {
+    "label": "Cấp cho dữ liệu, phân tích và đội AI một môi trường phát triển và hợp tác được quản lý.",
+    "why": "SageMaker Unified Studio thuộc Amazon SageMaker AI, và kích hoạt công việc: Cấp cho dữ liệu, phân tích và đội AI một môi trường phát triển và hợp tác được quản lý."
+  },
+  "feat-013-01": {
+    "label": "Phát triển tương tác với sổ tay hoặc tệp nguồn trong các công cụ dựa trên trình duyệt.",
+    "why": "JupyterLab and Code Editor thuộc Amazon SageMaker AI Studio, và kích hoạt công việc: Phát triển tương tác với sổ tay hoặc tệp nguồn trong các công cụ dựa trên trình duyệt."
+  },
+  "feat-013-03": {
+    "label": "Di chuyển một mô hình được phát triển vào một môi trường nơi người tiêu dùng có thể yêu cầu dự đoán.",
+    "why": "deployment thuộc Amazon SageMaker AI Studio, và kích hoạt công việc: Di chuyển một mô hình được phát triển vào một môi trường nơi người tiêu dùng có thể yêu cầu dự đoán."
+  },
+  "feat-014-00": {
+    "label": "Tạo các mô hình dự đoán thông qua quy trình công việc đồ họa thay vì viết mã huấn luyện.",
+    "why": "Visual model building thuộc Amazon SageMaker AI Canvas, và kích hoạt công việc: Tạo các mô hình dự đoán thông qua quy trình công việc đồ họa thay vì viết mã huấn luyện."
+  },
+  "feat-014-03": {
+    "label": "Thử nghiệm với khả năng tạo sinh thông qua giao diện hình ảnh cho người dùng kinh doanh.",
+    "why": "foundation-model access without writing ML code thuộc Amazon SageMaker AI Canvas, và kích hoạt công việc: Thử nghiệm với khả năng tạo sinh thông qua giao diện hình ảnh cho người dùng kinh doanh."
+  },
+  "feat-016-00": {
+    "label": "Phối hợp người, hướng dẫn và các biện pháp kiểm soát chất lượng để ghi nhãn các ví dụ huấn luyện.",
+    "why": "Managed human labeling workflows thuộc Amazon SageMaker AI Ground Truth, và kích hoạt công việc: Phối hợp người, hướng dẫn và các biện pháp kiểm soát chất lượng để ghi nhãn các ví dụ huấn luyện."
+  },
+  "feat-016-02": {
+    "label": "Tạo ra các ví dụ sự thật cơ sở cần thiết để tìm hiểu các nhiệm vụ được giám sát và đo lường hiệu suất.",
+    "why": "labeled datasets for training and evaluation thuộc Amazon SageMaker AI Ground Truth, và kích hoạt công việc: Tạo ra các ví dụ sự thật cơ sở cần thiết để tìm hiểu các nhiệm vụ được giám sát và đo lường hiệu suất."
+  },
+  "feat-017-01": {
+    "label": "Cải thiện sử dụng bộ tăng tốc và phục hồi để đào tạo có tính toán yêu cầu cao.",
+    "why": "infrastructure optimized for large-scale ML workloads thuộc Amazon SageMaker AI HyperPod, và kích hoạt công việc: Cải thiện sử dụng bộ tăng tốc và phục hồi để đào tạo có tính toán yêu cầu cao."
+  },
+  "feat-018-01": {
+    "label": "Nhúng phê duyệt con người và sửa chữa vào cả ứng dụng tạo sinh và dự đoán.",
+    "why": "Human review workflows thuộc Amazon Augmented AI (A2I), và kích hoạt công việc: Nhúng phê duyệt con người và sửa chữa vào cả ứng dụng tạo sinh và dự đoán."
+  },
+  "feat-019-01": {
+    "label": "Hạn chế một nhiệm vụ con người cho những người đáp ứng các tiêu chí kỹ năng hoặc phê duyệt xác định.",
+    "why": "custom worker qualifications thuộc Amazon Mechanical Turk, và kích hoạt công việc: Hạn chế một nhiệm vụ con người cho những người đáp ứng các tiêu chí kỹ năng hoặc phê duyệt xác định."
+  },
+  "feat-020-00": {
+    "label": "Xác định khi các bản ghi được viết khác nhau tham chiếu đến cùng một người hoặc tổ chức thực tế.",
+    "why": "Entity matching and resolution thuộc AWS Entity Resolution, và kích hoạt công việc: Xác định khi các bản ghi được viết khác nhau tham chiếu đến cùng một người hoặc tổ chức thực tế."
+  },
+  "feat-021-00": {
+    "label": "Duyệt các bộ dữ liệu do bên ngoài tạo có thể bổ sung thông tin của chính tổ chức bạn.",
+    "why": "Third-party data catalogue thuộc AWS Data Exchange, và kích hoạt công việc: Duyệt các bộ dữ liệu do bên ngoài tạo có thể bổ sung thông tin của chính tổ chức bạn."
+  },
+  "feat-021-02": {
+    "label": "Làm cho thông tin được đăng ký có sẵn cho các công cụ lưu trữ và phân tích mà không cần một quá trình chuyển riêng.",
+    "why": "delivery to AWS data services thuộc AWS Data Exchange, và kích hoạt công việc: Làm cho thông tin được đăng ký có sẵn cho các công cụ lưu trữ và phân tích mà không cần một quá trình chuyển riêng."
+  },
+  "feat-022-01": {
+    "label": "Chọn bó dữ liệu lớn được cấp phát hoặc thực thi theo yêu cầu mà không quản lý các cụm.",
+    "why": "cluster and serverless deployment options thuộc Amazon EMR, và kích hoạt công việc: Chọn bó dữ liệu lớn được cấp phát hoặc thực thi theo yêu cầu mà không quản lý các cụm."
+  },
+  "feat-023-00": {
+    "label": "Chuẩn bị và kết hợp thông tin từ nhiều nguồn mà không cần cấp phát máy chủ xử lý dữ liệu.",
+    "why": "Serverless data integration thuộc AWS Glue, và kích hoạt công việc: Chuẩn bị và kết hợp thông tin từ nhiều nguồn mà không cần cấp phát máy chủ xử lý dữ liệu."
+  },
+  "feat-023-02": {
+    "label": "Duy trì siêu dữ liệu kỹ thuật tập trung để các công cụ phân tích và ML có thể tìm thấy và hiểu bộ dữ liệu.",
+    "why": "AWS Glue Data Catalog thuộc AWS Glue, và kích hoạt công việc: Duy trì siêu dữ liệu kỹ thuật tập trung để các công cụ phân tích và ML có thể tìm thấy và hiểu bộ dữ liệu."
+  },
+  "feat-023-04": {
+    "label": "Xác định kỳ vọng cho bộ dữ liệu và phát hiện các bản ghi hoặc đường ống vi phạm chúng.",
+    "why": "data quality rules and monitoring thuộc AWS Glue, và kích hoạt công việc: Xác định kỳ vọng cho bộ dữ liệu và phát hiện các bản ghi hoặc đường ống vi phạm chúng."
+  },
+  "feat-024-01": {
+    "label": "Tính toán phân phối, giá trị bị thiếu và các bất thường để hiểu bộ dữ liệu trước khi mô hình hóa.",
+    "why": "data profiling thuộc AWS Glue DataBrew, và kích hoạt công việc: Tính toán phân phối, giá trị bị thiếu và các bất thường để hiểu bộ dữ liệu trước khi mô hình hóa."
+  },
+  "feat-025-00": {
+    "label": "Quản lý quyền truy cập vào dữ liệu phân tích được quản lý từ một mặt phẳng kiểm soát.",
+    "why": "Centralized data-lake permissions thuộc AWS Lake Formation, và kích hoạt công việc: Quản lý quyền truy cập vào dữ liệu phân tích được quản lý từ một mặt phẳng kiểm soát."
+  },
+  "feat-025-02": {
+    "label": "Cung cấp quyền truy cập được kiểm soát liên đội hoặc liên tài khoản vào các bảng phân tích được đăng ký.",
+    "why": "governed table sharing thuộc AWS Lake Formation, và kích hoạt công việc: Cung cấp quyền truy cập được kiểm soát liên đội hoặc liên tài khoản vào các bảng phân tích được đăng ký."
+  },
+  "feat-026-00": {
+    "label": "Lập chỉ mục tài liệu và sự kiện hoạt động để truy vấn nhanh mà không cần vận hành phần mềm cụm tìm kiếm.",
+    "why": "Managed search and log analytics thuộc Amazon OpenSearch Service, và kích hoạt công việc: Lập chỉ mục tài liệu và sự kiện hoạt động để truy vấn nhanh mà không cần vận hành phần mềm cụm tìm kiếm."
+  },
+  "feat-026-03": {
+    "label": "Kết hợp truy xuất từ khóa với các truy vấn tương tự độ trễ thấp trên các chỉ mục nội dung lớn.",
+    "why": "full-text plus high-throughput semantic search thuộc Amazon OpenSearch Service, và kích hoạt công việc: Kết hợp truy xuất từ khóa với các truy vấn tương tự độ trễ thấp trên các chỉ mục nội dung lớn."
+  },
+  "feat-027-00": {
+    "label": "Lưu trữ các giá trị theo cột để làm cho các tổng hợp phân tích lớn hiệu quả.",
+    "why": "Columnar data warehousing thuộc Amazon Redshift, và kích hoạt công việc: Lưu trữ các giá trị theo cột để làm cho các tổng hợp phân tích lớn hiệu quả."
+  },
+  "feat-027-02": {
+    "label": "Chạy các truy vấn kho dữ liệu có dung lượng được quản lý tự động thay vì duy trì các cụm được cấp phát.",
+    "why": "serverless analytics thuộc Amazon Redshift, và kích hoạt công việc: Chạy các truy vấn kho dữ liệu có dung lượng được quản lý tự động thay vì duy trì các cụm được cấp phát."
+  },
+  "feat-028-01": {
+    "label": "Thông báo cho các bên liên quan khi mức tiêu thụ thực tế hoặc dự báo vượt quá một phần trăm hoặc số tiền được chọn.",
+    "why": "threshold alerts thuộc AWS Budgets, và kích hoạt công việc: Thông báo cho các bên liên quan khi mức tiêu thụ thực tế hoặc dự báo vượt quá một phần trăm hoặc số tiền được chọn."
+  },
+  "feat-029-00": {
+    "label": "Chia nhỏ các khoản phí theo dịch vụ, tài khoản, khu vực, nhãn hoặc kích thước lập hóa đơn khác.",
+    "why": "Cost and usage filtering thuộc AWS Cost Explorer, và kích hoạt công việc: Chia nhỏ các khoản phí theo dịch vụ, tài khoản, khu vực, nhãn hoặc kích thước lập hóa đơn khác."
+  },
+  "feat-029-02": {
+    "label": "Ước tính các khoản phí trong tương lai từ các mẫu sử dụng gần đây.",
+    "why": "cost forecasting thuộc AWS Cost Explorer, và kích hoạt công việc: Ước tính các khoản phí trong tương lai từ các mẫu sử dụng gần đây."
+  },
+  "feat-030-01": {
+    "label": "Cấp phát phần cứng chuyên biệt cho huấn luyện mô hình hoặc suy luận.",
+    "why": "GPU and ML accelerator instances thuộc Amazon EC2, và kích hoạt công việc: Cấp phát phần cứng chuyên biệt cho huấn luyện mô hình hoặc suy luận."
+  },
+  "feat-030-02": {
+    "label": "Chọn hệ điều hành, mạng, lưu trữ và phần mềm được cài đặt cho một máy chủ ảo.",
+    "why": "Amazon EC2 instance types thuộc Amazon EC2, và kích hoạt công việc: Chọn hệ điều hành, mạng, lưu trữ và phần mềm được cài đặt cho một máy chủ ảo."
+  },
+  "feat-031-02": {
+    "label": "Tính phí cho các yêu cầu và thời lượng tính toán thay vì chạy liên tục một máy chủ.",
+    "why": "pay-per-use execution thuộc AWS Lambda, và kích hoạt công việc: Tính phí cho các yêu cầu và thời lượng tính toán thay vì chạy liên tục một máy chủ."
+  },
+  "feat-032-01": {
+    "label": "Chạy khối lượng công việc được đóng gói mà không cần chọn hoặc quản lý các máy chủ bên dưới.",
+    "why": "AWS Fargate serverless containers thuộc Amazon Elastic Container Service (Amazon ECS), và kích hoạt công việc: Chạy khối lượng công việc được đóng gói mà không cần chọn hoặc quản lý các máy chủ bên dưới."
+  },
+  "feat-033-00": {
+    "label": "Sử dụng API cụm container tiêu chuẩn trong khi AWS vận hành các thành phần điều phối cốt lõi.",
+    "why": "Managed Kubernetes control plane thuộc Amazon Elastic Kubernetes Service (Amazon EKS), và kích hoạt công việc: Sử dụng API cụm container tiêu chuẩn trong khi AWS vận hành các thành phần điều phối cốt lõi."
+  },
+  "feat-033-02": {
+    "label": "Kết nối các cụm container với các biện pháp kiểm soát truy cập, mạng và giám sát bản địa đám mây.",
+    "why": "AWS identity networking and observability integration thuộc Amazon Elastic Kubernetes Service (Amazon EKS), và kích hoạt công việc: Kết nối các cụm container với các biện pháp kiểm soát truy cập, mạng và giám sát bản địa đám mây."
+  },
+  "feat-034-01": {
+    "label": "Sao chép dữ liệu quan hệ trên các vùng lỗi trong khi tách lưu trữ khỏi tính toán.",
+    "why": "distributed fault-tolerant storage thuộc Amazon Aurora, và kích hoạt công việc: Sao chép dữ liệu quan hệ trên các vùng lỗi trong khi tách lưu trữ khỏi tính toán."
+  },
+  "feat-034-03": {
+    "label": "Sử dụng tiện ích mở rộng PostgreSQL để lưu trữ các nhúng trong công cụ quan hệ hiệu suất cao của AWS.",
+    "why": "Aurora PostgreSQL with pgvector thuộc Amazon Aurora, và kích hoạt công việc: Sử dụng tiện ích mở rộng PostgreSQL để lưu trữ các nhúng trong công cụ quan hệ hiệu suất cao của AWS."
+  },
+  "feat-035-00": {
+    "label": "Đại diện cho các bản ghi như các vật thể lồng nhau linh hoạt thay vì hàng quan hệ cố định.",
+    "why": "Document-oriented data model thuộc Amazon DocumentDB (with MongoDB compatibility), và kích hoạt công việc: Đại diện cho các bản ghi như các vật thể lồng nhau linh hoạt thay vì hàng quan hệ cố định."
+  },
+  "feat-035-02": {
+    "label": "Cho phép AWS duy trì các bản sao dự phòng và điểm phục hồi cho cơ sở dữ liệu tài liệu.",
+    "why": "managed replication and backups thuộc Amazon DocumentDB (with MongoDB compatibility), và kích hoạt công việc: Cho phép AWS duy trì các bản sao dự phòng và điểm phục hồi cho cơ sở dữ liệu tài liệu."
+  },
+  "feat-035-04": {
+    "label": "Lọc các bản ghi lồng nhau với các hoạt động tài liệu quen thuộc trong khi cũng truy xuất nội dung có liên quan theo khái niệm.",
+    "why": "$vectorSearch operator thuộc Amazon DocumentDB (with MongoDB compatibility), và kích hoạt công việc: Lọc các bản ghi lồng nhau với các hoạt động tài liệu quen thuộc trong khi cũng truy xuất nội dung có liên quan theo khái niệm."
+  },
+  "feat-036-01": {
+    "label": "Phân phối lưu lượng cơ sở dữ liệu không máy chủ và lưu trữ khi nhu cầu tăng.",
+    "why": "automatic horizontal scaling thuộc Amazon DynamoDB, và kích hoạt công việc: Phân phối lưu lượng cơ sở dữ liệu không máy chủ và lưu trữ khi nhu cầu tăng."
+  },
+  "feat-037-00": {
+    "label": "Sử dụng các cấu trúc dữ liệu trong bộ nhớ được áp dụng rộng rãi và máy khách trong một bộ nhớ đệm được quản lý.",
+    "why": "Valkey and Redis OSS compatibility thuộc Amazon ElastiCache, và kích hoạt công việc: Sử dụng các cấu trúc dữ liệu trong bộ nhớ được áp dụng rộng rãi và máy khách trong một bộ nhớ đệm được quản lý."
+  },
+  "feat-037-02": {
+    "label": "Sử dụng lại trạng thái ứng dụng tạm thời hoặc các phản hồi mô hình để giảm độ trễ và chi phí.",
+    "why": "session and inference-result caching thuộc Amazon ElastiCache, và kích hoạt công việc: Sử dụng lại trạng thái ứng dụng tạm thời hoặc các phản hồi mô hình để giảm độ trễ và chi phí."
+  },
+  "feat-038-01": {
+    "label": "Theo các liên kết nhiều giữa các thực thể một cách hiệu quả mà không cần các phép nối quan hệ tốn kém.",
+    "why": "relationship traversal thuộc Amazon Neptune, và kích hoạt công việc: Theo các liên kết nhiều giữa các thực thể một cách hiệu quả mà không cần các phép nối quan hệ tốn kém."
+  },
+  "feat-038-03": {
+    "label": "Kết hợp tương tự nhúng với các thuật toán trên một biểu đồ phân tích có kết nối cao.",
+    "why": "Neptune Analytics vector search thuộc Amazon Neptune, và kích hoạt công việc: Kết hợp tương tự nhúng với các thuật toán trên một biểu đồ phân tích có kết nối cao."
+  },
+  "feat-039-00": {
+    "label": "Chọn giữa các công nghệ cơ sở dữ liệu quan hệ được sử dụng rộng rãi và mã nguồn mở trong một dịch vụ được quản lý.",
+    "why": "Multiple relational database engines thuộc Amazon Relational Database Service (Amazon RDS), và kích hoạt công việc: Chọn giữa các công nghệ cơ sở dữ liệu quan hệ được sử dụng rộng rãi và mã nguồn mở trong một dịch vụ được quản lý."
+  },
+  "feat-039-02": {
+    "label": "Duy trì một sự chờ đợi được đồng bộ hóa trong một vùng lỗi khác để hoạt động cơ sở dữ liệu có khả năng phục hồi.",
+    "why": "Multi-AZ high availability thuộc Amazon Relational Database Service (Amazon RDS), và kích hoạt công việc: Duy trì một sự chờ đợi được đồng bộ hóa trong một vùng lỗi khác để hoạt động cơ sở dữ liệu có khả năng phục hồi."
+  },
+  "feat-039-04": {
+    "label": "Giữ các vectơ ngữ nghĩa bên cạnh các bảng và giao dịch được thiết lập mà không cần áp dụng một cửa hàng tìm kiếm riêng.",
+    "why": "RDS for PostgreSQL thuộc Amazon Relational Database Service (Amazon RDS), và kích hoạt công việc: Giữ các vectơ ngữ nghĩa bên cạnh các bảng và giao dịch được thiết lập mà không cần áp dụng một cửa hàng tìm kiếm riêng."
+  },
+  "feat-040-01": {
+    "label": "Áp dụng một họ các trợ lý tạo sinh cho các nhiệm vụ kiến thức tổ chức và phân phối phần mềm.",
+    "why": "business and developer assistants thuộc Amazon Q, và kích hoạt công việc: Áp dụng một họ các trợ lý tạo sinh cho các nhiệm vụ kiến thức tổ chức và phân phối phần mềm."
+  },
+  "feat-041-01": {
+    "label": "Đào tạo phân tích văn bản cho các nhãn dành riêng cho tổ chức và thuật ngữ.",
+    "why": "custom NLP models for domain-specific extraction/classification thuộc Amazon Comprehend, và kích hoạt công việc: Đào tạo phân tích văn bản cho các nhãn dành riêng cho tổ chức và thuật ngữ."
+  },
+  "feat-043-00": {
+    "label": "Tạo các trải nghiệm trò chuyện và điện thoại tương tác thông qua ngôn ngữ tự nhiên.",
+    "why": "Automatic speech recognition (ASR) thuộc Amazon Lex, và kích hoạt công việc: Tạo các trải nghiệm trò chuyện và điện thoại tương tác thông qua ngôn ngữ tự nhiên."
+  },
+  "feat-043-02": {
+    "label": "Theo dõi trạng thái hội thoại và thu thập thông tin cần thiết để hoàn thành yêu cầu.",
+    "why": "dialogue management thuộc Amazon Lex, và kích hoạt công việc: Theo dõi trạng thái hội thoại và thu thập thông tin cần thiết để hoàn thành yêu cầu."
+  },
+  "feat-044-00": {
+    "label": "Biến nội dung được viết thành âm thanh tự nhiên cho các ứng dụng và khả năng truy cập.",
+    "why": "Neural text-to-speech (NTTS) thuộc Amazon Polly, và kích hoạt công việc: Biến nội dung được viết thành âm thanh tự nhiên cho các ứng dụng và khả năng truy cập."
+  },
+  "feat-045-01": {
+    "label": "Cung cấp nội dung nói cho tìm kiếm, phân tích, chú thích hoặc tự động hóa hạ lưu.",
+    "why": "Streaming transcription thuộc Amazon Transcribe, và kích hoạt công việc: Cung cấp nội dung nói cho tìm kiếm, phân tích, chú thích hoặc tự động hóa hạ lưu."
+  },
+  "feat-047-00": {
+    "label": "Đọc cả từ và cấu trúc cặp khóa-giá trị từ các tệp được quét hoặc kỹ thuật số.",
+    "why": "Document Analysis API thuộc Amazon Textract, và kích hoạt công việc: Đọc cả từ và cấu trúc cặp khóa-giá trị từ các tệp được quét hoặc kỹ thuật số."
+  },
+  "feat-048-00": {
+    "label": "Cho phép nhân viên hoặc khách hàng đặt câu hỏi về tài liệu bằng ngôn ngữ thông thường.",
+    "why": "Natural-language search across unstructured enterprise content thuộc Amazon Kendra, và kích hoạt công việc: Cho phép nhân viên hoặc khách hàng đặt câu hỏi về tài liệu bằng ngôn ngữ thông thường."
+  },
+  "feat-049-00": {
+    "label": "Phân tích hình ảnh hoặc video để xác định các thực thể hình ảnh, môi trường và mọi người.",
+    "why": "Label detection thuộc Amazon Rekognition, và kích hoạt công việc: Phân tích hình ảnh hoặc video để xác định các thực thể hình ảnh, môi trường và mọi người."
+  },
+  "feat-050-00": {
+    "label": "Xếp hạng các mục cho mỗi người dùng từ hành vi và sở thích của họ trong khi họ tương tác.",
+    "why": "Real-time recommendations thuộc Amazon Personalize, và kích hoạt công việc: Xếp hạng các mục cho mỗi người dùng từ hành vi và sở thích của họ trong khi họ tương tác."
+  },
+  "feat-051-01": {
+    "label": "Ước tính một loạt các giá trị tương lai có thể ở các mức độ tự tin được chọn thay vì chỉ trả lại một số.",
+    "why": "probabilistic forecasts and prediction intervals thuộc Amazon Forecast, và kích hoạt công việc: Ước tính một loạt các giá trị tương lai có thể ở các mức độ tự tin được chọn thay vì chỉ trả lại một số."
+  },
+  "feat-052-01": {
+    "label": "Gán khả năng gian lận số cho hoạt động giao dịch hoặc tài khoản.",
+    "why": "event risk scores thuộc Amazon Fraud Detector, và kích hoạt công việc: Gán khả năng gian lận số cho hoạt động giao dịch hoặc tài khoản."
+  },
+  "feat-053-00": {
+    "label": "Tìm hiểu sự xuất hiện của các sản phẩm có thể chấp nhận được và cờ hình ảnh chứa khiếm khuyết bất thường.",
+    "why": "Visual anomaly detection thuộc Amazon Lookout for Vision, và kích hoạt công việc: Tìm hiểu sự xuất hiện của các sản phẩm có thể chấp nhận được và cờ hình ảnh chứa khiếm khuyết bất thường."
+  },
+  "feat-053-02": {
+    "label": "Chạy kiểm tra chất lượng hình ảnh được đào tạo gần với thiết bị nhà máy.",
+    "why": "edge-device model deployment thuộc Amazon Lookout for Vision, và kích hoạt công việc: Chạy kiểm tra chất lượng hình ảnh được đào tạo gần với thiết bị nhà máy."
+  },
+  "feat-054-00": {
+    "label": "Tìm hiểu hành vi biện pháp kinh doanh bình thường và bề mặt các thay đổi không mong muốn mà không có ngưỡng cố định.",
+    "why": "Automatic metric anomaly detection thuộc Amazon Lookout for Metrics, và kích hoạt công việc: Tìm hiểu hành vi biện pháp kinh doanh bình thường và bề mặt các thay đổi không mong muốn mà không có ngưỡng cố định."
+  },
+  "feat-054-02": {
+    "label": "Xếp hạng các kích thước giải thích mạnh mẽ nhất sự thay đổi được phát hiện trong một biện pháp kinh doanh.",
+    "why": "root-cause contribution analysis thuộc Amazon Lookout for Metrics, và kích hoạt công việc: Xếp hạng các kích thước giải thích mạnh mẽ nhất sự thay đổi được phát hiện trong một biện pháp kinh doanh."
+  },
+  "feat-056-01": {
+    "label": "Áp dụng kiểm tra dựa trên học tập và quy tắc cho các lỗ hổng phần mềm phổ biến và các hành vi không an toàn.",
+    "why": "security detector library thuộc Amazon CodeGuru Reviewer, và kích hoạt công việc: Áp dụng kiểm tra dựa trên học tập và quy tắc cho các lỗ hổng phần mềm phổ biến và các hành vi không an toàn."
+  },
+  "feat-057-00": {
+    "label": "Hồ sơ mã đang thực thi để định vị các phương thức tốn kém và giảm lãng phí tính toán.",
+    "why": "Continuous profiling thuộc Amazon CodeGuru Profiler, và kích hoạt công việc: Hồ sơ mã đang thực thi để định vị các phương thức tốn kém và giảm lãng phí tính toán."
+  },
+  "feat-058-01": {
+    "label": "Hướng dẫn bề mặt và thông tin liên quan cho nhân viên trung tâm liên hệ trong một cuộc trò chuyện trực tiếp.",
+    "why": "real-time agent assistance thuộc Amazon Connect, và kích hoạt công việc: Hướng dẫn bề mặt và thông tin liên quan cho nhân viên trung tâm liên hệ trong một cuộc trò chuyện trực tiếp."
+  },
+  "feat-058-03": {
+    "label": "Dự đoán nhu cầu liên hệ và căn chỉnh phủ sóng lực lượng công việc với khối lượng dự kiến.",
+    "why": "forecasting and scheduling thuộc Amazon Connect, và kích hoạt công việc: Dự đoán nhu cầu liên hệ và căn chỉnh phủ sóng lực lượng công việc với khối lượng dự kiến."
+  },
+  "feat-059-00": {
+    "label": "Sử dụng các đơn hàng lịch sử và tín hiệu để ước tính nhu cầu sản phẩm trong tương lai.",
+    "why": "Demand planning thuộc AWS Supply Chain, và kích hoạt công việc: Sử dụng các đơn hàng lịch sử và tín hiệu để ước tính nhu cầu sản phẩm trong tương lai."
+  },
+  "feat-059-02": {
+    "label": "Thống nhất hồ sơ hoạt động từ các hệ thống doanh nghiệp để lập kế hoạch và phân tích.",
+    "why": "supply-chain data lake thuộc AWS Supply Chain, và kích hoạt công việc: Thống nhất hồ sơ hoạt động từ các hệ thống doanh nghiệp để lập kế hoạch và phân tích."
+  },
+  "feat-060-01": {
+    "label": "Yêu cầu, phê duyệt và kiểm toán quyền truy cập vào bộ dữ liệu chia sẻ thông qua quy trình công việc được quản lý.",
+    "why": "governed data subscriptions thuộc Amazon DataZone, và kích hoạt công việc: Yêu cầu, phê duyệt và kiểm toán quyền truy cập vào bộ dữ liệu chia sẻ thông qua quy trình công việc được quản lý."
+  },
+  "feat-061-00": {
+    "label": "Đánh giá các tài liệu kiến trúc dựa trên các yêu cầu tổ chức trước khi viết mã.",
+    "why": "Design security review thuộc AWS Security Agent, và kích hoạt công việc: Đánh giá các tài liệu kiến trúc dựa trên các yêu cầu tổ chức trước khi viết mã."
+  },
+  "feat-061-02": {
+    "label": "Sử dụng các tác nhân chuyên biệt để thực hiện các tình huống tấn công nhiều bước chống lại các ứng dụng web và API.",
+    "why": "On-demand penetration testing thuộc AWS Security Agent, và kích hoạt công việc: Sử dụng các tác nhân chuyên biệt để thực hiện các tình huống tấn công nhiều bước chống lại các ứng dụng web và API."
+  },
+  "feat-061-04": {
+    "label": "Trả lại các đường khai thác có thể tái tạo, phân tích tác động và các sửa chữa sẵn sàng thực hiện.",
+    "why": "Actionable fixes for confirmed vulnerabilities thuộc AWS Security Agent, và kích hoạt công việc: Trả lại các đường khai thác có thể tái tạo, phân tích tác động và các sửa chữa sẵn sàng thực hiện."
+  },
+  "feat-062-01": {
+    "label": "Liên hệ đo từ xa, mã và dữ liệu triển khai để xác định lý do tại sao một lỗi sản xuất xảy ra.",
+    "why": "Root cause analysis thuộc AWS DevOps Agent, và kích hoạt công việc: Liên hệ đo từ xa, mã và dữ liệu triển khai để xác định lý do tại sao một lỗi sản xuất xảy ra."
+  },
+  "feat-062-03": {
+    "label": "Khám phá các dịch vụ và tài nguyên và duy trì một cấu trúc liên kết động của mối quan hệ của họ.",
+    "why": "Application Mapping thuộc AWS DevOps Agent, và kích hoạt công việc: Khám phá các dịch vụ và tài nguyên và duy trì một cấu trúc liên kết động của mối quan hệ của họ."
+  },
+  "feat-063-00": {
+    "label": "Ghi lại người đã thực hiện một hành động mặt phẳng kiểm soát đám mây, khi nó xảy ra và từ đâu.",
+    "why": "API and user activity history thuộc AWS CloudTrail, và kích hoạt công việc: Ghi lại người đã thực hiện một hành động mặt phẳng kiểm soát đám mây, khi nó xảy ra và từ đâu."
+  },
+  "feat-064-00": {
+    "label": "Thu thập các phép đo số, bản ghi sự kiện và đường yêu cầu trong một dịch vụ giám sát.",
+    "why": "Metrics logs and traces thuộc Amazon CloudWatch, và kích hoạt công việc: Thu thập các phép đo số, bản ghi sự kiện và đường yêu cầu trong một dịch vụ giám sát."
+  },
+  "feat-064-02": {
+    "label": "Trực quan hóa sức khỏe hệ thống và hành vi mô hình để giám sát sản xuất liên tục.",
+    "why": "dashboards and model observability thuộc Amazon CloudWatch, và kích hoạt công việc: Trực quan hóa sức khỏe hệ thống và hành vi mô hình để giám sát sản xuất liên tục."
+  },
+  "feat-065-01": {
+    "label": "Đánh giá các cài đặt tài nguyên liên tục dựa trên các điều kiện tổ chức bắt buộc.",
+    "why": "compliance rules thuộc AWS Config, và kích hoạt công việc: Đánh giá các cài đặt tài nguyên liên tục dựa trên các điều kiện tổ chức bắt buộc."
+  },
+  "feat-066-00": {
+    "label": "Nhận các phát hiện thực tiễn tốt nhất trên các danh mục chất lượng hoạt động chính.",
+    "why": "Cost security performance and resilience recommendations thuộc AWS Trusted Advisor, và kích hoạt công việc: Nhận các phát hiện thực tiễn tốt nhất trên các danh mục chất lượng hoạt động chính."
+  },
+  "feat-066-01": {
+    "label": "Tập trung sửa chữa vào các khuyến nghị được xếp hạng theo tác động tài khoản tiềm ẩn của chúng.",
+    "why": "prioritized checks thuộc AWS Trusted Advisor, và kích hoạt công việc: Tập trung sửa chữa vào các khuyến nghị được xếp hạng theo tác động tài khoản tiềm ẩn của chúng."
+  },
+  "feat-067-00": {
+    "label": "Đánh giá một kiến trúc trên sự xuất sắc hoạt động, an toàn, độ tin cậy, hiệu suất, chi phí và tính bền vững.",
+    "why": "Six-pillar workload reviews thuộc AWS Well-Architected Tool, và kích hoạt công việc: Đánh giá một kiến trúc trên sự xuất sắc hoạt động, an toàn, độ tin cậy, hiệu suất, chi phí và tính bền vững."
+  },
+  "feat-068-00": {
+    "label": "Phục vụ các yêu cầu lặp lại từ các vị trí gần người dùng thay vì quay trở lại nguồn gốc mỗi lần.",
+    "why": "Global edge caching thuộc Amazon CloudFront, và kích hoạt công việc: Phục vụ các yêu cầu lặp lại từ các vị trí gần người dùng thay vì quay trở lại nguồn gốc mỗi lần."
+  },
+  "feat-068-02": {
+    "label": "Phân phối tài sản web trên các kết nối được mã hóa thông qua một mạng toàn cầu.",
+    "why": "HTTPS content delivery thuộc Amazon CloudFront, và kích hoạt công việc: Phân phối tài sản web trên các kết nối được mã hóa thông qua một mạng toàn cầu."
+  },
+  "feat-069-01": {
+    "label": "Lọc lưu lượng tài nguyên và mạng con với các quy tắc mạng có trạng thái và không trạng thái.",
+    "why": "security groups and network ACLs thuộc Amazon Virtual Private Cloud (Amazon VPC), và kích hoạt công việc: Lọc lưu lượng tài nguyên và mạng con với các quy tắc mạng có trạng thái và không trạng thái."
+  },
+  "feat-070-00": {
+    "label": "Tải xuống chứng chỉ AWS và báo cáo khi kiểm toán viên hoặc khách hàng yêu cầu bằng chứng bảo đảm.",
+    "why": "On-demand compliance documents thuộc AWS Artifact, và kích hoạt công việc: Tải xuống chứng chỉ AWS và báo cáo khi kiểm toán viên hoặc khách hàng yêu cầu bằng chứng bảo đảm."
+  },
+  "feat-070-01": {
+    "label": "Xem xét các đánh giá độc lập về các biện pháp kiểm soát AWS và hiệu quả hoạt động.",
+    "why": "third-party audit reports thuộc AWS Artifact, và kích hoạt công việc: Xem xét các đánh giá độc lập về các biện pháp kiểm soát AWS và hiệu quả hoạt động."
+  },
+  "feat-071-00": {
+    "label": "Thu thập các bản ghi tài nguyên và hoạt động được ánh xạ liên tục thay vì lắp ráp bằng chứng kiểm toán theo cách thủ công.",
+    "why": "Automated evidence collection thuộc AWS Audit Manager, và kích hoạt công việc: Thu thập các bản ghi tài nguyên và hoạt động được ánh xạ liên tục thay vì lắp ráp bằng chứng kiểm toán theo cách thủ công."
+  },
+  "feat-071-02": {
+    "label": "Biên dịch trạng thái kiểm soát và bằng chứng hỗ trợ thành một gói sẵn sàng cho kiểm toán viên.",
+    "why": "assessment reports thuộc AWS Audit Manager, và kích hoạt công việc: Biên dịch trạng thái kiểm soát và bằng chứng hỗ trợ thành một gói sẵn sàng cho kiểm toán viên."
+  },
+  "feat-072-01": {
+    "label": "Cấp chỉ các hành động và tài nguyên cần thiết cho một người hoặc nhiệm vụ khối lượng công việc.",
+    "why": "least-privilege permissions thuộc AWS Identity and Access Management (IAM), và kích hoạt công việc: Cấp chỉ các hành động và tài nguyên cần thiết cho một người hoặc nhiệm vụ khối lượng công việc."
+  },
+  "feat-073-00": {
+    "label": "Kiểm tra các máy ảo và tạo tác phần mềm được đóng gói cho các lỗ hổng đã biết.",
+    "why": "Amazon EC2 and container image scanning thuộc Amazon Inspector, và kích hoạt công việc: Kiểm tra các máy ảo và tạo tác phần mềm được đóng gói cho các lỗ hổng đã biết."
+  },
+  "feat-073-02": {
+    "label": "Ưu tiên một lỗ hổng bằng cách sử dụng khả năng khai thác và bối cảnh tiếp xúc tài nguyên.",
+    "why": "risk-based findings thuộc Amazon Inspector, và kích hoạt công việc: Ưu tiên một lỗ hổng bằng cách sử dụng khả năng khai thác và bối cảnh tiếp xúc tài nguyên."
+  },
+  "feat-074-01": {
+    "label": "Bảo vệ dữ liệu bằng một khóa dữ liệu và sau đó mã hóa khóa đó dưới một khóa gốc dài hơn.",
+    "why": "envelope encryption thuộc AWS Key Management Service (AWS KMS), và kích hoạt công việc: Bảo vệ dữ liệu bằng một khóa dữ liệu và sau đó mã hóa khóa đó dưới một khóa gốc dài hơn."
+  },
+  "feat-075-00": {
+    "label": "Phân loại nội dung đối tượng để định vị thông tin cá nhân, tài chính, thông tin xác thực hoặc được quy định.",
+    "why": "Machine-learning sensitive-data discovery thuộc Amazon Macie, và kích hoạt công việc: Phân loại nội dung đối tượng để định vị thông tin cá nhân, tài chính, thông tin xác thực hoặc được quy định."
+  },
+  "feat-075-02": {
+    "label": "Hình ảnh động của bề mặt khi các đối tượng nhạy cảm hoặc các cài đặt lưu trữ không an toàn được phát hiện.",
+    "why": "findings for exposed data thuộc Amazon Macie, và kích hoạt công việc: Hình ảnh động của bề mặt khi các đối tượng nhạy cảm hoặc các cài đặt lưu trữ không an toàn được phát hiện."
+  },
+  "feat-076-01": {
+    "label": "Thay thế mật khẩu cơ sở dữ liệu hoặc ứng dụng được hỗ trợ trên một lịch trình mà không cập nhật thủ công.",
+    "why": "automatic credential rotation thuộc AWS Secrets Manager, và kích hoạt công việc: Thay thế mật khẩu cơ sở dữ liệu hoặc ứng dụng được hỗ trợ trên một lịch trình mà không cập nhật thủ công."
+  },
+  "feat-077-00": {
+    "label": "Duy trì các tệp, bộ dữ liệu và tạo tác dự phòng để truy cập đám mây dài hạn.",
+    "why": "Highly durable object storage thuộc Amazon Simple Storage Service (Amazon S3), và kích hoạt công việc: Duy trì các tệp, bộ dữ liệu và tạo tác dự phòng để truy cập đám mây dài hạn."
+  },
+  "feat-077-02": {
+    "label": "Chuyển đổi hoặc hết hạn các đối tượng tự động khi tuổi và nhu cầu truy cập của chúng thay đổi.",
+    "why": "lifecycle management thuộc Amazon Simple Storage Service (Amazon S3), và kích hoạt công việc: Chuyển đổi hoặc hết hạn các đối tượng tự động khi tuổi và nhu cầu truy cập của chúng thay đổi."
+  },
+  "feat-077-04": {
+    "label": "Ưu tiên kinh tế lưu trữ cho các bộ sưu tập nhúng rất lớn không yêu cầu độ trễ cực thấp.",
+    "why": "cost-optimized billion-scale vector storage thuộc Amazon Simple Storage Service (Amazon S3), và kích hoạt công việc: Ưu tiên kinh tế lưu trữ cho các bộ sưu tập nhúng rất lớn không yêu cầu độ trễ cực thấp."
+  },
+  "feat-078-01": {
+    "label": "Tốc độ truy xuất giao dịch chống lại giá khi khôi phục các đối tượng được lưu trữ.",
+    "why": "expedited to bulk retrieval options thuộc Amazon S3 Glacier, và kích hoạt công việc: Tốc độ truy xuất giao dịch chống lại giá khi khôi phục các đối tượng được lưu trữ."
+  },
+  "feat-079-00": {
+    "label": "Duy trì hồ sơ chăm sóc sức khỏe trong một định dạng có thể tương tác được thiết kế cho trao đổi lâm sàng.",
+    "why": "FHIR-enabled patient-data store thuộc AWS HealthLake, và kích hoạt công việc: Duy trì hồ sơ chăm sóc sức khỏe trong một định dạng có thể tương tác được thiết kế cho trao đổi lâm sàng."
+  },
+  "feat-080-00": {
+    "label": "Chuyển đổi các cuộc trò chuyện lâm sàng với từ vựng điều chỉnh cho chăm sóc sức khỏe.",
+    "why": "Medical speech recognition thuộc AWS HealthScribe, và kích hoạt công việc: Chuyển đổi các cuộc trò chuyện lâm sàng với từ vựng điều chỉnh cho chăm sóc sức khỏe."
+  },
+  "feat-080-02": {
+    "label": "Xác định các khái niệm có ý nghĩa y tế từ một cuộc trò chuyện bệnh nhân-lâm sàng.",
+    "why": "clinical term extraction thuộc AWS HealthScribe, và kích hoạt công việc: Xác định các khái niệm có ý nghĩa y tế từ một cuộc trò chuyện bệnh nhân-lâm sàng."
+  },
+  "feat-080-04": {
+    "label": "Hỗ trợ khối lượng công việc chăm sóc sức khỏe được quy định khi được định cấu hình trong các biện pháp kiểm soát tuân thủ bắt buộc.",
+    "why": "HIPAA-eligible processing thuộc AWS HealthScribe, và kích hoạt công việc: Hỗ trợ khối lượng công việc chăm sóc sức khỏe được quy định khi được định cấu hình trong các biện pháp kiểm soát tuân thủ bắt buộc."
+  },
+  "feat-082-00": {
+    "label": "Phục vụ các mạng nơ-ron được đào tạo trên silicon AWS được tối ưu hóa cho nền kinh tế dự đoán.",
+    "why": "Cost/performance-focused deep-learning and generative-AI inference thuộc AWS Inferentia / Inferentia2, và kích hoạt công việc: Phục vụ các mạng nơ-ron được đào tạo trên silicon AWS được tối ưu hóa cho nền kinh tế dự đoán."
+  },
+  "feat-083-00": {
+    "label": "Dịch các biểu đồ mạng nơ-ron được đào tạo thành các hướng dẫn được tối ưu hóa cho các bộ tăng tốc học máy AWS.",
+    "why": "Model compilation thuộc AWS Neuron SDK, và kích hoạt công việc: Dịch các biểu đồ mạng nơ-ron được đào tạo thành các hướng dẫn được tối ưu hóa cho các bộ tăng tốc học máy AWS."
+  },
+  "feat-083-02": {
+    "label": "Kiểm tra sử dụng bộ tăng tốc và hành vi thực thi để cải thiện hiệu suất.",
+    "why": "profiling and debugging tools thuộc AWS Neuron SDK, và kích hoạt công việc: Kiểm tra sử dụng bộ tăng tốc và hành vi thực thi để cải thiện hiệu suất."
+  },
+  "feat-084-01": {
+    "label": "Biên dịch và tối ưu hóa khối lượng công việc đào tạo cho silicon AWS được xây dựng với mục đích.",
+    "why": "Neuron SDK support thuộc Amazon EC2 Trn1 / Trn2 instances, và kích hoạt công việc: Biên dịch và tối ưu hóa khối lượng công việc đào tạo cho silicon AWS được xây dựng với mục đích."
+  },
+  "feat-085-00": {
+    "label": "Chọn các thế hệ bộ tăng tốc AWS được thiết kế đặc biệt cho dự đoán mạng nơ-ron.",
+    "why": "First- and second-generation Inferentia thuộc Amazon EC2 Inf1 / Inf2 instances, và kích hoạt công việc: Chọn các thế hệ bộ tăng tốc AWS được thiết kế đặc biệt cho dự đoán mạng nơ-ron."
+  },
+  "feat-085-02": {
+    "label": "Biên dịch và điều chỉnh các mô hình được đào tạo cho các bộ tăng tốc dự đoán AWS.",
+    "why": "Neuron SDK support for inference thuộc Amazon EC2 Inf1 / Inf2 instances, và kích hoạt công việc: Biên dịch và điều chỉnh các mô hình được đào tạo cho các bộ tăng tốc dự đoán AWS."
+  },
+  "feat-087-00": {
+    "label": "Sử dụng kiến trúc bộ tăng tốc cao cấp hiện tại cho huấn luyện và suy luận mô hình lớn đòi hỏi.",
+    "why": "NVIDIA Blackwell GPUs thuộc Amazon EC2 P6 instances and UltraServers, và kích hoạt công việc: Sử dụng kiến trúc bộ tăng tốc cao cấp hiện tại cho huấn luyện và suy luận mô hình lớn đòi hỏi."
+  },
+  "feat-087-02": {
+    "label": "Di chuyển lưu lượng bộ tăng tốc phân tán với độ trễ thấp và thông lượng cao giữa các nút tính toán.",
+    "why": "high-bandwidth EFA networking thuộc Amazon EC2 P6 instances and UltraServers, và kích hoạt công việc: Di chuyển lưu lượng bộ tăng tốc phân tán với độ trễ thấp và thông lượng cao giữa các nút tính toán."
+  },
+  "feat-088-01": {
+    "label": "Sử dụng các bộ tăng tốc hiệu quả hơn mới cho khối lượng công việc đồ họa, phương tiện truyền thông và phục vụ mô hình.",
+    "why": "NVIDIA L4 GPUs on G6 instances thuộc Amazon EC2 G5 / G6 instances, và kích hoạt công việc: Sử dụng các bộ tăng tốc hiệu quả hơn mới cho khối lượng công việc đồ họa, phương tiện truyền thông và phục vụ mô hình."
+  },
+  "feat-089-00": {
+    "label": "Sử dụng các bộ xử lý học sâu chuyên dụng như một thay thế cho huấn luyện GPU thông thường.",
+    "why": "Habana Gaudi accelerators thuộc Amazon EC2 DL1 instances, và kích hoạt công việc: Sử dụng các bộ xử lý học sâu chuyên dụng như một thay thế cho huấn luyện GPU thông thường."
+  },
+  "feat-089-01": {
+    "label": "Phối hợp học tập mô hình trên nhiều nút tính toán chuyên biệt.",
+    "why": "distributed deep-learning training thuộc Amazon EC2 DL1 instances, và kích hoạt công việc: Phối hợp học tập mô hình trên nhiều nút tính toán chuyên biệt."
+  },
+  "feat-090-00": {
+    "label": "Xác định và tái tạo một môi trường máy tính khoa học đàn hồi từ cấu hình.",
+    "why": "Infrastructure-as-code cluster creation thuộc AWS ParallelCluster, và kích hoạt công việc: Xác định và tái tạo một môi trường máy tính khoa học đàn hồi từ cấu hình."
+  },
+  "feat-090-02": {
+    "label": "Thêm các nút công nhân cho các công việc sắp xếp hàng đợi và xóa dung lượng không hoạt động khi nhu cầu giảm.",
+    "why": "automatic compute scaling thuộc AWS ParallelCluster, và kích hoạt công việc: Thêm các nút công nhân cho các công việc sắp xếp hàng đợi và xóa dung lượng không hoạt động khi nhu cầu giảm."
+  },
+  "feat-091-01": {
+    "label": "Tăng tốc độ các thư viện truyền thông phổ biến được sử dụng bởi HPC và huấn luyện mô hình.",
+    "why": "MPI and NCCL communication thuộc Elastic Fabric Adapter, và kích hoạt công việc: Tăng tốc độ các thư viện truyền thông phổ biến được sử dụng bởi HPC và huấn luyện mô hình."
+  },
+  "feat-092-00": {
+    "label": "Ưu tiên và giữ công việc tính toán ngoại tuyến cho đến khi dung lượng phù hợp có sẵn.",
+    "why": "Managed job queues thuộc AWS Batch, và kích hoạt công việc: Ưu tiên và giữ công việc tính toán ngoại tuyến cho đến khi dung lượng phù hợp có sẵn."
+  },
+  "feat-092-02": {
+    "label": "Diễn đạt các đường ống được sắp xếp thứ tự hoặc nhiều biến thể của cùng một nhiệm vụ hàng loạt.",
+    "why": "job dependencies and array jobs thuộc AWS Batch, và kích hoạt công việc: Diễn đạt các đường ống được sắp xếp thứ tự hoặc nhiều biến thể của cùng một nhiệm vụ hàng loạt."
+  },
+  "feat-094-00": {
+    "label": "Chạy các vùng chứa sẵn sàng khuôn khổ có thể tái tạo để học tập và dự đoán mô hình.",
+    "why": "Deep Learning Containers (DLCs) thuộc AWS Deep Learning Containers, và kích hoạt công việc: Chạy các vùng chứa sẵn sàng khuôn khổ có thể tái tạo để học tập và dự đoán mô hình."
+  },
+  "feat-095-00": {
+    "label": "Phát triển và vận hành khối lượng công việc dựa trên khuôn khổ học sâu động phổ biến.",
+    "why": "PyTorch on AWS thuộc PyTorch on AWS, và kích hoạt công việc: Phát triển và vận hành khối lượng công việc dựa trên khuôn khổ học sâu động phổ biến."
+  },
+  "feat-097-00": {
+    "label": "Sử dụng một ekosystem mô hình mở cùng với huấn luyện được quản lý và máy tính đám mây.",
+    "why": "Hugging Face Deep Learning Containers thuộc Hugging Face on Amazon SageMaker, và kích hoạt công việc: Sử dụng một ekosystem mô hình mở cùng với huấn luyện được quản lý và máy tính đám mây."
+  },
+  "feat-098-01": {
+    "label": "Khám phá dữ liệu, trực quan hóa kết quả và lặp lại trên mã mô hình trong các tài liệu có thể thực thi.",
+    "why": "interactive data science thuộc Jupyter on AWS, và kích hoạt công việc: Khám phá dữ liệu, trực quan hóa kết quả và lặp lại trên mã mô hình trong các tài liệu có thể thực thi."
+  },
+  "feat-099-00": {
+    "label": "Ghi chép các kịch bản mà một khả năng AI được quản lý được thiết kế và đánh giá.",
+    "why": "Intended use cases thuộc AWS AI Service Cards, và kích hoạt công việc: Ghi chép các kịch bản mà một khả năng AI được quản lý được thiết kế và đánh giá."
+  },
+  "feat-099-02": {
+    "label": "Cung cấp tính minh bạch và các cân nhắc sử dụng an toàn hơn cho các đội áp dụng một khả năng AI được quản lý.",
+    "why": "responsible AI design guidance thuộc AWS AI Service Cards, và kích hoạt công việc: Cung cấp tính minh bạch và các cân nhắc sử dụng an toàn hơn cho các đội áp dụng một khả năng AI được quản lý."
+  },
+  "feat-100-02": {
+    "label": "Xuất bản một nguyên mẫu tương tác để những người khác có thể thử nó.",
+    "why": "shareable applications thuộc Amazon PartyRock, và kích hoạt công việc: Xuất bản một nguyên mẫu tương tác để những người khác có thể thử nó."
+  },
+  "feat-100-03": {
+    "label": "Tìm hiểu cách từ ngữ hướng dẫn và ngữ cảnh thay đổi đầu ra mô hình thông qua thử nghiệm.",
+    "why": "hands-on prompt engineering thuộc Amazon PartyRock, và kích hoạt công việc: Tìm hiểu cách từ ngữ hướng dẫn và ngữ cảnh thay đổi đầu ra mô hình thông qua thử nghiệm."
+  },
+  "feat-000-01": {
+    "label": "Sử dụng các họ mô hình nền tảng do AWS phát triển cho tạo sinh, nhúng và khối lượng công việc đa phương tiện.",
+    "why": "Amazon Titan và các mô hình Amazon Nova thuộc về Amazon Bedrock, và kích hoạt công việc này: Sử dụng các họ mô hình nền tảng do AWS phát triển cho tạo sinh, nhúng và khối lượng công việc đa phương tiện."
+  },
+  "feat-000-02": {
+    "label": "Chạy các yêu cầu mô hình mà không cần cấp phát hoặc quản lý cơ sở hạ tầng suy luận cơ bản.",
+    "why": "suy luận quản lý không máy chủ thuộc về Amazon Bedrock, và kích hoạt công việc này: Chạy các yêu cầu mô hình mà không cần cấp phát hoặc quản lý cơ sở hạ tầng suy luận cơ bản."
+  },
+  "feat-000-04": {
+    "label": "Điều chỉnh hành vi của mô hình nền tảng với các ví dụ và yêu cầu cụ thể của tổ chức.",
+    "why": "tinh chỉnh và tùy chỉnh thuộc về Amazon Bedrock, và kích hoạt công việc này: Điều chỉnh hành vi của mô hình nền tảng với các ví dụ và yêu cầu cụ thể của tổ chức."
+  },
+  "feat-000-06": {
+    "label": "Sắp xếp các tác vụ đa bước suy luận trên các hướng dẫn và gọi các hành động hoặc nguồn dữ liệu.",
+    "why": "Agents for Amazon Bedrock thuộc về Amazon Bedrock, và kích hoạt công việc này: Sắp xếp các tác vụ đa bước suy luận trên các hướng dẫn và gọi các hành động hoặc nguồn dữ liệu."
+  },
+  "feat-000-08": {
+    "label": "Giữ các lời nhắc nhạy cảm và thông tin khách hàng bị cô lập khỏi đào tạo nhà cung cấp mô hình.",
+    "why": "bảo vệ dữ liệu riêng tư thuộc về Amazon Bedrock, và kích hoạt công việc này: Giữ các lời nhắc nhạy cảm và thông tin khách hàng bị cô lập khỏi đào tạo nhà cung cấp mô hình."
+  },
+  "feat-000-10": {
+    "label": "Chuyển hành vi từ một mô hình giáo viên lớn hơn vào một mô hình nhỏ hơn để giảm chi phí phục vụ và độ trễ.",
+    "why": "chưng cất mô hình thuộc về Amazon Bedrock, và kích hoạt công việc này: Chuyển hành vi từ một mô hình giáo viên lớn hơn vào một mô hình nhỏ hơn để giảm chi phí phục vụ và độ trễ."
+  },
+  "feat-000-13": {
+    "label": "Biến tài liệu, hình ảnh, âm thanh và video thành những hiểu biết có cấu trúc với xử lý đa phương tiện được quản lý.",
+    "why": "Bedrock Data Automation thuộc về Amazon Bedrock, và kích hoạt công việc này: Biến tài liệu, hình ảnh, âm thanh và video thành những hiểu biết có cấu trúc với xử lý đa phương tiện được quản lý."
+  },
+  "feat-000-15": {
+    "label": "Đưa một mô hình nền tảng được tùy chỉnh bên ngoài được hỗ trợ vào suy luận được quản lý.",
+    "why": "Custom Model Import thuộc về Amazon Bedrock, và kích hoạt công việc này: Đưa một mô hình nền tảng được tùy chỉnh bên ngoài được hỗ trợ vào suy luận được quản lý."
+  },
+  "feat-000-17": {
+    "label": "Ghi lại các tải trọng yêu cầu, phản hồi và siêu dữ liệu gọi hàm để kiểm tra và gỡ lỗi.",
+    "why": "ghi nhật ký gọi mô hình thuộc về Amazon Bedrock, và kích hoạt công việc này: Ghi lại các tải trọng yêu cầu, phản hồi và siêu dữ liệu gọi hàm để kiểm tra và gỡ lỗi."
+  },
+  "feat-001-01": {
+    "label": "Triển khai các tác nhân động trong các phiên bản cô lập với khả năng mở rộng không máy chủ và hỗ trợ thực thi không đồng bộ.",
+    "why": "Runtime thuộc về Amazon Bedrock AgentCore, và kích hoạt công việc này: Triển khai các tác nhân động trong các phiên bản cô lập với khả năng mở rộng không máy chủ và hỗ trợ thực thi không đồng bộ."
+  },
+  "feat-001-02": {
+    "label": "Giữ lại ngữ cảnh hội thoại ngắn hạn và kiến thức dài hạn kéo dài trên các phiên.",
+    "why": "Memory thuộc về Amazon Bedrock AgentCore, và kích hoạt công việc này: Giữ lại ngữ cảnh hội thoại ngắn hạn và kiến thức dài hạn kéo dài trên các phiên."
+  },
+  "feat-001-04": {
+    "label": "Kết nối các tác nhân với các nhà cung cấp xác thực hiện có và quản lý quyền truy cập mà không cần di chuyển người dùng.",
+    "why": "Identity thuộc về Amazon Bedrock AgentCore, và kích hoạt công việc này: Kết nối các tác nhân với các nhà cung cấp xác thực hiện có và quản lý quyền truy cập mà không cần di chuyển người dùng."
+  },
+  "feat-001-07": {
+    "label": "Theo dõi các đường thực thi, kiểm tra các đầu ra trung gian và gỡ lỗi hiệu suất tác nhân trong môi trường sản xuất.",
+    "why": "Observability thuộc về Amazon Bedrock AgentCore, và kích hoạt công việc này: Theo dõi các đường thực thi, kiểm tra các đầu ra trung gian và gỡ lỗi hiệu suất tác nhân trong môi trường sản xuất."
+  },
+  "feat-001-09": {
+    "label": "Đo lường mức độ tin cậy mà các tác nhân và công cụ hoàn thành các tác vụ trên các phiên, dấu vết và khoảng.",
+    "why": "Evaluations thuộc về Amazon Bedrock AgentCore, và kích hoạt công việc này: Đo lường mức độ tin cậy mà các tác nhân và công cụ hoàn thành các tác vụ trên các phiên, dấu vết và khoảng."
+  },
+  "feat-001-11": {
+    "label": "Thực thi các ranh giới xác định trên các cuộc gọi công cụ với các quy tắc ngôn ngữ tự nhiên hoặc Cedar.",
+    "why": "Policy thuộc về Amazon Bedrock AgentCore, và kích hoạt công việc này: Thực thi các ranh giới xác định trên các cuộc gọi công cụ với các quy tắc ngôn ngữ tự nhiên hoặc Cedar."
+  },
+  "feat-002-00": {
+    "label": "Để mô hình chọn và sắp xếp các hành động từ các hướng dẫn thay vì mã hóa cứng mọi đường dẫn.",
+    "why": "Phát triển tác nhân do mô hình điều khiển thuộc về Strands Agents, và kích hoạt công việc này: Để mô hình chọn và sắp xếp các hành động từ các hướng dẫn thay vì mã hóa cứng mọi đường dẫn."
+  },
+  "feat-002-02": {
+    "label": "Cung cấp cho một tác nhân quyền truy cập được kiểm soát vào các hàm bên ngoài, dịch vụ và dữ liệu.",
+    "why": "tích hợp công cụ thuộc về Strands Agents, và kích hoạt công việc này: Cung cấp cho một tác nhân quyền truy cập được kiểm soát vào các hàm bên ngoài, dịch vụ và dữ liệu."
+  },
+  "feat-002-04": {
+    "label": "Thay đổi các nhà cung cấp mô hình mà không cần thiết kế lại ứng dụng tác nhân xung quanh.",
+    "why": "hỗ trợ mô hình độc lập nhà cung cấp thuộc về Strands Agents, và kích hoạt công việc này: Thay đổi các nhà cung cấp mô hình mà không cần thiết kế lại ứng dụng tác nhân xung quanh."
+  },
+  "feat-003-00": {
+    "label": "Suy luận trên các lời nhắc văn bản và đầu vào trực quan bằng cách sử dụng các mô hình nền tảng AWS.",
+    "why": "Amazon Nova các mô hình văn bản và đa phương tiện thuộc về Amazon Nova, và kích hoạt công việc này: Suy luận trên các lời nhắc văn bản và đầu vào trực quan bằng cách sử dụng các mô hình nền tảng AWS."
+  },
+  "feat-003-03": {
+    "label": "Điều chỉnh một mô hình chung để hành vi chuyên biệt, thuật ngữ hoặc các ví dụ tổ chức.",
+    "why": "tùy chỉnh mô hình thuộc về Amazon Nova, và kích hoạt công việc này: Điều chỉnh một mô hình chung để hành vi chuyên biệt, thuật ngữ hoặc các ví dụ tổ chức."
+  },
+  "feat-004-00": {
+    "label": "Đưa các tệp nhóm, bảng điều khiển, nguồn dữ liệu và ngữ cảnh vào các khu vực làm việc hợp tác.",
+    "why": "Spaces thuộc về Amazon Quick, và kích hoạt công việc này: Đưa các tệp nhóm, bảng điều khiển, nguồn dữ liệu và ngữ cảnh vào các khu vực làm việc hợp tác."
+  },
+  "feat-004-02": {
+    "label": "Tổng hợp dữ liệu kinh doanh, nguồn internet công cộng và bộ dữ liệu của bên thứ ba vào các báo cáo chuyên nghiệp.",
+    "why": "Research thuộc về Amazon Quick, và kích hoạt công việc này: Tổng hợp dữ liệu kinh doanh, nguồn internet công cộng và bộ dữ liệu của bên thứ ba vào các báo cáo chuyên nghiệp."
+  },
+  "feat-004-04": {
+    "label": "Xây dựng các quy trình làm việc đơn giản hoặc đa bước được kết nối với các ứng dụng hàng ngày.",
+    "why": "Automate thuộc về Amazon Quick, và kích hoạt công việc này: Xây dựng các quy trình làm việc đơn giản hoặc đa bước được kết nối với các ứng dụng hàng ngày."
+  },
+  "feat-004-06": {
+    "label": "Tạo các tài liệu hoàn thiện, bản trình bày, bảng tính hoặc hình ảnh trong một cuộc trò chuyện.",
+    "why": "Tạo các kết quả đã hoàn thiện thuộc về Amazon Quick, và kích hoạt công việc này: Tạo các tài liệu hoàn thiện, bản trình bày, bảng tính hoặc hình ảnh trong một cuộc trò chuyện."
+  },
+  "feat-005-00": {
+    "label": "Lấy thông tin tổ chức và tổng hợp các phản hồi nơi làm việc từ các nguồn được kết nối.",
+    "why": "Tìm kiếm doanh nghiệp và câu trả lời thuộc về Amazon Q Business, và kích hoạt công việc này: Lấy thông tin tổ chức và tổng hợp các phản hồi nơi làm việc từ các nguồn được kết nối."
+  },
+  "feat-005-02": {
+    "label": "Cho phép một trợ lý nơi làm việc thực hiện các hoạt động được phê duyệt trong các hệ thống kinh doanh được kết nối.",
+    "why": "hành động thông qua plugin thuộc về Amazon Q Business, và kích hoạt công việc này: Cho phép một trợ lý nơi làm việc thực hiện các hoạt động được phê duyệt trong các hệ thống kinh doanh được kết nối."
+  },
+  "feat-006-01": {
+    "label": "Uỷ thác công việc triển khai đa bước có thể lập kế hoạch, chỉnh sửa, kiểm tra và lặp lại.",
+    "why": "phát triển phần mềm theo thuyết do tác nhân điều khiển thuộc về Amazon Q Developer, và kích hoạt công việc này: Uỷ thác công việc triển khai đa bước có thể lập kế hoạch, chỉnh sửa, kiểm tra và lặp lại."
+  },
+  "feat-006-03": {
+    "label": "Tăng tốc độ nâng cấp quy mô lớn hoặc di chuyển phần mềm hiện có.",
+    "why": "chuyển đổi ứng dụng thuộc về Amazon Q Developer, và kích hoạt công việc này: Tăng tốc độ nâng cấp quy mô lớn hoặc di chuyển phần mềm hiện có."
+  },
+  "feat-006-05": {
+    "label": "Điều tra các lỗi đám mây và đề xuất các hành động khắc phục bằng cách sử dụng bối cảnh hệ thống.",
+    "why": "khắc phục sự cố hoạt động thuộc về Amazon Q Developer, và kích hoạt công việc này: Điều tra các lỗi đám mây và đề xuất các hành động khắc phục bằng cách sử dụng bối cảnh hệ thống."
+  },
+  "feat-007-01": {
+    "label": "Phân tích và chuyển đổi các khối lượng công việc máy chủ lưu trữ kế thừa thành các kiến trúc hiện đại dễ bảo trì.",
+    "why": "hiện đại hóa mainframe thuộc về AWS Transform, và kích hoạt công việc này: Phân tích và chuyển đổi các khối lượng công việc máy chủ lưu trữ kế thừa thành các kiến trúc hiện đại dễ bảo trì."
+  },
+  "feat-007-03": {
+    "label": "Kiểm tra một cơ sở mã kế thừa và tạo ra một kế hoạch biến đổi dựa trên bằng chứng trước khi chỉnh sửa.",
+    "why": "phân tích mã và lập kế hoạch thuộc về AWS Transform, và kích hoạt công việc này: Kiểm tra một cơ sở mã kế thừa và tạo ra một kế hoạch biến đổi dựa trên bằng chứng trước khi chỉnh sửa."
+  },
+  "feat-007-05": {
+    "label": "Xác minh các phép biến đổi được tạo và duy trì sự chấp thuận của chuyên gia đối với các thay đổi trọng yếu.",
+    "why": "xác thực và giám sát của con người thuộc về AWS Transform, và kích hoạt công việc này: Xác minh các phép biến đổi được tạo và duy trì sự chấp thuận của chuyên gia đối với các thay đổi trọng yếu."
+  },
+  "feat-008-01": {
+    "label": "Lập kế hoạch các khả năng ứng dụng mới thông qua các quy trình làm việc theo yêu cầu trước tiên hoặc thiết kế trước tiên.",
+    "why": "Feature Specs thuộc về Kiro, và kích hoạt công việc này: Lập kế hoạch các khả năng ứng dụng mới thông qua các quy trình làm việc theo yêu cầu trước tiên hoặc thiết kế trước tiên."
+  },
+  "feat-008-03": {
+    "label": "Uỷ thác các tác vụ chuyên biệt vào các cửa sổ ngữ cảnh cô lập song song.",
+    "why": "Subagents thuộc về Kiro, và kích hoạt công việc này: Uỷ thác các tác vụ chuyên biệt vào các cửa sổ ngữ cảnh cô lập song song."
+  },
+  "feat-008-05": {
+    "label": "Sử dụng trợ lý mã hóa từ một terminal cho trò chuyện, tự động hóa và các quy trình làm việc không đầu.",
+    "why": "Kiro CLI thuộc về Kiro, và kích hoạt công việc này: Sử dụng trợ lý mã hóa từ một terminal cho trò chuyện, tự động hóa và các quy trình làm việc không đầu."
+  },
+  "feat-009-01": {
+    "label": "Sử dụng mã dự án và hướng dẫn làm bối cảnh khi thực hiện thay đổi phần mềm.",
+    "why": "triển khai do kho lưu trữ nhận thức thuộc về Kiro autonomous agent, và kích hoạt công việc này: Sử dụng mã dự án và hướng dẫn làm bối cảnh khi thực hiện thay đổi phần mềm."
+  },
+  "feat-010-00": {
+    "label": "Bắt đầu từ các mô hình được đào tạo trước đã được xem xét và các giải pháp tham chiếu thay vì xây dựng từ đầu.",
+    "why": "Danh sách mô hình và giải pháp được sắp xếp thuộc về Amazon SageMaker AI JumpStart, và kích hoạt công việc này: Bắt đầu từ các mô hình được đào tạo trước đã được xem xét và các giải pháp tham chiếu thay vì xây dựng từ đầu."
+  },
+  "feat-010-02": {
+    "label": "Hướng dẫn điều chỉnh một mô hình được đào tạo trước với dữ liệu dành riêng cho tác vụ và cài đặt.",
+    "why": "quy trình làm việc tùy chỉnh thuộc về Amazon SageMaker AI JumpStart, và kích hoạt công việc này: Hướng dẫn điều chỉnh một mô hình được đào tạo trước với dữ liệu dành riêng cho tác vụ và cài đặt."
+  },
+  "feat-011-00": {
+    "label": "Tạo hoặc chuyển đổi nội dung ngôn ngữ tự nhiên từ một hướng dẫn hoặc ngữ cảnh.",
+    "why": "Tạo văn bản thuộc về Amazon Titan, và kích hoạt công việc này: Tạo hoặc chuyển đổi nội dung ngôn ngữ tự nhiên từ một hướng dẫn hoặc ngữ cảnh."
+  },
+  "feat-011-02": {
+    "label": "Tạo nội dung hình ảnh mới khi thành viên được chọn của họ mô hình hỗ trợ phương thức đó.",
+    "why": "tạo hình ảnh tùy thuộc vào mô hình được chọn thuộc về Amazon Titan, và kích hoạt công việc này: Tạo nội dung hình ảnh mới khi thành viên được chọn của họ mô hình hỗ trợ phương thức đó."
+  },
+  "feat-012-02": {
+    "label": "Chọn các dự đoán theo yêu cầu ngay lập tức hoặc điểm số khối lượng cao được lên lịch cho các bản ghi được lưu trữ.",
+    "why": "suy luận thời gian thực và theo lô thuộc về Amazon SageMaker AI, và kích hoạt công việc này: Chọn các dự đoán theo yêu cầu ngay lập tức hoặc điểm số khối lượng cao được lên lịch cho các bản ghi được lưu trữ."
+  },
+  "feat-012-04": {
+    "label": "Kết nối chuẩn bị dữ liệu, đào tạo, đánh giá, phê duyệt và triển khai vào các đường dẫn có thể lặp lại.",
+    "why": "tích hợp quy trình làm việc thuộc về Amazon SageMaker AI, và kích hoạt công việc này: Kết nối chuẩn bị dữ liệu, đào tạo, đánh giá, phê duyệt và triển khai vào các đường dẫn có thể lặp lại."
+  },
+  "feat-012-06": {
+    "label": "Nhập, hồ sơ, làm sạch và chuyển đổi dữ liệu mô hình thông qua quy trình làm việc chuẩn bị trực quan.",
+    "why": "SageMaker Data Wrangler thuộc về Amazon SageMaker AI, và kích hoạt công việc này: Nhập, hồ sơ, làm sạch và chuyển đổi dữ liệu mô hình thông qua quy trình làm việc chuẩn bị trực quan."
+  },
+  "feat-012-08": {
+    "label": "Đo lường độ sai lệch trong bộ dữ liệu hoặc dự đoán và giải thích đầu vào nào ảnh hưởng đến một đầu ra.",
+    "why": "SageMaker Clarify thuộc về Amazon SageMaker AI, và kích hoạt công việc này: Đo lường độ sai lệch trong bộ dữ liệu hoặc dự đoán và giải thích đầu vào nào ảnh hưởng đến một đầu ra."
+  },
+  "feat-012-10": {
+    "label": "Xác định các quy trình làm việc xây dựng mô hình có thể lặp lại với các bước xử lý, đào tạo, đánh giá và phê duyệt.",
+    "why": "SageMaker Pipelines thuộc về Amazon SageMaker AI, và kích hoạt công việc này: Xác định các quy trình làm việc xây dựng mô hình có thể lặp lại với các bước xử lý, đào tạo, đánh giá và phê duyệt."
+  },
+  "feat-012-12": {
+    "label": "Bản sao mô hình phiên bản, theo dõi trạng thái phê duyệt và kiểm soát khuyến cao hướng đến triển khai.",
+    "why": "SageMaker Model Registry thuộc về Amazon SageMaker AI, và kích hoạt công việc này: Bản sao mô hình phiên bản, theo dõi trạng thái phê duyệt và kiểm soát khuyến cao hướng đến triển khai."
+  },
+  "feat-012-14": {
+    "label": "Thống nhất truy cập dữ liệu trên các kho lưu trữ phân tích cho khối lượng công việc phân tích và phát triển mô hình.",
+    "why": "SageMaker Lakehouse thuộc về Amazon SageMaker AI, và kích hoạt công việc này: Thống nhất truy cập dữ liệu trên các kho lưu trữ phân tích cho khối lượng công việc phân tích và phát triển mô hình."
+  },
+  "feat-013-00": {
+    "label": "Cung cấp cho các nhóm ML một địa điểm được quản lý để khám phá, chuyển đổi và chuẩn bị bộ dữ liệu.",
+    "why": "Không gian làm việc trung tâm để chuẩn bị dữ liệu thuộc về Amazon SageMaker AI Studio, và kích hoạt công việc này: Cung cấp cho các nhóm ML một địa điểm được quản lý để khám phá, chuyển đổi và chuẩn bị bộ dữ liệu."
+  },
+  "feat-013-02": {
+    "label": "Chạy các công việc học các tham số mô hình từ các ví dụ được chuẩn bị.",
+    "why": "đào tạo mô hình thuộc về Amazon SageMaker AI Studio, và kích hoạt công việc này: Chạy các công việc học các tham số mô hình từ các ví dụ được chuẩn bị."
+  },
+  "feat-013-04": {
+    "label": "Phối hợp và quản lý các hoạt động vòng đời máy học có thể lặp lại từ một không gian làm việc.",
+    "why": "hoạt động quy trình làm việc ML thuộc về Amazon SageMaker AI Studio, và kích hoạt công việc này: Phối hợp và quản lý các hoạt động vòng đời máy học có thể lặp lại từ một không gian làm việc."
+  },
+  "feat-014-01": {
+    "label": "Làm sạch, kết hợp và chuyển đổi thông tin thô thành đầu vào sẵn sàng cho mô hình.",
+    "why": "chuẩn bị dữ liệu thuộc về Amazon SageMaker AI Canvas, và kích hoạt công việc này: Làm sạch, kết hợp và chuyển đổi thông tin thô thành đầu vào sẵn sàng cho mô hình."
+  },
+  "feat-014-02": {
+    "label": "Áp dụng một mô hình được đào tạo cho các bản ghi mới thông qua một quy trình không mã được hướng dẫn.",
+    "why": "quy trình làm việc dự đoán thuộc về Amazon SageMaker AI Canvas, và kích hoạt công việc này: Áp dụng một mô hình được đào tạo cho các bản ghi mới thông qua một quy trình không mã được hướng dẫn."
+  },
+  "feat-015-00": {
+    "label": "Thử nghiệm máy học trong một không gian làm việc web sẵn sàng để sử dụng mà không cần thiết lập cục bộ.",
+    "why": "JupyterLab thuộc về Amazon SageMaker AI Studio Lab, và kích hoạt công việc này: Thử nghiệm máy học trong một không gian làm việc web sẵn sàng để sử dụng mà không cần thiết lập cục bộ."
+  },
+  "feat-016-01": {
+    "label": "Ưu tiên các ví dụ không chắc chắn để chú thích sao cho nỗ lực con người cải thiện mô hình một cách hiệu quả.",
+    "why": "các tùy chọn học tích cực thuộc về Amazon SageMaker AI Ground Truth, và kích hoạt công việc này: Ưu tiên các ví dụ không chắc chắn để chú thích sao cho nỗ lực con người cải thiện mô hình một cách hiệu quả."
+  },
+  "feat-017-00": {
+    "label": "Cung cấp các đội tính toán được quản lý có khả năng phục hồi cho các công việc đào tạo mô hình nền tảng đòi hỏi.",
+    "why": "Cụm được xây dựng mục đích cho các công việc đào tạo mô hình lớn thuộc về Amazon SageMaker AI HyperPod, và kích hoạt công việc này: Cung cấp các đội tính toán được quản lý có khả năng phục hồi cho các công việc đào tạo mô hình nền tảng đòi hỏi."
+  },
+  "feat-018-00": {
+    "label": "Thay đổi các đầu ra AI không chắc chắn hoặc trọng yếu để quyết định của một người.",
+    "why": "Vòng lặp con người thuộc về Amazon Augmented AI (A2I), và kích hoạt công việc này: Thay đổi các đầu ra AI không chắc chắn hoặc trọng yếu để quyết định của một người."
+  },
+  "feat-019-00": {
+    "label": "Phân phối các công việc chú thích, xác thực hoặc thu thập nhỏ cho một lực lượng làm việc theo yêu cầu.",
+    "why": "Các tác vụ con người được đông đảo thuộc về Amazon Mechanical Turk, và kích hoạt công việc này: Phân phối các công việc chú thích, xác thực hoặc thu thập nhỏ cho một lực lượng làm việc theo yêu cầu."
+  },
+  "feat-019-02": {
+    "label": "Sử dụng các quy tắc đồng thuận, xem xét và chấp nhận để cải thiện độ tin cậy của công việc con người được nộp.",
+    "why": "kiểm soát chất lượng kết quả thuộc về Amazon Mechanical Turk, và kích hoạt công việc này: Sử dụng các quy tắc đồng thuận, xem xét và chấp nhận để cải thiện độ tin cậy của công việc con người được nộp."
+  },
+  "feat-020-01": {
+    "label": "Kết hợp các danh tính trùng lặp trên các nguồn vào một hồ sơ được hợp nhất.",
+    "why": "Phối hợp dựa trên máy học thuộc về AWS Entity Resolution, và kích hoạt công việc này: Kết hợp các danh tính trùng lặp trên các nguồn vào một hồ sơ được hợp nhất."
+  },
+  "feat-021-01": {
+    "label": "Có được các quyền liên tục để sử dụng bộ dữ liệu của nhà cung cấp thông qua quy trình làm việc thị trường đám mây.",
+    "why": "truy cập dữ liệu dựa trên đăng ký thuộc về AWS Data Exchange, và kích hoạt công việc này: Có được các quyền liên tục để sử dụng bộ dữ liệu của nhà cung cấp thông qua quy trình làm việc thị trường đám mây."
+  },
+  "feat-022-00": {
+    "label": "Xử lý các bộ dữ liệu lớn với các khuôn khổ phân tích nguồn mở phổ biến.",
+    "why": "Các khối lượng công việc Apache Spark và Hadoop thuộc về Amazon EMR, và kích hoạt công việc này: Xử lý các bộ dữ liệu lớn với các khuôn khổ phân tích nguồn mở phổ biến."
+  },
+  "feat-022-02": {
+    "label": "Chạy các phép biến đổi phân tán trực tiếp đối với các đối tượng trong một hồ dữ liệu đám mây.",
+    "why": "xử lý dữ liệu trong Amazon S3 thuộc về Amazon EMR, và kích hoạt công việc này: Chạy các phép biến đổi phân tán trực tiếp đối với các đối tượng trong một hồ dữ liệu đám mây."
+  },
+  "feat-023-01": {
+    "label": "Đọc bản ghi nguồn, định hình lại chúng và viết kết quả cho một hệ thống đích.",
+    "why": "Các công việc AWS Glue ETL thuộc về AWS Glue, và kích hoạt công việc này: Đọc bản ghi nguồn, định hình lại chúng và viết kết quả cho một hệ thống đích."
+  },
+  "feat-023-03": {
+    "label": "Quét các kho dữ liệu tự động để suy ra cấu trúc và đăng ký các bảng và phân vùng.",
+    "why": "thu thập để khám phá lược đồ thuộc về AWS Glue, và kích hoạt công việc này: Quét các kho dữ liệu tự động để suy ra cấu trúc và đăng ký các bảng và phân vùng."
+  },
+  "feat-024-00": {
+    "label": "Làm sạch và định hình lại bản ghi nguồn thông qua giao diện trực quan thay vì các phép biến đổi lập trình.",
+    "why": "Chuẩn bị dữ liệu không mã thuộc về AWS Glue DataBrew, và kích hoạt công việc này: Làm sạch và định hình lại bản ghi nguồn thông qua giao diện trực quan thay vì các phép biến đổi lập trình."
+  },
+  "feat-024-02": {
+    "label": "Lưu một bộ các bước làm sạch theo thứ tự và áp dụng nó một cách nhất quán cho các bộ dữ liệu sau này.",
+    "why": "công thức biến đổi có thể tái sử dụng thuộc về AWS Glue DataBrew, và kích hoạt công việc này: Lưu một bộ các bước làm sạch theo thứ tự và áp dụng nó một cách nhất quán cho các bộ dữ liệu sau này."
+  },
+  "feat-025-01": {
+    "label": "Cấp quyền truy cập ở mức cơ sở dữ liệu, bảng, cột, hàng hoặc ô thay vì lộ toàn bộ bộ dữ liệu.",
+    "why": "kiểm soát truy cập chi tiết thuộc về AWS Lake Formation, và kích hoạt công việc này: Cấp quyền truy cập ở mức cơ sở dữ liệu, bảng, cột, hàng hoặc ô thay vì lộ toàn bộ bộ dữ liệu."
+  },
+  "feat-026-01": {
+    "label": "Lấy các mục có ý nghĩa tương tự bằng cách so sánh các biểu diễn số của ý nghĩa của chúng.",
+    "why": "tìm kiếm vectơ thuộc về Amazon OpenSearch Service, và kích hoạt công việc này: Lấy các mục có ý nghĩa tương tự bằng cách so sánh các biểu diễn số của ý nghĩa của chúng."
+  },
+  "feat-026-02": {
+    "label": "Khám phá thông tin hoạt động được lập chỉ mục thông qua hình ảnh hóa và chế độ xem giám sát.",
+    "why": "bảng điều khiển và khả năng quan sát thuộc về Amazon OpenSearch Service, và kích hoạt công việc này: Khám phá thông tin hoạt động được lập chỉ mục thông qua hình ảnh hóa và chế độ xem giám sát."
+  },
+  "feat-026-04": {
+    "label": "Trả lời được tạo ra khi xếp hạng nhanh chóng trên một kho lưu trữ có thể tìm kiếm lớn là yêu cầu chiếm ưu thế.",
+    "why": "truy xuất RAG nặng tìm kiếm thuộc về Amazon OpenSearch Service, và kích hoạt công việc này: Trả lời được tạo ra khi xếp hạng nhanh chóng trên một kho lưu trữ có thể tìm kiếm lớn là yêu cầu chiếm ưu thế."
+  },
+  "feat-027-01": {
+    "label": "Truy vấn các bộ dữ liệu có cấu trúc lớn với cú pháp quan hệ quen thuộc.",
+    "why": "Phân tích SQL theo tỷ lệ thuộc về Amazon Redshift, và kích hoạt công việc này: Truy vấn các bộ dữ liệu có cấu trúc lớn với cú pháp quan hệ quen thuộc."
+  },
+  "feat-028-00": {
+    "label": "Xác định giới hạn chi tiêu hoặc tiêu thụ dự kiến cho một tài khoản, dịch vụ hoặc dự án.",
+    "why": "Ngân sách chi phí và sử dụng tùy chỉnh thuộc về AWS Budgets, và kích hoạt công việc này: Xác định giới hạn chi tiêu hoặc tiêu thụ dự kiến cho một tài khoản, dịch vụ hoặc dự án."
+  },
+  "feat-028-02": {
+    "label": "Cảnh báo trước khi chi tiêu quá mức xảy ra bằng cách so sánh các khoản phí dự báo cuối tháng với mục tiêu.",
+    "why": "thông báo dựa trên dự báo thuộc về AWS Budgets, và kích hoạt công việc này: Cảnh báo trước khi chi tiêu quá mức xảy ra bằng cách so sánh các khoản phí dự báo cuối tháng với mục tiêu."
+  },
+  "feat-029-01": {
+    "label": "Kiểm tra cách chi tiêu đám mây thay đổi trong các ngày hoặc tháng trước.",
+    "why": "hình ảnh hóa xu hướng lịch sử thuộc về AWS Cost Explorer, và kích hoạt công việc này: Kiểm tra cách chi tiêu đám mây thay đổi trong các ngày hoặc tháng trước."
+  },
+  "feat-030-00": {
+    "label": "Chọn CPU máy ảo, bộ nhớ, lưu trữ và tỷ lệ mạng cho một khối lượng công việc.",
+    "why": "Các loại phiên bản có thể cấu hình thuộc về Amazon EC2, và kích hoạt công việc này: Chọn CPU máy ảo, bộ nhớ, lưu trữ và tỷ lệ mạng cho một khối lượng công việc."
+  },
+  "feat-031-00": {
+    "label": "Thực hiện mã để phản hồi các tải lên, lệnh gọi API, lịch biểu hoặc tin nhắn.",
+    "why": "Các hàm được kích hoạt sự kiện thuộc về AWS Lambda, và kích hoạt công việc này: Thực hiện mã để phản hồi các tải lên, lệnh gọi API, lịch biểu hoặc tin nhắn."
+  },
+  "feat-031-01": {
+    "label": "Tăng hoặc giảm dung lượng thực thi đồng thời khi các sự kiện tới.",
+    "why": "tự động mở rộng thuộc về AWS Lambda, và kích hoạt công việc này: Tăng hoặc giảm dung lượng thực thi đồng thời khi các sự kiện tới."
+  },
+  "feat-032-00": {
+    "label": "Lên lịch và vận hành các tác vụ ứng dụng được đóng gói trên một đội thông qua một mặt phẳng kiểm soát do AWS cung cấp.",
+    "why": "Sắp xếp thùng chứa được quản lý thuộc về Amazon Elastic Container Service (Amazon ECS), và kích hoạt công việc này: Lên lịch và vận hành các tác vụ ứng dụng được đóng gói trên một đội thông qua một mặt phẳng kiểm soát do AWS cung cấp."
+  },
+  "feat-032-02": {
+    "label": "Đặt các tác vụ thùng chứa trên dung lượng máy ảo được kiểm soát của khách hàng.",
+    "why": "Tùy chọn khởi chạy Amazon EC2 thuộc về Amazon Elastic Container Service (Amazon ECS), và kích hoạt công việc này: Đặt các tác vụ thùng chứa trên dung lượng máy ảo được kiểm soát của khách hàng."
+  },
+  "feat-033-01": {
+    "label": "Chạy các công cụ hệ sinh thái và bản kê khai nhắm mục tiêu vào giao diện sắp xếp mã nguồn mở phổ biến.",
+    "why": "Tương thích API Kubernetes thuộc về Amazon Elastic Kubernetes Service (Amazon EKS), và kích hoạt công việc này: Chạy các công cụ hệ sinh thái và bản kê khai nhắm mục tiêu vào giao diện sắp xếp mã nguồn mở phổ biến."
+  },
+  "feat-034-00": {
+    "label": "Sử dụng các trình điều khiển và công cụ quan hệ mã nguồn mở quen thuộc với một engine cơ sở dữ liệu được xây dựng AWS.",
+    "why": "Tương thích MySQL và PostgreSQL thuộc về Amazon Aurora, và kích hoạt công việc này: Sử dụng các trình điều khiển và công cụ quan hệ mã nguồn mở quen thuộc với một engine cơ sở dữ liệu được xây dựng AWS."
+  },
+  "feat-034-02": {
+    "label": "Điều chỉnh tính toán cơ sở dữ liệu quan hệ tự động cho nhu cầu thay đổi.",
+    "why": "Aurora Serverless capacity thuộc về Amazon Aurora, và kích hoạt công việc này: Điều chỉnh tính toán cơ sở dữ liệu quan hệ tự động cho nhu cầu thay đổi."
+  },
+  "feat-034-04": {
+    "label": "Giữ các giao dịch và bản ghi ứng dụng có cấu trúc bên cạnh các truy vấn hàng xóm ngữ nghĩa gần nhất.",
+    "why": "pgvector thuộc về Amazon Aurora, và kích hoạt công việc này: Giữ các giao dịch và bản ghi ứng dụng có cấu trúc bên cạnh các truy vấn hàng xóm ngữ nghĩa gần nhất."
+  },
+  "feat-035-01": {
+    "label": "Sử dụng các API và trình điều khiển cơ sở dữ liệu tài liệu phổ biến khi di chuyển một ứng dụng hiện có.",
+    "why": "Tương thích khối lượng công việc MongoDB thuộc về Amazon DocumentDB (with MongoDB compatibility), và kích hoạt công việc này: Sử dụng các API và trình điều khiển cơ sở dữ liệu tài liệu phổ biến khi di chuyển một ứng dụng hiện có."
+  },
+  "feat-035-03": {
+    "label": "Lưu trữ các nhúng bên cạnh các bản ghi linh hoạt như lịch sử y tế hoặc các bài viết kiến thức và truy vấn sự tương tự của chúng.",
+    "why": "tìm kiếm vectơ gốc cho tài liệu JSON thuộc về Amazon DocumentDB (with MongoDB compatibility), và kích hoạt công việc này: Lưu trữ các nhúng bên cạnh các bản ghi linh hoạt như lịch sử y tế hoặc các bài viết kiến thức và truy vấn sự tương tự của chúng."
+  },
+  "feat-036-00": {
+    "label": "Lấy các bản ghi linh hoạt một cách hiệu quả theo khóa chính mà không cần các phép nối quan hệ.",
+    "why": "Mô hình khóa-giá trị và tài liệu thuộc về Amazon DynamoDB, và kích hoạt công việc này: Lấy các bản ghi linh hoạt một cách hiệu quả theo khóa chính mà không cần các phép nối quan hệ."
+  },
+  "feat-036-02": {
+    "label": "Ghi lại một bản ghi được sắp xếp các thay đổi mục để kích hoạt xử lý hạ nguồn.",
+    "why": "DynamoDB Streams thuộc về Amazon DynamoDB, và kích hoạt công việc này: Ghi lại một bản ghi được sắp xếp các thay đổi mục để kích hoạt xử lý hạ nguồn."
+  },
+  "feat-037-01": {
+    "label": "Phục vụ các giá trị được yêu cầu thường xuyên từ bộ nhớ để tránh công việc cơ sở dữ liệu chậm hơn.",
+    "why": "lưu vào bộ nhớ đề xuất vi giây thuộc về Amazon ElastiCache, và kích hoạt công việc này: Phục vụ các giá trị được yêu cầu thường xuyên từ bộ nhớ để tránh công việc cơ sở dữ liệu chậm hơn."
+  },
+  "feat-038-00": {
+    "label": "Mô hình dữ liệu được kết nối với các mối quan hệ được gắn nhãn hoặc bộ ba ngữ nghĩa.",
+    "why": "Hỗ trợ biểu đồ tài sản và RDF thuộc về Amazon Neptune, và kích hoạt công việc này: Mô hình dữ liệu được kết nối với các mối quan hệ được gắn nhãn hoặc bộ ba ngữ nghĩa."
+  },
+  "feat-038-02": {
+    "label": "Đại diện các thực tế và các kết nối của chúng để tìm kiếm ngữ nghĩa, đề xuất hoặc nền tảng.",
+    "why": "khối lượng công việc biểu đồ kiến thức thuộc về Amazon Neptune, và kích hoạt công việc này: Đại diện các thực tế và các kết nối của chúng để tìm kiếm ngữ nghĩa, đề xuất hoặc nền tảng."
+  },
+  "feat-038-04": {
+    "label": "Nền tảng một câu trả lời được tạo ra bằng cách sử dụng cả các trận đấu ngữ nghĩa và các đường dẫn có thể giải thích giữa các thực thể.",
+    "why": "GraphRAG relationship context thuộc về Amazon Neptune, và kích hoạt công việc này: Nền tảng một câu trả lời được tạo ra bằng cách sử dụng cả các trận đấu ngữ nghĩa và các đường dẫn có thể giải thích giữa các thực thể."
+  },
+  "feat-039-01": {
+    "label": "Uỷ thác bảo trì cơ sở dữ liệu quan hệ định tuyến và tạo điểm khôi phục cho AWS.",
+    "why": "các bản sao lưu tự động và vá lỗi thuộc về Amazon Relational Database Service (Amazon RDS), và kích hoạt công việc này: Uỷ thác bảo trì cơ sở dữ liệu quan hệ định tuyến và tạo điểm khôi phục cho AWS."
+  },
+  "feat-039-03": {
+    "label": "Thêm lưu trữ nhúng và truy vấn hàng xóm gần nhất vào một ứng dụng PostgreSQL được quản lý thông thường.",
+    "why": "RDS for PostgreSQL with pgvector thuộc về Amazon Relational Database Service (Amazon RDS), và kích hoạt công việc này: Thêm lưu trữ nhúng và truy vấn hàng xóm gần nhất vào một ứng dụng PostgreSQL được quản lý thông thường."
+  },
+  "feat-040-00": {
+    "label": "Tạo các phản hồi nơi làm việc chỉ từ thông tin mà danh tính yêu cầu được phép xem.",
+    "why": "Câu trả lời doanh nghiệp nhận thức quyền thuộc về Amazon Q, và kích hoạt công việc này: Tạo các phản hồi nơi làm việc chỉ từ thông tin mà danh tính yêu cầu được phép xem."
+  },
+  "feat-040-02": {
+    "label": "Phản hồi trợ lý nền tảng trong các kho lưu trữ công ty được phê duyệt và ứng dụng.",
+    "why": "kết nối với dữ liệu tổ chức thuộc về Amazon Q, và kích hoạt công việc này: Phản hồi trợ lý nền tảng trong các kho lưu trữ công ty được phê duyệt và ứng dụng."
+  },
+  "feat-041-00": {
+    "label": "Trích xuất các tín hiệu ngôn ngữ phổ biến và cấu trúc từ văn bản không có cấu trúc chung.",
+    "why": "Wissen thông tin Amazon Comprehend thuộc về Amazon Comprehend, và kích hoạt công việc này: Trích xuất các tín hiệu ngôn ngữ phổ biến và cấu trúc từ văn bản không có cấu trúc chung."
+  },
+  "feat-042-00": {
+    "label": "Xác định các bệnh, thuốc, xét nghiệm và các mối quan hệ của chúng trong các tường thuật y tế.",
+    "why": "DetectEntitiesV2 thuộc về Amazon Comprehend Medical, và kích hoạt công việc này: Xác định các bệnh, thuốc, xét nghiệm và các mối quan hệ của chúng trong các tường thuật y tế."
+  },
+  "feat-043-01": {
+    "label": "Suy luận những gì một người dùng đang cố gắng thực hiện từ một phát biểu.",
+    "why": "nhận dạng ý định thuộc về Amazon Lex, và kích hoạt công việc này: Suy luận những gì một người dùng đang cố gắng thực hiện từ một phát biểu."
+  },
+  "feat-043-03": {
+    "label": "Kết nối giao diện hội thoại với logic kinh doanh phía sau và các hệ thống hoàn thành.",
+    "why": "tích hợp ứng dụng thuộc về Amazon Lex, và kích hoạt công việc này: Kết nối giao diện hội thoại với logic kinh doanh phía sau và các hệ thống hoàn thành."
+  },
+  "feat-045-00": {
+    "label": "Chuyển đổi giọng nói được ghi lại hoặc trực tiếp thành văn bản được viết.",
+    "why": "Phiên âm hàng loạt thuộc về Amazon Transcribe, và kích hoạt công việc này: Chuyển đổi giọng nói được ghi lại hoặc trực tiếp thành văn bản được viết."
+  },
+  "feat-046-00": {
+    "label": "Chuyển đổi nội dung được viết giữa các ngôn ngữ trong khi bảo tồn ý nghĩa.",
+    "why": "Dịch thời gian thực thuộc về Amazon Translate, và kích hoạt công việc này: Chuyển đổi nội dung được viết giữa các ngôn ngữ trong khi bảo tồn ý nghĩa."
+  },
+  "feat-047-01": {
+    "label": "Tự động hóa thủ tục tiếp nhận nơi bố cục, trường và giá trị dạng bảng phải trở thành bản ghi có thể sử dụng được.",
+    "why": "AnalyzeExpense API thuộc về Amazon Textract, và kích hoạt công việc này: Tự động hóa thủ tục tiếp nhận nơi bố cục, trường và giá trị dạng bảng phải trở thành bản ghi có thể sử dụng được."
+  },
+  "feat-048-01": {
+    "label": "Xếp hạng thông tin tổ chức có liên quan cho khám phá nơi làm việc hoặc hỗ trợ.",
+    "why": "Tìm kiếm thông minh thuộc về Amazon Kendra, và kích hoạt công việc này: Xếp hạng thông tin tổ chức có liên quan cho khám phá nơi làm việc hoặc hỗ trợ."
+  },
+  "feat-049-01": {
+    "label": "Dạy nhận dạng hình ảnh cho các đối tượng cụ thể của tổ chức bằng cách sử dụng các ví dụ được gắn nhãn.",
+    "why": "Nhãn tùy chỉnh thuộc về Amazon Rekognition, và kích hoạt công việc này: Dạy nhận dạng hình ảnh cho các đối tượng cụ thể của tổ chức bằng cách sử dụng các ví dụ được gắn nhãn."
+  },
+  "feat-051-00": {
+    "label": "Chọn và đào tạo các thuật toán dự báo từ các quan sát lịch sử mà không cần chuyên môn ML.",
+    "why": "Máy học chuỗi thời gian tự động thuộc về Amazon Forecast, và kích hoạt công việc này: Chọn và đào tạo các thuật toán dự báo từ các quan sát lịch sử mà không cần chuyên môn ML."
+  },
+  "feat-051-02": {
+    "label": "Cải thiện ước tính trong tương lai với các tín hiệu thay đổi và các thuộc tính mô tả vượt ra ngoài lịch sử mục tiêu.",
+    "why": "chuỗi thời gian và siêu dữ liệu mục liên quan thuộc về Amazon Forecast, và kích hoạt công việc này: Cải thiện ước tính trong tương lai với các tín hiệu thay đổi và các thuộc tính mô tả vượt ra ngoài lịch sử mục tiêu."
+  },
+  "feat-052-00": {
+    "label": "Mô hình tổ chức cụ thể Học các mẫu hành vi đáng ngờ từ các sự kiện lịch sử được gắn nhãn.",
+    "why": "Mô hình gian lận tùy chỉnh thuộc về Amazon Fraud Detector, và kích hoạt công việc này: Mô hình tổ chức cụ thể Học các mẫu hành vi đáng ngờ từ các sự kiện lịch sử được gắn nhãn."
+  },
+  "feat-052-02": {
+    "label": "Dịch kết quả mô hình và điều kiện kinh doanh thành các hành động như phê duyệt, chặn hoặc xem xét.",
+    "why": "quy tắc và kết quả thuộc về Amazon Fraud Detector, và kích hoạt công việc này: Dịch kết quả mô hình và điều kiện kinh doanh thành các hành động như phê duyệt, chặn hoặc xem xét."
+  },
+  "feat-053-01": {
+    "label": "Xây dựng một mô hình kiểm tra công nghiệp từ các ví dụ về đầu ra chấp nhận được và bị lỗi.",
+    "why": "Đào tạo hình ảnh bình thường và bị lỗi thuộc về Amazon Lookout for Vision, và kích hoạt công việc này: Xây dựng một mô hình kiểm tra công nghiệp từ các ví dụ về đầu ra chấp nhận được và bị lỗi."
+  },
+  "feat-054-01": {
+    "label": "Kết hợp các tín hiệu bất thường đồng thời có thể chia sẻ một sự cố cơ bản.",
+    "why": "nhóm sự kiện liên quan thuộc về Amazon Lookout for Metrics, và kích hoạt công việc này: Kết hợp các tín hiệu bất thường đồng thời có thể chia sẻ một sự cố cơ bản."
+  },
+  "feat-055-00": {
+    "label": "Tìm hành vi ứng dụng bất thường và giải thích tác động độ tin cậy có khả năng.",
+    "why": "Thông tin phản ứng thuộc về Amazon DevOps Guru, và kích hoạt công việc này: Tìm hành vi ứng dụng bất thường và giải thích tác động độ tin cậy có khả năng."
+  },
+  "feat-056-00": {
+    "label": "Kiểm tra các thay đổi nguồn được đề xuất và đề xuất các cải tiến về khả năng bảo trì trước khi hợp nhất.",
+    "why": "Đánh giá mã tự động thuộc về Amazon CodeGuru Reviewer, và kích hoạt công việc này: Kiểm tra các thay đổi nguồn được đề xuất và đề xuất các cải tiến về khả năng bảo trì trước khi hợp nhất."
+  },
+  "feat-056-02": {
+    "label": "Chạy phân tích đối với các dự án kiểm soát nguồn được hỗ trợ khi các thay đổi mã được gửi.",
+    "why": "tích hợp kho lưu trữ thuộc về Amazon CodeGuru Reviewer, và kích hoạt công việc này: Chạy phân tích đối với các dự án kiểm soát nguồn được hỗ trợ khi các thay đổi mã được gửi."
+  },
+  "feat-058-00": {
+    "label": "Giải quyết nhu cầu của khách hàng thông qua các tương tác giọng nói hoặc trò chuyện tự động trước khi yêu cầu một tác nhân.",
+    "why": "Dịch vụ tự phục vụ hội thoại thuộc về Amazon Connect, và kích hoạt công việc này: Giải quyết nhu cầu của khách hàng thông qua các tương tác giọng nói hoặc trò chuyện tự động trước khi yêu cầu một tác nhân."
+  },
+  "feat-058-02": {
+    "label": "Phân tích các tương tác cho cảm tính, chủ đề, tuân thủ và xu hướng chất lượng dịch vụ.",
+    "why": "phân tích liên hệ thuộc về Amazon Connect, và kích hoạt công việc này: Phân tích các tương tác cho cảm tính, chủ đề, tuân thủ và xu hướng chất lượng dịch vụ."
+  },
+  "feat-058-04": {
+    "label": "Quản lý các cuộc trò chuyện của khách hàng một cách nhất quán trên các kênh giọng nói và kỹ thuật số.",
+    "why": "tương tác khách hàng đa kênh thuộc về Amazon Connect, và kích hoạt công việc này: Quản lý các cuộc trò chuyện của khách hàng một cách nhất quán trên các kênh giọng nói và kỹ thuật số."
+  },
+  "feat-059-01": {
+    "label": "Xác định rủi ro kho và không cân bằng trên các cơ sở và đối tác.",
+    "why": "khả năng hiển thị kho và thông tin chi tiết thuộc về AWS Supply Chain, và kích hoạt công việc này: Xác định rủi ro kho và không cân bằng trên các cơ sở và đối tác."
+  },
+  "feat-060-00": {
+    "label": "Xuất bản các sản phẩm dữ liệu tổ chức có thể khám phá được với mô tả kinh doanh và quyền sở hữu.",
+    "why": "Danh sách dữ liệu kinh doanh thuộc về Amazon DataZone, và kích hoạt công việc này: Xuất bản các sản phẩm dữ liệu tổ chức có thể khám phá được với mô tả kinh doanh và quyền sở hữu."
+  },
+  "feat-060-02": {
+    "label": "Tạo ngữ cảnh danh sách hữu ích từ thông tin lược đồ kỹ thuật để cải thiện khám phá.",
+    "why": "Mô tả siêu dữ liệu hỗ trợ AI thuộc về Amazon DataZone, và kích hoạt công việc này: Tạo ngữ cảnh danh sách hữu ích từ thông tin lược đồ kỹ thuật để cải thiện khám phá."
+  },
+  "feat-061-01": {
+    "label": "Phân tích các yêu cầu kéo để các lỗ hổng phổ biến và yêu cầu cụ thể của tổ chức.",
+    "why": "Xem xét an ninh mã thuộc về AWS Security Agent, và kích hoạt công việc này: Phân tích các yêu cầu kéo để các lỗ hổng phổ biến và yêu cầu cụ thể của tổ chức."
+  },
+  "feat-061-03": {
+    "label": "Triển khai một ứng dụng trong hộp cát để xác nhận liệu một điểm yếu được phát hiện có thể khai thác được.",
+    "why": "Xác thực được mô phỏng thuộc về AWS Security Agent, và kích hoạt công việc này: Triển khai một ứng dụng trong hộp cát để xác nhận liệu một điểm yếu được phát hiện có thể khai thác được."
+  },
+  "feat-062-00": {
+    "label": "Khởi chạy phân tích sự cố tự động từ các hệ thống vé và báo động.",
+    "why": "Điều tra tự động thuộc về AWS DevOps Agent, và kích hoạt công việc này: Khởi chạy phân tích sự cố tự động từ các hệ thống vé và báo động."
+  },
+  "feat-062-02": {
+    "label": "Cung cấp các hành động giải quyết, xác thực và quay lại sau khi xác định nguyên nhân của sự cố.",
+    "why": "Các kế hoạch giảm nhẹ chi tiết thuộc về AWS DevOps Agent, và kích hoạt công việc này: Cung cấp các hành động giải quyết, xác thực và quay lại sau khi xác định nguyên nhân của sự cố."
+  },
+  "feat-062-04": {
+    "label": "Sử dụng phản hồi và các điều tra quá khứ để tinh chỉnh các khuyến nghị hoạt động trong tương lai.",
+    "why": "Học tập liên tục thuộc về AWS DevOps Agent, và kích hoạt công việc này: Sử dụng phản hồi và các điều tra quá khứ để tinh chỉnh các khuyến nghị hoạt động trong tương lai."
+  },
+  "feat-063-01": {
+    "label": "Cung cấp hoạt động tài khoản từ mọi khu vực địa lý được bật đến một điểm đến trung tâm.",
+    "why": "đường mòn đa vùng thuộc về AWS CloudTrail, và kích hoạt công việc này: Cung cấp hoạt động tài khoản từ mọi khu vực địa lý được bật đến một điểm đến trung tâm."
+  },
+  "feat-063-02": {
+    "label": "Giữ lại các bản ghi hoạt động chống giả mạo cho các điều tra và đánh giá tuân thủ.",
+    "why": "bằng chứng kiểm toán bất biến thuộc về AWS CloudTrail, và kích hoạt công việc này: Giữ lại các bản ghi hoạt động chống giả mạo cho các điều tra và đánh giá tuân thủ."
+  },
+  "feat-064-01": {
+    "label": "Phản hồi khi một phép đo hoạt động vượt qua ngưỡng hoặc phát hiện hành vi bất thường.",
+    "why": "báo động và hành động tự động thuộc về Amazon CloudWatch, và kích hoạt công việc này: Phản hồi khi một phép đo hoạt động vượt qua ngưỡng hoặc phát hiện hành vi bất thường."
+  },
+  "feat-065-00": {
+    "label": "Xem cách các cài đặt tài nguyên đám mây thay đổi theo thời gian.",
+    "why": "Lịch sử cấu hình thuộc về AWS Config, và kích hoạt công việc này: Xem cách các cài đặt tài nguyên đám mây thay đổi theo thời gian."
+  },
+  "feat-065-02": {
+    "label": "Khám phá các tài sản đám mây và hiểu cách các cấu hình của chúng phụ thuộc vào nhau.",
+    "why": "kho lưu trữ mối quan hệ tài nguyên thuộc về AWS Config, và kích hoạt công việc này: Khám phá các tài sản đám mây và hiểu cách các cấu hình của chúng phụ thuộc vào nhau."
+  },
+  "feat-066-02": {
+    "label": "Xem xét các cải tiến môi trường đám mây bằng cách sử dụng siêu dữ liệu tài khoản và cấu hình dịch vụ.",
+    "why": "hướng dẫn cấp tài khoản thuộc về AWS Trusted Advisor, và kích hoạt công việc này: Xem xét các cải tiến môi trường đám mây bằng cách sử dụng siêu dữ liệu tài khoản và cấu hình dịch vụ."
+  },
+  "feat-067-01": {
+    "label": "Ghi lại nơi một khối lượng công việc chưa đáp ứng các hoạt động kiến trúc được khuyến nghị.",
+    "why": "rủi ro được ghi lại thuộc về AWS Well-Architected Tool, và kích hoạt công việc này: Ghi lại nơi một khối lượng công việc chưa đáp ứng các hoạt động kiến trúc được khuyến nghị."
+  },
+  "feat-067-02": {
+    "label": "Biến các phát hiện xem xét thành một bộ các hành động khắc phục kiến trúc theo thứ tự.",
+    "why": "kế hoạch cải tiến thuộc về AWS Well-Architected Tool, và kích hoạt công việc này: Biến các phát hiện xem xét thành một bộ các hành động khắc phục kiến trúc theo thứ tự."
+  },
+  "feat-068-01": {
+    "label": "Giảm tải trực tiếp và tiếp xúc của ứng dụng hoặc hệ thống lưu trữ có nội dung.",
+    "why": "bảo vệ nguồn thuộc về Amazon CloudFront, và kích hoạt công việc này: Giảm tải trực tiếp và tiếp xúc của ứng dụng hoặc hệ thống lưu trữ có nội dung."
+  },
+  "feat-069-00": {
+    "label": "Chia một mạng đám mây được cô lập và kiểm soát nơi lưu lượng truy cập có thể đi tới.",
+    "why": "Mạng con và bảng định tuyến thuộc về Amazon Virtual Private Cloud (Amazon VPC), và kích hoạt công việc này: Chia một mạng đám mây được cô lập và kiểm soát nơi lưu lượng truy cập có thể đi tới."
+  },
+  "feat-069-02": {
+    "label": "Tiếp cận các dịch vụ đám mây được hỗ trợ một cách riêng tư mà không cần gửi lưu lượng truy cập thông qua internet công cộng.",
+    "why": "VPC endpoints và AWS PrivateLink thuộc về Amazon Virtual Private Cloud (Amazon VPC), và kích hoạt công việc này: Tiếp cận các dịch vụ đám mây được hỗ trợ một cách riêng tư mà không cần gửi lưu lượng truy cập thông qua internet công cộng."
+  },
+  "feat-070-02": {
+    "label": "Chấp nhận và theo dõi các thỏa thuận tuân thủ đám mây được chọn thông qua một cổng thông tin tự phục vụ.",
+    "why": "quản lý thỏa thuận thuộc về AWS Artifact, và kích hoạt công việc này: Chấp nhận và theo dõi các thỏa thuận tuân thủ đám mây được chọn thông qua một cổng thông tin tự phục vụ."
+  },
+  "feat-071-01": {
+    "label": "Bắt đầu một đánh giá từ các bộ kiểm soát được sắp xếp với các tiêu chuẩn và quy định phổ biến.",
+    "why": "khuôn khổ tuân thủ được xây dựng trước thuộc về AWS Audit Manager, và kích hoạt công việc này: Bắt đầu một đánh giá từ các bộ kiểm soát được sắp xếp với các tiêu chuẩn và quy định phổ biến."
+  },
+  "feat-072-00": {
+    "label": "Đại diện các danh tính và đính kèm tài liệu cho phép hoặc từ chối các hành động đám mây.",
+    "why": "Người dùng vai trò và chính sách thuộc về AWS Identity and Access Management (IAM), và kích hoạt công việc này: Đại diện các danh tính và đính kèm tài liệu cho phép hoặc từ chối các hành động đám mây."
+  },
+  "feat-072-02": {
+    "label": "Sử dụng quyền truy cập tuổi thọ ngắn cho các ứng dụng và danh tính liên kết thay vì các khóa vĩnh viễn.",
+    "why": "thông tin đăng nhập vai trò tạm thời thuộc về AWS Identity and Access Management (IAM), và kích hoạt công việc này: Sử dụng quyền truy cập tuổi thọ ngắn cho các ứng dụng và danh tính liên kết thay vì các khóa vĩnh viễn."
+  },
+  "feat-073-01": {
+    "label": "Đánh giá các gói mã chức năng máy chủ không có và phụ thuộc cho các điểm yếu bảo mật.",
+    "why": "AWS Lambda quét lỗ hổng thuộc về Amazon Inspector, và kích hoạt công việc này: Đánh giá các gói mã chức năng máy chủ không có và phụ thuộc cho các điểm yếu bảo mật."
+  },
+  "feat-074-00": {
+    "label": "Tạo các khóa mã hóa có các chính sách, vòng đời và sử dụng được kiểm soát bởi tổ chức.",
+    "why": "Khóa được quản lý của khách hàng thuộc về AWS Key Management Service (AWS KMS), và kích hoạt công việc này: Tạo các khóa mã hóa có các chính sách, vòng đời và sử dụng được kiểm soát bởi tổ chức."
+  },
+  "feat-074-02": {
+    "label": "Kiểm soát ai có thể sử dụng tài liệu mật mã và thay thế nó theo lịch được quản lý.",
+    "why": "chính sách khóa và xoay vòng tự động thuộc về AWS Key Management Service (AWS KMS), và kích hoạt công việc này: Kiểm soát ai có thể sử dụng tài liệu mật mã và thay thế nó theo lịch được quản lý."
+  },
+  "feat-075-01": {
+    "label": "Đánh giá các thùng lưu trữ đối tượng để truy cập công cộng, mã hóa và chia sẻ rủi ro.",
+    "why": "đánh giá tư thế bảo mật S3 thuộc về Amazon Macie, và kích hoạt công việc này: Đánh giá các thùng lưu trữ đối tượng để truy cập công cộng, mã hóa và chia sẻ rủi ro."
+  },
+  "feat-076-00": {
+    "label": "Giữ mật khẩu, mã thông báo và thông tin đăng nhập API ngoài mã nguồn và cấu hình văn bản thuần túy.",
+    "why": "lưu trữ bí mật được mã hóa thuộc về AWS Secrets Manager, và kích hoạt công việc này: Giữ mật khẩu, mã thông báo và thông tin đăng nhập API ngoài mã nguồn và cấu hình văn bản thuần túy."
+  },
+  "feat-076-02": {
+    "label": "Hạn chế việc truy xuất từng thông tin xác thực với các danh tính được phép rõ ràng.",
+    "why": "quyền truy cập bí mật chi tiết thuộc về AWS Secrets Manager, và kích hoạt công việc này: Hạn chế việc truy xuất từng thông tin xác thực với các danh tính được phép rõ ràng."
+  },
+  "feat-077-01": {
+    "label": "Bảo vệ lịch sử đối tượng và tính bảo mật trong khi kiểm soát danh tính nào có thể truy xuất nó.",
+    "why": "mã hóa chính sách truy cập và phiên bản thuộc về Amazon Simple Storage Service (Amazon S3), và kích hoạt công việc này: Bảo vệ lịch sử đối tượng và tính bảo mật trong khi kiểm soát danh tính nào có thể truy xuất nó."
+  },
+  "feat-077-03": {
+    "label": "Tạo các thùng vectơ và chỉ mục trong lưu trữ đối tượng cho các truy vấn tương tự máy chủ không có tỷ lệ khổng lồ.",
+    "why": "Amazon S3 Vectors thuộc về Amazon Simple Storage Service (Amazon S3), và kích hoạt công việc này: Tạo các thùng vectơ và chỉ mục trong lưu trữ đối tượng cho các truy vấn tương tự máy chủ không có tỷ lệ khổng lồ."
+  },
+  "feat-078-00": {
+    "label": "Giữ lại các bản ghi không được truy cập thường xuyên với chi phí thấp hơn lưu trữ đối tượng hoạt động.",
+    "why": "các lớp lưu trữ lưu trữ dài hạn thuộc về Amazon S3 Glacier, và kích hoạt công việc này: Giữ lại các bản ghi không được truy cập thường xuyên với chi phí thấp hơn lưu trữ đối tượng hoạt động."
+  },
+  "feat-078-02": {
+    "label": "Đáp ứng các khoảng thời gian bảo tồn dài một cách kinh tế khi truy cập ngay lập tức không cần thiết.",
+    "why": "tối ưu hóa chi phí tập trung giữ lại thuộc về Amazon S3 Glacier, và kích hoạt công việc này: Đáp ứng các khoảng thời gian bảo tồn dài một cách kinh tế khi truy cập ngay lập tức không cần thiết."
+  },
+  "feat-079-01": {
+    "label": "Chuẩn hóa thông tin y tế được chia thành một lược đồ hiện đại chung.",
+    "why": "FHIR R4 thuộc về AWS HealthLake, và kích hoạt công việc này: Chuẩn hóa thông tin y tế được chia thành một lược đồ hiện đại chung."
+  },
+  "feat-080-01": {
+    "label": "Phân biệt các đóng góp của bác sĩ lâm sàng và bệnh nhân trong một cuộc gặp được ghi lại.",
+    "why": "xác định vai trò loa thuộc về AWS HealthScribe, và kích hoạt công việc này: Phân biệt các đóng góp của bác sĩ lâm sàng và bệnh nhân trong một cuộc gặp được ghi lại."
+  },
+  "feat-080-03": {
+    "label": "Bản thảo tài liệu cuộc gặp có cấu trúc để xem xét chuyên nghiệp.",
+    "why": "ghi chú lâm sàng sơ bộ thuộc về AWS HealthScribe, và kích hoạt công việc này: Bản thảo tài liệu cuộc gặp có cấu trúc để xem xét chuyên nghiệp."
+  },
+  "feat-081-00": {
+    "label": "Sử dụng silicon được xây dựng mục đích AWS để giảm chi phí và thời gian học các tham số mô hình.",
+    "why": "AWS Trainium thuộc về AWS Trainium, và kích hoạt công việc này: Sử dụng silicon được xây dựng mục đích AWS để giảm chi phí và thời gian học các tham số mô hình."
+  },
+  "feat-082-01": {
+    "label": "Cung cấp họ phiên bản AWS tiết lộ bộ tăng tốc suy luận thế hệ thứ hai.",
+    "why": "Amazon EC2 Inf2 instances thuộc về AWS Inferentia / Inferentia2, và kích hoạt công việc này: Cung cấp họ phiên bản AWS tiết lộ bộ tăng tốc suy luận thế hệ thứ hai."
+  },
+  "feat-083-01": {
+    "label": "Sử dụng các thư viện phát triển mô hình phổ biến với các chip suy luận và đào tạo được xây dựng mục đích AWS.",
+    "why": "tích hợp khuôn khổ thuộc về AWS Neuron SDK, và kích hoạt công việc này: Sử dụng các thư viện phát triển mô hình phổ biến với các chip suy luận và đào tạo được xây dựng mục đích AWS."
+  },
+  "feat-084-00": {
+    "label": "Chọn các thế hệ bộ tăng tốc AWS để học mô hình hiệu quả chi phí ở các quy mô khác nhau.",
+    "why": "Trainium thế hệ thứ nhất và thứ hai thuộc về Amazon EC2 Trn1 / Trn2 instances, và kích hoạt công việc này: Chọn các thế hệ bộ tăng tốc AWS để học mô hình hiệu quả chi phí ở các quy mô khác nhau."
+  },
+  "feat-084-02": {
+    "label": "Kết nối các phiên bản bộ tăng tốc với mạng độ trễ thấp cho các công việc học tập được đồng bộ hóa lớn.",
+    "why": "đào tạo phân tán với EFA thuộc về Amazon EC2 Trn1 / Trn2 instances, và kích hoạt công việc này: Kết nối các phiên bản bộ tăng tốc với mạng độ trễ thấp cho các công việc học tập được đồng bộ hóa lớn."
+  },
+  "feat-085-01": {
+    "label": "Giảm giá của các dự đoán sản xuất bằng cách sử dụng silicon suy luận được xây dựng mục đích.",
+    "why": "phục vụ mô hình hiệu quả chi phí thuộc về Amazon EC2 Inf1 / Inf2 instances, và kích hoạt công việc này: Giảm giá của các dự đoán sản xuất bằng cách sử dụng silicon suy luận được xây dựng mục đích."
+  },
+  "feat-086-00": {
+    "label": "Sử dụng bộ tăng tốc cao cấp cho các khối lượng công việc đào tạo mô hình lớn và phục vụ đòi hỏi nhất.",
+    "why": "NVIDIA H100 Tensor Core GPUs thuộc về Amazon EC2 P5 instances, và kích hoạt công việc này: Sử dụng bộ tăng tốc cao cấp cho các khối lượng công việc đào tạo mô hình lớn và phục vụ đòi hỏi nhất."
+  },
+  "feat-087-01": {
+    "label": "Kết hợp nhiều máy chủ GPU thành một hệ thống được kết nối chặt chẽ cho các mô hình vượt quá một máy chủ.",
+    "why": "EC2 UltraServer scale-up systems thuộc về Amazon EC2 P6 instances and UltraServers, và kích hoạt công việc này: Kết hợp nhiều máy chủ GPU thành một hệ thống được kết nối chặt chẽ cho các mô hình vượt quá một máy chủ."
+  },
+  "feat-088-00": {
+    "label": "Sử dụng bộ tăng tốc đồ họa có ý thức chi phí cho suy luận ML chung và khối lượng công việc trực quan.",
+    "why": "NVIDIA A10G GPUs trên G5 instances thuộc về Amazon EC2 G5 / G6 instances, và kích hoạt công việc này: Sử dụng bộ tăng tốc đồ họa có ý thức chi phí cho suy luận ML chung và khối lượng công việc trực quan."
+  },
+  "feat-088-02": {
+    "label": "Chạy các ứng dụng trực quan và dự đoán sản xuất có kích thước vừa phải trên các phiên bản GPU linh hoạt.",
+    "why": "khối lượng công việc đồ họa và suy luận ML thuộc về Amazon EC2 G5 / G6 instances, và kích hoạt công việc này: Chạy các ứng dụng trực quan và dự đoán sản xuất có kích thước vừa phải trên các phiên bản GPU linh hoạt."
+  },
+  "feat-089-02": {
+    "label": "Phát triển và tối ưu hóa các khối lượng công việc với các thư viện và công cụ cho bộ xử lý Gaudi.",
+    "why": "SynapseAI software stack thuộc về Amazon EC2 DL1 instances, và kích hoạt công việc này: Phát triển và tối ưu hóa các khối lượng công việc với các thư viện và công cụ cho bộ xử lý Gaudi."
+  },
+  "feat-090-01": {
+    "label": "Hàng đợi và phân bổ công việc phân tán thông qua phần mềm lên lịch HPC quen thuộc.",
+    "why": "tích hợp bộ lên lịch công việc thuộc về AWS ParallelCluster, và kích hoạt công việc này: Hàng đợi và phân bổ công việc phân tán thông qua phần mềm lên lịch HPC quen thuộc."
+  },
+  "feat-091-00": {
+    "label": "Để các ứng dụng phân tán giao tiếp trực tiếp với phần cứng mạng để giảm độ trễ.",
+    "why": "Bỏ qua hệ điều hành thuộc về Elastic Fabric Adapter, và kích hoạt công việc này: Để các ứng dụng phân tán giao tiếp trực tiếp với phần cứng mạng để giảm độ trễ."
+  },
+  "feat-091-02": {
+    "label": "Đồng bộ hóa gradient một cách hiệu quả khi một công việc học tập trải dài trên nhiều máy.",
+    "why": "đào tạo phân tán được ghép chặt chẽ thuộc về Elastic Fabric Adapter, và kích hoạt công việc này: Đồng bộ hóa gradient một cách hiệu quả khi một công việc học tập trải dài trên nhiều máy."
+  },
+  "feat-092-01": {
+    "label": "Cung cấp và mở rộng quy mô dung lượng phiên bản cần thiết bởi các công việc xử lý được xếp hàng.",
+    "why": "Môi trường tính toán động thuộc về AWS Batch, và kích hoạt công việc này: Cung cấp và mở rộng quy mô dung lượng phiên bản cần thiết bởi các công việc xử lý được xếp hàng."
+  },
+  "feat-093-00": {
+    "label": "Khởi chạy các máy ảo với các khuôn khổ phổ biến và trình điều khiển đã được cấu hình.",
+    "why": "Deep Learning AMI (DLAMI) thuộc về AWS Deep Learning AMIs, và kích hoạt công việc này: Khởi chạy các máy ảo với các khuôn khổ phổ biến và trình điều khiển đã được cấu hình."
+  },
+  "feat-094-01": {
+    "label": "Sử dụng các tạo tác thùng chứa ML giống nhau trên các ML được quản lý, Kubernetes, thùng chứa hoặc máy ảo.",
+    "why": "Triển khai Amazon EKS thuộc về AWS Deep Learning Containers, và kích hoạt công việc này: Sử dụng các tạo tác thùng chứa ML giống nhau trên các ML được quản lý, Kubernetes, thùng chứa hoặc máy ảo."
+  },
+  "feat-096-00": {
+    "label": "Phát triển và vận hành các khối lượng công việc dựa trên khuôn khổ máy học của Google.",
+    "why": "TensorFlow trên AWS thuộc về TensorFlow on AWS, và kích hoạt công việc này: Phát triển và vận hành các khối lượng công việc dựa trên khuôn khổ máy học của Google."
+  },
+  "feat-098-00": {
+    "label": "Khởi chạy điện toán tương tác cộng tác mà không cần duy trì các máy chủ sổ tay theo cách thủ công.",
+    "why": "Môi trường máy tính được quản lý thuộc về Jupyter on AWS, và kích hoạt công việc này: Khởi chạy điện toán tương tác cộng tác mà không cần duy trì các máy chủ sổ tay theo cách thủ công."
+  },
+  "feat-098-02": {
+    "label": "Truy cập các bộ dữ liệu đám mây, các công việc đào tạo và công cụ triển khai từ một quy trình làm việc sổ tay.",
+    "why": "Amazon SageMaker notebook instances thuộc về Jupyter on AWS, và kích hoạt công việc này: Truy cập các bộ dữ liệu đám mây, các công việc đào tạo và công cụ triển khai từ một quy trình làm việc sổ tay."
+  },
+  "feat-099-01": {
+    "label": "Giải thích các hạn chế và điều kiện đã biết có thể thay đổi chất lượng đầu ra của dịch vụ.",
+    "why": "hạn chế và yếu tố hiệu suất thuộc về AWS AI Service Cards, và kích hoạt công việc này: Giải thích các hạn chế và điều kiện đã biết có thể thay đổi chất lượng đầu ra của dịch vụ."
+  },
+  "feat-100-00": {
+    "label": "Tạo một ứng dụng tạo sinh bằng cách mô tả hành vi và kết nối các thành phần do lời nhắc điều khiển.",
+    "why": "Xây dựng ứng dụng dựa trên lời nhắc thuộc về Amazon PartyRock, và kích hoạt công việc này: Tạo một ứng dụng tạo sinh bằng cách mô tả hành vi và kết nối các thành phần do lời nhắc điều khiển."
+  },
+  "feat-100-01": {
+    "label": "Cung cấp một ứng dụng học không mã với các mô hình tạo sinh được quản lý từ AWS.",
+    "why": "Amazon Bedrock foundation models thuộc về Amazon PartyRock, và kích hoạt công việc này: Cung cấp một ứng dụng học không mã với các mô hình tạo sinh được quản lý từ AWS."
+  },
+  "features": {
+    "hint": "Kéo từng công việc vào khả năng thực hiện nó. Phần tiết lộ đặt tên dịch vụ nó thuộc về."
+  }
+}

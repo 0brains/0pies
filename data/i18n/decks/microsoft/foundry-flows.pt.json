@@ -1,0 +1,82 @@
+{
+ "lad-agent": {
+  "prompt": "Coloca o ciclo de vida do agente na ordem em que deve acontecer.",
+  "steps[0].label": "Define o agente: PromptAgentDefinition(model=MODEL_NAME, instructions=..., tools=[...])",
+  "steps[0].detail": "Modelo + instruções + ferramentas definidas no momento da definição — {\"deployment\":{\"model\":AGENT_NAME}} é a resposta canonicamente errada; implementações hospedam modelos, agentes são modelo + instruções + ferramentas.",
+  "steps[1].label": "Testa no playground Agents",
+  "steps[1].detail": "O playground configura persona, ferramentas e conhecimento anexado lado a lado e permite tentar comportamento multi-turno antes de qualquer código cliente chamar o agente.",
+  "steps[2].label": "Guarda: project.agents.create_version(agent_name=AGENT_NAME, definition=...)",
+  "steps[2].detail": "Edições de playground não guardadas são perdidas ao sair do portal — create_version é o que realmente persiste uma definição, quer a tenhas construído no portal ou no código.",
+  "steps[3].label": "Cria um thread: openai.conversations.create()",
+  "steps[3].detail": "Abre o contentor em tempo de execução que turns mais tarde escrevem — chamado pela app cliente antes da primeira mensagem ser enviada, distinto da própria definição do agente.",
+  "steps[4].label": "Adiciona a mensagem do utilizador ao thread",
+  "steps[4].detail": "O conteúdo da volta é anexado ao histórico de mensagem acumulado do thread — uma execução não pode processar uma mensagem que ainda não foi adicionada.",
+  "steps[5].label": "Cria uma execução e lê a saída: openai.responses.create(..., extra_body={\"agent_reference\": {...}})",
+  "steps[5].detail": "A invocação que realmente processa a conversa e produz a próxima saída do agente; agent_reference é metadados por chamada apontando para a definição guardada."
+ },
+ "lad-chat": {
+  "prompt": "Coloca o fluxo de código na ordem em que deve ser executado.",
+  "steps[0].label": "Instala azure-ai-projects",
+  "steps[0].detail": "'Qual pacote deves instalar para o cliente de projeto?' é um stem de exame clássico — a resposta é azure-ai-projects.",
+  "steps[1].label": "Cria AIProjectClient(endpoint, DefaultAzureCredential())",
+  "steps[1].detail": "Endpoint + credencial devem ambos existir antes de qualquer chamada; auth sem chave = Entra ID DefaultAzureCredential.",
+  "steps[2].label": "Chama get_openai_client()",
+  "steps[2].detail": "Pontes o cliente de projeto para um cliente de chat compatível com OpenAI — a linha que quebra tudo se removida.",
+  "steps[3].label": "Constrói a lista de mensagens (prompt de sistema primeiro, depois prompt de utilizador)",
+  "steps[3].detail": "Regras e guardrails na mensagem de sistema; pedido desta volta na mensagem de utilizador.",
+  "steps[4].label": "Chama chat.completions.create(model=DEPLOYMENT_NAME, messages=[...])",
+  "steps[4].detail": "model= toma o teu nome de implementação, nunca o nome do modelo base — a armadilha clássica.",
+  "steps[5].label": "Lê response.choices[0].message.content",
+  "steps[5].detail": "O texto de resposta vive na primeira escolha da mensagem — perguntas de fragmento de corpus terminam aqui."
+ },
+ "lad-cu": {
+  "prompt": "Coloca o fluxo de trabalho de Content Understanding na ordem.",
+  "steps[0].label": "Escolhe ou define um analisador: descreve o esquema em linguagem natural (ContentAnalyzer(base_analyzer_id=..., field_schema=...))",
+  "steps[0].detail": "Ids de analisador pré-construído (prebuilt-invoice, prebuilt-audio,...) cobrem domínios comuns; um ContentAnalyzer personalizado nomeia os campos que tu desejas em linguagem simples via field_schema — sem código além de descrever o que extrair.",
+  "steps[1].label": "Regista: client.begin_create_analyzer(...)",
+  "steps[1].detail": "Provisiona a definição do analisador como uma operação de longa execução antes de poder ser chamado contra qualquer conteúdo — um passo de configuração única, não um por documento.",
+  "steps[2].label": "Submete conteúdo: client.begin_analyze(analyzer_id=..., inputs=[AnalysisInput(url=file_url)])",
+  "steps[2].detail": "Cada ficheiro documento/imagem/áudio/vídeo obtém a sua própria chamada begin_analyze contra o analisador já registado — o passo por documento, diferentemente do passo 2.",
+  "steps[3].label": "Sonda a operação: poller.result()",
+  "steps[3].detail": "begin_analyze retorna um poller; chama o seu método .result() para aguardar a saída final da análise — a análise é assíncrona, não um retorno síncrono (o exame chama-lhe 'chama o ________ método do poller').",
+  "steps[4].label": "Lê os campos JSON estruturados do resultado",
+  "steps[4].detail": "Os campos extraídos — nome de fornecedor, data de fatura, total de fatura e similares — pousam na carga útil do resultado do poller; é aqui onde o trabalho próprio do Content Understanding termina.",
+  "steps[5].label": "Entrega ao Azure AI Search para indexação",
+  "steps[5].detail": "Content Understanding apenas extrai — nunca indexa ou gera; Azure AI Search é o serviço a jusante separado que indexa a saída estruturada do CU para recuperação/RAG."
+ },
+ "lad-genai": {
+  "prompt": "Coloca os passos na ordem em que um modelo generativo transforma o teu prompt em texto.",
+  "steps[0].label": "Tokenização",
+  "steps[0].detail": "Texto de entrada é dividido em tokens — palavras ou sub-palavras — cada um mapeado para um id do vocabulário do modelo; nada a jusante tem significado até isto acontecer (Tarefa 1.2).",
+  "steps[1].label": "Embeddings",
+  "steps[1].detail": "Cada id de token é convertido num vector numérico codificando significado — o mesmo espaço de vector que torna a similaridade semântica computável como distância de vector.",
+  "steps[2].label": "Atenção de Transformer",
+  "steps[2].detail": "Camadas de auto-atenção pesam cada token contra cada outro token na sequência — o mecanismo que 'alimenta a maioria dos modelos fundacionais modernos,' e precisa que os vectores de embedding já existam.",
+  "steps[3].label": "Previsão de token seguinte",
+  "steps[3].detail": "O modelo produz uma distribuição de probabilidade sobre todo o vocabulário para o token seguinte único; temperatura e top-p remodelam esta distribuição antes de um token ser amostrado.",
+  "steps[4].label": "Saída detokenizada",
+  "steps[4].detail": "O id do token previsto é descodificado de volta para texto e o ciclo repete um token de cada vez até uma condição de paragem — perplexidade mede quão bem as previsões deste passo corresponderam ao texto retido."
+ },
+ "lad-speech": {
+  "prompt": "Coloca as chamadas do SDK de Fala na ordem em que devem ser executadas.",
+  "steps[0].label": "SpeechConfig(subscription=key, region=region)",
+  "steps[0].detail": "Cada fluxo do SDK de Fala começa aqui — o par chave/região (ou endpoint) que autentica cada chamada que se segue.",
+  "steps[1].label": "Define speech_config.speech_synthesis_voice_name = \"...\"",
+  "steps[1].detail": "A seleção de voz é uma propriedade definida diretamente no objeto de configuração — o snippet DragonHD-voice do exame define esta linha logo após SpeechConfig, antes de qualquer outro objeto ser construído a partir dele.",
+  "steps[2].label": "AudioConfig(...) — microfone, ficheiro ou dispositivo padrão",
+  "steps[2].detail": "Construído independentemente da propriedade de nome de voz, mas snippets de início rápido o constroem apenas após a configuração estar terminada, imediatamente antes do reconhecedor/sintetizador que consumirá ambos os objetos.",
+  "steps[3].label": "Cria o Recognizer ou Synthesizer: SpeechRecognizer(speech_config, audio_config) / SpeechSynthesizer(speech_config)",
+  "steps[3].detail": "Ambos os construtores tomam o speech_config já construído (o reconhecedor também toma audio_config) — nada após este ponto ainda pode injetar a configuração.",
+  "steps[4].label": "Chama recognize_once() / speak_text_async(text)",
+  "steps[4].detail": "recognize_once() captura uma elocução breve (vs reconhecimento contínuo); speak_text_async() realmente reproduz o texto — o padrão async future/.get() pertence aqui, último, uma vez que o objeto existe."
+ },
+ "lad-voice": {
+  "prompt": "Coloca o pipeline de agente de voz clássico na ordem.",
+  "steps[0].label": "Fala para texto: converte o áudio falado do chamador em texto",
+  "steps[0].detail": "Passo do pipeline um — recognize_once() ou reconhecimento contínuo transforma áudio numa transcrição antes de qualquer raciocínio nele poder acontecer.",
+  "steps[1].label": "Processamento de Linguagem / IA generativa: raciocina sobre a transcrição e produz uma resposta de texto",
+  "steps[1].detail": "Uma chamada de chat/agente raciocina sobre a transcrição — o passo que um único modelo multimodal (p.ex. implementação de chat áudio-entrada/áudio-saída) pode colapsar junto com os passos 1 e 3, e o que a API de Voz ao Vivo é construída para substituir os três de uma vez com uma única interface de fala para fala de baixa latência.",
+  "steps[2].label": "Texto para fala: sintetiza a resposta de volta para áudio",
+  "steps[2].detail": "speak_text_async() reproduz a resposta gerada — o passo final do pipeline clássico, também dobrável no modelo multimodal único ou alternativa de Voz ao Vivo nomeada no detalhe do passo 2."
+ }
+}

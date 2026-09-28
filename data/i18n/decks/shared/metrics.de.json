@@ -1,0 +1,73 @@
+{
+ "metrics": {
+  "hint": "Wähle eine Metrik vom Typ und den Kosten des Fehlers, nicht von Bequemlichkeit; Klassifizierung, Regression, Abruf, Generierung, Sicherheit und Menschenurteil beantworten unterschiedliche Qualitätsfragen."
+ },
+ "metrics-01": {
+  "label": "Der Anteil aller Vorhersagen, die korrekt sind; am nützlichsten, wenn Klassen und Fehlerkosten ausgewogen sind.",
+  "why": "Für 90 korrekte Vorhersagen von 100, liegt die Genauigkeit bei 90%. Sie kann mit unausgewogenen Klassen täuschend sein: Ein Modell, das jeden Fall einer seltenen Krankheit als negativ vorhersagt, kann sehr genau erscheinen und keine Patienten finden, die Hilfe brauchen."
+ },
+ "metrics-02": {
+  "label": "Von allen vorhergesagten Positiven, der Bruchteil, der tatsächlich positiv ist.",
+  "why": "Verwende Genauigkeit, wenn falsche Positive teuer sind. Wenn 100 Transaktionen als Betrug gekennzeichnet werden und nur 80 betrügerisch sind, liegt die Genauigkeit bei 80%; die restlichen 20 erstellen unnötige Untersuchungen oder blockierte Käufe."
+ },
+ "metrics-03": {
+  "label": "Von allen echten Positiven, der Bruchteil, den das Modell erfolgreich findet.",
+  "why": "Verwende Rückruf, wenn ein echtes Positives zu verpassen teuer ist. Wenn 100 betrügerische Transaktionen auftreten und das Modell 90 abfängt, beträgt der Rückruf 90%; die anderen 10 sind falsche Negative, die der Erkennung entkommen."
+ },
+ "metrics-04": {
+  "label": "Das harmonische Mittel von Genauigkeit und Rückruf, das beide in einem Wert ausgleicht.",
+  "why": "F1 wird nur hoch, wenn sowohl Genauigkeit als auch Rückruf hoch sind, daher ist es nützlich für unausgewogene Klassifizierung, wenn sowohl falsche Alarme als auch verpasste Positive wichtig sind. Es enthält keine echten Negative und kann verbergen, welcher von Genauigkeit oder Rückruf schwächer ist."
+ },
+ "metrics-05": {
+  "label": "Zählt echte Positive, echte Negative, falsche Positive und falsche Negative.",
+  "why": "Diese Tabelle zeigt die genauen Fehlertypen, die durch eine Zusammenfassungs-Nummer verborgen sind. Lies die vier Zellen, um zu sehen, ob das Modell falsche Alarme, verpasste echte Positive erstellt oder jede Klasse korrekt verarbeitet, bevor du Genauigkeit, Rückruf oder eine andere Metrik auswählst."
+ },
+ "metrics-06": {
+  "label": "Misst, wie gut ein Klassifizierer Positive über Negative über Schwellen hinweg bewertet.",
+  "why": "AUC-ROC evaluiert Ranking-Qualität, ohne sich auf einen Klassifizierungsschwellen festzulegen: 1,0 ist perfektes Ranking und etwa 0,5 ist Zufall. Für stark unausgewogene Daten, prüfe auch Genauigkeit-Rückruf-Verhalten, da ROC-Ergebnisse optimistisch aussehen können, wenn Negative dominieren."
+ },
+ "metrics-07": {
+  "label": "Die durchschnittliche quadratische Differenz zwischen vorhergesagten und tatsächlichen Werten; niedriger ist besser.",
+  "why": "Das Quadrieren jedes Residuums führt dazu, dass große Fehler unverhältnismäßig viel beitragen. Fehler von 2 und 10 tragen 4 und 100 bei, daher bestraft MSE stark Ausreißer; seine quadratischen Einheiten machen es weniger intuitiv, direkt zu erklären."
+ },
+ "metrics-08": {
+  "label": "Die Quadratwurzel von MSE, ausdrückend Fehler in der gleichen Einheit wie die vorhergesagten Werte.",
+  "why": "RMSE behält die zusätzliche Strafe von MSE für große Fehler bei, konvertiert aber das Ergebnis zurück in die Zieleinheit. Ein RMSE von 5.000 USD bei Hauspreisen bedeutet, dass die typische Fehlerskala in Dollar ausgedrückt wird, obwohl große Fehlschläge sie immer noch stark beeinflussen."
+ },
+ "metrics-09": {
+  "label": "Die durchschnittliche absolute Differenz zwischen vorhergesagten und tatsächlichen numerischen Werten.",
+  "why": "MAE behandelt Fehler-Größe linear: Fehlschläge von 2 und 10 tragen 2 und 10 bei. Es ist leichter zu interpretieren und weniger empfindlich gegenüber Ausreißern als MSE oder RMSE, daher nützlich, wenn jede Fehlereinheit ungefähr die gleichen Kosten hat."
+ },
+ "metrics-10": {
+  "label": "Misst, wie gut ein Modell die Wahrscheinlichkeit des nächsten Tokens oder Wortes vorhersagt.",
+  "why": "Niedrigere Verwirrung bedeutet, dass das Sprachmodell von der Evaluierungstext weniger überrascht ist und seinen Tokens höhere Wahrscheinlichkeit zuweist. Es misst nächste-Token-Vorhersage, nicht ob eine Antwort faktisch, sicher, hilfreich oder verankert ist."
+ },
+ "metrics-11": {
+  "label": "Misst Überlappung zwischen generiertem und Referenztext und wird häufig für Zusammenfassungen verwendet.",
+  "why": "ROUGE misst häufig, wie viel Referenz-Wortlaut eine generierte Zusammenfassung wiederherstellt, oft durch Wortabstimmung, n-Gramm oder Folgen. Ein hoher Score kann immer noch Bedeutung vermissen oder kopierte Worte belohnen, daher können semantische und menschliche Evaluierung auch nötig sein."
+ },
+ "metrics-12": {
+  "label": "Evaluiert Übersetzung durch Vergleich von n-Grammen in generiertem und Referenztext.",
+  "why": "BLEU belohnt n-Gramm-Überlappung mit einer oder mehreren Referenzübersetzungen und wendet eine Strafe auf Ausgaben an, die zu kurz sind. Gültige Übersetzungen können unterschiedliche Worte verwenden, daher ist BLEU am nützlichsten für Gesamtvergleich und nicht als Beweis, dass ein Satz korrekt ist."
+ },
+ "metrics-13": {
+  "label": "Überprüft, ob generierte Aussagen durch den Kontext oder Quellen gestützt werden, die dem Modell bereitgestellt werden.",
+  "why": "Für eine RAG-Antwort, prüfe, ob jede Aussage aus den abgerufenen Passages folgt, die dem Modell bereitgestellt werden. Eine Aussage kann allgemein wahr sein, ist aber trotzdem unverankert, wenn der bereitgestellte Beweis sie nicht stützt; Zitationen helfen, diese Prüfung nachverfolgbar zu machen."
+ },
+ "metrics-14": {
+  "label": "Überprüft Aussagen gegen vertrauenswürdige Tatsachen statt nur Text-Ähnlichkeit zu messen.",
+  "why": "Dies stellt die Frage, ob Aussagen mit vertrauenswürdiger Realität übereinstimmen, auch wenn keine unterstützende Passage in der Eingabeaufforderung bereitgestellt wurde. Es unterscheidet sich von Verankerung: Eine Antwort kann faktisch korrekt sein, aber in ihrem zitierten Kontext ungestützt, oder in einer Quelle verankert, die selbst falsch ist."
+ },
+ "metrics-15": {
+  "label": "Misst, wie oft der Retriever die relevanten Beweise unter den zurückgegebenen Passages enthält.",
+  "why": "Wenn 100 Fragen eine bekannte Beweis-Passage erfordern und der Retriever sie für 85 zurückgibt, beträgt der Retrieval-Rückruf 85%. Niedriger Retrieval-Rückruf deutet auf Chunking-, Embeddings-, Filterungs-, Abfrage-Rewrite- oder Kandidaten-Zahl-Probleme hin, die Generierung nicht reparieren kann."
+ },
+ "metrics-16": {
+  "label": "Verwendet Menschen und einen definierten Rubrik zur Bewertung von Qualitäten, die automatische Metriken vermissen können.",
+  "why": "Menschen können Nützlichkeit, Ton, Begründung, kulturelle Eignung und nuancierte Korrektheit gegen einen konsistenten Rubrik bewerten. Verwende repräsentative Stichproben, mehrere trainierte Reviewer und Übereinstimmungsprüfungen, weil menschliche Urteile subjektiv, langsam und teuer sein können."
+ },
+ "metrics-17": {
+  "label": "Testet Ausgaben auf schädliche Inhalte, Datenschutzlecks, Richtlinienverletzungen und gegnerisches Verhalten.",
+  "why": "Teste sowohl gewöhnliche als auch gegnerische Eingabeaufforderungen auf schädliche Ausgabe, Jailbreak-Erfolg, Sensitive-Datenlecks, Verzerrung und unsichere Tool-Aktionen. Berichte Ergebnisse nach Risikokategorie und Benutzergruppe; ein durchschnittlicher Qualitäts-Score kann nicht demonstrieren, dass ein System sicher ist."
+ }
+}

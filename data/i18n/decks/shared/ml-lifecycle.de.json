@@ -1,0 +1,25 @@
+{
+ "ml-lifecycle": {
+  "prompt": "Ordne den Lebenszyklus vom Geschäftsziel bis zur Produktionsüberwachung.",
+  "steps[0].label": "Geschäftsziel-Identifizierung",
+  "steps[0].detail": "Alles Nachgelagerte erbt dies. Ohne Geschäftsziel gibt es keine Möglichkeit zu sagen, ob das Modell etwas taugt.",
+  "steps[1].label": "ML-Problem-Framing",
+  "steps[1].detail": "Übersetze das Ziel in eine lernbare Aufgabe: Was wird vorhergesagt, wovon und was zählt als Erfolg.",
+  "steps[2].label": "Datensammlung",
+  "steps[2].detail": "Sammle das Rohmaterial und etabliere seinen Ursprung und die zulässige Verwendung, bevor darauf vertraut wird.",
+  "steps[3].label": "Datenvorverarbeitung",
+  "steps[3].detail": "Bereinige, verbinde, dedupliziere und behandle fehlende Werte, damit das Modell Signal statt Artefakte lernt.",
+  "steps[4].label": "Feature-Engineering",
+  "steps[4].detail": "Forme Eingaben in Darstellungen, die der Algorithmus verwenden kann. Oft der größte einzelne Hebel auf Genauigkeit.",
+  "steps[5].label": "Modell-Training",
+  "steps[5].detail": "Passe Parameter an der Training-Aufteilung an. Billig zu wiederholen, daher kommt es nach der teuren Datenarbeit, nicht davor.",
+  "steps[6].label": "Hyperparameter-Tuning",
+  "steps[6].detail": "Durchsuche die Einstellungen, die das Modell nicht selbst lernen kann, evaluiert auf Validierungsdaten statt Test.",
+  "steps[7].label": "Modell-Evaluierung",
+  "steps[7].detail": "Messe gegen gehaltene Daten und die Geschäftsmetrik. Dies ist das Gate, nicht eine Formalität.",
+  "steps[8].label": "Modell-Bereitstellung (Inferenz und Vorhersage)",
+  "steps[8].detail": "Bediene Vorhersagen für echte Anfragen mit der gleichen Vorverarbeitung wie beim Training oder die Ergebnisse stimmen nicht überein.",
+  "steps[9].label": "Modell-Überwachung",
+  "steps[9].detail": "Beobachte Eingaben, Ausgaben und Qualität in Produktion. Dies ist, wo Drift auftaucht, und es hört niemals auf."
+ }
+}

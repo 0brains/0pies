@@ -1,0 +1,57 @@
+{
+ "prompting": {
+  "hint": "Ce concept change les instructions, le contexte, l'échantillonnage, les contraintes de sortie ou la résistance aux attaques au moment de la demande sans réentraîner le modèle à moins que l'indice ne le dise explicitement."
+ },
+ "prompting-01": {
+  "label": "Casse une tâche complexe en étapes plus petites explicites dont les sorties peuvent être vérifiées.",
+  "why": "Casse une tâche complexe en étapes plus petites explicites dont les sorties peuvent être vérifiées."
+ },
+ "prompting-02": {
+  "label": "Demande à un modèle d'effectuer une tâche sans fournir d'exemples.",
+  "why": "Demande à un modèle d'effectuer une tâche sans fournir d'exemples."
+ },
+ "prompting-03": {
+  "label": "Fournit un petit nombre d'exemples pour guider le comportement et le format de sortie.",
+  "why": "Fournit un petit nombre d'exemples pour guider le comportement et le format de sortie."
+ },
+ "prompting-04": {
+  "label": "Définit le comportement d'application prioritaire, les limites, le rôle et les exigences de réponse.",
+  "why": "Définit le comportement d'application prioritaire, les limites, le rôle et les exigences de réponse."
+ },
+ "prompting-05": {
+  "label": "Une unité de texte traitée par un modèle de langage ; les comptages de jetons affectent la capacité du contexte, la latence et le coût.",
+  "why": "Une unité de texte traitée par un modèle de langage ; les comptages de jetons affectent la capacité du contexte, la latence et le coût."
+ },
+ "prompting-06": {
+  "label": "Le montant maximal combiné des jetons d'entrée et générés qu'un modèle peut traiter dans une seule demande.",
+  "why": "Le montant maximal combiné des jetons d'entrée et générés qu'un modèle peut traiter dans une seule demande."
+ },
+ "prompting-07": {
+  "label": "Contrôle l'aléa d'échantillonnage ; les valeurs inférieures favorisent une sortie plus reproductible et les valeurs supérieures augmentent la variation.",
+  "why": "Contrôle l'aléa d'échantillonnage ; les valeurs inférieures favorisent une sortie plus reproductible et les valeurs supérieures augmentent la variation."
+ },
+ "prompting-08": {
+  "label": "Limite l'échantillonnage au plus petit ensemble de jetons probables dont la probabilité cumulée atteint un seuil.",
+  "why": "Limite l'échantillonnage au plus petit ensemble de jetons probables dont la probabilité cumulée atteint un seuil."
+ },
+ "prompting-09": {
+  "label": "Plafonne la longueur de la réponse pour contrôler le risque de troncature, la latence et la dépense.",
+  "why": "Plafonne la longueur de la réponse pour contrôler le risque de troncature, la latence et la dépense."
+ },
+ "prompting-10": {
+  "label": "Restreint une réponse à un schéma tel que JSON afin que le logiciel en aval puisse le valider et le consommer.",
+  "why": "Restreint une réponse à un schéma tel que JSON afin que le logiciel en aval puisse le valider et le consommer."
+ },
+ "prompting-11": {
+  "label": "L'entrée malveillante tente de contourner les instructions ou de manipuler un modèle et ses outils connectés.",
+  "why": "L'entrée malveillante tente de contourner les instructions ou de manipuler un modèle et ses outils connectés."
+ },
+ "prompting-12": {
+  "label": "Des exemples d'entraînement corrompus ou adversariaux manipulent ce qu'un modèle apprend.",
+  "why": "Des exemples d'entraînement corrompus ou adversariaux manipulent ce qu'un modèle apprend."
+ },
+ "prompting-13": {
+  "label": "Tente de contourner les garde-fous de sécurité pour générer du contenu restreint.",
+  "why": "Tente de contourner les garde-fous de sécurité pour générer du contenu restreint."
+ }
+}

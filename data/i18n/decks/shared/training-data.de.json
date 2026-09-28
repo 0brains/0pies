@@ -1,0 +1,101 @@
+{
+ "training-data": {
+  "hint": "Die wichtige Unterscheidung ist die Daten-Rolle, Format oder Eignung für die echte Population; diese Details bestimmen was gelernt werden kann und ob Bewertung vertrauenswürdig ist."
+ },
+ "training-data-01": {
+  "label": "Der Teil der Daten, die verwendet werden um Modell-Parameter zu lernen.",
+  "why": "Der Teil der Daten, die verwendet werden um Modell-Parameter zu lernen."
+ },
+ "training-data-02": {
+  "label": "Halten-aus-Daten verwendet während Entwicklung zu Wahlen vergleichen und Hyperparameter tunen.",
+  "why": "Halten-aus-Daten verwendet während Entwicklung zu Wahlen vergleichen und Hyperparameter tunen."
+ },
+ "training-data-03": {
+  "label": "Unberührte Daten verwendet am Ende zu Leistung auf ungesehenen Beispiele schätzen.",
+  "why": "Unberührte Daten verwendet am Ende zu Leistung auf ungesehenen Beispiele schätzen."
+ },
+ "training-data-04": {
+  "label": "Beispiele, die die Ziel-Antwort erforderlich für überwachtes Lernen einschließen.",
+  "why": "Beispiele, die die Ziel-Antwort erforderlich für überwachtes Lernen einschließen."
+ },
+ "training-data-05": {
+  "label": "Beispiele ohne Ziel-Antworten, oft verwendet für unüberwachtes oder selbst-überwachtes Lernen.",
+  "why": "Beispiele ohne Ziel-Antworten, oft verwendet für unüberwachtes oder selbst-überwachtes Lernen."
+ },
+ "training-data-06": {
+  "label": "Daten organisiert in definierte Felder, Zeilen, Spalten oder Datensätze.",
+  "why": "Daten organisiert in definierte Felder, Zeilen, Spalten oder Datensätze."
+ },
+ "training-data-07": {
+  "label": "Freiform-Inhalt wie Text, Bilder, Audio und Video.",
+  "why": "Freiform-Inhalt wie Text, Bilder, Audio und Video."
+ },
+ "training-data-08": {
+  "label": "Beispiele, die die Menschen, Bedingungen und Fälle reflektieren, das Modell wird in Gebrauch treffen.",
+  "why": "Beispiele, die die Menschen, Bedingungen und Fälle reflektieren, das Modell wird in Gebrauch treffen."
+ },
+ "training-data-09": {
+  "label": "Information zur Prognostizierungs-Zeit nicht verfügbar tritt versehentlich in Training ein und bläst gemessene Leistung auf.",
+  "why": "Information zur Prognostizierungs-Zeit nicht verfügbar tritt versehentlich in Training ein und bläst gemessene Leistung auf."
+ },
+ "training-data-10": {
+  "label": "Eine Ziel-Klasse erscheint viel häufiger als eine andere, was Genauigkeit potenziell irreführend macht.",
+  "why": "Eine Ziel-Klasse erscheint viel häufiger als eine andere, was Genauigkeit potenziell irreführend macht."
+ },
+ "training-data-11": {
+  "label": "Rohbeispiele mit verifizierten Referenz-Labels versehen, damit ein überwachtes Modell Antworten hat, aus denen es lernen kann.",
+  "why": "Die Label-Qualität begrenzt die Modellqualität: verrauschte oder inkonsistente Labels bringen dem Modell die falsche Zuordnung bei, egal wie viele Daten vorhanden sind."
+ },
+ "training-data-12": {
+  "label": "Die verifizierte korrekte Antwort, mit der die Vorhersage des Modells während Training und Evaluierung verglichen wird.",
+  "why": "Ohne eine vertrauenswürdige Referenzantwort bedeuten weder Trainingsverlust noch Evaluierungsmetriken irgendetwas; beide werden an ihr gemessen."
+ },
+ "training-data-13": {
+  "label": "Zusätzliche Trainingsbeispiele erzeugen, indem vorhandene transformiert werden, etwa durch Spiegeln von Bildern oder Paraphrasieren von Text.",
+  "why": "Es streckt einen kleinen Datensatz und lehrt Invarianz gegenüber harmloser Variation, was Overfitting reduziert, ohne neue Daten zu sammeln."
+ },
+ "training-data-14": {
+  "label": "Künstlich erzeugte Beispiele, die verwendet werden, wenn echte Daten knapp, sensibel oder ohne seltene Fälle sind.",
+  "why": "Sie füllen Lücken, die echte Datenerhebung nicht schließen kann (seltene Ereignisse, datenschutzbeschränkte Datensätze), erben aber die Annahmen ihres Generators."
+ },
+ "training-data-15": {
+  "label": "Einen schiefen Datensatz ausbalancieren, indem zusätzliche Beispiele der Minderheitsklasse dupliziert oder erzeugt werden.",
+  "why": "Es gibt der seltenen Klasse genug Gewicht, um gelernt zu werden, mit dem Risiko von Overfitting auf wiederholte oder synthetische Minderheitsbeispiele."
+ },
+ "training-data-16": {
+  "label": "Einen schiefen Datensatz ausbalancieren, indem einige Beispiele der Mehrheitsklasse verworfen werden.",
+  "why": "Es gleicht den Klasseneinfluss kostengünstig aus, wirft dabei aber echtes Signal der Mehrheitsklasse weg."
+ },
+ "training-data-17": {
+  "label": "Ein einzelnes messbares Eingabemerkmal, etwa Alter, Pixelwert oder Transaktionsbetrag, aus dem das Modell lernt.",
+  "why": "Modelle sehen nur die Features, die man ihnen gibt; was enthalten ist und wie es kodiert wird, begrenzt, was gelernt werden kann."
+ },
+ "training-data-18": {
+  "label": "Rohe Eingaben vor dem Training in aussagekräftigere Merkmale umwandeln, etwa Verhältnisse, Klassen oder Kodierungen.",
+  "why": "Gute abgeleitete Features lassen einfachere Modelle das Muster erfassen; schlechte zwingen komplexe Modelle, es aus dem Rauschen neu zu entdecken."
+ },
+ "training-data-19": {
+  "label": "Durchwechseln, welcher Teil der Daten zurückgehalten wird, sodass jedes Beispiel sowohl für Training als auch für Evaluierung genutzt wird.",
+  "why": "Der Durchschnitt über mehrere zurückgehaltene Folds liefert eine stabilere Schätzung der Generalisierung als eine einzelne Aufteilung, besonders bei kleinen Datensätzen."
+ },
+ "training-data-20": {
+  "label": "Prüfungen auf Vollständigkeit, Genauigkeit, Konsistenz und Aktualität, bevor Daten zum Training verwendet werden.",
+  "why": "Mängel fließen stromabwärts: ein Modell, das auf unvollständigen oder inkonsistenten Datensätzen trainiert wurde, kodiert diese Mängel als Verhalten."
+ },
+ "training-data-21": {
+  "label": "Systematische Verzerrung, die entsteht, wenn die Erhebungsmethode manche Personen oder Fälle gegenüber anderen bevorzugt.",
+  "why": "Ein Modell kann nur gegenüber Fällen fair sein, die es gesehen hat; verzerrte Erhebung erzeugt verzerrte Vorhersagen, so gut der Algorithmus auch ist."
+ },
+ "training-data-22": {
+  "label": "Ein extremes oder anomales Beispiel, das weit außerhalb des Musters der übrigen Daten liegt.",
+  "why": "Eine Handvoll extremer Punkte kann Parameter und Skalierung verzerren; die Entscheidung, ob es Fehler oder echte Fälle sind, verändert das Modell."
+ },
+ "training-data-23": {
+  "label": "Eine reihenfolgebewusste Aufteilung, bei der das Modell auf früheren Zeiträumen trainiert und auf späteren evaluiert wird.",
+  "why": "Das Mischen von Zeitreihen lässt das Modell in die Zukunft blicken und bläht die Werte auf; ehrliche Evaluierung muss die Ankunftsreihenfolge respektieren."
+ },
+ "training-data-24": {
+  "label": "Eine Aufteilung, die die Klassenanteile jeder Teilmenge gleich denen des vollständigen Datensatzes hält.",
+  "why": "Zufällige Aufteilungen unausgewogener Daten können einem Fold die seltene Klasse völlig vorenthalten; Stratifizieren hält jede Evaluierung repräsentativ."
+ }
+}

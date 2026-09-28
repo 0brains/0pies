@@ -1,0 +1,95 @@
+{
+ "iv-deploy": {
+  "hint": "Traîne chaque scénario sur le choix qu'il demande. Le tableau contient des leurres dessinés de chaque axe — type de modèle, infrastructure, et adaptation — donc lis pour la contrainte réelle, pas juste le vocabulaire familier."
+ },
+ "iv-dm-01": {
+  "label": "Traduction en temps réel sur les téléphones avec connectivité intermittente.",
+  "sub": "Latence-Limitée, Hors-Ligne Capable",
+  "why": "La latence et la résilience hors-ligne battent la capacité brute ici — un modèle compact qui s'exécute localement surpasse un plus grand modèle qui a besoin d'une connexion en direct. « Les grands modèles sont toujours requis pour le temps réel » est un leurre de distraction enregistré : la capacité ne garantit pas une faible latence une fois que le réseau chute."
+ },
+ "iv-dm-02": {
+  "label": "Les réponses doivent refléter les directives cliniques de ce mois au moment où un clinicien demande — pas l'instantané d'entraînement du trimestre dernier.",
+  "sub": "Fraîcheur au Moment de la Requête",
+  "why": "La fraîcheur vit en dehors des poids : connecter le modèle à une source actuelle, curée au moment de la requête garde les réponses courantes sans ré-entraînement. Cela n'élimine pas l'hallucination — le modèle peut toujours mal lire ce qu'il a récupéré — et cela échange le coût d'entraînement pour un nouveau fardeau ops : le corpus a besoin d'une ré-indexation continue pour rester actuel."
+ },
+ "iv-dm-03": {
+  "label": "Les offres de prêt doivent être identiques pour les entrées identiques et doivent suivre uniquement les règles de politique de crédit écrites — aucun cas ne peut être décidé autrement.",
+  "sub": "Reproductible par Règle",
+  "why": "Quand les résultats doivent être parfaitement reproductibles et traçables aux règles codifiées, un moteur de règles si-alors — pas un modèle probabiliste — est la bonne adaptation ; un moteur de règles ne peut pas dériver ou halluciner son chemin vers une réponse différente pour les mêmes entrées."
+ },
+ "iv-dm-04": {
+  "label": "Un mandat de résidence strict exige que le régulateur ait une visibilité complète de l'infrastructure sur les enregistrements financiers sensibles.",
+  "sub": "Contrôle Visible par Régulateur",
+  "why": "Garder le modèle et les données à l'intérieur de l'environnement propre de l'organisation maximise le contrôle et contourne les questions de transfert transfrontalier qu'un régulateur aurait autrement dû poursuivre à travers l'infrastructure d'un vendeur — le compromis est un fardeau d'effectifs et d'audit internes plus lourd. Sur un classement latence-vs-surveillance, sur-site bât toujours l'edge quand la visibilité du régulateur centralisée compte plus que la proximité de la source de données."
+ },
+ "iv-dm-05": {
+  "label": "La direction veut un service géré pour évoluer rapidement l'analyse d'image sans construire un centre de données, et suppose que le fournisseur possède maintenant tous les risques de sécurité.",
+  "sub": "Élastique, Mais Dont le Risque ?",
+  "why": "Le cloud est le bon appel pour l'échelle sans propriété d'infrastructure — mais « le fournisseur possède la sécurité maintenant » est le piège : dans le modèle de responsabilité partagée, l'organisation qui se déploie répond toujours pour ses propres données, et une seule méconfiguration du côté client peut toujours causer une violation."
+ },
+ "iv-dm-06": {
+  "label": "Les kiosques de chat multilingues aux postes frontaliers ont une connectivité limitée et une puissance limitée, et les réponses doivent rester quasi-instantanées.",
+  "sub": "Pas de Serveur, Pas d'Attente",
+  "why": "Exécuter le modèle sur l'appareil lui-même supprime la dépendance à une connexion externe que ces postes frontaliers ne peuvent pas garantir de façon fiable. Ce que ce choix te coûte : pousser l'inférence vers l'edge échange l'outillage de détection de dérive centralisé, donc une flotte d'appareils peut discrètement dériver hors des spécifications sans un seul tableau de bord pour l'attraper."
+ },
+ "iv-dm-07": {
+  "label": "Un petit modèle propriétaire ré-entraîne en continu sur un flux de contenu en direct et doit garder le scoring de photos localement à travers des milliers de magasins, sans aller-retour réseau.",
+  "sub": "Local-D'Abord à Échelle de Flotte",
+  "why": "Le scoring local hors-ligne a besoin du modèle sur l'appareil. Ce que ce choix te coûte : surveiller et auditer la performance de façon cohérente devient beaucoup plus difficile une fois que les décisions sont dispersées à travers une vaste flotte dispersée physiquement au lieu d'un seul service centralisé."
+ },
+ "iv-dm-08": {
+  "label": "Une firme logistique optimisant sa chaîne d'approvisionnement veut inspecter, modifier et redistribuer les poids du modèle lui-même plutôt que de dépendre de la feuille de route d'un seul vendeur.",
+  "sub": "Inspecte-Le Toi-Même",
+  "why": "Les poids ouverts achètent la transparence, la flexibilité et la liberté de la feuille de route d'un seul vendeur — au coût de prendre un examen de licence interne, les vérifications de provenance et tes propres tests de sécurité qu'un vendeur porterait autrement."
+ },
+ "iv-dm-09": {
+  "label": "Une entreprise de médias automatisant les résumés vidéo veut les SLA d'un vendeur, réponse d'incident, et indemnités de propriété intellectuelle soutenant le modèle qu'elle livre.",
+  "sub": "Contrat-Soutenu, Pas Inspectable",
+  "why": "Le support contrat-soutenu et les garanties sont tout le point d'aller propriétaire — mais cette commodité a un coût stratégique nommé : s'en éloigner plus tard est plus difficile une fois que les workflows, les invites et les intégrations sont construits autour de l'API d'un vendeur, et le verrouillage du vendeur est enregistré comme le risque stratégique principal de ce chemin."
+ },
+ "iv-dm-10": {
+  "label": "Une banque a des milliers de décisions historiques étiquetées démontrant un comportement de scoring spécialiste stable que le modèle polyvalent ne reproduit pas seul.",
+  "sub": "Démontré, Pas Décrit",
+  "why": "C'est le bon outil pour un comportement stable, démontré cuit dans les poids via des exemples curés. Ce n'est pas une mise à niveau gratuite : la gouvernance traite maintenant le résultat comme un nouveau système nécessitant son propre ré-test de juste traitement et robustesse, et il porte une responsabilité juridique augmentée comparée à l'utilisation d'un modèle pré-construit tiers tel quel."
+ },
+ "iv-dm-11": {
+  "label": "Un générateur de données synthétiques est ré-entraîné sur une tranche des enregistrements de production donc sa sortie de test se sent assez réaliste pour que l'AQ fasse confiance.",
+  "sub": "Réalisme Emprunté à la Vraie Chose",
+  "why": "Adapter le modèle de base davantage sur les données propres de l'organisation est un fine-tuning par définition. Le risque qui suit est spécifique à ce chemin : la sortie synthétique générée peut toujours porter des traces des enregistrements de production sensibles originaux même après anonymisation, parce que l'information est maintenant cuite dans les poids, pas assise dans une base de données inspectable."
+ },
+ "iv-dm-12": {
+  "label": "Un pilote de dépistage des CV doit lancer ce trimestre ; il n'y a pas de temps ou budget encore pour ré-entraîner, uniquement pour valider le modèle sous licence contre les vrais résultats d'embauche.",
+  "sub": "Rapide, Adaptation Non-Prouvée",
+  "why": "Prêt à l'emploi est le chemin le plus rapide vers un pilote et évite le coût de ré-entraînement — mais la gouvernance doit le traiter comme haut-risque jusqu'à preuve du contraire : les données d'entraînement ou limites de décision du vendeur peuvent ne pas correspondre à ce domaine, donc la validation contre les propres standards de performance et juste traitement de cette organisation, plus les contrôles compensatoires comme l'examen humain, n'est pas optionnel."
+ },
+ "iv-dm-13": {
+  "label": "Un système de détection de fraude classe les enregistrements de transactions structurées ; ses risques principaux sont un biais contre certains groupes et une précision qui dégénère discrètement quand les modèles de dépenses changent.",
+  "sub": "Entrée Structurée, Échec Familier",
+  "why": "Prédire ou classer une catégorie connue à partir de caractéristiques structurées est le profil d'échec classique — risques familiers de biais et dérive que les tests de juste traitement et la surveillance sont construits pour détecter, distinct du mode d'échec d'un système génératif d'inventer de façon confiante du mauvais contenu."
+ },
+ "iv-dm-14": {
+  "label": "Le marketing a besoin d'un outil qui rédige une nouvelle copie publicitaire et des images de campagne à partir d'une courte invite, pas un qui classe ou score n'importe quoi qui existe déjà.",
+  "sub": "Nouveau Contenu, Pas un Verdict",
+  "why": "Créer du nouveau contenu — texte, images, code — est le profil de bénéfice et risque génératif : une sortie de façon convaincante mauvaise, questions de propriété intellectuelle et provenance, et un besoin de garde-fous de sécurité de contenu, distinct des modes d'échec de prédiction structurée classique d'un modèle."
+ },
+ "iv-dm-15": {
+  "label": "Un examinateur de sinistres a besoin que le système pèse une photographie de dommage ensemble avec la description d'incident écrite avant de signaler un sinistre.",
+  "sub": "Deux Canaux, Un Jugement",
+  "why": "Interpréter conjointement une image et texte ensemble — et pouvoir expliquer quelle entrée a conduit la sortie — est le profil de risque et capacité multimodal ; un système texte-seulement n'a simplement pas de canal pour la photographie."
+ },
+ "iv-dm-16": {
+  "label": "Un chatbot de support texte-seulement répond aux questions des clients et doit révéler qu'il est IA, citer les sources, et escalader les cas sensibles à un humain.",
+  "sub": "Un Canal, Révélé",
+  "why": "Texte-en, texte-hors avec révélation, citation et contrôles d'escalade humaine est le profil de gouvernance du modèle de langage — il n'y a pas de deuxième canal d'entrée à raisonner dessus, ce qui est ce qui pousserait cela vers le profil multimodal à la place."
+ },
+ "iv-dm-17": {
+  "label": "Deux millions d'enregistrements courts, structurés doivent être cotés chaque nuit sous un budget de calcul serré, utilisant une poignée de caractéristiques déjà étiquetées.",
+  "sub": "Tâche Étroite, Budget Serré",
+  "why": "Un modèle étroit, bas-calcul est plus facile à expliquer, ré-entraîner rapidement et exécuter bon marché à cette échelle de lot — le compromis est qu'il peut lutter une fois que l'environnement devient plus complexe ou variable que ce pour quoi il a été construit."
+ },
+ "iv-dm-18": {
+  "label": "Le système doit généraliser à travers de nombreux domaines non familiers à partir du jour un, sans temps pour construire ou étiqueter un ensemble de données par domaine d'abord.",
+  "sub": "Ampleur Achetée Par l'Échelle",
+  "why": "Le pré-entraînement large est ce qui achète la généralisation zéro-shot et few-shot à travers les domaines dont personne n'a encore les données étiquetées — le coût est un système plus grand, moins transparent qui a besoin de sa propre gouvernance de calcul, évaluation de sécurité et surveillance de dérive."
+ }
+}

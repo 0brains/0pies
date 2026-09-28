@@ -1,0 +1,95 @@
+{
+  "iv-deploy": {
+    "hint": "हर scenario को उस choice पर drag करो जिसे यह call करता है। Board हर axis से decoys रखता है — model type, infrastructure, और adaptation — तो actual constraint के लिए read करो, न कि सिर्फ familiar vocabulary।"
+  },
+  "iv-dm-01": {
+    "label": "Intermittent connectivity के साथ handsets पर real-time translation।",
+    "sub": "Latency-Bound, Offline-Capable",
+    "why": "Latency और offline resilience raw capability को beat करते हैं यहाँ — एक compact model जो locally run करता है एक bigger model को out-translate करता है जिसे live connection चाहिए। 'Large models हमेशा real-time के लिए required हैं' एक recorded false distractor है: capability guarantee नहीं देता है कि low latency एक बार network drop हो जाता है।"
+  },
+  "iv-dm-02": {
+    "label": "Answers को इस month के clinical guidelines को reflect करना चाहिए जिस moment एक clinician पूछता है — last quarter के training snapshot को नहीं।",
+    "sub": "Freshness at Query Time",
+    "why": "Freshness weights के बाहर रहता है: current, curated source को query time पर model से connect करना answers को retraining के बिना current रखता है। यह hallucination को eliminate नहीं करता — model अभी भी retrieve किए गए को misread कर सकता है — और यह training cost को एक new ops burden के लिए trade करता है: corpus को current रहने के लिए continuous re-indexing की जरूरत है।"
+  },
+  "iv-dm-03": {
+    "label": "Loan offers identical inputs के लिए identical होने चाहिए और केवल written credit-policy rules को follow करने चाहिए — कोई case किसी दूसरे तरीके से decide नहीं हो सकता।",
+    "sub": "Reproducible by Rule",
+    "why": "जब outcomes perfectly reproducible होने चाहिए और codified rules में traceable, एक if-then rules engine — एक probabilistic model नहीं — सही fit है; एक rules engine drift नहीं कर सकता या hallucinate करके अपने आप को एक अलग answer पर ले जा सकता है same inputs के लिए।"
+  },
+  "iv-dm-04": {
+    "label": "एक strict residency mandate को regulator को full infrastructure visibility की जरूरत है sensitive financial records के ऊपर।",
+    "sub": "Regulator-Visible Control",
+    "why": "Model और data को organization के अपने environment में रखना control को maximize करता है और एक regulator को cross-border transfer questions bypass करने देता है जिसे एक vendor की infrastructure के माध्यम से otherwise chase करना पड़ेगा — trade-off heavier in-house staffing और audit burden है। Latency-vs-oversight ranking पर, on-premises अभी भी beat करता है edge जब centralized regulator visibility data source के proximity से ज्यादा matter करता है।"
+  },
+  "iv-dm-05": {
+    "label": "Leadership एक managed service चाहता है image analysis को quickly scale करने के लिए data center build किए बिना, और assume करता है कि provider अब सभी security risk own करता है।",
+    "sub": "Elastic, But Whose Risk?",
+    "why": "Cloud infrastructure ownership के बिना scale के लिए सही call है — लेकिन 'provider security अब own करता है' trap है: shared-responsibility model के तहत, deploying organization अभी भी अपने data के लिए answer देता है, और customer side पर एक single misconfiguration अभी भी एक breach cause कर सकता है।"
+  },
+  "iv-dm-06": {
+    "label": "Border checkpoints पर Multilingual chat kiosks limited connectivity और limited power हैं, और responses को near-instant रहना चाहिए।",
+    "sub": "No Server, No Wait",
+    "why": "Model को device पर ही चलाना एक external connection की dependency को remove करता है ये checkpoints reliably guarantee नहीं कर सकते। जो यह choice तुम्हें cost करता है: inference को edge पर push करना centralized drift-detection tooling को trade away करता है, तो एक devices की fleet quietly specification से drift कर सकते हैं इसे catch करने के लिए कोई single dashboard के साथ।"
+  },
+  "iv-dm-07": {
+    "label": "एक small proprietary model continuously एक live content stream पर retrain करता है और thousands storefronts में locally photos score करना चाहिए, network round-trip के बिना।",
+    "sub": "Local-First at Fleet Scale",
+    "why": "Local, offline scoring को device पर model की जरूरत है। जो यह choice तुम्हें cost करता है: performance को consistent रूप से monitoring और auditing करना far harder हो जाता है एक बार decisions एक vast, physically dispersed fleet में spread होते हैं instead of एक centralized service के।"
+  },
+  "iv-dm-08": {
+    "label": "एक logistics firm अपनी supply chain optimize करना चाहता है और model के अपने weights को inspect, modify और redistribute करना चाहता है एक vendor के roadmap पर depend करने के बजाय।",
+    "sub": "Inspect It Yourself",
+    "why": "Open weights transparency, flexibility और एक vendor के release schedule से freedom को buy करते हैं — internal license review, provenance checks और security testing की cost पर जो एक vendor otherwise carry करता।"
+  },
+  "iv-dm-09": {
+    "label": "एक media company video summaries को automate करना चाहता है एक vendor के SLAs, incident response, और IP indemnities के साथ backed जो भी model यह ship करता है।",
+    "sub": "Contract-Backed, Not Inspectable",
+    "why": "Contract-backed support और guarantees इस proprietary को जाने का पूरा point हैं — लेकिन यह convenience एक named strategic cost है: एक बार जब workflows, prompts और integrations एक vendor के API के चारों ओर build होते हैं, बाद में switch करना harder है, और vendor lock-in को इस path के top strategic risk के रूप में record किया जाता है।"
+  },
+  "iv-dm-10": {
+    "label": "एक bank के पास हजारों labeled historical decisions हैं जो एक stable, specialist scoring behavior को demonstrate करते हैं जो general-purpose model अपने आप पर reproduce नहीं करता।",
+    "sub": "Demonstrated, Not Described",
+    "why": "यह एक stable, demonstrated behavior के लिए सही tool है curated examples के माध्यम से weights में baked। यह एक free upgrade नहीं है: governance अब result को एक new system के रूप में treat करता है जिसे अपने fairness और robustness re-testing की जरूरत है, और यह एक third-party prebuilt model को as-is use करने के compared increased legal liability carry करता है।"
+  },
+  "iv-dm-11": {
+    "label": "एक synthetic-data generator को production records के एक slice पर further train किया जाता है तो इसके test output QA को trust के लिए realistic काफी महसूस करता है।",
+    "sub": "वास्तविकता, असली से उधार",
+    "why": "Base model को organization के अपने data पर further adapt करना fine-tuning by definition है। Risk जो follow करता है यह path के लिए specific है: generated synthetic output अभी भी original sensitive production records के traces को carry कर सकता है anonymization के बाद भी, क्योंकि information अब weights में baked है, एक inspectable database में नहीं।"
+  },
+  "iv-dm-12": {
+    "label": "एक resume-screening pilot को इस quarter launch करना चाहिए; retraining के लिए अभी time या budget नहीं है, केवल licensed model को real hiring outcomes के विरुद्ध validate करने के लिए।",
+    "sub": "Fast, Unproven Fit",
+    "why": "Out-of-the-box एक pilot के लिए fastest path है और retraining cost avoid करता है — लेकिन governance को इसे high-risk के रूप में treat करना चाहिए जब तक proven अन्यथा: vendor का training data या decision boundaries इस domain को fit नहीं कर सकते, तो validation इस organization के अपने performance और fairness standards के विरुद्ध, plus human review जैसे compensating controls, optional नहीं है।"
+  },
+  "iv-dm-13": {
+    "label": "एक fraud-detection system structured transaction records को classify करता है; इसके main risks कुछ groups के विरुद्ध bias और accuracy हैं जो quietly degrade होती है जब spending patterns shift करते हैं।",
+    "sub": "Structured Input, Familiar Failure",
+    "why": "Structured features से एक ज्ञात category को predict या classify करना classic failure profile है — familiar bias और drift risks जो fairness testing और monitoring को catch करने के लिए built हैं, एक generative system के failure mode से distinct।"
+  },
+  "iv-dm-14": {
+    "label": "Marketing को एक tool चाहिए जो एक short prompt से नई ad copy और campaign images draft करता है, न कि एक जो classify या score करता है कुछ जो already exist करता है।",
+    "sub": "नई सामग्री, निर्णय नहीं",
+    "why": "नई content create करना — text, images, code — generative benefit-and-risk profile है: convincingly wrong output, IP और provenance questions, और content-safety guardrails की जरूरत, एक classic model के structured-prediction failure modes से distinct।"
+  },
+  "iv-dm-15": {
+    "label": "एक claims reviewer को system को एक damage photograph को written incident description के साथ weigh करना चाहिए एक claim को flag करने से पहले।",
+    "sub": "Two Channels, One Judgment",
+    "why": "एक image और text को jointly interpret करना — और यह explain करने के able होना कि कौन सा input output को drive किया — multimodal risk-and-capability profile है; एक text-only system के पास simply photograph के लिए कोई channel नहीं है।"
+  },
+  "iv-dm-16": {
+    "label": "एक text-only support chatbot customer questions को answer करता है और चाहिए disclose कि यह AI है, cite sources, और sensitive cases को एक human के लिए escalate।",
+    "sub": "One Channel, Disclosed",
+    "why": "Text-in, text-out disclosure, citation और human-escalation controls के साथ language-model governance profile है — कोई दूसरा input channel नहीं है reason के लिए, जो यह क्या होगा यदि push करता है इसे multimodal profile की ओर।"
+  },
+  "iv-dm-17": {
+    "label": "Two million short, structured records को nightly एक tight compute budget के तहत score किया जाना चाहिए, already-labeled features के handful का use करके।",
+    "sub": "Narrow Task, Tight Budget",
+    "why": "एक narrow, low-compute model explain करने में आसान है, quickly retrain, और इस batch scale पर cheaply चलाता है — trade-off यह है कि यह struggle कर सकता है एक बार जब environment उससे अधिक complex या variable हो जाता है जिसके लिए यह build किया गया।"
+  },
+  "iv-dm-18": {
+    "label": "System को कई unfamiliar domains में generalize करना चाहिए day one से, per-domain dataset को build या label करने के लिए कोई time के साथ।",
+    "sub": "Breadth Bought Through Scale",
+    "why": "Broad pretraining यही है जो zero- और few-shot generalization को buy करता है domains में जिसके लिए कोई भी labeled data नहीं है अभी — cost एक bigger, less transparent system है जिसे अपनी compute governance, safety evaluation और drift monitoring की जरूरत है।"
+  }
+}

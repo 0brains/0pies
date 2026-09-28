@@ -1,0 +1,193 @@
+{
+ "feat-000-00": {
+  "label": "Maschinenlesbaren Text aus einem Foto eines Whiteboards oder Straßenschildes herausziehen.",
+  "why": "Azure AI Vision's Read API wendet OCR an, um gedruckten und handschriftlichen Text aus Bildern zu extrahieren, anders als Image Analysis's Captioning und Tagging."
+ },
+ "feat-000-01": {
+  "label": "Einzelne Objekte in einem Foto identifizieren und Bounding Boxes darum platzieren.",
+  "why": "Azure AI Vision's Object Detection gibt Bounding Boxes und Kennzeichnungen für einzelne Objekte zurück, die in einem Bild gefunden werden."
+ },
+ "feat-000-02": {
+  "label": "Eine natürlichsprachige Bildunterschrift generieren, die beschreibt, was in einem Bild passiert.",
+  "why": "Azure AI Vision's Image Analysis Captioning-Funktion generiert eine natürlichsprachige Beschreibung des Inhalts eines Bildes."
+ },
+ "feat-001-00": {
+  "label": "Einen Live-Mikrofoneingang in Echtzeit in Streaming-Text umwandeln.",
+  "why": "Azure AI Speech's Speech-to-Text-Erkennung transkribiert Streaming- oder Batch-Audio in Echtzeit in Text um."
+ },
+ "feat-001-01": {
+  "label": "Natürlich klingende gesprochene Audio aus geschriebenem Text für einen Voice Assistant erzeugen.",
+  "why": "Azure AI Speech's Text-to-Speech-Synthese wandelt geschriebenen Text in natürlich klingende gesprochene Audio um."
+ },
+ "feat-001-02": {
+  "label": "Gesprochene Französisch-Audio in Echtzeit in gesprochenes oder geschriebenes Englisch übersetzen.",
+  "why": "Azure AI Speech's Speech Translation-Funktion übersetzt gesprochene Audio in die Text- oder Sprache einer anderen Sprache in Echtzeit und kombiniert Erkennung und Übersetzung in einem Aufruf."
+ },
+ "feat-002-00": {
+  "label": "Menschen, Orte, Organisationen und Daten, benannt in einem Textblock, herausziehen.",
+  "why": "Azure AI Language's Named Entity Recognition identifiziert und kategorisiert Menschen, Orte, Organisationen und Daten, die in Text erwähnt werden."
+ },
+ "feat-002-01": {
+  "label": "Automatisch Kreditkartennummern und Telefonnummern finden und schwärzen, die in Support-Transkripten gefunden wurden.",
+  "why": "Azure AI Language's PII-Erkennungsfunktion findet und kann sensible personenbezogene Daten wie Telefonnummern und Kartennummern in Text schwärzen."
+ },
+ "feat-002-02": {
+  "label": "Einen langen Artikel auf seine wichtigsten Sätze verkürzen.",
+  "why": "Azure AI Language's Zusammenfassungsfunktion verkürzt langen Text auf seine salienten Sätze oder eine kurze Zusammenfassung."
+ },
+ "feat-002-03": {
+  "label": "Erkennen, welche von Dutzenden von Sprachen ein eingehender Text geschrieben ist.",
+  "why": "Azure AI Language's Spracherkennungsfunktion identifiziert, welche von Dutzenden von Sprachen ein Textstück geschrieben ist."
+ },
+ "feat-002-04": {
+  "label": "Erstelle einen Chatbot, der die Absicht eines Benutzers erkennt, wie 'Buche einen Flug', und Schlüsselentitäten aus ihrer Nachricht extrahiert.",
+  "why": "Azure AI Language's Conversational Language Understanding trainiert ein Modell, um die Absicht eines Benutzers zu erkennen und Entitäten aus konversativer Eingabe zu extrahieren."
+ },
+ "feat-003-00": {
+  "label": "Sofort eine Chat-Nachricht, die auf Spanisch getippt wurde, ins Deutsche übersetzen.",
+  "why": "Azure AI Translator's Text-Übersetzungsfunktion wandelt Text zwischen Sprachen in Echtzeit über einen einzelnen API-Aufruf um."
+ },
+ "feat-003-01": {
+  "label": "Ein ganzes Word-Dokument übersetzen, während sein ursprüngliches Layout und Formatierung erhalten bleiben.",
+  "why": "Azure AI Translator's Document Translation-Funktion übersetzt ganze Dokumente asynchron, während ihre ursprüngliche Formatierung und Layout erhalten bleiben."
+ },
+ "feat-004-00": {
+  "label": "Vendor, Total und Line Items aus einer Quittung mit einem gebrauchsfertigen Modell extrahieren, ohne Training erforderlich.",
+  "why": "Azure AI Document Intelligence's prebuilt-Modelle extrahieren bekannte Felder aus Standard-Formulartypen wie Invoices und Quittungen ohne Training erforderlich."
+ },
+ "feat-004-01": {
+  "label": "Ein Modell auf deinem eigenen Custom-Formlayout trainieren, das kein Prebuilt-Modell abdeckt.",
+  "why": "Azure AI Document Intelligence's Custom-Modelle werden auf deinem eigenen gekennzeichneten Formlayouts trainiert, die kein Prebuilt-Modell abdeckt."
+ },
+ "feat-004-02": {
+  "label": "Rohen Text, Tabellen und Auswahlmarken aus der Struktur eines gescannten Dokuments herausziehen.",
+  "why": "Azure AI Document Intelligence's Layout-Modell extrahiert Rohen Text, Tabellen und Auswahlmarken zusammen mit der Struktur eines Dokuments."
+ },
+ "feat-005-00": {
+  "label": "Invoice-Nummern, Totale und Line Items aus gescannten PDF-Formularen und fotografierten Quittungen in strukturierte JSON-Felder, die du selbst benannt hast, herausziehen.",
+  "why": "Azure Content Understanding's Dokument-Feldextraktion wendet ein Custom-Analyzer-Schema auf PDFs, gescannte Formulare und Bilder an, um die spezifischen strukturierten Felder zurückzugeben, die du definiert hast, nicht nur ein fixiertes Prebuilt-Layout."
+ },
+ "feat-005-01": {
+  "label": "Eine Call-Aufnahme transkribieren lassen und ihre Gefühlszustand- und Schlüssel-Punkte zusammengefasst bekommen, oder gesprochenen Dialog und On-Screen-Text aus einem Trainings-Video herausziehen.",
+  "why": "Azure Content Understanding's Audio- und Video-Analyse transkribiert und argumentiert über Call-Aufnahmen und Video-Inhalte, extrahiert Felder wie Sprecher-Stimmung, Zusammenfassungen und Dialog, die in einem statischen Dokument nicht existieren."
+ },
+ "feat-006-00": {
+  "label": "Ein Modell trainieren, um deine eigenen Produktfotos in Kategorien zu sortieren, die du definierst.",
+  "why": "Azure AI Custom Vision's Image Classification trainiert ein Modell auf deinen eigenen gekennzeichneten Fotos, um Bilder in Kategorien zu sortieren, die du definierst."
+ },
+ "feat-006-01": {
+  "label": "Ein Modell trainieren, um einen spezifischen Fehlertyp in deinen eigenen Bildern zu lokalisieren und eine Box darum zu zeichnen.",
+  "why": "Azure AI Custom Vision's Object Detection trainiert ein Modell auf deinen eigenen gekennzeichneten Bildern, um ein spezifisches Objekt oder einen Fehler zu lokalisieren und zu boxen."
+ },
+ "feat-007-00": {
+  "label": "Den Ort jedes vorhandenen Gesichts in einem Gruppenfoto finden.",
+  "why": "Azure AI Face's Face Detection lokalisiert die Position jedes Gesichts, das in einem Bild vorhanden ist."
+ },
+ "feat-007-01": {
+  "label": "Bestätigen, dass zwei Fotos die gleiche spezifische Person zeigen.",
+  "why": "Azure AI Face's Verifizierung (1:1 Matching) bestätigt, ob zwei Gesichtsbilder zur gleichen Person gehören."
+ },
+ "feat-007-02": {
+  "label": "Eine große Galerie von angemeldeten Gesichtern durchsuchen, um zu identifizieren, wer in einem neuen Foto erscheint.",
+  "why": "Azure AI Face's Identifikation (1:N Matching) durchsucht eine Galerie von angemeldeten Gesichtern, um ein Match für ein neues Foto zu finden."
+ },
+ "feat-008-00": {
+  "label": "Eine Chat-Nachricht für Hass, Gewalt, Sexuelles oder Selbstschaden-Inhalts-Schweregrad bewerten.",
+  "why": "Azure AI Content Safety's Text-Moderation bewertet Text für Hass-, Gewalt-, Sexuelles und Selbstschaden-Inhalts-Schweregrad."
+ },
+ "feat-008-01": {
+  "label": "Einen Versuch erkennen, einen Chatbot zu jailbreaken oder böswillige Anweisungen in einem Dokument zu verstecken, das ein Modell lesen wird.",
+  "why": "Azure AI Content Safety's Prompt Shields erkennt Jailbreak-Versuche und indirekte Prompt Injection, die in Inhalten versteckt sind, die ein Modell verarbeitet."
+ },
+ "feat-008-02": {
+  "label": "Ein hochgeladenes Bild für grafischen oder gewalttätigen visuellen Inhalt kennzeichnen.",
+  "why": "Azure AI Content Safety's Image-Moderation bewertet hochgeladene Bilder für die gleichen Kategorien von schädlichem Inhalt, die auf Text angewendet werden."
+ },
+ "feat-009-00": {
+  "label": "Ein ungewöhnliches Spike in einer einzelnen Sensor-Messung über die Zeit hinweg kennzeichnen.",
+  "why": "Azure AI Anomaly Detector's univariate-Erkennung kennzeichnet unerwartete Spitzen oder Dips in einem einzelnen Time-Series-Stream."
+ },
+ "feat-009-01": {
+  "label": "Ein ungewöhnliches kombiniertes Muster über Dutzende von korrelierten Sensor-Streams auf einmal erkennen.",
+  "why": "Azure AI Anomaly Detector's multivariate-Erkennung kennzeichnet anomale kombinierte Muster über viele korrelierte Time-Series-Signale auf einmal."
+ },
+ "feat-010-00": {
+  "label": "Dokumente nach der Nähe ihrer Bedeutung abrufen, anstatt exakte Keyword-Matches.",
+  "why": "Azure AI Search's Vector-Suche ruft Dokumente nach der Nähe ihrer Bedeutung ab, anstatt exakte Keyword-Überlappung."
+ },
+ "feat-010-01": {
+  "label": "Führe eine KI-Anreicherungs-Pipeline aus, die Entitäten, Schlüsselbegriffe und Bild-Text aus Roh-Inhalten vor dem Indizieren extrahiert.",
+  "why": "Azure AI Search's Skillsets führen eine KI-Anreicherungs-Pipeline aus, die Entitäten, Schlüsselbegriffe und Bild-Text aus Roh-Inhalten vor dem Indizieren extrahiert."
+ },
+ "feat-010-02": {
+  "label": "Keyword-Suchergebnisse unter Verwendung eines Sprachmodells neu ordnen, um die relevantesten Treffer nach oben zu schieben.",
+  "why": "Azure AI Search's Semantic Ranking ordnet Keyword-Suchergebnisse unter Verwendung eines Sprachmodells neu, um die relevantesten Matches zuerst zu zeigen."
+ },
+ "feat-011-00": {
+  "label": "Identifiziere und kennzeichne das gleiche Gesicht einer Person, wo es in einem Video erneut erscheint.",
+  "why": "Azure AI Video Indexer's Face Detection identifiziert und verfolgt das gleiche Gesicht einer Person, während sie über ein Video erneut erscheint."
+ },
+ "feat-011-01": {
+  "label": "Produziere ein durchsuchbares Transkript, das gekennzeichnet ist, welcher Sprecher jede Zeile sagte.",
+  "why": "Azure AI Video Indexer's Transkriptionsfunktion produziert ein durchsuchbares Transkript, das gekennzeichnet ist, welcher Sprecher jede Zeile sagte."
+ },
+ "feat-011-02": {
+  "label": "Automatisch Szenen- und Schuss-Grenzen in einem hochgeladenen Video erkennen.",
+  "why": "Azure AI Video Indexer's Szenen- und Schuss-Erkennung kennzeichnet automatisch Szenen- und Schuss-Grenzen in einem hochgeladenen Video."
+ },
+ "feat-012-00": {
+  "label": "GPT-4o für Unternehmens-Chat-Completions mit deinem eigenen Quota und Content Filtern bereitstellen.",
+  "why": "Azure OpenAI Service stellt Chat- und Completion-Modelle wie GPT-4o als Unternehmens-Ressource mit deinem eigenen Quota und Content Filtern bereit."
+ },
+ "feat-012-01": {
+  "label": "Ein Satz einzigartiger Produktbilder aus einer Textbeschreibung generieren.",
+  "why": "Azure OpenAI Service's DALL-E Bereitstellung generiert neue Bilder aus einer Textbeschreibung."
+ },
+ "feat-012-02": {
+  "label": "Eine Charge von Dokumenten in numerische Vektoren für Ähnlichkeitssuche umwandeln.",
+  "why": "Azure OpenAI Service's Embeddings-Modelle wandeln Text in numerische Vektoren für Ähnlichkeitssuche und Retrieval um."
+ },
+ "feat-012-03": {
+  "label": "Den Ton und Stil eines Basis-Modells unter Verwendung deiner eigenen gekennzeichneten Beispiele anpassen.",
+  "why": "Azure OpenAI Service's Fine-Tuning passt den Ton und das Verhalten eines bereitgestellten Modells unter Verwendung deiner eigenen gekennzeichneten Beispiele an."
+ },
+ "feat-013-00": {
+  "label": "Durchsuche und vergleiche Foundation Models von mehreren Anbietern in einem Katalog vor dem Bereitstellen.",
+  "why": "Microsoft Foundry's Modell-Katalog lässt dich Foundation Models von mehreren Anbietern durchsuchen und vergleichen, bevor du eine bereitstellst."
+ },
+ "feat-013-01": {
+  "label": "Nachverfolge, teste und bewerte Prompt-Varianten gegen Evaluierungs-Datensätze, bevor du sie auslieferst.",
+  "why": "Microsoft Foundry's Prompt Flow und Evaluierungs-Tools verfolgen, testen und bewerten Prompt-Varianten gegen Datensätze, bevor du sie auslieferst."
+ },
+ "feat-013-02": {
+  "label": "Rufe ein Foundry-Projekt programmgesteuert aus Python auf, um Modelle und Agents zu verwalten.",
+  "why": "Microsoft Foundry's SDK zeigt einen AIProjectClient auf, damit Code sich mit einem Foundry-Projekt verbinden und Modelle und Agents programmgesteuert verwalten kann."
+ },
+ "feat-014-00": {
+  "label": "Lasse einen Agent deine eigenen hochgeladenen Dateien durchsuchen und zitieren, wenn er eine Frage antwortet.",
+  "why": "Microsoft Foundry Agent Service's File-Search-Tool lässt einen Agent deine eigenen hochgeladenen Dateien durchsuchen und zitieren, wenn er antwortet."
+ },
+ "feat-014-01": {
+  "label": "Lasse einen Agent Code schreiben und ausführen in einer Sandbox mid-Konversation, um ein Daten- oder Matheproblem zu lösen.",
+  "why": "Microsoft Foundry Agent Service's Code-Interpreter-Tool lässt einen Agent Code schreiben und ausführen in einer Sandbox mid-Konversation, um ein Problem zu lösen."
+ },
+ "feat-014-02": {
+  "label": "Gib einem Agent die Fähigkeit, deine eigenen externen APIs oder Funktionen als Teil seines Reasonings aufzurufen.",
+  "why": "Microsoft Foundry Agent Service's Function Calling lässt einen Agent deine eigenen externen APIs oder Funktionen als Teil seines Reasonings aufrufen."
+ },
+ "feat-015-00": {
+  "label": "Automatisch mehrere Algorithmen und Hyperparameter probieren, um das beste für deinen Datensatz ausführende Modell zu finden.",
+  "why": "Azure Machine Learning's Automated ML probiert mehrere Algorithmen und Hyperparameter, um das beste für deinen Datensatz ausführende Modell zu finden."
+ },
+ "feat-015-01": {
+  "label": "Baue eine Trainings-Pipeline visuell auf, indem du Module ziehst und verbindest, ohne Code erforderlich.",
+  "why": "Azure Machine Learning's Designer baut eine Trainings-Pipeline visuell auf, indem Module gezogen und verbunden werden, ohne Code erforderlich."
+ },
+ "feat-015-02": {
+  "label": "Verfolge Experiment-Läufe nach, registriere Modelle und verwalte Bereitstellung durch eine regierte MLOps-Pipeline.",
+  "why": "Azure Machine Learning's Pipelines und Modell-Registrierung verfolgen Experiment-Läufe nach, registrieren Modelle und verwalten regierte Bereitstellung."
+ },
+ "features": {
+  "hint": "Ziehe jeden Job auf die Fähigkeit, die ihn ausführt. Das Reveal nennt den Service, zu dem er gehört."
+ }
+}

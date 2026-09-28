@@ -1,0 +1,73 @@
+{
+  "metrics": {
+    "hint": "Elige una métrica del tipo y costo del error, no de la conveniencia; clasificación, regresión, recuperación, generación, seguridad y juicio humano responden diferentes preguntas de calidad."
+  },
+  "metrics-01": {
+    "label": "La fracción de todas las predicciones que son correctas; más útil cuando las clases y costos de error están equilibrados.",
+    "why": "Para 90 predicciones correctas de 100, la precisión es 90%. Puede ser engañosa con clases desbalanceadas: un modelo que predice cada caso de enfermedad rara como negativo puede parecer altamente preciso mientras no encuentra pacientes que necesiten ayuda."
+  },
+  "metrics-02": {
+    "label": "De todos los positivos predichos, la fracción que son realmente positivos.",
+    "why": "Usa precisión cuando los falsos positivos son costosos. Si 100 transacciones se marcan como fraude y solo 80 son fraudulentas, la precisión es 80%; las 20 restantes crean investigaciones innecesarias o compras bloqueadas."
+  },
+  "metrics-03": {
+    "label": "De todos los positivos reales, la fracción que el modelo encuentra exitosamente.",
+    "why": "Usa recall cuando faltar un verdadero positivo es costoso. Si 100 transacciones fraudulentas ocurren y el modelo captura 90, el recall es 90%; los otros 10 son falsos negativos que escaparon detección."
+  },
+  "metrics-04": {
+    "label": "La media armónica de precisión y recall, equilibrando ambas en un valor.",
+    "why": "F1 se vuelve alta solo cuando tanto precisión como recall son altas, así que es útil para clasificación desbalanceada cuando tanto falsas alarmas como positivos faltados importan. No incluye verdaderos negativos y puede ocultar cuál de precisión o recall es más débil."
+  },
+  "metrics-05": {
+    "label": "Cuenta verdaderos positivos, verdaderos negativos, falsos positivos y falsos negativos.",
+    "why": "Esta tabla expone los tipos exactos de error ocultos por un score de resumen. Lee sus cuatro celdas para ver si el modelo crea falsas alarmas, pierde positivos reales, o maneja cada clase correctamente antes de elegir precisión, recall, u otra métrica."
+  },
+  "metrics-06": {
+    "label": "Mide qué tan bien un clasificador clasifica positivos por encima de negativos en todos los umbrales.",
+    "why": "AUC-ROC evalúa la calidad de clasificación sin comprometerse a un umbral de clasificación: 1.0 es clasificación perfecta y alrededor de 0.5 es aleatorio. Para datos altamente desbalanceados, también inspecciona el comportamiento de precisión-recall porque los resultados de ROC pueden parecer optimistas cuando los negativos dominan."
+  },
+  "metrics-07": {
+    "label": "La diferencia cuadrada promedio entre valores predichos y reales; más bajo es mejor.",
+    "why": "Elevar al cuadrado cada residual hace que los grandes errores contribuyan desproporcionadamente. Errores de 2 y 10 contribuyen 4 y 100, así que MSE penaliza fuertemente los valores atípicos; sus unidades cuadradas la hacen menos intuitiva de explicar directamente."
+  },
+  "metrics-08": {
+    "label": "La raíz cuadrada de MSE, expresando error en la misma unidad que los valores predichos.",
+    "why": "RMSE preserva la penalidad extra de MSE para grandes errores pero convierte el resultado de vuelta a la unidad del objetivo. Un RMSE de $5,000 en precios de viviendas significa que la escala de error típico se expresa en dólares, aunque grandes fallas aún la influyen fuertemente."
+  },
+  "metrics-09": {
+    "label": "La diferencia absoluta promedio entre valores predichos y reales numéricos.",
+    "why": "MAE trata la magnitud del error linealmente: fallas de 2 y 10 contribuyen 2 y 10. Es más fácil de interpretar y menos sensible a valores atípicos que MSE o RMSE, haciéndola útil cuando cada unidad de error tiene aproximadamente el mismo costo."
+  },
+  "metrics-10": {
+    "label": "Mide qué tan bien un modelo predice la probabilidad del siguiente token o palabra.",
+    "why": "Una perplejidad más baja significa que el modelo de lenguaje es menos sorprendido por el texto de evaluación y asigna mayor probabilidad a sus tokens. Mide predicción del siguiente token, no si una respuesta es factual, segura, útil o fundamentada."
+  },
+  "metrics-11": {
+    "label": "Mide la superposición entre texto generado y de referencia y se usa comúnmente para resúmenes.",
+    "why": "ROUGE comúnmente mide cuánta redacción de referencia un resumen generado recupera, a menudo a través de palabras coincidentes, n-gramas o secuencias. Un score alto aún puede perder significado o recompensar redacción copiada, así que evaluación semántica y humana también pueden ser necesarias."
+  },
+  "metrics-12": {
+    "label": "Evalúa traducción comparando n-gramas en texto generado y de referencia.",
+    "why": "BLEU recompensa la superposición de n-gramas con una o más traducciones de referencia y aplica una penalidad a salidas que son demasiado cortas. Las traducciones válidas pueden usar redacción diferente, así que BLEU es más útil para comparación agregada y no como prueba de que una oración es correcta."
+  },
+  "metrics-13": {
+    "label": "Comprueba si las afirmaciones generadas están respaldadas por el contexto o fuentes proporcionadas al modelo.",
+    "why": "Para una respuesta RAG, inspecciona si cada afirmación se sigue de los pasajes recuperados proporcionados al modelo. Una declaración puede ser generalmente verdadera pero aún estar infundada si la evidencia proporcionada no la respalda; las citas ayudan a hacer esta verificación trazable."
+  },
+  "metrics-14": {
+    "label": "Comprueba afirmaciones contra hechos confiables en lugar de solo medir similitud textual.",
+    "why": "Esto pregunta si las afirmaciones concuerdan con la realidad confiable, incluso cuando ningún pasaje de apoyo fue suministrado en el prompt. Difiere de fundamentación: una respuesta puede ser factualmente correcta pero sin apoyo de su contexto citado, o fundamentada en una fuente que en sí misma es incorrecta."
+  },
+  "metrics-15": {
+    "label": "Mide con qué frecuencia el recuperador incluye la evidencia relevante entre los pasajes devueltos.",
+    "why": "Si 100 preguntas requieren un pasaje de evidencia conocido y el recuperador lo devuelve para 85, el recall de recuperación es 85%. El recall de recuperación bajo señala problemas de chunking, embeddings, filtros, reescritura de consultas o recuento de candidatos que la generación no puede reparar."
+  },
+  "metrics-16": {
+    "label": "Usa personas y una rúbrica definida para juzgar cualidades que las métricas automatizadas pueden perder.",
+    "why": "Las personas pueden puntuar utilidad, tono, razonamiento, adaptación cultural, y corrección matizada contra una rúbrica consistente. Usa muestras representativas, múltiples revisores capacitados y verificaciones de acuerdo porque los juicios humanos pueden ser subjetivos, lentos y costosos."
+  },
+  "metrics-17": {
+    "label": "Prueba salidas para contenido dañino, fuga de privacidad, violaciones de políticas y comportamiento adversarial.",
+    "why": "Prueba prompts ordinarios y adversariales para salida dañina, éxito de jailbreak, exposición de datos sensibles, sesgo, y acciones de herramientas inseguras. Reporta resultados por categoría de riesgo y grupo de usuario; un score de calidad promedio no puede demostrar que un sistema sea seguro."
+  }
+}

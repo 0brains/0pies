@@ -1,0 +1,25 @@
+{
+ "ml-lifecycle": {
+  "prompt": "Ordonne le cycle de vie de l'objectif commercial à la surveillance en production.",
+  "steps[0].label": "Identification de l'objectif commercial",
+  "steps[0].detail": "Tout en aval en hérite. Sans un objectif commercial, il n'y a pas de façon de dire si le modèle est bon.",
+  "steps[1].label": "Formulation du problème ML",
+  "steps[1].detail": "Traduis l'objectif en une tâche apprenante : qu'est-ce qui est prédit, à partir de quoi, et qu'est-ce qui compte comme succès.",
+  "steps[2].label": "Collecte de données",
+  "steps[2].detail": "Rassemble la matière première, et établis sa provenance et son utilisation autorisée avant qu'elle ne soit utilisée.",
+  "steps[3].label": "Prétraitement des données",
+  "steps[3].detail": "Nettoie, joins, déduplique et gère les valeurs manquantes, afin que le modèle apprenne le signal plutôt que les artefacts.",
+  "steps[4].label": "Conception des caractéristiques",
+  "steps[4].detail": "Façonne les entrées en représentations que l'algorithme peut utiliser. Souvent le plus grand levier unique sur la précision.",
+  "steps[5].label": "Entraînement du modèle",
+  "steps[5].detail": "Ajuste les paramètres sur la scission d'entraînement. Bon marché à répéter, donc il vient après le travail de données coûteux, pas avant.",
+  "steps[6].label": "Réglage des hyperparamètres",
+  "steps[6].detail": "Recherche les paramètres que le modèle ne peut pas apprendre lui-même, évalués sur les données de validation plutôt que de test.",
+  "steps[7].label": "Évaluation du modèle",
+  "steps[7].detail": "Mesure par rapport aux données détenues et à la métrique commerciale. C'est la barrière, pas une formalité.",
+  "steps[8].label": "Déploiement du modèle (inférence et prédiction)",
+  "steps[8].detail": "Sers les prédictions pour les vraies demandes, avec le même prétraitement qu'à l'entraînement ou les résultats ne correspondront pas.",
+  "steps[9].label": "Surveillance du modèle",
+  "steps[9].detail": "Observe les entrées, les sorties et la qualité en production. C'est là que la dérive apparaît, et cela ne finit jamais."
+ }
+}

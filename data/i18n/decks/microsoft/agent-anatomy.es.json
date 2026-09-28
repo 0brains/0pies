@@ -1,0 +1,84 @@
+{
+ "ag-001": {
+  "label": "\"Eres un agente de soporte cortés; escala cualquier asunto que implique reembolsos\" — configurado una sola vez cuando se crea el agente",
+  "why": "El campo de instrucciones define el comportamiento persistente en el momento de la creación — el concepto de agente más enfatizado en el material de estudio, distinto del estado de chat en tiempo de ejecución."
+ },
+ "ag-002": {
+  "label": "Permite que el agente llame a funciones externas o API para realizar acciones",
+  "why": "La invocación de funciones/herramientas permite que el modelo actúe más allá del texto — la capacidad que distingue un agente de una llamada de chat simple."
+ },
+ "ag-003": {
+  "label": "El gpt-4o implementado con el que razona el agente — referenciado por su nombre de implementación",
+  "why": "Un agente = modelo + instrucciones + herramientas; el modelo es una implementación, y {\"deployment\":{\"model\":AGENT_NAME}} es la respuesta canónica incorrecta."
+ },
+ "ag-004": {
+  "label": "Archivos de fundamentación y fuentes de datos que el agente puede buscar para responder desde tu contenido",
+  "why": "El conocimiento adjunta tus datos al agente para que las respuestas se fundamenten en ellos — parte de la anatomía del agente que la guía de estudio nombra para la Tarea 2.1."
+ },
+ "ag-005": {
+  "label": "Contiene los mensajes del usuario y del asistente de una sola conversación en tiempo de ejecución",
+  "why": "Los hilos/conversaciones mantienen el estado de chat en tiempo de ejecución — creados por sesión por la aplicación cliente, no en el momento de la definición del agente."
+ },
+ "ag-006": {
+  "label": "La invocación que procesa la conversación y produce la siguiente salida del agente",
+  "why": "Una ejecución (openai.responses.create / create run) ejecuta el agente contra el hilo — la tercera capa distinta: definición vs sesión vs invocación."
+ },
+ "ag-007": {
+  "label": "El texto de persona en lenguaje natural suministrado dentro de PromptAgentDefinition junto al nombre del modelo, cuando el agente se define por primera vez en código",
+  "why": "PromptAgentDefinition(model=MODEL_NAME, instructions=...) establece ambos campos en el momento de la definición, pero solo el texto de la persona da forma a cómo se comporta el agente — el nombre del modelo junto a él es un componente separado."
+ },
+ "ag-008": {
+  "label": "Formatea cada respuesta como una lista numerada limitada a cinco elementos — fijo cuando se escribe el agente, no elegido por pregunta",
+  "why": "Una regla de formateo permanente incrustada en el momento de la autoría es comportamiento, no una acción externa — no llama a nada más allá del texto, lo que la distingue de las Herramientas."
+ },
+ "ag-009": {
+  "label": "Cambiar el motor de razonamiento de gpt-4o-mini a gpt-5-mini sin tocar la persona del agente ni sus herramientas adjuntas",
+  "why": "Solo cambia el motor de razonamiento implementado aquí; la persona y el cableado de herramientas permanecen fijos — una prueba clara de si la implementación es una capa separada de otros componentes del agente."
+ },
+ "ag-010": {
+  "label": "El identificador de implementación pasado dentro de PromptAgentDefinition junto al texto de la persona, cuando el agente se define por primera vez en código",
+  "why": "La misma llamada PromptAgentDefinition() que el texto de la persona, pero este parámetro nombra qué motor implementado llama el agente — una referencia de implementación, no el comportamiento en sí."
+ },
+ "ag-011": {
+  "label": "Activa la búsqueda web en vivo para que el agente pueda extraer información actual más allá de lo que está en sus datos de entrenamiento",
+  "why": "La búsqueda web se abre desde el catálogo de herramientas del portal de Foundry (Build > Tools) junto con intérprete de código y búsqueda de archivos — una capacidad externa viva, no contenido estático adjunto."
+ },
+ "ag-012": {
+  "label": "Permite que el agente ejecute código generado para calcular un resultado en lugar de solo describir los pasos de cálculo",
+  "why": "La ejecución de código es una de las capacidades del catálogo, junto con búsqueda web y búsqueda de archivos, que permite que el agente actúe más allá de producir texto — el motor de razonamiento en sí nunca ejecuta código directamente."
+ },
+ "ag-013": {
+  "label": "Conecta un índice de Azure AI Search existente para que las respuestas del agente citen tu contenido indexado en lugar de adivinar",
+  "why": "Un índice de búsqueda adjunto es contenido estático que el agente recupera para fundamentar sus respuestas — distinto de una herramienta como búsqueda web, que accede a una capacidad externa viva en lugar de tus propios datos."
+ },
+ "ag-014": {
+  "label": "Agrega documentos de política de la empresa para que el agente busque — configurado en el patio de juegos de Agentes junto a su texto de persona y herramientas adjuntas — antes de probar el comportamiento de múltiples turnos",
+  "why": "El patio de juegos de Agentes configura tres superficies distintas lado a lado — persona, herramientas y documentos adjuntos — y esta tarjeta es la de contenido adjunto: datos sobre los que el agente fundamenta respuestas, no una acción que realiza."
+ },
+ "ag-015": {
+  "label": "openai.conversations.create() llamado por la aplicación cliente antes de que se envíe el primer turno al agente",
+  "why": "Crear el objeto de conversación ocurre antes de que se envíe cualquier mensaje — abre el contenedor en tiempo de ejecución en el que los turnos posteriores se escriben, distinto de la llamada que realmente produce una respuesta."
+ },
+ "ag-016": {
+  "label": "La cronología única e ininterrumpida de turnos que permite que el agente haga referencia a algo que el usuario dijo hace tres preguntas, sin que esos mensajes se reenví­en por mano cada vez",
+  "why": "El historial de chat acumulado en tiempo de ejecución es estado de sesión, no comportamiento del agente — crece por conversación, a diferencia de las reglas de persona fijas una sola vez en el momento de la definición."
+ },
+ "ag-017": {
+  "label": "openai.responses.create() es la llamada que realmente envía el mensaje más reciente del usuario y devuelve la respuesta del agente",
+  "why": "Este es el paso de invocación — es lo que realmente procesa la conversación y produce salida, distinto de openai.conversations.create(), que solo abre el contenedor en el que viven los mensajes."
+ },
+ "ag-018": {
+  "label": "El parámetro extra_body={\"agent_reference\": {...}} dentro de esa misma llamada, indicando al sistema qué definición de agente ejecutar contra la conversación",
+  "why": "agent_reference es metadatos por invocación en la llamada responses.create(), no una propiedad de agente fija — el examen extrae explícitamente esta distinción contra el nombre de implementación incrustado en la definición del propio agente."
+ },
+ "agent-anatomy": {
+  "hint": "Pregunta a qué capa pertenece el trabajo: fijo en la creación (instrucciones), el motor de razonamiento en sí (modelo), una acción más allá del texto (herramientas), datos adjuntos para fundamentar respuestas (conocimiento), estado acumulativo de una conversación (hilo), o la única llamada que produce salida (ejecución).",
+  "note": "Las instrucciones y herramientas se configuran ambas en tiempo de diseño — el desempate es si la tarjeta es una regla de comportamiento (instrucciones) o una capacidad externa que llama el agente (herramientas). El hilo y la ejecución existen ambos en tiempo de ejecución — el desempate es si la tarjeta es el contenedor que sostiene los mensajes (hilo) o la invocación que produce el siguiente mensaje (ejecución).",
+  "zones[0].def": "El comportamiento persistente, persona y reglas establecidas cuando se define el agente — no elegidas por conversación.",
+  "zones[1].def": "El modelo implementado — referenciado por nombre de implementación — con el que razona el agente.",
+  "zones[2].def": "Funciones, API y otras acciones que el agente puede llamar más allá de generar texto.",
+  "zones[3].def": "Archivos, índices y otras fuentes de datos que el agente puede buscar para fundamentar sus respuestas.",
+  "zones[4].def": "El historial de mensajes de una conversación en tiempo de ejecución, creado por sesión.",
+  "zones[5].def": "La invocación que ejecuta el agente contra un hilo y produce su siguiente salida."
+ }
+}

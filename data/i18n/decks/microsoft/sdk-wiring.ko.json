@@ -1,0 +1,106 @@
+{
+ "sw-001": {
+  "label": "엔드포인트와 자격 증명을 사용해 코드를 Foundry 프로젝트에 연결해요.(package azure-ai-projects)",
+  "why": "AIProjectClient(endpoint, credential)는 프로젝트 진입점이며, get_openai_client()는 그것에 달려 있어요. 인증을 제거하면 이 줄이 망가져요."
+ },
+ "sw-002": {
+  "label": "메시지 목록을 배포된 모델로 보내고 choices[0].message.content를 반환해요.",
+  "why": "chat.completions.create(model=DEPLOYMENT_NAME, messages=[…])는 chat call이며, model=는 기본 모델 이름이 아닌 배포 이름을 사용해요(histack trap #5)."
+ },
+ "sw-003": {
+  "label": "Speech 리소스 키와 리전, 그리고 synthesis voice 이름을 보유해요.",
+  "why": "SpeechConfig(key, region)은 먼저 구성되어요(예. speech_synthesis_voice_name='en-US-Ava:DragonHDLatestNeural'). AudioConfig는 기기를 처리하며, 자격증명은 아니에요."
+ },
+ "sw-004": {
+  "label": "사용자의 spoken 질문을 message content 내 inline audio 데이터로 보내요.",
+  "why": "Spoken INPUT은 message content parts에 input_audio로 가요. response-settings twin은 문서화된 함정이에요."
+ },
+ "sw-005": {
+  "label": "모델에 spoken audio로 답변하도록 요청해요: voice \"alloy\", format \"wav\"",
+  "why": "Spoken OUTPUT은 multimodal call에 modalities=[\"text\",\"audio\"] plus audio={\"voice\":\"alloy\",\"format\":\"wav\"}를 통해 요청되어요. 시험의 정확한 payload예요."
+ },
+ "sw-006": {
+  "label": "배포된 gpt-4o가 설명할 수 있도록 chat message에 사진(URL 또는 base64)을 포함해요.",
+  "why": "Visual input은 image_url / base64 content parts로 multimodal deployment에 이동해요. Vision SDK를 통하지 않으며, 이것은 다른 서비스이고 엔드포인트이에요(pair #23)."
+ },
+ "sw-007": {
+  "label": "기존 프로젝트 클라이언트를 Responses 및 Conversations call에 사용된 OpenAI-compatible 클라이언트로 연결해요.",
+  "why": "project.get_openai_client()는 프로젝트 객체에 호출된 인스턴스 메서드예요. 시험의 함정은 클래스 자체에 호출하는 것이에요."
+ },
+ "sw-008": {
+  "label": "프로젝트 클라이언트가 구축된 직후, 첫 Responses 또는 Conversations 요청이 나가기 전에 한 번 호출되어요.",
+  "why": "이것은 OpenAI-shaped 클라이언트를 반환하는 runtime bridge예요. 자격증명 객체는 프로젝트 클라이언트만 인증하며, chat 클라이언트를 반환하지 않아요."
+ },
+ "sw-009": {
+  "label": "credential= 값으로 zero 인수를 전달해 앱이 signed-in Azure 신원을 통해 인증되도록 하며, 어디에도 키를 입력하지 않아요.",
+  "why": "DefaultAzureCredential()는 keyless Entra ID 자격증명 객체예요. AIProjectClient가 이를 사용하며, azure-ai-projects는 runtime 객체가 아니라 package 이름일 뿐이에요."
+ },
+ "sw-010": {
+  "label": "az login이 설정하는 객체예요. 클라이언트는 호출 시간에 자동으로 signed-in 신원을 이것으로부터 해석해요. 환경 API 키가 필요 없어요.",
+  "why": "quickstart가 az login을 이 자격증명 객체와 쌍을 이루며. get_openai_client는 chat 클라이언트만 반환하며 인증과 아무 관계가 없어요."
+ },
+ "sw-011": {
+  "label": "quickstart의 매우 첫 설정 명령어에 따라 모든 Foundry 프로젝트 클라이언트 코드를 작성하기 전에 설치하는 pip 패키지예요.",
+  "why": "\"Which package should you install for the project client?\"은 고전적인 시험 stem이며, 답변은 azure-ai-projects이지 search 또는 language SDK가 아니에요."
+ },
+ "sw-012": {
+  "label": "quickstart 설정 단계에서 az login과 함께 나열되며, 모든 클라이언트 코드가 실행되기 전에 최소 버전(>=2.0.0)으로 고정되어요.",
+  "why": "문서화된 quickstart 지침은 azure-ai-projects>=2.0.0을 설치하고 az login을 실행해요. Vision 및 Search 패키지는 프로젝트 클라이언트와 무관해요."
+ },
+ "sw-013": {
+  "label": "plain text에 대해 key-phrase 또는 sentiment call이 실행되기 전에 엔드포인트와 AzureKeyCredential로 구축되어요.",
+  "why": "TextAnalyticsClient(endpoint, credential)는 .extract_key_phrases()/.analyze_sentiment()을 raw text에 노출해요. 다른 두 클라이언트는 완전히 다른 엔드포인트의 multimodal 문서와 이미지를 대상해요."
+ },
+ "sw-014": {
+  "label": "각 문서의 overall sentiment가 back으로 인쇄되도록 analyze_sentiment(documents)를 노출하는 어느 클라이언트 타입이든 사용해요.",
+  "why": "Sentiment 및 key-phrase 추출은 이 클라이언트의 AI Language text-analytics 메서드예요. 다른 두 개는 multimodal 문서나 live audio에서 작동하며, plain text가 아니에요."
+ },
+ "sw-015": {
+  "label": "저장된 파일 대신 컴퓨터의 기본 마이크에서 listen하도록 설정한 후, 그것을 recognizer에 audio 원본으로 전달해요.",
+  "why": "AudioConfig(use_default_microphone=True)는 input device를 선택해요. SpeechConfig는 subscription key/region을 보유하며, SpeechRecognizer는 이 객체가 전달되는 클래스이지 device selector 자체가 아니에요."
+ },
+ "sw-016": {
+  "label": "저장된 파일 이름에서 구축되어 recognizer가 live microphone 대신 test WAV 파일에서 speech를 읽어요.",
+  "why": "AudioConfig(filename=…)는 file-backed device 원본이에요. SpeechConfig는 자격증명과 voice 이름을 가지며, SpeechSynthesizer는 읽지 않고 audio를 재생해요."
+ },
+ "sw-017": {
+  "label": "speech config와 audio config 모두가 주어진 후, 호출되어 정확히 하나의 short spoken utterance를 캡처한 후 중지해요.",
+  "why": "이것은 recognize_once_async()를 캡처하는 클래스예요. SpeechSynthesizer는 대신 text를 말하며, AudioConfig는 input device만 연결해요."
+ },
+ "sw-018": {
+  "label": "single-utterance async call은 .text가 마이크가 방금 들은 내용의 transcript를 보유한 result 객체를 반환해요.",
+  "why": "speech-to-text 클래스는 live audio 인식으로부터 result.text를 반환해요. synthesizer는 대신 listen하며, Language 클라이언트는 이미 transcribe된 text에서만 작동해요."
+ },
+ "sw-019": {
+  "label": "voice 이름이 이미 설정된 speech config를 가지고, text 문자열을 speaker를 통해 spoken output으로 변환해요.",
+  "why": "이 클래스의 speak_text_async()는 구성된 voice를 사용해 문자열을 대중에게 재생해요. recognizer는 대신 speech를 text로 변환하며, AudioConfig는 device만 선택해요."
+ },
+ "sw-020": {
+  "label": "recognizer가 text transcript를 생성한 후, 이 두 번째 객체는 그 동일한 문자열을 자신의 async speak call로 대중에게 읽어내보내요.",
+  "why": "인식된 reply의 text-to-speech playback이 이 클래스의 일이에요. recognizer는 이미 text를 생성했으며, SpeechConfig는 자격증명과 voice 이름만 저장해요."
+ },
+ "sw-021": {
+  "label": "엔드포인트와 key를 사용해 구축된 후, 단일 call은 READ visual feature에 대한 image URL을 분석해 사진에서 text를 당겨요.",
+  "why": "이 Vision 클라이언트의 .analyze(image_url=…, visual_features=[…]) call은 general images에 OCR을 실행해요. ContentUnderstandingClient는 대신 very different, asynchronous call shape로부터 poller를 반환해요."
+ },
+ "sw-022": {
+  "label": "captioning-plus-OCR call은 raw bytes 대신 URL에 의해 image를 가지고, 하나의 pass에서 CAPTION 및 READ features를 모두 요청해요.",
+  "why": "이 Vision 클라이언트의 by-URL 분석 메서드는 caption 및 read와 같은 고정된 prebuilt features를 반환해요. 이것은 polling step이 없으며 speech 캡처와 전혀 무관해요."
+ },
+ "sw-023": {
+  "label": "앱이 document URL을 추출을 위해 보낼 때, 그리고 구조화된 결과를 back으로 읽을 때 처음 생성하는 클라이언트예요.",
+  "why": "\"Which client should the app create first?\"는 Content Understanding 앱의 경우 이 클래스이며. 다른 두 개는 plain text와 general images를 위해 별도의 서비스이고 별도의 엔드포인트를 가져요."
+ },
+ "sw-024": {
+  "label": "long-running analyze call은 poller를 반환해요. 그 poller에 .result()를 호출하는 것이 앱이 최종 추출된 output을 대기하는 방법이에요.",
+  "why": "begin_analyze() plus poller.result()는 이 클라이언트의 asynchronous polling pattern이에요. Vision 클라이언트의 analyze()는 synchronous이며, Language 클라이언트의 메서드는 polling 없이 documents를 직접 가져요."
+ },
+ "sw-025": {
+  "label": "response field b64_json이 디코딩할 실제 pixel data를 보유하는 image-generation request이지, url field가 아니에요.",
+  "why": "GPT-image-1 deployment는 response.data[0].b64_json에 생성된 image bytes를 반환해요. completions call은 text choices를 반환하며, Vision 클라이언트는 이미 존재하는 image만 분석해요."
+ },
+ "sw-026": {
+  "label": "transparent background를 설정하고 이 text-to-image request에 PNG output을 요청해 see-through background를 얻어요.",
+  "why": "Transparent background plus PNG output은 GPT-image-1-series generation 파라미터예요. Vision analysis 또는 chat-completion call에서는 아무 것도 이를 허용하지 않아요."
+ }
+}

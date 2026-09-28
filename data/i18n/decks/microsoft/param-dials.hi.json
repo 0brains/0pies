@@ -1,0 +1,106 @@
+{
+ "pd-001": {
+  "label": "तुम्हें same prompt से हर run consistent, repeatable output की जरूरत है",
+  "why": "histack का exact exam cue: 'consistent, repeatable output' → low temperature। यह whole probability distribution को rescale करता है; tune करो इसे या top_p, दोनों नहीं।"
+ },
+ "pd-002": {
+  "label": "Sampling को सबसे छोटे set of tokens में restrict करो जिनकी cumulative probability एक set threshold तक reach करती है",
+  "why": "Nucleus sampling — top_p candidate set को truncate करता है, जबकि temperature whole distribution को reshape करता है (corpus confused-pair #5)।"
+ },
+ "pd-003": {
+  "label": "Responses keep cutting off mid-sentence — तुम्हें complete answers की जरूरत है",
+  "why": "max_tokens सिर्फ output length को cap करता है — exam का most frequent parameter trap है इसे randomness control के रूप में offering करना (pair #4)।"
+ },
+ "pd-004": {
+  "label": "Model एक phrase को keep repeat करता है; tokens को penalize करो proportion में कितनी बार वे appear किए हैं",
+  "why": "Frequency penalty repeat count (repetition) के साथ scale होता है; presence penalty एक बार एक token appear किया है एक बार fire होता है (topic novelty) — corpus pair #6।"
+ },
+ "pd-005": {
+  "label": "Generated marketing images rough दिख रहे हैं — higher render fidelity tier request करें",
+  "why": "gpt-image-1 का payload prompt, size, quality (including 'high' trap value) और n लेता है — quality fidelity को control करता है, size dimensions को control करता है।"
+ },
+ "pd-006": {
+  "label": "Image progress को sooner देखो जबकि एक large generation render होता है",
+  "why": "Streaming partial_images images/generations path पर progressive output return करता है — exam का 'see image progress sooner' stem verbatim।"
+ },
+ "pd-007": {
+  "label": "Randomness knob जो sampling से पहले entire token probability distribution को reshape करता है, सिर्फ top slice नहीं",
+  "why": "Temperature whole distribution के across logits को scale करता है; top_p instead cumulative probability mass से truncate करता है — same 'creativity' intuition, different mechanism।"
+ },
+ "pd-008": {
+  "label": "Team चाहता है कि model सिर्फ ever most probable slice को next-token candidates का consider करे, long tail को cutting off करके",
+  "why": "Nucleus sampling (top_p) candidates को cumulative-probability slice में restrict करता है; temperature probabilities को reshape करता है लेकिन कभी nहीं candidates को outright remove करता है।"
+ },
+ "pd-009": {
+  "label": "एक hard ceiling कि कितने tokens एक single response generate कर सकता है, regardless of what it says",
+  "why": "max_tokens एक length ceiling है generation के दौरान enforced किया जाता है; एक stop sequence instead सिर्फ तब halts करता है जब एक specific string appear होता है — different trigger, same 'shorter output' goal।"
+ },
+ "pd-010": {
+  "label": "Model को discourage करो same word या phrase को many times over reuse करने से — more it repeats, harder the pushback",
+  "why": "Frequency penalty scale होता है कितनी बार एक token पहले से appear किया है; presence penalty एक flat penalty apply करता है moment एक token appear होता है even once — count-proportional vs binary।"
+ },
+ "pd-011": {
+  "label": "Chat transcript कभी नहीं earlier topics को revisit करता है — model हमेशा new subject matter को drift करता है इसे cover किया गया है की जगह",
+  "why": "एक high presence penalty instant fire करता है एक token appear होता है moment जब, model को new topics की ओर push करता है; frequency penalty repeat count के साथ scale करता है और mainly literal repetition को curb करता है, न कि topic drift।"
+ },
+ "pd-012": {
+  "label": "Response में shown up आ चुका है किसी भी token को same fixed penalty apply करता है, no matter कितनी बार",
+  "why": "Presence penalty per-token binary है (appeared या नहीं); frequency penalty instead repeat count के साथ grow होता है — exam का confused-pair distinction दोनों penalty parameters के बीच।"
+ },
+ "pd-013": {
+  "label": "Generation को end करना चाहिए instant model एक specific marker string को write करता है, length ceiling को hit करने के लिए wait किए बिना",
+  "why": "एक stop sequence एक literal string trigger है जो generation को early halt करता है; max_tokens सिर्फ एक length ceiling enforce करता है और specific text का कोई awareness नहीं है।"
+ },
+ "pd-014": {
+  "label": "एक specific piece of text जिसे model एक ending marker के रूप में treat करने के लिए told है, ताकि output stop हो जाए moment यह text produced हो",
+  "why": "Stop sequences matching text content पर trigger करते हैं; न ही max_tokens न ही frequency penalty generated text को inspect करते हैं — एक tokens count करता है, दूसरा repeats count करता है।"
+ },
+ "pd-015": {
+  "label": "Latency को predictable रहना चाहिए high, sustained request volume पर, और team fixed hourly cost pay करने के लिए fine है guarantee करने के लिए",
+  "why": "Provisioned throughput (PTU) dedicated capacity को reserve करता है predictable latency के लिए scale पर; Standard deployment है pay-per-token variable throughput के साथ load के under, और Capacity (TPM) सिर्फ quota dial है, deployment type नहीं।"
+ },
+ "pd-016": {
+  "label": "Reserved, dedicated model capacity advance में purchase किया जाता है ताकि throughput shared-tenant traffic के साथ fluctuate नहीं करे",
+  "why": "PTU है reserved-capacity deployment model; Standard share करता है capacity और bills per token variable throughput के साथ, जबकि Capacity (TPM) सिर्फ quota को set करता है जो भी deployment type chosen है।"
+ },
+ "pd-017": {
+  "label": "Customer-support app को unpredictable और bursty है, और team hourly reserved capacity की जगह pay-per-token billing चाहता है",
+  "why": "Pay-per-token pricing variable load के under है Standard deployment (exam का exact scenario); PTU instead reserved capacity के लिए hourly bills करता है regardless actual usage की।"
+ },
+ "pd-018": {
+  "label": "Bills per token consumed rather than per hour of reserved compute, throughput के साथ जो shared load के under vary कर सकता है",
+  "why": "Standard है consumption-based billing variable throughput के साथ; PTU variable को fixed hourly reservation के लिए trade करता है, और Capacity (TPM) quota setting है layered either model के top पर।"
+ },
+ "pd-019": {
+  "label": "एक deployment peak load के under throttling को keep hit करता है, ताकि team spare throughput quota को दूसरे underused deployment से shift करता है",
+  "why": "Per-deployment throughput quota को deployments (exam का documented scenario) के बीच reallocate किया जा सकता है; PTU और Standard deployment को describe करते हैं billing/reservation model, quota dial नहीं।"
+ },
+ "pd-020": {
+  "label": "Dial जो एक deployment पर process कर सकता है total throughput में upper bound set करता है हर minute, किसी भी single response की length से independent",
+  "why": "Capacity (TPM) deployment level पर throttles करता है सभी requests के across tokens per minute में measured; max_tokens सिर्फ एक response की length को cap करता है और rate limiting के साथ कुछ नहीं है।"
+ },
+ "pd-021": {
+  "label": "Banner image request एक small square return keep करता है जब layout को एक wide rectangular canvas की जरूरत है",
+  "why": "size pixel dimensions को set करता है (e.g. एक wide format की जगह 1024x1024); quality rendering fidelity को control करता है और n image count को control करता है — न ही canvas shape को change करता है।"
+ },
+ "pd-022": {
+  "label": "Request field जो generated image के pixel dimensions को set करता है, जैसे 1024×1024",
+  "why": "size है dimensions field images/generations payload में; quality instead rendering fidelity को govern करता है, और partial_images progressive streaming को control करता है, final canvas dimensions नहीं।"
+ },
+ "pd-023": {
+  "label": "Field जो 'high' fidelity tier को accept करता है ताकि fine detail crisply render करे, अलग से कि image कितना बड़ा है",
+  "why": "quality (including documented 'high' trap value) rendering fidelity को control करता है; size dimensions को control करता है और n कितने images come back को control करता है — same request पर तीन independent dials।"
+ },
+ "pd-024": {
+  "label": "एक prompt को चुनने के लिए चार separate image variations return करना चाहिए, एक single request में",
+  "why": "n set करता है कितने images request return करता है (e.g. n=4); size और quality हर individual image को shape करते हैं लेकिन कितने come back को change नहीं करते।"
+ },
+ "pd-025": {
+  "label": "Parameter जो set करता है कितने image variations एक single images/generations कॉल return करता है",
+  "why": "n है image-count field; partial_images instead एक single image के progressive previews को stream करता है जैसे यह render करता है, और size सिर्फ वह image के dimensions को set करता है।"
+ },
+ "pd-026": {
+  "label": "Streaming के साथ combined, यह field set करता है कितने progressive preview frames भेजे जाते हैं final image के complete होने से पहले",
+  "why": "partial_images (stream=True के साथ use किया जाता है) rendering के दौरान progressive preview frames की count को set करता है; n instead कितने separate final images return होते हैं set करता है, और quality fidelity को set करता है, न कि preview cadence को।"
+ }
+}

@@ -1,0 +1,193 @@
+{
+ "feat-000-00": {
+  "label": "Kéo văn bản có thể đọc được của máy từ ảnh của bảng trắng hoặc biển đường.",
+  "why": "API Đọc của Azure AI Vision áp dụng OCR để trích xuất văn bản in và viết tay từ hình ảnh, không giống như Image Analysis's captions và tagging."
+ },
+ "feat-000-01": {
+  "label": "Xác định và đặt hộp giới hạn xung quanh các đối tượng riêng lẻ trong ảnh.",
+  "why": "Object Detection của Azure AI Vision trả lại các hộp giới hạn và nhãn cho các đối tượng riêng lẻ được tìm thấy trong hình ảnh."
+ },
+ "feat-000-02": {
+  "label": "Tạo chú thích ngôn ngữ tự nhiên mô tả những gì đang xảy ra trong hình ảnh.",
+  "why": "Tính năng đóng chú thích của Image Analysis của Azure AI Vision tạo mô tả ngôn ngữ tự nhiên về nội dung của hình ảnh."
+ },
+ "feat-001-00": {
+  "label": "Chuyển đổi nguồn cấp dữ liệu micrô trực tiếp thành văn bản truyền phát theo thời gian thực.",
+  "why": "Nhận dạng giọng nói của Azure AI Speech chuyển đổi âm thanh truyền phát hoặc hàng loạt thành văn bản theo thời gian thực."
+ },
+ "feat-001-01": {
+  "label": "Tạo âm thanh nói tự nhiên từ văn bản được viết cho một trợ lý thoại.",
+  "why": "Tổng hợp văn bản thành giọng nói của Azure AI Speech chuyển đổi văn bản được viết thành âm thanh nói tự nhiên."
+ },
+ "feat-001-02": {
+  "label": "Dịch âm thanh tiếng Pháp được nói thành tiếng Anh được nói hoặc viết theo thời gian thực.",
+  "why": "Tính năng Dịch Giọng nói của Azure AI Speech dịch âm thanh được nói thành văn bản hoặc giọng nói của ngôn ngữ khác theo thời gian thực, kết hợp nhận dạng và dịch trong một cuộc gọi."
+ },
+ "feat-002-00": {
+  "label": "Kéo mọi người, địa điểm, tổ chức và ngày tháng được đặt tên trong một khối văn bản.",
+  "why": "Nhận dạng Thực thể Được đặt tên của Azure AI Language xác định và phân loại mọi người, địa điểm, tổ chức và ngày tháng được đề cập trong văn bản."
+ },
+ "feat-002-01": {
+  "label": "Tự động tìm và làm mờ các số thẻ tín dụng và số điện thoại được tìm thấy trong bản ghi hỗ trợ.",
+  "why": "Tính năng phát hiện PII của Azure AI Language tìm thấy và có thể làm mờ dữ liệu cá nhân nhạy cảm như số điện thoại và số thẻ trong văn bản."
+ },
+ "feat-002-02": {
+  "label": "Tóm tắt một bài viết dài xuống các câu quan trọng nhất của nó.",
+  "why": "Tính năng tóm tắt của Azure AI Language tóm tắt văn bản dài thành các câu nổi bật nhất hoặc tóm tắt ngắn."
+ },
+ "feat-002-03": {
+  "label": "Phát hiện ngôn ngữ nào trong số hàng chục ngôn ngữ một đoạn văn bản được viết bằng.",
+  "why": "Tính năng phát hiện ngôn ngữ của Azure AI Language xác định ngôn ngữ nào trong số hàng chục ngôn ngữ một đoạn văn bản được viết bằng."
+ },
+ "feat-002-04": {
+  "label": "Xây dựng một chatbot nhận ra ý định của người dùng, chẳng hạn như 'đặt chuyến bay,' và kéo các thực thể chính từ tin nhắn của họ.",
+  "why": "Conversational Language Understanding của Azure AI Language huấn luyện một mô hình để nhận ra ý định của người dùng và trích xuất thực thể từ đầu vào hội thoại."
+ },
+ "feat-003-00": {
+  "label": "Dịch ngay một tin nhắn trò chuyện được gõ bằng tiếng Tây Ban Nha thành tiếng Đức.",
+  "why": "Tính năng dịch văn bản của Azure AI Translator chuyển đổi văn bản giữa các ngôn ngữ theo thời gian thực thông qua một lệnh gọi API duy nhất."
+ },
+ "feat-003-01": {
+  "label": "Dịch một toàn bộ tài liệu Word trong khi bảo tồn bố cục và định dạng gốc của nó.",
+  "why": "Tính năng Dịch Tài liệu của Azure AI Translator dịch toàn bộ tài liệu không đồng bộ trong khi bảo tồn định dạng và bố cục gốc của chúng."
+ },
+ "feat-004-00": {
+  "label": "Trích xuất nhà cung cấp, tổng cộng và mục hàng từ một biên lai bằng cách sử dụng một mô hình sẵn có, không cần đào tạo.",
+  "why": "Các mô hình prebuilt của Azure AI Document Intelligence trích xuất các trường đã biết từ các loại biểu mẫu tiêu chuẩn như hóa đơn và biên lai mà không cần đào tạo."
+ },
+ "feat-004-01": {
+  "label": "Huấn luyện một mô hình trên bố cục biểu mẫu tùy chỉnh của chính bạn mà không có mô hình prebuilt nào bao phủ.",
+  "why": "Các mô hình tùy chỉnh của Azure AI Document Intelligence được huấn luyện trên bố cục biểu mẫu được gắn nhãn của riêng bạn mà không có mô hình prebuilt nào bao phủ."
+ },
+ "feat-004-02": {
+  "label": "Kéo văn bản thô, bảng và dấu lựa chọn từ cấu trúc tài liệu được quét.",
+  "why": "Mô hình Layout của Azure AI Document Intelligence trích xuất văn bản thô, bảng và dấu lựa chọn cùng với cấu trúc của tài liệu."
+ },
+ "feat-005-00": {
+  "label": "Kéo số hóa đơn, tổng cộng và mục hàng từ biểu mẫu PDF được quét và biên lai được chụp ảnh thành các trường JSON được cấu trúc mà bạn tự đặt tên.",
+  "why": "Trích xuất trường tài liệu tùy chỉnh của Azure Content Understanding áp dụng lược đồ bộ phân tích tùy chỉnh cho PDF, biểu mẫu được quét và hình ảnh để trả lại các trường được cấu trúc cụ thể mà bạn xác định, không chỉ bố cục prebuilt cố định."
+ },
+ "feat-005-01": {
+  "label": "Nhận bản ghi âm của một cuộc ghi âm cuộc gọi và tóm tắt cảm tình và các điểm nói chính của nó, hoặc kéo đối thoại được nói và văn bản trên màn hình từ một video đào tạo.",
+  "why": "Phân tích âm thanh và video của Azure Content Understanding chuyển ghi và lý luận trên các cuộc ghi âm cuộc gọi và nội dung video, trích xuất các trường như cảm tình loa, bản tóm tắt và đối thoại không tồn tại trong tài liệu tĩnh."
+ },
+ "feat-006-00": {
+  "label": "Huấn luyện một mô hình để sắp xếp ảnh sản phẩm của riêng bạn thành các danh mục bạn xác định.",
+  "why": "Phân loại hình ảnh của Azure AI Custom Vision huấn luyện một mô hình trên các ảnh được gắn nhãn của riêng bạn để sắp xếp hình ảnh thành các danh mục bạn xác định."
+ },
+ "feat-006-01": {
+  "label": "Huấn luyện một mô hình để xác định vị trí và vẽ một hộp xung quanh loại khiếm khuyết cụ thể trong các hình ảnh của riêng bạn.",
+  "why": "Phát hiện đối tượng của Azure AI Custom Vision huấn luyện một mô hình trên các hình ảnh được gắn nhãn của riêng bạn để xác định vị trí và hộp một đối tượng hoặc khiếm khuyết cụ thể."
+ },
+ "feat-007-00": {
+  "label": "Tìm vị trí của mọi khuôn mặt hiện diện trong ảnh nhóm.",
+  "why": "Phát hiện khuôn mặt của Azure AI Face xác định vị trí của mọi khuôn mặt hiện diện trong hình ảnh."
+ },
+ "feat-007-01": {
+  "label": "Xác nhận rằng hai ảnh cho thấy một người cụ thể.",
+  "why": "Xác minh (khớp 1:1) của Azure AI Face xác nhận liệu hai hình ảnh mặt có thuộc về cùng một người hay không."
+ },
+ "feat-007-02": {
+  "label": "Tìm kiếm một phòng trưng bày lớn các khuôn mặt đã ghi danh để xác định ai xuất hiện trong ảnh mới.",
+  "why": "Định danh (khớp 1:N) của Azure AI Face tìm kiếm trong một phòng trưng bày các khuôn mặt đã ghi danh để tìm kết quả khớp cho ảnh mới."
+ },
+ "feat-008-00": {
+  "label": "Chấm điểm tin nhắn trò chuyện cho mức độ nghiêm trọng nội dung thù hận, bạo lực, tình dục hoặc tự làm hại.",
+  "why": "Kiểm duyệt văn bản của Azure AI Content Safety chấm điểm văn bản cho mức độ nghiêm trọng nội dung thù hận, bạo lực, tình dục và tự làm hại."
+ },
+ "feat-008-01": {
+  "label": "Phát hiện nỗ lực phá vỡ chatbot hoặc ẩn hướng dẫn độc hại bên trong tài liệu mà mô hình sẽ đọc.",
+  "why": "Prompt Shields của Azure AI Content Safety phát hiện các nỗ lực phá vỡ và tiêm prompt gián tiếp ẩn trong nội dung mà mô hình sẽ xử lý."
+ },
+ "feat-008-02": {
+  "label": "Gắn cờ ảnh được tải lên cho nội dung hình ảnh đồ họa hoặc bạo lực.",
+  "why": "Kiểm duyệt hình ảnh của Azure AI Content Safety chấm điểm các hình ảnh được tải lên cho các danh mục nội dung có hại được áp dụng cho văn bản."
+ },
+ "feat-009-00": {
+  "label": "Gắn cờ một loại tăng bất thường trong mức độ đọc của một cảm biến duy nhất theo thời gian.",
+  "why": "Phát hiện đơn biến của Azure AI Anomaly Detector gắn cờ các loại tăng hoặc giảm bất thường trong một dòng chuỗi thời gian duy nhất."
+ },
+ "feat-009-01": {
+  "label": "Phát hiện một mô hình kết hợp bất thường trong hàng chục dòng cảm biến tương quan cùng một lúc.",
+  "why": "Phát hiện đa biến của Azure AI Anomaly Detector gắn cờ các mô hình bất thường kết hợp trên nhiều tín hiệu chuỗi thời gian tương quan cùng một lúc."
+ },
+ "feat-010-00": {
+  "label": "Truy xuất tài liệu theo độ gần của ý nghĩa của chúng thay vì khớp từ khóa chính xác.",
+  "why": "Tìm kiếm vectơ của Azure AI Search truy xuất tài liệu theo độ gần của ý nghĩa của chúng thay vì chồng lấp từ khóa chính xác."
+ },
+ "feat-010-01": {
+  "label": "Chạy một đường dẫn làm giàu AI trích xuất thực thể, cụm từ khóa và văn bản hình ảnh từ nội dung thô trước khi lập chỉ mục.",
+  "why": "Bộ kỹ năng của Azure AI Search chạy một đường dẫn làm giàu AI trích xuất thực thể, cụm từ khóa và văn bản hình ảnh từ nội dung thô trước khi lập chỉ mục."
+ },
+ "feat-010-02": {
+  "label": "Xếp hạng lại kết quả tìm kiếm từ khóa bằng cách sử dụng mô hình ngôn ngữ để đẩy các kết quả trùng khớp có liên quan nhất lên trên cùng.",
+  "why": "Xếp hạng ngữ nghĩa của Azure AI Search sắp xếp lại các kết quả tìm kiếm từ khóa bằng cách sử dụng mô hình ngôn ngữ để hiển thị các kết quả trùng khớp phù hợp nhất trước tiên."
+ },
+ "feat-011-00": {
+  "label": "Xác định và gắn nhãn khuôn mặt của cùng một người ở bất kỳ nơi nào họ xuất hiện lại trong video.",
+  "why": "Phát hiện khuôn mặt của Azure AI Video Indexer xác định và theo dõi khuôn mặt của cùng một người khi họ xuất hiện lại trong video."
+ },
+ "feat-011-01": {
+  "label": "Tạo một bản ghi âm có thể tìm kiếm được được gắn nhãn bằng người nói nào đã nói mỗi dòng.",
+  "why": "Tính năng phiên âm của Azure AI Video Indexer tạo bản ghi âm có thể tìm kiếm được được gắn nhãn bằng người nói nào đã nói mỗi dòng."
+ },
+ "feat-011-02": {
+  "label": "Tự động phát hiện ranh giới cảnh và bắn trong video được tải lên.",
+  "why": "Phát hiện cảnh và bắn của Azure AI Video Indexer tự động đánh dấu ranh giới cảnh và bắn trong video được tải lên."
+ },
+ "feat-012-00": {
+  "label": "Triển khai gpt-4o cho các hoàn thành trò chuyện doanh nghiệp với hạng mục và bộ lọc nội dung của riêng bạn.",
+  "why": "Dịch vụ Azure OpenAI triển khai chat và các mô hình hoàn thành như gpt-4o làm tài nguyên doanh nghiệp với hạng mục và bộ lọc nội dung của riêng bạn."
+ },
+ "feat-012-01": {
+  "label": "Tạo một bộ ảnh sản phẩm duy nhất từ mô tả văn bản.",
+  "why": "Triển khai DALL-E của Dịch vụ Azure OpenAI tạo ảnh mới từ mô tả văn bản."
+ },
+ "feat-012-02": {
+  "label": "Chuyển đổi một lô tài liệu thành vectơ số để tìm kiếm tương tự.",
+  "why": "Các mô hình nhúng của Dịch vụ Azure OpenAI chuyển đổi văn bản thành vectơ số để tìm kiếm tương tự và truy xuất."
+ },
+ "feat-012-03": {
+  "label": "Điều chỉnh giọng điệu và phong cách của mô hình cơ sở bằng cách sử dụng các ví dụ được gắn nhãn của riêng bạn.",
+  "why": "Tinh chỉnh của Dịch vụ Azure OpenAI điều chỉnh giọng điệu và hành vi của mô hình được triển khai bằng cách sử dụng các ví dụ được gắn nhãn của riêng bạn."
+ },
+ "feat-013-00": {
+  "label": "Duyệt và so sánh các mô hình nền tảng từ nhiều nhà cung cấp trong một danh mục trước khi triển khai.",
+  "why": "Danh mục mô hình của Microsoft Foundry cho phép bạn duyệt và so sánh các mô hình nền tảng từ nhiều nhà cung cấp trước khi triển khai."
+ },
+ "feat-013-01": {
+  "label": "Theo dõi, kiểm tra và chấm điểm các biến thể nhắc nhở so với bộ dữ liệu đánh giá trước khi vận chuyển.",
+  "why": "Các công cụ prompt flow và đánh giá của Microsoft Foundry theo dõi, kiểm tra và chấm điểm các biến thể nhắc nhở so với bộ dữ liệu trước khi vận chuyển."
+ },
+ "feat-013-02": {
+  "label": "Gọi vào một dự án Foundry theo chương trình từ Python để quản lý mô hình và agent.",
+  "why": "SDK của Microsoft Foundry hiển thị AIProjectClient để mã có thể kết nối với dự án Foundry và quản lý mô hình và agent theo chương trình."
+ },
+ "feat-014-00": {
+  "label": "Cho phép agent tìm kiếm và trích dẫn các tệp được tải lên của riêng bạn khi trả lời câu hỏi.",
+  "why": "Công cụ tìm kiếm tệp của Dịch vụ Agent Microsoft Foundry cho phép agent tìm kiếm và trích dẫn các tệp được tải lên của riêng bạn khi trả lời."
+ },
+ "feat-014-01": {
+  "label": "Cho phép agent viết và chạy mã trong hộp cát giữa cuộc hội thoại để giải quyết vấn đề dữ liệu hoặc toán học.",
+  "why": "Công cụ bộ thông dịch mã của Dịch vụ Agent Microsoft Foundry cho phép agent viết và chạy mã trong hộp cát giữa cuộc hội thoại để giải quyết vấn đề."
+ },
+ "feat-014-02": {
+  "label": "Cho phép agent gọi các API hoặc hàm bên ngoài của riêng bạn như một phần của lý luận của nó.",
+  "why": "Gọi hàm của Dịch vụ Agent Microsoft Foundry cho phép agent gọi các API hoặc hàm bên ngoài của riêng bạn như một phần của lý luận của nó."
+ },
+ "feat-015-00": {
+  "label": "Tự động thử nhiều thuật toán và siêu tham số để tìm mô hình hiệu năng tốt nhất cho bộ dữ liệu của bạn.",
+  "why": "Automated ML của Azure Machine Learning thử nhiều thuật toán và siêu tham số để tìm mô hình hiệu năng tốt nhất cho bộ dữ liệu của bạn."
+ },
+ "feat-015-01": {
+  "label": "Xây dựng đường dẫn huấn luyện một cách trực quan bằng cách kéo và kết nối các mô-đun, mà không cần mã.",
+  "why": "Designer của Azure Machine Learning xây dựng đường dẫn huấn luyện một cách trực quan bằng cách kéo và kết nối các mô-đun, mà không cần mã."
+ },
+ "feat-015-02": {
+  "label": "Theo dõi các chạy thử nghiệm, đăng ký mô hình và quản lý triển khai thông qua đường dẫn MLOps được quản lý.",
+  "why": "Các đường dẫn và đăng ký mô hình của Azure Machine Learning theo dõi các chạy thử nghiệm, đăng ký mô hình và quản lý triển khai được quản lý."
+ },
+ "features": {
+  "hint": "Kéo mỗi công việc vào khả năng thực hiện nó. Những lộ diễn tên dịch vụ nó thuộc về."
+ }
+}

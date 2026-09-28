@@ -1,0 +1,73 @@
+{
+ "metrics": {
+  "hint": "Metriği kolaylık yerine hata türü ve maliyetinden seç; sınıflandırma, regresyon, erişim, üretim, güvenlik ve insan yargısı farklı kalite sorularını yanıtlar."
+ },
+ "metrics-01": {
+  "label": "Doğru olan tüm tahminlerin kesri; sınıflar ve hata maliyetleri dengeli olduğunda en yararlı.",
+  "why": "100 tahminden 90 doğru için, doğruluk %90'dır. Dengesiz sınıflarda aldatıcı olabilir: nadir hastalık durumlarını negatif olarak tahmin eden bir model, yardıma ihtiyaç duyan hastalıları bulmamazken yüksek doğru görünebilir."
+ },
+ "metrics-02": {
+  "label": "Tahmin edilen tüm pozitifler arasında, gerçekten pozitif olanların kesri.",
+  "why": "Yanlış pozitifler pahalı olduğunda hassasiyeti kullan. 100 işlem dolandırıcılık olarak işaretlenir ve yalnızca 80'i dolandırıcılıksa, hassasiyet %80'dir; kalan 20 gereksiz araştırmalar veya engellenen satın almalar oluşturur."
+ },
+ "metrics-03": {
+  "label": "Gerçek tüm pozitifler arasında, modelin başarıyla bulduğu kesri.",
+  "why": "Gerçek bir pozitifi kaçırmak pahalı olduğunda geri çağrıyı kullan. 100 dolandırıcılık işlemi gerçekleşir ve model 90'ı yakalarsa, geri çağırma %90'dır; diğer 10'u algıdan kurtuldu."
+ },
+ "metrics-04": {
+  "label": "Hassasiyet ve geri çağırmanın harmonik ortalaması, bir değerde her ikisini dengeleyen.",
+  "why": "F1 sadece hassasiyet ve geri çağırma her ikisi de yüksek olduğunda yüksek olur, bu nedenle yanlış alarmlar ve kaçırılan pozitifler önemli olduğunda dengesiz sınıflandırma için yararlıdır. Gerçek negatifleri içermez ve hangi hassasiyetin veya geri çağırmanın daha zayıf olduğunu gizleyebilir."
+ },
+ "metrics-05": {
+  "label": "Gerçek pozitifler, gerçek negatifler, yanlış pozitifler ve yanlış negatifleri sayar.",
+  "why": "Bu tablo bir özet puan tarafından gizli tam hata türlerini ortaya çıkarır. Hassasiyet, geri çağırma veya başka metrik seçmeden önce modelin yanlış alarmlar, gerçek pozitifler oluşturup oluşturmadığını veya her sınıfı doğru şekilde işleyip işlemediğini görmek için dört hücresini oku."
+ },
+ "metrics-06": {
+  "label": "Bir sınıflandırıcının eşikler arasında pozitifler negatiflerinin üzerine nasıl sıralandığını ölçer.",
+  "why": "AUC-ROC, bir sınıflandırma eşiğine bağlanmadan sıralama kalitesini değerlendirir: 1.0 mükemmel sıralama ve yaklaşık 0.5 rastgeledir. Yüksek dengesiz veriler için, ROC sonuçları negatifler baskın olduğunda iyimser görünebileceği için hassasiyet-geri çağırma davranışını da inceleyin."
+ },
+ "metrics-07": {
+  "label": "Tahmin ve gerçek değerler arasındaki ortalama kare farkı; düşük daha iyidir.",
+  "why": "Her kalıntıyı karelemek büyük hataların orantısız olarak katkıda bulunmasını sağlar. 2 ve 10 hataları 4 ve 100 katkıda bulunur, bu nedenle MSE sapan değerleri güçlü bir şekilde cezalandırır; kare birimleri doğrudan açıklamak için az sezgiseldir."
+ },
+ "metrics-08": {
+  "label": "MSE'nin kare kökü, tahmin edilen değerlerin aynı biriminde hatayı ifade ediyor.",
+  "why": "RMSE, MSE'nin büyük hatalar için ekstra cezasını korur ama sonucu hedefin birimine geri dönüştürür. Ev fiyatlarında $5.000'lik bir RMSE, tipik hata ölçeğinin dolar olarak ifade edildiği anlamına gelir, rağmen büyük ıskalama yine de ağır basıyor."
+ },
+ "metrics-09": {
+  "label": "Tahmin edilen ve gerçek sayısal değerler arasındaki ortalama mutlak fark.",
+  "why": "MAE hata büyüklüğünü doğrusal olarak ele alır: 2 ve 10 ıskalama 2 ve 10 katkıda bulunur. MSE veya RMSE'den daha yorumlanması daha kolay ve sapan değerlere daha az duyarlı, her hata biriminin yaklaşık aynı maliyeti olduğunda yararlı."
+ },
+ "metrics-10": {
+  "label": "Bir modelin sonraki belirteç veya sözcüğün olasılığını ne kadar iyi tahmin ettiğini ölçer.",
+  "why": "Düşük kafa karışıklığı, dil modelinin değerlendirme metni tarafından daha az şaşırdığı ve belirtecine daha yüksek olasılık atadığı anlamına gelir. Sonraki belirteç tahmini ölçer, bir yanıtın olgusal, güvenli, yararlı veya yer alımlanmış olup olmadığı değil."
+ },
+ "metrics-11": {
+  "label": "Oluşturulan ve referans metni arasında örtüşmeyi ölçer ve özet için yaygın olarak kullanılır.",
+  "why": "ROUGE yaygın olarak oluşturulan bir özet ne kadar referans sözcüğü kurtardığını ölçer, genellikle sözcükleri, n-gramları veya dizileri eşleştirerek. Yüksek puan hala anlam kaçırabilir veya kopyalanan sözcükleri ödüllendirebilir, bu nedenle anlamsal ve insan değerlendirmesi de gerekli olabilir."
+ },
+ "metrics-12": {
+  "label": "Oluşturulan ve referans metinde n-gramları karşılaştırarak çeviri değerlendirir.",
+  "why": "BLEU, bir veya daha fazla referans çeviriye sahip n-gram örtüşmesini ödüllendirir ve çok kısa çıktılara ceza uygular. Geçerli çeviriler farklı sözcük kullanabilir, bu nedenle BLEU toplam karşılaştırma için en yararlıdır ve tek bir cümlenin doğru olduğunun kanıtı olarak değil."
+ },
+ "metrics-13": {
+  "label": "Oluşturulan iddiaların modele sağlanan bağlam veya kaynaklar tarafından desteklenip desteklenmediğini kontrol eder.",
+  "why": "Bir RAG yanıtı için, her iddianın modele sağlanan alınan pasajlardan ortaya çıkıp çıkmadığını inceleyin. Bir ifade genel olarak doğru olabilir ama yine de sağlanan kanıt onu desteklemiyorsa temelsiz; alıntılar bu kontrolü izlenebilir kılar."
+ },
+ "metrics-14": {
+  "label": "İddiaları sadece metin benzerliği ölçmek yerine güvenilir gerçekle karşılaştırır.",
+  "why": "Bu, destekleyici bir pasaj isteme alınmamış olsa bile iddiaların güvenilir gerçekle anlaşıp anlaşmadığını sorar. Temelsizlikten farklıdır: bir yanıt olgusal olarak doğru olabilir ama bağlamından desteklenmeyen veya kendisi yanlış olan bir kaynakta yer alan."
+ },
+ "metrics-15": {
+  "label": "Erişim özelliğinin döndürülen pasajlar arasında ilgili kanıtı içermesinin ne sıklıkla ölçer.",
+  "why": "100 sorunun bilinen bir kanıt pasajı gerekirse ve erişim 85 için döndürürse, erişim geri çağrısı %85'tir. Düşük erişim geri çağrısı parçalama, gömme, filtreler, sorgu yeniden yazma veya aday sayı sorunlarına işaret eder, çünkü üretim onarılamaz."
+ },
+ "metrics-16": {
+  "label": "Otomatik ölçütlerin kaçırabileceği nitelikleri yargılamak için insanlar ve tanımlanmış bir rübrik kullanır.",
+  "why": "İnsanlar bir tutarlı rübrik karşısında fayda, ton, muhakeme, kültürel uyum ve nüanslı doğruluğu puanlandırabilir. Temsili örnekler, eğitimli birden fazla gözlemci ve anlaşma kontrolleri kullanın çünkü insan yargıları öznel, yavaş ve pahalı olabilir."
+ },
+ "metrics-17": {
+  "label": "Zararlı içerik, mahremiyet sızıntısı, politika ihlalleri ve düşman davranışı için çıktıları test eder.",
+  "why": "Zararlı çıktı, jailbreak başarısı, hassas veri maruziyeti, önyargı ve güvensiz araç eylemleri için sıradan ve düşman isteklerini test et. Sonuçları risk kategorisine ve kullanıcı grubuna göre raporla; bir ortalama kalite puanı bir sistemin güvenli olduğunu gösteremez."
+ }
+}

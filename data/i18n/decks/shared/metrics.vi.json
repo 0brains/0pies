@@ -1,0 +1,73 @@
+{
+ "metrics": {
+  "hint": "Chọn một số liệu từ loại và chi phí lỗi, không phải từ sự tiện lợi; phân loại, hồi quy, truy xuất, thế hệ, an toàn và phán xét của con người trả lời các câu hỏi chất lượng khác nhau."
+ },
+ "metrics-01": {
+  "label": "Phần của tất cả các dự đoán đó là chính xác; hữu ích nhất khi các lớp và chi phí lỗi được cân bằng.",
+  "why": "Đối với 90 dự đoán chính xác trong 100, độ chính xác là 90%. Nó có thể gây hiểu lầm với các lớp không cân bằng: một model dự đoán mỗi trường hợp bệnh hiếm gặp là âm tính có thể trông rất chính xác trong khi không tìm thấy bệnh nhân nào cần giúp đỡ."
+ },
+ "metrics-02": {
+  "label": "Trong tất cả các dương tính được dự đoán, phần của chúng thực sự là tích cực.",
+  "why": "Sử dụng độ chính xác khi dương tính giả rất tốn kém. Nếu 100 giao dịch được gắn cờ là gian lận và chỉ 80 là gian lận, độ chính xác là 80%; 20 còn lại tạo ra cuộc điều tra không cần thiết hoặc mua bị chặn."
+ },
+ "metrics-03": {
+  "label": "Trong tất cả các dương tính thực tế, phần model tìm thấy thành công.",
+  "why": "Sử dụng lại nhớ lại khi bỏ lỡ một dương tính thực sự rất tốn kém. Nếu 100 giao dịch gian lận xảy ra và model bắt được 90, lại nhớ lại là 90%; 10 cái khác là âm tính giả mà thoát phát hiện."
+ },
+ "metrics-04": {
+  "label": "Trung bình điều hòa của độ chính xác và lại nhớ lại, cân bằng cả hai trong một giá trị.",
+  "why": "F1 trở thành cao chỉ khi cả độ chính xác và lại nhớ lại cao, vì vậy nó hữu ích cho phân loại không cân bằng khi cả dương tính giả và dương tính bị bỏ lỡ đều quan trọng. Nó không bao gồm âm tính thực và có thể che giấu độ chính xác hay lại nhớ lại nào yếu hơn."
+ },
+ "metrics-05": {
+  "label": "Đếm dương tính thực, âm tính thực, dương tính giả và âm tính giả.",
+  "why": "Bảng này tiếp lộ các loại lỗi chính xác được ẩn bằng một điểm tóm tắt. Đọc bốn ô của nó để xem model tạo ra dương tính giả, bỏ lỡ dương tính thực hoặc xử lý đúng mỗi lớp trước khi chọn độ chính xác, lại nhớ lại hoặc số liệu khác."
+ },
+ "metrics-06": {
+  "label": "Đo lường cách một bộ phân loại xếp hạng dương tính so với âm tính trên các ngưỡng.",
+  "why": "AUC-ROC đánh giá chất lượng xếp hạng mà không cam kết vào một ngưỡng phân loại: 1,0 là xếp hạng hoàn hảo và khoảng 0,5 là ngẫu nhiên. Đối với dữ liệu rất không cân bằng, cũng kiểm tra hành vi độ chính xác-lại nhớ lại vì kết quả ROC có thể trông lạc quan khi âm tính chiếm ưu thế."
+ },
+ "metrics-07": {
+  "label": "Sự khác biệt bình phương trung bình giữa các giá trị dự đoán và thực tế; thấp hơn tốt hơn.",
+  "why": "Bình phương mỗi phần dư làm cho lỗi lớn góp phần không tương xứng. Lỗi 2 và 10 góp phần 4 và 100, vì vậy MSE hình phạt mạnh mẽ các ngoại lệ; đơn vị bình phương của nó làm cho nó ít trực quan hơn để giải thích trực tiếp."
+ },
+ "metrics-08": {
+  "label": "Căn bậc hai của MSE, thể hiện lỗi trong cùng một đơn vị với các giá trị dự đoán.",
+  "why": "RMSE bảo tồn hình phạt lỗi lớn thêm của MSE nhưng chuyển đổi kết quả quay lại đơn vị mục tiêu. RMSE là $ 5.000 trên giá nhà có nghĩa là quy mô lỗi điển hình được thể hiện bằng đô la, mặc dù các bỏ lỡ lớn vẫn ảnh hưởng nặng nề đến nó."
+ },
+ "metrics-09": {
+  "label": "Sự khác biệt tuyệt đối trung bình giữa các giá trị số dự đoán và thực tế.",
+  "why": "MAE xử lý độ lớn lỗi một cách tuyến tính: bỏ lỡ 2 và 10 góp phần 2 và 10. Nó dễ dàng hơn để diễn giải và ít nhạy cảm với ngoại lệ hơn MSE hoặc RMSE, làm cho nó hữu ích khi mỗi đơn vị lỗi có chi phí tương đối như nhau."
+ },
+ "metrics-10": {
+  "label": "Đo lường cách model dự đoán khả năng của token hoặc từ tiếp theo.",
+  "why": "Thắng lúng độ thấp hơn có nghĩa là model ngôn ngữ ít bị ngạc nhiên bởi văn bản đánh giá và gán xác suất cao hơn cho các token của nó. Nó đo lường dự đoán token tiếp theo, không phải liệu câu trả lời là thực tế, an toàn, hữu ích hay có cơ sở."
+ },
+ "metrics-11": {
+  "label": "Đo lường sự chồng chéo giữa văn bản được tạo và tham chiếu và thường được sử dụng cho các bản tóm tắt.",
+  "why": "ROUGE thường đo lường bao nhiêu từ tham chiếu mà bản tóm tắt được tạo phục hồi, thường thông qua các từ, n-gram hoặc trình tự phù hợp. Một điểm cao vẫn có thể bỏ lỡ ý nghĩa hoặc phần thưởng từ được sao chép, vì vậy đánh giá ngữ nghĩa và của con người cũng có thể cần thiết."
+ },
+ "metrics-12": {
+  "label": "Đánh giá dịch thuật bằng cách so sánh n-gram trong văn bản được tạo và tham chiếu.",
+  "why": "BLEU phần thưởng n-gram chồng chéo với một hoặc nhiều bản dịch tham chiếu và áp dụng hình phạt cho đầu ra quá ngắn. Dịch thuật hợp lệ có thể sử dụng từ ngữ khác, vì vậy BLEU hữu ích nhất để so sánh tổng hợp và không phải bằng chứng rằng một câu là chính xác."
+ },
+ "metrics-13": {
+  "label": "Kiểm tra xem các yêu sách được tạo có được hỗ trợ bởi bối cảnh hoặc nguồn được cung cấp cho model hay không.",
+  "why": "Đối với câu trả lời RAG, kiểm tra xem mỗi yêu sách có tuân theo các bài viết được truy xuất được cung cấp cho model hay không. Một tuyên bố có thể thường đúng nhưng vẫn không có cơ sở nếu bằng chứng được cung cấp không hỗ trợ nó; trích dẫn giúp làm cho kiểm tra này có thể theo dõi."
+ },
+ "metrics-14": {
+  "label": "Kiểm tra yêu sách so với những sự kiện đáng tin cậy chứ không chỉ đo lường sự tương tự về văn bản.",
+  "why": "Điều này hỏi xem các yêu sách có đồng ý với thực tế đáng tin cậy hay không, ngay cả khi không có bài viết hỗ trợ được cung cấp trong lời nhắc. Nó khác với nền tảng: một câu trả lời có thể chính xác về thực tế nhưng không được hỗ trợ bởi bối cảnh được trích dẫn của nó, hoặc có cơ sở trong một nguồn sai."
+ },
+ "metrics-15": {
+  "label": "Đo lường cách thường xuyên người truy xuất bao gồm bằng chứng liên quan trong các bài viết được trả lại.",
+  "why": "Nếu 100 câu hỏi yêu cầu một bài viết bằng chứng đã biết và người truy xuất trả lại 85, lại truy xuất là 85%. Lại truy xuất thấp chỉ đến phân đoạn, nhúng, bộ lọc, viết lại truy vấn hoặc vấn đề số lượng ứng cử viên mà thế hệ không thể sửa chữa."
+ },
+ "metrics-16": {
+  "label": "Sử dụng mọi người và một rubric được xác định để phán xét các phẩm chất mà số liệu tự động có thể bỏ lỡ.",
+  "why": "Mọi người có thể ghi điểm tính hữu ích, tông, suy luận, phù hợp văn hóa và tính chính xác nuanced dựa trên một rubric nhất quán. Sử dụng các mẫu đại diện, nhiều người phê bình được đào tạo và kiểm tra thỏa thuận vì phán xét của con người có thể chủ quan, chậm và tốn kém."
+ },
+ "metrics-17": {
+  "label": "Kiểm tra đầu ra cho nội dung có hại, rò rỉ quyền riêng tư, vi phạm chính sách và hành vi đối kháng.",
+  "why": "Kiểm tra cả lời nhắc thông thường và đối kháng cho đầu ra có hại, thành công jailbreak, tiếp lộ dữ liệu nhạy cảm, bias và tác vụ công cụ không an toàn. Báo cáo kết quả theo danh mục rủi ro và nhóm người dùng; một điểm chất lượng trung bình không thể chứng minh rằng một hệ thống là an toàn."
+ }
+}

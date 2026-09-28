@@ -1,0 +1,84 @@
+{
+ "ag-001": {
+  "label": "\"Jesteś uprzejmym agentem wsparcia; eskaluj wszystko dotyczące zwrotów\" — ustawione raz przy tworzeniu agenta",
+  "why": "Pole instrukcji definiuje trwałe zachowanie w momencie tworzenia — najważniejszy koncept agenta w materiale edukacyjnym, odmienny od stanu czatu w trakcie działania."
+ },
+ "ag-002": {
+  "label": "Pozwól agentowi na wywoływanie funkcji lub API do wykonywania działań",
+  "why": "Function calling / tools pozwalają modelowi działać poza tekstem — zdolność, która odróżnia agenta od zwykłego wywołania czatu."
+ },
+ "ag-003": {
+  "label": "Wdrażany gpt-4o, którym agent rozumuje — przywoływany przez jego nazwę wdrożenia",
+  "why": "Agent = model + instrukcje + narzędzia; model to wdrożenie, a {\"deployment\":{\"model\":AGENT_NAME}} to kanoniczny błędna odpowiedź."
+ },
+ "ag-004": {
+  "label": "Pliki ugruntowujące i źródła danych, które agent może przeszukiwać, aby odpowiadać na podstawie Twoich treści",
+  "why": "Wiedza przyłącza Twoje dane do agenta, aby odpowiedzi były ugruntowane w nich — część anatomii agenta, którą przewodnik do nauki wymienia w Zadaniu 2.1."
+ },
+ "ag-005": {
+  "label": "Zawiera wiadomości użytkownika i asystenta jednej trwającej rozmowy w trakcie działania",
+  "why": "Wątki/rozmowy przechowują stan czatu w trakcie działania — tworzone dla sesji przez aplikację klienta, nie w momencie definiowania agenta."
+ },
+ "ag-006": {
+  "label": "Wywołanie, które przetwarza rozmowę i generuje następne dane wyjściowe agenta",
+  "why": "Uruchomienie (openai.responses.create / create run) wykonuje agenta przeciwko wątkowi — trzecia odrębna warstwa: definicja vs sesja vs wywołanie."
+ },
+ "ag-007": {
+  "label": "Tekst personas w języku naturalnym dostarczany wewnątrz PromptAgentDefinition obok nazwy modelu, gdy agent jest po raz pierwszy zdefiniowany w kodzie",
+  "why": "PromptAgentDefinition(model=MODEL_NAME, instructions=...) ustawia oba pola w momencie definiowania, ale tylko tekst personas określa zachowanie agenta — nazwa modelu obok niego to osobny komponent."
+ },
+ "ag-008": {
+  "label": "Formatuj każdą odpowiedź jako numerowaną listę ograniczoną do pięciu pozycji — ustalone przy tworzeniu, nie wybierane dla każdego pytania",
+  "why": "Stała reguła formatowania wbudowana w momencie tworzenia to zachowanie, nie akcja zewnętrzna — nie wywołuje nic poza tekstem, co odróżnia ją od Narzędzi."
+ },
+ "ag-009": {
+  "label": "Zamiana aparatu wnioskowania z gpt-4o-mini na gpt-5-mini bez dotykania personas agenta ani jego dołączonych narzędzi",
+  "why": "Zmienia się tylko wdrażany aparat wnioskowania; personas i okablowanie narzędzi pozostają stałe — czysty test tego, czy wdrożenie to odrębna warstwa od innych komponentów agenta."
+ },
+ "ag-010": {
+  "label": "Identyfikator wdrożenia przekazany wewnątrz PromptAgentDefinition obok tekstu personas, gdy agent jest po raz pierwszy zdefiniowany w kodzie",
+  "why": "Takie samo wywołanie PromptAgentDefinition() jak tekst personas, ale ten parametr nazwie, który wdrażany silnik agent wywołuje — odniesienie wdrożenia, nie samo zachowanie."
+ },
+ "ag-011": {
+  "label": "Włącz wyszukiwanie w sieci Web, aby agent mógł pobierać bieżące informacje wykraczające poza dane z treningu",
+  "why": "Wyszukiwanie sieciowe jest włączane z katalogu narzędzi portalu Foundry (Build > Tools) obok interpretera kodu i wyszukiwania plików — bieżąca zdolność zewnętrzna, a nie zawartość statyczna."
+ },
+ "ag-012": {
+  "label": "Pozwól agentowi na uruchamianie wygenerowanego kodu, aby obliczyć wynik zamiast po prostu opisywać kroki obliczenia",
+  "why": "Wykonywanie kodu to jedna z możliwości katalogowych, obok wyszukiwania sieciowego i wyszukiwania plików, która pozwala agentowi działać poza wytwarzaniem tekstu — silnik wnioskowania nigdy nie wykonuje kodu bezpośrednio."
+ },
+ "ag-013": {
+  "label": "Podłącz istniejący indeks Azure AI Search, aby odpowiedzi agenta powoływały się na indeksowaną zawartość zamiast zgadywać",
+  "why": "Dołączony indeks wyszukiwania to statyczna zawartość, którą agent pobiera, aby ugruntować odpowiedzi — odrębne od narzędzia takiego jak wyszukiwanie sieciowe, które dochodzi do żywej zdolności zewnętrznej zamiast Twoich danych."
+ },
+ "ag-014": {
+  "label": "Dodaj dokumenty polityki firmy, aby agent mógł je przeszukiwać — skonfigurowane w playground Agents obok tekstu personas i dołączonych narzędzi — przed testowaniem zachowania wieloturowego",
+  "why": "Playground Agents konfiguruje trzy odrębne powierzchnie obok siebie — personas, narzędzia i dołączone dokumenty — i ta karta to dołączona zawartość: dane, na których agent ugruntowuje odpowiedzi, nie akcja, którą wykonuje."
+ },
+ "ag-015": {
+  "label": "openai.conversations.create() wywołany przez aplikację klienta przed wysłaniem pierwszej tury do agenta",
+  "why": "Tworzenie obiektu rozmowy odbywa się przed wysłaniem jakiejkolwiek wiadomości — otwiera kontener czasu wykonywania, w którym później tury się zapisuje, odrębnie od wywołania, które faktycznie generuje odpowiedź."
+ },
+ "ag-016": {
+  "label": "Pojedyncza nieprzerwalona oś czasu tur, która pozwala agentowi odwoływać się do czegoś, co użytkownik powiedział trzy pytania temu, bez konieczności ręcznego ponownego wysyłania tych wiadomości za każdym razem",
+  "why": "Zgromadzona historia czatu w trakcie działania to stan sesji, nie zachowanie agenta — rośnie dla każdej rozmowy, w przeciwieństwie do reguł personas ustalonych raz w momencie definiowania."
+ },
+ "ag-017": {
+  "label": "openai.responses.create() to wywołanie, które faktycznie wysyła najnowszą wiadomość użytkownika i zwraca odpowiedź agenta",
+  "why": "To jest krok wywołania — to, co faktycznie przetwarza rozmowę i generuje wyjście, odrębnie od openai.conversations.create(), które tylko otwiera kontener, w którym żyją wiadomości."
+ },
+ "ag-018": {
+  "label": "Parametr extra_body={\"agent_reference\": {...}} wewnątrz tego samego wywołania, który mówi systemowi, którą definicję agenta wykonać przeciwko rozmowie",
+  "why": "agent_reference to metadane dla każdego wywołania na wywołaniu responses.create(), a nie stała właściwość agenta — egzamin wyraźnie wyciąga to rozróżnienie proti nazwie wdrożenia wbudowanej w definicji samego agenta."
+ },
+ "agent-anatomy": {
+  "hint": "Pytaj, do której warstwy należy zadanie: ustalone przy tworzeniu (instrukcje), sam aparat wnioskowania (model), działanie poza tekstem (narzędzia), dołączona zawartość do ugruntowywania odpowiedzi (wiedza), stan jednej rozmowy (wątek) czy pojedyncze wywołanie, które generuje wyjście (uruchomienie).",
+  "note": "Zarówno instrukcje jak i narzędzia są konfigurowane w momencie projektowania — rozstrzygacz to czy karta jest regułą zachowania (instrukcje) czy zdolnością zewnętrzną, którą agent wywołuje (narzędzia). Wątek i uruchomienie żyją w trakcie działania — rozstrzygacz to czy karta to kontener przechowujący wiadomości (wątek) czy wywołanie, które generuje następną wiadomość (uruchomienie).",
+  "zones[0].def": "Trwałe zachowanie, personas i reguły ustawione przy definiowaniu agenta — nie wybierane dla każdej rozmowy.",
+  "zones[1].def": "Wdrażany model — przywoływany przez nazwę wdrożenia — którym agent rozumuje.",
+  "zones[2].def": "Funkcje, interfejsy API i inne działania, które agent może wywoływać poza generowaniem tekstu.",
+  "zones[3].def": "Pliki, indeksy i inne źródła danych, które agent może przeszukiwać, aby ugruntować jego odpowiedzi.",
+  "zones[4].def": "Historia wiadomości czatu czasu wykonywania jednej trwającej rozmowy, tworzona dla sesji.",
+  "zones[5].def": "Wywołanie, które wykonuje agenta względem wątku i generuje jego następne wyjście."
+ }
+}

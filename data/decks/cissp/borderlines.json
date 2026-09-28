@@ -1,0 +1,223 @@
+{
+  "id": "borderlines",
+  "schemaVersion": 1,
+  "title": "Borderlines",
+  "blurb": "Drop each legal instrument onto the regime that wields it, then read what actually restricts the data crossing that border.",
+  "source": "Chapple CISSP SG 10ed ch.4 · outline 1.4 (legal, regulatory, and compliance issues; transborder data flow; privacy law)",
+  "asOf": "2026-08-11",
+  "map": {
+    "id": "bdl-map-transfers",
+    "title": "Borderlines",
+    "asOf": "2026-08-11",
+    "prompt": "Match each instrument to the regime that enforces it — then read what it really does to data crossing that border.",
+    "note": "Markers sit at the real coordinates of each regime's seat or geographic center, projected onto a Miller-style world map; labels in dense regions are nudged clear of their marker. Instruments, transfer rules and effective dates are authored from Chapple CISSP SG 10ed ch.4 and the Moore Domain 1 objective notes.",
+    "legend": [
+      {"key": "comprehensive", "label": "Omnibus privacy law with transfer restrictions"},
+      {"key": "sectoral", "label": "Sector-by-sector or state-level rules"},
+      {"key": "voluntary", "label": "Voluntary principles or export-control arrangement"},
+      {"key": "treaty", "label": "Adequacy corridor or multilateral agreement"}
+    ],
+    "jurisdictions": [
+      {
+        "id": "bdl-eu",
+        "name": "European Union",
+        "coverage": "comprehensive",
+        "instruments": ["GDPR", "Adequacy decisions", "Standard Contractual Clauses", "Binding Corporate Rules"],
+        "effective": "2018-05-25",
+        "obligations": [
+          "One harmonized regime across every member state, replacing the older Data Protection Directive",
+          "Reaches any organization anywhere that processes the personal data of people in the EU",
+          "Personal data may leave only toward an adequacy-listed destination or under approved safeguards such as SCCs or Binding Corporate Rules",
+          "A discovered breach must be reported to the supervising authority inside 72 hours"
+        ],
+        "tell": "The regime that exports its own rulebook: lawful transfer runs through an adequacy finding or contract-grade safeguards, and the obligation follows the person the data describes, not the server it sits on.",
+        "citation": "SG ch.4 · outline 1.4",
+        "lat": 50.85,
+        "lon": 4.35,
+        "short": "EU",
+        "labelDx": -3.5,
+        "labelDy": -3.0
+      },
+      {
+        "id": "bdl-us",
+        "name": "United States (federal)",
+        "coverage": "sectoral",
+        "instruments": ["CLOUD Act", "HIPAA", "GLBA", "COPPA"],
+        "effective": "sectoral statutes from 1974 onward; CLOUD Act 2018",
+        "obligations": [
+          "No single omnibus federal privacy statute — protection attaches by sector: health records, financial customers, children online",
+          "US providers can be compelled to hand over data they control regardless of which country physically stores it",
+          "Bilateral executive agreements give partner governments reciprocal access, with a mechanism for providers to challenge an order",
+          "Breach duties arrive piecemeal through sector rules and state notification laws rather than one national trigger"
+        ],
+        "tell": "A patchwork keyed to industry rather than to the individual — and its law-enforcement reach statute follows the provider across borders, which is the opposite direction from a data-localization rule.",
+        "citation": "SG ch.4 · outline 1.4",
+        "lat": 39.0,
+        "lon": -98.0,
+        "short": "US",
+        "labelDx": 0,
+        "labelDy": -3.2
+      },
+      {
+        "id": "bdl-ca-state",
+        "name": "California",
+        "coverage": "sectoral",
+        "instruments": ["CCPA"],
+        "effective": "2020-01-01",
+        "obligations": [
+          "Binds for-profit businesses over the revenue or data-volume thresholds; nonprofits and government agencies sit outside it",
+          "Residents can know, delete, correct, opt out of sale or sharing, limit use of sensitive data, and demand equal treatment",
+          "Duties flow down to service providers and contractors through their processing agreements",
+          "One state's consumer statute doing national work, because out-of-state businesses meet its thresholds"
+        ],
+        "tell": "A single US state reaching past its border through revenue and volume thresholds — the strongest evidence that the US answer to privacy is a patchwork, not an omnibus law.",
+        "citation": "SG ch.4 · outline 1.4",
+        "lat": 36.6,
+        "lon": -119.7,
+        "short": "California",
+        "labelDx": -2.0,
+        "labelDy": 3.5
+      },
+      {
+        "id": "bdl-cn",
+        "name": "China",
+        "coverage": "comprehensive",
+        "instruments": ["PIPL"],
+        "effective": "2021-11-01",
+        "obligations": [
+          "Explicit consent for processing and aggregation, withdrawable by the individual",
+          "Collection limited to what the stated purpose genuinely needs",
+          "Individuals hold access, correction, deletion and breach-notice rights",
+          "Outbound transfers are restricted: personal data leaves the country only after state-set conditions are satisfied"
+        ],
+        "tell": "GDPR-shaped on consent and rights, but its transfer chapter points inward — the state gates the exit, which is localization pressure rather than an adequacy bridge.",
+        "citation": "SG ch.4 · outline 1.4",
+        "lat": 35.0,
+        "lon": 103.0,
+        "short": "China",
+        "labelDx": 0,
+        "labelDy": -3.0
+      },
+      {
+        "id": "bdl-za",
+        "name": "South Africa",
+        "coverage": "comprehensive",
+        "instruments": ["POPIA"],
+        "effective": "2021-07-01",
+        "obligations": [
+          "Eight named conditions for lawful processing, from accountability through limits on further processing",
+          "Consent from the data subject, or a parent or guardian where the subject is a child",
+          "Tight handling rules for special categories such as race, religion, union membership and political life",
+          "Cross-border transfer allowed only where the receiving country's protection resembles its own; the Information Regulator enforces"
+        ],
+        "tell": "Eight enumerated conditions and a dedicated regulator — its border test asks whether the destination's law looks like its own, a similar-protection rule rather than a contract mechanism.",
+        "citation": "SG ch.4 · outline 1.4",
+        "lat": -30.0,
+        "lon": 25.0,
+        "short": "South Africa",
+        "labelDx": 0,
+        "labelDy": 3.5
+      },
+      {
+        "id": "bdl-can",
+        "name": "Canada",
+        "coverage": "comprehensive",
+        "instruments": ["PIPEDA"],
+        "effective": "2001-01-01, fully in force 2004",
+        "obligations": [
+          "Federal statute governing how private-sector organizations handle personal information in commercial activity",
+          "The collecting organization stays answerable for the data even after handing it to a processor elsewhere",
+          "Consent, purpose and safeguard duties travel with the information through the transfer"
+        ],
+        "tell": "The commercial-activity statute where accountability is sticky: outsourcing the processing never outsources the responsibility, wherever the processor sits.",
+        "citation": "SG ch.4 · outline 1.4",
+        "lat": 56.0,
+        "lon": -106.0,
+        "short": "Canada",
+        "labelDx": 0,
+        "labelDy": -3.2
+      },
+      {
+        "id": "bdl-dpf",
+        "name": "EU–US corridor",
+        "coverage": "treaty",
+        "instruments": ["EU-US Data Privacy Framework"],
+        "effective": "2023-07 (adequacy adopted)",
+        "obligations": [
+          "Third attempt at an adequacy bridge for EU-to-US flows: Safe Harbor came first, then Privacy Shield",
+          "Privacy Shield was struck down by the EU's top court in the Schrems II ruling of July 2020",
+          "US companies self-certify to the framework; only certified recipients enjoy the adequacy basis",
+          "Without a bridge like this, EU personal data heading to the US needs SCCs or another safeguard case by case"
+        ],
+        "tell": "The corridor that keeps dying in court — Safe Harbor fell, Privacy Shield fell to Schrems II, and this framework is the current adequacy bridge holding EU-to-US flows open.",
+        "citation": "SG ch.4 · outline 1.4",
+        "lat": 45.0,
+        "lon": -35.0,
+        "short": "EU-US DPF",
+        "labelDx": 0,
+        "labelDy": 3.5
+      },
+      {
+        "id": "bdl-oecd",
+        "name": "OECD",
+        "coverage": "voluntary",
+        "instruments": ["OECD Privacy Guidelines"],
+        "effective": "1980, revised 2013",
+        "obligations": [
+          "Eight principles, running from limits on collection and fidelity to stated purpose through safeguards, openness, individual participation and accountability",
+          "Urges members not to raise unjustified obstacles to transborder data flows",
+          "No enforcement arm — the principles bind only as far as members legislate them"
+        ],
+        "tell": "Principles, not penalties: the eight-point vocabulary most national privacy laws later borrowed, paired with an explicit plea to keep data moving across borders.",
+        "citation": "SG ch.4 · outline 1.4",
+        "lat": 48.86,
+        "lon": 2.35,
+        "short": "OECD",
+        "labelDx": -4.0,
+        "labelDy": 3.0
+      },
+      {
+        "id": "bdl-wassenaar",
+        "name": "Wassenaar Arrangement states",
+        "coverage": "voluntary",
+        "instruments": ["Wassenaar Arrangement"],
+        "effective": "1996",
+        "obligations": [
+          "Multinational, voluntary export-control regime for conventional arms and dual-use technology, cryptography included",
+          "Each participating state implements the control lists through its own national export law",
+          "Nothing in it protects personal data — it polices the technology itself crossing the border"
+        ],
+        "tell": "Not a privacy instrument at all: it controls what crosses the border when the export is the technology — and only as strongly as each member writes it into national law.",
+        "citation": "SG ch.4 · outline 1.4",
+        "lat": 48.21,
+        "lon": 16.37,
+        "short": "Wassenaar",
+        "labelDx": -4.5,
+        "labelDy": -2.5
+      },
+      {
+        "id": "bdl-coe",
+        "name": "Council of Europe signatories",
+        "coverage": "treaty",
+        "instruments": ["Convention on Cybercrime"],
+        "effective": "2004-07-01",
+        "obligations": [
+          "The Budapest treaty: signatory states harmonize their computer-crime offences",
+          "Creates cross-border cooperation channels for investigations and evidence",
+          "Binds the governments that sign it, not the companies operating under them"
+        ],
+        "tell": "A treaty about prosecutions rather than privacy — it moves offences and evidence across borders by obligating governments to cooperate, and never binds a company directly.",
+        "citation": "SG ch.4 · outline 1.4",
+        "lat": 47.5,
+        "lon": 19.05,
+        "short": "Budapest Conv.",
+        "labelDx": 4.5,
+        "labelDy": 2.5
+      }
+    ],
+    "projection": {
+      "type": "miller-fit",
+      "note": "x/y are derived at build time from lat/lon by the knowledge module's prepare() step; the board renders on the shared tools/templates/world-map-paths.svg asset that build_lab.py inlines for any lab with an aigpMap game."
+    }
+  }
+}

@@ -1,0 +1,233 @@
+{
+ "id": "sc-500",
+ "title": "SC-500",
+ "subtitle": "Microsoft SC-500 · end-to-end security controls for cloud and AI workloads",
+ "output": "SC-500.html",
+ "storageKey": "sc500.2026.progress.v1",
+ "allLabel": "All four domains",
+ "untranslated": true,
+ "release": "beta",
+ "releaseNote": "beta.1 — 17 games across the April-2026 outline. No quiz: the sim commits capital before it asks anything, and every board is a sort, not a stem.",
+ "studyContext": "I am studying for the Microsoft SC-500 exam, Implementing End-to-End Security Controls for Cloud and AI Workloads (outline effective 2026-04-26).",
+ "citeInstruction": "Cite the SC-500 exam outline domain and area (for example \"Area 3.1 — implement security for AI\") and, where relevant, the Microsoft Learn documentation page the control is described on.",
+ "sources": [
+  "private:sc-500/question-bank",
+  "private:sc-500/docs",
+  "private:sc-500/gapfill-docs"
+ ],
+ "outline": "data/outlines/sc-500.json",
+ "filters": [
+  { "id": "1", "label": "Identity" },
+  { "id": "2", "label": "Data & Network" },
+  { "id": "3", "label": "Compute & AI" },
+  { "id": "4", "label": "Posture" }
+ ],
+ "groups": [
+  {
+   "id": "sim",
+   "label": "Watch Floor",
+   "blurb": "The flagship simulation — the whole outline played under pressure instead of quizzed."
+  },
+  { "id": "d1", "label": "Domain 1 · Identity, Access & Governance" },
+  { "id": "d2", "label": "Domain 2 · Storage, Databases & Networking" },
+  { "id": "d3", "label": "Domain 3 · Secure Compute & AI" },
+  { "id": "d4", "label": "Domain 4 · Posture & Monitoring" }
+ ],
+ "games": [
+  {
+   "id": "watch-floor",
+   "group": "sim",
+   "rung": "Sim",
+   "runner": "opsCampaign",
+   "deck": "decks/sc500/watch-floor.json",
+   "areas": {
+    "1.1": 0.0793, "1.2": 0.0789, "1.3": 0.0789,
+    "2.1": 0.0965, "2.2": 0.0965, "2.3": 0.0965,
+    "3.1": 0.0789, "3.2": 0.0789, "3.3": 0.0789,
+    "4.1": 0.0789, "4.2": 0.0789, "4.3": 0.0789
+   },
+   "title": "The Watch Floor",
+   "blurb": "Fifteen turns, twelve desks, never enough budget. Spend to hold a desk before you know what it will ask, and contain what gets through."
+  },
+
+  {
+   "id": "entra-access",
+   "group": "d1",
+   "rung": "Learn",
+   "runner": "board",
+   "areaOverride": "1",
+   "deck": "decks/sc500/entra-access.json",
+   "areas": { "1.1": 1.0 },
+   "title": "Who Gets In",
+   "blurb": "Sort access scenes to the Entra control that actually solves them — PIM, Conditional Access, an authentication method, or a workload identity."
+  },
+  {
+   "id": "conditional-access-pairs",
+   "group": "d1",
+   "rung": "Contrast",
+   "runner": "pairs",
+   "areaOverride": "1",
+   "deck": "decks/sc500/conditional-access-pairs.json",
+   "areas": { "1.1": 1.0 },
+   "title": "One Condition Apart",
+   "blurb": "Two policies, one variable flipped, two very different blast radii. Tell them apart before a tenant does it for you."
+  },
+  {
+   "id": "key-vault-custody",
+   "group": "d1",
+   "rung": "Learn",
+   "runner": "board",
+   "areaOverride": "1",
+   "deck": "decks/sc500/key-vault-custody.json",
+   "areas": { "1.2": 1.0 },
+   "title": "Chain of Custody",
+   "blurb": "Keys, secrets, certificates and the managed identities that reach them — sort each scene to the custody control it needs."
+  },
+  {
+   "id": "governance-controls",
+   "group": "d1",
+   "rung": "Learn",
+   "runner": "board",
+   "areaOverride": "1",
+   "deck": "decks/sc500/governance-controls.json",
+   "areas": { "1.3": 1.0 },
+   "title": "Make It Stick",
+   "blurb": "A rule nobody enforces is a suggestion. Sort each governance need to the mechanism that makes it binding."
+  },
+
+  {
+   "id": "storage-exposure",
+   "group": "d2",
+   "rung": "Learn",
+   "runner": "board",
+   "areaOverride": "2",
+   "deck": "decks/sc500/storage-exposure.json",
+   "areas": { "2.1": 1.0 },
+   "title": "Left Open",
+   "blurb": "Every storage account leaks a different way. Sort the exposure to the control that closes it."
+  },
+  {
+   "id": "database-guardrails",
+   "group": "d2",
+   "rung": "Contrast",
+   "runner": "pairs",
+   "areaOverride": "2",
+   "deck": "decks/sc500/database-guardrails.json",
+   "areas": { "2.2": 1.0 },
+   "title": "Near Misses",
+   "blurb": "Database controls that sound interchangeable and are not — one variable apart, two different outcomes."
+  },
+  {
+   "id": "network-perimeter",
+   "group": "d2",
+   "rung": "Learn",
+   "runner": "board",
+   "areaOverride": "2",
+   "deck": "decks/sc500/network-perimeter.json",
+   "areas": { "2.3": 1.0 },
+   "title": "Hold the Edge",
+   "blurb": "Firewall, WAF, DDoS, private link, NSG. Sort each traffic problem to the service that is actually built for it."
+  },
+
+  {
+   "id": "agent-id-control",
+   "group": "d3",
+   "rung": "Learn",
+   "runner": "board",
+   "areaOverride": "3",
+   "deck": "decks/sc500/agent-id-control.json",
+   "areas": { "3.1": 1.0 },
+   "title": "Blast Radius",
+   "blurb": "Agents have identities now, and identities have reach. Sort each AI exposure to the surface that governs it."
+  },
+  {
+   "id": "ai-guardrails-pairs",
+   "group": "d3",
+   "rung": "Contrast",
+   "runner": "pairs",
+   "areaOverride": "3",
+   "deck": "decks/sc500/ai-guardrails-pairs.json",
+   "areas": { "3.1": 1.0 },
+   "title": "Guardrail or Gate",
+   "blurb": "Foundry guardrails, AI Gateway policies and Defender for AI overlap in the brochure and not in the portal."
+  },
+  {
+   "id": "server-hardening",
+   "group": "d3",
+   "rung": "Learn",
+   "runner": "board",
+   "areaOverride": "3",
+   "deck": "decks/sc500/server-hardening.json",
+   "areas": { "3.2": 1.0 },
+   "title": "Harden the Host",
+   "blurb": "Sort each server and VM weakness to the control that removes it rather than the one that merely reports it."
+  },
+  {
+   "id": "app-platform-defense",
+   "group": "d3",
+   "rung": "Learn",
+   "runner": "board",
+   "areaOverride": "3",
+   "deck": "decks/sc500/app-platform-defense.json",
+   "areas": { "3.3": 1.0 },
+   "title": "Platform Rules",
+   "blurb": "Containers, App Service, Functions and AKS each fail differently. Sort the scene to the platform control that fits."
+  },
+
+  {
+   "id": "posture-triage",
+   "group": "d4",
+   "rung": "Learn",
+   "runner": "board",
+   "areaOverride": "4",
+   "deck": "decks/sc500/posture-triage.json",
+   "areas": { "4.1": 1.0 },
+   "title": "Score and Sort",
+   "blurb": "Defender for Cloud tells you everything at once. Sort each finding to what it actually is — recommendation, attack path, alert, or governance rule."
+  },
+  {
+   "id": "sentinel-collection",
+   "group": "d4",
+   "rung": "Learn",
+   "runner": "board",
+   "areaOverride": "4",
+   "deck": "decks/sc500/sentinel-collection.json",
+   "areas": { "4.2": 1.0 },
+   "title": "Get the Signal In",
+   "blurb": "Connectors, collection rules, normalization and retention — sort each ingestion problem to the Sentinel mechanism that solves it."
+  },
+  {
+   "id": "sentinel-pairs",
+   "group": "d4",
+   "rung": "Contrast",
+   "runner": "pairs",
+   "areaOverride": "4",
+   "deck": "decks/sc500/sentinel-pairs.json",
+   "areas": { "4.2": 1.0 },
+   "title": "Two Tables Apart",
+   "blurb": "Analytics rule or hunting query, table or basic log, UEBA or anomaly. Flip one variable and the cost changes with the answer."
+  },
+  {
+   "id": "security-copilot",
+   "group": "d4",
+   "rung": "Learn",
+   "runner": "board",
+   "areaOverride": "4",
+   "deck": "decks/sc500/security-copilot.json",
+   "areas": { "4.3": 1.0 },
+   "title": "Ask It Properly",
+   "blurb": "Plugins, promptbooks, compute units and the embedded experiences — sort each need to the Security Copilot surface that serves it."
+  },
+  {
+   "id": "incident-ladders",
+   "group": "d4",
+   "rung": "Apply",
+   "runner": "ladders",
+   "areaOverride": "4",
+   "deck": "decks/sc500/incident-ladders.json",
+   "areas": { "4.2": 1.0 },
+   "title": "In Order",
+   "blurb": "Reconstruct the response sequences — onboarding a connector, running down an incident, tuning a noisy rule. Unscored practice."
+  }
+ ]
+}

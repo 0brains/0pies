@@ -1,0 +1,132 @@
+{
+ "rai-001": {
+  "label": "A loan-approval model rejects far more applicants from one neighborhood",
+  "why": "Biased outcomes across demographic groups is the canonical fairness scenario — mitigated with fairness assessments and balanced, representative training data."
+ },
+ "rai-002": {
+  "label": "A chatbot must refuse harmful content and stay stable when users submit risky prompts",
+  "why": "Consistent, tested behavior and reduced unsafe outputs under adversarial input is reliability & safety; content filters and model evaluation are its Azure levers."
+ },
+ "rai-003": {
+  "label": "Provide captions for audio and multilingual support so everyone can use the assistant",
+  "why": "Usable and accessible to all people via multiple interaction methods is inclusiveness — the exam's trap 'require one interaction method for all users' is its opposite."
+ },
+ "rai-004": {
+  "label": "Keep a reviewable record of what the AI did and who signed off on its decisions",
+  "why": "Human oversight, governance and clear ownership of outcomes — audit logs and abuse monitoring — is accountability, not transparency (which is disclosure)."
+ },
+ "rai-005": {
+  "label": "Model cards published for every deployed model, stating capabilities and limitations",
+  "why": "Communicating what a system can AND cannot do is transparency; model cards are the Azure feature histack maps to it. Hiding limitations violates the principle."
+ },
+ "rai-006": {
+  "label": "Managed identities and private endpoints so customer PII never leaks into responses or logs",
+  "why": "Data protection, PII governance and access control map to privacy & security — managed identities and private endpoints are the mapped Azure features."
+ },
+ "rai-007": {
+  "label": "A recruiting model consistently scores candidates from one age group lower than others, even when their qualifications are comparable",
+  "why": "Unequal scoring by a protected attribute despite equal qualifications is a differential-outcome problem, not an access problem — that makes it fairness, not inclusiveness."
+ },
+ "rai-008": {
+  "label": "A facial-recognition model trained on a dataset with far fewer images of one ethnic group produces a much higher error rate for that group",
+  "why": "Underrepresentation in training data driving a systematic accuracy gap between groups is a fairness issue — no data is exposed, so it is not privacy & security."
+ },
+ "rai-009": {
+  "label": "A hiring tool ranks candidates from certain universities lower regardless of their actual qualifications, systematically disadvantaging one applicant pool",
+  "why": "A proxy variable (university) producing a consistent disadvantage for one group of applicants is fairness, even though no demographic attribute is used directly."
+ },
+ "rai-010": {
+  "label": "Compare the model's error rate and approval rate side by side across demographic groups before it ships",
+  "why": "Fairness assessments are the Azure-lever card for fairness — distinct from content filters (reliability & safety) or audit logs (accountability)."
+ },
+ "rai-011": {
+  "label": "A moderation pipeline sometimes misses harmful content and occasionally blocks content that is actually safe",
+  "why": "Inconsistent detection quality under normal operating conditions is a performance problem, not a data-exposure or disclosure one — that is reliability & safety."
+ },
+ "rai-012": {
+  "label": "An AI tool that summarizes medical notes for clinicians must behave predictably even on unusual or edge-case input, since clinical decisions depend on it",
+  "why": "High-stakes, predictable behavior under unexpected input is the reliability & safety concern — the risk here is the system malfunctioning, not who it treats unfairly."
+ },
+ "rai-013": {
+  "label": "A team tests how an AI system behaves under unexpected or adversarial conditions before releasing it, checking that it degrades safely rather than failing unpredictably",
+  "why": "Pre-release testing against adversarial and edge-case conditions is the direct definition of reliability & safety, distinct from accountability's post-hoc oversight."
+ },
+ "rai-014": {
+  "label": "Configure content filters and run automated red-team evaluations on a deployed model to catch harmful or low-quality outputs before real users see them",
+  "why": "Content filters and automated evaluation are the Azure lever mapped to reliability & safety, not accountability — accountability is about who signs off, not what the model outputs."
+ },
+ "rai-015": {
+  "label": "A customer-support chatbot may receive account numbers and other personal data typed directly into user prompts",
+  "why": "Personal data flowing through prompts is a data-exposure risk, mitigated by redaction and access control — the defining concern of privacy & security."
+ },
+ "rai-016": {
+  "label": "An AI assistant processes employee HR documents, and the team must reduce the risk that this data leaks to unauthorized parties",
+  "why": "Restricting who can access sensitive stored data is privacy & security, not accountability — accountability is about ownership of decisions, not access control."
+ },
+ "rai-017": {
+  "label": "A school plans to release an AI tutor that processes private student conversations and must review how that data is stored and protected before broad rollout",
+  "why": "Reviewing storage and protection of personal conversation data before release is a privacy & security review, distinct from a transparency review of disclosed capabilities."
+ },
+ "rai-018": {
+  "label": "An AI application is configured to collect and retain only the specific conversation fields it actually needs, deleting the rest after a fixed retention window",
+  "why": "Data minimization and retention limits reduce how much personal data exists to be exposed in the first place — a distinct privacy & security lever from access-control mechanisms like managed identities."
+ },
+ "rai-019": {
+  "label": "An AI help desk is built for a global workforce and needs to work well for people speaking different languages and using different devices",
+  "why": "Designing for a range of languages and devices so everyone can use the system is inclusiveness — the concern is who can access the system, not who it scores differently."
+ },
+ "rai-020": {
+  "label": "A translation assistant assumes all users can hear audio responses clearly, ignoring people with hearing impairments",
+  "why": "An accessible-design gap that shuts out users with a disability is inclusiveness, not fairness — fairness is about differential model outcomes across groups, not usable design."
+ },
+ "rai-021": {
+  "label": "An AI kiosk must work as well in a noisy factory floor as in a quiet office, since some users cannot rely on voice input alone in either setting",
+  "why": "Supporting varied physical environments and interaction needs so the kiosk stays usable for everyone is inclusiveness."
+ },
+ "rai-022": {
+  "label": "A voice-enabled AI app is improved so it works better for people with different accents, physical abilities, and interaction needs",
+  "why": "Widening who the system serves well, across accents and abilities, is the direct definition of inclusiveness."
+ },
+ "rai-023": {
+  "label": "Users are told upfront that they are talking to an AI assistant, not a human, before the conversation begins",
+  "why": "Disclosing that an interaction is with AI is the core of transparency — it is about what users are told, not who is answerable if something goes wrong (accountability)."
+ },
+ "rai-024": {
+  "label": "An AI-generated summary embedded inside a search results page carries a visible label wherever it appears on the page, not just in a one-time pop-up the first time someone visits",
+  "why": "Ongoing, in-context labeling of AI-generated content is a different mechanism from a one-time upfront notice (rai-023) or a written model card (rai-005) — the discriminator against accountability is that this is about what the page shows, not who owns the outcome."
+ },
+ "rai-025": {
+  "label": "A loan applicant who is declined asks for the specific reasons behind that decision, and the bank must be able to point to the factors that drove that particular outcome for them",
+  "why": "Explaining an individual, already-made decision to the person it affected is transparency — distinct from accountability, which is about who is answerable for the decision process, not about explaining a specific outcome to the affected person."
+ },
+ "rai-026": {
+  "label": "A generative AI assistant shows the specific source documents it drew on so a user can check the basis for its answer before trusting it",
+  "why": "Surfacing the grounding sources behind an answer lets users verify it themselves — a traceability angle distinct from disclosing general capabilities/limitations (rai-005) or explaining one decision (rai-025)."
+ },
+ "rai-027": {
+  "label": "A bank designs its loan-recommendation AI so that a human reviewer, not the model itself, makes the final decision on escalated cases",
+  "why": "Keeping a named human as the final authority over consequential decisions is accountability — the trap answer treats the AI system itself as the final authority, which accountability explicitly rejects."
+ },
+ "rai-028": {
+  "label": "Even though a company uses an AI service built by someone else, the company remains responsible for how that solution is used and governed within its own operations",
+  "why": "Responsibility for governance does not transfer away just because the underlying model or service is managed by a vendor — that non-transferable ownership is accountability."
+ },
+ "rai-029": {
+  "label": "A team asks who is responsible if the AI system produces a harmful or incorrect outcome, and defines an escalation path before launch",
+  "why": "Assigning responsibility and an escalation path for when things go wrong is accountability — it is about ownership of outcomes, not about what the system discloses (transparency)."
+ },
+ "rai-030": {
+  "label": "Before a new AI feature can go live, a named risk owner must sign off on it, and the feature is blocked from release without that documented approval",
+  "why": "A pre-launch approval gate tied to a named owner is a system-wide governance checkpoint, distinct from rai-027's per-case human override of an individual decision and from rai-028's vendor-responsibility point."
+ },
+ "rai-principles": {
+  "hint": "Drag each card onto the principle it belongs to. Ask what actually moved: who gets treated differently (fairness), whether the system behaves and holds up under stress (reliability & safety), whether data or access is exposed (privacy & security), who can use it at all (inclusiveness), what people are told about it (transparency), or who answers for it after the fact (accountability).",
+  "note": "Several cards look like they could fit two zones. The tie-break is always the one thing the scenario is actually about — differential outcome, system behavior, data exposure, usability, disclosure, or ownership.",
+  "zones[0].def": "AI systems should treat all people fairly, avoiding bias and unequal outcomes across demographic groups.",
+  "zones[1].def": "AI systems should perform consistently under expected and adversarial conditions and avoid causing unintended harm.",
+  "zones[2].def": "AI systems should protect personal data and prompts/outputs from unauthorized access, collection, or use.",
+  "zones[3].def": "AI systems should empower and engage everyone, including people with different abilities, languages, and needs.",
+  "zones[4].def": "AI systems should be understandable — people should know they're interacting with AI and know its capabilities and limitations.",
+  "zones[5].def": "People who design and deploy AI systems remain answerable for how those systems are built, operated, and monitored."
+ }
+}

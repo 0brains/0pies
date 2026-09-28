@@ -1,0 +1,43 @@
+{
+ "iv-rl-01": {
+  "prompt": "Ordena os passos para responsavelmente aposentar um sistema de IA em direto.",
+  "steps[0].label": "Avaliar dependências + opções de fallback",
+  "steps[0].detail": "Antes de tocar em qualquer coisa em direto, mapeia o que depende do sistema — alimentações de dados a montante, processos a jusante, fluxos de trabalho de outras equipas — e confirma que um fallback existe para que aposentadoria não crie uma outage (SG).",
+  "steps[1].label": "Notificar partes interessadas + planejar desativação controlada",
+  "steps[1].detail": "O primeiro passo numa aposentadoria guiada é dizer às pessoas afetadas e construir um plano de desativação, não simplesmente virar um comutador (SG).",
+  "steps[2].label": "Desativação graduada com backup humano",
+  "steps[2].detail": "Para infraestrutura crítica, reduzir em palcos em vez de de uma vez, com um fallback executado por humano cobrindo a lacuna — a mesma disciplina utilizada para sistemas críticos em geral.",
+  "steps[3].label": "Arquivo, não apague, para legal/auditoria",
+  "steps[3].detail": "Preserva os dados do sistema aposentado, modelos e registos em vez de apagá-los — reguladores e auditores podem precisar reconstruir o que o sistema fez e por que, muito tempo depois de para de funcionar (SG).",
+  "steps[4].label": "Registar como uma investigação de caixa negra, com proprietários de decisão nomeados",
+  "steps[4].detail": "Regista o gatilho exato, quem autorizou o encerramento, e a razão de aposentadoria no mesmo estilo evidentário que uma investigação de incidente — uma única fonte de verdade auditável nomeando quem tinha autoridade de agir (SG)."
+ },
+ "iv-rl-02": {
+  "prompt": "Ordena a resposta a um incidente de IA em direto desde a primeira detecção até fechar o loop.",
+  "steps[0].label": "Detectar",
+  "steps[0].detail": "Um alerta, um sinal de monitoramento, ou uma reclamação superfícies que algo está errado — isto inicia o cronómetro em tudo que se segue.",
+  "steps[1].label": "Conter / quarentena primeiro",
+  "steps[1].detail": "Antes de investigar causas ou redigir comunicações, impeça o dano de espalhar: quarentena o modelo e notifique legal/conformidade imediatamente. A contenção bate investigação, recuperação, ou comunicação como o movimento seguinte muito — saltar direto para análise de causa raiz enquanto o sistema continua a causar dano é a armadilha de exame registada.",
+  "steps[2].label": "Notificar legal/conformidade (+72-hora relógio de violação onde dados pessoais)",
+  "steps[2].detail": "Onde o incidente envolve dados pessoais, um controlador GDPR deve notificar a autoridade supervisora dentro de 72 horas de tornar-se consciente da violação — os procedimentos de resposta de incidente e notificação devem ser construídos para bater esse prazo, não tratados como um pensamento pós-facto técnico (SG).",
+  "steps[3].label": "Causa raiz (Cinco Porquês / árvore de falha)",
+  "steps[3].detail": "Usa um quadro de análise formal — o método 'Cinco Porquês' ou análise de árvore de falha — para perfurar à causa subjacente em vez de parar no sintoma de nível de superfície (SG).",
+  "steps[4].label": "CAPA",
+  "steps[4].detail": "Registra ações corretivas e preventivas num sistema central com proprietários atribuídos, prazos, e passos de verificação, portanto a causa raiz é realmente fechada, não apenas diagnosticada.",
+  "steps[5].label": "Retrospetivo inculpável + divulgação proativa com lições aprendidas",
+  "steps[5].detail": "Executa uma revisão inter-funcional inculpável do que aconteceu e por que, e divulga proativamente detalhes técnicos e lições aprendidas em vez de esperar por ser pedido — isto é o que transforma um sintoma remendado numa melhoria documentada defensável."
+ },
+ "iv-rl-03": {
+  "prompt": "Ordena os passos para seguramente trazer um sistema desativado de volta online.",
+  "steps[0].label": "Verificar a correção",
+  "steps[0].detail": "Confirma que o defeito específico que acionou desativação foi realmente corrigido antes de qualquer coisa mais se mover para a frente — a retomada depende de correções verificadas, não apenas tentadas (SG).",
+  "steps[1].label": "Re-testar com rigor de primeiro lançamento",
+  "steps[1].detail": "Coloca o sistema corrigido através do mesmo teste completo que enfrentou antes do seu lançamento original — desempenho, robustez, segurança, justiça — re-teste confirma segurança e conformidade do zero, não recebe um atalho porque o sistema correu antes (SG).",
+  "steps[2].label": "Aprovação inter-funcional",
+  "steps[2].detail": "O sistema retoma apenas uma vez que equipas inter-funcionais — não um único engenheiro ou líder de equipa — aprovam o reinício, fechando o loop que começou com proprietários de decisão nomeados autorizando o encerramento.",
+  "steps[3].label": "Lançamento de re-rollout canário/azul-verde encenado atrás de bandeiras de recurso",
+  "steps[3].detail": "Traz o sistema de volta gradualmente — um lançamento canário ou implementação azul-verde portão por bandeiras de recurso — portanto a exposição pode ser discada de volta instantaneamente se o problema ressurgir, em vez de virar cada utilizador de volta de uma vez (SG).",
+  "steps[4].label": "Janela de monitoramento elevada",
+  "steps[4].detail": "Observa o sistema reiniciado mais de perto do que operação em estado estável para uma janela definida depois, portanto uma recorrência é apanhada imediatamente em vez de na próxima revisão agendada."
+ }
+}

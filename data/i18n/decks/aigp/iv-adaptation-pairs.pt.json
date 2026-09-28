@@ -1,0 +1,62 @@
+{
+ "iv-ap-01": {
+  "a.text": "O conhecimento proprietário da organização é treinado diretamente nos pesos do modelo através de rodadas de treino adicionais, tornando-se uma parte permanente do que o modelo 'sabe'.",
+  "a.why": "Integrar dados de domínio nos pesos significa que o modelo herda qualquer risco de memorização ou vazamento que esses dados carregam — um gerador de dados sintéticos adaptado desta forma em registos de produção ainda pode vazar rastros dos originais mesmo depois de anonimização, e usar dados específicos do aluno da mesma forma cria sua própria exposição de violação.",
+  "b.text": "O conhecimento proprietário da organização permanece numa loja externa separadamente mantida e é puxado apenas no momento em que cada pergunta é feita.",
+  "b.why": "Nada sobre este conhecimento é aprendido pelo modelo em si — é buscado fresco por consulta, o que é exatamente por que pode refletir a orientação deste mês sem uma única rodada de treino. A escolha de adaptação feita aqui é o que determina o ônus de garantia que a equipa acaba por possuir."
+ },
+ "iv-ap-02": {
+  "a.text": "Busca os documentos de política atuais para fundamentar uma única resposta, que um humano lê e age sobre.",
+  "a.why": "O trabalho do sistema para na produção de uma resposta bem fundamentada; cada ação consequente a jusante ainda é de um humano.",
+  "b.text": "Planeia uma tarefa de múltiplos passos por conta própria e executa ações através de ferramentas de reserva e pagamento, com revisão mínima de humanos em cada passo.",
+  "b.why": "A autonomia de ação, não apenas autonomia de resposta, é a nova superfície de governance aqui: quando um implementador deixa um sistema agir em vez de apenas informar, responsabilidade direta por comportamento de agente prejudicial ou enganoso cai no implementador — isto requer âmbito de ação, limiares humano-no-loop, e registos completos de ação, nenhum dos quais um assistente puramente recuperação-fundamentado precisa."
+ },
+ "iv-ap-03": {
+  "a.text": "A organização pode ler, modificar e redistribuir os próprios pesos e código do modelo, e executá-lo inteiramente na infraestrutura que controla.",
+  "a.why": "A inspeccionabilidade é todo o negócio: consegues auditar o algoritmo tu mesmo e evitar depender do roteiro de um vendedor, mas também herdar o ônus interno de verificar licenças, procedência de dados de treino e o teu próprio teste de segurança.",
+  "b.text": "A organização só pode chamar o modelo através de uma API e nunca vê os pesos, mas o vendedor o apoia com contratos de suporte, resposta de incidente e indenizações.",
+  "b.why": "Tu trocas direitos de inspeção por garantias apoiadas por contrato — e o custo estratégico dessa troca é registado como o risco superior desta via: uma vez que fluxos de trabalho são construídos em torno da API de um vendedor, afastar-se mais tarde fica caro."
+ },
+ "iv-ap-04": {
+  "a.text": "O modelo base é comprimido e reformulado — parâmetros podados, precisão reduzida, uma camada de adaptador leve sobreposta — para cortar custo e latência para uso de borda ou volume elevado.",
+  "a.why": "Encolher ou reformular o artefato desta forma pode silenciosamente mover seus limites de decisão e reduzir interpretabilidade, portanto precisão, justiça e robustez tudo precisa ser re-verificado após cada mudança, não presumido para levar sobre sem mudança.",
+  "b.text": "O modelo do vendedor executa sem modificação, exatamente conforme enviado, apoiado apenas por revisão humana e outros controlos sobrepostos ao redor.",
+  "b.why": "Nada sobre o artefato em si mudou, portanto governance apoia-se na documentação própria do vendedor e em controlos compensadores como revisão humana em vez de re-validar os internos do modelo."
+ },
+ "iv-ap-05": {
+  "a.text": "Um sistema de pontuação de crédito prediz ou classifica a partir de entradas estruturadas; seus riscos são viés contra certos grupos e precisão que silenciosamente degrada conforme os dados subjacentes derivam.",
+  "a.why": "Predizer ou classificar uma categoria conhecida a partir de características estruturadas é o modo de falha deste perfil — riscos de viés e deriva familiares que teste de justiça e monitoramento são construídos para apanhar.",
+  "b.text": "Um assistente de redação produz texto, imagens ou código novos a partir de um aviso; seus riscos são alucinação, exposição de direitos autorais e saída convincentemente errada.",
+  "b.why": "Criar conteúdo que não existia antes abre uma superfície de risco diferente inteiramente — alucinação e procedência, não o perfil de viés-e-deriva que governa um sistema predição-apenas."
+ },
+ "iv-ap-06": {
+  "a.text": "Um modelo de vendedor é usado exatamente conforme entregue; o trabalho da equipa é validá-lo contra seus próprios padrões de desempenho e justiça e documentar quaisquer lacunas.",
+  "a.why": "Governance aqui apoia-se quase inteiramente em transparência de vendedor mais controlos compensadores — a equipa nunca toca os internos do modelo, portanto suas obrigações param em validação e documentação.",
+  "b.text": "Um modelo de uso geral é retreinado nos dados rotulados da organização até reproduzir um comportamento específico e desejado.",
+  "b.why": "No momento em que uma organização retreina o modelo, governance trata o resultado como um sistema novo: teste de justiça e robustez deve ser repetido do zero, e — comparado com usar um modelo de vendedor conforme entregue — a organização agora carrega responsabilidade legal aumentada sua própria."
+ },
+ "iv-ap-07": {
+  "a.text": "Um chatbot de suporte toma em questões escritas e produz apenas respostas escritas, sem nenhum outro canal de entrada para raciocinar.",
+  "a.why": "Apenas texto dentro, apenas texto fora — as preocupações de governance aqui são alucinação, fraseado enviesado e ataques de aviso estilo jailbreak, nenhum dos quais envolvem uma segunda modalidade.",
+  "b.text": "Uma ferramenta de sinistros pesa uma fotografia de dano em conjunto com as notas escritas do avaliador antes de produzir um único julgamento combinado.",
+  "b.why": "Combinar canais adiciona um risco que um sistema apenas texto nunca enfrenta: correlações falsas entre uma imagem e o texto ao lado dela, e a necessidade de mostrar qual entrada realmente impulsionou a saída."
+ },
+ "iv-ap-08": {
+  "a.text": "Um classificador estreito trata uma tarefa num orçamento de computação apertado, retreina rapidamente, e rastreia suas saídas de volta a entradas com pouco esforço.",
+  "a.why": "Um sistema compacto e estreito é barato de re-testar e fácil de explicar — o custo é que pode ter desempenho inferior uma vez que o ambiente fica mais variável do que aquilo para o qual foi construído.",
+  "b.text": "Um amplo sistema de fundação generaliza entre muitas tarefas para as quais nunca foi treinado especificamente, ao custo de governance de computação mais pesado e uma superfície de ataque maior.",
+  "b.why": "Amplitude comprada através de escala significa que o sistema pode abordar domínios desconhecidos zero-shot, mas também precisa quotas de computação, red-teaming e monitoramento de deriva que um sistema estreito não precisa."
+ },
+ "iv-ap-09": {
+  "a.text": "Cada fonte em que o modelo se baseou durante uma sessão é registada para auditoria, e qualquer dado pessoal passando através do corpus conectado deve ser redacto antes de nunca ser mostrado ao modelo.",
+  "a.why": "Auditoria de logging e redação de PII através de um corpus externo são obrigações de governance que simplesmente não existem para um modelo sem nenhum pipeline de dados em direto anexado — o ônus de garantia desta via vive na encanação, não nos pesos.",
+  "b.text": "O modelo do vendedor é usado exatamente conforme entregue, e o caminho mais rápido para um piloto funcional é escolhido precisamente porque nenhum novo treino de dados ou pipeline precisa ser construído primeiro.",
+  "b.why": "A velocidade é todo o apelo aqui — nenhum retreino, nenhuma encanação de dados nova — mas governance trata essa velocidade como débito: o modelo é presumido alto-risco até validado contra padrões próprios de desempenho e justiça desta organização, uma vez que nada sobre ele foi construído com esta implementação em mente."
+ },
+ "iv-ap-10": {
+  "a.text": "O mesmo modelo base sai menor e mais barato de executar após compressão, sem um simples facto novo tendo sido adicionado a ele.",
+  "a.why": "Esta via alvo pegada, não conhecimento — mas encolher ou reformular o artefato ainda pode mover seus limites de decisão, portanto precisão e justiça precisam de re-verificação mesmo que nada 'novo' foi ensinado.",
+  "b.text": "O mesmo modelo base sai do mesmo tamanho, mas agora reproduz de forma confiável um comportamento especialista que nunca tinha acesso antes, aprendido a partir de exemplos curados.",
+  "b.why": "Esta via alvo comportamento e conhecimento, não pegada — e porque esse novo comportamento foi aprendido a partir dos dados próprios da organização, governance agora trata o resultado como um novo sistema exigindo seu próprio teste, não uma cópia redimensionada do velho."
+ }
+}

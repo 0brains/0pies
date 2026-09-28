@@ -1,0 +1,50 @@
+{
+ "rp-01": {
+  "a.text": "एक hiring model equal qualifications के बाद भी एक demographic group से far fewer candidates को shortlist करता है।",
+  "a.why": "Groups के across unequal outcomes है fairness — fixed होता है balanced training data और fairness assessments के साथ।",
+  "b.text": "वही hiring portal के AI screening सिर्फ voice से काम करता है, ताकि deaf candidates इसे complete नहीं कर सकें।",
+  "b.why": "कोई भी unfairly score नहीं है किया जा रहा — कुछ users locked हैं। Multiple interaction methods और accessibility हैं inclusiveness।"
+ },
+ "rp-02": {
+  "a.text": "एक retailer की shoplifting-detection camera system, mostly एक demographic group के images पर trained, दूसरे groups से लोगों को बहुत अधिक rate पर flag करता है।",
+  "a.why": "एक accuracy gap underrepresented training data के across demographic groups को traceable है fairness — representative, balanced training data है fix।",
+  "b.text": "वही retailer का self-checkout assistant सिर्फ spoken commands को accept करता है, ताकि जो customers नहीं बोल या hear clearly सकते वे इसे use नहीं कर सकते।",
+  "b.why": "कोई भी group worse score किया नहीं जा रहा है यहाँ — एक पूरा set of users एक interaction method पर rely करके shut है। वह access gap है inclusiveness, न कि एक scoring problem।"
+ },
+ "rp-03": {
+  "a.text": "Bank एक model card publish करता है जो credit model के capabilities और known limitations को explaining करता है।",
+  "a.why": "Communicating capabilities AND limitations — model cards, transparency notes — है transparency।",
+  "b.text": "Bank हर AI credit decision के audit logs को keep करता है और नाम करता है officer को जो overrides पर sign off करता है।",
+  "b.why": "Human oversight, governance और एक reviewable record जो है answerable है accountability।"
+ },
+ "rp-04": {
+  "a.text": "जब एक patient का insurance claim एक triage model द्वारा deny किया जाता है, care team particular decision को drive किया factors को specific point कर सकता है।",
+  "a.why": "Explaining particular reasons को already-made decision को, affected person को, है transparency।",
+  "b.text": "Hospital defines करता है कौन liable है एक denial को reviewing के लिए और escalating इसे अगर triage model का decision को turn out होता है को be wrong।",
+  "b.why": "Assigning ownership और एक escalation path को जब चीजें गलत जाती हैं है accountability — कौन outcome के लिए answers करता है, क्या disclose है नहीं।"
+ },
+ "rp-05": {
+  "a.text": "Support bot को configure किया जाता है ताकि customer PII कभी responses में या logs में appear नहीं करता।",
+  "a.why": "PII governance, data protection और access control map करते हैं privacy & security को।",
+  "b.text": "Support bot हर session को stating open करता है कि यह एक AI है और listing करता है कि यह क्या कर सकता है और नहीं कर सकता।",
+  "b.why": "Disclosing कि यह system क्या है और limits है transparency — data को protect करने से एक अलग obligation।"
+ },
+ "rp-06": {
+  "a.text": "Release notes state करते हैं summarizer poor performs है legal documents पर ताकि users judge कर सकें जब उसे trust करना है।",
+  "a.why": "Stating limitations up front है transparency, भले ही यह safety-adjacent जैसा feel करता है।",
+  "b.text": "Summarizer को stress-tested किया जाता है adversarial prompts के साथ और harmful content produce करने से refuse करता है उनके under।",
+  "b.why": "Consistent, tested, safe behavior risky prompts के under — content filters और model evaluation — है reliability & safety।"
+ },
+ "rp-07": {
+  "a.text": "एक content-moderation service को adversarial prompts को resist करना चाहिए जो output को violent instructions generate करने के लिए बनाने की try करते हैं।",
+  "a.why": "Resisting adversarial prompts को output को harmful होने से keep करने के लिए है tested, consistent system behavior — reliability & safety।",
+  "b.text": "वही service को customer phone numbers को store किए गए logs में appear करने से keep करना चाहिए जो chat messages में typed होते हैं।",
+  "b.why": "Personal data को storage और logs से keep करना है data protection — एक अलग concern कि कैसे model attack के under behave करता है।"
+ },
+ "rp-08": {
+  "a.text": "एक financial-advice chatbot को screen-reader-compatible output और keyboard-only navigation को add करता है ताकि visual या motor impairments के साथ लोग एक session को end to end complete कर सकें।",
+  "a.why": "Removing barriers ताकि अलग abilities वाले लोग product को use कर सकें है inclusiveness।",
+  "b.text": "वही chatbot हर session को stating open करता है कि यह एक automated assistant है और listing करता है topics जो यह नहीं advise कर सकता।",
+  "b.why": "Disclosing कि यह system AI है और stating limits एक अलग obligation है interface को make करने से usable हर एक को।"
+ }
+}

@@ -1,0 +1,21 @@
+{
+ "rag-pipeline": {
+  "prompt": "Ustaw etapy od pozyskiwania do ugruntowanej, cytowanej odpowiedzi.",
+  "steps[0].label": "Pozyskaj Wiarygodne Dokumenty Źródłowe",
+  "steps[0].detail": "Wycofanie może tylko gdy kiedykolwiek powierzchni co zostało pozyskane. Selekcja źródła to decyzja zarządzania, a nie decyzja instalacji.",
+  "steps[1].label": "Czyszcz, Podziel i Dołącz Metadane",
+  "steps[1].detail": "Fragmentacja decyduje, jaką jednostką można pobrać jest; metadane to to, co później umożliwia filtrowanie i przypisanie.",
+  "steps[2].label": "Utwórz Osadzania dla Każdego Fragmentu",
+  "steps[2].detail": "Tekst staje się wektorami. Wybrany tutaj model osadzania ogranicza wszystko, co można rozróżnić wycofaniu.",
+  "steps[3].label": "Przechowuj Fragmenty i Wektory w Indeksie",
+  "steps[3].detail": "Indeks sprawia, że wyszukiwanie podobieństwa jest możliwe. Kontrola dostępu należy tutaj, a nie tylko w odpowiedzi.",
+  "steps[4].label": "Osadź i Interpretuj Zapytanie Użytkownika",
+  "steps[4].detail": "Zapytanie jest osadzane przez ten sam model co fragmenty, lub oba żyją w nieporównywalnych przestrzeniach.",
+  "steps[5].label": "Pobierz, Filtruj i Rankuj Dowody",
+  "steps[5].detail": "Wycofanie decyduje, czy właściwy fragment jest dostępny na wszystko; ranking decyduje, czy przetrwa budżet kontekstu.",
+  "steps[6].label": "Zbuduj Monit z Dowodami i Instrukcjami",
+  "steps[6].detail": "Pobrany dowód jest umieszczony w monicie z instrukcjami, jak go użyć i kiedy odmówić.",
+  "steps[7].label": "Generuj, Waliduj i Cytuj Ugruntowaną Odpowiedź",
+  "steps[7].detail": "Model odpowiada na podstawie dostarczonego dowodu i go cytuje, aby czytelnik mógł sprawdzić, a nie ufać."
+ }
+}

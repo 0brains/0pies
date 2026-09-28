@@ -1,0 +1,175 @@
+{
+ "id": "access-denied",
+ "runner": "board",
+ "title": "Access Denied",
+ "blurb": "Eighteen scenes of least privilege, separation of duties and access-model puzzles. Each scene has one defensible answer — read for the actual mechanism at work, not the vocabulary.",
+ "source": "Chapple CISSP SG 10ed ch.13-14 (Managing Identity and Authentication; Controlling and Monitoring Access) · April-2024 outline 5.4",
+ "asOf": "2026-08",
+ "area": "5.4",
+ "zoneMode": "options",
+ "hint": "First decide whether the scene is about who is allowed to do something (a model) or about which access-control service is firing (identification, authentication, authorization, accountability) — then look for the one mechanism the scene actually describes.",
+ "items": [
+  {
+   "id": "ad-01",
+   "label": "Kestrel Shipyards' engineering system tags every hull drawing with a program classification, and every engineer's account carries a matching clearance. An engineer without the matching clearance cannot open the drawing's metadata at all, no matter what her manager says.",
+   "sub": "Which access control model is enforcing this?",
+   "options": ["Discretionary Access Control (DAC)", "Mandatory Access Control (MAC)", "Role-Based Access Control (RBAC)", "Rule-Based Access Control (RuBAC)"],
+   "answer": "Mandatory Access Control (MAC)",
+   "why": "Labels compared against clearance, enforced centrally and immune to a manager's say-so, is MAC's signature. Role-Based Access Control is the tempting wrong answer because engineers do have job roles, but nothing here keys off a role definition — access turns purely on classification label versus clearance, not on what job the engineer holds.",
+   "citation": "SG ch.14 · outline 5.4.3"
+  },
+  {
+   "id": "ad-02",
+   "label": "At Briarwood Credit Union, the loan officer who created a loan file can grant a colleague temporary read access straight from the file's own sharing menu, without involving IT at all.",
+   "sub": "Which access control model is enforcing this?",
+   "options": ["Discretionary Access Control (DAC)", "Mandatory Access Control (MAC)", "Role-Based Access Control (RBAC)", "Attribute-Based Access Control (ABAC)"],
+   "answer": "Discretionary Access Control (DAC)",
+   "why": "An owner granting access at their own discretion, outside any central process, is DAC's defining trait. Role-Based Access Control is the trap: it would require an administrator to have pre-defined the colleague's role and its rights, but here the grant is ad hoc and comes from the file's creator, not from a maintained role assignment.",
+   "citation": "SG ch.14 · outline 5.4.4"
+  },
+  {
+   "id": "ad-03",
+   "label": "Alder Valley University's grants portal gives 'Grants Reviewer' the same access whether Maria holds the title this term or her replacement holds it next term — the rights simply follow whoever is placed in the position.",
+   "sub": "Which access control model is enforcing this?",
+   "options": ["Discretionary Access Control (DAC)", "Mandatory Access Control (MAC)", "Role-Based Access Control (RBAC)", "Attribute-Based Access Control (ABAC)"],
+   "answer": "Role-Based Access Control (RBAC)",
+   "why": "Rights bound to the position rather than to a named individual, and inherited automatically on assignment, is RBAC's mechanism. Discretionary Access Control is the trap: no data owner is involved in this grant at all — a central administrator maintains the role definition, and swapping people in and out never touches any owner's discretion.",
+   "citation": "SG ch.14 · outline 5.4.1"
+  },
+  {
+   "id": "ad-04",
+   "label": "Solstice Payments blocks a support agent from viewing a specific customer's card data unless the agent is on-shift, connected from the corporate VPN, and the account matches a ticket currently assigned to them.",
+   "sub": "Which access control model is enforcing this?",
+   "options": ["Rule-Based Access Control (RuBAC)", "Mandatory Access Control (MAC)", "Role-Based Access Control (RBAC)", "Attribute-Based Access Control (ABAC)"],
+   "answer": "Attribute-Based Access Control (ABAC)",
+   "why": "Multiple contextual attributes — shift status, network origin, ticket assignment — evaluated together at request time is ABAC's dynamic evaluation. Role-Based Access Control is the trap: the 'support agent' role alone would grant broad standing access to card data, but here that same role is narrowed per request by conditions a static role assignment cannot express.",
+   "citation": "SG ch.14 · outline 5.4.5"
+  },
+  {
+   "id": "ad-05",
+   "label": "Northbridge Logistics' perimeter firewall applies one fixed set of allow and deny rules to every packet crossing a segment boundary, regardless of which employee or department originated the traffic.",
+   "sub": "Which access control model is enforcing this?",
+   "options": ["Discretionary Access Control (DAC)", "Mandatory Access Control (MAC)", "Role-Based Access Control (RBAC)", "Rule-Based Access Control (RuBAC)"],
+   "answer": "Rule-Based Access Control (RuBAC)",
+   "why": "A fixed rule set applied identically to every subject, with no concept of an individual role, is RuBAC's canonical firewall-ACL pattern. Role-Based Access Control is the trap: RBAC ties permissions to a specific role a person holds, but this filter doesn't know or care what human role, if any, generated the packet — it only ever checks the rule. Mandatory Access Control is a second trap worth naming: MAC also applies uniformly and centrally, but it does so by comparing a subject's clearance against an object's classification label — there is no label or clearance anywhere in this scene, only one global rule set applied identically to every packet regardless of who or what originated it.",
+   "citation": "SG ch.14 · outline 5.4.2"
+  },
+  {
+   "id": "ad-06",
+   "label": "Meridian Health's chart system flashes 'you do not have access to view psychiatric notes' the instant a nurse, already logged in successfully minutes earlier, tries to open that one section of a patient's record.",
+   "sub": "Which access control service is firing at this moment?",
+   "options": ["Identification", "Authentication", "Authorization", "Accountability"],
+   "answer": "Authorization",
+   "why": "The nurse's identity is already proven; this is a real-time decision about what she is permitted to do next, which is Authorization's job. Accountability is the trap: nothing here is a log entry or a retrospective review — it's the live permission check happening the instant she requests the section, before any record of the attempt is even reviewed.",
+   "citation": "SG ch.13 · outline 5.2.2"
+  },
+  {
+   "id": "ad-07",
+   "label": "A disaster-relief nonprofit's shared 'volunteer' login is used by six different field workers over one shipment. When supplies go missing, investigators cannot determine who was logged in at the time.",
+   "sub": "Which access control service has failed here?",
+   "options": ["Identification", "Authentication", "Authorization", "Accountability"],
+   "answer": "Accountability",
+   "why": "A shared account destroys the ability to trace an action back to one subject, which is exactly what Accountability requires. Authentication is the trap: the password worked fine every time, so proving that some credential was valid was never the failure — the failure is that the credential never mapped to a single person in the first place.",
+   "citation": "SG ch.13 · outline 5.2.2"
+  },
+  {
+   "id": "ad-08",
+   "label": "A biotech CRO's badge reader unlocks a controlled lab only after the presented smart card's certificate is checked against the site directory and the matching PIN is entered.",
+   "sub": "Which access control service is completing at the unlock moment?",
+   "options": ["Identification", "Authentication", "Authorization", "Accountability"],
+   "answer": "Authentication",
+   "why": "Verifying proof of identity through a possession factor plus a knowledge factor before the door opens is Authentication. Identification is the trap: swiping the card is the earlier claim of an identity, but the scene describes the certificate-and-PIN check that proves that claim, which is the step past identification.",
+   "citation": "SG ch.13 · outline 5.2.2"
+  },
+  {
+   "id": "ad-09",
+   "label": "Six months after a flagged shipment, a customs brokerage's audit team reconstructs exactly which clerk approved it, using timestamped logs tied to individual user IDs.",
+   "sub": "Which access control service made this reconstruction possible?",
+   "options": ["Identification", "Authentication", "Authorization", "Accountability"],
+   "answer": "Accountability",
+   "why": "Post-hoc traceability of a specific subject's action, via retained logs, is Accountability's outcome. Authorization is the trap: authorization was the real-time decision that let the clerk approve the shipment in the first place, but this scene is about the retrospective record proving who did it, months after that decision was made.",
+   "citation": "SG ch.13 · outline 5.2.2"
+  },
+  {
+   "id": "ad-10",
+   "label": "A ski resort's lift-pass terminal gives a seasonal operator only the functions needed to scan a pass and open the gate — nothing else on the shared terminal — no matter which of the five lift stations she rotates through that week.",
+   "sub": "Which access control model is enforcing this least-privilege scoping?",
+   "options": ["Discretionary Access Control (DAC)", "Mandatory Access Control (MAC)", "Role-Based Access Control (RBAC)", "Rule-Based Access Control (RuBAC)"],
+   "answer": "Role-Based Access Control (RBAC)",
+   "why": "The rights are bound once to a centrally defined 'lift operator' role and apply uniformly, regardless of which specific person or station is involved, which is RBAC's scoping. Discretionary Access Control is the trap: no individual station owner is granting these rights ad hoc — an administrator defined the role once, and least privilege here comes from that definition being tight, not from anyone's discretion.",
+   "citation": "SG ch.14 · outline 5.4.1"
+  },
+  {
+   "id": "ad-11",
+   "label": "A municipal water utility requires that the engineer who submits a change to chlorine-dosing setpoints can never be the same account that approves that change before it goes live.",
+   "sub": "Which access control model gives this two-person rule teeth?",
+   "options": ["Discretionary Access Control (DAC)", "Mandatory Access Control (MAC)", "Role-Based Access Control (RBAC)", "Attribute-Based Access Control (ABAC)"],
+   "answer": "Role-Based Access Control (RBAC)",
+   "why": "Defining separate submit and approve roles that no single account holds both of is how RBAC turns separation of duties into an enforced structure rather than a policy statement. Discretionary Access Control is the trap: an owner's discretion could simply hand both rights to one favored account at will, which is exactly the single-point-of-control risk the utility is trying to prevent.",
+   "citation": "SG ch.14 · outline 5.4.1"
+  },
+  {
+   "id": "ad-12",
+   "label": "Meridian Health's billing role can query any patient's insurance-eligibility record chain-wide, but the system additionally blocks any billing staffer from opening a record for a patient who shares their own home address.",
+   "sub": "Which access control model is layering in this extra restriction?",
+   "options": ["Discretionary Access Control (DAC)", "Mandatory Access Control (MAC)", "Role-Based Access Control (RBAC)", "Attribute-Based Access Control (ABAC)"],
+   "answer": "Attribute-Based Access Control (ABAC)",
+   "why": "An extra per-request attribute — a shared-address conflict flag — evaluated on top of a role's baseline grant is ABAC's dynamic layering. Role-Based Access Control is the trap: the base billing role alone would allow the read every time; it's the additional relationship attribute that narrows it further, something a flat role assignment cannot express by itself.",
+   "citation": "SG ch.14 · outline 5.4.5"
+  },
+  {
+   "id": "ad-13",
+   "label": "An access review at an insurance claims platform finds an adjuster, promoted three times over five years, still holding every entitlement granted during her first two roles — none of which her current job uses.",
+   "sub": "Which access control service should have caught this drift before now?",
+   "options": ["Identification", "Authentication", "Authorization", "Accountability"],
+   "answer": "Accountability",
+   "why": "Periodic auditing of whether standing entitlements still match a subject's current duties is part of Accountability's monitoring discipline, not a one-time decision. Authorization is the trap: each of her promotions was correctly authorized at the time it happened — the gap is that nobody later reviewed and logged whether those earlier grants should have been revoked, which is an audit failure, not a bad grant.",
+   "citation": "SG ch.13/14 · outline 5.5.1"
+  },
+  {
+   "id": "ad-14",
+   "label": "Northbridge Logistics' nightly EDI batch job authenticates to trading partners using credentials tied to its own dedicated service identity, never to the engineer who originally built the integration.",
+   "sub": "Which access control service does giving the job its own identity satisfy?",
+   "options": ["Identification", "Authentication", "Authorization", "Accountability"],
+   "answer": "Identification",
+   "why": "Deciding which identity gets claimed in the first place — a dedicated service identity rather than a borrowed human one — is Identification's territory. Authentication is the trap: authentication only proves whichever identity is claimed is genuine; the design choice being tested here is which identity the job claims at all, so that its activity is never confused with the engineer's.",
+   "citation": "SG ch.13/14 · outline 5.5.5"
+  },
+  {
+   "id": "ad-15",
+   "label": "A game studio's build system gives every developer local admin rights on their laptop by default, even though only its three release engineers ever need to install signed build tools.",
+   "sub": "Which access control model would enforce least privilege here?",
+   "options": ["Discretionary Access Control (DAC)", "Mandatory Access Control (MAC)", "Role-Based Access Control (RBAC)", "Attribute-Based Access Control (ABAC)"],
+   "answer": "Role-Based Access Control (RBAC)",
+   "why": "Scoping admin rights to a defined 'release engineer' role would give that privilege only to the three who need it, matching rights to job function. Discretionary Access Control is the trap: even letting IT decide per laptop who gets admin would still be an ad hoc, owner-style grant rather than a systematic match between rights and function — the blanket default would persist for anyone IT forgot to review.",
+   "citation": "SG ch.14 · outline 5.4.1"
+  },
+  {
+   "id": "ad-16",
+   "label": "A defense contractor's HR system disables — never deletes — a departing engineer's directory account the moment her termination is processed, keeping the record intact for audit while immediately blocking any login.",
+   "sub": "Which access control service is being cut off first, on purpose?",
+   "options": ["Identification", "Authentication", "Authorization", "Accountability"],
+   "answer": "Authentication",
+   "why": "Disabling the account revokes her ability to prove identity going forward, which is Authentication's gate, while the account record itself stays intact. Accountability is the trap: the record is deliberately preserved, not cut off — deleting the account instead of disabling it is what would destroy the accountability trail auditors need later, which is precisely the risk this disable-not-delete practice avoids.",
+   "citation": "SG ch.13/14 · outline 5.5.2"
+  },
+  {
+   "id": "ad-17",
+   "label": "An airline MRO's parts-inventory app lets any certified mechanic query any part record, but a mechanic sees the supplier-cost fields only on records for parts within their own certified aircraft type.",
+   "sub": "Which access control model is hiding those fields selectively?",
+   "options": ["Discretionary Access Control (DAC)", "Mandatory Access Control (MAC)", "Role-Based Access Control (RBAC)", "Attribute-Based Access Control (ABAC)"],
+   "answer": "Attribute-Based Access Control (ABAC)",
+   "why": "Comparing the record's aircraft-type attribute against the mechanic's own certification attribute at query time is ABAC's per-object evaluation. Role-Based Access Control is the trap: the mechanic role alone grants the base right to query part records at all, but it cannot by itself hide specific fields on specific records — that finer-grained comparison is what ABAC adds on top.",
+   "citation": "SG ch.14 · outline 5.4.5"
+  },
+  {
+   "id": "ad-18",
+   "label": "A public library consortium's proxy allows requests to academic-journal ranges during business hours and blocks all such requests after 8pm and on holidays, for every account without exception.",
+   "sub": "Which access control model is enforcing this schedule?",
+   "options": ["Discretionary Access Control (DAC)", "Mandatory Access Control (MAC)", "Role-Based Access Control (RBAC)", "Rule-Based Access Control (RuBAC)"],
+   "answer": "Rule-Based Access Control (RuBAC)",
+   "why": "One fixed, schedule-based rule applied identically to every account is RuBAC's global-filter pattern. Role-Based Access Control is the trap: nothing here depends on whether the account belongs to staff or a patron — the block is purely time-based and universal, with no role distinction driving the decision at all. Mandatory Access Control is a second trap worth naming: MAC also applies uniformly, but through a clearance-versus-classification comparison on every request — this proxy checks nothing about the requester at all, only the clock, which is a fixed rule set applied to all subjects rather than labels compared against clearance.",
+   "citation": "SG ch.14 · outline 5.4.2"
+  }
+ ]
+}

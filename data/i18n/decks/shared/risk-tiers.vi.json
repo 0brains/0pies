@@ -1,0 +1,91 @@
+{
+ "risk-tiers": {
+  "hint": "Kéo từng hệ thống vào tầng rủi ro của nó. Tầng theo mục đích và bối cảnh, không phải độ tinh vi của mô hình.",
+  "note": "Các tầng gắn vào cách sử dụng, không phải công nghệ. Cùng một mô hình có thể bị cấm trong một triển khai, rủi ro cao trong một cái khác và tối thiểu trong cái thứ ba.",
+  "zones[0].def": "Các thực tiễn bị cấm theo Art. 5. Không phải là một rủi ro được giảm thiểu — thực tiễn có thể không được đưa vào thị trường hoặc sử dụng.",
+  "zones[1].def": "Art. 6 và Phụ lục III, hoặc một thành phần an toàn của một sản phẩm được quy định. Được phép tùy thuộc vào các nghĩa vụ đáng kể trước và sau khi đưa vào thị trường.",
+  "zones[2].def": "Art. 50 các nghĩa vụ về tính minh bạch: cho mọi người biết họ đang xử lý AI, hoặc rằng nội dung là tổng hợp.",
+  "zones[3].def": "Mọi thứ khác. Không có nghĩa vụ theo Luật vượt quá những điều áp dụng cho bất kỳ phần mềm nào; các mã tự nguyện có thể áp dụng.",
+  "zones[4].def": "Các mô hình đa năng đáp ứng ngưỡng Art. 51, có các nghĩa vụ cấp mô hình riêng biệt từ kim tự tháp dựa trên cách sử dụng."
+ },
+ "rt2-01": {
+  "label": "Một chương trình chính phủ xếp hạng mức độ đáng tin cậy của công dân từ hành vi xã hội liên quan và sử dụng nó để từ chối truy cập vào dịch vụ công cộng.",
+  "why": "Xếp hạng xã hội bởi hoặc thay mặt cho các cơ quan công quyền dẫn đến xử lý bất lợi trong các bối cảnh không liên quan bị cấm hoàn toàn theo Art. 5."
+ },
+ "rt2-02": {
+  "label": "Một hệ thống suy luận cảm xúc của nhân viên từ các biểu hiện khuôn mặt trong ngày làm việc của họ, ngoài bất kỳ mục đích y tế hoặc an toàn nào.",
+  "why": "Suy luận cảm xúc ở nơi làm việc và trong giáo dục bị cấm, với các ngoại lệ y tế và an toàn hẹp. Đây là lý do tại sao lệnh cấm bắt được các sản phẩm phân tích nhân sự."
+ },
+ "rt2-03": {
+  "label": "Một công cụ cạo các hình ảnh khuôn mặt từ Internet và CCTV một cách thiếu thận trọng để xây dựng cơ sở dữ liệu nhận dạng khuôn mặt.",
+  "why": "Cạo không có chọn lọc để xây dựng cơ sở dữ liệu nhận dạng khuôn mặt bị cấm rõ ràng, bất kể mục đích của nhà điều hành."
+ },
+ "rt2-04": {
+  "label": "Một hệ thống sử dụng các kỹ thuật tiềm ý bên ngoài sự nhận thức của một người để thay đổi hành vi và gây hại đáng kể.",
+  "why": "Các kỹ thuật thao túng và khai thác gây hại đáng kể bị cấm. Bài kiểm tra là thay đổi hành vi vật chất, không phải độ tinh vi của kỹ thuật."
+ },
+ "rt2-05": {
+  "label": "Một hệ thống sàng lọc CV lọc và xếp hạng ứng viên cho một vai trò.",
+  "why": "Việc lựa chọn và quản lý lao động là một khu vực Phụ lục III. Sàng lọc tuyển dụng là ví dụ chính tắc rủi ro cao và thu hút bộ nghĩa vụ đầy đủ."
+ },
+ "rt2-06": {
+  "label": "Một mô hình được sử dụng bởi một ngân hàng để đánh giá khả năng tín dụng của những người tự nhiên.",
+  "why": "Đánh giá khả năng tín dụng của những người tự nhiên được liệt kê trong Phụ lục III, có một ngoại lệ cho việc phát hiện gian lận tài chính."
+ },
+ "rt2-07": {
+  "label": "Một thành phần AI kiểm soát chức năng an toàn của một thiết bị y tế được quy định theo luật hóa sáng tạo EU.",
+  "why": "Đây là tuyến đường Art. 6(1): một thành phần an toàn của một sản phẩm được bao gồm bởi luật hóa sáng tạo được liệt kê và yêu cầu đánh giá tuân thủ của bên thứ ba."
+ },
+ "rt2-08": {
+  "label": "Một hệ thống được sử dụng để xác định truy cập vào, hoặc gán những người vào các tổ chức giáo dục.",
+  "why": "Các quyết định giáo dục và đào tạo nghề nghiệp ảnh hưởng đến truy cập của một người là Phụ lục III. Hại cho cơ hội sống là lý do tại sao tầng cao hơn tối thiểu."
+ },
+ "rt2-09": {
+  "label": "Một chatbot dịch vụ khách hàng phải làm rõ cho người dùng rằng họ đang tương tác với một hệ thống AI.",
+  "why": "Art. 50 tính minh bạch: một người phải biết họ đang xử lý một máy trừ khi nó là rõ ràng. Tiết lộ đó là toàn bộ nghĩa vụ."
+ },
+ "rt2-10": {
+  "label": "Một trình tạo hình ảnh có đầu ra tổng hợp phải được đánh dấu ở định dạng có thể đọc bằng máy là được tạo ra nhân tạo.",
+  "why": "Đánh dấu nội dung tổng hợp là một Art. 50 vận hành trên các nhà cung cấp các hệ thống tạo sinh, độc lập với bất kỳ tầng nào triển khai nằm trong."
+ },
+ "rt2-11": {
+  "label": "Một deepfake được xuất bản như một phần của một mục tin tức, phải được tiết lộ là được tạo ra nhân tạo hoặc thao tác.",
+  "why": "Tiết lộ deepfake là một nghĩa vụ tính minh bạch trên các người triển khai, có điều chỉnh cho công việc rõ ràng có tính chất nghệ thuật hoặc châm biếm."
+ },
+ "rt2-12": {
+  "label": "Một hệ thống nhận dạng cảm xúc được sử dụng bên ngoài một bối cảnh bị cấm, mà những chủ thể của nó phải được thông báo về hoạt động của nó.",
+  "why": "Nơi nhận dạng cảm xúc không bị cấm hoàn toàn, thông báo cho những người bị tiếp xúc là một Art. 50 vận hành. Cùng một công nghệ nằm trong hai tầng khác nhau tùy thuộc vào cài đặt."
+ },
+ "rt2-13": {
+  "label": "Một bộ lọc spam phân loại email đến cho một dịch vụ mail doanh nghiệp.",
+  "why": "Lọc spam là ví dụ riêng của Luật về rủi ro tối thiểu. Không có nghĩa vụ gắn kèm vượt quá luật chung."
+ },
+ "rt2-14": {
+  "label": "Một đối thủ AI kiểm soát các ký tự không phải của người chơi trong một trò chơi video.",
+  "why": "Sử dụng giải trí mà không ảnh hưởng đến quyền, an toàn hoặc truy cập vào dịch vụ nằm ngoài các tầng mang các vận hành."
+ },
+ "rt2-15": {
+  "label": "Một mô hình dự báo hàng tồn kho dự đoán mức hàng tồn kho kho không ảnh hưởng đến các cá nhân.",
+  "why": "Không có khu vực được liệt kê, không có thành phần an toàn, không có tương tác với một người. Phân tích hoạt động là nơi hầu hết AI doanh nghiệp thực sự nằm."
+ },
+ "rt2-16": {
+  "label": "Một mô hình tối ưu hóa việc sử dụng năng lượng trong hệ thống làm mát trung tâm dữ liệu.",
+  "why": "Tối ưu hóa công nghiệp chạm vào không có khu vực Phụ lục III và không người là rủi ro tối thiểu, bất kể nó quan trọng như thế nào về mặt thương mại."
+ },
+ "rt2-17": {
+  "label": "Một mô hình đa năng được cho là mang rủi ro hệ thống vì tính toán đào tạo của nó vượt quá ngưỡng được đặt trong Luật.",
+  "why": "Art. 51 đặt một giả định dựa trên tính toán. Đây là một phân loại cấp mô hình và nằm ngoài kim tự tháp dựa trên cách sử dụng hoàn toàn."
+ },
+ "rt2-18": {
+  "label": "Một mô hình đa năng được Ủy ban chỉ định là có khả năng tác động cao tương đương với các mô hình nâng cao nhất.",
+  "why": "Chỉ định là tuyến đường thứ hai vào rủi ro hệ thống, cùng với giả định tính toán. Tuyến đường hoặc kích hoạt các nghĩa vụ giống nhau."
+ },
+ "rt2-19": {
+  "label": "Một nhà cung cấp được yêu cầu thực hiện đánh giá mô hình, thử nghiệm đối thủ, và theo dõi và báo cáo các sự cố nghiêm trọng ở cấp mô hình.",
+  "why": "Đánh giá, thử nghiệm đối thủ, giảm thiểu rủi ro hệ thống và báo cáo sự cố là Art. 55 nghĩa vụ mà chỉ có rủi ro hệ thống GPAI mới mang."
+ },
+ "rt2-20": {
+  "label": "Một nhà cung cấp được yêu cầu đảm bảo một mức độ bảo vệ an niệm mạng đầy đủ cho mô hình và cơ sở hạ tầng vật lý của nó.",
+  "why": "An niệm mạng cấp mô hình là một nghĩa vụ GPAI rủi ro hệ thống. Các nghĩa vụ GPAI cơ sở — tài liệu, chính sách bản quyền, tóm tắt dữ liệu đào tạo — áp dụng mà không có nó."
+ }
+}

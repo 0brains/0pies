@@ -1,0 +1,84 @@
+{
+ "iii-tb-01": {
+  "label": "Chỉ tokenizer được kiểm tra để xử lý an toàn các ký tự emoji.",
+  "why": "Cách ly thành phần đơn là toàn bộ công việc của bộ môn này — tokenizer xử lý được input hoặc không, độc lập với bất cứ điều gì phía sau nó."
+ },
+ "iii-tb-02": {
+  "label": "Một hàm chuẩn hóa cách các điểm dữ liệu khác nhau được biểu diễn được kiểm tra hoàn toàn riêng biệt, trước khi được kết nối vào bất cứ điều gì phía sau.",
+  "why": "Cách ly một khối xây dựng phát hiện lỗi khi chúng vẫn rẻ nhất để sửa, trước khi sai sót tinh tế lan rộng trên hàng triệu bản ghi và lặng lẽ làm sai lệch kết quả — bộ môn này vẫn tồn tại ngay cả khi hàm sau này chạy như một phần của pipeline lớn hơn."
+ },
+ "iii-tb-03": {
+  "label": "Một thói quen tính điểm tùy chỉnh ẩn trong pipeline được chạy với một số input đã biết và kiểm tra từng dòng để có output đúng, trước khi phần còn lại của hệ thống tồn tại để gọi nó.",
+  "why": "Kiểm tra output của một thói quen dựa trên những giá trị đã biết là đúng, trước khi phần còn lại của hệ thống tồn tại, là cánh cổng hẹp nhất và sớm nhất — riêng biệt với bộ môn tiếp theo, chỉ bắt đầu khi nhiều phần được kết nối lại với nhau."
+ },
+ "iii-tb-04": {
+  "label": "Retriever, model và UI được thực hiện cùng nhau end-to-end; những thất bại khó xảy ra chỉ ở cấp độ này.",
+  "why": "Những thất bại chỉ xuất hiện khi các thành phần chạy cùng nhau là chữ ký của bộ môn này — không có kiểm tra thành phần đơn nào có thể bắt được chúng."
+ },
+ "iii-tb-05": {
+  "label": "Những phần của hệ thống tồn kho vượt qua sạch sẽ riêng biệt, sau đó toàn bộ thứ bắt đầu lại khi mỗi thành phần chạy cùng nhau — đặt hàng quá nhiều sản phẩm được liên kết với các nhóm nhân khẩu học nhất định.",
+  "why": "Vấn đề chỉ nổi lên khi toàn bộ hệ thống được kết hợp, vì vậy bản sửa phải được áp dụng ở cấp độ kết hợp cũng vậy — một đánh giá thành phần từng cách sẽ hoàn toàn bỏ lỡ nó."
+ },
+ "iii-tb-06": {
+  "label": "Một mô hình phê duyệt cho vay trả lại kết quả khác nhau trên phần cứng khác nhau, vì những khác biệt độ chính xác dấu phẩy động chỉ xuất hiện khi toàn bộ hệ thống chạy end-to-end.",
+  "why": "Sự khác biệt là một sản phẩm của việc kết hợp các thành phần trên phần cứng thực — phản ứng quản trị là ghi lại phạm vi phương sai và đặt các ranh giới quyết định có thể chấp nhận được, không phải để loại nó ra khỏi bất cứ một phần nào riêng biệt."
+ },
+ "iii-tb-07": {
+  "label": "Độ chính xác tuyệt vời trên dữ liệu nó được đào tạo, tệ trên các bản ghi nó không bao giờ thấy.",
+  "why": "Đây là kiểm tra tổng quát hóa — khoảng cách giữa hành vi tập huấn luyện và hành vi trên dữ liệu chưa từng thấy — riêng biệt với bộ test/holdout, vẫn còn chưa động cho đến khi điều chỉnh hoàn tất rồi cung cấp ước tính lỗi cuối cùng, không thiên vị của mô hình."
+ },
+ "iii-tb-08": {
+  "label": "Một mô hình đạt độ chính xác gần như hoàn hảo trên bộ huấn luyện của nó, sau đó hoạt động không ổn định khi các nhóm bệnh nhân mới nằm ngoài bộ này được chạy qua nó.",
+  "why": "Khoảng cách từ training-to-unseen-data chính xác là những gì bộ môn này tồn tại để bắt; một số liệu công bằng sẽ thay vào đó so sánh tỷ lệ lỗi trên các nhóm được bảo vệ trên cùng một tập dữ liệu, mà kịch bản này không bao giờ làm."
+ },
+ "iii-tb-09": {
+  "label": "Dự đoán của một mô hình dao động dữ dội tùy thuộc vào lát cắt nào của dữ liệu huấn luyện nó nhìn thấy; cái khác hầu như không di chuyển khỏi trung bình không có gì được đưa vào.",
+  "why": "Những dao động lớn trên các lát cắt huấn luyện so với sự thờ ơ bằng phẳng đối với dữ liệu là hai chữ ký thất bại mà bộ môn này xem xét trong quá trình phát triển, tốt trước khi bất cứ ai nói về một con số hiệu suất cuối cùng."
+ },
+ "iii-tb-10": {
+  "label": "Sự khác biệt thời gian phản ứng được đo trên các vùng người dùng dưới tải.",
+  "why": "Công bằng thời gian xử lý biến một yêu cầu kinh doanh/công bằng thành một số liệu có thể đo lường, được định nghĩa trước — riên biệt với kiểm tra đảo chiếc bảo vệ, theo dõi nội dung output, không phải độ trễ."
+ },
+ "iii-tb-11": {
+  "label": "Lấy mẫu thống kê và kiểm tra phân tích quyết định được chạy lại các output của hệ thống để xác nhận chúng đáp ứng các mục tiêu độ chính xác và độ tin cây được đặt ở đầu dự án.",
+  "why": "Lấy mẫu thống kê và phân tích quyết định là những cách được công nhận để kiểm tra xem một hệ thống AI có trách nhiệm có đáp ứng các mục tiêu của nó không; tính điểm một vấn đề bằng xác suất lần mức độ nghiêm trọng là một công cụ ưu tiên quản lý rủi ro, không phải một cách để kiểm tra hệ thống."
+ },
+ "iii-tb-12": {
+  "label": "Các con số công bằng và độ tin cây mà một dự án ký tên cách đây vài tháng được kiểm tra lại những gì hệ thống thực sự sản xuất hôm nay, sử dụng cùng các số liệu mà mọi người đồng ý.",
+  "why": "Giữ kết quả theo các số liệu được thỏa thuận từ trước, không phải bất kỳ số nào có vẻ tốt nhất, là những gì giữ cho bộ môn này trung thực và ngăn ngừa các đội yên lặng thay đổi một biện pháp hữu lợi."
+ },
+ "iii-tb-13": {
+  "label": "Một người ngoài điều tra xem liệu hồ sơ của một bệnh nhân cụ thể có nằm trong bộ huấn luyện hay không.",
+  "why": "Một người ngoài tìm hiểu xem liệu một bản ghi cụ thể có nằm trong bộ huấn luyện hay không là một thất bại kiểm tra bảo mật — riên biệt với kiểm tra tổng quát hóa, chỉ quan tâm đến độ chính xác trên dữ liệu chưa nhìn thấy, không phải những người nằm trong bộ huấn luyện."
+ },
+ "iii-tb-14": {
+  "label": "Kiểm tra penetration-style tìm cách một kẻ tấn công có thể ăn cắp trọng số của mô hình hoặc tái cấu trúc các phần dữ liệu huấn luyện.",
+  "why": "Nhắm mục tiêu theft trọng số và tái cấu trúc dữ liệu training là một quan điểm của kẻ tấn công, riên biệt với kiểm tra tổng quát hóa, không bao giờ xem xét xem liệu bất cứ ai có cố gắng trích xuất bất cứ điều gì từ mô hình hay không."
+ },
+ "iii-tb-15": {
+  "label": "Những người kiểm tra penetration phát hiện ra rằng các input được chế tạo cẩn thận có thể lật chẩn đoán của một mô hình đã chính xác trong khoảng một trường hợp trong tám.",
+  "why": "Input đối kháng được chế tạo gây ra phân loại sai là một phát hiện kiểm tra bảo mật; phản ứng quản trị là ghi lại nó như một giới hạn được biết đến và thêm xác thực đầu vào và phát hiện bất thường, không phải để vẫy tay nó vì độ chính xác lâm sàng vẫn đáp ứng mục tiêu."
+ },
+ "iii-tb-16": {
+  "label": "Thuộc tính được bảo vệ lật, mọi thứ khác được giữ không đổi, output được xem xét.",
+  "why": "Xem liệu lật một thuộc tính được bảo vệ một mình thay đổi output là một kiểm tra công bằng counterfactual — riên biệt với một cuộc điều tra suy luận thành viên, yêu cầu xem liệu một bản ghi có nằm trong bộ huấn luyện hay không."
+ },
+ "iii-tb-17": {
+  "label": "Tệp tuân thủ của một bệnh viện cho thấy kiểm tra công bằng đã được chạy và ghi lại, cộng với một bản ghi rằng các quyết định có thể được giải thích cho những người xem xét — bằng chứng tổ chức đã thực hiện bổn phận chăm sóc của nó.",
+  "why": "Ghi lại rằng kiểm tra công bằng và giải thích thực sự chạy là những gì biến chúng thành bằng chứng quy định có thể bảo vệ được — riên biệt với một đường lộ kiểm tra bảo mật, ghi lại sự kháng cự tấn công, không phải chất lượng công bằng hoặc giải thích."
+ },
+ "iii-tb-18": {
+  "label": "Quyết định của mô hình được dịch thành những thuật ngữ một bác sĩ lâm sàng thực sự có thể hành động, không chỉ là một điểm số xác suất.",
+  "why": "Dịch một quyết định thành những thuật ngữ một bên liên quan có thể sử dụng, thay vì để nó như một điểm xác suất trần, là nửa của khu vực này mà một mô hình hộp đen vẫn có thể thất bại ngay cả sau khi vượt qua mọi con số độ chính xác và công bằng."
+ },
+ "iii-testing": {
+  "hint": "Hỏi cảnh đang kiểm tra cái gì, không chỉ những dữ liệu nó sử dụng. Xác thực ở đây có nghĩa là một điều duy nhất: liệu mô hình có tổng quát hóa vượt quá những gì nó được đào tạo không. Bộ dữ liệu cung cấp ước tính lỗi cuối cùng, không thiên vị của mô hình là một khái niệm khác, được kiểm tra trực tiếp trong Pipeline Twins.",
+  "note": "Đây là những kiểm tra thời gian phát triển và trước khi phát hành. Những gì xảy ra sau khi một hệ thống đi vào hoạt động và ở lại là một bảng khác.",
+  "zones[0].def": "Kiểm tra một thành phần của pipeline riêng biệt — một tokenizer, một hàm chuẩn hóa, một thói quen tính điểm — trước khi nó từng được kết nối vào bất cứ điều gì khác. Bắt lỗi khi chúng vẫn rẻ nhất để sửa.",
+  "zones[1].def": "Thực hiện các thành phần cùng nhau end-to-end, xem xét các thất bại chỉ xuất hiện khi các phần được kết hợp — không khớp, nút thắt hoặc sự thiên vị mà không có thành phần riêng lẻ nào được hiển thị riêng.",
+  "zones[2].def": "Kiểm tra xem liệu mô hình được đào tạo có tổng quát hóa vượt quá dữ liệu nó được đào tạo không: khoảng cách giữa hành vi bộ training và hành vi trên dữ liệu nó không bao giờ thấy. Một kiểm tra thời gian phát triển lại overfitting — không phải lời nói cuối cùng của mô hình về hiệu suất.",
+  "zones[3].def": "Đo lường hệ thống lại các số liệu cụ thể, được xác định trước — độ chính xác, độ tin cây, ngưỡng công bằng — dịch các mục tiêu kinh doanh, đạo đức và quy định của dự án thành những con số mà mọi người ký tên.",
+  "zones[4].def": "Điều tra xem liệu mô hình có thể bị tấn công: trọng số bị ăn cắp, dữ liệu huấn luyện được tái cấu trúc, output được thao tác bởi những input được chế tạo. Khả năng phục hồi chống lại thỏa hiệp cố ý hoặc vô ý.",
+  "zones[5].def": "Kiểm tra xem liệu các kết quả có công bằng trên các nhóm được bảo vệ hay không, và liệu một quyết định có thể được giải thích dưới những thuật ngữ có ý nghĩa với những người phải dựa vào nó không."
+ }
+}

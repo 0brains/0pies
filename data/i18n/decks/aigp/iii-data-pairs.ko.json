@@ -1,0 +1,74 @@
+{
+ "iii-dp-01": {
+  "a.text": "Development 중에 hyperparameter를 tune하고 training round 사이의 overfitting을 catch하려고 use돼요.",
+  "a.why": "이 role은 repeatable하고 iterative해요. Model이 그것에 대해 tune돼요 over and over. 정확히 왜 final verdict를 위해 stand in할 수 없는지예요.",
+  "b.text": "Frozen하고 untouched돼요 모든 tuning이 complete될 때까지. 그 다음 run돼요 once만. Provide하려고 model의 final, unbiased error estimate를 말이요.",
+  "b.why": "Evaluating final model을 set에 대해 그게 tuned됐던 거에 대해 — recorded exam trap — biased estimate를 produce해요. Only set이 tuning process가 절대 touched하지 않았던 거만 unbiased final number를 줄 수 있어요."
+ },
+ "iii-dp-02": {
+  "a.text": "Exact ETL script version이 churn model의 feature를 aggregate하려고 logged돼요. Every transformation step에서 말이요. Raw table에서 final feature까지요.",
+  "a.why": "이게 journey를 track해요 — dataset이 pass하는 거 every transformation — transformation-script version이 single most critical piece of metadata예요. Reproducibility와 drift debugging을 말이예요.",
+  "b.text": "Any transformation이 happen되기 전에 dataset의 original source, custody chain, collection condition이 record돼요. Establish its authenticity를 말이예요.",
+  "b.why": "이게 birth certificate예요 — origin과 custody — subsequent에 뭐가 done된 것의 record가 아니예요. 그 record는 pair의 다른 side에 belong해요."
+ },
+ "iii-dp-03": {
+  "a.text": "Calibrated mathematical noise가 add돼요 training 중에 그래서 no single training record가 show하려고 할 수 없어요. Model의 output에 더 이상 negligible effect를 가지려고요.",
+  "a.why": "이거는 mathematical guarantee about influence예요. Not about where data physically travel — whether data가 ever leave its source해도 apply돼요.",
+  "b.text": "Each hospital이 train해요 locally on its own patient record에서. Only resulting update만 — never raw record — travel해요 central server에 말이예요. Aggregation을 위해서요.",
+  "b.why": "Protected된 거는 which data leave the site예요. How much any single record을 infer할 수 있는지가 아니라 output에서 말이예요. Raw record은 절대 travel하지 않아요. Full stop이예요."
+ },
+ "iii-dp-04": {
+  "a.text": "Standardized document가 lay out해요. Dataset의 motivation, composition, collection process, recommended use를 말이예요. Any model이 train되기 전에 데이터에 대해서요.",
+  "a.why": "이거는 raw material itself를 document해요. Independent해요 any model이 later이 train될 것의 말이예요.",
+  "b.text": "Single version의 purpose, its training/validation/test data, performance metric, known limitation이 summarize돼요. Whoever가 deploy하려고 decide해요.",
+  "b.why": "이거는 one specific version에 scoped돼요. Not dataset behind it — trained artifact를 위한 nutrition label예요. Distinct해요 dataset-level scope of other side로부터요."
+ },
+ "iii-dp-05": {
+  "a.text": "Attacker가 work back해요 system의 output에서 reconstruct approximation을 actual record의 있던 거를 말이예요.",
+  "a.why": "이 attack이 recover해요 training data content를 system produce하는 것에서 — yes/no check이 아닌 reconstruction예요.",
+  "b.text": "Attacker가 reconstruct하지 않아요. 오직 confirm할 뿐이에요. Whether one specific person의 data가 training set에 include되었는지 전부 말이예요.",
+  "b.why": "이 attack이 answer해요 binary set-membership question만. 절대 recover하지 않아요 record's content을 way the other side가 하는 것처럼 말이예요."
+ },
+ "iii-dp-06": {
+  "a.text": "EU resident가 withdraw해요 consent를 하고 company가 must erase해요 their personal record를 system에서 말이예요.",
+  "a.why": "이게 remove해요 raw data itself를 response to rights request. Argument이 data가 help train model을 하는 게 erasure right를 override하지 않아요. Consent가 withdraw되면요.",
+  "b.text": "Even offending record이 gone한 후에도 model itself가 must be corrected돼요. It already learned pattern because of data를 말이예요. Should never have been used예요.",
+  "b.why": "이거는 remove해요 model이 improperly used data에서 absorb한 것을 — distinct remedy예요. Model이 retain할 수 있어요 effect long after underlying record이 erased돼요."
+ },
+ "iii-dp-07": {
+  "a.text": "Documented assessment가 link해요 data's characteristic과 coverage을 model의 specific intended context of use에 말이예요.",
+  "a.why": "이거는 matching data to particular use에 대한 거예요. Not data의 age나 volume — large, recent dataset이 여전히 fail할 수 있어요 이 check를 if it이 never assessed됐으면 actual use case에 대해서요.",
+  "b.text": "Dataset이 check돼요 to confirm it mirror하려고 population the model이 actually be applied to — treated as single most important bias mitigator in whole pipeline예요.",
+  "b.why": "이거는 mirror-match question about the population이예요. Simply augmenting skewed dataset을 synthetic example로 하는 거는 resolve하지 못해요 genuine gap을 여기서 말이예요. Underlying governance question이 original data가 appropriate였는지가 절대 answered되지 않았기 때문이예요."
+ },
+ "iii-dp-08": {
+  "a.text": "Dataset이 check돼요 to confirm it hasn't been altered나 corrupted되었는지. Any point at between original source와 current use를 말이예요.",
+  "a.why": "이거는 protection-from-alteration property예요. Distinct해요 whether content itself이 accurate나 reliable한지로부터요.",
+  "b.text": "Same dataset이 separately check돼요 to confirm it stay accurate하고 reliable해요 when it's shared이고 reused돼요 different system과 environment에서 말이예요.",
+  "b.why": "이거는 ask해요 whether content itself이 hold up하려고 across context해요. Dataset이 perfectly untampered할 수 있어요 while still being stale나 inconsistent in what it actually say해요."
+ },
+ "iii-dp-09": {
+  "a.text": "Rate of positive outcome이 compared across protected group on model's actual, real-world output distribution예요.",
+  "a.why": "이 metric이 compare해요 aggregate outcome rate를 group between on data as it actually stand해요.",
+  "b.text": "One applicant의 protected attribute이 flipped되고 every other input stay identical돼요. Output이 check돼요 any change를 위해요.",
+  "b.why": "이거는 test해요 single record를 against its own hypothetical twin로요. Not group-level outcome rate를 — model이 pass할 수 있어요 aggregate check를 while still failing this individual-level one예요."
+ },
+ "iii-dp-10": {
+  "a.text": "Weight value inside network이 updated돼요 backpropagation을 통해 training이 prediction error를 reduce할 때요.",
+  "a.why": "These는 learned value예요 input data를 transform하려고 결정하는 output로 — exist하지 않아요 final form in until training happen해요.",
+  "b.text": "Learning rate이 fixed돼요 team by before training ever start. Stay untouched돼요 while network learn해요.",
+  "b.why": "These는 set된 advance in to control how learning happen — input to training, not output예요."
+ },
+ "iii-dp-11": {
+  "a.text": "Sales-prediction model이 perform해요 almost perfectly on historical data it trained on. 그 다음 make significant error predict해요 genuinely new product를 위해서요.",
+  "a.why": "Model이 memorize해요 quirk을 specific to its training data 대신에 pattern을 learning이 transfer하려고. Strong on familiar, weak on new예요.",
+  "b.text": "Churn model이 very few parameter와 handful feature만 가지고 있어요. Perform해요 poorly on data it trained on과 new customer 둘 다 말이예요.",
+  "b.why": "Poor performance everywhere, including on training data itself는 signal이예요 model이 절대 가지지 못했어요 enough complexity to capture pattern in first place — opposite failure mode from memorizing it too well예요."
+ },
+ "iii-dp-12": {
+  "a.text": "Voice-recognition system이 train된 only few thousand audio clip. Struggle해요 capture하려고 variability of real-world speech예요.",
+  "a.why": "이거는 ask해요 whether enough data가 있는지. Full stop이요. Meaningful pattern을 learn하려고 — too little data here는 mean model이 절대 have chance를 generalize하려고요.",
+  "b.text": "Medical AI가 train된 single country의 data에서. Perform well its pilot에서 그 다음 struggle해요. Expand되면 different genetic background과 healthcare system이 patient 있는 population into 다른 곳에서요.",
+  "b.why": "이거는 ask해요 whether dataset이 pilot을 위해 enough였는지를 여전히 support할 수 있는지 expansion into new population과 context — distinct question위부터 whether enough data가 있었는지 pilot in first place예요."
+ }
+}

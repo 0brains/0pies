@@ -1,0 +1,53 @@
+{
+ "rag": {
+  "hint": "Place-le sur le chemin de récupération : préparer la connaissance, trouver les candidats, améliorer leur pertinence, ou assurer que la réponse générée reste soutenue et traçable."
+ },
+ "rag-01": {
+  "label": "Un vecteur numérique représentant les caractéristiques sémantiques afin que le contenu connexe puisse être comparé mathématiquement.",
+  "why": "Un vecteur numérique représentant les caractéristiques sémantiques afin que le contenu connexe puisse être comparé mathématiquement."
+ },
+ "rag-02": {
+  "label": "Divise les documents source en passages récupérables dimensionnés pour préserver le sens sans gaspiller le contexte.",
+  "why": "Divise les documents source en passages récupérables dimensionnés pour préserver le sens sans gaspiller le contexte."
+ },
+ "rag-03": {
+  "label": "Stocke les embeddings et prend en charge la recherche par similarité efficace des voisins les plus proches.",
+  "why": "Stocke les embeddings et prend en charge la recherche par similarité efficace des voisins les plus proches."
+ },
+ "rag-04": {
+  "label": "Récupère le contenu par le sens plutôt que d'exiger un chevauchement de mots-clés exact.",
+  "why": "Récupère le contenu par le sens plutôt que d'exiger un chevauchement de mots-clés exact."
+ },
+ "rag-05": {
+  "label": "Récupère le contenu en utilisant les correspondances de termes lexicaux et reste utile pour les noms, les codes et les phrases exactes.",
+  "why": "Récupère le contenu en utilisant les correspondances de termes lexicaux et reste utile pour les noms, les codes et les phrases exactes."
+ },
+ "rag-06": {
+  "label": "Combine la récupération sémantique et les mots-clés pour bénéficier du sens et de la correspondance de termes exacts.",
+  "why": "Combine la récupération sémantique et les mots-clés pour bénéficier du sens et de la correspondance de termes exacts."
+ },
+ "rag-07": {
+  "label": "Restreint la récupération par des attributs tels que le locataire, la date, le type de document ou le niveau d'accès.",
+  "why": "Restreint la récupération par des attributs tels que le locataire, la date, le type de document ou le niveau d'accès."
+ },
+ "rag-08": {
+  "label": "Reclasse les candidats récupérés pour placer les passages les plus pertinents à la requête complète en premier.",
+  "why": "Reclasse les candidats récupérés pour placer les passages les plus pertinents à la requête complète en premier."
+ },
+ "rag-09": {
+  "label": "Restreint la génération aux preuves fournies afin que les affirmations puissent être soutenues et tracées.",
+  "why": "Restreint la génération aux preuves fournies afin que les affirmations puissent être soutenues et tracées."
+ },
+ "rag-10": {
+  "label": "Relie une affirmation de réponse au passage source qui la soutient.",
+  "why": "Relie une affirmation de réponse au passage source qui la soutient."
+ },
+ "rag-11": {
+  "label": "Indique si l'étape de récupération trouve les preuves nécessaires pour répondre à une question.",
+  "why": "Si 100 questions exigent un passage de preuves connu et le récupérateur le retourne pour 85, le rappel de récupération est de 85 %. Le rappel de récupération bas pointe vers le chunking, les embeddings, les filtres, la réécriture de requête ou les problèmes de nombre de candidats que la génération ne peut pas réparer."
+ },
+ "rag-12": {
+  "label": "Indique quelle quantité du contexte récupéré est pertinente plutôt que du bruit distrayant.",
+  "why": "Indique quelle quantité du contexte récupéré est pertinente plutôt que du bruit distrayant."
+ }
+}

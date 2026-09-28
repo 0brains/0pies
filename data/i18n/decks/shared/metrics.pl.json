@@ -1,0 +1,73 @@
+{
+ "metrics": {
+  "hint": "Wybierz metrykę z typu i kosztu błędu, nie z wygody; klasyfikacja, regresja, wycofanie, generacja, bezpieczeństwo i osąd człowieka odpowiadają na różne pytania jakości."
+ },
+ "metrics-01": {
+  "label": "Frakcja wszystkich prognoz, które są poprawne; najużyteczniejsza, gdy klasy i koszty błędów są zrównoważone.",
+  "why": "Dla 90 prawidłowych prognoz na 100 dokładność wynosi 90%. Może być zwodnicza w przypadku niezrównoważonych klas: model, który przewiduje każdy rzadki przypadek choroby jako negatywny, może wydawać się wysoce dokładny, a jednocześnie nie znajdzie pacjentów, którzy potrzebują pomocy."
+ },
+ "metrics-02": {
+  "label": "Ze wszystkich przewidywanych pozytywów, frakcja, które są faktycznie pozytywne.",
+  "why": "Użyj precyzji, gdy fałszywe alarmy są kosztowne. Jeśli 100 transakcji jest oznaczonych jako oszustwo, a tylko 80 to oszustwo, precyzja wynosi 80%; pozostałe 20 tworzą niepotrzebne dochodzenia lub zablokowane zakupy."
+ },
+ "metrics-03": {
+  "label": "Ze wszystkich rzeczywistych pozytywów, frakcja, którą model pomyślnie znajduje.",
+  "why": "Użyj wycofania, gdy pominięcie prawdziwego pozytywu jest kosztowne. Jeśli 100 oszuściwych transakcji występuje, a model wyłapuje 90, wycofanie wynosi 90%; pozostałe 10 to fałszywe negatywy, które wymknęły się wykryciu."
+ },
+ "metrics-04": {
+  "label": "Średnia harmoniczna precyzji i wycofania, równoważąc obie w jednej wartości.",
+  "why": "F1 staje się wysoka tylko, gdy zarówno precyzja, jak i wycofanie są wysokie, więc jest przydatna dla niezrównoważonej klasyfikacji, gdy fałszywe alarmy i pominięte pozytywne znaczą. Nie obejmuje rzeczywistych negatywów i może ukryć, która z precyzji lub wycofania jest słabsza."
+ },
+ "metrics-05": {
+  "label": "Liczy prawdziwe pozytywne, rzeczywiste negatywne, fałszywe pozytywne i fałszywe negatywne.",
+  "why": "Ta tabela ujawnia dokładne typy błędów ukryte przez jeden wynik podsumowania. Przeczytaj jej cztery komórki, aby zobaczyć, czy model tworzy fałszywe alarmy, brakuje rzeczywistych pozytywów, czy prawidłowo obsługuje każdą klasę, zanim wybierzesz precyzję, wycofanie lub inną metrykę."
+ },
+ "metrics-06": {
+  "label": "Mierzy, jak dobrze klasyfikator uszeregowuje pozytywy powyżej negatywów w wielu progach.",
+  "why": "AUC-ROC ocenia jakość rankingu bez zatwierdzania jednego progu klasyfikacji: 1,0 to doskonały ranking, a około 0,5 to losowy. Dla wysoce niezrównoważonych danych również sprawdzaj zachowanie precyzji-wycofania, ponieważ wyniki ROC mogą wyglądać optymistycznie, gdy negatywy dominują."
+ },
+ "metrics-07": {
+  "label": "Średnia różnica kwadratowa między przewidywanymi i rzeczywistymi wartościami; mniejsza jest lepsza.",
+  "why": "Podniesienie każdej reszty do kwadratu powoduje, że duże błędy przyczyniają się nieproporcjonalnie. Błędy 2 i 10 przyczyniają się 4 i 100, więc MSE silnie karze odstające; jego jednostki kwadratowe czyniają go mniej intuicyjnym do bezpośredniego wyjaśnienia."
+ },
+ "metrics-08": {
+  "label": "Pierwiastek kwadratowy MSE, wyrażający błąd w tej samej jednostce, co przewidywane wartości.",
+  "why": "RMSE zachowuje dodatkową karę MSE dla dużych błędów, ale konwertuje wynik z powrotem do jednostki celu. RMSE $5000 na cenach domów oznacza, że typowa skala błędu jest wyrażona w dolarach, chociaż duże rozbieżności wciąż na niego wpływają."
+ },
+ "metrics-09": {
+  "label": "Średnia bezwzględna różnica między przewidywanymi i rzeczywistymi wartościami numerycznymi.",
+  "why": "MAE traktuje wielkość błędu liniowo: brakuje 2 i 10 współwkładów 2 i 10. Jest łatwiej zinterpretować i mniej czuły na odstające niż MSE lub RMSE, czyniąc go przydatnym, gdy każda jednostka błędu ma mniej więcej ten sam koszt."
+ },
+ "metrics-10": {
+  "label": "Mierzy, jak dobrze model przewiduje prawdopodobieństwo następnego tokena lub słowa.",
+  "why": "Niższa zawartość informacyjna oznacza, że model języka jest mniej zaskoczony tekstem ewaluacyjnym i przypisuje wyższe prawdopodobieństwo jego tokenom. Mierzy przewidywanie następnego tokena, a nie czy odpowiedź jest faktyczna, bezpieczna, pomocna lub ugruntowana."
+ },
+ "metrics-11": {
+  "label": "Mierzy zachodzenie między wygenerowanym i tekstem referencyjnym i jest powszechnie używany do podsumowań.",
+  "why": "ROUGE powszechnie mierzy, ile słownictwa referencyjnego wygenerowane podsumowanie odzyskuje, często poprzez dopasowywanie słów, n-gramów lub sekwencji. Wysoki wynik może wciąż coś pominąć i może nagradzać skopiowane słownictwo, więc ocena semantyczna i człowieka może być również potrzebna."
+ },
+ "metrics-12": {
+  "label": "Ocenia tłumaczenie, porównując n-gramy w wygenerowanym i tekstem referencyjnym.",
+  "why": "BLEU nagradza n-gram nakładanie się z jednym lub więcej tłumaczeniami referencyjnymi i stosuje karę do wyjść, które są zbyt krótkie. Prawidłowe tłumaczenia mogą używać innego słownictwa, więc BLEU jest najbardziej przydatny do porównania zagregowanego, a nie jako dowód, że jedno zdanie jest prawidłowe."
+ },
+ "metrics-13": {
+  "label": "Sprawdza, czy wygenerowane twierdzenia są wspierane przez kontekst lub źródła dostarczone modelowi.",
+  "why": "Dla odpowiedzi RAG sprawdzaj, czy każde twierdzenie wynika z fragmentów pobieranych dostarczonych modelowi. Oświadczenie może być ogólnie prawdziwe, ale nadal jest nieugruntowane, jeśli dostarczony dowód go nie wspiera; cytowania pomagają uczynić tę kontrolę śledzoną."
+ },
+ "metrics-14": {
+  "label": "Sprawdza twierdzenia względem wiarygodnych faktów, a nie tylko mierząc podobieństwo tekstowe.",
+  "why": "To pyta, czy twierdzenia zgadzają się z wiarygodną rzeczywistością, nawet gdy żaden wspierający fragment nie został dostarczony w monicie. Różni się od ugruntowania: odpowiedź może być faktycznie prawidłowa, ale nieobsługiwana przez jej cytowany kontekst, lub ugruntowana w źródle, które jest samo w sobie błędne."
+ },
+ "metrics-15": {
+  "label": "Mierzy, jak często wycofanie zawiera odpowiednie dowody wśród zwróconych fragmentów.",
+  "why": "Jeśli 100 pytań wymaga znanego fragmentu dowodów, a wycofanie zwraca go dla 85, wycofanie wycofania wynosi 85%. Niskie wycofanie wycofania wskazuje na fragmentowanie, osadzania, filtry, przepisanie zapytań lub problemy z licznikiem kandydatów, które generacja nie może naprawić."
+ },
+ "metrics-16": {
+  "label": "Wykorzystuje ludzi i zdefiniowaną rubrycę do oceny jakości, które zautomatyzowane metryki mogą pominąć.",
+  "why": "Ludzie mogą oceniać przydatność, ton, rozumowanie, dopasowanie kulturowe i zniuansowaną poprawność względem spójnej rubryk. Użyj reprezentatywnych próbek, wielokrotnych wyszkolonych recenzentów i kontroli zgody, ponieważ osądy człowieka mogą być subiektywne, powolne i drogie."
+ },
+ "metrics-17": {
+  "label": "Testuje wyjścia pod kątem szkodliwej zawartości, wycieku prywatności, naruszenia polityki i nieprzyjaznego zachowania.",
+  "why": "Testuj zarówno zwykłe, jak i antagonistyczne monity pod kątem szkodliwego wyjścia, sukcesu karania, ekspozycji wrażliwych danych, uprzedzeń i niebezpiecznych działań narzędzi. Raportuj wyniki według kategorii ryzyka i grupy użytkownika; jeden średni wynik jakości nie może wykazać, że system jest bezpieczny."
+ }
+}

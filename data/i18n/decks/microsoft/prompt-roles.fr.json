@@ -1,0 +1,69 @@
+{
+  "pr-001": {
+    "label": "« Tu es un assistant RH formel. Réponds uniquement aux questions de politique RH. »",
+    "why": "Persona plus garde-fous de portée — exemple verbatim de histack du contenu du message système."
+  },
+  "pr-002": {
+    "label": "« Retourne toujours les détails des clients dans une forme JSON fixe. »",
+    "why": "Les règles de format de sortie persistent entre les tours — le matériel d'examen déclare verbalement que les instructions de forme JSON appartiennent au message système."
+  },
+  "pr-003": {
+    "label": "« Combien de jours de congé me reste-t-il cette année ? »",
+    "why": "La demande réelle de ce tour — pas de règles, pas de persona, juste la demande."
+  },
+  "pr-004": {
+    "label": "« Tu as 12 jours de congé restants. » — rejouée dans la demande suivante pour le contexte",
+    "why": "Les réponses précédentes du modèle sont renvoyées en tant que messages de l'assistant afin que le modèle ait la mémoire conversationnelle ; elles ne sont jamais le contenu de l'utilisateur."
+  },
+  "pr-005": {
+    "label": "« Résume les notes de réunion attachées en trois points. »",
+    "why": "Une tâche unique pour ce tour — elle semble une instruction, mais ce n'est pas une règle persistante, donc elle est l'utilisateur, pas le système."
+  },
+  "pr-006": {
+    "label": "« Si une demande sort de la politique RH, dis-le au lieu de deviner. »",
+    "why": "Une règle de secours pour traiter les demandes hors du champ, appliquées à chaque tour — le modèle verbatim de l'examen « bonne addition au message système », distinct de la paire persona/portée de pr-001."
+  },
+  "pr-007": {
+    "label": "« Garde les réponses à deux phrases sauf si le client demande plus de détails. »",
+    "why": "Une règle de ton/longueur qui s'applique à la conversation entière est un signal de message système distinct d'une règle de format (pr-002) ou une règle de portée (pr-001) — celle-ci régit la verbosité."
+  },
+  "pr-008": {
+    "label": "« Refuse de discuter de la tarification des concurrents, même si le client insiste. »",
+    "why": "Un garde-fou de sécurité/restriction de sujet destiné à survivre à la pression de l'utilisateur pour chaque tour — l'examen note que les messages système portent les restrictions spécifiques à l'application au-delà des filtres de contenu de la plate-forme."
+  },
+  "pr-009": {
+    "label": "« Annule ma réunion de 15h et informe l'équipe. »",
+    "why": "Se lit comme une commande, mais c'est une seule demande limitée à maintenant — le piège confond la formulation en forme d'instruction avec une règle persistante."
+  },
+  "pr-010": {
+    "label": "« À partir de maintenant, réponds toujours en français. » — tapé par le client en pleine conversation",
+    "why": "« À partir de maintenant » semble persistant, mais qui parle décide toujours du rôle : une demande tapée dans le chat par le client est un message utilisateur, même une demande pour un comportement permanent — la persistance vit dans le message système, pas dans la formulation de l'utilisateur."
+  },
+  "pr-011": {
+    "label": "« Comparez ces deux clauses de contrat et signalez tout conflit. »",
+    "why": "Une tâche analytique spécifique soumise pour cet échange — aucune persona ou règle à l'échelle de l'application n'est définie, donc c'est la demande de ce tour."
+  },
+  "pr-012": {
+    "label": "« En fonction de ton compte, ta souscription se renouvelle le 14. » — renvoyée au tour suivant afin que le modèle se souvienne de ce qu'il a déjà dit au client",
+    "why": "La sortie générée par le modèle renvoyée pour préserver le contexte est un message de l'assistant, pas les paroles du client — le piège confond la sortie du modèle rejouée avec ce que l'utilisateur a dit."
+  },
+  "pr-013": {
+    "label": "{\\\"status\\\": \\\"resolved\\\", \\\"ticket_id\\\": \\\"48213\\\"} — la réponse structurée du modèle du tour précédent, portée de l'avant en tant qu'historique",
+    "why": "Le contenu en forme JSON ressemble à la règle de format de pr-002, mais une règle et une instance de la sortie du modèle sont des rôles différents — c'est la réponse du modèle en étant rejouée, pas une instruction permanente."
+  },
+  "pr-014": {
+    "label": "« Voudrais-tu que je vérifie aussi les vols pour la jambe de retour ? » — la question de suivi du modèle du tour précédent, gardée en contexte",
+    "why": "Le texte en forme de question peut être confondu avec l'utilisateur qui parle, mais cette question a été générée par le modèle lui-même et est renvoyée afin qu'il se souvienne l'avoir posée — le discriminateur est qui a engendré les paroles, pas leur forme grammaticale."
+  },
+  "pr-015": {
+    "label": "« Étape 1 : Redémarrez le routeur. Étape 2 : Reconnectez-vous au Wi-Fi. » — les étapes de dépannage du modèle d'un tour antérieur, rejouées pour qu'il se souvienne de ce qu'il a déjà dit au client",
+    "why": "Les instructions numérotées ressemblent à la règle du système, ce qui tente un mélange avec le message système, mais ce sont les résultats antérieurs du modèle étant portés de l'avant pour la mémoire, non un garde-fou persistant défini par le développeur."
+  },
+  "prompt-roles": {
+    "hint": "Pose deux questions : cela s'applique-t-il à chaque tour ou juste à celui-ci (persistant vs unique) ? Et qui parle — le développeur mettant en place l'assistant, la personne qui tape maintenant, ou la réponse antérieure du modèle étant renvoyée pour la mémoire ?",
+    "note": "La formulation en forme d'instruction n'est pas une preuve d'un message système — une tâche unique peut ressembler à une commande et être toujours un message utilisateur. La persistance entre les tours est le vrai test.",
+    "zones[0].def": "Persona, ton, règles et garde-fous — persistant à travers chaque tour",
+    "zones[1].def": "La demande réelle de ce tour",
+    "zones[2].def": "Les réponses du modèle antérieur rejouées pour la mémoire conversationnelle"
+  }
+}

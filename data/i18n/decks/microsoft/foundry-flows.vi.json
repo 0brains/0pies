@@ -1,0 +1,82 @@
+{
+ "lad-agent": {
+  "prompt": "Đặt vòng đời của agent theo thứ tự nó phải xảy ra.",
+  "steps[0].label": "Xác định agent: PromptAgentDefinition(model=MODEL_NAME, instructions=..., tools=[...])",
+  "steps[0].detail": "Mô hình + hướng dẫn + công cụ được đặt tại thời điểm định nghĩa — {\"deployment\":{\"model\":AGENT_NAME}} là câu trả lời sai chính tắc; triển khai lưu trữ mô hình, agent là mô hình + hướng dẫn + công cụ.",
+  "steps[1].label": "Kiểm tra nó trong sân chơi Agents",
+  "steps[1].detail": "Sân chơi cấu hình nhân vật, công cụ và kiến thức đính kèm cạnh nhau và cho phép bạn thử hành vi nhiều lượt trước khi bất kỳ mã máy khách nào gọi agent.",
+  "steps[2].label": "Lưu nó: project.agents.create_version(agent_name=AGENT_NAME, definition=...)",
+  "steps[2].detail": "Chỉnh sửa sân chơi không được lưu sẽ bị mất khi rời khỏi cổng thông tin — create_version là những gì thực sự lưu một định nghĩa, cho dù bạn xây dựng nó trong cổng thông tin hay trong mã.",
+  "steps[3].label": "Tạo luồng: openai.conversations.create()",
+  "steps[3].detail": "Mở thùng chứa thời gian chạy mà các lượt sau ghi vào — được gọi bởi ứng dụng khách trước khi tin nhắn đầu tiên được gửi, khác biệt với định nghĩa của agent.",
+  "steps[4].label": "Thêm tin nhắn của người dùng vào luồng",
+  "steps[4].detail": "Nội dung của lượt được thêm vào lịch sử tin nhắn tích lũy của luồng — một lần chạy không thể xử lý tin nhắn chưa được thêm.",
+  "steps[5].label": "Tạo một lần chạy và đọc đầu ra: openai.responses.create(..., extra_body={\"agent_reference\": {...}})",
+  "steps[5].detail": "Lệnh gọi thực sự xử lý cuộc hội thoại và tạo ra đầu ra tiếp theo của agent; agent_reference là siêu dữ liệu trên mỗi cuộc gọi trỏ đến định nghĩa đã lưu."
+ },
+ "lad-chat": {
+  "prompt": "Đặt luồng mã theo thứ tự nó phải chạy.",
+  "steps[0].label": "Cài đặt azure-ai-projects",
+  "steps[0].detail": "'Bạn nên cài đặt gói nào cho máy khách dự án?' là một thân kỳ thi cổ điển — câu trả lời là azure-ai-projects.",
+  "steps[1].label": "Tạo AIProjectClient(endpoint, DefaultAzureCredential())",
+  "steps[1].detail": "Endpoint + credential phải tồn tại trước khi có cuộc gọi nào; xác thực không có khóa = Entra ID DefaultAzureCredential.",
+  "steps[2].label": "Gọi get_openai_client()",
+  "steps[2].detail": "Cầu nối máy khách dự án đến máy khách trò chuyện tương thích OpenAI — dòng làm hỏng mọi thứ nếu bị xóa.",
+  "steps[3].label": "Xây dựng danh sách tin nhắn (nhắc nhở hệ thống trước tiên, sau đó nhắc nhở người dùng)",
+  "steps[3].detail": "Quy tắc và đảm bảo an toàn trong tin nhắn hệ thống; yêu cầu lượt này trong tin nhắn người dùng.",
+  "steps[4].label": "Gọi chat.completions.create(model=DEPLOYMENT_NAME, messages=[...])",
+  "steps[4].detail": "model= nhận TÊN TRIỂN KHAI của bạn, không bao giờ là tên mô hình cơ sở — cái bẫy cổ điển.",
+  "steps[5].label": "Đọc response.choices[0].message.content",
+  "steps[5].detail": "Văn bản trả lời sống trên tin nhắn của lựa chọn đầu tiên — các câu hỏi đoạn ngữ kho tàng kết thúc ở đây."
+ },
+ "lad-cu": {
+  "prompt": "Đặt quy trình Content Understanding theo thứ tự.",
+  "steps[0].label": "Chọn hoặc xác định bộ phân tích: mô tả lược đồ bằng ngôn ngữ tự nhiên (ContentAnalyzer(base_analyzer_id=..., field_schema=...))",
+  "steps[0].detail": "Các id bộ phân tích prebuilt (prebuilt-invoice, prebuilt-audio,...) bao gồm các miền phổ biến; một ContentAnalyzer tùy chỉnh đặt tên các trường bạn muốn bằng ngôn ngữ thuần túy thông qua field_schema — không có mã ngoài việc mô tả những gì cần trích xuất.",
+  "steps[1].label": "Đăng ký nó: client.begin_create_analyzer(...)",
+  "steps[1].detail": "Cung cấp định nghĩa bộ phân tích như một hoạt động chạy dài trước khi nó có thể được gọi so với bất kỳ nội dung nào — một bước thiết lập một lần, không phải một bước cho mỗi tài liệu.",
+  "steps[2].label": "Gửi nội dung: client.begin_analyze(analyzer_id=..., inputs=[AnalysisInput(url=file_url)])",
+  "steps[2].detail": "Mỗi tệp tài liệu/hình ảnh/âm thanh/video nhận được lệnh gọi begin_analyze riêng của nó so với bộ phân tích đã được đăng ký — bước cho mỗi tài liệu, không giống như bước 2.",
+  "steps[3].label": "Thăm dò hoạt động: poller.result()",
+  "steps[3].detail": "begin_analyze trả lại một bộ thăm dò; gọi phương pháp .result() của nó để chờ đợi đầu ra phân tích cuối cùng — phân tích không đồng bộ, không phải trả lại đồng bộ (kỳ thi gọi nó là 'gọi phương pháp ________ của bộ thăm dò').",
+  "steps[4].label": "Đọc các trường JSON được cấu trúc từ kết quả",
+  "steps[4].detail": "Các trường được trích xuất — tên nhà cung cấp, ngày hóa đơn, tổng hóa đơn, v.v. — hạ cánh trong tải trọng kết quả của bộ thăm dò; đây là nơi công việc của Content Understanding kết thúc.",
+  "steps[5].label": "Chuyển giao cho Azure AI Search để lập chỉ mục",
+  "steps[5].detail": "Content Understanding chỉ trích xuất — nó không bao giờ lập chỉ mục hoặc tạo; Azure AI Search là dịch vụ hạ lưu riêng biệt lập chỉ mục đầu ra được cấu trúc của CU để truy xuất/RAG."
+ },
+ "lad-genai": {
+  "prompt": "Đặt các bước theo thứ tự một mô hình tạo sinh biến nhắc nhở của bạn thành văn bản.",
+  "steps[0].label": "Mã hóa",
+  "steps[0].detail": "Văn bản đầu vào được chia thành các mã — từ hoặc từ con — mỗi ánh xạ tới một id từ bộ từ vựng của mô hình; không có gì hạ lưu có ý nghĩa cho đến khi điều này xảy ra (Task 1.2).",
+  "steps[1].label": "Nhúng",
+  "steps[1].detail": "Mỗi id mã được chuyển đổi thành một vectơ số mã hóa ý nghĩa — không gian vectơ tương tự làm cho tương tự ngữ nghĩa có thể tính toán được là khoảng cách vectơ.",
+  "steps[2].label": "Sự chú ý của transformer",
+  "steps[2].detail": "Các lớp tự chú ý cân nhắc mọi mã so với mọi mã khác trong chuỗi — cơ khí \"sức mạnh hầu hết các mô hình nền tảng hiện đại,\" và nó cần các vectơ nhúng đã tồn tại.",
+  "steps[3].label": "Dự đoán mã tiếp theo",
+  "steps[3].detail": "Mô hình xuất ra phân bố xác suất trên toàn bộ bộ từ vựng cho một mã tiếp theo duy nhất; nhiệt độ và top-p làm hình lại phân bố này trước khi một mã được lấy mẫu.",
+  "steps[4].label": "Đầu ra được giải mã",
+  "steps[4].detail": "Id mã dự đoán được giải mã trở lại văn bản và vòng lặp lặp lại từng mã một cho đến khi điều kiện dừng — perplexity đo mức độ tốt của dự đoán bước này khớp với văn bản được giữ lại."
+ },
+ "lad-speech": {
+  "prompt": "Đặt các cuộc gọi Speech SDK theo thứ tự nó phải chạy.",
+  "steps[0].label": "SpeechConfig(subscription=key, region=region)",
+  "steps[0].detail": "Mỗi luồng Speech SDK bắt đầu ở đây — cặp khóa/khu vực (hoặc điểm cuối) xác thực mỗi cuộc gọi theo sau.",
+  "steps[1].label": "Đặt speech_config.speech_synthesis_voice_name = \"...\"",
+  "steps[1].detail": "Chọn giọng nói là thuộc tính được đặt trực tiếp trên đối tượng cấu hình — đoạn mã giọng DragonHD của kỳ thi đặt dòng này ngay sau SpeechConfig, trước khi bất kỳ đối tượng nào khác được xây dựng từ nó.",
+  "steps[2].label": "AudioConfig(...) — micrô, tệp hoặc thiết bị mặc định",
+  "steps[2].detail": "Được xây dựng độc lập so với thuộc tính tên giọng nói, nhưng các đoạn mã khởi động nhanh xây dựng nó chỉ sau khi thiết lập cấu hình xong, ngay lập tức trước khi người nhận dạng/bộ tổng hợp sẽ tiêu thụ cả hai đối tượng.",
+  "steps[3].label": "Tạo Nhận dạng hoặc Bộ tổng hợp: SpeechRecognizer(speech_config, audio_config) / SpeechSynthesizer(speech_config)",
+  "steps[3].detail": "Cả hai hàm tạo nhận speech_config đã xây dựng (nhận dạng cũng nhận audio_config) — không có gì sau điểm này có thể vẫn tiêm cấu hình.",
+  "steps[4].label": "Gọi recognize_once() / speak_text_async(text)",
+  "steps[4].detail": "recognize_once() chứa một phát biểu ngắn (so với nhận dạng liên tục); speak_text_async() thực sự phát văn bản — mô hình không đồng bộ/.get() thuộc về đây, cuối cùng, khi đối tượng tồn tại."
+ },
+ "lad-voice": {
+  "prompt": "Đặt đường dẫn agent giọng nói cổ điển theo thứ tự.",
+  "steps[0].label": "Giọng nói thành văn bản: chuyển đổi âm thanh nói của người gọi thành văn bản",
+  "steps[0].detail": "Bước đường dẫn đầu tiên — recognize_once() hoặc nhận dạng liên tục biến âm thanh thành bản ghi âm trước khi bất kỳ lý luận nào có thể xảy ra trên nó.",
+  "steps[1].label": "Xử lý ngôn ngữ / AI tạo sinh: lý luận trên bản ghi âm và tạo ra trả lời văn bản",
+  "steps[1].detail": "Cuộc gọi trò chuyện/agent lý luận trên bản ghi âm — bước một mô hình đơn phương tiện (ví dụ: triển khai trò chuyện âm thanh-in/âm thanh-out) có thể sụp đổ cùng nhau với bước 1 và 3, và bước Voice Live API được xây dựng để thay thế cả ba cùng một lúc bằng một giao diện nói-sang-giọng nói duy nhất có độ trễ thấp.",
+  "steps[2].label": "Văn bản thành giọng nói: tổng hợp câu trả lời trở lại âm thanh",
+  "steps[2].detail": "speak_text_async() phát câu trả lời được tạo — bước cuối cùng của đường dẫn cổ điển, cũng có thể gập vào mô hình đơn phương tiện hoặc giải pháp Voice Live được đặt tên trong chi tiết bước 2."
+ }
+}

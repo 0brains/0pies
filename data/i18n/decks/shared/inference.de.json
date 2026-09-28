@@ -1,0 +1,37 @@
+{
+ "inference": {
+  "hint": "Suche nach der operativen Anforderung: Antwortzeit, Anfragevolumen, Gerätestandort, gehosteter Zugriff oder Änderung zwischen Training und Produktion."
+ },
+ "inference-01": {
+  "label": "Gibt sofort eine Vorhersage für eine interaktive Anfrage zurück, bei der geringe Latenz wichtig ist.",
+  "why": "Gibt sofort eine Vorhersage für eine interaktive Anfrage zurück, bei der geringe Latenz wichtig ist."
+ },
+ "inference-02": {
+  "label": "Verarbeitet viele gespeicherte Datensätze zusammen, wenn eine sofortige Antwort unnötig ist.",
+  "why": "Verarbeitet viele gespeicherte Datensätze zusammen, wenn eine sofortige Antwort unnötig ist."
+ },
+ "inference-03": {
+  "label": "Führt das Modell in der Nähe der Datenquelle oder des Geräts aus, um Latenz, Bandbreitenutzung oder Konnektivitätsabhängigkeit zu reduzieren.",
+  "why": "Führt das Modell in der Nähe der Datenquelle oder des Geräts aus, um Latenz, Bandbreitenutzung oder Konnektivitätsabhängigkeit zu reduzieren."
+ },
+ "inference-04": {
+  "label": "Eine gehostete Schnittstelle, über die Anwendungen Eingaben senden und Modellausgaben empfangen.",
+  "why": "Eine gehostete Schnittstelle, über die Anwendungen Eingaben senden und Modellausgaben empfangen."
+ },
+ "inference-05": {
+  "label": "Die Zeit zwischen dem Absenden einer Inferenzanfrage und dem Empfangen des Ergebnisses.",
+  "why": "Die Zeit zwischen dem Absenden einer Inferenzanfrage und dem Empfangen des Ergebnisses."
+ },
+ "inference-06": {
+  "label": "Die Anzahl der Inferenzanfragen oder Datensätze, die in einer bestimmten Zeit verarbeitet werden.",
+  "why": "Die Anzahl der Inferenzanfragen oder Datensätze, die in einer bestimmten Zeit verarbeitet werden."
+ },
+ "inference-07": {
+  "label": "Die Verteilung der Produktionseingaben unterscheidet sich von den Daten, die während des Trainings verwendet wurden.",
+  "why": "Die Verteilung der Produktionseingaben unterscheidet sich von den Daten, die während des Trainings verwendet wurden."
+ },
+ "inference-08": {
+  "label": "Die Beziehung zwischen Eingaben und der korrekten Ausgabe ändert sich über die Zeit.",
+  "why": "Die Beziehung zwischen Eingaben und der korrekten Ausgabe ändert sich über die Zeit."
+ }
+}

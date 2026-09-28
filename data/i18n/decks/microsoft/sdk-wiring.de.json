@@ -1,0 +1,106 @@
+{
+ "sw-001": {
+  "label": "Verbinde deinen Code mit einem Foundry-Projekt mit Endpunkt und Anmeldedaten (Paket azure-ai-projects)",
+  "why": "AIProjectClient(endpoint, credential) ist der Projekt-Einstiegspunkt; get_openai_client() hängt daran — entferne die Authentifizierung und dies ist die Zeile, die bricht."
+ },
+ "sw-002": {
+  "label": "Sende die Nachrichtenliste an ein bereitgestelltes Modell und gib choices[0].message.content zurück",
+  "why": "chat.completions.create(model=DEPLOYMENT_NAME, messages=[…]) ist der Chat-Aufruf — und model= nimmt den Bereitstellungsnamen, nicht den Basis-Modellnamen (Histack-Falle #5)."
+ },
+ "sw-003": {
+  "label": "Halte deinen Speech-Ressourcenschlüssel und Region sowie den Synthesestimmen-Namen",
+  "why": "SpeechConfig(key, region) wird zuerst konfiguriert (z.B. speech_synthesis_voice_name='en-US-Ava:DragonHDLatestNeural'); AudioConfig verarbeitet Geräte, nicht Anmeldedaten."
+ },
+ "sw-004": {
+  "label": "Sende die gesprochene Frage des Nutzers als inline Audio-Daten im Nachrichteninhalt",
+  "why": "Gesprochene EINGABE geht in Nachrichteninhalts-Teile als input_audio; das Antwort-Einstellungs-Zwilling ist die dokumentierte Falle."
+ },
+ "sw-005": {
+  "label": "Fordere das Modell auf, mit gesprochener Audio zu antworten: Stimme ‚alloy', Format ‚wav'",
+  "why": "Gesprochene AUSGABE wird angefordert über modalities=[\"text\",\"audio\"] plus audio={\"voice\":\"alloy\",\"format\":\"wav\"} beim Multimodal-Aufruf — die exakte Prüfungs-Payload."
+ },
+ "sw-006": {
+  "label": "Nimm ein Foto (URL oder base64) in eine Chat-Nachricht auf, damit das bereitgestellte gpt-4o es beschreiben kann",
+  "why": "Visuellen Input reist als image_url / base64 Inhalts-Teile zu einer Multimodal-Bereitstellung — nicht durch Vision SDK, das ein anderer Dienst und Endpunkt ist (Paar #23)."
+ },
+ "sw-007": {
+  "label": "Brückenprojekt-Client zum OpenAI-kompatiblen Client, der für Responses und Conversations Aufrufe verwendet wird",
+  "why": "project.get_openai_client() ist eine Instanzmethode, die auf dem Projekt-Objekt aufgerufen wird; die Prüfungs-Falle ist, ihn auf die Klasse selbst statt aufzurufen."
+ },
+ "sw-008": {
+  "label": "Aufgerufen einmal, gleich nachdem der Projekt-Client gebaut wird, bevor die erste Responses oder Conversations Anfrage gesendet wird",
+  "why": "Es ist die Laufzeit-Brücke, die den OpenAI-geformten Client zurückgibt; das Anmeldedaten-Objekt authentifiziert nur den Projekt-Client, es gibt nie einen Chat-Client zurück."
+ },
+ "sw-009": {
+  "label": "Mit null Argumenten als credential= Wert übergeben, damit die App sich via signierte Azure-Identität authentifiziert, kein Schlüssel irgendwo eingetippt",
+  "why": "DefaultAzureCredential() ist das Schlüssel-lose Entra ID Anmeldedaten-Objekt; AIProjectClient ist, was es verbraucht, und azure-ai-projects ist nur der Paketname, nicht ein Laufzeit-Objekt."
+ },
+ "sw-010": {
+  "label": "Das Objekt, das az login einrichtet: der Client löst deine signierte Identität automatisch zur Aufrufzeit aus, kein Umgebungs-API-Schlüssel erforderlich",
+  "why": "Die Schnellstart-Paare az login mit diesem Anmeldedaten-Objekt; get_openai_client gibt nur einen Chat-Client zurück und hat nichts mit Authentifizierung zu tun."
+ },
+ "sw-011": {
+  "label": "Das pip-Paket, das du installierst, bevor du einen Foundry-Projekt-Client-Code schreibst, pro Schnellstart's erster Setup-Befehl",
+  "why": "‚Welches Paket solltest du für den Projekt-Client installieren?' ist ein klassisches Prüfungs-Anliegen — die Antwort ist azure-ai-projects, nicht die Such- oder Sprach-SDKs."
+ },
+ "sw-012": {
+  "label": "Aufgelistet neben az login in den Schnellstart-Setup-Schritten, festgesteckt auf eine minimale Version (>=2.0.0), bevor ein Client-Code läuft",
+  "why": "Die dokumentierte Schnellstart-Führung installiert azure-ai-projects>=2.0.0 und führt az login aus — die Vision und Such-Pakete sind unverwendet für den Projekt-Client."
+ },
+ "sw-013": {
+  "label": "Konstruiert mit einem Endpunkt und AzureKeyCredential, bevor Stichwort-Extraktion oder Sentiment-Aufruf gegen Klartext laufen kann",
+  "why": "TextAnalyticsClient(endpoint, credential) offenbart .extract_key_phrases()/.analyze_sentiment() auf Klartext; die anderen zwei Clients richten sich auf Multimodal-Dokumente und Bilder an verschiedenen Endpunkten."
+ },
+ "sw-014": {
+  "label": "Whichever-Client-Typ offenbart analyze_sentiment(documents), damit jedes Dokuments allgemeines Sentiment zurück ausgedruckt wird",
+  "why": "Sentiment- und Stichwort-Extraktion sind AI Language Text-Analytics Methoden auf diesem Client; die anderen zwei sind Multimodal-Dokumente oder Live-Audio, nicht Klartext."
+ },
+ "sw-015": {
+  "label": "Eingestellt auf, von der Standard-Mikrofon des Computers zu hörer, statt einer gespeicherten Datei, dann zum Recognizer als sein Audio-Quelle übergeben",
+  "why": "AudioConfig(use_default_microphone=True) wählt das Eingabegerät; SpeechConfig hält stattdessen Subscription-Schlüssel/Region, und SpeechRecognizer ist die Klasse, dieses Objekt wird übergeben, nicht das Geräte-Wähler selbst."
+ },
+ "sw-016": {
+  "label": "Gebaut aus einem gespeicherten Dateinamen, damit ein Recognizer Sprache aus einer Test-WAV-Datei liest, statt ein Live-Mikrofon",
+  "why": "AudioConfig(filename=…) ist die Datei-unterstützte Geräte-Quelle; SpeechConfig trägt Anmeldedaten und Stimmen-Name, und SpeechSynthesizer spielt Audio statt liest es ein."
+ },
+ "sw-017": {
+  "label": "Gegeben sowohl einen Speech-Config als auch einen Audio-Config, dann aufgerufen, genau eine kurze gesprochene Äußerung zu erfassen und zu stoppen",
+  "why": "Dies ist die Klasse, deren recognize_once_async() eine einzelne Äußerung erfasst; SpeechSynthesizer spricht statt Text aus, und AudioConfig verdrahtet nur das Eingabegerät auf."
+ },
+ "sw-018": {
+  "label": "Der einzelne Äußerung async Aufruf gibt ein Ergebnis-Objekt zurück, dessen .text die Abschrift dessen hält, was das Mikrofon gerade gehört hat",
+  "why": "Die Sprach-zu-Text-Klasse gibt result.text aus, das Live-Audio erkennt; der Synthesizer spricht statt hört zu, und die Language-Client funktioniert nur auf Text, das bereits transkribiert wurde."
+ },
+ "sw-019": {
+  "label": "Nimmt einen Speech-Config mit dem Stimmen-Namen bereits gesetzt, dann wandelt einen Text-String in gesprochene Ausgabe durch den Lautsprecher um",
+  "why": "Diese Klassen speak_text_async() spielt eine String alaut mit der konfigurierten Stimme; der Recognizer konvertiert Sprache zu Text, und AudioConfig wählt nur ein Gerät."
+ },
+ "sw-020": {
+  "label": "Nach einem Recognizer, der einen Text-Transkript erzeugt, liest dieses zweite Objekt denselben String durch seinen eigenen async Sprach-Aufruf laut zurück",
+  "why": "Text-zu-Sprach-Wiedergabe der erkannten Antwort ist diese Klassen-Aufgabe; der Recognizer erzeugte bereits den Text, und SpeechConfig hält nur Anmeldedaten und Stimmen-Name, die er nutzt."
+ },
+ "sw-021": {
+  "label": "Konstruiert mit einem Endpunkt und Schlüssel, dann sein einzelner Aufruf analysiert eine Bild-URL für die READ visuelle Eigenschaft, Text aus einem Foto zu ziehen",
+  "why": "Dieser Vision-Clients .analyze(image_url=…, visual_features=[…]) Aufruf führt OCR auf allgemeinen Bildern aus; ContentUnderstandingClient gibt statt einen Poller von einer sehr verschiedenen, asynchronen Aufruf-Form zurück."
+ },
+ "sw-022": {
+  "label": "Sein Untertext-plus-OCR Aufruf nimmt das Bild von URL, statt Klartext-Bytes, fordert sowohl CAPTION als auch READ Eigenschaft in einem Durchgang",
+  "why": "Dieser Vision-Clients nach-URL Analyse-Methode gibt fest vorbereitete Eigenschaft wie Untertext und Lesen zurück; es hat keinen Polling-Schritt und keine Beziehung zu Sprach-Erfassung."
+ },
+ "sw-023": {
+  "label": "Der Client, den eine App zuerst erschafft, wenn sie Dokument-URLs für Extraktion absenden wird und strukturierte Ergebnisse zurück lesen",
+  "why": "‚Welcher Client sollte die App zuerst erschaffen?' für eine Content Understanding App ist diese Klasse — die anderen zwei sind getrennte Dienste mit getrennten Endpunkten für Klartext und allgemeine Bilder respektiv."
+ },
+ "sw-024": {
+  "label": "Sein lang-laufender Analyze-Aufruf gibt einen Poller zurück; aufruf .result() auf diesem Poller ist, wie die App auf die endgültige extrahierte Ausgabe wartet",
+  "why": "begin_analyze() plus poller.result() ist diese Clients asynchrones Polling-Muster; der Vision-Clients analyze() ist synchron, und der Language-Clients Methoden nehmen Dokumente direkt ohne Polling an."
+ },
+ "sw-025": {
+  "label": "Die Bild-Generierung Anfrage, deren Antwort Feld b64_json die tatsächlich Pixel-Daten hält, die du dekodierst, nicht ein URL-Feld",
+  "why": "Eine GPT-Image-1 Bereitstellung gibt erzeugtes Bild-Byte in response.data[0].b64_json zurück; ein Completions-Aufruf gibt Text-Wahlen zurück, und der Vision-Client analysiert nur ein Bild, das bereits existiert."
+ },
+ "sw-026": {
+  "label": "Setze Hintergrund zu transparent und fordere PNG-Ausgabe auf dieser Text-zu-Bild Anfrage an, um einen durchsichtigen Hintergrund zu bekommen",
+  "why": "Transparenter Hintergrund plus PNG-Ausgabe sind GPT-Image-1-Serie Generierungs-Parameter; nichts in der Vision Analyse oder Chat-Completion Aufrufen nimmt sie an."
+ }
+}

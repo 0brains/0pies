@@ -1,0 +1,62 @@
+{
+ "i-vp-01": {
+  "a.text": "Un sistema di visione mantiene la classificazione corretta su immagini perturbate avversarialmente.",
+  "a.why": "Il resistere all'input ostile o nuovo mentre si mantiene l'accuratezza e la funzionalità è il lavoro intero di questo lato — il modello non lascia mai mai la sua banda di prestazioni normale.",
+  "b.text": "Dopo gli input dei sensori degradati, il sistema ritorna ai suoi limiti di prestazioni specificati.",
+  "b.why": "Mantenere le prestazioni entro i limiti accettabili definiti nonostante le condizioni del mondo reale o avversariali, e recuperare ad essi, è l'altra metà — un sistema può essere resiliente senza mai affrontare un attacco deliberato."
+ },
+ "i-vp-02": {
+  "a.text": "Una clip audio sintetica di un funzionario pubblico viene fabbricata e diffusa con l'obiettivo deliberato di causare danni.",
+  "a.why": "La fabbricazione deliberata con intento di danneggiare è la caratteristica definitoria — lo stesso contenuto falso condiviso da qualcuno che crede sia reale appartiene all'altro lato.",
+  "b.text": "Un blogger condivide un video deepfake credendo che sia autentico, quindi corregge il record una volta che la fabbricazione viene alla luce.",
+  "b.why": "Nessun intento di ingannare — il condivisore credeva che il contenuto fosse vero — è ciò che separa questo dal lato deliberato-danni della coppia."
+ },
+ "i-vp-03": {
+  "a.text": "Grandi numeri di falsi, ride a basso costo vengono iniettati nel dataset di addestramento del modello di previsione delle tariffe da una fonte.",
+  "a.why": "Corrompere ciò da cui il modello impara, prima di essere mai distribuito, è un attacco in tempo di addestramento — l'altro lato accade dopo che il modello è già in diretta.",
+  "b.text": "Un utente malvagio crea dati di input che ingannano un modello di triage già distribuito nel segnalare i casi urgenti come non urgenti.",
+  "b.why": "Ingannare i risultati di un modello live con input realizzati al tempo di inferenza è l'altra metà della coppia — i dati di addestramento del modello non sono mai stati toccati."
+ },
+ "i-vp-04": {
+  "a.text": "La documentazione divulga quali dati e logica sono entrati nella costruzione del sistema, prima che chiunque chieda un risultato specifico.",
+  "a.why": "Questa è l'apertura sul design e i dati del sistema — una proprietà del sistema nel suo insieme, non di alcuna singola decisione.",
+  "b.text": "Un richiedente specifico chiede perché il suo caso è stato deciso nel modo in cui era, e l'organizzazione può camminare attraverso quel singolo output in termini che una persona può seguire.",
+  "b.why": "La calibrazione ufficiale è che una decisione è spiegabile quando il suo input, output e funzionamento sono comprensibili agli esseri umani — una proprietà per-decisione, distinta dalla trasparenza dell'apertura a livello di sistema."
+ },
+ "i-vp-05": {
+  "a.text": "I dati dei pazienti confidenziali diventano accessibili pubblicamente perché un bucket di archiviazione cloud è stato mal configurato, senza alcun attaccante coinvolto.",
+  "a.why": "L'esposizione non intenzionale attraverso il mal configurazione, non l'attività malvagia, è ciò che chiave questo lato.",
+  "b.text": "Un attore esterno deliberatamente bypassa i controlli di accesso per ottenere lo stesso tipo di dati.",
+  "b.why": "L'accesso deliberato e non autorizzato da un attore malvagio è l'altra metà — la stessa categoria di danno, la causa opposta."
+ },
+ "i-vp-06": {
+  "a.text": "Un rilevatore di difetti di produzione raggiunge un'accuratezza quasi perfetta sulle foto della linea di produzione esatta su cui è stato addestrato, quindi si perde di evidenti crepe in foto da una linea di fabbrica diversa.",
+  "a.why": "Eccellente sul set di addestramento e povero su qualsiasi cosa nuova è la firma di questo lato — il modello ha memorizzato le foto specifiche piuttosto che imparare cosa sia effettivamente una crepa.",
+  "b.text": "Un rilevatore di difetti costruito con solo un paio di filtri di immagine di base e nessuno strato più profondo perde crepe anche nelle foto su cui è stato addestrato.",
+  "b.why": "Prestazioni povere ovunque, anche sui dati di addestramento stesso, segnale che il modello non ha mai avuto abbastanza complessità per catturare il modello in primo luogo."
+ },
+ "i-vp-07": {
+  "a.text": "Un radiologo smette di doppio-controllo delle basse-rischio chiama di uno strumento di triage di scansione dopo mesi di flag accurati, e inizia a firmare tutto ciò che etichetta benigno.",
+  "a.why": "L'over-affidamento sugli output di IA senza revisione critica umana è il meccanismo di questo lato — un fallimento umano di continuare a controllare, non un difetto incorporato nei dati.",
+  "b.text": "Uno strumento di assunzione addestrato sui passati record di assunzione rifiuta più candidati da gruppi di minoranza, perché quei record già riflettevano chi è stato assunto prima.",
+  "b.why": "Il difetto è ereditato dai dati di addestramento stesso, portando avanti modelli da un passato discriminatorio — distinto dall'over-trusting di uno strumento output una volta che è già distribuito."
+ },
+ "i-vp-08": {
+  "a.text": "Un'auto a guida autonoma decide indipendentemente il miglior percorso verso un indirizzo che il conducente fornisce, ma non fa nulla al di fuori di quel compito.",
+  "a.why": "L'operazione entro un singolo dominio di compiti limitato, però capace su quel compito, è ciò che mantiene un sistema su questo lato della linea.",
+  "b.text": "La stessa auto avrebbe anche bisogno di ragionare, imparare e agire su qualsiasi compito che un umano potrebbe, non solo guidare, per conteggiare come questo invece.",
+  "b.why": "La piena capacità cognitiva umana nei domini, non solo l'eccellenza in un compito, è ciò che l'altro lato richiede — e rimane teorico."
+ },
+ "i-vp-09": {
+  "a.text": "Un comitato di governance che confronta due fornitori chiede quanti miliardi di valori di peso ciascuna rete è terminata una volta che l'addestramento era completo.",
+  "a.why": "Questa è la linea definitoria che questa coppia testa: un valore interno che l'addestramento stesso scopre e aggiusta, che non esiste in forma finale fino al termine dell'addestramento.",
+  "b.text": "Lo stesso comitato separatamente chiede quale tasso di apprendimento e dimensione del batch il team di ingegneria ha fisso prima che l'addestramento inizi.",
+  "b.why": "Questi sono scelte che una persona fa in anticipo per controllare come l'addestramento funziona — input che il team imposta, non valori che l'addestramento scopre su proprio."
+ },
+ "i-vp-10": {
+  "a.text": "Un modello di foresta casuale impara a tracciare la linea tra transazioni fraudolente e legittime.",
+  "a.why": "Imparare il confine tra classi esistenti, piuttosto che produrre nuovi esempi, è il lavoro di questo lato.",
+  "b.text": "Un modello diverso, dato lo stesso storico delle transazioni, produce intieramente nuovi record di transazioni sintetiche che non sono mai accadute.",
+  "b.why": "La produzione di nuovo contenuto anziché la classificazione dei input esistenti è l'altra metà della coppia."
+ }
+}

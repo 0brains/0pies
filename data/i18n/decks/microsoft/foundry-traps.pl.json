@@ -1,0 +1,74 @@
+{
+ "ft-01": {
+  "a.text": "Zespół platformy potrzebuje jednego miejsca do zarządzania wspólnym bezpieczeństwem, połączeniami, zasobami obliczeniowymi i limitem dla wszystkich zespołów AI.",
+  "a.why": "Hub to kontener współpracy i zarządzania najwyższego poziomu ze wspólnymi zasobami — pułapka histack #3.",
+  "b.text": "Zespół produktu potrzebuje miejsca, w którym faktycznie znajdują się ich wdrożenia, agenci, dane i ewaluacje.",
+  "b.why": "Projekt żyje wewnątrz hubu i to jest miejsce, w którym faktycznie się buduje — wdrożenia, agenci, dane, ewaluacje."
+ },
+ "ft-02": {
+  "a.text": "Twój kod przekazuje 'chat-app-prod' — niestandardową nazwę wybraną w momencie wdrożenia — jako argument modelu w chat.completions.create.",
+  "a.why": "Nazwa wdrożenia — a nie nazwa modelu bazowego — to to, co twój kod wywołuje (pułapka histack dokładnie; para korpusu #19).",
+  "b.text": "Katalog Foundry wymienia gpt-4o ze swoimi wynikami benchmarku zanim cokolwiek zostanie wdrażane.",
+  "b.why": "gpt-4o to identyfikator modelu bazowego w katalogu; staje się wywoływalny tylko poprzez nazwane wdrożenie."
+ },
+ "ft-03": {
+  "a.text": "Deweloper konfiguruje klienta z adresem HTTPS zasobu Foundry, odczytanym ze zmiennej środowiskowej, więc każde żądanie wie, do którego zasobu na Azure dotrzeć.",
+  "a.why": "Endpoint (azure_endpoint) to adres zasobu, który SDK celuje — identyfikuje, dokąd wysłane jest wywołanie, a nie kto może je wysyłać.",
+  "b.text": "Deweloper przenosi sekret z pliku źródłowego do oddzielnej zmiennej środowiskowej, więc poświadczenie, które dowodzi tożsamości dzwoniącego, nigdy nie jest wpisane na stałe.",
+  "b.why": "Poświadczenie jest przekazywane jako api_key (os.getenv('AZURE_OPENAI_KEY')) i uwierzytelnia dzwoniącego — zwyczaj prywatności i bezpieczeństwa odrębny od routingu."
+ },
+ "ft-04": {
+  "a.text": "Zasób Foundry jest tworzony raz z nazwą, instrukcjami i dołączonymi narzędziami, a następnie przywoływany przez wiele późniejszych tur za pomocą kolejnych żądań przy użyciu tej samej rozmowy.",
+  "a.why": "Agent to trwały, nazwany zasób — tworzony poprzez PromptAgentDefinition z instrukcjami i narzędziami, a następnie wywoływany wielokrotnie.",
+  "b.text": "Skrypt wysyła messages=[{'role': 'user', 'content': 'Podsumuj tę sprawę.'}] i otrzymuje jedną odpowiedź z zwykłego żądania completions, bez niczego zapisanego na serwerze i bez wątku czy narzędzi.",
+  "b.why": "Bare chat.completions.create to pojedyncze żądanie bezstanowe — żadne utrwalone instrukcje, narzędzia czy tożsamość nie przetrwają między wywołaniami."
+ },
+ "ft-05": {
+  "a.text": "'Zawsze zwracaj szczegóły klienta w stałym kształcie JSON i odpowiadaj tylko na pytania dotyczące polityki kadr' — trwała reguła dla każdej tury.",
+  "a.why": "Personas, ton, reguły i zabezpieczenia należą do wiadomości systemowej — 'pojedyncze najczęściej testowane rozróżnienie' histack; pułapka wsadzona umieszcza zachowanie w wiadomości użytkownika lub ustawieniach wdrażania.",
+  "b.text": "'Podsumuj dla mnie raport nieobecności tego kwartału' — jedno żądanie, tylko ta tura.",
+  "b.why": "Wiadomość użytkownika przenosi żądanie tej tury; wcześniejsze odpowiedzi modelu odtworzone dla pamięci to wiadomości asystenta."
+ },
+ "ft-06": {
+  "a.text": "Po wdrożeniu modelu deweloper wpisuje prompt bezpośrednio do portalu Foundry i odczytuje odpowiedź na ekranie bez napisania jednej linii Pythona.",
+  "a.why": "Playground to środowisko Foundry bez kodu na żądanie do szybkiego prototypowania i sprawdzania poprawności zanim jakikolwiek kod produkcji istnieje.",
+  "b.text": "Ten sam deweloper kopiuje wycinek z karty Kod, który konstruuje klienta AzureOpenAI i wywołuje chat.completions.create z pliku Pythona, który aplikacja faktycznie uruchomi.",
+  "b.why": "Karta Kod daje ci programowy wzorzec dostępu — wywołanie SDK to to, co wysyłamy, a nie sesja portalu, która to zwalidowała."
+ },
+ "ft-07": {
+  "a.text": "Agent zapytania jest konfigurowany tak, aby zawsze reagował formalnym tonem i odmawiał omawiania konkurencyjnych cen, bez względu na to, co użytkownik pyta.",
+  "a.why": "Personas i reguły behawioralne dostarczone do PromptAgentDefinition to instrukcje — kształtują, jak agent reaguje, a nie co może robić.",
+  "b.text": "Ten sam agent otrzymuje wyszukiwanie sieciowe i wyszukiwanie plików, aby mógł wyszukiwać informacje na żywo zamiast polegać tylko na tym, co już zna.",
+  "b.why": "Wyszukiwanie sieciowe i wyszukiwanie plików są dołączane z katalogu Build > Tools — zdolności, które agent może wywoływać, odrębne od instrukcji."
+ },
+ "ft-08": {
+  "a.text": "Model musi zawsze odpowiadać w stylu domu Twojej firmy, nauczony z 5000 poprzednich przykładów.",
+  "a.why": "Fine-tuning przeuczy wagi na przykładach — narzędzie do trwałej zmiany stylu/zachowania.",
+  "b.text": "Model musi odpowiadać z listy cen tego miesiąca, która zmienia się co tydzień, bez przeszkolenia.",
+  "b.why": "RAG wstrzykuje pobierane bieżące dane organizacyjne w momencie wnioskowania — 'zasilanie modelu twoimi danymi, aby odpowiedzi pozostały dokładne'."
+ },
+ "ft-09": {
+  "a.text": "Obciążenie wsadowe potrzebuje przewidywalnej, gwarantowanej szybkości przetwarzania ze stałym kosztem godzinowym, zarezerwowanym z góry niezależnie od tego, ile tokenów zostanie faktycznie wysłanych.",
+  "a.why": "PTU rezerwuje dedykowaną pojemność godzinową dla przewidywalnej, dużej przepustowości — płacisz za rezerwację, a nie za token.",
+  "b.text": "Interaktywna aplikacja czatu ma nieprzewidywalny ruch i potrzebuje rozliczenia za token z regionalnym, strefą danych lub opcjami przetwarzania globalnego, zamiast rezerwowanej pojemności godzinowej.",
+  "b.why": "Wdrożenie standardowe to preferowana opcja oferująca najszerszy zakres możliwości i elastycznego rozliczenia za token — najczęściej testowany kontrast wdrażania egzaminu (para #27)."
+ },
+ "ft-10": {
+  "a.text": "Napisałeś niestandardowy schemat pola dla umów dostawcy i musisz go zarejestrować zanim jakikolwiek dokument zostanie przetworzony.",
+  "a.why": "Tworzenie/definiowanie analizatora ze schematu pola to konfiguracja, a nie wykonanie.",
+  "b.text": "Analizator już istnieje; kod uruchamia go względem adresu URL umowy i sprawdza asynchroniczny wynik.",
+  "b.why": "Wykonanie to begin_analyze(analyzer_id=…, inputs=[AnalysisInput(url=…)]) — zamiana nazwy metody bliskiej, którą dokumenty korpusu (para #26)."
+ },
+ "ft-11": {
+  "a.text": "Opisz pola, które chcesz w języku naturalnym i wyodrębniaj je ze zmieszania plików PDF, obrazów i audio spotkania do ustrukturyzowanego JSON.",
+  "a.why": "Content Understanding pozwala ci opisać pola w języku naturalnym, podczas gdy model LLM rozumuje nad wejściem multimodalnym — wskazówka histack: 'wolna forma lub wejście niebędące dokumentem'.",
+  "b.text": "Wyodrębniaj razem ze standardowych faktur i paragonów przy użyciu gotowego modelu.",
+  "b.why": "Deterministyczna ekstrakcja ze znanych typów formularzy — faktury, paragony, identyfikatory, wizytówki. 'Pułapka ekstrakcji', ulubiona histack."
+ },
+ "ft-12": {
+  "a.text": "Zespół detaliczny przesyła zdjęcia półek i otrzymuje pola strukturalne zdefiniowane przez schematem: nazwa, cena i ilość.",
+  "a.why": "Content Understanding zamienia surowe, nieustrukturyzowane lub multimodalne wejście w określone wyjście ustrukturyzowane, które schemat prosi.",
+  "b.text": "Chatbot RAG potrzebuje bazy wiedzy, którą może odpytywać pod względem podobieństwa semantycznego, aby model czatu mógł ugruntować odpowiedzi w pobieranych fragmentach.",
+  "b.why": "Azure AI Search indeksuje zawartość — często poprzez osadzanie — i pobiera ją w momencie zapytania; wzorce RAG łączą model czatu z AI Search do ugruntowywania, inne zadanie niż wyodrębnianie pól z dokumentu."
+ }
+}

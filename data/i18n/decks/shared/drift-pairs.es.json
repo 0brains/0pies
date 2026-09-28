@@ -1,0 +1,50 @@
+{
+ "dp-01": {
+  "a.text": "Un modelo de crédito ve una ola de solicitantes de una nueva región. Para cualquier perfil dado de ingresos, empleo e historial, las tasas de incumplimiento son exactamente lo que el modelo espera.",
+  "a.why": "Las entradas se movieron a territorio nuevo pero la regla permanece intacta. Más datos de entrenamiento representativos lo arreglan; una nueva regla no es necesaria.",
+  "b.text": "Un modelo de crédito ve la misma ola de solicitantes de una nueva región. Para un perfil idéntico de ingresos, empleo e historial, las tasas de incumplimiento allí son el doble de lo que el modelo espera.",
+  "b.why": "Las entradas idénticas ahora producen resultados diferentes, así que P(Y|X) ha cambiado. Ningún rebalanceo de la mezcla de entrada lo arreglará si una relación ya no se mantiene."
+ },
+ "dp-02": {
+  "a.text": "El error de un modelo de precios salta un martes. La investigación encuentra que un competidor lanzó una campaña de descuento agresiva esa mañana.",
+  "a.why": "Un cambio real en el mundo alteró la relación que el modelo codifica. Entrenar nuevamente con datos posteriores al cambio es la respuesta correcta.",
+  "b.text": "El error de un modelo de precios salta un martes. La investigación encuentra que el trabajo ETL nocturno comenzó a escribir precio de lista en el campo que anteriormente tenía precio neto.",
+  "b.why": "Nada sobre el comportamiento de precios cambió — el modelo está siendo alimentado con una cantidad diferente bajo el mismo nombre. Entrenar nuevamente aquí hornea el defecto y lo oculta."
+ },
+ "dp-03": {
+  "a.text": "Durante seis meses un modelo de fraude se degrada a medida que un patrón de ataque antiguo es progresivamente reemplazado por uno nuevo. Durante todo el período, ambos patrones llegan en volumen.",
+  "a.why": "Dos conceptos distintos superponiéndose en el tiempo, con el peso de la mezcla moviéndose. Un conjunto que mantiene un modelo por concepto maneja esto bien.",
+  "b.text": "Durante seis meses un modelo de fraude se degrada a medida que los atacantes continuamente ajustan tamaños de transacción hacia arriba en pequeños pasos, sin patrón antiguo y nuevo distinto en ningún momento.",
+  "b.why": "Un concepto moviéndose suavemente a través de estados intermedios. Una ventana de reentrenamiento rodante lo rastrea; la maquinaria de cambio de concepto no tiene nada entre qué cambiar."
+ },
+ "dp-04": {
+  "a.text": "Un modelo de detección se implementa en una clínica nueva. Los pacientes son más jóvenes y en mejor forma que la población de entrenamiento, y la prevalencia de enfermedades no cambia.",
+  "a.why": "La distribución de características se movió mientras la mezcla de resultados no lo hizo. La preocupación es extrapolación en regiones de entrada escasamente cubiertas.",
+  "b.text": "Un modelo de detección se implementa en una clínica nueva. Los pacientes se ven demográficamente idénticos a la población de entrenamiento, pero la prevalencia de enfermedades es un cuarto de lo que era.",
+  "b.why": "P(Y) se movió con P(X|Y) intacto, así que la clasificación del modelo aún funciona pero sus probabilidades son sistemáticamente demasiado altas. Corrección previa, no reentrenamiento."
+ },
+ "dp-05": {
+  "a.text": "La cuota de puntuaciones de alto riesgo de un modelo de cobranza aumenta del 12% al 25% en un mes. Los resultados toman noventa días para observar, así que ninguno está disponible aún para esta cohorte.",
+  "a.why": "Un cambio de distribución de salida sin etiquetas es una señal de investigación, no un hallazgo. Puede ser una respuesta correcta a una población genuinamente más arriesgada.",
+  "b.text": "La cuota de puntuaciones de alto riesgo de un modelo de cobranza aumenta del 12% al 25% en un mes, y la cohorte de hace noventa días ya se ha resuelto con precisión abajo 18 puntos.",
+  "b.why": "Las etiquetas han llegado y la calidad ha caído realmente. Solo ahora el reentrenamiento se justifica en evidencia en lugar de en la forma de un histograma."
+ },
+ "dp-06": {
+  "a.text": "La precisión de un modelo de logística colapsa cada año en la quincena antes de Navidad y se recupera inmediatamente después.",
+  "a.why": "Un concepto conocido que vuelve en un ciclo. No retires nada: mantén el modelo estacional y selecciónalo por contexto.",
+  "b.text": "La precisión de un modelo de logística colapsa en la quincena después de un cambio permanente en regulaciones de entrega nacional, y nunca se recupera.",
+  "b.why": "Un cambio abrupto y de una sola dirección sin retorno. El modelo anterior al cambio no tiene más uso y los datos anteriores al cambio tienen valor limitado para reentrenamiento."
+ },
+ "dp-07": {
+  "a.text": "Un equipo de moderación reescribe su orientación para que una categoría de contenido fronterizo sea etiquetada como 'violador' donde era anteriormente 'aceptable'. El contenido que llega no cambia.",
+  "a.why": "Las mismas entradas, etiquetas diferentes: el mapeo fue redefinido. Toda etiqueta histórica bajo la orientación anterior es ahora parcialmente errónea para propósitos de entrenamiento.",
+  "b.text": "La orientación de un equipo de moderación no cambia, pero una tendencia viral significa que contenido genuinamente violador aumenta del 2% al 9% de la cola.",
+  "b.why": "La regla es estable; la mezcla de resultados se movió. Umbrales y planificación de capacidad necesitan atención, no el límite aprendido del modelo."
+ },
+ "dp-08": {
+  "a.text": "Las puntuaciones cambian el día en que se lanza una nueva versión de modelo. Una muestra de referencia fija, reproducida a través de ambas versiones, reproduce el cambio exactamente.",
+  "a.why": "Las entradas idénticas produciendo salidas diferentes aíslan el cambio al modelo. Este es el uso esperado de una muestra de referencia de oro en el lanzamiento.",
+  "b.text": "Las puntuaciones cambian el día en que se lanza una nueva versión de modelo. La misma muestra de referencia fija, reproducida a través de ambas versiones, produce salidas idénticas.",
+  "b.why": "Si el modelo es comprobablemente sin cambios en entradas fijas, las entradas en vivo deben haber cambiado — y una coincidencia del mismo día apunta a los cambios del lado de datos del despliegue, no al mundo."
+ }
+}

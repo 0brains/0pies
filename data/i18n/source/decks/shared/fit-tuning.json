@@ -1,0 +1,45 @@
+{
+ "fit-tuning": {
+  "hint": "Compare training performance with validation or test performance: both poor suggests underfitting, while a large training-to-validation gap suggests overfitting."
+ },
+ "fit-tuning-01": {
+  "label": "The model captures useful patterns and performs similarly on training and unseen data.",
+  "why": "The model captures useful patterns and performs similarly on training and unseen data."
+ },
+ "fit-tuning-02": {
+  "label": "The model performs very well on training data but poorly on unseen data.",
+  "why": "The model performs very well on training data but poorly on unseen data."
+ },
+ "fit-tuning-03": {
+  "label": "The model is too simple or insufficiently trained and performs poorly even on training data.",
+  "why": "The model is too simple or insufficiently trained and performs poorly even on training data."
+ },
+ "fit-tuning-04": {
+  "label": "Systematic oversimplification causes consistent error and is commonly associated with underfitting.",
+  "why": "Systematic oversimplification causes consistent error and is commonly associated with underfitting."
+ },
+ "fit-tuning-05": {
+  "label": "The model is overly sensitive to its training sample and is commonly associated with overfitting.",
+  "why": "The model is overly sensitive to its training sample and is commonly associated with overfitting."
+ },
+ "fit-tuning-06": {
+  "label": "A constraint or penalty that discourages excessive complexity and can reduce overfitting.",
+  "why": "A constraint or penalty that discourages excessive complexity and can reduce overfitting."
+ },
+ "fit-tuning-07": {
+  "label": "Repeated train-validation splits used to estimate how consistently a model generalizes.",
+  "why": "Repeated train-validation splits used to estimate how consistently a model generalizes."
+ },
+ "fit-tuning-08": {
+  "label": "A hyperparameter controlling the size of each optimization update.",
+  "why": "A hyperparameter controlling the size of each optimization update."
+ },
+ "fit-tuning-09": {
+  "label": "One complete pass through the training dataset.",
+  "why": "One complete pass through the training dataset."
+ },
+ "fit-tuning-10": {
+  "label": "The number of training examples used to calculate one parameter update.",
+  "why": "The number of training examples used to calculate one parameter update."
+ }
+}

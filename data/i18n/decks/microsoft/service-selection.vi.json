@@ -1,0 +1,109 @@
+{
+ "service-selection": {
+  "hint": "Hai câu hỏi quyết định nó: đầu vào trông như thế nào (văn bản, biểu mẫu, hình ảnh, âm thanh, video hoặc vectơ) và công việc là trích xuất/phân tích, dịch, tìm kiếm/lập chỉ mục hoặc tạo ra? Tùy chọn được trồng là gần như luôn là hàng xóm chia sẻ đầu vào nhưng làm công việc khác."
+ },
+ "ss-001": {
+  "label": "Mô tả các trường hóa đơn bằng ngôn ngữ thuần túy và trích xuất chúng từ PDF, ảnh và ghi âm cuộc gọi thành JSON có cấu trúc",
+  "why": "Mô tả trường ngôn ngữ tự nhiên trên đầu vào đa phương thức → JSON có cấu trúc là Content Understanding; các máy móc được xây dựng sẵn Document Intelligence là xác định và chỉ tài liệu."
+ },
+ "ss-002": {
+  "label": "Trích xuất xác định khối lượng lớn từ biên lai tiêu chuẩn và thẻ ID bằng một mô hình được xây dựng sẵn",
+  "why": "Các loại biểu mẫu đã biết — hóa đơn, biên lai, ID, thẻ kinh doanh — là lãnh thổ Document Intelligence được xây dựng sẵn."
+ },
+ "ss-003": {
+  "label": "Dịch các sách hướng dẫn sản phẩm được viết từ văn bản tiếng Anh thành văn bản tiếng Nhật",
+  "why": "Translator là text-to-text; Azure Speech xử lý âm thanh vào/ra bao gồm dịch giọng nói — một bối cảnh corpus nhầm lẫn 6 lần (pair #29)."
+ },
+ "ss-004": {
+  "label": "Lập chỉ mục dữ liệu hóa đơn được trích xuất để các ứng dụng hạ lưu có thể tìm kiếm và truy xuất nó",
+  "why": "CU trích xuất; AI Search lập chỉ mục và truy xuất hạ lưu (indexer, skillset, knowledge store) — trích xuất và truy xuất là các dịch vụ khác nhau (pair #22)."
+ },
+ "ss-005": {
+  "label": "Tìm kiếm mô tả sản phẩm bằng sự tương đồng ngữ nghĩa thay vì so khớp từ khóa chính xác",
+  "why": "Nhúng chuyển đổi văn bản thành vectơ để so sánh ngữ nghĩa (text-embedding-3-large) — họ truy xuất và so sánh, họ không bao giờ tạo nội dung (pair #18)."
+ },
+ "ss-006": {
+  "label": "Trả lời các câu hỏi tự do về một bức ảnh mà người dùng đính kèm vào thông báo trò chuyện của họ",
+  "why": "Hình ảnh làm đầu vào cần một mô hình đa phương thức được triển khai đọc các bộ phận nội dung hình ảnh; tạo hình ảnh đi theo hướng khác, và ImageAnalysisClient/Vision trả về các tính năng cố định — một API và điểm cuối khác (pair #23)."
+ },
+ "ss-007": {
+  "label": "Đọc văn bản in từ biển báo đường phố được chụp ảnh để ứng dụng có thể hiển thị nó trở lại dưới dạng văn bản thuần túy",
+  "why": "OCR/Đọc là khả năng Vision cốt lõi trên hình ảnh chung; Document Intelligence nhắm mục tiêu các bố cục biểu mẫu có cấu trúc, không phải văn bản tình cờ cảnh đường phố."
+ },
+ "ss-008": {
+  "label": "Tự động phát hiện ngôn ngữ nguồn của văn bản đến trước khi dịch nó sang tiếng Anh, trong cùng một cuộc gọi",
+  "why": "Phát hiện ngôn ngữ tự động của Translator chạy nội tuyến như một phần của đường dẫn dịch; Phát hiện ngôn ngữ của AI Language là một tính năng phân tích văn bản độc lập được sử dụng bên ngoài một cuộc gọi dịch."
+ },
+ "ss-009": {
+  "label": "Đào tạo một mô hình trên ảnh có nhãn của riêng bạn để phân biệt các bộ phận bị lỗi với các bộ phận được chấp nhận trên dây chuyền sản xuất",
+  "why": "Custom Vision mục đích xây dựng phân loại/phát hiện từ ảnh có nhãn của riêng bạn với vòng đào tạo được quản lý; Vision chung chỉ trả về các tính năng được xây dựng sẵn cố định của nó và không thể được đào tạo lại trên dữ liệu của bạn."
+ },
+ "ss-010": {
+  "label": "So khớp ảnh quét huy hiệu với danh sách các ảnh nhân viên để xác nhận danh tính của người đó",
+  "why": "Xác minh 1:1 và xác định 1:N so với khuôn mặt được đăng ký là khả năng chuyên dụng của Face; phân tích Vision chung không có tính năng so khớp danh tính."
+ },
+ "ss-011": {
+  "label": "Kiên trì cụm từ khóa, cảm tính và thực thể được rút ra từ đường dẫn tài liệu vào một cửa hàng các ứng dụng hạ lưu có thể tìm kiếm",
+  "why": "Một tập kỹ năng có thể gọi AI Language để làm phong phú mỗi tài liệu, nhưng kho kiến ​​thức bền vững, có thể truy vấn thuộc về AI Search — làm phong phú và truy xuất là các giai đoạn đường dẫn riêng biệt."
+ },
+ "ss-012": {
+  "label": "Kéo cảm tính, cụm từ khóa và thực thể được đặt tên trực tiếp ra khỏi văn bản hỗ trợ thô",
+  "why": "Phân tích cảm tính, trích xuất cụm từ khóa và NER là các tính năng phân tích văn bản AI Language; AI Search chỉ tiêu thụ đầu ra đó làm một bước làm phong phú, nó không tạo ra nó."
+ },
+ "ss-013": {
+  "label": "Cờ một spike bất thường trong đọc rung động cảm biến nhà máy khi chúng phát trực tiếp theo thời gian",
+  "why": "Phát hiện dị thường được xây dựng mục đích trên dữ liệu chuỗi thời gian đơn biến/đa biến là công việc của Anomaly Detector; một không gian làm việc ML chung sẽ yêu cầu bạn thiết kế, đào tạo và quản lý mô hình đó."
+ },
+ "ss-014": {
+  "label": "Nhận được bản ghi chép có dấu thời gian các lượt nói từ cuộc gọi hỗ trợ hai người được ghi lại",
+  "why": "Speech-to-text với diarization người nói chạy trực tiếp trên âm thanh thô như khả năng Speech; AI Language chỉ hoạt động trên văn bản đã được ghi lại."
+ },
+ "ss-015": {
+  "label": "Biến một khối sao chép tiếp thị tiếng Anh được viết thành âm thanh được kể lại cho lồng tiếng video",
+  "why": "Tổng hợp text-to-speech thần kinh là khả năng Speech gốc; tạo âm thanh được nói từ Azure OpenAI cần một triển khai đa phương thức/thời gian thực riêng biệt, và Translator không bao giờ chạm vào âm thanh."
+ },
+ "ss-016": {
+  "label": "Cờ ngôn ngữ bạo lực hoặc thù địch trong các thông báo trò chuyện do người dùng gửi trước khi chúng bao giờ đến máy",
+  "why": "Prompt Shields và các danh mục kiểm duyệt là công việc của Content Safety, được áp dụng cho đầu vào và đầu ra giống nhau; Phát hiện PII của AI Language là một tính năng quyền riêng tư, không phải bộ phân loại nội dung có hại."
+ },
+ "ss-017": {
+  "label": "Làm mờ hoặc đỏa số điện thoại và địa chỉ email của khách hàng trước khi bản ghi thoại trò chuyện được lưu trữ",
+  "why": "Phát hiện và đỏa PII là một tính năng AI Language chuyên dụng để phát hiện và che giấu dữ liệu cá nhân; Content Safety thay vào đó phân loại các danh mục nội dung có hại — một mối quan tâm quyền riêng tư, không phải an toàn."
+ },
+ "ss-018": {
+  "label": "Lưu trữ và truy vấn hàng triệu vectơ nhúng đã tính toán để các tra cứu hàng xóm gần nhất trả về trong mili giây",
+  "why": "Tìm kiếm vectơ và lưu trữ tại thời điểm truy vấn là công việc của AI Search; Mô hình Embeddings chỉ tạo ra các vectơ trong nơi đầu tiên, họ không lập chỉ mục hoặc truy xuất chúng."
+ },
+ "ss-019": {
+  "label": "Định tuyến một cuộc gọi công cụ chạy của tác nhân ra ngoài một API thời gian thực và nuôi dưỡng kết quả trở lại vào cùng một cuộc trò chuyện",
+  "why": "Gọi một hàm/công cụ tùy chỉnh mid-run chống một API bên ngoài trực tiếp là lớp điều phối Dịch vụ Tác nhân; một cuộc gọi hoàn thành trần trụi không có vòng lặp gọi công cụ được xây dựng sẵn của riêng nó."
+ },
+ "ss-020": {
+  "label": "Đính kèm một chỉ mục tìm kiếm hiện có với một tác nhân Foundry để các câu trả lời của nó nền tảng trong và trích dẫn tài liệu được lập chỉ mục của bạn",
+  "why": "Dây kết nối một nguồn kiến ​​thức vào hành vi nền tảng/trích dẫn của tác nhân được cấu hình trên Dịch vụ Tác nhân; chỉ mục chính nó chỉ phục vụ các truy vấn, nó không sở hữu nhân cách, công cụ hoặc dây kết nối kiến ​​thức của tác nhân."
+ },
+ "ss-021": {
+  "label": "Tạo hình ảnh mockup sản phẩm chân thực từ mô tả tiếng Anh thuần túy, không có ảnh bắt đầu",
+  "why": "Tạo text-to-image là công việc của DALL-E; một mô hình trò chuyện đa phương thức đọc hình ảnh làm đầu vào nhưng không vẽ cái mới, và Vision chỉ phân tích hình ảnh đã tồn tại."
+ },
+ "ss-022": {
+  "label": "Chạy một trợ lý nhạy cảm chi phí trên triển khai ngân sách chỉ bao giờ xử lý các yêu cầu ngắn, đơn giản",
+  "why": "Một mô hình ngôn ngữ nhỏ lớp Phi trao đổi một số khả năng cho chân rất nhỏ hơn và chi phí thấp hơn, phù hợp với các yêu cầu nhẹ, bị ràng buộc ngân sách; triển khai một mô hình biên giới đầy đủ cho văn bản đơn giản là bẫy quá cấp phát kinh điển."
+ },
+ "ss-023": {
+  "label": "Cho phép người dùng nói một câu hỏi và nghe một câu trả lời được nói lại trong cùng một lượt độ trễ thấp, không có các cuộc gọi công nhân nhận dạng/tổng hợp riêng biệt để dây lên",
+  "why": "gpt-realtime / Voice Live là một phiên độ trễ thấp duy nhất speech-in, speech-out; bản phân biệt Azure AI Speech có nghĩa là dây lên đường dẫn SpeechRecognizer→process→SpeechSynthesizer thủ công của riêng bạn, điều này mất trên độ trễ và tích hợp — chính xác những gì API realtime thay thế."
+ },
+ "ss-024": {
+  "label": "Nhận được phản hồi mô hình được triển khai dưới dạng JSON được hình thành tốt phù hợp với một lược đồ bạn cung cấp, không có thêm bài thơ xung quanh nó",
+  "why": "Đầu ra có cấu trúc là một thông số trên mỗi lệnh gọi trên một mô hình hoàn thành/trò chuyện được triển khai; điều chỉnh tốt thay đổi trọng số mô hình vĩnh viễn và không cần thiết chỉ để hình dạng một định dạng phản hồi."
+ },
+ "ss-025": {
+  "label": "Nướng phong cách viết của công ty vào mọi phản hồi tương lai bằng cách sử dụng hàng trăm bảng điểm ví dụ được ghi chép, vì vậy nó không bao giờ phải được nhắc lại",
+  "why": "Điều chỉnh tốt là vượt qua đào tạo nướng hành vi được trình diễn vào trọng số mới để nó vẫn còn trên các cuộc gọi; triển khai trò chuyện/hoàn thành cổ phiếu chỉ phản ánh những gì được gửi lại trong lời nhắc của cuộc gọi đó, và một mô hình đa phương thức thay đổi những loại đầu vào được chấp nhận, không phải liệu phong cách kiên trì mà không re-prompting."
+ },
+ "ss-026": {
+  "label": "Thử các lời nhắc được nói chống một mô hình được triển khai có khả năng âm thanh trực tiếp trong sân chơi trò chuyện Foundry, mà không viết bất kỳ mã SDK nào",
+  "why": "Triển khai đa phương thức có khả năng âm thanh có thể được tập thể dục thẳng trong sân chơi trò chuyện; Voice Live/gpt-realtime là API phiên thời gian thực chuyên dụng, một con đường triển khai riêng biệt được xây dựng cho trò chuyện giọng nói liên tục."
+ }
+}

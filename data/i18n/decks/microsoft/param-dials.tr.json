@@ -1,0 +1,106 @@
+{
+ "pd-001": {
+  "label": "Aynı istemi her çalıştırmada tutarlı, tekrar edilebilir çıktı almaya ihtiyacın var",
+  "why": "histack'ın tam sınav işareti: 'tutarlı, tekrar edilebilir çıktı' → düşük sıcaklık. Tüm olasılık dağılımını yeniden ölçeklendirir; top_p'yi değil, ikisini ayarla."
+ },
+ "pd-002": {
+  "label": "Örneklemeyi, kümülatif olasılığı belirlenmiş bir eşiğe ulaşan en küçük token setine sınırla",
+  "why": "Çekirdek örnekleme — top_p aday setini keserken, sıcaklık tüm dağılımı yeniden şekillendirir (corpus kafa karıştırıcı çift #5)."
+ },
+ "pd-003": {
+  "label": "Yanıtlar cümlenin ortasında kesiliyor — tamamlanmış cevaplara ihtiyacın var",
+  "why": "max_tokens yalnızca çıktı uzunluğunu sınırlar — sınavın en sık parametre tuzağı, bunu randomness kontrolü olarak sunmaktır (çift #4)."
+ },
+ "pd-004": {
+  "label": "Model bir ifadeyi tekrarlamaya devam ediyor; tokenleri ne kadar sık göründüğüyle orantılı olarak cezalandır",
+  "why": "Frekans cezası tekrar sayısıyla ölçeklenir (tekrarlama); presence cezası bir kez göründüğü an ateşlenir (konu yeniliği) — corpus çifti #6."
+ },
+ "pd-005": {
+  "label": "Oluşturulan pazarlama görüntüleri pis görünüyor — daha yüksek render sadakat katmanını iste",
+  "why": "gpt-image-1'in yükü istem, boyut, kalite (\\\"high\\\" tuzak değeri de dahil) ve n alır — kalite sadakat kontrol eder, boyut boyutları kontrol eder."
+ },
+ "pd-006": {
+  "label": "Büyük bir oluşturma işlenirken görüntü ilerlemesini daha çabuk gör",
+  "why": "Görüntüler/oluşturmalar yolunda partial_images akışı, ilerlemeli çıktı döndürür — sınavın 'görüntü ilerlemesini daha çabuk gör' gövdesi kelimesi."
+ },
+ "pd-007": {
+  "label": "Tokenin tüm olasılık dağılımını, yalnızca üst dilimi değil, örneklemeden önce yeniden şekillendirir randomness düğmesi",
+  "why": "Sıcaklık logit'leri tüm dağılım arasında ölçeklendirir; top_p yerine kümülatif olasılık kütlesinde keserek — aynı 'yaratıcılık' sezgisi, farklı mekanik."
+ },
+ "pd-008": {
+  "label": "Takım model'ı yalnızca en olası sonraki token adaylarının en olasılı dilimini düşün, uzun kuyruğu kes",
+  "why": "Çekirdek örnekleme (top_p), adayları kümülatif olasılık dilimine sınırlar; sıcaklık olasılıkları yeniden şekillendirir ancak asla adayları tamamen kaldırmaz."
+ },
+ "pd-009": {
+  "label": "Tek bir yanıtın oluşturabileceği kaç token'in zor bir tavanı, ne söylediyse söylesin",
+  "why": "max_tokens oluşturma sırasında uygulanan bir uzunluk tavanıdır; bir stop dizisi bunun yerine yalnızca belirli bir dize göründüğünde erken üretimi durdurur — farklı tetikleyici, aynı 'daha kısa çıktı' hedefi."
+ },
+ "pd-010": {
+  "label": "Modelin aynı sözcüğü veya ifadeyi birçok kez yeniden kullanmasını caydır — ne kadar tekrarlıyorsa, geri itti daha güçlü",
+  "why": "Frekans cezası bir token'ın zaten ne sıklıkta göründüğüyle ölçeklenir; presence cezası bir kez göründüğü an düz ceza uygular — sayı orantılı vs ikili."
+ },
+ "pd-011": {
+  "label": "Sohbet transkripti hiçbir zaman erken konulara geri dönmüyor — model her zaman kapsam dışı yeni konular yerine kayıyor",
+  "why": "Yüksek bir presence cezası bir token'ın bir kez göründüğü an ateşlenir, modeli yeni konular doğrultusunda itiyor; frekans cezası sayı ile ölçeklenir ve ağırlıklı olarak aynı tekrarları değil, konu drilt'ini engeller."
+ },
+ "pd-012": {
+  "label": "Yanıtta göründüğü kadar sık olmayan, göründüğü her token'a aynı sabit cezayı uygula",
+  "why": "Presence cezası token başına ikili'dir (göründü mü göründü mü); frekans cezası bunun yerine tekrar sayısı ile büyür — sınavın çift parametre karışıklığı çıkmazı."
+ },
+ "pd-013": {
+  "label": "Oluşturma model belirli bir işaretçi dizesi yazıyor yazıyor almaza beklemeksizin durmalı",
+  "why": "Bir stop dizesi, oluşturmayı erken durduran bir metin tetikleyicisidir; max_tokens yalnızca bir uzunluk tavanı uygular ve belirli metni farkında değildir."
+ },
+ "pd-014": {
+  "label": "Bir bitirme işareti olarak görülecek bir metin parçası model söylenmiş, bu metni bir kez çıktı üretince işleme durur",
+  "why": "Stop sekansları eşleşme metni içeriğine tetikler; max_tokens yalnızca token sayar ne de frequency penalty oluşturulan metni incelemez — biri token sayar, diğeri sayarımı."
+ },
+ "pd-015": {
+  "label": "Gecikme yüksek, kullanılan istek hacminde tahmin edilebilir kalmalı ve takım rezerve saatlik maliyeti ödemeye isteklidir",
+  "why": "Sağlanan iş başı (PTU) tahmin edilebilir gecikme ölçekte ayrılmış kapasite ayırır; Standart dağıtım token başına değişken iş başı ile kodu paylaşır ve Kapasite (TPM) yalnızca kota cihazdır, dağıtım tipi değil."
+ },
+ "pd-016": {
+  "label": "Paylaşılan kiracı trafiği ile iş başı dalgalanmayacak şekilde zaman öncesinde satın alınan ayrılmış, adanmış model kapasitesi",
+  "why": "PTU ayrılmış kapasite dağıtım modeli'dir; Standart kapasiteyi paylaşır ve token başına değişken iş başı ile fatura keser, Kapasite (TPM) bunun yerine hangi dağıtım tipine karar verirse seçilen tüm hangisi üzerine kota ayarlar."
+ },
+ "pd-017": {
+  "label": "Müşteri destek uygulamasına trafik tahmin edilemez ve patlamış, ve takım saatlik ayrılmış kapasite yerine token başına faturamayı istiyor",
+  "why": "Token başına faturalama değişken yük altında Standart dağıtım (sınavın tam senaryosu); PTU bunun yerine ayrılmış kapasite için gerçek kullanımdan bağımsız olarak saatlik fatura."
+ },
+ "pd-018": {
+  "label": "Tüketilen token başına fatura, saatlik ayrılmış hesaplama değil, kota paylaşılan yük altında değişiklik gösterebilir",
+  "why": "Standart tüketim tabanlı faturlama ve paylaşılan yük altında değişken iş başı; PTU bu değişkenliği sabit saatlik rezervasyon ile takas eder ve Kapasite (TPM) iki modelin üstüne katmanlı kota ayarıdır."
+ },
+ "pd-019": {
+  "label": "Dağıtım, yoğun yük altında azaltılma konusunda isabet ettiğinde, takım başka bir az kullanılan dağıtımdan yedek iş başı kotası vardır",
+  "why": "Dağıtım başına iş başı kotası dağıtımlar arasında yeniden tahsis edilebilir (sınavın belgelenen senaryo); PTU ve Standart dağıtımın faturlama/rezervasyon modelini açıklar, kota cihazdır değil."
+ },
+ "pd-020": {
+  "label": "Kota cihazdı dağıtım başına iş başı cihaz'ın bir dakikada işleyebileceği toplam iş başı üst sınırını, herhangi bir tek yanıtın uzunluğundan bağımsız olarak ayarlar",
+  "why": "Kapasite (TPM) dağıtım düzeyinde tüm istekleri ölçeklendirir dakika başına token; max_tokens tek bir yanıtın uzunluğunu sınırlar ve hız sınırlaması hiçbir şey ile yapması yoktur."
+ },
+ "pd-021": {
+  "label": "Banner görüntü isteği küçük bir kare döndürdüğünde düzen geniş dikdörtgen kanvas gerekir",
+  "why": "size piksel boyutları (örn. geniş bir biçim 1024x1024 yerine) ayarlar; quality render sadakati kontrol eder ve n görüntü sayısını kontrol eder — hiçbiri kanvas şekli değiştiremez."
+ },
+ "pd-022": {
+  "label": "İstek alanı oluşturulan görüntünün piksel boyutlarını ayarlar, örnek 1024×1024",
+  "why": "size görüntüleri/oluşturmalar yükü'nün boyut alanıdır; quality bunun yerine render sadakati yönetir ve partial_images kontrol eder, final kanvas boyutları değil, ilerlemeli akışı kontrol eder."
+ },
+ "pd-023": {
+  "label": "Alan daha iyi yüksek sadakat katmanı kabul eder böylece nettir ayrıntı daha kısa, görüntü kadar bağımsız kayan",
+  "why": "quality (\\\"high\\\" belgelenen tuzak değeri dahil) render sadakati kontrol eder; size boyutları kontrol eder ve n kaç görüntü döndüreceğini kontrol eder — aynı istekte üç bağımsız kadran."
+ },
+ "pd-024": {
+  "label": "Tek bir istem dört ayrı görüntü varyasyonu biri isteme dön seçebileceksiniz gibi",
+  "why": "n kaç görüntü isteğin döndüreceğini ayarlar (örn. n=4); size ve quality şekil her bireysel görüntüyü ama ne kadar döndüreceğini değiştirmez."
+ },
+ "pd-025": {
+  "label": "Tek görüntüleri/oluşturmalar çağrı kaç görüntü varyasyonu döndüreceğini ayarlar parametre",
+  "why": "n görüntü sayı alanıdır; partial_images bunun yerine tek görüntüsü ilerlemeli önizlemesi akış olarak işlenir ve size yalnızca o görüntünün boyutlarını ayarlar."
+ },
+ "pd-026": {
+  "label": "Akış ile birlikte kombinasyon, bu alan kaç ilerlemeli önizleme kare'si son görüntü tamamlanmadan önce gönderilir ayarlar",
+  "why": "partial_images (stream=True ile birlikte) oluşturma sırasında ilerlemeli önizleme kareleri sayısını ayarlar; n bunun yerine kaç ayrı son görüntü döndüreceğini ayarlar ve quality sadakat ayarlar, önizleme temponu değil."
+ }
+}

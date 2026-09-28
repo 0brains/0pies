@@ -1,0 +1,236 @@
+{
+ "id": "governance-controls",
+ "runner": "board",
+ "title": "Make It Stick",
+ "blurb": "Twenty-four governance scenes from real Azure estates, each one already going wrong. You decide which control actually binds it: a policy that refuses the request, one that only records it, one that quietly fixes it, a lock nobody can talk their way past, a Defender for Cloud standard, or the scope the assignment was hung on.",
+ "source": "Azure Policy overview, definition structure and effects (deny, denyAction, audit, auditIfNotExists, deployIfNotExists), assignment structure, Azure resource locks, Defender for Cloud security policies, standards and recommendations, regulatory compliance dashboard, MCSB · SC-500 outline 1.3",
+ "asOf": "2026-08",
+ "area": "1.3",
+ "hint": "Ask three questions in order. First: does the deployment still succeed? If Azure Resource Manager hands back a failure and the resource never exists, you are in refuse-the-request or Resource lock territory. If it succeeds and something is merely written down, you are in record-only. If it succeeds and Azure then adds the missing piece for you, you are in DeployIfNotExists. Second: what decided the outcome? Resource properties evaluated against a rule means Azure Policy; a blanket restriction that ignores properties and ignores who is asking, including subscription owners, means a resource lock. Third: if nothing about the rule itself is in question and the real problem is where the rule was authored, where it was assigned, which child scope escapes it, or whether it is enforced yet, that is the Assignment scope zone. Reserve the Defender for Cloud zone for scenes about assessing an estate against a named framework, the compliance dashboard, recommendations, attestation, and custom standards, rather than about the enforcement effect underneath.",
+ "zones": [
+  {
+   "key": "Policy deny",
+   "name": "Policy deny",
+   "def": "Azure Policy effects that refuse the request outright: deny stops a noncompliant create or update before the resource provider ever sees it, and denyAction blocks the delete call and returns a 403. Belongs here when the outcome is that the operation fails and the resource never exists or never goes away. Not audit, which lets exactly the same request succeed and only records it. Not Resource lock, because deny reads the properties on the request and only refuses the ones that break the rule, while a lock refuses everyone on that scope regardless of properties."
+  },
+  {
+   "key": "Policy audit",
+   "name": "Policy audit",
+   "def": "Azure Policy effects that observe and never obstruct: audit marks the resource noncompliant and writes an entry to the activity log while letting the deployment through, and auditIfNotExists does the same by checking for a related child or extension resource. Belongs here when the deliverable is visibility. Not deny, which fails the same request. Not DeployIfNotExists, because auditIfNotExists reports the missing companion resource and deployIfNotExists creates it."
+  },
+  {
+   "key": "DeployIfNotExists",
+   "name": "DeployIfNotExists",
+   "def": "Azure Policy deployIfNotExists and modify, plus the Enforce action in Defender for Cloud that sits on top of deployIfNotExists. The assignment carries a managed identity holding roles, evaluates after the resource provider succeeds, and deploys or edits the missing configuration. Existing noncompliant resources are only fixed when someone starts a remediation task. Not audit, which stops at reporting the same gap. Not deny, because the resource is allowed to exist and is then corrected rather than refused."
+  },
+  {
+   "key": "Resource lock",
+   "name": "Resource lock",
+   "def": "Management locks on a subscription, resource group, or resource: CanNotDelete shown as Delete in the portal, and ReadOnly. They apply across every user and every role, override permissions rather than grant them, inherit downwards with the most restrictive lock winning, and touch only control plane calls to the management endpoint. Not deny or denyAction, which are policy rules evaluated against resource properties and can be scoped by condition. Not Assignment scope, because a lock is the control itself, not a decision about where a policy was assigned."
+  },
+  {
+   "key": "Compliance standard",
+   "name": "Compliance standard",
+   "def": "Microsoft Defender for Cloud security standards and the Regulatory compliance dashboard: the Microsoft Cloud Security Benchmark on by default, named frameworks toggled on through Manage compliance policies, the controls and recommendations they generate, manual attestation with evidence, downloadable reports, and custom standards built from KQL recommendations under Defender CSPM. Not audit, which is the raw Azure Policy effect rather than a framework-shaped assessment view. Not DeployIfNotExists, unless the scene is specifically about pressing Enforce on a recommendation."
+  },
+  {
+   "key": "Assignment scope",
+   "name": "Assignment scope",
+   "def": "Where and how the rule is hung rather than what it does: definition location on a management group or subscription, assignment scope and inheritance to child scopes, initiatives grouping many definitions into one assignment, excluded scopes and exemptions carving a subscope out, and enforcementMode set to DoNotEnforce so an assignment evaluates without enforcing. Not deny or audit, which are the effect the rule carries. Not Resource lock, because nothing here is a blanket restriction on a resource."
+  }
+ ],
+ "items": [
+  {
+   "id": "gov-01",
+   "label": "A payments startup pins customer data to UK South under its residency commitment, but two engineers keep creating storage accounts in Southeast Asia. The platform lead says the next attempt must fail in the pipeline, not turn up in a quarterly report.",
+   "sub": "Which control closes this?",
+   "answer": "Policy deny",
+   "why": "A location rule carrying the deny effect is evaluated before the request reaches the storage resource provider, so the account in the wrong region is never created. Audit would let both accounts come into existence and merely flag them, which is exactly the report-after-the-fact outcome the lead rejected. Deny is the only effect here that turns the requirement into a hard failure at deployment time.",
+   "citation": "Learn: Azure Policy definitions deny effect and effect basics · outline 1.3"
+  },
+  {
+   "id": "gov-02",
+   "label": "A hospital trust's clinical data platform must never expose a SQL logical server to the public endpoint, not even briefly while someone notices and fixes it. The CISO signs off only on a rule where a server with public network access enabled simply cannot be provisioned.",
+   "sub": "Which control closes this?",
+   "answer": "Policy deny",
+   "why": "The requirement is that the noncompliant state has zero lifetime, which rules out anything that acts after creation. Deny rejects the create request itself. Auto-remediate with deployIfNotExists would allow the server to exist and then reconfigure it after the provider reports success and after an evaluation delay, leaving a real window of exposure the CISO explicitly refused.",
+   "citation": "Learn: Azure Policy definitions deny effect and deployIfNotExists effect · outline 1.3"
+  },
+  {
+   "id": "gov-03",
+   "label": "A grocery retailer keeps losing production Recovery Services vaults to over-eager cleanup scripts across forty subscriptions. Central governance wants delete calls on those vaults to come back forbidden, enforced by a rule they can assign once rather than something an engineer places on each vault by hand.",
+   "sub": "Which control closes this?",
+   "answer": "Policy deny",
+   "why": "The denyAction effect blocks requests by intended action, and delete is the supported action, returning a 403 to the caller. It rides on a policy assignment so one assignment covers the whole estate. A resource lock would also stop the deletion but has to be placed on each scope individually and cannot be conditioned on which vaults are production, which is the scale problem the team described.",
+   "citation": "Learn: Azure Policy definitions denyAction effect · outline 1.3"
+  },
+  {
+   "id": "gov-04",
+   "label": "An insurance group inherits nine hundred virtual machines from an acquisition. The compliance lead wants a standing count of which ones have unencrypted disks so she can size the remediation programme, and has told the platform team that nobody's deployment may break while she is counting.",
+   "sub": "Which control closes this?",
+   "answer": "Policy audit",
+   "why": "Audit flips the compliance state of every machine with an unencrypted disk to noncompliant during the evaluation cycle and never blocks a request, which is exactly a measurement exercise; the activity log entry only appears when someone creates or updates one of those machines, so the standing count comes from the compliance view rather than the log. Deny would fail deployments and is off the table by instruction. Scope-binding with DoNotEnforce would also avoid breakage, but that knob is for holding back an assignment that carries an enforcing effect, whereas here the effect chosen for the rule itself is reporting.",
+   "citation": "Learn: Azure Policy definitions audit effect · outline 1.3"
+  },
+  {
+   "id": "gov-05",
+   "label": "A logistics operator needs to know which of its key vaults have no diagnostic setting shipping logs to the central Log Analytics workspace. The security team wants the list; they are not ready to have Azure start wiring settings up on their behalf.",
+   "sub": "Which control closes this?",
+   "answer": "Policy audit",
+   "why": "The check is about a related extension resource rather than a property on the vault itself, so auditIfNotExists is the right shape: it looks for the companion resource and reports the vaults that lack one. Its near neighbour deployIfNotExists uses the same existence check but then deploys the missing diagnostic setting, which is precisely the automatic action the team said they were not ready for.",
+   "citation": "Learn: Azure Policy definitions auditIfNotExists and deployIfNotExists effects · outline 1.3"
+  },
+  {
+   "id": "gov-06",
+   "label": "A telecoms operator is mid-way through a cost allocation project. Finance wants a continuously refreshed picture of which resources are missing the cost-centre tag, and has been clear that no create or update should be rejected because of a tag while the project runs.",
+   "sub": "Which control closes this?",
+   "answer": "Policy audit",
+   "why": "A tag rule with the audit effect keeps resources flowing while marking every untagged one as noncompliant for the compliance view. Auto-remediate would be the choice if finance wanted the tag inherited from the resource group automatically through the modify effect, but they asked for a picture, not a change. Deny is ruled out by the no-rejection instruction.",
+   "citation": "Learn: Azure Policy definitions audit effect and definition structure policy rule · outline 1.3"
+  },
+  {
+   "id": "gov-07",
+   "label": "An energy utility is redesigning how its virtual machines reach the internet and expects the work to take two quarters. In the meantime the security lead wants every deployment of a VM with a public IP to leave a durable record in the activity log, without slowing a single delivery team down.",
+   "sub": "Which control closes this?",
+   "answer": "Policy audit",
+   "why": "Audit is evaluated during the create or update and adds an activity log operation while marking the resource noncompliant, giving the durable record without touching delivery. Deny would create precisely the delivery friction the lead ruled out. The scene is about the effect on the rule, not about the assignment being parked, so it is not Assignment scope.",
+   "citation": "Learn: Azure Policy definitions audit effect and effect order of evaluation · outline 1.3"
+  },
+  {
+   "id": "gov-08",
+   "label": "A SaaS company wants every new Azure Kubernetes Service cluster to come up with the monitoring agent extension already configured, without the platform team raising a ticket to each product squad after the fact.",
+   "sub": "Which control closes this?",
+   "answer": "DeployIfNotExists",
+   "why": "The deployIfNotExists effect runs after the resource provider returns success, checks whether the related extension exists, and deploys it when it does not, so new clusters self-configure. AuditIfNotExists would only list the clusters missing the agent and still leave the platform team raising tickets. The distinguishing word in the scene is that the configuration must appear, not just be noticed.",
+   "citation": "Learn: Azure Policy definitions deployIfNotExists effect · outline 1.3"
+  },
+  {
+   "id": "gov-09",
+   "label": "A pharmaceutical company assigns a rule that adds diagnostic settings to storage accounts. New accounts come up correctly, but three hundred accounts created before the assignment stay listed as noncompliant week after week and nothing happens to them.",
+   "sub": "Which control behaviour explains this?",
+   "answer": "DeployIfNotExists",
+   "why": "That is deployIfNotExists working as designed: during an evaluation cycle it marks pre-existing resources noncompliant but takes no action on them, and someone has to start a remediation task to bring them into line. This is not audit, which would never have fixed the new accounts either, and it is not a Assignment scope fault, since the assignment is reaching the resources and reporting on them correctly.",
+   "citation": "Learn: Azure Policy definitions deployIfNotExists effect and remediate non-compliant resources · outline 1.3"
+  },
+  {
+   "id": "gov-10",
+   "label": "A bank's platform engineer creates an assignment that is supposed to deploy a missing configuration, and the remediation run fails with an authorization error. The assignment was created without any identity attached to it.",
+   "sub": "Which control does this scene belong to?",
+   "answer": "DeployIfNotExists",
+   "why": "Assignments using deployIfNotExists or modify need a managed identity attached (either system-assigned or user-assigned), granted the roles listed in the definition, because Azure is performing a write on the engineer's behalf. Audit and deny assignments need no identity at all, which is why nobody hits this failure with them. The missing identity is the signature of the DeployIfNotExists family.",
+   "citation": "Learn: Azure Policy assignment structure identity and remediate non-compliant resources · outline 1.3"
+  },
+  {
+   "id": "gov-11",
+   "label": "A building society's security admin opens a Microsoft Cloud Security Benchmark recommendation in Defender for Cloud, selects Enforce from the top menu of the recommendation details page, and saves. From then on resources created without that configuration are corrected automatically.",
+   "sub": "Which control does this scene belong to?",
+   "answer": "DeployIfNotExists",
+   "why": "Enforce in Defender for Cloud is a front end onto the deployIfNotExist effect in Azure Policy, so noncompliant resources are remediated automatically on creation. Its sibling button, Deny, prevents the resource being created at all and would belong in the refuse-the-request zone. The scene turns on correction rather than refusal, so it is DeployIfNotExists.",
+   "citation": "Learn: Manage MCSB recommendations in Defender for Cloud, deny and enforce · outline 1.3"
+  },
+  {
+   "id": "gov-12",
+   "label": "A contractor holding Contributor on the shared hub network deletes a subnet during a tidy-up. The network team wants a guard on that virtual network that stops the deletion no matter who tries it, including the subscription owner, and without depending on getting everyone's role assignments right.",
+   "sub": "Which control closes this?",
+   "answer": "Resource lock",
+   "why": "A CanNotDelete lock applies across all users and roles and overrides permissions, so it holds even where RBAC does not. A denyAction policy could also block the delete, but it is a rule evaluated against resource properties and scope, whereas the team asked for a blanket guard on this specific network that ignores who is asking. Trimming the contractor's role assignment would not stop the owner either.",
+   "citation": "Learn: Azure resource locks, protect infrastructure from deletion · outline 1.3"
+  },
+  {
+   "id": "gov-13",
+   "label": "A payroll team applies a ReadOnly guard to the storage account holding its exports. Within a day the service desk reports it can no longer retrieve the account keys, and an attempt to grant a colleague a role scoped to one blob container also fails.",
+   "sub": "Which control explains this?",
+   "answer": "Resource lock",
+   "why": "A ReadOnly lock on a storage account blocks listing the account keys, because that operation is a POST to Resource Manager, and it also blocks role assignments scoped to the account or to a data container. Callers who need the data must use Microsoft Entra credentials instead. The nearest wrong zone is deny: a policy rule refuses a create or update whose properties break a stated condition, and no policy condition here was breached at all, because listing keys and assigning a role are simply POST and write calls that the lock level blanket-blocks. That collateral damage on operations nobody thinks of as changes is the signature of ReadOnly.",
+   "citation": "Learn: Lock your Azure resources, considerations before applying your locks · outline 1.3"
+  },
+  {
+   "id": "gov-14",
+   "label": "An analytics group assumes the guard they placed on their storage account protects the files inside it. A cleanup script talking to the storage service endpoint deletes a whole container's contents anyway, and the guard never fires.",
+   "sub": "Which control does this scene belong to?",
+   "answer": "Resource lock",
+   "why": "Locks apply only to control plane operations that go to the Resource Manager endpoint; data plane calls to the service instance are untouched, so blob, queue, table, and file data stay deletable, and blob-level protection needs immutability or soft delete instead. The nearest wrong zone is deny: denyAction would look like the same guard against a delete, but it too is a Resource Manager control plane rule and would have missed this script for the same reason, so blaming the wrong control here leads to reaching for another policy that also cannot see the call.",
+   "citation": "Learn: Lock your Azure resources, understand scope of locks · outline 1.3"
+  },
+  {
+   "id": "gov-15",
+   "label": "A data engineering team tries to delete a resource group that an Azure Databricks workspace created for its infrastructure. The delete is refused, and when they try to remove the guard itself they are told a system application owns it.",
+   "sub": "Which control does this scene belong to?",
+   "answer": "Resource lock",
+   "why": "Managed applications such as Databricks create a second, locked resource group holding the service infrastructure, and that lock cannot be removed by the customer; the way out is to delete the service itself. Nothing about the scene is a policy assignment or its scope, so this is not Assignment scope, and no rule evaluated properties here.",
+   "citation": "Learn: Lock your Azure resources, managed applications and locks · outline 1.3"
+  },
+  {
+   "id": "gov-16",
+   "label": "A UK insurer's external assessor is due in six weeks and wants to see the current position against PCI DSS v4.0.1 across twelve subscriptions, plus something printable to attach to the working papers.",
+   "sub": "Which control closes this?",
+   "answer": "Compliance standard",
+   "why": "Turning PCI DSS on through Manage compliance policies in Defender for Cloud puts it in the Regulatory compliance dashboard, which assesses the scope continuously and offers a per-standard summary report to download. Individual Azure Policy audit rules would produce compliance data but not the control-by-control framework view or the report the assessor expects.",
+   "citation": "Learn: Assign regulatory compliance standards and Improve regulatory compliance in Defender for Cloud · outline 1.3"
+  },
+  {
+   "id": "gov-17",
+   "label": "A retailer running workloads in both Azure and Google Cloud onboards Defender for Cloud on a Monday. By Tuesday the security lead sees resources in both clouds already being scored against a benchmark nobody on the team configured.",
+   "sub": "Which control explains this?",
+   "answer": "Compliance standard",
+   "why": "The Microsoft Cloud Security Benchmark is enabled by default when Defender for Cloud is turned on, across onboarded Azure subscriptions as well as AWS accounts and GCP projects, and it begins scoring resources in scope immediately. Additional named frameworks are the ones that must be switched on deliberately, and adding them needs a paid Defender for Cloud plan onboarded. The nearest wrong zone is audit: an Azure Policy audit rule also scores without blocking, but the team authored and assigned nothing, and what they are looking at is a benchmark presented as controls in the compliance dashboard rather than a single rule's effect.",
+   "citation": "Learn: MCSB in Defender for Cloud, plus default compliance standards · outline 1.3"
+  },
+  {
+   "id": "gov-18",
+   "label": "A manufacturer has an internal hardening baseline that maps to no published framework. With Defender CSPM enabled, its security architects write assessment logic in KQL, package the results as recommendations, and group them under a standard of their own naming.",
+   "sub": "Which control does this scene belong to?",
+   "answer": "Compliance standard",
+   "why": "Custom recommendations written in KQL live inside a custom standard and surface next to the built-in ones inside the Regulatory compliance dashboard and feed the overall posture assessment; the capability requires the Defender CSPM plan. This is standards work, not an enforcement effect: none of it blocks or repairs a deployment the way deny or deployIfNotExists would.",
+   "citation": "Learn: Create custom standards and recommendations in Defender for Cloud · outline 1.3"
+  },
+  {
+   "id": "gov-19",
+   "label": "A charity's compliance officer works through its assigned ISO IEC 27001:2022 standard and finds a control greyed out because it cannot be assessed automatically. She selects it, picks the relevant subscriptions, attaches a signed procedure document, and attests.",
+   "sub": "Which control does this scene belong to?",
+   "answer": "Compliance standard",
+   "why": "Standards contain controls that Defender for Cloud cannot evaluate automatically; those appear as unavailable, and the dashboard provides manual attestation with linked evidence to demonstrate compliance. Azure Policy's audit effect can only report on what it can machine-evaluate, so a greyed-out control with human evidence is uniquely a Defender for Cloud standards scene.",
+   "citation": "Learn: Regulatory compliance standards in Defender for Cloud and remediate a manual assessment · outline 1.3"
+  },
+  {
+   "id": "gov-20",
+   "label": "A conglomerate's European branch owns thirty subscriptions and needs one approved-regions rule to reach every one of them, with any subscription added to that branch next quarter picked up automatically.",
+   "sub": "Where should this be hung?",
+   "answer": "Assignment scope",
+   "why": "Assigning at the management group above the branch makes every child subscription inherit the assignment, including ones added later, which is the automatic pickup the scene asks for. The effect on the rule is not in question here; what is being decided is scope. Thirty separate subscription-level assignments would enforce the same rule but would not cover new subscriptions and would multiply the management burden.",
+   "citation": "Learn: What is Azure Policy, assignments and scope · outline 1.3"
+  },
+  {
+   "id": "gov-21",
+   "label": "An engineer authors a custom definition and saves it into the production subscription. A colleague then tries to assign that same definition to a sibling subscription in the same management group and cannot find it there.",
+   "sub": "Which control does this scene belong to?",
+   "answer": "Assignment scope",
+   "why": "The definition location determines where a definition can be assigned: saved to a subscription, it only reaches resources in that subscription, whereas saving it to a management group makes it available to every child management group and subscription beneath. The rule and its effect are fine; the fault is entirely in where the definition was placed, which is Assignment scope.",
+   "citation": "Learn: Azure Policy definition structure basics, definition location · outline 1.3"
+  },
+  {
+   "id": "gov-22",
+   "label": "A media company's platform team has a new blocking rule ready but wants a fortnight of evidence on how many existing resources would be affected before anything starts failing, and does not want deny entries piling up in the activity log during the trial.",
+   "sub": "Which control closes this?",
+   "answer": "Assignment scope",
+   "why": "Setting enforcementMode to DoNotEnforce on the assignment lets it evaluate compliance without applying the effect or writing enforcement entries to the activity log, then flipping to Default turns it on. Rewriting the definition to audit would also produce data, but the team would then have to author and validate the blocking rule all over again; the assignment-level switch keeps the exact rule they intend to ship.",
+   "citation": "Learn: Azure Policy assignment structure, enforcement mode · outline 1.3"
+  },
+  {
+   "id": "gov-23",
+   "label": "A government department applies an estate-wide rule but has one sandbox resource group where researchers genuinely need the configuration the rule forbids. Weakening the rule everywhere is unacceptable to the security board.",
+   "sub": "Which control closes this?",
+   "answer": "Assignment scope",
+   "why": "Azure Policy works as an explicit deny system, so a more permissive assignment lower down does not override a denying one; the sandbox has to be carved out of the broad assignment through an excluded scope or an exemption. Loosening the definition or lowering the effect to audit would relax the control for the entire estate, which is what the board refused.",
+   "citation": "Learn: What is Azure Policy assignments, and Azure Policy assignment structure excluded scopes · outline 1.3"
+  },
+  {
+   "id": "gov-24",
+   "label": "A security architect at a housing association has fourteen related hardening rules and expects to add more each quarter. She wants to add future rules without creating and tracking a new assignment on every subscription each time.",
+   "sub": "Which control closes this?",
+   "answer": "Assignment scope",
+   "why": "Grouping the definitions into an initiative and assigning the initiative means definitions added to it later automatically become part of the existing assignments, so the assignment count stays flat. This is a packaging and binding decision, not an effect decision: each member definition still carries its own deny, audit, or deployIfNotExists behaviour unchanged.",
+   "citation": "Learn: What is Azure Policy, initiative definition and recommendations for managing policies · outline 1.3"
+  }
+ ]
+}

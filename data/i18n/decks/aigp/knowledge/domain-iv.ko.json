@@ -1,0 +1,40 @@
+{
+ "d4-brief-borrowed-brain": {
+  "scenario": "Solant Capital은 SEC 등록 부티크 투자자문사인데, PortfolioSense라는 어시스턴트를 출시하고 싶어요. 이 도구는 고객 회의를 위해 맞춤형 투자 추천안을 작성해줘요. 공학 리더 Dan Okafor의 팀이 Kestrel-13B라는 공개 가중치 기초 모델을 다운로드했어요. 그리고 Solant의 내부 연구 노트, 과거 고객 서신, 2019년부터의 포트폴리오 해설에 대해 6주간 파인튜닝했어요. Kestrel-13B는 허용적 기본 라이선스로 출시되지만, Dan의 팀은 파인튜닝 툴킷도 끌어다 썼는데, 그 의존성 체인이 엔지니어링팀도 법무팀도 검토하지 않은 코플레프트, 셰어얼라이크 조항을 포함하고 있어요. Dan은 3분기 리밸런싱 사이클 전 3주 안에 출시하고 싶고, 파인튜닝을 Solant가 재인증할 필요가 없는 사소한 맞춤화로 취급하고 있어요. Compliance 담당자 Renata Voss는 AI 부품 명세서, 라이선스 검토, 업데이트된 영향 평가, PortfolioSense의 조언이 Solant가 의도하지 않은 고객에게 전달되면 어떤 일이 벌어질지에 대한 예측이 모두 없다고 지적했어요. Fiduciary로서 Solant는 이 도구가 생산하는 모든 추천에 대해 SEC에 답변해야 해요. 엔지니어링팀이 릴리스 브랜치에 병합하기 전에 governance 입장을 작성하라고 요청받아요.",
+  "fields[0].prompt": "Kestrel-13B를 파인튜닝하면 Solant의 책임과 보증 입장이 그대로 사용하는 것과 어떻게 달라져요?",
+  "fields[1].prompt": "파인튜닝 툴킷의 의존성 체인에 대한 라이선스 검토가 확인해야 할 사항은 뭐고, 그중 가장 큰 장기적 위험이 뭐예요?",
+  "fields[2].prompt": "PortfolioSense를 출시하기 전에 Solant가 예측해야 할 다운스트림 또는 2차 사용으로 인한 해로움은 뭐고, 어떤 방식으로 예측해요?",
+  "fields[3].prompt": "Dan의 팀이 릴리스 브랜치에 병합하기 전에 있어야 할 문서와 인벤토리가 뭐예요?"
+ },
+ "d4-brief-silent-update": {
+  "scenario": "Larkspur Talent은 Aptivus AI라는 업체에서 만든 ScreenWise라는 채용 코파일럿을 라이선스해서 그 고객 Marlowe Foods의 이력서를 채점하고 후보자들을 shortlist해요. Aptivus와의 계약은 모델 변경에 대한 사전 알림이 없고, Marlowe에게는 훈련 데이터나 평가 보고서에 대한 감시 권한이 없어요. 3주 전 Aptivus는 모든 고객에게 알림도 없고 changelog도 없이 모델 업데이트인 v4.2를 배포했어요. 월요일에 Marlowe의 People Analytics 리더 Priya Shah은 분기별 fairness 점검을 실행했고, 지난 업데이트 이후 엔지니어링 역할의 여성 코딩 이력서 통과율이 34%에서 27.6%로 떨어졌다는 걸 발견했어요. 이건 회사의 2% 평탄 escalation 트리거인 평균 점수 드리프트 범위 아래지만, 보호되는 집단에 정확히 해당해요. ScreenWise는 여전히 live고 오늘의 지원자들을 여전히 검사 중이에요. General counsel은 아직 보고받지 않았고, 공식 성명은 없으며, 노동권 nonprofit이 이미 이메일을 보내 \"채용 도구의 편향에 대한 보고\"를 Marlowe가 인식하고 있는지 물어봤어요. 당신은 governance 리더예요. Priya는 오늘 끝나기 전에 결정을 원해요.",
+  "fields[0].prompt": "ScreenWise를 계속 live로 두고 조사하는 대안에 대해 정당화하면서 containment 결정을 내려요.",
+  "fields[1].prompt": "다음 업체 쪽 모델 변경이 후보자들이 피해를 입기 전에 포착되도록 사후 시장 모니터링 계획을 재설계해요.",
+  "fields[2].prompt": "nonprofit의 문의에 대한 외부 커뮤니케이션 대응의 범위를 작성해요. 뭘 공개하고 뭘 유보할지예요.",
+  "fields[3].prompt": "ScreenWise가 다시 Marlowe의 생산 환경으로 돌아가기 전에 만족되어야 할 deactivation 트리거와 재시작 기준을 정해요."
+ },
+ "d4-case-bidder-questions": {
+  "brief": "어떤 시 경찰청이 예측 위험 점수 도구를 조달하고 있고, 외부 컨설턴트를 입찰자 평가를 위해 데려왔어요. 2개 업체가 최종 라운드에 올라요. 각 업체는 정확도 비율, 훈련 데이터 다양성에 대한 설명, 모델 작동 방식에 대한 설명을 제공해요. 컨설턴트가 높은 정확도 비율을 가진 업체를 추천하면 경찰청이 서명해요. 계약이 최종화되기 전에 governance에서 평가 자체를 확인하라고 요청받아요. 이 3가지 범주의 질문들이 실제로 뭘 다루었는지, 뭘 열어뒀는지, 배포 전에 아직 정착되어야 할 게 뭔지예요.",
+  "steps[0].why": "요청한 3가지 범주 중 어느 것도 cybersecurity, resilience, 공격에 대한 취약성을 건드리지 않아요. 정확도 비율은 validity를 다루고, '어떻게 작동하는지'는 explainability를 다루고, 훈련 데이터 다양성은 fairness/discrimination을 다루지만, 요청엔 시스템의 기술적 견고성이나 관련된 민감한 데이터 때문에 더 중요한 무단 접근 노출에 대해 아무 것도 묻지 않아요.",
+  "steps[1].why": "다양한 훈련 데이터는 배포 전에 인구 통계적 그룹 전체의 불균등 성능을 포착하기 위한 governance의 표준 레버예요. 이건 fairness 질문이지, 독립적인 법적 명령이나 reliability 지표가 아니거나 explainability 질문도 아니어요.",
+  "steps[2].why": "AUP는 사용 조건을 실제로 정하는 문서예요 — 허용되는 용도, 금지된 사용, 운영 제한 — 이건 지속적인 운영을 감시하기 위해 정확히 필요한 거예요. Privacy, security, code-of-conduct 정책은 각각 더 좁은 부분(데이터 처리, 기술적 보호, 내부 윤리)을 다루지만 도구가 뭘 할 수 있고 없는지를 정의하는 게 아무 것도 없어요.",
+  "steps[3].why": "Impact 평가는 그 도구를 배포하는 게 영향을 받는 사람들에게 방어 가능한지 묻는 거예요. 공개 위험 점수 도구의 경우 그게 threshold 질문이고, 순전히 기술적인 위험 평가(실패의 확률과 심각도)가 의미 있기 전에 정착되어야 해요. 그들은 정말 다른 평가예요. 같은 이름의 두 가지가 아니고, 둘 다 'only best practice'가 아니에요. 둘 다 예상되지만 impact가 먼저예요.",
+  "steps[4].why": "폐쇄적이고 proprietary한 시스템은 장기적 dependency를 만들어요 — 가격, roadmap, portability가 모두 업체 손에 있고, 나중에 전환하기는 경찰청이 오래 머물수록 어려워져요. Biased output은 진짜 위험이지만 open 대안에도 똑같이 적용돼요. Integration 문제는 단기 엔지니어링 수정이지, strategic 한 거 아니고, subscription 비용은 budgeting 질문이지 향후 선택지를 제한하는 게 뭔가 아니에요."
+ },
+ "d4-case-fraud-rfp": {
+  "brief": "중간 규모의 지역 은행이 실시간 카드 거래를 검사하기 위해 미국 SaaS 업체에서 AI 기반 사기 탐지 시스템을 조달해요. 초안 계약은 업체에게 모델의 IP 단독 소유권을 주고, 은행이 그걸 수정하거나 재훈련하는 걸 금지하고, 정기적인 성능 보고서를 약속하고, false positive와 false negative에 대한 업체 책임을 제외해요. Procurement가 governance에 서명 전에 계약을 red-line하라고 요청하고, 그 거래가 은행이 필요한 oversight, IP 보호, 오픈소스 위험 visibility를 주는지 확인해달라고 해요.",
+  "steps[0].why": "사기 탐지 오류는 고객의 돈에 직접 영향을 미쳐요 — false negative는 사기성 청구를 통과시키고, false positive는 합법적인 것을 막아요. 업체가 책임을 지지 않으면 은행이 계약적 구제 없이 전체 재정, regulatory, reputation 노출을 흡수해요. IP 소유권과 no-retrain 조항은 flexibility를 제한하지만 그 직접적인 노출을 만들진 않고, 성능 보고서는 transparency plus지, 위험이 아니어요.",
+  "steps[1].why": "Oversight와 auditability는 은행이 실제로 시스템 안으로 볼 수 있는지에 달려 있어요 — 그것의 데이터, 문서, 모델 internals — 누가 책임 있는지, 누가 output을 소유하는지, 누가 업그레이드를 배포하는지는 다른 disputes에 중요하지만 은행이 자신이 실행하는 시스템을 감시하고 평가할 수 있는지 여부는 아니에요.",
+  "steps[2].why": "Indemnification은 infringement 청구의 법적 비용과 손해배상을 업체에 옮기는 메커니즘이에요. Insurance는 업체의 carrier가 정책을 honor한다면 지불해주기만 할 뿐이에요. 업체에 은행을 방어하라고 의무를 지우진 않아요. Performance warranty는 도구가 작동하는지를 다루지만 누가 기반 IP를 소유하는지는 아니고, privacy notice는 개인 데이터 사용을 다루지만 infringement 위험은 아니어요.",
+  "steps[3].why": "Jurisdictional scope는 SaaS indemnification에서 가장 흔한 carve-out 중 하나예요. 업체는 동의하지 않은 나라에서 노출을 평가하거나 가격 책정한 적이 없으니까, 거기에 배포하면 은행이 가장 필요할 때 정확히 보호가 무효화돼요. Indemnification은 무제한이 아니고, 노출로 scale하지 않으며, 이건 계약 조건이지 regulator가 inherit하는 게 아니어요.",
+  "steps[4].why": "AGPL은 network-accessible 사용에까지 미치는 copyleft 라이선스예요. 네트워크 over로 서비스와 상호작용하는 누구든지 해당 소스를 요구할 수 있어요. 이건 은행이 그 주변에 싸인 proprietary 코드를 뽑아내요. Missed accuracy benchmarks, API misuse, public domain로의 slide는 모두 진짜 업체 위험이지만, 아무 것도 unreviewed AGPL dependency가 실제로 trigger하는 게 아니에요."
+ },
+ "d4-case-ours-alone": {
+  "brief": "지역 은행의 데이터 사이언스 그룹은 지난 1년을 사는 대신 in-house 사기 점수 모델을 만드는 데 썼어요. 은행 자체의 거래 이력만 사용해서 훈련하고 내부적으로 검증했어요. 모델은 이 분기에 출시돼요. 보드의 risk committee는 sign-off 전에 proprietary build를 governance하는 게 bought 도구를 governance하는 것과 어떻게 다른지, 그리고 specifically 은행이 bought 시스템으로는 소유하지 않을 게 뭔지를 이해하고 싶어요.",
+  "steps[0].why": "책임은 좋은 행동으로도 사라지지 않는 유일한 위험이에요. Proprietary 모델은 모든 현재 표준이 충족된 후에도 edge case나 예측 불가능한 상태를 통해 여전히 해를 끼칠 수 있고, 결과적인 손해배상, 소송, reputation fallout을 공유할 업체가 없어요. Cost, compliance burden, obsolescence는 모두 budgeting과 monitoring을 통해 관리 가능해요. 책임은 무관하게 지속돼요.",
+  "steps[1].why": "업체 문서가 없으면 은행의 자체 paper trail — 훈련 데이터, testing, model card, decision log — 이 compliance와 defense를 위한 유일한 증거예요. Negotiate할 업체가 없고, blame을 공유할 2번째 provider가 없으며, 의존할 외부 승인이 없어요. Obligation이 정확히 은행 자신의 record-keeping 위에 있어요.",
+  "steps[2].why": "Bias는 누가 만들었든 관계없이 모든 모델에서의 위험이에요. Bought 시스템이 homegrown 도구와 같은 fairness testing이 필요해요. 당신 자신의 훈련 데이터를 sourcing하고, 당신 자신의 conformity 평가를 실행하고, 당신 자신의 compute 비용을 carry하는 건 대신에 업체 purchase가 흡수했거나 공유했을 burdens여요.",
+  "steps[3].why": "업체 disclaimer는 paperwork를 shift하지 발표자의 underlying due diligence duty를 shift하지 않아요. Governance는 시스템을 생산으로 넣은 조직이 그걸 validating하는 책임이 있어요. Disclaimer 없이 말이에요. Vendor과 employee가 어느 정도 blame을 공유할 수 있고, 고객을 탓하기 위해 가면 안 돼요. Primary duty는 deployer와 함께 앉아요.",
+  "steps[4].why": "Standard tech E&O wording은 algorithmic decisioning 전에 생겼고, routinely는 정확히 AI 시스템이 생성하는 청구를 제외해요. 그래서 이게 proprietary model review가 닫아야 할 specific gap이에요 — cap의 크기, physical-outage term, pricing이 아니라. 이들은 generic policy mechanics예요. 이 시스템의 위험을 다르게 만드는 것과 무관해요."
+ }
+}

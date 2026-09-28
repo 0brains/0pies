@@ -1,0 +1,83 @@
+{
+ "ra-01": {
+  "label": "Chaque risque est noté 1–5 pour la probabilité et 1–5 pour la conséquence, et le produit décide où il s'inscrit dans le registre.",
+  "why": "La grille de notation est l'appareil de priorisation standard. Sa faiblesse est qu'elle aplatit un risque rare catastrophique et un risque trivial fréquent dans la même cellule."
+ },
+ "ra-02": {
+  "label": "Les risques sont tracés sur une grille rouge/ambre/verte afin que le comité puisse voir d'un coup d'œil lesquels ont besoin d'attention en premier.",
+  "why": "La carte thermique est un outil de communication construit sur les deux mêmes axes. C'est pour le triage, pas pour comprendre la causalité."
+ },
+ "ra-03": {
+  "label": "La méthode est critiquée pour impliquer une précision qu'elle n'a pas quand les probabilités sous-jacentes sont des suppositions.",
+  "why": "Les scores ordinaux multipliés ensemble produisent des nombres qui semblent quantitatifs et ne le sont pas. Savoir ceci est ce qui empêche un 12 d'être traité comme deux fois un 6."
+ },
+ "ra-04": {
+  "label": "Un seul événement principal est placé au centre, avec les chemins de menace et les barrières préventives tracés à sa gauche et les chemins de conséquence avec les barrières de mitigation à sa droite.",
+  "why": "La scission gauche/droite autour d'un événement est la forme de définition du diagramme, et elle rend la distinction préventive/mitigation visible plutôt que supposée."
+ },
+ "ra-05": {
+  "label": "L'analyse rend évident que trois des quatre barrières de gauche sont le même contrôle compté trois fois.",
+  "why": "Exposer les barrières en mode commun est exactement ce que le diagramme est bon pour. Un registre de contrôles énumérés en tant que texte cache cette dépendance."
+ },
+ "ra-06": {
+  "label": "Les facteurs d'escalade sont tracés par rapport à chaque barrière, montrant les conditions sous lesquelles cette barrière cesse de fonctionner.",
+  "why": "Les facteurs d'escalade et leurs propres contrôles font partie de la méthode bowtie. C'est comment le diagramme évite de supposer que les barrières sont toujours efficaces."
+ },
+ "ra-07": {
+  "label": "Chaque composant est examiné à tour de rôle pour les façons dont il peut échouer, et chaque défaillance est notée pour la gravité, la probabilité d'occurrence et la probabilité de détection.",
+  "why": "Le score à trois facteurs produisant un numéro de priorité de risque est la signature de FMEA. C'est ascendant, du composant à l'effet."
+ },
+ "ra-08": {
+  "label": "Une défaillance qui est grave mais détectée de manière fiable avant d'atteindre un utilisateur est notée plus bas qu'une qui est silencieuse.",
+  "why": "La détectabilité en tant qu'axe explicite du tiers est unique à FMEA parmi ces techniques, et c'est pourquoi les défaillances silencieuses se classent si haut — ce qui convient bien aux modes de défaillance ML."
+ },
+ "ra-09": {
+  "label": "L'analyse est critiquée pour gérer mal les combinaisons de défaillances simultanées, puisqu'elle considère chaque mode de défaillance seul.",
+  "why": "L'orientation à point de défaillance unique est la limitation connue de FMEA. Utilisez-la avec une technique qui modélise les combinaisons, pas à la place d'une."
+ },
+ "ra-10": {
+  "label": "Un examen d'incident conclut qu'aucune défense unique n'a échoué catastrophiquement ; quatre faiblesses partielles se sont trouvées alignées ce jour-là.",
+  "why": "L'alignement des trous à travers les couches est la revendication centrale du modèle, et c'est pourquoi 'qui a fait l'erreur' est généralement la mauvaise première question."
+ },
+ "ra-11": {
+  "label": "Le modèle distingue les défaillances actives à la limite de celles des conditions latentes créées beaucoup plus tôt par les décisions de conception et de gestion.",
+  "why": "La distinction actif/latent est celle de Reason, et c'est ce qui dirige l'attention vers les décisions qui ont chargé la défaillance."
+ },
+ "ra-12": {
+  "label": "L'encadrement avertit que l'ajout d'une autre couche de défense offre moins de protection que prévu si les trous de la nouvelle couche sont au même endroit.",
+  "why": "Les défenses corrélées sont le piège. Deux relecteurs utilisant la même liste de vérification défectueuse sont une couche, pas deux."
+ },
+ "ra-13": {
+  "label": "L'évaluation sépare les préjudices d'allocation, où les opportunités ou les ressources sont retenues, des préjudices de représentation, où un groupe est déshonoré ou effacé.",
+  "why": "La scission allocatif/représentatif est fondamentale, et le préjudice représentatif est celui qui glisse à travers les évaluations pilotées par les métriques de précision."
+ },
+ "ra-14": {
+  "label": "L'évaluation enregistre qu'un système fonctionne de manière mesurément pire pour un groupe même si aucune décision ne leur est refusée.",
+  "why": "Le préjudice de qualité de service est une catégorie distincte. Sans une taxonomie le nommant, cette découverte tend à être classée comme une question de précision et déprioritisée."
+ },
+ "ra-15": {
+  "label": "La méthode existe pour empêcher l'évaluation de couvrir uniquement les préjudices qui se trouvent avoir une métrique attachée.",
+  "why": "L'énumération des catégories en premier, puis la recherche de mesure, est ce qui maintient les préjudices dignitaires et sociétaux en portée plutôt que hors de portée."
+ },
+ "ra-16": {
+  "label": "Le risque est évalué deux fois : une fois comme si aucun contrôle n'existait, et une fois avec les contrôles fonctionnant comme prévu.",
+  "why": "L'appariement avant et après est toute la technique. La différence est la base de preuve pour savoir si un contrôle vaut son coût."
+ },
+ "ra-17": {
+  "label": "Un contrôle s'avère réduire le score de presque rien, ce qui devient l'argument pour le supprimer et dépenser l'effort ailleurs.",
+  "why": "Comparer les deux évaluations est comment les contrôles qui existent seulement pour être énumérés sont identifiés. Un contrôle sans delta est du théâtre."
+ },
+ "ra-18": {
+  "label": "Le registre enregistre le niveau restant après le traitement, et c'est ce niveau qui doit se situer dans l'appétit avant l'approbation.",
+  "why": "Le risque résiduel est ce qui est accepté ; le risque inhérent n'est jamais que du contexte. Accepter par rapport au chiffre inhérent est une erreur de catégorie."
+ },
+ "risk-analysis": {
+  "hint": "Fais glisser chaque description sur sa technique. Demande-toi ce que la méthode est réellement construite pour révéler — un classement, un chemin causal, un mode de défaillance ou une mesure.",
+  "zones[0].def": "Évalue la probabilité et la conséquence, les trace sur une grille, l'utilise pour prioriser. Rapide, grossier et le défaut dans la plupart des registres.",
+  "zones[1].def": "Un événement au milieu ; les causes et les barrières préventives à gauche, les conséquences et les barrières de mitigation à droite.",
+  "zones[2].def": "Travaille de bas en haut à partir de chaque mode de défaillance du composant vers leurs effets, en évaluant la gravité, l'occurrence et la détectabilité.",
+  "zones[3].def": "Le préjudice se produit quand les trous dans les couches successives de défense s'alignent. Explique pourquoi les explications à une seule cause des incidents sont généralement erronées.",
+  "zones[4].def": "Énumère les catégories de préjudice — allocatif, représentatif, qualité de service, dignitaire, sociétal — afin que l'évaluation ne soit pas limitée à ce qui est facile à mesurer.",
+  "zones[5].def": "Évalue le risque avant les contrôles et à nouveau après eux. L'écart est ce que les contrôles achètent réellement."
+ }
+}

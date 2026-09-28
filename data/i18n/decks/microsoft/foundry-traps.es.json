@@ -1,0 +1,74 @@
+{
+ "ft-01": {
+  "a.text": "El equipo de plataforma necesita un lugar para gestionar seguridad compartida, conexiones, recursos de cómputo y cuota para todos los equipos de IA.",
+  "a.why": "El concentrador es el contenedor de colaboración y gobernanza de nivel superior con recursos compartidos — trampa histack #3.",
+  "b.text": "Un equipo de producto necesita el lugar donde realmente viven sus implementaciones, agentes, datos y evaluaciones.",
+  "b.why": "Un proyecto vive dentro de un concentrador y es donde realmente construyes — implementaciones, agentes, datos, evaluaciones."
+ },
+ "ft-02": {
+  "a.text": "Tu código pasa 'chat-app-prod' — el nombre personalizado elegido en el momento de la implementación — como argumento del modelo en chat.completions.create.",
+  "a.why": "El nombre de implementación — no el nombre del modelo base — es lo que tu código llama (la trampa exacta de histack; par de corpus #19).",
+  "b.text": "El catálogo de Foundry lista gpt-4o con sus puntuaciones de referencia antes de que nada se implemente.",
+  "b.why": "gpt-4o es el id del modelo base en el catálogo; se vuelve invocable solo a través de una implementación nombrada."
+ },
+ "ft-03": {
+  "a.text": "Un desarrollador configura el cliente con la dirección HTTPS del recurso de Foundry, leída de una variable de entorno, para que cada solicitud sepa qué recurso en Azure alcanzar.",
+  "a.why": "El punto final (azure_endpoint) es la dirección del recurso que el SDK orienta — identifica dónde se envía la llamada, no quién está autorizado a enviarla.",
+  "b.text": "Un desarrollador saca un secreto de archivo de fuente a una variable de entorno separada, de modo que la credencial que prueba la identidad de la persona que llama nunca se codifique de forma rígida.",
+  "b.why": "La credencial se pasa como api_key (os.getenv('AZURE_OPENAI_KEY')) y autentica a la persona que llama — un hábito de privacidad y seguridad distinto del enrutamiento."
+ },
+ "ft-04": {
+  "a.text": "Un recurso de Foundry se crea una sola vez con un nombre, instrucciones y herramientas adjuntas, luego se referencia en muchos turnos posteriores usando la misma conversación.",
+  "a.why": "Un agente es un recurso persistente y nombrado — creado a través de PromptAgentDefinition con instrucciones y herramientas, luego invocado repetidamente.",
+  "b.text": "Un script envía messages=[{'role': 'user', 'content': 'Summarize this case.'}] y obtiene una respuesta de una solicitud de completaciones simples, sin nada guardado en el servidor sin hilo o herramientas involucradas.",
+  "b.why": "Una chat.completions.create simple es una solicitud única sin estado — ninguna instrucción persistida, herramientas o identidad sobreviven entre llamadas."
+ },
+ "ft-05": {
+  "a.text": "'Siempre devuelve detalles del cliente en una forma JSON fija y solo responde preguntas sobre políticas de RRHH' — una regla persistente para cada turno.",
+  "a.why": "La persona, tono, reglas y guardriles pertenecen al prompt del sistema — la distinción 'más probada única' de histack; la respuesta plantada incorrecta pone el comportamiento en el prompt del usuario o configuración de implementación.",
+  "b.text": "'Resume el informe de ausencias de este trimestre para mí' — una solicitud, solo este turno.",
+  "b.why": "El prompt del usuario lleva la solicitud de este turno; las respuestas previas del modelo reproducidas para la memoria son mensajes del asistente."
+ },
+ "ft-06": {
+  "a.text": "Después de implementar un modelo, un desarrollador escribe un prompt directamente en el portal de Foundry y lee la respuesta en pantalla sin escribir una sola línea de Python.",
+  "a.why": "El patio de juegos es el entorno sin código bajo demanda de Foundry para prototipado rápido y validación antes de que exista cualquier código de producción.",
+  "b.text": "El mismo desarrollador copia el fragmento de la pestaña Código, que construye un cliente AzureOpenAI y llama chat.completions.create desde un archivo Python que la aplicación realmente ejecutará.",
+  "b.why": "La pestaña Código te da el patrón de acceso programático — la llamada del SDK es lo que se envía, no la sesión del portal que la validó."
+ },
+ "ft-07": {
+  "a.text": "Un agente de prompt se configura para responder siempre en un tono formal y rechazar discutir precios de competidores, sin importar lo que pregunte el usuario.",
+  "a.why": "La persona y reglas de comportamiento suministradas a PromptAgentDefinition son instrucciones — dan forma a cómo responde el agente, no lo que puede hacer.",
+  "b.text": "El mismo agente recibe búsqueda web y búsqueda de archivos para que pueda buscar información viva en lugar de confiar solo en lo que ya sabe.",
+  "b.why": "La búsqueda web y la búsqueda de archivos se adjuntan desde el catálogo de herramientas Build > Tools — capacidades que el agente puede invocar, separadas de sus instrucciones."
+ },
+ "ft-08": {
+  "a.text": "El modelo siempre debe responder en el estilo de tu firma, aprendido de 5.000 ejemplos anteriores.",
+  "a.why": "El ajuste fino reentrena pesos en ejemplos — la herramienta para cambio de comportamiento/estilo duradero.",
+  "b.text": "El modelo debe responder desde la lista de precios de este mes, que cambia semanalmente, sin reentrenamiento.",
+  "b.why": "RAG inyecta datos organizacionales actuales recuperados en inferencia — 'alimentar al modelo tus propios datos para que las respuestas se mantengan precisas'."
+ },
+ "ft-09": {
+  "a.text": "Una carga de trabajo de lote necesita una tasa de procesamiento predecible y garantizada a un costo por hora fijo, reservada con anticipación independientemente de cuántos tokens se envíen realmente.",
+  "a.why": "PTU reserva capacidad horaria dedicada para rendimiento predecible y de alto volumen — pagas por la reserva, no por token.",
+  "b.text": "Una aplicación de chat interactiva tiene tráfico impredecible y necesita facturación de pago por token con procesamiento regional, zona de datos o global, en lugar de capacidad horaria reservada.",
+  "b.why": "La implementación estándar es la opción preferida que ofrece el rango más amplio de capacidades y precios elásticos de pago por token — el contraste de implementación más probado por el examen (par #27)."
+ },
+ "ft-10": {
+  "a.text": "Has escrito un esquema de campo personalizado para contratos de proveedores y debes registrarlo antes de que se procese cualquier documento.",
+  "a.why": "Crear/definir el analizador a partir de un esquema de campo es configuración, no ejecución.",
+  "b.text": "El analizador ya existe; el código lo ejecuta contra una URL de contrato y sondea el resultado estructurado.",
+  "b.why": "La ejecución es begin_analyze(analyzer_id=…, inputs=[AnalysisInput(url=…)]) — el intercambio de nombre de método cercano que el corpus documenta (par #26)."
+ },
+ "ft-11": {
+  "a.text": "Describe los campos que deseas en lenguaje natural y extráelos de una mezcla de PDFs, imágenes y audio de reuniones en JSON estructurado.",
+  "a.why": "CU te permite describir campos en lenguaje natural mientras un LLM razona sobre entrada multimodal — la pista de histack: 'entrada no de documento o sin forma'.",
+  "b.text": "Extrae totales de un alto volumen de facturas y recibos estándar usando un modelo listo para usar.",
+  "b.why": "Extracción determinística de tipos de formulario conocidos — facturas, recibos, IDs, tarjetas de presentación. 'La trampa de extracción', la favorita de histack."
+ },
+ "ft-12": {
+  "a.text": "Un equipo minorista envía fotos de estantería y obtiene campos de producto estructurados como nombre, precio y cantidad, definidos por su propio esquema.",
+  "a.why": "Content Understanding convierte entrada sin formato, no estructurada o multimodal en la salida estructurada específica que un esquema pide.",
+  "b.text": "Un chatbot de RAG necesita una base de conocimiento que pueda consultar por similitud semántica para que un modelo de chat pueda fundamentar sus respuestas en los pasajes recuperados.",
+  "b.why": "Azure AI Search indexa contenido — a menudo a través de incrustaciones — y lo recupera en tiempo de consulta; los patrones RAG emparejan un modelo de chat con AI Search para fundamentación, un trabajo diferente de extraer campos de un documento."
+ }
+}

@@ -39,9 +39,24 @@ There are no trackers or analytics anywhere, and the pages make no outbound
 requests at all. Deep-link any game as `<lab>.html#g/<game-id>` — open a game
 and copy the address bar.
 
-This repo is the deployed site itself. The pages are generated artifacts of a
-content pipeline that is not part of this repository, so treat the HTML as
-read-only: hand-edits would be overwritten by the next content release.
+This repo is the deployed site and its source. The pages in `gamification/`
+are generated, so treat the HTML as read-only: hand-edits are overwritten by
+the next build.
+
+## Building the site
+
+- `data/` — lab manifests, decks and translations (the content)
+- `tools/templates/lab.html` — the game engine, inlined into every lab page
+- `python3 tools/build_lab.py --all` — rebuilds every lab into `gamification/`;
+  `python3 tools/build_meta.py` refreshes short links, sitemap and `llms.txt`
+- `python3 tools/golden_master.py --check` — proves a tooling change left every
+  page byte-identical; `python3 -m pytest tools/ -q` runs the build tests
+
+The build refuses any card that shares an 8-word run with the material it was
+written from. For two labs (CISSP, SC-500) that material is licensed and is not
+in this repo: their manifests name it as `private:…` sources, which the build
+resolves through `SOURCES_ROOT`. Without that checkout, `SKIP_VERBATIM=1` builds
+anyway and warns loudly that the guard did not run.
 
 ## Contributing
 

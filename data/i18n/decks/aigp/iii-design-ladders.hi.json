@@ -1,0 +1,45 @@
+{
+  "iii-dl-01": {
+    "prompt": "Gates का order करो एक नई AI system first business case से shadow-mode readiness evidence तक pass करती है।",
+    "steps[0].label": "Business case & objectives",
+    "steps[0].detail": "Define करो क्यों AI बिल्कुल: cost-benefit case, including societal impacts, पहले आता है। कुछ भी downstream evaluate नहीं हो सकता है एक stated objective के बिना यह measure करने के लिए।",
+    "steps[1].label": "Use case + impact assessment (leveraged एक PIA से)",
+    "steps[1].detail": "Scope करो specific use case और run करो एक impact assessment anticipate करने के लिए और manage करने के लिए harms यह कर सकता है cause। सबसे अच्छा existing template को adapt करना एक privacy impact assessment है (PIA/DPIA) — governance नहीं invent करता है यह scratch से।",
+    "steps[2].label": "डिज़ाइन — जोखिम-प्रभाव अनुमान और आर्किटेक्चर",
+    "steps[2].detail": "Design work includes करता है estimating risk impact और choosing architecture। यह पहला gate है जहां architecture actually decide होता है; planning explicitly exclude करता है यह — planning set करता है objectives और governance approach, design pick करता है कैसे system build होता है। (planning architecture exclude करता है।)",
+    "steps[3].label": "Build",
+    "steps[3].detail": "Construct करो system को design risk-impact estimate और chosen architecture के विरुद्ध।",
+    "steps[4].label": "Benchmark vs human experts same decision context में",
+    "steps[4].detail": "Pilot करने से पहले, compare करो system performance को human expert performance के विरुद्ध same domain में — यह है most valuable governance benchmark, नहीं एक abstract accuracy target।",
+    "steps[5].label": "Pilot — validate करो fairness + accuracy controlled scale पर",
+    "steps[5].detail": "Run करो एक pre-deployment pilot जिसका primary purpose है validating fairness और accuracy real-world data पर एक controlled, limited scale पर full rollout से पहले।",
+    "steps[6].label": "छाया-मोड रन तैयारी के प्रमाण के रूप में दस्तावेज़ित",
+    "steps[6].detail": "Run करो system को parallel में live process के साथ (shadow mode) और document करो outcomes। यह documented evidence — नहीं एक verbal sign-off — है कि क्या demonstrate करता है deployment readiness।"
+  },
+  "iii-dl-02": {
+    "prompt": "Risk-mitigation hierarchy को order करो most durable fix से last resort तक।",
+    "steps[0].label": "Eliminate the risk",
+    "steps[0].detail": "Remove करो risky feature या use case को entirely — AI use नहीं करो high-risk context में, way में एक recruitment algorithm जो keep producing करता है biased outcomes को retired करता है rather than endlessly patched। Exam parallel vocabulary में यह same top tier को call किया जाता है 'Avoid': stop करो undertaking activity को तो exposure go करता है zero को। Same concept, different label — defuse करो vocabulary clash को, नहीं pick करो एक side।",
+    "steps[1].label": "Substitute with एक lower-risk design",
+    "steps[1].detail": "अगर elimination feasible नहीं है, swap करो एक simpler, more interpretable model में या एक lower-risk dataset जो achieve करता है same purpose — एक opaque model के लिए एक interpretable, एक noisier dataset के लिए collected एक stricter quality controls के तहत। Exam phrasing sometimes fold करता है यह 'Mitigate' में (act करो likelihood या impact पर जबकि activity continue करती है) — again, same design move एक different word के तहत।",
+    "steps[2].label": "Engineer safeguards",
+    "steps[2].detail": "Build करो safeguards को system में: confidence thresholds, robustness testing, bias audits, explainability tools — और human-in-the-loop controls, जो sit करते हैं यहां एक example technique के रूप में among several, नहीं एक separate last-resort tier। यह है जहां most technical controls live, और जहां exam 'Mitigate/Reduce' bucket भी land करता है।",
+    "steps[3].label": "Warn और train करो users को",
+    "steps[3].detail": "एक बार system खुद जितना safe है engineering make कर सकता है, अगली line defense है telling करना लोगों को: interpretability dashboards, plain-language warnings, और user training तो people interacting करते हैं system के साथ understand करते हैं अपनी limits। यह एक distinct tier engineering controls से — यह change करता है क्या human know करता है, नहीं क्या system करता है।",
+    "steps[4].label": "Accept with monitoring",
+    "steps[4].detail": "जो कोई भी risk remain करता है उपरोक्त चार tiers के बाद knowingly accept किया जाता है और watched — audit logs और post-market review, नहीं silent tolerance। Exam final tier, 'Accept', cleanly map करता है यह एक को: एक recorded decision, owned right level of authority पर, backed by ongoing monitoring rather than एक one-time sign-off। कुछ frameworks insert करते हैं Administrative controls एक distinct tier की तरह — NIOSH-style hierarchy taught Hierarchy of Controls में — same idea, different slicing।"
+  },
+  "iii-dl-03": {
+    "prompt": "Order करो steps एक probability × severity harms matrix run करने के लिए design के दौरान।",
+    "steps[0].label": "Enumerate करो harms per stakeholder",
+    "steps[0].detail": "List करो ways system गलत हो सकता है हर affected group के लिए — end users, downstream subjects, operators — कुछ भी score करने से पहले। Stakeholder mapping widen करता है lens beyond development team तो कोई भी group exposure miss नहीं होता है।",
+    "steps[1].label": "Score करो probability × severity",
+    "steps[1].detail": "Rate करो हर enumerated harm को likelihood और impact पर using pre-defined scales। यह scoring applied होता है throughout design और testing, नहीं एक one-off exercise, तो नई findings move कर सकती हैं items को grid पर।",
+    "steps[2].label": "Prioritize — catastrophic override करता है score",
+    "steps[2].detail": "Rank करो plotted score द्वारा, लेकिन let करो एक catastrophic-impact item एक merely-average priority ranking को override करें: एक low-likelihood, high-severity failure एक autonomous system में अभी भी trigger करता है एक hard gate भले ही अपने raw score नहीं होता है top list।",
+    "steps[3].label": "Apply करो mitigation hierarchy design source पर",
+    "steps[3].detail": "Fix करो highest-priority harms को design/source level पर rather than bolting करो disclaimers या monitoring बाद में — eg designing एक chatbot dialogue को crisis scenarios के लिए instead of relying एक disclaimer पर, या designing एक model को exclude करने के लिए financially vulnerable customers को एक harmful offer से rather than flagging उन्हें बाद में।",
+    "steps[4].label": "Document करो residual risk & owner",
+    "steps[4].detail": "Record करो क्या risk remain करता है mitigation के बाद, किस score पर, और कौन accountable है accepting करने के लिए यह। एक unrecorded residual risk है indistinguishable एक unmanaged से।"
+  }
+}

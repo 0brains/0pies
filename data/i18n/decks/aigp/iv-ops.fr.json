@@ -1,0 +1,105 @@
+{
+ "iv-ops": {
+  "hint": "Ce sont tous des devoirs au moment du déploiement — le système est déjà en direct. Demande quelle obligation permanente la scène exerce, pas si quelque chose s'est mal passé.",
+  "note": "L'assurance avant la sortie (examens de préparation, tests avant qu'un système ne navigue jamais) appartient à un jeu différent. Tout sur ce tableau se passe après le lancement en direct, sur une base récurrente ou déclenchée.",
+  "zones[0].def": "Le devoir légal nommé, continu de suivre la performance, le juste traitement et la conformité d'un système en direct contre les métriques et seuils pré-définis, avec des règles d'escalade pour quand les résultats tombent en dehors. C'est le plan de surveillance lui-même — pas les mathématiques de dérive derrière quelque métrique, et pas le contrôle indépendant qui vérifie ensuite que le plan a été réellement suivi.",
+  "zones[1].def": "Contrôles qui arrêtent les sorties ou capacités d'un système déployé d'être réaffectées à un usage, audience ou population que l'approbation originale n'a jamais couverte — prévoir la réaffectation et la restreindre avant qu'elle n'arrive, pas réagir une fois qu'elle est déjà publique.",
+  "zones[2].def": "Contenu et canaux pré-convenus pour ce que l'organisation dit aux régulateurs, utilisateurs et le public à propos d'un système en direct — proactif (avis de transparence, cartes de système) et réactif (reconnaître un problème en direct) — distinct de l'enquête interne que les déclarations décrivent.",
+  "zones[3].def": "Autorité pré-écrite, déclencheurs et critères de redémarrage pour retirer un système en direct complètement hors-ligne (désactivation) ou restreindre à moins de régions ou caractéristiques (localisation) — une décision d'arrêter-ou-restreindre avec conditions documentées pour reprendre, pas la correction technique qui la suit.",
+  "zones[4].def": "Préparer les personnes qui exploitent un système en direct ou dépendent de ses sorties — instruction spécifique au rôle, pratique simulée et attestation enregistrée — donc elles peuvent attraper une mauvaise sortie et savoir quand la contourner, renouvelée sur un cadence plutôt que livrée une fois au lancement.",
+  "zones[5].def": "Détecter, enregistrer, trier et fermer les problèmes de système en direct, dimensionnés par sévérité — d'une plainte mineure enregistrée suivie pour un motif, à travers une réponse formelle avec confinement, analyse de cause racine et action corrective.",
+  "zones[6].def": "Vérification indépendante programmée que les contrôles d'un système en direct tiennent toujours — examens de conformité récurrents et tests adversariales exécutés après le lancement, sur un cadence ou liés à un changement majeur — distinct de l'évaluation de préparation à temps unique exécutée avant qu'un système navigue jamais."
+ },
+ "iv-ops-01": {
+  "label": "Un vendeur silencieusement échange une version de modèle nouvelle, sans notification à l'équipe qui l'a déployée.",
+  "why": "La surveillance post-marché est un devoir légal permanent de suivre un système en direct contre sa ligne de base ; un échange de version non annoncé est une défaillance du plan de surveillance, distinct de la gestion des problèmes et incidents, qui n'ouvre un dossier qu'une fois que quelqu'un a remarqué le préjudice résultant."
+ },
+ "iv-ops-02": {
+  "label": "Un examen trimestriel suit la dérive de distribution de caractéristique, les problèmes de qualité de données entrantes, et la latence/charge de calcul — jamais l'ensemble d'entraînement original avec lequel le modèle s'est livré.",
+  "why": "Calibrage officiel : les métriques de surveillance en production sont la dérive de données, la qualité de données et les signaux latence/calcul — jamais les données d'entraînement historiques. Fixer ce qui est suivi est le travail de cette zone ; vérifier indépendamment que le plan a été réellement suivi est Audits périodiques et red teaming."
+ },
+ "iv-ops-03": {
+  "label": "Les règles d'escalade routent quelque métrique qui traverse son seuil droit à un propriétaire nommé, qui peut ordonner un retour ou une notification de régulateur.",
+  "why": "Le plan de surveillance nomme qui agit et ce qu'ils font une fois qu'un seuil est violé ; la gestion des problèmes et incidents ne reprend qu'après cet escalade se déclenche, pour enregistrer et trier le problème spécifique qu'il nomme."
+ },
+ "iv-ops-04": {
+  "label": "Un outil de programmation construit pour le personnel des quarts silencieusement se ré-vise au scoring des performances des employés individuels.",
+  "why": "La réaffectation à un usage non approuvé a besoin de protocoles de consentement et restrictions d'utilisation avant qu'elle n'arrive ; le devoir de « mésuse raisonnablement prévisible » lie les fournisseurs et déploiants de même, contrairement à la gestion des problèmes et incidents, qui ne s'engage qu'une fois qu'une plainte a déjà émergé."
+ },
+ "iv-ops-05": {
+  "label": "Dix-huit mois en déploiement, l'équipe exécute un exercice de réflexion d'ordre second programmé comme partie de la gouvernance en cours, cartographiant qui d'autre peut maintenant brancher la sortie de ce système dans leur propre workflow.",
+  "why": "Prévoir la réaffectation et les effets à cascade est une activité de gouvernance post-déploiement récurrente, plus large qu'une évaluation d'impact ponctuelle et différente du test adversarial de Audits périodiques et red teaming, qui sonde pour une attaque, pas pour la réutilisation de façon légale que l'approbation originale n'a jamais couverte."
+ },
+ "iv-ops-06": {
+  "label": "Chaque sortie quittant l'API porte une balise de version de modèle et un drapeau « pas validé pour les décisions d'embauche ou de crédit », et tout nouveau cas d'usage déclenche un examen frais avant la réutilisation est autorisée.",
+  "why": "Les marqueurs de provenance plus une porte d'approbation de réutilisation arrêtent le préjudice de se composer à travers le workflow d'une autre équipe ; le contrôle vit dans comment les sorties sont autorisées à voyager, distinct des Communications externes, qui est ce qui est dit une fois qu'un problème est déjà visible aux étrangers."
+ },
+ "iv-ops-07": {
+  "label": "Une plainte à propos d'une mauvaise décision automatisée devient virale du jour au lendemain.",
+  "why": "Reconnaître publiquement au moment que le problème est connu et en enquête ; attendre que le travail de cause racine interne de la gestion des problèmes et incidents se termine d'abord ne compose seulement le dégât réputationnel."
+ },
+ "iv-ops-08": {
+  "label": "La déclaration publique révèle le but du système et les limitations connues, et s'arrête court de la méthode qui a produit la décision signalée.",
+  "why": "La révélation couvre le but prévu, les capacités et limitations, mais les méthodes propriétaires restent en dehors de quelque déclaration publique — une limitation de portée sur ce que cette zone dit, distincte du label de réutilisation que Contrôle d'utilisation secondaire estampille sur une sortie avant qu'elle ne voyage jamais."
+ },
+ "iv-ops-09": {
+  "label": "Les régulateurs reçoivent le paquet de preuve complète — évaluation d'impact, résultats de surveillance, propriétaires d'action corrective nommés — tandis que la déclaration publique reste en langage clair sans cause racine technique encore.",
+  "why": "Le même enregistrement sous-jacent est adapté par audience ici : les régulateurs obtiennent la preuve, le public obtient la responsabilité et les prochaines étapes — jamais l'inverse, et jamais les résultats bruts qu'un exercice Audits périodiques et red teaming produit pour usage interne uniquement."
+ },
+ "iv-ops-10": {
+  "label": "Les seuils pré-écrits nomment exactement qui peut retirer un système en direct hors-ligne, et les critères qui doivent être remplis avant qu'il ne redémarre.",
+  "why": "C'est le protocole du commutateur d'arrêt : l'autorité pré-convenue et les critères de redémarrage, distinct de la première étape d'action immédiate de la gestion des problèmes et incidents, qui isole un système au milieu d'un problème sans avoir besoin de la signature documentée de cette zone pour reprendre. La méthodologie algorithmique est le facteur non-nommé dans la décision."
+ },
+ "iv-ops-11": {
+  "label": "Une nouvelle loi sur la confidentialité dans une région signifie que le système cesse de fonctionner là-bas tandis qu'il continue de fonctionner partout ailleurs, sous une politique pré-documentée, réversible.",
+  "why": "La restriction sélective, limitée à la juridiction est un mouvement différent d'un interrupteur d'arrêt complet, mais cette zone possède les deux extrémités du même contrôle — arrêt total et restriction régionale — plutôt que de les diviser entre les jeux séparés."
+ },
+ "iv-ops-12": {
+  "label": "Un système de maintenance prédictive servant une infrastructure critique est progressivement retiré en étapes, avec une sauvegarde humaine fonctionnant à côté jusqu'à ce que la transition soit complète.",
+  "why": "Le dégagement progressif avec continuité planification appartient ici parce que le déclencheur est une préoccupation de sécurité permanente étant gérée sur un calendrier, contrairement à la gestion des problèmes et incidents, dont l'étape de confinement répond à un seul problème se déroulant maintenant."
+ },
+ "iv-ops-13": {
+  "label": "Les cliniciens continuent de mal lire les scores de confiance de l'IA, donc l'équipe arrange le coaching basé sur la simulation avec un appairage de mentor en cours.",
+  "why": "L'instruction spécifique au rôle avec pratique pratique et soutien continu aborde un écart de compétences et confiance qu'un examen de certification à une seule fois testerait uniquement la connaissance contre, pas construire ; c'est un curriculum permanent, pas l'affichage du score de confiance lui-même, qui est une caractéristique de produit."
+ },
+ "iv-ops-14": {
+  "label": "Les souscripteurs sont dit d'appliquer leur propre jugement à la recommandation initiale du modèle avant qu'elle ne devienne finale.",
+  "why": "C'est l'habitude de surveillance humaine que le curriculum est destiné à inculquer ; un avis de droit d'appel ou un sondage de rétroaction sont plus passifs et ne mettent pas le jugement d'une personne en avant de la sortie automatisée de la façon que cela fait."
+ },
+ "iv-ops-15": {
+  "label": "Avant de renouveler l'accès au système, chaque examinateur complète une perceuse de scénario et signe une attestation confirmant ils comprennent les limites déclarées de l'outil.",
+  "why": "L'attestation obligatoire, enregistrée liée à l'accès renouvelé est ce qui fait cela un contrôle exécutoire plutôt qu'une orientation à temps unique — preuve qu'un auditeur peut vérifier, contrairement aux canaux de rapport de la gestion des problèmes et incidents, qui existent pour faire surface un problème, pas pour certifier la préparation d'avance."
+ },
+ "iv-ops-16": {
+  "label": "Les mauprédictions répétées de basse sévérité sont enregistrées et regardées pour un motif avant qu'on n'escalade.",
+  "why": "C'est la piste de sévérité plus basse — enregistrée, triée et tendancée, escaladant uniquement si le motif persiste. Le split entre la piste de sévérité plus haute tourne sur l'échelle de préjudice et l'exposition légale, pas sur si une erreur s'est produite du tout ; elle reste ici plutôt que se déplacer vers Audits périodiques et red teaming, qui vérifie les contrôles sur un calendrier, pas une base par erreur."
+ },
+ "iv-ops-17": {
+  "label": "La détection de fraude sur-signale énormément les transactions légitimes ; le tout premier mouvement est de retirer le système hors-ligne avant qu'on ne commence le travail de cause racine.",
+  "why": "Le confinement — isoler immédiatement le système — est la première étape de réponse de cette zone à l'intérieur d'un problème en direct, distinct de Désactivation et localisation, qui possède l'autorité pré-convenue et les critères de redémarrage documentés qui font un arrêt légal et réversible en premier lieu."
+ },
+ "iv-ops-18": {
+  "label": "Une conclusion de biais s'assoit à 1.8%, juste sous le déclencheur d'escalade de 2% — l'équipe ouvre la piste de réponse formelle de toute façon parce que le groupe affecté est une classe protégée.",
+  "why": "Les seuils de sévérité guident mais ne remplacent pas le jugement quand une classe protégée est affectée : la conclusion obtient la piste de réponse formelle complète plutôt que d'être enregistrée comme un élément mineur et laissée à tendancer, ce qui est le traitement une conclusion non-seuil, classe non-protégée recevrait."
+ },
+ "iv-ops-19": {
+  "label": "Douze mois après le lancement, un équipage en dehors ré-exécute les tentatives de jailbreak contre l'assistant en direct sur un calendrier programmé.",
+  "why": "Le test adversarial récurrent, programmé après le déploiement est la discipline de cette zone ; la version avant la sortie de la même technique — l'évaluation de préparation exécutée avant qu'un système navigue jamais — appartient à un jeu différent entièrement."
+ },
+ "iv-ops-20": {
+  "label": "Une équipe de deuxième ligne indépendante échantillonne les décisions automatisées du trimestre dernier, ré-exécute les contrôles de juste traitement à la main, et parcourt comment l'escalade dernier a réellement joué.",
+  "why": "L'indépendance de l'équipe de produit plus ré-effectuer les contrôles plutôt que de faire confiance au tableau de bord est ce qui sépare cela de la propre examen en direct de Surveillance post-marché, que l'équipe de produit exécute et effectue elle-même."
+ },
+ "iv-ops-21": {
+  "label": "Les régulateurs s'attendent à un fournisseur de modèle de fondation pour documenter un round frais de sondage adversarial chaque fois qu'une version majeure navigue, en plus de tout ce qui a été exécuté avant le premier lancement.",
+  "why": "Le ré-test récurrent lié à un changement matériel est une attente permanente, au moment du déploiement pour les modèles haut-risque et polyvalents — une obligation répétée, pas le portail à temps unique traversé une fois à la sortie initiale."
+ },
+ "iv-ops-22": {
+  "label": "Avant qu'un système ne soit jamais retiré hors-ligne, l'équipe d'abord cartographie chaque flux en amont et processus en aval qui compte sur lui, et confirme une alternative est prête à prendre le relais l'écart.",
+  "why": "C'est l'étape de planification qui doit arriver avant qu'une décision d'arrêter-ou-restreindre soit exécutée — distincte de la première étape d'action immédiate du confinement de la gestion des problèmes et incidents, qui réagit à un problème qui se déroulait déjà, et de la surveillance en cours de Surveillance post-marché, qui suppose le système reste en direct."
+ },
+ "iv-ops-23": {
+  "label": "Une fois qu'un système est complètement retiré, ses données, modèles et journaux de décision sont préservés plutôt que supprimés, donc un régulateur ou auditeur peut reconstruire ce qu'il a fait des années plus tard.",
+  "why": "La préservation est partie de l'enregistrement d'arrêt lui-même, possédé par la même autorité qui a retiré le système hors-ligne — contrairement à la CAPA journal de la gestion des problèmes et incidents, qui suit les corrections à un problème spécifique, et contrairement à la Surveillance post-marché, qui ne suit qu'un système tandis qu'il est encore en direct."
+ }
+}

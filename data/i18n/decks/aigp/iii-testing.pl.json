@@ -1,0 +1,84 @@
+{
+ "iii-tb-01": {
+  "label": "Tokenizer samodzielnie sprawdzany pod kątem bezpiecznego przetwarzania danych wejściowych z emoji.",
+  "why": "Izolacja pojedynczego komponentu — to cała istota tej dyscypliny: tokenizer albo obsługuje dane wejściowe, albo nie, niezależnie od tego, co następuje dalej."
+ },
+ "iii-tb-02": {
+  "label": "Funkcja, która standaryzuje sposób reprezentacji różnych punktów danych, jest sprawdzana całkowicie samodzielnie, zanim zostanie podłączona do czegokolwiek dalej.",
+  "why": "Izolacja pojedynczego bloku chwyta błędy, gdy są najtańsze do naprawy, zanim subtelna wada rozprzestrzeni się na miliony rekordów i skrycie zniekształci wyniki — dyscyplina pozostaje tutaj, chociaż funkcja będzie później działać jako część większego potoku."
+ },
+ "iii-tb-03": {
+  "label": "Niestandardowa procedura punktacji ukryta w potoku jest uruchamiana dla kilku znanych danych wejściowych i sprawdzana linia po linii pod kątem poprawnego wyniku, zanim system w ogóle istnieje, aby ją wywołać.",
+  "why": "Sprawdzanie wyniku jednej procedury względem znanych poprawnych wartości, zanim reszta systemu istnieje, to najwęższa i najwcześniejsza brama — różna od następnej dyscypliny, która rozpoczyna się dopiero po podłączeniu wielu elementów razem."
+ },
+ "iii-tb-04": {
+  "label": "Pobieranie, model i interfejs użytkownika są ćwiczone razem od końca do końca; niepowodzenia wyłaniające się pojawiają się tylko na tym poziomie.",
+  "why": "Niepowodzenia, które pojawiają się tylko raz, gdy komponenty działają razem, to podpis tej dyscypliny — żaden pojedynczy check komponentu nie mógłby go złapać."
+ },
+ "iii-tb-05": {
+  "label": "Elementy systemu spisu pojawiają się czysto na własną rękę, a następnie całość zaczyna nad-zamawiać produkty powiązane z pewnymi grupami demograficznymi raz, gdy każdy komponent działa razem.",
+  "why": "Problem pojawia się tylko raz, gdy pełny system jest połączony, więc naprawę również trzeba zastosować na połączonym poziomie — przegląd komponent po komponentcie minąłby to całkowicie."
+ },
+ "iii-tb-06": {
+  "label": "Model zatwierdzania pożyczki zwraca różne wyniki na różnym sprzęcie, ze względu na różnice precyzji zmiennoprzecinkowej, które pojawiają się tylko raz, gdy pełny system działa od końca do końca.",
+  "why": "Rozbieżność jest produktem ubocznym łączenia komponentów na prawdziwym sprzęcie — odpowiedź z zakresu zarządzania to udokumentowanie zakresu wariancji i ustawienie akceptowalnych granic decyzji, a nie ściganie jej z żadnego pojedynczego elementu w izolacji."
+ },
+ "iii-tb-07": {
+  "label": "Doskonała dokładność na danych, na których trenowała, słaba na rekordach, które nigdy nie widziała.",
+  "why": "To jest uogólnianie — luka między zachowaniem trenowania a zachowaniem na danych, które nigdy nie widziała — różne od zestawu testowego/wstrzymanego, który pozostaje bez zmian aż do ukończenia tuningu, a następnie dostarcza ostateczne, bezstronne oszacowanie błędu modelu."
+ },
+ "iii-tb-08": {
+  "label": "Model osiąga prawie idealną dokładność na swoim zestawie treningowym, a następnie działa niespójnie, gdy nowe grupy pacjentów poza tym zestawem są uruchamiane przez niego.",
+  "why": "Luka między treningiem a danymi nieznanymi jest dokładnie tym, co ta dyscyplina istnieje, aby złapać; metryka sprawiedliwości zamiast tego porównywałaby współczynniki błędów między grupami chronionymi na tym samym zestawie danych, co ten scenariusz nigdy nie robi."
+ },
+ "iii-tb-09": {
+  "label": "Prognozy jednego modelu wahają się dzikim zakresem w zależności od tego, który wycinek danych treningowych widzi; inny ledwie porusza się od średniej, bez względu na to, co się zasilanie.",
+  "why": "Szerokie huśtawki między wycinkami treningowymi w stosunku do płaskiego obojętności na dane to dwie sygnatury awarii, które ta dyscyplina obserwuje podczas rozwoju, bardzo przed dyskusją o ostatecznym numerze wydajności."
+ },
+ "iii-tb-10": {
+  "label": "Rozbieżność czasu odpowiedzi jest mierzona w różnych regionach użytkowników pod obciążeniem.",
+  "why": "Równość czasu przetwarzania zmienia wymóg biznesowy/uczciwości na mierzoną, wstępnie zdefiniowaną metrykę — różną od sprawdzenia przerzutu atrybutu chronionego, które obserwuje zawartość wyjściową, a nie opóźnienie."
+ },
+ "iii-tb-11": {
+  "label": "Próbkowanie statystyczne i sprawdzanie analizy decyzyjnej są uruchamiane względem wyników systemu w celu potwierdzenia, że spełniają one dokładność i niezawodność celów ustalonych na początku projektu.",
+  "why": "Próbkowanie statystyczne i analiza decyzji to uznane sposoby testowania, czy odpowiedzialny system AI spełnia swoje cele; punktowanie problemu przez prawdopodobieństwo razy ścieżkę jest narzędziem priorytetyzacji zarządzania ryzykiem, a nie sposobem testowania samego systemu."
+ },
+ "iii-tb-12": {
+  "label": "Liczby sprawiedliwości i niezawodności, które projekt zatwierdził miesiące temu, są sprawdzane względem tego, co system faktycznie produkuje dzisiaj, używając tych samych metryk, które wszyscy uzgodnili.",
+  "why": "Trzymanie wyników do metryk uzgodnionych z góry, a nie którykolwiek numer, który wydaje się najlepszy, to co utrzymuje tę dyscyplinę uczciwą i uniemożliwia zespołom cichego zamiany na pochlebną miarę."
+ },
+ "iii-tb-13": {
+  "label": "Obca osoba bada, czy rekord konkretnego pacjenta był w zestawie treningowym.",
+  "why": "Obca osoba ucząc się, czy konkretny rekord był w zestawie treningowym, to niepowodzenie testowania bezpieczeństwa — różne od sprawdzenia uogólniania, które tylko dba o dokładność na nieznanych danych, a nie o to, kto był w zestawie treningowym."
+ },
+ "iii-tb-14": {
+  "label": "Testy penetracyjne poszukują sposobów, w jakie osoba atakująca mogłaby ukraść wagi modelu lub odtworzyć części danych treningowych.",
+  "why": "Skierowanie się na kradzież wag i rekonstrukcję danych treningowych to perspektywa atakującego, różna od sprawdzenia uogólniania, które nigdy nie rozważa, czy ktoś próbuje wyodrębnić cokolwiek z modelu."
+ },
+ "iii-tb-15": {
+  "label": "Testerzy penetracji odkrywają, że starannie wykonane dane wejściowe mogą odwrócić już dokładną diagnozę modelu w mniej więcej jeden przypadek na osiem.",
+  "why": "Starannie przygotowane dane wejściowe powodujące błędną klasyfikację to ustalenie testowania bezpieczeństwa; odpowiedź z zakresu zarządzania to udokumentowanie tego jako znanego ograniczenia i dodanie walidacji danych wejściowych oraz wykrywania anomalii, a nie machanie nią, ponieważ dokładność kliniczna nadal spełnia cel."
+ },
+ "iii-tb-16": {
+  "label": "Atrybut chroniony przerzucony, wszystko inne trzymane stałe, dane wyjściowe obserwowane.",
+  "why": "Obserwowanie, czy przerzucenie samego atrybutu chronionego zmienia dane wyjściowe, to sprawdzenie sprawiedliwości kontrfaktycznej — różne od sondy wnioskowania członkostwa, która pyta, czy rekord był w zestawie treningowym w ogóle."
+ },
+ "iii-tb-17": {
+  "label": "Plik zgodności szpitala pokazuje, że sprawdzania sprawiedliwości były uruchamiane i rejestrowane, oraz rekord, że decyzje mogły być wyjaśnione recenzentom — dowód, że organizacja spełniła swoją powinność opieki.",
+  "why": "Zalogowanie, że sprawdzania sprawiedliwości i wyjaśnień faktycznie biegły, to co zamienia je na obronialny dowód regulacyjny — różny od ścieżki audytu bezpieczeństwa, która dokumentuje odporność na ataki, a nie jakość sprawiedliwości lub wyjaśnienia."
+ },
+ "iii-tb-18": {
+  "label": "Decyzja modelu jest tłumaczona na warunki, które lekarz może faktycznie działać, a nie tylko wynik prawdopodobieństwa.",
+  "why": "Tłumaczenie decyzji na warunki, które interesariusz może użyć, zamiast zostawiania jej jako wyniku samego prawdopodobieństwa, to połowa tej strefy, którą model czarnej skrzynki może nadal nie przejść, nawet po przejściu każdego numeru dokładności i sprawiedliwości."
+ },
+ "iii-testing": {
+  "hint": "Pytaj, co scena sprawdza, a nie tylko jakie dane używa. Walidacja tutaj oznacza jedno: czy model uogólnia poza to, na czym trenował. Zestaw danych, który dostarcza ostateczne, bezstronne oszacowanie błędu modelu, to zupełnie inny koncept, testowany bezpośrednio w Pipeline Twins.",
+  "note": "To są sprawdzenia czasu rozwoju i przed wydaniem. To, co dzieje się po przejściu systemu na żywo i pozostaje na żywo, to inna tablica.",
+  "zones[0].def": "Sprawdzanie jednego komponentu potoku samodzielnie — tokenizatora, funkcji normalizacji, procedury punktacji — zanim będzie kiedykolwiek podłączony do czegokolwiek innego. Łapie błędy, gdy są najtańsze do naprawy.",
+  "zones[1].def": "Ćwiczenie komponentów razem od końca do końca, obserwowanie niepowodzeń, które pojawiają się tylko po połączeniu części — niedopasowania, wąskie gardła lub stronniczość, którą żaden pojedynczy komponent nie wykazał na własną rękę.",
+  "zones[2].def": "Sprawdzanie, czy wytrenowany model uogólnia poza dane, na których trenował: luka między zachowaniem zestawu treningowego a zachowaniem na danych, które nigdy nie widziało. Sprawdzenie czasu rozwoju przed przeuczeniem — nie ostatnie słowo modelu na temat wydajności.",
+  "zones[3].def": "Mierzenie systemu względem konkretnych, wstępnie zdefiniowanych metryk — dokładność, niezawodność, progi sprawiedliwości — które tłumaczą cele biznesowe, etyczne i regulacyjne projektu na liczby, które wszyscy zatwierdził.",
+  "zones[4].def": "Badanie, czy model może być zaatakowany: wagi skradzione, dane treningowe odtworzone, dane wyjściowe manipulowane przez starannie przygotowane dane wejściowe. Odporność na celowe lub przypadkowe naruszenia.",
+  "zones[5].def": "Sprawdzanie, czy wyniki są sprawiedliwe dla grup chronionych, i czy decyzja może być wyjaśniona w kategoriach, które mają sens dla ludzi, którzy muszą się na niej opierać."
+ }
+}

@@ -1,0 +1,50 @@
+{
+  "genai-ops": {
+    "hint": "Arrastra cada situación a la respuesta que requiere. Algunas respuestas en el tablero están ahí para tentarte."
+  },
+  "genai-ops-01": {
+    "label": "Las respuestas se leen bien pero incluyen afirmaciones ausentes de los pasajes de política recuperados.",
+    "sub": "Afirmaciones No Respaldadas",
+    "why": "Primero determina si las afirmaciones están respaldadas, luego refuerza el uso de evidencia, el comportamiento de rechazo y la validación de citas. Compensación: Un modelo más grande puede mejorar la fluidez sin resolver la evidencia faltante o ignorada."
+  },
+  "genai-ops-02": {
+    "label": "El generador de respuestas no puede usar el hecho correcto porque el pasaje relevante está ausente del conjunto recuperado.",
+    "sub": "La Evidencia Correcta Nunca Aparece",
+    "why": "La recuperación de recall aísla si chunking, embeddings, filtros, reescritura de consultas, o el recuento de candidatos pierde evidencia necesaria. Compensación: Los cambios de generación no pueden recuperar evidencia que nunca entra en el contexto."
+  },
+  "genai-ops-03": {
+    "label": "El pasaje relevante está presente, pero está enterrado entre muchos fragmentos distrayentes.",
+    "sub": "Demasiado Contexto Irrelevante",
+    "why": "Mejores filtros, recuperación híbrida y reranking reducen ruido mientras preservan la mejor evidencia. Compensación: Aumentar el recuento de candidatos puede mejorar el recall pero puede empeorar la precisión, latencia y costo de tokens."
+  },
+  "genai-ops-04": {
+    "label": "Un cambio de prompt mejoró ejemplos de prueba pero degradó varios flujos de trabajo de cliente importantes.",
+    "sub": "La Calidad Varía Después del Lanzamiento",
+    "why": "Un conjunto de evaluación representado y versionado detecta regresiones entre casos de uso antes del lanzamiento. Compensación: La revisión humana sigue siendo valiosa cuando está guiada por una rúbrica y muestreada entre la distribución real."
+  },
+  "genai-ops-05": {
+    "label": "Un juez LLM puntúa consistentemente respuestas más largas más alto incluso cuando las respuestas concisas son correctas.",
+    "sub": "El Evaluador Prefiere Respuestas Verbosas",
+    "why": "Los jueces LLM pueden tener sesgos de posición, verbosidad y auto-preferencia y deben calibrarse con juicios humanos. Compensación: La evaluación automatizada sigue siendo útil a escala después de que su rúbrica y sesgo son validados."
+  },
+  "genai-ops-06": {
+    "label": "El uso es constante, pero la longitud promedio de contexto de entrada y salida se ha triplicado.",
+    "sub": "Pico de Costo Interactivo",
+    "why": "La telemetría de tokens expone el factor de costo directo; recupera menos ruido, resume el historial, cachea contexto estable, y limita salida. Compensación: El throughput provisionado ayuda con alta utilización predecible, no con crecimiento de prompt derrochador por sí solo."
+  },
+  "genai-ops-07": {
+    "label": "Muchos usuarios hacen preguntas semánticamente equivalentes sobre información pública sin cambios.",
+    "sub": "Respuestas Lentas pero Repetidas",
+    "why": "Un caché cuidadosamente codificado puede reducir la latencia y el gasto de tokens para solicitudes equivalentes cuando se respetan la frescura y los límites de acceso. Compensación: No cachees respuestas sensibles, personalizadas, que cambian rápidamente, o insuficientemente aisladas."
+  },
+  "genai-ops-08": {
+    "label": "Un agente de soporte llama a la misma API que falla una y otra vez hasta que se agota su presupuesto de ejecución.",
+    "sub": "El Agente Repite una Llamada de Herramienta",
+    "why": "Los reintentos acotados, manejo explícito de errores, idempotencia, observabilidad y escalación humana previenen bucles desenfrenados. Compensación: Mejorar las descripciones de herramientas ayuda con la selección pero no reemplaza los límites de tiempo de ejecución y controles de falla."
+  },
+  "genai-ops-10": {
+    "label": "Un modelo de soporte médico es incierto y el costo de una recomendación incorrecta es severo.",
+    "sub": "Bajo Confianza, Apuestas Altas",
+    "why": "Los umbrales de confianza, abstención, visualización de evidencia y revisión humana calificada son apropiados para incertidumbre consecuente. Compensación: La supervisión humana necesita responsabilidad clara, contexto útil, y calidad de revisión medida en lugar de aprobación ceremonial."
+  }
+}

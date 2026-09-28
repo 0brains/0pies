@@ -1,0 +1,62 @@
+{
+ "i-vp-01": {
+  "a.text": "Un système de vision continue à classer correctement sur les images perturbées de manière adversariale.",
+  "a.why": "Résister aux entrées hostiles ou nouvelles tout en maintenant la précision et la fonctionnalité est le travail entier de ce côté — le modèle ne quitte jamais sa bande de performance normale.",
+  "b.text": "Après dégradation des entrées des capteurs, le système revient à ses limites de performance spécifiées.",
+  "b.why": "Maintenir les performances dans les limites acceptables définies malgré les conditions du monde réel ou adversariales, et s'y rétablir, est l'autre moitié — un système peut être résilient sans jamais faire face à une attaque délibérée."
+ },
+ "i-vp-02": {
+  "a.text": "Un clip audio synthétique d'un personnage public est fabriqué et propagé avec l'intention délibérée de causer du tort.",
+  "a.why": "La fabrication délibérée avec intention de nuire est la caractéristique déterminante — le même contenu faux partagé par quelqu'un qui le croit réel appartient à l'autre côté.",
+  "b.text": "Un blogger partage une vidéo deepfake en croyant qu'elle est authentique, puis corrige le dossier une fois la fabrication venue à la lumière.",
+  "b.why": "Aucune intention de tromper — le partageant croyait que le contenu était vrai — est ce qui le sépare du côté des dommages délibérés de la paire."
+ },
+ "i-vp-03": {
+  "a.text": "Un grand nombre de faux trajets à bas prix sont injectés dans l'ensemble de données d'entraînement d'un modèle de prédiction de tarif à partir d'une source.",
+  "a.why": "Corrompre ce que le modèle apprend, avant qu'il ne soit jamais déployé, est une attaque au moment de l'entraînement — l'autre côté se produit après que le modèle est déjà en direct.",
+  "b.text": "Un utilisateur malveillant fabrique des données d'entrée qui trompent un modèle de tri déjà déployé pour étiqueter les cas urgents comme non urgents.",
+  "b.why": "Tromper les résultats d'un modèle en direct avec des entrées fabriquées au moment de l'inférence est l'autre moitié de la paire — les données d'entraînement du modèle n'ont jamais été touchées."
+ },
+ "i-vp-04": {
+  "a.text": "La documentation divulgue quelles données et quelle logique ont servi à construire le système, avant que quiconque ne demande un résultat spécifique.",
+  "a.why": "C'est l'ouverture sur la conception et les données du système — une propriété du système dans son ensemble, pas d'une seule décision.",
+  "b.text": "Un demandeur spécifique demande pourquoi son cas a été tranché de la manière dont il l'a été, et l'organisation peut parcourir cet unique résultat dans des termes qu'une personne peut suivre.",
+  "b.why": "L'étalonnage officiel est qu'une décision est explicable quand son entrée, sa sortie et son fonctionnement sont compréhensibles par les êtres humains — une propriété par décision, distincte de la transparence du système dans son ensemble."
+ },
+ "i-vp-05": {
+  "a.text": "Les données patient confidentielles deviennent accessible au public parce qu'un compartiment de stockage dans le cloud a été mal configuré, sans aucun attaquant impliqué.",
+  "a.why": "L'exposition involontaire par mal-configuration, pas l'activité malveillante, est ce qui fait basculer ce côté.",
+  "b.text": "Un acteur externe contourne délibérément les contrôles d'accès pour obtenir le même type de données.",
+  "b.why": "L'accès délibéré et non autorisé par un acteur malveillant est l'autre moitié — la même catégorie de tort, la cause opposée."
+ },
+ "i-vp-06": {
+  "a.text": "Un détecteur de défauts de fabrication atteint une précision quasi parfaite sur les photos de chaîne de production exactes sur lesquelles il a été entraîné, puis manque les fissures évidentes sur les photos d'une chaîne d'usine différente.",
+  "a.why": "Excellent sur l'ensemble d'entraînement et mauvais sur tout ce qui est nouveau est la caractéristique de ce côté — le modèle a mémorisé les photos spécifiques plutôt que d'apprendre ce qu'une fissure ressemble réellement.",
+  "b.text": "Un détecteur de défauts construit avec seulement quelques filtres d'image de base et aucune couche plus profonde manque les fissures même dans les photos exactes sur lesquelles il a été entraîné.",
+  "b.why": "Les mauvaises performances partout, y compris sur les données d'entraînement elles-mêmes, signalent que le modèle n'a jamais eu assez de complexité pour capturer le motif en premier lieu."
+ },
+ "i-vp-07": {
+  "a.text": "Un radiologue cesse de vérifier les appels à faible risque d'un outil de tri de scans après des mois de drapeaux précis, et commence à approuver tout ce qu'il marque bénin.",
+  "a.why": "La dépendance excessive à la sortie d'IA sans surveillance critique humaine est le mécanisme de ce côté — une défaillance humaine à continuer de vérifier, pas un défaut cuit dans les données.",
+  "b.text": "Un outil d'embauche entraîné sur les dossiers d'embauche passés rejette plus de candidats de groupes minoritaires, parce que ces dossiers reflétaient déjà qui était embauché avant.",
+  "b.why": "Le défaut est hérité des données d'entraînement elles-mêmes, perpétuer les motifs d'un passé discriminatoire — distinct de faire trop confiance à la sortie d'un outil une fois qu'il est déjà déployé."
+ },
+ "i-vp-08": {
+  "a.text": "Une voiture autonome décide de manière indépendante du meilleur itinéraire vers une adresse fournie par le conducteur, mais ne fait rien en dehors de cette seule tâche.",
+  "a.why": "Fonctionner dans un domaine de tâche unique et limité, aussi capable sur cette tâche, est ce qui maintient un système de ce côté de la ligne.",
+  "b.text": "La même voiture aurait également besoin de raisonner, d'apprendre et d'agir sur n'importe quelle tâche qu'un humain pourrait, pas seulement la conduite, pour compter comme ceci à la place.",
+  "b.why": "La capacité cognitive humaine complète sur les domaines, pas seulement l'excellence dans une tâche, est ce que l'autre côté demande — et cela reste théorique."
+ },
+ "i-vp-09": {
+  "a.text": "Un comité de gouvernance comparant deux fournisseurs demande combien de milliards de valeurs de poids chaque réseau a fini par avoir une fois l'entraînement terminé.",
+  "a.why": "C'est la ligne définitionnelle que cette paire teste : une valeur interne que l'entraînement lui-même découvre et ajuste, qui n'existe pas en forme finale jusqu'à ce que l'entraînement soit fait.",
+  "b.text": "Le même comité demande séparément quel taux d'apprentissage et taille de lot l'équipe d'ingénierie a fixé avant que l'entraînement ne commence jamais.",
+  "b.why": "Ce sont des choix qu'une personne fait à l'avance pour contrôler comment l'entraînement s'exécute — des entrées que l'équipe fixe, pas des valeurs que l'entraînement découvre par lui-même."
+ },
+ "i-vp-10": {
+  "a.text": "Un modèle de forêt aléatoire apprend à tracer la ligne entre les transactions frauduleuses et légitimes.",
+  "a.why": "Apprendre la limite entre les classes existantes, plutôt que de produire de nouveaux exemples, est le travail de ce côté.",
+  "b.text": "Un modèle différent, ayant la même historique de transactions, produit des dossiers de transactions synthétiques entièrement nouveaux qui ne se sont jamais produits.",
+  "b.why": "Produire un nouveau contenu plutôt que classer les entrées existantes est l'autre moitié de la paire."
+ }
+}

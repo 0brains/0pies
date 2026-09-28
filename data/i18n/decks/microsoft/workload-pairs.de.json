@@ -1,0 +1,62 @@
+{
+ "wp-01": {
+  "a.text": "Aus Support-Tickets, liste jeden Produkt-Namen, Person und Datum erwähnt auf.",
+  "a.why": "Einheiten identifizieren, wer/was erwähnt wird — Menschen, Datumsangaben, Organisationen (Histack: 'kategorisiert spezifische Dinge').",
+  "b.text": "Aus den gleichen Tickets, bestimme, ob Kunden sich positiv, negativ oder neutral fühlen.",
+  "b.why": "Meinung-Polarität ist Sentiment — die Prüfung's #1 verwirrt Paar (17 Co-Vorkommen)."
+ },
+ "wp-02": {
+  "a.text": "Transkribiere eine Call-Center-Aufzeichnung, damit Agenten die Unterhaltung suchen können.",
+  "a.why": "Audio rein, Text raus — Erkennung. ‚Transkribiere' ist das Stichwort-Verb.",
+  "b.text": "Eine Navigations-App liest Abbiegungsrichtungen laut mit der en-US-Ava neuronale Stimme.",
+  "b.why": "Text rein, Audio raus — Synthese. SSML und Stimmen-Namen wie en-US-Ava:DragonHDLatestNeural gehören nur zu Synthese."
+ },
+ "wp-03": {
+  "a.text": "Eine Konferenz-App hört einem Französisch-Sprecher zu und erzeugt Live-Englisch-Bildunterschriften für das Publikum.",
+  "a.why": "Erkennung von Sprache in einer Sprache und Wiedergabe in einer anderen ist Übersetzung — die Prüfung's Tell für dieses Paar (Audio-ein, ander-Sprache-raus).",
+  "b.text": "Die gleiche App erzeugt auch gleich-Sprache Französisch-Bildunterschriften für einen hörgestörten Teilnehmer in der vorderen Reihe.",
+  "b.why": "Audio rein, gleich-Sprache Text raus ist Klartext Sprach-zu-Text; keine Sprache kreuzt, daher gibt es nichts zu übersetzen."
+ },
+ "wp-04": {
+  "a.text": "Extrahiere die Seriennummer gedruckt auf ein fotografiertes Ausrüstungs-Etikett.",
+  "a.why": "OCR/Read extrahiert den wörtlich Text in dem Bild — ‚extrahiere lesbaren Text von einem Bild' ist das Prüfungs-Anliegen.",
+  "b.text": "Generiere ein ein-Satz natürlich-Sprache Beschreibung von, was das Foto zeigt.",
+  "b.why": "Bildunterschrift (VisualFeatures.CAPTION) beschreibt die Szene — es liest nicht Text in ihr."
+ },
+ "wp-05": {
+  "a.text": "Eine Scan-App liest das Adress-Block gedruckt von einem fotografierten Umschlag in strukturierte Text-Felder.",
+  "a.why": "OCR konvertiert bestehende Pixel in Text — die Eingabe ist ein Bild, die Ausgabe ist Text.",
+  "b.text": "Ein Design-Tool nimmt die Aufforderung ‚ein flach Symbol einer blau Rakete' und produziert ein ganz-neu PNG, das nie zuvor existiert.",
+  "b.why": "Bild-Generierung (client.images.generate mit gpt-image-1 / DALL·E) läuft die ander Richtung — Text Aufforderung rein, synthetisiert Pixel raus — die Prüfung's Richtungs-Umdreh Falle auf diesem Paar."
+ },
+ "wp-06": {
+  "a.text": "Entscheide, ob jedes hochgeladene Foto ‚fehlerhafte Teil' oder ‚gute Teil' ist.",
+  "a.why": "Klassifikation weist ein Label dem Gesamtbild zu.",
+  "b.text": "Markiere, wo jeden Teil auf dem Förder-Bild mit Begrenzungs-Kästen sitzt.",
+  "b.why": "Begrenzungs-Kästen pro Objekt ist die Prüfung's Tell für Erkennung — die klassisch Vision Verwirrung."
+ },
+ "wp-07": {
+  "a.text": "Gib zurück ['Preis', 'Akku-Laufzeit', 'Kundensupport'] von ein Ansammlung von Bewertungen.",
+  "a.why": "Stichwörter geben eine Liste von wichtig Bedingungen zurück — kein neu Prosa wird geschrieben.",
+  "b.text": "Kondensiere die gleich Bewertungen in drei frisch Sätze, die das Gesamtfeedback erfassen.",
+  "b.why": "Zusammenfassung schreibt neu komprimiert Sätze — die Ausgabe-Form Kontrast den Corpus Tests (Paar #14)."
+ },
+ "wp-08": {
+  "a.text": "Ein Leicht-Gewicht App muss jeden E-Mail-Adresse und Telefonnummer in Kundenmeldungen finden und redaktionalisieren, bevor sie gespeichert werden.",
+  "a.why": "PII Erkennung ist die gewährte Fähigkeit, die identifiziert und kann redaktionalisieren empfindlich persönlich Daten, wie Telefonnummern und E-Mail-Adressen (die Prüfung ruft es ‚das meisten direkt Datenschutz-fokussiert Fähigkeit').",
+  "b.text": "Die gleiche App Tags auch jeden Person, Organisation und Ort erwähnt in den Meldungen zum ein abfragbar Index.",
+  "b.why": "Einheit Erkennung ist breiter Extraktion über Kategorien — Menschen, Plätze, Organisationen — nicht die gewährte Redaktion-fokussiert Funktion PII Erkennung ist."
+ },
+ "wp-09": {
+  "a.text": "Ein Treffen Transkript muss jedem Abschnitt der aufgezeichnet Audio dem richtigen Teilnehmer zuordnen.",
+  "a.why": "Diarization identifiziert und separiert Sprecher in eingehend Audio, Kennzeichnung wer jeder Portion des Transkripts sprach (die Prüfung ruft es ‚Audio Sprecher Zuordnung').",
+  "b.text": "Einmal der Transkript finalisiert ist, ein Erzähler Stimme liest die Treffen Zusammenfassung alaut für ein Podcast Feed.",
+  "b.why": "Synthese konvertiert Text in menschlich-ähnlich Stimme Ausgabe — die ander Pipeline Stufe von Diarizing bestehend Audio."
+ },
+ "wp-10": {
+  "a.text": "Ein Entwickler Bedürfnis Live Audio Bildunterschrift ein Video Konferenz in Echtzeit, gleich Sprache, für hörgestört Teilnehmer.",
+  "a.why": "Azure AI Speech bietet der Echtzeit Sprach-zu-Text Pipeline zum Live Audio — der Standard Dienst zum Bildunterschriften, unterschiedlich von quer-Sprache Text Umwandlung.",
+  "b.text": "Ein Einzelhandelst Bedürfnis umwandeln schriftlich Produktbeschreibungen von Englisch zu 20 ander Sprachen als Text.",
+  "b.why": "Azure AI Translator bietet neurales Maschinen-Übersetzung zwischn Sprachen zum Text — die Prüfung's Kontrast ist Audio-Pipeline Dienst gegen quer-Sprache Text Dienst, nicht ein Workload Überlappen (Paar #29)."
+ }
+}

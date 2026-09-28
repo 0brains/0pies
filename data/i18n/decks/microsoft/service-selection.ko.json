@@ -1,0 +1,109 @@
+{
+ "service-selection": {
+  "hint": "두 가지 질문이 결정해요: 입력이 어떻게 보이는지(text, form, image, audio, video, 또는 vectors), 그리고 작업이 extract/analyze, translate, search/index, 또는 generate인지 해요. 심어진 선택지는 거의 항상 input을 공유하지만 다른 작업을 수행하는 이웃이에요."
+ },
+ "ss-001": {
+  "label": "청구서 필드를 일반 언어로 설명하고 PDF, 사진, 그리고 통화 기록에서 구조화된 JSON으로 추출해요.",
+  "why": "multimodal input에 대한 natural-language field 설명 → structured JSON은 Content Understanding이에요. Document Intelligence prebuilts는 결정론적이고 document-only예요."
+ },
+ "ss-002": {
+  "label": "prebuilt 모델을 사용해 표준 영수증 및 ID 카드에서 high-volume 결정론적 추출을 해요.",
+  "why": "알려진 form types(청구서, 영수증, ID, business card)은 Document Intelligence prebuilt 영역이에요."
+ },
+ "ss-003": {
+  "label": "English text에서 written product 매뉴얼을 Japanese text로 번역해요.",
+  "why": "Translator는 text-to-text이에요. Azure Speech는 speech 번역을 포함한 audio in/out을 처리합니다. 6-count corpus confusion(pair #29)이에요."
+ },
+ "ss-004": {
+  "label": "추출된 청구서 데이터를 index하여 downstream apps이 검색하고 검색할 수 있도록 해요.",
+  "why": "CU는 extract하고, AI Search는 downstream을 index하고 검색해요(indexer, skillset, knowledge store). extraction과 retrieval은 다른 서비스예요(pair #22)."
+ },
+ "ss-005": {
+  "label": "정확한 keyword matching 대신 semantic similarity로 product descriptions를 검색해요.",
+  "why": "Embeddings는 text를 semantic comparison을 위한 vectors로 변환해요(text-embedding-3-large). 이들은 검색하고 비교하며, 절대 콘텐츠를 생성하지 않아요(pair #18)."
+ },
+ "ss-006": {
+  "label": "사용자가 chat message에 첨부한 사진에 대한 free-form 질문에 답해요.",
+  "why": "Image-as-input은 image content parts를 읽는 배포된 multimodal 모델이 필요해요. image generation은 다른 방향으로 가고, ImageAnalysisClient/Vision은 고정된 features를 반환하며, different API 및 endpoint예요(pair #23)."
+ },
+ "ss-007": {
+  "label": "photographed street sign에서 인쇄된 text를 읽어 앱이 plain text로 back으로 보여줄 수 있도록 해요.",
+  "why": "OCR/Read는 general images에 대한 core Vision 기능이에요. Document Intelligence는 incidental street-scene text가 아닌 structured form layouts을 대상해요."
+ },
+ "ss-008": {
+  "label": "같은 call에서 incoming text의 source language를 자동으로 감지한 후 English로 번역해요.",
+  "why": "Translator의 language auto-detection은 translation pipeline의 일부로서 inline으로 실행돼요. AI Language의 Language Detection은 translation call 외부에서 사용되는 standalone text-analytics 기능이에요."
+ },
+ "ss-009": {
+  "label": "생산 라인에서 defective parts를 acceptable ones로부터 구분하기 위해 자신의 labeled photos에 대한 모델을 training해요.",
+  "why": "Custom Vision은 managed training loop을 사용해 자신의 labeled images에서 classification/detection을 목적 빌드해요. general Vision은 fixed prebuilt features만 반환하며 자신의 데이터에 대해 재학습될 수 없어요."
+ },
+ "ss-010": {
+  "label": "개인의 신원을 확인하기 위해 badge-scanner 사진을 employee photos의 roster와 match해요.",
+  "why": "1:1 verification과 enrolled faces에 대한 1:N identification은 Face의 전용 기능이에요. general Vision analysis는 identity-matching feature가 없어요."
+ },
+ "ss-011": {
+  "label": "document pipeline에서 pulled된 key phrases, sentiment, 그리고 entities를 downstream apps이 검색할 수 있는 store에 persist해요.",
+  "why": "skillset은 각 document를 enrich하기 위해 AI Language를 호출할 수 있지만, persisted, queryable knowledge store은 AI Search에 속해요. enrichment과 retrieval은 별도의 pipeline stages예요."
+ },
+ "ss-012": {
+  "label": "raw support-ticket text에서 직접 sentiment, key phrases, 그리고 named entities를 pull해요.",
+  "why": "Sentiment, key phrase extraction, 그리고 NER은 AI Language text-analytics 기능이에요. AI Search는 enrichment step으로서 그 output만 소비하며, 생성하지 않아요."
+ },
+ "ss-013": {
+  "label": "factory sensor의 vibration readings에서 시간에 따라 streaming되는 unusual spike를 flag해요.",
+  "why": "Purpose-built univariate/multivariate anomaly detection over time-series data는 Anomaly Detector의 일이에요. general ML workspace는 당신이 그 모델을 설계, training, 그리고 manage할 것을 요구해요."
+ },
+ "ss-014": {
+  "label": "recorded two-person support call에서 timestamped speaker turns를 가진 transcript를 얻어요.",
+  "why": "Speaker diarization을 가진 speech-to-text는 raw audio에 직접 Speech capability로서 실행돼요. AI Language는 이미 transcribed된 text에서만 작동해요."
+ },
+ "ss-015": {
+  "label": "video voiceover를 위해 written English marketing copy의 block을 narrated audio로 turn해요.",
+  "why": "Neural text-to-speech synthesis는 native Speech 기능이에요. Azure OpenAI에서 spoken audio 생성은 separate multimodal/realtime deployment이 필요하며, Translator는 절대 audio를 touch하지 않아요."
+ },
+ "ss-016": {
+  "label": "모델에 절대 도달하기 전에 user-submitted chat messages에서 violent 또는 hateful language를 flag해요.",
+  "why": "Prompt Shields 및 moderation categories는 Content Safety의 일이며, input과 output 모두에 적용돼요. AI Language의 PII detection은 harmful-content classifier가 아닌 privacy 기능이에요."
+ },
+ "ss-017": {
+  "label": "chat transcript가 저장되기 전에 customer의 phone number와 email address를 blur 또는 redact해요.",
+  "why": "PII Detection 및 Redaction은 personal data를 spot하고 mask하기 위한 전용 AI Language 기능이에요. Content Safety는 대신 harmful-content categories를 classify하며, privacy 관심이 아닌 safety 관심이에요."
+ },
+ "ss-018": {
+  "label": "이미 계산된 millions of embedding vectors를 store하고 query하여 nearest-neighbor lookups이 milliseconds에 return하도록 해요.",
+  "why": "Vector search 및 query time에서의 storage는 AI Search의 일이에요. Embeddings models는 vectors를 처음 생성할 뿐이며, 이들을 index하거나 retrieve하지 않아요."
+ },
+ "ss-019": {
+  "label": "running agent의 tool call을 live weather API로 route하고 result를 같은 conversation으로 다시 feed해요.",
+  "why": "Live external API에 대한 mid-run function/custom tool 호출은 Agent Service의 orchestration layer예요. Bare chat completion call은 built-in tool-invocation loop이 없어요."
+ },
+ "ss-020": {
+  "label": "existing search index를 Foundry agent에 attach하여 그 답변이 indexed documents에 ground되고 cite되도록 해요.",
+  "why": "knowledge source를 agent의 grounding/citation behavior에 wiring하는 것은 Agent Service에서 구성돼요. index 자체는 queries를 serve할 뿐이며, agent의 persona, tools, 또는 knowledge wiring을 own하지 않아요."
+ },
+ "ss-021": {
+  "label": "plain-English description에서 starting photo 없이 photorealistic product mockup image를 generate해요.",
+  "why": "Text-to-image generation은 DALL-E의 일이에요. multimodal chat model은 images를 input으로 읽지만 새로운 것을 paint하지 않으며, Vision은 이미 존재하는 images만 analyze해요."
+ },
+ "ss-022": {
+  "label": "short, simple requests만 처리하는 budget deployment에서 cost-sensitive assistant를 실행해요.",
+  "why": "Phi-class small language model은 일부 기능을 capability의 훨씬 작은 footprint 및 낮은 비용으로 trade하며, 이는 lightweight, budget-constrained requests에 맞아요. simple text를 위한 full frontier model 배포는 classic over-provisioning trap이에요."
+ },
+ "ss-023": {
+  "label": "사용자가 질문을 말하고 separate recognizer/synthesizer calls를 wire up할 필요 없이 같은 low-latency turn에서 spoken answer를 들어요.",
+  "why": "gpt-realtime / Voice Live는 single low-latency speech-in, speech-out session이에요. Azure AI Speech distractor는 자신이 manual SpeechRecognizer→process→SpeechSynthesizer pipeline을 wire up하는 것을 의미하며, 이는 latency와 integration에서 손실이며, 정확히 realtime API가 replace하는 것이에요."
+ },
+ "ss-024": {
+  "label": "배포된 모델의 reply를 당신이 supply하는 schema와 match하는 well-formed JSON으로 얻어요. 주변에 extra prose 없이요.",
+  "why": "Structured output은 배포된 chat/completion 모델의 per-call parameter예요. fine-tuning은 영구적으로 model weights를 변경하며, 하나의 response format을 shape하는 것만으로 불필요해요."
+ },
+ "ss-025": {
+  "label": "hundreds of labeled example transcripts를 사용해 company의 writing style을 모든 미래 responses에 bake하여, 다시 prompt될 필요가 없도록 해요.",
+  "why": "Fine-tuning은 demonstrated behavior를 new weights에 bake하는 training pass이므로 calls에 걸쳐 persist되어요. stock chat/completion deployment는 그 call의 prompt에서만 resent되는 것을 reflect하며, multimodal model은 input types를 변경하지 re-prompting 없이 style persist 여부는 변경하지 않아요."
+ },
+ "ss-026": {
+  "label": "SDK code를 작성하지 않고도 Foundry chat playground에서 배포된 audio-capable 모델에 대해 직접 spoken prompts를 test해요.",
+  "why": "Audio-capable multimodal deployment은 chat playground에서 straight로 exercised될 수 있어요. Voice Live/gpt-realtime는 continuous conversational voice를 위해 구축된 dedicated low-latency realtime session API, separate deployment path예요."
+ }
+}

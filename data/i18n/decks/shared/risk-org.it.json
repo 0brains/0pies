@@ -1,0 +1,74 @@
+{
+  "risk-org": {
+    "hint": "Trascina ogni attività sulla linea che dovrebbe eseguirla. Il test è l'indipendenza: chi può valutare il proprio lavoro, e chi non può.",
+    "note": "Le linee riguardano l'indipendenza, non l'anzianità o il numero di persone. Una funzione di seconda linea che rende conto al team che supervisiona è una funzione di prima linea con un badge diverso.",
+    "zones[0].def": "Possiede e gestisce il rischio giorno per giorno: i team che costruiscono, distribuiscono e gestiscono il sistema.",
+    "zones[1].def": "Imposta la politica, consiglia, sfida e monitora — rischio, conformità, legal, una funzione di governance dell'AI. Indipendente dalla delivery, non dal management.",
+    "zones[2].def": "Audit interno. Assicurazione indipendente al consiglio sull'effettiva efficienza delle prime due linee.",
+    "zones[3].def": "Imposta l'appetito, detiene la responsabilità ultima, e è l'unico organismo che può accettare rischi oltre i limiti delegati."
+  },
+  "ro-01": {
+    "label": "Il team di ingegneria esegue la suite di valutazione dell'equità prima di promuovere un modello in produzione.",
+    "why": "Eseguire i controlli all'interno del processo di delivery è lavoro di prima linea. Farlo bene non lo rende assicurazione, perché il team valuta il suo output."
+  },
+  "ro-02": {
+    "label": "Il product owner registra un nuovo rischio nel registro e propone un trattamento.",
+    "why": "L'identificazione del rischio e la gestione giorno per giorno rimangono con le persone più vicine all'attività. Il registro è loro da popolare, non della funzione rischi."
+  },
+  "ro-03": {
+    "label": "Il team di operations monitora i dashboard di drift in produzione e alza un incidente quando le soglie vengono superate.",
+    "why": "Operare un controllo, incluso uno di rilevamento, è di prima linea. La seconda linea chiede se la soglia è corretta; la prima linea agisce quando si attiva."
+  },
+  "ro-04": {
+    "label": "Il team di data science documenta i limiti del modello e l'uso previsto nella model card.",
+    "why": "Produrre la documentazione è un'attività di costruzione. Rivedere se rispetta la politica è compito di una linea diversa."
+  },
+  "ro-05": {
+    "label": "Il team di governance dell'AI scrive la politica che definisce quali casi d'uso richiedono una valutazione di impatto.",
+    "why": "Impostare il framework e gli standard che la prima linea deve rispettare è l'attività di seconda linea che la definisce."
+  },
+  "ro-06": {
+    "label": "Compliance esamina una valutazione di impatto completata e sfida la valutazione del rischio residuo del team.",
+    "why": "La sfida indipendente del giudizio della prima linea è seconda linea. È consultiva e di monitoraggio, e non è assicurazione al consiglio."
+  },
+  "ro-07": {
+    "label": "Legal consiglia che una distribuzione proposta rientra in un'area dell'Annex III e pertanto attrae obblighi ad alto rischio.",
+    "why": "La consulenza specializzata che vincola ciò che la prima linea può fare è di seconda linea. La decisione di procedere rimane della prima linea, all'interno della politica."
+  },
+  "ro-08": {
+    "label": "La funzione rischi mantiene il registro aziendale e segnala l'esposizione al rischio di AI aggregato all'esecutivo.",
+    "why": "L'aggregazione, la supervisione e il reporting sulla prima linea è monitoraggio di seconda linea. Si basa sui dati della prima linea, che è precisamente il motivo per cui esiste la terza linea."
+  },
+  "ro-09": {
+    "label": "L'audit interno esamina se il processo di approvazione del modello è stato seguito per ogni rilascio nell'ultimo anno.",
+    "why": "Testare se i controlli hanno funzionato come progettato, dopo il fatto e indipendentemente, è il compito dell'audit interno."
+  },
+  "ro-10": {
+    "label": "Una revisione indipendente segnala al comitato di audit che il processo di sfida della seconda linea non è evidenziato.",
+    "why": "La terza linea controlla anche la seconda linea oltre che la prima, e riferisce al consiglio piuttosto che al management — quella linea di reporting è ciò che la rende indipendente."
+  },
+  "ro-11": {
+    "label": "Il lavoro di assicurazione è pianificato su un ciclo basato sul rischio e il suo ambito è concordato con il comitato di audit, non con i team controllati.",
+    "why": "L'ambito stabilito al di fuori del management è la caratteristica strutturale che separa l'audit dalla revisione di seconda linea."
+  },
+  "ro-12": {
+    "label": "Una revisione conclude che un controllo è documentato ma non è mai stato effettivamente eseguito, e lo segnala verso l'alto.",
+    "why": "Trovare il divario tra l'efficienza documentata e quella operativa è il valore che l'audit aggiunge. Nessuna delle prime due linee è posizionata per segnalarlo contro se stessa."
+  },
+  "ro-13": {
+    "label": "L'appetito del rischio per il processo decisionale automatizzato viene impostato e pubblicato.",
+    "why": "L'appetito è una dichiarazione a livello di consiglio di quanto rischio l'organizzazione assumerà. Tutto al di sotto è calibrazione rispetto ad esso."
+  },
+  "ro-14": {
+    "label": "Un rischio residuo che supera il limite delegato viene escalation e formalmente accettato al vertice dell'organizzazione.",
+    "why": "Solo l'organismo che detiene l'autorità può accettare oltre i limiti delegati. L'accettazione altrove non è accettazione; è un'esposizione non registrata."
+  },
+  "ro-15": {
+    "label": "Viene designato un esecutivo responsabile per il sistema di gestione dell'AI, con l'autorità e le risorse per farlo funzionare.",
+    "why": "Gli standard del sistema di gestione richiedono la responsabilità della leadership denominata. Una funzione di governance senza proprietario esecutivo ha responsabilità senza autorità."
+  },
+  "ro-16": {
+    "label": "Viene presa la decisione di ritirare un sistema distribuito dopo che l'assicurazione segnala che il suo rischio non può essere portato all'interno dell'appetito.",
+    "why": "Il ritiro contro l'interesse commerciale è una decisione che solo il livello responsabile può prendere, motivo per cui la rotta di escalation deve esistere prima di essere necessaria."
+  }
+}

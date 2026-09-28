@@ -1,0 +1,91 @@
+{
+ "rc-01": {
+  "label": "Wolne pole tekstowe, które pozwoliło użytkownikom przesłać arbitralne monity do modelu bazowego, jest usuwane; tylko stały zbiór akcji pozostaje.",
+  "why": "Powierzchnia wtrysku znika, nie jest strzeżona. Eliminacja jest rozpoznawalna, ponieważ złagodzenie usuwa zdolność, a nie ogranicza jej użycie."
+ },
+ "rc-02": {
+  "label": "Funkcja, która wnioskowała atrybuty demograficzne ze zdjęć użytkownika, jest usuwana z produktu.",
+  "why": "Brak wniosku oznacza brak błędu wniosku, brak rozbieżności dokładności i brak pytania o prawowitą podstawę. Zagrożenie nie jest zarządzane; już nie istnieje."
+ },
+ "rc-03": {
+  "label": "Zdolność czatbota do wykonywania zmian konta jest całkowicie wycofana; teraz może tylko czytać i wyjaśniać.",
+  "why": "Usunięcie możliwości zapisu eliminuje całą klasę szkód nieautoryzowanych działań. Wszystko poniżej tego staje się niepotrzebne."
+ },
+ "rc-04": {
+  "label": "Identyfikatory bezpośrednie są upuszczane z korpusu treningowego całkowicie, a nie są chronione w nim.",
+  "why": "Dane, które nigdy nie były zbierane, nie mogą wyciekać, być re-identyfikowane lub być przedmiotem żądania dostępu. To dlaczego minimalizacja pokonuje szyfrowanie."
+ },
+ "rc-05": {
+  "label": "Generatywny model używany do podsumowywania notatek medycznych jest zastępowany summerielem ekstrakcyjnym, który może tylko cytować źródło.",
+  "why": "Cel jest zachowywany, podczas gdy niebezpieczny mechanizm — wolna generacja, a więc fabularyzacja — jest zamieniany na taki, który nie może fabularyzować."
+ },
+ "rc-06": {
+  "label": "Model gradient-boosted czarna skrzynka w decyzji pożyczki jest zastępowany przez kartę monotonicz z porównywalną dokładnością.",
+  "why": "Przeprojektowanie dla wewnętrznie wyjaśnialnego modelu usuwa problem wyjaśnienia, a nie przyklejanie post-hoc eksplanera na nim."
+ },
+ "rc-07": {
+  "label": "Rzeczywiste rekordy klientów używane w środowisku testowym są zastępowane danymi syntetycznymi tego samego kształtu statystycznego.",
+  "why": "Czynność jest kontynuowana z materiałem wejściowym znacznie bezpieczniejszym. Substytucja siedzi poniżej eliminacji, ponieważ zastępstwo niesie ze sobą jego własne, mniejsze zagrożenia."
+ },
+ "rc-08": {
+  "label": "Krok rozpoznawania twarzy w sprawdzeniu tożsamości jest zastępowany sprawdzeniem dokumentu-plus-liveness, które nie buduje szablonu twarzy.",
+  "why": "Ten sam cel zapewnienia, inny mechanizm, o wiele niższa ekspozycja biometryczna. Wskaźnik to to, że funkcja przetrwa i zagrożenie jest zamieniane."
+ },
+ "rc-09": {
+  "label": "Filtry wyjścia blokują odpowiedzi zawierające wzorce danych osobowych, zanim osiągną użytkownika.",
+  "why": "Ograniczenie jest egzekwowane przez system w każdym żądaniu. Nikt nie musi go pamiętać, co jest to, co czyni kontrole techniczne przewyższają proceduralne."
+ },
+ "rc-10": {
+  "label": "Kontrola dostępu oparta na roli zapobiega zwracaniu dokumentów warstwy poboru, których żądający użytkownik nie ma uprawnień do oglądania.",
+  "why": "Autoryzacja jest egzekwowana w punkcie wycofania, a nie zaufana moniciowi. Reguła stosowana przez system nie może być zapomniana pod presją."
+ },
+ "rc-11": {
+  "label": "Twardy limit ogranicza liczbę połączeń narzędzi agenta może wykonać, zanim musi zatrzymać się i eskalować.",
+  "why": "Granica czasu wykonawczego trwa niezależnie od tego, co model decyduje zrobić. Poprawa opisu narzędzia byłaby miarą administracyjną w porównaniu."
+ },
+ "rc-12": {
+  "label": "Wdrażanie jest bramkowane przez zautomatyzowaną pakiet ewaluacji, który zawala budowę, jeśli wydajność podgrupy regresji poza progiem.",
+  "why": "Brama jest mechaniczna i nie może być pominięta przez zajętego menedżera wydania, co jest dokładnie dlaczego to pokonuje listę kontrolną przeglądu pokrywającą ten sam grunt."
+ },
+ "rc-13": {
+  "label": "Polityka akceptowalnego użytku jest publikowana, a cały personel ukończy roczne szkolenie na jej temat.",
+  "why": "Skuteczność zależy całkowicie od ludzi czytających, pamiętających i stosowania. Szkolenie jest warte posiadania i jest rutynowo nadmiernie wiarygodny w ocenach ryzyka."
+ },
+ "rc-14": {
+  "label": "Procedura wymaga drugiego recenzenta do podpisania każdej wysokowpływowej zmiany modelu.",
+  "why": "Proceduralna brama może być pominięta pod presją terminu. Wykonanie tej samej kontroli wymaganego statusu w potoku przeniesie go wyżej w tierze."
+ },
+ "rc-15": {
+  "label": "Kwartalne ręczne audyty próbują decyzji modelu i sprawdzają je przeciw polityce.",
+  "why": "Detektyw, okresowy i człowiek. Znajduje problemy po ich wstąpieniu, co jest przydatne i nie jest zapobieganiem."
+ },
+ "rc-16": {
+  "label": "Runbook reagowania na incydent określa, kto jest wezwany i w jaki sposób, gdy model się misbehaves.",
+  "why": "Proceduralne przygotowanie zmniejsza wpływ poprzez szybszą odpowiedź, ale tylko jeśli procedura jest śledzona i bieżąca."
+ },
+ "rc-17": {
+  "label": "Baner mówi użytkownikom, że odpowiedzi są generowane przez AI i mogą być niedokładne.",
+  "why": "Zobowiązanie do ujawnienia może być obowiązkowe, ale jako złagodzenie jest to najsłabszy tier: przenosi czujność do użytkownika, który nie może sprawdzić model."
+ },
+ "rc-18": {
+  "label": "Interfejs ostrzega użytkowników, aby nie wprowadzali poufnych informacji do asystenta.",
+  "why": "Ostrzeżenie zależy od osoby najmniej wyposażonej do jej egzekwowania. Blokowanie czułych wzorów przy wejściu byłoby kontrolą inżynierską dla tego samego zagrożenia."
+ },
+ "rc-19": {
+  "label": "Dokumentacja stwierdza, że model nie został zwalidowany do użytku w sprawach pediatrycznych.",
+  "why": "Wyznawanie ograniczenia informuje narzędzę wdrażające bez zapobiegania nieużytkownikami. Odmowa poza zakresem wejść w czasie wykonawczym byłaby znacznie silniejsza."
+ },
+ "rc-20": {
+  "label": "Wygenerowane obrazy noszą widoczną etykietę i osadzone metadane pochodzenia identyfikujące je jako syntetyczne.",
+  "why": "Znacznik pochodzenia wspiera osąd podrzędny i często jest prawnie wymagany. Zmienia nic o tym, co system będzie produkować."
+ },
+ "risk-controls": {
+  "hint": "Przeciągnij każde złagodzenie na jego tier. Pytanie to jak wiele miary zależy od człowieka robiącego właściwą rzecz — im więcej, tym słabszy tier.",
+  "note": "Porządek ma znaczenie bardziej niż etykiety. Miara, która zależy od osoby czytającej, pamiętającej i zgodnie jest strukturalnie słabsza niż ta, która czyni awarię niemożliwą, jednak pilnie pierwszy jest napisany.",
+  "zones[0].def": "Usuń zagrożenie. Tryb awarii nie może się zdarzyć, ponieważ zdolność, która go wyprodukowała, znika.",
+  "zones[1].def": "Zamień niebezpieczny element na bezpieczniejszy, który osiąga ten sam cel.",
+  "zones[2].def": "Zbuduj ograniczenie w system, aby utrzymywało się bez kogoś wybierającego się do przestrzegania.",
+  "zones[3].def": "Zasady, szkolenia, kroki przeglądu i procedury. Skuteczne tylko w stopniu, w jakim ludzie je przestrzegają.",
+  "zones[4].def": "Powiedz użytkownikowi. Najsłabszy tier: przesuwa odpowiedzialność do osoby najmniej zdolnej do zmiany wyniku."
+ }
+}

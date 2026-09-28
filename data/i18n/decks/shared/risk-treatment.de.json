@@ -1,0 +1,74 @@
+{
+ "risk-treatment": {
+  "hint": "Ziehe jede Entscheidung auf die Behandlungsoption, die sie darstellt. Frage dich, was mit dem Risiko selbst passiert ist, nicht wie viel Arbeit die Antwort brauchte.",
+  "note": "Die Behandlung beantwortet 'was tun wir gegen dieses Risiko'. Es ist eine andere Achse als Kontrollstärke, die 'wie effektiv ist die Reduktion' beantwortet. Eine Versicherung zu kaufen ist eine starke Behandlungsentscheidung und kein Kontroll.",
+  "zones[0].def": "Führe die Aktivität nicht aus oder höre auf sie auszuführen, die das Risiko verursacht. Die Exposition geht auf null, weil die Aktivität auf null geht.",
+  "zones[1].def": "Behalte die Aktivität bei, aber wirke auf Wahrscheinlichkeit oder Auswirkung. Die meisten Kontrollen leben hier, und Restrisiko bleibt immer.",
+  "zones[2].def": "Übertrage die finanzielle oder rechtliche Konsequenz auf eine andere Partei. Die Gefahr bleibt unberührt; nur wer bezahlt, ändert sich.",
+  "zones[3].def": "Behalte das Risiko wissentlich auf der Ebene der Autorität, die berechtigt ist es zu akzeptieren, und erfasse die Entscheidung."
+ },
+ "rt-01": {
+  "label": "Nach einer Risikobewertung storniert das Unternehmen seine geplante Emotionserkennungsfunktion für Arbeitsplatz-Monitoring vollständig.",
+  "why": "Die Aktivität selbst wird aufgegeben, daher verschwindet die Exposition statt verwaltet zu werden. Vermeidung ist die einzige Behandlung, die ein Risiko entfernt statt es zu schrumpfen."
+ },
+ "rt-02": {
+  "label": "Das Modell eines Anbieters würde die Verarbeitung biometrischer Daten erfordern, für die das Unternehmen keine Rechtsgrundlage hat, also zieht sich das Unternehmen aus der Beschaffung zurück.",
+  "why": "Das Ablehnen fortzufahren ist eine Behandlungsentscheidung, nicht die Abwesenheit einer. Es ist normalerweise die richtige Antwort, wenn das Risiko bei irgendeinem Restrisiko-Niveau nicht annehmbar ist."
+ },
+ "rt-03": {
+  "label": "Eine Bank entscheidet sich, ein automatisiertes Entscheidungsmodell nicht in der einen Gerichtsbarkeit einzusetzen, in der die Bestreitbarkeitsverpflichtung nicht erfüllt werden könnte.",
+  "why": "Die Begrenzung der Aktivität aus einer Gerichtsbarkeit beseitigt die Exposition dort. Teilweise Vermeidung durch Umfang ist immer noch Vermeidung."
+ },
+ "rt-04": {
+  "label": "Ein Team lässt eine geplante Funktion fallen, die Gesundheitsstatus aus Kaufverlauf ablesen würde, indem es urteilt, dass keine Minderung ausreichend ist.",
+  "why": "Wenn keine Kontrolle Restrisiko innerhalb der Toleranz bringt, ist Vermeidung die verbleibende Option. Das Zeichen ist dass die Aktivität endet, nicht dass sie näher beobachtet wird."
+ },
+ "rt-05": {
+  "label": "Konfidenz-Schwellenwerte werden eingeführt, damit unsichere Fälle zu einem ausgebildeten Reviewer geroutet werden statt automatisch entschieden zu werden.",
+  "why": "Die Aktivität setzt sich mit geringerer Wahrscheinlichkeit einer ungeprüften falschen Entscheidung fort. Restrisiko bleibt — Reviewer sind fehlbar — was die Unterschrift der Reduktion ist."
+ },
+ "rt-06": {
+  "label": "Das Trainings-Korpus wird neu ausgeglichen und das Modell wird nach Subgruppe vor Freigabe neu evaluiert.",
+  "why": "Dies senkt die Wahrscheinlichkeit von disparaten Leistungen ohne es zu eliminieren. Messbare Verbesserung mit Restexposition ist Reduktion, nicht Vermeidung."
+ },
+ "rt-07": {
+  "label": "Rate Limits, Ausgabefilter und ein Kill-Schalter werden zu einem kundenseitigen Assistenten hinzugefügt.",
+  "why": "Jede Maßnahme greift Wahrscheinlichkeit oder Auswirkung an während der Service weiterläuft. Beachte dass der Kill-Schalter die Auswirkung reduziert statt die Wahrscheinlichkeit — beide zählen."
+ },
+ "rt-08": {
+  "label": "Modellkarten, Evaluierungsergebnisse und bekannte Beschränkungen werden veröffentlicht, damit Einsatzführer das System innerhalb seines getesteten Umschlags nutzen können.",
+  "why": "Missbrauch durch Informieren des Einsatzführers zu reduzieren ist eine echte, wenn schwache, Reduktion. Seine Schwäche ist eine Kontrollstärke-Frage, nicht eine Behandlungsklassifizierungs-Frage."
+ },
+ "rt-09": {
+  "label": "Das Unternehmen kauft spezifische KI-Haftungsversicherung, die Ansprüche abdeckt, die sich aus automatisierten Entscheidungen ergeben.",
+  "why": "Die finanzielle Konsequenz bewegt sich zur Versicherungsgesellschaft während sich das Modell genau gleich verhält. Versicherung reduziert nie die Wahrscheinlichkeit von Schaden und ist kein Kontroll."
+ },
+ "rt-10": {
+  "label": "Ein Vertrag macht den Modell-Anbieter haftbar für Schäden verursacht durch Defekte im bereitgestellten System.",
+  "why": "Vertraglich Freistellung ordnet Kosten zwischen Parteien neu an. Die betroffene Person ist nicht besser geschützt, deshalb behandeln Regulatoren es nicht als Minderung."
+ },
+ "rt-11": {
+  "label": "Eine Hochrisiko-Verarbeitungsaktivität wird an einen Spezialanbieter unter einem Vertrag ausgelagert, der sie für Compliance-Fehler verantwortlich macht.",
+  "why": "Das Outsourcing verlagert operative und finanzielle Konsequenz, obwohl selten regulatorische Verantwortung — eine Unterscheidung, die Leute fängt."
+ },
+ "rt-12": {
+  "label": "Der Einsatzführer handelt eine Garantie und eine Obergrenze-Freistellung für Ansprüche Dritter Geistiger Eigenschaft aus, die sich aus generierter Ausgabe ergeben.",
+  "why": "Die Exposition wird bepreist und verlagert statt verringert. Eine Obergrenze bedeutet die Verschiebung ist teilweise, was es wert ist im Risikoregister aufgezeichnet zu werden."
+ },
+ "rt-13": {
+  "label": "Ein kleines Restrisiko eines niedriggradigen Formatierungsfehlers wird dokumentiert, vom Product Owner unterzeichnet und jährlich überprüft.",
+  "why": "Informierte, autorisierte und aufgezeichnete Beibehaltung ist Akzeptanz. Akzeptanz ist eine Entscheidung mit einem Eigentümer und einem Überprüfungsdatum, nicht Stille."
+ },
+ "rt-14": {
+  "label": "Der Risikoausschuss erfasst dass das Restrisiko der Bereitstellung innerhalb des angegebenen Appetits liegt und weitere Maßnahmen sind in diesem Zyklus nicht erforderlich.",
+  "why": "Explizite Beibehaltung auf der Ebene der Autorität berechtigt sie zu beibehaltung. Wenn niemand auf der richtigen Ebene ja sagte, wird das Risiko nicht akzeptiert — es ist nur unverwaltet."
+ },
+ "rt-15": {
+  "label": "Eine bekannte Beschränkung mit einer dokumentierten Workaround wird zur nächsten Model-Auffrischung eingeplant statt jetzt behoben zu werden.",
+  "why": "Zeit-begrenzte Beibehaltung mit einem Überprüfungspunkt ist Akzeptanz. Die Workaround macht es nicht zur Reduktion, weil das Risiko selbst in der Zwischenzeit unverändert bleibt."
+ },
+ "rt-16": {
+  "label": "Der Vorstand notiert dass die Kosten weiterer Minderung die erwartete Verlust übersteigt und leitet an dass das Restrisiko beibehaltung und Überwachung gelten.",
+  "why": "Eine kostengerechtigte Beibehaltungsentscheidung auf Vorstandsebene, mit Überwachung angehängt. Überwachung ist kein Kontroll hier — es erkennt, es verhindert nicht."
+ }
+}

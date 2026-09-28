@@ -1,0 +1,45 @@
+{
+ "iii-dl-01": {
+  "prompt": "Ordina i cancelli che un nuovo sistema di AI passa attraverso da primo caso aziendale a shadow-mode readiness evidence.",
+  "steps[0].label": "Caso aziendale e obiettivi",
+  "steps[0].detail": "Definisci perché l'AI a tutti: il caso di costo-beneficio, incluso l'impatto societale, viene prima. Nulla di downstream può essere valutato senza un obiettivo dichiarato per misurarlo rispetto.",
+  "steps[1].label": "Use case + valutazione di impatto (sfruttata da un PIA)",
+  "steps[1].detail": "Circoscrivere l'use case specifico e eseguire una valutazione di impatto per anticipare e gestire i danni che potrebbe causare. Il miglior template esistente da adattare è una valutazione di impatto sulla privacy (PIA/DPIA) — la governance non inventa questo da zero.",
+  "steps[2].label": "Progettazione — stima dell'impatto del rischio e architettura",
+  "steps[2].detail": "Il lavoro di progettazione include la stima dell'impatto del rischio e la scelta dell'architettura. Questo è il primo cancello in cui l'architettura è effettivamente decisa; la pianificazione esplicitamente l'esclude — la pianificazione imposta obiettivi e approccio di governance, la progettazione sceglie come il sistema è costruito (; la pianificazione esclude l'architettura, ).",
+  "steps[3].label": "Costruzione",
+  "steps[3].detail": "Costruire il sistema rispetto alla stima dell'impatto del rischio della progettazione e all'architettura scelta.",
+  "steps[4].label": "Benchmark rispetto agli esperti umani nel stesso contesto decisionale",
+  "steps[4].detail": "Prima del pilota, confronta la prestazione del sistema rispetto alla prestazione dell'esperto umano nel stesso dominio — questo è il benchmark di governance più prezioso, non un obiettivo di accuratezza astratto.",
+  "steps[5].label": "Pilota — convalidare equità + accuratezza su scala controllata",
+  "steps[5].detail": "Esegui un pilota di pre-distribuzione il cui scopo primario è la convalida dell'equità e dell'accuratezza sui dati del mondo reale su una scala limitata e controllata prima del rollout completo.",
+  "steps[6].label": "Shadow-mode run come readiness evidence documentato",
+  "steps[6].detail": "Esegui il sistema in parallelo con il processo live (shadow mode) e documenta i risultati. Questa evidenza documentata — non un'approvazione verbale — è ciò che dimostra la prontezza di distribuzione (SG)."
+ },
+ "iii-dl-02": {
+  "prompt": "Ordina la gerarchia di mitigazione del rischio dalla correzione più duratura all'ultimo ricorso.",
+  "steps[0].label": "Eliminare il rischio",
+  "steps[0].detail": "Rimuovi completamente la feature o il case d'uso rischioso — non usare affatto l'AI nel contesto ad alto rischio, il modo in cui un algoritmo di reclutamento che continua a produrre risultati distorti viene ritirato piuttosto che endlessly patched. Nel vocabolario parallelo dell'esame questo stesso tier superiore è chiamato 'Evitare': smetti di intraprendere l'attività quindi l'esposizione va a zero. Stesso concetto, etichetta diversa — smetti la scontro di vocabolario, non scegliere una parte.",
+  "steps[1].label": "Sostituire con un design a basso rischio",
+  "steps[1].detail": "Se l'eliminazione non è fattibile, scambia un modello più semplice e interpretabile o un dataset a basso rischio che raggiunge lo stesso scopo — un modello opaco per uno interpretabile, un dataset più rumoroso per uno raccolto sotto controlli di qualità più rigorosi. La fraseologia dell'esame a volte piega questo in 'Mitigare' (agire sulla probabilità o l'impatto mentre l'attività continua) — di nuovo, la stessa mossa di progettazione sotto una parola diversa.",
+  "steps[2].label": "Progettare salvaguardie",
+  "steps[2].detail": "Costruire salvaguardie nel sistema stesso: soglie di confidenza, test di robustezza, audit di bias, strumenti di esplicabilità — e controlli human-in-the-loop, che rimangono qui come un'esempio tecnica tra parecchi, non come un tier di ultimo ricorso separato. Questo è dove vivono la maggior parte dei controlli tecnici, ed dove il bucket 'Mitigare/Ridurre' dell'esame atterra anche.",
+  "steps[3].label": "Avvertire e addestrare gli utenti",
+  "steps[3].detail": "Una volta che il sistema stesso è sicuro come l'ingegneria può farlo, la prossima linea di difesa è dire alla gente: dashboard di interpretabilità, avvertimenti in linguaggio semplice, e addestramento dell'utente in modo che le persone che interagiscono con il sistema comprendono i suoi limiti. Questo è un tier distinto dai controlli di ingegneria — cambia ciò che l'umano sa, non ciò che il sistema fa.",
+  "steps[4].label": "Accettare con monitoraggio",
+  "steps[4].detail": "Qualunque rischio rimane dopo i quattro tier sopra è consapevolmente accettato e guardato — audit log e revisione post-market, non tolleranza silenziosa. Il tier finale dell'esame, 'Accettare', mappa in modo pulito su questo: una decisione registrata, posseduta al livello giusto di autorità, sostenuta dal monitoraggio continuo piuttosto che un'approvazione una-tantum. Alcuni framework inseriscono Controlli amministrativi come un tier distinto — la gerarchia di tipo NIOSH insegnata in Gerarchia di Controlli — stessa idea, slicing diverso."
+ },
+ "iii-dl-03": {
+  "prompt": "Ordina i passaggi per eseguire una matrice di danni probabilità × gravità durante la progettazione.",
+  "steps[0].label": "Enumerare i danni per stakeholder",
+  "steps[0].detail": "Elenca i modi in cui il sistema potrebbe andare storto per ogni gruppo interessato — end user, soggetti downstream, operatori — prima di valutare qualsiasi cosa. La mappatura degli stakeholder allarga la lente oltre il team di sviluppo in modo che nessuna esposizione di gruppo sia persa.",
+  "steps[1].label": "Punteggio probabilità × gravità",
+  "steps[1].detail": "Valuta ogni danno enumerato sulla probabilità e l'impatto usando scale pre-definite. Questo punteggio è applicato durante la progettazione e i test, non come un esercizio una-tantum, quindi i nuovi risultati possono spostare i elementi sulla griglia (SG).",
+  "steps[2].label": "Dare priorità — catastrofico sovrascrive punteggio",
+  "steps[2].detail": "Classificare il punteggio tracciato, ma lasciare che un elemento di impatto catastrofico sovrascriva una classificazione di priorità semplicemente media: un fallimento bassa probabilità, alta gravità in un sistema autonomo ancora attiva un cancello duro anche se il suo punteggio grezzo non apparirebbe in cima alla lista.",
+  "steps[3].label": "Applicare la gerarchia di mitigazione alla fonte di progettazione",
+  "steps[3].detail": "Correggi i danni più alti priorità al livello di progettazione/fonte piuttosto che bullone su disclaimer o monitoraggio dopo il fatto — per esempio progettando il dialogo di un chatbot per scenari di crisi invece di fare affidamento su un disclaimer, o progettando un modello per escludere i clienti finanziariamente vulnerabili da un'offerta dannosa piuttosto che segnalarli dopo il fatto.",
+  "steps[4].label": "Documentare il rischio residuale e il proprietario",
+  "steps[4].detail": "Registra quale rischio rimane dopo la mitigazione, a quale punteggio, e chi è responsabile di accettarlo. Un rischio residuale non registrato è indistinguibile da uno non gestito."
+ }
+}

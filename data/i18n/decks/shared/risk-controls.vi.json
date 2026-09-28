@@ -1,0 +1,91 @@
+{
+ "rc-01": {
+  "label": "Trường văn bản tự do cho phép người dùng gửi các lời nhắc tùy ý đến model cơ bản bị loại bỏ; chỉ có một tập hợp hành động cố định vẫn còn.",
+  "why": "Bề mặt tiêm nhiễm đã biến mất, không được bảo vệ. Sự loại bỏ có thể nhận ra được vì biện pháp giảm thiểu loại bỏ một khả năng chứ không phải hạn chế sử dụng của nó."
+ },
+ "rc-02": {
+  "label": "Tính năng suy ra các thuộc tính nhân khẩu học từ ảnh người dùng bị xóa khỏi sản phẩm.",
+  "why": "Không suy luận có nghĩa là không suy luận lỗi, không độ chính xác khác biệt và không có câu hỏi cơ sở hợp pháp. Nguy hiểm không được quản lý; nó không còn tồn tại nữa."
+ },
+ "rc-03": {
+  "label": "Khả năng của chatbot thực hiện các thay đổi tài khoản bị rút lại hoàn toàn; bây giờ nó chỉ có thể đọc và giải thích.",
+  "why": "Loại bỏ khả năng viết loại bỏ toàn bộ lớp các tổn hại hành động không được phép. Mọi thứ phía sau nó trở thành không cần thiết."
+ },
+ "rc-04": {
+  "label": "Các nhận dạng trực tiếp được loại bỏ khỏi kho huấn luyện hoàn toàn chứ không phải được bảo vệ trong nó.",
+  "why": "Dữ liệu chưa bao giờ được thu thập không thể rò rỉ, được định danh lại, hoặc phải chịu yêu cầu truy cập. Đây là lý do tại sao giảm thiểu vượt trội mã hóa."
+ },
+ "rc-05": {
+  "label": "Một mô hình tạo được sử dụng để tóm tắt các ghi chú y tế được thay thế bằng một trình tóm tắt chiết xuất chỉ có thể trích dẫn nguồn.",
+  "why": "Mục đích được bảo tồn trong khi cơ chế nguy hiểm — tạo tự do, và do đó tạo ra — bị trao đổi cho một cái không thể tạo ra."
+ },
+ "rc-06": {
+  "label": "Một mô hình gradient-boosted hộp đen trong quyết định cho vay được thay thế bằng một thẻ điểm đơn điệu có độ chính xác so sánh.",
+  "why": "Thiết kế lại cho một mô hình được giải thích một cách vốn có loại bỏ vấn đề giải thích chứ không phải siết chặt một bộ giải thích hậu hoc vào nó."
+ },
+ "rc-07": {
+  "label": "Các bản ghi khách hàng thực tế được sử dụng trong một môi trường kiểm tra được thay thế bằng dữ liệu tổng hợp có cùng hình dạng thống kê.",
+  "why": "Hoạt động tiếp tục với một đầu vào an toàn hơn về mặt vật chất. Thay thế nằm dưới loại bỏ vì thay thế mang theo các rủi ro nhỏ hơn của nó."
+ },
+ "rc-08": {
+  "label": "Một bước nhận dạng khuôn mặt trong một kiểm tra danh tính được thay thế bằng một kiểm tra tài liệu cộng với kiểm tra sống không xây dựng một mẫu khuôn mặt.",
+  "why": "Cùng một mục tiêu đảm bảo, cơ chế khác, tiếp xúc sinh trắc học thấp hơn nhiều. Dấu hiệu là chức năng sống sót và nguy hiểm được trao đổi."
+ },
+ "rc-09": {
+  "label": "Bộ lọc đầu ra chặn các phản hồi chứa mẫu dữ liệu cá nhân trước khi chúng bao giờ đạt đến người dùng.",
+  "why": "Ràng buộc được thực thi bởi hệ thống trên mỗi yêu cầu. Không ai phải nhớ nó, đó là những gì làm cho các kiểm soát kỹ thuật vượt trội so với các kiểm soát thủ tục."
+ },
+ "rc-10": {
+  "label": "Kiểm soát truy cập dựa trên vai trò ngăn chặn lớp truy xuất trả lại các tài liệu người dùng yêu cầu không có quyền xem.",
+  "why": "Ủy quyền được thực thi tại điểm truy xuất chứ không phải được tin tưởng vào lời nhắc. Một quy tắc hệ thống áp dụng không thể bị lãng quên dưới áp lực."
+ },
+ "rc-11": {
+  "label": "Một bề mặt cứng giới hạn số lượng lệnh gọi công cụ mà một tác nhân có thể thực hiện trước khi nó phải dừng lại và tăng cấp.",
+  "why": "Một ràng buộc thời gian chạy giữ bất kỳ model nào quyết định làm gì. Cải thiện mô tả công cụ sẽ là một biện pháp hành chính để so sánh."
+ },
+ "rc-12": {
+  "label": "Triển khai được gated bởi một bộ đánh giá tự động mà không hoạt động nếu hiệu suất nhóm con thoái lui vượt quá ngưỡng.",
+  "why": "Cổng là cơ học và không thể bị bỏ qua bởi một người quản lý phát hành bận rộn, đó chính xác là tại sao nó vượt trội một danh sách kiểm tra xem xét cùng một lý do."
+ },
+ "rc-13": {
+  "label": "Một chính sách sử dụng có thể chấp nhận được được công bố và tất cả nhân viên hoàn thành đào tạo hàng năm về nó.",
+  "why": "Hiệu quả phụ thuộc hoàn toàn vào mọi người đọc, nhớ và áp dụng nó. Đào tạo là điều đáng có và được ghi tín quá mức trong các đánh giá rủi ro."
+ },
+ "rc-14": {
+  "label": "Một thủ tục yêu cầu một người phê bình thứ hai ký phê duyệt trên mỗi thay đổi mô hình tác động cao.",
+  "why": "Một cổng thủ tục có thể bị vượt qua dưới áp lực thời hạn. Làm cho kiểm tra tương tự là một trạng thái bắt buộc trong đường ống sẽ di chuyển nó lên một bậc."
+ },
+ "rc-15": {
+  "label": "Kiểm toán thủ công hàng quý lấy mẫu các quyết định mô hình và kiểm tra chúng so với chính sách.",
+  "why": "Thư, định kỳ và con người. Nó tìm thấy các vấn đề sau khi chúng xảy ra, nó hữu ích và không phải ngăn ngừa."
+ },
+ "rc-16": {
+  "label": "Một cuốn sách chạy phản ứng sự cố thiết lập ai được gọi và theo thứ tự gì khi một mô hình hành xử sai.",
+  "why": "Chuẩn bị thủ tục giảm tác động thông qua phản ứng nhanh hơn, nhưng chỉ khi quy trình được tuân theo và hiện tại."
+ },
+ "rc-17": {
+  "label": "Một biểu ngữ cho người dùng biết rằng các phản hồi được tạo bởi AI và có thể không chính xác.",
+  "why": "Một nghĩa vụ tiếp lộ có thể là bắt buộc, nhưng là biện pháp giảm thiểu nó là bậc yếu nhất: nó chuyển cảnh báo cho người dùng, người không thể kiểm tra model."
+ },
+ "rc-18": {
+  "label": "Giao diện cảnh báo người dùng không nhập thông tin bí mật vào trợ lý.",
+  "why": "Cảnh báo phụ thuộc vào người ít được trang bị để thực thi nó. Chặn các mẫu nhạy cảm tại đầu vào sẽ là một kiểm soát kỹ thuật cho cùng một rủi ro."
+ },
+ "rc-19": {
+  "label": "Tài liệu nêu rằng model không được xác thực để sử dụng trên các trường hợp nhi đồng.",
+  "why": "Nêu một giới hạn thông báo cho người triển khai mà không ngăn chặn sử dụng sai. Từ chối các đầu vào ngoài phạm vi tại thời gian chạy sẽ mạnh hơn đáng kể."
+ },
+ "rc-20": {
+  "label": "Hình ảnh được tạo mang một nhãn hiển thị và siêu dữ liệu nguồn gốc nhúng xác định chúng là tổng hợp.",
+  "why": "Đánh dấu nguồn gốc hỗ trợ phán xét hạ lưu và thường được yêu cầu về mặt pháp lý. Nó không thay đổi gì về những gì hệ thống sẽ sản xuất."
+ },
+ "risk-controls": {
+  "hint": "Kéo mỗi biện pháp giảm thiểu vào bậc của nó. Câu hỏi là bao nhiêu biện pháp phụ thuộc vào một con người làm điều đúng — nó làm bao nhiêu, bậc yếu hơn.",
+  "note": "Thứ tự quan trọng hơn các nhãn. Một biện pháp phụ thuộc vào một người đọc, nhớ và tuân thủ về cơ cấu yếu hơn một biện pháp làm cho sự thất bại trở thành không thể, tuy nhiên chăm sóc người đầu tiên được viết.",
+  "zones[0].def": "Loại bỏ nguy hiểm. Chế độ thất bại không thể xảy ra vì khả năng tạo ra nó đã biến mất.",
+  "zones[1].def": "Thay thế phần tử nguy hiểm bằng một phần tử an toàn hơn đạt được cùng một mục đích.",
+  "zones[2].def": "Xây dựng ràng buộc vào hệ thống để nó giữ mà không ai chọn tuân thủ.",
+  "zones[3].def": "Chính sách, đào tạo, bước xem xét và quy trình. Có hiệu quả chỉ ở mức độ mọi người tuân theo chúng.",
+  "zones[4].def": "Cho biết người dùng. Bậc yếu nhất: nó chuyển trách nhiệm cho người ít có khả năng thay đổi kết quả."
+ }
+}

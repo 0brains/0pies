@@ -1,0 +1,101 @@
+{
+ "training-data": {
+  "hint": "Sự phân biệt quan trọng là vai trò, định dạng, hoặc độ phù hợp của dữ liệu cho dân số thực; những chi tiết đó xác định những gì có thể được học và liệu đánh giá có đáng tin cậy không."
+ },
+ "training-data-01": {
+  "label": "Phần dữ liệu được sử dụng để học các tham số mô hình.",
+  "why": "Phần dữ liệu được sử dụng để học các tham số mô hình."
+ },
+ "training-data-02": {
+  "label": "Dữ liệu được giữ lại được sử dụng trong quá trình phát triển để so sánh các lựa chọn và điều chỉnh siêu tham số.",
+  "why": "Dữ liệu được giữ lại được sử dụng trong quá trình phát triển để so sánh các lựa chọn và điều chỉnh siêu tham số."
+ },
+ "training-data-03": {
+  "label": "Dữ liệu không bị chạm vào được sử dụng ở cuối để ước tính hiệu suất trên các ví dụ không được nhìn thấy.",
+  "why": "Dữ liệu không bị chạm vào được sử dụng ở cuối để ước tính hiệu suất trên các ví dụ không được nhìn thấy."
+ },
+ "training-data-04": {
+  "label": "Các ví dụ bao gồm câu trả lời mục tiêu cần thiết để học tập được giám sát.",
+  "why": "Các ví dụ bao gồm câu trả lời mục tiêu cần thiết để học tập được giám sát."
+ },
+ "training-data-05": {
+  "label": "Các ví dụ không có câu trả lời mục tiêu, thường được sử dụng cho học tập không giám sát hoặc tự giám sát.",
+  "why": "Các ví dụ không có câu trả lời mục tiêu, thường được sử dụng cho học tập không giám sát hoặc tự giám sát."
+ },
+ "training-data-06": {
+  "label": "Dữ liệu được tổ chức thành các trường được xác định, hàng, cột, hoặc bản ghi.",
+  "why": "Dữ liệu được tổ chức thành các trường được xác định, hàng, cột, hoặc bản ghi."
+ },
+ "training-data-07": {
+  "label": "Nội dung dạng tự do như văn bản, hình ảnh, âm thanh, và video.",
+  "why": "Nội dung dạng tự do như văn bản, hình ảnh, âm thanh, và video."
+ },
+ "training-data-08": {
+  "label": "Các ví dụ phản ánh những người, điều kiện, và trường hợp mô hình sẽ gặp phải trong sử dụng.",
+  "why": "Các ví dụ phản ánh những người, điều kiện, và trường hợp mô hình sẽ gặp phải trong sử dụng."
+ },
+ "training-data-09": {
+  "label": "Thông tin không sẵn có tại thời điểm dự đoán vô tình nhập đào tạo và phóng đại hiệu suất được đo lường.",
+  "why": "Thông tin không sẵn có tại thời điểm dự đoán vô tình nhập đào tạo và phóng đại hiệu suất được đo lường."
+ },
+ "training-data-10": {
+  "label": "Một lớp mục tiêu xuất hiện thường xuyên hơn cái khác, làm cho độ chính xác có khả năng gây hiểu lầm.",
+  "why": "Một lớp mục tiêu xuất hiện thường xuyên hơn cái khác, làm cho độ chính xác có khả năng gây hiểu lầm."
+ },
+ "training-data-11": {
+  "label": "Gắn nhãn đúng thực tế cho các ví dụ thô để mô hình có giám sát có câu trả lời để học.",
+  "why": "Chất lượng nhãn giới hạn chất lượng mô hình: nhãn nhiễu hoặc không nhất quán dạy mô hình ánh xạ sai dù có bao nhiêu dữ liệu đi nữa."
+ },
+ "training-data-12": {
+  "label": "Câu trả lời đúng đã được xác minh mà dự đoán của mô hình được so sánh với trong quá trình huấn luyện và đánh giá.",
+  "why": "Không có câu trả lời tham chiếu đáng tin cậy, cả tổn thất huấn luyện lẫn các chỉ số đánh giá đều vô nghĩa — cả hai đều được đo dựa trên nó."
+ },
+ "training-data-13": {
+  "label": "Tạo thêm các ví dụ huấn luyện bằng cách biến đổi các ví dụ hiện có, chẳng hạn lật ảnh hoặc diễn đạt lại văn bản.",
+  "why": "Nó mở rộng một tập dữ liệu nhỏ và dạy tính bất biến trước biến thể vô hại, giảm quá khớp mà không cần thu thập dữ liệu mới."
+ },
+ "training-data-14": {
+  "label": "Các ví dụ được tạo nhân tạo, dùng khi dữ liệu thực khan hiếm, nhạy cảm hoặc thiếu các trường hợp hiếm.",
+  "why": "Nó lấp các khoảng trống mà việc thu thập thực không thể — sự kiện hiếm, hồ sơ bị hạn chế vì quyền riêng tư — nhưng thừa hưởng các giả định của bộ tạo ra nó."
+ },
+ "training-data-15": {
+  "label": "Cân bằng lại một tập dữ liệu lệch bằng cách nhân bản hoặc tạo thêm các ví dụ của lớp thiểu số.",
+  "why": "Nó cho lớp hiếm đủ trọng lượng để được học, với rủi ro quá khớp vào các ví dụ thiểu số lặp lại hoặc tổng hợp."
+ },
+ "training-data-16": {
+  "label": "Cân bằng lại một tập dữ liệu lệch bằng cách loại bỏ một số ví dụ của lớp đa số.",
+  "why": "Nó cân bằng ảnh hưởng của các lớp một cách rẻ, nhưng trong quá trình đó vứt bỏ tín hiệu thực từ lớp đa số."
+ },
+ "training-data-17": {
+  "label": "Một thuộc tính đầu vào riêng lẻ có thể đo được, chẳng hạn tuổi, giá trị điểm ảnh hoặc số tiền giao dịch, mà mô hình học từ đó.",
+  "why": "Mô hình chỉ thấy các đặc trưng được cung cấp; những gì được bao gồm và cách chúng được mã hóa giới hạn những gì có thể học được."
+ },
+ "training-data-18": {
+  "label": "Biến đổi đầu vào thô thành các thuộc tính giàu thông tin hơn, chẳng hạn tỷ lệ, phân nhóm hoặc mã hóa, trước khi huấn luyện.",
+  "why": "Đặc trưng dẫn xuất tốt giúp các mô hình đơn giản hơn nắm bắt được mẫu; đặc trưng kém buộc các mô hình phức tạp phải tự khám phá lại nó từ nhiễu."
+ },
+ "training-data-19": {
+  "label": "Luân phiên phần dữ liệu được giữ lại để mọi ví dụ đều được dùng cho cả huấn luyện lẫn đánh giá.",
+  "why": "Lấy trung bình trên nhiều phần giữ lại cho ước tính khái quát hóa ổn định hơn một lần chia duy nhất, đặc biệt trên các tập dữ liệu nhỏ."
+ },
+ "training-data-20": {
+  "label": "Các kiểm tra về tính đầy đủ, chính xác, nhất quán và mới mẻ được áp dụng trước khi dữ liệu được dùng để huấn luyện.",
+  "why": "Lỗi chảy xuống hạ nguồn: một mô hình được huấn luyện trên các bản ghi không đầy đủ hoặc không nhất quán sẽ mã hóa những lỗi đó thành hành vi."
+ },
+ "training-data-21": {
+  "label": "Độ lệch có hệ thống xuất hiện khi phương pháp thu thập thiên vị một số người hoặc trường hợp so với những cái khác.",
+  "why": "Mô hình chỉ có thể công bằng với các trường hợp nó đã thấy; thu thập lệch tạo ra dự đoán lệch dù thuật toán tốt đến đâu."
+ },
+ "training-data-22": {
+  "label": "Một ví dụ cực đoan hoặc bất thường nằm xa bên ngoài mẫu của phần còn lại của dữ liệu.",
+  "why": "Một nhúm điểm cực đoan có thể kéo lệch các tham số và việc chia tỷ lệ; quyết định chúng là lỗi hay trường hợp thực sẽ thay đổi mô hình."
+ },
+ "training-data-23": {
+  "label": "Một cách chia có nhận biết thứ tự, trong đó mô hình huấn luyện trên các giai đoạn sớm hơn và được đánh giá trên các giai đoạn muộn hơn.",
+  "why": "Xáo trộn chuỗi thời gian cho phép mô hình nhìn trộm tương lai, thổi phồng điểm số; đánh giá trung thực phải tôn trọng thứ tự dữ liệu đến."
+ },
+ "training-data-24": {
+  "label": "Một cách chia giữ tỷ lệ các lớp của mỗi tập con giống với tỷ lệ của toàn bộ tập dữ liệu.",
+  "why": "Chia ngẫu nhiên dữ liệu mất cân bằng có thể khiến một phần hoàn toàn thiếu lớp hiếm; phân tầng giữ cho mọi lần đánh giá đều mang tính đại diện."
+ }
+}

@@ -1,0 +1,21 @@
+{
+ "rag-pipeline": {
+  "prompt": "Aşamaları alımından yer alımlanmış, alıntılı cevap olarak sırayı koyun.",
+  "steps[0].label": "Güvenilir Kaynak Belgeleri Al",
+  "steps[0].detail": "Erişim asla alındığından daha fazlasını yüzeye çıkartamaz. Kaynak seçimi bir yönetişim kararıdır, hizmet birimi değil.",
+  "steps[1].label": "Temizle, Böl ve Meta Veri İle Ekle",
+  "steps[1].detail": "Parçalama alınabilir birim ne olduğuna karar verir; meta veri daha sonra filtreleme ve atfı mümkün kılar.",
+  "steps[2].label": "Her Yığın İçin Gömme Oluştur",
+  "steps[2].detail": "Metin vektörlere dönüşür. Burada seçilen gömme modeli erişiyin ayırt edebileceği her şeyi kısıtlar.",
+  "steps[3].label": "Yığınları ve Vektörleri Dizine Al",
+  "steps[3].detail": "Dizin benzerlik aramasını mümkün kılar. Erişim denetimleri sadece cevap değil burada aittir.",
+  "steps[4].label": "Kullanıcı Sorgusunu Gömme ve Yorumlama",
+  "steps[4].detail": "Sorgu yığınlar ile aynı model tarafından gömülü veya iki karşılaştırılamaz boşluklarda yaşıyor.",
+  "steps[5].label": "Kanıt Alın, Filtreleyin ve Yeniden Sırayı",
+  "steps[5].detail": "Geri çağırma doğru pasajın tüm mevcut olup olmadığına karar verir; sıralama bağlam bütçesi hayatta kalıp kalmaması karar verir.",
+  "steps[6].label": "Kanıt ve Talimatlara Sahip İstem Oluştur",
+  "steps[6].detail": "Alınan kanıt isteme konur ve bunu nasıl kullanacağı ve ne zaman reddedileceği üzerinde talimatlar.",
+  "steps[7].label": "Yer Alımlanmış Cevap Oluştur, Doğrula ve Alıntı",
+  "steps[7].detail": "Model sağlanan kanıttan cevaplar ve bunu alıntı yapamaz, böylece bir okuyucu güvenmek yerine kontrol edebilir."
+ }
+}

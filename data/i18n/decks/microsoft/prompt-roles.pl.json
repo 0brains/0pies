@@ -1,0 +1,69 @@
+{
+ "pr-001": {
+  "label": "\"Jesteś formalnym asystentem HR. Odpowiadaj tylko na pytania dotyczące polityki HR.\"",
+  "why": "Personas plus guardrails zakresu — dokładny przykład histack zawartości wiadomości systemowej."
+ },
+ "pr-002": {
+  "label": "\"Zawsze zwracaj szczegóły klienta w stałym kształcie JSON.\"",
+  "why": "Reguły formatu wyjścia utrzymują się przez tury — materiał egzaminacyjny stwierdza doslownie, że instrukcje kształtu JSON należą do wiadomości systemowej."
+ },
+ "pr-003": {
+  "label": "\"Ile mam dni urlopu pozostałego na ten rok?\"",
+  "why": "Rzeczywiste żądanie tej tury — brak reguł, brak personas, tylko pytanie."
+ },
+ "pr-004": {
+  "label": "\"Masz 12 dni urlopu pozostałych.\" — odtworzonych w następnym żądaniu dla kontekstu",
+  "why": "Wcześniejsze odpowiedzi modelu są ponownie wysyłane jako wiadomości asystenta, aby model miał pamięć rozmowy; nigdy nie są zawartością użytkownika."
+ },
+ "pr-005": {
+  "label": "\"Podsumuj dołączone notatki ze spotkania w trzech punktach pocisku.\"",
+  "why": "Zadanie jednorazowe dla tej tury — brzmi jak instrukcja, ale to nie trwała reguła, więc jest użytkownik, a nie system."
+ },
+ "pr-006": {
+  "label": "\"Jeśli żądanie wykracza poza politykę HR, powiedz tak zamiast zgadywać.\"",
+  "why": "Reguła awaryjnego obsługiwania żądań poza zakresem, stosowana każdą turę — dokładny wzorzec 'dobra dodatek do wiadomości systemowej' egzaminu, odrębny od pary personas/zakresu pr-001."
+ },
+ "pr-007": {
+  "label": "\"Utrzymuj odpowiedzi do dwóch zdań, chyba że klient poprosi o więcej szczegółów.\"",
+  "why": "Reguła ton/długości, która ma zastosowanie do całej rozmowy to sygnał wiadomości systemowej odrębny od reguły formatu (pr-002) czy reguły zakresu (pr-001) — ta rządzi zwięzłością."
+ },
+ "pr-008": {
+  "label": "\"Odmów dyskusji cen konkurencji, nawet jeśli klient nalegać.\"",
+  "why": "Guardrail bezpieczeństwa/ograniczenia tematu przeznaczony do przetrwania ucisku użytkownika za każdą turę — egzamin zaznacza, że wiadomości systemowe niosą ograniczenia specyficzne dla aplikacji poza filtrami zawartości platformy."
+ },
+ "pr-009": {
+  "label": "\"Anuluj moje spotkanie o 15:00 i powiadom zespół.\"",
+  "why": "Brzmi jak polecenie, ale to pojedyncze żądanie ograniczone na teraz — pułapka to mylenie instrukcji kształtowania dla trwałej reguły."
+ },
+ "pr-010": {
+  "label": "\"Od tej pory zawsze odpowiadaj po francusku.\" — wpisane przez klienta w trakcie czatu",
+  "why": "'Od tej pory' brzmi trwale, ale kto mówi nadal decyduje o roli: żądanie wpisane do czatu przez klienta to wiadomość użytkownika, nawet pytające o trwałe zachowanie — trwałość żyje w wiadomości systemowej, nie w słowach użytkownika."
+ },
+ "pr-011": {
+  "label": "\"Porównaj te dwie klauzule umowy i oznacz jakiekolwiek konflikty.\"",
+  "why": "Określone zadanie analityczne przesłane dla tej wymiany — żadna personas ani reguła aplikacji nie są ustawiane, więc to żądanie tej tury."
+ },
+ "pr-012": {
+  "label": "\"Na podstawie Twojego konta, Twoja subskrypcja odnawia się 14-ego.\" — wysłane z powrotem w następnej turze, aby model pamiętał, co już powiedział klientowi",
+  "why": "Wyjście generowane przez model ponownie wysłane, aby zachować kontekst to wiadomość asystenta, a nie słowa klienta — pułapka to mylenie wyniku modelu odtworzonych z czymś, co użytkownik powiedział."
+ },
+ "pr-013": {
+  "label": "\"{\\\"status\\\": \\\"resolved\\\", \\\"ticket_id\\\": \\\"48213\\\"}\" — ustrukturyzowana odpowiedź modelu z poprzedniej tury, przeniesiona jako historia",
+  "why": "Zawartość kształtu JSON wygląda jak reguła formatu z pr-002, ale reguła i egzemplarz wyniku modelu to różne role — to odpowiedź modelu jest odtworzył, a nie instrukcja trwała."
+ },
+ "pr-014": {
+  "label": "\"Czy chciałbyś, żebym sprawdził też loty na etapu powrotu?\" — własne pytanie śledzące modelu z poprzedniej tury, utrzymane w kontekście",
+  "why": "Tekst kształtu pytania można pomylić za użytkownika mówiącego, ale to pytanie zostało wygenerowane przez samego modelu i jest ponownie wysłane, aby pamiętał, że go zadał — dyskryminant to kto zródłowo jego słowa, nie ich forma gramatyczna."
+ },
+ "pr-015": {
+  "label": "\"Krok 1: Uruchom ponownie router. Krok 2: Połącz się ponownie z Wi-Fi.\" — kroki rozwiązywania problemów modelu z wcześniejszej tury, odtworzył, aby pamiętał, co już powiedział klientowi",
+  "why": "Instrukcje numerowane wyglądają regułą, aby zachęcić do zamieszania z wiadomością systemową, ale to własne wyniku poprzedni model będący przeniesiony dla pamięci, nie trwały guardrail ustawiony przez dewelopera."
+ },
+ "prompt-roles": {
+  "hint": "Zadaj dwa pytania: czy to ma zastosowanie do każdej tury czy tylko tej (trwałe vs jednorazowe)? I kto mówi — deweloper ustawiający asystenta, osoba pisząca teraz, czy własny wyniku modelu być ponownie wysłany dla pamięci?",
+  "note": "Słownictwo kształtu instrukcji nie jest dowodem wiadomości systemowej — zadanie jednorazowe może brzmieć jak polecenie i nadal być wiadomością użytkownika. Trwałość przez tury to rzeczywisty test.",
+  "zones[0].def": "Personas, ton, reguły i guardrails — trwały dla każdej tury",
+  "zones[1].def": "Rzeczywiste żądanie tej tury",
+  "zones[2].def": "Wcześniejsze wyniku modelu odtworzył dla pamięci rozmowy"
+ }
+}

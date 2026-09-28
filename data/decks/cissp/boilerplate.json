@@ -1,0 +1,208 @@
+{
+  "id": "boilerplate",
+  "schemaVersion": 1,
+  "title": "Boilerplate",
+  "blurb": "Read an unlabeled excerpt from the document stack and spot the tell that says whether it is policy, standard, baseline, guideline, procedure — or a contract talking.",
+  "source": "Chapple CISSP SG 10ed ch.1 · outline 1.6 (security document hierarchy) and 1.3 (governance and accountability); ch.4 · outline 1.4 (contractual and regulatory obligations)",
+  "asOf": "2026-08-11",
+  "tells": [
+    {
+      "id": "bpl-001",
+      "area": "1.3",
+      "asOf": "2026-08-11",
+      "status": "stable",
+      "snippet": "Protecting client information is a strategic obligation of this organization. Issued under the authority of the executive board, this document states which assets deserve protection and how far our program must go to protect them. It names no tools and no settings.",
+      "answer": "Security policy",
+      "options": ["Security policy", "Standard", "Guideline", "Procedure"],
+      "tell": "Executive authority plus strategic scope plus a deliberate absence of implementation detail is the top tier of the document hierarchy. A policy says what must be protected and why it matters; everything below it says how.",
+      "citation": "SG ch.1 · outline 1.3"
+    },
+    {
+      "id": "bpl-002",
+      "area": "1.6",
+      "asOf": "2026-08-11",
+      "status": "stable",
+      "snippet": "Company systems exist for the work of your role. Personal use that interferes with duties, or any attempt to sidestep a security control, can bring warnings, penalties, or dismissal.",
+      "answer": "Security policy",
+      "options": ["Security policy", "Guideline", "Procedure", "Contract clause"],
+      "tell": "Expected behavior tied to job consequences is the acceptable use policy — a policy-tier document aimed at every user, not advice they may decline and not a step list they follow.",
+      "citation": "SG ch.1 · outline 1.6"
+    },
+    {
+      "id": "bpl-003",
+      "area": "1.6",
+      "asOf": "2026-08-11",
+      "status": "stable",
+      "snippet": "Every company-issued laptop will run the corporate build of full-disk encryption using AES-256. No exception exists for any business unit, region, or seniority level.",
+      "answer": "Standard",
+      "options": ["Standard", "Baseline", "Guideline", "Security policy"],
+      "tell": "A compulsory, uniform technology requirement stated for the whole organization is a standard: it names the exact mechanism and permits no local variation, which is more specific than policy and more absolute than a guideline.",
+      "citation": "SG ch.1 · outline 1.6"
+    },
+    {
+      "id": "bpl-004",
+      "area": "1.6",
+      "asOf": "2026-08-11",
+      "status": "stable",
+      "snippet": "No server of this class enters production below the minimum hardening floor: unused services off, current patch set applied, the required logging configuration in place. Teams may build above the floor, never beneath it.",
+      "answer": "Baseline",
+      "options": ["Baseline", "Standard", "Procedure", "Guideline"],
+      "tell": "A minimum security level that every system of a type must meet — exceed freely, never fall below — is a baseline. It is system-class-specific where a standard is organization-wide, and it sets a floor rather than steps.",
+      "citation": "SG ch.1 · outline 1.6"
+    },
+    {
+      "id": "bpl-005",
+      "area": "1.6",
+      "asOf": "2026-08-11",
+      "status": "stable",
+      "snippet": "Teams handling sensitive records are encouraged to adopt a password manager and, where it fits the workflow, hardware tokens. Adapt these suggestions to your own systems and constraints.",
+      "answer": "Guideline",
+      "options": ["Guideline", "Standard", "Baseline", "Security policy"],
+      "tell": "Encouraged, where it fits, adapt to your workflow — every verb is optional. Recommendations that flex to local conditions and compel nothing are a guideline, the only non-mandatory rung of the stack.",
+      "citation": "SG ch.1 · outline 1.6"
+    },
+    {
+      "id": "bpl-006",
+      "area": "1.6",
+      "asOf": "2026-08-11",
+      "status": "stable",
+      "snippet": "Step 1: open a change ticket. Step 2: snapshot the volume. Step 3: run the patch job. Step 4: confirm services restart cleanly. Step 5: close the ticket with evidence attached.",
+      "answer": "Procedure",
+      "options": ["Procedure", "Baseline", "Guideline", "Standard"],
+      "tell": "Numbered, ordered, exact actions for one task is a procedure — the SOP rung. Nothing else in the hierarchy tells you what to do next; everything else tells you what must be true.",
+      "citation": "SG ch.1 · outline 1.6"
+    },
+    {
+      "id": "bpl-007",
+      "area": "1.4",
+      "asOf": "2026-08-11",
+      "status": "stable",
+      "snippet": "As a condition of continued card processing, the Merchant agrees to remain compliant with the current PCI DSS and to submit to the acquiring bank's compliance validation on request.",
+      "answer": "Contract clause",
+      "options": ["Contract clause", "Standard", "Security policy", "Procedure"],
+      "tell": "PCI DSS reads like a standard, but the duty here flows from the merchant agreement with the bank — breach it and you lose card processing, not your liberty. Industry rules bind by contract, not statute.",
+      "citation": "SG ch.4 · outline 1.4"
+    },
+    {
+      "id": "bpl-008",
+      "area": "1.4",
+      "asOf": "2026-08-11",
+      "status": "stable",
+      "snippet": "The Vendor, as business associate, undertakes in writing to safeguard the protected health information it receives on behalf of the Covered Entity, in support of both parties' obligations under health-privacy law.",
+      "answer": "Contract clause",
+      "options": ["Contract clause", "Security policy", "Standard", "Guideline"],
+      "tell": "Two named parties, capitalized defined terms, a written undertaking: this is the business associate agreement that HIPAA-covered entities must put in place with their handlers — a contract instrument carrying a regulatory duty.",
+      "citation": "SG ch.4 · outline 1.4"
+    },
+    {
+      "id": "bpl-009",
+      "area": "1.6",
+      "asOf": "2026-08-11",
+      "status": "stable",
+      "snippet": "Privileged-account passwords are required to be at least sixteen characters and must be replaced immediately on any suspicion of compromise. The requirement applies identically on every platform we operate.",
+      "answer": "Standard",
+      "options": ["Standard", "Guideline", "Baseline", "Procedure"],
+      "tell": "Required and applies identically everywhere: compulsory and uniform is the signature of a standard. A guideline would say should; a baseline would attach to one system class; a procedure would give you the steps.",
+      "citation": "SG ch.1 · outline 1.6"
+    },
+    {
+      "id": "bpl-010",
+      "area": "1.6",
+      "asOf": "2026-08-11",
+      "status": "stable",
+      "snippet": "Each workstation image ships with the same minimum security floor for its class. A business unit may harden further; no machine may ever sit below the floor.",
+      "answer": "Baseline",
+      "options": ["Baseline", "Standard", "Security policy", "Guideline"],
+      "tell": "A per-class minimum with exceed-but-never-undercut language is a baseline. The floor metaphor is the tell: baselines set the least a system may be, not the one way everything must be done.",
+      "citation": "SG ch.1 · outline 1.6"
+    },
+    {
+      "id": "bpl-011",
+      "area": "1.6",
+      "asOf": "2026-08-11",
+      "status": "stable",
+      "snippet": "When picking among the approved encryption mechanisms, prefer the one your team can operate with confidence. This document suggests practice; it does not mandate it.",
+      "answer": "Guideline",
+      "options": ["Guideline", "Standard", "Procedure", "Contract clause"],
+      "tell": "It says so itself: suggests, does not mandate. Advice on how to apply mandatory requirements well, flexing to team circumstances, is exactly the guideline's job in the hierarchy.",
+      "citation": "SG ch.1 · outline 1.6"
+    },
+    {
+      "id": "bpl-012",
+      "area": "1.6",
+      "asOf": "2026-08-11",
+      "status": "stable",
+      "snippet": "1. Receive the termination notice from HR. 2. Disable every account before the exit interview ends. 3. Collect badge and laptop. 4. Record each hand-off on the departure checklist.",
+      "answer": "Procedure",
+      "options": ["Procedure", "Security policy", "Guideline", "Standard"],
+      "tell": "An ordered checklist for one recurring task — offboarding a leaver — is a procedure. The subject matter is personnel security, but the document type is decided by its shape: sequential, exact, repeatable.",
+      "citation": "SG ch.1 · outline 1.6"
+    },
+    {
+      "id": "bpl-013",
+      "area": "1.3",
+      "asOf": "2026-08-11",
+      "status": "stable",
+      "snippet": "Ultimate accountability for protecting information assets rests with executive leadership, who approve this document and the risk appetite it expresses. Daily duties are delegated; accountability is not.",
+      "answer": "Security policy",
+      "options": ["Security policy", "Standard", "Contract clause", "Guideline"],
+      "tell": "Senior management owning the document and the risk appetite is governance speaking — the policy tier. Delegating tasks while retaining accountability is the accountability principle of area 1.3 written into the top-tier document.",
+      "citation": "SG ch.1 · outline 1.3"
+    },
+    {
+      "id": "bpl-014",
+      "area": "1.4",
+      "asOf": "2026-08-11",
+      "status": "stable",
+      "snippet": "The Supplier will provide the Customer with its most recent independent security assessment each year, and failure to remedy critical findings within ninety days constitutes a material breach of this Agreement.",
+      "answer": "Contract clause",
+      "options": ["Contract clause", "Standard", "Baseline", "Security policy"],
+      "tell": "Material breach of this Agreement is the giveaway: obligations created between two named parties and enforced through contract remedies. No internal document, however strict, threatens breach — it threatens noncompliance.",
+      "citation": "SG ch.4 · outline 1.4"
+    },
+    {
+      "id": "bpl-015",
+      "area": "1.6",
+      "asOf": "2026-08-11",
+      "status": "stable",
+      "snippet": "Remote access to internal systems must go through the corporate VPN profile with multi-factor authentication enabled. No alternative access path is permitted for any user population.",
+      "answer": "Standard",
+      "options": ["Standard", "Guideline", "Security policy", "Procedure"],
+      "tell": "Must, one named mechanism, no permitted alternative, every user population: a compulsory uniform conformance requirement. Policies state goals; this states the required technology, which is what standards do.",
+      "citation": "SG ch.1 · outline 1.6"
+    },
+    {
+      "id": "bpl-016",
+      "area": "1.6",
+      "asOf": "2026-08-11",
+      "status": "stable",
+      "snippet": "Administrators should review authentication logs after unusual sign-in activity, and may widen the review window in seasons when travel inflates false alarms.",
+      "answer": "Guideline",
+      "options": ["Guideline", "Procedure", "Standard", "Baseline"],
+      "tell": "Should and may, with room to widen the window by judgment — modal verbs that permit rather than compel mark a guideline. A procedure would number the steps; a standard would strike the word should.",
+      "citation": "SG ch.1 · outline 1.6"
+    },
+    {
+      "id": "bpl-017",
+      "area": "1.6",
+      "asOf": "2026-08-11",
+      "status": "stable",
+      "snippet": "First, isolate the affected host from the network. Second, preserve a memory capture before power changes. Third, page the on-call lead. Fourth, log every action taken, each with a timestamp.",
+      "answer": "Procedure",
+      "options": ["Procedure", "Guideline", "Security policy", "Baseline"],
+      "tell": "First, second, third, fourth: an exact action sequence for one situation. Incident subject matter does not make it an incident policy — ordered concrete actions make it a procedure.",
+      "citation": "SG ch.1 · outline 1.6"
+    },
+    {
+      "id": "bpl-018",
+      "area": "1.6",
+      "asOf": "2026-08-11",
+      "status": "stable",
+      "snippet": "This document commits the organization to protecting personal data wherever we operate and directs each division to publish supporting requirements. It names outcomes, never technologies.",
+      "answer": "Security policy",
+      "options": ["Security policy", "Standard", "Baseline", "Procedure"],
+      "tell": "Outcomes without technologies, plus an instruction that subordinate documents be created beneath it — a policy sits at the top of the stack and spawns the standards, baselines and procedures that implement it.",
+      "citation": "SG ch.1 · outline 1.6"
+    }
+  ]
+}

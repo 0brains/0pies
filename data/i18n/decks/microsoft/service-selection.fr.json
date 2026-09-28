@@ -1,0 +1,109 @@
+{
+ "service-selection": {
+  "hint": "Deux questions la décident : à quoi ressemble l'entrée (texte, formulaire, image, audio, vidéo ou vecteurs), et le travail extrait/analyse, traduit, recherche/indexe ou génère ? L'option plantée est presque toujours le voisin qui partage l'entrée mais fait l'autre travail."
+ },
+ "ss-001": {
+  "label": "Décrivez les champs des factures en langage simple et extrayez-les des fichiers PDF, photos et enregistrements d'appels dans un JSON structuré",
+  "why": "Description de champ en langage naturel sur entrée multimodale → JSON structuré est Content Understanding ; les modèles préétablis de Document Intelligence sont déterministes et réservés aux documents."
+ },
+ "ss-002": {
+  "label": "Extraction déterministe en grand volume de reçus standard et cartes d'identité avec un modèle préétabli",
+  "why": "Les types de formulaires connus — factures, reçus, identifiants, cartes de visite — sont le territoire préétabli de Document Intelligence."
+ },
+ "ss-003": {
+  "label": "Traduisez les manuels de produits écrits du texte anglais vers du texte japonais",
+  "why": "Translator est texte à texte ; Azure Speech gère l'audio entrée/sortie y compris la traduction de parole — une confusion de corpus 6 paires (paire #29)."
+ },
+ "ss-004": {
+  "label": "Indexez les données de facture extraites afin que les applications en aval puissent les rechercher et les récupérer",
+  "why": "CU extrait ; AI Search indexe et récupère en aval (indexeur, ensemble de compétences, magasin de connaissances) — l'extraction et la récupération sont des services différents (paire #22)."
+ },
+ "ss-005": {
+  "label": "Recherchez les descriptions de produits par similarité sémantique au lieu d'une correspondance par mot clé exact",
+  "why": "Les intégrations convertissent le texte en vecteurs pour la comparaison sémantique (text-embedding-3-large) — elles récupèrent et comparent, elles ne créent jamais de contenu (paire #18)."
+ },
+ "ss-006": {
+  "label": "Répondez à des questions en forme libre sur une photo que l'utilisateur joint à son message de chat",
+  "why": "Image en tant qu'entrée a besoin d'un modèle multimodal déployé lisant des parties de contenu d'image ; la génération d'images va dans l'autre sens, et ImageAnalysisClient/Vision retourne des fonctionnalités fixes — une API et un point de terminaison différents (paire #23)."
+ },
+ "ss-007": {
+  "label": "Lisez le texte imprimé sur une pancarte photographiée afin que l'application puisse la renvoyée sous forme de texte brut",
+  "why": "La reconnaissance optique des caractères/lecture est une capacité Vision principale sur les images générales ; Document Intelligence cible les dispositions de formulaires structurés, pas le texte de scène incidental."
+ },
+ "ss-008": {
+  "label": "Détectez automatiquement la langue source du texte entrant avant de le traduire en anglais, dans le même appel",
+  "why": "La détection automatique de langue de Translator s'exécute en ligne dans le pipeline de traduction ; la détection de langue d'AI Language est une fonctionnalité d'analyse de texte autonome utilisée en dehors d'un appel de traduction."
+ },
+ "ss-009": {
+  "label": "Entraînez un modèle sur vos propres photos étiquetées pour distinguer les pièces défectueuses des acceptables sur une chaîne de production",
+  "why": "Custom Vision crée des pièces de classification/détection à partir de vos propres images étiquetées avec une boucle d'entraînement gérée ; Vision générale retourne uniquement ses fonctionnalités préétablies fixes et ne peut pas être réentraînée sur vos données."
+ },
+ "ss-010": {
+  "label": "Associez une photo de scanneur de badge à une liste de photos d'employés pour confirmer l'identité de la personne",
+  "why": "La vérification 1:1 et l'identification 1:N contre les visages inscrits est la capacité dédiée de Face ; l'analyse Vision générale n'a pas de fonctionnalité d'appariement d'identité."
+ },
+ "ss-011": {
+  "label": "Persistez les phrases clés, les sentiments et les entités extraits d'un pipeline de documents dans un magasin que les applications en aval peuvent rechercher",
+  "why": "Un ensemble de compétences peut appeler AI Language pour enrichir chaque document, mais le magasin de connaissances persistant et interrogeable appartient à AI Search — l'enrichissement et la récupération sont des étapes de pipeline séparées."
+ },
+ "ss-012": {
+  "label": "Extrayez les sentiments, les phrases clés et les entités nommées directement du texte de ticket d'assistance brut",
+  "why": "L'analyse des sentiments, l'extraction de phrases clés et la reconnaissance d'entités nommées sont des fonctionnalités d'analyse de texte AI Language ; AI Search consomme uniquement cette sortie en tant qu'étape d'enrichissement, elle ne la produit pas."
+ },
+ "ss-013": {
+  "label": "Marquez un pic inhabituel dans les lectures de vibration d'un capteur d'usine au fur et à mesure qu'il diffuse en continu au fil du temps",
+  "why": "La détection d'anomalies univariée/multivariée personnalisée sur les données de séries chronologiques est le travail d'Anomaly Detector ; un espace de travail ML général vous obligerait à concevoir, entraîner et gérer ce modèle vous-même."
+ },
+ "ss-014": {
+  "label": "Obtenez une transcription avec des tours d'orateur horodatés à partir d'un appel de support enregistré de deux personnes",
+  "why": "La parole à texte avec la diarisation des orateurs s'exécute directement sur l'audio brut en tant que capacité Speech ; AI Language ne fonctionne que sur le texte qui a déjà été transcrit."
+ },
+ "ss-015": {
+  "label": "Transformez un bloc de copie marketing écrite en anglais en audio narré pour une voix off vidéo",
+  "why": "La synthèse de parole neurale texte à parole est une capacité Speech native ; la production d'audio parlé d'Azure OpenAI nécessite un déploiement multimodal/réaliste séparé, et Translator ne touche jamais à l'audio."
+ },
+ "ss-016": {
+  "label": "Marquez le langage violent ou haineux dans les messages de chat soumis par les utilisateurs avant qu'ils n'atteignent jamais le modèle",
+  "why": "Prompt Shields et les catégories de modération sont le travail de Content Safety, appliqué à l'entrée et à la sortie ; la détection PII d'AI Language est une fonctionnalité de confidentialité, pas un classificateur de contenu nuisible."
+ },
+ "ss-017": {
+  "label": "Flouter ou rédiger le numéro de téléphone et l'adresse électronique d'un client avant qu'une transcription de chat ne soit stockée",
+  "why": "Détection et rédaction PII est une fonctionnalité d'analyse de texte AI Language dédiée pour détecter et masquer les données personnelles ; Content Safety classe plutôt les catégories de contenu nuisible — une préoccupation de sécurité, pas de confidentialité."
+ },
+ "ss-018": {
+  "label": "Stockez et interrogez des millions de vecteurs d'intégration déjà calculés afin que les recherches de voisins les plus proches retournent en millisecondes",
+  "why": "La recherche vectorielle et le stockage au moment de l'interrogation est le travail d'AI Search ; les modèles d'intégrations ne produisent que les vecteurs en premier lieu, ils ne les indexent ni les récupèrent."
+ },
+ "ss-019": {
+  "label": "Acheminez un appel d'outil d'un agent en cours vers une API météo en direct et alimentez le résultat en arrière dans la même conversation",
+  "why": "Invoquer une fonction/outil personnalisé à mi-parcours contre une API externe en direct est la couche d'orchestration du Service Agent ; un appel de complétion de chat simple n'a pas de boucle d'invocation d'outil intégrée."
+ },
+ "ss-020": {
+  "label": "Attachez un index de recherche existant à un agent Foundry afin que ses réponses s'enracinent dans et citent vos documents indexés",
+  "why": "Le câblage d'une source de connaissances dans le comportement d'ancrage/citation d'un agent est configuré sur le Service Agent ; l'index lui-même ne traite que les requêtes, il ne possède pas la personnalité, les outils ou le câblage de connaissances de l'agent."
+ },
+ "ss-021": {
+  "label": "Générez une image de maquette de produit photodéréaliste à partir d'une description en anglais simple, sans photo de départ",
+  "why": "La génération de texte à image est le travail de DALL-E ; un modèle de chat multimodal lit les images en entrée mais ne les peint pas nouvelles, et Vision n'analyse que les images qui existent déjà."
+ },
+ "ss-022": {
+  "label": "Exécutez un assistant sensible aux coûts sur un déploiement budgété qui ne gère jamais que de courtes requêtes simples",
+  "why": "Un modèle de classe Phi compromet une certaine capacité pour un bien plus petit encombrement et un coût inférieur, ce qui convient aux requêtes légères et limitées par le budget ; déployer un modèle frontière complet pour du texte simple est le piège de surprovisionnement classique."
+ },
+ "ss-023": {
+  "label": "Laissez un utilisateur parler une question et entendre une réponse parlée en retour dans le même tour à latence faible, sans appels séparés de reconnaissant/synthétiseur à câbler",
+  "why": "gpt-realtime / Voice Live est la session de parole en, parole en sortie à latence faible unique ; la distraction Azure AI Speech signifie câbler le pipeline manual SpeechRecognizer→process→SpeechSynthesizer vous-même, qui perd la latence et l'intégration — exactement ce que l'API en temps réel remplace."
+ },
+ "ss-024": {
+  "label": "Obtenez la réponse du modèle déployé sous la forme d'un JSON bien formé correspondant à un schéma que tu fournis, sans prose supplémentaire autour",
+  "why": "La sortie structurée est un paramètre par appel sur un modèle de chat/complétion déployé ; l'ajustement fin change de manière permanente les poids du modèle et est inutile juste pour former le format d'une réponse."
+ },
+ "ss-025": {
+  "label": "Intégrez le style d'écriture d'une entreprise dans chaque réponse future à l'aide de centaines de transcriptions d'exemple étiquetées, afin qu'il n'ait jamais besoin d'être relancé",
+  "why": "L'ajustement fin est la transmission d'entraînement qui cuit le comportement démontré dans de nouveaux poids afin qu'il persiste entre les appels ; un déploiement de chat/complétion de stock ne reflète que ce qui est renvoyé dans l'invite de cet appel, et un modèle multimodal change les types d'entrée acceptés, pas si le style persiste sans relance."
+ },
+ "ss-026": {
+  "label": "Testez les invites parlées contre un modèle compatible audio déployé directement dans le terrain de jeu de chat Foundry, sans écrire aucun code SDK",
+  "why": "Un déploiement multimodal compatible audio peut être exercé directement dans le terrain de jeu de chat ; Voice Live/gpt-realtime est l'API de session en temps réel dédiée à latence faible, un chemin de déploiement séparé construit pour la conversation vocale continue."
+ }
+}

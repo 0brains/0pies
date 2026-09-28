@@ -1,0 +1,106 @@
+{
+ "sw-001": {
+  "label": "Kết nối mã của bạn với dự án Foundry bằng cách sử dụng điểm cuối và thông tin đăng nhập (gói azure-ai-projects)",
+  "why": "AIProjectClient(endpoint, credential) là điểm nhập dự án; get_openai_client() treo khỏi nó — loại bỏ auth và đây là dòng bị gián đoạn."
+ },
+ "sw-002": {
+  "label": "Gửi danh sách tin nhắn tới một mô hình được triển khai và trả về choices[0].message.content",
+  "why": "chat.completions.create(model=DEPLOYMENT_NAME, messages=[…]) là cuộc gọi trò chuyện — và model= lấy tên triển khai, không phải tên mô hình cơ sở (histack bẫy #5)."
+ },
+ "sw-003": {
+  "label": "Giữ khóa tài nguyên Giọng nói và vùng của bạn, cũng như tên giọng nói tổng hợp",
+  "why": "SpeechConfig(key, region) được định cấu hình trước tiên (ví dụ speech_synthesis_voice_name='en-US-Ava:DragonHDLatestNeural'); AudioConfig xử lý các thiết bị, không phải thông tin đăng nhập."
+ },
+ "sw-004": {
+  "label": "Gửi câu hỏi được nói của người dùng dưới dạng dữ liệu âm thanh nội tuyến bên trong nội dung tin nhắn",
+  "why": "Đầu vào được nói đi vào các bộ phận nội dung tin nhắn như input_audio; sinh đôi cài đặt phản hồi là bẫy được ghi lại."
+ },
+ "sw-005": {
+  "label": "Yêu cầu mô hình trả lời bằng âm thanh được nói: giọng nói \"alloy\", định dạng \"wav\"",
+  "why": "Đầu ra được nói được yêu cầu thông qua modalities=[\"text\",\"audio\"] cộng với audio={\"voice\":\"alloy\",\"format\":\"wav\"} trên cuộc gọi đa phương thức — tải trọng chính xác của bài thi."
+ },
+ "sw-006": {
+  "label": "Bao gồm một bức ảnh (URL hoặc base64) trong một tin nhắn trò chuyện để gpt-4o được triển khai có thể mô tả nó",
+  "why": "Đầu vào hình ảnh đi dạo như các bộ phận nội dung image_url / base64 tới một triển khai đa phương thức — không thông qua Vision SDK, đó là một dịch vụ khác và điểm cuối (pair #23)."
+ },
+ "sw-007": {
+  "label": "Cầu nối một khách hàng dự án hiện có tới khách hàng tương thích OpenAI được sử dụng cho các cuộc gọi Phản hồi và Cuộc trò chuyện",
+  "why": "project.get_openai_client() là một phương thức thể hiện được gọi trên đối tượng dự án; bẫy bài thi là gọi nó trên lớp thay vào đó."
+ },
+ "sw-008": {
+  "label": "Được gọi một lần, ngay sau khi khách hàng dự án được xây dựng, trước khi yêu cầu Phản hồi hoặc Cuộc trò chuyện đầu tiên đi ra",
+  "why": "Nó là cầu nối thời gian chạy trả về khách hàng hình dạng OpenAI; đối tượng thông tin đăng nhập chỉ xác thực khách hàng dự án, nó không bao giờ trả về khách hàng trò chuyện."
+ },
+ "sw-009": {
+  "label": "Được chuyển với không có đối số làm giá trị credential= để ứng dụng xác thực thông qua danh tính Azure được ký, không có khóa được nhập ở bất kỳ đâu",
+  "why": "DefaultAzureCredential() là đối tượng thông tin đăng nhập Entra ID không có khóa; AIProjectClient là những gì tiêu thụ nó, và azure-ai-projects chỉ là tên gói, không phải đối tượng thời gian chạy."
+ },
+ "sw-010": {
+  "label": "Đối tượng az login thiết lập cho: khách hàng giải quyết danh tính đã ký của bạn từ nó tự động tại thời điểm gọi, không cần khóa API môi trường",
+  "why": "Quickstart ghép az login với đối tượng thông tin đăng nhập này; get_openai_client chỉ trả về khách hàng trò chuyện và không có liên quan gì đến xác thực."
+ },
+ "sw-011": {
+  "label": "Gói pip bạn cài đặt trước khi viết bất kỳ mã khách hàng dự án Foundry, mỗi theo lệnh thiết lập quickstart đầu tiên",
+  "why": "\"Bạn nên cài đặt gói nào cho khách hàng dự án?\" là thân cây bài thi cổ điển — câu trả lời là azure-ai-projects, không phải các SDK tìm kiếm hoặc ngôn ngữ."
+ },
+ "sw-012": {
+  "label": "Được liệt kê cạnh az login trong các bước thiết lập quickstart, ghim vào phiên bản tối thiểu (>=2.0.0) trước khi bất kỳ mã khách hàng nào chạy",
+  "why": "Hướng dẫn quickstart được ghi lại cài đặt azure-ai-projects>=2.0.0 và chạy az login — các gói Vision và Search không liên quan đến khách hàng dự án."
+ },
+ "sw-013": {
+  "label": "Xây dựng với điểm cuối và AzureKeyCredential trước khi có thể chạy bất kỳ cuộc gọi cụm từ khóa hoặc cảm tính nào với văn bản thuần túy",
+  "why": "TextAnalyticsClient(endpoint, credential) lộ.extract_key_phrases()/.analyze_sentiment() trên văn bản thô; hai khách hàng còn lại nhắm mục tiêu tại các tài liệu và hình ảnh đa phương thức ở các điểm cuối khác nhau hoàn toàn."
+ },
+ "sw-014": {
+  "label": "Bất cứ loại khách hàng nào lộ analyze_sentiment(documents) để tất cả tình cảm tổng thể của tài liệu đều được in trở lại",
+  "why": "Phân tích cảm tính và trích xuất cụm từ khóa là các phương thức phân tích văn bản Ngôn ngữ AI trên khách hàng này; hai khách hàng khác hoạt động trên các tài liệu đa phương thức hoặc âm thanh trực tiếp, không phải văn bản thuần túy."
+ },
+ "sw-015": {
+  "label": "Đặt để nghe từ micrô mặc định của máy tính thay vì một tệp đã lưu, sau đó được trao cho công nhân nhận dạng làm nguồn âm thanh của nó",
+  "why": "AudioConfig(use_default_microphone=True) chọn thiết bị đầu vào; SpeechConfig thay vào đó giữ khóa đăng ký/vùng, và SpeechRecognizer là lớp đối tượng này được chuyển vào, không phải bộ chọn thiết bị."
+ },
+ "sw-016": {
+  "label": "Được xây dựng từ tên tệp đã lưu để công nhân nhận dạng đọc giọng nói từ tệp WAV kiểm tra thay vì micrô trực tiếp",
+  "why": "AudioConfig(filename=…) là nguồn thiết bị được hỗ trợ tệp; SpeechConfig mang thông tin đăng nhập và tên giọng nói, và SpeechSynthesizer phát âm thanh ra ngoài thay vì đọc nó vào."
+ },
+ "sw-017": {
+  "label": "Được cấp cả cấu hình giọng nói và cấu hình âm thanh, sau đó được gọi để chụp chính xác một phát ngôn nói ngắn và dừng",
+  "why": "Đây là lớp có phương thức recognize_once_async() chụp một phát ngôn riêng; SpeechSynthesizer thay vào đó nói văn bản ra, và AudioConfig chỉ có dây thiết bị đầu vào."
+ },
+ "sw-018": {
+  "label": "Cuộc gọi không đồng bộ phát ngôn duy nhất của nó trả về một đối tượng kết quả có.text giữ bản ghi lại những gì micrô vừa nghe",
+  "why": "Lớp speech-to-text trả về result.text từ việc nhận dạng âm thanh trực tiếp; người tổng hợp nói thay vì lắng nghe, và khách hàng Ngôn ngữ chỉ bao giờ làm việc trên văn bản đã được ghi lại."
+ },
+ "sw-019": {
+  "label": "Lấy cấu hình giọng nói với tên giọng nói đã được đặt, sau đó biến một chuỗi văn bản thành đầu ra được nói qua loa",
+  "why": "Phương thức speak_text_async() của lớp này phát một chuỗi to bằng giọng nói được cấu hình; công nhân nhận dạng thay vào đó chuyển đổi giọng nói thành văn bản, và AudioConfig chỉ chọn một thiết bị."
+ },
+ "sw-020": {
+  "label": "Sau khi công nhân nhận dạng tạo ra bản ghi văn bản, đối tượng thứ hai này đọc chuỗi cùng một điều ra loa với cuộc gọi nói không đồng bộ riêng của nó",
+  "why": "Phát lại văn bản thành giọng nói được công nhân nhận dạng đã tạo ra là công việc của lớp này; người nhận dạng đã tạo ra văn bản, và SpeechConfig chỉ lưu trữ thông tin đăng nhập và tên giọng nói nó sử dụng."
+ },
+ "sw-021": {
+  "label": "Xây dựng với điểm cuối và khóa, sau đó cuộc gọi duy nhất của nó phân tích URL hình ảnh cho tính năng hình ảnh READ để kéo văn bản ra khỏi ảnh",
+  "why": "Phương thức.analyze(image_url=…, visual_features=[…]) của khách hàng Vision này chạy OCR trên hình ảnh chung; ContentUnderstandingClient thay vào đó trả về một poller từ một hình dạng cuộc gọi rất khác, không đồng bộ."
+ },
+ "sw-022": {
+  "label": "Cuộc gọi phụ đề cộng với OCR của nó lấy hình ảnh bằng URL thay vì các byte thô, yêu cầu cả tính năng CHỮ VIẾT và ĐỌC trong một lần vượt",
+  "why": "Phương thức phân tích theo URL của khách hàng Vision này trả về các tính năng được xây dựng sẵn cố định như chú thích và đọc; nó không có bước bình chọn và không liên quan gì đến chụp giọng nói."
+ },
+ "sw-023": {
+  "label": "Khách hàng mà một ứng dụng tạo trước tiên khi nó sẽ gửi URL tài liệu để trích xuất và đọc các kết quả có cấu trúc trở lại",
+  "why": "\"Khách hàng nào ứng dụng nên tạo trước tiên?\" đối với ứng dụng Content Understanding là lớp này — hai khách hàng khác là các dịch vụ riêng biệt có các điểm cuối riêng biệt cho văn bản thuần túy và hình ảnh chung tương ứng."
+ },
+ "sw-024": {
+  "label": "Cuộc gọi phân tích chạy lâu dài của nó trả về một poller; gọi.result() trên poller đó là cách ứng dụng chờ đầu ra được trích xuất cuối cùng",
+  "why": "begin_analyze() cộng với poller.result() là mô hình bình chọn không đồng bộ của khách hàng này; phương thức analyze() của khách hàng Vision là đồng bộ, và các phương thức của khách hàng Ngôn ngữ lấy tài liệu trực tiếp mà không bình chọn."
+ },
+ "sw-025": {
+  "label": "Yêu cầu tạo hình ảnh có trường phản hồi b64_json giữ dữ liệu pixel thực tế bạn giải mã, không phải trường url",
+  "why": "Triển khai GPT-image-1 trả về các byte hình ảnh được tạo trong response.data[0].b64_json; cuộc gọi hoàn thành trả về các lựa chọn văn bản, và khách hàng Vision chỉ phân tích một hình ảnh đã tồn tại."
+ },
+ "sw-026": {
+  "label": "Đặt nền thành trong suốt và yêu cầu đầu ra PNG trên yêu cầu text-to-image này để nhận được nền xuyên thấu",
+  "why": "Nền trong suốt cộng với đầu ra PNG là các tham số tạo series GPT-image-1; không có gì trong phân tích hình ảnh hoặc cuộc gọi hoàn thành nhận chúng."
+ }
+}

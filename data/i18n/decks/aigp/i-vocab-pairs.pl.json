@@ -1,0 +1,62 @@
+{
+ "i-vp-01": {
+  "a.text": "System wizji utrzymuje poprawną klasyfikację na zaburzonego obrazach.",
+  "a.why": "Wytrzymywanie wrogiego lub nowego wkładu przy zachowaniu dokładności i funkcjonalności to cała praca tej strony — model nigdy nie opuszcza normalnego pasma wydajności.",
+  "b.text": "Po zdegradowanych wkładach czujnika system wraca do określonych limitów wydajności.",
+  "b.why": "Utrzymywanie wydajności w zdefiniowanych akceptowalnych limitach pomimo rzeczywistych lub wrogich warunków, i powrót do nich, to druga połowa — system może być odporny bez kiedykolwiek bycia oblicze sztucznego ataku."
+ },
+ "i-vp-02": {
+  "a.text": "Syntetyczny klip audio publicznego urzędnika jest fabrykatorem i rozprzestrzeniany z wyraźnym celem wyrządzenia szkód.",
+  "a.why": "Celowy fabrykat z zamiarem wyrządzenia szkód to definiująca cecha — ta sama fałszywa zawartość udostępniana przez kogoś, kto wierzy, że to prawdziwe, należy do drugiej strony.",
+  "b.text": "Bloger dzieli się deepfake'iem wideo wierząc, że jest autentyczne, następnie koryguje zapis, gdy fabrykat wychodzi na jaw.",
+  "b.why": "Brak zamiaru oszukania — akcjonariusz wierzył, że zawartość była prawdziwa — to co oddziela to od celowo wyrządzenia szkód strony tej pary."
+ },
+ "i-vp-03": {
+  "a.text": "Duże liczby fałszywych, niskotaryfowych przejazdów są wstrzykiwane do danych treningowych modelu przewidywania tarifyfy z jednego źródła.",
+  "a.why": "Kłopotliwe to, czego model się nauczy, zanim zostanie wdrożony, to atak w czasie szkolenia — druga strona dzieje się po tym, jak model jest już na żywo.",
+  "b.text": "Złośliwy użytkownik opracowuje dane wejściowe, które oszukują już wdrażany model triażu w etykietowaniu pilnych przypadków jako nie-pilne.",
+  "b.why": "Oszukiwanie żywe wyniki modelu za pomocą sporządzonego wkładu w czasie wnioskowania to druga połowa pary — dane treningowe modelu nigdy nie były dotknięte."
+ },
+ "i-vp-04": {
+  "a.text": "Dokumentacja ujawnia, jakie dane i logika weszły w budowanie systemu, zanim ktokolwiek pyta o konkretny wynik.",
+  "a.why": "To otwartość na temat projektowania i danych systemu — właściwość systemu jako całości, a nie żadnej decyzji.",
+  "b.text": "Konkretny kandydat prosi, dlaczego ich przypadek został rozstrzygnięty w ten sposób, i organizacja może przejść przez ten jeden wynik w warunkach, które osoba może śledzić.",
+  "b.why": "Oficjalna kalibracja to, że decyzja jest wyjaśnialna, gdy jej wkład, wynik i funkcjonowanie są zrozumiałe dla istot człowieka — właściwość na decyzję, odrębnie od przejrzystości systemowej otwartości."
+ },
+ "i-vp-05": {
+  "a.text": "Poufne dane pacjenta stają się publicznie dostępne, ponieważ zasobnik magazynu w chmurze został błędnie skonfigurowany, bez uczestnika ataku.",
+  "a.why": "Niezamierzona ekspozycja przez błędną konfigurację, a nie złośliwą działalność, to kluczy tę stronę.",
+  "b.text": "Zewnętrzny aktor celowo omija kontrole dostępu w celu uzyskania tego samego rodzaju danych.",
+  "b.why": "Celowy, nieautoryzowany dostęp przez złośliwego aktora to druga połowa — ta sama kategoria szkód, przeciwległa przyczyna."
+ },
+ "i-vp-06": {
+  "a.text": "Detektor wad produkcji osiąga prawie doskonałą dokładność na dokładnie fotach linii produkcyjnej, na których szkolił, następnie mija oczywiste pęknięcia na zdjęciach z innej linii fabryki.",
+  "a.why": "Doskonały na zestawie treningowym i słaby na wszystko nowy to charakterystyczne nieudane — model zapamiętał konkretne zdjęcia zamiast nauczyć się, jak pęknięcie faktycznie wygląda.",
+  "b.text": "Detektor wad zbudowany tylko kilkoma podstawowymi filtrami obrazu i bez głębszych warstw mija pęknięcia nawet w bardzo fotografiach, które szkolił.",
+  "b.why": "Słaba wydajność wszędzie, w tym na danych treningowych, sygnalizuje model nigdy nie miał wystarczającej złożoności do uchwycenia wzoru w pierwszej kolejności."
+ },
+ "i-vp-07": {
+  "a.text": "Radiolog przestaje przeglądać podwójnie nisko-ryzyka wezwań narzędzia do triażu skanów po miesiącach dokładnych flag i zaczyna podpisywać cokolwiek etykietuje benignę.",
+  "a.why": "Nadmierne poleganie na wynikach AI bez krytycznego nadzoru człowieka to mechanizm tej strony — ludzkie niepowodzenie w utrzymywaniu sprawdzenia, a nie wada wbita w dane.",
+  "b.text": "Narzędzie do zatrudniania szkolone na przeszłych zapisach zatrudniania odrzuca więcej kandydatów z grup mniejszościowych, ponieważ te rekordy już odzwierciedlały, kto dostał pracę wcześniej.",
+  "b.why": "Wada jest odziedziczona z samych danych treningowych, przenoszących wzory z dyskryminacyjnej przeszłości — odrębne od nad-zaufania narzędziu wyjście, gdy już się wdrożyło."
+ },
+ "i-vp-08": {
+  "a.text": "Samochód autonomiczny niezależnie decyduje najlepszą trasę do adresu kierowcy, ale nie robi nic poza tym jednym zadaniem.",
+  "a.why": "Działanie w ramach jednej, ograniczonej domeny zadań, jednak zdolne do tego zadania, to co trzyma system po tej stronie linii.",
+  "b.text": "Ten sam samochód potrzebowałby również rozsądnie, nauczyć się i działać na każde zadanie człowiek mógł, nie tylko jazdy, do liczenia zamiast tego.",
+  "b.why": "Pełna ludzka zdolność poznawcza między domenami, a nie tylko doskonały w jednym zadaniu, to co druga strona wymaga — i pozostaje teoretyczne."
+ },
+ "i-vp-09": {
+  "a.text": "Komitet zarządzeniowy porównujący dwóch dostawców pyta, ile miliardów wartości ważenia każda sieć skończyła się po tym, gdy szkolenie zostało zakończone.",
+  "a.why": "To definiacyjna linia ta para testuje: wewnętrzna wartość, którą szkolenie się odkrywa i dostosowuje, która nie istnieje w formie ostatecznej do czasu szkolenia jest wykonane.",
+  "b.text": "Ten sam komitet oddzielnie pyta, jaka szybkość uczenia się i rozmiar partii zespół inżynierski ustalony przed szkoleniem kiedykolwiek zaczął.",
+  "b.why": "To są wybory osoba, którą zespół ustalony w szkoleniu — wejścia w szkolenie, a nie wartości szkolenie odkrywa."
+ },
+ "i-vp-10": {
+  "a.text": "Model losowego lasu uczy się rysować linia między oszukańczymi a uzasadnionymi transakcjami.",
+  "a.why": "Nauka granicy istniejących klas zamiast tworzenia nowych przykładów to ta strona cała praca.",
+  "b.text": "Inny model, biorąc tę samą historię transakcji, tworzy całkowicie nowe syntetyczne rekordy transakcji, które nigdy się nie stały.",
+  "b.why": "Tworzenie nowej zawartości zamiast klasyfikacji istniejących wkładów to druga połowa pary."
+ }
+}

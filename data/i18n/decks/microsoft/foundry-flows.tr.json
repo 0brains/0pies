@@ -1,0 +1,82 @@
+{
+ "lad-agent": {
+  "prompt": "Ajanın yaşam döngüsünü gerçekleşmesi gereken sırada put.",
+  "steps[0].label": "Ajani tanımla: PromptAgentDefinition(model=MODEL_NAME, instructions=..., tools=[...])",
+  "steps[0].detail": "Model + instructions + tools tanım zamanında ayarlanır — {\"deployment\":{\"model\":AGENT_NAME}} kanonik yanlış cevaptır; deployment'lar modelleri barındırır, ajanlar model + instructions + tools'dur.",
+  "steps[1].label": "Agents oyun alanında test et",
+  "steps[1].detail": "Oyun alanı persona, tools ve ekli bilgiyi yan yana yapılandırır ve herhangi bir istemci kodu ajani çağırmadan önce çok dönüşlü davranışı denemeni sağlar.",
+  "steps[2].label": "Kaydet: project.agents.create_version(agent_name=AGENT_NAME, definition=...)",
+  "steps[2].detail": "Kaydedilmemiş oyun alanı düzenlemeleri portal'dan çıkınca kaybolur — create_version, bunu kodda mı portalda mı oluşturmuş olsun, tanımı aslında devam ettiren şeydir.",
+  "steps[3].label": "Thread oluştur: openai.conversations.create()",
+  "steps[3].detail": "Daha sonra dönüşlerin yazacağı çalışma zamanı konteynerini açar — istemci uygulaması tarafından ilk mesaj gönderilmeden önce çağrılır, ajanın kendi tanımından ayrıdır.",
+  "steps[4].label": "Kullanıcının mesajını thread'e ekle",
+  "steps[4].detail": "Dönüşün içeriği thread'in biriken mesaj geçmişine eklenir — bir run henüz eklenmemiş bir mesajı işleyemez.",
+  "steps[5].label": "Bir run oluştur ve çıktıyı oku: openai.responses.create(..., extra_body={\"agent_reference\": {...}})",
+  "steps[5].detail": "Sohbeti aslında işleyen ve ajanın sonraki çıktısını üreten çağrı; agent_reference kaydedilmiş tanımı gösteren dönüş başına metaveridir."
+ },
+ "lad-chat": {
+  "prompt": "Kod akışını çalıştırması gereken sırada put.",
+  "steps[0].label": "azure-ai-projects yükle",
+  "steps[0].detail": "'Proje istemcisi için hangi paketi yüklemeli?' klasik bir sınav gövdesidir — cevap azure-ai-projects'dir.",
+  "steps[1].label": "AIProjectClient(endpoint, DefaultAzureCredential()) oluştur",
+  "steps[1].detail": "Endpoint + kimlik bilgisi herhangi bir çağrıdan önce var olması gerekir; keyless kimlik = Entra ID DefaultAzureCredential.",
+  "steps[2].label": "get_openai_client() çağrı yap",
+  "steps[2].detail": "Proje istemcisini OpenAI uyumlu bir sohbet istemcisine köprüler — kaldırılınca her şeyi kıran satır.",
+  "steps[3].label": "Mesajlar listesi oluştur (sistem istemi ilk, sonra kullanıcı istemi)",
+  "steps[3].detail": "Sistem mesajında kurallar ve koruma önlemleri; bu dönüşün isteği kullanıcı mesajında.",
+  "steps[4].label": "chat.completions.create(model=DEPLOYMENT_NAME, messages=[...]) çağrı yap",
+  "steps[4].detail": "model= senin deployment adını alır, asla temel model adını değil — klasik tuzak.",
+  "steps[5].label": "response.choices[0].message.content oku",
+  "steps[5].detail": "Yanıt metni ilk seçimin mesajında yaşar — corpus snippet soruları burada sona erer."
+ },
+ "lad-cu": {
+  "prompt": "Content Understanding iş akışını sırada put.",
+  "steps[0].label": "Analizleyici seç veya tanımla: şemayı doğal dilde açıkla (ContentAnalyzer(base_analyzer_id=..., field_schema=...))",
+  "steps[0].detail": "Önceden oluşturulmuş analizleyici id'leri (prebuilt-invoice, prebuilt-audio,...) yaygın etki alanlarını kapsar; bir özel ContentAnalyzer, field_schema aracılığıyla düz dilde istediğin alanları adlandırır — tanımladığı başka hiçbir kodun adı yoktur.",
+  "steps[1].label": "Kayıt et: client.begin_create_analyzer(...)",
+  "steps[1].detail": "Analizleyici tanımını, herhangi bir içeriğe karşı çağrılmadan önce uzun çalışan bir işlem olarak hazırlar — bir kerelik kurulum adımı, belgeler başına değil.",
+  "steps[2].label": "İçerik gönder: client.begin_analyze(analyzer_id=..., inputs=[AnalysisInput(url=file_url)])",
+  "steps[2].detail": "Her belge/görüntü/ses/video dosyası, zaten kayıtlı analizleyiciye karşı kendi begin_analyze çağrısını alır — her belgeler başına adım, step 2 değil.",
+  "steps[3].label": "Operasyonu yokla: poller.result()",
+  "steps[3].detail": "begin_analyze bir yoklayıcı döndürür; sonuç analizi çıktısı için result() yöntemini çağrı yap — analiz senkron değil, eşzamansız değildir (sınav bunu 'yoklayıcının ________ yöntemini çağrı yap' diye çağırır).",
+  "steps[4].label": "Sonucun yapılandırılmış JSON alanlarını oku",
+  "steps[4].detail": "Çıkarılan alanlar — satıcı adı, fatura tarihi, fatura toplam ve benzeri — yoklayıcının sonuç yüküne iner; bu Content Understanding'ün kendi işinin bittiği yerdir.",
+  "steps[5].label": "Dizinleme için Azure AI Search'e devret",
+  "steps[5].detail": "Content Understanding yalnızca çıkarır — asla dizinlemez veya üretmez; Azure AI Search, alım/RAG için CU'nun yapılandırılmış çıktısını dizinleyen ayrı bir aşağı akış servisidir."
+ },
+ "lad-genai": {
+  "prompt": "Adımları, oluşturma modelinin istemi metne dönüştürmesi sırasında put.",
+  "steps[0].label": "Tokenleştirme",
+  "steps[0].detail": "Giriş metni tokenler'e — sözcükler veya alt sözcükler — her biri modelin sözlüğündeki bir id'ye eşleştirilir; daha sonra hiçbir şey bu olmadan anlam taşımaz (Task 1.2).",
+  "steps[1].label": "Gömme",
+  "steps[1].detail": "Her token id, anlam kodlayan sayısal bir vektöre dönüştürülür — anlamsal benzerliği vektör uzaklığı olarak hesaplanabilir kılan aynı vektör alanı.",
+  "steps[2].label": "Transformer dikkat",
+  "steps[2].detail": "Öz dikkat katmanları her tokeni sıradaki diğer tüm tokenlere karşı ağırlıklandırır — 'çoğu modern foundation modeli' güçlendiren mekanik ve gömme vektörleri zaten var olması gerekir.",
+  "steps[3].label": "Sonraki token tahmini",
+  "steps[3].detail": "Model tek sonraki token için tüm sözlük üzerinde bir olasılık dağılımı çıkarır; sıcaklık ve top-p bu dağılımı bir token örneklenmeden önce yeniden şekillendirir.",
+  "steps[4].label": "Çözümlenmemiş çıktı",
+  "steps[4].detail": "Tahmin edilen token id'si metne geri çözülür ve döngü bir duruş koşulu'na kadar bir seferinde bir token tekrarlanır — perplexity bu adımın tahminlerinin tutulmuş metinle ne kadar eşleştiğini ölçer."
+ },
+ "lad-speech": {
+  "prompt": "Konuşma SDK çağrılarını çalıştırması gereken sırada put.",
+  "steps[0].label": "SpeechConfig(subscription=key, region=region)",
+  "steps[0].detail": "Her Konuşma SDK akışı burada başlar — sonraki tüm çağrıları kim doğrulandırır key/region (veya endpoint) çifti.",
+  "steps[1].label": "speech_config.speech_synthesis_voice_name = \\\"...\\\" ayarla",
+  "steps[1].detail": "Ses seçimi, config nesnesi üzerinde doğrudan ayarlanan bir özelliktir — sınavın DragonHD voice snippet'i bu satırı SpeechConfig'ten hemen sonra, diğer herhangi bir nesne oluşturulmadan önce ayarlar.",
+  "steps[2].label": "AudioConfig(...) — mikrofon, dosya veya varsayılan cihaz",
+  "steps[2].detail": "Ses adı özelliğinden bağımsız olarak oluşturulur, ancak hızlı başlatma snippet'leri bunu yalnızca config kurulumu tamamlandıktan sonra, tüketecek tanıyıcı/sentezleyiciden hemen önce oluşturur.",
+  "steps[3].label": "Tanıyıcı veya Sentezleyiciyi oluştur: SpeechRecognizer(speech_config, audio_config) / SpeechSynthesizer(speech_config)",
+  "steps[3].detail": "Her iki yapıcı da zaten oluşturulmuş speech_config'i alır (tanıyıcı da audio_config'i alır) — config'i yine de enjekte edebilecek bu noktadan sonra hiçbir şey yoktur.",
+  "steps[4].label": "recognize_once() / speak_text_async(text) çağrı yap",
+  "steps[4].detail": "recognize_once() kısa bir ifadeyi yakalar (vs. sürekli tanıma); speak_text_async() aslında metni çalar — eşzamansız gelecek/.get() deseni buraya aittir, son olarak, nesne var olduktan sonra."
+ },
+ "lad-voice": {
+  "prompt": "Klasik ses ajani ardışık hattını sırada put.",
+  "steps[0].label": "Konuşmadan metne: arayan'ın konuşulan sesini metne dönüştür",
+  "steps[0].detail": "Ardışık hat adımı bir — recognize_once() veya sürekli tanıma sesi yazıya aktarır, bunun üzerine herhangi bir akıl yürütme yapılmadan önce.",
+  "steps[1].label": "Dil / oluşturma yapay zekası işlemesi: transkripti üzerine akıl yürüt ve metin yanıtı üret",
+  "steps[1].detail": "Sohbet/ajan çağrısı transkripti üzerine akıl yürütür — bir tek çok modlu model (örn. ses giriş/çıktı sohbet dağıtımı) adım 1 ve 3'ü birlikte çökertebilecek adım ve Voice Live API, tüm üçünü tek düşük gecikme konuşmadan konuşmaya arayüzü ile değiştirmek üzere oluşturulmuş olandır.",
+  "steps[2].label": "Metinden konuşmaya: sentezleyen yanıtı sesine geri dönüştür",
+  "steps[2].detail": "speak_text_async() oluşturulan yanıtı çalar — klasik ardışık hatın son adımı, aynı zamanda adım 2'nin detayında adlandırılan tek çok modlu model veya Ses Canlı alternatifine katlana biliyor."
+ }
+}

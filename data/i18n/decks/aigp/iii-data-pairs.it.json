@@ -1,0 +1,74 @@
+{
+ "iii-dp-01": {
+  "a.text": "Utilizzato durante lo sviluppo per sintonizzare gli iper-parametri e catturare l'overfitting tra i turni di addestramento.",
+  "a.why": "Questo ruolo è ripetibile e iterativo — il modello viene sintonizzato contro di esso più e più volte, che è esattamente perché non può anche stare in per il verdetto finale.",
+  "b.text": "Congelato e intoccato fino al completamento di tutti i sintonizzazioni, quindi eseguito una volta per fornire la stima dell'errore finale e imparziale del modello.",
+  "b.why": "La valutazione del modello finale sul set rispetto al quale è stato sintonizzato — la trappola dell'esame registrata — produce una stima distorta. Solo un set che il processo di sintonizzazione non ha mai toccato può dare un numero finale imparziale."
+ },
+ "iii-dp-02": {
+  "a.text": "La versione esatta dello script ETL utilizzato per aggregare le feature di un modello di churn è registrata a ogni fase di trasformazione, dalla tabella grezza alla feature finale.",
+  "a.why": "Questo traccia il viaggio — ogni trasformazione che un dataset passa — e la versione dello script di trasformazione è il singolo pezzo più critico di questo metadata per la riproducibilità e il debug della deriva.",
+  "b.text": "Prima che qualsiasi trasformazione accada, la fonte originale del dataset, la catena di custodia e le condizioni di raccolta sono registrate per stabilire la sua autenticità.",
+  "b.why": "Questo è il certificato di nascita — origine e custodia — non il record di ciò che è stato successivamente fatto ai dati; quel record appartiene all'altro lato di questa coppia."
+ },
+ "iii-dp-03": {
+  "a.text": "Il rumore matematico calibrato viene aggiunto durante l'addestramento in modo che nessun singolo record di addestramento possa essere dimostrato di avere più di un effetto trascurabile sull'output del modello.",
+  "a.why": "Questa è una garanzia matematica sull'influenza, non su dove i dati viaggiano fisicamente — si applica indipendentemente dal fatto che i dati lascino mai la loro fonte.",
+  "b.text": "Ogni ospedale addestra localmente su i propri record di pazienti, e solo gli aggiornamenti risultanti — mai i record grezzi — viaggiano a un server centrale per l'aggregazione.",
+  "b.why": "Ciò che è protetto qui è quali dati lasciano il sito, non quanto un singolo record possa essere inferito da un output — i record grezzi non viaggiano mai, stop."
+ },
+ "iii-dp-04": {
+  "a.text": "Un documento standardizzato delinea la motivazione, la composizione, il processo di raccolta e gli usi consigliati di un dataset, prima che qualsiasi modello venga addestrato su di esso.",
+  "a.why": "Questo documenta la materia prima stessa, indipendentemente da qualsiasi modello che verrà successivamente addestrato su di esso.",
+  "b.text": "Lo scopo di una singola versione, i suoi dati di addestramento/validazione/test, le sue metriche di prestazione e i suoi limiti noti sono riepilogati per chiunque decida se distribuirlo.",
+  "b.why": "Questo è circoscritto a una versione specifica, non il dataset dietro di esso — un'etichetta di nutrizione per l'artefatto addestrato, distinto dall'ambito a livello di dataset dell'altro lato."
+ },
+ "iii-dp-05": {
+  "a.text": "Un attaccante lavora all'indietro dagli output di un sistema per ricostruire approssimazioni dei record effettivi su cui è stato addestrato.",
+  "a.why": "Questo attacco recupera il contenuto dei dati di addestramento da ciò che il sistema produce — ricostruzione, non un controllo sì/no.",
+  "b.text": "Un attaccante non ricostruisce nulla, solo conferma se i dati di una persona specifica erano inclusi nel set di addestramento a tutto.",
+  "b.why": "Questo attacco risponde a una domanda binaria di set-membership; non recupera mai il contenuto del record nel modo in cui l'altro lato fa."
+ },
+ "iii-dp-06": {
+  "a.text": "Un residente dell'UE ritira il consenso, e l'azienda deve cancellare i suoi record personali dai suoi sistemi.",
+  "a.why": "Questo rimuove i dati grezzi stessi in risposta a una richiesta di diritti — un argomento che i dati aiutano a addestrare il modello non sovrascrive il diritto di cancellazione una volta ritirato il consenso.",
+  "b.text": "Anche dopo che i record offensivi se ne sono andati, il modello stesso deve essere corretto perché ha già imparato modelli da dati che non avrebbero mai dovuto essere utilizzati.",
+  "b.why": "Questo rimuove ciò che un modello ha assorbito da dati utilizzati in modo improprio — un rimedio distinto, perché il modello può mantenere l'effetto molto dopo che i record sottostanti vengono cancellati."
+ },
+ "iii-dp-07": {
+  "a.text": "Una valutazione documentata collega le caratteristiche e la copertura dei dati al contesto di utilizzo previsto specifico del modello.",
+  "a.why": "Questo riguarda l'abbinamento dei dati a un utilizzo particolare, non l'età o il volume dei dati — un dataset grande e recente può comunque non superare questo controllo se non è mai stato valutato rispetto al caso d'uso effettivo.",
+  "b.text": "Il dataset viene controllato per confermare che rispecchia la popolazione a cui il modello verrà effettivamente applicato — trattato come il mitigatore di bias più importante dell'intera pipeline.",
+  "b.why": "Questa è una domanda di specchio-match sulla popolazione; semplicemente aumentare un dataset distorto con esempi sintetici non risolve un vero divario qui, perché la domanda di governance sottostante di se i dati originali fossero appropriati non ha mai avuto risposta."
+ },
+ "iii-dp-08": {
+  "a.text": "Un dataset viene controllato per confermare che non è stato alterato o corrotto in alcun punto tra la sua fonte originale e il suo uso attuale.",
+  "a.why": "Questa è una proprietà di protezione-da-alterazione, distinta da se il contenuto stesso è accurato o affidabile.",
+  "b.text": "Lo stesso dataset è separatamente controllato per confermare che rimane accurato e affidabile quando è condiviso e riutilizzato tra sistemi e ambienti diversi.",
+  "b.why": "Questo chiede se il contenuto stesso regge nei contesti; un dataset può essere perfettamente intatto mentre rimane stantio o incoerente in ciò che effettivamente dice."
+ },
+ "iii-dp-09": {
+  "a.text": "Il tasso di risultati positivi viene confrontato tra i gruppi protetti sulla distribuzione di output effettiva del modello, mondo reale.",
+  "a.why": "Questa metrica confronta i tassi di risultati aggregati tra i gruppi su dati come effettivamente stanno.",
+  "b.text": "L'attributo protetto di un candidato viene capovolto mentre ogni altro input rimane identico, e l'output viene controllato per qualsiasi cambiamento.",
+  "b.why": "Questo testa un singolo record rispetto al suo gemello ipotetico, non i tassi di risultato a livello di gruppo — un modello può passare il controllo aggregato mentre ancora non riesce a questo individuali."
+ },
+ "iii-dp-10": {
+  "a.text": "I valori di peso all'interno della rete vengono aggiornati attraverso la back-propagazione mentre l'addestramento riduce l'errore di predizione.",
+  "a.why": "Questi sono valori imparati che determinano come i dati di input vengono trasformati in output — non esistono in forma finale fino a quando l'addestramento accade.",
+  "b.text": "Il tasso di apprendimento è fisso dal team prima che l'addestramento inizi mai, e rimane intoccato mentre la rete impara.",
+  "b.why": "Questi sono scelte che una persona fa in anticipo per controllare come l'addestramento accade — input all'addestramento, non output di esso."
+ },
+ "iii-dp-11": {
+  "a.text": "Un modello di previsione delle vendite funziona quasi perfettamente sui dati storici su cui è stato addestrato, quindi fa errori significativi predicendo le vendite per prodotti genuinamente nuovi.",
+  "a.why": "Il modello ha memorizzato le stranezze specifiche ai suoi dati di addestramento piuttosto che imparare modelli che trasferiscono — forte sul familiare, debole sul nuovo.",
+  "b.text": "Un modello di churn con pochissimi parametri e solo una manciata di feature funziona male sia sui dati su cui è stato addestrato che su nuovi clienti.",
+  "b.why": "Prestazioni povere ovunque, anche sui dati di addestramento stesso, segnale che il modello non ha mai avuto abbastanza complessità per catturare il modello in primo luogo — la modalità di fallimento opposta alla memorizzazione troppo bene."
+ },
+ "iii-dp-12": {
+  "a.text": "Un sistema di riconoscimento vocale addestrato su solo poche migliaia di clip audio fatica a catturare la variabilità del discorso del mondo reale.",
+  "a.why": "Questo chiede se ci sono abbastanza dati, stop, per imparare modelli significativi a tutti — troppi pochi dati qui significa che il modello non ha mai avuto una possibilità di generalizzare.",
+  "b.text": "Un'AI medica addestrata su dati da un solo paese funziona bene nel suo pilota, quindi fatica una volta espanso a pazienti con sfondi genetici diversi e sistemi di assistenza sanitaria altrove.",
+  "b.why": "Questo chiede se un dataset che era abbastanza per un pilota può ancora supportare l'espansione in nuove popolazioni e contesti — una domanda distinta da se ci sono abbastanza dati per il pilota in primo luogo."
+ }
+}

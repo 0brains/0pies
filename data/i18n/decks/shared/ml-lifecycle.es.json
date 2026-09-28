@@ -1,0 +1,25 @@
+{
+  "ml-lifecycle": {
+    "prompt": "Ordena el ciclo de vida desde el objetivo de negocio hasta el monitoreo en producción.",
+    "steps[0].label": "Identificación del Objetivo de Negocio",
+    "steps[0].detail": "Todo lo descendente hereda esto. Sin un objetivo de negocio no hay forma de decir si el modelo es bueno.",
+    "steps[1].label": "Encuadre del Problema de ML",
+    "steps[1].detail": "Traduce el objetivo a una tarea aprendible: qué se predice, de qué, y qué cuenta como éxito.",
+    "steps[2].label": "Recopilación de Datos",
+    "steps[2].detail": "Ensambla la materia prima, y establece su procedencia y uso permitido antes de que se dependa de ella.",
+    "steps[3].label": "Preprocesamiento de Datos",
+    "steps[3].detail": "Limpia, une, deduplica y maneja valores faltantes, así el modelo aprende señal en lugar de artefactos.",
+    "steps[4].label": "Ingeniería de Características",
+    "steps[4].detail": "Forma entradas en representaciones que el algoritmo puede usar. A menudo la mayor palanca individual en precisión.",
+    "steps[5].label": "Entrenamiento del Modelo",
+    "steps[5].detail": "Ajusta parámetros en la división de entrenamiento. Barato de repetir, así que viene después del trabajo de datos costoso, no antes.",
+    "steps[6].label": "Ajuste de Hiperparámetros",
+    "steps[6].detail": "Busca en las configuraciones que el modelo no puede aprender por sí mismo, evaluadas en datos de validación en lugar de prueba.",
+    "steps[7].label": "Evaluación del Modelo",
+    "steps[7].detail": "Mide contra datos retenidos y la métrica de negocio. Esta es la puerta, no una formalidad.",
+    "steps[8].label": "Despliegue del Modelo (Inferencia y Predicción)",
+    "steps[8].detail": "Sirve predicciones para solicitudes reales, con el mismo preprocesamiento que entrenamiento o los resultados no coincidirán.",
+    "steps[9].label": "Monitoreo del Modelo",
+    "steps[9].detail": "Observa entradas, salidas y calidad en producción. Aquí es donde emerge el drift, y nunca termina."
+  }
+}

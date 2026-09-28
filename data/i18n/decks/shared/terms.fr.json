@@ -1,0 +1,53 @@
+{
+ "terms": {
+  "hint": "Déplacez chaque définition sur le terme qu'elle définit."
+ },
+ "terms-01": {
+  "label": "Le large domaine de la construction de systèmes qui exécutent les tâches associées à l'intelligence humaine.",
+  "why": "L'IA est le domaine parapluie : les systèmes experts basés sur des règles, la vision par ordinateur, la robotique, l'apprentissage automatique et les modèles génératifs peuvent tous être de l'IA. L'apprentissage automatique est une façon de construire l'IA, pas un synonyme du domaine entier."
+ },
+ "terms-02": {
+  "label": "Un sous-ensemble de l'IA dans lequel les systèmes apprennent les motifs à partir des données au lieu de s'appuyer uniquement sur des règles explicites.",
+  "why": "Par exemple, un filtre anti-spam peut déduire les motifs des messages étiquetés plutôt que d'exiger qu'un développeur énumère chaque règle de spam. L'indice d'examen clé est l'amélioration à partir des données ou de l'expérience."
+ },
+ "terms-03": {
+  "label": "Un sous-ensemble du ML qui utilise des réseaux de neurones multicouches pour apprendre les représentations complexes.",
+  "why": "Un modèle de vision peut apprendre les arêtes dans les couches précoces, les formes dans les couches intermédiaires, et les objets dans les couches ultérieures. Il se distingue de l'apprentissage automatique plus large par son utilisation de réseaux de neurones profonds et ses besoins généralement plus grands en données et calcul."
+ },
+ "terms-04": {
+  "label": "L'IA qui crée un nouveau contenu tel que du texte, des images, de l'audio, de la vidéo ou du code.",
+  "why": "Un modèle textuel rédige un courrier et un modèle de diffusion crée une image sont génératifs car ils synthétisent une nouvelle production. Prédire si un courrier existant est du spam est de la classification discriminative à la place."
+ },
+ "terms-05": {
+  "label": "La représentation apprise qui mappe les entrées aux prédictions ou aux résultats générés.",
+  "why": "Après l'entraînement, le modèle est l'artefact utilisé pour l'inférence. Par exemple, un modèle de prix de maison applique les relations apprises aux caractéristiques d'une nouvelle propriété pour estimer son prix."
+ },
+ "terms-06": {
+  "label": "La procédure utilisée pour apprendre les motifs, optimiser un modèle ou effectuer un calcul.",
+  "why": "La descente de gradient est un algorithme d'apprentissage, tandis que le réseau entraîné qu'il produit est le modèle. La distinction est le processus par rapport à l'artefact appris."
+ },
+ "terms-07": {
+  "label": "Une variable d'entrée ou un attribut mesurable fourni à un modèle.",
+  "why": "Pour un modèle de prix de maison, la surface au sol, le code postal et le nombre de chambres sont des caractéristiques car elles entrent dans le modèle comme preuve. Le prix de vente est l'étiquette à prédire, tandis que les paramètres sont les valeurs internes que le modèle apprend pendant l'entraînement."
+ },
+ "terms-08": {
+  "label": "La réponse cible ou souhaitée connue attachée à un exemple d'entraînement supervisé.",
+  "why": "Dans la détection du spam, la réponse spam ou non-spam de chaque courrier d'entraînement est son étiquette. Une étiquette est la cible que le modèle apprend à prédire ; les caractéristiques sont la preuve utilisée pour faire cette prédiction."
+ },
+ "terms-09": {
+  "label": "Une valeur, comme un poids de réseau de neurones, apprise à partir des données d'entraînement.",
+  "why": "Un poids de réseau de neurones est ajusté automatiquement à mesure que l'entraînement minimise l'erreur. Les paramètres sont appris par le modèle, contrairement aux hyperparamètres tels que le taux d'apprentissage que les praticiens choisissent avant ou autour de l'entraînement."
+ },
+ "terms-10": {
+  "label": "Un paramètre de formation ou de modèle choisi en dehors du processus d'apprentissage, tel que le taux d'apprentissage ou la profondeur de l'arbre.",
+  "why": "Les exemples incluent le taux d'apprentissage, la taille du batch, la profondeur de l'arbre et la force de la régularisation. Ces paramètres contrôlent la structure de l'entraînement ou du modèle et sont généralement sélectionnés avec les données de validation plutôt qu'appris comme poids de modèle."
+ },
+ "terms-11": {
+  "label": "Le processus d'ajustement des paramètres du modèle pour réduire l'erreur sur les exemples.",
+  "why": "Pendant l'entraînement, le système compare les résultats avec un signal d'apprentissage, calcule l'erreur et met à jour les paramètres. C'est la phase d'apprentissage ; l'inférence utilise le modèle fixe résultant sur les nouvelles entrées."
+ },
+ "terms-12": {
+  "label": "Utiliser un modèle entraîné pour produire une prédiction, une décision, un embedding ou un résultat généré.",
+  "why": "Un modèle de fraude déployé évaluant une nouvelle transaction de carte effectue l'inférence. Aucun apprentissage du modèle n'est requis pour cette demande ; le modèle entraîné est appliqué à l'entrée précédemment invisible."
+ }
+}

@@ -1,0 +1,108 @@
+{
+ "cu-001": {
+  "label": "Bir fatura PDF'ini analiz et ve çıkarılan satıcı, toplam ve son tarih alanlarını oku",
+  "sub": "prebuilt-invoice",
+  "why": "prebuilt-invoice, fatura belgelerinden yapılandırılmış alanları çıkarır — sınavın en çok sınanması yapılan önceden oluşturulmuş analizleyici (7 bahis)."
+ },
+ "cu-002": {
+  "label": "Doğal dile kendi alan şemanı tanımla ve bu alanları sözleşmelerden çıkar",
+  "sub": "custom analyzer via begin_create_analyzer",
+  "why": "Özel analizleyiciler, tanımladığın bir alan şemasından oluşturulur — Content Understanding'in düz dilli alan açıklaması, bunu Document Intelligence önceden oluşturulmuş'larından ayıran şeydir."
+ },
+ "cu-003": {
+  "label": "Fotoğraflanmış ekipman etiketlerinden metin ve tanımlanan nesneleri çıkar",
+  "sub": "prebuilt-image",
+  "why": "prebuilt-image, durağan görüntülerden metni ve nesneleri diğer tüm modaliyeleri gibi aynı analizleyici iş akışından çıkarır."
+ },
+ "cu-004": {
+  "label": "Kaydedilmiş destek çağrılarından transkript artı özet ve hoparlör dökümü al",
+  "sub": "prebuilt-audio",
+  "why": "Content Understanding'in ses analizleyicileri transkriptleri, özetleri ve konuşmacıları döndürür — hiçbir zaman konuşma sentezini değil."
+ },
+ "cu-005": {
+  "label": "Kaydedilmiş eğitim oturumlarını bölümlendir ve transkriptlerini ve görsel olaylarını arama için dizinle",
+  "sub": "prebuilt-videoSearch",
+  "why": "Video analizleyicileri segmentleri, transkriptleri ve görsel olayları döndürür; *Search varyantları, içeriği CU çıkarırsa arama yapmak için değil, alım için hazırlarlar — Azure AI Search, CU'nun çıkardığı şeyi dizinler."
+ },
+ "cu-006": {
+  "label": "Belge yapısı ile metni, tabloları ve seçim işaretlerini döndür — alan semantiği yok",
+  "sub": "prebuilt-layout",
+  "why": "Layout, metni, tabloları, seçim işaretlerini ve yapıyı çıkarır; Read tarzı OCR, yalnızca metindir — histack'ın CU Read vs Layout ayrımı."
+ },
+ "cu-007": {
+  "label": "Karışık bir satıcı form'ları grubu, önceden tanımlanmış bir alan şemasından başlamadan gevşek anahtar-değer çiftleri çekilir",
+  "sub": "prebuilt-documentFields",
+  "why": "prebuilt-documentFields, etki alanına özgü bir şema gerektirmeden belgelerdeki genel anahtar-değer çiftlerini çıkarır — prebuilt-invoice'ın sabit fatura alanlarından farklıdır."
+ },
+ "cu-008": {
+  "label": "Henüz şema'sı yapılmamış bir form türü için özel bir analizleyici oluşturmadan önce, Content Understanding'den alan şemasını öner, sonra yeni analizleyiciyi genel belge analizleyicisine dayandır",
+  "sub": "prebuilt-documentFieldSchema → prebuilt-document",
+  "why": "prebuilt-documentFieldSchema, henüz şema'sı yapmadığın bir belge türü için alanları önerir; prebuilt-document, yeni bir özel belge analizleyici tanımlarken kullanılacak base_analyzer_id'dir — aynı özel yapım iş akışında iki ayrı id."
+ },
+ "cu-009": {
+  "label": "Python hızlı başlatmasını bir ürün fotoğrafına karşı çalıştır ve sonucun Özet alanından oluşturulan açıklamayı oku",
+  "sub": "prebuilt-imageSearch",
+  "why": "prebuilt-imageSearch, açıklayıcı görüntü çıktısı için hızlı başlatma analizleyicisidir — sonucu doğal dilli açıklamayı tutan bir Özet alanı içerir."
+ },
+ "cu-010": {
+  "label": "Kontrol paneli ekran görüntülerinin bir grubu dışında bir grafiğin Başlık ve GrafikTürü alanlarını çeken özel bir analizleyici oluştur",
+  "sub": "custom analyzer via base_analyzer_id=\"prebuilt-image\"",
+  "why": "Özel görüntü analizleyicileri, bir alan şemasını katmanlaştırmadan önce base_analyzer_id'yi prebuilt-image'a ayarlar — grafik ve ekran görüntüsü çıkarması için belgelenen desen."
+ },
+ "cu-011": {
+  "label": "Perakende denetiminden raf fotoğraflarını analiz et ve ürün sayısı, marka varlığı ve stok dışı göstergeleri için yapılandırılmış alanları döndür",
+  "sub": "prebuilt-image",
+  "why": "Content Understanding'in görüntü analizleyicisi, fotoğraflardan şema tarafından tanımlanmış yapılandırılmış alanları döndürür — sınavın doğrudan test ettiği perakende raf denetimi senaryosu."
+ },
+ "cu-012": {
+  "label": "analyzer_id=\"prebuilt-image\" ile bir fotoğraf URL'sine karşı begin_analyze'ı çağıran, sonra sonuçtan algılanan nesneleri okuyan bir Python istemci yağla",
+  "sub": "prebuilt-image",
+  "why": "begin_analyze(analyzer_id=..., inputs=[AnalysisInput(url=...)]) çağrı deseni modaliteler arasında aynıdır — yalnızca analizleyici id'si değişir ve prebuilt-image doğrudan (arama dışı) görüntü analizleyicisidir."
+ },
+ "cu-013": {
+  "label": "Bir çağrı kayıt URL'sine karşı begin_analyze'ı çağıran hafif bir Python istemci yağla, bir transkript ve özetini alım dizini için hazır durumdayken geri çek",
+  "sub": "prebuilt-audioSearch",
+  "why": "prebuilt-audioSearch, SDK'ın hızlı başlatma snippet'inde belgelenmiş analizleyici id'sidir — *Search soneki çıktıyı prebuilt-audio'nun alım için hazırlık olmayan doğrudan çıkarmasından ayıran işareti."
+ },
+ "cu-014": {
+  "label": "Podcast bölümleri grubundan hoparlöre etiketlenmiş, kesin olarak zamanlanmış transkript ifadelerini çek",
+  "sub": "transcriptPhrases",
+  "why": "transcriptPhrases, konuşmacı tanımlaması ve zamanlaması bilgisini taşıyan çıktı alanıdır — analizleyici id'sinin kendisinden ayrı doğrudan bir ses çıkarma çıktısı."
+ },
+ "cu-015": {
+  "label": "Bir podcast MP3'i Content Understanding'e göndermek, video girdileri için kullanılan aynı değere contents nesnelerinin kind değerini ayarladığını tanı",
+  "sub": "kind: \"audioVisual\"",
+  "why": "Yalnızca ses ve video girdileri, içerik şemasında kind: \"audioVisual\" kullanır — farklı bir 'audio' tür bekleyen herkesi tuzağa düşüren paylaşılan bir değer."
+ },
+ "cu-016": {
+  "label": "Bir sesli posta gelen kutusundan yapılandırılmış bir transkript çekmek konuşmanın metne yakalandığını, metni asla konuşmaya çevrilmediğini doğrula",
+  "why": "Content Understanding'in ses analizleyicileri, mevcut konuşmayı yapılandırılmış çıktıya yazıya aktarır — hiçbir zaman yeni konuşma sentezlemezler; bu işlem Content Understanding'e değil Azure AI Speech'e aittir."
+ },
+ "cu-017": {
+  "label": "Yüklenen kaydedilmiş bir ürün demosunu, herhangi bir aşağı akış işlemesi çalıştırılmadan önce mantıksal sahne segmentlerine böl",
+  "sub": "enableSegment",
+  "why": "enableSegment, görüntüyü sahneler gibi mantıksal segmentlere bölen analizleyici şema özelliğidir — ses veya belge analizleyicisi değil, bir video analizleyicisi kontrolü."
+ },
+ "cu-018": {
+  "label": "Pazarlama klibini analiz ettikten sonra, transkriptinin ve görsel içeriğinin yapılandırılmış markdown özetini döndür",
+  "sub": "prebuilt-videoSearch",
+  "why": "prebuilt-videoSearch sonuçları, segment başına transkript ve görsel içeriği özetleyen bir markdown alanını ortaya çıkarır — video için SDK'ın belgelenmiş geri okuma alanıdır."
+ },
+ "cu-019": {
+  "label": "Yüklenen bir kayıttan keyframe'leri ve görsel olayları çıkarmanın mevcut olan görüntüler üzerinde çalıştığını, yeni kareler oluşturmadığını doğrula",
+  "why": "Content Understanding'in analizleyicileri, mevcut olan görüntülerden keyframe'leri, transkriptleri ve görsel olayları çıkarırlar — sentetik kareler oluşturmazlar; bu tamamen farklı bir AI hizmeti kategorisidir."
+ },
+ "cu-020": {
+  "label": "analyzer_id=\"prebuilt-videoSearch\" ile yüklenen bir MP4 URL'sine karşı begin_analyze'ı çağıran bir Python istemci yağla",
+  "sub": "prebuilt-videoSearch",
+  "why": "begin_analyze(analyzer_id=\"prebuilt-videoSearch\", inputs=[AnalysisInput(url=...)]) çağrısı, video çıkarması başlatmak için belgelenmiş SDK desenidir."
+ },
+ "cu-modality-grid": {
+  "hint": "Kaynak dosyanın gerçekte ne olduğunu sor, sonra tam önceden oluşturulmuş-* analizleyici id'si için alt satırı kontrol et — id'si kendi modalitesini (belge/görüntü/ses/video) adlandırır ve Search soneki alanları modaliteyi değiştirmek yerine alım için hazırlar.",
+  "note": "Content Understanding her zaman çıkarır — asla üretmez veya dizinlemez. Çıkarılan içeriği Azure AI Search'e dökümü bir aşağı akış adımıdır, CU'nun kendisinin yapmadığı bir şeydir.",
+  "zones[0].def": "PDF'ler, faturalar, sözleşmeler ve serbest form kâğıtlar Content Understanding yapılandırılmış alanlara, tablolara ve metne dönüştürür.",
+  "zones[1].def": "Fotoğraflar, ekran görüntüleri ve grafikler Content Understanding yapılandırılmış alanlara, açıklamalara ve algılanan nesnelere dönüştürür.",
+  "zones[2].def": "Kaydedilmiş konuşma — çağrılar, podcast'ler ve sesli postalar — Content Understanding transkriptlere, özetlere ve konuşmacı etiketlerine dönüştürür.",
+  "zones[3].def": "Kaydedilmiş görüntüler Content Understanding bölümlendirir, yazıya aktarır ve arama için hazırlar."
+ }
+}

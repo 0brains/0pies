@@ -1,0 +1,50 @@
+{
+ "genai-ops": {
+  "hint": "Drag each situation onto the response it calls for. Some responses on the board are there to tempt you."
+ },
+ "genai-ops-01": {
+  "label": "Answers read well but include claims absent from the retrieved policy passages.",
+  "sub": "Unsupported Claims",
+  "why": "First determine whether claims are supported, then tighten evidence use, refusal behavior, and citation validation. Trade-off: A larger model may improve fluency without solving missing or ignored evidence."
+ },
+ "genai-ops-02": {
+  "label": "The answer generator cannot use the right fact because the relevant passage is absent from the retrieved set.",
+  "sub": "Correct Evidence Never Appears",
+  "why": "Retrieval recall isolates whether chunking, embeddings, filters, query rewriting, or candidate count misses needed evidence. Trade-off: Generation changes cannot recover evidence that never enters the context."
+ },
+ "genai-ops-03": {
+  "label": "The relevant passage is present, but it is buried among many distracting chunks.",
+  "sub": "Too Much Irrelevant Context",
+  "why": "Better filters, hybrid retrieval, and reranking reduce noise while preserving the best evidence. Trade-off: Increasing candidate count can improve recall but may worsen precision, latency, and token cost."
+ },
+ "genai-ops-04": {
+  "label": "A prompt change improved test examples but degraded several important customer workflows.",
+  "sub": "Quality Varies After Release",
+  "why": "A versioned representative evaluation set detects regressions across use cases before release. Trade-off: Human review remains valuable when guided by a rubric and sampled across the real distribution."
+ },
+ "genai-ops-05": {
+  "label": "An LLM judge consistently scores longer answers higher even when concise answers are correct.",
+  "sub": "Evaluator Prefers Verbose Answers",
+  "why": "LLM judges can have position, verbosity, and self-preference biases and must be calibrated with human judgments. Trade-off: Automated judging remains useful for scale after its rubric and bias are validated."
+ },
+ "genai-ops-06": {
+  "label": "Usage is steady, but average input context and output length have tripled.",
+  "sub": "Interactive Cost Spike",
+  "why": "Token telemetry exposes the direct cost driver; retrieve less noise, summarize history, cache stable context, and cap output. Trade-off: Provisioned throughput helps predictable high utilization, not wasteful prompt growth by itself."
+ },
+ "genai-ops-07": {
+  "label": "Many users ask semantically equivalent questions about unchanged public information.",
+  "sub": "Slow but Repeated Answers",
+  "why": "A carefully keyed cache can reduce latency and token spend for equivalent requests when freshness and access boundaries are respected. Trade-off: Do not cache sensitive, personalized, rapidly changing, or insufficiently isolated responses."
+ },
+ "genai-ops-08": {
+  "label": "A support agent calls the same failing API until its execution budget is exhausted.",
+  "sub": "Agent Repeats a Tool Call",
+  "why": "Bounded retries, explicit error handling, idempotency, observability, and human escalation prevent runaway loops. Trade-off: Improving tool descriptions helps selection but does not replace runtime limits and failure controls."
+ },
+ "genai-ops-10": {
+  "label": "A medical support model is uncertain and the cost of a wrong recommendation is severe.",
+  "sub": "High-Stakes Low Confidence",
+  "why": "Confidence thresholds, abstention, evidence display, and qualified human review are appropriate for consequential uncertainty. Trade-off: Human oversight needs clear responsibility, useful context, and measured review quality rather than ceremonial approval."
+ }
+}

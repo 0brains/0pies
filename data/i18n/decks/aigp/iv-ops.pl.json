@@ -1,0 +1,105 @@
+{
+ "iv-ops": {
+  "hint": "To są wszystkie obowiązki czasu wdrażania — system jest już na żywo. Pytaj, które stojące zobowiązanie scena egzekwuje, a nie czy coś poszło nie tak.",
+  "note": "Zapewnienie przed wydaniem (recenzje gotowości, testowanie zanim system kiedykolwiek wysyła) należy do innej gry. Wszystko na tej tablicy dzieje się po go-live, na bazie powtarzającej się lub wyzwalanej.",
+  "zones[0].def": "Nazwane, bieżące prawne obowiązek śledzenia wydajności, sprawiedliwości i zgodności živego systemu wobec wstępnie ustawionych metryk i progów, z regułami eskalacji dla kiedy wyniki spadają poza nimi. To jest sam plan monitorowania — nie matematyka dryfu za wszelkie metryki, i nie niezależny check, który później weryfikuje plan faktycznie był następowany.",
+  "zones[1].def": "Kontrole, które zatrzymują wdrożone dane wyjściowe lub możliwości systemu, które mają być przeznaczyć na użytek, odbiorcy lub populacji, którą oryginalna zatwierdzenie nigdy nie obejmowała — prognozowanie przeznaczyć i ograniczenie go zanim to już jest publiczne.",
+  "zones[2].def": "Pre-agreed zawartość i kanały dla tego, co organizacja mówi regulatorom, użytkownikom i publiczności o živym systemie — proaktywne (zawiadomienia przejrzystości, karty systemowe) i reaktywne (potwierdzenie żywego problemu) — wyraźnie różne od wewnętrznego dochodzenia oświadczeń opisują.",
+  "zones[3].def": "Pre-written uprawnienia, wyzwalacze i kryteria ponownego uruchomienia dla ściągnięcia živego systemu całkowicie w tryb offline (deaktywacja) lub ograniczenia go do mniej regionów lub cech (lokalizacja) — zatrzymać-lub-ograniczyć decyzję z udokumentowanymi warunkami, aby wznowić, nie techniczny fix, który następuje.",
+  "zones[4].def": "Przygotowywanie ludzi, którzy działają živym systemem lub polegają na jego wynikach — instrukcja roli specyficznej, symulowana praktyka i zalogowana atestacja — aby mogli złapać błędny wynik i wiedzą, kiedy go przesłonić, odnowione na skalę zamiast dostarczane raz na uruchamianie.",
+  "zones[5].def": "Wykrycie, rejestracja, triage i zamknięcie żywych problemów systemowych, wielkości według ścieżki — od mały zalogowany skargę śledzony dla wzoru, poprzez formalną odpowiedź z zawarciem, analizą głównej przyczyny i akcją korekcyjną.",
+  "zones[6].def": "Zaplanowana, niezależna weryfikacja, że żywe systemy kontroluje nadal posiadaj — powtarzające się recenzje zgodności i testowanie adversarial uruchamianie po uruchamianiu, na skalę lub powiązane z główną zmianą — wyraźnie różne od jednorazowej oceny gotowości uruchamiania przed systemem kiedykolwiek wysyła."
+ },
+ "iv-ops-01": {
+  "label": "Dostawca cicho zamienia nową wersję modelu, bez powiadomienia zespołowi, który go wdrożył.",
+  "why": "Post-market monitorowanie to stojące prawne obowiązek śledzenia živego systemu względem jego linii bazowej; niezapowiedziany swap wersji to niepowodzenie planu monitorowania, wyraźnie różne od zarządzania problemami i incydentami, które tylko otwiera plik, gdy ktoś zauważył wynikającą szkodę."
+ },
+ "iv-ops-02": {
+  "label": "Kwartalna recenzja śledzi dryf dystrybucji cech, problemy z jakością danych przychodzących i opóźnienie/obciążenie obliczeniowe — nigdy oryginalny zestaw treningowy, z którym model wysłał.",
+  "why": "Oficjalne kalibracja: metryki monitorowania produkcji to dryf danych, jakość danych i sygnały opóźnienia/obliczeniowe — nigdy historyczne dane treningowe. Ustawienie, co jest śledzone, jest zadaniem tej strefy; niezależnie ponowne sprawdzenie, że plan faktycznie był następowany, jest zadaniem Periodic audits & red teaming."
+ },
+ "iv-ops-03": {
+  "label": "Reguły eskalacji kierują każdą metrykę, która przekracza próg prosto do nazwanego właściciela, który może nakazać wycofanie się lub powiadomienie regulatora.",
+  "why": "Plan monitorowania nazwie, kto działa i co robią, gdy próg jest naruszony; zarządzanie problemami i incydentami podnosi się dopiero po tej eskalacji opaleniu, aby zarejestrować i triage konkretny problem, który nazwie."
+ },
+ "iv-ops-04": {
+  "label": "Narzędzie planowania, zbudowane do kadr zmian, cicho zmienia się na punktację wydajności poszczególnych pracowników.",
+  "why": "Przeznaczyć na niezatwierdzony użytek wymaga protokołów zgody i ograniczeń użytku zanim to będzie; \"rozsądnie przewidywalny nieużytek\" powinno wiążą dostawców i wdrażających podobnie, w odróżnieniu od zarządzania problemami i incydentami, które tylko angażuje gdy skarga już powierzchni."
+ },
+ "iv-ops-05": {
+  "label": "Osiemnaście miesięcy w wdrażanie, zespół biegnie zaplanowaną ćwiczenie drugiego rzędu myślenia jako część bieżących zarządzania, mapując kto inny może być teraz podłączając wyjście tego systemu do własnego przepływu pracy.",
+  "why": "Prognozowanie przeznaczyć i efekty drugiego rzędu to powtarzająca się działalność zarządzania post-wdrażaniem, szersza niż punkt w czasie ocena wpływu i różna od Periodic audits & red teaming's testowania adversarial, który bada atakę, nie dla legalnie wyglądającego ponownego użytku oryginału zatwierdzenie nigdy nie pokrywał."
+ },
+ "iv-ops-06": {
+  "label": "Każdy wyjście opuszczające API nosi tag wersji modelu i flagę 'nie walidowana dla decyzji zatrudnienia lub kredytu', a każdy nowy przypadek użytku wyzwala świeży przegląd przed ponownym użyciem dozwolony.",
+  "why": "Markery pochodzenia plus ponowne użyteczne zatwierdzenie bramę stop bezpieczeństwo skomplikowanie poprzez innego zespołu przepływu pracy; kontrola żyje w jak dane wyjściowe mogą podróżować, wyraźnie różne od Komunikacja zewnętrzna, co mówi się po problemie już widocznym dla outsiderów."
+ },
+ "iv-ops-07": {
+  "label": "Skarga dotycząca błędnej zautomatyzowanej decyzji staje się wirusowa podczas nocy.",
+  "why": "Potwierdź publicznie naraz, że problem jest znany i badany; czekanie na wewnętrzną pracę głównej przyczyny zarządzania problemami i incydentami na koniec tylko zwiększa uszkodzenie reputacyjne."
+ },
+ "iv-ops-08": {
+  "label": "Oświadczenie publiczne ujawnia cel i znane ograniczenia systemu, i zatrzymuje się z metody, która wyprodukowała flagowaną decyzję.",
+  "why": "Ujawnienie obejmuje zamierzone cel, możliwości i ograniczenia, ale metody własnościowe pozostają z każdego oświadczenia publicznego — granica zakresu na tym, co ta strefa mówi, wyraźnie różne od etykiety ponownego użytku, którą Secondary-use control znaczki na wyjściu zanim kiedykolwiek podróżuje."
+ },
+ "iv-ops-09": {
+  "label": "Regulatorzy otrzymują pełny pakiet dowodów — ocena wpływu, wyniki monitorowania, nazwane właściciele akcji korekcyjnej — natomiast oświadczenie publiczne pozostaje w zwykłym języku bez technicznej głównej przyczyny jeszcze.",
+  "why": "Ten sam podstawowy zapis zostaje dostosowany za odbiorcę tutaj: regulatorzy otrzymują dowody, publiczność otrzymuje odpowiedzialność i następne kroki — nigdy odwrotnie, i nigdy surowe znalazki Periodic audits & red teaming ćwiczenie wyprodukowało do tylko wewnętrznego użytku."
+ },
+ "iv-ops-10": {
+  "label": "Pre-written progi dokładnie nazwę kto może ściągnąć živy system w tryb offline, i kryteria, która musi być spełniona zanim to zrestartuje.",
+  "why": "To jest protokół wyłącznika: pre-agreed uprawnienia i kryteria ponownego uruchomienia, wyraźnie różne od zarządzania problemami i incydentami natychmiast zawierać się ruch, co izoluje system mid-problem bez potrzeby tej strefy udokumentowanego znaku do wznowienia. Metodologia algorytmiczna to nazwane nie-czynnik w decyzji."
+ },
+ "iv-ops-11": {
+  "label": "Nowe prawo prywatności w jednym regionie oznacza system zatrzymuje się tam, gdy pozostaje wszędzie indziej, pod pre-documented, reversible polityka.",
+  "why": "Selektywna, ograniczona do jurysdykcji ograniczenie to inny ruch z pełnym wyłącznikiem, ale ta strefa posiada oba koniec tej samej kontroli — całkowity stop i ograniczenie regionalne — zamiast podzielić je na oddzielne gry."
+ },
+ "iv-ops-12": {
+  "label": "Predykcyjny system konserwacji obsługujący krytyczną infrastrukturę jest stopniowy wycofywane w etapach, z zapamiętywaniem człowieka działającym obok, aż przejście jest kompletna.",
+  "why": "Gradualne wind-down z planowaniem ciągłości należy tutaj, ponieważ wyzwalacz to stojące obawy bezpieczeństwa będące zarządzane na skalę, w odróżnieniu od zarządzania problemami i incydentami, którego zawierać się krok reaguje na jeden problem dzieje się teraz."
+ },
+ "iv-ops-13": {
+  "label": "Klinicyści zachowują źle odczytywanie wyników zaufania sztucznej inteligencji, więc zespół aranżuje szkolenie oparte na symulacji z bieżącym mentor pairing.",
+  "why": "Instrukcja specyficzna dla roli z praktyką praktyczną i ciągłym wsparciem rozwiązuje lukę umiejętności i zaufania, którą test certyfikacji jednorazowej byłyby tylko testowanie wiedzy w stosunku, nie budować; to jest stojąca program, nie sama wyświetlacza wyniku zaufania, co jest funkcją produktu."
+ },
+ "iv-ops-14": {
+  "label": "Underwriters są powiedziani, aby zastosować ich własny osąd do początkowej rekomendacji modelu zanim stanie się ostateczna.",
+  "why": "To jest zawyczaj nadzoru człowieka program ma zamiar zainstalować; prawo-do-odwołania powiadomienie lub ankieta sprzężenia zwrotnego są bardziej pasywne i nie miej osąd osoby przed zautomatyzowanym wyjścia sposób to robi."
+ },
+ "iv-ops-15": {
+  "label": "Przed odnowieniem dostępu do systemu, każdy recenzent przechodzi wiertło scenariusza i podpisuje atestację, potwierdzając rozumie oświadczane limity narzędzia.",
+  "why": "Obowiązkowa, zalogowana atestacja powiązana z odnowionym dostępem jest to, co sprawia, że to kontrola wymuszalna zamiast jednorazowej orientacji — dowód audytor może sprawdzić, w odróżnieniu od kanałów raportowania zarządzania problemami i incydentami, które istnieją do powierzchni problem, nie certyfikować gotowość wcześnie."
+ },
+ "iv-ops-16": {
+  "label": "Powtarzające się nisko-ważności błędy prognozy są rejestrowane i obserwowane dla wzoru zanim ktokolwiek eskalować.",
+  "why": "To jest niska toru ścieżka — rejestrowany, triaged i trended, eskalujący tylko jeśli wzór utrzymuje się. Podział od wyższego ścieżki ścieżki zwrócić się na skalę szkody i ekspozycji prawnej, nie na tym czy błąd w ogóle się wydarzył; pozostaje tutaj zamiast przechodzenia do Periodic audits & red teaming, który weryfikuje kontroluje na skalę, nie na per-błąd podstawa."
+ },
+ "iv-ops-17": {
+  "label": "Wykrywanie oszustw dziką nad-flagowaniem legalnych transakcji; bardzo pierwszy ruch jest do ściągnięcia system w tryb offline zanim ktokolwiek uruchamia pracę głównej przyczyny.",
+  "why": "Zawierać się — natychmiast izoluje system — to ta strefa pierwszy kroki odpowiedź wewnątrz żywy problem, wyraźnie różne od Deactivation & localization, która posiada pre-agreed uprawnienia i udokumentowany kryteria ponownego uruchomienia, które sprawia, że zamknięcie legalnym i reversible w pierwszym miejscu."
+ },
+ "iv-ops-18": {
+  "label": "Biased ustalenia siedzi w 1.8%, tuż poniżej 2% wyzwolenia progowe — zespół otwiera formalne ścieżkę odpowiedzi mimo to ponieważ dotknięta grupa to klasa chroniona.",
+  "why": "Próg ważności guide ale nie przesłonić sąd, gdy grupa chroniona jest dotknięta: znajdujący otrzyma pełnej formalnej ścieżki odpowiedzi zamiast być zalogowany jako mały element i lewy do trendu, co jest leczenie nad-prog, nie chronionym-klasa ustalenia otrzyma."
+ },
+ "iv-ops-19": {
+  "label": "Dwanaście miesięcy po uruchomieniu, zewnętrzna załoga ponownie biegnie próby jailbreak przeciwko żywemu asystentowi na zaplanowaną skalę.",
+  "why": "Powtarzające się, zaplanowane testowanie adversarial po wdrażaniu jest ta strefa dyscyplina; wersja pre-release tej samej techniki — ocena gotowości biegnie zanim system kiedykolwiek wysyła — należy do innej gry całkowicie."
+ },
+ "iv-ops-20": {
+  "label": "Niezależny drugi wiersz zespół próbek ostatniej zautomatyzowane decyzje kwartału, ponownie biegnie sprawdzania sprawiedliwości ręcznie, i chodzi przez jak ostatnia eskalacja faktycznie zagrał się.",
+  "why": "Niezależność od zespołu produktu plus ponowna wykonanie sprawdzenia zamiast zaufania pulpitowi to co oddziela to od Post-market monitoring własna żywy przegląd, który zespół produktu biegnie i personel się."
+ },
+ "iv-ops-21": {
+  "label": "Regulatorzy oczekują dostawcy model fundacyjny do dokumentu świeży okrąg testowania adversarial każdy raz główna wersja wysyła, na górze cokolwiek ran zanim pierwszy uruchomienie.",
+  "why": "Powtarzające się ponowne testowanie powiązane z zmianą materiału to stojące, post-wdrażanie czasowego oczekiwania dla wysokiego ryzyka i modelu ogólnego przeznaczenia — powtarzające się zobowiązanie, nie jednorazową bramę przekroczoną raz przy początkowym wydaniu."
+ },
+ "iv-ops-22": {
+  "label": "Zanim system jest kiedykolwiek ściągnięty w tryb offline, zespół najpierw mapa każdy nadrzędny źródło i proces podrzędny, który uzależnia się od niego, i potwierdza fallback jest gotowy do przejścia luki.",
+  "why": "To jest krok planowania, który musi być się dzieje zanim decyzja zatrzymać-lub-ograniczyć jest wykonywana — wyraźnie różne od zarządzania problemami i incydentami zawierać się, który reaguje na problem już się już dzieje, i od Post-market monitoring bieżące śledzenie wydajności, które zakłada system pozostaje żywy."
+ },
+ "iv-ops-23": {
+  "label": "Raz system jest całkowicie przejście na emeryturę, jego dane, modele i logach decyzji są zachowywane zamiast usunięte, więc regulator lub audytor może zrekonstruować co to zrobiło lat później.",
+  "why": "Zachowanie jest częścią rekordu zamknięcia się, posiadane przez tę samą uprawnienia, która ściągnęła system w tryb offline — w odróżnieniu od zarządzania problemami i incydentami CAPA dziennik, który śledzi poprawki do konkretnego problemu, i w odróżnieniu od Post-market monitoring, który tylko śledzi system raz jest jeszcze żywy."
+ }
+}

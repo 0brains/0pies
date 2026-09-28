@@ -1,0 +1,50 @@
+{
+ "dp-01": {
+  "a.text": "Un modello di credito vede un'ondata di candidati da una nuova regione. Per un dato profilo di reddito, occupazione e storia, i tassi di insolvenza sono esattamente quello che il modello si aspetta.",
+  "a.why": "Gli input si sono mossi in nuovo territorio ma la regola è intatta. Più dati di addestramento rappresentativi lo risolvono; una nuova regola non è necessaria.",
+  "b.text": "Un modello di credito vede la stessa ondata di candidati da una nuova regione. Per un profilo identico di reddito, occupazione e storia, i tassi di insolvenza lì sono il doppio di quello che il modello si aspetta.",
+  "b.why": "Input identici producono ora risultati diversi, quindi P(Y|X) è cambiato. Nessuna quantità di riequilibrio del mix di input risolverà una relazione che non regge più."
+ },
+ "dp-02": {
+  "a.text": "L'errore di un modello di prezzi salta di martedì. L'indagine scopre che un concorrente ha lanciato una campagna di sconto aggressivo quella mattina.",
+  "a.why": "Un vero cambiamento nel mondo ha alterato la relazione che il modello codifica. Il riaddestramiento sui dati post-cambio è la risposta corretta.",
+  "b.text": "L'errore di un modello di prezzi salta di martedì. L'indagine scopre che il processo ETL notturno ha iniziato a scrivere il prezzo di listino nel campo che precedentemente conteneva il prezzo netto.",
+  "b.why": "Nulla del comportamento dei prezzi è cambiato — al modello viene data una quantità diversa con lo stesso nome. Il riaddestramiento qui inforna il difetto e lo nasconde."
+ },
+ "dp-03": {
+  "a.text": "Nel corso di sei mesi, un modello di frode si degrada mentre un vecchio modello di attacco viene gradualmente sostituito da uno nuovo. Nel corso del periodo, entrambi i modelli arrivano in volume.",
+  "a.why": "Due concetti distinti che si sovrappongono nel tempo, con il peso della miscela che si muove. Un insieme che mantiene un modello per concetto gestisce questo bene.",
+  "b.text": "Nel corso di sei mesi, un modello di frode si degrada mentre gli aggressori continuano a regolare continuamente le dimensioni delle transazioni verso l'alto in piccoli passi, con nessun modello nuovo e vecchio distinto in nessun punto.",
+  "b.why": "Un concetto che si muove dolcemente attraverso gli stati intermedi. Una finestra di riaddestramiento continuo lo traccia; il macchinario di commutazione di concetto non ha nulla da commutare tra."
+ },
+ "dp-04": {
+  "a.text": "Un modello di screening è distribuito in una nuova clinica. I pazienti sono più giovani e più in forma della popolazione di addestramento, e la prevalenza della malattia è invariata.",
+  "a.why": "La distribuzione della caratteristica si è mossa mentre il mix di risultati no. La preoccupazione è l'estrapolazione in regioni di input scarsamente coperte.",
+  "b.text": "Un modello di screening è distribuito in una nuova clinica. I pazienti sembrano demograficamente identici alla popolazione di addestramento, ma la prevalenza della malattia è un quarto di quello che era.",
+  "b.why": "P(Y) si è mosso con P(X|Y) intatto, quindi la classifica del modello funziona ancora ma le sue probabilità sono sistematicamente troppo alte. Correzione precedente, non riaddestramiento."
+ },
+ "dp-05": {
+  "a.text": "La quota di punteggi ad alto rischio di un modello di raccolta aumenta dal 12% al 25% in un mese. I risultati richiedono novanta giorni per osservare, quindi nessuno è ancora disponibile per questa coorte.",
+  "a.why": "Un cambiamento di distribuzione di output senza etichette è un segnale da indagare, non una scoperta. Potrebbe essere una risposta corretta a una popolazione genuinamente più rischiosa.",
+  "b.text": "La quota di punteggi ad alto rischio di un modello di raccolta aumenta dal 12% al 25% in un mese, e la coorte da novanta giorni fa ha ora risolto con precisione in calo di 18 punti.",
+  "b.why": "Le etichette sono arrivate e la qualità è effettivamente diminuita. Solo ora il riaddestramiento è giustificato su prove piuttosto che sulla forma di un istogramma."
+ },
+ "dp-06": {
+  "a.text": "L'accuratezza di un modello di logistica crolla ogni anno nella quindicina prima di Natale e si riprende immediatamente dopo.",
+  "a.why": "Un concetto noto che torna su un ciclo. Non ritira nulla: mantieni il modello stagionale e selezionalo dal contesto.",
+  "b.text": "L'accuratezza di un modello di logistica crolla nella quindicina dopo un cambiamento permanente alla normativa nazionale di consegna, e non si riprende mai.",
+  "b.why": "Un cambiamento abruppo, unidirezionale senza ritorno. Il modello pre-cambio non ha ulteriore utilità e i dati pre-cambio hanno valore limitato per il riaddestramiento."
+ },
+ "dp-07": {
+  "a.text": "Un team di moderazione riscrive le sue linee guida in modo che una categoria di contenuto borderline sia ora etichettata 'violazione' dove era precedentemente 'accettabile'. Il contenuto in arrivo è invariato.",
+  "a.why": "Stessi input, etichette diverse: la mappatura è stata ridefinita. Ogni etichetta storica secondo la vecchia guida è ora in parte sbagliata ai fini dell'addestramento.",
+  "b.text": "La guida di un team di moderazione è invariata, ma una tendenza virale significa che il contenuto effettivamente violato aumenta dal 2% al 9% della coda.",
+  "b.why": "La regola è stabile; il mix di risultati si è mosso. Soglie e pianificazione della capacità necessitano attenzione, non il confine appreso del modello."
+ },
+ "dp-08": {
+  "a.text": "I punteggi cambiano il giorno in cui viene rilasciata una nuova versione del modello. Un campione di riferimento fisso, riprodotto attraverso entrambe le versioni, riproduce esattamente lo spostamento.",
+  "a.why": "Input identici che producono output diversi isola il cambiamento al modello. Questo è l'uso previsto di un campione di riferimento d'oro al rilascio.",
+  "b.text": "I punteggi cambiano il giorno in cui viene rilasciata una nuova versione del modello. Lo stesso campione di riferimento fisso, riprodotto attraverso entrambe le versioni, produce output identici.",
+  "b.why": "Se il modello è provabilmente invariato su input fissi, gli input dal vivo devono aver cambiato — e una coincidenza lo stesso giorno del deploy punta ai cambiamenti dal lato dei dati, non al mondo."
+ }
+}

@@ -1,0 +1,21 @@
+{
+ "rag-pipeline": {
+  "prompt": "Order the stages from ingestion to a grounded, cited answer.",
+  "steps[0].label": "Ingest Trusted Source Documents",
+  "steps[0].detail": "Retrieval can only ever surface what was ingested. Source selection is a governance decision, not a plumbing one.",
+  "steps[1].label": "Clean, Split, and Attach Metadata",
+  "steps[1].detail": "Chunking decides what a retrievable unit is; metadata is what later makes filtering and attribution possible.",
+  "steps[2].label": "Create Embeddings for Each Chunk",
+  "steps[2].detail": "Text becomes vectors. The embedding model chosen here constrains everything the retriever can distinguish.",
+  "steps[3].label": "Store Chunks and Vectors in an Index",
+  "steps[3].detail": "The index makes similarity search tractable. Access controls belong here, not only at the answer.",
+  "steps[4].label": "Embed and Interpret the User Query",
+  "steps[4].detail": "The query is embedded by the same model as the chunks, or the two live in incomparable spaces.",
+  "steps[5].label": "Retrieve, Filter, and Rerank Evidence",
+  "steps[5].detail": "Recall decides whether the right passage is available at all; ranking decides whether it survives the context budget.",
+  "steps[6].label": "Build a Prompt with Evidence and Instructions",
+  "steps[6].detail": "The retrieved evidence is placed in the prompt with instructions on how to use it and when to refuse.",
+  "steps[7].label": "Generate, Validate, and Cite the Grounded Answer",
+  "steps[7].detail": "The model answers from the supplied evidence and cites it, so a reader can check rather than trust."
+ }
+}

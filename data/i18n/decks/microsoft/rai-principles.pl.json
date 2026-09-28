@@ -1,0 +1,132 @@
+{
+ "rai-001": {
+  "label": "Model zatwierdzania kredytów odrzuca znacznie więcej kandydatów z jednej dzielnicy",
+  "why": "Stronnicze wyniki w grupach demograficznych to klasyczny scenariusz uczciwości — złagodza się go ocenami uczciwości i zbilansowanymi, reprezentatywnymi danymi treningowymi."
+ },
+ "rai-002": {
+  "label": "Chatbot musi odmawiać szkodliwych treści i pozostawać stabilny, gdy użytkownicy przesyłają ryzykowne podpowiedzi",
+  "why": "Spójne, przetestowane zachowanie i zmniejszone niebezpieczne wyniki w warunkach wrogich wejść to niezawodność i bezpieczeństwo; filtry treści i ewaluacja modelu to jego dźwignie Azure."
+ },
+ "rai-003": {
+  "label": "Podaj podpisy do audio i obsługę wielojęzyczną, aby wszyscy mogli korzystać z asystenta",
+  "why": "Możliwość użytkowania i dostępność dla wszystkich ludzi poprzez wiele metod interakcji to inklusywność — pułapka egzaminu to 'wymagaj jednej metody interakcji dla wszystkich użytkowników'."
+ },
+ "rai-004": {
+  "label": "Przechowuj przejrzysty zapis tego, co system AI zrobił i kto zatwierdził jego decyzje",
+  "why": "Nadzór człowieka, zarządzanie i jasna odpowiedzialność za wyniki — dzienniki audytu i monitorowanie nadużyć — to odpowiedzialność, nie przejrzystość (która to ujawnianie)."
+ },
+ "rai-005": {
+  "label": "Karty modelu opublikowane dla każdego wdrożonego modelu, określające możliwości i ograniczenia",
+  "why": "Komunikowanie tego, co system MOŻE i CZEGO NIE MOŻE robić, to przejrzystość; karty modelu to funkcja Azure, która się do niej mapuje. Ukrycie ograniczeń narusza zasadę."
+ },
+ "rai-006": {
+  "label": "Zarządzane tożsamości i prywatne punkty końcowe, aby dane osobowe klientów nigdy nie wyciekały do odpowiedzi lub dzienników",
+  "why": "Ochrona danych, zarządzanie danymi osobowymi i kontrola dostępu mapują się na prywatność i bezpieczeństwo — zarządzane tożsamości i prywatne punkty końcowe to mapowane funkcje Azure."
+ },
+ "rai-007": {
+  "label": "Model rekrutacyjny konsekwentnie ocenia kandydatów z jednej grupy wiekowej niżej niż inne, nawet jeśli mają porównywalne kwalifikacje",
+  "why": "Nierówna ocena według chronionego atrybutu pomimo równych kwalifikacji to problem różnych wyników, nie dostępu — to czyni go uczciwością, nie inklusywnością."
+ },
+ "rai-008": {
+  "label": "Model rozpoznawania twarzy wytrenowany na zbiorze danych z znacznie mniejszą liczbą obrazów jednej grupy etnicznej produkuje znacznie wyższy wskaźnik błędów dla tej grupy",
+  "why": "Niedoreprezentacja w danych treningowych powodująca systematyczną lukę dokładności między grupami to problem uczciwości — żadne dane nie są ekspozycją, więc nie jest to prywatność i bezpieczeństwo."
+ },
+ "rai-009": {
+  "label": "Narzędzie do zatrudniania rankinguje kandydatów z określonych uniwersytetów niżej niezależnie od ich rzeczywistych kwalifikacji, systematycznie dyskryminując jedną pulę kandydatów",
+  "why": "Zmienna proxy (uniwersytet) powodująca konsekwentną stratę dla jednej grupy kandydatów to uczciwość, choć żaden atrybut demograficzny nie jest bezpośrednio używany."
+ },
+ "rai-010": {
+  "label": "Porównaj wskaźnik błędów i wskaźnik zatwierdzenia modelu obok siebie w grupach demograficznych zanim się go wdroży",
+  "why": "Oceny uczciwości to karta dźwigni Azure dla uczciwości — odrębna od filtrów treści (niezawodność i bezpieczeństwo) lub dzienników audytu (odpowiedzialność)."
+ },
+ "rai-011": {
+  "label": "Rurociąg moderacji czasami pomija szkodliwe treści i czasami blokuje treści, które są faktycznie bezpieczne",
+  "why": "Niespójna jakość detekcji w normalnych warunkach pracy to problem wydajności, nie problem ekspozycji danych lub ujawnienia — to niezawodność i bezpieczeństwo."
+ },
+ "rai-012": {
+  "label": "Narzędzie AI, które podsumowuje notatki medyczne dla klinicystów, musi zachowywać się przewidywalnie nawet na niespodziewanych lub skrajnych wejściach, ponieważ decyzje kliniczne od tego zależą",
+  "why": "Wysokostawkowe, przewidywalne zachowanie w warunkach nieoczekiwanego wejścia to problem niezawodności i bezpieczeństwa — ryzyko tutaj to system działający nieprawidłowo, nie kogoś, z kim postępuje się nieuczciwie."
+ },
+ "rai-013": {
+  "label": "Zespół testuje, jak system AI zachowuje się w nieoczekiwanych lub wrogich warunkach przed jego wydaniem, sprawdzając, czy degraduje się bezpiecznie, a nie zawodzi nieprzewidywalnie",
+  "why": "Testowanie przed wydaniem w warunkach wrogich i skrajnych to bezpośrednia definicja niezawodności i bezpieczeństwa, odrębna od nadzoru post-hoc odpowiedzialności."
+ },
+ "rai-014": {
+  "label": "Skonfiguruj filtry treści i uruchom automatyczne oceny red-team na wdrożonym modelu, aby złapać niebezpieczne lub niskowartościowe wyniki zanim rzeczywiści użytkownicy je zobaczą",
+  "why": "Filtry treści i automatyczna ewaluacja to dźwignia Azure mapowana na niezawodność i bezpieczeństwo, nie odpowiedzialność — odpowiedzialność to kto zatwierdza, nie co model produkuje."
+ },
+ "rai-015": {
+  "label": "Chatbot wsparcia klienta może otrzymywać numery kont i inne dane osobowe wpisane bezpośrednio w podpowiedzi użytkownika",
+  "why": "Dane osobowe płynące przez podpowiedzi to ryzyko ekspozycji danych, złagodzone przez redakcję i kontrolę dostępu — definiujące zagadnienie prywatności i bezpieczeństwa."
+ },
+ "rai-016": {
+  "label": "Asystent AI przetwarza dokumenty HR pracowników, a zespół musi zmniejszyć ryzyko, że te dane wyciekną do nieuprawnionych stron",
+  "why": "Ograniczenie, kto może uzyskać dostęp do przechowywanych danych wrażliwych, to prywatność i bezpieczeństwo, nie odpowiedzialność — odpowiedzialność to właścicielstwo decyzji, nie kontrola dostępu."
+ },
+ "rai-017": {
+  "label": "Szkoła planuje wydać tutora AI, który przetwarza prywatne rozmowy studentów i musi przejrzeć sposób przechowywania i ochrony tych danych przed szerokim wdrożeniem",
+  "why": "Przegląd przechowywania i ochrony osobistych danych rozmowy przed wydaniem to przegląd prywatności i bezpieczeństwa, odrębny od przeglądu przejrzystości ujawnionych możliwości."
+ },
+ "rai-018": {
+  "label": "Aplikacja AI jest skonfigurowana do zbierania i przechowywania tylko określonych pól rozmowy, których faktycznie potrzebuje, usuwając resztę po stałym oknie zatrzymania",
+  "why": "Minimalizacja danych i limity zatrzymania zmniejszają, ile danych osobowych istnieje do potencjalnej ekspozycji — odrębna dźwignia prywatności i bezpieczeństwa od mechanizmów kontroli dostępu, takich jak zarządzane tożsamości."
+ },
+ "rai-019": {
+  "label": "Asystent pomocy AI jest zbudowany dla globalnej siły roboczej i musi dobrze działać dla osób mówiących w różnych językach i używających różnych urządzeń",
+  "why": "Projektowanie dla zakresu języków i urządzeń, aby wszyscy mogli korzystać z systemu, to inklusywność — zagadnienie to kto ma dostęp do systemu, nie kogo system ocenia inaczej."
+ },
+ "rai-020": {
+  "label": "Asystent tłumaczenia zakłada, że wszyscy użytkownicy mogą wyraźnie słyszeć odpowiedzi audio, ignorując osoby z upośledzeniami słuchu",
+  "why": "Luka w dostępności projektowania, która wyłącza użytkowników z niepełnosprawnością, to inklusywność, nie uczciwość — uczciwość to różne wyniki modelu w grupach, nie użyteczne projektowanie."
+ },
+ "rai-021": {
+  "label": "Kiosk AI musi działać równie dobrze na hałaśliwej podłodze fabryki, jak w cichym biurze, ponieważ niektórzy użytkownicy nie mogą polegać wyłącznie na wejściu głosowym w żadnym ustawieniu",
+  "why": "Obsługa zróżnicowanych środowisk fizycznych i potrzeb interakcji, aby kiosk pozostał użyteczny dla wszystkich, to inklusywność."
+ },
+ "rai-022": {
+  "label": "Aplikacja obsługiwana głosem jest ulepszona, aby lepiej działała dla osób z różnymi akcentami, możliwościami fizycznymi i potrzebami interakcji",
+  "why": "Poszerzenie, dla kogo system działa dobrze, poprzez akcenty i możliwości, to bezpośrednia definicja inklusywności."
+ },
+ "rai-023": {
+  "label": "Użytkownicy są informowani z góry, że rozmawiają z asystentem AI, a nie człowiekiem, przed rozpoczęciem rozmowy",
+  "why": "Ujawnienie, że interakcja dotyczy AI, to rdzień przejrzystości — chodzi o to, co użytkownicy są informowani, nie kto odpowiada, jeśli coś pójdzie nie tak (odpowiedzialność)."
+ },
+ "rai-024": {
+  "label": "Podsumowanie wygenerowane przez AI osadzone na stronie wyników wyszukiwania ma widoczną etykietę wszędzie tam, gdzie się pojawia, a nie tylko w jednorazowym wyskakującym oknie przy pierwszej wizycie",
+  "why": "Bieżące etykietowanie treści wygenerowanej przez AI w kontekście to inny mechanizm niż jednorazowe powiadomienie z góry (rai-023) lub napisana karta modelu (rai-005) — dyskryminator wobec odpowiedzialności to to, że chodzi o to, co strona pokazuje, nie kto posiada wynik."
+ },
+ "rai-025": {
+  "label": "Wnioskodawca kredytu odrzucony pyta o konkretne przyczyny tej decyzji, a bank musi móc wskazać czynniki, które doprowadziły do danego wyniku",
+  "why": "Wyjaśnienie pojedynczej, już podjętej decyzji osobie, którą ona dotyczy, to przejrzystość — odrębna od odpowiedzialności, która to to, kto odpowiada za proces decyzyjny, nie wyjaśnianie konkretnego wyniku osobie, której się to dotyczy."
+ },
+ "rai-026": {
+  "label": "Generatywny asystent AI pokazuje specjalne dokumenty źródłowe, na których się oparł, aby użytkownik mógł sprawdzić podstawę swojej odpowiedzi przed jej zaufaniem",
+  "why": "Ujawnienie źródeł ugruntowania za odpowiedzią pozwala użytkownikom zweryfikować to sami — kąt możliwości odkrywania odrębny od ujawniania ogólnych możliwości/ograniczeń (rai-005) lub wyjaśniania jednej decyzji (rai-025)."
+ },
+ "rai-027": {
+  "label": "Bank projektuje swoją sztuczną inteligencję rekomendacji pożyczki tak, aby przegląd człowieka, a nie sam model, podejmował ostateczną decyzję w sprawach eskalacyjnych",
+  "why": "Utrzymywanie nazwanego człowieka jako ostatecznej władzy nad ważnymi decyzjami to odpowiedzialność — odpowiedź pułapki traktuje sam system AI jako ostateczną władzę, którą odpowiedzialność wyraźnie odrzuca."
+ },
+ "rai-028": {
+  "label": "Nawet jeśli firma korzysta z usługi AI zbudowanej przez kogoś innego, firma pozostaje odpowiedzialna za sposób, w jaki to rozwiązanie jest używane i zarządzane w ramach własnych operacji",
+  "why": "Odpowiedzialność za zarządzanie nie przenosi się tylko dlatego, że model bazowy lub usługa jest zarządzana przez dostawcę — ta nieprzedająca się własność to odpowiedzialność."
+ },
+ "rai-029": {
+  "label": "Zespół pyta, kto odpowiada, jeśli system AI produkuje szkodliwy lub nieprawidłowy wynik, i definiuje ścieżkę eskalacji przed uruchomieniem",
+  "why": "Przypisanie odpowiedzialności i ścieżka eskalacji na wypadek, gdy coś pójdzie nie tak, to odpowiedzialność — to kwestia właścicielstwa wyników, nie tego, co system ujawnia (przejrzystość)."
+ },
+ "rai-030": {
+  "label": "Zanim nowa funkcja AI będzie mogła przejść na żywo, nazwany właściciel ryzyka musi się na niej zatwierdzić, a funkcja jest zablokowana przed wydaniem bez tego udokumentowanego zatwierdzenia",
+  "why": "Brama zatwierdzenia przed uruchomieniem powiązana z nazwanym właścicielem to punkt kontroli zarządzania systemem, odrębny od rai-027 na przypadek override człowieka indywidualnej decyzji i od rai-028 o punkcie odpowiedzialności dostawcy."
+ },
+ "rai-principles": {
+  "hint": "Przeciągnij każdą kartę na zasadę, do której należy. Zapytaj, co faktycznie się przesunęło: kto jest traktowany inaczej (uczciwość), czy system zachowuje się i wytrzymuje stres (niezawodność i bezpieczeństwo), czy dane lub dostęp jest ekspozycją (prywatność i bezpieczeństwo), kto może korzystać z niego w ogóle (inklusywność), co ludzie są informowani o nim (przejrzystość), czy kto odpowiada za to po fakcie (odpowiedzialność).",
+  "note": "Kilka kart wygląda, jakby mogłoby pasować do dwóch stref. Tiebreak to zawsze jedno, o czym scenariusz faktycznie mówi — różny wynik, zachowanie systemu, ekspozycja danych, użyteczność, ujawnienie lub właścicielstwo.",
+  "zones[0].def": "Systemy AI powinny traktować wszystkich ludzi uczciwie, unikając stronniczości i nierównych wyników w grupach demograficznych.",
+  "zones[1].def": "Systemy AI powinny działać konsekwentnie w warunkach oczekiwanych i wrogich oraz unikać niezamierzonej szkody.",
+  "zones[2].def": "Systemy AI powinny chronić dane osobowe i podpowiedzi/wyniki przed nieuprawnionym dostępem, zbieraniem lub użyciem.",
+  "zones[3].def": "Systemy AI powinny wzmacniać i zaangażować wszystkich, w tym osoby z różnymi możliwościami, językami i potrzebami.",
+  "zones[4].def": "Systemy AI powinny być zrozumiałe — ludzie powinni wiedzieć, że wchodzą w interakcję ze sztuczną inteligencją i znać jej możliwości i ograniczenia.",
+  "zones[5].def": "Osoby, które projektują i wdrażają systemy AI, pozostają odpowiedzialne za to, jak te systemy są budowane, obsługiwane i monitorowane."
+ }
+}

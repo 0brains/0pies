@@ -1,0 +1,1401 @@
+{
+  "feat-000-00": {
+    "label": "通过一项托管服务从多个提供商比较和选择基础模型。",
+    "why": "Multi-provider model catalogue 属于 Amazon Bedrock，支持以下工作：通过一项托管服务从多个提供商比较和选择基础模型。"
+  },
+  "feat-000-03": {
+    "label": "根据质量、安全性和特定任务标准比较候选基础模型，然后采纳。",
+    "why": "model evaluation 属于 Amazon Bedrock，支持以下工作：根据质量、安全性和特定任务标准比较候选基础模型，然后采纳。"
+  },
+  "feat-000-05": {
+    "label": "将生成的响应植入检索的企业信息中，无需重新训练模型。",
+    "why": "Knowledge Bases for RAG 属于 Amazon Bedrock，支持以下工作：将生成的响应植入检索的企业信息中，无需重新训练模型。"
+  },
+  "feat-000-07": {
+    "label": "对模型输入和输出应用集中管理的安全策略和内容控制。",
+    "why": "Guardrails for Amazon Bedrock 属于 Amazon Bedrock，支持以下工作：对模型输入和输出应用集中管理的安全策略和内容控制。"
+  },
+  "feat-000-09": {
+    "label": "通过程序化服务调用将基础模型功能连接到应用程序。",
+    "why": "API-based integration 属于 Amazon Bedrock，支持以下工作：通过程序化服务调用将基础模型功能连接到应用程序。"
+  },
+  "feat-000-11": {
+    "label": "创建可复用的指令模板，测试变体，并集中管理版本。",
+    "why": "Prompt Management 属于 Amazon Bedrock，支持以下工作：创建可复用的指令模板，测试变体，并集中管理版本。"
+  },
+  "feat-000-12": {
+    "label": "以可视方式将提示词、模型、数据和应用逻辑连接到多步生成式工作流。",
+    "why": "Bedrock Flows 属于 Amazon Bedrock，支持以下工作：以可视方式将提示词、模型、数据和应用逻辑连接到多步生成式工作流。"
+  },
+  "feat-000-14": {
+    "label": "通过托管基础模型平台发现和部署符合条件的第三方模型。",
+    "why": "Bedrock Marketplace 属于 Amazon Bedrock，支持以下工作：通过托管基础模型平台发现和部署符合条件的第三方模型。"
+  },
+  "feat-000-16": {
+    "label": "使用大量未标记的专有文本扩展模型的领域知识。",
+    "why": "continued pre-training 属于 Amazon Bedrock，支持以下工作：使用大量未标记的专有文本扩展模型的领域知识。"
+  },
+  "feat-001-00": {
+    "label": "通过单个 API 调用定义并调用由模型、系统提示词和工具组成的托管代理循环。",
+    "why": "Harness 属于 Amazon Bedrock AgentCore，支持以下工作：通过单个 API 调用定义并调用由模型、系统提示词和工具组成的托管代理循环。"
+  },
+  "feat-001-03": {
+    "label": "将 API、Lambda 函数和服务转换为受管理的 MCP 兼容工具。",
+    "why": "Gateway 属于 Amazon Bedrock AgentCore，支持以下工作：将 API、Lambda 函数和服务转换为受管理的 MCP 兼容工具。"
+  },
+  "feat-001-05": {
+    "label": "在隔离的沙箱中执行 Python、JavaScript 或 TypeScript。",
+    "why": "Code Interpreter 属于 Amazon Bedrock AgentCore，支持以下工作：在隔离的沙箱中执行 Python、JavaScript 或 TypeScript。"
+  },
+  "feat-001-06": {
+    "label": "在安全的托管环境中使用自动化框架与网络应用程序交互。",
+    "why": "Browser 属于 Amazon Bedrock AgentCore，支持以下工作：在安全的托管环境中使用自动化框架与网络应用程序交互。"
+  },
+  "feat-001-08": {
+    "label": "使用 x402 协议为付费 API、MCP 服务器和内容启用代理微交易。",
+    "why": "Payments 属于 Amazon Bedrock AgentCore，支持以下工作：使用 x402 协议为付费 API、MCP 服务器和内容启用代理微交易。"
+  },
+  "feat-001-10": {
+    "label": "使用受控流量实验生成并测试版本化配置改进。",
+    "why": "Optimization 属于 Amazon Bedrock AgentCore，支持以下工作：使用受控流量实验生成并测试版本化配置改进。"
+  },
+  "feat-001-12": {
+    "label": "在中央目录中发布、审查、批准和发现代理、MCP 服务器、工具和技能。",
+    "why": "Registry 属于 Amazon Bedrock AgentCore，支持以下工作：在中央目录中发布、审查、批准和发现代理、MCP 服务器、工具和技能。"
+  },
+  "feat-002-01": {
+    "label": "在两个广泛使用的编程生态系统中构建代理应用程序。",
+    "why": "Python and TypeScript SDKs 属于 Strands Agents，支持以下工作：在两个广泛使用的编程生态系统中构建代理应用程序。"
+  },
+  "feat-002-03": {
+    "label": "协调专业代理彼此协作或相互交接工作。",
+    "why": "multi-agent patterns 属于 Strands Agents，支持以下工作：协调专业代理彼此协作或相互交接工作。"
+  },
+  "feat-003-01": {
+    "label": "从自然语言指令创建新的视觉资产和运动媒体。",
+    "why": "image and video generation 属于 Amazon Nova，支持以下工作：从自然语言指令创建新的视觉资产和运动媒体。"
+  },
+  "feat-003-02": {
+    "label": "构建理解或生成语音的语音体验。",
+    "why": "speech models 属于 Amazon Nova，支持以下工作：构建理解或生成语音的语音体验。"
+  },
+  "feat-003-04": {
+    "label": "通过托管基础模型 API 和工具访问此 AWS 模型系列。",
+    "why": "Amazon Bedrock integration 属于 Amazon Nova，支持以下工作：通过托管基础模型 API 和工具访问此 AWS 模型系列。"
+  },
+  "feat-004-01": {
+    "label": "创建具有定义的专业知识、语气和工具集的专业化队友，主动工作。",
+    "why": "Agents 属于 Amazon Quick，支持以下工作：创建具有定义的专业知识、语气和工具集的专业化队友，主动工作。"
+  },
+  "feat-004-03": {
+    "label": "将问题转化为交互式仪表板、图表、预测和数据探索。",
+    "why": "Business Intelligence 属于 Amazon Quick，支持以下工作：将问题转化为交互式仪表板、图表、预测和数据探索。"
+  },
+  "feat-004-05": {
+    "label": "创建和共享交互式工具，无需编写代码或提交 IT 请求。",
+    "why": "Build custom apps 属于 Amazon Quick，支持以下工作：创建和共享交互式工具，无需编写代码或提交 IT 请求。"
+  },
+  "feat-005-01": {
+    "label": "决定员工可以查看哪些信息时，尊重源系统访问权限。",
+    "why": "permissions-aware responses 属于 Amazon Q Business，支持以下工作：决定员工可以查看哪些信息时，尊重源系统访问权限。"
+  },
+  "feat-006-00": {
+    "label": "创建新源代码并帮助开发人员理解陌生的实现。",
+    "why": "Code generation and explanation 属于 Amazon Q Developer，支持以下工作：创建新源代码并帮助开发人员理解陌生的实现。"
+  },
+  "feat-006-02": {
+    "label": "检查变更是否存在可维护性缺陷和潜在漏洞，然后再发布。",
+    "why": "code reviews and security scanning 属于 Amazon Q Developer，支持以下工作：检查变更是否存在可维护性缺陷和潜在漏洞，然后再发布。"
+  },
+  "feat-006-04": {
+    "label": "在开发期间推荐云服务配置和实现方法。",
+    "why": "AWS resource guidance 属于 Amazon Q Developer，支持以下工作：在开发期间推荐云服务配置和实现方法。"
+  },
+  "feat-007-00": {
+    "label": "通过自动化分析和更改升级较旧的 Microsoft 应用程序堆栈和框架。",
+    "why": ".NET modernization 属于 AWS Transform，支持以下工作：通过自动化分析和更改升级较旧的 Microsoft 应用程序堆栈和框架。"
+  },
+  "feat-007-02": {
+    "label": "计划并执行从虚拟化数据中心应用程序环境的迁移。",
+    "why": "VMware workload transformation 属于 AWS Transform，支持以下工作：计划并执行从虚拟化数据中心应用程序环境的迁移。"
+  },
+  "feat-007-04": {
+    "label": "在大型应用程序中应用可重复的源代码更改，而不是手动编辑每个文件。",
+    "why": "automated refactoring 属于 AWS Transform，支持以下工作：在大型应用程序中应用可重复的源代码更改，而不是手动编辑每个文件。"
+  },
+  "feat-008-00": {
+    "label": "将高层次想法转化为结构化需求、设计和可执行任务。",
+    "why": "Specs 属于 Kiro，支持以下工作：将高层次想法转化为结构化需求、设计和可执行任务。"
+  },
+  "feat-008-02": {
+    "label": "诊断根本原因、设计有针对性的修正方案并防止回退。",
+    "why": "Bugfix Specs 属于 Kiro，支持以下工作：诊断根本原因、设计有针对性的修正方案并防止回退。"
+  },
+  "feat-008-04": {
+    "label": "在定义的开发事件发生时自动运行提示词或 Shell 命令。",
+    "why": "Agent hooks 属于 Kiro，支持以下工作：在定义的开发事件发生时自动运行提示词或 Shell 命令。"
+  },
+  "feat-009-00": {
+    "label": "在开发人员专注于其他工作时异步继续有界开发工作。",
+    "why": "Background task execution 属于 Kiro autonomous agent，支持以下工作：在开发人员专注于其他工作时异步继续有界开发工作。"
+  },
+  "feat-009-02": {
+    "label": "将完成的后台工作作为可审查的源代码控制更改返回。",
+    "why": "pull-request delivery 属于 Kiro autonomous agent，支持以下工作：将完成的后台工作作为可审查的源代码控制更改返回。"
+  },
+  "feat-010-01": {
+    "label": "在托管基础架构后发布选定的模型，以便应用程序可以调用它。",
+    "why": "model deployment 属于 Amazon SageMaker AI JumpStart，支持以下工作：在托管基础架构后发布选定的模型，以便应用程序可以调用它。"
+  },
+  "feat-010-03": {
+    "label": "在托管 ML 工作流中部署预训练社区和开放分发的生成式模型。",
+    "why": "Foundation models 属于 Amazon SageMaker AI JumpStart，支持以下工作：在托管 ML 工作流中部署预训练社区和开放分发的生成式模型。"
+  },
+  "feat-011-01": {
+    "label": "将内容转换为数值向量以进行语义检索、聚类或相似度比较。",
+    "why": "embeddings 属于 Amazon Titan，支持以下工作：将内容转换为数值向量以进行语义检索、聚类或相似度比较。"
+  },
+  "feat-012-00": {
+    "label": "从实验到受控生产运营管理完整的自定义模型生命周期。",
+    "why": "Amazon SageMaker AI 属于 Amazon SageMaker AI，支持以下工作：从实验到受控生产运营管理完整的自定义模型生命周期。"
+  },
+  "feat-012-01": {
+    "label": "无需管理底层应用程序服务器即可提供训练的模型。",
+    "why": "managed hosting 属于 Amazon SageMaker AI，支持以下工作：无需管理底层应用程序服务器即可提供训练的模型。"
+  },
+  "feat-012-03": {
+    "label": "在多个加速器或机器上训练大型模型以减少经过的时间。",
+    "why": "distributed training 属于 Amazon SageMaker AI，支持以下工作：在多个加速器或机器上训练大型模型以减少经过的时间。"
+  },
+  "feat-012-05": {
+    "label": "自动探索数据、选择算法、调整候选模型并生成可解释的模型工件。",
+    "why": "SageMaker Autopilot 属于 Amazon SageMaker AI，支持以下工作：自动探索数据、选择算法、调整候选模型并生成可解释的模型工件。"
+  },
+  "feat-012-07": {
+    "label": "在训练和低延迟在线预测之间保持可复用模型输入的一致性。",
+    "why": "SageMaker Feature Store 属于 Amazon SageMaker AI，支持以下工作：在训练和低延迟在线预测之间保持可复用模型输入的一致性。"
+  },
+  "feat-012-09": {
+    "label": "检测生产数据漂移、质量变化、偏差漂移和特征归因漂移。",
+    "why": "SageMaker Model Monitor 属于 Amazon SageMaker AI，支持以下工作：检测生产数据漂移、质量变化、偏差漂移和特征归因漂移。"
+  },
+  "feat-012-11": {
+    "label": "记录并比较训练运行、参数、数据集和生成的指标。",
+    "why": "SageMaker Experiments 属于 Amazon SageMaker AI，支持以下工作：记录并比较训练运行、参数、数据集和生成的指标。"
+  },
+  "feat-012-13": {
+    "label": "为间歇请求、队列化有效载荷或离线数据集选择托管预测模式。",
+    "why": "serverless asynchronous and batch inference 属于 Amazon SageMaker AI，支持以下工作：为间歇请求、队列化有效载荷或离线数据集选择托管预测模式。"
+  },
+  "feat-012-15": {
+    "label": "为数据、分析和 AI 团队提供一个统一的受管理开发和协作环境。",
+    "why": "SageMaker Unified Studio 属于 Amazon SageMaker AI，支持以下工作：为数据、分析和 AI 团队提供一个统一的受管理开发和协作环境。"
+  },
+  "feat-013-01": {
+    "label": "使用笔记本或源文件在基于浏览器的工具中进行交互式开发。",
+    "why": "JupyterLab and Code Editor 属于 Amazon SageMaker AI Studio，支持以下工作：使用笔记本或源文件在基于浏览器的工具中进行交互式开发。"
+  },
+  "feat-013-03": {
+    "label": "将开发的模型转移到消费者可以请求预测的环境。",
+    "why": "deployment 属于 Amazon SageMaker AI Studio，支持以下工作：将开发的模型转移到消费者可以请求预测的环境。"
+  },
+  "feat-014-00": {
+    "label": "通过图形工作流而不是编写训练代码来创建预测模型。",
+    "why": "Visual model building 属于 Amazon SageMaker AI Canvas，支持以下工作：通过图形工作流而不是编写训练代码来创建预测模型。"
+  },
+  "feat-014-03": {
+    "label": "通过面向业务用户的可视化界面试验生成式功能。",
+    "why": "foundation-model access without writing ML code 属于 Amazon SageMaker AI Canvas，支持以下工作：通过面向业务用户的可视化界面试验生成式功能。"
+  },
+  "feat-016-00": {
+    "label": "协调人员、指令和质量控制以注释训练示例。",
+    "why": "Managed human labeling workflows 属于 Amazon SageMaker AI Ground Truth，支持以下工作：协调人员、指令和质量控制以注释训练示例。"
+  },
+  "feat-016-02": {
+    "label": "生成学习监督任务和衡量性能所需的真实示例。",
+    "why": "labeled datasets for training and evaluation 属于 Amazon SageMaker AI Ground Truth，支持以下工作：生成学习监督任务和衡量性能所需的真实示例。"
+  },
+  "feat-017-01": {
+    "label": "提高加速器利用率和计算密集型训练的恢复能力。",
+    "why": "infrastructure optimized for large-scale ML workloads 属于 Amazon SageMaker AI HyperPod，支持以下工作：提高加速器利用率和计算密集型训练的恢复能力。"
+  },
+  "feat-018-01": {
+    "label": "将人工批准和修正嵌入生成式和预测应用程序中。",
+    "why": "Human review workflows 属于 Amazon Augmented AI (A2I)，支持以下工作：将人工批准和修正嵌入生成式和预测应用程序中。"
+  },
+  "feat-019-01": {
+    "label": "将人工任务限制给符合定义技能或批准标准的人员。",
+    "why": "custom worker qualifications 属于 Amazon Mechanical Turk，支持以下工作：将人工任务限制给符合定义技能或批准标准的人员。"
+  },
+  "feat-020-00": {
+    "label": "确定不同的书写记录是否指代相同的真实人物或组织。",
+    "why": "Entity matching and resolution 属于 AWS Entity Resolution，支持以下工作：确定不同的书写记录是否指代相同的真实人物或组织。"
+  },
+  "feat-021-00": {
+    "label": "浏览可以增强组织自身信息的外部生成数据集。",
+    "why": "Third-party data catalogue 属于 AWS Data Exchange，支持以下工作：浏览可以增强组织自身信息的外部生成数据集。"
+  },
+  "feat-021-02": {
+    "label": "不通过单独的传输流程将已订阅信息提供给存储和分析工具。",
+    "why": "delivery to AWS data services 属于 AWS Data Exchange，支持以下工作：不通过单独的传输流程将已订阅信息提供给存储和分析工具。"
+  },
+  "feat-022-01": {
+    "label": "选择预置的大数据集群或按需执行，无需管理集群。",
+    "why": "cluster and serverless deployment options 属于 Amazon EMR，支持以下工作：选择预置的大数据集群或按需执行，无需管理集群。"
+  },
+  "feat-023-00": {
+    "label": "准备和组合来自多个源的信息，无需配置数据处理服务器。",
+    "why": "Serverless data integration 属于 AWS Glue，支持以下工作：准备和组合来自多个源的信息，无需配置数据处理服务器。"
+  },
+  "feat-023-02": {
+    "label": "维护集中的技术元数据，以便分析和 ML 工具可以查找和理解数据集。",
+    "why": "AWS Glue Data Catalog 属于 AWS Glue，支持以下工作：维护集中的技术元数据，以便分析和 ML 工具可以查找和理解数据集。"
+  },
+  "feat-023-04": {
+    "label": "定义数据集的期望值并检测违反期望值的记录或管道。",
+    "why": "data quality rules and monitoring 属于 AWS Glue，支持以下工作：定义数据集的期望值并检测违反期望值的记录或管道。"
+  },
+  "feat-024-01": {
+    "label": "计算分布、缺失值和异常以在建模前了解数据集。",
+    "why": "data profiling 属于 AWS Glue DataBrew，支持以下工作：计算分布、缺失值和异常以在建模前了解数据集。"
+  },
+  "feat-025-00": {
+    "label": "从一个控制平面管理对受管理分析数据的访问。",
+    "why": "Centralized data-lake permissions 属于 AWS Lake Formation，支持以下工作：从一个控制平面管理对受管理分析数据的访问。"
+  },
+  "feat-025-02": {
+    "label": "提供对已注册分析表的受控跨团队或跨账户访问。",
+    "why": "governed table sharing 属于 AWS Lake Formation，支持以下工作：提供对已注册分析表的受控跨团队或跨账户访问。"
+  },
+  "feat-026-00": {
+    "label": "索引文档和操作事件以进行快速查询，无需运行搜索集群软件。",
+    "why": "Managed search and log analytics 属于 Amazon OpenSearch Service，支持以下工作：索引文档和操作事件以进行快速查询，无需运行搜索集群软件。"
+  },
+  "feat-026-03": {
+    "label": "将关键字检索与大型内容索引上的低延迟相似度查询相结合。",
+    "why": "full-text plus high-throughput semantic search 属于 Amazon OpenSearch Service，支持以下工作：将关键字检索与大型内容索引上的低延迟相似度查询相结合。"
+  },
+  "feat-027-00": {
+    "label": "按列存储值以提高大型分析聚合的效率。",
+    "why": "Columnar data warehousing 属于 Amazon Redshift，支持以下工作：按列存储值以提高大型分析聚合的效率。"
+  },
+  "feat-027-02": {
+    "label": "运行容量自动管理而不是维护预置集群的仓库查询。",
+    "why": "serverless analytics 属于 Amazon Redshift，支持以下工作：运行容量自动管理而不是维护预置集群的仓库查询。"
+  },
+  "feat-028-01": {
+    "label": "当实际或预测消费超过选定的百分比或数量时通知利益相关者。",
+    "why": "threshold alerts 属于 AWS Budgets，支持以下工作：当实际或预测消费超过选定的百分比或数量时通知利益相关者。"
+  },
+  "feat-029-00": {
+    "label": "按服务、账户、区域、标签或其他计费维度分解费用。",
+    "why": "Cost and usage filtering 属于 AWS Cost Explorer，支持以下工作：按服务、账户、区域、标签或其他计费维度分解费用。"
+  },
+  "feat-029-02": {
+    "label": "从最近的使用模式估计未来费用。",
+    "why": "cost forecasting 属于 AWS Cost Explorer，支持以下工作：从最近的使用模式估计未来费用。"
+  },
+  "feat-030-01": {
+    "label": "为模型训练或推理配置专业硬件。",
+    "why": "GPU and ML accelerator instances 属于 Amazon EC2，支持以下工作：为模型训练或推理配置专业硬件。"
+  },
+  "feat-030-02": {
+    "label": "为虚拟服务器选择操作系统、网络、存储和已安装的软件。",
+    "why": "Amazon EC2 instance types 属于 Amazon EC2，支持以下工作：为虚拟服务器选择操作系统、网络、存储和已安装的软件。"
+  },
+  "feat-031-02": {
+    "label": "按请求和计算时长收费，而不是连续运行服务器。",
+    "why": "pay-per-use execution 属于 AWS Lambda，支持以下工作：按请求和计算时长收费，而不是连续运行服务器。"
+  },
+  "feat-032-01": {
+    "label": "运行打包的工作负载，无需选择或管理底层主机。",
+    "why": "AWS Fargate serverless containers 属于 Amazon Elastic Container Service (Amazon ECS)，支持以下工作：运行打包的工作负载，无需选择或管理底层主机。"
+  },
+  "feat-033-00": {
+    "label": "使用标准容器集群 API，而 AWS 运营其核心协调组件。",
+    "why": "Managed Kubernetes control plane 属于 Amazon Elastic Kubernetes Service (Amazon EKS)，支持以下工作：使用标准容器集群 API，而 AWS 运营其核心协调组件。"
+  },
+  "feat-033-02": {
+    "label": "将容器集群与云原生访问、网络和监控控制连接。",
+    "why": "AWS identity networking and observability integration 属于 Amazon Elastic Kubernetes Service (Amazon EKS)，支持以下工作：将容器集群与云原生访问、网络和监控控制连接。"
+  },
+  "feat-034-01": {
+    "label": "在分离存储和计算的同时跨故障域复制关系数据。",
+    "why": "distributed fault-tolerant storage 属于 Amazon Aurora，支持以下工作：在分离存储和计算的同时跨故障域复制关系数据。"
+  },
+  "feat-034-03": {
+    "label": "使用 PostgreSQL 扩展在 AWS 高性能关系引擎中存储嵌入。",
+    "why": "Aurora PostgreSQL with pgvector 属于 Amazon Aurora，支持以下工作：使用 PostgreSQL 扩展在 AWS 高性能关系引擎中存储嵌入。"
+  },
+  "feat-035-00": {
+    "label": "将记录表示为灵活的嵌套对象，而不是固定的关系行。",
+    "why": "Document-oriented data model 属于 Amazon DocumentDB (with MongoDB compatibility)，支持以下工作：将记录表示为灵活的嵌套对象，而不是固定的关系行。"
+  },
+  "feat-035-02": {
+    "label": "让 AWS 维护文档数据库的冗余副本和恢复点。",
+    "why": "managed replication and backups 属于 Amazon DocumentDB (with MongoDB compatibility)，支持以下工作：让 AWS 维护文档数据库的冗余副本和恢复点。"
+  },
+  "feat-035-04": {
+    "label": "使用熟悉的文档操作过滤嵌套记录，同时还检索概念相关的内容。",
+    "why": "$vectorSearch operator 属于 Amazon DocumentDB (with MongoDB compatibility)，支持以下工作：使用熟悉的文档操作过滤嵌套记录，同时还检索概念相关的内容。"
+  },
+  "feat-036-01": {
+    "label": "随着需求增长分发无服务器数据库流量和存储。",
+    "why": "automatic horizontal scaling 属于 Amazon DynamoDB，支持以下工作：随着需求增长分发无服务器数据库流量和存储。"
+  },
+  "feat-037-00": {
+    "label": "在托管缓存中使用广泛采用的内存中数据结构和客户端。",
+    "why": "Valkey and Redis OSS compatibility 属于 Amazon ElastiCache，支持以下工作：在托管缓存中使用广泛采用的内存中数据结构和客户端。"
+  },
+  "feat-037-02": {
+    "label": "重用瞬时应用程序状态或模型响应以减少延迟和成本。",
+    "why": "session and inference-result caching 属于 Amazon ElastiCache，支持以下工作：重用瞬时应用程序状态或模型响应以减少延迟和成本。"
+  },
+  "feat-038-01": {
+    "label": "有效地跟踪实体之间的多个链接，无需昂贵的关系连接。",
+    "why": "relationship traversal 属于 Amazon Neptune，支持以下工作：有效地跟踪实体之间的多个链接，无需昂贵的关系连接。"
+  },
+  "feat-038-03": {
+    "label": "将嵌入相似度与高度连接的分析图上的算法相结合。",
+    "why": "Neptune Analytics vector search 属于 Amazon Neptune，支持以下工作：将嵌入相似度与高度连接的分析图上的算法相结合。"
+  },
+  "feat-039-00": {
+    "label": "在托管服务中选择熟悉的商业和开源 SQL 技术。",
+    "why": "Multiple relational database engines 属于 Amazon Relational Database Service (Amazon RDS)，支持以下工作：在托管服务中选择熟悉的商业和开源 SQL 技术。"
+  },
+  "feat-039-02": {
+    "label": "在另一个故障域中维护同步备用以实现弹性数据库运营。",
+    "why": "Multi-AZ high availability 属于 Amazon Relational Database Service (Amazon RDS)，支持以下工作：在另一个故障域中维护同步备用以实现弹性数据库运营。"
+  },
+  "feat-039-04": {
+    "label": "不采用单独搜索存储的情况下在已建立的表和事务旁边保留语义向量。",
+    "why": "RDS for PostgreSQL 属于 Amazon Relational Database Service (Amazon RDS)，支持以下工作：不采用单独搜索存储的情况下在已建立的表和事务旁边保留语义向量。"
+  },
+  "feat-040-01": {
+    "label": "对组织知识和软件交付任务应用一系列生成式助手。",
+    "why": "business and developer assistants 属于 Amazon Q，支持以下工作：对组织知识和软件交付任务应用一系列生成式助手。"
+  },
+  "feat-041-01": {
+    "label": "为组织特定标签和术语训练文本分析。",
+    "why": "custom NLP models for domain-specific extraction/classification 属于 Amazon Comprehend，支持以下工作：为组织特定标签和术语训练文本分析。"
+  },
+  "feat-043-00": {
+    "label": "创建通过自然语言交互的聊天和电话体验。",
+    "why": "Automatic speech recognition (ASR) 属于 Amazon Lex，支持以下工作：创建通过自然语言交互的聊天和电话体验。"
+  },
+  "feat-043-02": {
+    "label": "追踪对话状态并收集完成请求所需的信息。",
+    "why": "dialogue management 属于 Amazon Lex，支持以下工作：追踪对话状态并收集完成请求所需的信息。"
+  },
+  "feat-044-00": {
+    "label": "将书面内容转换为自然发音的音频，用于应用程序和辅助功能。",
+    "why": "Neural text-to-speech (NTTS) 属于 Amazon Polly，支持以下工作：将书面内容转换为自然发音的音频，用于应用程序和辅助功能。"
+  },
+  "feat-045-01": {
+    "label": "将语音内容馈送到搜索、分析、字幕或下游自动化。",
+    "why": "Streaming transcription 属于 Amazon Transcribe，支持以下工作：将语音内容馈送到搜索、分析、字幕或下游自动化。"
+  },
+  "feat-047-00": {
+    "label": "从扫描或数字文件读取词语和键值结构。",
+    "why": "Document Analysis API 属于 Amazon Textract，支持以下工作：从扫描或数字文件读取词语和键值结构。"
+  },
+  "feat-048-00": {
+    "label": "让员工或客户使用常规语言对文档提问。",
+    "why": "Natural-language search across unstructured enterprise content 属于 Amazon Kendra，支持以下工作：让员工或客户使用常规语言对文档提问。"
+  },
+  "feat-049-00": {
+    "label": "分析图像或视频以识别视觉实体、环境和人物。",
+    "why": "Label detection 属于 Amazon Rekognition，支持以下工作：分析图像或视频以识别视觉实体、环境和人物。"
+  },
+  "feat-050-00": {
+    "label": "根据用户行为和偏好在他们交互时为每个用户排列项目。",
+    "why": "Real-time recommendations 属于 Amazon Personalize，支持以下工作：根据用户行为和偏好在他们交互时为每个用户排列项目。"
+  },
+  "feat-051-01": {
+    "label": "估计所选置信度水平处的可能未来值范围，而不仅仅返回一个数字。",
+    "why": "probabilistic forecasts and prediction intervals 属于 Amazon Forecast，支持以下工作：估计所选置信度水平处的可能未来值范围，而不仅仅返回一个数字。"
+  },
+  "feat-052-01": {
+    "label": "为事务或账户活动分配欺诈的数值可能性。",
+    "why": "event risk scores 属于 Amazon Fraud Detector，支持以下工作：为事务或账户活动分配欺诈的数值可能性。"
+  },
+  "feat-053-00": {
+    "label": "学习可接受的产品外观并标记包含异常缺陷的图像。",
+    "why": "Visual anomaly detection 属于 Amazon Lookout for Vision，支持以下工作：学习可接受的产品外观并标记包含异常缺陷的图像。"
+  },
+  "feat-053-02": {
+    "label": "在工厂设备附近运行训练的视觉质量检查。",
+    "why": "edge-device model deployment 属于 Amazon Lookout for Vision，支持以下工作：在工厂设备附近运行训练的视觉质量检查。"
+  },
+  "feat-054-00": {
+    "label": "学习正常商业度量行为并显示没有固定阈值的意外变化。",
+    "why": "Automatic metric anomaly detection 属于 Amazon Lookout for Metrics，支持以下工作：学习正常商业度量行为并显示没有固定阈值的意外变化。"
+  },
+  "feat-054-02": {
+    "label": "排列最有力解释商业度量检测变化的维度。",
+    "why": "root-cause contribution analysis 属于 Amazon Lookout for Metrics，支持以下工作：排列最有力解释商业度量检测变化的维度。"
+  },
+  "feat-056-01": {
+    "label": "应用常见软件漏洞和不安全做法的已学习和基于规则的检查。",
+    "why": "security detector library 属于 Amazon CodeGuru Reviewer，支持以下工作：应用常见软件漏洞和不安全做法的已学习和基于规则的检查。"
+  },
+  "feat-057-00": {
+    "label": "分析执行代码以找到昂贵的方法并减少计算浪费。",
+    "why": "Continuous profiling 属于 Amazon CodeGuru Profiler，支持以下工作：分析执行代码以找到昂贵的方法并减少计算浪费。"
+  },
+  "feat-058-01": {
+    "label": "在实时对话中为联系中心员工提供指导和相关信息。",
+    "why": "real-time agent assistance 属于 Amazon Connect，支持以下工作：在实时对话中为联系中心员工提供指导和相关信息。"
+  },
+  "feat-058-03": {
+    "label": "预测联系需求并使劳动力覆盖与预期数量一致。",
+    "why": "forecasting and scheduling 属于 Amazon Connect，支持以下工作：预测联系需求并使劳动力覆盖与预期数量一致。"
+  },
+  "feat-059-00": {
+    "label": "使用历史订单和信号估计未来的产品需求。",
+    "why": "Demand planning 属于 AWS Supply Chain，支持以下工作：使用历史订单和信号估计未来的产品需求。"
+  },
+  "feat-059-02": {
+    "label": "统一企业系统的操作记录以进行规划和分析。",
+    "why": "supply-chain data lake 属于 AWS Supply Chain，支持以下工作：统一企业系统的操作记录以进行规划和分析。"
+  },
+  "feat-060-01": {
+    "label": "通过托管工作流请求、批准和审计对共享数据集的访问。",
+    "why": "governed data subscriptions 属于 Amazon DataZone，支持以下工作：通过托管工作流请求、批准和审计对共享数据集的访问。"
+  },
+  "feat-061-00": {
+    "label": "在编写代码前根据组织要求评估架构文档。",
+    "why": "Design security review 属于 AWS Security Agent，支持以下工作：在编写代码前根据组织要求评估架构文档。"
+  },
+  "feat-061-02": {
+    "label": "使用专门代理对网络应用程序和 API 执行多步攻击场景。",
+    "why": "On-demand penetration testing 属于 AWS Security Agent，支持以下工作：使用专门代理对网络应用程序和 API 执行多步攻击场景。"
+  },
+  "feat-061-04": {
+    "label": "返回可复现的利用路径、影响分析和现成的实现更正。",
+    "why": "Actionable fixes for confirmed vulnerabilities 属于 AWS Security Agent，支持以下工作：返回可复现的利用路径、影响分析和现成的实现更正。"
+  },
+  "feat-062-01": {
+    "label": "关联遥测、代码和部署数据以识别生产故障的原因。",
+    "why": "Root cause analysis 属于 AWS DevOps Agent，支持以下工作：关联遥测、代码和部署数据以识别生产故障的原因。"
+  },
+  "feat-062-03": {
+    "label": "发现服务和资源并维护其关系的动态拓扑。",
+    "why": "Application Mapping 属于 AWS DevOps Agent，支持以下工作：发现服务和资源并维护其关系的动态拓扑。"
+  },
+  "feat-063-00": {
+    "label": "记录谁执行了云控制平面操作、何时执行以及从何处执行。",
+    "why": "API and user activity history 属于 AWS CloudTrail，支持以下工作：记录谁执行了云控制平面操作、何时执行以及从何处执行。"
+  },
+  "feat-064-00": {
+    "label": "在一个监控服务中收集数值测量、事件记录和请求路径。",
+    "why": "Metrics logs and traces 属于 Amazon CloudWatch，支持以下工作：在一个监控服务中收集数值测量、事件记录和请求路径。"
+  },
+  "feat-064-02": {
+    "label": "可视化系统健康和模型行为以进行持续生产监督。",
+    "why": "dashboards and model observability 属于 Amazon CloudWatch，支持以下工作：可视化系统健康和模型行为以进行持续生产监督。"
+  },
+  "feat-065-01": {
+    "label": "针对要求的组织条件持续评估资源设置。",
+    "why": "compliance rules 属于 AWS Config，支持以下工作：针对要求的组织条件持续评估资源设置。"
+  },
+  "feat-066-00": {
+    "label": "获得跨主要操作质量类别的最佳实践发现。",
+    "why": "Cost security performance and resilience recommendations 属于 AWS Trusted Advisor，支持以下工作：获得跨主要操作质量类别的最佳实践发现。"
+  },
+  "feat-066-01": {
+    "label": "将补救工作集中在按潜在账户影响排列的建议上。",
+    "why": "prioritized checks 属于 AWS Trusted Advisor，支持以下工作：将补救工作集中在按潜在账户影响排列的建议上。"
+  },
+  "feat-067-00": {
+    "label": "跨卓越运营、安全性、可靠性、性能、成本和可持续性评估架构。",
+    "why": "Six-pillar workload reviews 属于 AWS Well-Architected Tool，支持以下工作：跨卓越运营、安全性、可靠性、性能、成本和可持续性评估架构。"
+  },
+  "feat-068-00": {
+    "label": "从靠近用户的位置提供重复请求，而不是每次都返回到源站。",
+    "why": "Global edge caching 属于 Amazon CloudFront，支持以下工作：从靠近用户的位置提供重复请求，而不是每次都返回到源站。"
+  },
+  "feat-068-02": {
+    "label": "通过全球网络通过加密连接分发网络资产。",
+    "why": "HTTPS content delivery 属于 Amazon CloudFront，支持以下工作：通过全球网络通过加密连接分发网络资产。"
+  },
+  "feat-069-01": {
+    "label": "使用有状态和无状态网络规则过滤资源和子网流量。",
+    "why": "security groups and network ACLs 属于 Amazon Virtual Private Cloud (Amazon VPC)，支持以下工作：使用有状态和无状态网络规则过滤资源和子网流量。"
+  },
+  "feat-070-00": {
+    "label": "当审计员或客户要求保证证据时下载 AWS 认证和报告。",
+    "why": "On-demand compliance documents 属于 AWS Artifact，支持以下工作：当审计员或客户要求保证证据时下载 AWS 认证和报告。"
+  },
+  "feat-070-01": {
+    "label": "审查对 AWS 控制和运营有效性的独立评估。",
+    "why": "third-party audit reports 属于 AWS Artifact，支持以下工作：审查对 AWS 控制和运营有效性的独立评估。"
+  },
+  "feat-071-00": {
+    "label": "持续收集映射的资源和活动记录，而不是手动组装审计证明。",
+    "why": "Automated evidence collection 属于 AWS Audit Manager，支持以下工作：持续收集映射的资源和活动记录，而不是手动组装审计证明。"
+  },
+  "feat-071-02": {
+    "label": "将控制状态和支持证据编译为审计员就绪的包。",
+    "why": "assessment reports 属于 AWS Audit Manager，支持以下工作：将控制状态和支持证据编译为审计员就绪的包。"
+  },
+  "feat-072-01": {
+    "label": "仅授予人员或工作负载的任务所需的操作和资源。",
+    "why": "least-privilege permissions 属于 AWS Identity and Access Management (IAM)，支持以下工作：仅授予人员或工作负载的任务所需的操作和资源。"
+  },
+  "feat-073-00": {
+    "label": "检查虚拟机和打包的软件工件是否存在已知漏洞。",
+    "why": "Amazon EC2 and container image scanning 属于 Amazon Inspector，支持以下工作：检查虚拟机和打包的软件工件是否存在已知漏洞。"
+  },
+  "feat-073-02": {
+    "label": "使用可利用性和资源暴露背景优先排列漏洞。",
+    "why": "risk-based findings 属于 Amazon Inspector，支持以下工作：使用可利用性和资源暴露背景优先排列漏洞。"
+  },
+  "feat-074-01": {
+    "label": "用数据密钥保护数据，然后在更长期的根密钥下加密该密钥。",
+    "why": "envelope encryption 属于 AWS Key Management Service (AWS KMS)，支持以下工作：用数据密钥保护数据，然后在更长期的根密钥下加密该密钥。"
+  },
+  "feat-075-00": {
+    "label": "分类对象内容以定位个人、财务、凭证或受管制信息。",
+    "why": "Machine-learning sensitive-data discovery 属于 Amazon Macie，支持以下工作：分类对象内容以定位个人、财务、凭证或受管制信息。"
+  },
+  "feat-075-02": {
+    "label": "在检测到敏感对象或不安全存储设置时显示可操作的警报。",
+    "why": "findings for exposed data 属于 Amazon Macie，支持以下工作：在检测到敏感对象或不安全存储设置时显示可操作的警报。"
+  },
+  "feat-076-01": {
+    "label": "按计划替换支持的数据库或应用程序密码，无需手动更新。",
+    "why": "automatic credential rotation 属于 AWS Secrets Manager，支持以下工作：按计划替换支持的数据库或应用程序密码，无需手动更新。"
+  },
+  "feat-077-00": {
+    "label": "为长期云访问冗余持久保存文件、数据集和工件。",
+    "why": "Highly durable object storage 属于 Amazon Simple Storage Service (Amazon S3)，支持以下工作：为长期云访问冗余持久保存文件、数据集和工件。"
+  },
+  "feat-077-02": {
+    "label": "随着对象的年龄和访问需求变化自动过渡或过期对象。",
+    "why": "lifecycle management 属于 Amazon Simple Storage Service (Amazon S3)，支持以下工作：随着对象的年龄和访问需求变化自动过渡或过期对象。"
+  },
+  "feat-077-04": {
+    "label": "对不需要超低延迟的非常大的嵌入集合优先考虑存储经济学。",
+    "why": "cost-optimized billion-scale vector storage 属于 Amazon Simple Storage Service (Amazon S3)，支持以下工作：对不需要超低延迟的非常大的嵌入集合优先考虑存储经济学。"
+  },
+  "feat-078-01": {
+    "label": "在恢复存档对象时权衡检索速度与价格。",
+    "why": "expedited to bulk retrieval options 属于 Amazon S3 Glacier，支持以下工作：在恢复存档对象时权衡检索速度与价格。"
+  },
+  "feat-079-00": {
+    "label": "在为临床交换设计的互操作格式中持久保存医疗记录。",
+    "why": "FHIR-enabled patient-data store 属于 AWS HealthLake，支持以下工作：在为临床交换设计的互操作格式中持久保存医疗记录。"
+  },
+  "feat-080-00": {
+    "label": "用医疗保健调谐词汇转录临床对话。",
+    "why": "Medical speech recognition 属于 AWS HealthScribe，支持以下工作：用医疗保健调谐词汇转录临床对话。"
+  },
+  "feat-080-02": {
+    "label": "从患者临床工作者对话中识别医学上有意义的概念。",
+    "why": "clinical term extraction 属于 AWS HealthScribe，支持以下工作：从患者临床工作者对话中识别医学上有意义的概念。"
+  },
+  "feat-080-04": {
+    "label": "在配置所需合规控制下支持受管制医疗保健工作负载。",
+    "why": "HIPAA-eligible processing 属于 AWS HealthScribe，支持以下工作：在配置所需合规控制下支持受管制医疗保健工作负载。"
+  },
+  "feat-082-00": {
+    "label": "在针对预测经济学优化的 AWS 硅上提供训练的神经网络。",
+    "why": "Cost/performance-focused deep-learning and generative-AI inference 属于 AWS Inferentia / Inferentia2，支持以下工作：在针对预测经济学优化的 AWS 硅上提供训练的神经网络。"
+  },
+  "feat-083-00": {
+    "label": "将训练的神经网络图转换为 AWS 机器学习加速器的优化指令。",
+    "why": "Model compilation 属于 AWS Neuron SDK，支持以下工作：将训练的神经网络图转换为 AWS 机器学习加速器的优化指令。"
+  },
+  "feat-083-02": {
+    "label": "检查加速器利用率和执行行为以提高性能。",
+    "why": "profiling and debugging tools 属于 AWS Neuron SDK，支持以下工作：检查加速器利用率和执行行为以提高性能。"
+  },
+  "feat-084-01": {
+    "label": "为专用 AWS 硅编译和优化训练工作负载。",
+    "why": "Neuron SDK support 属于 Amazon EC2 Trn1 / Trn2 instances，支持以下工作：为专用 AWS 硅编译和优化训练工作负载。"
+  },
+  "feat-085-00": {
+    "label": "选择专门为神经网络预测设计的 AWS 加速器代数。",
+    "why": "First- and second-generation Inferentia 属于 Amazon EC2 Inf1 / Inf2 instances，支持以下工作：选择专门为神经网络预测设计的 AWS 加速器代数。"
+  },
+  "feat-085-02": {
+    "label": "为 AWS 预测加速器编译和调整训练的模型。",
+    "why": "Neuron SDK support for inference 属于 Amazon EC2 Inf1 / Inf2 instances，支持以下工作：为 AWS 预测加速器编译和调整训练的模型。"
+  },
+  "feat-087-00": {
+    "label": "对于要求苛刻的大型模型训练和推理使用高端加速器架构。",
+    "why": "NVIDIA Blackwell GPUs 属于 Amazon EC2 P6 instances and UltraServers，支持以下工作：对于要求苛刻的大型模型训练和推理使用高端加速器架构。"
+  },
+  "feat-087-02": {
+    "label": "以低延迟和高吞吐量在计算节点之间移动分布式加速器流量。",
+    "why": "high-bandwidth EFA networking 属于 Amazon EC2 P6 instances and UltraServers，支持以下工作：以低延迟和高吞吐量在计算节点之间移动分布式加速器流量。"
+  },
+  "feat-088-01": {
+    "label": "对图形、媒体和模型服务工作负载使用更新的高效加速器。",
+    "why": "NVIDIA L4 GPUs on G6 instances 属于 Amazon EC2 G5 / G6 instances，支持以下工作：对图形、媒体和模型服务工作负载使用更新的高效加速器。"
+  },
+  "feat-089-00": {
+    "label": "使用专用深度学习处理器作为常规 GPU 训练的替代方案。",
+    "why": "Habana Gaudi accelerators 属于 Amazon EC2 DL1 instances，支持以下工作：使用专用深度学习处理器作为常规 GPU 训练的替代方案。"
+  },
+  "feat-089-01": {
+    "label": "跨多个专业计算节点协调模型学习。",
+    "why": "distributed deep-learning training 属于 Amazon EC2 DL1 instances，支持以下工作：跨多个专业计算节点协调模型学习。"
+  },
+  "feat-090-00": {
+    "label": "从配置定义和复制弹性科学计算环境。",
+    "why": "Infrastructure-as-code cluster creation 属于 AWS ParallelCluster，支持以下工作：从配置定义和复制弹性科学计算环境。"
+  },
+  "feat-090-02": {
+    "label": "为队列中的作业添加工作节点，当需求下降时移除空闲容量。",
+    "why": "automatic compute scaling 属于 AWS ParallelCluster，支持以下工作：为队列中的作业添加工作节点，当需求下降时移除空闲容量。"
+  },
+  "feat-091-01": {
+    "label": "加速 HPC 和模型训练使用的常见消息传递和集合库。",
+    "why": "MPI and NCCL communication 属于 Elastic Fabric Adapter，支持以下工作：加速 HPC 和模型训练使用的常见消息传递和集合库。"
+  },
+  "feat-092-00": {
+    "label": "优先排列并保留离线计算工作直到适当容量可用。",
+    "why": "Managed job queues 属于 AWS Batch，支持以下工作：优先排列并保留离线计算工作直到适当容量可用。"
+  },
+  "feat-092-02": {
+    "label": "表示有序管道或相同批处理任务的许多并行变体。",
+    "why": "job dependencies and array jobs 属于 AWS Batch，支持以下工作：表示有序管道或相同批处理任务的许多并行变体。"
+  },
+  "feat-094-00": {
+    "label": "运行框架就绪、可复现的容器用于模型学习和预测。",
+    "why": "Deep Learning Containers (DLCs) 属于 AWS Deep Learning Containers，支持以下工作：运行框架就绪、可复现的容器用于模型学习和预测。"
+  },
+  "feat-095-00": {
+    "label": "基于流行的动态深度学习框架开发和运营工作负载。",
+    "why": "PyTorch on AWS 属于 PyTorch on AWS，支持以下工作：基于流行的动态深度学习框架开发和运营工作负载。"
+  },
+  "feat-097-00": {
+    "label": "将开放模型生态系统与托管训练和云计算结合使用。",
+    "why": "Hugging Face Deep Learning Containers 属于 Hugging Face on Amazon SageMaker，支持以下工作：将开放模型生态系统与托管训练和云计算结合使用。"
+  },
+  "feat-098-01": {
+    "label": "在可执行文档中探索数据、可视化结果并迭代模型代码。",
+    "why": "interactive data science 属于 Jupyter on AWS，支持以下工作：在可执行文档中探索数据、可视化结果并迭代模型代码。"
+  },
+  "feat-099-00": {
+    "label": "记录托管 AI 功能设计和评估的场景。",
+    "why": "Intended use cases 属于 AWS AI Service Cards，支持以下工作：记录托管 AI 功能设计和评估的场景。"
+  },
+  "feat-099-02": {
+    "label": "为采纳托管 AI 功能的团队提供透明度和更安全的使用建议。",
+    "why": "responsible AI design guidance 属于 AWS AI Service Cards，支持以下工作：为采纳托管 AI 功能的团队提供透明度和更安全的使用建议。"
+  },
+  "feat-100-02": {
+    "label": "发布交互式原型，让其他人可以尝试。",
+    "why": "shareable applications 属于 Amazon PartyRock，支持以下工作：发布交互式原型，让其他人可以尝试。"
+  },
+  "feat-100-03": {
+    "label": "通过实验了解指令措辞和背景如何改变模型输出。",
+    "why": "hands-on prompt engineering 属于 Amazon PartyRock，支持以下工作：通过实验了解指令措辞和背景如何改变模型输出。"
+  },
+  "feat-000-01": {
+    "label": "使用 AWS 开发的基础模型系列进行生成、嵌入和多模态工作负载。",
+    "why": "Amazon Titan 和 Amazon Nova 模型属于 Amazon Bedrock，并能完成这项工作：使用 AWS 开发的基础模型系列进行生成、嵌入和多模态工作负载。"
+  },
+  "feat-000-02": {
+    "label": "运行模型请求，无需配置或管理底层推理基础设施。",
+    "why": "无服务器托管推理属于 Amazon Bedrock，并能完成这项工作：运行模型请求，无需配置或管理底层推理基础设施。"
+  },
+  "feat-000-04": {
+    "label": "使用特定组织的示例和要求来调整基础模型的行为。",
+    "why": "微调和定制属于 Amazon Bedrock，并能完成这项工作：使用特定组织的示例和要求来调整基础模型的行为。"
+  },
+  "feat-000-06": {
+    "label": "协调多步骤任务，这些任务根据指令进行推理并调用操作或数据源。",
+    "why": "Amazon Bedrock 代理属于 Amazon Bedrock，并能完成这项工作：协调多步骤任务，这些任务根据指令进行推理并调用操作或数据源。"
+  },
+  "feat-000-08": {
+    "label": "使敏感提示和客户信息与模型提供商的培训隔离。",
+    "why": "私有数据保护属于 Amazon Bedrock，并能完成这项工作：使敏感提示和客户信息与模型提供商的培训隔离。"
+  },
+  "feat-000-10": {
+    "label": "将行为从较大的教师模型转移到较小的模型，以降低服务成本和延迟。",
+    "why": "模型蒸馏属于 Amazon Bedrock，并能完成这项工作：将行为从较大的教师模型转移到较小的模型，以降低服务成本和延迟。"
+  },
+  "feat-000-13": {
+    "label": "通过托管多模态处理将文档、图像、音频和视频转换为结构化洞察。",
+    "why": "Bedrock Data Automation 属于 Amazon Bedrock，并能完成这项工作：通过托管多模态处理将文档、图像、音频和视频转换为结构化洞察。"
+  },
+  "feat-000-15": {
+    "label": "将支持的外部定制基础模型引入托管推理。",
+    "why": "Custom Model Import 属于 Amazon Bedrock，并能完成这项工作：将支持的外部定制基础模型引入托管推理。"
+  },
+  "feat-000-17": {
+    "label": "捕获请求负载、响应和调用元数据以进行审计和调试。",
+    "why": "模型调用日志记录属于 Amazon Bedrock，并能完成这项工作：捕获请求负载、响应和调用元数据以进行审计和调试。"
+  },
+  "feat-001-01": {
+    "label": "在隔离的会话中部署动态代理，支持无服务器扩展和异步执行。",
+    "why": "Runtime 属于 Amazon Bedrock AgentCore，并能完成这项工作：在隔离的会话中部署动态代理，支持无服务器扩展和异步执行。"
+  },
+  "feat-001-02": {
+    "label": "保留跨会话持久化的短期对话背景和长期知识。",
+    "why": "Memory 属于 Amazon Bedrock AgentCore，并能完成这项工作：保留跨会话持久化的短期对话背景和长期知识。"
+  },
+  "feat-001-04": {
+    "label": "将代理连接到现有身份验证提供商并管理访问，无需迁移用户。",
+    "why": "Identity 属于 Amazon Bedrock AgentCore，并能完成这项工作：将代理连接到现有身份验证提供商并管理访问，无需迁移用户。"
+  },
+  "feat-001-07": {
+    "label": "追踪执行路径、检查中间输出并在生产中调试代理性能。",
+    "why": "Observability 属于 Amazon Bedrock AgentCore，并能完成这项工作：追踪执行路径、检查中间输出并在生产中调试代理性能。"
+  },
+  "feat-001-09": {
+    "label": "衡量代理和工具在会话、追踪和跨度中完成任务的可靠性。",
+    "why": "Evaluations 属于 Amazon Bedrock AgentCore，并能完成这项工作：衡量代理和工具在会话、追踪和跨度中完成任务的可靠性。"
+  },
+  "feat-001-11": {
+    "label": "使用自然语言或 Cedar 规则强制实施对工具调用的确定性边界。",
+    "why": "Policy 属于 Amazon Bedrock AgentCore，并能完成这项工作：使用自然语言或 Cedar 规则强制实施对工具调用的确定性边界。"
+  },
+  "feat-002-00": {
+    "label": "让模型从指令中选择和排列操作，而不是硬编码每条路径。",
+    "why": "Model-driven agent development 属于 Strands Agents，并能完成这项工作：让模型从指令中选择和排列操作，而不是硬编码每条路径。"
+  },
+  "feat-002-02": {
+    "label": "为代理提供对外部函数、服务和数据的受控访问。",
+    "why": "tool integration 属于 Strands Agents，并能完成这项工作：为代理提供对外部函数、服务和数据的受控访问。"
+  },
+  "feat-002-04": {
+    "label": "在不重新设计周围代理应用程序的情况下更改模型提供商。",
+    "why": "provider-independent model support 属于 Strands Agents，并能完成这项工作：在不重新设计周围代理应用程序的情况下更改模型提供商。"
+  },
+  "feat-003-00": {
+    "label": "使用 AWS 基础模型对书面提示和视觉输入进行推理。",
+    "why": "Nova text and multimodal models 属于 Amazon Nova，并能完成这项工作：使用 AWS 基础模型对书面提示和视觉输入进行推理。"
+  },
+  "feat-003-03": {
+    "label": "将通用模型调整为专门的行为、术语或组织示例。",
+    "why": "model customization 属于 Amazon Nova，并能完成这项工作：将通用模型调整为专门的行为、术语或组织示例。"
+  },
+  "feat-004-00": {
+    "label": "将团队文件、仪表板、数据源和背景信息引入协作工作区。",
+    "why": "Spaces 属于 Amazon Quick，并能完成这项工作：将团队文件、仪表板、数据源和背景信息引入协作工作区。"
+  },
+  "feat-004-02": {
+    "label": "将业务数据、公网资源和第三方数据集综合为专业报告。",
+    "why": "Research 属于 Amazon Quick，并能完成这项工作：将业务数据、公网资源和第三方数据集综合为专业报告。"
+  },
+  "feat-004-04": {
+    "label": "构建连接到日常应用程序的简单或多步骤工作流。",
+    "why": "Automate 属于 Amazon Quick，并能完成这项工作：构建连接到日常应用程序的简单或多步骤工作流。"
+  },
+  "feat-004-06": {
+    "label": "在对话中生成完成的文档、演示文稿、电子表格或图像。",
+    "why": "Create polished deliverables 属于 Amazon Quick，并能完成这项工作：在对话中生成完成的文档、演示文稿、电子表格或图像。"
+  },
+  "feat-005-00": {
+    "label": "检索组织信息并从连接的资源综合工作场所响应。",
+    "why": "Enterprise search and answers 属于 Amazon Q Business，并能完成这项工作：检索组织信息并从连接的资源综合工作场所响应。"
+  },
+  "feat-005-02": {
+    "label": "让工作场所助手在连接的业务系统中执行已批准的操作。",
+    "why": "actions through plugins 属于 Amazon Q Business，并能完成这项工作：让工作场所助手在连接的业务系统中执行已批准的操作。"
+  },
+  "feat-006-01": {
+    "label": "委托可以规划、编辑、测试和迭代的多步骤实现工作。",
+    "why": "agentic software development 属于 Amazon Q Developer，并能完成这项工作：委托可以规划、编辑、测试和迭代的多步骤实现工作。"
+  },
+  "feat-006-03": {
+    "label": "加速现有软件的大规模升级或迁移。",
+    "why": "application transformation 属于 Amazon Q Developer，并能完成这项工作：加速现有软件的大规模升级或迁移。"
+  },
+  "feat-006-05": {
+    "label": "调查云故障并使用系统背景建议纠正措施。",
+    "why": "operational troubleshooting 属于 Amazon Q Developer，并能完成这项工作：调查云故障并使用系统背景建议纠正措施。"
+  },
+  "feat-007-01": {
+    "label": "分析并将旧主机工作负载转换为可维护的现代架构。",
+    "why": "mainframe modernization 属于 AWS Transform，并能完成这项工作：分析并将旧主机工作负载转换为可维护的现代架构。"
+  },
+  "feat-007-03": {
+    "label": "检查旧代码库并在编辑前生成基于证据的转换计划。",
+    "why": "code analysis and planning 属于 AWS Transform，并能完成这项工作：检查旧代码库并在编辑前生成基于证据的转换计划。"
+  },
+  "feat-007-05": {
+    "label": "验证生成的转换并保留对重要更改的专家批准。",
+    "why": "validation and human oversight 属于 AWS Transform，并能完成这项工作：验证生成的转换并保留对重要更改的专家批准。"
+  },
+  "feat-008-01": {
+    "label": "通过需求优先或设计优先的工作流规划新的应用程序功能。",
+    "why": "Feature Specs 属于 Kiro，并能完成这项工作：通过需求优先或设计优先的工作流规划新的应用程序功能。"
+  },
+  "feat-008-03": {
+    "label": "将专门任务委托给并行隔离上下文窗口。",
+    "why": "Subagents 属于 Kiro，并能完成这项工作：将专门任务委托给并行隔离上下文窗口。"
+  },
+  "feat-008-05": {
+    "label": "从终端使用编码助手进行聊天、自动化和无头工作流。",
+    "why": "Kiro CLI 属于 Kiro，并能完成这项工作：从终端使用编码助手进行聊天、自动化和无头工作流。"
+  },
+  "feat-009-01": {
+    "label": "使用项目代码和指令作为进行软件变更时的背景。",
+    "why": "repository-aware implementation 属于 Kiro autonomous agent，并能完成这项工作：使用项目代码和指令作为进行软件变更时的背景。"
+  },
+  "feat-010-00": {
+    "label": "从已审核的预训练模型和参考解决方案开始，而不是从头构建。",
+    "why": "Curated model and solution catalogue 属于 Amazon SageMaker AI JumpStart，并能完成这项工作：从已审核的预训练模型和参考解决方案开始，而不是从头构建。"
+  },
+  "feat-010-02": {
+    "label": "使用特定任务的数据和设置指导预训练模型的调整。",
+    "why": "customization workflows 属于 Amazon SageMaker AI JumpStart，并能完成这项工作：使用特定任务的数据和设置指导预训练模型的调整。"
+  },
+  "feat-011-00": {
+    "label": "从指令或背景创建或转换自然语言内容。",
+    "why": "Text generation 属于 Amazon Titan，并能完成这项工作：从指令或背景创建或转换自然语言内容。"
+  },
+  "feat-011-02": {
+    "label": "在模型系列的选定成员支持该模态的情况下生成新的视觉内容。",
+    "why": "image generation depending on model selected 属于 Amazon Titan，并能完成这项工作：在模型系列的选定成员支持该模态的情况下生成新的视觉内容。"
+  },
+  "feat-012-02": {
+    "label": "选择立即按请求预测或针对存储记录的预定高容量评分。",
+    "why": "real-time and batch inference 属于 Amazon SageMaker AI，并能完成这项工作：选择立即按请求预测或针对存储记录的预定高容量评分。"
+  },
+  "feat-012-04": {
+    "label": "将数据准备、训练、评估、批准和部署连接到可重复的管道。",
+    "why": "workflow integration 属于 Amazon SageMaker AI，并能完成这项工作：将数据准备、训练、评估、批准和部署连接到可重复的管道。"
+  },
+  "feat-012-06": {
+    "label": "通过可视化准备工作流导入、分析、清理和转换模型数据。",
+    "why": "SageMaker Data Wrangler 属于 Amazon SageMaker AI，并能完成这项工作：通过可视化准备工作流导入、分析、清理和转换模型数据。"
+  },
+  "feat-012-08": {
+    "label": "衡量数据集或预测中的偏差，并解释哪些输入影响了输出。",
+    "why": "SageMaker Clarify 属于 Amazon SageMaker AI，并能完成这项工作：衡量数据集或预测中的偏差，并解释哪些输入影响了输出。"
+  },
+  "feat-012-10": {
+    "label": "定义具有处理、训练、评估和批准步骤的可重复模型构建工作流。",
+    "why": "SageMaker Pipelines 属于 Amazon SageMaker AI，并能完成这项工作：定义具有处理、训练、评估和批准步骤的可重复模型构建工作流。"
+  },
+  "feat-012-12": {
+    "label": "版本模型包、跟踪批准状态并控制朝向部署的升级。",
+    "why": "SageMaker Model Registry 属于 Amazon SageMaker AI，并能完成这项工作：版本模型包、跟踪批准状态并控制朝向部署的升级。"
+  },
+  "feat-012-14": {
+    "label": "统一跨分析存储的数据访问，用于分析和模型开发工作负载。",
+    "why": "SageMaker Lakehouse 属于 Amazon SageMaker AI，并能完成这项工作：统一跨分析存储的数据访问，用于分析和模型开发工作负载。"
+  },
+  "feat-013-00": {
+    "label": "为 ML 团队提供一个托管的地方来探索、转换和准备数据集。",
+    "why": "Central workspace for data preparation 属于 Amazon SageMaker AI Studio，并能完成这项工作：为 ML 团队提供一个托管的地方来探索、转换和准备数据集。"
+  },
+  "feat-013-02": {
+    "label": "运行从准备的示例中学习模型参数的作业。",
+    "why": "model training 属于 Amazon SageMaker AI Studio，并能完成这项工作：运行从准备的示例中学习模型参数的作业。"
+  },
+  "feat-013-04": {
+    "label": "从一个工作区协调和管理可重复的机器学习生命周期活动。",
+    "why": "ML workflow operations 属于 Amazon SageMaker AI Studio，并能完成这项工作：从一个工作区协调和管理可重复的机器学习生命周期活动。"
+  },
+  "feat-014-01": {
+    "label": "清理、合并和转换原始信息为模型就绪的输入。",
+    "why": "data preparation 属于 Amazon SageMaker AI Canvas，并能完成这项工作：清理、合并和转换原始信息为模型就绪的输入。"
+  },
+  "feat-014-02": {
+    "label": "通过有指导的无代码流程将训练的模型应用于新记录。",
+    "why": "prediction workflows 属于 Amazon SageMaker AI Canvas，并能完成这项工作：通过有指导的无代码流程将训练的模型应用于新记录。"
+  },
+  "feat-015-00": {
+    "label": "在随时可用的网络工作区中进行机器学习实验，无需本地设置。",
+    "why": "JupyterLab 属于 Amazon SageMaker AI Studio Lab，并能完成这项工作：在随时可用的网络工作区中进行机器学习实验，无需本地设置。"
+  },
+  "feat-016-01": {
+    "label": "优先考虑不确定的示例进行注释，以便人类努力有效地改进模型。",
+    "why": "active-learning options 属于 Amazon SageMaker AI Ground Truth，并能完成这项工作：优先考虑不确定的示例进行注释，以便人类努力有效地改进模型。"
+  },
+  "feat-017-00": {
+    "label": "为要求高的基础模型训练作业提供有韧性的托管计算车队。",
+    "why": "Purpose-built clusters for training large models 属于 Amazon SageMaker AI HyperPod，并能完成这项工作：为要求高的基础模型训练作业提供有韧性的托管计算车队。"
+  },
+  "feat-018-00": {
+    "label": "将不确定或重要的 AI 输出升级给某人的决定。",
+    "why": "Human loops 属于 Amazon Augmented AI (A2I)，并能完成这项工作：将不确定或重要的 AI 输出升级给某人的决定。"
+  },
+  "feat-019-00": {
+    "label": "将小型注释、验证或收集作业分配给按需劳动力。",
+    "why": "Crowdsourced human tasks 属于 Amazon Mechanical Turk，并能完成这项工作：将小型注释、验证或收集作业分配给按需劳动力。"
+  },
+  "feat-019-02": {
+    "label": "使用共识、审查和接受规则来提高已提交人工工作的可靠性。",
+    "why": "result quality controls 属于 Amazon Mechanical Turk，并能完成这项工作：使用共识、审查和接受规则来提高已提交人工工作的可靠性。"
+  },
+  "feat-020-01": {
+    "label": "将跨来源的重复身份合并为统一的档案。",
+    "why": "Machine learning-based matching 属于 AWS Entity Resolution，并能完成这项工作：将跨来源的重复身份合并为统一的档案。"
+  },
+  "feat-021-01": {
+    "label": "通过云市场工作流获得使用提供商数据集的持续权利。",
+    "why": "subscription-based data access 属于 AWS Data Exchange，并能完成这项工作：通过云市场工作流获得使用提供商数据集的持续权利。"
+  },
+  "feat-022-00": {
+    "label": "使用流行的分布式开源分析框架处理大型数据集。",
+    "why": "Apache Spark and Hadoop workloads 属于 Amazon EMR，并能完成这项工作：使用流行的分布式开源分析框架处理大型数据集。"
+  },
+  "feat-022-02": {
+    "label": "直接针对云数据湖中的对象运行分布式转换。",
+    "why": "processing data in Amazon S3 属于 Amazon EMR，并能完成这项工作：直接针对云数据湖中的对象运行分布式转换。"
+  },
+  "feat-023-01": {
+    "label": "读取源记录、重塑它们并将结果写入目标系统。",
+    "why": "AWS Glue ETL jobs 属于 AWS Glue，并能完成这项工作：读取源记录、重塑它们并将结果写入目标系统。"
+  },
+  "feat-023-03": {
+    "label": "自动扫描数据存储以推断结构并注册表和分区。",
+    "why": "crawlers for schema discovery 属于 AWS Glue，并能完成这项工作：自动扫描数据存储以推断结构并注册表和分区。"
+  },
+  "feat-024-00": {
+    "label": "通过可视化界面而不是编程转换来清理和重塑源记录。",
+    "why": "No-code data preparation 属于 AWS Glue DataBrew，并能完成这项工作：通过可视化界面而不是编程转换来清理和重塑源记录。"
+  },
+  "feat-024-02": {
+    "label": "保存一组有序的清理步骤，并将其一致地应用于后来的数据集。",
+    "why": "reusable transformation recipes 属于 AWS Glue DataBrew，并能完成这项工作：保存一组有序的清理步骤，并将其一致地应用于后来的数据集。"
+  },
+  "feat-025-01": {
+    "label": "在数据库、表、列、行或单元级别授予访问权限，而不是公开整个数据集。",
+    "why": "fine-grained access control 属于 AWS Lake Formation，并能完成这项工作：在数据库、表、列、行或单元级别授予访问权限，而不是公开整个数据集。"
+  },
+  "feat-026-01": {
+    "label": "通过比较其含义的数值表示来检索语义相似的项。",
+    "why": "vector search 属于 Amazon OpenSearch Service，并能完成这项工作：通过比较其含义的数值表示来检索语义相似的项。"
+  },
+  "feat-026-02": {
+    "label": "通过可视化和监控视图探索索引的操作信息。",
+    "why": "dashboards and observability 属于 Amazon OpenSearch Service，并能完成这项工作：通过可视化和监控视图探索索引的操作信息。"
+  },
+  "feat-026-04": {
+    "label": "当快速跨大型可搜索语料库的排名是主要要求时，为生成的答案建立基础。",
+    "why": "search-heavy RAG retrieval 属于 Amazon OpenSearch Service，并能完成这项工作：当快速跨大型可搜索语料库的排名是主要要求时，为生成的答案建立基础。"
+  },
+  "feat-027-01": {
+    "label": "使用熟悉的关系语法查询大型结构化数据集。",
+    "why": "SQL analytics at scale 属于 Amazon Redshift，并能完成这项工作：使用熟悉的关系语法查询大型结构化数据集。"
+  },
+  "feat-028-00": {
+    "label": "为账户、服务或项目定义预期支出或使用限制。",
+    "why": "Custom cost and usage budgets 属于 AWS Budgets，并能完成这项工作：为账户、服务或项目定义预期支出或使用限制。"
+  },
+  "feat-028-02": {
+    "label": "通过将预计的月底费用与目标进行比较，在支出过度前发出警告。",
+    "why": "forecast-based notifications 属于 AWS Budgets，并能完成这项工作：通过将预计的月底费用与目标进行比较，在支出过度前发出警告。"
+  },
+  "feat-029-01": {
+    "label": "检查云支出在过去几天或几个月内的变化方式。",
+    "why": "historical trend visualization 属于 AWS Cost Explorer，并能完成这项工作：检查云支出在过去几天或几个月内的变化方式。"
+  },
+  "feat-030-00": {
+    "label": "为工作负载选择虚拟机 CPU、内存、存储和网络比例。",
+    "why": "Configurable instance types 属于 Amazon EC2，并能完成这项工作：为工作负载选择虚拟机 CPU、内存、存储和网络比例。"
+  },
+  "feat-031-00": {
+    "label": "响应上传、API 调用、计划或消息执行代码。",
+    "why": "Event-triggered functions 属于 AWS Lambda，并能完成这项工作：响应上传、API 调用、计划或消息执行代码。"
+  },
+  "feat-031-01": {
+    "label": "随着事件到达而增加或减少并发执行容量。",
+    "why": "automatic scaling 属于 AWS Lambda，并能完成这项工作：随着事件到达而增加或减少并发执行容量。"
+  },
+  "feat-032-00": {
+    "label": "通过 AWS 原生控制平面跨车队计划和操作打包的应用程序任务。",
+    "why": "Managed container orchestration 属于 Amazon Elastic Container Service (Amazon ECS)，并能完成这项工作：通过 AWS 原生控制平面跨车队计划和操作打包的应用程序任务。"
+  },
+  "feat-032-02": {
+    "label": "在客户控制的虚拟机容量上放置容器任务。",
+    "why": "Amazon EC2 launch option 属于 Amazon Elastic Container Service (Amazon ECS)，并能完成这项工作：在客户控制的虚拟机容量上放置容器任务。"
+  },
+  "feat-033-01": {
+    "label": "运行以通用开源编排接口为目标的生态系统工具和清单。",
+    "why": "Kubernetes API compatibility 属于 Amazon Elastic Kubernetes Service (Amazon EKS)，并能完成这项工作：运行以通用开源编排接口为目标的生态系统工具和清单。"
+  },
+  "feat-034-00": {
+    "label": "使用 AWS 构建的数据库引擎搭配熟悉的开源关系驱动程序和工具。",
+    "why": "MySQL and PostgreSQL compatibility 属于 Amazon Aurora，并能完成这项工作：使用 AWS 构建的数据库引擎搭配熟悉的开源关系驱动程序和工具。"
+  },
+  "feat-034-02": {
+    "label": "自动调整关系数据库计算以应对可变的需求。",
+    "why": "Aurora Serverless capacity 属于 Amazon Aurora，并能完成这项工作：自动调整关系数据库计算以应对可变的需求。"
+  },
+  "feat-034-04": {
+    "label": "保持事务和结构化应用程序记录与语义最近邻查询相邻。",
+    "why": "pgvector 属于 Amazon Aurora，并能完成这项工作：保持事务和结构化应用程序记录与语义最近邻查询相邻。"
+  },
+  "feat-035-01": {
+    "label": "在迁移现有应用程序时使用通用文档数据库 API 和驱动程序。",
+    "why": "MongoDB workload compatibility 属于 Amazon DocumentDB (with MongoDB compatibility)，并能完成这项工作：在迁移现有应用程序时使用通用文档数据库 API 和驱动程序。"
+  },
+  "feat-035-03": {
+    "label": "在灵活的记录（如医疗历史或知识文章）旁边存储嵌入，并查询其相似性。",
+    "why": "native vector search for JSON documents 属于 Amazon DocumentDB (with MongoDB compatibility)，并能完成这项工作：在灵活的记录（如医疗历史或知识文章）旁边存储嵌入，并查询其相似性。"
+  },
+  "feat-036-00": {
+    "label": "通过主键有效检索灵活的记录，无需关系连接。",
+    "why": "Key-value and document model 属于 Amazon DynamoDB，并能完成这项工作：通过主键有效检索灵活的记录，无需关系连接。"
+  },
+  "feat-036-02": {
+    "label": "捕获项目变更的有序记录以触发下游处理。",
+    "why": "DynamoDB Streams 属于 Amazon DynamoDB，并能完成这项工作：捕获项目变更的有序记录以触发下游处理。"
+  },
+  "feat-037-01": {
+    "label": "从内存中为频繁请求的值提供服务，以避免较慢的数据库工作。",
+    "why": "microsecond-latency caching 属于 Amazon ElastiCache，并能完成这项工作：从内存中为频繁请求的值提供服务，以避免较慢的数据库工作。"
+  },
+  "feat-038-00": {
+    "label": "使用标记的关系或语义三元组建模连接数据。",
+    "why": "Property graph and RDF support 属于 Amazon Neptune，并能完成这项工作：使用标记的关系或语义三元组建模连接数据。"
+  },
+  "feat-038-02": {
+    "label": "代表事实及其连接用于语义搜索、建议或基础。",
+    "why": "knowledge graph workloads 属于 Amazon Neptune，并能完成这项工作：代表事实及其连接用于语义搜索、建议或基础。"
+  },
+  "feat-038-04": {
+    "label": "使用语义匹配和实体之间的可解释路径为生成的答案建立基础。",
+    "why": "GraphRAG relationship context 属于 Amazon Neptune，并能完成这项工作：使用语义匹配和实体之间的可解释路径为生成的答案建立基础。"
+  },
+  "feat-039-01": {
+    "label": "将例行关系数据库维护和恢复点创建委托给 AWS。",
+    "why": "automated backups and patching 属于 Amazon Relational Database Service (Amazon RDS)，并能完成这项工作：将例行关系数据库维护和恢复点创建委托给 AWS。"
+  },
+  "feat-039-03": {
+    "label": "向传统托管 PostgreSQL 应用程序添加嵌入存储和最近邻查询。",
+    "why": "RDS for PostgreSQL with pgvector 属于 Amazon Relational Database Service (Amazon RDS)，并能完成这项工作：向传统托管 PostgreSQL 应用程序添加嵌入存储和最近邻查询。"
+  },
+  "feat-040-00": {
+    "label": "仅从请求身份被授权查看的信息生成工作场所响应。",
+    "why": "Permissions-aware enterprise answers 属于 Amazon Q，并能完成这项工作：仅从请求身份被授权查看的信息生成工作场所响应。"
+  },
+  "feat-040-02": {
+    "label": "使助手响应基于已批准的公司存储库和应用程序。",
+    "why": "connections to organizational data 属于 Amazon Q，并能完成这项工作：使助手响应基于已批准的公司存储库和应用程序。"
+  },
+  "feat-041-00": {
+    "label": "提取通用语言信号并从一般非结构化文本中构造结构。",
+    "why": "Amazon Comprehend insights 属于 Amazon Comprehend，并能完成这项工作：提取通用语言信号并从一般非结构化文本中构造结构。"
+  },
+  "feat-042-00": {
+    "label": "在医疗保健叙述中识别条件、药物、检查及其关系。",
+    "why": "DetectEntitiesV2 属于 Amazon Comprehend Medical，并能完成这项工作：在医疗保健叙述中识别条件、药物、检查及其关系。"
+  },
+  "feat-043-01": {
+    "label": "从表述中推断用户试图完成的目标。",
+    "why": "intent recognition 属于 Amazon Lex，并能完成这项工作：从表述中推断用户试图完成的目标。"
+  },
+  "feat-043-03": {
+    "label": "将对话界面连接到后端业务逻辑和履行系统。",
+    "why": "application integration 属于 Amazon Lex，并能完成这项工作：将对话界面连接到后端业务逻辑和履行系统。"
+  },
+  "feat-045-00": {
+    "label": "将预录或流式语音转换为书面文本。",
+    "why": "Batch transcription 属于 Amazon Transcribe，并能完成这项工作：将预录或流式语音转换为书面文本。"
+  },
+  "feat-046-00": {
+    "label": "在保留意义的同时在语言之间转换书面内容。",
+    "why": "Real-time translation 属于 Amazon Translate，并能完成这项工作：在保留意义的同时在语言之间转换书面内容。"
+  },
+  "feat-047-01": {
+    "label": "自动化摄入，其中布局、字段和表格值必须成为可用记录。",
+    "why": "AnalyzeExpense API 属于 Amazon Textract，并能完成这项工作：自动化摄入，其中布局、字段和表格值必须成为可用记录。"
+  },
+  "feat-048-01": {
+    "label": "为工作场所或支持发现排名相关的组织信息。",
+    "why": "Intelligent search 属于 Amazon Kendra，并能完成这项工作：为工作场所或支持发现排名相关的组织信息。"
+  },
+  "feat-049-01": {
+    "label": "使用标记的示例为特定组织的对象教授图像识别。",
+    "why": "Custom Labels 属于 Amazon Rekognition，并能完成这项工作：使用标记的示例为特定组织的对象教授图像识别。"
+  },
+  "feat-051-00": {
+    "label": "在无需 ML 专业知识的情况下从历史观察中选择和训练预测算法。",
+    "why": "Automated time-series machine learning 属于 Amazon Forecast，并能完成这项工作：在无需 ML 专业知识的情况下从历史观察中选择和训练预测算法。"
+  },
+  "feat-051-02": {
+    "label": "通过改变信号和超越目标历史的描述性属性来改进未来估计。",
+    "why": "related time-series and item metadata 属于 Amazon Forecast，并能完成这项工作：通过改变信号和超越目标历史的描述性属性来改进未来估计。"
+  },
+  "feat-052-00": {
+    "label": "从标记的历史事件中学习特定组织的可疑行为模式。",
+    "why": "Custom fraud models 属于 Amazon Fraud Detector，并能完成这项工作：从标记的历史事件中学习特定组织的可疑行为模式。"
+  },
+  "feat-052-02": {
+    "label": "将模型结果和业务条件转换为批准、阻止或审查等操作。",
+    "why": "rules and outcomes 属于 Amazon Fraud Detector，并能完成这项工作：将模型结果和业务条件转换为批准、阻止或审查等操作。"
+  },
+  "feat-053-01": {
+    "label": "从可接受和有故障的输出示例构建工业检查模型。",
+    "why": "normal and defective image training 属于 Amazon Lookout for Vision，并能完成这项工作：从可接受和有故障的输出示例构建工业检查模型。"
+  },
+  "feat-054-01": {
+    "label": "结合可能共享一个底层事件的同时不寻常的信号。",
+    "why": "related-event grouping 属于 Amazon Lookout for Metrics，并能完成这项工作：结合可能共享一个底层事件的同时不寻常的信号。"
+  },
+  "feat-055-00": {
+    "label": "发现不寻常的应用程序行为并解释可能的可靠性影响。",
+    "why": "Reactive insights 属于 Amazon DevOps Guru，并能完成这项工作：发现不寻常的应用程序行为并解释可能的可靠性影响。"
+  },
+  "feat-056-00": {
+    "label": "检查建议的源代码更改并在合并前推荐可维护性改进。",
+    "why": "Automated code reviews 属于 Amazon CodeGuru Reviewer，并能完成这项工作：检查建议的源代码更改并在合并前推荐可维护性改进。"
+  },
+  "feat-056-02": {
+    "label": "在代码变更提交时针对支持的源控制项目运行分析。",
+    "why": "repository integration 属于 Amazon CodeGuru Reviewer，并能完成这项工作：在代码变更提交时针对支持的源控制项目运行分析。"
+  },
+  "feat-058-00": {
+    "label": "在需要代理之前通过自动语音或聊天互动解决客户需求。",
+    "why": "Conversational self-service 属于 Amazon Connect，并能完成这项工作：在需要代理之前通过自动语音或聊天互动解决客户需求。"
+  },
+  "feat-058-02": {
+    "label": "分析互动以获取情感、主题、合规性和服务质量趋势。",
+    "why": "contact analytics 属于 Amazon Connect，并能完成这项工作：分析互动以获取情感、主题、合规性和服务质量趋势。"
+  },
+  "feat-058-04": {
+    "label": "跨语音和数字渠道一致管理客户对话。",
+    "why": "omnichannel customer interactions 属于 Amazon Connect，并能完成这项工作：跨语音和数字渠道一致管理客户对话。"
+  },
+  "feat-059-01": {
+    "label": "识别跨设施和合作伙伴的库存风险和不平衡。",
+    "why": "inventory visibility and insights 属于 AWS Supply Chain，并能完成这项工作：识别跨设施和合作伙伴的库存风险和不平衡。"
+  },
+  "feat-060-00": {
+    "label": "发布具有业务描述和所有权的可发现组织数据产品。",
+    "why": "Business data catalogue 属于 Amazon DataZone，并能完成这项工作：发布具有业务描述和所有权的可发现组织数据产品。"
+  },
+  "feat-060-02": {
+    "label": "从技术架构信息生成有用的目录背景以改进发现。",
+    "why": "AI-assisted metadata descriptions 属于 Amazon DataZone，并能完成这项工作：从技术架构信息生成有用的目录背景以改进发现。"
+  },
+  "feat-061-01": {
+    "label": "分析拉取请求以查找常见漏洞和特定组织要求。",
+    "why": "Code security review 属于 AWS Security Agent，并能完成这项工作：分析拉取请求以查找常见漏洞和特定组织要求。"
+  },
+  "feat-061-03": {
+    "label": "在沙箱中部署应用程序，以确认发现的弱点是否可被利用。",
+    "why": "Simulated validation 属于 AWS Security Agent，并能完成这项工作：在沙箱中部署应用程序，以确认发现的弱点是否可被利用。"
+  },
+  "feat-062-00": {
+    "label": "从票务和警报系统自动启动事件分析。",
+    "why": "Automated investigations 属于 AWS DevOps Agent，并能完成这项工作：从票务和警报系统自动启动事件分析。"
+  },
+  "feat-062-02": {
+    "label": "在识别事件原因后提供解决、验证和回滚操作。",
+    "why": "Detailed mitigation plans 属于 AWS DevOps Agent，并能完成这项工作：在识别事件原因后提供解决、验证和回滚操作。"
+  },
+  "feat-062-04": {
+    "label": "使用反馈和过去的调查来改进未来的操作建议。",
+    "why": "Continuous learning 属于 AWS DevOps Agent，并能完成这项工作：使用反馈和过去的调查来改进未来的操作建议。"
+  },
+  "feat-063-01": {
+    "label": "从每个启用的地理区域将账户活动交付到中央目的地。",
+    "why": "multi-Region trails 属于 AWS CloudTrail，并能完成这项工作：从每个启用的地理区域将账户活动交付到中央目的地。"
+  },
+  "feat-063-02": {
+    "label": "为调查和合规审查保留防篡改活动记录。",
+    "why": "immutable audit evidence 属于 AWS CloudTrail，并能完成这项工作：为调查和合规审查保留防篡改活动记录。"
+  },
+  "feat-064-01": {
+    "label": "当操作测量跨过阈值或检测到异常行为时进行响应。",
+    "why": "alarms and automated actions 属于 Amazon CloudWatch，并能完成这项工作：当操作测量跨过阈值或检测到异常行为时进行响应。"
+  },
+  "feat-065-00": {
+    "label": "查看云资源的设置随时间如何变化。",
+    "why": "Configuration history 属于 AWS Config，并能完成这项工作：查看云资源的设置随时间如何变化。"
+  },
+  "feat-065-02": {
+    "label": "发现云资产并了解其配置如何相互依赖。",
+    "why": "resource relationship inventory 属于 AWS Config，并能完成这项工作：发现云资产并了解其配置如何相互依赖。"
+  },
+  "feat-066-02": {
+    "label": "使用账户元数据和服务配置审查云环境改进。",
+    "why": "account-level guidance 属于 AWS Trusted Advisor，并能完成这项工作：使用账户元数据和服务配置审查云环境改进。"
+  },
+  "feat-067-01": {
+    "label": "记录工作负载尚未满足建议架构实践的地方。",
+    "why": "documented risks 属于 AWS Well-Architected Tool，并能完成这项工作：记录工作负载尚未满足建议架构实践的地方。"
+  },
+  "feat-067-02": {
+    "label": "将审查结果转换为有序的架构补救操作集。",
+    "why": "improvement plans 属于 AWS Well-Architected Tool，并能完成这项工作：将审查结果转换为有序的架构补救操作集。"
+  },
+  "feat-068-01": {
+    "label": "减少拥有内容的应用程序或存储系统的直接负载和暴露。",
+    "why": "origin protection 属于 Amazon CloudFront，并能完成这项工作：减少拥有内容的应用程序或存储系统的直接负载和暴露。"
+  },
+  "feat-069-00": {
+    "label": "分割隔离的云网络并控制其流量可以在何处传输。",
+    "why": "Subnets and route tables 属于 Amazon Virtual Private Cloud (Amazon VPC)，并能完成这项工作：分割隔离的云网络并控制其流量可以在何处传输。"
+  },
+  "feat-069-02": {
+    "label": "在不通过公网发送流量的情况下访问受支持的云服务。",
+    "why": "VPC endpoints and AWS PrivateLink 属于 Amazon Virtual Private Cloud (Amazon VPC)，并能完成这项工作：在不通过公网发送流量的情况下访问受支持的云服务。"
+  },
+  "feat-070-02": {
+    "label": "通过自助门户接受并追踪选定的云合规协议。",
+    "why": "agreement management 属于 AWS Artifact，并能完成这项工作：通过自助门户接受并追踪选定的云合规协议。"
+  },
+  "feat-071-01": {
+    "label": "从与通用标准和法规一致的控制集开始评估。",
+    "why": "prebuilt compliance frameworks 属于 AWS Audit Manager，并能完成这项工作：从与通用标准和法规一致的控制集开始评估。"
+  },
+  "feat-072-00": {
+    "label": "代表身份并附加允许或拒绝云操作的文档。",
+    "why": "Users roles and policies 属于 AWS Identity and Access Management (IAM)，并能完成这项工作：代表身份并附加允许或拒绝云操作的文档。"
+  },
+  "feat-072-02": {
+    "label": "为应用程序和联合身份使用短期访问权限而不是永久密钥。",
+    "why": "temporary role credentials 属于 AWS Identity and Access Management (IAM)，并能完成这项工作：为应用程序和联合身份使用短期访问权限而不是永久密钥。"
+  },
+  "feat-073-01": {
+    "label": "评估无服务器函数代码包和依赖关系以查找安全漏洞。",
+    "why": "AWS Lambda vulnerability scanning 属于 Amazon Inspector，并能完成这项工作：评估无服务器函数代码包和依赖关系以查找安全漏洞。"
+  },
+  "feat-074-00": {
+    "label": "创建由组织控制其政策、生命周期和使用的加密密钥。",
+    "why": "Customer managed keys 属于 AWS Key Management Service (AWS KMS)，并能完成这项工作：创建由组织控制其政策、生命周期和使用的加密密钥。"
+  },
+  "feat-074-02": {
+    "label": "控制谁可能使用密码资料并在托管计划上更换它。",
+    "why": "key policies and automatic rotation 属于 AWS Key Management Service (AWS KMS)，并能完成这项工作：控制谁可能使用密码资料并在托管计划上更换它。"
+  },
+  "feat-075-01": {
+    "label": "评估对象存储桶以查找公共访问、加密和共享风险。",
+    "why": "S3 security posture evaluation 属于 Amazon Macie，并能完成这项工作：评估对象存储桶以查找公共访问、加密和共享风险。"
+  },
+  "feat-076-00": {
+    "label": "将密码、令牌和 API 凭证保留在源代码和纯文本配置之外。",
+    "why": "Encrypted secret storage 属于 AWS Secrets Manager，并能完成这项工作：将密码、令牌和 API 凭证保留在源代码和纯文本配置之外。"
+  },
+  "feat-076-02": {
+    "label": "限制每个凭证的检索仅限于明确授权的身份。",
+    "why": "fine-grained secret access 属于 AWS Secrets Manager，并能完成这项工作：限制每个凭证的检索仅限于明确授权的身份。"
+  },
+  "feat-077-01": {
+    "label": "保护对象历史和机密性，同时控制哪些身份可能检索它。",
+    "why": "versioning encryption and access policies 属于 Amazon Simple Storage Service (Amazon S3)，并能完成这项工作：保护对象历史和机密性，同时控制哪些身份可能检索它。"
+  },
+  "feat-077-03": {
+    "label": "在对象存储中创建向量桶和索引，用于大规模无服务器相似性查询。",
+    "why": "Amazon S3 Vectors 属于 Amazon Simple Storage Service (Amazon S3)，并能完成这项工作：在对象存储中创建向量桶和索引，用于大规模无服务器相似性查询。"
+  },
+  "feat-078-00": {
+    "label": "保留不经常访问的记录，成本低于活跃对象存储。",
+    "why": "Long-term archival storage classes 属于 Amazon S3 Glacier，并能完成这项工作：保留不经常访问的记录，成本低于活跃对象存储。"
+  },
+  "feat-078-02": {
+    "label": "当即时访问不必要时，经济地满足长保存期。",
+    "why": "retention-focused cost optimization 属于 Amazon S3 Glacier，并能完成这项工作：当即时访问不必要时，经济地满足长保存期。"
+  },
+  "feat-079-01": {
+    "label": "将分散的医疗保健信息规范化为通用现代架构。",
+    "why": "FHIR R4 属于 AWS HealthLake，并能完成这项工作：将分散的医疗保健信息规范化为通用现代架构。"
+  },
+  "feat-080-01": {
+    "label": "在录制的遭遇中区分临床医生和患者的贡献。",
+    "why": "speaker role identification 属于 AWS HealthScribe，并能完成这项工作：在录制的遭遇中区分临床医生和患者的贡献。"
+  },
+  "feat-080-03": {
+    "label": "为专业审查起草结构化遭遇文档。",
+    "why": "preliminary clinical notes 属于 AWS HealthScribe，并能完成这项工作：为专业审查起草结构化遭遇文档。"
+  },
+  "feat-081-00": {
+    "label": "使用专用 AWS 硅来降低学习模型参数的成本和时间。",
+    "why": "AWS Trainium 属于 AWS Trainium，并能完成这项工作：使用专用 AWS 硅来降低学习模型参数的成本和时间。"
+  },
+  "feat-082-01": {
+    "label": "配置暴露第二代 AWS 推理加速器的实例系列。",
+    "why": "Amazon EC2 Inf2 instances 属于 AWS Inferentia / Inferentia2，并能完成这项工作：配置暴露第二代 AWS 推理加速器的实例系列。"
+  },
+  "feat-083-01": {
+    "label": "将通用模型开发库与专用 AWS 训练和推理芯片一起使用。",
+    "why": "framework integrations 属于 AWS Neuron SDK，并能完成这项工作：将通用模型开发库与专用 AWS 训练和推理芯片一起使用。"
+  },
+  "feat-084-00": {
+    "label": "为不同规模的具成本效益的模型学习选择 AWS 加速器世代。",
+    "why": "First- and second-generation Trainium 属于 Amazon EC2 Trn1 / Trn2 instances，并能完成这项工作：为不同规模的具成本效益的模型学习选择 AWS 加速器世代。"
+  },
+  "feat-084-02": {
+    "label": "使用低延迟网络连接加速器实例以用于大型同步学习作业。",
+    "why": "distributed training with EFA 属于 Amazon EC2 Trn1 / Trn2 instances，并能完成这项工作：使用低延迟网络连接加速器实例以用于大型同步学习作业。"
+  },
+  "feat-085-01": {
+    "label": "使用专用推理硅降低生产预测的价格。",
+    "why": "cost-efficient model serving 属于 Amazon EC2 Inf1 / Inf2 instances，并能完成这项工作：使用专用推理硅降低生产预测的价格。"
+  },
+  "feat-086-00": {
+    "label": "为最要求高的大模型训练和服务工作负载使用高端加速器。",
+    "why": "NVIDIA H100 Tensor Core GPUs 属于 Amazon EC2 P5 instances，并能完成这项工作：为最要求高的大模型训练和服务工作负载使用高端加速器。"
+  },
+  "feat-087-01": {
+    "label": "将多个 GPU 主机组合成紧密连接的系统，用于超过一个服务器的模型。",
+    "why": "EC2 UltraServer scale-up systems 属于 Amazon EC2 P6 instances and UltraServers，并能完成这项工作：将多个 GPU 主机组合成紧密连接的系统，用于超过一个服务器的模型。"
+  },
+  "feat-088-00": {
+    "label": "为常规 ML 推理和视觉工作负载使用具有成本意识的图形加速器。",
+    "why": "NVIDIA A10G GPUs on G5 instances 属于 Amazon EC2 G5 / G6 instances，并能完成这项工作：为常规 ML 推理和视觉工作负载使用具有成本意识的图形加速器。"
+  },
+  "feat-088-02": {
+    "label": "在灵活的 GPU 实例上运行视觉应用程序和中等规模的生产预测。",
+    "why": "graphics and ML inference workloads 属于 Amazon EC2 G5 / G6 instances，并能完成这项工作：在灵活的 GPU 实例上运行视觉应用程序和中等规模的生产预测。"
+  },
+  "feat-089-02": {
+    "label": "使用 Gaudi 处理器的库和工具开发和优化工作负载。",
+    "why": "SynapseAI software stack 属于 Amazon EC2 DL1 instances，并能完成这项工作：使用 Gaudi 处理器的库和工具开发和优化工作负载。"
+  },
+  "feat-090-01": {
+    "label": "通过熟悉的 HPC 调度软件对分布式工作进行队列和分配。",
+    "why": "job scheduler integration 属于 AWS ParallelCluster，并能完成这项工作：通过熟悉的 HPC 调度软件对分布式工作进行队列和分配。"
+  },
+  "feat-091-00": {
+    "label": "让分布式应用程序直接与网络硬件通信以降低延迟。",
+    "why": "Operating-system bypass 属于 Elastic Fabric Adapter，并能完成这项工作：让分布式应用程序直接与网络硬件通信以降低延迟。"
+  },
+  "feat-091-02": {
+    "label": "当一个学习作业跨多个机器时有效同步梯度。",
+    "why": "tightly coupled distributed training 属于 Elastic Fabric Adapter，并能完成这项工作：当一个学习作业跨多个机器时有效同步梯度。"
+  },
+  "feat-092-01": {
+    "label": "配置和扩展排队处理作业所需的实例容量。",
+    "why": "dynamic compute environments 属于 AWS Batch，并能完成这项工作：配置和扩展排队处理作业所需的实例容量。"
+  },
+  "feat-093-00": {
+    "label": "启动已配置通用框架和驱动程序的虚拟机。",
+    "why": "Deep Learning AMI (DLAMI) 属于 AWS Deep Learning AMIs，并能完成这项工作：启动已配置通用框架和驱动程序的虚拟机。"
+  },
+  "feat-094-01": {
+    "label": "跨托管 ML、Kubernetes、容器或虚拟机使用相同的 ML 容器工件。",
+    "why": "Amazon EKS deployment 属于 AWS Deep Learning Containers，并能完成这项工作：跨托管 ML、Kubernetes、容器或虚拟机使用相同的 ML 容器工件。"
+  },
+  "feat-096-00": {
+    "label": "基于 Google 的机器学习框架开发和操作工作负载。",
+    "why": "TensorFlow on AWS 属于 TensorFlow on AWS，并能完成这项工作：基于 Google 的机器学习框架开发和操作工作负载。"
+  },
+  "feat-098-00": {
+    "label": "在不手动维护笔记本服务器的情况下开发和操作协作交互计算。",
+    "why": "Managed notebook environments 属于 Jupyter on AWS，并能完成这项工作：在不手动维护笔记本服务器的情况下开发和操作协作交互计算。"
+  },
+  "feat-098-02": {
+    "label": "从笔记本工作流访问云数据集、训练作业和部署工具。",
+    "why": "Amazon SageMaker notebook instances 属于 Jupyter on AWS，并能完成这项工作：从笔记本工作流访问云数据集、训练作业和部署工具。"
+  },
+  "feat-099-01": {
+    "label": "解释可以改变服务输出质量的已知约束和条件。",
+    "why": "limitations and performance factors 属于 AWS AI Service Cards，并能完成这项工作：解释可以改变服务输出质量的已知约束和条件。"
+  },
+  "feat-100-00": {
+    "label": "通过描述行为并连接提示驱动的组件来创建生成应用程序。",
+    "why": "Prompt-based app building 属于 Amazon PartyRock，并能完成这项工作：通过描述行为并连接提示驱动的组件来创建生成应用程序。"
+  },
+  "feat-100-01": {
+    "label": "使用来自 AWS 的托管生成模型为无代码学习应用程序供电。",
+    "why": "Amazon Bedrock foundation models 属于 Amazon PartyRock，并能完成这项工作：使用来自 AWS 的托管生成模型为无代码学习应用程序供电。"
+  },
+  "features": {
+    "hint": "将每个工作拖到执行它的功能上。显示将其命名为属于的服务。"
+  }
+}

@@ -1,0 +1,57 @@
+{
+ "prompting": {
+  "hint": "Khái niệm này thay đổi hướng dẫn, bối cảnh, lấy mẫu, ràng buộc đầu ra, hoặc khả năng chống tấn công tại thời gian yêu cầu mà không huấn luyện lại model trừ khi manh mối rõ ràng nói cách khác."
+ },
+ "prompting-01": {
+  "label": "Chia nhỏ một tác vụ phức tạp thành các bước nhỏ hơn rõ ràng có thể kiểm tra đầu ra của chúng.",
+  "why": "Chia nhỏ một tác vụ phức tạp thành các bước nhỏ hơn rõ ràng có thể kiểm tra đầu ra của chúng."
+ },
+ "prompting-02": {
+  "label": "Yêu cầu model thực hiện một tác vụ mà không cung cấp ví dụ.",
+  "why": "Yêu cầu model thực hiện một tác vụ mà không cung cấp ví dụ."
+ },
+ "prompting-03": {
+  "label": "Cung cấp một số lượng nhỏ các ví dụ để hướng dẫn hành vi và định dạng đầu ra.",
+  "why": "Cung cấp một số lượng nhỏ các ví dụ để hướng dẫn hành vi và định dạng đầu ra."
+ },
+ "prompting-04": {
+  "label": "Xác định hành vi ứng dụng ưu tiên cao, ranh giới, vai trò và yêu cầu phản hồi.",
+  "why": "Xác định hành vi ứng dụng ưu tiên cao, ranh giới, vai trò và yêu cầu phản hồi."
+ },
+ "prompting-05": {
+  "label": "Một đơn vị văn bản được xử lý bởi model ngôn ngữ; số lượng token ảnh hưởng đến dung tích ngữ cảnh, độ trễ và chi phí.",
+  "why": "Một đơn vị văn bản được xử lý bởi model ngôn ngữ; số lượng token ảnh hưởng đến dung tích ngữ cảnh, độ trễ và chi phí."
+ },
+ "prompting-06": {
+  "label": "Số lượng tối đa kết hợp của các token đầu vào và được tạo model có thể xử lý trong một yêu cầu.",
+  "why": "Số lượng tối đa kết hợp của các token đầu vào và được tạo model có thể xử lý trong một yêu cầu."
+ },
+ "prompting-07": {
+  "label": "Kiểm soát tính ngẫu nhiên lấy mẫu; các giá trị thấp hơn ủng hộ đầu ra có thể lặp lại hơn và các giá trị cao hơn tăng sự biến đổi.",
+  "why": "Kiểm soát tính ngẫu nhiên lấy mẫu; các giá trị thấp hơn ủng hộ đầu ra có thể lặp lại hơn và các giá trị cao hơn tăng sự biến đổi."
+ },
+ "prompting-08": {
+  "label": "Giới hạn lấy mẫu đến tập hợp nhỏ nhất của các token có khả năng có xác suất tích lũy đạt đến một ngưỡng.",
+  "why": "Giới hạn lấy mẫu đến tập hợp nhỏ nhất của các token có khả năng có xác suất tích lũy đạt đến một ngưỡng."
+ },
+ "prompting-09": {
+  "label": "Giới hạn độ dài phản hồi để kiểm soát rủi ro cắt ngắn, độ trễ và chi tiêu.",
+  "why": "Giới hạn độ dài phản hồi để kiểm soát rủi ro cắt ngắn, độ trễ và chi tiêu."
+ },
+ "prompting-10": {
+  "label": "Hạn chế phản hồi đối với một schema như JSON để phần mềm hạ lưu có thể xác thực và tiêu thụ nó.",
+  "why": "Hạn chế phản hồi đối với một schema như JSON để phần mềm hạ lưu có thể xác thực và tiêu thụ nó."
+ },
+ "prompting-11": {
+  "label": "Đầu vào độc hại cố gắng ghi đè hướng dẫn hoặc thao túng một model và các công cụ được kết nối của nó.",
+  "why": "Đầu vào độc hại cố gắng ghi đè hướng dẫn hoặc thao túng một model và các công cụ được kết nối của nó."
+ },
+ "prompting-12": {
+  "label": "Các ví dụ huấn luyện bị hỏng hoặc đối kháng thao túng những gì model học.",
+  "why": "Các ví dụ huấn luyện bị hỏng hoặc đối kháng thao túng những gì model học."
+ },
+ "prompting-13": {
+  "label": "Cố gắng vượt qua các hàng rào an toàn để tạo nội dung bị hạn chế.",
+  "why": "Cố gắng vượt qua các hàng rào an toàn để tạo nội dung bị hạn chế."
+ }
+}

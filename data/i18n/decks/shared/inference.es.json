@@ -1,0 +1,37 @@
+{
+  "inference": {
+    "hint": "Busca el requisito operacional: tiempo de respuesta, volumen de solicitudes, ubicación del dispositivo, acceso alojado, o cambio entre entrenamiento y producción."
+  },
+  "inference-01": {
+    "label": "Devuelve una predicción inmediatamente para una solicitud interactiva donde la baja latencia importa.",
+    "why": "Devuelve una predicción inmediatamente para una solicitud interactiva donde la baja latencia importa."
+  },
+  "inference-02": {
+    "label": "Procesa muchos registros almacenados juntos cuando una respuesta inmediata no es necesaria.",
+    "why": "Procesa muchos registros almacenados juntos cuando una respuesta inmediata no es necesaria."
+  },
+  "inference-03": {
+    "label": "Ejecuta el modelo cerca de la fuente de datos o dispositivo para reducir latencia, uso de ancho de banda, o dependencia de conectividad.",
+    "why": "Ejecuta el modelo cerca de la fuente de datos o dispositivo para reducir latencia, uso de ancho de banda, o dependencia de conectividad."
+  },
+  "inference-04": {
+    "label": "Una interfaz alojada a través de la cual las aplicaciones envían entradas y reciben salidas del modelo.",
+    "why": "Una interfaz alojada a través de la cual las aplicaciones envían entradas y reciben salidas del modelo."
+  },
+  "inference-05": {
+    "label": "El tiempo entre enviar una solicitud de inferencia y recibir su resultado.",
+    "why": "El tiempo entre enviar una solicitud de inferencia y recibir su resultado."
+  },
+  "inference-06": {
+    "label": "El número de solicitudes de inferencia o registros procesados en un período de tiempo.",
+    "why": "El número de solicitudes de inferencia o registros procesados en un período de tiempo."
+  },
+  "inference-07": {
+    "label": "La distribución de entradas de producción cambia desde los datos usados durante el entrenamiento.",
+    "why": "La distribución de entradas de producción cambia desde los datos usados durante el entrenamiento."
+  },
+  "inference-08": {
+    "label": "La relación entre entradas y la salida correcta cambia con el tiempo.",
+    "why": "La relación entre entradas y la salida correcta cambia con el tiempo."
+  }
+}

@@ -1,0 +1,91 @@
+{
+  "rc-01": {
+    "label": "Il campo di testo libero che permetteva agli utenti di inviare prompt arbitrari al modello sottostante viene rimosso; rimane solo un set fisso di azioni.",
+    "why": "La superficie di iniezione è sparita, non custodita. L'eliminazione è riconoscibile perché la mitigazione rimuove una capacità piuttosto che vincolare il suo uso."
+  },
+  "rc-02": {
+    "label": "La feature che inferiva attributi demografici dalle foto dell'utente viene eliminata dal prodotto.",
+    "why": "Nessuna inferenza significa nessun errore di inferenza, nessuna accuratezza disparata e nessuna domanda di base giuridica. L'hazard non è gestito; non esiste più."
+  },
+  "rc-03": {
+    "label": "La capacità di un chatbot di eseguire modifiche ai conti viene ritirata completamente; ora può solo leggere e spiegare.",
+    "why": "La rimozione della capacità di scrittura elimina l'intera classe di danni di azioni non autorizzate. Tutto ciò che segue diventa non necessario."
+  },
+  "rc-04": {
+    "label": "Gli identificatori diretti vengono eliminati dal corpus di addestramento completamente piuttosto che essere protetti all'interno di esso.",
+    "why": "I dati che non sono mai stati raccolti non possono perdere, essere ri-identificati o essere soggetti a una richiesta di accesso. Questo è il motivo per cui la minimizzazione supera la crittografia."
+  },
+  "rc-05": {
+    "label": "Un modello generativo utilizzato per riassumere note mediche viene sostituito con un riassumtore estrattivo che può solo citare l'origine.",
+    "why": "Lo scopo è preservato mentre il meccanismo pericoloso — generazione libera e quindi fabbricazione — viene sostituito con uno che non può fabbricare."
+  },
+  "rc-06": {
+    "label": "Un modello gradient-boosted scatola nera in una decisione di prestito viene sostituito da una scorecard monotonica con accuratezza comparabile.",
+    "why": "Ri-progettare per un modello intrinsecamente spiegabile rimuove il problema della spiegazione piuttosto che attaccare un'explicatore post-hoc ad esso."
+  },
+  "rc-07": {
+    "label": "I record reali dei clienti utilizzati in un ambiente di test vengono sostituiti con dati sintetici della stessa forma statistica.",
+    "why": "L'attività continua con un input materialmente più sicuro. La sostituzione si trova al di sotto dell'eliminazione perché la sostituzione ha i suoi rischi più piccoli."
+  },
+  "rc-08": {
+    "label": "Un passaggio di riconoscimento facciale in un controllo di identità viene sostituito con un controllo documento-più-liveness che non crea un modello di viso.",
+    "why": "Stesso obiettivo di assicurazione, meccanismo diverso, esposizione biometrica molto inferiore. L'indicazione è che la funzione sopravvive e l'hazard viene scambiato."
+  },
+  "rc-09": {
+    "label": "I filtri di output bloccano le risposte contenenti modelli di dati personali prima che raggiungano mai l'utente.",
+    "why": "Il vincolo è applicato dal sistema su ogni richiesta. Nessuno ha bisogno di ricordarlo, il che rende i controlli tecnici superiori a quelli procedurali."
+  },
+  "rc-10": {
+    "label": "Il controllo di accesso basato su ruoli impedisce al livello di recupero di restituire documenti che l'utente richiedente non ha diritto di vedere.",
+    "why": "L'autorizzazione è applicata al punto di recupero piuttosto che fidarsi del prompt. Una regola che il sistema applica non può essere dimenticata sotto pressione."
+  },
+  "rc-11": {
+    "label": "Un limite duro limita il numero di chiamate di strumento che un agente può fare prima di doversi fermare ed escalare.",
+    "why": "Un limite di runtime mantiene indipendentemente da ciò che il modello decide di fare. Migliorare la descrizione dello strumento sarebbe una misura amministrativa per confronto."
+  },
+  "rc-12": {
+    "label": "Il deployment è protetto da una suite di valutazione automatizzata che fallisce la build se le prestazioni del sottogruppo regrediscono oltre una soglia.",
+    "why": "Il gate è meccanico e non può essere saltato da un manager di rilascio occupato, il che è esattamente il motivo per cui batte una lista di controllo di revisione che copre lo stesso terreno."
+  },
+  "rc-13": {
+    "label": "Una politica di uso accettabile è pubblicata e tutto il personale completa la formazione annuale su di essa.",
+    "why": "L'efficacia dipende interamente da persone che la leggono, la ricordano e la applicano. La formazione vale la pena di avere e viene regolarmente sovraccreditata nelle valutazioni dei rischi."
+  },
+  "rc-14": {
+    "label": "Una procedura richiede a un secondo revisore di approvare ogni cambio del modello ad alto impatto.",
+    "why": "Un gate procedurale può essere bypassato sotto pressione di scadenza. Fare dello stesso controllo uno stato obbligatorio nella pipeline lo sposterebbe su un livello."
+  },
+  "rc-15": {
+    "label": "Gli audit manuali trimestrali campionano le decisioni del modello e le controllano rispetto alla politica.",
+    "why": "Detective, periodico e umano. Trova problemi dopo che si verificano, il che è utile e non è prevenzione."
+  },
+  "rc-16": {
+    "label": "Un playbook di risposta agli incidenti indica chi viene chiamato e in che ordine quando un modello si comporta male.",
+    "why": "La preparazione procedurale riduce l'impatto attraverso una risposta più veloce, ma solo se la procedura è seguita ed è attuale."
+  },
+  "rc-17": {
+    "label": "Un banner dice agli utenti che le risposte sono generate dall'IA e potrebbero essere imprecise.",
+    "why": "Un obbligo di divulgazione può benissimo essere obbligatorio, ma come mitigazione è il livello più debole: trasferisce la vigilanza all'utente, che non può ispezionare il modello."
+  },
+  "rc-18": {
+    "label": "L'interfaccia avverte gli utenti di non inserire informazioni riservate nell'assistente.",
+    "why": "L'avviso dipende dalla persona meno equipaggiata per applicarlo. Bloccare modelli sensibili all'input sarebbe un controllo di ingegneria per lo stesso rischio."
+  },
+  "rc-19": {
+    "label": "La documentazione afferma che il modello non è stato validato per l'uso su casi pediatrici.",
+    "why": "Indicare una limitazione informa il deployer senza prevenire l'uso improprio. Rifiutare input fuori ambito al runtime sarebbe materialmente più forte."
+  },
+  "rc-20": {
+    "label": "Le immagini generate portano un'etichetta visibile e metadati di provenienza incorporati che le identificano come sintetiche.",
+    "why": "Il marchio di provenienza supporta il giudizio a valle ed è spesso legalmente richiesto. Non cambia nulla su ciò che il sistema produrrà."
+  },
+  "risk-controls": {
+    "hint": "Trascina ogni mitigazione sul suo livello. La domanda è quanto la misura dipenda da un umano che fa la cosa giusta — più dipende, più debole è il livello.",
+    "note": "L'ordine conta più delle etichette. Una misura che dipende da una persona che legge, ricorda e si conforma è strutturalmente più debole di una che rende il guasto impossibile, per quanto diligentemente la prima sia scritta.",
+    "zones[0].def": "Rimuovi l'hazard. La modalità di guasto non può verificarsi perché la capacità che l'ha prodotta è sparita.",
+    "zones[1].def": "Sostituisci l'elemento pericoloso con uno più sicuro che raggiunge lo stesso scopo.",
+    "zones[2].def": "Costruisci il vincolo nel sistema in modo che si mantenga senza che nessuno scelga di conformarsi.",
+    "zones[3].def": "Politiche, formazione, passaggi di revisione e procedure. Efficace solo nella misura in cui le persone le seguono.",
+    "zones[4].def": "Dillo all'utente. Il livello più debole: trasferisce la responsabilità alla persona meno in grado di cambiare l'esito."
+  }
+}

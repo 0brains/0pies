@@ -1,0 +1,21 @@
+{
+  "rag-pipeline": {
+    "prompt": "Ordina gli stadi dall'assunzione a una risposta radicata e citata.",
+    "steps[0].label": "Assumi documenti di fonte affidabile",
+    "steps[0].detail": "Il recupero può solo affiorare quello che è stato assunto. La selezione della fonte è una decisione di governance, non di plumbing.",
+    "steps[1].label": "Pulisci, dividi e allega metadati",
+    "steps[1].detail": "Il chunking decide cosa sia un'unità recuperabile; i metadati sono ciò che rende possibile il filtro e l'attribuzione.",
+    "steps[2].label": "Crea embeddings per ogni chunk",
+    "steps[2].detail": "Il testo diventa vettori. Il modello di embedding scelto qui vincola tutto ciò che il recuperatore può distinguere.",
+    "steps[3].label": "Archivia chunk e vettori in un indice",
+    "steps[3].detail": "L'indice rende la ricerca di somiglianza gestibile. I controlli di accesso appartengono qui, non solo alla risposta.",
+    "steps[4].label": "Incorpora e interpreta la query dell'utente",
+    "steps[4].detail": "La query è incorporata dallo stesso modello dei chunk, o i due vivono in spazi incomparabili.",
+    "steps[5].label": "Recupera, filtra e riclassifica le prove",
+    "steps[5].detail": "Il richiamo decide se il passaggio corretto è disponibile; la classificazione decide se sopravvive al budget del contesto.",
+    "steps[6].label": "Crea un prompt con prove e istruzioni",
+    "steps[6].detail": "Le prove recuperate vengono collocate nel prompt con istruzioni su come usarle e quando rifiutare.",
+    "steps[7].label": "Genera, convalida e cita la risposta radicata",
+    "steps[7].detail": "Il modello risponde dalle prove fornite e le cita, quindi un lettore può controllare piuttosto che fidarsi."
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "rag": {
+    "hint": "Colócalo en la ruta de recuperación: preparación de conocimiento, búsqueda de candidatos, mejora de su relevancia, o asegurando que la respuesta generada siga siendo respaldada y trazable."
+  },
+  "rag-01": {
+    "label": "Un vector numérico que representa características semánticas para que el contenido relacionado pueda compararse matemáticamente.",
+    "why": "Un vector numérico que representa características semánticas para que el contenido relacionado pueda compararse matemáticamente."
+  },
+  "rag-02": {
+    "label": "Divide documentos de fuente en pasajes recuperables dimensionados para preservar significado sin desperdiciar contexto.",
+    "why": "Divide documentos de fuente en pasajes recuperables dimensionados para preservar significado sin desperdiciar contexto."
+  },
+  "rag-03": {
+    "label": "Almacena embeddings y soporta búsqueda de similitud de vecinos más cercanos eficiente.",
+    "why": "Almacena embeddings y soporta búsqueda de similitud de vecinos más cercanos eficiente."
+  },
+  "rag-04": {
+    "label": "Recupera contenido por significado en lugar de requerir superposición de palabras clave exactas.",
+    "why": "Recupera contenido por significado en lugar de requerir superposición de palabras clave exactas."
+  },
+  "rag-05": {
+    "label": "Recupera contenido usando coincidencias de términos léxicos y sigue siendo útil para nombres, códigos y frases exactas.",
+    "why": "Recupera contenido usando coincidencias de términos léxicos y sigue siendo útil para nombres, códigos y frases exactas."
+  },
+  "rag-06": {
+    "label": "Combina recuperación semántica y por palabras clave para beneficiarse de significado y coincidencia de términos exactos.",
+    "why": "Combina recuperación semántica y por palabras clave para beneficiarse de significado y coincidencia de términos exactos."
+  },
+  "rag-07": {
+    "label": "Restringe la recuperación por atributos como inquilino, fecha, tipo de documento, o nivel de acceso.",
+    "why": "Restringe la recuperación por atributos como inquilino, fecha, tipo de documento, o nivel de acceso."
+  },
+  "rag-08": {
+    "label": "Re-puntúa candidatos recuperados para colocar los pasajes más relevantes a la consulta completa primero.",
+    "why": "Re-puntúa candidatos recuperados para colocar los pasajes más relevantes a la consulta completa primero."
+  },
+  "rag-09": {
+    "label": "Restringe la generación a evidencia proporcionada así las afirmaciones pueden ser respaldadas y trazadas.",
+    "why": "Restringe la generación a evidencia proporcionada así las afirmaciones pueden ser respaldadas y trazadas."
+  },
+  "rag-10": {
+    "label": "Vincula una afirmación de respuesta de vuelta al pasaje de fuente que la respalda.",
+    "why": "Vincula una afirmación de respuesta de vuelta al pasaje de fuente que la respalda."
+  },
+  "rag-11": {
+    "label": "Indica si la etapa de recuperación encuentra la evidencia necesaria para responder una pregunta.",
+    "why": "Si 100 preguntas requieren un pasaje de evidencia conocido y el recuperador lo devuelve para 85, el recall de recuperación es 85%. El recall de recuperación bajo señala problemas de chunking, embeddings, filtros, reescritura de consultas, o recuento de candidatos que la generación no puede reparar."
+  },
+  "rag-12": {
+    "label": "Indica cuánto del contexto recuperado es relevante en lugar de ruido distrayente.",
+    "why": "Indica cuánto del contexto recuperado es relevante en lugar de ruido distrayente."
+  }
+}

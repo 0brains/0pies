@@ -1,0 +1,151 @@
+{
+ "id": "incident-zero",
+ "runner": "ladders",
+ "title": "Incident Zero",
+ "blurb": "Four sequences behind a breach: the response model, the DR activation, the evidence-handling order, and the attacker's own path through the kill chain.",
+ "source": "Chapple CISSP SG 10ed ch.17 (Preventing and Responding to Incidents) · ch.18 (Disaster Recovery Planning) · ch.19 (Investigations and Ethics) · outline 7.6/7.11/7.1 · MITRE ATT&CK Enterprise Matrix, as published at attack.mitre.org",
+ "asOf": "2026-08",
+ "area": "7.6",
+ "ladders": [
+  {
+   "id": "iz-01",
+   "title": "Bracknell Freight: the response",
+   "prompt": "A SOC analyst at Bracknell Freight confirms a server compromise. Order the incident response from first detection to closing the loop.",
+   "citation": "SG ch.17 · outline 7.6",
+   "asOf": "2026-08",
+   "steps": [
+    {
+     "label": "Detection",
+     "detail": "A SIEM alert or an end-user report surfaces something abnormal; the analyst's job here is to triage and confirm this is an actual incident, not just a benign event, before anything else moves (SG)."
+    },
+    {
+     "label": "Response",
+     "detail": "Once confirmed, the IR team is activated and begins investigating and limiting scope — this is where system access gets shut down and evidence starts being protected; jumping straight to root-cause analysis or a press notice before scope is limited is the tested trap, not the correct next move (SG)."
+    },
+    {
+     "label": "Mitigation",
+     "detail": "With the team engaged, the goal narrows to reducing the incident's severity through containment — the team's job at this stage is not yet to fix the underlying problem, only to stop it from getting worse (SG)."
+    },
+    {
+     "label": "Reporting",
+     "detail": "Once the incident is contained, formal reporting goes out to stakeholders — and to regulators or affected individuals where law or contract (such as a payment-card standard) requires it; reporting is not the first move, it follows containment, not detection (SG)."
+    },
+    {
+     "label": "Recovery",
+     "detail": "Systems are restored to a fully functioning state — rebuilding from clean images and known-good backups is the most defensible path, not simply patching in place (SG)."
+    },
+    {
+     "label": "Remediation",
+     "detail": "A root-cause analysis identifies what allowed the incident to happen, and configuration changes are made so it cannot recur the same way — this is a distinct step from recovery, which only restores service (SG)."
+    },
+    {
+     "label": "Lessons Learned",
+     "detail": "The IR team and stakeholders review the whole response, and findings feed back into detection tuning and future preparation — this closes the loop rather than ending the process at remediation (SG)."
+    }
+   ]
+  },
+  {
+   "id": "iz-02",
+   "title": "Meridian Bank: activating the DR plan",
+   "prompt": "Meridian Bank's primary data center goes dark. Order the steps for activating and executing the disaster recovery plan.",
+   "citation": "SG ch.18 · outline 7.11",
+   "asOf": "2026-08",
+   "steps": [
+    {
+     "label": "Declare the disaster against defined criteria",
+     "detail": "The DR plan names the person authorized to call it and the specific thresholds that must be met — this has to happen first, before any team mobilizes or any site activates, or the org risks activating for a non-event (SG)."
+    },
+    {
+     "label": "Notify and assemble the DR team",
+     "detail": "The notification checklist reaches DR team members and critical personnel through their listed contact methods, so the people who execute the plan are actually in motion (SG)."
+    },
+    {
+     "label": "Assess and triage the damage",
+     "detail": "On arrival, the team's first priority is a quick assessment of what's actually broken, followed by more detailed evaluation — skipping straight to restoration without triage risks recovering the wrong systems first (SG)."
+    },
+    {
+     "label": "Activate the alternate processing site",
+     "detail": "Based on the assessment, operations shift to the pre-arranged alternate site — a subscription hot site with near-real-time data, a partially equipped warm site, or a bare cold site, chosen well before the disaster, not decided on the fly (SG)."
+    },
+    {
+     "label": "Restore systems and data",
+     "detail": "The most critical business units get their systems back first, restoring the affected files and services that were active at the time of the failure — restoring the facility is a separate concern from recovering business operations (SG)."
+    },
+    {
+     "label": "Lessons learned",
+     "detail": "A lessons-learned session, held while memories are fresh, captures what worked, what didn't, and what the plan should change — the DR effort isn't complete until this session happens, not once systems are simply back online (SG)."
+    }
+   ]
+  },
+  {
+   "id": "iz-03",
+   "title": "Corvid Labs: seizing the evidence",
+   "prompt": "Investigators respond to a compromised workstation at Corvid Labs. Order the evidence collection from most volatile to least volatile.",
+   "citation": "outline 7.1 (evidence collection) · volatility order per RFC 3227-style practice",
+   "asOf": "2026-08",
+   "steps": [
+    {
+     "label": "CPU registers and cache",
+     "detail": "The most fleeting state on the machine — gone the instant execution continues or power is cut — so it has to be captured before any other step touches the system."
+    },
+    {
+     "label": "RAM and running-process memory",
+     "detail": "Live memory holds decrypted data, injected code, and network sessions that disappear on shutdown; a memory capture must happen while the system is still running, which is why investigators are trained never to power a live system off first (SG)."
+    },
+    {
+     "label": "Network state (ARP cache, routing table, active connections)",
+     "detail": "Connection tables and cached network state decay quickly as new traffic arrives, but they persist a little longer than raw process memory, so they're pulled next."
+    },
+    {
+     "label": "Temporary files and swap",
+     "detail": "Temp and swap data survive a reboot less reliably than disk data proper but longer than in-memory state — this sits between the volatile and the durable evidence."
+    },
+    {
+     "label": "Local disk contents",
+     "detail": "The disk itself is comparatively durable, but a forensic acquisition still comes before archived or off-box copies — investigators create bit-for-bit images here rather than working from the original (SG)."
+    },
+    {
+     "label": "Remote logs, backups, and archival media",
+     "detail": "Centralized log servers, backup tapes, and offline archives are the least volatile — they'll still be there tomorrow, which is exactly why they're collected last, not because they matter least to the case."
+    }
+   ]
+  },
+  {
+   "id": "iz-04",
+   "title": "Northgate Retail: reconstructing the intrusion",
+   "prompt": "Analysts reconstruct how an attacker moved through Northgate Retail's network. Order the intrusion by ATT&CK tactic, from initial access to exfiltration.",
+   "citation": "MITRE ATT&CK Enterprise Matrix, as published at attack.mitre.org",
+   "asOf": "2026-08",
+   "steps": [
+    {
+     "label": "Initial Access (TA0001)",
+     "detail": "The attacker gets into Northgate's network — in this case a spear-phished vendor-invoice attachment opened by an accounts-payable clerk — the entry point that starts everything downstream (MITRE ATT&CK)."
+    },
+    {
+     "label": "Execution (TA0002)",
+     "detail": "The attachment's macro runs malicious code on the clerk's workstation; this is the attacker running code they control, distinct from merely having gotten a foot in the door (MITRE ATT&CK)."
+    },
+    {
+     "label": "Persistence (TA0003)",
+     "detail": "The attacker plants a scheduled task that re-launches their access after reboot — maintaining the foothold before doing anything riskier, so a routine restart doesn't cost them their access (MITRE ATT&CK)."
+    },
+    {
+     "label": "Privilege Escalation (TA0004)",
+     "detail": "From the clerk's limited account, the attacker exploits a local flaw to gain admin rights on the workstation — higher-level permissions than the compromised user started with, which is a distinct tactic from simply staying resident (MITRE ATT&CK)."
+    },
+    {
+     "label": "Credential Access (TA0006)",
+     "detail": "With admin rights, the attacker dumps cached domain credentials from the workstation — stealing account names and passwords is a separate goal from the privilege escalation that enabled it (MITRE ATT&CK)."
+    },
+    {
+     "label": "Lateral Movement (TA0008)",
+     "detail": "Using the stolen credentials, the attacker moves from the clerk's workstation to the inventory database server — moving through the environment, not merely discovering it (MITRE ATT&CK)."
+    },
+    {
+     "label": "Exfiltration (TA0010)",
+     "detail": "Customer payment records are staged and pushed out over an encrypted channel to attacker-controlled infrastructure — the theft of data is the last step in this reconstruction, coming only after access, footholds, and movement are all in place (MITRE ATT&CK)."
+    }
+   ]
+  }
+ ]
+}

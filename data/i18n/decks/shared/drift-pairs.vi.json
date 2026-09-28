@@ -1,0 +1,50 @@
+{
+ "dp-01": {
+  "a.text": "Một mô hình tín dụng thấy một làn sóng ứng viên từ một khu vực mới. Đối với bất kỳ hồ sơ thu nhập, việc làm và lịch sử nhất định, tỷ lệ mặc định chính xác là những gì mô hình mong đợi.",
+  "a.why": "Đầu vào di chuyển vào lãnh thổ mới nhưng quy tắc còn nguyên vẹn. Dữ liệu đào tạo đại diện hơn sửa chữa; một quy tắc mới là không cần thiết.",
+  "b.text": "Một mô hình tín dụng thấy cùng một làn sóng ứng viên từ một khu vực mới. Đối với hồ sơ thu nhập, việc làm và lịch sử giống hệt nhau, tỷ lệ mặc định ở đó gấp đôi những gì mô hình mong đợi.",
+  "b.why": "Đầu vào giống hệt nhau bây giờ tạo ra các kết quả khác nhau, vì vậy P(Y|X) đã thay đổi. Không có lượng cân bằng lại hỗn hợp đầu vào nào sẽ khắc phục một mối quan hệ không còn giữ."
+ },
+ "dp-02": {
+  "a.text": "Lỗi của mô hình định giá nhảy vào thứ ba. Điều tra thấy một đối thủ cạnh tranh đã khởi chạy một chiến dịch chiết khấu tích cực vào sáng hôm đó.",
+  "a.why": "Một thay đổi thực sự trong thế giới thay đổi mối quan hệ mô hình mã hóa. Đào tạo lại trên dữ liệu sau thay đổi là phản ứng chính xác.",
+  "b.text": "Lỗi của mô hình định giá nhảy vào thứ ba. Điều tra thấy công việc ETL qua đêm bắt đầu viết giá niêm yết vào trường mà trước đây đã giữ giá ròng.",
+  "b.why": "Không có gì về hành vi định giá thay đổi — mô hình đang được cung cấp một số lượng khác dưới cùng một tên. Đào tạo lại ở đây nướng khiếm khuyết trong và ẩn nó."
+ },
+ "dp-03": {
+  "a.text": "Trong sáu tháng một mô hình gian lận suy thoái khi một mô hình tấn công cũ được thay thế dần dần bằng một mô hình mới. Trong suốt kỳ, cả hai mô hình đều đến trong khối lượng.",
+  "a.why": "Hai khái niệm riêng biệt chồng chéo trong thời gian, với trọng số hỗn hợp chuyển động. Một tập hợp giữ một mô hình cho mỗi khái niệm xử lý điều này tốt.",
+  "b.text": "Trong sáu tháng một mô hình gian lận suy thoái khi những kẻ tấn công liên tục điều chỉnh kích thước giao dịch tăng lên theo các bước nhỏ, không có mô hình cũ và mới riêng biệt tại bất kỳ điểm nào.",
+  "b.why": "Một khái niệm chuyển động mượt mà qua các trạng thái trung gian. Một cửa sổ đào tạo lại có thể theo dõi nó; máy móc chuyển đổi khái niệm không có gì để chuyển đổi giữa."
+ },
+ "dp-04": {
+  "a.text": "Một mô hình sàng lọc được triển khai tại một phòng khám mới. Bệnh nhân trẻ hơn và khỏe mạnh hơn so với dân số huấn luyện, và prevalence bệnh không thay đổi.",
+  "a.why": "Phân phối tính năng di chuyển trong khi hỗn hợp kết quả không. Mối quan tâm là suy ngoại vào các vùng được bao phủ mỏng.",
+  "b.text": "Một mô hình sàng lọc được triển khai tại một phòng khám mới. Bệnh nhân trông giống như dân số huấn luyện từ nhân khẩu học, nhưng prevalence bệnh là một phần tư của những gì nó là.",
+  "b.why": "P(Y) di chuyển với P(X|Y) nguyên vẹn, vì vậy xếp hạng của mô hình vẫn hoạt động nhưng xác suất của nó quá cao một cách có hệ thống. Điều chỉnh trước, không đào tạo lại."
+ },
+ "dp-05": {
+  "a.text": "Chia sẻ điểm rủi ro cao của mô hình bộ sưu tập tăng từ 12% lên 25% trong một tháng. Kết quả mất chín mươi ngày để quan sát, vì vậy không có kết quả nào cho đoàn hệ này.",
+  "a.why": "Một thay đổi phân phối đầu ra mà không có nhãn là một tín hiệu để điều tra, không phải một phát hiện. Nó có thể là một phản ứng chính xác đối với một dân số rủi ro cao hơn chính hãng.",
+  "b.text": "Chia sẻ điểm rủi ro cao của mô hình bộ sưu tập tăng từ 12% lên 25% trong một tháng, và đoàn hệ từ chín mươi ngày trước đã giải quyết với độ chính xác xuống 18 điểm.",
+  "b.why": "Nhãn đã đến và chất lượng thực sự đã giảm. Chỉ bây giờ đào tạo lại được biện minh trên bằng chứng thay vì về hình dạng của một biểu đồ."
+ },
+ "dp-06": {
+  "a.text": "Độ chính xác của mô hình hậu cần thu đông mỗi năm trong hai tuần trước Giáng sinh và phục hồi ngay lập tức sau đó.",
+  "a.why": "Một khái niệm được biết đến quay lại trong một chu kỳ. Không cảm thấy không mất: giữ mô hình theo mùa và chọn nó theo bối cảnh.",
+  "b.text": "Độ chính xác của mô hình hậu cần sụp đổ trong hai tuần sau một thay đổi vĩnh viễn đối với các quy định giao hàng quốc gia, và không bao giờ phục hồi.",
+  "b.why": "Một thay đổi một chiều đột ngột không có trở lại. Mô hình trước thay đổi không có tác dụng tiếp theo và dữ liệu trước thay đổi có giá trị hạn chế để đào tạo lại."
+ },
+ "dp-07": {
+  "a.text": "Một nhóm kiểm duyệt viết lại hướng dẫn của nó để một danh mục nội dung giáp ranh bây giờ được gắn nhãn 'vi phạm' nơi nó trước đây 'có thể chấp nhận'. Nội dung đến là không thay đổi.",
+  "a.why": "Cùng đầu vào, nhãn khác nhau: ánh xạ được xác định lại. Mọi nhãn lịch sử dưới hướng dẫn cũ bây giờ một phần sai lầm cho mục đích đào tạo.",
+  "b.text": "Hướng dẫn nhóm kiểm duyệt là không thay đổi, nhưng một xu hướng viral có nghĩa là nội dung vi phạm chính hãng tăng từ 2% đến 9% của hàng đợi.",
+  "b.why": "Quy tắc là ổn định; hỗn hợp kết quả di chuyển. Ngưỡng và lập kế hoạch năng lực cần chú ý, không có ranh giới học được của mô hình."
+ },
+ "dp-08": {
+  "a.text": "Điểm thay đổi ngày một phiên bản mô hình mới được phát hành. Một mẫu tham khảo cố định, phát lại qua cả hai phiên bản, tái tạo sự thay đổi chính xác.",
+  "a.why": "Đầu vào giống hệt nhau tạo ra các đầu ra khác nhau cách ly thay đổi vào mô hình. Đây là việc sử dụng dự kiến ​​của một mẫu tham khảo vàng tại phát hành.",
+  "b.text": "Điểm thay đổi ngày một phiên bản mô hình mới được phát hành. Cùng một mẫu tham khảo cố định, phát lại qua cả hai phiên bản, tạo ra các đầu ra giống hệt nhau.",
+  "b.why": "Nếu mô hình được chứng minh là không thay đổi trên đầu vào cố định, đầu vào trực tiếp phải đã thay đổi — và sự trùng hợp cùng ngày chỉ vào các thay đổi phía dữ liệu triển khai, không phải thế giới."
+ }
+}

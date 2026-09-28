@@ -1,0 +1,50 @@
+{
+ "rhp-01": {
+  "a.text": "L'entreprise ajoute une validation des résultats et un examen humain à un modèle de sinistres, réduisant le taux de refus erronés.",
+  "a.why": "La probabilité du préjudice diminue réellement. La réduction est le seul traitement qui améliore la situation de la personne affectée.",
+  "b.text": "L'entreprise achète une police d'assurance couvrant le coût des sinistres refusés à tort, sans modifier le modèle.",
+  "b.why": "Le demandeur est refusé au même taux exactement ; seul le bilan de l'entreprise est protégé. L'assurance n'est jamais un contrôle."
+ },
+ "rhp-02": {
+  "a.text": "Après l'évaluation, la fonction d'inférence émotionnelle est annulée et supprimée de la feuille de route.",
+  "a.why": "L'activité s'arrête, donc l'exposition devient nulle. L'évitement est le seul traitement sans risque résiduel à enregistrer.",
+  "b.text": "Après l'évaluation, la fonction d'inférence émotionnelle est lancée avec des seuils de confiance, une évaluation par sous-groupe et un examen humain des cas à faible confiance.",
+  "b.why": "L'activité continue avec une probabilité de préjudice réduite. L'atténuation substantielle est encore une réduction, et le risque résiduel a toujours besoin d'un responsable."
+ },
+ "rhp-03": {
+  "a.text": "Le pipeline de déploiement refuse de promouvoir un modèle dont l'évaluation d'équité a régressé au-delà d'un seuil.",
+  "a.why": "La règle s'exécute à chaque version sans que personne ne choisisse de l'appliquer, la pression des délais ne peut donc l'éroder.",
+  "b.text": "La liste de contrôle de version exige que le gestionnaire de version confirme que l'évaluation d'équité n'a pas régressé.",
+  "b.why": "L'intention est identique, appliquée par la diligence humaine. C'est la surévaluation la plus courante dans les évaluations de risque d'IA."
+ },
+ "rhp-04": {
+  "a.text": "La capacité de l'agent à émettre des remboursements est entièrement supprimée de son ensemble d'outils.",
+  "a.why": "Aucune capacité, aucun mode de défaillance, et rien à surveiller. L'élimination est le niveau supérieur car elle retire toute la branche de l'arbre des risques.",
+  "b.text": "L'agent conserve son outil de remboursement, avec une limite stricte d'un remboursement par session et un plafond de montant appliqué par l'outil.",
+  "b.why": "Une forte contrainte technique qui laisse toujours une exposition limitée — et laisse le plafond lui-même comme quelque chose qui peut être mal configuré."
+ },
+ "rhp-05": {
+  "a.text": "L'assistant détecte et bloque les entrées ayant l'apparence confidentielle avant qu'elles ne soient envoyées au modèle.",
+  "a.why": "Le système prévient la divulgation indépendamment de ce que fait l'utilisateur. Le fardeau repose sur la partie capable de le porter.",
+  "b.text": "L'assistant affiche un avis demandant aux utilisateurs de ne pas coller d'informations confidentielles.",
+  "b.why": "Le même risque, avec le fardeau déplacé vers l'utilisateur. Niveau le plus faible, et souvent le seul implémenté."
+ },
+ "rhp-06": {
+  "a.text": "Le comité des risques enregistre le risque résiduel, confirme qu'il est dans l'appétence, nomme un responsable et fixe une date d'examen.",
+  "a.why": "L'acceptation est une décision affirmative avec autorité, un responsable et un point d'examen. Cet enregistrement est ce qui le distingue de la négligence.",
+  "b.text": "Le risque résiduel est connu de l'équipe de livraison, n'est pas dans le registre des risques, et personne au-dessus de l'équipe n'en a été informé.",
+  "b.why": "Le silence n'est pas l'acceptation. Sans que la bonne autorité décide, il n'y a pas de traitement du tout — seulement une exposition que personne n'a appropriée."
+ },
+ "rhp-07": {
+  "a.text": "Un résumeur à génération libre sur des notes cliniques est remplacé par un résumeur extractif qui ne peut citer que le texte source.",
+  "a.why": "Le mécanisme de fabrication est remplacé par un mécanisme incapable de fabriquer, tandis que l'objectif persiste. La reconception vaut mieux que le réglage.",
+  "b.text": "Le même résumeur à génération libre est conservé, avec la température baissée et une instruction d'ancrage ajoutée au prompt.",
+  "b.why": "Le mécanisme capable de fabriquer est intact et simplement découragé. Utile, et structurellement plus faible que de supprimer la capacité."
+ },
+ "rhp-08": {
+  "a.text": "La récupération applique les droits d'accès de l'utilisateur demandeur, donc les documents non autorisés ne sont jamais retournés.",
+  "a.why": "Le préjudice ne peut pas survenir. La prévention est ce qui réduit la probabilité ; tout le reste réduit seulement la durée ou l'impact.",
+  "b.text": "Un audit trimestriel échantillonne les réponses et signale toutes celles qui citaient des documents que l'utilisateur ne devrait pas avoir vus.",
+  "b.why": "La divulgation a déjà eu lieu, il y a jusqu'à trois mois. La détection limite l'impact et est régulièrement confondue avec la prévention dans les catalogues de contrôle."
+ }
+}

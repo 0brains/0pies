@@ -1,0 +1,105 @@
+{
+ "iv-ops": {
+  "hint": "Estes são todos deveres de tempo de implementação — o sistema já está em direto. Pergunta qual obrigação contínua nomeada o cenário está a exercer, não se algo correu mal.",
+  "note": "Garantia de pré-lançamento (revisões de prontidão, teste antes de um sistema nunca enviar) pertence a um jogo diferente. Tudo neste tabuleiro acontece após go-live, numa base recorrente ou acionada.",
+  "zones[0].def": "O dever legal nomeado e contínuo de rastrear o desempenho em direto do sistema, justiça e conformidade contra métricas e limiares pré-definidos, com regras de escalação para quando os resultados caiem fora deles. É o plano de monitoramento em si — não a matemática de deriva atrás de qualquer métrica, e não a verificação independente que mais tarde verifica que o plano foi realmente seguido.",
+  "zones[1].def": "Controlos que impedem as saídas ou capacidades de um sistema implementado serem repropositadas a um uso, público ou população que a aprovação original nunca cobriu — prevendo a repropositação e restringindo-a antes de acontecer, não reagindo uma vez que já é público.",
+  "zones[2].def": "Conteúdo pré-concordado e canais para o que a organização diz a reguladores, utilizadores e o público sobre um sistema em direto — proativo (avisos de transparência, cartões de sistema) e reativo (reconhecendo um problema em direto) — distinto da investigação interna que as declarações descrevem.",
+  "zones[3].def": "Autoridade pré-escrita, gatilhos e critérios de reinicialização para puxar um sistema em direto completamente offline (desativação) ou restringir-o a menos regiões ou características (localização) — uma decisão parar-ou-restringir com condições documentadas para retomar, não a correção técnica que se segue.",
+  "zones[4].def": "Preparar as pessoas que operam um sistema em direto ou dependem das suas saídas — instrução específica por papel, prática simulada e atestação registada — para que possam apanhar uma saída errada e saber quando anular, renovada numa cadência em vez de entregue uma vez no lançamento.",
+  "zones[5].def": "Detectar, registar, classificar e fechar problemas de sistema em direto, dimensionados por severidade — desde uma pequena reclamação registada rastreada para um padrão, através de uma resposta formal com contenção, análise de causa raiz e ação corretiva.",
+  "zones[6].def": "Verificação agendada independente que os controlos de um sistema em direto ainda mantêm — revisões de conformidade recorrentes e teste adversarial funcionar após lançamento, numa cadência ou ligado a uma mudança maior — distinto da avaliação de prontidão única executada antes de um sistema nunca enviar."
+ },
+ "iv-ops-01": {
+  "label": "Um vendedor silenciosamente troca uma nova versão de modelo, sem aviso à equipa que a implementou.",
+  "why": "Monitoramento de pós-mercado é um dever legal de pé de rastrear um sistema em direto contra sua linha de base; uma troca de versão não anunciada é uma falha de plano de monitoramento, distinto de gestão de incidente & problema, que apenas abre um arquivo uma vez que alguém tenha notado o dano resultante."
+ },
+ "iv-ops-02": {
+  "label": "Uma revisão trimestral rastreia a deriva de distribuição de características, problemas de qualidade de dados entrada, e latência/carga de computação — nunca o conjunto de treino original que o modelo enviou.",
+  "why": "Calibração oficial: métricas de monitoramento de produção são deriva de dados, qualidade de dados e sinais de latência/computação — nunca dados históricos de treino. Definir o que é rastreado é o trabalho desta zona; re-verificação independente que o plano foi realmente seguido é auditorias periódicas & red teaming's."
+ },
+ "iv-ops-03": {
+  "label": "As regras de escalação encaminham qualquer métrica que cruza seu limite direto a um proprietário nomeado, que pode ordenar um rollback ou um aviso regulador.",
+  "why": "O plano de monitoramento nomeia quem age e o que fazem uma vez que um limiar é quebrado; gestão de incidente & problema apanha apenas após essa escalação disparar, para registar e classificar o problema específico que nomeia."
+ },
+ "iv-ops-04": {
+  "label": "Uma ferramenta de agendamento construída para pessoal muda silenciosamente reapropositada para pontuação de desempenho de funcionários individuais.",
+  "why": "A repropositação a um uso não aprovado precisa de protocolos de consentimento e restrições de uso antes de acontecer; o dever 'uso mal-interpretável razoavelmente' vincula fornecedores e implementadores igualmente, ao contrário da gestão de incidente & problema, que apenas se envolve uma vez que uma reclamação já tenha emergido."
+ },
+ "iv-ops-05": {
+  "label": "Dezoito meses na implementação, a equipa executa um exercício programado de pensamento de segunda ordem como parte de governance contínuo, mapeando quem mais agora pode estar a inserir a saída deste sistema no seu próprio fluxo de trabalho.",
+  "why": "Prever repropositação e efeitos de knock-on é uma atividade de governance pós-implementação recorrente, mais ampla que uma avaliação de impacto num ponto no tempo e diferente do teste adversarial de auditorias periódicas & red teaming's, que investiga ataque, não para uso com aparência lícita a aprovação original nunca cobriu."
+ },
+ "iv-ops-06": {
+  "label": "Cada saída deixando a API carrega uma marca de versão de modelo e uma bandeira 'não validada para decisões de contratação ou crédito', e qualquer novo caso de uso dispara uma revisão fresca antes da reutilização ser permitida.",
+  "why": "Marcas de procedência mais um portão de aprovação de reutilização impedem dano agravante através do fluxo de trabalho de outra equipa; o controlo vive em como as saídas são permitidas viajar, distinto de comunicações externas, que é o que é dito uma vez que um problema já é visível para forasteiros."
+ },
+ "iv-ops-07": {
+  "label": "Uma reclamação sobre uma decisão automatizada errada torna-se viral durante a noite.",
+  "why": "Reconhece publicamente de uma vez que o problema é conhecido e sob investigação; esperar que o trabalho de raiz de causa interna de gestão de incidente & problema acabe primeiro apenas agrava o dano reputacional."
+ },
+ "iv-ops-08": {
+  "label": "A declaração pública revela o propósito e limitações conhecidas do sistema, e pára antes do método que produziu a decisão sinalizada.",
+  "why": "Divulgação cobre propósito destinado, capacidades e limitações, mas métodos proprietários ficam fora de qualquer declaração pública — uma limite de âmbito no que esta zona diz, distinto da etiqueta de reutilização de aprovação que carimbos de controlo de uso secundário numa saída antes nunca viajar."
+ },
+ "iv-ops-09": {
+  "label": "Os reguladores recebem o pacote de evidência completo — avaliação de impacto, resultados de monitoramento, proprietários de ação corretiva nomeados — enquanto a declaração pública permanece em linguagem simples sem raiz de causa técnica ainda.",
+  "why": "O mesmo registo subjacente fica personalizado por público aqui: reguladores obtêm evidência, o público obtém responsabilidade e próximos passos — nunca o inverso, e nunca as descobertas brutas que um exercício de auditorias periódicas & red teaming produziu para uso interno apenas."
+ },
+ "iv-ops-10": {
+  "label": "Os limiares pré-escritos nomeiam exatamente quem pode puxar um sistema em direto offline, e os critérios que devem ser encontrados antes de reiniciar.",
+  "why": "Este é o protocolo de botão de morte: autoridade pré-concordada e critérios de reinicialização, distinto da mudança de contenção imediata de gestão de incidente & problema, que isola um sistema em meio-problema sem precisar do sinal-off documentado desta zona para retomar. A metodologia algorítmica é o fator não nomeado na decisão."
+ },
+ "iv-ops-11": {
+  "label": "Uma nova lei de privacidade numa região significa que o sistema para de operar lá enquanto continua a funcionar em qualquer outra parte, sob uma política pré-documentada reversível.",
+  "why": "A restrição jurisdição-limitada seletiva é uma mudança diferente de um botão de morte completo, mas esta zona possui ambos os fins do mesmo controlo — paragem total e restrição regional — em vez de dividir entre jogos separados."
+ },
+ "iv-ops-12": {
+  "label": "Um sistema de manutenção preditiva servindo infraestrutura crítica é faseado em palcos, com um backup humano funcionar ao lado dele até a transição estar completa.",
+  "why": "Redução graduada com planeamento de continuidade pertence aqui porque o gatilho é uma preocupação de segurança permanente sendo gerida numa agenda, ao contrário de gestão de incidente & problema, cuja mudança de contenção responde a um único problema acontecendo agora."
+ },
+ "iv-ops-13": {
+  "label": "Os clínicos continuam a ler mal as pontuações de confiança da IA, portanto a equipa arranja coaching baseado em simulação com um emparelhamento de mentor contínuo.",
+  "why": "Instrução específica por papel com prática prática e apoio contínuo aborda uma lacuna de aptidões e confiança que um exame de certificação única apenas testaria conhecimento contra, não construir; este é um currículo de pé, não a própria exibição de pontuação de confiança, que é uma característica de produto."
+ },
+ "iv-ops-14": {
+  "label": "Os subscritores são instruídos a aplicar o seu próprio julgamento à recomendação inicial do modelo antes de se tornar final.",
+  "why": "Este é o hábito de supervisão humana que o currículo visa instalar; um aviso de direito de apelação ou uma pesquisa de feedback são mais passivos e não colocam o julgamento de uma pessoa à frente da saída automatizada da forma que isto faz."
+ },
+ "iv-ops-15": {
+  "label": "Antes de renovar acesso ao sistema, cada revisor completa um exercício de cenário e assina uma atestação confirmando que entendem os limites estabelecidos da ferramenta.",
+  "why": "Atestação obrigatória registada ligada ao acesso renovado é o que torna este um controlo forçável em vez de uma orientação única — evidência que um auditor pode verificar, ao contrário de canais de relatório de gestão de incidente & problema, que existem para superfície um problema, não certificar prontidão antecipadamente."
+ },
+ "iv-ops-16": {
+  "label": "As mispredictions baixa-severidade repetidas são registadas e observadas para um padrão antes de alguém escalar.",
+  "why": "Este é o rasto de severidade inferior — registado, classificado e tendência, escalando apenas se o padrão persiste. A divisão do rasto de severidade superior transforma-se em escala de dano e exposição legal, não se um erro aconteceu mesmo assim; permanece aqui em vez de mover-se para auditorias periódicas & red teaming, que verifica controlos numa agenda, não numa base por erro."
+ },
+ "iv-ops-17": {
+  "label": "A detecção de fraude está em excesso a sinalizar transações legítimas; o movimento muito primeiro é puxar o sistema offline antes de alguém começar o trabalho de causa raiz.",
+  "why": "Contenção — imediatamente isolando o sistema — é o passo de resposta primeira desta zona dentro de um problema em direto, distinto de desativação & localização, que possui a autoridade pré-concordada e critérios de reinicialização documentados que tornam uma paragem legal e reversível no primeiro lugar."
+ },
+ "iv-ops-18": {
+  "label": "Uma descoberta de viés senta-se em 1.8%, apenas sob o gatilho de escalação 2% — a equipa abre a via de resposta formal mesmo assim porque o grupo afetado é uma classe protegida.",
+  "why": "Os limiares de severidade guiam mas não anulam julgamento quando um grupo protegido é afetado: a descoberta recebe a via de resposta formal completa em vez de ser registada como um item menor e deixada para tendência, o qual é o tratamento que uma descoberta sub-limiar sem classe protegida receberia."
+ },
+ "iv-ops-19": {
+  "label": "Doze meses após lançamento, uma equipa externa fora re-executa tentativas de jailbreak contra o assistente em direto numa cadência agendada.",
+  "why": "Teste adversarial recorrente e agendado após implementação é a disciplina desta zona; a versão pré-lançamento da mesma técnica — a avaliação de prontidão executar antes de um sistema nunca enviar — pertence a um jogo diferente inteiramente."
+ },
+ "iv-ops-20": {
+  "label": "Uma equipa segunda-linha independente exemplifica decisões automatizadas do trimestre passado, re-executa as verificações de justiça à mão, e caminha através de como a escalação passada realmente funcionou.",
+  "why": "A independência da equipa de produto mais re-realização de verificações em vez de confiar no painel é o que separa isto de revisão ao vivo própria de monitoramento pós-mercado, que a equipa de produto corre e equipa."
+ },
+ "iv-ops-21": {
+  "label": "Os reguladores esperam que um fornecedor de modelo de fundação documente uma rodada fresca de investigação adversarial cada vez que uma versão maior envia, em cima de tudo quanto correr antes do primeiro lançamento.",
+  "why": "Re-teste recorrente ligado a uma mudança material é uma expectativa de implementação permanente para modelos de alto-risco e uso geral — uma obrigação repetida, não o portão único cruzado uma vez no lançamento inicial."
+ },
+ "iv-ops-22": {
+  "label": "Antes de um sistema ser puxado offline, a equipa primeiro mapeia cada alimentação a montante e processo a jusante que depende dele, e confirma que um fallback está pronto a assumir a lacuna.",
+  "why": "Este é o passo de planeamento que tem de acontecer antes de uma decisão parar-ou-restringir ser executada — distinto de contenção de gestão de incidente & problema, que reage a um problema já acontecendo, e de monitoramento pós-mercado, que presume que o sistema permanece em direto."
+ },
+ "iv-ops-23": {
+  "label": "Uma vez que um sistema é totalmente aposentado, seus dados, modelos e registos de decisão são preservados em vez de apagados, portanto um regulador ou auditor pode reconstruir o que fez anos mais tarde.",
+  "why": "A preservação é parte do registo de encerramento em si, possuída pela mesma autoridade que puxou o sistema offline — ao contrário do registo CAPA de gestão de incidente & problema, que rastreia correções a um problema específico, e ao contrário de monitoramento de pós-mercado, que apenas rastreia um sistema enquanto ainda está em direto."
+ }
+}

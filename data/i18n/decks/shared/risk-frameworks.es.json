@@ -1,0 +1,74 @@
+{
+  "rf-01": {
+    "label": "Establece el proceso de riesgo como: establecer alcance y contexto, identificar, analizar, evaluar, tratar, con monitoreo y comunicación en todo momento.",
+    "why": "Este es el proceso de riesgo genérico en el que todos los otros documentos de riesgo se construyen. Su vocabulario — probabilidad, consecuencia, tratamiento, riesgo residual — es lo que los documentos específicos de IA heredan."
+  },
+  "rf-02": {
+    "label": "Define riesgo como el efecto de la incertidumbre sobre los objetivos, que puede ser positivo así como negativo.",
+    "why": "La definición de riesgo inclusiva de las ventajas es de ISO 31000, y es por eso que el estándar habla de objetivos en lugar de daños."
+  },
+  "rf-03": {
+    "label": "Es deliberadamente agnóstico del sector y agnóstico de la tecnología; no dice nada sobre modelos, datos o entrenamiento.",
+    "why": "Su generalidad es el punto y también su límite — es por eso que 23894 existe para decir qué cambia de IA."
+  },
+  "rf-04": {
+    "label": "Enmarca la gestión de riesgo como principios, un marco y un proceso, con el compromiso del liderazgo como el primer requisito del marco.",
+    "why": "La estructura de tres partes es la idea organizadora de ISO 31000. Los documentos específicos de IA la adoptan en lugar de reemplazarla."
+  },
+  "rf-05": {
+    "label": "Proporciona orientación sobre cómo aplicar un proceso de riesgo genérico específicamente a la inteligencia artificial, incluyendo fuentes de riesgo específicas de IA.",
+    "why": "23894 es el documento puente: el proceso de ISO 31000, con las fuentes de riesgo y ciclo de vida particulares de IA adjuntos. Es orientación, no requisitos."
+  },
+  "rf-06": {
+    "label": "Describe cómo las actividades de gestión de riesgo se mapean en el ciclo de vida del sistema de IA, desde el inicio hasta la jubilación.",
+    "why": "La orientación de riesgo de IA mapeada al ciclo de vida es la contribución de 23894. Siendo orientación, no puede ser auditada, que es donde entra 42001."
+  },
+  "rf-07": {
+    "label": "Ofrece fuentes de riesgo de IA ilustrativas — calidad de datos, opacidad, sesgo de automatización, uso no previsto — como una ayuda en lugar de una lista obligatoria.",
+    "why": "El catálogo de fuentes de riesgo de IA es consultivo. Tratarlo como una lista de verificación de cumplimiento malinterpreta el estado del documento."
+  },
+  "rf-08": {
+    "label": "Es la compañera específica de IA que explica qué cambia cuando la cosa cuya gestión de riesgo aprende de datos.",
+    "why": "El propósito completo del documento es este: 31000 para IA. Si una declaración es sobre aplicar método de riesgo a IA sin imponer requisitos, es 23894."
+  },
+  "rf-09": {
+    "label": "Especifica requisitos para establecer, implementar, mantener y mejorar continuamente un sistema de gestión para IA.",
+    "why": "'Requisitos para un sistema de gestión' es lenguaje de estándar de sistema de gestión: este es el certificable, estructurado como ISO 27001."
+  },
+  "rf-10": {
+    "label": "Una organización puede ser auditada por un organismo de certificación e emitida un certificado contra ella.",
+    "why": "La certificabilidad es el discriminador limpio único entre estos cuatro. Ni el marco de NIST ni los documentos de orientación de ISO pueden ser certificados contra."
+  },
+  "rf-11": {
+    "label": "Lleva un Anexo A de controles y requiere una declaración de aplicabilidad explicando cuáles se implementan.",
+    "why": "Anexo A más una declaración de aplicabilidad es el patrón del sistema de gestión. Es lo que un auditor realmente repasa."
+  },
+  "rf-12": {
+    "label": "Requiere una política de IA, roles definidos, objetivos, auditoría interna y revisión de gestión en un ciclo de mejora continua.",
+    "why": "Auditoría interna y revisión de gestión son obligaciones del sistema de gestión. Los documentos de orientación recomiendan; solo el estándar del sistema de gestión requiere."
+  },
+  "rf-13": {
+    "label": "Organiza el trabajo de riesgo en cuatro funciones: Gobernar, Mapear, Medir y Gestionar.",
+    "why": "Las cuatro funciones son la estructura de firma del RMF, con Gobernar cortando a través de las otras tres en lugar de precederlas."
+  },
+  "rf-14": {
+    "label": "Nombra siete características de IA confiable, incluyendo válida y confiable, segura, segura y resiliente, y responsable y transparente.",
+    "why": "Las siete características de confiabilidad son el encuadre de NIST. Los documentos ISO hablan de objetivos y controles en su lugar."
+  },
+  "rf-15": {
+    "label": "Es explícitamente voluntario, desarrollado por una agencia federal de EE.UU. bajo una dirección estatutaria, y va acompañado de un playbook compañero.",
+    "why": "Voluntario, federal de EE.UU., con un playbook y perfiles — ninguno de los cuales describe un estándar ISO."
+  },
+  "rf-16": {
+    "label": "Soporta perfiles de uso que adaptan el marco a un sector particular o caso de uso.",
+    "why": "Los perfiles son cómo el RMF se adapta sin ser certificado. Son la respuesta a 'cómo aplicamos esto a nosotros' en un marco voluntario."
+  },
+  "risk-frameworks": {
+    "hint": "Arrastra cada descripción al marco al que pertenece. Pregúntate qué tipo de documento es: riesgo genérico, orientación de riesgo específica de IA, un sistema de gestión certificable, o un marco voluntario.",
+    "note": "Solo uno de estos cuatro es certificable. Solo uno es federal de EE.UU. y voluntario. Confundir 'seguimos el NIST AI RMF' con 'estamos certificados' es el error que este tablero existe para prevenir.",
+    "zones[0].def": "Principios genéricos de gestión de riesgo, marco y proceso. No específico de IA y no certificable.",
+    "zones[1].def": "Orientación aplicando ISO 31000 a IA. Consultivo: te dice cómo el riesgo de IA difiere, no qué certificar.",
+    "zones[2].def": "Estándar de sistema de gestión de IA. Requisitos más controles de Anexo A, y el que una organización puede ser certificada contra.",
+    "zones[3].def": "Marco voluntario de EE.UU.: cuatro funciones, siete características de confiabilidad, sin certificación."
+  }
+}

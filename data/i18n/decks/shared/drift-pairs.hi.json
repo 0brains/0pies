@@ -1,0 +1,50 @@
+{
+  "dp-01": {
+    "a.text": "एक credit मॉडल नए region से applicants की एक wave देखता है। किसी भी दिए गए income, employment और history profile के लिए, default rates बिल्कुल वह हैं जो मॉडल expects करता है।",
+    "a.why": "इनपुट नए territory में moved हैं लेकिन rule intact है। अधिक representative प्रशिक्षण data इसे ठीक करता है; एक नया rule आवश्यक नहीं है।",
+    "b.text": "एक credit मॉडल नए region से applicants की एक ही wave देखता है। identical income, employment और history profile के लिए, वहां default rates मॉडल expects करता है उससे दो गुना हैं।",
+    "b.why": "Identical inputs अब अलग परिणाम produce करते हैं, इसलिए P(Y|X) बदल गया है। इनपुट mix को rebalance करने की कोई मात्रा एक relationship को ठीक करेगी जो अब hold नहीं करता है।"
+  },
+  "dp-02": {
+    "a.text": "एक pricing मॉडल की error एक Tuesday को jumps करती है। Investigation एक competitor को खोजता है जिसने सुबह एक aggressive discount campaign launched किया।",
+    "a.why": "दुनिया में एक real बदलाव मॉडल encodes करता है relationship को बदल दिया। पोस्ट-change डेटा पर retraining सही response है।",
+    "b.text": "एक pricing मॉडल की error एक Tuesday को jumps करती है। Investigation overnight ETL job को खोजता है जो list price को लिखना शुरू कर दिया जहां पहले net price था field में।",
+    "b.why": "कुछ भी pricing behaviour के बारे में नहीं बदला — मॉडल को एक ही नाम के तहत एक अलग quantity खिलाया जा रहा है। Retraining यहां defect को bake करता है और छिपाता है।"
+  },
+  "dp-03": {
+    "a.text": "छह महीने भर एक fraud मॉडल degrades करता है जैसा कि एक पुरानी attack pattern progressively एक नए के द्वारा बदली जाती है। पूरी अवधि भर, दोनों patterns volume में आते हैं।",
+    "a.why": "समय में overlapping दो अलग-अलग concepts, mixture weight moving के साथ। एक ensemble जो एक मॉडल को concept प्रति रखता है इसे अच्छी तरह से संभालता है।",
+    "b.text": "छह महीने भर एक fraud मॉडल degrades करता है जैसा कि attackers निरंतर छोटे steps में transaction sizes को upward adjust करते हैं, किसी भी point पर कोई distinct पुरानी और नई pattern नहीं।",
+    "b.why": "एक concept intermediate states के माध्यम से smoothly moving है। Rolling retraining window इसे track करता है; concept-switching machinery के बीच कुछ नहीं है switch करने के लिए।"
+  },
+  "dp-04": {
+    "a.text": "एक screening मॉडल एक नए clinic में तैनात किया जाता है। Patients प्रशिक्षण population से younger और फिटर हैं, और disease prevalence unchanged है।",
+    "a.why": "Feature distribution moved जबकि outcome mix नहीं किया। Concern thinly-covered इनपुट regions में extrapolation है।",
+    "b.text": "एक screening मॉडल एक नए clinic में तैनात किया जाता है। Patients demographically identical को प्रशिक्षण population में देखते हैं, लेकिन disease prevalence क्या था उसका एक quarter है।",
+    "b.why": "P(Y) P(X|Y) intact के साथ moved, इसलिए मॉडल की ranking अभी काम करती है लेकिन इसकी probabilities systematically बहुत अधिक हैं। Prior correction, retraining नहीं।"
+  },
+  "dp-05": {
+    "a.text": "एक collections मॉडल की high-risk scores का share 12% से 25% में एक महीने में rises करता है। Outcomes 90 दिनों में observe करने के लिए, कोई इस cohort के लिए अभी तक available नहीं हैं।",
+    "a.why": "एक output-distribution change लेबल के बिना एक signal को investigate करने के लिए है, एक finding नहीं। यह एक genuinely riskier population के लिए एक सही response हो सकता है।",
+    "b.text": "एक collections मॉडल की high-risk scores का share 12% से 25% में एक महीने में rises करता है, और cohort 90 दिनों पहले से अब resolved है precision down 18 points के साथ।",
+    "b.why": "Labels आए हैं और quality वास्तव में fallen है। केवल अब है retraining evidence पर justified एक histogram की shape पर नहीं।"
+  },
+  "dp-06": {
+    "a.text": "एक logistics मॉडल की accuracy हर साल Christmas से पहले fortnight में collapses करती है और immediately बाद में recovers करती है।",
+    "a.why": "एक ज्ञात concept जो एक cycle पर back आता है। कुछ भी retire नहीं: seasonal मॉडल को keep करें और context के द्वारा इसे select करें।",
+    "b.text": "एक logistics मॉडल की accuracy national delivery regulations के लिए एक permanent change के बाद fortnight में collapses करती है, और कभी recovers नहीं।",
+    "b.why": "एक abrupt, one-way change return के बिना। Pre-change मॉडल के पास कोई आगे उपयोग नहीं है और pre-change डेटा के लिए retraining को limited मूल्य है।"
+  },
+  "dp-07": {
+    "a.text": "एक moderation team अपने guidance को rewrites करता है इसलिए borderline सामग्री की एक श्रेणी अब labeled है 'violating' जहां यह पहले 'acceptable' था। Arriving content unchanged है।",
+    "a.why": "Same inputs, अलग labels: mapping redefined था। हर historical label पुरानी guidance के तहत प्रशिक्षण के लिए अब partially गलत है।",
+    "b.text": "एक moderation team का guidance unchanged है, लेकिन एक viral trend genuinely का मतलब है violating content 2% से 9% की queue में rises करता है।",
+    "b.why": "Rule है stable; outcome का mix moved। Thresholds और capacity planning को attention की जरूरत है, मॉडल के learned boundary नहीं।"
+  },
+  "dp-08": {
+    "a.text": "Scores एक नए मॉडल version release के दिन shift करते हैं। एक fixed reference sample, दोनों versions के माध्यम से replayed, shift को बिल्कुल reproduces करता है।",
+    "a.why": "Identical inputs अलग outputs produce करता है shift को isolates करता है मॉडल को। यह release के golden reference sample के expected use है।",
+    "b.text": "Scores एक नए मॉडल version release के दिन shift करते हैं। Same fixed reference sample, दोनों versions के माध्यम से replayed, identical outputs produce करता है।",
+    "b.why": "यदि मॉडल fixed inputs पर provably unchanged है, live inputs को बदल दिया गया होना चाहिए — और एक same-day coincidence deploy के डेटा-side changes पर इंगित करता है, दुनिया पर नहीं।"
+  }
+}

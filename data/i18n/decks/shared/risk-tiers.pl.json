@@ -1,0 +1,91 @@
+{
+  "risk-tiers": {
+    "hint": "Przeciągnij każdy system na jego warstwę ryzyka. Warstwa następuje po celu i kontekście, nie jak zaawansowany jest model.",
+    "note": "Warstwy dołączają do użytku, nie technologii. Ten sam model może być zakazany w jednym wdrażaniu, wysokiego ryzyka w innym i minimalnego w trzecim.",
+    "zones[0].def": "Praktyki zabronione pod art. 5. Nie ryzyko do mitigacji — praktyka nie może być umieszczona na rynku lub używana w ogóle.",
+    "zones[1].def": "Art. 6 i Załącznik III, lub komponent bezpieczeństwa produktu regulowanego. Dopuszczony pod warunkiem znacznych obowiązków przed i po umieszczeniu na rynku.",
+    "zones[2].def": "Art. 50 obowiązki przejrzystości: powiedz osobom, że mają do czynienia z AI, lub że zawartość jest syntetyczna.",
+    "zones[3].def": "Wszystko inne. Brak obowiązków pod Ustawą poza tymi, które dotyczą wszelkich oprogramowań; kodeksy dobrowolne mogą mieć zastosowanie.",
+    "zones[4].def": "Modele ogólnego przeznaczenia spełniające próg art. 51, z obowiązkami na poziomie modelu odrębnym od piramidy opartej na użytku."
+  },
+  "rt2-01": {
+    "label": "Schemat rządowy oceniający godność zaufania obywateli z niezwiązanego zachowania społecznego i używający go do odmowy dostępu do usług publicznych.",
+    "why": "Ocena społeczna przez lub w imieniu władz publicznych prowadząca do detrimentalnego traktowania w niezwiązanych kontekstach jest zabroniona całkowicie pod art. 5."
+  },
+  "rt2-02": {
+    "label": "System wnioskujący emocje pracowników z mimiki twarzy podczas ich dnia roboczego, poza medycznym lub bezpieczeństwa celem.",
+    "why": "Wnioskowanie emocji w miejscu pracy i edukacji jest zabronione, z wąskimi wyjątkami medycznymi i bezpieczeństwa. Dlatego zakaz wyłapuje produkty analityki HR."
+  },
+  "rt2-03": {
+    "label": "Narzędzie, które zbiera obrazy twarzy z Internetu i bezpośrednio z CCTV do budowania bazy danych rozpoznawania twarzy.",
+    "why": "Bezcelowe zbieranie w celu budowania baz danych rozpoznawania twarzy jest wyraźnie zakazane, niezależnie od celu operatora."
+  },
+  "rt2-04": {
+    "label": "System używający subliminalnych technik poza świadomością osoby w celu materialnego zniekształcenia zachowania i wyrządzenia znacznej szkody.",
+    "why": "Manipulacyjne i eksploatacyjne techniki wyrządzające znaczną szkodę są zakazane. Test to materialne zniekształcenie zachowania, nie zaawansowanie techniki."
+  },
+  "rt2-05": {
+    "label": "System przesiewu CV, który filtruje i klasyfikuje kandydatów na rolę.",
+    "why": "Zatrudnienie i zarządzanie pracownikami to obszar Załącznika III. Screening rekrutacyjny to kanoniczny przykład wysokiego ryzyka i przyciąga pełny zestaw obowiązków."
+  },
+  "rt2-06": {
+    "label": "Model używany przez bank do oceny zdolności kredytowej osób fizycznych.",
+    "why": "Ocena zdolności kredytowej osób fizycznych jest wymieniona w Załączeniu III, z wyłączeniem dla detektowania oszustw finansowych."
+  },
+  "rt2-07": {
+    "label": "Komponent AI, który kontroluje funkcję bezpieczeństwa urządzenia medycznego już regulowanego pod prawem harmonizacyjnym UE.",
+    "why": "To jest droga art. 6(1): komponent bezpieczeństwa produktu objętego wymienioną legislacją harmonizacyjną i wymagający oceny zgodności stron trzecich."
+  },
+  "rt2-08": {
+    "label": "System używany do określenia dostępu do, lub przydzielenia osób do, instytucji edukacyjnych.",
+    "why": "Decyzje edukacji i szkolenia zawodowego dotyczące dostępu osoby to Załącznik III. Szkoda dla szans życiowych jest dlaczego warstwa jest wysoka, a nie ograniczona."
+  },
+  "rt2-09": {
+    "label": "Chatbot obsługi klienta, który musi wyjaśnić użytkownikowi, że wchodzi w interakcję z systemem AI.",
+    "why": "Przejrzystość art. 50: osoba musi wiedzieć, że ma do czynienia z maszyną, chyba że jest to oczywiste. To ujawnienie to cały obowiązek."
+  },
+  "rt2-10": {
+    "label": "Generator obrazu, którego syntetyczne wyniki muszą być oznaczone w formacie odczytywanym maszynowo jako sztucznie generowane.",
+    "why": "Oznaczanie syntetycznej zawartości to obowiązek art. 50 na dostawców systemów generacyjnych, niezależnie od tego, w którą warstwę wdrażanie siedzi."
+  },
+  "rt2-11": {
+    "label": "Deepfake opublikowany jako część artykułu wiadomości, który musi być ujawniany jako sztucznie generowany lub manipulowany.",
+    "why": "Ujawnienie deepfake'u to obowiązek przejrzystości na wdrażających, z dostosowaniami dla wyraźnie artystycznych lub satyrycznych dzieł."
+  },
+  "rt2-12": {
+    "label": "System rozpoznawania emocji używany poza zakazanym kontekstem, których podmioty muszą być informowane o jego działaniu.",
+    "why": "Gdzie rozpoznawanie emocji nie jest zakazane całkowicie, informowanie eksponowanych osób to obowiązek art. 50. Ta sama technologia siedzi w dwóch różnych warstwach w zależności od ustawienia."
+  },
+  "rt2-13": {
+    "label": "Filtr spamu klasyfikujący przychodzący email dla serwisu poczty przedsiębiorstwa.",
+    "why": "Filtrowanie spamu to własny przykład Ustawy minimalnego ryzyka. Brak obowiązków poza prawem ogólnym."
+  },
+  "rt2-14": {
+    "label": "Przeciwnik AI kontrolujący postacie niezagrywających w grze wideo.",
+    "why": "Zastosowania rozrywkowe bez wpływu na prawa, bezpieczeństwo lub dostęp do usług wpadają poza warstwy, które niosą obowiązki."
+  },
+  "rt2-15": {
+    "label": "Model prognozujący poziomy zapasów magazynu bez wpływu na osoby.",
+    "why": "Brak wymienionego obszaru, brak komponentu bezpieczeństwa, brak interakcji z osobą. Analityka operacyjna to gdzie większość korporacyjnego AI rzeczywiście siedzi."
+  },
+  "rt2-16": {
+    "label": "Model optymalizujący użycie energii w systemie chłodzenia centrum danych.",
+    "why": "Optymalizacja przemysłowa dotykająca obszaru bez Załącznika III i bez osoby to minimalne ryzyko, niezależnie od tego, jak konsekwentne jest handlowo."
+  },
+  "rt2-17": {
+    "label": "Model ogólnego przeznaczenia domniemany na niesienie ryzyka systemowego, bo jego obliczenia szkoleniowe przekraczają próg ustalony w Ustawie.",
+    "why": "Art. 51 ustanawia domniemanie oparte na obliczeniach. To klasyfikacja na poziomie modelu i siedzi całkowicie poza piramidą opartą na użytku."
+  },
+  "rt2-18": {
+    "label": "Model ogólnego przeznaczenia wyznaczony przez Komisję jako posiadający zdolności o wysokim wpływie równoważne najbardziej zaawansowanym modelom.",
+    "why": "Oznaczenie to druga droga do ryzyka systemowego, obok domniemania obliczeniowego. Każda droga powoduje te same obowiązki."
+  },
+  "rt2-19": {
+    "label": "Dostawca wymagany do przeprowadzenia ocen modelu, testowania adversarialnego i śledzenia oraz raportowania poważnych incydentów na poziomie modelu.",
+    "why": "Ocena, testowanie adversarialne, mitigacja ryzyka systemowego i raportowanie incydentów to obowiązki art. 55, które tylko GPAI ryzyka systemowego nosi."
+  },
+  "rt2-20": {
+    "label": "Dostawca wymagany do zapewnienia odpowiedniego poziomu ochrony cyberbezpieczeństwa dla modelu i jego fizycznej infrastruktury.",
+    "why": "Cyberbezpieczeństwo na poziomie modelu to obowiązek GPAI ryzyka systemowego. Obowiązki GPAI linii podstawowej — dokumentacja, polityka praw autorskich, podsumowanie danych szkoleniowych — dotyczą bez tego."
+  }
+}

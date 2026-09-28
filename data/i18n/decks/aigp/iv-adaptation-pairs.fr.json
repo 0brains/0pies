@@ -1,0 +1,62 @@
+{
+ "iv-ap-01": {
+  "a.text": "Les connaissances propriétaires de l'organisation sont entraînées directement dans les poids du modèle par des rounds d'entraînement supplémentaires, devenant une partie permanente de ce que le modèle « sait ».",
+  "a.why": "Cuire les données de domaine dans les poids signifie que le modèle hérite de tout risque de mémorisation ou de fuite que ces données portent — un générateur de données synthétiques adapté de cette façon sur des enregistrements de production peut toujours laisser des traces des originaux même après anonymisation, et utiliser des données spécifiques aux étudiants de la même façon crée son propre risque de violation.",
+  "b.text": "Les connaissances propriétaires de l'organisation restent dans un magasin externe, séparément maintenu, et sont extraites uniquement au moment où chaque question est posée.",
+  "b.why": "Rien de cette connaissance n'est appris par le modèle lui-même — c'est extrait frais par requête, ce qui est exactement pourquoi il peut refléter les directives de ce mois sans un seul run d'entraînement. Le choix d'adaptation fait ici est ce qui détermine la charge d'assurance que l'équipe finit par posséder."
+ },
+ "iv-ap-02": {
+  "a.text": "Récupère les documents de politique courant pour fonder une seule réponse, qu'un humain lit ensuite et agit dessus.",
+  "a.why": "Le travail du système s'arrête à la production d'une réponse bien fondée ; chaque action conséquente en aval reste celle d'un humain.",
+  "b.text": "Planifie une tâche multi-étapes par lui-même et exécute des actions sur les outils de réservation et paiement, avec un examen humain minimal à chaque étape.",
+  "b.why": "L'autonomie d'action, pas seulement l'autonomie de réponse, est la nouvelle surface de gouvernance ici : quand un déploieur laisse un système agir plutôt que seulement informer, la responsabilité directe du comportement d'agent nuisible ou trompeur incombe au déploieur — cela exige une limitation de portée d'action, des seuils humain-dans-la-boucle, et des journaux d'action complets, dont aucun n'est nécessaire pour un assistant purement basé sur la récupération."
+ },
+ "iv-ap-03": {
+  "a.text": "L'organisation peut lire, modifier et redistribuer les poids et le code du modèle lui-même, et l'exécuter entièrement sur une infrastructure qu'elle contrôle.",
+  "a.why": "L'inspectabilité est tout l'échange : tu peux auditer l'algorithme toi-même et éviter de dépendre de la feuille de route d'un seul vendeur, mais tu hérites aussi du fardeau interne de vérifier les licences, la provenance des données d'entraînement et tes propres tests de sécurité.",
+  "b.text": "L'organisation ne peut appeler le modèle que par une API et ne voit jamais les poids, mais le vendeur le soutient par des contrats de support, réponse d'incident et indemnités.",
+  "b.why": "Tu échanges les droits d'inspection pour des garanties soutenues par contrat — et le coût stratégique de cet échange est enregistré comme le risque principal de ce chemin : une fois que les workflows sont construits autour de l'API d'un vendeur, s'en éloigner plus tard devient coûteux."
+ },
+ "iv-ap-04": {
+  "a.text": "Le modèle de base est compressé et remodelé — paramètres élaguées, précision réduite, un adaptateur léger superposé — pour réduire le coût et la latence pour une utilisation en edge ou de haut volume.",
+  "a.why": "Rétrécir ou remodeler l'artefact de cette façon peut discrètement déplacer ses limites de décision et réduire l'interprétabilité, donc la précision, le juste traitement et la robustesse doivent tous être re-vérifiés après chaque tel changement, pas supposés rester inchangés.",
+  "b.text": "Le modèle du vendeur s'exécute non modifié, exactement tel que livré, soutenu uniquement par examen humain et d'autres contrôles superposés autour de lui.",
+  "b.why": "Rien à propos de l'artefact lui-même n'a changé, donc la gouvernance s'appuie sur la propre documentation du vendeur et sur des contrôles compensatoires comme l'examen humain plutôt que sur la re-validation des internes du modèle."
+ },
+ "iv-ap-05": {
+  "a.text": "Un système de scoring de crédit prédit ou classe à partir d'entrées structurées ; ses risques sont un biais contre certains groupes et une précision qui dégénère discrètement quand les données sous-jacentes dérivent.",
+  "a.why": "Prédire ou classer une catégorie connue à partir de caractéristiques structurées est le mode d'échec de ce profil — risques familiers de biais et dérive que les tests de juste traitement et la surveillance sont construits pour détecter.",
+  "b.text": "Un assistant de rédaction produit du texte, des images ou du code entièrement nouveau à partir d'une invite ; ses risques sont l'hallucination, l'exposition au copyright et une sortie de façon convaincante mauvaise.",
+  "b.why": "Créer du contenu qui n'existait pas avant ouvre une surface de risque entièrement différente — hallucination et provenance, pas le profil biais-et-dérive qui gouverne un système purement prédictif."
+ },
+ "iv-ap-06": {
+  "a.text": "Un modèle d'un vendeur est utilisé exactement tel que livré ; le travail de l'équipe consiste à le valider contre ses propres standards de performance et juste traitement et documenter tout écart.",
+  "a.why": "La gouvernance ici s'appuie presque entièrement sur la transparence du vendeur plus les contrôles compensatoires — l'équipe ne touche jamais les internes du modèle, donc ses obligations s'arrêtent à la validation et la documentation.",
+  "b.text": "Un modèle polyvalent est ré-entraîné sur les données étiquetées de l'organisation jusqu'à reproduire un comportement spécifique souhaité.",
+  "b.why": "Le moment où une organisation ré-entraîne le modèle, la gouvernance traite le résultat comme un nouveau système : les tests de juste traitement et robustesse doivent être répétés à zéro, et — comparés à l'utilisation du modèle d'un vendeur tel que livré — l'organisation porte maintenant une responsabilité juridique augmentée qui lui est propre."
+ },
+ "iv-ap-07": {
+  "a.text": "Un chatbot de support prend les questions écrites et produit uniquement des réponses écrites, sans aucun autre canal d'entrée pour raisonner dessus.",
+  "a.why": "Texte-seulement en entrée, texte-seulement en sortie — les préoccupations de gouvernance ici sont l'hallucination, la formulation biaisée et les attaques de type jailbreak d'invite, dont aucune n'implique une deuxième modalité.",
+  "b.text": "Un outil de sinistres pèse une photographie de dommage ensemble avec les notes écrites de l'expert avant de produire un jugement combiné unique.",
+  "b.why": "Combiner des canaux ajoute un risque qu'un système texte-seulement ne jamais face : des fausses corrélations entre une image et le texte à côté, et la nécessité de montrer quelle entrée a réellement conduit la sortie."
+ },
+ "iv-ap-08": {
+  "a.text": "Un classificateur étroit traite une seule tâche sur un budget de calcul serré, ré-entraîne rapidement, et trace ses sorties à l'entrée avec peu d'effort.",
+  "a.why": "Un système compact et étroit est bon marché pour re-tester et facile à expliquer — le coût est qu'il peut sous-performer une fois que l'environnement devient plus variable que pour quoi il a été construit.",
+  "b.text": "Un système de fondation large généralise sur de nombreuses tâches pour lesquelles il n'a jamais été spécifiquement entraîné, au prix d'une gouvernance de calcul plus lourde et d'une surface d'attaque plus grande.",
+  "b.why": "L'ampleur achetée par l'échelle signifie que le système peut gérer des domaines non familiers en zéro-shot, mais il a aussi besoin de quotas de calcul, de red-teaming et d'une surveillance de dérive que système étroit ne fait pas."
+ },
+ "iv-ap-09": {
+  "a.text": "Chaque source dont le modèle s'est servi pendant une session est enregistrée pour l'audit, et les données personnelles circulant dans le corpus connecté doivent être rédactées avant de jamais être montrées au modèle.",
+  "a.why": "Le enregistrement d'audit et la rédaction des informations personnelles dans un corpus externe sont des obligations de gouvernance qui n'existent simplement pas pour un modèle sans pipeline de données en direct attaché — la charge d'assurance de ce chemin vit dans la tuyauterie, pas les poids.",
+  "b.text": "Le modèle du vendeur est utilisé exactement tel que livré, et le chemin le plus rapide vers un pilote fonctionnant est choisi précisément parce qu'aucune donnée d'entraînement nouvelle ou tuyauterie ne doit être construite d'abord.",
+  "b.why": "La vitesse est l'attrait entier ici — pas de ré-entraînement, pas de nouvelle tuyauterie de données — mais la gouvernance traite cette vitesse comme une dette : le modèle est présumé haut-risque jusqu'à validation contre les propres standards de performance et juste traitement de cette organisation, puisque rien à ce sujet n'a été construit avec ce déploiement en tête."
+ },
+ "iv-ap-10": {
+  "a.text": "Le même modèle de base sort plus petit et moins cher à exécuter après compression, sans aucun fait nouveau ayant été ajouté à celui-ci.",
+  "a.why": "Ce chemin cible l'empreinte, pas la connaissance — mais rétrécir ou remodeler l'artefact peut toujours déplacer ses limites de décision, donc la précision et le juste traitement doivent re-vérifier même si rien de « nouveau » n'a été enseigné.",
+  "b.text": "Le même modèle de base sort de la même taille, mais reproduit maintenant de façon fiable un comportement spécialiste qu'il n'a jamais eu accès avant, appris à partir d'exemples curés.",
+  "b.why": "Ce chemin cible le comportement et la connaissance, pas l'empreinte — et parce que ce comportement nouveau a été appris à partir des données propres de l'organisation, la gouvernance traite maintenant le résultat comme un nouveau système nécessitant ses propres tests, pas une copie redimensionnée de l'ancien."
+ }
+}

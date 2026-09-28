@@ -1,0 +1,91 @@
+{
+  "rc-01": {
+    "label": "El campo de texto libre que permitía a los usuarios enviar prompts arbitrarios al modelo subyacente se elimina; solo permanece un conjunto fijo de acciones.",
+    "why": "La superficie de inyección se ha ido, no resguardada. La eliminación es reconocible porque la mitigación elimina una capacidad en lugar de constreñir su uso."
+  },
+  "rc-02": {
+    "label": "La característica que infería atributos demográficos de fotos de usuario se elimina del producto.",
+    "why": "Sin inferencia significa sin error de inferencia, sin precisión disparatada y sin pregunta de base legal. El peligro no se gestiona; ya no existe."
+  },
+  "rc-03": {
+    "label": "La capacidad de un chatbot para ejecutar cambios de cuenta se retira completamente; ahora solo puede leer y explicar.",
+    "why": "Remover la capacidad de escritura elimina la clase completa de daños de acción no autorizada. Todo aguas abajo se vuelve innecesario."
+  },
+  "rc-04": {
+    "label": "Los identificadores directos se eliminan del corpus de entrenamiento completamente en lugar de ser protegidos dentro de él.",
+    "why": "Los datos que nunca fueron recopilados no pueden filtrar, ser re-identificados, o estar sujetos a una solicitud de acceso. Por eso la minimización supera el cifrado."
+  },
+  "rc-05": {
+    "label": "Un modelo generativo usado para resumir notas médicas se reemplaza con un resumidor extractivo que solo puede citar la fuente.",
+    "why": "El propósito se preserva mientras el mecanismo peligroso — generación libre, y por lo tanto fabricación — se intercambia por uno que no puede fabricar."
+  },
+  "rc-06": {
+    "label": "Un modelo de caja negra boosted por gradiente en una decisión de préstamo se reemplaza por un scorecard monótono con precisión comparable.",
+    "why": "Rediseñar para un modelo inherentemente explicable elimina el problema de explicación en lugar de empujar un explicador post-hoc a él."
+  },
+  "rc-07": {
+    "label": "Registros reales de clientes usados en un entorno de prueba se reemplazan con datos sintéticos de la misma forma estadística.",
+    "why": "La actividad continúa con una entrada materialmente más segura. La sustitución se sitúa por debajo de la eliminación porque el reemplazo lleva sus propios riesgos más pequeños."
+  },
+  "rc-08": {
+    "label": "Un paso de reconocimiento facial en una verificación de identidad se reemplaza con una verificación de documento-más-vivacidad que no construye un template de cara.",
+    "why": "Mismo objetivo de seguridad, mecanismo diferente, exposición biométrica mucho más baja. La señal es que la función sobrevive y el peligro se intercambia."
+  },
+  "rc-09": {
+    "label": "Los filtros de salida bloquean respuestas que contienen patrones de datos personales antes de que lleguen al usuario.",
+    "why": "La restricción se aplica por el sistema en cada solicitud. Nadie tiene que recordarla, que es lo que hace los controles técnicos superen los procedurales."
+  },
+  "rc-10": {
+    "label": "El control de acceso basado en roles evita que la capa de recuperación devuelva documentos que el usuario solicitante no está autorizado a ver.",
+    "why": "La autorización se aplica en el punto de recuperación en lugar de confiarse al prompt. Una regla que el sistema aplica no puede ser olvidada bajo presión."
+  },
+  "rc-11": {
+    "label": "Un límite duro limita el número de llamadas de herramientas que un agente puede hacer antes de que deba detenerse y escalar.",
+    "why": "Un límite de tiempo de ejecución se mantiene independientemente de lo que decida hacer el modelo. Mejorar la descripción de la herramienta sería una medida administrativa en comparación."
+  },
+  "rc-12": {
+    "label": "El despliegue se controla por una suite de evaluación automatizada que falla la compilación si el desempeño de subgrupo regresa más allá de un umbral.",
+    "why": "La puerta es mecánica y no puede ser saltada por un gestor de lanzamiento ocupado, que es precisamente por qué supera una lista de verificación de revisión cubriendo el mismo terreno."
+  },
+  "rc-13": {
+    "label": "Una política de uso aceptable se publica y todo el personal completa entrenamiento anual sobre ella.",
+    "why": "La efectividad depende completamente de que las personas la lean, recuerden y apliquen. El entrenamiento vale la pena tener y se suele sobreacreditar en evaluaciones de riesgo."
+  },
+  "rc-14": {
+    "label": "Un procedimiento requiere un segundo revisor para aprobar cada cambio de modelo de alto impacto.",
+    "why": "Una puerta de procedimiento puede ser saltada bajo presión de plazo. Hacer la misma verificación un estado requerido en el pipeline la movería hacia un nivel superior."
+  },
+  "rc-15": {
+    "label": "Las auditorías manuales trimestrales muestrean decisiones del modelo y las verifican contra la política.",
+    "why": "Detectivo, periódico y humano. Encuentra problemas después de que ocurren, lo que es útil y no es prevención."
+  },
+  "rc-16": {
+    "label": "Un runbook de respuesta a incidentes establece quién es llamado y en qué orden cuando un modelo se comporta mal.",
+    "why": "La preparación procesal reduce el impacto a través de respuesta más rápida, pero solo si el procedimiento se sigue y está actual."
+  },
+  "rc-17": {
+    "label": "Un banner dice a los usuarios que las respuestas son generadas por IA y pueden ser inexactas.",
+    "why": "Una obligación de divulgación bien puede ser obligatoria, pero como mitigación es el nivel más débil: transfiere vigilancia al usuario, que no puede inspeccionar el modelo."
+  },
+  "rc-18": {
+    "label": "La interfaz advierte a los usuarios que no ingresen información confidencial en el asistente.",
+    "why": "La advertencia depende de la persona menos equipada para aplicarla. Bloquear patrones sensibles en la entrada sería un control de ingeniería para el mismo riesgo."
+  },
+  "rc-19": {
+    "label": "La documentación establece que el modelo no fue validado para uso en casos pediátricos.",
+    "why": "Declarar una limitación informa al desplegador sin prevenir el uso indebido. Rechazar entradas fuera de alcance en tiempo de ejecución sería materialmente más fuerte."
+  },
+  "rc-20": {
+    "label": "Las imágenes generadas llevan una etiqueta visible y metadatos de procedencia incrustados identificándolas como sintéticas.",
+    "why": "El marcado de procedencia apoya el juicio aguas abajo y a menudo es legalmente requerido. No cambia nada sobre lo que el sistema producirá."
+  },
+  "risk-controls": {
+    "hint": "Arrastra cada mitigación a su nivel. La pregunta es cuánto la medida depende de que un humano haga lo correcto — más depende, más débil es el nivel.",
+    "note": "El orden importa más que las etiquetas. Una medida que depende de que una persona lea, recuerde y cumpla es estructuralmente más débil que una que hace la falla imposible, sin importar cuán diligentemente la primera sea escrita.",
+    "zones[0].def": "Elimina el peligro. El modo de falla no puede ocurrir porque la capacidad que lo produjo se ha ido.",
+    "zones[1].def": "Reemplaza el elemento peligroso con uno más seguro que logra el mismo propósito.",
+    "zones[2].def": "Construye la restricción en el sistema para que se mantenga sin que nadie elija cumplir.",
+    "zones[3].def": "Políticas, entrenamiento, pasos de revisión y procedimientos. Efectivos solo en la medida que las personas los sigan.",
+    "zones[4].def": "Cuéntale al usuario. El nivel más débil: mueve responsabilidad a la persona menos capaz de cambiar el resultado."
+  }
+}

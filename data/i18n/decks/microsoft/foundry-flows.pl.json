@@ -1,0 +1,82 @@
+{
+ "lad-agent": {
+  "prompt": "Ułóż cykl życia agenta w kolejności, w jakiej musi się to zdarzyć.",
+  "steps[0].label": "Zdefiniuj agenta: PromptAgentDefinition(model=MODEL_NAME, instructions=..., tools=[...])",
+  "steps[0].detail": "Model + instrukcje + narzędzia są ustawiane w momencie definiowania — {\"deployment\":{\"model\":AGENT_NAME}} to kanoniczny błędy odpowiedź; wdrożenia hostują modele, agenci to model + instrukcje + narzędzia.",
+  "steps[1].label": "Testuj w playground Agents",
+  "steps[1].detail": "Playground konfiguruje personas, narzędzia i przyłączoną wiedzę obok siebie i pozwala spróbować zachowania wieloturowego przed wywołaniem kodu klienta agenta.",
+  "steps[2].label": "Zapisz go: project.agents.create_version(agent_name=AGENT_NAME, definition=...)",
+  "steps[2].detail": "Niezapisane edycje playground tracie się przy opuszczeniu portalu — create_version to to, co faktycznie utrwala definicję, niezależnie od tego, czy zbudowałeś ją w portalu czy w kodzie.",
+  "steps[3].label": "Stwórz wątek: openai.conversations.create()",
+  "steps[3].detail": "Otwiera kontener czasu wykonywania, w którym później tury się zapisuje — wywołane przez aplikację klienta przed wysłaniem pierwszej wiadomości, odrębnie od definicji samego agenta.",
+  "steps[4].label": "Dodaj wiadomość użytkownika do wątku",
+  "steps[4].detail": "Zawartość tury jest dołączana do rosnącej historii wiadomości wątku — uruchomienie nie może przetwarzać wiadomości, która nie została jeszcze dodana.",
+  "steps[5].label": "Stwórz uruchomienie i odczytaj wyjście: openai.responses.create(..., extra_body={\"agent_reference\": {...}})",
+  "steps[5].detail": "Wywołanie, które faktycznie przetwarza rozmowę i generuje następne wyjście agenta; agent_reference to metadane dla każdego wywołania wskazujące na zapisaną definicję."
+ },
+ "lad-chat": {
+  "prompt": "Ułóż przepływ kodu w kolejności, w jakiej musi się to uruchamiać.",
+  "steps[0].label": "Zainstaluj azure-ai-projects",
+  "steps[0].detail": "'Jaki pakiet powinieneś zainstalować dla klienta projektu?' to klasyczne pytanie egzaminacyjne — odpowiedzią jest azure-ai-projects.",
+  "steps[1].label": "Stwórz AIProjectClient(endpoint, DefaultAzureCredential())",
+  "steps[1].detail": "Endpoint + poświadczenie muszą istnieć zanim jakikolwiek kod będzie się wykonywał; bezklawisz auth = Entra ID DefaultAzureCredential.",
+  "steps[2].label": "Wywołaj get_openai_client()",
+  "steps[2].detail": "Łączy klienta projektu do kompatybilnego klienta czatu OpenAI — linia, która psuje wszystko, jeśli usunięta.",
+  "steps[3].label": "Zbuduj listę wiadomości (wiadomość systemowa najpierw, potem wiadomość użytkownika)",
+  "steps[3].detail": "Reguły i zabezpieczenia w wiadomości systemowej; żądanie tej tury w wiadomości użytkownika.",
+  "steps[4].label": "Wywołaj chat.completions.create(model=DEPLOYMENT_NAME, messages=[...])",
+  "steps[4].detail": "model= bierze TWOJĄ nazwę wdrożenia, nigdy nazwę modelu bazowego — klasyczna pułapka.",
+  "steps[5].label": "Odczytaj response.choices[0].message.content",
+  "steps[5].detail": "Tekst odpowiedzi żyje w pierwszym wyborze wiadomości — pytania części tekstu kończą się tutaj."
+ },
+ "lad-cu": {
+  "prompt": "Ułóż przepływ pracy Content Understanding w kolejności.",
+  "steps[0].label": "Wybierz lub zdefiniuj analizator: opisz schemat w języku naturalnym (ContentAnalyzer(base_analyzer_id=..., field_schema=...))",
+  "steps[0].detail": "Prebudowane identyfikatory analizatorów (prebuilt-invoice, prebuilt-audio,...) obejmują wspólne domeny; niestandardowy ContentAnalyzer nazwie pola, które chcesz w zwykłym języku poprzez field_schema — bez kodu poza opisem tego, co wyodrębnić.",
+  "steps[1].label": "Zarejestruj go: client.begin_create_analyzer(...)",
+  "steps[1].detail": "Przepisy definicję analizatora jako długotrwałą operację zanim będzie można ją wywoływać dla jakiejkolwiek zawartości — jednorazowy krok konfiguracji, a nie dla każdego dokumentu.",
+  "steps[2].label": "Prześlij zawartość: client.begin_analyze(analyzer_id=..., inputs=[AnalysisInput(url=file_url)])",
+  "steps[2].detail": "Każdy plik dokument/obraz/audio/wideo otrzymuje własne wywołanie begin_analyze względem już zarejestrowanego analizatora — krok dla każdego dokumentu, w przeciwieństwie do kroku 1.",
+  "steps[3].label": "Sprawdzaj operację: poller.result()",
+  "steps[3].detail": "begin_analyze zwraca polling; wywołaj metodę .result(), aby czekać na ostateczne wyjście analizy — analiza jest asynchroniczna, a nie synchroniczny zwrot (egzamin to nazwie 'wywołaj metodę ________ pollera').",
+  "steps[4].label": "Odczytaj ustrukturyzowane pola JSON z wyniku",
+  "steps[4].detail": "Wyodrębnione pola — nazwa dostawcy, data faktury, razem faktury i podobnie — trafiają do ładunku wyniku pollera; tutaj kończy się własne zadanie Content Understanding.",
+  "steps[5].label": "Przekaż do Azure AI Search do indeksowania",
+  "steps[5].detail": "Content Understanding tylko ekstraktuje — nigdy nie indeksuje ani nie generuje; Azure AI Search to oddzielna usługa następna, która indeksuje strukturalne wyjście Content Understanding do wyszukiwania/RAG."
+ },
+ "lad-genai": {
+  "prompt": "Ułóż kroki w kolejności, w jakiej model generacyjny zamienia Twój prompt na tekst.",
+  "steps[0].label": "Tokenizacja",
+  "steps[0].detail": "Tekst wejściowy jest dzielony na tokeny — słowa lub podslowa — każdy mapowany na identyfikator z słownika modelu; nic następnie nie ma znaczenia, dopóki to się nie zdarzy (Zadanie 1.2).",
+  "steps[1].label": "Osadzanie",
+  "steps[1].detail": "Każdy identyfikator tokenu jest konwertowany na wektor numeryczny kodujący znaczenie — ta sama przestrzeń wektorowa, która czyni podobieństwo semantyczne obliczalnym jako odległość wektora.",
+  "steps[2].label": "Transformer uwagi",
+  "steps[2].detail": "Warstwy self-attention ważą każdy token względem każdego innego tokenu w sekwencji — mechanika, która 'napędza większość nowoczesnych modeli fundamentalnych', i potrzebuje wektorów osadzania, aby już istnieć.",
+  "steps[3].label": "Przewidywanie następnego tokenu",
+  "steps[3].detail": "Model wyświetla rozkład prawdopodobieństwa całego słownika dla pojedynczego następnego tokenu; temperatura i top-p zmieniają ten rozkład zanim jeden token jest próbkowany.",
+  "steps[4].label": "Detokenizowane wyjście",
+  "steps[4].detail": "Przewidywany identyfikator tokenu jest dekodowany z powrotem na tekst i pętla powtarza się jeden token naraz, dopóki warunek zatrzymania — zakontowanie mierzy, jak dobrze przewidywania tego kroku pasowały do wstrzymywanego tekstu."
+ },
+ "lad-speech": {
+  "prompt": "Ułóż wywołania Speech SDK w kolejności, w jakiej muszą się to uruchamiać.",
+  "steps[0].label": "SpeechConfig(subscription=key, region=region)",
+  "steps[0].detail": "Każdy przepływ Speech SDK zaczyna się tutaj — para klucz/region (lub endpoint), która uwierzytelnia każde wywołanie, które następuje.",
+  "steps[1].label": "Ustaw speech_config.speech_synthesis_voice_name = \"...\"",
+  "steps[1].detail": "Wybór głosu to właściwość ustawiana bezpośrednio na obiekcie konfiguracji — wycinek DragonHD-voice egzaminu ustawia tę linię zaraz po SpeechConfig, zanim jakikolwiek inny obiekt zostanie zbudowany z niego.",
+  "steps[2].label": "AudioConfig(...) — mikrofon, plik lub domyślne urządzenie",
+  "steps[2].detail": "Zbudowany niezależnie od właściwości nazwy głosu, ale fragmenty szybkiego startu konstruują go tylko po zakończeniu konfiguracji, bezpośrednio przed rozpoznawaczem/syntezatorem, które go zużyją.",
+  "steps[3].label": "Stwórz Recognizer lub Synthesizer: SpeechRecognizer(speech_config, audio_config) / SpeechSynthesizer(speech_config)",
+  "steps[3].detail": "Oba konstruktory biorą już zbudowaną speech_config (recognizer również bierze audio_config) — nic po tym punkcie nie może wciąż wstrzykiwać konfiguracji.",
+  "steps[4].label": "Wywołaj recognize_once() / speak_text_async(text)",
+  "steps[4].detail": "recognize_once() przechwytuje jedną krótką wypowiedź (vs. ciągłe rozpoznawanie); speak_text_async() faktycznie odtwarza tekst — wzorzec asynchroniczny futuro/.get() należy tutaj, ostatecznie, gdy obiekt istnieje."
+ },
+ "lad-voice": {
+  "prompt": "Ułóż klasyczny potok agenta głosowego w kolejności.",
+  "steps[0].label": "Mowa na tekst: konwertuj mówioną audio dzwoniącego na tekst",
+  "steps[0].detail": "Pierwszy krok potoku — recognize_once() lub ciągłe rozpoznawanie zamienia audio na transkrypcję zanim jakikolwiek rozumowanie może się na niej zdarzyć.",
+  "steps[1].label": "Przetwarzanie języka / sztucznej inteligencji generacyjnej: rozumuj transkrypcję i wytwórz odpowiedź tekstową",
+  "steps[1].detail": "Wywołanie czatu/agenta rozumuje transkrypcję — krok, który pojedynczy model multimodalny (np. wdrożenie czatu audio-wejście/audio-wyjście) może zawinąć razem z krokami 1 i 3, i ten, który Voice Live API jest zbudowany, aby zastąpić wszystkie trzy naraz z pojedynczym interfejsem niskiej opóźnienia mowy do mowy.",
+  "steps[2].label": "Tekst na mowę: syntetyzuj odpowiedź z powrotem na audio",
+  "steps[2].detail": "speak_text_async() odtwarza wygenerowaną odpowiedź — ostateczny krok klasycznego potoku, również skłonny do zapamiętania pojedynczego modelu multimodalnego lub Voice Live alternatywy wymienionej w szczegółach kroku 2."
+ }
+}

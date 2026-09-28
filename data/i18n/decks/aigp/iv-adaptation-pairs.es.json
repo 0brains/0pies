@@ -1,0 +1,62 @@
+{
+ "iv-ap-01": {
+  "a.text": "El conocimiento propietario de la organización se entrena directamente en los pesos del modelo a través de rondas de entrenamiento adicionales, convirtiéndose en una parte permanente de lo que el modelo «sabe».",
+  "a.why": "Hornear datos de dominio en los pesos significa que el modelo hereda cualquier riesgo de memorización o fuga que esos datos lleven — un generador de datos sintéticos adaptado de esta manera en registros de producción aún puede filtrar trazas de los originales incluso después de la anonimización, y usar datos específicos de estudiantes de la misma manera crea su propia exposición de violación.",
+  "b.text": "El conocimiento propietario de la organización permanece en un almacén externo, separadamente mantenido, y se recupera solo en el momento en que se hace cada pregunta.",
+  "b.why": "Nada sobre este conocimiento es aprendido por el modelo en sí — se obtiene fresco por consulta, que es exactamente por qué puede reflejar la orientación de este mes sin una sola ronda de reentrenamiento. La opción de adaptación hecha aquí es lo que determina la carga de seguridad que el equipo termina siendo propietario."
+ },
+ "iv-ap-02": {
+  "a.text": "Obtiene los documentos de política actual para fundamentar una sola respuesta, que un humano luego lee y actúa.",
+  "a.why": "El trabajo del sistema se detiene en producir una respuesta bien fundamentada; cada acción consiguiente posterior sigue siendo responsabilidad de un humano tomar.",
+  "b.text": "Planifica una tarea de múltiples pasos por sí sola y ejecuta acciones a través de herramientas de reserva y pago, con revisión humana mínima en cada paso.",
+  "b.why": "La autonomía de acción, no solo la autonomía de respuesta, es la nueva superficie de gobernanza aquí: cuando un implementador permite que un sistema actúe en lugar de simplemente informar, la responsabilidad directa por comportamiento de agente dañino o engañoso cae en el implementador — esto requiere alcance de acción, umbrales de intervención humana, y registros de acción completos, ninguno de los cuales un asistente basado puramente en recuperación necesita."
+ },
+ "iv-ap-03": {
+  "a.text": "La organización puede leer, modificar y redistribuir los propios pesos y código del modelo, y ejecutarlo completamente en infraestructura que controla.",
+  "a.why": "La inspeccionabilidad es el cambio completo: obtienes auditar el algoritmo tú mismo y evitar depender de la hoja de ruta de un proveedor, pero también heredas la carga interna de verificar licencias, procedencia de datos de entrenamiento y tus propias pruebas de seguridad.",
+  "b.text": "La organización solo puede llamar al modelo a través de una API y nunca ve los pesos, pero el proveedor lo respalda con contratos de soporte, respuesta ante incidentes e indemnidades.",
+  "b.why": "Cambias derechos de inspección por garantías respaldadas por contrato — y el costo estratégico de ese cambio se registra como el riesgo superior de este camino: una vez que los flujos de trabajo se construyen alrededor de la API de un proveedor, cambiar más tarde se vuelve costoso."
+ },
+ "iv-ap-04": {
+  "a.text": "El modelo base se comprime y reformula — parámetros podados, precisión reducida, un adaptador ligero en capas — para reducir costo y latencia para uso de borde o alto volumen.",
+  "a.why": "Encoger o reformular el artefacto de esta manera puede mover silenciosamente sus límites de decisión y reducir la interpretabilidad, por lo que la precisión, equidad y robustez todas necesitan ser verificadas nuevamente después de cada cambio, no asumidas para trasladarse sin cambios.",
+  "b.text": "El modelo del proveedor se ejecuta sin modificaciones, exactamente como se envió, respaldado solo por revisión humana y otros controles en capas alrededor de él.",
+  "b.why": "Nada sobre el artefacto en sí ha cambiado, por lo que la gobernanza se basa en la propia documentación del proveedor y en controles compensatorios como revisión humana en lugar de revalidar los internos del modelo."
+ },
+ "iv-ap-05": {
+  "a.text": "Un sistema de puntuación crediticia predice o clasifica a partir de entradas estructuradas; sus riesgos son sesgo contra ciertos grupos y precisión que se degrada silenciosamente a medida que los datos subyacentes se desplazan.",
+  "a.why": "Predecir o clasificar una categoría conocida a partir de características estructuradas es el modo de fallo de este perfil — riesgos familiares de sesgo y desplazamiento que la prueba de equidad y el monitoreo están construidos para detectar.",
+  "b.text": "Un asistente de redacción produce texto, imágenes o código completamente nuevo a partir de un mensaje; sus riesgos son alucinación, exposición de derechos de autor y salida convincentemente incorrecta.",
+  "b.why": "Crear contenido que no existía antes abre una superficie de riesgo completamente diferente — alucinación y procedencia, no el perfil de sesgo y desplazamiento que rige un sistema de solo predicción."
+ },
+ "iv-ap-06": {
+  "a.text": "El modelo de un proveedor se usa exactamente como se entregó; el trabajo del equipo es validarlo contra sus propios estándares de rendimiento y equidad y documentar cualquier brecha.",
+  "a.why": "La gobernanza aquí se basa casi completamente en la transparencia del proveedor más controles compensatorios — el equipo nunca toca los internos del modelo, por lo que sus obligaciones se detienen en la validación y documentación.",
+  "b.text": "Un modelo de propósito general se reentrena en los propios datos etiquetados de la organización hasta que reproduce un comportamiento específico deseado.",
+  "b.why": "En el momento en que una organización reentrena el modelo, la gobernanza trata el resultado como un sistema nuevo: la prueba de equidad y robustez debe repetirse desde cero, y — comparado con usar el modelo de un proveedor tal como se entrega — la organización ahora lleva una responsabilidad legal aumentada de su propia."
+ },
+ "iv-ap-07": {
+  "a.text": "Un chatbot de soporte acepta preguntas escritas y produce solo respuestas escritas, sin otro canal de entrada para razonar.",
+  "a.why": "Solo texto adentro, solo texto afuera — las preocupaciones de gobernanza aquí son alucinación, fraseología sesgada y ataques de estilo jailbreak, ninguno de los cuales involucra una segunda modalidad.",
+  "b.text": "Una herramienta de reclamaciones pesa una fotografía de daño junto con las notas escritas del ajustador antes de producir un juicio combinado único.",
+  "b.why": "Combinar canales agrega un riesgo que un sistema solo de texto nunca enfrenta: falsas correlaciones entre una imagen y el texto junto a ella, y la necesidad de mostrar qué entrada realmente condujo la salida."
+ },
+ "iv-ap-08": {
+  "a.text": "Un clasificador estrecho maneja una tarea en un presupuesto de computación ajustado, reentrena rápidamente, y rastrea sus salidas a entradas con poco esfuerzo.",
+  "a.why": "Un sistema compacto y estrecho es barato para re-probar y fácil de explicar — el costo es que puede tener un rendimiento deficiente una vez que el ambiente se vuelve más variable que lo que fue construido.",
+  "b.text": "Un amplio sistema de fundación generaliza a través de muchas tareas para las que nunca fue específicamente entrenado, al costo de gobernanza de computación más pesada y una superficie de ataque más grande.",
+  "b.why": "La amplitud comprada a través de escala significa que el sistema puede abordar dominios desconocidos en cero-shot, pero también necesita cuotas de computación, red y monitoreo de desplazamiento que un sistema estrecho no."
+ },
+ "iv-ap-09": {
+  "a.text": "Cada fuente de la que el modelo extrajo durante una sesión se registra para auditoría, y cualquier dato personal que pase a través del corpus conectado debe ser redactado antes de que se muestre al modelo.",
+  "a.why": "El registro de auditoría y la redacción PII a través de un corpus externo son obligaciones de gobernanza que simplemente no existen para un modelo sin canal de datos vivos conectado — la carga de seguranza de este camino vive en la plomería, no en los pesos.",
+  "b.text": "El modelo del proveedor se usa exactamente como se entregó, y el camino más rápido a un piloto funcional se elige precisamente porque no es necesario construir ningún nuevo datos de entrenamiento o canalización primero.",
+  "b.why": "La velocidad es todo el atractivo aquí — sin reentrenamiento, sin nueva plomería de datos — pero la gobernanza trata esa velocidad como una deuda: el modelo se presume alto riesgo hasta que se valida contra los propios estándares de rendimiento y equidad de esta organización, ya que nada sobre él fue construido con esta implementación en mente."
+ },
+ "iv-ap-10": {
+  "a.text": "El mismo modelo base sale más pequeño y más barato de ejecutar después de la compresión, sin un hecho nuevo agregado a él.",
+  "a.why": "Este camino apunta al pie de página, no al conocimiento — pero encoger o reformular el artefacto aún puede mover sus límites de decisión, por lo que la precisión y equidad necesitan re-verificación incluso aunque nada «nuevo» fue enseñado.",
+  "b.text": "El mismo modelo base sale del mismo tamaño, pero ahora reproduce de manera confiable un comportamiento especialista que nunca tuvo acceso antes, aprendido de ejemplos seleccionados.",
+  "b.why": "Este camino apunta al comportamiento y conocimiento, no al pie de página — y porque ese nuevo comportamiento fue aprendido de los propios datos de la organización, la gobernanza ahora trata el resultado como un sistema nuevo que requiere su propia prueba, no una copia redimensionada del viejo."
+ }
+}

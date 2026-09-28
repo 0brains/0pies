@@ -1,0 +1,108 @@
+{
+  "wl-001": {
+    "label": "Rascunhar cinco slogans candidatos para um novo produto a partir de um resumo de duas linhas",
+    "why": "Criar conteúdo novo a partir de um prompt é IA generativa — nada está sendo analisado, extraído ou falado."
+  },
+  "wl-002": {
+    "label": "Um assistente que verifica inventário, apresenta a recomendação e envia um email ao fornecedor sem prompts passo a passo",
+    "why": "Ação autónoma multi-passo com uso de ferramentas é a assinatura agentic — histack 'assistente persistente' vs 'uma resposta sem estado'."
+  },
+  "wl-003": {
+    "label": "Determinar quem falou quando numa reunião gravada (diarização de falante)",
+    "why": "Diarização separa falantes dentro de áudio — uma capacidade de fala. Armadilha: não gera nada, por isso nunca é síntese."
+  },
+  "wl-004": {
+    "label": "Interações de fala-para-fala de latência baixa e alta qualidade para um agente de voz",
+    "why": "Frase verbatim de Voice Live / gpt-realtime a partir do corpus — áudio em tempo real em, áudio fora."
+  },
+  "wl-005": {
+    "label": "Devolver caixas delimitadoras ao redor de cada veículo em gravação de câmara de tráfego",
+    "why": "Detecção de objeto — caixas delimitadoras por objeto — é visão de computador, distinto de classificação de imagem inteira."
+  },
+  "wl-006": {
+    "label": "Puxar o número da fatura, total e data de vencimento de milhares de PDFs digitalizados",
+    "why": "Extrair campos estruturados de documentos e formulários é a carga de trabalho de extração de informações — território de Content Understanding no Domínio 2."
+  },
+  "wl-007": {
+    "label": "Criar uma imagem de herói fotorealista para uma página de produto a partir de uma descrição de texto de duas frases do item e sua configuração",
+    "why": "Produzir uma imagem totalmente nova a partir de um prompt de texto é o lado de imagem de IA generativa — não há imagem existente sendo analisada, o que a tornaria visão de computador."
+  },
+  "wl-008": {
+    "label": "Produzir um primeiro rascunho de uma página de FAQ de produto a partir de um esboço de pontos de discussão",
+    "why": "Transformar um esboço escasso em prosa nova é criação de conteúdo a partir de um prompt, a mesma capacidade que os slogans de wl-001, apenas aplicado a um documento mais longo."
+  },
+  "wl-009": {
+    "label": "Responder a uma única pergunta de cliente singular numa janela de chat com uma resposta, sem passos de acompanhamento ou ferramentas invocadas",
+    "why": "Uma resposta sem estado a um prompt é IA generativa; no momento em que um sistema começa a planejar etapas e chamar ferramentas por conta própria, cruza para IA agentic."
+  },
+  "wl-010": {
+    "label": "Um assistente de reserva de viagens compara tarifas em três sites, mantém um assento e completa a compra uma vez que o alvo de preço é atingido, sem humano confirmando cada etapa",
+    "why": "Comparar, decidir e executar uma compra de ponta a ponta sem re-prompting por etapa é o padrão agentic, distinto de um chatbot que apenas responde."
+  },
+  "wl-011": {
+    "label": "Um assistente de suporte de TI classifica um bilhete de entrada, executa um script de diagnóstico contra o servidor afetado e escala para um humano apenas se a correção automatizada falhar",
+    "why": "Uso de ferramenta mais uma ação seguinte condicional é a definição de 'uso de ferramenta significa que o agente pode chamar capacidades externas' do exame — distinto de uma única resposta gerada."
+  },
+  "wl-012": {
+    "label": "Um assistente de pesquisa quebra uma pergunta ampla em sub-perguntas, procura múltiplas fontes para cada uma e tece as descobertas num relatório final",
+    "why": "Planeamento de tarefa que decompõe um objetivo em etapas, executado de ponta a ponta, é a definição de planeja-tarefa-mais-completa-tarefa do exame de IA agentic, não uma resposta gerada única."
+  },
+  "wl-013": {
+    "label": "Digitalizar bilhetes de suporte de texto livre e sinalizar qualquer número de telefone ou endereço de email que contenham antes dos bilhetes serem armazenados",
+    "why": "Deteção de PII sinaliza períodos sensíveis dentro de texto não estruturado — uma funcionalidade de análise textual, distinta da extração de informações de campos fixos puxados de formulários e documentos."
+  },
+  "wl-014": {
+    "label": "Devolver uma lista curta e classificada dos tópicos principais mencionados em milhares de bilhetes de suporte, sem produzir um parágrafo reescrito",
+    "why": "Extração de palavra-chave lista os termos salientes; a armadilha plantada do exame é oferecer resumização em seu lugar, o que produziria prosa em vez de uma lista de tópicos."
+  },
+  "wl-015": {
+    "label": "Identificar cada nome de pessoa, organização e local mencionado em um lote de artigos de notícias",
+    "why": "Reconhecimento de entidade nomeada classifica menções dentro de texto em execução em pessoas, lugares e organizações — uma capacidade de análise textual, não extração contra um esquema de documento fixo."
+  },
+  "wl-016": {
+    "label": "Condensar um documento de política de 40 páginas em uma visão geral de três parágrafos que captura seus pontos-chave",
+    "why": "Resumização comprime texto existente em prosa nova mas fiel — análise textual, não IA generativa, porque a saída está fundamentada em e restrita pelo documento fonte."
+  },
+  "wl-017": {
+    "label": "Transcrever um lote de gravações de entrevistas carregadas uma vez que acabaram de fazer upload, em vez de conforme são faladas",
+    "why": "Transcrição em lote processa áudio pré-gravado assincronamente — ainda uma capacidade de fala, apenas o irmão offline de reconhecimento em tempo real, não uma tarefa de texto ou extração."
+  },
+  "wl-018": {
+    "label": "Produzir áudio narrado de som natural para um módulo de e-learning a partir de um script escrito",
+    "why": "Converter texto escrito em áudio falado é síntese de texto-para-fala — o lado de saída da carga de trabalho de fala, espelhando o caso de áudio-em/áudio-fora de wl-004."
+  },
+  "wl-019": {
+    "label": "Verificar que a pessoa em frente a uma câmara de login é um humano vivo, não uma foto impressa ou reabilitação de vídeo",
+    "why": "Deteção de vivacidade de rosto defende contra ataques de apresentação analisando a imagem da câmara em direto — uma capacidade de visão de computador de segurança, distinta da verificação de rosto de correspondência de identidade."
+  },
+  "wl-020": {
+    "label": "Detetar mudanças de cena e gerar marcadores de capítulo analisando os quadros visuais de um vídeo de treino carregado",
+    "why": "Derivar quebras de capítulo do que os quadros mostram é análise visual do vídeo; a mesma gravação muda para apenas fala quando o entregável é a transcrição falada em vez disso."
+  },
+  "wl-021": {
+    "label": "Etiquetar uma foto carregada com uma categoria de imagem inteira única como 'praia' ou 'rua da cidade', sem localizações por objeto necessárias",
+    "why": "Classificação de imagem atribui um rótulo a toda a imagem, diferente da detecção de objeto de wl-005, que devolve caixas delimitadoras por objeto — ambos são visão de computador, mas técnicas distintas."
+  },
+  "wl-022": {
+    "label": "Executar habilidades de enriquecimento de IA sobre milhares de relatórios e imagens digitalizados durante indexação para que conteúdo que era anteriormente impossível de pesquisar se torne consultável",
+    "why": "Isto é mineração de conhecimento — a definição de Azure AI Search do exame de usar habilidades de IA para superfície informações de conteúdo não estruturado num índice de pesquisa."
+  },
+  "wl-023": {
+    "label": "Devolver um conjunto de campos definidos por esquema — motivo da chamada, resolução e ação de acompanhamento — a partir de um lote de chamadas de suporte gravadas",
+    "why": "Puxar um esquema de negócios fixo do conteúdo de áudio é extração estruturada de Content Understanding; o entregável é campos definidos, não uma transcrição, o que a tornaria fala."
+  },
+  "wl-024": {
+    "label": "Puxar pares chave-valor e estrutura de tabela a partir de um lote misto de contratos, formulários de entrada e recibos escritos à mão usando um esquema reutilizável",
+    "why": "Extração de campo estruturado e estrutura de tabela em vários tipos de documentos é território layout/modelo personalizado de inteligência de documentos — a mesma carga de trabalho que as faturas de wl-006, aplicado a uma mistura de documentos mais ampla."
+  },
+  "workload-sort": {
+    "hint": "Pergunta qual é realmente o entregável: conteúdo totalmente novo a partir de um prompt (generativo), ação multi-passo autónoma com ferramentas (agentic), julgamento ou resumo sobre texto existente (análise textual), qualquer coisa que toque áudio falado (fala), julgamento sobre um quadro de imagem ou vídeo (visão de computador), ou conjunto fixo de campos estruturados/um índice puxado de documentos ou conteúdo misto (extração de informações).",
+    "note": "Vários pedidos poderiam soar como duas cargas de trabalho. O desempate é sempre o entregável: conteúdo novo vs. uma ação autónoma vs. análise de texto existente vs. áudio em/fora vs. julgamento sobre pixels vs. conjunto de campo estruturado.",
+    "zones[0].def": "Criando novo conteúdo — texto, imagens, código ou áudio — a partir de um prompt, em vez de analisar ou agir em conteúdo que já existe.",
+    "zones[1].def": "Planejamento autónomo, uso de ferramentas e ação multi-passo em direção a um objetivo, indo além de uma resposta única sem estado.",
+    "zones[2].def": "Analisando texto escrito para significado de superfície já presente nele — sentimento, frases-chave, entidades, PII ou resumo fundamentado — sem gerar conteúdo novo.",
+    "zones[3].def": "Convertendo entre áudio falado e texto, ou trabalhando diretamente com fluxos de áudio — reconhecimento, síntese, tradução e diarização.",
+    "zones[4].def": "Analisando o conteúdo visual de imagens e quadros de vídeo — classificar, detetar objetos, verificar rostos ou ler uma cena.",
+    "zones[5].def": "Puxando um conjunto fixo de campos estruturados, ou um índice consultável, de documentos, formulários ou conteúdo multimodal misto."
+  }
+}

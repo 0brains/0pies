@@ -1,0 +1,109 @@
+{
+ "service-selection": {
+  "hint": "Dwa pytania decydują: jak wygląda wejście (tekst, formularz, obraz, audio, wideo lub wektory), oraz czy zadanie ekstrahuje/analizuje, tłumaczy, przeszukuje/indeksuje czy generuje? Zasadzona opcja to prawie zawsze sąsiad, który dzieli wejście, ale robi inne zadanie."
+ },
+ "ss-001": {
+  "label": "Opisz pola faktury w zwykłym języku i wyodrębnij je z plików PDF, zdjęć i nagrań rozmów do ustrukturyzowanego JSON",
+  "why": "Opis pola w języku naturalnym nad multimodalnym wejściem → ustrukturyzowany JSON to Content Understanding; Document Intelligence prebuilts to deterministyczne i tylko dokumenty."
+ },
+ "ss-002": {
+  "label": "Ekstrakcja o wysokiej objętości dla znanych typów formularzy ze wstępnie skonstruowanym modelem",
+  "why": "Znane typy formularzy — faktury, paragony, dowody osobiste, wizytówki — to terytorium Document Intelligence prebuilt."
+ },
+ "ss-003": {
+  "label": "Przetłumacz napisane podręczniki produktów z tekstu angielskiego na tekst japoński",
+  "why": "Translator to tekst-na-tekst; Azure Speech obsługuje audio wejście/wyjście, w tym tłumaczenie mowy — pomyłka korpusu 6-elementowa (para #29)."
+ },
+ "ss-004": {
+  "label": "Indeksuj wyodrębnione dane faktury, aby aplikacje podrzędne mogły je przeszukiwać i pobierać",
+  "why": "CU ekstrahuje; AI Search indeksuje i pobiera downstream (indexer, skillset, knowledge store) — ekstrakcja i pobieranie to różne usługi (para #22)."
+ },
+ "ss-005": {
+  "label": "Przeszukaj opisy produktów przez podobieństwo semantyczne zamiast dokładnego dopasowania słów kluczowych",
+  "why": "Osadzenia konwertują tekst na wektory do porównania semantycznego (text-embedding-3-large) — pobierają i porównują, nigdy nie tworzą treści (para #18)."
+ },
+ "ss-006": {
+  "label": "Odpowiedz na dowolne pytania na temat zdjęcia, które użytkownik dołącza do swojej wiadomości czatu",
+  "why": "Obraz jako wejście wymaga wdrożonego modelu multimodalnego odczytującego części zawartości obrazu; generowanie obrazu idzie w drugą stronę, a ImageAnalysisClient/Vision zwraca ustalane funkcje — inny API i punkt końcowy (para #23)."
+ },
+ "ss-007": {
+  "label": "Czytaj drukowany tekst ze sfosfotografowanego znaku drogowego, aby aplikacja mogła go wyświetlić jako zwykły tekst",
+  "why": "OCR/Read to główna możliwość Vision dla ogólnych obrazów; Document Intelligence celuje w układy formularzach strukturyzowanych, nie przypadkowy tekst sceny ulicy."
+ },
+ "ss-008": {
+  "label": "Automatycznie wykryj język źródłowy przychodzącego tekstu przed jego przetłumaczeniem na angielski w tym samym wezwaniu",
+  "why": "Automatyczne wykrywanie języka w Tłumaczu działa wbudowane jako część rurociągu tłumaczenia; Language Detection w AI Language to samodzielna funkcja analityki tekstu używana poza wezwaniem tłumaczenia."
+ },
+ "ss-009": {
+  "label": "Wytrenuj model na swoich własnych oznaczonych zdjęciach, aby rozróżnić defektywne części od akceptowalnych na linii produkcji",
+  "why": "Custom Vision specjalizuje się w klasyfikacji/detekcji z twoich własnych oznaczonych obrazów za pomocą zarządzanej pętli treningowej; ogólna Vision tylko zwraca swoje stałe wstępnie skonstruowane funkcje i nie może być ponownie wytrenowana na twoich danych."
+ },
+ "ss-010": {
+  "label": "Dopasuj zdjęcie skanerów odznak do rejestru zdjęć pracowników, aby potwierdzić tożsamość osoby",
+  "why": "Weryfikacja 1:1 i identyfikacja 1:N wobec zarejestrowanych twarzy to dedykowana zdolność Face; analiza ogólnej Vision nie ma funkcji dopasowywania tożsamości."
+ },
+ "ss-011": {
+  "label": "Przechowuj frazy kluczowe, sentyment i jednostki wyciągnięte z rurociągu dokumentów do magazynu, który aplikacje podrzędne mogą przeszukiwać",
+  "why": "Zestaw umiejętności może wywoływać AI Language, aby wzbogacić każdy dokument, ale przechowywany, odpytywany knowledge store należy do AI Search — wzbogacenie i pobieranie to osobne etapy rurociągu."
+ },
+ "ss-012": {
+  "label": "Wyciągnij sentyment, frazy kluczowe i nazwane jednostki bezpośrednio z surowego tekstu biletu wsparcia",
+  "why": "Analiza sentymuntu, ekstrakcja frazy kluczowej i NER to funkcje analityki tekstu AI Language; AI Search tylko konsumuje ten wynik jako krok wzbogacenia, go nie produkuje."
+ },
+ "ss-013": {
+  "label": "Oflaguj niezwykły skok w odczytach wibracji czujnika fabryki w miarę ich napływania w czasie",
+  "why": "Celowo budowany univariate/multivariate anomaly detection nad danymi szeregów czasowych to zadanie Anomaly Detectora; ogólny workspace ML wymagałby od ciebie zaprojektowania, wytrenowania i zarządzania tym modelem samodzielnie."
+ },
+ "ss-014": {
+  "label": "Uzyskaj transkrypcję z oznaczonymi czasowo kolejkami mówiących z nagranej dwuosobowej rozmowy wsparcia",
+  "why": "Zamianie mowy na tekst z diaryzacją głośnika uruchamia się bezpośrednio na surowym audio jako możliwość Speech; AI Language tylko pracuje z tekstem, który został już transkrybowany."
+ },
+ "ss-015": {
+  "label": "Zamień blok napisanego angielskiego tekstu marketingowego na narrowane audio dla głosu wideo",
+  "why": "Synteza tekstu na mowę neuronową to natywna możliwość Speech; produkowanie audio mówiącego z Azure OpenAI wymaga osobnego wdrożenia multimodalnego/realtime, a Translator nigdy nie dotyka audio."
+ },
+ "ss-016": {
+  "label": "Oflaguj przemoc lub nienawiści w wiadomościach czatu wysłanych przez użytkownika, zanim kiedykolwiek dotrą do modelu",
+  "why": "Prompt Shields i kategorie moderacji to zadanie Content Safety, stosowane zarówno do wejścia, jak i wyjścia; PII detection w AI Language to funkcja prywatności, nie klasyfikator złośliwych treści."
+ },
+ "ss-017": {
+  "label": "Zamazywanie lub redakcja numeru telefonu klienta i adresu e-mail przed przechowaniem transkrypcji rozmowy",
+  "why": "PII Detection and Redaction to dedykowana funkcja AI Language do identyfikacji i maskowania danych osobowych; Content Safety zamiast tego klasyfikuje kategorie szkodliwych treści — zagadnienie bezpieczeństwa, a nie prywatności."
+ },
+ "ss-018": {
+  "label": "Przechowywuj i odpytuj miliony już obliczonych wektorów osadzenia, aby wyszukiwania najbliższych sąsiadów zwracały się w milisekundach",
+  "why": "Wyszukiwanie wektorowe i przechowywanie w czasie zapytania to zadanie AI Search; modele osadzenia tylko produkują wektory w pierwszej kolejności, nie indeksują ich ani ich nie pobierają."
+ },
+ "ss-019": {
+  "label": "Bezpośrednio wezwania narzędziowego uruchomionego agenta do żywego interfejsu API pogody i podaj wynik z powrotem do tej samej rozmowy",
+  "why": "Wywoływanie narzędzia/niestandardowego do żywego zewnętrznego API w trakcie trwania wdrażania wobec Agent Service to warstwa orkiestracji; samo wezwanie uzupełniania czatu nie ma wbudowanej pętli wywoływania narzędziowego."
+ },
+ "ss-020": {
+  "label": "Dołącz istniejący indeks wyszukiwania do agenta Foundry, aby jego odpowiedzi ugruntować i cytować twoje indeksowane dokumenty",
+  "why": "Przewodnia źródła wiedzy do zachowania ugruntowania/cytowania agenta to skonfigurowane na Agent Service; sam indeks tylko obsługuje zapytania, nie posiada osobowości agenta, narzędzi czy wdrażania wiedzy."
+ },
+ "ss-021": {
+  "label": "Wygeneruj fotorealistyczną makietę produktu z zwykłego opisu w angielskim, bez początkowego zdjęcia",
+  "why": "Generowanie tekstu na obraz to zadanie DALL-E; model czatu multimodalny czyta obrazy jako wejście, ale nie maluje nowych, a Vision tylko analizuje obrazy, które już istnieją."
+ },
+ "ss-022": {
+  "label": "Uruchom czułą na koszty asystentę na budżetowym wdrożeniu, które tylko kiedykolwiek obsługuje krótkie, proste żądania",
+  "why": "Model języka klasy Phi handluje pewnym potencjałem dla znacznie mniejszego rozmiaru i niższych kosztów, który pasuje do lekkich, budżetowych żądań; wdrażanie pełnego modelu pogranicznego dla prostego tekstu to klasyczna pułapka nadmiernego udostępniania."
+ },
+ "ss-023": {
+  "label": "Niech użytkownik mówi pytanie i słyszy mówioną odpowiedź w tej samej obniżonej turze latencji, bez oddzielnych wywołań rozpoznawacza/syntezatora do przewodu",
+  "why": "gpt-realtime / Voice Live to jedyna niskopołudniowa sesja audio na wejściu, audio na wyjściu; dystraktory Azure AI Speech oznaczają przewodowy ręczny rurociąg SpeechRecognizer→process→SpeechSynthesizer samodzielnie, który traci na latencji i integracji — dokładnie to, co realtime API zastępuje."
+ },
+ "ss-024": {
+  "label": "Uzyskaj odpowiedź wdrożonego modelu z powrotem jako dobrze sformułowany JSON dopasowujący dostarczony schemat, bez dodatkowej prozy dookoła",
+  "why": "Wyjście ustrukturyzowane to parametr dla wezwania na wdrożonym modelu czatu/uzupełniania; fine-tuning trwale zmienia wagi modelu i jest niepotrzebny, aby tylko ukształtować format jednej odpowiedzi."
+ },
+ "ss-025": {
+  "label": "Wbij styl pisania firmy w każdą przyszłą odpowiedź za pomocą setek oznaczonych transkryptów przykładu, aby nigdy nie musiał zostać ponownie poproszony",
+  "why": "Fine-tuning to przejście treningowe, które piecze zademonstrowane zachowanie do nowych wag, aby utrwalało się przez wezwania; wdrożenie magazynowania czatu/uzupełniania tylko odzwierciedla to, co zostaje resent w podpowiedzi tego wezwania, a model multimodalny zmienia, jakie typy wejścia są akceptowane, nie czy styl się utrwala bez ponownego żądania."
+ },
+ "ss-026": {
+  "label": "Testuj mówione podpowiedzi wobec wdrożonego modelu obsługującego audio bezpośrednio na placu zabaw Foundry chat, bez pisania jakiegokolwiek kodu SDK",
+  "why": "Wdrożenie multimodalne obsługujące audio może być wykonywane prosto na placu zabaw czatu; Voice Live/gpt-realtime to dedykowany niskowybierowy API sesji realtime, osobna ścieżka wdrażania zbudowana dla ciągłych rozmów głosowych."
+ }
+}

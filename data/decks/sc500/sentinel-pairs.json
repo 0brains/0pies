@@ -1,0 +1,221 @@
+{
+ "id": "sentinel-pairs",
+ "runner": "pairs",
+ "title": "Two Tables Apart",
+ "blurb": "Two Sentinel deployments look identical until one detail moves, and that detail decides which table the data lands in, which role can act, and what the month costs. Read each pair, spot the moved variable, and place both sides.",
+ "source": "Microsoft Learn Sentinel docs: automation rules, playbooks, data tiers and retention, Syslog and CEF via AMA, Windows security events and DCRs, custom logs via AMA, roles and permissions, workspaces in the Defender portal, content hub, Purview Audit in Defender XDR · SC-500 outline 4.2",
+ "asOf": "2026-08",
+ "area": "4.2",
+ "pairs": [
+  {
+   "id": "snp-01",
+   "dimension": "response that stays inside the incident record vs response that has to reach an outside system",
+   "buckets": [
+    "Automation rule action on its own",
+    "Playbook invoked by the automation rule"
+   ],
+   "a": {
+    "text": "At a regional hospital trust, every incident raised by the phishing detection rule needs to arrive already set to Active, owned by the mailbox triage queue, and carrying a tag that marks it as email-borne, so the night shift never has to do that clerical work by hand.",
+    "answer": "Automation rule action on its own",
+    "why": "Setting status, assigning an owner and adding a tag are actions the automation rule wizard performs directly, with no Logic App involved at all. The nearest wrong zone is the playbook side: a playbook would work, but it is the wrong tool here because nothing in this scene touches a service outside Sentinel, and you would be paying for and maintaining a Logic App to do what the rule already does natively.",
+    "citation": "Learn: Sentinel automation rules · outline 4.2"
+   },
+   "b": {
+    "text": "At the same hospital trust, every incident raised by that same phishing detection rule must also open a ticket in the trust's third-party service desk and drop a message into the on-call Teams channel with the sender domain attached.",
+    "answer": "Playbook invoked by the automation rule",
+    "why": "Reaching a service desk API and posting to Teams needs connectors and a workflow, which is exactly what a Logic Apps playbook provides, and the automation rule calls it as one of its actions. The nearest wrong zone is the plain automation rule action: the built-in action list covers task, status, severity, owner and tag changes on the incident, and it has no way to authenticate to and call an external system.",
+    "citation": "Learn: Sentinel automation rules · outline 4.2"
+   },
+   "citation": "Learn: Sentinel automation rules · outline 4.2"
+  },
+  {
+   "id": "snp-02",
+   "dimension": "the analytics rule creates an incident vs the analytics rule has incident creation switched off",
+   "buckets": [
+    "When incident is created trigger",
+    "When alert is created trigger"
+   ],
+   "a": {
+    "text": "A logistics operator runs a scheduled rule for repeated failed sign-ins against its freight portal, and the rule is left with its incident settings on, so each hit produces a case file that the SOC picks up in the queue.",
+    "answer": "When incident is created trigger",
+    "why": "Because the rule produces an incident, the automation should hang off the incident creation trigger, where conditions can inspect incident properties and entities and the full action set is available. The nearest wrong zone is the alert trigger: it fires too, but it hands you a single piece of evidence with only the source analytics rule available as a condition, so you lose the enrichment and property checks the incident carries.",
+    "citation": "Learn: Sentinel automation rules · outline 4.2"
+   },
+   "b": {
+    "text": "The same logistics operator runs the same scheduled failed sign-in rule, but incident creation has been turned off in the rule wizard because a separate ticketing engine decides which alerts deserve a case, so nothing ever appears in the incident queue.",
+    "answer": "When alert is created trigger",
+    "why": "With incident creation disabled the rule emits alerts and nothing else, so the only trigger that will ever fire is the alert creation trigger, which is supported for scheduled, near-real-time and Microsoft security rules. The nearest wrong zone is the incident trigger: it would simply never run, because there is no incident object for it to evaluate.",
+    "citation": "Learn: Sentinel automation rules · outline 4.2"
+   },
+   "citation": "Learn: Sentinel automation rules · outline 4.2"
+  },
+  {
+   "id": "snp-03",
+   "dimension": "logs that detections must run against continuously vs logs kept only to answer questions later",
+   "buckets": [
+    "Analytics tier",
+    "Data Lake tier"
+   ],
+   "a": {
+    "text": "A grocery chain feeds its edge firewall denies into Sentinel because two custom detections and a nightly hunting query both read that table every single day looking for beaconing to newly registered domains.",
+    "answer": "Analytics tier",
+    "why": "Detection rules, hunting queries, workbooks and the rest of the real-time surface only operate on data held in the analytics tier, and query cost there is included rather than metered. The nearest wrong zone is the data lake tier: it holds the same rows far more cheaply, but moving the table there stops the analytics rules and hunting queries against it from working.",
+    "citation": "Learn: Sentinel data tiers and retention · outline 4.2"
+   },
+   "b": {
+    "text": "The same grocery chain also feeds in its edge firewall allow records, which no rule reads, but which the audit committee insists be producible for several years whenever a card-data enquiry lands.",
+    "answer": "Data Lake tier",
+    "why": "High-volume, low-signal records that only need to be retrievable belong in the lake, where ingestion is minimal cost and total retention stretches to twelve years, reachable through KQL and Spark jobs and search jobs. The nearest wrong zone is the analytics tier: keeping years of verbose allow traffic hot buys query performance nobody in this scene needs and charges long-term retention on top.",
+    "citation": "Learn: Log retention tiers in Microsoft Sentinel · outline 4.2"
+   },
+   "citation": "Learn: Sentinel data tiers and retention · outline 4.2"
+  },
+  {
+   "id": "snp-04",
+   "dimension": "the appliance emits a plain syslog line vs the appliance emits a Common Event Format line",
+   "buckets": [
+    "Syslog via AMA connector, Syslog table",
+    "CEF via AMA connector, CommonSecurityLog table"
+   ],
+   "a": {
+    "text": "A university has its Linux jump hosts sending ordinary daemon and auth messages over port 514 to a dedicated Linux forwarder in Azure that runs rsyslog with the Azure Monitor Agent installed on it.",
+    "answer": "Syslog via AMA connector, Syslog table",
+    "why": "Unstructured syslog lines are picked up by the Syslog via AMA connector and land in the Syslog table, with the data collection rule filtering by facility and severity at the source. The nearest wrong zone is the CEF path: the CEF connector expects the vendor-neutral header with device vendor, product, version and event class, and these auth messages carry no such header.",
+    "citation": "Learn: Sentinel AMA Syslog and CEF connectors · outline 4.2"
+   },
+   "b": {
+    "text": "The same university points its perimeter firewall at that same Linux forwarder on the same port, and the firewall writes each event with a vendor and product header followed by key-value extensions for source and destination address.",
+    "answer": "CEF via AMA connector, CommonSecurityLog table",
+    "why": "That structured header is Common Event Format, so the CEF via AMA connector parses it into the CommonSecurityLog table where the fields arrive already split out. The nearest wrong zone is the Syslog table: if both streams use the same facility on one forwarder you can end up billed for the same event twice, which is why Microsoft advises separating facilities or adding an ingestion-time transformation that drops CEF lines out of the syslog stream.",
+    "citation": "Learn: Sentinel AMA Syslog and CEF connectors · outline 4.2"
+   },
+   "citation": "Learn: Sentinel AMA Syslog and CEF connectors · outline 4.2"
+  },
+  {
+   "id": "snp-05",
+   "dimension": "the agent sits on every source server vs the agent sits on one collector the servers already forward to",
+   "buckets": [
+    "Windows Security Events via AMA",
+    "Windows Forwarded Events"
+   ],
+   "a": {
+    "text": "A building society wants sign-in and process creation auditing from forty domain-joined member servers, all of them Azure Arc enabled, and it is happy to put the Azure Monitor Agent on each of the forty and filter down to a short list of event IDs.",
+    "answer": "Windows Security Events via AMA",
+    "why": "The Windows Security Events connector builds a data collection rule scoped to those machines, installs the agent as part of deployment, and lets you pick All events, Common, Minimal or your own XPath expressions so filtering happens on the server before anything is billed. The nearest wrong zone is Forwarded Events, which assumes the events have already been funnelled somewhere central and would leave you with nothing to read.",
+    "citation": "Learn: Sentinel Windows agent-based data connector · outline 4.2"
+   },
+   "b": {
+    "text": "The same building society has a second estate of legacy servers that already push their security logs to an established Windows Event Collector subscription, and the platform team refuses to touch those servers individually.",
+    "answer": "Windows Forwarded Events",
+    "why": "Where Windows Event Forwarding is already in place you install the Azure Monitor Agent only on the collector machine and use the Forwarded Events connector, with the ASIM parsers deployed so the data normalises properly. The nearest wrong zone is the Security Events connector: it expects a rule targeting each source machine, which is precisely the per-server change the platform team has ruled out.",
+    "citation": "Learn: Sentinel Windows agent-based data connector · outline 4.2"
+   },
+   "citation": "Learn: Sentinel Windows agent-based data connector · outline 4.2"
+  },
+  {
+   "id": "snp-06",
+   "dimension": "running a workflow that already exists vs building or altering the workflow itself",
+   "buckets": [
+    "Microsoft Sentinel Playbook Operator",
+    "Logic App Contributor"
+   ],
+   "a": {
+    "text": "A managed service provider's tier-one analysts need to open an incident, pick the account-disable workflow the engineering team already published, and fire it by hand during an out-of-hours compromise.",
+    "answer": "Microsoft Sentinel Playbook Operator",
+    "why": "That role covers listing, viewing and manually running playbooks and nothing more, which is the least privilege that still lets a first responder act. The nearest wrong zone is Logic App Contributor: it would also let them run the workflow, but it hands a night-shift analyst the ability to rewrite response automation, which is far more than the scene calls for.",
+    "citation": "Learn: Sentinel roles and permissions · outline 4.2"
+   },
+   "b": {
+    "text": "At the same provider, the detection engineers need to add a new approval step to that account-disable workflow and wire in a fresh connector before the next customer onboarding.",
+    "answer": "Logic App Contributor",
+    "why": "Playbooks are Azure Logic Apps resources, so authoring and editing them is a Logic Apps permission rather than a Sentinel one, granted at the playbook resource group. The nearest wrong zone is Playbook Operator: it stops at running what exists and will block any attempt to change the workflow definition.",
+    "citation": "Learn: Sentinel roles and permissions · outline 4.2"
+   },
+   "citation": "Learn: Sentinel roles and permissions · outline 4.2"
+  },
+  {
+   "id": "snp-07",
+   "dimension": "the workspace that Defender XDR alerts correlate into vs an additional workspace attached alongside it",
+   "buckets": [
+    "Primary workspace",
+    "Secondary workspace"
+   ],
+   "a": {
+    "text": "A pharmaceutical group runs its central SOC from a workspace in the UK South region, and the group expects Defender XDR alerts and its own Sentinel analytics rule alerts to be stitched into one unified incident queue in the Defender portal.",
+    "answer": "Primary workspace",
+    "why": "Exactly one workspace per tenant can be primary, and the Defender XDR connector attaches there, which is what makes the correlation and the single queue happen. The nearest wrong zone is secondary: a secondary workspace can ingest Defender table data, but XDR alerts and incidents sync only to the primary.",
+    "citation": "Learn: Sentinel multi-workspace view in the Defender portal · outline 4.2"
+   },
+   "b": {
+    "text": "The same pharmaceutical group also keeps a workspace in Germany West Central because manufacturing plant telemetry must stay in country, and its analysts read that data in the Defender portal alongside the central one.",
+    "answer": "Secondary workspace",
+    "why": "Any workspace onboarded after the primary is secondary, there is no cap on how many you attach, and data residency is one of the standard reasons to keep a separate one. The nearest wrong zone is primary: only one exists per tenant, and promoting this one would move the Defender XDR connector away from the central SOC workspace.",
+    "citation": "Learn: Sentinel multi-workspace view in the Defender portal · outline 4.2"
+   },
+   "citation": "Learn: Sentinel multi-workspace view in the Defender portal · outline 4.2"
+  },
+  {
+   "id": "snp-08",
+   "dimension": "packaged content shipped by a vendor vs content the team wrote itself",
+   "buckets": [
+    "Content hub",
+    "Repositories page"
+   ],
+   "a": {
+    "text": "An insurer has the vendor-published solution for its cloud storage platform installed, bringing a connector, several analytics rules and a workbook, and a newer version of that package has just been released.",
+    "answer": "Content hub",
+    "why": "Out-of-the-box solutions and standalone items are discovered, deployed in one step and updated from the Content hub, which also shows whether Microsoft, a partner or the community supports each item. The nearest wrong zone is the Repositories page: that surface exists for content the organisation authors, not for marketplace-delivered packages.",
+    "citation": "Learn: Microsoft Sentinel content and solutions overview · outline 4.2"
+   },
+   "b": {
+    "text": "The same insurer's detection engineers keep a dozen hand-written analytics rules and hunting queries in a Git repository under change control, and a merge to main has just added two more rules that need to reach the workspace.",
+    "answer": "Repositories page",
+    "why": "Custom content authored in source control is deployed and kept current through the Repositories connection, giving the team review and rollback on their own rules. The nearest wrong zone is the Content hub: it manages updates for out-of-the-box content and has no visibility of a private repository.",
+    "citation": "Learn: Microsoft Sentinel content and solutions overview · outline 4.2"
+   },
+   "citation": "Learn: Microsoft Sentinel content and solutions overview · outline 4.2"
+  },
+  {
+   "id": "snp-09",
+   "dimension": "the agent reads the text file on the machine that wrote it vs the agent reads it on a forwarder that received it",
+   "buckets": [
+    "Column named RawData",
+    "Column named Message"
+   ],
+   "a": {
+    "text": "A games studio installs the Azure Monitor Agent straight onto the Windows box running its licence server appliance and points a Custom Logs via AMA rule at the appliance's own daily text log, writing into a new table whose name ends in the custom suffix.",
+    "answer": "Column named RawData",
+    "why": "When the agent collects the file directly from the machine hosting the application, the destination table is built with a timestamp column and a string column holding the whole line, and that string column takes the raw name, with the transformation left as the untouched default. The nearest wrong zone is the forwarder naming: use it here and the ingested rows will not match the stream the rule declares.",
+    "citation": "Learn: Sentinel text-log collection with Azure Monitor Agent · outline 4.2"
+   },
+   "b": {
+    "text": "The same studio has a sealed network appliance that cannot host an agent, so it ships its log lines to a dedicated Linux forwarder running rsyslog, and the Azure Monitor Agent on that forwarder is what the Custom Logs via AMA rule targets.",
+    "answer": "Column named Message",
+    "why": "Collecting by way of a log forwarder rather than the originating device means the single string column is named for the forwarded message, and the rule carries a transformation that renames the raw field accordingly. The nearest wrong zone is the direct-collection naming: keeping the raw column name on a forwarder path leaves the transformation and the table schema out of step.",
+    "citation": "Learn: Sentinel text-log collection with Azure Monitor Agent · outline 4.2"
+   },
+   "citation": "Learn: Sentinel text-log collection with Azure Monitor Agent · outline 4.2"
+  },
+  {
+   "id": "snp-10",
+   "dimension": "who performed an administrative action in the portal vs what the endpoint itself did",
+   "buckets": [
+    "Purview Audit search in the Defender portal",
+    "Advanced hunting in the Defender portal"
+   ],
+   "a": {
+    "text": "A law firm discovers that a laptop belonging to a partner was released from isolation at two in the morning, and the security lead wants the name of the account that clicked it and the exact time the action was taken.",
+    "answer": "Purview Audit search in the Defender portal",
+    "why": "Device isolation, indicator creation, role changes and retention changes are administrative activities recorded by the Purview auditing solution, searchable from the Audit page in the Defender portal once auditing is switched on, and reachable by an account holding the Audit Logs or view-only equivalent in Exchange Online. The nearest wrong zone is advanced hunting: the hunting tables carry device and identity telemetry, not the record of who operated the portal.",
+    "citation": "Learn: Defender XDR audit log search · outline 4.2"
+   },
+   "b": {
+    "text": "At the same law firm, the security lead then wants to know what that partner's laptop actually did in the twenty minutes after it came out of isolation, down to the processes that started and the addresses it reached.",
+    "answer": "Advanced hunting in the Defender portal",
+    "why": "Processes that started and addresses the machine reached are endpoint telemetry, and that lives in the device tables the hunting page exposes, so a KQL query over device process and device network events is the right instrument. The nearest wrong zone is the Purview audit search: it only ever records operator and administrative activity, so it will faithfully name whoever lifted the isolation and the minute they did it, and say nothing whatever about the machine's own behaviour afterwards.",
+    "citation": "Learn: Defender XDR audit log search · outline 4.2"
+   },
+   "citation": "Learn: Defender XDR audit log search · outline 4.2"
+  }
+ ]
+}

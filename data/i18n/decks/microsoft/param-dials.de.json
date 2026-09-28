@@ -1,0 +1,106 @@
+{
+ "pd-001": {
+  "label": "Du brauchst konsistente, wiederholbare Ausgabe aus dem gleichen Prompt bei jedem Lauf",
+  "why": "Histack's exakte Prüfungs-Hinweis: 'konsistente, wiederholbare Ausgabe' → niedrige Temperatur. Es reskaliert die ganze Wahrscheinlichkeits-Verteilung; tune sie oder top_p, nicht beide."
+ },
+ "pd-002": {
+  "label": "Beschränke Sampling auf die kleinste Menge von Token, deren kumulative Wahrscheinlichkeit einen gesetzten Schwellwert erreicht",
+  "why": "Nucleus Sampling — top_p schneidet den Kandidaten-Satz ab, während Temperatur die ganze Verteilung umformt (Corpus verwirrtes-Paar #5)."
+ },
+ "pd-003": {
+  "label": "Antworten brechen ab mid-Satz ab — du brauchst vollständige Antworten",
+  "why": "max_tokens begrenzt Ausgabe-Länge nur — die am häufigsten Prüfungs-Parameter-Falle ist, sie als Randomness-Kontrolle anzubieten (Paar #4)."
+ },
+ "pd-004": {
+  "label": "Das Modell wiederholt immer eine Phrase; Pönalisiere Token proportional, wie oft sie erschienen sind",
+  "why": "Frequency Penalty skaliert mit Wiederholungs-Zählung (Repetition); Presence Penalty feuert, sobald ein Token überhaupt erschienen ist (Topic-Neuheit) — Corpus Paar #6."
+ },
+ "pd-005": {
+  "label": "Generierte Marketing-Bilder sehen grob aus — fordere die höhere Render-Fidelity-Tier an",
+  "why": "gpt-image-1's Payload nimmt prompt, size, quality (einschließlich der 'high' Falle Wert) und n — quality kontrolliert Fidelity, size kontrolliert Dimensionen."
+ },
+ "pd-006": {
+  "label": "Sehe Bild-Fortschritt schneller, während eine große Generierung rendert",
+  "why": "Streaming partial_images auf dem images/generations Pfad gibt progressive Ausgabe zurück — die exakte Prüfungs-'see image progress sooner' Stamm."
+ },
+ "pd-007": {
+  "label": "Der Randomness-Knopf, der die ganze Token-Wahrscheinlichkeits-Verteilung vor dem Sampling umformt, nicht nur den top Slice",
+  "why": "Temperatur skaliert Logits über die ganze Verteilung; top_p schneidet stattdessen durch kumulative Wahrscheinlichkeits-Masse ab — die gleiche 'creativity' Intuition, andere Mechanik."
+ },
+ "pd-008": {
+  "label": "Das Team möchte, dass das Modell nur jemals den wahrscheinlichsten Slice von Next-Token-Kandidaten berücksichtigt, schneidet den Long Tail ab",
+  "why": "Nucleus Sampling (top_p) beschränkt Kandidaten auf einen kumulativen-Wahrscheinlichkeits-Slice; Temperatur formt Wahrscheinlichkeiten um, aber schneidet Kandidaten niemals aus."
+ },
+ "pd-009": {
+  "label": "Eine harte Decke, wie viele Token ein einzelner Response generieren kann, egal was er sagt",
+  "why": "max_tokens ist eine Längen-Decke, erzwungen während Generierung; eine Stop-Sequenz stoppt stattdessen früh nur, wenn ein spezifischer String erscheint — anderer Trigger, gleiches 'shorter output' Ziel."
+ },
+ "pd-010": {
+  "label": "Entmutige das Modell, das gleiche Wort oder die gleiche Phrase viele Male über zu benutzen — je mehr es wiederholt, desto stärker der Rückstoß",
+  "why": "Frequency Penalty skaliert mit, wie oft ein Token bereits erschienen ist; Presence Penalty wendet eine flache Pönalisierung an, sobald ein Token auch nur einmal erscheint — Zähler-proportional vs. Binär."
+ },
+ "pd-011": {
+  "label": "Das Chat-Transkript besucht niemals frühere Themen erneut — das Modell driftet immer auf neue Materie statt auf frühere Abdeckung zurückzukehren",
+  "why": "Eine hohe Presence Penalty feuert, sobald ein Token einmal erschienen ist, drängend das Modell zu neuen Themen; Frequency Penalty skaliert mit Wiederholungs-Zählung und hemmt hauptsächlich wörtliche Wiederholung, nicht Topic-Drift."
+ },
+ "pd-012": {
+  "label": "Wendet die gleiche fixe Pönalisierung auf jeden Token an, der überhaupt in der Antwort bis jetzt erschienen ist, egal wie oft",
+  "why": "Presence Penalty ist binär pro-Token (erschien oder nicht); Frequency Penalty wächst stattdessen mit Wiederholungs-Zählung — die Prüfungs' verwirrtes-Paar Unterscheidung zwischen den zwei Pönalisierungs-Parametern."
+ },
+ "pd-013": {
+  "label": "Generierung sollte enden, sobald das Modell einen spezifischen Marker-String schreibt, ohne auf die Längen-Decke zu warten",
+  "why": "Eine Stop-Sequenz ist ein wörtlicher String-Trigger, der Generierung früh stoppt; max_tokens erzwingt nur eine Längen-Decke und hat kein Bewusstsein für spezifischen Text."
+ },
+ "pd-014": {
+  "label": "Ein spezifisches Textstück, dem das Modell gesagt wird, als Endmarker zu behandeln, damit Ausgabe stoppt, sobald dieser Text erzeugt wird",
+  "why": "Stop-Sequenzen triggern auf Text-Content-Matching; weder max_tokens noch Frequency Penalty inspizieren den generierten Text selbst — eine zählt Tokens, die andere zählt Wiederholungen."
+ },
+ "pd-015": {
+  "label": "Latenz muss auf hohem, sustained Request-Volumen vorhersagbar bleiben, und das Team ist in Ordnung, reservierten Stundenkosten zu bezahlen, um es zu garantieren",
+  "why": "Provisioned Throughput (PTU) reserviert dedizierte Kapazität für vorhersagbare Latenz im großen Maßstab; Standard-Bereitstellung ist Pay-Per-Token mit variablem Durchsatz unter Last, und Capacity (TPM) ist nur der Quota-Dial, nicht der Bereitstellungstyp selbst."
+ },
+ "pd-016": {
+  "label": "Reservierte, dedizierte Modell-Kapazität, im Voraus gekauft, damit Durchsatz mit gemeinsam genutztem-Tenant-Traffic nicht fluctuiert",
+  "why": "PTU ist das reservierte-Kapazität Bereitstellungs-Modell; Standard teilt Kapazität und fakturiert pro Token mit variablem Durchsatz, während Capacity (TPM) nur das Quota auf welchem Bereitstellungstyp gesetzt, der gewählt wird."
+ },
+ "pd-017": {
+  "label": "Traffic zu der Kundenservice-App ist unvorhersagbar und stoßweise, und das Team möchte Pay-Per-Token-Billing anstelle von Stunden-reservierter Kapazität",
+  "why": "Pay-Per-Token-Preise unter variablem Load ist Standard-Bereitstellung (das exakte Prüfungs-Szenario); PTU fakturiert stattdessen stündlich für reservierte Kapazität, egal ob tatsächliche Nutzung."
+ },
+ "pd-018": {
+  "label": "Fakturiert pro Token verbraucht anstelle von pro Stunde reservierter Compute, mit Durchsatz, der unter gemeinsam genutzter Last variieren kann",
+  "why": "Standard ist verbrauchs-basierte Billing mit variablem Durchsatz; PTU tauscht diese Variabilität gegen eine fixe Stunden-Reservierung, und Capacity (TPM) ist das Quota-Einstellung, das auf beide Modelle oben ist."
+ },
+ "pd-019": {
+  "label": "Eine Bereitstellung trifft immer Drosseln unter Peak-Last, also verschiebt das Team Reservekapazität über von einer anderer untergenutzter Bereitstellung",
+  "why": "Das pro-Bereitstellungs-Durchsatz-Quota kann zwischen Bereitstellungen umgelagert werden (das dokumentierte Prüfungs-Szenario); PTU und Standard beschreiben das Bereitstellungs-Billing/Reservierungs-Modell, nicht sein Quota-Dial."
+ },
+ "pd-020": {
+  "label": "Der Dial, der eine obere Grenze auf totalen Durchsatz setzt, das eine Bereitstellung pro Minute verarbeiten kann, unabhängig von jeder einzelnen Response's Länge",
+  "why": "Capacity (TPM) drosselt auf Bereitstellungs-Level über alle Anfragen, gemessen in Tokens pro Minute; max_tokens begrenzt stattdessen die Länge einer Antwort und hat nichts mit Rate-Limiting zu tun."
+ },
+ "pd-021": {
+  "label": "Die Banner-Bild-Anfrage gibt immer ein kleines Quadrat zurück, wenn das Layout ein breites rechteckiges Canvas braucht",
+  "why": "size setzt die Pixel-Dimensionen (z.B. ein breites Format anstelle von 1024x1024); quality kontrolliert Rendering-Fidelity und n kontrolliert Bild-Zählung — weder ändert die Canvas-Form."
+ },
+ "pd-022": {
+  "label": "Das Request-Feld, das die Pixel-Dimensionen des generierten Bildes setzt, wie 1024×1024",
+  "why": "size ist das Dimensionen-Feld in der images/generations Payload; quality regiert stattdessen Rendering-Fidelity, und partial_images kontrolliert progressive Streaming, nicht die endgültigen Canvas-Dimensionen."
+ },
+ "pd-023": {
+  "label": "Das Feld, das den 'high' Fidelity-Tier akzeptiert, damit feine Details krisper rendern, separat von wie groß das Bild ist",
+  "why": "quality (einschließlich des dokumentierten 'high' Falle Wert) kontrolliert Rendering-Fidelity; size kontrolliert Dimensionen und n kontrolliert, wie viele Bilder zurückkommen — drei unabhängige Dials auf der gleichen Anfrage."
+ },
+ "pd-024": {
+  "label": "Ein Prompt sollte vier seperate Bild-Variationen zurückgeben, um zu wählen, in einer einzelnen Anfrage",
+  "why": "n setzt, wie viele Bilder die Anfrage zurückgibt (z.B. n=4); size und quality gestalten jedes einzelne Bild, aber ändern nicht, wie viele zurückkommen."
+ },
+ "pd-025": {
+  "label": "Der Parameter, der setzt, wie viele Bild-Variationen ein einzelner images/generations-Aufruf zurückgibt",
+  "why": "n ist das Bild-Zählung-Feld; partial_images streamt stattdessen progressive Vorschauen eines einzelnen Bildes, während es rendert, und size setzt nur die Dimensionen dieses Bildes."
+ },
+ "pd-026": {
+  "label": "In Kombination mit Streaming setzt dieses Feld, wie viele progressive Vorschau-Frames gesendet werden, bevor das endgültige Bild vervollständigt wird",
+  "why": "partial_images (genutzt zusammen mit stream=True) setzt die Zählung von progressive Vorschau-Frames während Rendering; n setzt stattdessen, wie viele separate endgültige Bilder zurückkommen, und quality setzt Fidelity, nicht Vorschau-Kadenz."
+ }
+}

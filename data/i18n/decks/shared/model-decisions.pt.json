@@ -1,0 +1,45 @@
+{
+  "model-decisions": {
+    "hint": "Arrasta cada situação para a resposta que requer. Algumas respostas no quadro estão lá para te tentar."
+  },
+  "model-decisions-01": {
+    "label": "Um assistente deve responder a partir de políticas privadas que mudam cada semana e citar a fonte atual.",
+    "sub": "Políticas Mudando Frequentemente",
+    "why": "RAG recupera evidência privada atual à hora de requisição e suporta citações. Compromisso: Fine-tuning pode adaptar comportamento, mas é um mecanismo pobre para factos mudando frequentemente."
+  },
+  "model-decisions-02": {
+    "label": "Milhares de exemplos demonstram um estilo de relatório estável que o modelo base falha em reproduzir consistentemente.",
+    "sub": "Formato Especialista Estável",
+    "why": "Fine-tuning é apropriado para comportamento recorrente demonstrado por um conjunto de exemplos curado. Compromisso: Prompting few-shot ainda deve ser experimentado primeiro quando atende requisitos de qualidade com complexidade menor."
+  },
+  "model-decisions-03": {
+    "label": "Um modelo capaz deve extrair cinco campos para um objecto JSON validado; nenhuma nova conhecimento é necessária.",
+    "sub": "Extracção Rigorosa de JSON",
+    "why": "Instruções claras, exemplos, um schema e validação abordam formatação sem mudar pesos do modelo. Compromisso: Fine-tuning torna-se razoável apenas se extracção baseada em prompt repetidamente falha na escala e qualidade requeridas."
+  },
+  "model-decisions-04": {
+    "label": "Um modelo deve internalizar terminologia especializada de um corpus científico muito grande não rotulado.",
+    "sub": "Linguagem de Domínio em Escala",
+    "why": "Pré-treino continuado adapta representações de linguagem do modelo utilizando grandes quantidades de texto de domínio. Compromisso: RAG permanece preferível quando a necessidade é acesso a factos mudando em vez de adaptação de linguagem de domínio mais profunda."
+  },
+  "model-decisions-05": {
+    "label": "O sistema deve inspecionar uma encomenda, requisitar aprovação, chamar uma API de reembolso e relatar o resultado.",
+    "sub": "Assistente Tomador de Acção",
+    "why": "Um agente utilizador de tool pode orquestrar passos, mas cada tool precisa de permissões estreitas, validação e portões de aprovação. Compromisso: Um fluxo de trabalho determinístico é mais seguro quando a sequência é fixa e não requer planeamento direcionado por modelo."
+  },
+  "model-decisions-06": {
+    "label": "Um sistema de reclamações deve raciocinar sobre uma fotografia de dano juntamente com a descrição de incidente escrita.",
+    "sub": "Inspecção de Imagem e Texto",
+    "why": "Um modelo multimodal pode interpretar conjuntamente inputs visuais e textuais. Compromisso: Modelos especialistas de visão e texto separados podem ganhar quando outputs independentes, controle ou custo menor importam mais."
+  },
+  "model-decisions-07": {
+    "label": "Dez milhões de registos curtos devem ser classificados nightly sob um orçamento tight após rótulos estarem disponíveis.",
+    "sub": "Classificação Simples de Alto-Volume",
+    "why": "Um classificador menor avaliado pode entregar qualidade adequada com custo de inferência em lote muito menor. Compromisso: Um modelo de fundação pode acelerar prototipagem ou criar rótulos, mas deve ganhar seu custo de produção através de qualidade medida."
+  },
+  "model-decisions-08": {
+    "label": "Regras publicadas completamente determinam elegibilidade e cada decisão deve ser reprodutível e auditável.",
+    "sub": "Política de Elegibilidade Exacta",
+    "why": "Regras exactas e completas devem ser implementadas directamente em vez de aproximadas por um modelo probabilístico. Compromisso: AI pode assistir intake de documento ou explicação sem ser dono da decisão autoritária."
+  }
+}

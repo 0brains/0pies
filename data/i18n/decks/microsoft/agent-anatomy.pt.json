@@ -1,0 +1,84 @@
+{
+ "ag-001": {
+  "label": "\"Tu és um agente de suporte educado; escalona tudo o que envolver reembolsos\" — definido uma vez quando o agente é criado",
+  "why": "O campo instructions define o comportamento persistente no momento da criação — o conceito de agente mais enfatizado no material de estudo, distinto do estado de chat em tempo de execução."
+ },
+ "ag-002": {
+  "label": "Permite que o agente chame funções externas ou APIs para realizar ações",
+  "why": "Chamadas de função / ferramentas deixam o modelo agir além do texto — a capacidade que separa um agente de uma chamada de chat simples."
+ },
+ "ag-003": {
+  "label": "O gpt-4o implementado com o qual o agente raciocina — referenciado pelo seu nome de implantação",
+  "why": "Um agente = modelo + instruções + ferramentas; o modelo é uma implantação, e {\"deployment\":{\"model\":AGENT_NAME}} é a resposta canonicamente errada."
+ },
+ "ag-004": {
+  "label": "Arquivos de fundamentação e fontes de dados que o agente pode pesquisar para responder a partir do teu conteúdo",
+  "why": "O conhecimento anexa os teus dados ao agente para que as respostas se fundamentem neles — parte da anatomia do agente que o guia de estudo nomeia para a Tarefa 2.1."
+ },
+ "ag-005": {
+  "label": "Carrega as mensagens de utilizador e assistente de uma única conversa em tempo de execução",
+  "why": "Threads/conversas mantêm o estado de chat em tempo de execução — criadas por sessão pela app cliente, não no momento da definição do agente."
+ },
+ "ag-006": {
+  "label": "A invocação que processa a conversa e produz a próxima saída do agente",
+  "why": "Uma execução (openai.responses.create / create run) executa o agente contra o thread — a terceira camada distinta: definição vs sessão vs invocação."
+ },
+ "ag-007": {
+  "label": "O texto de persona em linguagem natural fornecido dentro de PromptAgentDefinition juntamente com o nome do modelo, quando o agente é definido pela primeira vez no código",
+  "why": "PromptAgentDefinition(model=MODEL_NAME, instructions=...) define ambos os campos no momento da definição, mas apenas o texto de persona molda o comportamento do agente — o nome do modelo ao lado é um componente separado."
+ },
+ "ag-008": {
+  "label": "Formata cada resposta como uma lista numerada limitada a cinco itens — fixo quando o agente é escrito, não escolhido por pergunta",
+  "why": "Uma regra de formatação fixa integrada no momento da escrita é comportamento, não uma ação externa — não chama nada além de texto, o que é o que a separa de Ferramentas."
+ },
+ "ag-009": {
+  "label": "Trocar o motor de raciocínio de gpt-4o-mini para gpt-5-mini sem tocar na persona do agente ou nas suas ferramentas anexadas",
+  "why": "Apenas o motor de raciocínio implementado muda aqui; persona e ligação de ferramentas permanecem fixos — um teste limpo se a implantação é uma camada separada dos outros componentes do agente."
+ },
+ "ag-010": {
+  "label": "O identificador de implantação passado dentro de PromptAgentDefinition juntamente com o texto de persona, quando o agente é definido pela primeira vez no código",
+  "why": "A mesma chamada PromptAgentDefinition() que o texto de persona, mas este parâmetro nomeia qual motor implementado o agente chama — uma referência de implantação, não o comportamento em si."
+ },
+ "ag-011": {
+  "label": "Ativa a pesquisa na web ao vivo para que o agente possa obter informações atuais além do que está nos seus dados de treino",
+  "why": "A pesquisa na web é aberta a partir do catálogo de ferramentas do portal Foundry (Build > Tools) juntamente com interpretador de código e pesquisa de ficheiro — uma capacidade externa ao vivo, não conteúdo estático anexado."
+ },
+ "ag-012": {
+  "label": "Permite que o agente execute código gerado para calcular um resultado em vez de apenas descrever os passos do cálculo",
+  "why": "Execução de código é uma das capacidades do catálogo, juntamente com pesquisa na web e pesquisa de ficheiro, que deixa o agente agir além de produzir texto — o motor de raciocínio em si nunca executa código diretamente."
+ },
+ "ag-013": {
+  "label": "Liga um índice existente de Azure AI Search para que as respostas do agente citem o teu conteúdo indexado em vez de adivinhar",
+  "why": "Um índice de pesquisa anexado é conteúdo estático que o agente recupera para fundamentar as suas respostas — distinto de uma ferramenta como pesquisa na web, que alcança uma capacidade externa ao vivo em vez dos teus dados."
+ },
+ "ag-014": {
+  "label": "Adiciona documentos de política da empresa para o agente pesquisar — configurado no playground Agents juntamente com a sua persona e ferramentas anexadas — antes de testar o comportamento multi-turno",
+  "why": "O playground Agents configura três superfícies distintas lado a lado — persona, ferramentas e documentos anexados — e este card é o anexado: dados que o agente fundamenta respostas, não uma ação que toma."
+ },
+ "ag-015": {
+  "label": "openai.conversations.create() chamado pela app cliente antes da primeira volta ser enviada para o agente",
+  "why": "Criar o objeto de conversa acontece antes de qualquer mensagem ser enviada — abre o contentor em tempo de execução que turns mais tarde escrevem, distinto da chamada que realmente produz uma resposta."
+ },
+ "ag-016": {
+  "label": "A linha única contínua de turnos que deixa o agente referenciar algo que o utilizador disse três perguntas atrás, sem essas mensagens serem reenviadas manualmente a cada vez",
+  "why": "Histórico de chat acumulado em tempo de execução é estado da sessão, não comportamento do agente — cresce por conversa, diferentemente das regras de persona fixadas uma vez no momento da definição."
+ },
+ "ag-017": {
+  "label": "openai.responses.create() é a chamada que realmente envia a última mensagem do utilizador e retorna a resposta do agente",
+  "why": "Este é o passo de invocação — é o que realmente processa a conversa e produz saída, distinto de openai.conversations.create(), que apenas abre o contentor onde as mensagens vivem."
+ },
+ "ag-018": {
+  "label": "O parâmetro extra_body={\"agent_reference\": {...}} dentro da mesma chamada, dizendo ao sistema qual definição de agente executar contra a conversa",
+  "why": "agent_reference é metadados por invocação na chamada responses.create(), não uma propriedade de agente fixa — o exame desenha esta distinção explicitamente contra o nome de implantação integrado na própria definição do agente."
+ },
+ "agent-anatomy": {
+  "hint": "Pergunta em que camada a tarefa pertence: fixa na criação (instruções), o motor de raciocínio em si (modelo), uma ação além de texto (ferramentas), dados anexados para fundamentar respostas (conhecimento), estado acumulativo de uma conversa (thread), ou a chamada única que produz saída (execução).",
+  "note": "Instruções e ferramentas ambas são configuradas no momento do design — o desempate é se o card é uma regra de comportamento (instruções) ou uma capacidade externa que o agente chama (ferramentas). Thread e execução ambas vivem em tempo de execução — o desempate é se o card é o contentor que segura mensagens (thread) ou a invocação que produz a próxima mensagem (execução).",
+  "zones[0].def": "O comportamento persistente, persona e regras definidas quando o agente é definido — não escolhido por conversa.",
+  "zones[1].def": "O modelo implementado — referenciado pelo nome de implantação — com o qual o agente raciocina.",
+  "zones[2].def": "Funções, APIs e outras ações que o agente pode chamar além de gerar texto.",
+  "zones[3].def": "Ficheiros, índices e outras fontes de dados que o agente pode pesquisar para fundamentar as suas respostas.",
+  "zones[4].def": "Histórico de mensagens em tempo de execução de uma conversa em curso, criado por sessão.",
+  "zones[5].def": "A invocação que executa o agente contra um thread e produz a sua próxima saída."
+ }
+}

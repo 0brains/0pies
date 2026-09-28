@@ -1,0 +1,69 @@
+{
+ "pr-001": {
+  "label": "\"Du bist ein formaler HR-Assistant. Beantworte nur Fragen über HR-Richtlinie.\"",
+  "why": "Persona plus Scope-Guardrails — Histack's wörtliches Beispiel von System-Prompt-Inhalt."
+ },
+ "pr-002": {
+  "label": "\"Gib Customer-Details immer in einer fixierten JSON-Form zurück.\"",
+  "why": "Output-Formatierungs-Regeln bestehen über Durchgänge — das Prüfungs-Material gibt wörtlich an, dass JSON-Formanweisungen zum System-Prompt gehören."
+ },
+ "pr-003": {
+  "label": "\"Wie viele Urlaubstage habe ich noch dieses Jahr übrig?\"",
+  "why": "Dieser Durchgang's tatsächliche Anfrage — keine Regeln, keine Persona, gerade die Frage."
+ },
+ "pr-004": {
+  "label": "\"Du hast 12 Urlaubstage übrig.\" — abgespielt in die nächste Anfrage zum Kontekt",
+  "why": "Vorherige Modell-Antworten werden als Assistant-Nachrichten erneut gesendet, damit das Modell Gesprächs-Gedächtnis hat; sie sind nie Benutzer-Inhalt."
+ },
+ "pr-005": {
+  "label": "\"Fasse die angehängten Meeting-Notizen in drei Aufzählungspunkte zusammen.\"",
+  "why": "Eine einmalige Aufgabe für diesen Durchgang — sie klingt wie eine Anweisung, aber es ist keine persistente Regel, also ist sie User, nicht System."
+ },
+ "pr-006": {
+  "label": "\"Wenn eine Anfrage außerhalb der HR-Richtlinie fällt, sage das, anstatt zu raten.\"",
+  "why": "Eine Fallback-Regel zum Umgang mit Out-of-Scope-Anfragen, angewendet bei jedem Durchgang — die Prüfungs-wörtliches 'gute Addition zum System-Prompt' Muster, distinct von pr-001's Persona/Scope-Paar."
+ },
+ "pr-007": {
+  "label": "\"Halte Antworten auf zwei Sätze, wenn der Kunde nicht um mehr Detail fragt.\"",
+  "why": "Eine Ton/Längen-Regel, die auf die ganze Konversation angewendet wird, ist ein System-Prompt-Signal, distinct von einer Format-Regel (pr-002) oder einer Scope-Regel (pr-001) — diese regiert Ausführlichkeit."
+ },
+ "pr-008": {
+  "label": "\"Weigere dich, über Konkurrenz-Preise zu diskutieren, auch wenn der Customer insistiert.\"",
+  "why": "Ein Sicherheits/Topic-Einschränkungs-Guardrail meant to survive Benutzer-Gegenwind für jeden Durchgang — die Prüfungs-Noten System-Nachrichten tragen App-spezifische Einschränkungen über Plattform-Content-Filter."
+ },
+ "pr-009": {
+  "label": "\"Storniere mein 3pm Meeting und benachrichtige das Team.\"",
+  "why": "Klingt wie ein Befehl, aber es ist eine einzelne Anfrage, begrenzt auf Recht Jetzt — die Falle ist, Anweisungs-förmige Phrasing mit einer persistenten Regel zu verwechseln."
+ },
+ "pr-010": {
+  "label": "\"Von jetzt an, antworte immer auf Französisch.\" — vom Customer mid-Chat getippt",
+  "why": "'Von jetzt an' klingt persistent, aber wer spricht, entscheidet immer noch die Rolle: eine Anfrage, die vom Customer ins Chat getippt wird, ist eine Benutzer-Nachricht, auch eine, die nach stehendem Verhalten fragt — Persistenz lebt im System-Prompt, nicht in Benutzer-Wording."
+ },
+ "pr-011": {
+  "label": "\"Vergleiche diese zwei Contract-Klauseln und kennzeichne alle Konflikte.\"",
+  "why": "Eine spezifische analytische Aufgabe, eingereicht für diesen Austausch — keine Persona oder App-breite Regel wird gesetzt, also ist es dieser Durchgang's Anfrage."
+ },
+ "pr-012": {
+  "label": "\"Basierend auf deinem Account erneuert sich dein Abonnement am 14.\" — gesendet auf dem nächsten Durchgang, damit das Modell das merkt, das es bereits dem Customer sagte",
+  "why": "Modell-generierte Ausgabe erneut gesendet, um Kontekt zu bewahren, ist eine Assistant-Nachricht, nicht die Customer's Wörter — die Falle ist, abgespielte Modell-Ausgabe mit etwas, das der Benutzer sagte, zu verwechseln."
+ },
+ "pr-013": {
+  "label": "\"{{\\\"status\\\": \\\"resolved\\\", \\\"ticket_id\\\": \\\"48213\\\"}}\" — die strukturierte Antwort des Modells vom vorherigen Durchgang, weitergetragen als Historie",
+  "why": "JSON-geformter Inhalt sieht aus wie die Format-Regel von pr-002, aber eine Regel und eine Instanz der Modell's eigenen Ausgabe sind unterschiedliche Rollen — das ist die Modell's Antwort, die abgespielt wird, nicht eine stehende Anweisung."
+ },
+ "pr-014": {
+  "label": "\"Möchtest du, dass ich auch Flüge für die Rückfahrt überprüfe?\" — die Modell's eigene Follow-Up-Frage vom vorherigen Durchgang, behalten im Kontekt",
+  "why": "Frage-geformter Text kann mit dem User-Sprechen verwechselt werden, aber diese Frage wurde vom Modell selbst generiert und wird erneut gesendet, damit es sich merkt, dass es sie gefragt hat — der Diskriminator ist, wer die Wörter ursprünglich erzeugt hat, nicht ihre grammatikalische Form."
+ },
+ "pr-015": {
+  "label": "\"Schritt 1: Starten Sie den Router neu. Schritt 2: Verbinden Sie sich erneut mit Wi-Fi.\" — der Modell's Troubleshooting-Schritte von einem früheren Durchgang, abgespielt, damit es merkt, das es dem Customer bereits sagte",
+  "why": "Nummerierte Anweisungen sehen Regel-ähnlich aus, versuchen eine Vermischung mit dem System-Prompt, aber diese sind die Modell's eigene vorherige Ausgabe, die erneut für Gedächtnis weitergetragen wird, nicht ein persistenter Guardrail, der vom Developer gesetzt wird."
+ },
+ "prompt-roles": {
+  "hint": "Stelle zwei Fragen: wendet dies auf jeden Durchgang oder nur diesen an (persistent vs. einmaliger)? Und wer spricht — der Developer, der den Assistant aufsetzt, die Person, die gerade tippt, oder die Modell's eigene vorherige Antwort, die für Gedächtnis erneut gesendet wird?",
+  "note": "Anweisungs-geformtes Wording ist nicht Beweis eines System-Prompts — eine einmalige Aufgabe kann wie ein Befehl klingen und immer noch eine Benutzer-Nachricht sein. Persistenz über Durchgänge ist der echte Test.",
+  "zones[0].def": "Persona, Ton, Regeln und Guardrails — persistent über jeden Durchgang",
+  "zones[1].def": "Dieser Durchgang's tatsächliche Anfrage",
+  "zones[2].def": "Vorherige Modell-Antworten, abgespielt für Gesprächs-Gedächtnis"
+ }
+}

@@ -1,0 +1,108 @@
+{
+ "cu-001": {
+  "label": "Analizuj plik PDF faktury i odczytaj wyodrębnione pola: dostawca, całkowita kwota i termin płatności",
+  "sub": "prebuilt-invoice",
+  "why": "prebuilt-invoice wyodrębnia pola strukturalne z dokumentów faktur — najczęściej testowany prebudowany analizator egzaminu (7 wzmianek)."
+ },
+ "cu-002": {
+  "label": "Zdefiniuj własny schemat pól w języku naturalnym i wyodrębniaj te pola z umów",
+  "sub": "custom analyzer via begin_create_analyzer",
+  "why": "Niestandardowe analizatory są zbudowane ze schematu pól, który opisujesz — opis pola w języku naturalnym Content Understanding to to, co go odróżnia od prebudowanych w Document Intelligence."
+ },
+ "cu-003": {
+  "label": "Wyodrębniaj tekst i zidentyfikowane obiekty z fotografii etykiet urządzeń",
+  "sub": "prebuilt-image",
+  "why": "prebuilt-image wyodrębnia tekst i obiekty ze zdjęć poprzez ten sam przepływ analizatora co każda inna modalność."
+ },
+ "cu-004": {
+  "label": "Uzyskaj transkrypcję, streszczenie i podział mówców z nagranych rozmów wsparcia",
+  "sub": "prebuilt-audio",
+  "why": "Analizatory audio Content Understanding zwracają transkrypcje, streszczenia i mówców — ekstrakcja, nigdy synteza mowy."
+ },
+ "cu-005": {
+  "label": "Podziel zarejestrowane sesje szkoleniowe i indeksuj ich transkrypcje oraz zdarzenia wizualne do wyszukiwania",
+  "sub": "prebuilt-videoSearch",
+  "why": "Analizatory wideo zwracają segmenty, transkrypcje i zdarzenia wizualne; warianty *Search przygotowują zawartość do wyszukiwania — Azure AI Search indeksuje to, co wyodrębnia Content Understanding."
+ },
+ "cu-006": {
+  "label": "Zwróć tekst, tabele i znaczniki zaznaczenia wraz ze strukturą dokumentu — bez semantyki pól",
+  "sub": "prebuilt-layout",
+  "why": "Layout wyodrębnia tekst, tabele, znaczniki zaznaczenia i strukturę; OCR w stylu Read to tylko tekst — rozróżnienie Read vs Layout histack w Content Understanding."
+ },
+ "cu-007": {
+  "label": "Mieszana partia formularzy dostawców musi mieć wyodrębnione luźne pary klucz-wartość bez początkowania od predefiniowanego schematu pól",
+  "sub": "prebuilt-documentFields",
+  "why": "prebuilt-documentFields wyodrębnia ogólne pary klucz-wartość z dokumentów bez wymaganego schematu specjalnego dla domeny — w przeciwieństwie do stałych pól faktur prebuilt-invoice."
+ },
+ "cu-008": {
+  "label": "Zanim budujesz niestandardowy analizator dla nowego typu formularza, poproś Content Understanding, aby zaproponował schemat pola, a następnie opieraj nowy analizator na ogólnym analizatorze dokumentów",
+  "sub": "prebuilt-documentFieldSchema → prebuilt-document",
+  "why": "prebuilt-documentFieldSchema proponuje pola dla typu dokumentu, którego jeszcze nie schematiziujesz; prebuilt-document to base_analyzer_id używany przy definiowaniu nowego niestandardowego analizatora dokumentów — dwa odrębne identyfikatory w tym samym przepływie budowania niestandardowego."
+ },
+ "cu-009": {
+  "label": "Uruchom szybki start Python dla zdjęcia produktu i odczytaj wygenerowany opis z pola Summary w wyniku",
+  "sub": "prebuilt-imageSearch",
+  "why": "prebuilt-imageSearch to analizator szybkiego startu dla deskryptywnego wyjścia obrazu — jego wynik udostępnia pole Summary zawierające opis w języku naturalnym."
+ },
+ "cu-010": {
+  "label": "Zbuduj niestandardowy analizator, który wyodrębnia pola Title i ChartType wykresu z partii zrzutów ekranu pulpitu nawigacyjnego",
+  "sub": "custom analyzer via base_analyzer_id=\"prebuilt-image\"",
+  "why": "Niestandardowe analizatory obrazów ustawią base_analyzer_id na prebuilt-image przed stratyfikowaniem schematu pól — udokumentowany wzorzec ekstrakcji wykresów i zrzutów ekranu."
+ },
+ "cu-011": {
+  "label": "Analizuj zdjęcia półek z audytu detalicznego i zwróć pola strukturalne zdefiniowane przez własny schemat: nazwa produktu, cena i ilość",
+  "sub": "prebuilt-image",
+  "why": "Analizator obrazów Content Understanding zwraca pola strukturalne zdefiniowane schematem bezpośrednio ze zdjęć — scenariusz audytu półki detalicznej, który egzamin testuje bezpośrednio."
+ },
+ "cu-012": {
+  "label": "Okabluj klienta Python, który wywoła begin_analyze z analyzer_id=\"prebuilt-image\" dla adresu URL zdjęcia, a następnie odczytaj wykryte obiekty z wyniku",
+  "sub": "prebuilt-image",
+  "why": "Wzorzec wywołania begin_analyze(analyzer_id=..., inputs=[AnalysisInput(url=...)]) jest identyczny dla modalności — zmienia się tylko identyfikator analizatora, a prebuilt-image to bezpośredni (bez wyszukiwania) analizator obrazów."
+ },
+ "cu-013": {
+  "label": "Okabluj lekki klient Python, który wywoła begin_analyze z adresem URL nagrania rozmowy, aby ściągnąć transkrypcję i streszczenie gotowe dla indeksu wyszukiwania",
+  "sub": "prebuilt-audioSearch",
+  "why": "prebuilt-audioSearch to identyfikator analizatora udokumentowany w wyprzedzeniu SDK — sufiks *Search oznacza wyjście przygotowane do indeksowania/RAG wyszukiwania, w przeciwieństwie do ekstrakcji bezpośredniej prebuilt-audio bez przygotowania wyszukiwania."
+ },
+ "cu-014": {
+  "label": "Wyodrębniaj frazy transkryptu oznaczone mówcami z dokładnym czasem z partii odcinków podcastów",
+  "sub": "transcriptPhrases",
+  "why": "transcriptPhrases to pole wyjściowe noszące identyfikację mówcy i informacje o czasie — bezpośrednie wyjście ekstrakcji audio, odrębne od samego identyfikatora analizatora."
+ },
+ "cu-015": {
+  "label": "Rozpoznaj, że przesłanie MP3 podcastu do Content Understanding ustawia właściwość kind obiektu contents na taką samą wartość jak dla wejść wideo",
+  "sub": "kind: \"audioVisual\"",
+  "why": "Wejścia tylko audio i wideo oba używają kind: \"audioVisual\" w schemacie contents — wspólna wartość, która przekłada każdego oczekującego odrębny rodzaj 'audio'."
+ },
+ "cu-016": {
+  "label": "Potwierdź, że wyodrębnianie strukturalnej transkrypcji ze skrzynki głosowej to mowa przechwycona do tekstu, nigdy tekst zamieniony na mowę",
+  "why": "Analizatory audio Content Understanding transkrybują istniejącą mowę w strukturalne wyjście — nigdy nie syntetyzują nowych mówionych danych wyjściowych; to zadanie należy do Azure AI Speech, a nie Content Understanding."
+ },
+ "cu-017": {
+  "label": "Podziel przesłane nagranie demonstracyjne produktu na segmenty logicznych scen, zanim uruchomi się jakikolwiek przepływ przetwarzania",
+  "sub": "enableSegment",
+  "why": "enableSegment to właściwość schematu analizatora, która dzieli materiał wideo na logiczne segmenty, takie jak sceny — element sterowania analizatorem wideo, a nie audio czy dokument."
+ },
+ "cu-018": {
+  "label": "Po analizie klipu marketingowego odczytaj ustrukturyzowane streszczenie markdown jego transkryptu i zawartości wizualnej",
+  "sub": "prebuilt-videoSearch",
+  "why": "Wyniki prebuilt-videoSearch udostępniają pole markdown podsumowujące transkrypcję i zawartość wizualną na segment — pole odczytania udokumentowane dla wideo w SDK."
+ },
+ "cu-019": {
+  "label": "Potwierdź, że ekstrakcja klatek kluczowych i zdarzeń wizualnych z przesłanego nagrania działa na materiale, który już istnieje, zamiast generować nowe klatki",
+  "why": "Analizatory Content Understanding wyodrębniają klatki kluczowe, transkrypcje i zdarzenia wizualne z materiału, który już istnieje — nie generują syntetycznych klatek; to inna kategoria usługi AI."
+ },
+ "cu-020": {
+  "label": "Okabluj klienta Python, który wywoła begin_analyze z analyzer_id=\"prebuilt-videoSearch\" dla przesłanego adresu URL MP4",
+  "sub": "prebuilt-videoSearch",
+  "why": "Wywołanie begin_analyze(analyzer_id=\"prebuilt-videoSearch\", inputs=[AnalysisInput(url=...)]) to udokumentowany wzorzec SDK do rozpoczęcia ekstrakcji wideo."
+ },
+ "cu-modality-grid": {
+  "hint": "Pytaj, czym faktycznie jest plik źródłowy, a następnie sprawdź linię sub dla dokładnego identyfikatora analizatora prebuilt-* — identyfikator sam nazwie swoją modalność (dokument/obraz/audio/wideo), a identyfikatory z sufiksem Search przygotowują wyjście do indeksowania zamiast zmieniać modalność.",
+  "note": "Content Understanding zawsze ekstraktuje — nigdy nie generuje ani nie indeksuje. Ekstrakcja do Azure AI Search to krok następny, a nie coś, co robi samo Content Understanding.",
+  "zones[0].def": "Pliki PDF, faktury, umowy i luźne papierkowe dokumenty, które Content Understanding zamienia w pola strukturalne, tabele i tekst.",
+  "zones[1].def": "Zdjęcia, zrzuty ekranu i wykresy, które Content Understanding zamienia w pola strukturalne, opisy i wykryte obiekty.",
+  "zones[2].def": "Zarejestrowana mowa — rozmowy, podcasty i wiadomości głosowe — które Content Understanding zamienia w transkrypcje, streszczenia i etykiety mówców.",
+  "zones[3].def": "Zarejestrowany materiał wideo, który Content Understanding segmentuje, transkrybuje i przygotowuje do wyszukiwania."
+ }
+}

@@ -1,0 +1,91 @@
+{
+ "risk-tiers": {
+  "hint": "Arrasta cada sistema para o seu nível de risco. O nível segue o propósito e contexto, não o quão sofisticado é o modelo.",
+  "note": "Os níveis prendem-se ao uso, não à tecnologia. O mesmo modelo pode ser proibido numa implementação, risco elevado noutro e mínimo num terceiro.",
+  "zones[0].def": "Práticas proibidas sob Art. 5. Não é um risco a ser mitigado — a prática não pode ser colocada no mercado ou usada nada.",
+  "zones[1].def": "Art. 6 e Anexo III, ou um componente de segurança de um produto regulado. Permitido sujeito a obrigações substanciais antes e depois de colocar no mercado.",
+  "zones[2].def": "Obrigações de transparência do Art. 50: informar as pessoas que estão a lidar com IA, ou que o conteúdo é sintético.",
+  "zones[3].def": "Tudo o resto. Sem obrigações sob a Lei além das que se aplicam a qualquer software; códigos voluntários podem aplicar-se.",
+  "zones[4].def": "Modelos de propósito geral cumprindo o limiar do Art. 51, com obrigações de nível de modelo distintas da pirâmide baseada em uso."
+ },
+ "rt2-01": {
+  "label": "Um esquema governamental que pontua a confiabilidade dos cidadãos a partir de comportamento social não relacionado e o usa para negar acesso a serviços públicos.",
+  "why": "Pontuação social por ou em nome de autoridades públicas levando a tratamento prejudicial em contextos não relacionados é proibida sob Art. 5."
+ },
+ "rt2-02": {
+  "label": "Um sistema que infere emoções dos funcionários a partir de expressões faciais durante o seu dia de trabalho, fora de qualquer propósito médico ou de segurança.",
+  "why": "A inferência de emoção no local de trabalho e na educação é proibida, com exceções médicas e de segurança estreitas. É por isso que a proibição apanha produtos de análise de RH."
+ },
+ "rt2-03": {
+  "label": "Uma ferramenta que raspa imagens faciais da internet e CCTV indiscriminadamente para construir uma base de dados de reconhecimento facial.",
+  "why": "A raspagem não seletiva para construir bases de dados de reconhecimento facial é expressamente proibida, independentemente do propósito do operador."
+ },
+ "rt2-04": {
+  "label": "Um sistema usando técnicas sublimares além da consciência de uma pessoa para distorcer materialmente comportamento e causar dano significativo.",
+  "why": "Técnicas manipuladoras e exploratórias causando dano significativo são proibidas. O teste é distorção material de comportamento, não sofisticação da técnica."
+ },
+ "rt2-05": {
+  "label": "Um sistema de rastreio de CV que filtra e classifica candidatos para um papel.",
+  "why": "Emprego e gestão de trabalhadores é uma área do Anexo III. O rastreio de recrutamento é o exemplo canónico de risco elevado e atrai o conjunto completo de obrigações."
+ },
+ "rt2-06": {
+  "label": "Um modelo usado por um banco para avaliar a solvabilidade de pessoas singulares.",
+  "why": "A avaliação de solvabilidade de pessoas singulares está listada no Anexo III, com uma exceção para detetar fraude financeira."
+ },
+ "rt2-07": {
+  "label": "Um componente de IA que controla a função de segurança de um dispositivo médico já regulado sob lei de harmonização da UE.",
+  "why": "Esta é a rota Art. 6(1): um componente de segurança de um produto coberto pela legislação de harmonização listada e requerendo avaliação de conformidade de terceiros."
+ },
+ "rt2-08": {
+  "label": "Um sistema usado para determinar acesso a, ou atribuir pessoas a, instituições educacionais.",
+  "why": "Decisões de educação e treino vocacional afetando acesso de uma pessoa estão no Anexo III. O dano é para oportunidades de vida, o que é por que o nível é elevado em vez de limitado."
+ },
+ "rt2-09": {
+  "label": "Um chatbot de atendimento ao cliente que deve tornar claro para o utilizador que está a interagir com um sistema de IA.",
+  "why": "Transparência Art. 50: uma pessoa deve saber que está a lidar com uma máquina a menos que seja óbvio. Essa divulgação é toda a obrigação."
+ },
+ "rt2-10": {
+  "label": "Um gerador de imagem cujos resultados sintéticos devem ser marcados num formato legível por máquina como gerado artificialmente.",
+  "why": "Marcar conteúdo sintético é um dever Art. 50 sobre fornecedores de sistemas generativos, independentemente de qualquer nível que a implementação se sente."
+ },
+ "rt2-11": {
+  "label": "Um deepfake publicado como parte de um item de notícia, que deve ser divulgado como gerado ou manipulado artificialmente.",
+  "why": "Divulgação de deepfake é uma obrigação de transparência sobre implementadores, com ajustes para trabalho evidentemente artístico ou satírico."
+ },
+ "rt2-12": {
+  "label": "Um sistema de reconhecimento de emoção usado fora de um contexto proibido, cujos sujeitos devem ser informados da sua operação.",
+  "why": "Onde o reconhecimento de emoção não é proibido explicitamente, informar pessoas expostas é um dever Art. 50. A mesma tecnologia se senta em dois níveis diferentes dependendo do cenário."
+ },
+ "rt2-13": {
+  "label": "Um filtro de spam classificando email inbound para um serviço de mail empresarial.",
+  "why": "A filtragem de spam é o próprio exemplo da Lei de risco mínimo. Sem obrigações além da lei geral."
+ },
+ "rt2-14": {
+  "label": "Um adversário de IA controlando personagens não-jogador num videojogo.",
+  "why": "Usos de entretenimento sem efeito sobre direitos, segurança ou acesso a serviços caem fora dos níveis que carregam obrigações."
+ },
+ "rt2-15": {
+  "label": "Um modelo de previsão de inventário prevendo níveis de stock de armazém sem efeito em indivíduos.",
+  "why": "Nenhuma área listada, nenhum componente de segurança, nenhuma interação com uma pessoa. Analytics operacional é onde a maioria da IA empresarial realmente se senta."
+ },
+ "rt2-16": {
+  "label": "Um modelo que otimiza uso de energia no sistema de arrefecimento de um data center.",
+  "why": "Otimização industrial tocando nenhuma área do Anexo III e nenhuma pessoa é risco mínimo, por muito consequente que seja comercialmente."
+ },
+ "rt2-17": {
+  "label": "Um modelo de propósito geral presumido de levar risco sistemático porque a sua computação de treino excede o limiar definido na Lei.",
+  "why": "Art. 51 define uma presunção baseada em compute. Esta é uma classificação de nível de modelo e se senta fora da pirâmide baseada em uso inteiramente."
+ },
+ "rt2-18": {
+  "label": "Um modelo de propósito geral designado pela Comissão como tendo capacidades de impacto elevado equivalentes aos modelos mais avançados.",
+  "why": "A designação é a segunda rota para risco sistemático, ao lado da presunção de compute. Qualquer rota dispara as mesmas obrigações."
+ },
+ "rt2-19": {
+  "label": "Um fornecedor requerido para realizar avaliações de modelo, testes adversariais, e rastrear e relatar incidentes graves no nível de modelo.",
+  "why": "Avaliação, testes adversariais, mitigação de risco sistemático e relatório de incidentes são as obrigações Art. 55 que apenas GPAI de risco sistemático carrega."
+ },
+ "rt2-20": {
+  "label": "Um fornecedor requerido para assegurar um nível adequado de proteção de cibersegurança para o modelo e sua infraestrutura física.",
+  "why": "Cibersegurança de nível de modelo é um dever GPAI de risco sistemático. Obrigações de GPAI baseline — documentação, política de direitos de autor, resumo de dados de treino — aplicam-se sem isso."
+ }
+}

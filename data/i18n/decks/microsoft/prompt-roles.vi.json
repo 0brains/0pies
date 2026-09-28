@@ -1,0 +1,69 @@
+{
+ "pr-001": {
+  "label": "\"Bạn là một trợ lý HR chính thức. Chỉ trả lời các câu hỏi về chính sách HR.\"",
+  "why": "Nhân vật cộng với đảm bảo an toàn phạm vi — ví dụ từ chữ của histack về nội dung nhắc nhở hệ thống."
+ },
+ "pr-002": {
+  "label": "\"Luôn trả lại chi tiết khách hàng ở hình dạng JSON cố định.\"",
+  "why": "Quy tắc định dạng đầu ra tồn tại trên các lượt — tài liệu kỳ thi tuyên bố từ chữ rằng hướng dẫn hình dạng JSON thuộc về nhắc nhở hệ thống."
+ },
+ "pr-003": {
+  "label": "\"Tôi còn bao nhiêu ngày nghỉ phép trong năm nay?\"",
+  "why": "Yêu cầu thực tế lượt này — không có quy tắc, không có nhân vật, chỉ yêu cầu."
+ },
+ "pr-004": {
+  "label": "\"Bạn còn 12 ngày nghỉ phép.\" — phát lại vào yêu cầu tiếp theo để ngữ cảnh",
+  "why": "Trả lời mô hình trước đó được gửi lại làm tin nhắn trợ lý để mô hình có bộ nhớ hội thoại; chúng không bao giờ nội dung người dùng."
+ },
+ "pr-005": {
+  "label": "\"Tóm tắt ghi chú cuộc họp đính kèm trong ba dấu đạn.\"",
+  "why": "Một nhiệm vụ một lần cho lượt này — nó nghe giống như một hướng dẫn, nhưng nó không phải là một quy tắc lâu dài, vì vậy nó là người dùng, không phải hệ thống."
+ },
+ "pr-006": {
+  "label": "\"Nếu yêu cầu nằm ngoài chính sách HR, hãy nói thay vì đoán.\"",
+  "why": "Quy tắc phật pháp để xử lý các yêu cầu ngoài phạm vi, áp dụng mỗi lượt — mô hình kỳ thi từ chữ 'bổ sung tốt cho nhắc nhở hệ thống', riêng biệt từ cặp nhân vật/phạm vi của pr-001."
+ },
+ "pr-007": {
+  "label": "\"Giữ câu trả lời thành hai câu trừ khi khách hàng yêu cầu chi tiết hơn.\"",
+  "why": "Quy tắc giọng điệu/độ dài áp dụng cho cuộc hội thoại toàn bộ là tín hiệu nhắc nhở hệ thống riêng biệt so với quy tắc định dạng (pr-002) hoặc quy tắc phạm vi (pr-001) — quy tắc này quản lý dài dòng."
+ },
+ "pr-008": {
+  "label": "\"Từ chối thảo luận về giá cạnh tranh, ngay cả khi khách hàng khăng khăng.\"",
+  "why": "Đảm bảo an toàn/hạn chế chủ đề nghĩa là tồn tại sự đẩy lùi người dùng mỗi lượt — ghi chú kỳ thi tin nhắn hệ thống mang hạn chế ứng dụng nhất định ngoài bộ lọc nội dung nền tảng."
+ },
+ "pr-009": {
+  "label": "\"Hủy cuộc họp 3 chiều của tôi và cho đội biết.\"",
+  "why": "Đọc giống như lệnh, nhưng nó là yêu cầu duy nhất được xác định đến bây giờ — cái bẫy là nhầm lẫn từ chữ giống hướng dẫn với quy tắc lâu dài."
+ },
+ "pr-010": {
+  "label": "\"Từ bây giờ, luôn trả lời bằng tiếng Pháp.\" — được gõ bởi khách hàng giữa trò chuyện",
+  "why": "'Từ bây giờ' nghe bền bỉ, nhưng ai đang nói vẫn quyết định vai trò: yêu cầu được gõ vào trò chuyện bởi khách hàng là tin nhắn người dùng, ngay cả một yêu cầu cho hành vi đứng — tính bền bỉ sống trong nhắc nhở hệ thống, không nói từ của người dùng."
+ },
+ "pr-011": {
+  "label": "\"So sánh hai điều khoản hợp đồng này và gắn cờ bất kỳ xung đột nào.\"",
+  "why": "Một nhiệm vụ phân tích cụ thể được gửi cho trao đổi này — không có nhân vật hoặc quy tắc ứng dụng rộng được đặt, vì vậy nó là yêu cầu lượt này."
+ },
+ "pr-012": {
+  "label": "\"Dựa trên tài khoản của bạn, việc đăng ký của bạn gia hạn vào ngày 14.\" — gửi lại vào lượt tiếp theo để mô hình nhớ những gì nó đã cho khách hàng",
+  "why": "Đầu ra được tạo mô hình được gửi lại để bảo tồn ngữ cảnh là tin nhắn trợ lý, không phải từ của khách hàng — cái bẫy là nhầm lẫn đầu ra mô hình được phát lại với thứ mà người dùng đã nói."
+ },
+ "pr-013": {
+  "label": "\"{\\\"status\\\": \\\"resolved\\\", \\\"ticket_id\\\": \\\"48213\\\"}\" — trả lời có cấu trúc của mô hình từ lượt trước, mang về phía trước như lịch sử",
+  "why": "Nội dung hình dạng JSON trông giống như quy tắc định dạng từ pr-002, nhưng quy tắc và trường hợp đầu ra mô hình riêng của nó là vai trò khác nhau — đây là câu trả lời của mô hình được phát lại, không phải hướng dẫn đứng."
+ },
+ "pr-014": {
+  "label": "\"Bạn có muốn tôi cũng kiểm tra chuyến bay cho chân trở lại không?\" — câu hỏi theo dõi riêng của mô hình từ lượt trước, giữ trong ngữ cảnh",
+  "why": "Văn bản hình dạng câu hỏi có thể bị nhầm lẫn với người dùng nói, nhưng câu hỏi này được tạo bởi mô hình chính nó và được gửi lại để nó nhớ đã hỏi — phân biệt là ai bắt nguồn từ từ, không phải hình dạng ngữ pháp của chúng."
+ },
+ "pr-015": {
+  "label": "\"Bước 1: Khởi động lại bộ định tuyến. Bước 2: Kết nối lại với Wi-Fi.\" — các bước khắc phục sự cố của mô hình từ lượt sớm, được phát lại để nó nhớ những gì nó đã cho khách hàng",
+  "why": "Hướng dẫn được đánh số trông quy tắc giống, cám dỗ trộn với nhắc nhở hệ thống, nhưng đây là đầu ra trước đó của mô hình được mang về phía trước để bộ nhớ, không phải đảm bảo bền bỉ được đặt bởi nhà phát triển."
+ },
+ "prompt-roles": {
+  "hint": "Hỏi hai câu: điều này có áp dụng cho mỗi lượt hoặc chỉ cái này (bền bỉ so với một lần)? Và ai đang nói — nhà phát triển thiết lập trợ lý, người gõ ngay bây giờ, hoặc đầu ra trước đó của mô hình được gửi lại cho bộ nhớ?",
+  "note": "Từ chữ giống hướng dẫn không phải chứng minh của nhắc nhở hệ thống — một nhiệm vụ một lần có thể nghe giống như lệnh và vẫn là tin nhắn người dùng. Tính bền bỉ trên các lượt là bài kiểm tra thực tế.",
+  "zones[0].def": "Nhân vật, giọng điệu, quy tắc và đảm bảo an toàn — bền bỉ trên mỗi lượt",
+  "zones[1].def": "Yêu cầu thực tế lượt này",
+  "zones[2].def": "Trả lời mô hình trước đó được phát lại cho bộ nhớ hội thoại"
+ }
+}

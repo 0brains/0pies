@@ -1,0 +1,45 @@
+{
+ "fit-tuning": {
+  "hint": "Compare les performances d'entraînement avec les performances de validation ou de test : toutes deux faibles suggèrent un sous-apprentissage, tandis qu'un grand écart entraînement-validation suggère un surapprentissage."
+ },
+ "fit-tuning-01": {
+  "label": "Le modèle capture les motifs utiles et fonctionne de manière similaire sur les données d'entraînement et les données non vues.",
+  "why": "Le modèle capture les motifs utiles et fonctionne de manière similaire sur les données d'entraînement et les données non vues."
+ },
+ "fit-tuning-02": {
+  "label": "Le modèle fonctionne très bien sur les données d'entraînement mais mal sur les données non vues.",
+  "why": "Le modèle fonctionne très bien sur les données d'entraînement mais mal sur les données non vues."
+ },
+ "fit-tuning-03": {
+  "label": "Le modèle est trop simple ou insuffisamment entraîné et fonctionne mal même sur les données d'entraînement.",
+  "why": "Le modèle est trop simple ou insuffisamment entraîné et fonctionne mal même sur les données d'entraînement."
+ },
+ "fit-tuning-04": {
+  "label": "La surSimplification systématique cause une erreur cohérente et est couramment associée au sous-apprentissage.",
+  "why": "La surSimplification systématique cause une erreur cohérente et est couramment associée au sous-apprentissage."
+ },
+ "fit-tuning-05": {
+  "label": "Le modèle est excessivement sensible à son échantillon d'entraînement et est couramment associé au surapprentissage.",
+  "why": "Le modèle est excessivement sensible à son échantillon d'entraînement et est couramment associé au surapprentissage."
+ },
+ "fit-tuning-06": {
+  "label": "Une contrainte ou une pénalité qui décourage la complexité excessive et peut réduire le surapprentissage.",
+  "why": "Une contrainte ou une pénalité qui décourage la complexité excessive et peut réduire le surapprentissage."
+ },
+ "fit-tuning-07": {
+  "label": "Des scissions entraînement-validation répétées utilisées pour estimer la généralisation cohérente d'un modèle.",
+  "why": "Des scissions entraînement-validation répétées utilisées pour estimer la généralisation cohérente d'un modèle."
+ },
+ "fit-tuning-08": {
+  "label": "Un hyperparamètre qui contrôle la taille de chaque mise à jour d'optimisation.",
+  "why": "Un hyperparamètre qui contrôle la taille de chaque mise à jour d'optimisation."
+ },
+ "fit-tuning-09": {
+  "label": "Un passage complet à travers l'ensemble de données d'entraînement.",
+  "why": "Un passage complet à travers l'ensemble de données d'entraînement."
+ },
+ "fit-tuning-10": {
+  "label": "Le nombre d'exemples d'entraînement utilisés pour calculer une mise à jour de paramètre.",
+  "why": "Le nombre d'exemples d'entraînement utilisés pour calculer une mise à jour de paramètre."
+ }
+}

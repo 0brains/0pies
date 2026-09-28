@@ -1,0 +1,101 @@
+{
+  "I-roles": {
+    "prompt": "Asigna cada deber (o deber alegado) al rol al que realmente pertenece. Algunos no pertenecen a nadie."
+  },
+  "d1-case-charter": {
+    "brief": "Solvix Underwriting es una pequeña startup de análisis predictivo que califica el riesgo de préstamos agrícolas para bancos regionales. La gobernanza hasta ahora ha sido lo que los dos fundadores acordaron tomando un café. Un gran socio de reaseguros está a punto de firmar un acuerdo de intercambio de datos de varios años, pero su equipo de diligencia quiere ver 'un programa de gobernanza real' antes de que se firme. Te contratan para construirlo — y, dieciocho meses después, para mantenerlo funcionando después de que el motor de underwriting de Solvix se licencie a equipos de riesgo crediticio en bancos en toda la UE, América del Norte y Asia Sudoriental.",
+    "steps[0].why": "No puedes gobernar lo que no has contabilizado: un inventario de IA es la línea base fáctica que te dice qué necesita gobernanza antes de poder decidir quién la gobierna, capacitar a alguien en ella o escribir una política al respecto. Contratar un CAIO o capacitar personal sin esa línea base pone a la gente en movimiento sin nada concreto en qué actuar, y redactar una política primero produce un documento adaptado a conjeturas en lugar del huella de IA real de Solvix.",
+    "steps[1].why": "Una carta ligera y basada en principios es gobernanza proporcional en acción — convierte lo que los fundadores ya creen en algo documentado y repetible sin agregar la capa de burocracia que Solvix aún no necesita. Contratar un CAGO es un gasto prematuro, la externalización rinde el conocimiento institucional que los fundadores deberían estar construyendo, y copiar el marco ERM de escala empresarial del reasegurador enterraría a un pequeño equipo en procesos construidos para una empresa diez veces más grande.",
+    "steps[2].why": "La federación es la estructura construida exactamente para esta tensión: un conjunto consistente de principios desde el centro, con espacio para que cada región adapte detalles específicos a su propio panorama regulatorio y cultural. Una política global única es demasiado rígida para flexionar según la ley local, la autonomía regional completa pierde la supervisión central que mantiene coherente todo el programa, y una matriz de propiedad de proyectos compartidos difumina exactamente la responsabilidad que un modelo de riesgo crediticio necesita cuando un regulador viene preguntando quién firmó.",
+    "steps[3].why": "Esperar que cada empleado técnico se reconvierta como constructor de modelos no es capacitación específica de rol, es una fantasía de recuento de personal — la mayoría del personal técnico toca el sistema de IA sin necesidad de construir uno, y la capacitación debe coincidir con esa realidad. Los otros tres son piezas legítimas y complementarias de un programa real: capacitación ajustada a rol y estructura de gobernanza reales, una pista de construcción de cultura ética, y educación del usuario final para las personas que confían en los resultados del modelo."
+  },
+  "d1-case-policies": {
+    "brief": "Verdant Health Analytics ha ejecutado un programa de cumplimiento de privacidad maduro durante años — protocolos de breach, un proceso PIA permanente, contratos con proveedores — todo construido alrededor de su producto SaaS original, que solo almacenaba y procesaba los registros de salud que los clientes le daban directamente. Verdant ahora está integrando un asistente de documentación clínica de IA generativa en ese mismo producto, y el equipo de cumplimiento quiere reutilizar tanto de la pila existente como pueda en lugar de construir una paralela desde cero. Mientras tanto, la ingeniería ya está recibiendo solicitudes de clínicos que quieren pegar notas de pacientes en chatbots públicos para ahorrar tiempo.",
+    "steps[0].why": "Un PIA ya está construido para hacer exactamente las preguntas que un sistema de IA plantea — qué datos entran, qué sucede con los individuos como resultado — así que extenderlo para cubrir entrenamiento, equidad y explicabilidad es un ajuste natural, no una reconstrucción. Las pruebas de penetración verifican la resistencia técnica a intrusiones, no sesgo algorítmico o legalidad; las evaluaciones de transferencia responden una pregunta transfronteriza más estrecha; y la capacitación del personal crea conciencia pero no expone el riesgo específico del sistema en absoluto.",
+    "steps[1].why": "Una política heredada se escribe para flujos de datos estáticos y directos — qué se recopila, dónde se almacena — y nunca anticipó que los propios resultados e inferencias de un modelo sean un segundo conjunto de datos derivados que puede cruzarse para re-identificar a alguien cuyo registro sin procesar fue anonimizado apropiadamente. Un DPA, un DPO designado y un reloj de notificación de breach son toda la higiene del programa de privacidad genérico que cualquier sistema de TI necesita; ninguno de ellos es el agujero específico de IA en el que este escenario apunta.",
+    "steps[2].why": "Cada minuto que los clínicos pegan notas de pacientes en una herramienta pública, ese texto puede salir del control de Verdant completamente — usado para el propio entrenamiento del proveedor, registrado o expuesto — que es el daño concreto que una prohibición realmente está previniendo. La estrategia de monetización y los costos de contratación no son riesgos de privacidad en absoluto, y 'no hay tiempo para capacitar aún' describe una brecha temporal de recursos, no una razón por la que una fuga de PHI sea lo suficientemente peligrosa como para justificar bloquear la herramienta completamente.",
+    "steps[3].why": "Plegar las reglas de IA en las políticas de privacidad, seguridad y ética existentes mantiene la gobernanza unificada y evita que la organización ejecute dos conjuntos de estándares que pueden alejarse silenciosamente — los reguladores y auditores esperan que la IA se siente bajo la misma estructura de responsabilidad que todo lo demás. El argumento de señalización del regulador es verdadero pero demasiado estrecho para llevar el caso por sí solo, y tanto el argumento de detalle como el de velocidad para un documento independiente intercambian cohesión a largo plazo por conveniencia a corto plazo, que es exactamente lo que crea los silos que la integración está destinada a evitar."
+  },
+  "d1-case-vendor-file": {
+    "brief": "La división de reclamaciones de Bramwell Mutual está evaluando proveedores de IA de terceros para priorizar reclamaciones de seguros entrantes. Dos finalistas han llegado a la revisión de contratos, y un modelo de un tercer proveedor ya está siendo considerado para el piloto de selección de currículum del equipo de HR el próximo trimestre. Se le pide a gobernanza que ejecute el archivo: cuánta escrutinio realmente necesita cada proveedor, qué hacer cuando uno no muestra su trabajo, qué hacer cuando el mejor modelo no cumple la propia barra de seguridad de Bramwell, y qué pertenece al papeleo antes de que cualquiera de ellos se ponga en marcha.",
+    "steps[0].why": "La gestión de riesgos de IA de terceros funciona de la misma manera que la gestión de riesgos interna: esfuerzo proporcional al riesgo, verificado de manera continua en lugar de una sola vez al firmar. Una auditoría bienal indiscriminada para cada proveedor es excesiva y no escalable, la estabilidad financiera sola ignora el daño real que un sistema de IA puede causar, y dividir el riesgo técnico del riesgo ético (dejando este último al texto del contrato) trata dos mitades de la misma evaluación como si no estuvieran relacionadas.",
+    "steps[1].why": "Si la política dice que una evaluación de riesgos debe ocurrir antes de la adquisición y la negativa del proveedor hace esa evaluación imposible, proceder de todas formas rompe el propio marco de gobernanza de la organización — el movimiento defensible es alejarse. El monitoreo interno es un sustituto débil para la evaluación que nunca ocurrió, tallar una excepción de política socava la política para cada proveedor futuro, e una cláusula de indemnización puede cambiar la responsabilidad financiera pero no hace nada para llenar el punto ciego operativo y ético en el que Bramwell queda.",
+    "steps[2].why": "Un sandbox es el control compensatorio construido precisamente para esta situación — permite que Bramwell capture el rendimiento del modelo mientras contiene la exposición creada por un proveedor que no puede cumplir la barra de seguridad directamente. Renunciar al requisito o escribir una excepción permanente para proveedores 'reputables' erosiona el estándar de seguridad para todos los demás, mientras que un bloque absoluto trata un problema de contención manejable como uno inmanejable y puede costarle a Bramwell un modelo genuinamente superior sin razón defensible.",
+    "steps[3].why": "El riesgo de IA no se queda quieto de la manera en que una auditoría IP única o un SLA estático asume — un modelo de selección de currículum puede derivar en resultados sesgados meses después de firmar, así que el contrato necesita una obligación permanente de mantener el desempeño documentado y un plan para apagar el sistema cuando ya no sea apto para el propósito. El inventario de código abierto es una verificación de IP útil de una sola vez, el acceso al código fuente y datos de entrenamiento es a menudo una no-iniciadora con proveedores e innecesario si el monitoreo es sólido, y un SLA en precisión y latencia captura una instantánea, no la deriva y riesgo de equidad que realmente se acumula durante la vida del contrato."
+  },
+  "i-rl-01": {
+    "text": "Selecciona los datos de entrenamiento y ejecuta pruebas de sesgo previas al lanzamiento, luego documenta cómo funciona el sistema para las personas que lo operarán",
+    "why": "Los deberes de la etapa de construcción — curaduría de datos, pruebas de equidad antes del lanzamiento y documentación para operadores — se sientan con quienquiera que construya el sistema. Esto es distinto del monitoreo continuo en contexto que la organización operativa ejecuta una vez que el sistema está en vivo."
+  },
+  "i-rl-02": {
+    "text": "Integra herramientas de pruebas de sesgo y características de explicabilidad directamente en el modelo mientras se entrena, luego elige cómo hacer compensaciones entre precisión y equidad",
+    "why": "Las salvaguardas técnicas construidas en el modelo mismo — 'gobernanza por diseño' — son una elección en tiempo de construcción sobre arquitectura y entrenamiento, hecha antes de que el sistema jamás llegue a un entorno en vivo."
+  },
+  "i-rl-03": {
+    "text": "Registra de dónde vinieron los datos de entrenamiento y explica por qué se eligió una arquitectura de modelo particular sobre las alternativas",
+    "why": "Los registros de linaje de datos y la lógica del diseño son artefactos del proceso de construcción en sí — explican elecciones hechas antes de que el sistema exista, no cómo se desempeña una vez en ejecución."
+  },
+  "i-rl-04": {
+    "text": "Monitorea el desempeño en vivo y la deriva en su propio contexto operativo y audita la precisión de manera continua",
+    "why": "La integridad operacional en un contexto específico es el deber distintivo aquí — no las elecciones de diseño detrás del modelo, que pertenecen a quienquiera que lo construyó antes de que jamás llegara a este contexto."
+  },
+  "i-rl-05": {
+    "text": "Integra el modelo en un entorno de producción y configura el monitoreo que lo observará una vez que se ejecute allí",
+    "why": "Poner el sistema en producción e instrumentarlo es un acto operativo, separado del entrenamiento y pruebas que produjeron el modelo en primer lugar."
+  },
+  "i-rl-06": {
+    "text": "Lleva la responsabilidad principal cuando un sistema de terceros no validado se coloca en una vía de atención del hospital sin validación independiente primero",
+    "why": "La responsabilidad sigue la decisión de poner un sistema no validado en un entorno en vivo, que es la llamada de la organización operativa — el constructor original no es quien eligió omitir la validación antes del uso."
+  },
+  "i-rl-07": {
+    "text": "Interactúa con el sistema de IA en situaciones del mundo real y a menudo es el primero en notar que algo ha salido mal",
+    "why": "La proximidad al resultado en vivo — notar sesgo, errores o deriva mientras realmente sucede — es el rol de primera línea, distinto de la organización que opera y monitorea el sistema en su conjunto."
+  },
+  "i-rl-08": {
+    "text": "Interpreta la recomendación del sistema y toma la decisión final e informada basada en ella",
+    "why": "Aplicar criterio a un resultado específico y decidir qué hacer con él es un acto de punto de uso, no el monitoreo operativo o el trabajo de diseño que sucede en otro lugar del ciclo de vida."
+  },
+  "i-rl-09": {
+    "text": "Sirve como el punto de escalada cuando un equipo quiere enviar una característica de IA rápidamente pero otro equipo plantea preocupaciones regulatorias al respecto",
+    "why": "Reconciliar intereses funcionales competitivos día a día es un trabajo operativo e interfuncional — más estrecho en alcance que la revisión moral y societal especializada de casos de alto impacto, y no establece el apetito de riesgo empresarial de la manera que la cima de la organización lo hace."
+  },
+  "i-rl-10": {
+    "text": "Decide cuál de varias propuestas de IA en competencia recibe recursos primero, ponderando el nivel de riesgo contra la prioridad estratégica y los recursos disponibles",
+    "why": "Priorizar casos de uso contra riesgo y recursos es una decisión operativa permanente e interfuncional — distinta de la revisión moral única de una sola vez que un cuerpo especializado da a un único caso de alto impacto, y distinto del establecimiento de apetito de nivel superior que financia todo el programa."
+  },
+  "i-rl-11": {
+    "text": "Pregunta '¿deberíamos construir este sistema en absoluto?' en lugar de solo '¿podemos construirlo?' para un caso de uso propuesto",
+    "why": "Sopesar si un caso de uso es correcto, no solo permisible, es la revisión moral y societal especializada — más estrecha y profunda que la priorización operativa que un cuerpo interfuncional ejecuta en todas las propuestas."
+  },
+  "i-rl-12": {
+    "text": "Requiere auditorías de sesgo y medidas correctivas para una herramienta de contratación antes de ser aprobada, ponderando la equidad contra el daño a grupos particulares",
+    "why": "La revisión independiente del daño desproporcionado a una población protegida es la función de revisión ética especializada — distinta de la aprobación operativa más amplia del comité interfuncional."
+  },
+  "i-rl-13": {
+    "text": "Proporciona asesoramiento independiente sobre si una propuesta se ajusta a los valores declarados de la organización, incluso en casos donde ya es técnicamente legal",
+    "why": "Juzgar un área gris que supera la barra legal pero aún plantea preguntas de confianza pública es exactamente la función reflexiva para la que existe un cuerpo moral especializado, separado de la aprobación legal u operativa."
+  },
+  "i-rl-14": {
+    "text": "Establece el apetito de riesgo de IA de la organización y decide si la estrategia general favorece la velocidad de innovación o el cumplimiento estricto",
+    "why": "Establecer el tono y la tolerancia para el riesgo en toda la organización se sienta por encima de cualquier cuerpo de revisión único — los comités y juntas operan dentro del apetito que se establece aquí, no al revés."
+  },
+  "i-rl-15": {
+    "text": "Aprueba el marco de gobernanza general y asigna el presupuesto que lo financia",
+    "why": "Aprobar y financiar el marco en sí es un acto de legitimidad y recursos de la cima de la organización, distinto de la operación día a día de ese marco por los cuerpos que financia."
+  },
+  "i-rl-16": {
+    "text": "Confirma que la estrategia de IA se alinea con expectativas externas como estándares de la industria y requisitos regulatorios, no solo con objetivos comerciales internos",
+    "why": "Alinear la dirección general de la organización con el mundo exterior es un acto estratégico en la cima, distinto de la verificación de cumplimiento operativo que los equipos legal y de riesgo realizan bajo esa dirección."
+  },
+  "i-rl-17": {
+    "text": "Permanece completamente responsable del cumplimiento de un sistema con las regulaciones incluso después de que ha sido entregado a quien lo ejecuta ahora",
+    "why": "Documentadamente falso: el constructor original no permanece completamente responsable una vez que la operación pasa a otro rol. La responsabilidad se comparte y rastrea las responsabilidades reales de cada rol — la organización operativa asume la responsabilidad que viene con operar el sistema."
+  },
+  "i-rl-18": {
+    "text": "Se sienta dentro del ciclo de vida de desarrollo de IA como participante permanente, aprobando cada fase antes de que la siguiente pueda proceder",
+    "why": "Documentadamente falso: esto describe cuerpos de supervisión externa, y la supervisión/cumplimiento desde fuera no es lo mismo que ser un participante involucrado dentro de las etapas del ciclo de vida en sí, junto con arquitectos de datos, expertos socio-culturales y técnicos, y especialistas en legal/privacidad."
+  },
+  "roles-lifecycle": {
+    "prompt": "Asigna cada deber (o deber alegado) al rol al que realmente pertenece. Algunos no pertenecen a nadie."
+  }
+}

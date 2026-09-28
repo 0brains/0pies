@@ -1,0 +1,110 @@
+{
+ "i-uniq": {
+  "hint": "Spesifik olarak neyin başarısız olduğunu sor: bir insan göremez mi (Opacity), yoksa tam erişime bile yapı izleyemez mi (Complexity)? Sistem istenmeden hareket etti mi (Autonomy), yoksa bir kişi tarafından yapılan bir görev sisteme basitçe kayboldu mu (Automation)? Sistem daha fazla öğrendikten sonra değişti mi (Adaptability), yoksa kusur öğrenilen şeyde mi baked mıydı (Data dependency)? Aynı giriş farklı bir cevap mı verdi (Probabilistic outputs), yoksa küçük bir hata birinin yakalaması çok daha hızlı mı yayıldı (Speed & scale)?",
+  "note": "Bu sınavın kurallı sekiz öğeli rosterdir. Sekiz sabit bölge, çoğu altı kartlık anlaşmanın bir veya iki bölgesi boş bırakması anlamına gelir — beklenir, hata değil. Automation ve Autonomy, yavaşlamaya değer olan çifttir: Automation, kimin elleriyle işi yapması (görev değiştirme, aşırı güven, işgücü bozulması); Autonomy çağrıyı kimse yapar (insan onayı olmadan bağımsız kararlar).",
+  "zones[0].def": "İç mantık, bunu yapanlar tarafından bile görülmez veya açıklanamaz — görünürlük başarısızlığı. Complexity'den farklı: opasaktik gizli olanı hakkında, yapı ne kadar karmaşık olduğunu değil.",
+  "zones[1].def": "Sistem kendi başına karar verir ve hareket eder, bir insan bu belirli eylemi onaylamadan — bir bağımsız eylem riski. Automation'dan farklı: özerklik çağrıyı kim yapması, el işini kim yapması değil.",
+  "zones[2].def": "Sürekli öğrenme ve yeniden eğitim bir sistemi orijinal hedeflerinden uzaklaştırabilir veya daha sessiz bir şekilde zaten sahip olduğu yetenekleri kaybettirebilir.",
+  "zones[3].def": "AI, bir kişi tarafından yapılması için işlemleri ve kararları ele alır, hiçbir insan ekibi eşleştiremez — sistem'in kendi bağımsız yargısı ayrı riskleri artırır.",
+  "zones[4].def": "Performans, ardında sadece eğitim verisi kadar iyidir — boşluklara, kaymalara ve nelerin öğrendiğinden devralınan kusurlar için kırılgan.",
+  "zones[5].def": "AI insanlar gerçek zamanda değerlendirebilecek çok daha hızlı ve çok daha fazla örnek arasında hareket eder, bu nedenle küçük bir hata birinin fark etmesi çok önce çok büyük bir hale gelebilir.",
+  "zones[6].def": "Sonuçlar olası cevapların dağılımından değil sabit kurallardan çekilir, bu nedenle aynı giriş her zaman farklı bir çıkış verebilir.",
+  "zones[7].def": "O kadar birçok etkileşim katmanı ve parametresi vardır ki geliştiriciler bile karar yolunu izleyemezler — yapısal bir başarısızlık. Opacity'den farklı: karmaşıklık yapı ne kadar karmaşık, gizli olan şey değil."
+ },
+ "i-uq-01": {
+  "label": "Bir banka, neden düzenleyiciye sinir ağı bu kredi başvurusu başvurucusunu reddettiğini söyleyemez.",
+  "why": "Modelin iç mantığına görünürlük yok — Complexity'den farklı, bu yapı izlemek çok karmaşık, hiç görmek inability değil."
+ },
+ "i-uq-02": {
+  "label": "Kıdemli bir yönetici, depo sipariş modeli pahalı bir hata yaparsa, hiç kimsenin bundan sonra neden olduğunu açıklayamayacağını uyarır.",
+  "why": "Şikayet mantık gizli olduğu, modelin yapısal olarak karmaşık değil — bu bölgenin izlediği aynı kara kutu boşluğu, Complexity yapısal olanı değil."
+ },
+ "i-uq-03": {
+  "label": "İçerik moderatörü, asla yayınlanan kurallara göre bir yazı kaldırır ve gönderici hangi kuralın uygulandığını öğrenmenin bir yolu yoktur.",
+  "why": "Mevcut ancak etkilenen insanlara hiçbir zaman sunulmayan kurallar bu bölgenin tanımlı başarısızlığıdır — gizli akıl yürütme, yapı izlemek çok karmaşık değil."
+ },
+ "i-uq-04": {
+  "label": "Kendi kendine yönlendirilen bir araba yoğun şehir trafiğini gezinir ve her direksiyon, fren ve yönlendirme çağrısını yapması kendisi yapır, hiçbir kişi müdahale etmeye hazır değildir.",
+  "why": "Yüksek eylem bağımsızlığı yüksek potansiyel zarar ile bu bölgenin imza eşleşmesidir — Automation'dan farklı, bu çağrıyı kim yapması, eli kimin yapması değil."
+ },
+ "i-uq-05": {
+  "label": "Alım satım botu milisaniye cinsinden hisse satın ve satar; hiçbir kişi herhangi bir bireysel ticareti yürütülmeden önce onaylamaz.",
+  "why": "Bağımsız eylem — insan onayı beklemeden karar ve uygulama — bu bölgenin izlediği şeydir, ticaretin çok hızlı olup olmadığına bakılmaksızın. Automation'dan farklı, bir kişi ticareti elle yerleştirmiş mi bile, her birini imzalamışmı."
+ },
+ "i-uq-06": {
+  "label": "İşe alım aracı özgeçmişleri tarar ve adayları görüşmeye veya reddetmeye taşır, bir işe alımı hiçbir zaman çağrıyı gözden geçirmez.",
+  "why": "Endişe insan onayı olmadan bir karar çıktı — kontrol ve sorumluluk boşluğu, kişinin tarafından yapılması için görevi ortadan kaldırma (bu Automation tarafı)."
+ },
+ "i-uq-07": {
+  "label": "Öneri sistemi yeni ürün kataloğunda yeniden eğitildikten sonra, sahip olması gereken becerileri sessizce kaybeder, yinelenen listeleri işaretlemek gibi.",
+  "why": "Bu felaket unutması — sistem her yeniden öğrenildiğinde orijinal yeteneklerini sürükleyen risk çarpanı sürümüdür; gerçek risk ancak asla kendi bölgesi."
+ },
+ "i-uq-08": {
+  "label": "Bir bankanın dolandırıcılık tespit sistemi kendisini yakın işlemler üzerinde yeniden eğitir ve meşru satın almalarının büyük numaralarını engellemeye başlar.",
+  "why": "Yeniden eğitimden sonra orijinal hedeften kayma — yönetişim yanıtı izleme, güncellemelerin dağıtım öncesi testi ve sapma izleme, bir kez başlatma incelemesi değil."
+ },
+ "i-uq-09": {
+  "label": "Başlatmadan altı ay sonra, doz önerisi aracının önerileri sessiz bir şekilde değişti çünkü etiketleme hataları içeren hastane verilerinde yeniden eğitildi.",
+  "why": "Yeniden eğitim veya yeni veri maruziyetinden sonra davranış değişmesi bu bölgenin işareti; düzeltme sürekli izleme, sapma algılama ve güncellenmiş bir model canlıya gitmeden önce onay kapılarıdır."
+ },
+ "i-uq-10": {
+  "label": "Çağrı merkezinin bilet önceliği, daha önce bir kişi tarafından her isteği okumuş, artık baştan sona sistem tarafından hiçbir kimsenin kuyrukta dokunmadan çözülür.",
+  "why": "Bu işçi değişim ekseni — bir kişi tarafından yapılan görev artık sistem tarafından hacim olarak yürütülür. Autonomy'den farklı, çağrıyı kim yapması, eli kimin yapması değil."
+ },
+ "i-uq-11": {
+  "label": "Müşteri hizmet aracının geniş çaplı müşteri hizmet merkezi çoğu personelini kaldırır, yerel iş pazarını rahatsız eder.",
+  "why": "İnsan işçiliğini değiştirmekten işçi ve ekonomik bozulma — bu bölgenin toplumsal maliyeti, Autonomy'nin kontrol ve sorumluluk çercevesi farklı."
+ },
+ "i-uq-12": {
+  "label": "Alacak sistemi doğru bir şekilde binlerce davayı sırada çözdükten sonra, ayarlayıcıları işaretlenmiş reddedişini çift kontrol etmeyi bırakır ve önerdiği neyi onaylama başlar.",
+  "why": "Sistem çıktısı aşırı güven — her şeyi onaylanacak değil crit inceleme — bu bölgenin izlenmesi için yönetişim risk budur; bu sistem kendi bağımsız karar vermesini değil kişi tepkisidir, Autonomy'nin riski."
+ },
+ "i-uq-13": {
+  "label": "Eğitim sırasında halk fikrini doğru tahmin eden bir duygu modeli, eğitim verilerinin asla yakalamadığı büyük bir olay meydana geldiğinde çılgınca hatalanır.",
+  "why": "Dünya eğitim verilerinden uzaklaştığında kırılganlık bu bölgenin temel başarısızlığıdır — model sadece öğrendiği kadar iyidir."
+ },
+ "i-uq-14": {
+  "label": "Cilt tipi yordayıcısı eğitim fotoğraflarında daha açık cilt tonlarından çoğunlukla öğrenir ve herkese başka yönergeler vermez.",
+  "why": "Model eğitim verilerinde temsil edilen popülasyon kadar performans gösterir — yapısal veya görünürlük sorunu değil öğrendiği boşluk."
+ },
+ "i-uq-15": {
+  "label": "Kredi puanlama modeli göçmen başvurucuları aynı finansal profillerden diğerlerine göre daha yüksek oranda ödünç vermek reddeder.",
+  "why": "Eğitim verisi tarihsel ayrımcılığı ileri taşıdı ve model bunu yeniden üretti — bu bölgenin en sistematik başarısızlık modu, çünkü modeli veriyi çözmeden düzeltme temel nedeni dokunmaz."
+ },
+ "i-uq-16": {
+  "label": "Bir ürün listesinde yanlış fiyatlandırma hatası milyonlarca sayfa arasında çoğalır herhangi bir insan fark etmez.",
+  "why": "Küçük hata, makine tempo ve hacim çarpılır, insan tarafından incelenme ve düzenleyici yanıt insanlar adım atabilir herhangi bir şey — bu bölgenin imza başarısızlığı."
+ },
+ "i-uq-17": {
+  "label": "Gözetleme kameraları tüm şehrin gerçek zamanlı video akışını işler anında, dakika başına binlerce 'olağan dışı etkinliği' işaretler.",
+  "why": "İnsan gözlemci ile devam edemek hacim ve tempo bu bölgenin riskini farklı kılmaları — sorun sistem sadece kötü mantıklı ilişkisizdir."
+ },
+ "i-uq-18": {
+  "label": "Hastane hastası kötüleşme aracı her hastane boyunca sürekli yüksek hacim tahminleri çalıştırır ve tek yanlış kalibrasyonu saatler içinde sistem genelinde alarm fırtınasına dönüşür.",
+  "why": "Hızlı yüksek hacim çıkış küçük yanlış kalibrasyonu personel yakalaması çok daha hızlı sistem genelinde soruna dönüştürür — hacim ilişkisiz mantıktır."
+ },
+ "i-uq-19": {
+  "label": "Aynı istem ardışık günlerde farklı yatırım tavsiyesi alır, başka hiçbir şey istekte değişmez.",
+  "why": "Olası cevapların ağırlıklı yayılması yerine çıktı örneklenmiş özel bir sonuç için kesin açıklama vermek karmaşık hale gelir — ancak bu denetim imkansız, kaydedilmiş yanlış cevap demek değil."
+ },
+ "i-uq-20": {
+  "label": "Kasa sayfasında bir sistem her zaman aynı siparişin aynı satış vergisini hesaplar; ikinci sistem aynı sayfada sayfayı yükledikçe hafifçe farklı ürünler önerir.",
+  "why": "Vergi motoru belirlenimlidir — her zaman aynı giriş için aynı çıkış — öneri yapıcı ağırlıklı çıkış dağılımından her seferinde çeker; sadece ikinci davranış bu bölgeye aittir."
+ },
+ "i-uq-21": {
+  "label": "Bir chatbot aynı tatlı sorusunu üç ayrı kez soruya üç farklı yanıt verir, her biri uygun seçeneklerin ağırlıklı listesinden çekilir.",
+  "why": "Ağırlıklı cevap yayılması yerine bir katı yolu yerine örnekleme tam olarak bu bölge yönetir — düzeltme güven kalibrasyonu ve beklenti ayarlama, herhangi bir cevap sabit gerçek olarak muamele değil."
+ },
+ "i-uq-22": {
+  "label": "Gözlemciler artık modelin milyonlarca etkileşim parametresi arasında bir belirli karar gerçekten çalıştırıldığını izleyemeyeceğini kabul eder.",
+  "why": "Bu iç yapı — izlemek çok katman ve parametre — görünürlük açıdan gizlenen mi hakkında değil; bu Opacity ile sınırıdır, yapısal bir sorun, görünürlük değil."
+ },
+ "i-uq-23": {
+  "label": "Sözleşme analiz modeli aynı anda bir düzine yetki genelinde farklı yasal dil ve gereklilikleri ağırlandırması gerekir ve hiçbir tek gözlemci mantıği tüm tututamaz.",
+  "why": "Yapısal karmaşıklık — çok fazla izlemek etkinlikle faktörler — bu bölgeyi tanımlar, sadece akıl yürütme göstermek reddeder modelden farklı."
+ },
+ "i-uq-24": {
+  "label": "Teslimat yönlendirme modelinin optimizasyon mantığı o kadar karmaşık hale geldi ki mühendisler neden bir rota başka seçti sorun gideremez.",
+  "why": "Yapanlar tarafından bile gözlemcileri savuşturan karmaşıklık — bu bölgenin yapısal başarısızlığı izler, Opacity's görünürlük başarısızlığı ikizi, hiçbir zaman karıştırılmamak için açık olarak belirtilir."
+ }
+}

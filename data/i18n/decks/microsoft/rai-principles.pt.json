@@ -1,0 +1,132 @@
+{
+  "rai-001": {
+    "label": "Um modelo de aprovação de empréstimos rejeita muito mais candidatos de um bairro específico",
+    "why": "Resultados enviesados entre grupos demográficos é o cenário canónico de equidade — mitigado com avaliações de equidade e dados de treino equilibrados e representativos."
+  },
+  "rai-002": {
+    "label": "Um chatbot deve recusar conteúdo prejudicial e manter-se estável quando os utilizadores enviam prompts arriscados",
+    "why": "Comportamento consistente e testado, com redução de saídas inseguras sob entrada adversarial, é fiabilidade e segurança; filtros de conteúdo e avaliação de modelos são as suas alavancas Azure."
+  },
+  "rai-003": {
+    "label": "Fornecer legendas para áudio e suporte multilingue para que todos possam usar o assistente",
+    "why": "Ser utilizável e acessível para todas as pessoas através de múltiplos métodos de interação é inclusão — a armadilha do exame, 'exigir um método de interação para todos os utilizadores', é o seu oposto."
+  },
+  "rai-004": {
+    "label": "Manter um registo revisto do que a IA fez e quem aprovou as suas decisões",
+    "why": "Supervisão humana, governação e propriedade clara dos resultados — registos de auditoria e monitorização de abuso — é responsabilidade, não transparência (que é divulgação)."
+  },
+  "rai-005": {
+    "label": "Cartões de modelo publicados para cada modelo implementado, declarando capacidades e limitações",
+    "why": "Comunicar o que um sistema pode E NÃO PODE fazer é transparência; cartões de modelo são o recurso Azure que se mapeia a ela. Ocultar limitações viola o princípio."
+  },
+  "rai-006": {
+    "label": "Identidades geridas e pontos de terminação privados para que o PII do cliente nunca vaze nas respostas ou registos",
+    "why": "Proteção de dados, governação de PII e controlo de acesso mapeiam-se para privacidade e segurança — identidades geridas e pontos de terminação privados são as funcionalidades Azure mapeadas."
+  },
+  "rai-007": {
+    "label": "Um modelo de recrutamento classifica consistentemente candidatos de um grupo etário mais baixo do que outros, mesmo quando as suas qualificações são comparáveis",
+    "why": "Classificação desigual por um atributo protegido apesar de qualificações iguais é um problema de resultado diferencial, não de acesso — isso torna-o equidade, não inclusão."
+  },
+  "rai-008": {
+    "label": "Um modelo de reconhecimento facial treinado num conjunto com muito menos imagens de um grupo étnico produz uma taxa de erro muito maior para esse grupo",
+    "why": "Subrepresentação nos dados de treino que causa uma lacuna de precisão sistemática entre grupos é um problema de equidade — nenhum dado é exposto, por isso não é privacidade e segurança."
+  },
+  "rai-009": {
+    "label": "Uma ferramenta de contratação classifica candidatos de certas universidades mais baixo independentemente das suas qualificações reais, desfavorecendo sistematicamente um grupo de candidatos",
+    "why": "Uma variável de substituição (universidade) que produz uma desvantagem consistente para um grupo de candidatos é equidade, mesmo que nenhum atributo demográfico seja usado diretamente."
+  },
+  "rai-010": {
+    "label": "Comparar a taxa de erro e taxa de aprovação do modelo lado a lado entre grupos demográficos antes de ser lançado",
+    "why": "Avaliações de equidade são a alavanca Azure para equidade — distinto de filtros de conteúdo (fiabilidade e segurança) ou registos de auditoria (responsabilidade)."
+  },
+  "rai-011": {
+    "label": "Um pipeline de moderação por vezes perde conteúdo prejudicial e ocasionalmente bloqueia conteúdo que é realmente seguro",
+    "why": "Qualidade de detecção inconsistente sob condições operacionais normais é um problema de desempenho, não de exposição de dados ou divulgação — isso é fiabilidade e segurança."
+  },
+  "rai-012": {
+    "label": "Uma ferramenta de IA que resume notas médicas para clínicos deve comportar-se previsivelmente mesmo em entrada incomum ou casos extremos, já que decisões clínicas dependem dela",
+    "why": "Comportamento previsível de alto risco sob entrada inesperada é a preocupação de fiabilidade e segurança — o risco aqui é o sistema avariado, não quem o trata injustamente."
+  },
+  "rai-013": {
+    "label": "Uma equipa testa como um sistema de IA se comporta em condições inesperadas ou adversariais antes de o lançar, verificando que se degrada com segurança em vez de falhar de forma imprevisível",
+    "why": "Testes pré-lançamento contra condições adversariais e casos extremos é a definição direta de fiabilidade e segurança, distinto da supervisão pós-hoc da responsabilidade."
+  },
+  "rai-014": {
+    "label": "Configurar filtros de conteúdo e executar avaliações automatizadas de equipa vermelha num modelo implementado para capturar saídas prejudiciais ou de baixa qualidade antes dos utilizadores reais as verem",
+    "why": "Filtros de conteúdo e avaliação automatizada são a alavanca Azure mapeada para fiabilidade e segurança, não responsabilidade — responsabilidade é sobre quem aprova, não o que o modelo produz."
+  },
+  "rai-015": {
+    "label": "Um chatbot de atendimento ao cliente pode receber números de conta e outros dados pessoais digitados diretamente nas sugestões do utilizador",
+    "why": "Dados pessoais fluindo através de prompts é um risco de exposição de dados, mitigado por redação e controlo de acesso — a preocupação definidora de privacidade e segurança."
+  },
+  "rai-016": {
+    "label": "Uma assistência de IA processa documentos de RH de funcionários e a equipa deve reduzir o risco de esses dados vazarem para partes não autorizadas",
+    "why": "Restringir quem pode aceder a dados armazenados sensíveis é privacidade e segurança, não responsabilidade — responsabilidade é sobre propriedade de decisões, não controlo de acesso."
+  },
+  "rai-017": {
+    "label": "Uma escola planeia lançar um tutor de IA que processa conversas privadas de alunos e deve rever como esse dados são armazenados e protegidos antes de um lançamento amplo",
+    "why": "Rever armazenamento e proteção de dados de conversas pessoais antes do lançamento é uma revisão de privacidade e segurança, distinta de uma revisão de transparência de capacidades divulgadas."
+  },
+  "rai-018": {
+    "label": "Uma aplicação de IA é configurada para recolher e reter apenas os campos de conversação específicos que realmente precisa, apagando o resto após uma janela de retenção fixa",
+    "why": "Minimização de dados e limites de retenção reduzem quanto dados pessoais existem para serem expostos em primeiro lugar — uma alavanca de privacidade e segurança distinta de mecanismos de controlo de acesso como identidades geridas."
+  },
+  "rai-019": {
+    "label": "Uma secretária de IA é construída para uma força de trabalho global e precisa funcionar bem para pessoas que falam idiomas diferentes e usam dispositivos diferentes",
+    "why": "Desenhar para uma gama de idiomas e dispositivos para que todos possam usar o sistema é inclusão — a preocupação é quem pode aceder ao sistema, não quem o marca diferentemente."
+  },
+  "rai-020": {
+    "label": "Um assistente de tradução assume que todos os utilizadores conseguem ouvir respostas de áudio claramente, ignorando pessoas com deficiências auditivas",
+    "why": "Uma lacuna de desenho acessível que exclui utilizadores com deficiência é inclusão, não equidade — equidade é sobre resultados de modelo diferencial entre grupos, não desenho utilizável."
+  },
+  "rai-021": {
+    "label": "Um quiosque de IA deve funcionar tão bem no chão de fábrica ruidoso como num escritório silencioso, já que alguns utilizadores não podem confiar apenas em entrada de voz em qualquer um",
+    "why": "Suportar ambientes físicos variados e necessidades de interação para que o quiosque permaneça utilizável para todos é inclusão."
+  },
+  "rai-022": {
+    "label": "Uma aplicação de IA ativada por voz é melhorada para funcionar melhor para pessoas com sotaques, capacidades físicas e necessidades de interação diferentes",
+    "why": "Alargar para quem o sistema serve bem, em sotaques e capacidades, é a definição direta de inclusão."
+  },
+  "rai-023": {
+    "label": "Os utilizadores são informados antecipadamente de que estão a conversar com um assistente de IA, não um humano, antes da conversa começar",
+    "why": "Divulgar que uma interação é com IA é o núcleo de transparência — é sobre o que os utilizadores são informados, não quem é responsável se algo corre mal (responsabilidade)."
+  },
+  "rai-024": {
+    "label": "Um resumo gerado por IA incorporado dentro de uma página de resultados de pesquisa carrega um rótulo visível sempre que aparece na página, não apenas numa pop-up única da primeira visita",
+    "why": "Rotulagem contextual contínua de conteúdo gerado por IA é um mecanismo diferente de um aviso antecipado único (rai-023) ou cartão de modelo escrito (rai-005) — o discriminador contra responsabilidade é que isto é sobre o que a página mostra, não quem possuir o resultado."
+  },
+  "rai-025": {
+    "label": "Um candidato a empréstimo que é recusado pede as razões específicas por trás dessa decisão, e o banco deve conseguir apontar os factores que impulsionaram esse resultado particular para eles",
+    "why": "Explicar uma decisão já tomada e individual para a pessoa que foi afetada é transparência — distinto de responsabilidade, que é sobre quem é responsável pelo processo de decisão, não sobre explicar um resultado específico à pessoa afetada."
+  },
+  "rai-026": {
+    "label": "Um assistente de IA generativa mostra os documentos fonte específicos nos quais se baseou para que o utilizador possa verificar a base da sua resposta antes de confiar nela",
+    "why": "Superfície as fontes de fundamentação por trás de uma resposta permite aos utilizadores verificá-la eles próprios — um ângulo de rastreabilidade distinto de divulgar capacidades/limitações gerais (rai-005) ou explicar uma decisão (rai-025)."
+  },
+  "rai-027": {
+    "label": "Um banco desenha a sua IA de recomendação de empréstimo para que um revisor humano, não o modelo em si, tome a decisão final em casos escalados",
+    "why": "Manter um humano nomeado como a autoridade final sobre decisões consequentes é responsabilidade — a resposta armadilha trata o sistema de IA em si como a autoridade final, o que responsabilidade explicitamente rejeita."
+  },
+  "rai-028": {
+    "label": "Mesmo que uma empresa use um serviço de IA construído por outro, a empresa permanece responsável por como essa solução é usada e governada dentro das suas operações",
+    "why": "Responsabilidade pela governação não se transfere apenas porque o modelo subjacente ou serviço é gerido por um fornecedor — essa propriedade não transferível é responsabilidade."
+  },
+  "rai-029": {
+    "label": "Uma equipa pergunta quem é responsável se o sistema de IA produzir um resultado prejudicial ou incorreto, e define um caminho de escalação antes do lançamento",
+    "why": "Atribuir responsabilidade e um caminho de escalação para quando as coisas correm mal é responsabilidade — é sobre propriedade de resultados, não sobre o que o sistema divulga (transparência)."
+  },
+  "rai-030": {
+    "label": "Antes de uma nova funcionalidade de IA poder ir ao vivo, um proprietário de risco nomeado deve aprová-la, e a funcionalidade é bloqueada do lançamento sem essa aprovação documentada",
+    "why": "Uma porta de aprovação pré-lançamento ligada a um proprietário nomeado é um ponto de controlo de governação em todo o sistema, distinto da sobreposição humana por caso de rai-027 de uma decisão individual e do ponto de responsabilidade do fornecedor de rai-028."
+  },
+  "rai-principles": {
+    "hint": "Arraste cada cartão para o princípio a que pertence. Pergunta-te o que realmente mudou: quem é tratado diferentemente (equidade), se o sistema se comporta e resiste ao stress (fiabilidade e segurança), se dados ou acesso são expostos (privacidade e segurança), quem pode usá-lo (inclusão), o que as pessoas são informadas sobre ele (transparência), ou quem responde por isso depois (responsabilidade).",
+    "note": "Vários cartões parecem que poderiam caber em duas zonas. O desempate é sempre o que a situação é realmente — resultado diferencial, comportamento do sistema, exposição de dados, usabilidade, divulgação, ou propriedade.",
+    "zones[0].def": "Os sistemas de IA devem tratar todas as pessoas justamente, evitando enviesamento e resultados desiguais entre grupos demográficos.",
+    "zones[1].def": "Os sistemas de IA devem funcionar consistentemente sob condições esperadas e adversariais e evitar causar dano não intencional.",
+    "zones[2].def": "Os sistemas de IA devem proteger dados pessoais e prompts/saídas do acesso não autorizado, recolha ou uso.",
+    "zones[3].def": "Os sistemas de IA devem capacitar e envolver todos, incluindo pessoas com capacidades, idiomas e necessidades diferentes.",
+    "zones[4].def": "Os sistemas de IA devem ser compreensíveis — as pessoas devem saber que estão a interagir com IA e conhecer as suas capacidades e limitações.",
+    "zones[5].def": "As pessoas que desenham e implementam sistemas de IA permanecem responsáveis por como esses sistemas são construídos, operados e monitorizados."
+  }
+}

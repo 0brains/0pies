@@ -1,0 +1,50 @@
+{
+  "genai-ops": {
+    "hint": "Trascina ogni situazione sulla risposta che richiede. Alcune risposte sul tabellone sono lì per tentarti."
+  },
+  "genai-ops-01": {
+    "label": "Le risposte si leggono bene ma includono affermazioni assenti dai passaggi di politica recuperati.",
+    "sub": "Affermazioni non supportate",
+    "why": "Innanzitutto determina se le affermazioni sono supportate, quindi stringe l'uso delle prove, il comportamento di rifiuto e la convalida delle citazioni. Compromesso: un modello più grande può migliorare la fluidità senza risolvere prove mancanti o ignorate."
+  },
+  "genai-ops-02": {
+    "label": "Il generatore di risposte non può usare il fatto corretto perché il passaggio pertinente è assente dal set recuperato.",
+    "sub": "Le prove corrette non appaiono mai",
+    "why": "Il richiamo del recupero isola se chunking, embeddings, filtri, riscrittura di query o numero di candidati perde prove necessarie. Compromesso: i cambiamenti di generazione non possono recuperare prove che non entrano mai nel contesto."
+  },
+  "genai-ops-03": {
+    "label": "Il passaggio pertinente è presente, ma è sepolto tra molti chunk distraenti.",
+    "sub": "Troppo contesto irrilevante",
+    "why": "Filtri migliori, recupero ibrido e reranking riducono il rumore preservando le migliori prove. Compromesso: aumentare il numero di candidati può migliorare il richiamo ma può peggiorare la precisione, la latenza e il costo del token."
+  },
+  "genai-ops-04": {
+    "label": "Un cambio di prompt ha migliorato gli esempi di test ma ha degradato diversi importanti flussi di lavoro dei clienti.",
+    "sub": "La qualità varia dopo il rilascio",
+    "why": "Un set di valutazione rappresentativo con versione rileva regressioni tra i casi d'uso prima del rilascio. Compromesso: la revisione umana rimane preziosa quando guidata da un rubrica e campionata in tutta la distribuzione reale."
+  },
+  "genai-ops-05": {
+    "label": "Un giudice LLM punteggia coerentemente risposte più lunghe più in alto anche quando le risposte concise sono corrette.",
+    "sub": "L'evaluatore preferisce risposte verbose",
+    "why": "I giudici LLM possono avere pregiudizi di posizione, verbosità e auto-preferenza e devono essere calibrati con giudizi umani. Compromesso: il giudizio automatizzato rimane utile per la scala dopo che il suo rubrica e il bias sono convalidati."
+  },
+  "genai-ops-06": {
+    "label": "L'utilizzo è costante, ma la lunghezza media del contesto di input e dell'output si è triplicata.",
+    "sub": "Picco di costo interattivo",
+    "why": "La telemetria del token espone il driver di costo diretto; recupera meno rumore, riassumi la storia, cache il contesto stabile e limita l'output. Compromesso: il throughput fornito aiuta l'utilizzo prevedibile elevato, non la crescita wasteful del prompt da sola."
+  },
+  "genai-ops-07": {
+    "label": "Molti utenti pongono domande semanticamente equivalenti su informazioni pubbliche invariate.",
+    "sub": "Risposte lente ma ripetute",
+    "why": "Una cache attentamente chiave può ridurre la latenza e la spesa dei token per richieste equivalenti quando la freschezza e i confini di accesso sono rispettati. Compromesso: non memorizzare risposte sensibili, personalizzate, rapidamente mutevoli o insufficientemente isolate."
+  },
+  "genai-ops-08": {
+    "label": "Un agente di supporto chiama la stessa API fallita finché il suo budget di esecuzione non si esaurisce.",
+    "sub": "L'agente ripete una chiamata di strumento",
+    "why": "I tentativi limitati, la gestione esplicita degli errori, l'idempotenza, l'osservabilità e l'escalation umana prevengo i loop fuggire. Compromesso: migliorare le descrizioni dello strumento aiuta la selezione ma non sostituisce i limiti di runtime e i controlli di guasto."
+  },
+  "genai-ops-10": {
+    "label": "Un modello di supporto medico è incerto e il costo di una raccomandazione sbagliata è grave.",
+    "sub": "Basso rischio, bassa fiducia",
+    "why": "Le soglie di confidenza, l'astensione, la visualizzazione delle prove e la revisione umana qualificata sono appropriate per l'incertezza consequenziale. Compromesso: la supervisione umana ha bisogno di responsabilità chiara, contesto utile e qualità di revisione misurata piuttosto che approvazione cerimoniale."
+  }
+}

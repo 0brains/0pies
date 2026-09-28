@@ -1,0 +1,74 @@
+{
+ "risk-treatment": {
+  "hint": "Arrastra cada decisión a la opción de tratamiento que representa. Pregunta qué pasó con el riesgo en sí, no cuánto trabajo costó la respuesta.",
+  "note": "El tratamiento responde 'qué vamos a hacer sobre este riesgo'. Es un eje diferente de la fortaleza del control, que responde 'cuán efectiva es la reducción'. Comprar seguros es una decisión de tratamiento fuerte y ningún control en absoluto.",
+  "zones[0].def": "No realizar, o dejar de realizar, la actividad que da lugar al riesgo. La exposición llega a cero porque la actividad llega a cero.",
+  "zones[1].def": "Mantener la actividad pero actuar sobre la probabilidad o el impacto. La mayoría de controles viven aquí, y el riesgo residual siempre permanece.",
+  "zones[2].def": "Mover la consecuencia financiera o legal a otra parte. El peligro está intacto; solo quién paga cambia.",
+  "zones[3].def": "Retener el riesgo sabiéndolo, al nivel de autoridad titulada para aceptarlo, y registrar la decisión."
+ },
+ "rt-01": {
+  "label": "Después de una evaluación de riesgos, la empresa cancela completamente su característica de reconocimiento de emociones planificada para monitoreo laboral.",
+  "why": "La actividad en sí se abandona, por lo que la exposición desaparece en lugar de ser gestionada. La evitación es el único tratamiento que elimina un riesgo en lugar de reducirlo."
+ },
+ "rt-02": {
+  "label": "Un modelo de proveedor requeriría procesar datos biométricos para los cuales la empresa no tiene base legal, por lo que la empresa se retira de la contratación.",
+  "why": "Declinar proceder es una decisión de tratamiento, no la ausencia de una. Usualmente es la respuesta correcta cuando el riesgo es inaceptable en cualquier nivel residual."
+ },
+ "rt-03": {
+  "label": "Un banco decide no desplegar un modelo de decisión automatizada en la única jurisdicción donde no podría cumplir el requisito de impugnabilidad.",
+  "why": "Acotar la actividad fuera de una jurisdicción elimina la exposición allí. La evitación parcial por alcance sigue siendo evitación."
+ },
+ "rt-04": {
+  "label": "Un equipo abandona una característica planeada que habría inferido estado de salud desde historial de compra, juzgando ninguna mitigación suficiente.",
+  "why": "Cuando ningún control lleva el riesgo residual dentro de la tolerancia, la evitación es la opción restante. La señal es que la actividad se detiene, no que se monitoriza más de cerca."
+ },
+ "rt-05": {
+  "label": "Se introducen umbrales de confianza para que casos inciertos se enruten a un revisor entrenado en lugar de ser auto-decididos.",
+  "why": "La actividad continúa con menor probabilidad de una decisión incorrecta sin revisar. El riesgo residual permanece — los revisores son falibles — que es la firma de reducción."
+ },
+ "rt-06": {
+  "label": "El corpus de entrenamiento se rebalancea y el modelo se re-evalúa por subgrupo antes del lanzamiento.",
+  "why": "Esto reduce la probabilidad de rendimiento dispare sin eliminarlo. Mejora medible con exposición residual es reducción, no evitación."
+ },
+ "rt-07": {
+  "label": "Se añaden límites de velocidad, filtros de salida y un interruptor de parada a un asistente orientado al cliente.",
+  "why": "Cada medida ataca la probabilidad o el impacto mientras el servicio sigue funcionando. Nota que el interruptor de parada reduce el impacto en lugar de la probabilidad — ambos cuentan."
+ },
+ "rt-08": {
+  "label": "Las tarjetas de modelo, resultados de evaluación y limitaciones conocidas se publican para que los implementadores puedan usar el sistema dentro de su envoltura probada.",
+  "why": "Reducir mal uso al informar al implementador es una reducción genuina, si débil. Su debilidad es una cuestión de fortaleza de control, no una de clasificación de tratamiento."
+ },
+ "rt-09": {
+  "label": "La empresa compra un seguro de responsabilidad civil de IA específico cubriendo reclamaciones derivadas de decisiones automatizadas.",
+  "why": "La consecuencia financiera se mueve al asegurador mientras el modelo se comporta exactamente igual. Los seguros nunca reducen la probabilidad de daño y no son un control."
+ },
+ "rt-10": {
+  "label": "Un contrato hace al proveedor del modelo responsable de los daños causados por defectos en el sistema suministrado.",
+  "why": "La indemnidad contractual reasigna coste entre partes. El individuo afectado no está mejor protegido, razón por la que los reguladores no lo tratan como mitigación."
+ },
+ "rt-11": {
+  "label": "Una actividad de procesamiento de alto riesgo se subcontrata a un proveedor especializado bajo un contrato que lo hace responsable de fallos de cumplimiento.",
+  "why": "La subcontratación desplaza consecuencia operativa y financiera, aunque raras veces responsabilidad regulatoria — una distinción que atrapa a la gente."
+ },
+ "rt-12": {
+  "label": "El implementador negocia una garantía e indemnidad acotada para reclamaciones de propiedad intelectual de terceros derivadas de salida generada.",
+  "why": "La exposición se valora y se desplaza en lugar de disminuirse. Un tope significa que la transferencia es parcial, que vale la pena registrar en el registro de riesgos."
+ },
+ "rt-13": {
+  "label": "Un pequeño riesgo residual de un error de formato de baja severidad se documenta, se firma por el propietario del producto, y se revisa anualmente.",
+  "why": "La retención informada, autorizada y registrada es aceptación. La aceptación es una decisión con un propietario y una fecha de revisión, no silencio."
+ },
+ "rt-14": {
+  "label": "El comité de riesgos registra que el riesgo residual del despliegue está dentro del apetito indicado y no se requiere acción adicional este ciclo.",
+  "why": "La retención explícita al nivel de autoridad titulada para retenerlo. Si nadie al nivel correcto dijo sí, el riesgo no está aceptado — simplemente está no gestionado."
+ },
+ "rt-15": {
+  "label": "Una limitación conocida con una solución alternativa documentada se programa para revisión en la siguiente actualización del modelo en lugar de arreglarse ahora.",
+  "why": "La retención encuadrada en tiempo con un punto de revisión es aceptación. La solución alternativa no lo hace reducción, porque el riesgo en sí no cambia entretanto."
+ },
+ "rt-16": {
+  "label": "El consejo anota que el coste de una mitigación adicional excede la pérdida esperada y dirige que el riesgo residual sea retenido y monitorizado.",
+  "why": "Una decisión de retención justificada por coste a nivel de consejo, con monitorización adjunta. La monitorización no es un control aquí — detecta, no previene."
+ }
+}

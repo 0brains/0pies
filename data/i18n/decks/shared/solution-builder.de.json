@@ -1,0 +1,145 @@
+{
+ "sol-01": {
+  "label": "Ein Supermarkt möchte verstehen, welche Produkte häufig zusammen gekauft werden.",
+  "sub": "Market Basket Analysis",
+  "why": "Assoziatives Lernen findet Objektkombinationen, die zusammen auftreten und misst ihre Unterstützung, Vertrauen und Lift. Platziere oder bewerbe assoziierte Produkte zusammen, um den Korb-Wert zu erhöhen."
+ },
+ "sol-02": {
+  "label": "Ein Abonnement-Unternehmen möchte Kunden identifizieren, die wahrscheinlich nächsten Monat kündigen.",
+  "sub": "Customer Churn",
+  "why": "Das Ziel ist eine gekennzeichnete Kategorie mit zwei möglichen Klassen: Churn oder Beibehaltung. Konzentriere Beibehaltungsangebote auf Kunden mit hoher Churn-Wahrscheinlichkeit."
+ },
+ "sol-03": {
+  "label": "Eine Immobilien-Plattform möchte den Verkaufspreis einer neuen Angebot schätzen.",
+  "sub": "House Price Estimation",
+  "why": "Regression lernt Beziehungen zwischen Eingabe-Features und einem numerischen Ziel. Stelle eine datengesteuerte Preisschätzung für jede Immobilie bereit."
+ },
+ "sol-04": {
+  "label": "Ein Einzelhändler möchte natürliche Kundengruppen ohne vordefinierte Etiketten entdecken.",
+  "sub": "Customer Segmentation",
+  "why": "Clustering ist unüberwachtes Lernen, das Datensätze nach Ähnlichkeit ohne gekennzeichnete Ergebnisse gruppiert. Erstelle maßgeschneiderte Kampagnen für unterschiedliche Verhaltenssegmente."
+ },
+ "sol-05": {
+  "label": "Eine Fabrik möchte ungewöhnliches Maschinenverhalten vor einem Ausfall identifizieren.",
+  "sub": "Equipment Failure Signals",
+  "why": "Anomalie-Erkennung modelliert normales Verhalten und markiert Beobachtungen, die davon abweichen. Untersuche abnormale Ausrüstung früh und reduziere ungeplante Ausfallzeiten."
+ },
+ "sol-06": {
+  "label": "Ein Distributor braucht wöchentliche Bedarfschätzungen für das nächste Quartal.",
+  "sub": "Demand Planning",
+  "why": "Die Prognose modelliert explizit Beobachtungen über Zeit bestellt, einschließlich Trend und Saisonalität. Plane Inventar und Besetzung um erwarteten Bedarf."
+ },
+ "sol-07": {
+  "label": "Eine Streaming-Plattform möchte jedem Nutzer Inhalte vorschlagen, die er wahrscheinlich genießen wird.",
+  "sub": "Personalized Media",
+  "why": "Empfehlungssysteme lernen Verwandtschaft aus Nutzer-, Objekt- und Interaktionsmustern. Stelle eine personalisierte Ranking-Liste vor, die Entdeckung verbessert."
+ },
+ "sol-08": {
+  "label": "Ein Produktteam möchte verfolgen, ob Kundenrezensionen positiv, neutral oder negativ sind.",
+  "sub": "Review Sentiment",
+  "why": "Text-Klassifizierung konvertiert Sprache in Features und prognostiziert ein vordefiniertes Etikett. Überwache Sentiment-Trends und leite negatives Feedback zur Aufmerksamkeit weiter."
+ },
+ "sol-09": {
+  "label": "Eine Produktionslinie muss entscheiden, ob jedes Komponentenbild akzeptabel oder fehlerhaft ist.",
+  "sub": "Visual Quality Control",
+  "why": "Bild-Klassifizierung prognostiziert eine Kategorie für ein ganzes Bild. Separiere automatisch wahrscheinliche Fehler zur Überprüfung."
+ },
+ "sol-10": {
+  "label": "Ein Fahrzeug-Assistenzsystem muss jeden Fußgänger finden, der in einem Kamerarahmen sichtbar ist.",
+  "sub": "Pedestrian Safety",
+  "why": "Objekt-Erkennung prognostiziert, welche Objekte vorhanden sind und wo jedes erscheint. Lokalisiere Fußgänger, damit nachgelagerte Sicherheitssysteme reagieren können."
+ },
+ "sol-11": {
+  "label": "Mitarbeiter brauchen Antworten verankert in häufig sich ändernden internen Richtlinien mit Quellen-Verweisen.",
+  "sub": "Current Policy Assistant",
+  "why": "RAG ruft relevanten externen Kontext zur Anfrage-Zeit ab und liefert ihn zu einem generierenden Modell. Antworte aus aktuellen Richtlinien mit nachverfolgbaren stützenden Quellen."
+ },
+ "sol-12": {
+  "label": "Ein Sprachmodell muss durchgehend Berichte in stabiler Spezialist-Format und Ton erzeugen.",
+  "sub": "Consistent Specialist Style",
+  "why": "Fein-Tuning aktualisiert Modellverhalten aus Beispielen und ist nützlich für stabilen Stil oder Task-Anpassung. Generiere Berichte, die durchgehend dem Spezialist-Muster folgen."
+ },
+ "sol-13": {
+  "label": "Ein allgemeines Sprachmodell muss Namen, Daten und Summen als strenges JSON-Objekt zurückgeben.",
+  "sub": "Structured Extraction",
+  "why": "Few-Shot-Prompts demonstrieren die erwartete Task und Format in Modell-Kontext. Produziere konsistent strukturierte Ausgabe mit minimalem Setup."
+ },
+ "sol-14": {
+  "label": "Ein Roboter muss effiziente Routen durch ein sich änderndes Lager lernen, indem er Aktionen versucht.",
+  "sub": "Warehouse Navigation",
+  "why": "Verstärkungs-Lernen verbessert Aktionswahlen durch Feedback ausgedrückt als Belohnungen und Strafen. Navigiere dynamisch und balance Geschwindigkeit und Sicherheit."
+ },
+ "sol-15": {
+  "label": "Ein Marketing-Team möchte neue Produktbilder aus geschriebenen kreative Briefen erstellen.",
+  "sub": "Campaign Artwork",
+  "why": "Diffusions-Modelle generieren Bilder, indem sie lernen ein graduelles Rausch-Prozess rückgängig zu machen, bedingt auf einem Prompt. Erstelle originale Kampagnen-Konzepte aus natürlichsprach Beschreibungen."
+ },
+ "sol-16": {
+  "label": "Eine öffentliche Leistung muss nur genehmigt werden, wenn ein fester Satz von Rechts-Bedingungen erfüllt ist.",
+  "sub": "Statutory Eligibility",
+  "why": "Eine feste Regel-Engine ist bevorzugt, wenn das erforderliche Ergebnis genau, erklärt und vollständig angegeben ist. Produziere konsistente Entscheidungen, die direkt auf Politik zurückgeführt werden können."
+ },
+ "sol-17": {
+  "label": "Ein Team hat einen historischen Datensatz und braucht, um ein Modell zu entwickeln ohne seine Leistung zu überstaaten.",
+  "sub": "Honest Model Evaluation",
+  "why": "Training-Daten lernen Parameter, Validierungs-Daten führen Modell und Hyperparameter-Wahlen, und unberührte Test-Daten schätzen finale Generalisierung. Vergleiche Modelle während Entwicklung während an ehrlicher Finale Bewertung."
+ },
+ "sol-18": {
+  "label": "Ein Help Desk möchte neue Tickets in Kategorien, die sein Supportteam definiert, kanalisieret.",
+  "sub": "Known Ticket Categories",
+  "why": "Überwachtes Lernen nutzt gekennzeichnete Beispiele zu lernen, wie Eingaben zu vordefinierten Antworten beziehen. Kanalisiere automatisch neue Tickets zu einer angemessenen Supportwarteschlange."
+ },
+ "sol-19": {
+  "label": "Ein Musik-Service möchte Hörer-Verhaltenstypen ohne die Gruppen im Voraus zu entscheiden entdecken.",
+  "sub": "Unknown Listening Patterns",
+  "why": "Unüberwachtes Lernen entdeckt Muster in Daten, die kein vordefiniertes Etikett oder numerisches Ziel haben. Enthülle nützliche Hörer-Segmente für Produkt-Forschung und Personalisierung."
+ },
+ "sol-20": {
+  "label": "Ein Team hat Milliarden von Sätzen, aber sehr wenig manuell gekennzeichnete Sprach-Daten.",
+  "sub": "Learning Language at Scale",
+  "why": "Selbst-überwachtes Lernen erzeugt Etiketten aus rohen Daten, wie etwa Maskierungs-Tokens und Training des Modells zu ihrer Rekonstruktion. Baue allgemeine Darstellungen, die später mit viel weniger gekennzeichnete Daten angepasst werden können."
+ },
+ "sol-21": {
+  "label": "Ein Sprachmodell ist fähig, aber erzeugt oft Antworten, die Leute als unhilfreichen oder schlecht ausgerichtet beurteilen.",
+  "sub": "Aligning an Assistant",
+  "why": "RLHF lernt ein Belohnungs-Modell aus menschlichen Präferenzen und optimiert dann Modellverhalten gegen diese Belohnung. Produziere Antworten, die menschliche Erwartungen und Anweisungen besser reflektieren."
+ },
+ "sol-22": {
+  "label": "Ein Modell erreicht 99% Trainings-Genauigkeit, aber nur 68% Validierungs-Genauigkeit.",
+  "sub": "Memorized Training Examples",
+  "why": "Das Vorspannung signalisiert Überanpassung und hohe Varianz; Komplexität begrenzen oder vor Memorisierung stoppen kann ungesehene Leistung verbessern. Tausche ein bisschen Trainings-Leistung für stärkere Validierungs- und Produktions-Leistung."
+ },
+ "sol-23": {
+  "label": "Ein kleines Modell erbringt schlechte Leistung sowohl auf seinen Trainings-Daten als auch auf Validierungs-Daten.",
+  "sub": "Model Too Simple",
+  "why": "Schlechte Leistung selbst auf Trainings-Daten zeigt Unteranpassung und hohe Voreingenommenheit; reicher Features, größere Kapazität oder längere Trainierung können helfen. Lerne ein Modell komplex genug um das nützliche Signal darzustellen."
+ },
+ "sol-24": {
+  "label": "Ein Team muss Learning-Rate, Batch-Größe, Baum-Tiefe und Regularisierungs-Stärke auswählen.",
+  "sub": "Choosing Training Settings",
+  "why": "Hyperparameter werden außerhalb des Parameter-Lernens ausgewählt und sollten mit Validierungs-Daten oder Kreuzvalidierung verglichen werden. Finde eine starke Konfiguration während an Test-Set für finale Bewertung bewahrt bleibt."
+ },
+ "sol-25": {
+  "label": "Ein Kreditgeber berechnet Risiko für fünf Millionen bestehende Konten jede Nacht neu.",
+  "sub": "Overnight Portfolio Scoring",
+  "why": "Batch-Inference bewertet gespeicherte Datensätze zusammen und ist angemessen, wenn Ergebnisse auf einem Zeitplan erzeugt werden können. Generiere aktualisierte Portfolio-Risiko-Werte vor dem nächsten Geschäftstag."
+ },
+ "sol-26": {
+  "label": "Eine Zahlungs-Plattform muss jede Transaktion beurteilen während der Kunde an der Kasse wartet.",
+  "sub": "Payment Authorization",
+  "why": "Echtzeit-Inference serviert individuelle Anfragen über einen beständigen Endpunkt, wenn niedrige Latenz wesentlich ist. Genehmige, lehne ab oder überprüfe die Transaktion ohne Kasse zu unterbrechen."
+ },
+ "sol-27": {
+  "label": "Ein Screening-Modell unterstützt Kliniker, wo fehlend echte Fälle viel schädlicher ist als ein falscher Alarm überprüfen.",
+  "sub": "Rare Disease Screening",
+  "why": "Abruf misst den Bruchteil des echte Positive gefunden; Genauigkeit kann auf unausgeglichenen Daten hoch aussehen während seltene Fälle übersehen werden. Wähle einen Schwellenwert und Modell, das gefährliche false Negative minimiert."
+ },
+ "sol-28": {
+  "label": "Ein Manager möchte Gesamtverkauf nach Region und die Prozentänderung vom letzten Monat.",
+  "sub": "Monthly Sales Summary",
+  "why": "Gruppierung, Summierung und Prozentänderung-Berechnung sind bestimmende Analytik-Tasks mit kein Lernen oder Prognostizierungs-Anforderung. Produziere einen genaue, prüfbaren Bericht mit einer Datenbankabfrage oder Business-Intelligence-Berechnung."
+ },
+ "solution-builder": {
+  "hint": "Lese die Daten und die gewünschte Ausgabe, dann ziehe jedes Szenario auf seine Technik."
+ }
+}

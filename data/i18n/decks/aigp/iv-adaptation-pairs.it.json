@@ -1,0 +1,62 @@
+{
+  "iv-ap-01": {
+    "a.text": "La conoscenza proprietaria dell'organizzazione viene addestrata direttamente nei pesi del modello attraverso round di addestramento aggiuntivi, diventando una parte permanente di ciò che il modello \"sa\".",
+    "a.why": "Cuocere i dati di dominio nei pesi significa che il modello eredita qualsiasi rischio di memorizzazione o perdita che quei dati comportano — un generatore di dati sintetici adattato in questo modo su record di produzione può comunque perdere tracce degli originali anche dopo l'anonimizzazione, e usare dati specifici degli studenti nello stesso modo crea la sua stessa esposizione di violazione.",
+    "b.text": "La conoscenza proprietaria dell'organizzazione rimane in un negozio esterno, mantenuto separatamente, e viene estratta solo nel momento in cui ogni domanda viene posta.",
+    "b.why": "Niente di questa conoscenza viene appreso dal modello stesso — viene recuperato fresco per query, che è esattamente perché può riflettere le linee guida di questo mese senza un singolo run di riaddestramento. La scelta di adattamento fatta qui è quello che determina il carico di garanzia che il team finisce per possedere."
+  },
+  "iv-ap-02": {
+    "a.text": "Recupera i documenti politici attuali per fondare una risposta singola, che un essere umano poi legge e agisce.",
+    "a.why": "Il lavoro del sistema si ferma a produrre una risposta ben fondata; ogni azione consequenziale a valle è ancora quella di un essere umano.",
+    "b.text": "Pianifica un'attività multi-step da solo ed esegue azioni attraverso strumenti di prenotazione e pagamento, con revisione umana minima ad ogni step.",
+    "b.why": "L'autonomia dell'azione, non solo l'autonomia della risposta, è la nuova superficie di governance qui: quando uno sviluppatore permette a un sistema di agire piuttosto che semplicemente informare, la responsabilità diretta per il comportamento dell'agente dannoso o ingannevole ricade sullo sviluppatore — questo richiede scoping dell'azione, soglie human-in-the-loop, e log completi delle azioni, nessuno dei quali un assistente puramente basato su retrieval ha bisogno."
+  },
+  "iv-ap-03": {
+    "a.text": "L'organizzazione può leggere, modificare e ridistribuire i pesi e il codice del modello stesso, ed eseguirlo interamente su infrastruttura che controlla.",
+    "a.why": "L'ispezionabilità è l'intero scambio: puoi controllare l'algoritmo da solo e evitare di dipendere dalla roadmap di un fornitore, ma erediti anche il carico interno di controllare le licenze, la provenienza dei dati di addestramento e i tuoi stessi test di sicurezza.",
+    "b.text": "L'organizzazione può solo chiamare il modello attraverso un'API e non vede mai i pesi, ma il fornitore lo sostiene con contratti di supporto, risposta ai incident e indennizzi.",
+    "b.why": "Scambi i diritti di ispezione per garanzie sostenute da contratto — e il costo strategico di questo scambio è registrato come il rischio principale di questo percorso: una volta che i flussi di lavoro sono costruiti intorno all'API di un fornitore, passare a un altro in seguito diventa costoso."
+  },
+  "iv-ap-04": {
+    "a.text": "Il modello base viene compresso e rimodellato — parametri potati, precisione ridotta, un adattatore leggero stratificato — per tagliare costo e latenza per uso edge o ad alto volume.",
+    "a.why": "Ridurre o rimodellare l'artefatto in questo modo può silenziosamente spostare i suoi confini decisionali e ridurre l'interpretabilità, quindi accuratezza, equità e robustezza devono tutte essere controllate di nuovo dopo ogni tale cambiamento, non assunte per portare avanti inalterate.",
+    "b.text": "Il modello del fornitore viene eseguito non modificato, esattamente come spedito, sostenuto solo dalla revisione umana e da altri controlli stratificati intorno ad esso.",
+    "b.why": "Niente dell'artefatto stesso è cambiato, quindi la governance si affida alla documentazione stessa del fornitore e ai controlli compensanti come la revisione umana piuttosto che sulla re-validazione degli interni del modello."
+  },
+  "iv-ap-05": {
+    "a.text": "Un sistema di scoring del credito predice o classifica da input strutturati; i suoi rischi sono bias contro certi gruppi e accuratezza che silenziosamente si degrada mentre i dati sottostanti si spostano.",
+    "a.why": "Predire o classificare una categoria nota da caratteristiche strutturate è la modalità di fallimento di questo profilo — rischi di bias e drift familiari che i test di equità e il monitoraggio sono costruiti per intercettare.",
+    "b.text": "Un assistente di redazione produce nuovo testo, immagini o codice da un prompt; i suoi rischi sono allucinazione, esposizione di copyright e output plausibilmente sbagliato.",
+    "b.why": "Creare contenuto che non esisteva prima apre una superficie di rischio completamente diversa — allucinazione e provenienza, non il profilo di bias e drift che governa un sistema di sola previsione."
+  },
+  "iv-ap-06": {
+    "a.text": "Un modello di fornitore viene utilizzato esattamente come consegnato; il lavoro del team è convalidarlo rispetto ai suoi standard di prestazione e equità e documentare eventuali lacune.",
+    "a.why": "La governance qui si affida quasi interamente alla trasparenza del fornitore più controlli compensanti — il team non tocca mai gli interni del modello, quindi i suoi obblighi si fermano alla validazione e alla documentazione.",
+    "b.text": "Un modello generico viene riaddestrato sui dati etichettati dell'organizzazione finché non riproduce un comportamento specifico e desiderato.",
+    "b.why": "Nel momento in cui un'organizzazione riaddestra il modello, la governance tratta il risultato come un nuovo sistema: i test di equità e robustezza devono essere ripetuti da zero, e — rispetto all'utilizzo del modello di un fornitore così come consegnato — l'organizzazione ora porta una maggiore responsabilità legale propria."
+  },
+  "iv-ap-07": {
+    "a.text": "Un chatbot di supporto accetta domande scritte e produce solo risposte scritte, senza nessun altro canale di input su cui ragionare.",
+    "a.why": "Solo testo in, solo testo fuori — le preoccupazioni di governance qui sono allucinazione, formulazione distorta e attacchi in stile jailbreak di prompt, nessuno dei quali coinvolge una seconda modalità.",
+    "b.text": "Uno strumento di reclami pesa una fotografia di danno insieme alle note scritte dell'aggiustatore prima di produrre un singolo giudizio combinato.",
+    "b.why": "Combinare canali aggiunge un rischio che un sistema solo testo non affronta mai: false correlazioni tra un'immagine e il testo accanto ad essa, e la necessità di mostrare quale input ha effettivamente guidato l'output."
+  },
+  "iv-ap-08": {
+    "a.text": "Un classificatore ristretto gestisce un compito su un budget di calcolo stretto, riaddestra rapidamente, e rintraccia i suoi output agli input con poco sforzo.",
+    "a.why": "Un sistema compatto e ristretto è economico da ri-testare e facile da spiegare — il costo è che può avere prestazioni inferiori una volta che l'ambiente diventa più variabile di quello per cui è stato costruito.",
+    "b.text": "Un ampio sistema di base generalizza tra molti compiti per cui non è stato specificamente addestrato, al costo di una governance di calcolo più pesante e di una superficie di attacco più grande.",
+    "b.why": "L'ampiezza acquistata attraverso la scala significa che il sistema può affrontare domini sconosciuti zero-shot, ma ha anche bisogno di quote di calcolo, red-teaming e monitoraggio del drift che un sistema ristretto non ha."
+  },
+  "iv-ap-09": {
+    "a.text": "Ogni fonte su cui il modello ha disegnato durante una sessione viene registrata per audit, e qualsiasi dato personale che passa attraverso il corpus collegato deve essere redatto prima che sia mai mostrato al modello.",
+    "a.why": "La registrazione dell'audit e la redazione del PII su un corpus esterno sono obblighi di governance che semplicemente non esistono per un modello senza pipeline di dati live collegata — il carico di garanzia di questo percorso vive negli impianti idraulici, non nei pesi.",
+    "b.text": "Il modello del fornitore viene utilizzato esattamente come consegnato, e il percorso più veloce verso un pilot funzionante viene scelto proprio perché non è necessario costruire prima nessun nuovo dato di addestramento o pipeline.",
+    "b.why": "La velocità è l'intero appello qui — nessun riaddestramento, nessun nuovo impianto idraulico di dati — ma la governance tratta quella velocità come un debito: il modello è presunto ad alto rischio fino a quando non viene convalidato rispetto ai propri standard di prestazione e equità dell'organizzazione, poiché nulla in esso è stato costruito tenendo presente questa distribuzione."
+  },
+  "iv-ap-10": {
+    "a.text": "Lo stesso modello base esce più piccolo e più economico da eseguire dopo la compressione, senza un singolo nuovo fatto aggiunto ad esso.",
+    "a.why": "Questo percorso mira all'impronta, non alla conoscenza — ma ridurre o rimodellare l'artefatto può comunque spostare i suoi confini decisionali, quindi accuratezza e equità devono essere controllate di nuovo anche se nulla di \"nuovo\" è stato insegnato.",
+    "b.text": "Lo stesso modello base esce della stessa dimensione, ma ora riproduce in modo affidabile un comportamento specialista che non ha mai avuto accesso prima, appreso da esempi curati.",
+    "b.why": "Questo percorso mira al comportamento e alla conoscenza, non all'impronta — e poiché quel nuovo comportamento è stato appreso dai dati dell'organizzazione, la governance ora tratta il risultato come un nuovo sistema che richiede i suoi stessi test, non una copia ridimensionata di quello vecchio."
+  }
+}

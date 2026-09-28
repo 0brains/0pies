@@ -1,0 +1,53 @@
+{
+  "rag": {
+    "hint": "Posizionalo nel percorso di recupero: preparare la conoscenza, trovare candidati, migliorare la loro rilevanza o garantire che la risposta generata rimanga supportata e tracciabile."
+  },
+  "rag-01": {
+    "label": "Un vettore numerico che rappresenta caratteristiche semantiche in modo che i contenuti correlati possono essere confrontati matematicamente.",
+    "why": "Un vettore numerico che rappresenta caratteristiche semantiche in modo che i contenuti correlati possono essere confrontati matematicamente."
+  },
+  "rag-02": {
+    "label": "Divide i documenti di origine in passaggi recuperabili dimensionati per preservare il significato senza sprecare contesto.",
+    "why": "Divide i documenti di origine in passaggi recuperabili dimensionati per preservare il significato senza sprecare contesto."
+  },
+  "rag-03": {
+    "label": "Archivia gli embeddings e supporta la ricerca di somiglianza tra i vicini più prossimi efficientemente.",
+    "why": "Archivia gli embeddings e supporta la ricerca di somiglianza tra i vicini più prossimi efficientemente."
+  },
+  "rag-04": {
+    "label": "Recupera il contenuto per significato piuttosto che richiedere una sovrapposizione esatta delle parole chiave.",
+    "why": "Recupera il contenuto per significato piuttosto che richiedere una sovrapposizione esatta delle parole chiave."
+  },
+  "rag-05": {
+    "label": "Recupera il contenuto utilizzando corrispondenze di termini lessicali e rimane utile per nomi, codici e frasi esatte.",
+    "why": "Recupera il contenuto utilizzando corrispondenze di termini lessicali e rimane utile per nomi, codici e frasi esatte."
+  },
+  "rag-06": {
+    "label": "Combina il recupero semantico e per parole chiave per beneficiare del significato e della corrispondenza esatta dei termini.",
+    "why": "Combina il recupero semantico e per parole chiave per beneficiare del significato e della corrispondenza esatta dei termini."
+  },
+  "rag-07": {
+    "label": "Limita il recupero per attributi come tenant, data, tipo di documento o livello di accesso.",
+    "why": "Limita il recupero per attributi come tenant, data, tipo di documento o livello di accesso."
+  },
+  "rag-08": {
+    "label": "Ri-punteggia i candidati recuperati per posizionare i passaggi più pertinenti alla query completa per primi.",
+    "why": "Ri-punteggia i candidati recuperati per posizionare i passaggi più pertinenti alla query completa per primi."
+  },
+  "rag-09": {
+    "label": "Vincola la generazione alle prove fornite in modo che le affermazioni possano essere supportate e tracciate.",
+    "why": "Vincola la generazione alle prove fornite in modo che le affermazioni possano essere supportate e tracciate."
+  },
+  "rag-10": {
+    "label": "Collega un'affermazione di risposta al passaggio di origine che la supporta.",
+    "why": "Collega un'affermazione di risposta al passaggio di origine che la supporta."
+  },
+  "rag-11": {
+    "label": "Indica se lo stadio di recupero trova le prove necessarie per rispondere a una domanda.",
+    "why": "Se 100 domande richiedono un passaggio di prova noto e il recuperatore lo restituisce per 85, il richiamo del recupero è dell'85%. Il basso richiamo del recupero indica il chunking, gli embeddings, i filtri, la riscrittura della query o problemi di numero di candidati che la generazione non può riparare."
+  },
+  "rag-12": {
+    "label": "Indica quanto del contesto recuperato è rilevante piuttosto che rumore distraente.",
+    "why": "Indica quanto del contesto recuperato è rilevante piuttosto che rumore distraente."
+  }
+}

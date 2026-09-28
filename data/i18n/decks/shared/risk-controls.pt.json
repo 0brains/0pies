@@ -1,0 +1,91 @@
+{
+  "rc-01": {
+    "label": "O campo texto-livre que permitia utilizadores submeter prompts arbitrários para o modelo subjacente é removido; apenas um conjunto fixo de acções permanece.",
+    "why": "A superfície de injecção está desaparecida, não guardada. Eliminação é reconhecível porque a mitigação remove uma capacidade em vez de constrair o seu uso."
+  },
+  "rc-02": {
+    "label": "A funcionalidade que inferiu atributos demográficos a partir de fotos de utilizador é deletada do produto.",
+    "why": "Nenhuma inferência significa nenhum erro de inferência, nenhuma precisão disparatada e nenhuma questão de base legal. O perigo não é gerenciado; deixou de existir."
+  },
+  "rc-03": {
+    "label": "A capacidade de um chatbot para executar mudanças de conta é retirada inteiramente; agora pode apenas ler e explicar.",
+    "why": "Remover a capacidade de escrita elimina a classe inteira de danos de acção não autorizada. Tudo que se segue torna-se desnecessário."
+  },
+  "rc-04": {
+    "label": "Identificadores directos são largados do corpus de treino totalmente em vez de ser protegidos dentro dele.",
+    "why": "Dados que nunca foram recolhidos não podem vazar, ser re-identificados ou estar sujeitos a um pedido de acesso. Isto é por que minimização supera encriptação."
+  },
+  "rc-05": {
+    "label": "Um modelo generativo utilizado para resumir notas médicas é substituído com um resumidor extractivo que pode apenas citar a fonte.",
+    "why": "O propósito é preservado enquanto o mecanismo perigoso — geração livre, e portanto fabricação — é trocado por um que não pode fabricar."
+  },
+  "rc-06": {
+    "label": "Um modelo de caixa-preta reforço gradiente numa decisão de empréstimo é substituído por um cartão de pontuação monótono com precisão comparável.",
+    "why": "Redesenho para um modelo inerentemente explicável remove o problema de explicação em vez de prensar um explicador pós-hoc nele."
+  },
+  "rc-07": {
+    "label": "Registos de cliente real utilizados num ambiente de teste são substituídos com dados sintéticos da mesma forma estatística.",
+    "why": "A actividade continua com um input materialmente mais seguro. Substituição senta-se abaixo de eliminação porque o substituto leva os seus próprios riscos menores."
+  },
+  "rc-08": {
+    "label": "Um passo de reconhecimento facial numa verificação de identidade é substituído com uma verificação de documento-mais-liveness que não constrói um template de rosto.",
+    "why": "Mesmo objectivo de garantia, mecanismo diferente, exposição biométrica muito inferior. A indicação é que a função sobrevive e o perigo é trocado."
+  },
+  "rc-09": {
+    "label": "Filtros de output bloqueiam respostas contendo padrões de dados pessoais antes que atinjam o utilizador.",
+    "why": "A restrição é enérgida pelo sistema em cada requisição. Ninguém tem a lembrar, o que é o que torna controles técnicos superam procedurais."
+  },
+  "rc-10": {
+    "label": "Controle de acesso baseado em função impede a camada de recuperação de retornar documentos que o utilizador requisitante não tem direito a ver.",
+    "why": "A autorização é enérgida no ponto de recuperação em vez de confiada ao prompt. Uma regra que o sistema aplica não pode ser esquecida sob pressão."
+  },
+  "rc-11": {
+    "label": "Um limite rigoroso limita o número de chamadas de tool que um agente pode fazer antes de ser forçado a parar e escalar.",
+    "why": "Um limite de runtime mantém-se independentemente do que o modelo decide fazer. Melhorar a descrição de tool seria uma medida administrativa por comparação."
+  },
+  "rc-12": {
+    "label": "A implementação é portão por um suite de avaliação automatizada que falha a compilação se desempenho de subgrupo retrocede além de um limiar.",
+    "why": "O portão é mecânico e não pode ser saltado por um gerente de lançamento ocupado, o que é precisamente por que bate uma checklist de revisão cobrindo o mesmo terreno."
+  },
+  "rc-13": {
+    "label": "Uma política de uso aceitável é publicada e todo pessoal completa treino anual nela.",
+    "why": "A efectividade depende inteiramente de pessoas lendo, lembrando e aplicando-a. O treino vale ter e é rotineiramente sobre-creditado em avaliações de risco."
+  },
+  "rc-14": {
+    "label": "Um procedimento requer um segundo revisor para assinar cada mudança de modelo de alto-impacto.",
+    "why": "Um portão procedural pode ser contornado sob pressão de prazo. Fazer a mesma verificação um estado necessário no pipeline a moveria para um nível."
+  },
+  "rc-15": {
+    "label": "Auditorias manuais trimestrais amostra decisões de modelo e verificam-nas contra política.",
+    "why": "Detectivo, periódico e humano. Encontra problemas depois de ocorrerem, o que é útil e não é prevenção."
+  },
+  "rc-16": {
+    "label": "Um runbook de resposta de incidente estabelece quem é chamado e em que ordem quando um modelo misbehaves.",
+    "why": "A preparação procedural reduz impacto através de resposta mais rápida, mas apenas se o procedimento é seguido e actual."
+  },
+  "rc-17": {
+    "label": "Uma banner diz aos utilizadores que respostas são geradas por AI e podem ser imprecisas.",
+    "why": "Uma obrigação de divulgação pode bem ser obrigatória, mas como mitigação é o nível mais fraco: transfere vigilância para o utilizador que não pode inspecionar o modelo."
+  },
+  "rc-18": {
+    "label": "A interface avisa utilizadores para não entrar informação confidencial no assistente.",
+    "why": "O aviso depende da pessoa menos equipada para enérgir-o. Bloqueando padrões sensíveis na entrada seria um controle de engenharia para o mesmo risco."
+  },
+  "rc-19": {
+    "label": "Documentação declara que o modelo não foi validado para uso em casos pediátricos.",
+    "why": "Declarar uma limitação informa o deployador sem prevenir o mau-uso. Recusar inputs fora-de-escopo no runtime seria materialmente mais forte."
+  },
+  "rc-20": {
+    "label": "Imagens geradas levam uma label visível e metadados de proveniência embebido identificando-as como sintéticas.",
+    "why": "Marcação de proveniência suporta julgamento a jusante e é frequentemente legalmente necessária. Muda nada sobre o que o sistema produzirá."
+  },
+  "risk-controls": {
+    "hint": "Arrasta cada mitigação para o seu nível. A questão é quanta medida depende de um humano fazer a coisa certa — mais o faz, mais fraco o nível.",
+    "note": "A ordem importa mais que os rótulos. Uma medida que depende de uma pessoa lendo, lembrando e cumprindo é estruturalmente mais fraca que uma que torna a falha impossível, porém diligentemente o primeiro é escrito.",
+    "zones[0].def": "Remove o perigo. O modo de falha não pode ocorrer porque a capacidade que o produziu está desaparecida.",
+    "zones[1].def": "Substitui o elemento perigoso com um mais seguro que alcança o mesmo propósito.",
+    "zones[2].def": "Constrói a restrição no sistema para que se mantenha sem qualquer um escolhendo cumprir.",
+    "zones[3].def": "Políticas, treino, passos de revisão e procedimentos. Eficaz apenas na medida que pessoas seguem-nos.",
+    "zones[4].def": "Diz ao utilizador. O nível mais fraco: move responsabilidade para a pessoa menos capaz de mudar o resultado."
+  }
+}

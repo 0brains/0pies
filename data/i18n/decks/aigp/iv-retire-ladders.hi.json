@@ -1,0 +1,43 @@
+{
+  "iv-rl-01": {
+    "prompt": "एक live AI system को responsibly retire करने के लिए steps को order करो।",
+    "steps[0].label": "निर्भरताओं का आकलन करो + फॉलबैक विकल्प",
+    "steps[0].detail": "कुछ भी live touch करने से पहले, map करो कि क्या system पर depend करता है — upstream data feeds, downstream processes, other teams के workflows — और confirm करो एक fallback exist करता है तो retirement एक outage create नहीं करेगी (SG)।",
+    "steps[1].label": "हितधारकों को सूचित करो + नियंत्रित निष्क्रिय करण की योजना बनाओ",
+    "steps[1].detail": "एक driven retirement में first step लोगों को affected को tell करना है और एक deactivation plan को build करना, simply एक switch को flip करना नहीं (SG)।",
+    "steps[2].label": "मानव बैकअप के साथ क्रमिक निष्क्रिय करण",
+    "steps[2].detail": "Critical infrastructure के लिए, एक बार सब को wind down करने की बजाय stages में, एक human-run fallback के साथ gap को covering — same discipline use करते हुए critical systems के लिए generally।",
+    "steps[3].label": "संग्रहीत करो, हटाओ नहीं, कानूनी/ऑडिट के लिए",
+    "steps[3].detail": "Retired system के data, models, और logs को preserve करो न कि delete करो — regulators और auditors को reconstruct करने की जरूरत हो सकती है system ने क्या किया और क्यों, long के बाद यह stop running करता है (SG)।",
+    "steps[4].label": "ब्लैक-बॉक्स जांच की तरह रिकॉर्ड करो, नाम वाले निर्णय निर्माताओं के साथ",
+    "steps[4].detail": "Log करो exact trigger, कौन shutdown को authorize किया, और retirement rationale एक same evidentiary style में एक incident investigation के रूप में — एक single auditable source of truth naming कौन के पास authority था act करने के लिए (SG)।"
+  },
+  "iv-rl-02": {
+    "prompt": "एक live AI incident के response को first detection से closing the loop तक order करो।",
+    "steps[0].label": "Detect",
+    "steps[0].detail": "एक alert, एक monitoring signal, या एक complaint surfaces कि कुछ गलत है — यह उस clock को start करता है सब कुछ follow करता है।",
+    "steps[1].label": "Contain / quarantine first",
+    "steps[1].detail": "Causes को investigate करने या communications को draft करने से पहले, harm को spread करने से stop करो: model को quarantine करो और legal/compliance को immediately notify करो। Containment investigation, recovery, या communication को beat करता है अगले move के रूप में — straight jump करना root-cause analysis में जबकि system keep करता है harm cause करना recorded exam trap है।",
+    "steps[2].label": "कानूनी/अनुपालन को सूचित करो (+72-घंटे उल्लंघन घड़ी जहां व्यक्तिगत डेटा)",
+    "steps[2].detail": "जहाँ incident personal data को involve करता है, एक GDPR controller को supervisory authority को notify करना चाहिए breach के 72 hours के अंदर aware बनने के — incident response और notification procedures को build करना चाहिए उस deadline को hit करने के लिए, न कि एक technical afterthought के रूप में treat किया जाए (SG)।",
+    "steps[3].label": "मूल कारण (पाँच व्हाई / दोष वृक्ष)",
+    "steps[3].detail": "एक formal analysis framework use करो — 'Five Whys' method या fault-tree analysis — underlying cause को drill down करने के लिए surface-level symptom पर stop करने की बजाय (SG)।",
+    "steps[4].label": "CAPA",
+    "steps[4].detail": "Corrective और preventive actions को एक central system में record करो assigned owners, deadlines, और verification steps के साथ, तो root cause actually closed out है, न कि केवल diagnosed।",
+    "steps[5].label": "दोषहीन पश्चदृश्य + सीखे गए सबक के साथ सक्रिय प्रकटीकरण",
+    "steps[5].detail": "एक cross-functional, blameless review run करो जो happened और क्यों, और proactively disclose करो technical details और lessons learned न कि waiting को asked करने के लिए — यह है जो एक patched symptom को एक documented, defensible improvement में turn करता है।"
+  },
+  "iv-rl-03": {
+    "prompt": "एक deactivated system को safely bring करने के लिए steps को online order करो।",
+    "steps[0].label": "Verify the fix",
+    "steps[0].detail": "Confirm करो कि specific defect जिसने deactivation को trigger किया actually corrected है किसी अन्य चीज़ से पहले move करता है — resumption fixes को verify किए जाने पर depend करता है, केवल attempted नहीं (SG)।",
+    "steps[1].label": "Re-test with first-release rigor",
+    "steps[1].detail": "Fixed system को वही full testing के माध्यम से put करो यह faced पहले इसके original launch से — performance, robustness, security, fairness — retesting confirm करती है safety और compliance scratch से, यह एक shortcut नहीं get करता क्योंकि system run हो चुका (SG)।",
+    "steps[2].label": "Cross-functional approval",
+    "steps[2].detail": "System केवल resume करता है एक बार cross-functional teams — एक single engineer या team lead नहीं — restart को approve करते, closing loop जो start किया गया नाम decision-makers को authorize करने के साथ shutdown।",
+    "steps[3].label": "फीचर फ्लैग के पीछे चरणबद्ध कैनरी/नीले-हरे पुन: रोलआउट",
+    "steps[3].detail": "System को gradually bring करो — एक canary release या blue-green deployment gated feature flags द्वारा — exposure को dial back किया जा सकता है instantly problem तो resurface किया जाता है, न कि हर user को एक बार back flip करने की बजाय (SG)।",
+    "steps[4].label": "Heightened monitoring window",
+    "steps[4].detail": "Restarted system को more closely watch करो steady-state operation से एक defined window के लिए afterward, तो एक recurrence caught है immediately न कि next scheduled review में।"
+  }
+}

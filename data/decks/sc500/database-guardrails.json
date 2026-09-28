@@ -1,0 +1,173 @@
+{
+  "id": "database-guardrails",
+  "runner": "pairs",
+  "title": "Near Misses",
+  "blurb": "Two Azure SQL scenes at a time, identical except for one detail, and that detail decides the control. You sort each side and find out where your instinct blurs Always Encrypted into TDE, masking into row filtering, and an audit trail into an alert.",
+  "source": "Microsoft Learn: Azure SQL security overview, Transparent data encryption, Auditing for Azure SQL Database, Auditing for Azure SQL Managed Instance, Microsoft Entra-only authentication, Azure SQL firewall rules, Azure Private Link for Azure SQL Database, Microsoft Defender for SQL, Defender for Databases plans, SQL vulnerability assessment, Azure SQL security best practices · SC-500 outline 2.2",
+  "asOf": "2026-08",
+  "area": "2.2",
+  "pairs": [
+    {
+      "id": "dat-01",
+      "dimension": "the person you are keeping the plaintext away from is a privileged operator inside the engine vs someone holding the raw files outside it",
+      "buckets": ["Always Encrypted", "Transparent data encryption"],
+      "a": {
+        "text": "A private hospital group keeps patient national identifier numbers in one column of an Azure SQL Database. The contracted DBAs run index maintenance and query plans all day and management has decided those DBAs must never be able to read that column in clear text, even though they hold db_owner.",
+        "answer": "Always Encrypted",
+        "why": "Always Encrypted keeps the column ciphertext inside the engine and hands decryption to the client driver: the driver reads the encrypted column encryption key from database metadata and unwraps it with the column master key, which lives outside SQL in Azure Key Vault or the Windows certificate store and is never exposed to the service, so a db_owner querying the table sees only ciphertext. Transparent data encryption is the near miss and it fails here: TDE decrypts pages as they are read into memory, so any authorised query, including a DBA's, returns plain values.",
+        "citation": "Learn: Azure SQL security overview, encryption-in-use · outline 2.2"
+      },
+      "b": {
+        "text": "The same hospital group worries about a different scene: a decommissioned storage array leaves the data centre with database files and backup copies still on it, and nobody wants those files readable by whoever ends up with the hardware.",
+        "answer": "Transparent data encryption",
+        "why": "TDE encrypts the database, its backups, and the transaction log at rest at the page level, which is exactly the offline-media threat described, and new Azure SQL databases already have it on with a service-managed protector. Always Encrypted is the near miss and it is the wrong shape: it protects only the specific columns you designate and is not a substitute for encrypting everything at rest.",
+        "citation": "Learn: Transparent data encryption for SQL Database and SQL Managed Instance · outline 2.2"
+      },
+      "citation": "Learn: Azure SQL security overview and Transparent data encryption · outline 2.2"
+    },
+    {
+      "id": "dat-02",
+      "dimension": "the row still comes back with part of the value obscured vs the row never comes back at all",
+      "buckets": ["Dynamic data masking", "Row-level security"],
+      "a": {
+        "text": "At a mobile network operator, support agents open a customer record and need to confirm the account exists, but the billing team has ruled that agents should see only the last four digits of the stored card number while the stored value itself stays untouched.",
+        "answer": "Dynamic data masking",
+        "why": "Dynamic data masking obfuscates designated fields in the query result set for nonprivileged callers while leaving the data in the table unchanged, which is precisely a partly hidden value on a row the agent is still allowed to see. Row-level security is the near miss and it would overshoot: it removes whole rows from the result, so the agent could not confirm the account exists at all.",
+        "citation": "Learn: Azure SQL security overview, dynamic data masking · outline 2.2"
+      },
+      "b": {
+        "text": "At the same mobile network operator, agents are split into regional teams, and the billing team has ruled that an agent in the northern team must not retrieve customer records belonging to the southern team even when they run an unfiltered SELECT over the whole table.",
+        "answer": "Row-level security",
+        "why": "Row-Level Security applies a predicate based on the characteristics of the executing user, such as group membership or execution context, so the southern rows never enter the result set. Dynamic data masking is the near miss and it does not do this: masking still returns every row the query matched, merely with certain column values obscured, so the northern agent would still learn that those southern customers exist.",
+        "citation": "Learn: Azure SQL security overview, row-level security · outline 2.2"
+      },
+      "citation": "Learn: Azure SQL security overview · outline 2.2"
+    },
+    {
+      "id": "dat-03",
+      "dimension": "a durable record of events kept for later inspection vs a detection that raises an alert while it happens",
+      "buckets": ["SQL auditing", "Microsoft Defender for SQL"],
+      "a": {
+        "text": "A grocery retailer is preparing for a regulator visit and has been told to be able to show, months from now, exactly which principals ran which statements against the loyalty database and which sign-ins succeeded or failed, with the evidence held somewhere the DBAs cannot quietly trim.",
+        "answer": "SQL auditing",
+        "why": "SQL auditing writes the chosen action groups, including batch completed and successful and failed database authentication, to a storage account, Log Analytics workspace, or event hub that you own and can make immutable through protected append blobs. Defender for SQL is the near miss: it raises alerts on anomalies but is not the retained per-statement trail a regulator asks to inspect, and Microsoft even recommends turning auditing on so its alerts can be investigated properly.",
+        "citation": "Learn: Azure SQL Database auditing · outline 2.2"
+      },
+      "b": {
+        "text": "At the same grocery retailer, the security team wants someone woken up the same night if the loyalty database starts answering malformed statements injected through the web front end, or if an account suddenly reads at a volume and from a location it has never used before.",
+        "answer": "Microsoft Defender for SQL",
+        "why": "Advanced Threat Protection, delivered by the Defender for SQL plan, continuously watches for injection attempts, brute force sign-in bursts, and anomalous access and query patterns, and raises a security alert in Defender for Cloud as it happens, which reaches the recipients set up for alert email notifications on the subscription. SQL auditing is the near miss and it would not wake anyone: it records events faithfully but performs no detection and issues no alert on its own.",
+        "citation": "Learn: SQL Advanced Threat Protection and Microsoft Defender for SQL · outline 2.2"
+      },
+      "citation": "Learn: Auditing for Azure SQL Database and Microsoft Defender for SQL · outline 2.2"
+    },
+    {
+      "id": "dat-04",
+      "dimension": "an Entra administrator exists alongside working SQL logins vs Entra identities are the only credentials the server will accept",
+      "buckets": ["Mixed authentication", "Microsoft Entra-only authentication"],
+      "a": {
+        "text": "An insurance broker sets a security group as the Microsoft Entra administrator on its logical server so the analytics team can sign in with their corporate identities. The legacy claims service keeps its old SQL login and password in a connection string and continues to connect every night without complaint.",
+        "answer": "Mixed authentication",
+        "why": "Naming an Entra administrator only adds Entra as an authentication path; the server stays on what the portal calls SQL and Microsoft Entra authentication, so SQL authentication logins keep working, which is exactly why the nightly job still connects. Entra-only authentication is the near miss and it is plainly not in force here, because under it every SQL authentication account, including the server admin login, is refused a connection.",
+        "citation": "Learn: Azure SQL security overview, authentication · outline 2.2"
+      },
+      "b": {
+        "text": "The same insurance broker, having already set the Entra administrator group, flips the extra server setting demanded by its passwordless policy. That night the legacy claims service fails to connect with its unchanged SQL login and password, even though the login row still exists in the server.",
+        "answer": "Microsoft Entra-only authentication",
+        "why": "Entra-only authentication disables every other method at the server or instance level, so existing SQL logins are not deleted but are refused at connection time, and the setting can be turned on only after an Entra admin is set and only by an Owner, Contributor, or SQL Security Manager. Mixed authentication is the near miss and it cannot explain the failure, because under mixed mode that untouched SQL credential would still be accepted.",
+        "citation": "Learn: Microsoft Entra-only authentication with Azure SQL · outline 2.2"
+      },
+      "citation": "Learn: Microsoft Entra-only authentication with Azure SQL · outline 2.2"
+    },
+    {
+      "id": "dat-05",
+      "dimension": "the connection still crosses the public endpoint and is judged by source address vs the connection resolves to a private address inside the virtual network",
+      "buckets": ["IP firewall rule", "Private endpoint"],
+      "a": {
+        "text": "A logistics firm needs its on-premises reporting server, which egresses from one fixed public address, to reach an Azure SQL Database. An engineer opens the Networking page for the logical server and adds an entry for that single address under the firewall rules section.",
+        "answer": "IP firewall rule",
+        "why": "A server-level IP firewall rule grants access through the public endpoint based on the originating address of each request, and it is stored in the master database and applies to every database on that server. A private endpoint is the near miss and it is not what was built: nothing here places the service on a private address inside a virtual network, and the traffic still traverses the public endpoint.",
+        "citation": "Learn: Azure SQL Database IP firewall rules · outline 2.2"
+      },
+      "b": {
+        "text": "The same logistics firm moves the reporting workload onto a virtual machine in an Azure virtual network, and the network team provisions a network interface for the database inside that subnet. The SQL admin then approves the pending connection on the Private access tab and ticks the setting that refuses public network access.",
+        "answer": "Private endpoint",
+        "why": "A private endpoint gives the logical server a private address in your subnet, the SQL admin approves or rejects each private endpoint connection under Networking, and public routing is not blocked automatically, so the deny public network access checkbox is the step that actually closes the public path. An IP firewall rule is the near miss and would leave the public endpoint reachable to any address you listed rather than confining traffic to the virtual network.",
+        "citation": "Learn: Private Link private endpoints for Azure SQL · outline 2.2"
+      },
+      "citation": "Learn: Azure SQL private endpoints versus IP firewall rules · outline 2.2"
+    },
+    {
+      "id": "dat-06",
+      "dimension": "the audit policy is attached to the logical server and covers everything on it vs attached to one database that needs its own trail",
+      "buckets": ["Server-level auditing", "Database-level auditing"],
+      "a": {
+        "text": "A university IT team wants the same baseline of database events collected from every database on a logical server, including any database a faculty deploys next term, and is happy for the events to land in one place in the storage container.",
+        "answer": "Server-level auditing",
+        "why": "A server auditing policy reaches every database the server already hosts and every one created there later, and the re-architected server audit runs a single extended event session at server level and consolidates the logs into one folder named master. Database-level auditing is the near miss and would not cover next term's new databases, because it has to be switched on for each database individually.",
+        "citation": "Learn: Azure SQL server-level audit setup · outline 2.2"
+      },
+      "b": {
+        "text": "At the same university, one logical server hosts dozens of busy transactional databases and investigators complain that pulling the events for a single student records database out of the shared audit folder takes far too long.",
+        "answer": "Database-level auditing",
+        "why": "Microsoft's guidance for many databases under heavy transactional load is to switch to database-level auditing so each database writes into its own audit folder, cutting the volume that has to be scanned during retrieval. Server-level auditing is the near miss and it is the cause of the complaint, since it funnels events from every database on the server into the same folder.",
+        "citation": "Learn: Auditing for Azure SQL Database, recommended approach for large OLTP workloads · outline 2.2"
+      },
+      "citation": "Learn: Azure SQL auditing, server and database policies · outline 2.2"
+    },
+    {
+      "id": "dat-07",
+      "dimension": "the key protecting the database encryption key is held and rotated by the platform vs held in a vault the customer controls",
+      "buckets": ["Service-managed TDE", "Customer-managed TDE"],
+      "a": {
+        "text": "A fintech startup deploys a new Azure SQL Database and does nothing about encryption settings. Encryption is already on, nobody in the team has ever seen or handled the certificate involved, and the rotation of that certificate happens annually without any ticket being raised.",
+        "answer": "Service-managed TDE",
+        "why": "By default the database encryption key is wrapped by a built-in certificate unique to the server, using AES 256 in CBC mode, and Microsoft rotates it yearly with no customer action, which matches a team that has never touched a key. Customer-managed TDE is the near miss and does not fit: it requires a vault key you provision and grant the server access to, none of which happened here.",
+        "citation": "Learn: Transparent data encryption, service-managed transparent data encryption · outline 2.2"
+      },
+      "b": {
+        "text": "The same fintech startup is later told by its regulator that it must be able to revoke access to its own data on demand. The team stores an asymmetric key in Azure Key Vault, grants the logical server permission to wrap and unwrap with it, and sets it as the protector at server level.",
+        "answer": "Customer-managed TDE",
+        "why": "Bring Your Own Key means the TDE protector is a customer-held asymmetric key in Key Vault or Managed HSM that never leaves the vault, giving the team control of rotation and, crucially, revocation, since removing the server's permission renders the database inaccessible. Service-managed TDE is the near miss and cannot satisfy the regulator, because the protector and its rotation belong to the platform and there is no customer lever to revoke.",
+        "citation": "Learn: Transparent data encryption, customer-managed transparent data encryption · outline 2.2"
+      },
+      "citation": "Learn: Transparent data encryption for SQL Database and SQL Managed Instance · outline 2.2"
+    },
+    {
+      "id": "dat-08",
+      "dimension": "the database engine being protected is the SQL family vs an open-source engine on Azure Database flexible server",
+      "buckets": ["Defender for Azure SQL Databases", "Defender for Open-Source Relational Databases"],
+      "a": {
+        "text": "A media company opens Environment settings in Microsoft Defender for Cloud for the subscription that holds its elastic pools, one managed instance, and a dedicated Synapse pool, and turns on the plan that will also scan those resources for misconfigurations.",
+        "answer": "Defender for Azure SQL Databases",
+        "why": "This plan inside Defender for Databases covers Azure SQL single databases and elastic pools, managed instances, and Synapse dedicated pools, and it brings both vulnerability assessment and Advanced Threat Protection, which is why the scan expectation fits. The open-source plan is the near miss and covers none of those engines, and it offers threat detection without a vulnerability assessment component.",
+        "citation": "Learn: Defender for Azure SQL Databases plan · outline 2.2"
+      },
+      "b": {
+        "text": "The same media company runs its content pipeline on Azure Database for PostgreSQL flexible server and Azure Database for MySQL flexible server in the same subscription, and wants alerts when those servers see brute force sign-in bursts or connections from a compromised host.",
+        "answer": "Defender for Open-Source Relational Databases",
+        "why": "This plan is the one that covers PostgreSQL and MySQL flexible server across all pricing tiers, plus Amazon RDS instances in preview, and it alerts on anomalous access patterns and suspicious activity enriched with MITRE ATT&CK context. Defender for Azure SQL Databases is the near miss and simply does not extend to those engines, so enabling it would leave the pipeline unmonitored.",
+        "citation": "Learn: Defender for Open-Source Relational Databases plan · outline 2.2"
+      },
+      "citation": "Learn: Defender for Databases plan selection · outline 2.2"
+    },
+    {
+      "id": "dat-09",
+      "dimension": "scan results and baselines are held by Defender for Cloud vs written to a storage account you provision and manage",
+      "buckets": ["Express configuration", "Classic configuration"],
+      "a": {
+        "text": "A charity turns on the Defender for Azure SQL plan for its subscription, never creates a storage account for scan output, and finds vulnerability assessment already running. An analyst marks several findings as accepted for their environment and the report reflects that immediately, before the next scan runs.",
+        "answer": "Express configuration",
+        "why": "In the express configuration Defender for Cloud manages storage for scan results, so no customer storage account is needed, and a baseline takes effect without rescanning the database, which is exactly the immediate report change described. Classic configuration is the near miss and contradicts both details, since it needs a storage account you configure and its baselines only apply after a rescan.",
+        "citation": "Learn: SQL vulnerability assessment, express configuration · outline 2.2"
+      },
+      "b": {
+        "text": "A charity that migrated years ago still points vulnerability assessment at a storage account in its own resource group so it can control the account location and resiliency. An analyst accepts several findings as a baseline and the report keeps showing them as issues until the database is scanned again.",
+        "answer": "Classic configuration",
+        "why": "The classic configuration writes scan results to a customer-managed storage account whose location and access model you own, and baseline changes only show up once the database has been rescanned, which is the delay the analyst hit. Express configuration is the near miss and does not match, because it needs no storage account and applies baselines without waiting for another scan.",
+        "citation": "Learn: SQL vulnerability assessment, configuration model comparison · outline 2.2"
+      },
+      "citation": "Learn: SQL vulnerability assessment for Azure SQL · outline 2.2"
+    }
+  ]
+}

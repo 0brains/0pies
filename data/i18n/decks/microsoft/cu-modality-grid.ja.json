@@ -1,0 +1,108 @@
+{
+ "cu-001": {
+  "label": "請求書PDFを分析して、抽出されたベンダー、合計、期日フィールドを読み取ります",
+  "sub": "prebuilt-invoice",
+  "why": "prebuilt-invoiceは請求書ドキュメントから構造化フィールドを抽出します。試験で最も多くテストされるprebuilt分析器です(7回言及)。"
+ },
+ "cu-002": {
+  "label": "自然言語でフィールドスキーマを定義してカスタム分析器を作成し、契約書からそれらのフィールドを抽出します",
+  "sub": "begin_create_analyzerを使用したカスタム分析器",
+  "why": "カスタム分析器はあなたが説明するフィールドスキーマから構築されます。CUのプレーンランゲージフィールド説明は、Document Intelligenceのprebuiltと区別するものです。"
+ },
+ "cu-003": {
+  "label": "写真撮影された機器ラベルからテキストと識別されたオブジェクトを抽出します",
+  "sub": "prebuilt-image",
+  "why": "prebuilt-imageは同じ分析ワークフロー内の写真からテキストとオブジェクトを抽出します。他のすべてのモダリティと同じです。"
+ },
+ "cu-004": {
+  "label": "記録されたサポート通話から転写、要約、スピーカーの内訳を取得します",
+  "sub": "prebuilt-audio",
+  "why": "CUのオーディオ分析器は転写、要約、スピーカー — 抽出返します。決して音声合成ではありません。"
+ },
+ "cu-005": {
+  "label": "記録されたトレーニングセッションを分割して、その転写と視覚的なイベントをインデックスして検索できるようにします",
+  "sub": "prebuilt-videoSearch",
+  "why": "ビデオ分析器はセグメント、転写、視覚的なイベントを返します。*Search変数はコンテンツを取得用に準備します。Azure AI Searchはcu抽出をインデックスします。"
+ },
+ "cu-006": {
+  "label": "テキスト、テーブル、選択マークをドキュメント構造で返します — フィールド意味論なし",
+  "sub": "prebuilt-layout",
+  "why": "レイアウトはテキスト、テーブル、選択マーク、構造を抽出します。Read スタイルのOCRはテキストのみです。これはhistack's CU Read-vs-Layout区別です。"
+ },
+ "cu-007": {
+  "label": "ベンダーフォームの混合バッチは、事前定義されたフィールドスキーマから開始せずに、その緩いキーと値のペアを抽出する必要があります",
+  "sub": "prebuilt-documentFields",
+  "why": "prebuilt-documentFieldsはドメイン固有スキーマなしでドキュメントから一般的なキーと値のペアを抽出します。prebuilt-invoiceの固定請求書フィールドとは異なります。"
+ },
+ "cu-008": {
+  "label": "ブランド新しいフォームタイプ用のカスタム分析器を構築する前に、Content Understandingにフィールドスキーマを提案するよう依頼してから、一般ドキュメント分析器に基づいて新しい分析器を作成します",
+  "sub": "prebuilt-documentFieldSchema → prebuilt-document",
+  "why": "prebuilt-documentFieldSchemaはまだスキーマしていないドキュメントタイプのフィールドを提案します。prebuilt-documentは新しいカスタムドキュメント分析器を定義するときに使用されるbase_analyzer_idです。カスタムビルドワークフローの同じ2つの異なるIDです。"
+ },
+ "cu-009": {
+  "label": "製品写真に対してPythonクイックスタートを実行して、結果のSummaryフィールドから生成された説明を読み取ります",
+  "sub": "prebuilt-imageSearch",
+  "why": "prebuilt-imageSearchは記述的な画像出力のクイックスタート分析器です。その結果は自然言語説明を保持するSummaryフィールドを公開します。"
+ },
+ "cu-010": {
+  "label": "ダッシュボードスクリーンショットのバッチからチャートのタイトルとChartTypeフィールドを引き出すカスタム分析器を構築します",
+  "sub": "base_analyzer_id=\"prebuilt-image\"を使用したカスタム分析器",
+  "why": "カスタム画像分析器はbase_analyzer_idをprebuilt-imageに設定してから、フィールドスキーマを層にします。チャートとスクリーンショット抽出の文書化されたパターンです。"
+ },
+ "cu-011": {
+  "label": "小売監査からの棚写真を分析して、製品数、ブランドの存在、および在庫切れインジケータの構造化フィールドを返します",
+  "sub": "prebuilt-image",
+  "why": "Content Understandingの画像分析器は、写真から直接スキーマ定義された構造化フィールドを返します。試験が直接テストする小売棚監査シナリオです。"
+ },
+ "cu-012": {
+  "label": "analyzer_id=\"prebuilt-image\"でbegin_analyzeを呼び出すPythonクライアントを接続して、写真URLに対して実行してから、結果から検出されたオブジェクトを読み取ります",
+  "sub": "prebuilt-image",
+  "why": "begin_analyze(analyzer_id=..., inputs=[AnalysisInput(url=...)])呼び出しパターンはモダリティ全体で同じです。分析器IDだけが変わり、prebuilt-imageはダイレクト(非検索)画像分析器です。"
+ },
+ "cu-013": {
+  "label": "通話記録URLでbegin_analyzeを呼び出して転写と要約を取得する軽量Pythonクライアントを接続して、検索インデックス用に準備できます",
+  "sub": "prebuilt-audioSearch",
+  "why": "prebuilt-audioSearchはSDKのクイックスタートスニペットのドキュメント化された分析器IDです。*Search接尾辞は、prebuilt-audioのダイレクト抽出とは異なり、インデックス作成/RAG取得用に準備された出力を示します。"
+ },
+ "cu-014": {
+  "label": "ポッドキストエピソードのバッチからスピーカーラベル付き、正確にタイミングされた転写フレーズを抽出します",
+  "sub": "transcriptPhrases",
+  "why": "transcriptPhrasesはスピーカー識別とタイミング情報を保持する出力フィールドです。分析器ID自体とは異なる直接オーディオ抽出出力です。"
+ },
+ "cu-015": {
+  "label": "ポッドキャストMP3をContent Understandingに送信すると、コンテンツオブジェクトのkindが動画入力に使用される値に設定されることを認識します",
+  "sub": "kind: \"audioVisual\"",
+  "why": "オーディオのみおよびビデオ入力は両方ともcontentsスキーマでkind: \"audioVisual\"を使用します。共有値で、誰もが異なる「audio」kindを期待してトリップアップします。"
+ },
+ "cu-016": {
+  "label": "ボイスメールインボックスから構造化転写を抽出することが、テキストを音声に変換することではなく、音声をテキストにキャプチャしていることを確認します",
+  "why": "CUのオーディオ分析器は既存の音声を構造化出力に転写します。決して新しい音声出力を合成しません。そのジョブはAzure AI Speechではなく、Content Understandingに属します。"
+ },
+ "cu-017": {
+  "label": "アップロードされた記録製品デモを論理シーンセグメントに分割して、ダウンストリーム処理の前に実行します",
+  "sub": "enableSegment",
+  "why": "enableSegmentは、シーンなどの論理セグメントにフッテージを分割する分析器スキーマプロパティです。オーディオやドキュメント分析器ではなく、ビデオ分析器コントロールです。"
+ },
+ "cu-018": {
+  "label": "マーケティングクリップを分析した後、その転写と視覚的コンテンツの構造化マークダウン要約を読み取ります",
+  "sub": "prebuilt-videoSearch",
+  "why": "prebuilt-videoSearchの結果はセグメントごとに転写と視覚的コンテンツを要約するマークダウンフィールドを公開します。ビデオのSDKドキュメント化された読み取りバックフィールドです。"
+ },
+ "cu-019": {
+  "label": "アップロードされた記録から既存フッテージからキーフレームと視覚的なイベントを抽出することが、新しいフレームを生成することではなく機能することを確認します",
+  "why": "CUの分析器は既存フッテージからキーフレーム、転写、視覚的なイベントを抽出します。合成フレームを生成しません。これはまったく異なるカテゴリーのAIサービスです。"
+ },
+ "cu-020": {
+  "label": "analyzer_id=\"prebuilt-videoSearch\"でbegin_analyzeを呼び出すPythonクライアントをアップロードされたMP4 URLに対して接続します",
+  "sub": "prebuilt-videoSearch",
+  "why": "begin_analyze(analyzer_id=\"prebuilt-videoSearch\", inputs=[AnalysisInput(url=...)])呼び出しはビデオ抽出をキックオフするためのドキュメント化されたSDKパターンです。"
+ },
+ "cu-modality-grid": {
+  "hint": "ソースファイルが実際に何であるかを問いかけてから、正確なprebuilt-*分析器IDのサブラインをチェックします。IDそのものがそのモダリティ(ドキュメント/画像/オーディオ/ビデオ)を指定し、検索サフィックス付きのIDは、モダリティを変更するのではなく、インデックス作成のための出力を準備します。",
+  "note": "Content Understandingは常に抽出します。決して生成またはインデックス作成は行いません。Azure AI Searchへの抽出は後流ステップであり、CU自体がすることではありません。",
+  "zones[0].def": "PDF、請求書、契約書、フリーフォームペーパーワークContent Understandingが構造化フィールド、テーブル、テキストに変わります。",
+  "zones[1].def": "写真、スクリーンショット、チャートContent Understandingが構造化フィールド、説明、検出されたオブジェクトに変わります。",
+  "zones[2].def": "記録されたスピーチ — 通話、ポッドキャスト、ボイスメール — Content Understandingが転写、要約、スピーカーラベルに変わります。",
+  "zones[3].def": "記録されたフッテージContent Understandingはセグメント化、転写、検索用に準備します。"
+ }
+}

@@ -1,0 +1,108 @@
+{
+ "cu-001": {
+  "label": "Проанализируй PDF счета-фактуры и прочитай извлеченные поля поставщика, сумму и срок платежа",
+  "sub": "prebuilt-invoice",
+  "why": "prebuilt-invoice извлекает структурированные поля из документов счета-фактуры — наиболее тестируемый встроенный анализатор в экзамене (7 упоминаний)."
+ },
+ "cu-002": {
+  "label": "Определи собственную схему полей на естественном языке и извлеки эти поля из контрактов",
+  "sub": "custom analyzer via begin_create_analyzer",
+  "why": "Custom analyzers строятся из описания схемы полей — plain-language описание поля CU — это то, что отличает его от Document Intelligence prebuilts."
+ },
+ "cu-003": {
+  "label": "Извлеки текст и идентифицированные объекты из сфотографированных ярлыков оборудования",
+  "sub": "prebuilt-image",
+  "why": "prebuilt-image извлекает текст и объекты из неподвижных изображений через тот же workflow анализатора, что и любая другая модальность."
+ },
+ "cu-004": {
+  "label": "Получи транскрипцию плюс сводку и разбивку спикеров из записанных вызовов поддержки",
+  "sub": "prebuilt-audio",
+  "why": "Audio analyzers CU возвращают транскрипции, сводки и спикеров — extraction, никогда не синтез речи."
+ },
+ "cu-005": {
+  "label": "Раздели записанные тренировочные сеансы и индексируй их транскрипции и визуальные события для поиска",
+  "sub": "prebuilt-videoSearch",
+  "why": "Video analyzers возвращают segments, транскрипции и визуальные события; варианты *Search готовят контент для retrieval — Azure AI Search индексирует то, что извлекает CU."
+ },
+ "cu-006": {
+  "label": "Верни текст, таблицы и флажки выделения со структурой документа — без семантики полей",
+  "sub": "prebuilt-layout",
+  "why": "Layout извлекает текст, таблицы, флажки выделения и структуру; Read-style OCR — только текст — histack's CU Read-vs-Layout distinction."
+ },
+ "cu-007": {
+  "label": "Смешанный пакет форм поставщиков нуждается в извлечении их слабых пар ключ-значение без начинания с предопределенной схемы полей",
+  "sub": "prebuilt-documentFields",
+  "why": "prebuilt-documentFields извлекает общие пары ключ-значение из документов без требуемой domain-specific схемы — в отличие от fixed полей счета-фактуры prebuilt-invoice."
+ },
+ "cu-008": {
+  "label": "Перед созданием custom analyzer для совершенно нового типа форм попроси Content Understanding предложить схему полей, затем основывай новый анализатор на общем document analyzer",
+  "sub": "prebuilt-documentFieldSchema → prebuilt-document",
+  "why": "prebuilt-documentFieldSchema предлагает поля для типа документа, который еще не схемирован; prebuilt-document — это base_analyzer_id, используемый при определении нового custom document analyzer — два различных id в том же custom-build workflow."
+ },
+ "cu-009": {
+  "label": "Запусти Python quickstart против фотографии продукта и прочитай созданное описание из поля Summary результата",
+  "sub": "prebuilt-imageSearch",
+  "why": "prebuilt-imageSearch — это quickstart analyzer для descriptive image output — его результат expose поле Summary, содержащее natural-language описание."
+ },
+ "cu-010": {
+  "label": "Построй custom analyzer, который извлекает поля Title и ChartType диаграммы из пакета снимков экрана панели инструментов",
+  "sub": "custom analyzer via base_analyzer_id=\"prebuilt-image\"",
+  "why": "Custom image analyzers устанавливают base_analyzer_id в prebuilt-image перед наложением схемы полей — задокументированный паттерн для extraction диаграмм и скриншотов."
+ },
+ "cu-011": {
+  "label": "Анализируй фотографии полок из audit розничной торговли и верни структурированные поля для count продуктов, presence марки и out-of-stock indicators",
+  "sub": "prebuilt-image",
+  "why": "Image analyzer Content Understanding возвращает schema-defined структурированные поля прямо из фотографий — scenario audit полок розничной торговли, который экзамен тестирует напрямую."
+ },
+ "cu-012": {
+  "label": "Подключи Python client, который вызывает begin_analyze с analyzer_id=\"prebuilt-image\" против URL фотографии, затем прочитай обратно обнаруженные объекты из результата",
+  "sub": "prebuilt-image",
+  "why": "Паттерн вызова begin_analyze(analyzer_id=..., inputs=[AnalysisInput(url=...)]) идентичен across модальностям — меняется только analyzer id, и prebuilt-image — это direct (non-search) image analyzer."
+ },
+ "cu-013": {
+  "label": "Подключи легковесный Python client, который вызывает begin_analyze с URL записи звонка для extraction транскрипции и сводки, готовой к retrieval index",
+  "sub": "prebuilt-audioSearch",
+  "why": "prebuilt-audioSearch — это задокументированный analyzer id в SDK's quickstart snippet — суффикс *Search отмечает output, подготовленный для indexing/RAG retrieval, в отличие от prebuilt-audio's direct extraction без подготовки retrieval."
+ },
+ "cu-014": {
+  "label": "Извлеки marked спикером, precisely timed фразы транскрипции из пакета episodes подкастов",
+  "sub": "transcriptPhrases",
+  "why": "transcriptPhrases — это output поле, несущее speaker identification и timing information — direct audio-extraction output, отличный от самого analyzer id."
+ },
+ "cu-015": {
+  "label": "Признай, что отправка подкаста MP3 в Content Understanding устанавливает значение kind объекта contents в то же значение, используемое для video inputs",
+  "sub": "kind: \"audioVisual\"",
+  "why": "Audio-only и video inputs оба используют kind: \"audioVisual\" в contents schema — shared значение, которое путает кого-то, ожидающего distinct 'audio' kind."
+ },
+ "cu-016": {
+  "label": "Подтверди, что извлечение структурированной транскрипции из voicemail inbox — это речь, захватываемая в текст, никогда не текст, превращаемый в речь",
+  "why": "Audio analyzers CU транскрибируют существующую речь в структурированный output — они никогда не синтезируют новый spoken output; эта работа принадлежит Azure AI Speech, а не Content Understanding."
+ },
+ "cu-017": {
+  "label": "Раздели загруженную записанную demo продукта на логические сегменты сцен перед любой downstream обработкой",
+  "sub": "enableSegment",
+  "why": "enableSegment — это свойство analyzer schema, которое splits footage на логические segments, такие как сцены — video-analyzer control, а не audio или document один."
+ },
+ "cu-018": {
+  "label": "После анализа marketing clip прочитай обратно структурированное markdown резюме его транскрипции и визуального контента",
+  "sub": "prebuilt-videoSearch",
+  "why": "prebuilt-videoSearch результаты expose markdown поле, резюмирующее транскрипцию и визуальный контент per segment — SDK's задокументированное read-back поле для video."
+ },
+ "cu-019": {
+  "label": "Подтверди, что extraction keyframes и визуальных событий из загруженной записи работает на footage, которое уже существует, а не generate новые frames",
+  "why": "CU's analyzers extract keyframes, транскрипции и визуальные события из footage, которое уже существует — они не generate синтетические frames; это совсем другая категория AI сервиса."
+ },
+ "cu-020": {
+  "label": "Подключи Python client, который вызывает begin_analyze с analyzer_id=\"prebuilt-videoSearch\" против загруженного URL MP4",
+  "sub": "prebuilt-videoSearch",
+  "why": "Вызов begin_analyze(analyzer_id=\"prebuilt-videoSearch\", inputs=[AnalysisInput(url=...)]) — это задокументированный SDK паттерн для запуска video extraction."
+ },
+ "cu-modality-grid": {
+  "hint": "Спроси, что такое исходный файл на самом деле, затем проверь sub line для exact prebuilt-* analyzer id — сам id называет его modality (document/image/audio/video), и Search-suffixed ids подготавливают output для indexing, а не change модальность.",
+  "note": "Content Understanding всегда extract — никогда не generate или index. Extraction в Azure AI Search — это downstream шаг, а не что-то, что делает CU.",
+  "zones[0].def": "PDFs, счета-фактуры, контракты и freeform paperwork, которые Content Understanding превращает в структурированные поля, таблицы и текст.",
+  "zones[1].def": "Фотографии, скриншоты и диаграммы, которые Content Understanding превращает в структурированные поля, описания и обнаруженные объекты.",
+  "zones[2].def": "Записанная речь — звонки, подкасты и voicemails — Content Understanding превращает в транскрипции, сводки и labels спикеров.",
+  "zones[3].def": "Записанное видео, которое Content Understanding segments, transcribes и подготавливает для поиска."
+ }
+}

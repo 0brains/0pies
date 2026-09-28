@@ -1,0 +1,184 @@
+{
+ "id": "security-models",
+ "runner": "board",
+ "title": "Whose Rule Is This?",
+ "blurb": "Nineteen access-control behaviors, one model each. Read the scenario for the actual rule it's enforcing — confidentiality, integrity, a certified transaction, or a conflict-of-interest wall — and sort it to the model that names it.",
+ "source": "Chapple CISSP SG 10ed ch.8 (Principles of Security Models, Design, and Capabilities) · April-2024 outline 3.2",
+ "asOf": "2026-08",
+ "area": "3.2",
+ "zoneMode": "options",
+ "hint": "First ask what the rule is actually protecting — confidentiality, integrity, or a designated process/relationship — then match the direction (up/down, before/after) to the model that names that exact behavior.",
+ "items": [
+  {
+   "id": "smod-01",
+   "label": "A junior analyst holding a Confidential clearance tries to open a file stamped Secret; the system blocks the read before the file even opens.",
+   "sub": "No read up (Simple Security Property)",
+   "options": ["Bell-LaPadula", "Biba", "Clark-Wilson", "Brewer-Nash"],
+   "answer": "Bell-LaPadula",
+   "why": "Blocking a lower-cleared subject from reading a higher-classified object is BLP's confidentiality rule. Biba's simple property runs the opposite direction — it stops reading down, not up — so a scenario about disclosure risk from a lower clearance always points to BLP, not Biba.",
+   "citation": "SG ch.8 · outline 3.2"
+  },
+  {
+   "id": "smod-02",
+   "label": "A Secret-cleared officer drafting a briefing is prevented from saving a copy of it into a folder marked Unclassified, even though her own clearance outranks that folder's level.",
+   "sub": "No write down (* / Star Property, confinement)",
+   "options": ["Bell-LaPadula", "Biba", "Clark-Wilson", "Lattice-based access control"],
+   "answer": "Bell-LaPadula",
+   "why": "Stopping high-classified content from leaking into a lower-classified store is the star property's confinement rule — a confidentiality control. Lattice-based access control is the ordering structure that makes 'higher' and 'lower' meaningful at all, but the actual write-down block is BLP's named rule, not the generic lattice concept.",
+   "citation": "SG ch.8 · outline 3.2"
+  },
+  {
+   "id": "smod-03",
+   "label": "Two engineers share the same Secret clearance, but only one of them can open a specific weapons-design file, because only she is listed as needing that file for her project.",
+   "sub": "Discretionary Security Property (need-to-know via access matrix)",
+   "options": ["Bell-LaPadula", "Clark-Wilson", "Brewer-Nash", "Biba"],
+   "answer": "Bell-LaPadula",
+   "why": "BLP layers a need-to-know access matrix on top of mandatory clearance checks, so two equally-cleared subjects can still be split by discretionary permissions. Brewer-Nash also splits access per-subject, but dynamically, based on prior read history to block a conflict of interest — this is a static need-to-know listing, not a history-driven wall.",
+   "citation": "SG ch.8 · outline 3.2"
+  },
+  {
+   "id": "smod-04",
+   "label": "A system configured under its strictest confidentiality mode confines every subject to reading and writing solely within its own classification layer — no reaching up, no reaching down.",
+   "sub": "Strong Star Property",
+   "options": ["Bell-LaPadula", "Biba", "Clark-Wilson", "Brewer-Nash"],
+   "answer": "Bell-LaPadula",
+   "why": "The strong star property is BLP's stricter variant that collapses the simple and star properties into one same-layer-only rule. Biba enforces its own layer restriction for integrity, not confidentiality, so a scenario framed purely around classification layers stays with BLP.",
+   "citation": "SG ch.8 · outline 3.2"
+  },
+  {
+   "id": "smod-05",
+   "label": "A production database server running at the highest integrity tier refuses to ingest a data feed pulled from an unvetted, low-integrity staging table.",
+   "sub": "No read down (Simple Integrity Property)",
+   "options": ["Biba", "Bell-LaPadula", "Clark-Wilson", "Lattice-based access control"],
+   "answer": "Biba",
+   "why": "Refusing to pull data down from a less-trusted source protects integrity, not confidentiality — Biba's simple property runs opposite BLP's: it blocks reading down, where BLP blocks reading up. A scenario about corrupting trusted data with untrusted input is Biba's territory.",
+   "citation": "SG ch.8 · outline 3.2"
+  },
+  {
+   "id": "smod-06",
+   "label": "A contractor account with a low integrity rating is denied write access to the organization's certified configuration-management baseline.",
+   "sub": "No write up (* Integrity Property)",
+   "options": ["Biba", "Bell-LaPadula", "Clark-Wilson", "Brewer-Nash"],
+   "answer": "Biba",
+   "why": "Preventing a low-integrity subject from writing into a high-integrity object is Biba's star integrity rule — the goal is uncorrupted data, not restricted disclosure. Clark-Wilson also protects integrity, but through a certified transformation procedure rather than a direct label comparison like this one.",
+   "citation": "SG ch.8 · outline 3.2"
+  },
+  {
+   "id": "smod-07",
+   "label": "A low-integrity utility script is blocked from calling or invoking a higher-integrity system process at all, even for a read-only status check.",
+   "sub": "Invocation Property",
+   "options": ["Biba", "Bell-LaPadula", "Clark-Wilson", "Brewer-Nash"],
+   "answer": "Biba",
+   "why": "Barring a lower-integrity subject from invoking a higher-integrity subject at all — not just reading or writing its data — is Biba's invocation property, the model's third integrity rule. That's a different move from Clark-Wilson's approach, which routes changes through a certified program rather than blocking a call outright.",
+   "citation": "SG ch.8 · outline 3.2"
+  },
+  {
+   "id": "smod-08",
+   "label": "A manufacturing control system enforces mandatory access purely to stop less-trusted operators from tampering with calibration data, with no rule at all about who is allowed to view the results.",
+   "sub": "Integrity-only mandatory access (no confidentiality concern)",
+   "options": ["Biba", "Bell-LaPadula", "Clark-Wilson", "Lattice-based access control"],
+   "answer": "Biba",
+   "why": "The named concern is preventing untrusted subjects from corrupting trusted data — integrity, not disclosure — which is what puts this with Biba over BLP. Lattice-based access control is the ordering structure both models sit on, but naming the actual security goal here resolves to a specific model, not the generic lattice concept.",
+   "citation": "SG ch.8 · outline 3.2"
+  },
+  {
+   "id": "smod-09",
+   "label": "A bank's funds-transfer application only allows money to move through a fixed, audited sequence of steps; no direct edit to an account balance is ever permitted.",
+   "sub": "Well-formed transactions",
+   "options": ["Clark-Wilson", "Bell-LaPadula", "Biba", "Brewer-Nash"],
+   "answer": "Clark-Wilson",
+   "why": "Forcing every change through a certified, structured procedure instead of a direct edit is Clark-Wilson's well-formed-transaction rule. Biba would simply block a low-integrity subject from writing at all; Clark-Wilson instead lets the write happen, but only through an intermediary program that enforces the correct sequence.",
+   "citation": "SG ch.8 · outline 3.2"
+  },
+  {
+   "id": "smod-10",
+   "label": "The clerk who enters a new vendor into the payment system is never the person permitted to approve that vendor's first invoice.",
+   "sub": "Separation of duties (subject / program / object)",
+   "options": ["Clark-Wilson", "Brewer-Nash", "Bell-LaPadula", "Biba"],
+   "answer": "Clark-Wilson",
+   "why": "Splitting a sensitive transaction across two required roles so no single person controls it end to end is Clark-Wilson's separation-of-duties rule, enforced through its subject-program-object triplet. Brewer-Nash also restricts a subject based on prior activity, but to prevent a conflict of interest between competing clients, not to split one transaction between two people.",
+   "citation": "SG ch.8 · outline 3.2"
+  },
+  {
+   "id": "smod-11",
+   "label": "Before a new expense-reporting workflow can touch production data, auditors must formally certify it meets the organization's integrity rules, and the platform then refuses to run any workflow that skips that certification step.",
+   "sub": "Certification rule + Enforcement rule",
+   "options": ["Clark-Wilson", "Bell-LaPadula", "Biba", "Lattice-based access control"],
+   "answer": "Clark-Wilson",
+   "why": "Requiring a program to be certified against integrity rules, then having the system enforce that only certified programs run, is Clark-Wilson's paired certification/enforcement mechanism — a governance process around the transformation procedure itself, not a label comparison the way BLP or Biba operate.",
+   "citation": "SG ch.8 · outline 3.2"
+  },
+  {
+   "id": "smod-12",
+   "label": "Payroll records can only be changed by running the approved payroll-adjustment program; no user or script may write to the payroll table directly.",
+   "sub": "Constrained Data Items accessed only through Transformation Procedures",
+   "options": ["Clark-Wilson", "Biba", "Bell-LaPadula", "Brewer-Nash"],
+   "answer": "Clark-Wilson",
+   "why": "Routing every change to a protected data item through one designated program is exactly Clark-Wilson's CDI/TP structure. Biba achieves a similar-looking lockdown by comparing integrity labels directly, without requiring a specific intermediary program — the mandatory-program requirement is what marks this as Clark-Wilson.",
+   "citation": "SG ch.8 · outline 3.2"
+  },
+  {
+   "id": "smod-13",
+   "label": "An internal-controls team periodically re-runs an independent check confirming the payroll-adjustment program still produces results consistent with the source timesheets it started from.",
+   "sub": "Integrity Verification Procedure",
+   "options": ["Clark-Wilson", "Bell-LaPadula", "Biba", "Brewer-Nash"],
+   "answer": "Clark-Wilson",
+   "why": "An independent audit step that checks a transformation procedure's output for internal and external consistency is Clark-Wilson's Integrity Verification Procedure — a review of the process itself, not a direct read/write permission check the way the other three models operate.",
+   "citation": "SG ch.8 · outline 3.2"
+  },
+  {
+   "id": "smod-14",
+   "label": "An investment analyst who has already opened Client A's confidential merger file is automatically blocked from ever opening Client B's file, the moment B is flagged as a competitor in the same deal.",
+   "sub": "Conflict-of-interest wall (ethical wall)",
+   "options": ["Brewer-Nash", "Bell-LaPadula", "Clark-Wilson", "Biba"],
+   "answer": "Brewer-Nash",
+   "why": "Access here changes dynamically because of what the subject has already read, to stop one person serving two competing clients — that history-driven wall is Brewer-Nash's signature move. BLP's access matrix is static by comparison: it doesn't lock a door because of what you opened five minutes ago.",
+   "citation": "SG ch.8 · outline 3.2"
+  },
+  {
+   "id": "smod-15",
+   "label": "A law firm's document system lets a new associate freely read either of two rival clients' files, but the instant she opens one, the system permanently locks her out of the other.",
+   "sub": "Dynamically changing access based on prior activity",
+   "options": ["Brewer-Nash", "Bell-LaPadula", "Biba", "Lattice-based access control"],
+   "answer": "Brewer-Nash",
+   "why": "The rule engages only after the first read and is triggered by a competing-client relationship — a real-time behavioral lockout, not a fixed classification ordering. Lattice-based access control describes an ordering of clearance levels, but there is no clearance hierarchy at play here, just a conflict-of-interest trigger.",
+   "citation": "SG ch.8 · outline 3.2"
+  },
+  {
+   "id": "smod-16",
+   "label": "A financial conglomerate's compliance platform is built specifically to stop insider-trading-style leakage between its brokerage and investment-banking arms, based on which accounts each employee has already touched.",
+   "sub": "Conflict-of-interest-driven access control (\"cone of silence\")",
+   "options": ["Brewer-Nash", "Clark-Wilson", "Bell-LaPadula", "Biba"],
+   "answer": "Brewer-Nash",
+   "why": "Preventing leakage between competing business units by tracking each employee's own access history is the textbook Brewer-Nash use case. Clark-Wilson's separation of duties splits one transaction across two roles; this instead blocks one person from ever touching two conflicting relationships at all.",
+   "citation": "SG ch.8 · outline 3.2"
+  },
+  {
+   "id": "smod-17",
+   "label": "A classification scheme orders every combination of sensitivity level and compartment so that any two labels have one clearly-defined 'least upper bound' a subject would need in order to access both at once.",
+   "sub": "Partially ordered set with defined least-upper-bound / greatest-lower-bound",
+   "options": ["Lattice-based access control", "Bell-LaPadula", "Biba", "Clark-Wilson"],
+   "answer": "Lattice-based access control",
+   "why": "Defining a mathematically ordered structure across every label combination, with a computable upper and lower bound for any two labels, is the lattice concept itself — the shared mathematical foundation BLP and Biba are both built on top of. BLP names the specific no-read-up/no-write-down rules that run inside that structure, but this scenario describes the ordering, not one model's read/write rule.",
+   "citation": "SG ch.8 · outline 3.2"
+  },
+  {
+   "id": "smod-18",
+   "label": "A defense system assigns every subject and object a label combining a sensitivity tier and a set of compartments, then grants access only when one label's tier and compartment set both dominate the other's.",
+   "sub": "Multilevel security via mandatory, label-based lattice comparison",
+   "options": ["Lattice-based access control", "Brewer-Nash", "Clark-Wilson", "Bell-LaPadula"],
+   "answer": "Lattice-based access control",
+   "why": "Comparing combined tier-plus-compartment labels for dominance is the general lattice-based mandatory-access mechanism underlying multilevel security. Bell-LaPadula is the specific confidentiality policy that runs on top of that structure, but this scenario names the label-comparison mechanism itself, not a no-read-up or no-write-down rule.",
+   "citation": "SG ch.8 · outline 3.2"
+  },
+  {
+   "id": "smod-19",
+   "label": "Two departments' security labels each carry different, non-overlapping compartments at the same sensitivity tier; the ordering structure treats them as incomparable, so neither dominates the other and no default access flows either way.",
+   "sub": "Incomparable elements in a partial order (no default flow)",
+   "options": ["Lattice-based access control", "Bell-LaPadula", "Biba", "Brewer-Nash"],
+   "answer": "Lattice-based access control",
+   "why": "Incomparability — two labels that are neither greater nor lesser than each other — is a property of the partial-order lattice structure itself, not a rule any single model enforces. Bell-LaPadula only tells you what happens once dominance is established; this scenario is about the ordering rule that decides whether dominance exists at all.",
+   "citation": "SG ch.8 · outline 3.2"
+  }
+ ]
+}

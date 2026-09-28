@@ -1,0 +1,21 @@
+{
+ "rag-pipeline": {
+  "prompt": "Sắp xếp các giai đoạn từ nhập đến một câu trả lời có cơ sở và được trích dẫn.",
+  "steps[0].label": "Nhập Tài Liệu Nguồn Đáng Tin Cậy",
+  "steps[0].detail": "Truy xuất chỉ có thể bao giờ bề mặt những gì đã được nhập. Lựa chọn nguồn là quyết định quản lý, không phải quyết định đường ống.",
+  "steps[1].label": "Làm Sạch, Chia, và Đính Kèm Siêu Dữ Liệu",
+  "steps[1].detail": "Phân đoạn quyết định một đơn vị có thể truy xuất là gì; siêu dữ liệu là những gì sau này làm cho lọc và quy kết có thể.",
+  "steps[2].label": "Tạo Nhúng Cho Mỗi Phân Đoạn",
+  "steps[2].detail": "Văn bản trở thành vectơ. Mô hình nhúng được chọn ở đây hạn chế mọi thứ người truy xuất có thể phân biệt.",
+  "steps[3].label": "Lưu Trữ Các Phân Đoạn và Vectơ Trong Một Chỉ Mục",
+  "steps[3].detail": "Chỉ mục làm cho tìm kiếm tương tự có thể thực hiện được. Kiểm soát truy cập thuộc về đây, không chỉ ở câu trả lời.",
+  "steps[4].label": "Nhúng và Giải Thích Truy Vấn Của Người Dùng",
+  "steps[4].detail": "Truy vấn được nhúng bởi cùng một mô hình như các phân đoạn, hoặc hai cái sống trong những không gian không so sánh được.",
+  "steps[5].label": "Truy Xuất, Lọc, và Xếp Hạng Lại Bằng Chứng",
+  "steps[5].detail": "Lại quyết định xem đoạn đúng có sẵn hay không; xếp hạng quyết định xem nó có sống sót được ngân sách bối cảnh hay không.",
+  "steps[6].label": "Xây Dựng Một Lời Nhắc Với Bằng Chứng và Hướng Dẫn",
+  "steps[6].detail": "Bằng chứng được truy xuất được đặt trong lời nhắc với hướng dẫn về cách sử dụng nó và khi nào từ chối.",
+  "steps[7].label": "Tạo, Xác Thực, và Trích Dẫn Câu Trả Lời Có Cơ Sở",
+  "steps[7].detail": "Model trả lời từ bằng chứng được cung cấp và trích dẫn nó, vì vậy người đọc có thể kiểm tra thay vì tin tưởng."
+ }
+}

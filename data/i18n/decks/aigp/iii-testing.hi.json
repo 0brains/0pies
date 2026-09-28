@@ -1,0 +1,84 @@
+{
+  "iii-tb-01": {
+    "label": "टोकेनाइजर को emoji इनपुट के crash-free हैंडलिंग के लिए अकेले परीक्षण किया जाता है।",
+    "why": "सिंगल-कंपोनेंट अलगाव इस विषय की पूरी दक्षता है — टोकेनाइजर या तो इनपुट को हैंडल करता है या नहीं करता, downstream में किसी चीज़ की परवाह किए बिना।"
+  },
+  "iii-tb-02": {
+    "label": "एक फ़ंक्शन जो विभिन्न डेटा बिंदुओं के प्रतिनिधित्व को मानकीकृत करता है, को पूरी तरह अकेले परीक्षण किया जाता है, इससे पहले कि इसे downstream में कुछ भी से जोड़ा जाए।",
+    "why": "एक ही बिल्डिंग ब्लॉक को अलग करने से त्रुटियों को पकड़ा जाता है जब वे सबसे सस्ते में होती हैं, इससे पहले कि कोई subtle flaw लाखों रिकॉर्ड्स में scale हो और quietly परिणामों को तिरछा कर दे — यह विषय यहाँ रहता है भले ही फ़ंक्शन बाद में बड़ी pipeline के हिस्से के रूप में चलेगा।"
+  },
+  "iii-tb-03": {
+    "label": "Pipeline में दबा हुआ एक custom scoring routine को कुछ ज्ञात इनपुट्स के विरुद्ध चलाया जाता है और सही output के लिए line-by-line जांच की जाती है, इससे पहले कि बाकी सिस्टम भी इसे कॉल करने के लिए मौजूद हो।",
+    "why": "एक routine के output को ज्ञात-सही मानों के विरुद्ध जांचना, इससे पहले कि बाकी सिस्टम मौजूद हो, सबसे narrow और earliest gate है — अगले विषय से अलग, जो केवल तब शुरू होता है जब multiple pieces एक साथ जुड़े हों।"
+  },
+  "iii-tb-04": {
+    "label": "Retriever, model और UI को एक साथ end-to-end exercise किया जाता है; emergent failures केवल इस level पर दिखाई देती हैं।",
+    "why": "ऐसी failures जो केवल तब दिखाई देती हैं जब components एक साथ चलते हैं, इस विषय की पहचान है — कोई भी सिंगल-कंपोनेंट check ने उन्हें नहीं पकड़ा होता।"
+  },
+  "iii-tb-05": {
+    "label": "एक inventory system के टुकड़े cleanly अपने आप pass होते हैं, फिर सब कुछ हर component चलने के बाद certain demographic groups से जुड़े products को over-order करना शुरू कर देता है।",
+    "why": "समस्या केवल तभी सामने आती है जब पूरा सिस्टम combined हो, इसलिए fix को combined level पर भी लागू करना होगा — एक component-by-component review इसे पूरी तरह miss कर गया होता।"
+  },
+  "iii-tb-06": {
+    "label": "एक loan-approval model अलग-अलग hardware पर अलग-अलग परिणाम देता है, क्योंकि floating-point precision में अंतर जो केवल पूरा सिस्टम end to end चलने पर दिखाई देते हैं।",
+    "why": "असमानता real hardware पर components को combine करने का एक byproduct है — governance response इसे किसी एक piece में अलग करने का प्रयास नहीं है, बल्कि variance range को document करना और acceptable decision boundaries set करना है।"
+  },
+  "iii-tb-07": {
+    "label": "इसने जो data train किया है उस पर बहुत अच्छी accuracy है, लेकिन records पर बहुत कम है जिसे इसने कभी नहीं देखा।",
+    "why": "यह generalization check है — training और unseen-data behavior के बीच gap — test/holdout set से अलग, जो tuning खत्म होने तक untouched रहता है और फिर model की final, unbiased error estimate देता है।"
+  },
+  "iii-tb-08": {
+    "label": "एक model अपने training set पर near-perfect accuracy को हिट करता है, फिर inconsistently perform करता है जब उस set के बाहर के नए patient groups को चलाया जाता है।",
+    "why": "training-to-unseen-data gap ठीक वही है जो यह विषय पकड़ने के लिए मौजूद है; एक fairness metric इसके बजाय एक ही dataset पर protected groups में error rates को compare करता है, जो यह scenario कभी नहीं करता।"
+  },
+  "iii-tb-09": {
+    "label": "एक model की predictions training data के किस slice को देखते हैं इस पर निर्भर करता है; दूसरा average से barely move करता है चाहे कुछ भी खिलाया जाए।",
+    "why": "Training slices में wide swings बनाम data के लिए flat indifference, ये दोनों failure signatures हैं जो यह विषय development के दौरान देखता है, किसी भी final performance number के बारे में बात करने से बहुत पहले।"
+  },
+  "iii-tb-10": {
+    "label": "Response-time disparity को load के तहत user regions में measure किया जाता है।",
+    "why": "Processing-time equity एक business/fairness requirement को एक measurable, pre-defined metric में बदल देता है — protected-attribute-flip check से अलग, जो output content को देखता है, latency को नहीं।"
+  },
+  "iii-tb-11": {
+    "label": "सिस्टम के outputs के विरुद्ध Statistical sampling और decision-analysis checks चलाए जाते हैं यह confirm करने के लिए कि वे project की शुरुआत में set की गई accuracy और reliability targets को पूरा करते हैं।",
+    "why": "Statistical sampling और decision analysis एक responsible AI system को test करने के recognized तरीके हैं; एक issue को probability times severity से score करना एक risk-management prioritization tool है, न कि सिस्टम को test करने का तरीका।"
+  },
+  "iii-tb-12": {
+    "label": "महीनों पहले project ने जिन fairness और reliability numbers पर sign off किया, उन्हें check किया जाता है यह देखने के लिए कि सिस्टम आज actually क्या produce कर रहा है, वही metrics का use करके जिस पर सभी सहमत थे।",
+    "why": "परिणामों को upfront पर सहमत metrics के विरुद्ध रखना, किसी भी संख्या को नहीं जो सबसे अच्छी दिखाई दे, यही है जो इस विषय को honest रखता है और teams को quietly एक flattering measure में swap करने से रोकता है।"
+  },
+  "iii-tb-13": {
+    "label": "एक outsider probe करता है कि क्या एक specific patient का record training set में था।",
+    "why": "एक outsider को सीखना कि क्या एक specific record training set में था, यह एक security-testing failure है — generalization check से अलग, जो केवल unseen data पर accuracy की परवाह करता है, न कि training set में कौन था।"
+  },
+  "iii-tb-14": {
+    "label": "Penetration-style checks ऐसे तरीके ढूंढते हैं जिनसे एक attacker model के weights चोरी कर सकता है या training data के टुकड़ों को reconstruct कर सकता है।",
+    "why": "Weight theft और training-data reconstruction को target करना एक attacker की vision है, generalization check से अलग, जो कभी नहीं सोचता कि क्या कोई model से कुछ निकालने की कोशिश कर रहा है।"
+  },
+  "iii-tb-15": {
+    "label": "Penetration testers पाते हैं कि carefully crafted inputs एक पहले से accurate model के diagnosis को लगभग 8 में से 1 cases में flip कर सकते हैं।",
+    "why": "Crafted adversarial inputs से misclassification, यह एक security-testing finding है; governance response इसे एक known limitation के रूप में document करना है और input validation और anomaly detection add करना है, न कि इसे ignore करना क्योंकि clinical accuracy अभी भी target को पूरा करती है।"
+  },
+  "iii-tb-16": {
+    "label": "Protected attribute flipped, सब कुछ else constant रखा गया, output देखा गया।",
+    "why": "एक protected attribute को flip करके सिखना कि क्या यह output को change करता है, यह एक counterfactual-fairness check है — membership-inference probe से अलग, जो पूछता है कि क्या एक record training set में था।"
+  },
+  "iii-tb-17": {
+    "label": "एक hospital की compliance file दिखाती है कि fairness checks चलाए गए थे और logged, plus एक record कि decisions को reviewers को explain किया जा सकता था — proof कि organization ने अपना duty of care पूरा किया।",
+    "why": "लॉग करना कि fairness और explanation checks actually चलाए गए, यही है जो उन्हें defensible regulatory evidence में बदल देता है — security audit trail से अलग, जो attack resistance को document करता है, न कि fairness या explanation quality।"
+  },
+  "iii-tb-18": {
+    "label": "एक model के decision को एक clinician के लिए terms में translate किया जाता है जिन पर वह actually act कर सकता है, सिर्फ एक probability score नहीं।",
+    "why": "एक decision को एक stakeholder में ऐसे terms में translate करना जिन्हें वह use कर सकता है, इसे एक bare probability score के रूप में छोड़ने के बजाय, यह इस zone का आधा हिस्सा है जो एक black-box model अभी भी हर accuracy और fairness number को pass करने के बाद fail कर सकता है।"
+  },
+  "iii-testing": {
+    "hint": "पूछो कि scene क्या check कर रहा है, न कि सिर्फ क्या data use करता है। Validation यहाँ केवल एक चीज़ का मतलब है: क्या model जो train किया गया उससे beyond generalize करता है। Dataset जो एक model की final, unbiased error estimate देता है वह एक अलग concept है, Pipeline Twins में head-on test किया गया।",
+    "note": "ये development-time और pre-release checks हैं। जो एक सिस्टम के live होने के बाद होता है और live रहता है, वह एक अलग board है।",
+    "zones[0].def": "Pipeline के एक component को अपने आप check करना — एक tokenizer, एक normalization function, एक scoring routine — इससे पहले कि यह कभी कुछ और में wire हो। Errors को पकड़ता है जब वे सबसे सस्ते में होते हैं।",
+    "zones[1].def": "Components को एक साथ end-to-end exercise करना, failures को देखना जो केवल तब emerge होती हैं जब pieces combined होते हैं — mismatches, bottlenecks, या bias जो कोई भी individual component अपने आप पर नहीं दिखाता था।",
+    "zones[2].def": "Check करना कि क्या trained model data से beyond generalize करता है जिस पर train किया: training-set behavior और behavior के बीच gap उस data पर जिसे इसने कभी नहीं देखा। Development-time check overfitting के विरुद्ध — model के final word पर नहीं।",
+    "zones[3].def": "सिस्टम को specific, pre-defined metrics के विरुद्ध measure करना — accuracy, reliability, fairness thresholds — जो project के business, ethical और regulatory goals को उन numbers में translate करता है जिन पर सभी sign off हुए।",
+    "zones[4].def": "Probe करना कि क्या model को attack किया जा सकता है: weights चोरी, training data reconstruct, crafted inputs से outputs manipulate। Deliberate या accidental compromise के विरुद्ध resilience।",
+    "zones[5].def": "Check करना कि क्या outcomes protected groups में fair हैं, और क्या एक decision को ऐसे terms में explain किया जा सकता है जो meaningful हों उन लोगों के लिए जिन्हें इस पर rely करना है।"
+  }
+}

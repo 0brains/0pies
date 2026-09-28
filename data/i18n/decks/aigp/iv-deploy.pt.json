@@ -1,0 +1,95 @@
+{
+ "iv-deploy": {
+  "hint": "Arrasta cada cenário para a escolha que solicita. O tabuleiro contém engodos desenhados de cada eixo — tipo de modelo, infraestrutura e adaptação — portanto lê pela restrição real, não apenas vocabulário familiar."
+ },
+ "iv-dm-01": {
+  "label": "Tradução em tempo real em telemóveis com conectividade intermitente.",
+  "sub": "Latência-Vinculado, Offline-Capaz",
+  "why": "Latência e resiliência offline batem capacidade bruta aqui — um modelo compacto que executa localmente bate um modelo maior que precisa de uma conexão em direto. 'Grandes modelos são sempre necessários para tempo real' é um distrator falso registado: capacidade não garante latência baixa uma vez que a rede cai."
+ },
+ "iv-dm-02": {
+  "label": "As respostas devem refletir as diretrizes clínicas deste mês no momento em que um clínico pergunta — não o instantâneo de treino do trimestre passado.",
+  "sub": "Atualidade no Momento da Consulta",
+  "why": "Atualidade vive fora dos pesos: conectar o modelo a uma fonte atual curada no tempo de consulta mantém respostas atuais sem retreino. Não elimina alucinação — o modelo ainda pode ler mal o que recuperou — e troca custo de treino para um novo ônus de ops: o corpus precisa de re-indexação contínua para permanecer atual."
+ },
+ "iv-dm-03": {
+  "label": "As ofertas de empréstimo devem ser idênticas para entradas idênticas e devem seguir apenas as regras de política de crédito escrita — nenhum caso pode ser decidido de qualquer outra forma.",
+  "sub": "Reproduzível por Regra",
+  "why": "Quando os resultados devem ser perfeitamente reproduzíveis e rastreáveis a regras codificadas, um motor de regras se-então — não um modelo probabilístico — é o ajuste correto; um motor de regras não pode derivar ou alucinar seu caminho a uma resposta diferente para as mesmas entradas."
+ },
+ "iv-dm-04": {
+  "label": "Um mandato de residência rigoroso exige que o regulador tenha visibilidade completa de infraestrutura sobre registos financeiros sensíveis.",
+  "sub": "Controlo Visível Regulador",
+  "why": "Manter o modelo e dados dentro do ambiente próprio da organização maximiza o controlo e contorna questões de transferência transfronteiriça que um regulador teria de outra forma perseguir através da infraestrutura de um vendedor — a troca é ônus mais pesado de pessoal interno e auditoria. Numa classificação de latência-vs-supervisão, no local ainda bate borda sempre que visibilidade reguladora centralizada importa mais que proximidade à fonte de dados."
+ },
+ "iv-dm-05": {
+  "label": "A liderança quer um serviço gerenciado para escalar análise de imagem rapidamente sem construir um centro de dados, e assume que o fornecedor agora possui todo o risco de segurança.",
+  "sub": "Elástico, Mas Risco de Quem?",
+  "why": "Nuvem é a chamada correta para escala sem propriedade de infraestrutura — mas 'o fornecedor possui segurança agora' é a armadilha: sob o modelo de responsabilidade compartilhada, a organização de implementação ainda responde pelos seus próprios dados, e uma simples configuração errada no lado do cliente ainda pode causar uma violação."
+ },
+ "iv-dm-06": {
+  "label": "Quiosques de chat multilingues nos postos fronteiriços têm conectividade limitada e energia limitada, e as respostas devem permanecer quase instantâneas.",
+  "sub": "Nenhum Servidor, Sem Espera",
+  "why": "Executar o modelo no próprio dispositivo remove a dependência de uma conexão externa que estes postos não podem garantir fiabilidade. O que essa escolha te custa: empurrar a inferência para a borda troca a instrumentação centralizada de detecção de deriva, portanto uma frota de dispositivos pode silenciosamente derivar fora da especificação sem um único painel para apanhá-lo."
+ },
+ "iv-dm-07": {
+  "label": "Um modelo proprietário pequeno retreina continuamente num fluxo de conteúdo em direto e deve manter foto de pontuação localmente através de milhares de lojas, sem rodada de rede.",
+  "sub": "Localmente-Primeiro na Escala de Frota",
+  "why": "Pontuação local offline precisa do modelo no dispositivo. O que essa escolha te custa: monitorização e auditoria de desempenho consistentemente fica muito mais difícil uma vez que as decisões são espalhadas através de uma vasta frota dispersa fisicamente em vez de um único serviço centralizado."
+ },
+ "iv-dm-08": {
+  "label": "Uma firma de logística otimizando sua cadeia de abastecimento quer inspecionar, modificar e redistribuir os próprios pesos do modelo em vez de depender do roteiro de um vendedor.",
+  "sub": "Inspeciona Tu Mesmo",
+  "why": "Pesos abertos compram transparência, flexibilidade e liberdade do calendário de lançamento de um único vendedor — ao custo de assumir revisão de licença interna, verificações de procedência e seu próprio teste de segurança que um vendedor carregaria de outra forma."
+ },
+ "iv-dm-09": {
+  "label": "Uma empresa de mídia automatizando resumos de vídeo quer SLAs de vendedor, resposta de incidente e indenizações de PI apoiando qualquer modelo que envie com.",
+  "sub": "Apoiado por Contrato, Não Inspecionável",
+  "why": "Suporte apoiado por contrato e garantias são todo o ponto de ir proprietário — mas essa conveniência tem um custo estratégico nomeado: afastar-se mais tarde é mais difícil uma vez que fluxos de trabalho, aviso e integrações são construídas em torno da API de um vendedor, e bloqueio de vendedor é registado como o risco estratégico superior desta via."
+ },
+ "iv-dm-10": {
+  "label": "Um banco tem milhares de decisões históricas etiquetadas demonstrando um comportamento de pontuação especialista estável que o modelo de uso geral não reproduz por conta própria.",
+  "sub": "Demonstrado, Não Descrito",
+  "why": "Esta é a ferramenta certa para um comportamento estável demonstrado integrado em pesos através de exemplos curados. Não é uma atualização livre: governance agora trata o resultado como um novo sistema precisando do seu próprio re-teste de justiça e robustez, e carrega responsabilidade legal aumentada comparado com usar um modelo pré-construído de terceiros como está."
+ },
+ "iv-dm-11": {
+  "label": "Um gerador de dados sintéticos é treinado além de um segmento de registos de produção de forma que sua saída de teste sinta-se realista o suficiente para a garantia confiar.",
+  "sub": "Realismo Emprestado da Coisa Real",
+  "why": "Adaptar o modelo base além de dados da organização é ajuste fino por definição. O risco que se segue é específico a esta via: a saída sintética gerada pode ainda carregar rastros dos registos de produção sensíveis originais mesmo após anonimização, porque a informação agora está integrada nos pesos, não sentando num banco de dados inspecionável."
+ },
+ "iv-dm-12": {
+  "label": "Um piloto de seleção de currículo precisa de lançar este trimestre; não há tempo ou orçamento ainda para retreino, apenas para validar o modelo licenciado contra resultados de contratação reais.",
+  "sub": "Rápido, Ajuste Não Comprovado",
+  "why": "Fora-da-caixa é o caminho mais rápido para um piloto e evita custo de retreino — mas governance tem de tratá-lo como alto-risco até comprovado de outra forma: os dados de treino do vendedor ou limites de decisão podem não se encaixar neste domínio, portanto validação contra padrões próprios de desempenho e justiça desta organização, mais controlos compensadores como revisão humana, não é opcional."
+ },
+ "iv-dm-13": {
+  "label": "Um sistema de detecção de fraude classifica registos de transação estruturada; seus riscos principais são viés contra certos grupos e precisão que silenciosamente degrada conforme padrões de gastos derivam.",
+  "sub": "Entrada Estruturada, Falha Familiar",
+  "why": "Predizer ou classificar uma categoria conhecida a partir de características estruturadas é o perfil de falha clássico — riscos familiares de viés e deriva que teste de justiça e monitoramento são construídos para apanhar, distinto do modo de falha de um sistema generativo de inventar com confiança conteúdo errado."
+ },
+ "iv-dm-14": {
+  "label": "O marketing precisa de uma ferramenta que redija novo texto de anúncio e imagens de campanha a partir de um aviso curto, não aquele que classifica ou marca qualquer coisa que já exista.",
+  "sub": "Conteúdo Novo, Não um Veredito",
+  "why": "Criar conteúdo novo — texto, imagens, código — é o perfil de benefício-e-risco generativo: saída convincentemente errada, questões de PI e procedência, e uma necessidade de salvaguardas de segurança de conteúdo, distinto dos modos de falha de predição estruturada de um modelo clássico."
+ },
+ "iv-dm-15": {
+  "label": "Um revisor de sinistros precisa que o sistema pese uma fotografia de dano em conjunto com a descrição de incidente escrita antes de sinalizar um sinistro.",
+  "sub": "Dois Canais, Um Julgamento",
+  "why": "Interpretar conjuntamente uma imagem e texto — e ser capaz de explicar qual entrada impulsionou a saída — é o perfil de risco-e-capacidade multimodal; um sistema apenas texto simplesmente tem nenhum canal para a fotografia."
+ },
+ "iv-dm-16": {
+  "label": "Um chatbot de suporte apenas texto responde questões de cliente e deve revelar que é IA, citar fontes e escalar casos sensíveis para um humano.",
+  "sub": "Um Canal, Divulgado",
+  "why": "Texto dentro, texto fora com divulgação, citação e controlos de escalação humano é o perfil de governance de modelo de linguagem — não há segundo canal de entrada para raciocinar, o que é o que empurraria isto para o perfil multimodal em vez disso."
+ },
+ "iv-dm-17": {
+  "label": "Dois milhões de registos curtos estruturados devem ser pontuados nightly sob um orçamento apertado de computação, usando um punhado de características já rotuladas.",
+  "sub": "Tarefa Estreita, Orçamento Apertado",
+  "why": "Um modelo estreito de baixa computação é mais fácil de explicar, retreina rapidamente e executa barato nesta escala de lote — a troca é que pode lutar uma vez que o ambiente fica mais complexo ou variável do que aquilo para o qual foi construído."
+ },
+ "iv-dm-18": {
+  "label": "O sistema deve generalizar entre muitos domínios desconhecidos desde o primeiro dia, sem tempo para construir ou rotular um conjunto de dados por domínio primeiro.",
+  "sub": "Amplitude Comprada Através de Escala",
+  "why": "Pré-treino amplo é o que compra generalização zero-shot e poucos-shot através de domínios que ninguém tem dados rotulados para ainda — o custo é um sistema maior menos transparente que precisa do seu próprio governance de computação, avaliação de segurança e monitoramento de deriva."
+ }
+}

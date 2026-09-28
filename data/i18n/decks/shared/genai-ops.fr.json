@@ -1,0 +1,50 @@
+{
+ "genai-ops": {
+  "hint": "Fais glisser chaque situation sur la réponse qu'elle exige. Certaines réponses sur le tableau sont là pour te tenter."
+ },
+ "genai-ops-01": {
+  "label": "Les réponses se lisent bien mais incluent des affirmations absentes des passages de politique récupérés.",
+  "sub": "Affirmations non soutenues",
+  "why": "Détermine d'abord si les affirmations sont soutenues, puis renforce l'utilisation des preuves, le comportement de refus et la validation des citations. Compromis : Un modèle plus grand peut améliorer la fluidité sans résoudre les preuves manquantes ou ignorées."
+ },
+ "genai-ops-02": {
+  "label": "Le générateur de réponses ne peut pas utiliser le bon fait parce que le passage pertinent est absent de l'ensemble récupéré.",
+  "sub": "Les preuves correctes ne paraissent jamais",
+  "why": "Le rappel de récupération isole si le chunking, les embeddings, les filtres, la réécriture de requête ou le nombre de candidats manquent les preuves nécessaires. Compromis : Les changements de génération ne peuvent pas récupérer les preuves qui ne pénètrent jamais le contexte."
+ },
+ "genai-ops-03": {
+  "label": "Le passage pertinent est présent, mais il est enterré parmi de nombreux chunks distrayants.",
+  "sub": "Trop de contexte non pertinent",
+  "why": "De meilleurs filtres, une récupération hybride et un réclassement réduisent le bruit tout en préservant les meilleures preuves. Compromis : Augmenter le nombre de candidats peut améliorer le rappel mais peut aggraver la précision, la latence et le coût des jetons."
+ },
+ "genai-ops-04": {
+  "label": "Un changement d'invite a amélioré les exemples de test mais a dégradé plusieurs flux de travail clients importants.",
+  "sub": "La qualité varie après la publication",
+  "why": "Un ensemble d'évaluation représentatif avec version détecte les régressions entre les cas d'usage avant la publication. Compromis : L'examen humain reste utile quand guidé par une grille d'évaluation et échantillonné dans la distribution réelle."
+ },
+ "genai-ops-05": {
+  "label": "Un juge LLM évalue systématiquement les réponses plus longues plus haut même quand les réponses concises sont correctes.",
+  "sub": "L'évaluateur préfère les réponses verbeux",
+  "why": "Les juges LLM peuvent avoir un biais de position, de verbosité et d'auto-préférence et doivent être calibrés avec les jugements humains. Compromis : L'évaluation automatisée reste utile à l'échelle après que sa grille d'évaluation et son biais soient validés."
+ },
+ "genai-ops-06": {
+  "label": "L'utilisation est stable, mais la longueur moyenne du contexte d'entrée et de sortie a triplé.",
+  "sub": "Pic de coût interactif",
+  "why": "La télémétrie des jetons expose le moteur du coût direct ; récupère moins de bruit, résume l'historique, met en cache le contexte stable et plafonne la sortie. Compromis : Le débit approvisionné aide l'utilisation prévisible élevée, pas la croissance de requête inutile en elle-même."
+ },
+ "genai-ops-07": {
+  "label": "De nombreux utilisateurs posent des questions sémantiquement équivalentes sur des informations publiques inchangées.",
+  "sub": "Réponses lentes mais répétées",
+  "why": "Un cache soigneusement cléé peut réduire la latence et la dépense de jetons pour les demandes équivalentes quand la fraîcheur et les limites d'accès sont respectées. Compromis : Ne mets pas en cache les réponses sensibles, personnalisées, rapidement changeantes ou insuffisamment isolées."
+ },
+ "genai-ops-08": {
+  "label": "Un agent d'assistance appelle l'API défaillante jusqu'à épuisement de son budget d'exécution.",
+  "sub": "L'agent répète un appel d'outil",
+  "why": "Les tentatives limitées, la gestion explicite des erreurs, l'idempotence, l'observabilité et l'escalade humaine empêchent les boucles d'exécution. Compromis : Améliorer les descriptions d'outils aide la sélection mais ne remplace pas les limites d'exécution et les contrôles d'échec."
+ },
+ "genai-ops-10": {
+  "label": "Un modèle d'assistance médicale est incertain et le coût d'une mauvaise recommandation est grave.",
+  "sub": "Haute enjeu, faible confiance",
+  "why": "Les seuils de confiance, l'abstention, l'affichage de preuves et l'examen humain qualifié sont appropriés pour l'incertitude conséquente. Compromis : La surveillance humaine a besoin de responsabilité claire, de contexte utile et de qualité d'examen mesurée plutôt que d'approbation cérémonielle."
+ }
+}

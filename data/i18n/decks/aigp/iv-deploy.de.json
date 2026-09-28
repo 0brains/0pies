@@ -1,0 +1,95 @@
+{
+ "iv-deploy": {
+  "hint": "Zieh jedes Szenario auf die Wahl, die es verlangt. Das Board hält Köder von jedem Achse — Modell-Typ, Infrastruktur und Anpassung — daher lies die aktuelle Einschränkung, nicht nur vertraute Vokabeln."
+ },
+ "iv-dm-01": {
+  "label": "Echtzeitübersetzung auf Handsets mit zeitweiliger Konnektivität.",
+  "sub": "Latenz-Gebunden, Offline-Fähig",
+  "why": "Latenz und Offline-Widerstandsfähigkeit schlagen rohe Fähigkeit hier — ein kompaktes Modell, das lokal läuft, schlägt ein größeres Modell, das eine live Verbindung braucht. \"Große Modelle werden immer für Echtzeit benötigt\" ist ein aufgezeichneter falscher Ablenker: Fähigkeit garantiert keine niedrige Latenz, wenn das Netzwerk abfällt."
+ },
+ "iv-dm-02": {
+  "label": "Antworten müssen im Moment, in dem ein Kliniker fragt, diesen Monat's klinische Richtlinien widerspiegeln — nicht die Trainings-Schnappschuss von letztem Quartal.",
+  "sub": "Frische zur Abfrage-Zeit",
+  "why": "Frische lebt außerhalb der Gewichte: das Modell an einer aktuellen, kuratierten Quelle zur Abfrage-Zeit verbinden, hält Antworten aktuell, ohne umzutrainieren. Es stoppt Halluzination nicht — das Modell kann immer noch falsch lesen, was es abgerufen hat — und es handelt Trainingskosten für eine neue Ops-Pflicht: das Corpus muss kontinuierlich neu indexiert werden, um aktuell zu bleiben."
+ },
+ "iv-dm-03": {
+  "label": "Kreditangebote müssen für identische Eingaben identisch sein und nur auf die schriftlichen Kreditrichtlinien-Regeln folgen — kein Fall darf auf andere Weise entschieden werden.",
+  "sub": "Reproduzierbar nach Regel",
+  "why": "Wenn Ergebnisse perfekt reproduzierbar und verfolgbar zu codierten Regeln sein müssen, ist eine Wenn-Dann-Regel-Engine — nicht ein probabilistisches Modell — der richtige Fit; eine Regel-Engine kann nicht treiben oder ihre Weise zu einer anderen Antwort für die gleichen Eingaben halluzinieren."
+ },
+ "iv-dm-04": {
+  "label": "Ein striktes Wohnzitzmandat verlangt vom Regulator, volle Infrastruktur-Sichtbarkeit über sensible Finanzunterlagen zu haben.",
+  "sub": "Regulator-Sichtbare Kontrolle",
+  "why": "Das Modell und die Daten im eigenen Umfeld der Organisation behalten, maximiert Kontrolle und umgeht Cross-Border-Transfer-Fragen, ein Regulator sonst durch die Infrastruktur eines Herstellers hätte verfolgen müssen — der Kompromiss ist schwerere In-House-Besetzung und Audit-Pflicht. Auf einer Latenz-gegen-Aufsicht-Rangliste schlägt On-Premises immer noch Edge, wenn zentralisierte Regulator-Sichtbarkeit mehr als Nähe zur Datenquelle zählt."
+ },
+ "iv-dm-05": {
+  "label": "Leadership will einen verwalteten Service, um Bildanalyse schnell zu skalieren, ohne ein Datenzentrum zu bauen, und setzt voraus, der Anbieter besitzt jetzt all das Sicherheitsrisiko.",
+  "sub": "Elastisch, Aber Wen's Risiko?",
+  "why": "Cloud ist der richtige Anruf für Skala ohne Infrastruktur-Besitz — aber \"der Anbieter besitzt jetzt die Sicherheit\" ist die Falle: unter dem Shared-Responsibility-Modell antwortet die einbringfähige Organisation immer noch für ihre eigenen Daten, und eine einzige Fehlkonfiguration auf der Kundenseite kann immer noch einen Durchsatz verursachen."
+ },
+ "iv-dm-06": {
+  "label": "Mehrsprachige Chat-Kioske an Grenzpunkten haben begrenzte Konnektivität und begrenzte Kraft, und Antworten müssen nahe-augenblicklich bleiben.",
+  "sub": "Kein Server, Kein Warten",
+  "why": "Das Modell auf dem Gerät selbst laufen lassen, entfernt die Abhängigkeit von einer externen Verbindung, diese Kontrollpunkte verlässlich nicht garantieren können. Was diese Wahl dich kostet: Pushing-Rückschluss zum Edge handelt zentrale Drift-Erkennungs-Werkzeugausrüstung weg, daher kann eine Flotte von Geräten leise aus der Spez treiben, mit kein einzelnes Dashboard, um es zu erfasst."
+ },
+ "iv-dm-07": {
+  "label": "Ein kleines Proprietary-Modell trainiert kontinuierlich auf einem live Inhalts-Stream um und muss Fotos lokal über tausende Ladengeschäfte scoring halten, mit kein Netzwerk Round-Trip.",
+  "sub": "Lokal-Erste bei Flotten-Skala",
+  "why": "Lokal, offline-Scoring braucht das Modell auf dem Gerät. Was diese Wahl dich kostet: Überwachung und Audit-Performance konsistent wird viel schwerer, sobald Entscheidungen über eine riesige, physisch zerstreute Flotte anstatt ein zentralisierter Service verteilt sind."
+ },
+ "iv-dm-08": {
+  "label": "Eine Logistik-Firma, die ihre Lieferkette optimiert, will des Modells eigene Gewichte untersuchen, ändern und verteilen, anstatt auf eines Hersteller-Roadmap abhängig zu sein.",
+  "sub": "Prüf es Selbst",
+  "why": "Open Gewichte kaufen Transparenz, Flexibilität und Freiheit von eines Hersteller-Freigabe-Zeitplan — auf Kosten, deine eigene Lizenz-Überprüfung, Herkunfts-Checks und Sicherheits-Test zu übernehmen, ein Hersteller würde sonst tragen."
+ },
+ "iv-dm-09": {
+  "label": "Ein Medien-Unternehmen, das Video-Zusammenfassungen automatisiert, will eines Hersteller SLAs, Incident-Response und IP-Schadensersatz-Garantien, die Modelle, die es mit versändet, unterstützen.",
+  "sub": "Vertrags-Unterstützt, Nicht Inspektierbar",
+  "why": "Vertrags-unterstützte Unterstützung und Garantien sind das ganz Punkt gehen proprietary — aber diese Bequemlichkeit hat einen benannten strategischen Kosten: später weg schalten wird schwerer, sobald Workflows, Aufforderungen und Integrationen um eines Hersteller-API gebaut sind, und Hersteller-Sperrung wird als Top-strategisches Risiko dieses Pfads aufgezeichnet."
+ },
+ "iv-dm-10": {
+  "label": "Eine Bank hat tausende von gekennzeichneten historischen Entscheidungen, die ein stabiles, Spezialisten-Scoring-Verhalten demonstrieren, das das Allzweck-Modell nicht selbst reproduziert.",
+  "sub": "Demonstriert, Nicht Beschrieben",
+  "why": "Dies ist das richtige Werkzeug für ein stabiles, demonstriertes Verhalten in Gewichte über kuratierte Beispiele. Es ist keine freie Upgrade: Governance behandelt jetzt das Ergebnis als neues System, das seinen eigenen Fairness- und Robustness-Neu-Test braucht, und es trägt erhöhte rechtliche Haftung im Vergleich zur Verwendung eines Drittanbieter-vorgefertigten Modells wie-ist."
+ },
+ "iv-dm-11": {
+  "label": "Ein synthetischer-Daten-Generator wird weiter auf einem Schnitt Produktionsdatensätze trainiert, daher sein Test-Ausgabe fühlt sich realistisch genug für QA, um zu vertrauen.",
+  "sub": "Realismus von der echten Sache ausgeliehen",
+  "why": "Das Basis-Modell weiter auf der Organisationen eigenen Daten anpassen ist Fine-Tuning per Definition. Das Risiko, das folgt, ist spezifisch für diesen Pfad: die erzeugte synthetische Ausgabe kann immer noch Spuren der ursprünglichen sensiblen Produktionsdatensätze tragen, auch nach Anonymisierung, weil die Information jetzt in Gewichte gewonnen ist, nicht in einer inspektierbare Datenbank sitzt."
+ },
+ "iv-dm-12": {
+  "label": "Ein Resume-Screening-Pilot braucht dieses Quartal zu starten; es gibt keine Zeit oder Budget noch für Umtraining, nur für die Validierung des lizenzierten Modells gegen echte Einstellungsergebnisse.",
+  "sub": "Schnell, Ungeprüfter Fit",
+  "why": "Out-of-the-Box ist der schnellste Pfad zu einem Piloten und vermeidet Umtraining-Kosten — aber Governance hat ihn als Hochrisiko zu behandeln, bis anders gezeigt: des Hersteller-Trainingsdaten oder Entscheidungs-Grenzen passen möglicherweise nicht diese Domain, daher Validierung gegen diese Organisationen eigene Leistungs- und Fairness-Standards, plus kompensierende Kontrollen wie menschliche Überprüfung, ist nicht optional."
+ },
+ "iv-dm-13": {
+  "label": "Ein Betrugs-Erkennungs-System klassifiziert strukturierte Transaktionssätze; seine Hauptrisiken sind Bias gegen bestimmte Gruppen und Genauigkeit, die leise abnimmt, wenn Ausgabemuster treiben.",
+  "sub": "Strukturierte Eingabe, Vertraute Fehler",
+  "why": "Die Vorhersage oder Klassifizierung einer bekannten Kategorie aus strukturierten Features ist das klassische Fehler-Profil — vertraute Bias- und Drift-Risiken, die Fairness-Test und Überwachung erfasst, unterschiedlich von eines Generative-Systems Fehler-Modus der Selbstsicherheits-erfundenen falschen Inhalts."
+ },
+ "iv-dm-14": {
+  "label": "Marketing braucht ein Werkzeug, das neue Anzeigen-Text und Kampagnen-Bilder aus einer kurzen Eingabeaufforderung entwirft, nicht eines, das etwas klassifiziert oder scoring, das bereits existiert.",
+  "sub": "Neuer Inhalt, Nicht ein Verdikt",
+  "why": "Neue Inhalte schaffen — Text, Bilder, Code — ist der generative Nutzen-und-Risiko-Profil: überzeugend falsche Ausgabe, IP und Herkunfts-Fragen, und eine Notwendigkeit für Inhalts-Sicherheits-Guardrails, unterschiedlich von eines klassischen Modells strukturierten-Vorhersage-Fehler-Modi."
+ },
+ "iv-dm-15": {
+  "label": "Ein Claims-Reviewer braucht das System, um ein Schadenfoto zusammen mit der schriftlichen Incident-Beschreibung zu wägen, bevor es eine Forderung flaggt.",
+  "sub": "Zwei Kanäle, Ein Urteil",
+  "why": "Gemeinsam interpretierend ein Bild und Text zusammen — und fähig sein, zu zeigen, welche Eingabe die Ausgabe fuhren — ist das Multimodal-Risiko-und-Fähigkeits-Profil; ein reines Text-System hat einfach keinen Kanal für das Foto."
+ },
+ "iv-dm-16": {
+  "label": "Ein Text-only Support-Chatbot antwortet auf Kundenfragen und muss enthüllen, es's KI, zitatqueellen und escallate sensible Fälle zu einem Menschen.",
+  "sub": "Ein Kanal, Enthüllt",
+  "why": "Text-in, Text-out mit Enthüllung, Zitation und menschlicher Escallation-Kontrollen ist das Sprach-Modell-Governance-Profil — es gibt keinen zweiten Eingabe-Kanal zum Überdenken, was dieses zum multimodal-Profil statt würde schieben."
+ },
+ "iv-dm-17": {
+  "label": "Zwei Millionen kurze, strukturierte Datensätze müssen nächtlich unter einem engen Rechnerbudget scoring gewertet werden, mit einer Handvoll bereits-gekennzeichnete Features genutzt.",
+  "sub": "Enge Aufgabe, Enges Budget",
+  "why": "Ein enges, Niedrig-Rechner-Modell ist leichter zu erklären, schnell umzutrainieren und billig bei dieser Batchskala zu laufen — der Kompromiss ist, dass es kampfen kann, sobald die Umgebung komplexer oder variabler wird als das, für das es gebaut wurde."
+ },
+ "iv-dm-18": {
+  "label": "Das System muss über viele unfamiläre Domains verallgemeinern von Tag eins, mit keine Zeit, um ein per-Domain-Datensatz zuerst zu bauen oder zu kennzeichnen.",
+  "sub": "Breite Gekauft Durch Skala",
+  "why": "Breites Vor-Training ist das, was Null- und Few-Shot-Generalisierung über Domains kauft, niemand Kennzeichen-Daten für noch hat — die Kosten ist ein größeres, weniger durchsichtig System, das seine eigene Rechner-Governance, Sicherheits-Evaluation und Drift-Überwachung braucht."
+ }
+}

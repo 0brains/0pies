@@ -1,0 +1,106 @@
+{
+ "sw-001": {
+  "label": "Kodunu bir Foundry projesine bir uç nokta ve kimlik bilgisi kullanarak bağla (paket azure-ai-projects)",
+  "why": "AIProjectClient(endpoint, credential), proje giriş noktasıdır; get_openai_client() ondan asılıdır — kimlik doğrulamayı kaldır ve bu, kırılan satır."
+ },
+ "sw-002": {
+  "label": "İletileri listesini dağıtılan bir modele gönder ve choices[0].message.content döndür",
+  "why": "chat.completions.create(model=DEPLOYMENT_NAME, messages=[…]), sohbet çağrısıdır — ve model=, temel model adını değil dağıtım adını alır (histack tuzağı #5)."
+ },
+ "sw-003": {
+  "label": "Konuşma kaynağı anahtarını ve bölgeyi tutar ve sentez ses adı",
+  "why": "SpeechConfig(key, region) ilk yapılandırılır (ör. speech_synthesis_voice_name='en-US-Ava:DragonHDLatestNeural'); AudioConfig cihazları, kimlik bilgilerini değil."
+ },
+ "sw-004": {
+  "label": "Kullanıcının konuşulan sorusunu ileti içeriği içinde satır içi ses verisi olarak gönder",
+  "why": "Konuşulan GİRİŞ, ileti içeriği parçaları input_audio olarak gider; yanıt ayarları ikizi, belgelenmiş tuzaktır."
+ },
+ "sw-005": {
+  "label": "Modelden konuşulan ses ile yanıt vermesini iste: ses \"alloy\", format \"wav\"",
+  "why": "Konuşulan ÇIKTI, çok modlu çağrı üzerinde modalities=[\"text\",\"audio\"] artı audio={\"voice\":\"alloy\",\"format\":\"wav\"} ile talep edilir — sınavın kesin yükü."
+ },
+ "sw-006": {
+  "label": "Bir fotoğrafı (URL veya base64) sohbet iletisine ekle, böylece dağıtılan gpt-4o bunu açıklayabilir",
+  "why": "Görsel giriş, farklı bir hizmet ve uç nokta olan Vision SDK'nin aksine (çift #23), çok modlu dağıtıma image_url / base64 içerik parçaları olarak gider."
+ },
+ "sw-007": {
+  "label": "Mevcut bir proje istemcisini, Yanıtlar ve Konuşmalar çağrıları için kullanılan OpenAI uyumlu istemciye bağla",
+  "why": "project.get_openai_client(), proje nesnesi üzerinde adı geçen bir örnek yöntemidir; sınavın tuzağı sınıf üzerinde bunu çağırmaktır."
+ },
+ "sw-008": {
+  "label": "Proje istemcisi inşa edildikten hemen sonra, ilk Yanıtlar veya Konuşmalar isteği gitmeden önce bir kez çağrılır",
+  "why": "Çalışma zamanı OpenAI şeklinde istemci döndüren köprüdür; kimlik doğrulama nesnesi yalnızca proje istemcisini doğrular, hiçbir zaman sohbet istemcisi döndürmez."
+ },
+ "sw-009": {
+  "label": "Sıfır bağımsız değişkeniyle credential= değeri olarak geçilir, böylece uygulama hiçbir yerde anahtar yazılmadan imzalı Azure kimliği aracılığıyla kimliğini doğrular",
+  "why": "DefaultAzureCredential(), anahtarsız Entra ID kimlik bilgisi nesnesidir; AIProjectClient onu tüketir ve azure-ai-projects yalnızca paket adı, çalışma zamanı nesnesi değildir."
+ },
+ "sw-010": {
+  "label": "az login'in ayarladığı nesne: istemci, ortamda API anahtarına gerek kalmadan, çağrı zamanında imzalı kimliğinizi otomatik olarak çözer",
+  "why": "Hızlı başlangıç az login'i bu kimlik bilgisi nesnesiyle eşleştirir; get_openai_client yalnızca sohbet istemcisi döndürür ve kimlik doğrulamayla hiçbir ilgisi yoktur."
+ },
+ "sw-011": {
+  "label": "Herhangi bir Foundry proje istemci kodu yazmadan önce, hızlı başlangıç'ın ilk kurulum komutunda yüklediğin pip paketi",
+  "why": "\"Proje istemci için hangi paketi yüklemelisin?\" klasik bir sınav sorusudur — cevap azure-ai-projects, arama veya dil SDK'leri değil."
+ },
+ "sw-012": {
+  "label": "Hızlı başlangıçta az login'in yanı sıra listelenen kurulum adımları, herhangi bir istemci kodu çalışmadan önce minimum bir sürüme (>=2.0.0) sabitlenmiş",
+  "why": "Belgelenen hızlı başlangıç rehberi azure-ai-projects>=2.0.0 yükler ve az login çalıştırır — Vision ve Arama paketleri proje istemcisiyle ilgisi yoktur."
+ },
+ "sw-013": {
+  "label": "Düz metin üzerinde herhangi bir anahtar cümle veya his çıkarılması çalışmadan önce bir uç nokta ve AzureKeyCredential ile inşa edilir",
+  "why": "TextAnalyticsClient(endpoint, credential), ham metin üzerinde .extract_key_phrases()/.analyze_sentiment() ortaya çıkarmıştır; diğer iki istemci tam olarak farklı uç noktalardaki çok modlu belgeler ve görüntüler hedefler."
+ },
+ "sw-014": {
+  "label": "Hangi istemci türü analyze_sentiment(documents) ortaya çıkarırsa, her belgenin genel duygusu yazdırılırsa",
+  "why": "Duygu ve anahtar cümle çıkarılması, bu istemci üzerinde AI Dil metin analitikleri yöntemleridir; diğer iki çok modlu belgeler veya canlı sese çalışır, düz metin değil."
+ },
+ "sw-015": {
+  "label": "Bilgisayarın varsayılan mikrofonundan dinlemek için ayarla, böylece tanıyıcıya ses kaynağı olarak iletilir",
+  "why": "AudioConfig(use_default_microphone=True), giriş cihazını seçer; SpeechConfig yerine abonelik anahtarını/bölgeyi tutar ve SpeechRecognizer, cihaz seçici değil bu nesnenin iletildiği sınıftır."
+ },
+ "sw-016": {
+  "label": "Kaydedilen bir dosya adından inşa edilir, böylece bir tanıyıcı canlı bir mikrofon yerine bir test WAV dosyasından konuşma okur",
+  "why": "AudioConfig(filename=…) dosya destekli cihaz kaynağıdır; SpeechConfig kimlik bilgilerini ve ses adını taşır ve SpeechSynthesizer ses çalmak yerine okur."
+ },
+ "sw-017": {
+  "label": "Konuşma yapılandırması ve ses yapılandırması verilir, sonra tam olarak kısa konuşulan bir söylem yakalar ve durur",
+  "why": "Bu, recognize_once_async() çeken sınıftır; SpeechSynthesizer konuşma çıktısı vermez, AudioConfig yalnızca giriş cihazını temizler."
+ },
+ "sw-018": {
+  "label": "Tek söylem zaman uyumsuz çağrısı, mikrofonun az duyduğunun transkriptini tutan sonuç nesnesi döndürür",
+  "why": "Konuşmadan metne sınıf, canlı ses tanıyıp result.text döndürür; sentetizleyici yerine dinler ve Dil istemcisi sadece transkript yapılmış metinle çalışır."
+ },
+ "sw-019": {
+  "label": "Ses adı zaten ayarlanmış bir konuşma yapılandırması alır, sonra metin dizesini hoparlörün sesli çıktısına çevirir",
+  "why": "Bu sınıfın speak_text_async(), ayarlanmış sesi kullanarak bir dizeyi yüksek sesle oynatır; tanıyıcı konuşmayı metne çevirir, AudioConfig yalnızca cihaz seçer."
+ },
+ "sw-020": {
+  "label": "Bir tanıyıcı metin transkripti üretdikten sonra, bu ikinci nesne aynı dizeyi kendi zaman uyumsuz konuşma çağrısıyla yüksek sesle okur",
+  "why": "Tanınan yanıtın metinden sese oynatılması bu sınıfın işidir; tanıyıcı zaten metni üretmiş ve SpeechConfig yalnızca kimlik bilgilerini ve kullandığı ses adını depolar."
+ },
+ "sw-021": {
+  "label": "Bir uç nokta ve anahtarla inşa edilir, sonra tek çağrısı, fotoğraftan metin çekmek için OKUNANLAR görsel özelliğine karşı bir görüntü URL'sini analiz eder",
+  "why": "Bu Vision istemcisinin .analyze(image_url=…, visual_features=[…]) çağrısı genel görüntülerde OCR çalıştırır; ContentUnderstandingClient bunun yerine çok farklı, zaman uyumsuz çağrı şeklinden bir yoklayıcı döndürür."
+ },
+ "sw-022": {
+  "label": "BAŞLI YAPMA artı OCR çağrısı, ham bayt yerine URL tarafından görüntü alır, tek geçişte BAŞLIK ve OKUNANLAR özellikleri ister",
+  "why": "Bu Vision istemcisinin URL tarafından analiz yöntemi, başlık ve okuma gibi sabit önceden oluşturulmuş özellikler döndürür; hiçbir yoklama adımı ve konuşma yakalamayla ilgisi yoktur."
+ },
+ "sw-023": {
+  "label": "Belge URL'lerini çıkarılması için çıkaran ve yapılandırılmış sonuçları geri okur, bir uygulama ilk oluşturduğunda istemci",
+  "why": "\"İçerik Anlama uygulaması ilk oluşturması gereken istemci nedir?\" bu sınıftır — diğer iki düz metin ve genel görüntüler için ayrı uç noktalarla ayrı hizmetlerdir."
+ },
+ "sw-024": {
+  "label": "Uzun süreli analiz çağrısı bir yoklayıcı döndürür; o yoklayıcı üzerinde .result() çağrı, son çıkartılmış çıktıyı beklemenin uygulaması nasıl bekler",
+  "why": "begin_analyze() artı poller.result(), bu istemcinin zaman uyumsuz yoklama modelidir; Vision istemcisinin analyze() senkron ve Dil istemcisinin yöntemleri yoklama ile belgeleri doğrudan alır."
+ },
+ "sw-025": {
+  "label": "Yanıt alanı b64_json, bir url alanı değil, çözülen gerçek piksel veri tutan GPT görüntüsü üretme isteği",
+  "why": "GPT görüntüsü-1 dağıtımı, response.data[0].b64_json'de oluşturulan görüntü baytları döndürür; tamamlama çağrısı metin seçenekleri döndürür ve Vision istemcisi yalnızca zaten var olan bir görüntüyü analiz eder."
+ },
+ "sw-026": {
+  "label": "Arkaplanı şeffaf ayarla ve bu metin-görüntü isteğinde PNG çıktısı iste, böylece şeffaf bir arkaplan elde et",
+  "why": "Şeffaf arkaplan artı PNG çıktısı, GPT görüntüsü-1 serisi oluşturma parametreleridir; Vision analizi veya sohbet tamamlama çağrılarında hiçbir şey bunları kabul etmez."
+ }
+}

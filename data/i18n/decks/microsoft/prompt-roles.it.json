@@ -1,0 +1,69 @@
+{
+ "pr-001": {
+  "label": "\"Sei un assistente HR formale. Rispondi solo a domande sulla politica HR.\"",
+  "why": "Persona più guardrail di ambito — l'esempio verbatim di histack del contenuto del system prompt."
+ },
+ "pr-002": {
+  "label": "\"Restituisci sempre i dettagli del cliente in una forma JSON fissa.\"",
+  "why": "Le regole di formato di output persistono tra i turni — il materiale dell'esame afferma verbatim che le istruzioni di forma JSON appartengono al system prompt."
+ },
+ "pr-003": {
+  "label": "\"Quanti giorni di ferie mi rimangono quest'anno?\"",
+  "why": "La richiesta effettiva di questo turno — nessuna regola, nessuna persona, solo la domanda."
+ },
+ "pr-004": {
+  "label": "\"Hai 12 giorni di ferie rimasti.\" — riproiettato nella richiesta successiva per il contesto",
+  "why": "Le risposte precedenti del modello vengono risent come messaggi di assistente affinché il modello abbia memoria conversazionale; non sono mai contenuto dell'utente."
+ },
+ "pr-005": {
+  "label": "\"Riassumi le note di riunione allegate in tre punti elenco.\"",
+  "why": "Un compito una tantum per questo turno — suona come un'istruzione, ma non è una regola persistente, quindi è utente, non sistema."
+ },
+ "pr-006": {
+  "label": "\"Se una richiesta esce dal perimetro della politica HR, dillo invece di indovinare.\"",
+  "why": "Una regola di fallback per gestire richieste fuori scope, applicate ogni turno — il pattern 'buona aggiunta al system prompt' verbatim dell'esame, distinto dal coppia persona/scope di pr-001."
+ },
+ "pr-007": {
+  "label": "\"Mantieni le risposte a due frasi a meno che il cliente non chieda più dettagli.\"",
+  "why": "Una regola di tono/lunghezza che si applica all'intera conversazione è un segnale di system prompt distinto da una regola di formato (pr-002) o una regola di ambito (pr-001) — questa governa la verbosità."
+ },
+ "pr-008": {
+  "label": "\"Rifiuta di discutere i prezzi dei concorrenti, anche se il cliente insiste.\"",
+  "why": "Una guardrail di sicurezza/restrizione dell'argomento destinata a sopravvivere alla spinta dell'utente per ogni turno — le note dell'esame che i messaggi di sistema portano restrizioni specifiche dell'app oltre i filtri di contenuto della piattaforma."
+ },
+ "pr-009": {
+  "label": "\"Annulla la mia riunione delle 3 e informala al team.\"",
+  "why": "Legge come un comando, ma è una singola richiesta scoped a adesso — la trappola è scambiare la frase di istruzione per una regola persistente."
+ },
+ "pr-010": {
+  "label": "\"Da ora in poi, rispondi sempre in francese.\" — digitato dal cliente a metà chat",
+  "why": "'Da ora in poi' suona persistente, ma chi parla ancora decide il ruolo: una richiesta digitata nella chat dal cliente è un messaggio dell'utente, anche uno che chiede comportamento permanente — la persistenza vive nel system prompt, non nella formulazione dell'utente."
+ },
+ "pr-011": {
+  "label": "\"Confronta questi due termini di contratto e contrassegna eventuali conflitti.\"",
+  "why": "Un compito analitico specifico presentato per questo scambio — nessuna persona o regola app-wide viene impostata, quindi è la richiesta di questo turno."
+ },
+ "pr-012": {
+  "label": "\"In base al tuo account, il tuo abbonamento viene rinnovato il 14.\" — inviato al turno successivo affinché il modello ricordi cosa ha già detto al cliente",
+  "why": "L'output generato dal modello risent per preservare il contesto è un messaggio di assistente, non le parole del cliente — la trappola è scambiare l'output riproiettato del modello per qualcosa che l'utente ha detto."
+ },
+ "pr-013": {
+  "label": "\"{{\\\"status\\\": \\\"resolved\\\", \\\"ticket_id\\\": \\\"48213\\\"}}\" — la risposta strutturata del modello dal turno precedente, portata avanti come cronologia",
+  "why": "Il contenuto di forma JSON assomiglia alla regola di formato di pr-002, ma una regola e un'istanza dell'output stesso del modello hanno ruoli diversi — questa è la risposta del modello riproiettata, non un'istruzione permanente."
+ },
+ "pr-014": {
+  "label": "\"Vorresti che controllassi anche i voli per il ritorno?\" — la domanda di follow-up propria del modello dal turno precedente, mantenuta nel contesto",
+  "why": "Il testo di forma di domanda può essere scambiato per l'utente che parla, ma questa domanda è stata generata dal modello stesso e viene risent affinché ricordi di aver fatto domande — il discriminatore è chi ha originato le parole, non la loro forma grammaticale."
+ },
+ "pr-015": {
+  "label": "\"Passaggio 1: Riavvia il router. Passaggio 2: Ricollega al Wi-Fi.\" — gli step di risoluzione dei problemi del modello da un turno precedente, riproiettati affinché ricordi cosa ha già detto al cliente",
+  "why": "Le istruzioni numerate sembrano simile a regola, tentando uno scambio con il system prompt, ma questi sono l'output precedente del modello stesso portato avanti per la memoria, non una guardrail persistente impostata dallo sviluppatore."
+ },
+ "prompt-roles": {
+  "hint": "Fai due domande: questo si applica a ogni turno o solo a questo (persistente vs una tantum)? E chi parla — lo sviluppatore che configura l'assistente, la persona che digita adesso, o la risposta precedente del modello che viene risent per la memoria?",
+  "note": "La formulazione di tipo istruzione non è prova di un system prompt — un compito una tantum può suonare come un comando e essere comunque un messaggio dell'utente. La persistenza tra i turni è il vero test.",
+  "zones[0].def": "Persona, tono, regole e guardrail — persistenti su ogni turno",
+  "zones[1].def": "La richiesta effettiva di questo turno",
+  "zones[2].def": "Le risposte precedenti del modello riproiettate per la memoria conversazionale"
+ }
+}

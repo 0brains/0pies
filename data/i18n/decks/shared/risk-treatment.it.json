@@ -1,0 +1,74 @@
+{
+  "risk-treatment": {
+    "hint": "Trascina ogni decisione sull'opzione di trattamento che rappresenta. Chiedi cosa è successo al rischio stesso, non quanto lavoro la risposta ha preso.",
+    "note": "Il trattamento risponde a 'cosa faremo rispetto a questo rischio'. È un asse diverso dalla forza del controllo, che risponde a 'quanto efficace è la riduzione'. Comprare l'assicurazione è una forte decisione di trattamento e nessun controllo affatto.",
+    "zones[0].def": "Non intraprendere, o smettere di intraprendere, l'attività che dà origine al rischio. L'esposizione va a zero perché l'attività va a zero.",
+    "zones[1].def": "Mantieni l'attività ma agisci sulla probabilità o sull'impatto. La maggior parte dei controlli vive qui, e il rischio residuo rimane sempre.",
+    "zones[2].def": "Sposta la conseguenza finanziaria o legale a un'altra parte. Il pericolo è intoccato; solo chi paga cambia.",
+    "zones[3].def": "Retain il rischio consapevolmente, al livello di autorità titolata ad accettarlo, e registra la decisione."
+  },
+  "rt-01": {
+    "label": "Dopo una valutazione del rischio, l'azienda cancella la sua funzione di riconoscimento emotivo pianificata per il monitoraggio sul luogo di lavoro interamente.",
+    "why": "L'attività stessa viene abbandonata, quindi l'esposizione scompare piuttosto che essere gestita. L'evitamento è l'unico trattamento che rimuove un rischio invece di ridurlo."
+  },
+  "rt-02": {
+    "label": "Un modello del fornitore richiederebbe l'elaborazione di dati biometrici per i quali l'azienda non ha alcuna base legittima, quindi l'azienda si ritira dall'approvvigionamento.",
+    "why": "Declinare di procedere è una decisione di trattamento, non l'assenza di uno. Di solito è la risposta giusta quando il rischio è inaccettabile a qualsiasi livello residuo."
+  },
+  "rt-03": {
+    "label": "Una banca decide di non distribuire un modello di decisione automatizzato nella giurisdizione in cui non potrebbe soddisfare il requisito di contestabilità.",
+    "why": "Scoping l'attività fuori da una giurisdizione rimuove l'esposizione lì. L'evitamento parziale per ambito è ancora evitamento."
+  },
+  "rt-04": {
+    "label": "Un team abbandona una funzione pianificata che avrebbe dedotto lo stato di salute dalla cronologia di acquisto, giudicando nessuna mitigazione sufficiente.",
+    "why": "Quando nessun controllo porta il rischio residuo all'interno della tolleranza, l'evitamento è l'opzione rimanente. Il segno è che l'attività si ferma, non che viene osservata più da vicino."
+  },
+  "rt-05": {
+    "label": "Le soglie di confidenza vengono introdotte in modo che i casi incerti vengono instradati a un revisore allenato invece di essere auto-decisi.",
+    "why": "L'attività continua con minore probabilità di una decisione sbagliata non riveduta. Il rischio residuo rimane — i revisori sono fallibili — che è la firma della riduzione."
+  },
+  "rt-06": {
+    "label": "Il corpus di addestramento viene ribilanciato e il modello viene rivalutato per sottogruppo prima del rilascio.",
+    "why": "Questo abbassa la probabilità di prestazioni disparate senza eliminarla. Il miglioramento misurabile con esposizione residua è riduzione, non evitamento."
+  },
+  "rt-07": {
+    "label": "I limiti di velocità, i filtri di output e un kill switch vengono aggiunti a un assistente rivolto al cliente.",
+    "why": "Ogni misura attacca la probabilità o l'impatto mentre il servizio continua a essere eseguito. Nota che il kill switch riduce l'impatto piuttosto che la probabilità — entrambi contano."
+  },
+  "rt-08": {
+    "label": "Le model card, i risultati della valutazione e i limiti noti vengono pubblicati in modo che i distributori possono utilizzare il sistema all'interno della sua busta testata.",
+    "why": "Ridurre l'uso improprio informando il distributore è una riduzione genuina, se debole. La sua debolezza è una domanda di forza di controllo, non una classificazione di trattamento."
+  },
+  "rt-09": {
+    "label": "L'azienda acquista un'assicurazione di responsabilità di AI specifica che copre i reclami derivanti da decisioni automatizzate.",
+    "why": "La conseguenza finanziaria si sposta all'assicuratore mentre il modello si comporta esattamente come prima. L'assicurazione non riduce mai la probabilità di danno e non è un controllo."
+  },
+  "rt-10": {
+    "label": "Un contratto rende il fornitore del modello responsabile dei danni causati da difetti nel sistema fornito.",
+    "why": "L'indennità contrattuale riallocia il costo tra le parti. L'individuo colpito non è meglio protetto, motivo per cui i regolatori non lo trattano come mitigazione."
+  },
+  "rt-11": {
+    "label": "Un'attività di elaborazione ad alto rischio viene esternalizzata a un fornitore specializzato secondo un contratto che li rende responsabili dei fallimenti di conformità.",
+    "why": "L'esternalizzazione sposta la conseguenza operativa e finanziaria, sebbene raramente la responsabilità normativa — una distinzione che cattura le persone."
+  },
+  "rt-12": {
+    "label": "Il distributore negozia una garanzia e un'indennità limitata per i reclami di proprietà intellettuale di terze parti derivanti dall'output generato.",
+    "why": "L'esposizione è prezzata e spostata piuttosto che diminuita. Un limite significa che il trasferimento è parziale, che vale la pena registrare nel registro dei rischi."
+  },
+  "rt-13": {
+    "label": "Un piccolo rischio residuo di un errore di formattazione di bassa gravità viene documentato, firmato dal product owner, e esaminato annualmente.",
+    "why": "La ritenzione informata, autorizzata e registrata è accettazione. L'accettazione è una decisione con un proprietario e una data di revisione, non il silenzio."
+  },
+  "rt-14": {
+    "label": "Il comitato rischi registra che il rischio residuo della distribuzione rientra nell'appetito dichiarato e non è richiesto alcun ulteriore intervento questo ciclo.",
+    "why": "La ritenzione esplicita al livello di autorità titolata a mantenerla. Se nessuno al livello giusto ha detto di sì, il rischio non viene accettato — è solo non gestito."
+  },
+  "rt-15": {
+    "label": "Un limite noto con una soluzione documentata è programmato per la revisione all'aggiornamento del modello successivo piuttosto che essere risolto adesso.",
+    "why": "La ritenzione limitata nel tempo con un punto di revisione è accettazione. La soluzione alternativa non la rende riduzione, perché il rischio stesso è invariato nel frattempo."
+  },
+  "rt-16": {
+    "label": "Il consiglio nota che il costo della mitigazione ulteriore supera la perdita attesa e dirige che il rischio residuo sia mantenuto e monitorato.",
+    "why": "Una decisione di ritenzione giustificata dal costo a livello di consiglio, con monitoraggio allegato. Il monitoraggio non è un controllo qui — rileva, non previene."
+  }
+}

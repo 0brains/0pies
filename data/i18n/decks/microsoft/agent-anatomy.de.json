@@ -1,0 +1,84 @@
+{
+ "ag-001": {
+  "label": "\"Du bist ein höflicher Support-Agent; eskaliere alles, was Rückerstattungen betrifft\" — wird einmal bei der Agent-Erstellung gesetzt",
+  "why": "Das instructions-Feld definiert persistentes Verhalten zum Erstellungszeitpunkt — das am meisten betonte Agent-Konzept des Studienmaterials, unterscheidet sich von Laufzeit-Chat-Zustand."
+ },
+ "ag-002": {
+  "label": "Erlaube dem Agent, externe Funktionen oder APIs aufzurufen, um Aktionen auszuführen",
+  "why": "Function Calling / Tools ermöglichen dem Modell, über Text hinaus zu handeln — die Fähigkeit, die einen Agent von einem einfachen Chat-Aufruf unterscheidet."
+ },
+ "ag-003": {
+  "label": "Das bereitgestellte gpt-4o, über das der Agent nachdenkt — referenziert durch seinen Bereitstellungsnamen",
+  "why": "Ein Agent = Modell + Instructions + Tools; das Modell ist eine Bereitstellung, und {{\"deployment\":{{\"model\":AGENT_NAME}}}} ist die kanonisch falsche Antwort."
+ },
+ "ag-004": {
+  "label": "Grundlagendateien und Datenquellen, die der Agent durchsuchen kann, um aus deinem Inhalt zu antworten",
+  "why": "Knowledge bindet deine Daten an den Agent, damit Antworten darin verankert sind — Teil der Agent-Anatomie, die das Studienmaterial für Task 2.1 benennt."
+ },
+ "ag-005": {
+  "label": "Trägt einer laufenden Konversation Benutzer- und Assistant-Nachrichten zur Laufzeit",
+  "why": "Threads/Konversationen halten Laufzeit-Chat-Zustand — werden pro Sitzung von der Client-App erstellt, nicht zum Zeitpunkt der Agent-Definition."
+ },
+ "ag-006": {
+  "label": "Der Aufruf, der die Konversation verarbeitet und die nächste Ausgabe des Agenten erzeugt",
+  "why": "Ein Run (openai.responses.create / create run) führt den Agent gegen den Thread aus — die dritte distinct Schicht: Definition vs. Sitzung vs. Aufruf."
+ },
+ "ag-007": {
+  "label": "Der natürlichsprachige Persona-Text, der in PromptAgentDefinition neben dem Modellnamen eingefügt wird, wenn der Agent zuerst in Code definiert wird",
+  "why": "PromptAgentDefinition(model=MODEL_NAME, instructions=...) setzt beide Felder zum Definitionszeitpunkt, aber nur der Persona-Text formt das Agent-Verhalten — der daneben angegebene Modellname ist eine separate Komponente."
+ },
+ "ag-008": {
+  "label": "Formatiere jede Antwort als nummerierte Liste, begrenzt auf fünf Punkte — fixiert zum Autorenzeitpunkt, nicht pro Frage gewählt",
+  "why": "Eine stehende Formatierungsregel, die zum Autorenzeitpunkt eingebacken ist, ist Verhalten, kein externer Action — sie ruft nichts über Text hinaus auf, was sie von Tools unterscheidet."
+ },
+ "ag-009": {
+  "label": "Tausch das Reasonings-Engine von gpt-4o-mini zu gpt-5-mini aus, ohne die Persona des Agenten oder seine angehängten Tools zu berühren",
+  "why": "Nur das bereitgestellte Reasoning-Engine ändert sich hier; Persona und Tool-Verkabelung bleiben fixiert — ein sauberer Test, ob die Bereitstellung eine separate Schicht von anderen Agent-Komponenten ist."
+ },
+ "ag-010": {
+  "label": "Der Bereitstellungsidentifikator, der in PromptAgentDefinition neben dem Persona-Text eingefügt wird, wenn der Agent zuerst in Code definiert wird",
+  "why": "Der gleiche PromptAgentDefinition()-Aufruf wie der Persona-Text, aber dieser Parameter benennt, welches bereitgestellte Engine der Agent aufruft — eine Bereitstellungsreferenz, nicht das Verhalten selbst."
+ },
+ "ag-011": {
+  "label": "Aktiviere Live-Websuche, damit der Agent aktuelle Informationen abrufen kann, die über seine Trainingsdaten hinausgehen",
+  "why": "Web-Suche wird aus dem Foundry-Portal-Tool-Katalog aktiviert (Build > Tools) neben Code Interpreter und Dateisuche — eine Live-Außen-Fähigkeit, kein angehängter statischer Inhalt."
+ },
+ "ag-012": {
+  "label": "Erlaube dem Agent, generiertes Code auszuführen, um ein Ergebnis zu berechnen, anstatt nur die Berechnungsschritte zu beschreiben",
+  "why": "Code-Ausführung ist eine der Katalog-Fähigkeiten neben Websuche und Dateisuche, die den Agent über Text-Erzeugung hinaus handeln lässt — das Reasoning-Engine selbst führt Code nie direkt aus."
+ },
+ "ag-013": {
+  "label": "Verbinde einen existierenden Azure AI Search Index, damit die Antworten des Agenten deinen indizierten Inhalt zitieren, anstatt zu raten",
+  "why": "Ein angehängter Search Index ist statischer Inhalt, den der Agent abruft, um seine Antworten zu verankern — distinct von einem Tool wie Websuche, das stattdessen eine Live-Außen-Fähigkeit erreicht."
+ },
+ "ag-014": {
+  "label": "Füge Unternehmensrichtlinien-Dokumente hinzu, die der Agent durchsuchen kann — konfiguriert im Agents Playground neben Persona-Text und angehängten Tools — vor dem Testen von Multi-Turn-Verhalten",
+  "why": "Das Agents Playground konfiguriert drei distinct Flächen nebeneinander — Persona, Tools und angehängte Dokumente — und diese Karte ist die angehängte-Inhalt: Daten, in denen der Agent Antworten verankert, kein Action, den er nimmt."
+ },
+ "ag-015": {
+  "label": "openai.conversations.create() wird von der Client-App vor dem ersten Durchgang aufgerufen",
+  "why": "Das Erstellen des Conversation-Objekts passiert vor jeder Nachricht — es öffnet den Laufzeit-Container, in den spätere Durchgänge schreiben, distinct vom Aufruf, der tatsächlich eine Antwort erzeugt."
+ },
+ "ag-016": {
+  "label": "Die einzelne ununterbrochene Timeline von Durchgängen, die den Agent Bezug nehmen lässt auf etwas, das der Benutzer drei Fragen zuvor sagte, ohne dass diese Nachrichten jedes Mal von Hand erneut gesendet werden",
+  "why": "Akkumulierte Laufzeit-Chat-Historie ist Sitzungs-Zustand, nicht Agent-Verhalten — wächst pro Konversation, anders als die Persona-Regeln, fixiert einmal zum Definitionszeitpunkt."
+ },
+ "ag-017": {
+  "label": "openai.responses.create() ist der Aufruf, der die neueste Nachricht des Benutzers tatsächlich sendet und die Antwort des Agenten zurückgibt",
+  "why": "Das ist der Invocations-Schritt — es ist das, was tatsächlich die Konversation verarbeitet und Ausgabe erzeugt, distinct von openai.conversations.create(), das nur den Container öffnet, in dem die Nachrichten leben."
+ },
+ "ag-018": {
+  "label": "Der extra_body={{\"agent_reference\": {{...}}}} Parameter in demselben Aufruf, der dem System sagt, welche Agent-Definition gegen die Konversation ausgeführt werden soll",
+  "why": "agent_reference ist pro-Invocation Metadaten im responses.create() Aufruf, nicht eine fixe Agent-Eigenschaft — die Prüfung zieht diese Unterscheidung explizit gegen den Bereitstellungsnamen, eingebacken in die Agent-Definition selbst."
+ },
+ "agent-anatomy": {
+  "hint": "Frage, in welche Schicht der Job gehört: fixiert zum Erstellungszeitpunkt (instructions), das Reasoning-Engine selbst (model), eine Aktion über Text (tools), angehängte Daten zum Verankern von Antworten (knowledge), eines Konversation akkumulierendes Laufzeit-Zustand (thread), oder der einzelne Aufruf, der Ausgabe erzeugt (run).",
+  "note": "Instructions und Tools werden beide zum Designzeitpunkt konfiguriert — der Tie-Break ist, ob die Karte eine Verhaltensregel (instructions) oder eine Außen-Fähigkeit, die der Agent aufruft (tools), ist. Thread und Run leben beide zur Laufzeit — der Tie-Break ist, ob die Karte der Container, der Nachrichten hält (thread), oder die Invocation, die die nächste Nachricht erzeugt (run), ist.",
+  "zones[0].def": "Das persistente Verhalten, die Persona und Regeln, gesetzt, wenn der Agent definiert wird — nicht pro Konversation gewählt.",
+  "zones[1].def": "Das bereitgestellte Modell — referenziert durch Bereitstellungsnamen — über das der Agent nachdenkt.",
+  "zones[2].def": "Funktionen, APIs und andere Actions, die der Agent über Text-Erzeugung hinaus aufrufen kann.",
+  "zones[3].def": "Dateien, Indexes und andere Datenquellen, die der Agent durchsuchen kann, um seine Antworten zu verankern.",
+  "zones[4].def": "Einer laufenden Konversation Laufzeit-Nachrichten-Historie, erstellt pro Sitzung.",
+  "zones[5].def": "Die Invocation, die den Agent gegen einen Thread ausführt und seine nächste Ausgabe erzeugt."
+ }
+}

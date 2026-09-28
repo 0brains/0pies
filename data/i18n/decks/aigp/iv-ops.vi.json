@@ -1,0 +1,105 @@
+{
+ "iv-ops": {
+  "hint": "Đây là tất cả các nghĩa vụ thời gian triển khai — hệ thống đã chạy rồi. Hỏi nghĩa vụ nào đứng yên kịch bản là thực hiện, không phải liệu có điều gì sai.",
+  "note": "Bảo đảm trước phát hành (kiểm tra sẵn sàng, kiểm tra trước khi một hệ thống từng gửi) thuộc một trò chơi khác. Mọi thứ trên bảng này xảy ra sau khi go-live, trên một cơ sở định kỳ hoặc kích hoạt.",
+  "zones[0].def": "Nghĩa vụ pháp lý đặt tên, đang diễn ra để theo dõi hiệu suất, công bằng và tuân thủ của một hệ thống trực tiếp chống lại các số liệu và ngưỡng được xác định trước, với các quy tắc leo thang cho khi kết quả rơi bên ngoài chúng. Đó là kế hoạch giám sát tự nó — không phải toán drifting phía sau bất kỳ số liệu nào, và không phải kiểm tra độc lập sau này xác minh kế hoạch thực sự được theo dõi.",
+  "zones[1].def": "Các điều khiển dừng output của một hệ thống triển khai hoặc khả năng được tái sử dụng cho một cách sử dụng, khán giả hoặc dân số phê duyệt gốc không bao giờ bao gồm — dự báo tái sử dụng và hạn chế nó trước khi nó xảy ra, không phản ứng khi nó đã công khai.",
+  "zones[2].def": "Nội dung được thỏa thuận trước và các kênh cho những gì tổ chức nói với cơ quan quản lý, người dùng và công chúng về một hệ thống trực tiếp — proactive (thông báo tính minh bạch, các thẻ hệ thống) và phản ứng (thừa nhận một vấn đề sống) — riên biệt với cuộc điều tra nội bộ những tuyên bố mô tả.",
+  "zones[3].def": "Cơ quan được viết trước, kích hoạt và tiêu chí khởi động lại để kéo một hệ thống trực tiếp hoàn toàn ngoại tuyến (deactivation) hoặc hạn chế nó để ít hơn các khu vực hoặc tính năng (địa phương hóa) — quyết định dừng-hoặc-hạn chế với các điều kiện được ghi lại để tiếp tục, không phải bản sửa chữa kỹ thuật theo sau nó.",
+  "zones[4].def": "Chuẩn bị những người vận hành một hệ thống trực tiếp hoặc dựa vào output của nó — hướng dẫn cụ thể vai trò, thực hành mô phỏng và cam kết được ghi lại — vì vậy họ có thể bắt một output sai và biết khi nào để ghi đè nó, được gia hạn trên một lịch trình thay vì được gửi một lần khi khởi chạy.",
+  "zones[5].def": "Phát hiện, ghi lại, phân loại và đóng các vấn đề hệ thống trực tiếp, kích thước theo mức độ nghiêm trọng — từ một khiếu nại được ghi lại nhỏ được theo dõi cho một mẫu, qua để phản ứng chính thức với khống chế, phân tích gốc rễ và hành động sửa chữa.",
+  "zones[6].def": "Xác minh độc lập được lên lịch mà các điều khiển của một hệ thống trực tiếp vẫn giữ — các đánh giá tuân thủ định kỳ và kiểm tra đối kháng chạy sau khi khởi chạy, trên một lịch trình hoặc liên kết với một thay đổi chính — riên biệt với việc đánh giá sẵn sàng một lần chạy trước khi một hệ thống từng gửi."
+ },
+ "iv-ops-01": {
+  "label": "Một nhà cung cấp yên tĩnh hoán đổi trong một phiên bản mô hình mới, mà không có thông báo cho nhóm triển khai nó.",
+  "why": "Giám sát sau thị trường là một nghĩa vụ pháp lý đứng yên để theo dõi một hệ thống trực tiếp chống lại đường cơ sở của nó; một hoán đổi phiên bản không được thông báo là một thất bại kế hoạch giám sát, riên biệt với quản lý vấn đề & sự cố, chỉ mở một tệp khi ai đó đã nhận thấy tổn thương kết quả."
+ },
+ "iv-ops-02": {
+  "label": "Một đánh giá hàng quý theo dõi drifting phân phối tính năng, các vấn đề chất lượng dữ liệu đến, và độ trễ/tải tính toán — không bao giờ bộ huấn luyện gốc mô hình gửi đi.",
+  "why": "Hiệu chỉnh chính thức: các số liệu giám sát sản xuất là drifting dữ liệu, chất lượng dữ liệu và tín hiệu độ trễ/tính toán — không bao giờ dữ liệu huấn luyện lịch sử. Đặt những gì được theo dõi là công việc của khu vực này; độc lập tái kiểm tra rằng kế hoạch thực sự được theo dõi là kiểm tra tuần hoàn & red teaming's."
+ },
+ "iv-ops-03": {
+  "label": "Quy tắc leo thang định tuyến bất kỳ số liệu nào vượt qua ngưỡng của nó thẳng đến một chủ sở hữu được đặt tên, người có thể đặt hàng một rollback hoặc thông báo cơ quan quản lý.",
+  "why": "Kế hoạch giám sát đặt tên ai hoạt động và những gì họ làm khi một ngưỡng bị vi phạm; quản lý vấn đề & sự cố chỉ nhặt khi leo thang đó kích hoạt, để ghi lại và phân loại vấn đề cụ thể nó đặt tên."
+ },
+ "iv-ops-04": {
+  "label": "Một công cụ lập lịch xây dựng để nhân viên thay ca yên tĩnh nhận được mục tiêu lại ở việc tính điểm hiệu suất của nhân viên riêng lẻ.",
+  "why": "Tái sử dụng cho một cách sử dụng không được phê duyệt cần các giao thức đồng ý và hạn chế sử dụng trước khi nó xảy ra; duty 'có thể dự báo lạm dụng' buộc cả nhà cung cấp và người triển khai, không giống quản lý vấn đề & sự cố, chỉ tham gia khi một khiếu nại đã nổi lên."
+ },
+ "iv-ops-05": {
+  "label": "Mười tám tháng vào triển khai, nhóm chạy một bài tập suy nghĩ thứ hai có lịch được lập làm một phần của quản trị liên tục, lập bản đồ ai khác có thể hiện đang cắm output của hệ thống này vào quy trình công việc của riêng họ.",
+  "why": "Dự báo tái sử dụng và hiệu ứng bậc hai là một hoạt động quản trị sau triển khai liên tục, rộng hơn một đánh giá tác động thời điểm và khác với kiểm tra tuần hoàn & red teaming's thử nghiệm đối kháng, cái nào điều tra tấn công, không phải sử dụng hợp pháp trông giống như lựa chọn gốc không bao giờ bao gồm."
+ },
+ "iv-ops-06": {
+  "label": "Mọi output rời khỏi API mang một thẻ phiên bản mô hình và một cờ 'không xác thực cho các quyết định thuê hoặc tín dụng', và bất kỳ trường hợp sử dụng nào mới kích hoạt một đánh giá tươi trước khi tái sử dụng được phép.",
+  "why": "Dấu hiệu nguồn gốc cộng với một cổng phê duyệt tái sử dụng dừng tổn thương compounding thông qua quy trình công việc của một đội khác; điều khiển sống trong cách đầu ra được phép đi du lịch, riên biệt với các giao tiếp bên ngoài, đó là những gì được nói khi một vấn đề đã có thể nhìn thấy với bên ngoài."
+ },
+ "iv-ops-07": {
+  "label": "Một khiếu nại về một quyết định tự động sai trở thành viral qua đêm.",
+  "why": "Công khai thừa nhận ngay lập tức rằng vấn đề được biết đến và đang được điều tra; chờ công việc gốc nguyên nhân nội bộ của quản lý vấn đề & sự cố hoàn tất trước tiên chỉ phức tạp tổn thương danh tiếng."
+ },
+ "iv-ops-08": {
+  "label": "Tuyên bố công khai công khai mục đích của hệ thống và những hạn chế đã biết, và dừng lại trước phương pháp mà sản xuất quyết định được gắn cờ.",
+  "why": "Công bố bao gồm mục đích dự định, khả năng và hạn chế, nhưng các phương pháp độc quyền ở ngoài bất kỳ tuyên bố công khai nào — một ranh giới phạm vi trên những gì khu vực này nói, riên biệt với nhãn tái sử dụng phê duyệt mà dùng thứ cấp-kiểm soát dấu trên một output trước khi nó từng đi du lịch."
+ },
+ "iv-ops-09": {
+  "label": "Cơ quan quản lý nhận gói bằng chứng đầy đủ — đánh giá tác động, kết quả giám sát, chủ sở hữu hành động sửa chữa được đặt tên — trong khi tuyên bố công khai ở lại thường xuyên ngôn ngữ với không có gốc rễ kỹ thuật chưa.",
+  "why": "Bản ghi cơ bản giống nhau được điều chỉnh mỗi khán giả ở đây: cơ quan quản lý nhận được bằng chứng, công chúng nhận được trách nhiệm và các bước tiếp theo — không bao giờ ngược lại, và không bao giờ phát hiện thô mà bài tập kiểm tra tuần hoàn & red teaming sản xuất để sử dụng nội bộ chỉ."
+ },
+ "iv-ops-10": {
+  "label": "Ngưỡng được viết trước đặt tên chính xác ai có thể kéo một hệ thống trực tiếp ngoại tuyến, và tiêu chí phải được đáp ứng trước khi nó khởi động lại.",
+  "why": "Đây là giao thức công tắc tắt: cơ quan và tiêu chí khởi động lại được thỏa thuận trước, riên biệt với chứng kiến quản lý vấn đề & sự cố' di chuyển ngay lập tức, cách ly một hệ thống giữa vấn đề mà không cần ký chỉ của khu vực này để tiếp tục. Phương pháp luận thuật toán là yếu tố không được đặt tên trong quyết định."
+ },
+ "iv-ops-11": {
+  "label": "Một luật riêng tư mới trong một khu vực có nghĩa là hệ thống dừng hoạt động có trong khi nó vẫn chạy ở mọi nơi khác, dưới một chính sách được đặt trước tài liệu, có thể đảo ngược.",
+  "why": "Hạn chế phạm vi, được trang bị định mức khu vực là một di chuyển khác nhau từ một công tắc tắt đầy đủ, nhưng khu vực này sở hữu cả hai đầu của điều khiển giống nhau — dừng tổng cộng và hạn chế khu vực — thay vì chia chúng trên các trò chơi riêng biệt."
+ },
+ "iv-ops-12": {
+  "label": "Một hệ thống duy trì dự đoán phục vụ cơ sở hạ tầng quan trọng được loại bỏ theo giai đoạn, với một bản sao lưu con người chạy song song với nó cho đến khi quá trình chuyển đổi hoàn tất.",
+  "why": "Gió down graduated với kế hoạch liên tục thuộc ở đây bởi vì kích hoạt là một mối quan tâm an toàn đứng yên được quản lý trên một lịch trình, không giống quản lý vấn đề & sự cố, bước khống chế mà đáp ứng một vấn đề duy nhất xảy ra ngay bây giờ."
+ },
+ "iv-ops-13": {
+  "label": "Bác sĩ lâm sàng vẫn đọc sai các điểm số tự tin của AI, vì vậy nhóm sắp xếp huấn luyện dựa trên mô phỏng với ghép nối cố vấn liên tục.",
+  "why": "Hướng dẫn cụ thể vai trò với thực hành thực tế và hỗ trợ liên tục giải quyết khoảng cách kỹ năng-và-tự tin mà kỳ thi chứng chỉ một lần sẽ chỉ kiểm tra kiến thức chống lại, không xây dựng; đây là một chương trình đứng yên, không phải bản thân hiển thị điểm số tự tin, đó là một tính năng sản phẩm."
+ },
+ "iv-ops-14": {
+  "label": "Nhà bảo hiểm được cho biết để áp dụng đánh giá của riêng họ đến đề xuất ban đầu của mô hình trước khi nó trở thành cuối cùng.",
+  "why": "Đây là thói quen giám sát con người mà chương trình này có ý định truyền cảm hứng; một thông báo quyền-to-appeal hoặc khảo sát phản hồi là các tuyên bố thụ động hơn và không đặt xét của một người phía trước output tự động những cách này làm."
+ },
+ "iv-ops-15": {
+  "label": "Trước khi gia hạn truy cập hệ thống, mỗi người xem xét hoàn thành một khoan tình huống và ký một cam kết xác nhận họ hiểu những hạn chế được nêu của công cụ.",
+  "why": "Bắt buộc, ghi lại cam kết liên kết với truy cập được gia hạn là những gì làm cho điều này là một điều khiển có thể thực thi được thay vì một hướng dẫn một lần — bằng chứng một auditor có thể kiểm tra, không giống quản lý vấn đề & sự cố's các kênh báo cáo, tồn tại để nổi lên một vấn đề, không phải để chứng thực sẵn sàng trước."
+ },
+ "iv-ops-16": {
+  "label": "Dự đoán sai mức độ thấp lặp đi lặp lại được ghi lại và xem xét một mẫu trước khi bất cứ ai leo thang.",
+  "why": "Đây là con đường mức độ thấp hơn — ghi lại, phân loại và có xu hướng, leo thang chỉ khi mẫu kéo dài. Sự phân tách từ con đường mức độ cao hơn rẽ trên quy mô tổn thương và phơi bày pháp lý, không phải liệu một sai lầm xảy ra; nó ở lại ở đây thay vì chuyển đến kiểm tra tuần hoàn & red teaming, xác minh các điều khiển trên một lịch trình, không trên một cơ sở mỗi sai lầm."
+ },
+ "iv-ops-17": {
+  "label": "Phát hiện gian lận là lỗi quá nhiều giao dịch hợp pháp; động thái rất đầu tiên là kéo hệ thống ngoại tuyến trước khi bất cứ ai bắt đầu công việc nguyên nhân gốc rễ.",
+  "why": "Khống chế — ngay lập tức cô lập hệ thống — là bước đáp ứng đầu tiên của khu vực này bên trong một vấn đề sống, riên biệt với deactivation & địa phương hóa, chi sở hữu cơ quan thỏa thuận trước tài liệu và tiêu chí khởi động lại mà làm cho một tắc máy hợp pháp và có thể đảo ngược."
+ },
+ "iv-ops-18": {
+  "label": "Một phát hiện sai lệch ngồi ở 1.8%, chỉ dưới kích hoạt 2% — nhóm mở con đường phản ứng chính thức dù vậy bởi vì nhóm bị ảnh hưởng là một lớp được bảo vệ.",
+  "why": "Ngưỡng mức độ nghiêm trọng hướng dẫn nhưng không ghi đè xét xử khi một nhóm được bảo vệ bị ảnh hưởng: phát hiện nhận được bản đồ phản ứng chính thức hoàn toàn thay vì được ghi lại như một mục nhỏ và để có xu hướng, đó là xử lý một non-protected-class phát hiện sub-threshold sẽ nhận."
+ },
+ "iv-ops-19": {
+  "label": "Mười hai tháng sau khi khởi chạy, một tổ chức bên ngoài lại chạy cố gắng jailbreak chống lại trợ lý trực tiếp trên một lịch trình có lịch lẻ.",
+  "why": "Thử nghiệm đối kháng định kỳ, có lịch sau triển khai là bộ môn của khu vực này; phiên bản trước khai thác của kỹ thuật giống nhau — đánh giá sẵn sàng chạy trước khi hệ thống từng gửi — thuộc một trò chơi hoàn toàn khác."
+ },
+ "iv-ops-20": {
+  "label": "Một đội độc lập dòng thứ hai mẫu quyết định tự động quý cuối cùng, lại chạy các kiểm tra công bằng bằng tay, và đi bộ qua cách leo thang cuối cùng thực sự diễn ra.",
+  "why": "Độc lập từ nhóm sản phẩm cộng với lại thực hiện kiểm tra thay vì tin tưởng bảng điều khiển là những gì tách cái này từ giám sát sau thị trường riêng của nó sống xem xét, mà nhóm sản phẩm chạy và nhân viên."
+ },
+ "iv-ops-21": {
+  "label": "Cơ quan quản lý mong đợi một nhà cung cấp mô hình nền tảng để ghi lại một vòng tươi điều tra đối kháng mỗi khi một phiên bản chính gửi, trên đầu bất kỳ cái nào chạy trước lần khởi chạy đầu tiên.",
+  "why": "Thử nghiệm tái lặp lại liên kết đến một thay đổi chất liệu là một kỳ vọng triển khai, đứng yên cho các mô hình rủi ro cao và đa năng — một nghĩa vụ lặp đi lặp lại, không phải cổng một lần vượt qua khi phát hành ban đầu."
+ },
+ "iv-ops-22": {
+  "label": "Trước khi một hệ thống từng bị kéo ngoại tuyến, nhóm trước tiên lập bản đồ mọi luồng thượng nguồn và quy trình hạ lưu dựa vào nó, và xác nhận một fallback sẵn sàng để tiếp quản khoảng.",
+  "why": "Đây là bước lập kế hoạch phải xảy ra trước khi một quyết định dừng-hoặc-hạn chế được thực hiện — riên biệt với quản lý vấn đề & sự cố's khống chế, phản ứng lại một vấn đề đã xảy ra, và từ giám sát sau thị trường's theo dõi hiệu suất liên tục, giả định hệ thống ở lại trực tiếp."
+ },
+ "iv-ops-23": {
+  "label": "Khi một hệ thống được hoàn toàn loại bỏ, dữ liệu, mô hình và quyết định ghi lại được bảo tồn thay vì xóa, vì vậy một cơ quan quản lý hoặc auditor có thể tái cấu trúc những gì nó đã làm nhiều năm sau đó.",
+  "why": "Bảo tồn là một phần của bản ghi tắc máy chính nó, được sở hữu bởi cùng cơ quan kéo hệ thống ngoại tuyến — không giống quản lý vấn đề & sự cố's nhật ký CAPA, theo dõi bản sửa chữa cho một vấn đề cụ thể, và không giống giám sát sau thị trường, chỉ theo dõi một hệ thống trong khi nó vẫn trực tiếp."
+ }
+}

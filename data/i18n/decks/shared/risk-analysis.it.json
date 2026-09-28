@@ -1,0 +1,83 @@
+{
+  "ra-01": {
+    "label": "Ogni rischio è punteggiato 1–5 per probabilità e 1–5 per conseguenza, e il prodotto decide dove si siede nel registro.",
+    "why": "La griglia di punteggio è il dispositivo standard di priorizzazione. La sua debolezza è che appiattisce un rischio catastrofico raro e uno banale frequente nella stessa cella."
+  },
+  "ra-02": {
+    "label": "I rischi vengono tracciati su una griglia rosso/ambra/verde in modo che il comitato possa vedere a colpo d'occhio quali hanno bisogno di attenzione per primo.",
+    "why": "La mappa di calore è uno strumento di comunicazione costruito sui due stessi assi. È per triage, non per la comprensione della causalità."
+  },
+  "ra-03": {
+    "label": "Il metodo è criticato per implicare una precisione che non ha quando le probabilità sottostanti sono supposizioni.",
+    "why": "I punteggi ordinali moltiplicati insieme producono numeri che sembrano quantitativi e non lo sono. Sapere questo è ciò che impedisce a 12 di essere trattato come il doppio di 6."
+  },
+  "ra-04": {
+    "label": "Un singolo evento principale è collocato al centro, con percorsi di minaccia e barriere preventive disegnate a sinistra e percorsi di conseguenza con barriere attenuanti a destra.",
+    "why": "La divisione sinistra/destra attorno a un evento è la forma distintiva del diagramma, e rende la distinzione preventiva/attenuante visibile piuttosto che assunta."
+  },
+  "ra-05": {
+    "label": "L'analisi rende ovvio che tre delle quattro barriere a sinistra sono lo stesso controllo contato tre volte.",
+    "why": "Esporre le barriere di modalità comune è esattamente per cosa il diagramma è buono. Un registro dei controlli elencati come testo nasconde quella dipendenza."
+  },
+  "ra-06": {
+    "label": "I fattori di escalation vengono disegnati contro ogni barriera, mostrando le condizioni in cui quella barriera smette di funzionare.",
+    "why": "I fattori di escalation e i loro stessi controlli sono parte del metodo bowtie. È così che il diagramma evita di assumere che le barriere siano sempre efficaci."
+  },
+  "ra-07": {
+    "label": "Ogni componente viene esaminato a turno per i modi in cui può fallire, e ogni guasto viene punteggiato per gravità, probabilità di accadimento e probabilità di rilevamento.",
+    "why": "Il punteggio a tre fattori che produce un numero di priorità di rischio è la firma di FMEA. È dal basso verso l'alto, dal componente all'effetto."
+  },
+  "ra-08": {
+    "label": "Un guasto che è grave ma rilevato in modo affidabile prima di raggiungere un utente punteggia più basso di uno che è silenzioso.",
+    "why": "La rilevabilità come terzo asse esplicito è unica a FMEA tra queste tecniche, ed è per questo che i guasti silenziosi si classificano così in alto — il che si adatta bene ai modelli di guasto ML."
+  },
+  "ra-09": {
+    "label": "L'analisi è criticata per gestire male le combinazioni di guasti simultanei, poiché considera ogni modalità di guasto da sola.",
+    "why": "L'orientamento di singolo punto di guasto è il limite noto di FMEA. Usalo con una tecnica che modella combinazioni, non al posto di uno."
+  },
+  "ra-10": {
+    "label": "Una revisione dell'incidente conclude che nessuna difesa singola ha fallito catastroficamente; quattro debolezze parziali si sono allineate per caso il giorno.",
+    "why": "L'allineamento dei buchi attraverso i livelli è l'affermazione principale del modello, ed è per questo che 'chi ha commesso l'errore' è solitamente la domanda iniziale sbagliata."
+  },
+  "ra-11": {
+    "label": "Il modello distingue i guasti attivi all'estremità acuta dalle condizioni latenti create molto prima da decisioni di progettazione e gestione.",
+    "why": "La distinzione attiva/latente è di Reason, ed è ciò che dirige l'attenzione alle decisioni che hanno pre-caricato il guasto."
+  },
+  "ra-12": {
+    "label": "Il framing avverte che aggiungere un altro livello di difesa fornisce meno protezione del previsto se i buchi del nuovo livello si trovano nello stesso posto.",
+    "why": "Le difese correlate sono la trappola. Due revisori che utilizzano la stessa lista di controllo difettosa sono un livello, non due."
+  },
+  "ra-13": {
+    "label": "La valutazione separa i danni di allocazione, dove le opportunità o risorse sono negate, dai danni di rappresentazione, dove un gruppo è demerito o cancellato.",
+    "why": "La divisione allocativa/rappresentativa è fondamentale, e il danno rappresentativo è quello che sfugge alle valutazioni guidate da metriche di accuratezza."
+  },
+  "ra-14": {
+    "label": "La valutazione registra che un sistema funziona misurabilmente peggio per un gruppo anche se nessuna decisione viene negata loro.",
+    "why": "Il danno di qualità del servizio è una categoria distinta. Senza una tassonomia che lo nomina, questo risultato tende a essere archiviato come un problema di accuratezza e deprioritizzato."
+  },
+  "ra-15": {
+    "label": "Il metodo esiste per impedire la valutazione di coprire solo i danni che hanno una metrica allegata.",
+    "why": "Enumerare le categorie per primo, quindi cercare la misurazione, è ciò che mantiene i danni dignitoriali e sociali nell'ambito piuttosto che fuori da esso."
+  },
+  "ra-16": {
+    "label": "Il rischio viene valutato due volte: una volta come se non esistessero controlli e una volta con i controlli che funzionano come progettato.",
+    "why": "L'abbinamento prima e dopo è l'intera tecnica. La differenza è la base di prove per stabilire se un controllo vale il suo costo."
+  },
+  "ra-17": {
+    "label": "Si scopre che un controllo riduce il punteggio di quasi nulla, il che diventa l'argomento per rimuoverlo e spendere lo sforzo altrove.",
+    "why": "Confrontare le due valutazioni è come vengono identificati i controlli che esistono solo per essere elencati. Un controllo senza delta è teatro."
+  },
+  "ra-18": {
+    "label": "Il registro registra il livello rimasto dopo il trattamento, ed è questo livello che deve stare all'interno dell'appetito prima della firma.",
+    "why": "Il rischio residuo è ciò che viene accettato; il rischio inerente è solo contesto. Accettare rispetto alla cifra inerente è un errore di categoria."
+  },
+  "risk-analysis": {
+    "hint": "Trascina ogni descrizione sulla sua tecnica. Chiedi cosa il metodo è effettivamente costruito per rivelare — una classificazione, un percorso causale, una modalità di guasto o una misurazione.",
+    "zones[0].def": "Tasso probabilità e conseguenza, traccia su una griglia, usalo per priorizzare. Veloce, grezzo e il default nella maggior parte dei registri.",
+    "zones[1].def": "Un evento nel mezzo; cause e barriere preventive a sinistra, conseguenze e barriere attenuanti a destra.",
+    "zones[2].def": "Lavora dal basso verso l'alto da ogni modalità di guasto del componente ai suoi effetti, punteggiando gravità, occorrenza e rilevabilità.",
+    "zones[3].def": "Il danno si verifica quando i buchi nei successivi strati di difesa si allineano. Spiega perché le spiegazioni di causa singola degli incidenti sono solitamente sbagliate.",
+    "zones[4].def": "Enumera categorie di danno — allocativo, rappresentativo, qualità del servizio, dignitoriale, sociale — in modo che la valutazione non sia limitata a ciò che è facile misurare.",
+    "zones[5].def": "Valuta il rischio prima dei controlli e di nuovo dopo. Il divario è ciò che i controlli stanno effettivamente comprando."
+  }
+}

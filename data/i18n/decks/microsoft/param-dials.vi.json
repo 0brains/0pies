@@ -1,0 +1,105 @@
+{
+ "pd-001": {
+  "label": "Bạn cần đầu ra nhất quán, có thể lặp lại từ cùng một nhắc nhở mỗi lần chạy",
+  "why": "Gợi ý kỳ thi chính xác của histack: 'đầu ra nhất quán, có thể lặp lại' → nhiệt độ thấp. Nó cân nhắc lại toàn bộ phân bố xác suất; điều chỉnh nó hoặc top_p, không phải cả hai."
+ },
+ "pd-002": {
+  "label": "Hạn chế lấy mẫu để tập hợp mã nhỏ nhất có xác suất tích lũy đạt được ngưỡng đặt",
+  "why": "Lấy mẫu inti — top_p cắt ngắn bộ ứng cử, trong khi nhiệt độ làm hình lại toàn bộ phân bố (cặp bối rối kho tàng #5)."
+ },
+ "pd-003": {
+  "label": "Các phản hồi giữ cắt giữa câu — bạn cần câu trả lời đầy đủ",
+  "why": "max_tokens cắp tối đa độ dài đầu ra — cái bẫy tham số được kiểm tra nhất của kỳ thi đang cung cấp nó như một điều khiển ngẫu nhiên (cặp #4)."
+ },
+ "pd-004": {
+  "label": "Mô hình giữ lặp lại một cụm từ; phạt mã theo tỷ lệ cơ hội chúng đã xuất hiện",
+  "why": "Phạt tần số tỷ lệ với số lần lặp lại (lặp lại); phạt hiện diện bắn một lần mã đã xuất hiện ở tất cả (sáng tạo chủ đề) — cặp kho tàng #6."
+ },
+ "pd-005": {
+  "label": "Hình ảnh tiếp thị được tạo trông thô — yêu cầu tier độ trung thực kỹ thuật cao hơn",
+  "why": "Tải của gpt-image-1 lấy nhắc nhở, kích thước, chất lượng (bao gồm cái bẫy giá trị 'cao') và n — chất lượng điều khiển độ trung thực, kích thước điều khiển kích thước."
+ },
+ "pd-006": {
+  "label": "Xem tiến độ hình ảnh sớm hơn trong khi kỹ thuật lớn kỹ thuật",
+  "why": "Truyền phát partial_images trên đường dẫn images/generations trả lại đầu ra tiến bộ — thân kỳ thi 'xem tiến độ hình ảnh sớm hơn' từ chữ."
+ },
+ "pd-007": {
+  "label": "Nút ngẫu nhiên làm hình lại toàn bộ phân bố xác suất mã trước lấy mẫu, không chỉ lát cắt trên cùng",
+  "why": "Nhiệt độ mở rộng logits trên toàn bộ phân bố; top_p thay vào đó cắt ngắn theo khối lượng xác suất tích lũy — cùng một ý thức 'sáng tạo', cơ chế khác nhau."
+ },
+ "pd-008": {
+  "label": "Nhóm muốn mô hình chỉ xem xét lát cắt xác suất cao nhất của ứng cử viên mã tiếp theo, cắt bỏ đuôi dài",
+  "why": "Lấy mẫu inti (top_p) hạn chế ứng cử viên để một lát cắt xác suất tích lũy; nhiệt độ làm hình lại xác suất nhưng không bao giờ loại bỏ ứng cử viên hoàn toàn."
+ },
+ "pd-009": {
+  "label": "Trần cứng về bao nhiêu mã một phản hồi duy nhất có thể tạo, bất kể nó nói gì",
+  "why": "max_tokens là trần chiều dài được thực thi trong kỳ thời gian tạo; trình tự dừng thay vào đó dừng kỳ thời gian sớm chỉ khi chuỗi cụ thể xuất hiện — kích hoạt khác, cùng một mục tiêu 'đầu ra ngắn hơn'."
+ },
+ "pd-010": {
+  "label": "Không khuyến khích mô hình khi sử dụng lại từ hoặc cụm từ tương tự nhiều lần — mà cạnh tranh càng chặt",
+  "why": "Phạt tần số tỷ lệ với cơ hội mã đã xuất hiện; phạt hiện diện áp dụng phạt phẳng ngay khi mã xuất hiện một lần — phạt theo lượt vs nhị phân."
+ },
+ "pd-011": {
+  "label": "Bản ghi chuyến tương tác không bao giờ tái khám phá chủ đề sớm — mô hình luôn trôi nổi vào chủ đề mới thay vì quay lại những gì nó đã bao phủ",
+  "why": "Phạt hiện diện cao bắn ngay lập tức một mã đã xuất hiện một lần, đẩy mô hình về chủ đề mới; phạt tần số tỷ lệ với số lần lặp lại và chủ yếu là chế áp sự lặp lại theo nghĩa đen, không trôi chủ đề."
+ },
+ "pd-012": {
+  "label": "Áp dụng phạt cố định tương tự cho bất kỳ mã nào đã hiển thị ở tất cả trong phản hồi cho đến nay, không quan trọng là bao nhiêu lần",
+  "why": "Phạt hiện diện là mỗi mã nhị phân (xuất hiện hay không); phạt tần số thay vào đó phát triển với số lần lặp lại — phân biệt được cặp bối rối của kỳ thi giữa hai tham số phạt."
+ },
+ "pd-013": {
+  "label": "Kỳ thời gian tạo phải kết thúc ngay lập tức khi mô hình viết chuỗi đánh dấu cụ thể, mà không chờ đợi để hit trần chiều dài",
+  "why": "Trình tự dừng là trình kích hoạt chuỗi theo nghĩa đen dừng kỳ thời gian sớm; max_tokens chỉ thực thi trần chiều dài và không có nhận biết về văn bản cụ thể."
+ },
+ "pd-014": {
+  "label": "Một đoạn văn bản cụ thể mô hình được cho là coi như một đánh dấu kết thúc, vì vậy đầu ra dừng ngay lập tức khi văn bản đó được sản xuất",
+  "why": "Chuỗi dừng kích hoạt trên nội dung văn bản phù hợp; max_tokens cũng không phạt tần số không kiểm tra văn bản được tạo ra chính nó — một mã mã thông báo, cây khác phạt lặp lại."
+ },
+ "pd-015": {
+  "label": "Độ trễ phải ở dự đoán được ở khối lượng yêu cầu cao, bền bỉ và nhóm ổn.",  "why": "Thông lượng được cung cấp (PTU) dự trữ dung lượng chuyên dụng để độ trễ dự đoán được ở quy mô; triển khai tiêu chuẩn là theo mã với thông lượng có thể thay đổi dưới tải, và dung lượng (TPM) chỉ là đường số lượng, không phải loại triển khai chính nó."
+ },
+ "pd-016": {
+  "label": "Dung lượng mô hình chuyên dụng, được mua trước đó để thông lượng không dao động với lưu lượng kiểu dáng chia sẻ",
+  "why": "PTU là mô hình triển khai dung lượng dự trữ; tiêu chuẩn chia sẻ dung lượng và hóa đơn cho mỗi mã với thông lượng có thể thay đổi, trong khi dung lượng (TPM) chỉ đặt hạng mục trên loại triển khai nào được chọn."
+ },
+ "pd-017": {
+  "label": "Lưu lượng truy cập ứng dụng hỗ trợ khách hàng không thể dự đoán được và bừng bừa, và nhóm muốn hóa đơn theo mã thay vì dung lượng dự trữ hàng giờ",
+  "why": "Giá theo mã dưới tải có thể thay đổi là triển khai tiêu chuẩn (kịch bản chính xác của kỳ thi); PTU thay vào đó hóa đơn hàng giờ cho dung lượng dự trữ bất kể sử dụng thực tế."
+ },
+ "pd-018": {
+  "label": "Hóa đơn cho mỗi mã được tiêu thụ thay vì mỗi giờ tính toán dự trữ, với thông lượng có thể thay đổi dưới tải chia sẻ",
+  "why": "Tiêu chuẩn là hóa đơn dựa trên tiêu thụ với thông lượng có thể thay đổi; PTU thương mại mà biến đó cho dự trữ hàng giờ cố định, và dung lượng (TPM) là đặt hạng mục lớp trên đầu của loại mô hình nào."
+ },
+ "pd-019": {
+  "label": "Triển khai giữ nhấn vào lượng chứng khoán dưới lưu lượng pico, vì vậy nhóm thay đổi hạng mục thông lượng để xây dựng từ triển khai dưới sử dụng",
+  "why": "Hạng mục thông lượng mỗi triển khai có thể được phân bổ lại giữa các triển khai (kịch bản được ghi chép của kỳ thi); PTU và tiêu chuẩn mô tả loại hóa đơn/dự trữ của triển khai, không phải đường số lượng."
+ },
+ "pd-020": {
+  "label": "Quay số đặt giới hạn trên của tổng thông lượng triển khai có thể xử lý mỗi phút, độc lập của bất kỳ phản hồi duy nhất chiều dài",
+  "why": "Dung lượng (TPM) siết chặt ở mức triển khai trên tất cả các yêu cầu được đo bằng mã một phút; max_tokens cơ hội cắp tối đa độ dài của một phản hồi và không có gì cần làm với giới hạn tốc độ."
+ },
+ "pd-021": {
+  "label": "Yêu cầu hình ảnh banner giữ quay trở lại một hình vuông nhỏ khi bố cục cần một canvas hình chữ nhật rộng",
+  "why": "kích thước đặt kích thước pixel (ví dụ: định dạng rộng thay vì 1024x1024); chất lượng điều khiển độ trung thực kỹ thuật và n điều khiển số lượng hình ảnh — cả không thay đổi hình dạng canvas."
+ },
+ "pd-022": {
+  "label": "Trường yêu cầu đặt kích thước pixel của hình ảnh được tạo, chẳng hạn như 1024×1024",
+  "why": "kích thước là trường kích thước trong tải images/generations; chất lượng thay vào đó quản lý độ trung thực kỹ thuật, và partial_images điều khiển truyền phát tiến bộ, không phải kích thước canvas cuối cùng."
+ },
+ "pd-023": {
+  "label": "Trường chấp nhận tầng độ trung thực 'cao' để chi tiết mỏng hơn kỹ thuật crisply, riêng biệt từ cách lớn hình ảnh",
+  "why": "chất lượng (bao gồm cái bẫy giá trị 'cao' được ghi chép) điều khiển độ trung thực kỹ thuật; kích thước điều khiển kích thước và n điều khiển hình ảnh bao nhiêu trở lại — ba quay số độc lập trên cùng một yêu cầu."
+ },
+ "pd-024": {
+  "label": "Một nhắc nhở nên trả lại bốn biến thể hình ảnh riêng biệt để chọn giữa, trong một yêu cầu duy nhất",
+  "why": "n đặt bao nhiêu hình ảnh yêu cầu trả lại (ví dụ: n=4); kích thước và chất lượng hình dạng mỗi hình ảnh riêng lẻ nhưng không thay đổi bao nhiêu trở lại."
+ },
+ "pd-025": {
+  "label": "Tham số đặt bao nhiêu biến thể hình ảnh một cuộc gọi images/generations duy nhất trả lại",
+  "why": "n là trường hình ảnh-count; partial_images thay vào đó truyền phát bản xem trước tiến bộ của hình ảnh duy nhất khi nó kỹ thuật, và kích thước chỉ đặt kích thước hình ảnh đó."
+ },
+ "pd-026": {
+  "label": "Kết hợp với truyền phát, trường này đặt bao nhiêu khung xem trước tiến bộ được gửi trước khi hình ảnh cuối cùng hoàn tất",
+  "why": "partial_images (được sử dụng cùng với stream=True) đặt số lượng khung xem trước tiến bộ trong kỳ thời gian kỹ thuật; n thay vào đó đặt bao nhiêu hình ảnh cuối cùng riêng biệt được trả lại, và chất lượng đặt độ trung thực, không phải nhịp xem trước."
+ }
+}

@@ -1,0 +1,145 @@
+{
+  "sol-01": {
+    "label": "Supermarket chce zrozumieć, które produkty są często kupowane razem.",
+    "sub": "Analiza koszyka rynkowego",
+    "why": "Uczenie asocjacyjne znajduje kombinacje przedmiotów, które występują razem i mierzy ich wsparcie, pewność i podniesienie. Umieszczaj lub promuj powiązane produkty razem, aby zwiększyć wartość koszyka."
+  },
+  "sol-02": {
+    "label": "Biznes na subskrypcję chce zidentyfikować klientów, którzy prawdopodobnie anulują w przyszłym miesiącu.",
+    "sub": "Churn klientów",
+    "why": "Cel to kategoria etykietowana z dwoma możliwymi klasami: churn lub zatrzymanie. Skupiaj oferty zatrzymania na klientach z wysokim prawdopodobieństwem churn."
+  },
+  "sol-03": {
+    "label": "Platforma nieruchomości chce oszacować cenę sprzedaży nowej oferty.",
+    "sub": "Estymacja ceny domu",
+    "why": "Regresja uczy relacje między cechami wejścia a celem numerycznym. Dostarczaj szacunki cen opartych na danych dla każdej nieruchomości."
+  },
+  "sol-04": {
+    "label": "Sprzedawca chce odkryć naturalne grupy klientów bez predefiniowanych etykiet.",
+    "sub": "Segmentacja klientów",
+    "why": "Klastrowanie to nienadzorowane uczenie, które grupuje rekordy przez podobieństwo bez etykietowanych wyników. Twórz kampanie dostosowane dla odrębnych segmentów behawioralnych."
+  },
+  "sol-05": {
+    "label": "Fabryka chce zidentyfikować niezwykłe zachowanie maszyny przed awarią.",
+    "sub": "Sygnały awarii sprzętu",
+    "why": "Modele detektowania anomalii modelują normalne zachowanie i flagują obserwacje, które odbiegają od niego. Badaj anomalne urządzenia wcześnie i zmniejsz nieplanowe przestoje."
+  },
+  "sol-06": {
+    "label": "Dystrybutor potrzebuje tygodniowych szacunków zapotrzebowania na następny kwartał.",
+    "sub": "Planowanie zapotrzebowania",
+    "why": "Prognozowanie jawnie modeluje obserwacje uporządkowane w czasie, w tym trend i sezonowość. Planuj zapasy i załatwianie wokół oczekiwanego zapotrzebowania."
+  },
+  "sol-07": {
+    "label": "Platforma strumieniowania chce zasugerować zawartość, którą każdy użytkownik prawdopodobnie będzie lubił.",
+    "sub": "Spersonalizowana media",
+    "why": "Systemy rekomendacyjne uczą się powinowactwa z użytkownika, przedmiotu i wzorców interakcji. Przedstawiaj spersonalizowaną ranking listę, która ulepsza odkrywanie i zaangażowanie."
+  },
+  "sol-08": {
+    "label": "Zespół produktu chce śledzić, czy recenzje klientów są pozytywne, neutralne czy negatywne.",
+    "sub": "Sentyment recenzji",
+    "why": "Klasyfikacja tekstu konwertuje język na cechy i przewiduje predefiniowaną etykietę. Monitoruj trendy sentymentu i kieruj negatywne opinie do uwagi."
+  },
+  "sol-09": {
+    "label": "Linia produkcyjna musi zdecydować, czy każdy obraz komponentu jest akceptowalny czy wadliwy.",
+    "sub": "Kontrola jakości wizualnej",
+    "why": "Klasyfikacja obrazu przewiduje kategorię dla całego obrazu. Automatycznie oddziel prawdopodobne wady do inspekcji."
+  },
+  "sol-10": {
+    "label": "System asystencji pojazdu musi znaleźć każdego pieszego widocznego w ramce kamery.",
+    "sub": "Bezpieczeństwo pieszych",
+    "why": "Detekcja obiektu przewiduje, jakie obiekty są obecne i gdzie każdy się pojawia. Zlokalizuj pieszych, aby systemy bezpieczeństwa mogły odpowiedzieć."
+  },
+  "sol-11": {
+    "label": "Pracownicy potrzebują odpowiedzi ugruntowanych w często zmieniających się politykach wewnętrznych z odwołaniami źródła.",
+    "sub": "Asystent polityki bieżącej",
+    "why": "RAG pobiera odpowiedni kontekst zewnętrzny w czasie żądania i dostarcza go do modelu generacyjnego. Odpowiadaj z bieżących polityk ze źródłami o możliwości śledzenia."
+  },
+  "sol-12": {
+    "label": "Model języka musi konsekwentnie produkować raporty w stabilnym formacie i tonie specjalisty.",
+    "sub": "Konsekwentny styl specjalisty",
+    "why": "Fine-tuning aktualizuje zachowanie modelu z przykładów i jest przydatne dla stabilnego stylu lub adaptacji zadania. Generuj raporty, które konsekwentnie podążają za wzorcem specjalisty."
+  },
+  "sol-13": {
+    "label": "Ogólny model języka musi zwrócić imiona, daty i sumy jako ścisły obiekt JSON.",
+    "sub": "Strukturyzowana ekstrakcja",
+    "why": "Few-shot prompty demonstrują oczekiwane zadanie i format wewnątrz kontekstu modelu. Produkuj konsekwentnie ustrukturyzowany wynik z minimalną konfiguracją."
+  },
+  "sol-14": {
+    "label": "Robot musi uczyć się efektywnych tras przez zmieniane magazyn poprzez próbowanie działań.",
+    "sub": "Nawigacja magazynu",
+    "why": "Uczenie wzmacniające ulepsza wybory działań poprzez sprzężenie zwrotne wyrażone jako nagrody i kary. Nawiguj dynamicznie, równoważąc szybkość i bezpieczeństwo."
+  },
+  "sol-15": {
+    "label": "Zespół marketingu chce tworzyć nowe obrazy produktów z pisanych briefów kreatywnych.",
+    "sub": "Dzieło kampanii",
+    "why": "Modele dyfuzji generują obrazy poprzez uczenie się odwracania stopniowego procesu szumowania warunkowanego promptem. Twórz oryginalne koncepcje kampanii z opisów w języku naturalnym."
+  },
+  "sol-16": {
+    "label": "Świadczenie publiczne musi zostać zatwierdzone tylko, gdy ustalony zestaw warunków prawnych jest spełniony.",
+    "sub": "Uprawnienia ustawowe",
+    "why": "Aparat reguł stałych jest preferowany, gdy wymagany wynik jest dokładny, wyjaśnialny i w pełni określony. Produkuj konsekwentne decyzje, które można wyśledzić bezpośrednio do polityki."
+  },
+  "sol-17": {
+    "label": "Zespół ma jeden historyczny zestaw danych i musi opracować model bez przesadniania jego wydajności.",
+    "sub": "Uczciwa ocena modelu",
+    "why": "Dane treningowe uczą parametry, dane walidacji kierują wybory modelu i hiperparametrów, a nietkniętych danych testowych szacuje ostateczną generalizację. Porównuj modele podczas tworzenia, zachowując uczciwą ostateczną ocenę."
+  },
+  "sol-18": {
+    "label": "Helpdesk chce kierować nowe bilety do kategorii zdefiniowanych przez jego zespół wsparcia.",
+    "sub": "Znane kategorie biletów",
+    "why": "Nadzorowane uczenie używa etykietowanych przykładów, aby się nauczyć, jak wejścia odnoszą się do predefiniowanych odpowiedzi. Automatycznie kieruj nowe bilety do odpowiedniej kolejki wsparcia."
+  },
+  "sol-19": {
+    "label": "Usługa muzyki chce odkryć typy zachowania słuchacza bez decydowania grup z góry.",
+    "sub": "Nieznane wzorce słuchania",
+    "why": "Nienadzorowane uczenie odkrywa wzorce w danych, które nie mają predefiniowanej etykiety ani celu numerycznego. Odsłoń przydatne segmenty słuchaczy do badań produktu i personalizacji."
+  },
+  "sol-20": {
+    "label": "Zespół ma miliardy zdań, ale bardzo mało ręcznie etykietowanych danych językowych.",
+    "sub": "Nauczanie się języka w skali",
+    "why": "Samonadzorowane uczenie tworzy etykiety z surowych danych, takie jak maskowanie tokenów i trening modelu do rekonstrukcji ich. Buduj ogólne reprezentacje, które mogą być później adaptowane z znacznie mniejszymi etykietowanymi danymi."
+  },
+  "sol-21": {
+    "label": "Model języka jest zdolny, ale często produkuje odpowiedzi, które ludzie osądzają jako mało pomocne lub źle wyrównane.",
+    "sub": "Wyrównywanie asystenta",
+    "why": "RLHF uczy model nagrody z preferencji człowieka, a następnie optymalizuje zachowanie modelu w stronę tej nagrody. Produkuj odpowiedzi, które lepiej odzwierciedlają oczekiwania i instrukcje człowieka."
+  },
+  "sol-22": {
+    "label": "Model osiąga 99% dokładności treningowej, ale tylko 68% dokładności walidacji.",
+    "sub": "Zapamiętane przykłady treningowe",
+    "why": "Luka sygnalizuje przeuczenie i wysoką wariancję; ograniczenie złożoności lub zatrzymanie przed zapamiętaniem może poprawiać niewidzianą wydajność. Handluj trochę wydajności treningowej za silniejszą walidację i wydajność produkcji."
+  },
+  "sol-23": {
+    "label": "Mały model osiąga słabą wydajność zarówno na danych treningowych, jak i danych walidacji.",
+    "sub": "Model zbyt prosty",
+    "why": "Słaba wydajność nawet na danych treningowych wskazuje niedouczenie i wysokie obciążenie; bogatsze cechy, większa pojemność lub dłuższe szkolenie mogą pomóc. Ucz się modelu wystarczająco złożonego, aby reprezentować użyteczny sygnał."
+  },
+  "sol-24": {
+    "label": "Zespół musi wybrać tempo nauki, rozmiar partii, głębokość drzewa i siłę regularyzacji.",
+    "sub": "Wybieranie ustawień szkoleniowych",
+    "why": "Hiperparametry są wybierane poza uczeniem parametrów i powinny być porównywane przy użyciu danych walidacji lub walidacji krzyżowej. Znajdź mocną konfigurację, zachowując zestaw testów dla ostatecznej oceny."
+  },
+  "sol-25": {
+    "label": "Pożyczkodawca przelicza ryzyko dla pięciu milionów istniejących kont co noc.",
+    "sub": "Nocne ocenianie portfela",
+    "why": "Wnioskowanie partii ocenia przechowywane rekordy razem i jest odpowiednie, gdy wyniki mogą być produkowane na harmonogramie. Generuj zaktualizowane wyniki ryzyka portfela przed następnym dniem roboczym."
+  },
+  "sol-26": {
+    "label": "Platforma płatności musi ocenić każdą transakcję, podczas gdy klient czeka w kasie.",
+    "sub": "Autoryzacja płatności",
+    "why": "Wnioskowanie w czasie rzeczywistym obsługuje indywidualne żądania poprzez trwały punkt końcowy, gdy niska opóźnienie jest niezbędna. Zatwierdź, odrzuć lub przejrzyj transakcję bez zakłócenia kasy."
+  },
+  "sol-27": {
+    "label": "Model przesiewu wspomaga lekarzy, gdzie pominięcie genuinejtej sprawy jest znacznie bardziej szkodliwe niż przegląd fałszywego alarmu.",
+    "sub": "Screening rzadkiej choroby",
+    "why": "Przywołanie mierzy ułamek rzeczywistych pozytywów znalezionych; dokładność może wyglądać wysoko na niezrównoważonych danych, podczas gdy brakuje rzadkich przypadków. Wybierz próg i model, który minimalizuje niebezpieczne fałszywe negatywy."
+  },
+  "sol-28": {
+    "label": "Menedżer chce łącznych sprzedaży według regionu i zmiany procentowej z ostatniego miesiąca.",
+    "sub": "Miesięczne podsumowanie sprzedaży",
+    "why": "Grupowanie, sumowanie i obliczanie zmiany procentowej to deterministyczne zadania analityczne bez wymagań do uczenia lub przewidywania. Produkuj dokładny, audytowalny raport z zapytaniem bazy danych lub obliczeniem business intelligence."
+  },
+  "solution-builder": {
+    "hint": "Przeczytaj dane i żądane wyjście, a następnie przeciągnij każdy scenariusz na jego technikę."
+  }
+}

@@ -1,0 +1,74 @@
+{
+ "ft-01": {
+  "a.text": "Platform team нуждается в одном месте для управления shared security, connections, compute и quota для всех AI teams.",
+  "a.why": "Hub — это top-level collaboration и governance container с shared resources — histack trap #3.",
+  "b.text": "Product team нуждается в месте, где их deployments, agents, data и evaluations фактически живут.",
+  "b.why": "Project живет внутри hub и это где ты фактически строишь — deployments, agents, data, evaluations."
+ },
+ "ft-02": {
+  "a.text": "Твой code передает 'chat-app-prod' — custom name, выбранное на deploy time — как model argument в chat.completions.create.",
+  "a.why": "Deployment name — не base model name — это то, что твой code вызывает (histack's exact trap; corpus pair #19).",
+  "b.text": "Foundry catalog список gpt-4o с его benchmark scores перед чем-либо развертыванием.",
+  "b.why": "gpt-4o — это base model id в catalog; это становится callable только через named deployment."
+ },
+ "ft-03": {
+  "a.text": "Developer настраивает client с Foundry resource's HTTPS address, прочитанной из environment variable, чтобы каждый request знал, какой resource на Azure достичь.",
+  "a.why": "Endpoint (azure_endpoint) — это resource address, на который SDK targets — он идентифицирует, куда отправляется вызов, не кто разрешено отправлять его.",
+  "b.text": "Developer перемещает secret из source file в separate environment variable, чтобы credential, который доказывает identity caller, никогда не hard-coded.",
+  "b.why": "Credential передается как api_key (os.getenv('AZURE_OPENAI_KEY')) и аутентифицирует caller — privacy-and-security habit, отличный от routing."
+ },
+ "ft-04": {
+  "a.text": "Foundry resource создается один раз с name, instructions и attached tools, затем referenced across много later turns, используя ту же conversation.",
+  "a.why": "Agent — это persistent, named resource — созданный через PromptAgentDefinition с instructions и tools, затем invoked многократно.",
+  "b.text": "Script отправляет messages=[{'role': 'user', 'content': 'Summarize this case.'}] и получает один reply обратно из plain completions request, с ничего saved на server и no thread или tools involved.",
+  "b.why": "Bare chat.completions.create — это single stateless request — no persisted instructions, tools или identity survive между calls."
+ },
+ "ft-05": {
+  "a.text": "'Always верни customer details в fixed JSON shape и только answer HR-policy questions' — persistent rule для каждого turn.",
+  "a.why": "Persona, tone, rules и guardrails принадлежат в system prompt — histack's 'single most-tested distinction'; planted неправильный ответ ставит поведение в user prompt или deployment settings.",
+  "b.text": "'Summarize this quarter's absence report для меня' — один request, только этот turn.",
+  "b.why": "User prompt несет запрос этого turn; prior model replies replayed для memory — это assistant messages."
+ },
+ "ft-06": {
+  "a.text": "После развертывания model, developer типирует prompt прямо в Foundry portal и читает reply на screen без написания единственной line Python.",
+  "a.why": "Playground — это Foundry's on-demand, no-code environment для rapid prototyping и validation перед any production code exists.",
+  "b.text": "Тот же developer копирует Code tab's snippet, который конструирует AzureOpenAI client и вызывает chat.completions.create из Python file, которое app фактически будет запускать.",
+  "b.why": "Code tab передает тебе programmatic access pattern — SDK call — это то, что ships, не portal session, который его validified."
+ },
+ "ft-07": {
+  "a.text": "Prompt agent настроен так, чтобы он всегда respond в formal tone и refuse обсуждать competitor pricing, не важно что пользователь спросит.",
+  "a.why": "Persona и behavioral rules поставляемые PromptAgentDefinition — это instructions — они shape как agent responds, не что он может делать.",
+  "b.text": "Тот же agent дан web search и file search чтобы он мог look up live information вместо полагания только на то, что он уже знает.",
+  "b.why": "Web search и file search attach из Build > Tools catalog — capabilities agent может invoke, separate из его instructions."
+ },
+ "ft-08": {
+  "a.text": "Model должен всегда answer в твоей firm's house style, learned из 5,000 past examples.",
+  "a.why": "Fine-tuning retrains weights на examples — tool для durable style/behavior change.",
+  "b.text": "Model должен answer из этого month's price list, который меняется weekly, без retraining.",
+  "b.why": "RAG injects retrieved current org data при inference — 'feeding model твои собственные data чтобы answers stay accurate'."
+ },
+ "ft-09": {
+  "a.text": "Batch workload нуждается в predictable, guaranteed processing rate в fixed hourly cost, reserved заранее regardless из how many tokens фактически отправлены.",
+  "a.why": "PTU reserves dedicated hourly capacity для predictable, high-volume throughput — ты платишь за reservation, не per token.",
+  "b.text": "Interactive chat app имеет unpredictable traffic и нуждается в pay-per-token billing с regional, data zone или global processing options, а не hourly reserved capacity.",
+  "b.why": "Standard deployment — это preferred option предлагающий widest range capabilities и elastic pay-per-token pricing — exam's most-tested deployment contrast (pair #27)."
+ },
+ "ft-10": {
+  "a.text": "Ты написал custom field schema для supplier contracts и должен register его перед any document обработан.",
+  "a.why": "Creating/defining analyzer из field schema — это setup, не execution.",
+  "b.text": "Analyzer уже exists; code запускает его против contract URL и polls за structured result.",
+  "b.why": "Execution — это begin_analyze(analyzer_id=…, inputs=[AnalysisInput(url=…)]) — close-method-name swap corpus documents (pair #26)."
+ },
+ "ft-11": {
+  "a.text": "Описать fields, которые ты хочешь, на natural language и extract их из mix из PDFs, images и meeting audio в structured JSON.",
+  "a.why": "CU позволяет тебе describe fields на natural language while LLM reasons over multimodal input — histack's cue: 'free-form или non-document input'.",
+  "b.text": "Extract totals из high volume из standard invoices и receipts используя ready-made model.",
+  "b.why": "Deterministic extraction из known form types — invoices, receipts, IDs, business cards. 'The extraction trap', histack's favorite."
+ },
+ "ft-12": {
+  "a.text": "Retail team отправляет shelf photos и получает обратно structured product fields, такие как name, price и quantity, определенные их собственной schema.",
+  "a.why": "Content Understanding превращает raw, unstructured или multimodal input в specific structured output, который schema спрашивает.",
+  "b.text": "RAG chatbot нуждается в knowledge base, который он может query по semantic similarity чтобы chat model мог ground его answers в retrieved passages.",
+  "b.why": "Azure AI Search индексирует content — часто через embeddings — и retrieves его во время query; RAG patterns связывают chat model с AI Search для grounding, различная работа из extracting fields из document."
+ }
+}

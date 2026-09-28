@@ -1,0 +1,108 @@
+{
+  "cu-001": {
+    "label": "Analyse une facture PDF et lis les champs de fournisseur, total et date d'échéance extraits",
+    "sub": "prebuilt-invoice",
+    "why": "prebuilt-invoice extrait les champs structurés des documents de facture — l'analyseur préintégré le plus testé de l'examen (7 mentions)."
+  },
+  "cu-002": {
+    "label": "Définir ton propre schéma de champ en langage naturel et extraire ces champs des contrats",
+    "sub": "custom analyzer via begin_create_analyzer",
+    "why": "Les analyseurs personnalisés sont construits à partir d'un schéma de champ que tu décris — la description de champ en langage simple de CU est ce qui la distingue des pré-générateurs Document Intelligence."
+  },
+  "cu-003": {
+    "label": "Extrais le texte et les objets identifiés des étiquettes d'équipement photographiées",
+    "sub": "prebuilt-image",
+    "why": "prebuilt-image extrait le texte et les objets des images fixes via le même flux de travail d'analyseur que toute autre modalité."
+  },
+  "cu-004": {
+    "label": "Obtiens une transcription plus un résumé et une répartition par intervenant des appels d'assistance enregistrés",
+    "sub": "prebuilt-audio",
+    "why": "Les analyseurs audio de CU retournent des transcriptions, résumés et orateurs — extraction, jamais synthèse vocale."
+  },
+  "cu-005": {
+    "label": "Divise les sessions d'formation enregistrées et indexe leurs transcriptions et événements visuels pour la recherche",
+    "sub": "prebuilt-videoSearch",
+    "why": "Les analyseurs vidéo retournent des segments, transcriptions et événements visuels ; les variantes *Search préparent le contenu pour la récupération — Azure AI Search indexe ce que CU extrait."
+  },
+  "cu-006": {
+    "label": "Retourne le texte, les tableaux et les marques de sélection avec la structure du document — aucune sémantique de champ",
+    "sub": "prebuilt-layout",
+    "why": "Layout extrait le texte, les tableaux, les marques de sélection et la structure ; la lecture de style OCR est le texte uniquement — la distinction CU Read-vs-Layout de histack."
+  },
+  "cu-007": {
+    "label": "Un lot mixte de formulaires de fournisseurs a besoin que ses paires clé-valeur libres soient extraites sans commencer par un schéma de champ prédéfini",
+    "sub": "prebuilt-documentFields",
+    "why": "prebuilt-documentFields extrait les paires clé-valeur générales des documents sans schéma spécifique au domaine requis — contrairement aux champs de facture fixes de prebuilt-invoice."
+  },
+  "cu-008": {
+    "label": "Avant de construire un analyseur personnalisé pour un nouveau type de formulaire, demande à Content Understanding de proposer le schéma de champ, puis base le nouvel analyseur sur l'analyseur de document général",
+    "sub": "prebuilt-documentFieldSchema → prebuilt-document",
+    "why": "prebuilt-documentFieldSchema propose des champs pour un type de document que tu n'as pas encore schématisé ; prebuilt-document est le base_analyzer_id utilisé lors de la définition d'un nouvel analyseur de document personnalisé — deux identifiants distincts dans le même flux de travail de construction personnalisée."
+  },
+  "cu-009": {
+    "label": "Exécute le démarrage rapide Python par rapport à une photo de produit et lis la description générée retournée du champ Résumé du résultat",
+    "sub": "prebuilt-imageSearch",
+    "why": "prebuilt-imageSearch est l'analyseur de démarrage rapide pour la sortie d'image descriptive — son résultat expose un champ de résumé contenant la description en langage naturel."
+  },
+  "cu-010": {
+    "label": "Construis un analyseur personnalisé qui tire les champs Titre et Type de graphique d'un lot de captures d'écran de tableau de bord",
+    "sub": "custom analyzer via base_analyzer_id=\"prebuilt-image\"",
+    "why": "Les analyseurs d'image personnalisés définissent base_analyzer_id sur prebuilt-image avant de superposer un schéma de champ — le modèle documenté pour l'extraction de graphiques et de captures d'écran."
+  },
+  "cu-011": {
+    "label": "Analyse les photos d'étagères d'un audit de détail et retourne les champs structurés pour le nombre de produits, la présence de marque et les indicateurs de rupture de stock",
+    "sub": "prebuilt-image",
+    "why": "L'analyseur d'image de Content Understanding retourne les champs structurés définis par le schéma directement à partir des photos — le scénario d'audit d'étagère de détail que l'examen teste directement."
+  },
+  "cu-012": {
+    "label": "Câble un client Python qui appelle begin_analyze avec analyzer_id=\"prebuilt-image\" par rapport à une URL de photo, puis lis les objets détectés du résultat",
+    "sub": "prebuilt-image",
+    "why": "Le modèle d'appel begin_analyze(analyzer_id=..., inputs=[AnalysisInput(url=...)]) est identique entre les modalités — seul l'identifiant d'analyseur change, et prebuilt-image est l'analyseur d'image direct (non-recherche)."
+  },
+  "cu-013": {
+    "label": "Câble un client Python léger qui appelle begin_analyze avec une URL d'enregistrement d'appel pour extraire une transcription et un résumé prêts pour un index de récupération",
+    "sub": "prebuilt-audioSearch",
+    "why": "prebuilt-audioSearch est l'identifiant d'analyseur documenté dans l'extrait de démarrage rapide du SDK — le suffixe *Search marque la sortie préparée pour l'indexation/récupération RAG, contrairement à l'extraction directe de prebuilt-audio sans préparation de récupération."
+  },
+  "cu-014": {
+    "label": "Tire les phrases de transcription étiquetées par orateur et précisément chronométrées d'un lot d'épisodes de podcast",
+    "sub": "transcriptPhrases",
+    "why": "transcriptPhrases est le champ de sortie contenant l'identification des orateurs et les informations de synchronisation — une sortie d'extraction audio directe, distincte de l'identifiant d'analyseur lui-même."
+  },
+  "cu-015": {
+    "label": "Reconnaître que soumettre un podcast MP3 à Content Understanding définit la valeur de type de l'objet de contenu à la même valeur utilisée pour les entrées vidéo",
+    "sub": "kind: \"audioVisual\"",
+    "why": "Les entrées audio uniquement et vidéo utilisent toutes les deux kind: \"audioVisual\" dans le schéma de contenus — une valeur partagée qui trompe quiconque s'attend à un type « audio » distinct."
+  },
+  "cu-016": {
+    "label": "Confirme que l'extraction d'une transcription structurée d'une boîte vocale est la parole capturée en texte, jamais le texte transformé en parole",
+    "why": "Les analyseurs audio de CU transcrivent la parole existante en sortie structurée — ils ne synthétisent jamais la nouvelle sortie parlée ; ce travail appartient à Azure AI Speech, pas Content Understanding."
+  },
+  "cu-017": {
+    "label": "Divise une démo de produit enregistrée et chargée en segments de scène logique avant que tout traitement en aval ne s'exécute",
+    "sub": "enableSegment",
+    "why": "enableSegment est la propriété de schéma d'analyseur qui divise le matériel en segments logiques tels que des scènes — un contrôle d'analyseur vidéo, pas un audio ou un document."
+  },
+  "cu-018": {
+    "label": "Après avoir analysé un clip marketing, lis un résumé en markdown structuré de sa transcription et de son contenu visuel",
+    "sub": "prebuilt-videoSearch",
+    "why": "Les résultats prebuilt-videoSearch exposent un champ markdown résumant la transcription et le contenu visuel par segment — le champ de relecture documenté du SDK pour la vidéo."
+  },
+  "cu-019": {
+    "label": "Confirme que l'extraction des images clés et des événements visuels d'un enregistrement chargé fonctionne sur des images qui existent déjà, plutôt que de générer de nouvelles images",
+    "why": "Les analyseurs de CU extraient les images clés, les transcriptions et les événements visuels du matériel qui existe déjà — ils ne génèrent pas de cadres synthétiques ; c'est une catégorie différente de service IA tout à fait."
+  },
+  "cu-020": {
+    "label": "Câble un client Python qui appelle begin_analyze avec analyzer_id=\"prebuilt-videoSearch\" par rapport à une URL de téléchargement MP4",
+    "sub": "prebuilt-videoSearch",
+    "why": "L'appel begin_analyze(analyzer_id=\"prebuilt-videoSearch\", inputs=[AnalysisInput(url=...)]) est le modèle SDK documenté pour lancer l'extraction vidéo."
+  },
+  "cu-modality-grid": {
+    "hint": "Demande ce que le fichier source est réellement, puis consulte la ligne sub pour l'identifiant d'analyseur exact prebuilt-* — l'identifiant lui-même nomme sa modalité (document/image/audio/vidéo), et les identifiants avec suffixe Search préparent la sortie pour l'indexation plutôt que de changer la modalité.",
+    "note": "Content Understanding extrait toujours — il ne génère ni n'indexe jamais. L'extraction dans Azure AI Search est une étape en aval, pas quelque chose que CU fait elle-même.",
+    "zones[0].def": "Les PDF, factures, contrats et documents en vrac que Content Understanding transforme en champs structurés, tableaux et texte.",
+    "zones[1].def": "Les photos, captures d'écran et graphiques que Content Understanding transforme en champs structurés, descriptions et objets détectés.",
+    "zones[2].def": "La parole enregistrée — appels, podcasts et messagerie vocale — que Content Understanding transforme en transcriptions, résumés et étiquettes d'orateurs.",
+    "zones[3].def": "Le matériel vidéo enregistré que Content Understanding segmente, transcrit et prépare pour la recherche."
+  }
+}

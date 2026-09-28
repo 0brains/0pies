@@ -1,0 +1,84 @@
+{
+ "iii-ab-01": {
+  "label": "Un examinateur indépendant, organisationnellement séparé de l'équipe produit, vérifie les distributions d'équité et les dossiers de provenance des données par rapport à ISO/IEC 42001 avant l'approbation.",
+  "why": "L'indépendance de l'équipe de construction plus une piste de preuve documentée est la caractéristique de cette discipline — distinct du red teaming, où la même indépendance est utilisée pour attaquer le système plutôt que d'examiner sa paperasserie."
+ },
+ "iii-ab-02": {
+  "label": "Le résultat le plus crucial n'est pas un score de référence mais une liste priorisée de non-conformités, chacune avec un propriétaire nommé et une date limite de correction.",
+  "why": "Le livrable d'un audit est un registre de lacunes et de corrections par rapport à la piste papier — différent du catalogue de cas d'abus de la modélisation des menaces, qui énumère ce qui pourrait se passer plutôt que ce qui a déjà mal fonctionné."
+ },
+ "iii-ab-03": {
+  "label": "Une semaine avant le lancement prévu, un examen interne final du fichier technique découvre une lacune d'équité que les tests uniformes d'échantillons antérieurs avaient manqués.",
+  "why": "Examiner le dossier après le fait pour attraper ce que les tests ont manqué est le travail de cette discipline — les tests antérieurs eux-mêmes, et tout exercice de red team qui a déjà fonctionné et s'est fermé, appartiennent à leurs propres zones."
+ },
+ "iii-ab-04": {
+  "label": "Des spécialistes embauchés chaînent les invites jailbreak pour contourner les garde-fous avant le lancement ; les résultats alimentent le registre des risques et sont re-testés une fois corriges.",
+  "why": "Simuler les mauvais usages réalistes de bout en bout est le travail de la discipline — un test de pénétration ne sonde que l'infrastructure, et un audit examinerait le rapport résultant, pas trouver l'exploit lui-même."
+ },
+ "iii-ab-05": {
+  "label": "Les testeurs poussent un chatbot de service client à travers l'encadrage du génie social, l'injection d'invites et les scénarios de mauvaise utilisation en cas limites qu'aucun script d'assurance qualité ordinaire ne tenterait.",
+  "why": "La simulation adversariale multi-perspectives combinant des attaques techniques avec un encadrement de mauvaise utilisation est la plus grande valeur de gouvernance de la discipline — une sonde au niveau du composant d'un point de terminaison API reste plutôt dans la zone suivante."
+ },
+ "iii-ab-06": {
+  "label": "Une défaillance de condition rare qui ne s'affiche que sous des conditions météorologiques et d'éclairage spécifiques apparaît lors de tests adversariales de pré-lancement ; le lancement est retardé jusqu'à ce que le scénario soit corrigé et revalidé, aussi rare que le déclencheur.",
+  "why": "Les tests adversariales en direct sont ce qui a fait émerger cette défaillance en premier lieu — un exercice de modélisation des menaces ne l'aurait que signalé comme un scénario hypothétique sur papier, jamais réellement exécuté."
+ },
+ "iii-ab-07": {
+  "label": "Les actifs, les limites de confiance et les cas d'abus sont énumérés sur le diagramme d'architecture au moment de la conception, avant l'exécution d'un test.",
+  "why": "L'anticipation structurée sur papier, sans attaque en direct, est ce qui rend cette discipline préventive plutôt que diagnostique — dès que quelqu'un essaie réellement le jailbreak, le travail a dépassé au red teaming."
+ },
+ "iii-ab-08": {
+  "label": "L'examen de conception énumère les adversaires possibles, leurs objectifs et capacités, aux côtés de la sauvegarde que chaque cas d'abus aura besoin — aucune tentative d'attaque en direct pour le moment.",
+  "why": "Un catalogue nommé du propriétaire et lié à la mitigation est le livrable ici — distinct des tests de sécurité, qui ne commencent qu'une fois qu'une sauvegarde spécifique a besoin d'être confirmée comme fonctionnant réellement."
+ },
+ "iii-ab-09": {
+  "label": "La carte énumère les ensembles de données, les bibliothèques et les poids pré-entraînés qui pourraient être altérés dans la chaîne d'approvisionnement, et nomme un propriétaire pour chaque sauvegarde — l'exercice se produit avant le navire du système.",
+  "why": "Cataloguer ce qui pourrait être altéré est l'anticipation, pas la vérification — confirmer qu'une analyse de dépendances a réellement attrapé une bibliothèque compromise est une discipline différente et pratique."
+ },
+ "iii-ab-10": {
+  "label": "Les testeurs de pénétration frappent l'API de service et la console d'administration pour les mal-configurations et l'authentification faible, une analyse de dépendances signale les bibliothèques obsolètes, et les limites de taux sont vérifiées sous la charge simulée.",
+  "why": "La sonde pratique de composants spécifiques déjà identifiés confirme qu'une défense fonctionne réellement — la modélisation des menaces ne cartographiait que les endroits où ces points faibles pourraient être, jamais exécuté le contrôle."
+ },
+ "iii-ab-11": {
+  "label": "Un examen ligne par ligne du pipeline de prétraitement vérifie les risques d'injection et les secrets exposés, tandis qu'un inventaire suit chaque bibliothèque et ensemble de données sur lequel la version dépend.",
+  "why": "Confirmer qu'un composant spécifique nommé est renforcé est plus étroit que la simulation de mauvaise utilisation complète et de bout en bout du red teaming — cette discipline reste à l'intérieur d'un composant à la fois."
+ },
+ "iii-ab-12": {
+  "label": "Les résultats du test de pénétration API et de l'analyse de dépendances sont enregistrés avec une gravité, un propriétaire et une date limite de re-test, et le lancement ne peut pas approuver jusqu'à ce qu'ils se ferment.",
+  "why": "Sonde, correctif, re-test est la boucle de fonctionnement de cette discipline par rapport à un composant défini — un audit examinerait plutôt si cette boucle s'est déroulée du tout, plutôt que de l'exécuter."
+ },
+ "iii-ab-13": {
+  "label": "Les évaluations d'ombre hebdomadaires rejouent le trafic récent par rapport à un modèle de référence, et les vérifications d'équité mensuelles s'exécutent sur le calendrier que le plan de lancement a défini.",
+  "why": "C'est le côté cadence technique et tableau de bord du plan de surveillance ; le devoir légal permanent de l'exécuter du tout, une fois que le système est en direct, appartient à un conseil entièrement différent."
+ },
+ "iii-ab-14": {
+  "label": "Le tableau de bord de l'équipe produit suit l'étalonnage et la latence par rapport à une ligne de base validée sur un calendrier hebdomadaire fonctionnant, avec les ratios de disparité d'équité s'actualisent automatiquement aux côtés.",
+  "why": "Un flux continu et automatisé appartenant à l'équipe qui a construit le système est la texture de cette zone — dès que ce même contrôle est au lieu d'être exécuté par un examinateur organisationnellement séparé de cette équipe, sur une visite programmée plutôt qu'un flux en direct, c'est un audit."
+ },
+ "iii-ab-15": {
+  "label": "La télémétrie automatisée surveille les motifs de trafic anormal et les entrées fabriquées censées confondre le modèle, et déclenche une alerte quand l'un ou l'autre franchit un seuil.",
+  "why": "Une montre automatisée et toujours active est la texture de cette zone — une sonde programmée et pratique des mêmes interfaces pour confirmer que la défense tient est la discipline de test de pénétration au lieu."
+ },
+ "iii-ab-16": {
+  "label": "Pendant un pilote de pré-lancement avec un petit groupe d'utilisateurs réels, le tort réel du monde réel est confirmé — dès qu'il l'est, le confinement commence immédiatement : isoler d'abord, enquêter en second, avec l'horloge de notification du RGPD de 72 heures déjà en cours d'exécution.",
+  "why": "Le tort confirmé est le déclencheur de cette discipline, que le système soit toujours dans un pilote verrouillé ou complètement en direct ; un modèle de prédictions à faible gravité toujours enregistrées et surveillées pour une tendance n'a pas traversé cette ligne pour l'instant, et reste dans le suivi des problèmes de routine."
+ },
+ "iii-ab-17": {
+  "label": "À mi-pilote, avant la disponibilité générale, un chatbot de service client émet des conseils médicaux dangereux à l'un des utilisateurs d'essai ; la recherche déclenche un playbook formel — une balise de gravité, des rôles d'escalade clairs, et une analyse de cause première qui doit se terminer avant que le dossier ne puisse se fermer.",
+  "why": "Les machines formelles et délimitées dans le temps — gravité, propriété, une fermeture définie — se déclenchent dès que le tort atterrit réellement sur une personne réelle, pilote ou non, contrairement à l'examen programmé d'un audit des dossiers qui peuvent ne rien montrer qui cloche du tout."
+ },
+ "iii-ab-18": {
+  "label": "Avant que le pilote ne se convertisse à la disponibilité générale, une rétrospective sans culpabilité sur le cas de tort confirmé attribue toujours des correctifs concrets — réentraînement sur des données corrigées, des limites de taux plus serré, une fiche de modèle mise à jour — avec la preuve préservée pour l'analyse judiciaire.",
+  "why": "Transformer un tort confirmé en corrections durables et une piste de preuve préservée ferme la boucle de cette discipline, que le tort ait surgi dans un pilote verrouillé ou une production complète — nourrir une conclusion dans le registre des risques sans que ce tort se soit produit pour l'instant est le travail de la modélisation des menaces au lieu."
+ },
+ "iii-assurance": {
+  "hint": "Ce sont des vérifications pré-version, cycle de développement. Demande-toi à quel stade se trouve la scène : un catalogue de papier avant tout test s'exécute est la modélisation des menaces ; une tentative en direct de casser le système est le red teaming ; un examinateur indépendant vérifiant la piste de preuve est un audit.",
+  "note": "Tout sur ce conseil se produit avant ou pendant la décision de disponibilité. Ce qu'un système en direct doit à son opérateur après le lancement, sur une base récurrente, est un conseil différent.",
+  "zones[0].def": "Un examinateur indépendant, organisationnellement séparé de l'équipe qui a construit le système, vérifie le fichier technique — provenance des données, enregistrements de test, évaluations d'impact — par rapport à une norme ou politique nommée et produit un rapport de lacunes avec des propriétaires et des délais. La piste de preuve, pas une attaque en direct.",
+  "zones[1].def": "Les spécialistes simulent un scénario adversaire réaliste ou de mauvaise utilisation de bout en bout — jailbreaks, injection d'invites, génie social, abus en cas limites — pour voir comment l'ensemble du système tient sous la pression, puis alimentent ce qu'ils ont trouvé dans un plan de correction qui obtient re-testé.",
+  "zones[2].def": "Un exercice structuré et basé sur papier, effectué au moment de la conception avant l'exécution d'un test, qui énumère ce qui a besoin de protection, qui pourrait l'attaquer et quels cas d'abus importent le plus — produisant une liste de risques et de mitigations nommées, pas une tentative en direct d'exploiter n'importe quoi.",
+  "zones[3].def": "Sonde pratique de composants spécifiques déjà identifiés — l'API de service, les dépendances, le code du pipeline — pour confirmer qu'une défense est réellement présente et correctement configurée, distinct d'une simulation adversariale de système complet ou d'un catalogue papier de ce qui pourrait se tromper.",
+  "zones[4].def": "La cadence technique de vérifications — évaluations programmées, métriques suivies, alertes automatisées — qui est construite et répétée au fur et à mesure que le plan de surveillance se met en place. Les tableaux de bord et les détecteurs eux-mêmes, pas le devoir légal permanent de les exécuter une fois que le système est en direct.",
+  "zones[5].def": "Les machines formelles et délimitées dans le temps — confinement d'abord, puis analyse de cause première, puis action corrective — qui s'activent dès qu'une scène implique un tort réel confirmé du monde réel, pas une conclusion de routine toujours enregistrée et surveillée."
+ }
+}

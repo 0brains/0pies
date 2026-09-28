@@ -1,0 +1,246 @@
+{
+ "id": "resilience-vocab",
+ "runner": "board",
+ "title": "Resilience & Recovery Vocabulary",
+ "blurb": "Eleven terms that decide how fast, how completely, and how expensively a business comes back after a disruption. Sort each scene into the metric, site type, or backup scheme it's really describing.",
+ "source": "Chapple CISSP SG 10ed ch.18 · outline 7.10 (Implement recovery strategies), 7.11 (Implement DR processes)",
+ "asOf": "2026-08",
+ "area": "7.10-7.11",
+ "hint": "First ask whether the scene is naming a number (a metric), a facility (a site), or a backup job (a scheme) — then find the discriminator inside that group.",
+ "note": "WRT (work recovery time) and redundant sites appear in the source material but are out of scope for this board; every item here sorts into one of the eleven zones listed.",
+ "zones": [
+  {
+   "key": "RTO",
+   "name": "RTO (Recovery Time Objective)",
+   "def": "The maximum acceptable length of clock time a system or service can stay down before the business impact becomes unacceptable — it measures how fast recovery must happen, not how much data is lost along the way. A valid RTO must land inside the MTD of the business function the system supports; a scene about a specific system's restoration deadline is RTO, while a scene about the whole function's outer breaking point is MTD."
+  },
+  {
+   "key": "RPO",
+   "name": "RPO (Recovery Point Objective)",
+   "def": "The maximum acceptable amount of data loss, measured backward in time from the moment of disruption — it answers 'how much recent data can we afford to lose,' never 'how long can we be down.' RPO is set by backup and replication frequency, which is what separates it from RTO, a target about restoration speed rather than data currency."
+  },
+  {
+   "key": "MTD",
+   "name": "MTD (Maximum Tolerable Downtime)",
+   "def": "The outer ceiling on total disruption to a critical business function before the consequences become unacceptable or irrecoverable — a business-impact figure set during the BIA, not a technical recovery target for any single system. When a proposed RTO for a component would exceed the MTD of the function it serves, the recovery strategy is inadequate no matter how reasonable that RTO looks on its own."
+  },
+  {
+   "key": "MTBF-MTTR",
+   "name": "MTBF / MTTR",
+   "def": "MTBF (mean time between failures) estimates how long a component typically runs before it breaks — a reliability/frequency measure; MTTR (mean time to repair) measures how long fixing it takes once it does — a maintainability/speed measure. Both describe a single component's own failure-and-repair behavior, which is what separates either of them from RTO or RPO, which describe business-level recovery targets for a whole service."
+  },
+  {
+   "key": "Hot site",
+   "name": "Hot site",
+   "def": "A fully equipped, continuously or near-continuously data-synchronized offsite facility that can assume production operations almost immediately after a disaster is declared — the most expensive option, chosen when RTO is measured in minutes to hours. It is typically a leased subscription facility, which is the detail that separates it from a redundant site the org owns and runs itself in constant parallel."
+  },
+  {
+   "key": "Warm site",
+   "name": "Warm site",
+   "def": "A partially equipped offsite facility — building, power, and some pre-configured hardware and connectivity are in place — but current production data is not, so it needs restoration work, typically at least half a day, before it can take over. It is the middle ground chosen when a same-day RTO is tolerable and a hot site's cost cannot be justified."
+  },
+  {
+   "key": "Cold site",
+   "name": "Cold site",
+   "def": "An empty shell facility with power and environmental support but no pre-installed computing hardware, software, or data links — the cheapest option, but activation can take weeks. Choosing a cold site whenever the tolerable downtime is short is the classic error this zone tests against; a low sticker price is only a good trade when the function's MTD is measured in weeks, not hours."
+  },
+  {
+   "key": "Mobile site",
+   "name": "Mobile site",
+   "def": "A self-contained, transportable recovery capability — a trailer or container pre-configured as a cold or warm environment — that can be deployed wherever it is needed rather than sitting at one fixed leased address. The defining trait is deployability, not a distinct readiness tier from a fixed cold or warm site of the same equipment level."
+  },
+  {
+   "key": "Full backup",
+   "name": "Full backup",
+   "def": "A complete copy of every selected file regardless of whether it has changed, resetting every file's archive bit once complete — the anchor every other backup scheme restores from. It is the slowest to create and the largest to store, but the fastest single set to restore from, which is the trade every scene weighing backup-window pressure against restore-speed pressure is testing."
+  },
+  {
+   "key": "Incremental backup",
+   "name": "Incremental backup",
+   "def": "Backs up only files changed since the most recent backup of any type — full or incremental — clearing each captured file's archive bit as it goes. This keeps each job the smallest and fastest of the three schemes to create, but a restore must replay the last full backup plus every incremental since, in order, which is the longest restore chain of the three."
+  },
+  {
+   "key": "Differential backup",
+   "name": "Differential backup",
+   "def": "Backs up every file changed since the last full backup without clearing the archive bit, so each successive differential job grows larger until the next full backup resets it. A restore needs only the last full plus the single latest differential — never a multi-step chain — which is what separates it from incremental's smaller-but-chained jobs."
+  }
+ ],
+ "items": [
+  {
+   "id": "resv-01",
+   "label": "A payments team commits that after any outage, the card-authorization service must be back online within 90 minutes.",
+   "sub": "Which measurement is this?",
+   "answer": "RTO",
+   "why": "This is a commitment about how fast restoration must happen, not how much transaction data could be lost (RPO) or the outer business-wide ceiling for the payments function as a whole (MTD) — it's the specific recovery-time target planners agree to hit.",
+   "citation": "SG ch.18 · outline 7.11"
+  },
+  {
+   "id": "resv-02",
+   "label": "During a DR tabletop, the CFO asks how quickly the general ledger system needs to be usable again before month-end close is put at risk.",
+   "sub": "Which measurement is being scoped?",
+   "answer": "RTO",
+   "why": "The question is about the deadline for restoring the system's usability, a time-to-recover figure — the tempting neighbour is MTD, but MTD would be the ceiling for the whole finance close process, not the target set for this one system inside it.",
+   "citation": "SG ch.18 · outline 7.11"
+  },
+  {
+   "id": "resv-03",
+   "label": "A hospital sets its replication schedule so that, in the worst case, at most 15 minutes of patient-vitals data would be unrecoverable after a crash.",
+   "sub": "Which measurement is this?",
+   "answer": "RPO",
+   "why": "The scene says nothing about how long the system takes to come back up — only about how much data could vanish — which makes this a data-loss tolerance, not a restoration-speed target like RTO.",
+   "citation": "SG ch.18 · outline 7.11"
+  },
+  {
+   "id": "resv-04",
+   "label": "An accounting firm decides its nightly full backup is sufficient because losing up to 24 hours of transactional entries is an acceptable risk for its size.",
+   "sub": "Which measurement drove this decision?",
+   "answer": "RPO",
+   "why": "The 24-hour figure defines tolerable data loss, which then dictates backup frequency; it's distinct from RTO, which would set how fast the ledger server itself must be back online rather than how current its data must be.",
+   "citation": "SG ch.18 · outline 7.11"
+  },
+  {
+   "id": "resv-05",
+   "label": "A manufacturer's BIA finds that order-processing can be down for at most three days before contractual penalties and customer attrition make the disruption unrecoverable for the business.",
+   "sub": "Which measurement is this?",
+   "answer": "MTD",
+   "why": "This three-day figure is the outer, business-impact ceiling for the whole function, set during the BIA — not a technical target for any one system. Every RTO for a component inside order-processing must be planned to land inside this ceiling.",
+   "citation": "SG ch.18 · outline 7.11"
+  },
+  {
+   "id": "resv-06",
+   "label": "A DR planner flags a mismatch: the payroll system's proposed recovery target is five days, but the BIA already established that payroll processing cannot be down more than 48 hours without triggering statutory penalties.",
+   "sub": "Which figure is the 48-hour number?",
+   "answer": "MTD",
+   "why": "The 48-hour figure is the business-wide ceiling the proposed recovery target is failing to respect; the scene is testing recognition of MTD as the boundary a system's RTO must fit inside, not a second RTO restated in different words.",
+   "citation": "SG ch.18 · outline 7.11"
+  },
+  {
+   "id": "resv-07",
+   "label": "A reliability engineer logs that a core load balancer averages one failure every 20,000 operating hours under normal load.",
+   "sub": "Which measurement is this?",
+   "answer": "MTBF-MTTR",
+   "why": "This is the frequency half of the pairing — how often the component tends to break — a reliability figure about the component itself, not a business-level recovery target like RTO, which would describe how fast the whole service comes back after any failure.",
+   "citation": "SG ch.18 · outline 7.10.4"
+  },
+  {
+   "id": "resv-08",
+   "label": "After a disk controller fails, the vendor's documented average time for field technicians to swap and restore it is four hours.",
+   "sub": "Which measurement is this?",
+   "answer": "MTBF-MTTR",
+   "why": "This is the repair-speed half of the pairing — a maintainability measure for one component — distinct from RTO, which targets the overall service's restoration time and may rely on failover rather than waiting for a physical repair.",
+   "citation": "SG ch.18 · outline 7.10.4"
+  },
+  {
+   "id": "resv-09",
+   "label": "A trading firm keeps a fully staffed offsite facility with servers continuously mirroring live trade data, ready to take over operations within minutes of a declared disaster.",
+   "sub": "Which site type is this?",
+   "answer": "Hot site",
+   "why": "Near-real-time replication plus near-instant takeover is the hot-site signature; a warm site is the tempting neighbour, but a warm site's equipment sits ready without current data — it can't mirror live trade data continuously or take over within minutes the way this facility does.",
+   "citation": "SG ch.18 · outline 7.10.3"
+  },
+  {
+   "id": "resv-10",
+   "label": "A firm's DR budget report shows its alternate facility roughly doubling annual infrastructure spend, justified because the trading platform's RTO is measured in minutes.",
+   "sub": "Which site type explains this cost?",
+   "answer": "Hot site",
+   "why": "Only a hot site's cost profile and near-instant readiness match an RTO measured in minutes; a warm site's partial readiness — equipment present but data not current — would blow that target.",
+   "citation": "SG ch.18 · outline 7.10.3"
+  },
+  {
+   "id": "resv-11",
+   "label": "A regional bank leases a facility with racks, network drops, and pre-configured server hardware already installed, but current account data still needs restoring from last night's backup before operations can resume.",
+   "sub": "Which site type is this?",
+   "answer": "Warm site",
+   "why": "Pre-installed equipment without live, current data is the warm-site signature — a hot site would already have replicated data on hand, while a cold site would have no hardware installed at all.",
+   "citation": "SG ch.18 · outline 7.10.3"
+  },
+  {
+   "id": "resv-12",
+   "label": "Activation checklists for a call center's alternate facility estimate at least half a day before agents can log back in, once hardware is powered up and current data is loaded.",
+   "sub": "Which site type is this?",
+   "answer": "Warm site",
+   "why": "A roughly twelve-hour activation window is the warm-site benchmark, separating it from a cold site's multi-week lag and a hot site's near-immediate takeover.",
+   "citation": "SG ch.18 · outline 7.10.3"
+  },
+  {
+   "id": "resv-13",
+   "label": "A regional utility signs a lease for an empty warehouse with power and HVAC already provisioned, but no computers, servers, or network gear installed.",
+   "sub": "Which site type is this?",
+   "answer": "Cold site",
+   "why": "No pre-installed computing facilities at all is the cold-site definition; the low price is tempting to read as the smart default, but the multi-week activation lag means it only fits functions with a long MTD.",
+   "citation": "SG ch.18 · outline 7.10.3"
+  },
+  {
+   "id": "resv-14",
+   "label": "A DR planner rejects a proposed recovery facility for a payment function with a 24-hour MTD, because the facility would take roughly three weeks to become operational from a bare shell.",
+   "sub": "Which site type was rejected?",
+   "answer": "Cold site",
+   "why": "The multi-week activation lag is diagnostic of a cold site; the scene tests recognizing that a cold site is the wrong choice whenever MTD is short, and that a warm or hot site is needed instead.",
+   "citation": "SG ch.18 · outline 7.10.3"
+  },
+  {
+   "id": "resv-15",
+   "label": "A field-services company keeps a fleet of pre-configured trailers, each fitted out as a warm-equipped environment, that can be trucked to whichever regional office is hit by a disaster.",
+   "sub": "Which site type is this?",
+   "answer": "Mobile site",
+   "why": "The recovery capability here is transportable rather than fixed at one leased address — deployability is the defining trait, not a different readiness tier from a fixed warm site carrying the same equipment.",
+   "citation": "SG ch.18 · outline 7.10.3"
+  },
+  {
+   "id": "resv-22",
+   "label": "A retailer's cloud provider offers a pre-packaged shipping container, kitted out with hardware and network gear that mirrors the retailer's store-server stack, deployable to any parking lot within 48 hours of a request.",
+   "sub": "Which site type is this?",
+   "answer": "Mobile site",
+   "why": "A prefabricated unit that ships to wherever it's needed, rather than sitting at a single fixed leased address, is the mobile-site trait; that it happens to arrive hot-equipped doesn't change the category — deployability, not equipment tier, is what defines this zone.",
+   "citation": "SG ch.18 · outline 7.10.3"
+  },
+  {
+   "id": "resv-16",
+   "label": "Every Sunday night, an entire file server's contents are copied in full, regardless of which files changed during the week.",
+   "sub": "Which backup scheme is this?",
+   "answer": "Full backup",
+   "why": "Copying everything unconditionally and resetting every file's archive bit is the full-backup definition — it's the anchor set the other two schemes in this deck are always measured against.",
+   "citation": "SG ch.18 · outline 7.10.1"
+  },
+  {
+   "id": "resv-17",
+   "label": "After a Friday crash, restoring a file server takes only a single restore job, because the previous night's backup already held a fresh, complete copy of the whole system.",
+   "sub": "Which backup scheme made this possible?",
+   "answer": "Full backup",
+   "why": "A one-step, fastest-possible restore is the full-backup payoff; the trade is that creating it is the slowest and largest job of the three schemes, which incremental and differential exist to avoid running every night.",
+   "citation": "SG ch.18 · outline 7.10.1"
+  },
+  {
+   "id": "resv-18",
+   "label": "A backup admin schedules jobs Tuesday through Friday that each capture only the files touched since the previous night's job — whether that prior job was Monday's full backup or Wednesday's own run.",
+   "sub": "Which backup scheme is this?",
+   "answer": "Incremental backup",
+   "why": "Chaining off whichever backup ran most recently, of any type, and clearing the archive bit after each run is the incremental signature — it keeps each job small, but a Friday restore must replay Monday's full plus every night's job in order, unlike a differential restore.",
+   "citation": "SG ch.18 · outline 7.10.1"
+  },
+  {
+   "id": "resv-19",
+   "label": "A DR team accepts a short nightly backup window over a longer restore next disaster, because their systems run around the clock and I/O contention has to be minimized.",
+   "sub": "Which backup scheme fits this trade-off?",
+   "answer": "Incremental backup",
+   "why": "Smallest, fastest backup creation at the cost of the most complex restore chain is the incremental trade-off; a differential scheme would take longer to create each night but shorten the eventual restore to just two backups.",
+   "citation": "SG ch.18 · outline 7.10.1"
+  },
+  {
+   "id": "resv-20",
+   "label": "A Wednesday backup job captures every file changed since Monday's full backup, and by Friday that same job is visibly copying a larger set of files than it did on Tuesday.",
+   "sub": "Which backup scheme is this?",
+   "answer": "Differential backup",
+   "why": "Growing size night over night, because the archive bit is never cleared until the next full backup, is the differential signature — it separates it from incremental, whose jobs stay small because they only capture changes since the last job of any type.",
+   "citation": "SG ch.18 · outline 7.10.1"
+  },
+  {
+   "id": "resv-21",
+   "label": "A restore runbook for a failed application server names exactly two jobs to pull: last Monday's full backup and last night's backup — nothing in between.",
+   "sub": "Which backup scheme produces a two-job restore like this?",
+   "answer": "Differential backup",
+   "why": "Needing only the last full plus one other job, regardless of how many days have passed since the full, is the differential restore pattern — an incremental scheme would instead need every night's job played back in sequence since the last full.",
+   "citation": "SG ch.18 · outline 7.10.1"
+  }
+ ]
+}

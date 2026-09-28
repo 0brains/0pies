@@ -1,0 +1,236 @@
+{
+  "id": "posture-triage",
+  "runner": "board",
+  "title": "Score and Sort",
+  "blurb": "Defender for Cloud throws six different kinds of paper at you and they all look like findings. Sort each one to the surface that actually produced it, and you stop wasting a morning hunting an alert that was only ever a recommendation.",
+  "source": "Microsoft Learn: Defender for Cloud secure score, security recommendations, governance rules, exemptions, Attack path analysis, cloud security explorer, internet exposure analysis, regulatory compliance standards, and the workload protection plan tutorials · SC-500 outline 4.1",
+  "asOf": "2026-08",
+  "area": "4.1",
+  "hint": "Ask three questions in order. First: has anything actually happened? If a resource behaved suspiciously in real time, it is a Security alert, and alerts only exist where a paid workload protection plan is switched on. Second: if nothing has happened yet, is the finding about one resource's setting or about a chain? A single misconfigured resource with a Fix action and a points value is a secure score recommendation; a chain that starts at an internet entry point and walks identities and network hops to a crown-jewel asset is an Attack path, as is anything you found by hand-building a graph query. Third: if it is neither, what is the paperwork for? Naming a framework such as PCI DSS, ISO 27001 or DORA and proving resources pass its controls is regulatory compliance; naming a human being and a deadline for fixing recommendations is a Governance rule; and deciding whether a Defender plan is on, at what tier, and over which scope is Plan coverage. Enablement questions always beat detection questions: if the plan is off, there is no alert to triage in the first place.",
+  "zones": [
+    {
+      "key": "Secure score recommendation",
+      "name": "Secure score recommendation",
+      "def": "A continuous assessment finding that one resource sits below the Microsoft cloud security benchmark bar, shown on the Recommendations page with a risk level, an affected resource, and often a Fix, Enforce or Deny action plus a points contribution. Exemptions and preview tags live here too. Unlike a Security alert, nothing is happening; this is a standing misconfiguration. Unlike a Compliance control, it is one actionable item rather than a framework requirement that groups many such items."
+    },
+    {
+      "key": "Attack path",
+      "name": "Attack path",
+      "def": "Output of the cloud security graph under Defender CSPM: an exploitable chain running from an external entry point through lateral movement to a critical target, shown on Attack path analysis, plus anything you discover by hand-building a query in Cloud security explorer. Unlike a Secure score recommendation, the finding is the chain and its context rather than one resource's setting. Unlike a Security alert, no attacker has done anything; the graph is modelling what one could do."
+    },
+    {
+      "key": "Security alert",
+      "name": "Security alert",
+      "def": "A real-time detection that a paid workload protection plan raised because something suspicious actually occurred on a protected resource, carrying a severity, affected resource details and response steps, and correlated into incidents for export to a SIEM. Unlike an Attack path, this is observed behaviour, not modelled exposure. Unlike Plan coverage, the plan is already on; the question is what the detection means, not whether detection exists."
+    },
+    {
+      "key": "Compliance control",
+      "name": "Compliance control",
+      "def": "A control inside a named security standard assigned to a scope and tracked on the Regulatory compliance dashboard, where controls show as passing, failing, or greyed out when they cannot be assessed automatically, and where audit reports and compliance-over-time workbooks come from. Unlike a Secure score recommendation, the unit is a framework requirement and the goal is attestation, not points. Unlike a Governance rule, it says what good looks like, not who must fix it by when."
+    },
+    {
+      "key": "Governance rule",
+      "name": "Governance rule",
+      "def": "A rule created under Environment settings that stamps an owner and a due date onto recommendations matching a severity, risk level, category or specific recommendation, with a priority number, an optional grace period, and weekly mail to owners and their managers. Unlike a Secure score recommendation, the rule fixes nothing itself; it manufactures accountability and an SLA. Unlike a Compliance control, it drives the remediation process rather than defining the standard being met."
+    },
+    {
+      "key": "Plan coverage",
+      "name": "Plan coverage",
+      "def": "The enablement decision itself: which Defender plan is switched on, at which tier, at which scope, and with which optional components, set on the Defender plans page under Environment settings and extended to other clouds through AWS and GCP connectors. Unlike a Security alert, nothing has been detected; you are deciding whether detection can happen. Unlike a Secure score recommendation, the answer is a licensing and scoping change rather than remediating a specific resource."
+    }
+  ],
+  "items": [
+    {
+      "id": "pos-01",
+      "label": "A Rotterdam logistics operator opens the Recommendations page and finds 62 Linux virtual machines flagged because they still accept password authentication over SSH. Each row carries a medium risk level, names the affected machine, links to remediation steps, and the whole set rolls up under one security control.",
+      "sub": "What kind of finding is this?",
+      "answer": "Secure score recommendation",
+      "why": "This is one resource setting assessed continuously against the Microsoft cloud security benchmark, listed per affected resource and contributing points to whichever security control groups it, with remediation steps offered machine by machine. It is not a Compliance control, because a control is the framework requirement that would group findings like this one and be reported as pass or fail on the Regulatory compliance dashboard. And it is not a Security alert: nobody has logged in with a password, the machines are simply configured to allow it.",
+      "citation": "Learn: Security recommendations in Microsoft Defender for Cloud · outline 4.1"
+    },
+    {
+      "id": "pos-02",
+      "label": "A UK insurer's overall percentage drops several points the week after their two AWS accounts and one GCP project finish onboarding. Nothing in the Azure estate changed. The change log on the score card lists a batch of newly evaluated multicloud items tagged as recently added.",
+      "sub": "Which surface explains this?",
+      "answer": "Secure score recommendation",
+      "why": "Since the expanded multicloud coverage became generally available, over two hundred AWS and GCP recommendations feed the score, so widening the assessed estate moves the percentage, downward in this case, without the environment itself getting worse. That makes it a recommendations and scoring story. It is not Plan coverage, even though a connector was involved: the connector is already on, and the thing being explained is how newly assessed recommendations move the score, not whether to enable anything.",
+      "citation": "Learn: Defender for Cloud secure score · outline 4.1"
+    },
+    {
+      "id": "pos-03",
+      "label": "A grocery chain patches its warehouse servers with a third-party tool that Defender for Cloud has no visibility into, so thirty machines sit permanently in the unhealthy list for a patching item. The security admin marks them as resolved through an external service so they stop dragging the percentage down.",
+      "sub": "Where does this action belong?",
+      "answer": "Secure score recommendation",
+      "why": "Exemptions are attached to a recommendation and change how affected resources count toward the score: a mitigated exemption makes the resource count as healthy, while a waiver excludes it from the calculation entirely. That is squarely recommendation machinery. It is not a Governance rule, which would instead assign a named owner and a due date to the same recommendation rather than removing its score impact.",
+      "citation": "Learn: Exempt resources from recommendations · outline 4.1"
+    },
+    {
+      "id": "pos-04",
+      "label": "An engineer at a Nordic gaming studio remediates every item under one security control and expects the potential increase to close to zero. Several items carry a preview tag, and after twenty-four hours the potential increase has barely moved.",
+      "sub": "Which surface explains the behaviour?",
+      "answer": "Secure score recommendation",
+      "why": "Items still in preview are classified but excluded from the score calculation, so remediating them changes nothing until they reach general availability, and a control only pays out fully when every non-preview item in it is healthy across every resource. This is recommendation and scoring behaviour. It is not a Compliance control question: the framework dashboards report pass and fail states for controls, and they do not run the points arithmetic that is confusing this engineer.",
+      "citation": "Learn: Defender for Cloud secure score · outline 4.1"
+    },
+    {
+      "id": "pos-05",
+      "label": "A media company's morning review surfaces a single chained finding: an internet-reachable EC2 instance carrying a remote code execution flaw, whose attached role can read an S3 bucket that data discovery has already labelled as holding customer records.",
+      "sub": "Which surface produced this?",
+      "answer": "Attack path",
+      "why": "The cloud security graph stitched exposure, an exploitable weakness, an identity permission and a sensitive target into one externally initiated chain, and that chained presentation is exactly what Attack path analysis under Defender CSPM produces. It is not a Secure score recommendation, even though the individual vulnerability and the bucket permission each generate one; the recommendations are the fixes suggested for breaking the chain, whereas the chain itself is the finding here.",
+      "citation": "Learn: Defender CSPM attack path analysis · outline 4.1"
+    },
+    {
+      "id": "pos-06",
+      "label": "Before a board review, an analyst at a Swiss private bank builds a multi-resource query with the dropdown filters, asking for every managed database across Azure, AWS and GCP that is reachable from the public internet and has an identity with broad write permissions, then exports the result set to CSV.",
+      "sub": "Which surface is she working in?",
+      "answer": "Attack path",
+      "why": "Hand-built graph queries against the cloud security graph, with entity filters, prebuilt templates, a shareable query link and CSV export, are the cloud security explorer, which shares the graph and the CSPM prerequisite with Attack path analysis. It is not a Compliance control exercise: no standard has been assigned and nothing is being reported as compliant or not; this is proactive hunting driven by her own hypothesis.",
+      "citation": "Learn: Build queries with cloud security explorer · outline 4.1"
+    },
+    {
+      "id": "pos-07",
+      "label": "In the Defender portal under Exposure Management, a hospital group's security lead opens the attack surface view and sees that a single shared automation identity is the node where eleven separate chains converge, flagged as a bottleneck worth fixing before anything else.",
+      "sub": "Which surface is this?",
+      "answer": "Attack path",
+      "why": "Choke points, top entry points and top targets are views inside the attack paths experience in the Defender portal, where multiple modelled chains intersect on one node. It is not a Security alert: no detection has fired against that identity, and an alert would name observed behaviour and a severity rather than a convergence count across modelled routes.",
+      "citation": "Learn: Identify and remediate attack paths · outline 4.1"
+    },
+    {
+      "id": "pos-08",
+      "label": "A utility runs its own internal scanner from a fixed address range. After a tenant-scoped policy registers that range as known and trusted, a long list of chains that all began at scanner-reachable virtual machines quietly disappears, and related recommendations drop down the priority order.",
+      "sub": "Which surface changed?",
+      "answer": "Attack path",
+      "why": "Trusted Exposure lets you declare address ranges as known, after which multicloud virtual machines reachable only from those addresses are treated as having no internet exposure, so chains originating from them are suppressed. This is exposure analysis feeding the graph. It is not a Secure score recommendation: the recommendations on those machines still exist and are still assessed, they have merely been deprioritised now that the only route in is a trusted one, whereas the findings that disappeared outright were the chains.",
+      "citation": "Learn: Internet exposure analysis · outline 4.1"
+    },
+    {
+      "id": "pos-09",
+      "label": "At 02:14 a blob container belonging to a Dutch fintech receives an upload that matches known malicious content, and within minutes a burst of reads pulls files that sensitive data discovery had already tagged. The console entry carries a severity, the affected storage account, and suggested response steps.",
+      "sub": "Which surface produced this?",
+      "answer": "Security alert",
+      "why": "Defender for Storage detects malicious uploads and exfiltration of sensitive data in near real time and raises a detection with severity, affected resource and remediation guidance, which is the shape of an alert rather than a posture finding. It is not an Attack path: the graph models what an attacker could reach, whereas this is a record of what somebody actually did in the last few minutes.",
+      "citation": "Learn: Deploy Microsoft Defender for Storage · outline 4.1"
+    },
+    {
+      "id": "pos-10",
+      "label": "A university tenant sees a run of unusual control-plane operations against a subscription overnight, issued through a rarely used automation principal, flagged as potentially harmful and correlated with two other detections into a single incident that is streamed to the SOC's SIEM.",
+      "sub": "What is the analyst looking at?",
+      "answer": "Security alert",
+      "why": "Defender for Resource Manager watches management operations and raises detections when the pattern looks harmful, and correlated detections become incidents that can be exported to SIEM, SOAR and ticketing systems. That is alert and incident territory. It is not an Attack path: the graph would only model that this principal could reach the subscription, inferred from permissions and configuration, whereas what is on screen is a record of operations that were actually issued overnight and then correlated with other detections.",
+      "citation": "Learn: Microsoft Defender for Cloud overview, cloud workload protection platform · outline 4.1"
+    },
+    {
+      "id": "pos-11",
+      "label": "Shortly after a contractor's session token is issued, a key vault holding production signing certificates is hit with an unusual pattern of secret reads from an address the tenant has never seen before. The entry names the vault, rates the severity, and suggests immediate steps.",
+      "sub": "Which surface produced this?",
+      "answer": "Security alert",
+      "why": "Defender for Key Vault is there to spot anomalous, likely malicious activity aimed at vault accounts and the secrets they hold, and what lands in the console is a severity-rated detection with response guidance. It is not a Secure score recommendation: a recommendation about that vault would flag a standing weakness such as missing network restrictions, and it would sit there quietly with a Fix action instead of describing behaviour that just happened.",
+      "citation": "Learn: Microsoft Defender for Cloud overview, infrastructure service insights · outline 4.1"
+    },
+    {
+      "id": "pos-12",
+      "label": "On a Windows jump box in a manufacturer's Azure Arc estate, an endpoint detection reports an obfuscated script launched from a scheduled task, minutes after a failed sign-in burst against the same machine. The response team is asked to triage it before shift end.",
+      "sub": "Which surface produced this?",
+      "answer": "Security alert",
+      "why": "Defender for Servers delivers endpoint detection and response through the Defender for Endpoint integration, and those detections arrive as severity-rated alerts on protected machines regardless of whether the machine sits in Azure, another cloud or a rack on site. It is not Plan coverage: coverage would be the earlier decision to switch the Servers plan on for that subscription, and it is only because that decision was already taken that this detection exists at all.",
+      "citation": "Learn: Defender for Servers plan selection · outline 4.1"
+    },
+    {
+      "id": "pos-13",
+      "label": "A payments processor has an external assessor arriving in six weeks. The security team assigns the card industry standard to the two subscriptions that host the cardholder environment, then works down the failing control groups and pulls the summary report for the assessor's file.",
+      "sub": "Which surface is this work happening on?",
+      "answer": "Compliance control",
+      "why": "Assigning a named standard to a scope and then reviewing its controls, drilling into passed and failed assessments and downloading audit reports, is the regulatory compliance dashboard. It is not a Secure score recommendation, even though remediating the underlying recommendations is how the controls turn green; the unit of work and the deliverable here is the control and its evidence, not a points increase.",
+      "citation": "Learn: Defender for Cloud regulatory compliance · outline 4.1"
+    },
+    {
+      "id": "pos-14",
+      "label": "Reviewing a newly assigned international standard, a compliance analyst at a shipping firm finds several requirements about staff background checks and physical site access rendered inert and uncoloured, with nothing to drill into and no affected resources listed.",
+      "sub": "Which surface explains this?",
+      "answer": "Compliance control",
+      "why": "Where a control cannot be assessed automatically, Defender for Cloud cannot decide whether resources satisfy it, so the control is greyed out and awaits manual or shared-responsibility handling; that behaviour is specific to standards on the compliance dashboard. It is not a Secure score recommendation: recommendations always name affected resources and produce healthy or unhealthy counts, so there is no equivalent uncoloured state there.",
+      "citation": "Learn: Defender for Cloud regulatory compliance · outline 4.1"
+    },
+    {
+      "id": "pos-15",
+      "label": "A games publisher finishes onboarding a GCP project and finds two standards already assessing it out of the box. A customer questionnaire then asks specifically about alignment to the US federal cybersecurity framework, so the team adds that standard to the same scope.",
+      "sub": "Which surface is being extended?",
+      "answer": "Compliance control",
+      "why": "Every onboarded environment starts with default standards, the Microsoft cloud security benchmark plus a cloud-specific default for AWS and GCP, and further standards such as NIST CSF v2.0 are added per scope from the compliance experience. It is not Plan coverage: onboarding the connector was the coverage decision, whereas choosing which frameworks assess that project is a compliance choice made afterwards.",
+      "citation": "Learn: Defender for Cloud regulatory compliance · outline 4.1"
+    },
+    {
+      "id": "pos-16",
+      "label": "An EU asset manager must report quarterly on operational resilience obligations and on its new generative AI estate. The team assigns the two matching standards across Azure and AWS scopes and builds a workbook so the trend line can be shown to the risk committee each quarter.",
+      "sub": "Which surface is this?",
+      "answer": "Compliance control",
+      "why": "Both the operational resilience regulation and the European AI legislation ship as assignable standards across Azure, AWS and GCP, and the dashboard supports a compliance-over-time workbook for exactly this reporting rhythm. It is not a Governance rule: governance would assign an engineer and a deadline to the recommendations underneath, whereas nothing here names a person or an SLA.",
+      "citation": "Learn: Defender for Cloud regulatory compliance · outline 4.1"
+    },
+    {
+      "id": "pos-17",
+      "label": "A Melbourne retailer already tags every resource with the responsible squad. The security team wants any high-severity finding to land on that squad automatically with a fortnight to fix it, instead of being emailed round as a spreadsheet each month.",
+      "sub": "Which control delivers this?",
+      "answer": "Governance rule",
+      "why": "A rule created under Environment settings can match recommendations by severity and read the owner from a named resource tag, then apply a remediation window of seven, fourteen, thirty or ninety days. It is not a Secure score recommendation: the recommendations already exist and the rule changes nothing about them technically, it only attaches a responsible party and a deadline so progress can be tracked.",
+      "citation": "Learn: Drive recommendation remediation by using governance rules · outline 4.1"
+    },
+    {
+      "id": "pos-18",
+      "label": "A telecoms group finds that its enterprise-wide rule and a rule written by one business unit both match the same critical findings, and the owner shown is not the one the business unit expected.",
+      "sub": "Which surface explains the outcome?",
+      "answer": "Governance rule",
+      "why": "When several rules match the same recommendation the one with the higher priority wins, and rules written at a management scope such as an Azure management group, an AWS master account or a GCP organization take effect before rules written on a single subscription, account or project. It is not a Compliance control: standards assigned at different scopes accumulate rather than compete for a single owner field.",
+      "citation": "Learn: Drive recommendation remediation by using governance rules · outline 4.1"
+    },
+    {
+      "id": "pos-19",
+      "label": "A hospital trust wants its engineers held to a thirty-day fix window, but the CISO refuses to let the reported percentage sag during that window for benchmark items that are being worked on in good faith. Only once the deadline passes should the number take the hit.",
+      "sub": "Which setting delivers this?",
+      "answer": "Governance rule",
+      "why": "The rule offers a grace period so that benchmark-derived recommendations under an active assignment do not affect the score until they become overdue, and rules can be filtered by grace period to find exactly those items. It is not an exemption on a Secure score recommendation: an exemption removes the score impact permanently for that resource or scope, whereas the grace period is temporary and expires with the deadline.",
+      "citation": "Learn: Drive recommendation remediation by using governance rules · outline 4.1"
+    },
+    {
+      "id": "pos-20",
+      "label": "Every Monday, platform engineers at an energy company receive a note listing what they owe and what has slipped, and the line managers of anyone who has slipped get their own copy. The security lead then opens a report broken down by rule and by owner to see who is consistently late.",
+      "sub": "Which surface produced this?",
+      "answer": "Governance rule",
+      "why": "Weekly mail to resource owners covering on-time and overdue work, escalation to the owner's manager when their address is discoverable in Microsoft Entra ID, and the report showing completion by rule and owner are all governance features. It is not a Compliance control: the regulatory dashboard reports whether controls pass, and it has no concept of an owner, a deadline or a chase-up email.",
+      "citation": "Learn: Drive recommendation remediation by using governance rules · outline 4.1"
+    },
+    {
+      "id": "pos-21",
+      "label": "A software firm runs the richer server tier across the whole production subscription, but forty short-lived build agents in the same subscription do not justify the cost. The platform team wants those specific machines dropped to the entry-level server tier without disturbing anything else.",
+      "sub": "Which surface handles this?",
+      "answer": "Plan coverage",
+      "why": "This is a scoping and tiering decision on the Defender plans page: the higher server tier cannot be enabled per resource, but it can be disabled per resource, and a script or a granular pricing policy targeting a tag or resource group downgrades a set of machines to the entry-level tier. It is not a Secure score recommendation: no resource is being remediated, and the outcome is a different level of protection rather than a healthier configuration.",
+      "citation": "Learn: Defender for Servers plan selection · outline 4.1"
+    },
+    {
+      "id": "pos-22",
+      "label": "A media archive uploads terabytes of user-submitted video each month. Finance is nervous about the bill for scanning it all, so the team wants the scanning volume held to a fixed monthly ceiling per storage account and the results routed somewhere the SOC can act on.",
+      "sub": "Which surface handles this?",
+      "answer": "Plan coverage",
+      "why": "Malware scanning is a configurable component of the storage plan, with a monthly cap per storage account that defaults to ten thousand gigabytes, plus configurable response and logging destinations, and it can be set at subscription level with per-account overrides. It is not a Security alert: alerts are what the scanning eventually produces, whereas everything being decided here is about enablement, cost ceiling and scope.",
+      "citation": "Learn: Deploy Microsoft Defender for Storage · outline 4.1"
+    },
+    {
+      "id": "pos-23",
+      "label": "A public sector body runs a mixed estate of managed SQL, SQL on virtual machines, PostgreSQL and a document database. The security architect flips one toggle in Environment settings and is surprised to find protection now billed across all four kinds of database.",
+      "sub": "Which surface explains this?",
+      "answer": "Plan coverage",
+      "why": "The databases toggle activates four separately priced offerings at once, covering managed SQL, SQL running on machines, open-source relational engines and the document database service, across all supported databases in the subscription. It is not a Compliance control: no standard was assigned and nothing is being assessed for pass or fail; the only thing that changed is which workloads are protected and billed.",
+      "citation": "Learn: Protect your databases with Defender for Databases · outline 4.1"
+    },
+    {
+      "id": "pos-24",
+      "label": "A retail bank stands up its first customer-facing generative assistant on Azure and the security team realises nothing is currently watching prompts and responses for abuse. They go to the subscription's Defender plans page to turn on protection for the AI services in scope.",
+      "sub": "Which surface handles this?",
+      "answer": "Plan coverage",
+      "why": "Threat protection for AI services is enabled as a plan on the subscription, and only once it is on can real-time detections against generative AI workloads be produced. It is not a Security alert: the team has no detections yet, and that absence is precisely the gap they are closing. Note also that posture-side AI capabilities such as the AI bill of materials ride on Defender CSPM rather than on this workload plan.",
+      "citation": "Learn: Enable threat protection for AI services, and Microsoft Defender for Cloud overview · outline 4.1"
+    }
+  ]
+}

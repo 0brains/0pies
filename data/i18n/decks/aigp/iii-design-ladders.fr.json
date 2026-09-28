@@ -1,0 +1,45 @@
+{
+ "iii-dl-01": {
+  "prompt": "Ordonne les portails qu'un nouveau système d'IA passe de la première affaire commerciale aux preuves de disponibilité en mode ombre.",
+  "steps[0].label": "Affaire commerciale et objectifs",
+  "steps[0].detail": "Définir pourquoi l'IA du tout : l'affaire de coût-avantage, y compris les impacts sociétaux, vient en premier. Rien en aval ne peut être évalué sans un objectif déclaré pour le mesurer contre.",
+  "steps[1].label": "Cas d'utilisation + évaluation d'impact (exploité à partir d'une PIA)",
+  "steps[1].detail": "Limiter le cas d'utilisation spécifique et exécuter une évaluation d'impact pour anticiper et gérer les préjudices qu'il pourrait causer. Le meilleur modèle existant à adapter est une évaluation d'impact sur la vie privée (PIA/DPIA) — la gouvernance n'invente pas cela de zéro.",
+  "steps[2].label": "Conception — estimation de l'impact des risques et architecture",
+  "steps[2].detail": "Le travail de conception inclut l'estimation de l'impact des risques et le choix de l'architecture. C'est la première porte où l'architecture est réellement décidée ; la planification exclut explicitement — la planification définit les objectifs et l'approche de gouvernance, la conception décide comment le système est construit (;, exclut la planification ;).",
+  "steps[3].label": "Construire",
+  "steps[3].detail": "Construire le système contre l'estimation d'impact des risques de conception et l'architecture choisie.",
+  "steps[4].label": "Benchmark par rapport aux experts humains dans le même contexte de décision",
+  "steps[4].detail": "Avant de piloter, comparer les performances du système avec les performances des experts humains dans le même domaine — c'est l'indice de gouvernance le plus précieux, pas une cible de précision abstraite.",
+  "steps[5].label": "Pilote — valider l'équité + la précision à l'échelle contrôlée",
+  "steps[5].detail": "Exécuter un pilote de pré-déploiement dont l'objectif principal est de valider l'équité et la précision sur les données du monde réel à une échelle limitée et contrôlée avant le déploiement complet.",
+  "steps[6].label": "Exécution en mode ombre comme preuve documentée de disponibilité",
+  "steps[6].detail": "Exécuter le système en parallèle avec le processus en direct (mode ombre) et documenter les résultats. Cette preuve documentée — pas une approbation verbale — est ce qui démontre la disponibilité du déploiement (SG)."
+ },
+ "iii-dl-02": {
+  "prompt": "Ordonne la hiérarchie d'atténuation des risques de la correction la plus durable au dernier recours.",
+  "steps[0].label": "Éliminer le risque",
+  "steps[0].detail": "Supprimer complètement la caractéristique ou le cas d'utilisation à risque — ne pas utiliser l'IA du tout dans le contexte à risque élevé, de la façon qu'un algorithme de recrutement qui continue à produire des résultats biaisés retire plutôt que de corriger sans fin. Dans le vocabulaire parallèle de l'examen, ce même niveau supérieur s'appelle « Éviter » : arrêter d'entreprendre l'activité afin que l'exposition aille à zéro. Même concept, étiquette différente — dissipe le choc du vocabulaire, ne prends pas parti.",
+  "steps[1].label": "Remplacer par une conception à risque inférieur",
+  "steps[1].detail": "Si l'élimination n'est pas faisable, remplacer par un modèle plus simple et plus interprétable ou un ensemble de données à risque plus faible qui réalise le même objectif — un modèle opaque pour un interprétable, un ensemble de données plus bruyant pour celui collecté sous des contrôles de qualité plus strictes. La formulation d'examen plie parfois cela en « Atténuer » (agir sur la probabilité ou l'impact tandis que l'activité continue) — encore, le même geste de conception sous un mot différent.",
+  "steps[2].label": "Intégrer les sauvegarde",
+  "steps[2].detail": "Construire les sauvegarde dans le système lui-même : seuils de confiance, tests de robustesse, audits de parti pris, outils d'explicabilité — et les contrôles boucle-humaine, qui s'assoient ici comme un exemple technique parmi plusieurs, pas comme un niveau de dernier recours séparé. C'est où la plupart des contrôles techniques vivent, et où le seau « Atténuer/Réduire » de l'examen atterrit aussi.",
+  "steps[3].label": "Avertir et former les utilisateurs",
+  "steps[3].detail": "Une fois que le système lui-même est aussi sûr que l'ingénierie peut le rendre, la prochaine ligne de défense est d'informer les gens : tableaux de bord d'interprétabilité, avertissements en langage clair, et formation des utilisateurs afin que les gens qui interagissent avec le système comprennent ses limites. C'est un niveau distinct des contrôles d'ingénierie — cela change ce que l'humain sait, pas ce que le système fait.",
+  "steps[4].label": "Accepter avec surveillance",
+  "steps[4].detail": "Quel que soit le risque qui reste après les quatre niveaux ci-dessus est sciemment accepté et regardé — journaux d'audit et examen post-commercialisation, pas tolérance silencieuse. Le niveau final de l'examen, « Accepter », cartographie proprement sur celui-ci : une décision enregistrée, possédée au bon niveau d'autorité, soutenue par la surveillance en cours plutôt qu'une approbation unique. Certains cadres insèrent les Contrôles administratifs comme un niveau distinct — la hiérarchie de contrôle enseignée par le style NIOSH — la même idée, un découpage différent."
+ },
+ "iii-dl-03": {
+  "prompt": "Ordonne les étapes pour exécuter une matrice de préjudices probabilité × gravité pendant la conception.",
+  "steps[0].label": "Énumérer les préjudices par partie prenante",
+  "steps[0].detail": "Énumérer les façons dont le système pourrait mal fonctionner pour chaque groupe affecté — utilisateurs finaux, sujets en aval, opérateurs — avant de noter quoi que ce soit. La cartographie des parties prenantes élargit la lentille au-delà de l'équipe de développement de sorte qu'aucune exposition de groupe n'est manquée.",
+  "steps[1].label": "Note probabilité × gravité",
+  "steps[1].detail": "Noter chaque tort énuméré sur la probabilité et l'impact en utilisant des échelles pré-définies. Cette notation est appliquée tout au long de la conception et des tests, pas comme un exercice ponctuel, afin que les nouvelles conclusions puissent déplacer les éléments sur la grille (SG).",
+  "steps[2].label": "Prioriser — catastrophique remplace le score",
+  "steps[2].detail": "Classer par le score tracé, mais laisser un élément d'impact catastrophique remplacer un classement de priorité simplement moyen : une défaillance de faible probabilité et de gravité élevée dans un système autonome déclenche toujours une porte dure même si son score brut ne dominerait pas la liste.",
+  "steps[3].label": "Appliquer la hiérarchie d'atténuation au niveau de la source de conception",
+  "steps[3].detail": "Corriger les préjudices de priorité la plus élevée au niveau de la conception/source plutôt que de boulonner les disclaimers ou la surveillance après coup — par exemple concevoir le dialogue d'un chatbot pour les scénarios de crise au lieu de s'appuyer sur un disclaimer, ou concevoir un modèle pour exclure les clients financièrement vulnérables d'une offre nuisible plutôt que de les signaler après coup.",
+  "steps[4].label": "Documenter le risque résiduel et le propriétaire",
+  "steps[4].detail": "Enregistrer quel risque demeure après l'atténuation, à quel score, et qui est responsable de l'accepter. Un risque résiduel non enregistré est indiscernable d'un risque non géré."
+ }
+}
