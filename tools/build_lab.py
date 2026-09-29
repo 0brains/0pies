@@ -1025,11 +1025,15 @@ def verbatim_errors(manifest: dict, decks: dict[str, dict]) -> list[str]:
     if errors:
         return errors
 
-    index = check_verbatim.source_index(check_verbatim.load_sources(paths))
+    index = (check_verbatim.source_index(check_verbatim.load_sources(paths))
+             - check_verbatim.public_index())
+    dindex = check_verbatim.derivation_index(paths)
     for ref, deck in decks.items():
         for _, card_path, run in check_verbatim.check_data(deck, ref, index):
             errors.append(f"verbatim: {ref} {card_path} shares an 8-token run with a "
                           f'declared source: "{run}"')
+        for _, card_path, reason in check_verbatim.check_derivation(deck, ref, dindex):
+            errors.append(f"derived: {ref} {card_path} {reason}")
     return errors
 
 

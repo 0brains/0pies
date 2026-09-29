@@ -278,3 +278,53 @@ def test_build_only_keys_never_reach_the_page():
                 "outline": {"areas": []}, "acceptedGaps": ["c"], "games": []}
     out = build_lab.shipped(manifest)
     assert set(out) == {"id", "title", "games"}
+
+
+# --- reference fields, public-text allowlist, derivation gate ---------------
+
+def test_citation_fields_are_not_checked():
+    lifted = _lifted_sentence()
+    deck = {"id": "d", "items": [{"id": "c1", "citation": lifted, "source": {"title": lifted}}]}
+    assert check_verbatim.check_data(deck, "d", [lifted]) == []
+
+
+def test_public_text_runs_are_allowed(monkeypatch, tmp_path):
+    public = tmp_path / "public-texts.json"
+    law = "The data subject shall have the right not to be subject to a decision based solely on automated processing"
+    public.write_text(json.dumps({"texts": [{"text": law, "source": "GDPR Art. 22(1)"}]}))
+    monkeypatch.setattr(check_verbatim, "PUBLIC_TEXTS", public)
+    index = check_verbatim.source_index([law + " quoted inside a study guide"]) - check_verbatim.public_index()
+    deck = {"id": "d", "items": [{"id": "c1", "why": law}]}
+    assert check_verbatim.check_data(deck, "d", index) == []
+
+
+def _bank(tmp_path, question, choices):
+    f = tmp_path / "bank.json"
+    f.write_text(json.dumps([{"question": question, "choices": choices}]))
+    return check_verbatim.derivation_index([str(f)])
+
+
+def test_distinctive_distractor_set_is_flagged(tmp_path):
+    choices = ["Apply one uniform control set everywhere", "Centralise every control at head office",
+               "Differentiate controls by site risk profile", "Mandate multifactor login at all sites"]
+    dindex = _bank(tmp_path, "Our branch offices differ from headquarters in risk; how should controls be designed?", choices)
+    card = {"id": "c", "q": "Night shift: a new depot opens. Your move?", "options": choices, "answer": choices[2]}
+    assert check_verbatim.check_derivation({"cards": [card]}, "d", dindex)
+
+
+def test_standard_term_options_with_a_new_stem_pass(tmp_path):
+    choices = ["Bell-LaPadula", "Biba", "Clark-Wilson", "Brewer-Nash"]
+    dindex = _bank(tmp_path, "Which model prevents reading up and writing down in a military classification system?", choices)
+    card = {"id": "c", "q": "A consultancy serves two rival banks and must wall off each team's files. Your move?",
+            "options": choices, "answer": "Brewer-Nash"}
+    assert check_verbatim.check_derivation({"cards": [card]}, "d", dindex) == []
+
+
+def test_paraphrased_stem_is_flagged(tmp_path):
+    q = ("A hospital lets the lead surgeon read complete patient records before operating, while the ward nurse "
+         "with general clearance is blocked from the same detailed diagnosis records.")
+    dindex = _bank(tmp_path, q, ["a", "b", "c", "d"])
+    card = {"id": "c", "q": "At the hospital the lead surgeon may read complete patient records before operating, but the ward "
+                            "nurse with general clearance is blocked from the detailed diagnosis records. Why?",
+            "options": ["w", "x", "y", "z"], "answer": "w"}
+    assert check_verbatim.check_derivation({"cards": [card]}, "d", dindex)
