@@ -1,0 +1,131 @@
+{
+ "ent-01": {
+  "label": "At a freight logistics company, three platform engineers have held Owner on the production subscription permanently since the migration eighteen months ago. None of them uses the rights more than a couple of days a quarter, and the last access review was never finished.",
+  "sub": "Which control closes this?",
+  "why": "This is standing privilege, so the fix is to make those Owner assignments eligible rather than active in Privileged Identity Management, so the engineers elevate for a bounded window when they actually need it and hold nothing in between. Conditional Access is the nearest tempting zone and it is wrong here: a policy demanding MFA or a compliant device at the Azure portal still leaves Owner permanently attached to the account, so a stolen token or a careless click retains full subscription control. Microsoft advises keeping zero permanently active assignments apart from emergency access accounts."
+ },
+ "ent-02": {
+  "label": "A regional hospital wants its Exchange administrators to hold the role for no more than two hours at a stretch, to type a change ticket number when they take it, and to have a second administrator sign off before the rights become usable.",
+  "sub": "Which control closes this?",
+  "why": "Activation duration, justification text, ticket capture, and a delegated approver are all role settings inside PIM, and the approver has a fixed twenty-four hour window to answer before the requester must ask again. Conditional Access looks close because it can also interrupt a user, but it has no notion of a role request queue or an approver, and it cannot expire a directory role two hours after it was taken. Authentication methods is further off still: it decides what the approver signs in with, not whether an approval step exists."
+ },
+ "ent-03": {
+  "label": "An external auditor asks who held Global Administrator at 02:15 on a Tuesday three weeks ago, what business reason they typed when they took it, and who approved the request.",
+  "sub": "Which control closes this?",
+  "why": "The Resource audit and My audit views under Privileged Identity Management hold assignment changes and activations for the previous thirty days, including the justification the requester entered, and the data can be routed to a storage account through Azure Monitor when the auditor wants a longer window. Conditional Access is the wrong lane because sign-in logs show that an authentication happened and which policy applied, but they never capture the elevation reason or the approver. App identity is irrelevant here since the actor is a human administrator, not a service principal."
+ },
+ "ent-04": {
+  "label": "A retail group is rolling out just-in-time administration and its identity lead worries about the day the tenant-wide policy is misconfigured. One cloud-only account is deliberately left holding the top directory role permanently, stored in a safe, and excluded from the rollout.",
+  "sub": "Which control closes this?",
+  "why": "The emergency access account is a documented carve-out in the PIM deployment guidance: every other assignment moves to eligible, and the break-glass account stays permanently active precisely so an administrator cannot lock the whole tenant out. PIM itself refuses to remove the last active Global Administrator assignment for the same reason. Conditional Access is the neighbour that trips people up, because that account is also usually excluded from CA policies, but the scene here is about who holds the role permanently, which is a PIM assignment decision."
+ },
+ "ent-05": {
+  "label": "A merchant bank hires contract analysts who work from their own MacBooks. Those machines are not enrolled in Intune, and the analysts are currently reaching the internal finance reporting app from them without anything stopping them.",
+  "sub": "Which control closes this?",
+  "why": "A policy scoped to the contractor group and the finance app with the grant control requiring the device to be marked as compliant blocks the unenrolled Mac, because Intune never reports compliance for a device it does not manage. App identity is the nearest wrong answer: requiring user assignment on the enterprise application would decide whether contractors may use the app at all, but it says nothing about the machine they use, so an assigned analyst on a personal laptop would still get in."
+ },
+ "ent-06": {
+  "label": "A university IT team finds mail clients still authenticating to Exchange Online over IMAP and SMTP with just a username and password. Those sessions never present a second factor and never report device state.",
+  "sub": "Which control closes this?",
+  "why": "The client apps condition lets you target the legacy authentication clients, Exchange ActiveSync and Other clients, and block them, which is the documented way to shut down basic authentication protocols that cannot carry an MFA or device claim. Authentication methods is the near miss: enabling passkeys or Authenticator for those mailbox owners does nothing, because a basic-authentication protocol has no way to invoke a modern credential and would simply keep failing or keep succeeding on the password alone."
+ },
+ "ent-07": {
+  "label": "A utility company is happy for staff to approve an Authenticator push for everyday work, but when anyone opens the Azure portal, Azure CLI, or Azure PowerShell it wants only unphishable credentials such as a security key or Windows Hello for Business to count.",
+  "sub": "Which control closes this?",
+  "why": "Two different bars for two different resources is exactly what the Require authentication strength grant control does: target the Azure management resource and select the built-in phishing-resistant strength, while everything else keeps the ordinary multifactor bar. Authentication methods is the neighbour and it cannot do this alone, because that policy is tenant-wide per user or group and has no concept of which resource is being reached; it enables the credential, the strength control decides where that credential is the only acceptable one. Note that you cannot combine Require multifactor authentication and Require authentication strength in one policy."
+ },
+ "ent-08": {
+  "label": "In a hospital pharmacy, staff share a wall-mounted browser terminal. Sessions there stay signed in for days because the browser remembers them, and the next person on shift picks up the previous pharmacist's session.",
+  "sub": "Which control closes this?",
+  "why": "Session controls handle the shape of an existing session rather than the credential: set sign-in frequency to a short interval on the group and the batch-records app, and add a second policy that switches persistent browser sessions off. That second control has to target all resources, because every tab in a browser shares one session token and persistence is a property of that token, not of one app. PIM is the wrong lane even though it also expires things, because it expires privileged role activations, not ordinary user sessions on a shared browser. Authentication methods is wrong for the same reason it usually is here: the credential is fine, its lifetime is not."
+ },
+ "ent-09": {
+  "label": "A graduate joins an insurance broker on Monday morning with a laptop still in its box and no credential of any kind. She has to get through first sign-in and register a passkey without an administrator ever telling her a password over the phone.",
+  "sub": "Which control closes this?",
+  "why": "A Temporary Access Pass, enabled in the Authentication methods policy and issued to her by an Authentication Administrator, is a time-limited passcode that satisfies strong authentication once so she can bootstrap a passwordless credential; with a single-use pass she has ten minutes from sign-in to finish registering. Conditional Access is the neighbour to reject: a policy can insist she register from a trusted location or compliant device, but it cannot hand her a credential to start with, and an overly broad phishing-resistant policy on all resources is the classic cause of a registration loop."
+ },
+ "ent-10": {
+  "label": "A payments firm decides its engineering group must move off text-message codes and onto passkeys, and the security architect insists only hardware-attested, device-bound passkeys from an approved model count, with cloud-synced ones excluded.",
+  "sub": "Which control closes this?",
+  "why": "Passkey profiles live in the Passkey (FIDO2) policy under Authentication methods: enforcing attestation restricts registration to device-bound passkeys and excludes synced ones, and targeting specific AAGUIDs narrows it further to the approved authenticator model. Conditional Access is the near neighbour and is genuinely needed later to demand a phishing-resistant strength, but a strength only judges what is presented at sign-in. Even the advanced option that narrows a custom strength to named AAGUIDs cannot enforce attestation or stop a synced passkey being registered in the first place, and turning the strength on before anyone has registered simply locks the group out."
+ },
+ "ent-11": {
+  "label": "A council's identity admin switched voice calls off for everyone in one policy blade, yet a group of staff can still complete verification with a phone call, and nobody can work out where the permission is coming from.",
+  "sub": "Which control closes this?",
+  "why": "Settings are not synchronised between the modern Authentication methods policy and the legacy per-tenant MFA and password reset policies, and a user enabled in any one of them can still register and use that method, so the fix is to audit all three and finish the migration to a single policy. Conditional Access is the wrong lane because it never enables or disables a method; it only decides when one is demanded, and it would happily accept the voice call it did not authorise. Note that methods can no longer be managed in the legacy policies after the September 2025 deprecation date."
+ },
+ "ent-12": {
+  "label": "On a bottling plant floor, phones are banned inside the clean area, so a shift of operators has no mobile device to receive a push or a code, yet they still have to complete a second factor to reach the batch records system.",
+  "sub": "Which control closes this?",
+  "why": "Choosing a credential the workforce can physically use is an Authentication methods decision: hardware OATH tokens and FIDO2 security keys are both governed there and neither needs a phone, and each type has its own control in the policy rather than the single lumped OATH switch the legacy policy used. Conditional Access is the neighbour that cannot help, because it can insist on multifactor all day and the operators still have nothing to answer with; the method has to exist and be registered first."
+ },
+ "ent-13": {
+  "label": "A payroll bureau's expenses portal is visible to every employee in the tenant, but only the twelve people in the Payroll Operations group are supposed to be able to open it at all.",
+  "sub": "Which control closes this?",
+  "why": "By default any user in the tenant can reach an enterprise application, so you set the assignment requirement on the application's properties and then assign the Payroll Operations group, which is a service principal configuration in Enterprise applications. Consent is the neighbour to reject: consent settings decide what organizational data the app may read once someone is in, not who is allowed through the door, and an app that already has admin consent is still open to everybody until assignment is required."
+ },
+ "ent-14": {
+  "label": "A software vendor sells a scheduling product to forty hospital trusts. Each trust's administrator needs the product to appear as an object inside their own directory so they can assign their own staff to it and see its sign-in activity.",
+  "sub": "Which control closes this?",
+  "why": "The vendor holds one application object in its home tenant, and a service principal, the local instance, is created in every customer tenant that uses the app, which is the object the trust's administrator manages under Enterprise applications. Consent is the tempting neighbour because an administrator consenting is what triggers that object to appear, but the thing the scene asks for is the tenant-local identity itself; consent is about which permissions that principal then carries. Managed identity is wrong outright, since managed identities have no associated application object."
+ },
+ "ent-15": {
+  "label": "A media group runs a nightly ingest daemon in its own datacentre that calls Azure Resource Manager. It currently authenticates with a client secret that the release pipeline has expired twice, each time at three in the morning.",
+  "sub": "Which control closes this?",
+  "why": "Unless the machine is projected into Azure with Arc, a daemon in your own datacentre has no Azure resource for an identity to hang off, so it needs an app registration whose service principal authenticates with a certificate credential rather than a long-lived shared secret. Managed identity is the neighbour and is the right answer only when the code runs on supported Azure compute, which this does not. Note that a workload hosted on Azure compute can instead use its managed identity as a federated credential on an Entra application, which is the credential-free route when an application object is genuinely required."
+ },
+ "ent-16": {
+  "label": "An engineering team is building an internal quotes API and wants signed-in salespeople's client apps to be able to read quotes on the user's behalf, while a separate overnight reconciliation service reads every quote with no user present.",
+  "sub": "Which control closes this?",
+  "why": "Both halves are declarations on the API's own app registration: expose delegated scopes for the on-behalf-of case and define app roles for the app-only case, so that clients have something named to request. Consent is the neighbour and comes second in the sequence: consent is how those declared permissions get granted, and an administrator must grant the app-role side because application permissions can never be consented to by an ordinary user. Getting the order wrong is the usual mistake, since nothing can be consented to before the API defines it."
+ },
+ "ent-17": {
+  "label": "At an advertising agency, a designer signs into a free colour-palette web tool with her work account and clicks through a prompt asking for standing access to her mailbox and her files. Security only notices weeks later, when the same tool appears under dozens of accounts.",
+  "sub": "Which control closes this?",
+  "why": "Tighten the tenant's user consent setting so ordinary users may consent only to verified-publisher apps, and then only for the permissions your organisation has classified as low impact, which is the built-in low policy assigned to the default user role. Conditional Access is the neighbour that cannot reach this: consent is not a sign-in condition, the designer authenticated perfectly legitimately, and no grant control inspects the permissions on a consent prompt. Also remember that tightening the setting affects future consent only, so the existing grants still have to be revoked."
+ },
+ "ent-18": {
+  "label": "Since a charity locked consent down, its fundraising team keeps emailing the service desk asking for a donations analytics tool to be turned on, and the requests get lost in a shared mailbox with no record of who approved what.",
+  "sub": "Which control closes this?",
+  "why": "The admin consent workflow gives blocked users a route inside the product to submit a justification and route the request to designated reviewers, replacing the ad hoc mailbox with an auditable queue. App identity is the wrong neighbour: assigning users to the enterprise application controls who may sign in once it exists, but it does not create the request-and-review path for permissions the user is not allowed to grant in the first place."
+ },
+ "ent-19": {
+  "label": "Threat intelligence flags a third-party productivity add-in as malicious. It already holds broad mailbox and file permissions across a manufacturer's tenant, granted at different times both by an administrator for everyone and by individual staff for themselves.",
+  "sub": "Which control closes this?",
+  "why": "Open the application under Enterprise applications and work through its Permissions page: the organisation-wide grants can be revoked from the admin consent tab in the portal, while the ones individual users granted for themselves have to be removed through Microsoft Graph or PowerShell because the portal will not revoke them. Conditional Access is the neighbour that feels faster but leaves the grant in place, and revoking without also stopping the app from requesting the permissions again lets users simply re-consent."
+ },
+ "ent-20": {
+  "label": "A compliance reporting service at a law firm runs unattended overnight and must read documents belonging to every fee earner. Its developer added the application permission on the registration page and ticked nothing else, and the service still receives an authorization failure every night.",
+  "sub": "Which control closes this?",
+  "why": "Application permissions are requested on the registration but remain unusable until somebody authorised to consent for the organisation grants tenant-wide admin consent, which is a Privileged Role Administrator for Microsoft Graph app roles and a Cloud Application Administrator for most other APIs. App identity is the near miss: the registration and its declared permissions are already correct, so nothing about the object needs changing. Managed identity would only be relevant if the service ran on Azure compute, and even then the app role would still have to be assigned to the identity."
+ },
+ "ent-21": {
+  "label": "A grocery chain's price-feed function app runs entirely in Azure and reads a storage account using a client secret that expires every ninety days. The rotation has been forgotten twice and the shelf-edge prices went stale both times.",
+  "sub": "Which control closes this?",
+  "why": "Turn on a managed identity for the function app and give that identity the storage role directly, and the secret disappears entirely: the platform issues tokens to the code with nothing for anyone to rotate or leak, and managed identities cost nothing extra. App identity is the neighbour to reject, because keeping the app registration and swapping the secret for a certificate still leaves a credential with an expiry date and an owner who has to remember it, and the workload here is already on supported Azure compute."
+ },
+ "ent-22": {
+  "label": "A gaming studio's build fleet scales up and down all day. Every new virtual machine needs the same read access to one artifact store, and the operations team keeps hitting object creation rate limits and stale role assignments left behind by deleted machines.",
+  "sub": "Which control closes this?",
+  "why": "This is the documented case for a user-assigned managed identity: one standalone identity, one set of role assignments made in advance, attached to every machine in the fleet, which avoids creating a fresh directory object per machine and the rate limiting that follows. The competing option inside this same zone is a system-assigned identity, which is wrong here because it is born and destroyed with each machine, cannot be pre-authorised before deployment, and multiplies the role assignments you have to clean up."
+ },
+ "ent-23": {
+  "label": "A clinical research platform must be able to prove in an investigation exactly which of its four processing virtual machines wrote to a dataset, and the security lead wants the machine's access to vanish the moment that machine is decommissioned.",
+  "sub": "Which control closes this?",
+  "why": "A system-assigned identity is the right choice here, because it is unique to one Azure resource, appears in the sign-in logs as that resource, and is deleted automatically when the resource is deleted so the permissions cannot outlive the machine. The near-miss is the user-assigned identity from the previous pattern: sharing one identity across the four machines would make the audit trail ambiguous and would keep the access alive after decommissioning. Note that role assignments themselves are not removed automatically and still need tidying."
+ },
+ "ent-24": {
+  "label": "An energy trader adds a workload's identity to a security group that carries key vault permissions. The change is confirmed in the directory, but the running service keeps being refused for the rest of the afternoon and only starts working the next morning.",
+  "sub": "Which control closes this?",
+  "why": "Group and role membership travel as claims inside the access token, and tokens issued for managed identities are cached by the Azure backend per resource for roughly a day, with no supported way to force a refresh, so membership changes can take hours to bite. The recommended pattern is to assign the permissions straight to a shared user-assigned identity instead of shuffling identities in and out of groups. Consent is the wrong lane entirely, since nothing here is a delegated scope or an OAuth grant, and Conditional Access is wrong because no interactive sign-in is involved."
+ },
+ "entra-access": {
+  "hint": "Ask what the scene is actually complaining about. If somebody holds admin rights all the time and nobody activates or approves anything, it is a standing-privilege problem and belongs to PIM. If the person already has the right role but you want to change what must be true at the moment of sign-in (device state, network, risk, how strong the credential is, how long the session lasts), it is Conditional Access. If the complaint is that the credential itself is wrong, missing, or too weak to register, it is Authentication methods, because that policy decides which credentials exist in the tenant at all while Conditional Access only decides when they are demanded. If the trouble is the application object itself, who may sign in to it, what it exposes, how it proves it is itself, it is App identity. If the trouble is what data a running app can reach on behalf of a user or on its own, and the words consent, scope, or admin approval appear, it is Consent. And if an Azure-hosted workload needs a token with no secret to store or rotate, it is Managed identity, not an app registration with a key.",
+  "zones[0].def": "Standing privilege problems: converting permanent active role assignments to eligible, just-in-time activation with justification, approver workflow, activation time limits, and the activation audit trail for Entra roles, Azure resource roles, and PIM for Groups. Unlike Conditional Access, which conditions a sign-in that is already happening, PIM changes whether the person holds the privilege at all between activations. Unlike Authentication methods, PIM does not decide which credentials exist, only whether MFA and approval are demanded at role activation.",
+  "zones[1].def": "If-then policy evaluated after first-factor authentication: assignments of users, target resources, network and device conditions, risk conditions, then grant controls such as block, require MFA, require authentication strength, require an Intune-compliant device, plus session controls like sign-in frequency and persistent browser. Unlike Authentication methods, which turns a credential type on and scopes who may register it, Conditional Access only chooses when a credential of a given strength is demanded. Unlike PIM, it never removes a standing role assignment.",
+  "zones[2].def": "The Authentication methods policy under Entra ID and the credentials it governs: passkey (FIDO2) profiles and attestation, passkeys and push in Microsoft Authenticator, Temporary Access Pass, OATH hardware and software tokens, SMS and voice, plus migration off the legacy per-tenant MFA and SSPR policies. This zone answers which credential a user can register and use; Conditional Access answers when a strong one is required. Registration bootstrapping for a brand-new or locked-out user lands here, not in PIM.",
+  "zones[3].def": "The application object in App registrations and its service principal in Enterprise applications: single-tenant versus multitenant registration, the local instance created in each consuming tenant, exposing scopes and app roles, requiring user assignment so only chosen groups may sign in, SAML signing certificates, and certificate credentials for workloads outside Azure. Unlike Consent, this zone is about who may use the app and how it identifies itself, not about what organizational data the app is authorized to read. Unlike Managed identity, the credential here is one you create and rotate.",
+  "zones[4].def": "OAuth permission grants and the settings around them: delegated scopes versus application permissions, user consent settings scoped to verified publishers and low-impact classified permissions, the admin consent workflow, tenant-wide admin consent, and reviewing or revoking grants on the Permissions page of an enterprise application. Unlike App identity, the question here is what data the app may touch once it is running. Unlike Conditional Access, no sign-in condition is involved; the grant persists until an admin removes it.",
+  "zones[5].def": "Credential-free workload identity for Azure compute: system-assigned identities tied to one resource lifecycle, user-assigned identities created as standalone resources and shared across many, role assignments granted to them, and their token caching behaviour. Unlike App identity, there is no secret or certificate for anyone to leak or rotate, and the workload must run on an Azure resource that supports it. Unlike Consent, the authorization is Azure RBAC or app roles on the identity, not a consent prompt."
+ }
+}

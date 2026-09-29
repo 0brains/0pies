@@ -7,8 +7,8 @@
   "why": "Le modèle capture les motifs utiles et fonctionne de manière similaire sur les données d'entraînement et les données non vues."
  },
  "fit-tuning-02": {
-  "label": "Le modèle fonctionne très bien sur les données d'entraînement mais mal sur les données non vues.",
-  "why": "Le modèle fonctionne très bien sur les données d'entraînement mais mal sur les données non vues."
+  "label": "La précision à l’entraînement est excellente, mais elle chute fortement sur de nouvelles données que le modèle n’a jamais vues.",
+  "why": "Le modèle a mémorisé le jeu d’entraînement, bruit compris, au lieu d’apprendre des motifs qui se généralisent ; il obtient donc de bons scores à l’entraînement et de mauvais sur de nouvelles données."
  },
  "fit-tuning-03": {
   "label": "Le modèle est trop simple ou insuffisamment entraîné et fonctionne mal même sur les données d'entraînement.",

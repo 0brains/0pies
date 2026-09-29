@@ -1,0 +1,54 @@
+{
+ "osi-01": {
+  "prompt": "Order the OSI model from Physical up through Application, the order each layer's job becomes possible.",
+  "steps[0].label": "Physical (1) — bits on the wire",
+  "steps[0].detail": "Converts data into electrical, optical, or radio signal and puts it on the medium. Every other layer's work is meaningless until something is actually carrying signal, which is why this is the layer nothing else can precede.",
+  "steps[1].label": "Data Link (2) — frames + MAC addressing",
+  "steps[1].detail": "Wraps bits into frames and adds hardware (MAC) addressing so devices sharing one physical medium can tell who a frame is meant for. This only becomes necessary once more than one device shares that medium — a point-to-point link barely needs it, a shared segment can't function without it.",
+  "steps[2].label": "Network (3) — packets + logical addressing",
+  "steps[2].detail": "Adds IP addressing and routing so traffic can be forwarded beyond the local segment. MAC addressing alone doesn't scale past one segment — a router has to make a forwarding decision using an address that means something across the whole path, not just the next hop.",
+  "steps[3].label": "Transport (4) — segments/datagrams + ports",
+  "steps[3].detail": "Adds port numbers and, for TCP, sequencing and acknowledgment, so multiple applications on one host can be told apart and (optionally) guaranteed delivery. This only matters once a single IP address is shared by many running processes at once.",
+  "steps[4].label": "Session (5) — dialogue management",
+  "steps[4].detail": "Establishes, maintains, and tears down a conversation between two hosts across possibly many transport-layer exchanges. This is a distinct job from Transport because a session can span reconnects and multiple segments — the dialogue's identity has to outlive any one segment.",
+  "steps[5].label": "Presentation (6) — common format",
+  "steps[5].detail": "Translates data into a representation both ends agree on — character encoding, compression, encryption — before the receiving application ever sees it. This has to happen after a session exists but before an application can make sense of the bytes.",
+  "steps[6].label": "Application (7) — the user-facing service",
+  "steps[6].detail": "The actual protocol the requesting program speaks — HTTP, DNS, SMTP. It sits last because it has no housekeeping left to hand off; every layer below exists purely to get its data there intact."
+ },
+ "osi-02": {
+  "prompt": "Order the TCP/IP model's four layers bottom-up, and know which OSI layers each one folds in.",
+  "steps[0].label": "Link (Network Access) — folds in OSI Physical + Data Link",
+  "steps[0].detail": "TCP/IP treats signaling and framing as one job handled by a single network-interface driver, so it never separates them into two layers the way OSI does — operationally there's no reason to split what one piece of hardware does in one pass.",
+  "steps[1].label": "Internet — matches OSI Network",
+  "steps[1].detail": "A 1:1 mapping: logical addressing and routing (IP) is a distinct enough job in both models to stand alone as its own layer, so TCP/IP doesn't collapse it into anything above or below it.",
+  "steps[2].label": "Transport (Host-to-Host) — matches OSI Transport",
+  "steps[2].detail": "Another 1:1 mapping: TCP and UDP do process-to-process delivery in both models identically, so this layer's boundaries don't move between the two.",
+  "steps[3].label": "Application — folds in OSI Session + Presentation + Application",
+  "steps[3].detail": "TCP/IP has no separate session or presentation layer at all — it treats dialogue management and data formatting as the application program's own responsibility, not the network stack's, so three OSI layers collapse into this one."
+ },
+ "osi-03": {
+  "prompt": "A dispatcher at Norrbridge Freight submits a delivery-status update over HTTPS. Order the encapsulation steps from the moment the app builds the request to the moment it leaves as a signal on the wire.",
+  "steps[0].label": "Application builds the request",
+  "steps[0].detail": "The dispatch app forms its HTTP request body. This is the payload every later step exists only to deliver — it's the first layer at which the data exists at all, so nothing can precede it.",
+  "steps[1].label": "Transport adds a TCP segment header",
+  "steps[1].detail": "Wraps the request in a TCP segment carrying source/destination port and a sequence number, so the receiving host's OS can hand it to the right listening process and detect anything lost or reordered. This has to happen before IP addressing is added, because the IP layer treats the whole segment as an opaque payload it never inspects.",
+  "steps[2].label": "Network adds an IP packet header",
+  "steps[2].detail": "Wraps the segment in a packet carrying source/destination IP, so routers between here and Norrbridge's server know which network to forward it toward next. This can't happen earlier — the port numbers the routers don't need have to already be sealed inside the payload first.",
+  "steps[3].label": "Data Link adds a frame header and trailer",
+  "steps[3].detail": "Wraps the packet in a frame carrying source/destination MAC address and a checksum, so the very next hop's network card can pick it off the medium and confirm it wasn't corrupted. Unlike the IP address, the MAC address is only ever valid for one hop, so this header gets stripped and rebuilt fresh at every router along the path.",
+  "steps[4].label": "Physical converts the frame to bits",
+  "steps[4].detail": "The finished frame is serialized into electrical, optical, or radio signal for transmission. Nothing before this step is something a wire, fiber, or antenna can actually carry — this is the layer where all four earlier headers finally become a transmittable signal."
+ },
+ "osi-04": {
+  "prompt": "Order these four attacks by which OSI layer they operate at, from lowest to highest.",
+  "steps[0].label": "ARP spoofing — Data Link (2)",
+  "steps[0].detail": "Forges ARP replies binding the attacker's MAC address to a trusted IP, such as the default gateway, hijacking address-resolution trust that only exists within one local segment. It sits at Layer 2 because ARP itself is a Data Link broadcast mechanism — the attack corrupts an address mapping, not a transport handshake, a session token, or rendered content, which is what would move it to a higher layer.",
+  "steps[1].label": "SYN flood — Transport (4)",
+  "steps[1].detail": "Sends a flood of spoofed, unreachable SYNs that never complete TCP's three-way handshake, exhausting the target's table of half-open connections. It sits at Transport because the resource being exhausted is TCP's own per-connection state — not an address mapping (that would be Layer 2) and not an already-established, authenticated session (that would be Layer 5).",
+  "steps[2].label": "Session hijacking — Session (5)",
+  "steps[2].detail": "Steals or predicts a session identifier to take over a conversation that already completed its handshake and authentication, rather than exhausting connection-table resources like a SYN flood or forging an address mapping like ARP spoofing. It sits at the Session layer because the target is the continuity of one specific ongoing dialogue, not the connection's setup or a rendered page.",
+  "steps[3].label": "Cross-site scripting (XSS) — Application (7)",
+  "steps[3].detail": "Injects malicious script into a page or response so a victim's browser executes it as trusted content from a site the victim already trusts. It sits at Application because it exploits how a web application renders and trusts input — nothing about it touches address resolution, handshake state, or session-token continuity, which is what the three lower-layer attacks abuse instead."
+ }
+}

@@ -24,24 +24,24 @@
   "why": "Data protection, PII governance and access control map to privacy & security — managed identities and private endpoints are the mapped Azure features."
  },
  "rai-007": {
-  "label": "A recruiting model consistently scores candidates from one age group lower than others, even when their qualifications are comparable",
-  "why": "Unequal scoring by a protected attribute despite equal qualifications is a differential-outcome problem, not an access problem — that makes it fairness, not inclusiveness."
+  "label": "A credit-card model offers women noticeably lower spending limits than men who have the same income and repayment history",
+  "why": "Unequal treatment by a protected attribute despite equivalent financial profiles is a differential-outcome problem, not an access problem — that makes it fairness, not inclusiveness."
  },
  "rai-008": {
-  "label": "A facial-recognition model trained on a dataset with far fewer images of one ethnic group produces a much higher error rate for that group",
+  "label": "A voice-login feature rejects speakers with strong regional accents several times as often as others, because recordings of those accents were scarce when it was built",
   "why": "Underrepresentation in training data driving a systematic accuracy gap between groups is a fairness issue — no data is exposed, so it is not privacy & security."
  },
  "rai-009": {
-  "label": "A hiring tool ranks candidates from certain universities lower regardless of their actual qualifications, systematically disadvantaging one applicant pool",
-  "why": "A proxy variable (university) producing a consistent disadvantage for one group of applicants is fairness, even though no demographic attribute is used directly."
+  "label": "A résumé-screening model marks down anyone with a gap in their work history, which in practice mostly penalizes parents returning from caregiving",
+  "why": "A proxy feature (employment gaps) producing a consistent disadvantage for one group of applicants is fairness, even though no demographic attribute is used directly."
  },
  "rai-010": {
   "label": "Compare the model's error rate and approval rate side by side across demographic groups before it ships",
   "why": "Fairness assessments are the Azure-lever card for fairness — distinct from content filters (reliability & safety) or audit logs (accountability)."
  },
  "rai-011": {
-  "label": "A moderation pipeline sometimes misses harmful content and occasionally blocks content that is actually safe",
-  "why": "Inconsistent detection quality under normal operating conditions is a performance problem, not a data-exposure or disclosure one — that is reliability & safety."
+  "label": "An invoice-extraction model reads totals correctly on clean scans but returns wrong amounts whenever a page is slightly tilted",
+  "why": "Inconsistent output quality under ordinary operating conditions is a performance problem, not a data-exposure or disclosure one — that is reliability & safety."
  },
  "rai-012": {
   "label": "An AI tool that summarizes medical notes for clinicians must behave predictably even on unusual or edge-case input, since clinical decisions depend on it",
@@ -60,11 +60,11 @@
   "why": "Personal data flowing through prompts is a data-exposure risk, mitigated by redaction and access control — the defining concern of privacy & security."
  },
  "rai-016": {
-  "label": "An AI assistant processes employee HR documents, and the team must reduce the risk that this data leaks to unauthorized parties",
+  "label": "A payroll chatbot reads salary slips and bank details, and the builders must make sure only authorised staff can ever see those records",
   "why": "Restricting who can access sensitive stored data is privacy & security, not accountability — accountability is about ownership of decisions, not access control."
  },
  "rai-017": {
-  "label": "A school plans to release an AI tutor that processes private student conversations and must review how that data is stored and protected before broad rollout",
+  "label": "A fitness app is adding an AI coach that reads members' health logs, and the team must confirm how those logs are encrypted and who can open them before launch",
   "why": "Reviewing storage and protection of personal conversation data before release is a privacy & security review, distinct from a transparency review of disclosed capabilities."
  },
  "rai-018": {
@@ -76,7 +76,7 @@
   "why": "Designing for a range of languages and devices so everyone can use the system is inclusiveness — the concern is who can access the system, not who it scores differently."
  },
  "rai-020": {
-  "label": "A translation assistant assumes all users can hear audio responses clearly, ignoring people with hearing impairments",
+  "label": "A banking chatbot can only be operated with a mouse, leaving out customers who rely on screen readers or keyboard-only navigation",
   "why": "An accessible-design gap that shuts out users with a disability is inclusiveness, not fairness — fairness is about differential model outcomes across groups, not usable design."
  },
  "rai-021": {
@@ -84,8 +84,8 @@
   "why": "Supporting varied physical environments and interaction needs so the kiosk stays usable for everyone is inclusiveness."
  },
  "rai-022": {
-  "label": "A voice-enabled AI app is improved so it works better for people with different accents, physical abilities, and interaction needs",
-  "why": "Widening who the system serves well, across accents and abilities, is the direct definition of inclusiveness."
+  "label": "A museum's audio-guide assistant is retrained on regional dialects and given a large-text, tap-to-talk mode so more visitors can use it comfortably",
+  "why": "Widening who the system serves well, across dialects and abilities, is the direct definition of inclusiveness."
  },
  "rai-023": {
   "label": "Users are told upfront that they are talking to an AI assistant, not a human, before the conversation begins",

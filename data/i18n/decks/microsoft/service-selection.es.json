@@ -19,7 +19,7 @@
   "why": "CU extrae; AI Search indexa y recupera secundaria (indexer, skillset, knowledge store) — extracción y recuperación son servicios diferentes (par #22)."
  },
  "ss-005": {
-  "label": "Busca descripciones de productos por similitud semántica en lugar de coincidencia de palabras clave exacta",
+  "label": "Encontrar artículos del catálogo cuyas descripciones significan lo mismo que una consulta, aunque la redacción sea distinta",
   "why": "Los embeddings convierten texto en vectores para comparación semántica (text-embedding-3-large) — recuperan y comparan, nunca crean contenido (par #18)."
  },
  "ss-006": {
@@ -103,7 +103,7 @@
   "why": "El ajuste fino es el paso de entrenamiento que incrustra comportamiento demostrado en nuevos pesos para que persista entre llamadas; una implementación de chat/finalización de stock solo refleja lo que se reenvía en el prompt de esa llamada, y un modelo multimodal cambia qué tipos de entrada se aceptan, no si el estilo persiste sin re-indicar."
  },
  "ss-026": {
-  "label": "Prueba indicaciones habladas contra un modelo implementado con capacidad de audio directamente en el playground de chat Foundry, sin escribir ningún código SDK",
+  "label": "Probar la entrada de voz en una implementación de modelo con audio desde el playground de chat de Foundry, sin escribir código",
   "why": "Una implementación multimodal con capacidad de audio se puede ejercitar directamente en el playground de chat; Voice Live/gpt-realtime es la API de sesión realtime dedicada de baja latencia, una ruta de implementación separada construida para voz conversacional continua."
  }
 }

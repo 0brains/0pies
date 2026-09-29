@@ -24,7 +24,7 @@
   "b.why": "Ein bloßes chat.completions.create ist eine einzelne stateless Anfrage — keine persistierten Instructions, Tools oder Identität überleben zwischen Aufrufen."
  },
  "ft-05": {
-  "a.text": "'Gib Customer-Details immer in einer fixierten JSON-Form zurück und antworte nur auf HR-Richtlinien-Fragen' — eine persistente Regel für jeden Durchgang.",
+  "a.text": "„Antworte nur zu HR-Richtlinien und formatiere jeden Mitarbeiterdatensatz als JSON mit denselben Feldern“ — eine dauerhafte Regel, die in jeder Gesprächsrunde gilt.",
   "a.why": "Persona, Ton, Regeln und Guardrails gehören in den System-Prompt — Histack's 'die am meisten getestete Unterscheidung'; die gepflanzte falsche Antwort setzt Verhalten in den Benutzer-Prompt oder Bereitstellungseinstellungen.",
   "b.text": "'Fasse den Fehlensbericht dieses Quartals für mich zusammen' — eine Anfrage, dieser Durchgang nur.",
   "b.why": "Der Benutzer-Prompt trägt diese Durchgang's Anfrage; vorherige Modell-Antworten, die zum Gedächtnis abgespielt werden, sind Assistant-Nachrichten."

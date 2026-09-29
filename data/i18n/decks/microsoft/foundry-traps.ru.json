@@ -24,7 +24,7 @@
   "b.why": "Bare chat.completions.create — это single stateless request — no persisted instructions, tools или identity survive между calls."
  },
  "ft-05": {
-  "a.text": "'Always верни customer details в fixed JSON shape и только answer HR-policy questions' — persistent rule для каждого turn.",
+  "a.text": "«Отвечай только по вопросам кадровой политики и форматируй каждую запись о сотруднике как JSON с одинаковыми полями» — постоянное правило, действующее на каждом ходе.",
   "a.why": "Persona, tone, rules и guardrails принадлежат в system prompt — histack's 'single most-tested distinction'; planted неправильный ответ ставит поведение в user prompt или deployment settings.",
   "b.text": "'Summarize this quarter's absence report для меня' — один request, только этот turn.",
   "b.why": "User prompt несет запрос этого turn; prior model replies replayed для memory — это assistant messages."

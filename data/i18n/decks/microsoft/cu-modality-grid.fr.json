@@ -30,7 +30,7 @@
     "why": "Layout extrait le texte, les tableaux, les marques de sélection et la structure ; la lecture de style OCR est le texte uniquement — la distinction CU Read-vs-Layout de histack."
   },
   "cu-007": {
-    "label": "Un lot mixte de formulaires de fournisseurs a besoin que ses paires clé-valeur libres soient extraites sans commencer par un schéma de champ prédéfini",
+    "label": "Un assureur reçoit des dossiers de sinistre de dizaines de courtiers, chacun avec sa propre mise en page, et veut capturer tous les champs étiquetés qui y figurent — sans liste de champs rédigée à l’avance",
     "sub": "prebuilt-documentFields",
     "why": "prebuilt-documentFields extrait les paires clé-valeur générales des documents sans schéma spécifique au domaine requis — contrairement aux champs de facture fixes de prebuilt-invoice."
   },
@@ -50,7 +50,7 @@
     "why": "Les analyseurs d'image personnalisés définissent base_analyzer_id sur prebuilt-image avant de superposer un schéma de champ — le modèle documenté pour l'extraction de graphiques et de captures d'écran."
   },
   "cu-011": {
-    "label": "Analyse les photos d'étagères d'un audit de détail et retourne les champs structurés pour le nombre de produits, la présence de marque et les indicateurs de rupture de stock",
+    "label": "Transformer des photos de rayons prises lors d’un audit en magasin en champs structurés : combien de produits sont visibles, quelles marques apparaissent et si des emplacements sont vides",
     "sub": "prebuilt-image",
     "why": "L'analyseur d'image de Content Understanding retourne les champs structurés définis par le schéma directement à partir des photos — le scénario d'audit d'étagère de détail que l'examen teste directement."
   },
@@ -60,7 +60,7 @@
     "why": "Le modèle d'appel begin_analyze(analyzer_id=..., inputs=[AnalysisInput(url=...)]) est identique entre les modalités — seul l'identifiant d'analyseur change, et prebuilt-image est l'analyseur d'image direct (non-recherche)."
   },
   "cu-013": {
-    "label": "Câble un client Python léger qui appelle begin_analyze avec une URL d'enregistrement d'appel pour extraire une transcription et un résumé prêts pour un index de récupération",
+    "label": "Un réseau de podcasts soumet des liens d’épisodes via le SDK et veut récupérer les paroles prononcées ainsi qu’un résumé déjà mis en forme pour un index de recherche RAG",
     "sub": "prebuilt-audioSearch",
     "why": "prebuilt-audioSearch est l'identifiant d'analyseur documenté dans l'extrait de démarrage rapide du SDK — le suffixe *Search marque la sortie préparée pour l'indexation/récupération RAG, contrairement à l'extraction directe de prebuilt-audio sans préparation de récupération."
   },

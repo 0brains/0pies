@@ -1,0 +1,38 @@
+{
+ "bdp-01": {
+  "a.text": "The DR plan sets a four-hour ceiling on how long the claims-processing system may stay unavailable after a declared disaster.",
+  "a.why": "It caps clock time down — restoration speed — and says nothing about how much data may be lost, which is the other measurement's job.",
+  "b.text": "The DR plan sets a four-hour ceiling on how much claims data may be lost, measured backward from the moment the system fails.",
+  "b.why": "It caps data loss measured backward from failure, not downtime — the same four-hour figure now describes lost records, not how long the system stays down."
+ },
+ "bdp-02": {
+  "a.text": "The BIA records that order-entry may lose at most two days of captured orders in a failure, counted backward from the moment it stops.",
+  "a.why": "Counting backward from the failure to fix how stale the recovered records may be is a data-currency ceiling, saying nothing about how long the function may sit idle.",
+  "b.text": "The BIA records that order-entry may sit unavailable for at most two days after a failure before the business can no longer survive the outage.",
+  "b.why": "The same two-day figure now measures forward from the failure as the outer downtime the business can absorb — the ceiling every recovery-time target for the function must fit inside."
+ },
+ "bdp-03": {
+  "a.text": "The brokerage's leased failover facility continuously mirrors live trade data, so operations can shift over within minutes of a declared disaster.",
+  "a.why": "Continuously current data plus near-instant takeover is the marker — the other facility type has the hardware ready but not the live data, so it can't cut over this fast.",
+  "b.text": "The brokerage's leased failover facility has racks and network drops preinstalled, but last night's trade data still has to be loaded before operations can shift over, a process expected to take about half a day.",
+  "b.why": "Hardware present but data not yet current, needing restoration work before cutover, is the marker — the other facility type would already hold live, replicated data."
+ },
+ "bdp-04": {
+  "a.text": "The utility's alternate facility already has servers and network gear racked and ready, needing only current data loaded before staff can resume billing operations.",
+  "a.why": "Preinstalled hardware and connectivity awaiting only current data is the marker — the other facility type has no computing equipment installed at all yet.",
+  "b.text": "The utility's alternate facility is an empty shell with power and HVAC provisioned, but no servers, network gear, or computing equipment of any kind installed.",
+  "b.why": "No preinstalled computing facilities at all, only the building shell and utilities, is the marker — the other facility type already has hardware racked and waiting on data."
+ },
+ "bdp-05": {
+  "a.text": "Every Sunday night, the archive job copies the entire file server's contents regardless of which files changed that week, resetting every archive bit.",
+  "a.why": "Copying everything unconditionally and clearing every archive bit each run is the marker — the other scheme would only capture what changed since the last full run.",
+  "b.text": "Every weeknight, the archive job copies only the files changed since Sunday's full backup without touching the archive bit, so Thursday's job is visibly larger than Monday's.",
+  "b.why": "Growing nightly size, because it always measures from the last full backup and never clears the archive bit, is the marker — a full run would instead copy everything, every night."
+ },
+ "bdp-06": {
+  "a.text": "Restoring the crashed file server needs Monday's full backup plus every single nightly job run since, replayed in order.",
+  "a.why": "A multi-step restore chain, needing the full plus every backup since in sequence, is the marker — each job only captured changes since the last job of any type, whichever that was.",
+  "b.text": "Restoring the crashed file server needs only Monday's full backup and last night's job, nothing else, no matter how many nights have passed since.",
+  "b.why": "A two-job restore, the last full plus just the most recent run, is the marker — the other scheme would instead require replaying every night's job since the full."
+ }
+}

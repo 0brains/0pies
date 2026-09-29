@@ -12,13 +12,13 @@
   "b.why": "Đây là giấy chứng sinh — nguồn gốc và giam giữ — không phải ghi lại những gì sau đó được thực hiện cho dữ liệu; ghi lại đó thuộc mặt khác của cặp này."
  },
  "iii-dp-03": {
-  "a.text": "Tiếng ồn toán học được hiệu chỉnh được thêm vào trong quá trình đào tạo để không có hồ sơ đào tạo duy nhất nào có thể được hiển thị để có nhiều hơn một hiệu ứng không đáng kể trên đầu ra của mô hình.",
+  "a.text": "Nhiễu được hiệu chỉnh cẩn thận được đưa vào trong quá trình huấn luyện, để việc hồ sơ của bất kỳ một người nào có được đưa vào hay không hầu như không làm thay đổi đầu ra của mô hình.",
   "a.why": "Đây là một bảo đảm toán học về ảnh hưởng, không phải về nơi dữ liệu di chuyển về mặt vật lý — nó áp dụng cho dù dữ liệu bao giờ rời khỏi nguồn của nó hay không.",
   "b.text": "Mỗi bệnh viện đào tạo địa phương trên các hồ sơ bệnh nhân của riêng nó, và chỉ các bản cập nhật kết quả — không bao giờ các hồ sơ thô — du lịch đến máy chủ trung tâm để tập hợp.",
   "b.why": "Những gì được bảo vệ đây là dữ liệu nào rời khỏi trang web, không phải bao nhiêu bất kỳ hồ sơ duy nhất nào có thể được suy luận từ một đầu ra — các hồ sơ thô không bao giờ đi du lịch, toàn bộ dừng."
  },
  "iii-dp-04": {
-  "a.text": "Một tài liệu tiêu chuẩn đặt ra động lực của một tập dữ liệu, thành phần, quá trình thu thập và các cách sử dụng được đề xuất, trước khi bất kỳ mô hình nào được đào tạo trên nó.",
+  "a.text": "Một bản mô tả có cấu trúc ghi lại lý do một tập dữ liệu được xây dựng, nó chứa gì, được thu thập ra sao và nên được dùng vào việc gì, trước khi bất kỳ mô hình nào được huấn luyện trên nó.",
   "a.why": "Điều này ghi lại nguyên liệu thô chính nó, độc lập với bất kỳ mô hình nào sẽ sau được đào tạo trên nó.",
   "b.text": "Mục đích của một phiên bản duy nhất, dữ liệu đào tạo/xác thực/kiểm tra của nó, số liệu hiệu suất của nó và những hạn chế đã biết của nó được tóm tắt cho ai đó quyết định có nên triển khai nó hay không.",
   "b.why": "Đây là phạm vi cho một phiên bản cụ thể, không phải tập dữ liệu đằng sau nó — một nhãn dinh dưỡng cho tạo tác được đào tạo, khác biệt từ phạm vi cấp tập dữ liệu của mặt khác."
@@ -55,7 +55,7 @@
  },
  "iii-dp-10": {
   "a.text": "Giá trị trọng số bên trong mạng được cập nhật qua lan truyền ngược vì đào tạo giảm lỗi dự đoán.",
-  "a.why": "Đây là giá trị học mà xác định cách dữ liệu đầu vào được chuyển đổi thành đầu ra — chúng không tồn tại dạng cuối cùng cho đến khi đào tạo xảy ra.",
+  "a.why": "Mạng tự tìm ra các giá trị này, và chúng quyết định cách mỗi đầu vào trở thành đầu ra — chúng chưa tồn tại ở dạng cuối cùng cho đến khi quá trình huấn luyện diễn ra.",
   "b.text": "Tỷ lệ học tập được sửa chữa bởi đội trước khi đào tạo bao giờ bắt đầu, và ở lại không chạm trong khi mạng học.",
   "b.why": "Đây là bộ trước để kiểm soát cách học xảy ra — đầu vào để đào tạo, không phải đầu ra của nó."
  },

@@ -19,7 +19,7 @@
   "why": "CU는 extract하고, AI Search는 downstream을 index하고 검색해요(indexer, skillset, knowledge store). extraction과 retrieval은 다른 서비스예요(pair #22)."
  },
  "ss-005": {
-  "label": "정확한 keyword matching 대신 semantic similarity로 product descriptions를 검색해요.",
+  "label": "표현이 다르더라도 설명이 쿼리와 같은 의미를 갖는 카탈로그 항목 찾기",
   "why": "Embeddings는 text를 semantic comparison을 위한 vectors로 변환해요(text-embedding-3-large). 이들은 검색하고 비교하며, 절대 콘텐츠를 생성하지 않아요(pair #18)."
  },
  "ss-006": {
@@ -103,7 +103,7 @@
   "why": "Fine-tuning은 demonstrated behavior를 new weights에 bake하는 training pass이므로 calls에 걸쳐 persist되어요. stock chat/completion deployment는 그 call의 prompt에서만 resent되는 것을 reflect하며, multimodal model은 input types를 변경하지 re-prompting 없이 style persist 여부는 변경하지 않아요."
  },
  "ss-026": {
-  "label": "SDK code를 작성하지 않고도 Foundry chat playground에서 배포된 audio-capable 모델에 대해 직접 spoken prompts를 test해요.",
+  "label": "코드 없이 Foundry 채팅 플레이그라운드에서 오디오 지원 모델 배포로 음성 입력 시험해 보기",
   "why": "Audio-capable multimodal deployment은 chat playground에서 straight로 exercised될 수 있어요. Voice Live/gpt-realtime는 continuous conversational voice를 위해 구축된 dedicated low-latency realtime session API, separate deployment path예요."
  }
 }

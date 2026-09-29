@@ -24,24 +24,24 @@
   "why": "Ochrona danych, zarządzanie danymi osobowymi i kontrola dostępu mapują się na prywatność i bezpieczeństwo — zarządzane tożsamości i prywatne punkty końcowe to mapowane funkcje Azure."
  },
  "rai-007": {
-  "label": "Model rekrutacyjny konsekwentnie ocenia kandydatów z jednej grupy wiekowej niżej niż inne, nawet jeśli mają porównywalne kwalifikacje",
-  "why": "Nierówna ocena według chronionego atrybutu pomimo równych kwalifikacji to problem różnych wyników, nie dostępu — to czyni go uczciwością, nie inklusywnością."
+  "label": "Model kart kredytowych przyznaje kobietom wyraźnie niższe limity wydatków niż mężczyznom o tych samych dochodach i historii spłat",
+  "why": "Nierówne traktowanie ze względu na cechę chronioną mimo równoważnych profili finansowych to problem zróżnicowanych wyników, a nie dostępu — dlatego chodzi o sprawiedliwość, a nie inkluzywność."
  },
  "rai-008": {
-  "label": "Model rozpoznawania twarzy wytrenowany na zbiorze danych z znacznie mniejszą liczbą obrazów jednej grupy etnicznej produkuje znacznie wyższy wskaźnik błędów dla tej grupy",
+  "label": "Funkcja logowania głosowego kilkakrotnie częściej odrzuca osoby z silnym akcentem regionalnym, bo podczas jej budowy nagrań tych akcentów było niewiele",
   "why": "Niedoreprezentacja w danych treningowych powodująca systematyczną lukę dokładności między grupami to problem uczciwości — żadne dane nie są ekspozycją, więc nie jest to prywatność i bezpieczeństwo."
  },
  "rai-009": {
-  "label": "Narzędzie do zatrudniania rankinguje kandydatów z określonych uniwersytetów niżej niezależnie od ich rzeczywistych kwalifikacji, systematycznie dyskryminując jedną pulę kandydatów",
-  "why": "Zmienna proxy (uniwersytet) powodująca konsekwentną stratę dla jednej grupy kandydatów to uczciwość, choć żaden atrybut demograficzny nie jest bezpośrednio używany."
+  "label": "Model przesiewu CV obniża ocenę każdemu, kto ma przerwę w historii zatrudnienia, co w praktyce karze głównie rodziców wracających po okresie sprawowania opieki",
+  "why": "Cecha zastępcza (proxy) — przerwy w zatrudnieniu — konsekwentnie stawiająca jedną grupę kandydatów w gorszej sytuacji to kwestia sprawiedliwości, mimo że żaden atrybut demograficzny nie jest używany bezpośrednio."
  },
  "rai-010": {
   "label": "Porównaj wskaźnik błędów i wskaźnik zatwierdzenia modelu obok siebie w grupach demograficznych zanim się go wdroży",
   "why": "Oceny uczciwości to karta dźwigni Azure dla uczciwości — odrębna od filtrów treści (niezawodność i bezpieczeństwo) lub dzienników audytu (odpowiedzialność)."
  },
  "rai-011": {
-  "label": "Rurociąg moderacji czasami pomija szkodliwe treści i czasami blokuje treści, które są faktycznie bezpieczne",
-  "why": "Niespójna jakość detekcji w normalnych warunkach pracy to problem wydajności, nie problem ekspozycji danych lub ujawnienia — to niezawodność i bezpieczeństwo."
+  "label": "Model wyodrębniania danych z faktur poprawnie odczytuje sumy z czystych skanów, ale zwraca błędne kwoty, gdy tylko strona jest lekko przekrzywiona",
+  "why": "Niespójna jakość wyników w zwykłych warunkach działania to problem wydajności, a nie ujawnienia danych czy informacji — to niezawodność i bezpieczeństwo."
  },
  "rai-012": {
   "label": "Narzędzie AI, które podsumowuje notatki medyczne dla klinicystów, musi zachowywać się przewidywalnie nawet na niespodziewanych lub skrajnych wejściach, ponieważ decyzje kliniczne od tego zależą",
@@ -60,11 +60,11 @@
   "why": "Dane osobowe płynące przez podpowiedzi to ryzyko ekspozycji danych, złagodzone przez redakcję i kontrolę dostępu — definiujące zagadnienie prywatności i bezpieczeństwa."
  },
  "rai-016": {
-  "label": "Asystent AI przetwarza dokumenty HR pracowników, a zespół musi zmniejszyć ryzyko, że te dane wyciekną do nieuprawnionych stron",
+  "label": "Chatbot płacowy odczytuje paski wynagrodzeń i dane bankowe, a twórcy muszą zagwarantować, że te rekordy zobaczą wyłącznie upoważnieni pracownicy",
   "why": "Ograniczenie, kto może uzyskać dostęp do przechowywanych danych wrażliwych, to prywatność i bezpieczeństwo, nie odpowiedzialność — odpowiedzialność to właścicielstwo decyzji, nie kontrola dostępu."
  },
  "rai-017": {
-  "label": "Szkoła planuje wydać tutora AI, który przetwarza prywatne rozmowy studentów i musi przejrzeć sposób przechowywania i ochrony tych danych przed szerokim wdrożeniem",
+  "label": "Aplikacja fitness dodaje trenera AI, który czyta dzienniki zdrowotne członków, a zespół musi przed startem potwierdzić, jak te dzienniki są szyfrowane i kto może je otworzyć",
   "why": "Przegląd przechowywania i ochrony osobistych danych rozmowy przed wydaniem to przegląd prywatności i bezpieczeństwa, odrębny od przeglądu przejrzystości ujawnionych możliwości."
  },
  "rai-018": {
@@ -76,7 +76,7 @@
   "why": "Projektowanie dla zakresu języków i urządzeń, aby wszyscy mogli korzystać z systemu, to inklusywność — zagadnienie to kto ma dostęp do systemu, nie kogo system ocenia inaczej."
  },
  "rai-020": {
-  "label": "Asystent tłumaczenia zakłada, że wszyscy użytkownicy mogą wyraźnie słyszeć odpowiedzi audio, ignorując osoby z upośledzeniami słuchu",
+  "label": "Chatbot bankowy można obsługiwać wyłącznie myszą, co wyklucza klientów korzystających z czytników ekranu lub nawigacji samą klawiaturą",
   "why": "Luka w dostępności projektowania, która wyłącza użytkowników z niepełnosprawnością, to inklusywność, nie uczciwość — uczciwość to różne wyniki modelu w grupach, nie użyteczne projektowanie."
  },
  "rai-021": {
@@ -84,8 +84,8 @@
   "why": "Obsługa zróżnicowanych środowisk fizycznych i potrzeb interakcji, aby kiosk pozostał użyteczny dla wszystkich, to inklusywność."
  },
  "rai-022": {
-  "label": "Aplikacja obsługiwana głosem jest ulepszona, aby lepiej działała dla osób z różnymi akcentami, możliwościami fizycznymi i potrzebami interakcji",
-  "why": "Poszerzenie, dla kogo system działa dobrze, poprzez akcenty i możliwości, to bezpośrednia definicja inklusywności."
+  "label": "Asystent audioprzewodnika w muzeum zostaje dotrenowany na dialektach regionalnych i dostaje tryb z dużym tekstem i funkcją „dotknij, aby mówić”, aby więcej zwiedzających mogło wygodnie z niego korzystać",
+  "why": "Poszerzanie grona osób, którym system dobrze służy — niezależnie od dialektu i sprawności — to wprost definicja inkluzywności."
  },
  "rai-023": {
   "label": "Użytkownicy są informowani z góry, że rozmawiają z asystentem AI, a nie człowiekiem, przed rozpoczęciem rozmowy",

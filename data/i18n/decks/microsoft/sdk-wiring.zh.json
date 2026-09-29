@@ -4,7 +4,7 @@
   "why": "AIProjectClient(endpoint, credential) 是项目入口点；get_openai_client() 挂在它上面——移除身份验证，这就是断裂的行。"
  },
  "sw-002": {
-  "label": "将消息列表发送到已部署的模型并返回 choices[0].message.content",
+  "label": "给定部署名称和一个由系统消息加用户消息组成的数组，返回回复，然后你从 choices[0].message.content 中读取它",
   "why": "chat.completions.create(model=DEPLOYMENT_NAME, messages=[…]) 是聊天调用——model= 接受部署名称，不是基础模型名称（histack 陷阱 #5）。"
  },
  "sw-003": {
@@ -40,8 +40,8 @@
   "why": "快速入门将 az login 与此凭证对象配对；get_openai_client 只返回聊天客户端，与身份验证无关。"
  },
  "sw-011": {
-  "label": "在编写任何 Foundry 项目客户端代码前安装的 pip 包，根据快速入门的第一个设置命令",
-  "why": "\"为项目客户端应该安装哪个包？\"是经典考试题——答案是 azure-ai-projects，不是搜索或语言 SDK。"
+  "label": "在全新虚拟环境中的第一条命令，在任何代码能够连接到 Foundry 项目之前执行",
+  "why": "Foundry 项目客户端位于 azure-ai-projects 中——这是一个常考的包名；搜索和语言 SDK 是常见的干扰项。"
  },
  "sw-012": {
   "label": "在快速入门设置步骤中与 az login 一起列出，在任何客户端代码运行前钉住最小版本 (>=2.0.0)",
@@ -56,7 +56,7 @@
   "why": "情感和关键短语提取是此客户端上的 AI Language 文本分析方法；其他两个操作多模式文档或实时音频，不是纯文本。"
  },
  "sw-015": {
-  "label": "设置为从计算机的默认麦克风而不是保存的文件监听，然后作为其音频源交给识别器",
+  "label": "使用 use_default_microphone=True 构造，使自助终端能采集实时语音，然后作为输入传入识别器的构造函数",
   "why": "AudioConfig(use_default_microphone=True) 选择输入设备；SpeechConfig 反而持有订阅密钥/区域，SpeechRecognizer 是此对象被传入的类，不是设备选择器本身。"
  },
  "sw-016": {
@@ -88,8 +88,8 @@
   "why": "此 Vision 客户端的按 URL 分析方法返回固定预构建特征如字幕和读取；它没有轮询步骤，与语音捕获完全无关。"
  },
  "sw-023": {
-  "label": "应用在发送文档 URL 以进行提取并读回结构化结果时首先创建的客户端",
-  "why": "\"Content Understanding 应用首先应该创建哪个客户端？\"是此类——其他两个是具有不同端点的纯文本和一般图像的分离服务。"
+  "label": "一个理赔应用将把扫描的保单 PDF 交给自定义分析器并读回字段值——这是它最先构造的对象",
+  "why": "Content Understanding 的工作从这个类开始——另外两个是独立的服务，分别有各自的端点，用于纯文本和通用图像。"
  },
  "sw-024": {
   "label": "其长时间运行分析调用返回轮询器；在该轮询器上调用 .result() 是应用等待最终提取输出的方式",
@@ -100,7 +100,7 @@
   "why": "GPT 图像 1 部署在 response.data[0].b64_json 中返回生成的图像字节；完成调用返回文本选择，Vision 客户端只分析已经存在的图像。"
  },
  "sw-026": {
-  "label": "设置背景为透明并在此文本到图像请求中请求 PNG 输出以获得透明背景",
+  "label": "一个贴纸店生成器需要背景为空的抠图素材，因此这个调用传入 background=transparent 和 output_format=png",
   "why": "透明背景加 PNG 输出是 GPT 图像 1 系列生成参数；Vision 分析或聊天完成调用中的任何内容都不接受它们。"
  }
 }

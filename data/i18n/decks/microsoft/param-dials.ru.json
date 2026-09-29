@@ -4,7 +4,7 @@
   "why": "histack's exact exam cue: 'consistent, repeatable output' → low temperature. Это rescales всю probability distribution; tune его или top_p, не оба."
  },
  "pd-002": {
-  "label": "Restrict sampling к smallest set из tokens, чья cumulative probability достигает set threshold",
+  "label": "Выбирать только из токенов с наивысшим рангом, пока их суммарная вероятность не достигнет заданного порога",
   "why": "Nucleus sampling — top_p truncates candidate set, while temperature reshapes всю distribution (corpus confused-pair #5)."
  },
  "pd-003": {
@@ -64,8 +64,8 @@
   "why": "PTU — это reserved-capacity deployment model; Standard shares capacity и bills per token с variable throughput, пока Capacity (TPM) только sets quota на whichever deployment type chosen."
  },
  "pd-017": {
-  "label": "Traffic к customer-support app unpredictable и bursty, и team хочет pay-per-token billing вместо hourly reserved capacity",
-  "why": "Pay-per-token pricing под variable load — это Standard deployment (exam's exact scenario); PTU вместо этого bills hourly для reserved capacity regardless из actual usage."
+  "label": "Ассистент по продаже билетов на фестиваль неделями простаивает, а затем получает внезапные наплывы, и финансовый отдел хочет платить только за израсходованные токены, а не за круглосуточно зарезервированную пропускную способность",
+  "why": "Оплата за токен при переменной нагрузке — это развёртывание Standard; PTU же тарифицируется почасово за зарезервированную ёмкость независимо от фактического использования."
  },
  "pd-018": {
   "label": "Bills per token consumed нежели per hour из reserved compute, с throughput, который может vary под shared load",

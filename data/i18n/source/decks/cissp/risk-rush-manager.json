@@ -1,0 +1,96 @@
+{
+ "risk-rush-manager": {
+  "hint": "Ask what a manager actually controls in the first hour: scope, authority, and information. A control that's technically correct but skips scoping or authorization is a trap; so is freezing, and so is escalating straight to the most drastic response available.",
+  "note": "Every wrong option here is a real CISSP pattern: the technically-sound fix that jumps the queue, the do-nothing that waits for more data indefinitely, and the panic response that skips straight to the most severe action. The why on each card names which trap the wrong options are."
+ },
+ "rrm-01": {
+  "label": "A VP has already verbally agreed with a new SaaS vendor to connect the vendor's API to the customer database next week, and only now loops in the security manager.",
+  "sub": "What does the manager do first?",
+  "why": "A manager's first move is to scope the actual exposure before anyone decides anything; blocking outright is the panic response (no basis yet to justify killing a business deal), mandating MFA is a technically sound control jumping ahead of the assessment that would tell you if it's even the right one, and rubber-stamping the VP's verbal commitment is the do-nothing that skips security's job entirely."
+ },
+ "rrm-02": {
+  "label": "Staff have started using personal tablets to read work email, and no written rule covers it either way.",
+  "sub": "What does the manager do first?",
+  "why": "Technical controls need a governing policy to define their scope before they're deployed, so pushing MDM first is the technically-correct-but-not-managerial move; waiting for an incident is the do-nothing; and an immediate blanket ban is the panic overreach nobody asked for or authorized."
+ },
+ "rrm-03": {
+  "label": "An engineer flags that an encrypted customer records table may have been briefly exposed to the internet during a misconfigured deployment; scope and actual exposure are still unknown.",
+  "sub": "What does the manager do first?",
+  "why": "Notification obligations and next steps hinge on confirmed scope, so notifying everyone before the facts are known is the panic move; deferring to a quarterly review is the do-nothing that lets a live exposure sit unaddressed; and rotating keys/patching is a real fix that belongs after the investigation frames what's actually broken, not before."
+ },
+ "rrm-04": {
+  "label": "A consultant is asked to gauge the security posture of a company about to be acquired, with only a few hours of access before the deal closes.",
+  "sub": "What's the FIRST indicator worth checking?",
+  "why": "Leadership commitment is the root signal — it's what actually drives budget, staffing, and priority for everything else, whereas incident counts, insurance limits, and training completion are all downstream proxies that can look fine even when the program behind them is hollow."
+ },
+ "rrm-05": {
+  "label": "A wildfire is approaching a regional office campus and the company has no written procedure for getting people out safely.",
+  "sub": "Which plan does the manager stand up first?",
+  "why": "Human life-safety during an active emergency is an occupant emergency plan's specific job; BCP, DRP, and COOP all matter afterward for keeping the business and its systems running, but none of them is written to get people out of a building right now."
+ },
+ "rrm-06": {
+  "label": "A manager discovers a single employee both raises purchase orders and approves the invoices that pay them, with no one else in the loop.",
+  "sub": "What does the manager do first?",
+  "why": "The gap is structural — one person holding both ends of the transaction — so fixing the process by separating the duties is the actual first move; extra logging is a technically useful but secondary control that leaves the structural gap in place, waiting for evidence of fraud ignores a control failure that exists regardless of intent, and firing someone with no evidence of wrongdoing is a panic response to a process gap, not a person."
+ },
+ "rrm-07": {
+  "label": "A manufacturer's awareness program reports 100 percent course completion every quarter, and the board now asks the security manager to demonstrate that the training is actually changing how staff behave.",
+  "sub": "What does the manager do first?",
+  "why": "Completion counts how many people sat through the course, not whether anything changed, so presenting it as proof is the do-nothing dressed up as evidence; swapping vendors and bolting on modules are both spend committed before anyone has measured what the current program achieves, the technically-plausible fix that jumps ahead of the measurement that would tell you whether it is needed."
+ },
+ "rrm-08": {
+  "label": "A newly hired CISO is told to build a risk register for a product line that has never had one.",
+  "sub": "What does the manager do first?",
+  "why": "Risk identification is the first step in the process everything else depends on; jumping to controls or a monitoring dashboard puts a later step ahead of the one that defines what's actually being managed, and deferring to the next audit cycle is the do-nothing that leaves the product line unassessed in the meantime."
+ },
+ "rrm-09": {
+  "label": "A hospital trust's biomedical engineer gets a social-media message from her brother-in-law, a nurse at a competing hospital group, offering to pass her that group's confidential patient-throughput figures ahead of a joint regional funding bid.",
+  "sub": "What's the engineer's FIRST response?",
+  "why": "Putting an unsolicited, ethically compromised offer on the record up the chain is what keeps the engineer and the bid clear of a conflict-of-interest or misappropriation claim later; taking the figures while privately intending not to use them still puts a rival's confidential data in her hands and is the fix that feels harmless but is not hers to authorize, silently deleting the message is the do-nothing that leaves the trust unaware of an approach it may be legally obliged to disclose, and drawing her brother-in-law out for detail deepens exactly the relationship she has no standing to manage."
+ },
+ "rrm-10": {
+  "label": "Procurement wants to sign a subcontractor who will process production data, without a security review, because the main contract deadline is Friday.",
+  "sub": "What does the manager insist on first?",
+  "why": "Assessing a new link in the supply chain before granting it access to production data is the point of third-party risk review; demanding the subcontractor run the company's own security tooling overreaches into their environment before you even know what's needed, signing now and chasing a compliance report later is the do-nothing dressed up as due diligence, and insurance alone transfers financial loss but does nothing to assess or reduce the actual exposure."
+ },
+ "rrm-11": {
+  "label": "A product team designing a new connected medical sensor wants to lock in the encryption algorithm this week so engineering can start building.",
+  "sub": "What does the manager insist on first?",
+  "why": "Threat modeling is what tells you which assets and paths actually need protecting, so picking an algorithm first is a technically sound choice made before anyone knows if it's the right one; skipping the exercise for schedule reasons is the do-nothing dressed as pragmatism, and a penetration test is a later-stage verification step, not the design-time exercise this scenario calls for."
+ },
+ "rrm-12": {
+  "label": "A retailer is about to start selling into the EU for the first time and has never assessed its data practices against EU privacy law.",
+  "sub": "What does the manager do first?",
+  "why": "A gap assessment tells the company what it's actually missing before it builds anything; deploying consent banners guesses at a fix before the requirements are scoped, waiting for a complaint is the do-nothing that trades a known gap for an unknown penalty, and halting all EU sales is a panic response disproportionate to a compliance gap that hasn't even been measured yet."
+ },
+ "rrm-13": {
+  "label": "A department writes a detailed, forty-step USB-encryption procedure, but no overarching security policy exists to authorize it or say who it applies to.",
+  "sub": "What does the manager do first?",
+  "why": "A procedure only has force once a policy above it says who must follow it and why; publishing the detailed document anyway skips that governance layer, scrapping good work over a structural gap is an overreaction, and letting every department freelance its own version is the do-nothing that guarantees inconsistent, unenforceable rules."
+ },
+ "rrm-14": {
+  "label": "After a regional outage scare, department heads want to pick a hot-site vendor for disaster recovery this week, before anyone has ranked which systems matter most.",
+  "sub": "What does the manager insist on first?",
+  "why": "A BIA is what tells you which systems actually need a hot site and how fast, so signing a contract first is a technically reasonable move made before the requirement is known; delaying to next year's budget is the do-nothing that leaves the exposure open, and declaring everything critical isn't rigor, it's the panic option that blows the budget without ever doing the analysis."
+ },
+ "rrm-15": {
+  "label": "A formal risk analysis rates a legacy billing system's residual risk as within the company's documented risk appetite, but the IT director still wants to spend $200,000 replacing it 'to be safe.'",
+  "sub": "What does the manager do first?",
+  "why": "When an analyzed risk sits inside the organization's stated appetite, documented acceptance is the correct, legitimate first response, not spending; approving the $200,000 fix anyway is the technically-safer-but-not-managerial move that burns budget the analysis didn't call for, leaving the decision unresolved is the do-nothing, and escalating a within-appetite finding to the board as a crisis is a panic response the numbers don't support."
+ },
+ "rrm-16": {
+  "label": "An account manager walks into her supervisor's office and reports that she forwarded an internal-only project schedule to her own webmail to read on a long train journey; the mail gateway log confirms the message went to that address and nowhere else, and she has no prior policy breaches.",
+  "sub": "What does the manager do first?",
+  "why": "Intent is not in question here — she disclosed it herself and the gateway log corroborates her account — so the proportionate managerial response to an inadvertent breach is counsel plus retraining, and open discussion costs nothing because there is no evidence at risk of being destroyed; that is precisely why a suspected deliberate diversion is handled the opposite way, quietly with HR and counsel before any contact. Termination and a company-wide lockdown are panic responses sized for a malicious exfiltration the facts rule out, and filing the report without a response is the do-nothing that leaves a real violation uncorrected and teaches her the rule carries no weight."
+ },
+ "rrm-17": {
+  "label": "A manager suspects an employee has been quietly siphoning funds through falsified expense reports, a situation that could become a criminal matter.",
+  "sub": "What does the manager do first?",
+  "why": "Whether this becomes a criminal, civil, or administrative matter changes who has authority to collect evidence and how, so getting legal and HR involved first protects the case; personally imaging the laptop is a technically sound forensic step taken before that authority and chain of custody are established, confronting the employee directly is a panic move that tips them off and lets evidence disappear, and waiting for a formal complaint is the do-nothing that lets the activity continue."
+ },
+ "rrm-18": {
+  "label": "A firm's mandatory onboarding security training hasn't stopped incidents among staff who have been there for years and completed it long ago.",
+  "sub": "What does the manager do first?",
+  "why": "A one-time onboarding session doesn't hold up years later, so the fix is a recurring program tied to role and cadence, not a single event; a new DLP product is a real technical layer but doesn't address the stale training driving the behavior, firing repeat offenders is a panic response to a training gap the company itself left open, and shrugging off the incident rate is the do-nothing that guarantees it continues."
+ }
+}

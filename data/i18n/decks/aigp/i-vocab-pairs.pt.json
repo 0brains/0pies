@@ -3,7 +3,7 @@
   "a.text": "Um sistema de visão continua a classificar corretamente em imagens perturbadas adversarialmente.",
   "a.why": "Resistir a entrada hostil ou novel enquanto mantém precisão e funcionalidade é o trabalho inteiro deste lado — o modelo nunca sai da sua banda de desempenho normal.",
   "b.text": "Após entradas de sensor degradadas, o sistema volta aos seus limites de desempenho especificados.",
-  "b.why": "Manter desempenho dentro de limites aceitáveis definidos apesar de condições reais-mundiais ou adversariais, e recuperar para eles, é a outra metade — um sistema pode ser resiliente sem nunca enfrentar um ataque deliberado."
+  "b.why": "Recuperar para o seu intervalo de funcionamento especificado após uma perturbação — seja por condições adversas do mundo real ou por um ataque — é o que este lado descreve; um sistema pode ser resiliente sem nunca enfrentar um ataque deliberado."
  },
  "i-vp-02": {
   "a.text": "Um clipe de áudio sintético de um oficial público é fabricado e espalhado com o objetivo deliberado de causar dano.",
@@ -14,7 +14,7 @@
  "i-vp-03": {
   "a.text": "Grandes números de rides falsos, de baixa tarifa, são injetados no conjunto de dados de treino de um modelo de previsão de tarifa de uma fonte.",
   "a.why": "Corromper o que o modelo aprende, antes de ele ser alguma vez implantado, é um ataque ao tempo de treino — o outro lado acontece depois do modelo estar já live.",
-  "b.text": "Um utilizador malicioso cria dados de entrada que enganam um modelo de triage já implantado em rotular casos urgentes como não urgentes.",
+  "b.text": "Semanas depois de um filtro de spam entrar em produção, um atacante semeia e-mails de phishing com caracteres invisíveis para que o filtro os classifique como seguros.",
   "b.why": "Enganar as saídas de um modelo vivo com entradas artesanais ao tempo de inferência é a outra metade do par — os dados de treino do modelo nunca foram tocados."
  },
  "i-vp-04": {
@@ -37,7 +37,7 @@
  },
  "i-vp-07": {
   "a.text": "Um radiologista para de verificar duplo as chamadas de baixo risco de uma ferramenta de triage de scan após meses de sinalizações precisas, e começa a assinar o que quer que rotule benigno.",
-  "a.why": "Over-reliance em outputs de IA sem supervisão crítica humana é o mecanismo deste lado — uma falha humana de continuar a verificar, não um defeito incorporado nos dados.",
+  "a.why": "O mecanismo aqui é uma pessoa confiar tanto nas respostas da ferramenta que deixa de as escrutinar — uma falha humana em continuar a verificar, não um defeito embutido nos dados.",
   "b.text": "Uma ferramenta de contratação treinada em registos de contratação passados rejeita mais candidatos de grupos minoritários, porque esses registos já refletiam quem foi contratado antes.",
   "b.why": "O defeito é herdado dos dados de treino em si, transportando padrões para a frente a partir de um passado discriminatório — distinto de confiar em excesso numa saída de ferramenta uma vez que está já implantada."
  },

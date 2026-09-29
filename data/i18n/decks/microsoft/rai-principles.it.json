@@ -24,24 +24,24 @@
   "why": "La protezione dei dati, la governance delle PII e il controllo di accesso si associano a privacy e sicurezza — le identità gestite e gli endpoint privati sono le funzioni Azure mappate."
  },
  "rai-007": {
-  "label": "Un modello di assunzione assegna coerentemente punteggi più bassi ai candidati di un gruppo di età rispetto ad altri, anche quando le loro qualifiche sono comparabili",
-  "why": "L'assegnazione di punteggi ineguale da un attributo protetto nonostante qualifiche uguali è un problema di esito differenziale, non di accesso — il che lo rende equità, non inclusività."
+  "label": "Un modello per carte di credito offre alle donne limiti di spesa sensibilmente più bassi rispetto agli uomini con lo stesso reddito e la stessa storia di rimborsi",
+  "why": "Un trattamento diseguale in base a un attributo protetto a parità di profilo finanziario è un problema di esiti differenziati, non di accesso — per questo si tratta di equità, non di inclusività."
  },
  "rai-008": {
-  "label": "Un modello di riconoscimento facciale addestrato su un set di dati con molte meno immagini di un gruppo etnico produce un tasso di errore molto più alto per quel gruppo",
+  "label": "Una funzione di accesso vocale rifiuta i parlanti con forti accenti regionali molte volte più spesso degli altri, perché quando è stata sviluppata le registrazioni di quegli accenti erano scarse",
   "why": "La sottorepresentazione nei dati di addestramento che guida un divario di accuratezza sistematico tra i gruppi è una questione di equità — nessun dato è esposto, quindi non è privacy e sicurezza."
  },
  "rai-009": {
-  "label": "Uno strumento di assunzione classifica i candidati di determinate università più in basso indipendentemente dalle loro qualifiche effettive, svantaggiando sistematicamente un pool di candidati",
-  "why": "Una variabile proxy (università) che produce uno svantaggio coerente per un gruppo di candidati è equità, anche se nessun attributo demografico è usato direttamente."
+  "label": "Un modello di screening dei curriculum penalizza chiunque abbia un periodo di inattività lavorativa, il che in pratica colpisce soprattutto i genitori che rientrano dopo un periodo di cura dei figli",
+  "why": "Una variabile proxy (i periodi di inattività lavorativa) che produce uno svantaggio costante per un gruppo di candidati è una questione di equità, anche se nessun attributo demografico viene usato direttamente."
  },
  "rai-010": {
   "label": "Confronta il tasso di errore e il tasso di approvazione del modello fianco a fianco tra i gruppi demografici prima che venga distribuito",
   "why": "Le valutazioni di equità sono la scheda leva Azure per l'equità — distinte dai filtri di contenuti (affidabilità e sicurezza) o dai log di audit (responsabilità)."
  },
  "rai-011": {
-  "label": "Una pipeline di moderazione a volte perde contenuti dannosi e occasionalmente blocca contenuti che in realtà sono sicuri",
-  "why": "La qualità della rilevazione incoerente in condizioni normali di funzionamento è un problema di prestazioni, non uno di esposizione di dati o divulgazione — è affidabilità e sicurezza."
+  "label": "Un modello di estrazione dati dalle fatture legge correttamente i totali sulle scansioni pulite, ma restituisce importi errati ogni volta che una pagina è leggermente inclinata",
+  "why": "Una qualità dell’output incoerente in normali condizioni operative è un problema di prestazioni, non di esposizione o divulgazione dei dati — si tratta di affidabilità e sicurezza."
  },
  "rai-012": {
   "label": "Uno strumento IA che riepiloga note mediche per i clinici deve comportarsi prevedibilmente anche su input insolito o edge case, poiché le decisioni cliniche dipendono da esso",
@@ -60,11 +60,11 @@
   "why": "I dati personali che fluiscono attraverso i prompt sono un rischio di esposizione di dati, mitigato dalla redazione e dal controllo di accesso — la preoccupazione definente della privacy e della sicurezza."
  },
  "rai-016": {
-  "label": "Un'applicazione IA elabora documenti HR dei dipendenti e il team deve ridurre il rischio che questi dati si diffondano a parti non autorizzate",
+  "label": "Un chatbot per le buste paga legge cedolini e coordinate bancarie, e chi lo sviluppa deve garantire che solo il personale autorizzato possa mai vedere quei dati",
   "why": "Limitare chi può accedere ai dati sensibili archiviati è privacy e sicurezza, non responsabilità — la responsabilità riguarda la proprietà delle decisioni, non il controllo di accesso."
  },
  "rai-017": {
-  "label": "Una scuola prevede di rilasciare un tutor IA che elabora conversazioni private degli studenti e deve rivedere come questi dati vengono archiviati e protetti prima del rollout ampio",
+  "label": "Un’app di fitness sta aggiungendo un coach basato sull’IA che legge i diari di salute degli iscritti, e prima del lancio il team deve verificare come sono cifrati quei diari e chi può aprirli",
   "why": "La revisione dello stoccaggio e della protezione dei dati delle conversazioni personali prima del rilascio è una revisione di privacy e sicurezza, distinta da una revisione di trasparenza sulle capacità divulgate."
  },
  "rai-018": {
@@ -76,7 +76,7 @@
   "why": "Il design per una gamma di lingue e dispositivi in modo che tutti possano usare il sistema è inclusività — la preoccupazione è chi può accedere al sistema, non chi ha punteggi diversi."
  },
  "rai-020": {
-  "label": "Un assistente di traduzione presume che tutti gli utenti riescono a sentire chiaramente le risposte audio, ignorando le persone con disabilità uditiva",
+  "label": "Un chatbot bancario si può usare solo con il mouse, escludendo i clienti che si affidano a screen reader o alla sola navigazione da tastiera",
   "why": "Un divario nel design accessibile che esclude gli utenti con una disabilità è inclusività, non equità — l'equità riguarda i risultati del modello differenziale tra i gruppi, non il design usabile."
  },
  "rai-021": {
@@ -84,8 +84,8 @@
   "why": "Il supporto per ambienti fisici e esigenze di interazione variati in modo che il chiosco rimanga usabile per tutti è inclusività."
  },
  "rai-022": {
-  "label": "Un'app IA abilitata per la voce è migliorata in modo che funzioni meglio per persone con accenti diversi, abilità fisiche e esigenze di interazione",
-  "why": "L'allargamento di chi il sistema serve bene, attraverso accenti e abilità, è la definizione diretta di inclusività."
+  "label": "L’assistente audioguida di un museo viene riaddestrato sui dialetti regionali e dotato di una modalità a caratteri grandi con tocco per parlare, così che più visitatori possano usarlo comodamente",
+  "why": "Ampliare le persone che il sistema serve bene, tra dialetti e abilità diverse, è la definizione stessa di inclusività."
  },
  "rai-023": {
   "label": "Gli utenti vengono informati in anticipo che stanno parlando con un assistente IA, non un umano, prima che inizi la conversazione",

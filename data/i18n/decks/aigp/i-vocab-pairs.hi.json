@@ -3,7 +3,7 @@
   "a.text": "एक vision system classify करता है correctly adversarially perturbed images पर।",
   "a.why": "Withstanding hostile या novel input जबकि maintain करते हुए accuracy और functionality है यह side का पूरा काम — model कभी नहीं छोड़ता अपनी normal performance band को।",
   "b.text": "Degraded sensor inputs के बाद, system return करता है अपनी specified performance limits को।",
-  "b.why": "Maintaining performance within defined acceptable limits despite real-world या adversarial conditions, और recovering करना उनको, और दूसरा half — एक system हो सकता है resilient बिना कभी face किए deliberate attack को।"
+  "b.why": "यह पक्ष बताता है कि किसी व्यवधान के बाद — चाहे वह कठोर वास्तविक परिस्थितियों से हो या किसी हमले से — system अपनी तय operating range में वापस लौट आए; कोई system कभी जानबूझकर किए गए हमले का सामना किए बिना भी resilient हो सकता है।"
  },
  "i-vp-02": {
   "a.text": "एक synthetic audio clip एक public official का fabricate होता है और spread होता है deliberately goal के साथ harm करने की।",
@@ -14,7 +14,7 @@
  "i-vp-03": {
   "a.text": "Large numbers fake, low-fare rides को inject किया जाता है एक fare-prediction model के training dataset में एक source से।",
   "a.why": "Corrupting क्या model learn करता है, से पहले यह ever deployed है एक training-time attack — दूसरा side होता है एक बार model already live है।",
-  "b.text": "एक malicious user craft करता है input data जो trick करता है एक already-deployed triage model को को label करने के लिए urgent cases को non-urgent की तरह।",
+  "b.text": "एक spam filter के live होने के कुछ हफ़्ते बाद, एक attacker phishing emails में अदृश्य characters घुसा देता है ताकि filter उन्हें safe आँके।",
   "b.why": "Fooling एक live model outputs को crafted inputs के साथ inference time पर है दूसरा half pair के — model training data कभी नहीं था touched।"
  },
  "i-vp-04": {
@@ -37,7 +37,7 @@
  },
  "i-vp-07": {
   "a.text": "एक radiologist stop करता है double-check एक scan-triage tool के low-risk calls को months के बाद accurate flags, और start करता है sign off जो यह label करता है benign को।",
-  "a.why": "Over-reliance एक AI outputs पर without critical human oversight है यह side mechanism — एक human failure को keep checking, flaw नहीं बेक किया गया data में।",
+  "a.why": "यहाँ mechanism यह है कि कोई व्यक्ति tool के जवाबों पर इतना भरोसा करने लगता है कि उन्हें परखना ही बंद कर देता है — यह जाँचते रहने में इंसानी चूक है, data में बसी कोई खामी नहीं।",
   "b.text": "एक hiring tool trained past hiring records पर reject करता है more candidates को minority groups से, क्योंकि वह records पहले से reflect किए गए कौन को hire किया गया था।",
   "b.why": "Flaw inherited है training data से खुद, carry forward करते हुए patterns एक discriminatory past से — distinct over-trusting tool को एक बार यह already deployed है।"
  },

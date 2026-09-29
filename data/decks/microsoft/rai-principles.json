@@ -10,7 +10,7 @@
  "note": "Several cards look like they could fit two zones. The tie-break is always the one thing the scenario is actually about — differential outcome, system behavior, data exposure, usability, disclosure, or ownership.",
  "traps": [
   "Requiring a single interaction method for all users is the planted anti-inclusiveness answer.",
-  "Treating the AI system as the final authority for decisions that affect people's lives is the planted anti-accountability answer — human oversight must stay in the loop.",
+  "Letting the model make consequential calls about people with no one able to review or overturn them is the planted anti-accountability answer — human oversight must stay in the loop.",
   "Claiming that hiding a model's limitations protects users is the planted anti-transparency answer — transparency means disclosing capabilities and limitations, not concealing them."
  ],
  "zones": [
@@ -55,23 +55,23 @@
   },
   {
    "id": "rai-007",
-   "label": "A recruiting model consistently scores candidates from one age group lower than others, even when their qualifications are comparable",
+   "label": "A credit-card model offers women noticeably lower spending limits than men who have the same income and repayment history",
    "answer": "Fairness",
-   "why": "Unequal scoring by a protected attribute despite equal qualifications is a differential-outcome problem, not an access problem — that makes it fairness, not inclusiveness.",
+   "why": "Unequal treatment by a protected attribute despite equivalent financial profiles is a differential-outcome problem, not an access problem — that makes it fairness, not inclusiveness.",
    "citation": "AI-901 study guide Task 1.1 · Microsoft responsible AI principles (Microsoft Learn) — Fairness"
   },
   {
    "id": "rai-008",
-   "label": "A facial-recognition model trained on a dataset with far fewer images of one ethnic group produces a much higher error rate for that group",
+   "label": "A voice-login feature rejects speakers with strong regional accents several times as often as others, because recordings of those accents were scarce when it was built",
    "answer": "Fairness",
    "why": "Underrepresentation in training data driving a systematic accuracy gap between groups is a fairness issue — no data is exposed, so it is not privacy & security.",
    "citation": "AI-901 study guide Task 1.1 · Microsoft responsible AI principles (Microsoft Learn) — Fairness"
   },
   {
    "id": "rai-009",
-   "label": "A hiring tool ranks candidates from certain universities lower regardless of their actual qualifications, systematically disadvantaging one applicant pool",
+   "label": "A résumé-screening model marks down anyone with a gap in their work history, which in practice mostly penalizes parents returning from caregiving",
    "answer": "Fairness",
-   "why": "A proxy variable (university) producing a consistent disadvantage for one group of applicants is fairness, even though no demographic attribute is used directly.",
+   "why": "A proxy feature (employment gaps) producing a consistent disadvantage for one group of applicants is fairness, even though no demographic attribute is used directly.",
    "citation": "AI-901 study guide Task 1.1 · Microsoft responsible AI principles (Microsoft Learn) — Fairness"
   },
   {
@@ -90,9 +90,9 @@
   },
   {
    "id": "rai-011",
-   "label": "A moderation pipeline sometimes misses harmful content and occasionally blocks content that is actually safe",
+   "label": "An invoice-extraction model reads totals correctly on clean scans but returns wrong amounts whenever a page is slightly tilted",
    "answer": "Reliability & safety",
-   "why": "Inconsistent detection quality under normal operating conditions is a performance problem, not a data-exposure or disclosure one — that is reliability & safety.",
+   "why": "Inconsistent output quality under ordinary operating conditions is a performance problem, not a data-exposure or disclosure one — that is reliability & safety.",
    "citation": "AI-901 study guide Task 1.1 · Microsoft responsible AI principles (Microsoft Learn) — Reliability & safety"
   },
   {
@@ -132,14 +132,14 @@
   },
   {
    "id": "rai-016",
-   "label": "An AI assistant processes employee HR documents, and the team must reduce the risk that this data leaks to unauthorized parties",
+   "label": "A payroll chatbot reads salary slips and bank details, and the builders must make sure only authorised staff can ever see those records",
    "answer": "Privacy & security",
    "why": "Restricting who can access sensitive stored data is privacy & security, not accountability — accountability is about ownership of decisions, not access control.",
    "citation": "AI-901 study guide Task 1.1 · Microsoft responsible AI principles (Microsoft Learn) — Privacy & security"
   },
   {
    "id": "rai-017",
-   "label": "A school plans to release an AI tutor that processes private student conversations and must review how that data is stored and protected before broad rollout",
+   "label": "A fitness app is adding an AI coach that reads members' health logs, and the team must confirm how those logs are encrypted and who can open them before launch",
    "answer": "Privacy & security",
    "why": "Reviewing storage and protection of personal conversation data before release is a privacy & security review, distinct from a transparency review of disclosed capabilities.",
    "citation": "AI-901 study guide Task 1.1 · Microsoft responsible AI principles (Microsoft Learn) — Privacy & security"
@@ -167,7 +167,7 @@
   },
   {
    "id": "rai-020",
-   "label": "A translation assistant assumes all users can hear audio responses clearly, ignoring people with hearing impairments",
+   "label": "A banking chatbot can only be operated with a mouse, leaving out customers who rely on screen readers or keyboard-only navigation",
    "answer": "Inclusiveness",
    "why": "An accessible-design gap that shuts out users with a disability is inclusiveness, not fairness — fairness is about differential model outcomes across groups, not usable design.",
    "citation": "AI-901 study guide Task 1.1 · Microsoft responsible AI principles (Microsoft Learn) — Inclusiveness"
@@ -181,9 +181,9 @@
   },
   {
    "id": "rai-022",
-   "label": "A voice-enabled AI app is improved so it works better for people with different accents, physical abilities, and interaction needs",
+   "label": "A museum's audio-guide assistant is retrained on regional dialects and given a large-text, tap-to-talk mode so more visitors can use it comfortably",
    "answer": "Inclusiveness",
-   "why": "Widening who the system serves well, across accents and abilities, is the direct definition of inclusiveness.",
+   "why": "Widening who the system serves well, across dialects and abilities, is the direct definition of inclusiveness.",
    "citation": "AI-901 study guide Task 1.1 · Microsoft responsible AI principles (Microsoft Learn) — Inclusiveness"
   },
   {

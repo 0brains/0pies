@@ -4,7 +4,7 @@
   "why": "histack's exact exam cue: 'consistent, repeatable output' → low temperature. It rescales the whole probability distribution; tune it or top_p, not both."
  },
  "pd-002": {
-  "label": "Restrict sampling to the smallest set of tokens whose cumulative probability reaches a set threshold",
+  "label": "Only sample from the top-ranked tokens until their combined probability adds up to a chosen cutoff",
   "why": "Nucleus sampling — top_p truncates the candidate set, while temperature reshapes the whole distribution (corpus confused-pair #5)."
  },
  "pd-003": {
@@ -64,8 +64,8 @@
   "why": "PTU is the reserved-capacity deployment model; Standard shares capacity and bills per token with variable throughput, while Capacity (TPM) merely sets the quota on whichever deployment type is chosen."
  },
  "pd-017": {
-  "label": "Traffic to the customer-support app is unpredictable and bursty, and the team wants pay-per-token billing instead of hourly reserved capacity",
-  "why": "Pay-per-token pricing under variable load is Standard deployment (the exam's exact scenario); PTU instead bills hourly for reserved capacity regardless of actual usage."
+  "label": "A festival ticketing assistant idles for weeks then gets sudden rushes, and finance wants to be charged only for tokens consumed, never for throughput held around the clock",
+  "why": "Pay-per-token pricing under variable load is Standard deployment; PTU instead bills hourly for reserved capacity regardless of actual usage."
  },
  "pd-018": {
   "label": "Bills per token consumed rather than per hour of reserved compute, with throughput that can vary under shared load",

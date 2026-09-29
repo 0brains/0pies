@@ -4,7 +4,7 @@
   "why": "AIProjectClient(endpoint, credential) là điểm nhập dự án; get_openai_client() treo khỏi nó — loại bỏ auth và đây là dòng bị gián đoạn."
  },
  "sw-002": {
-  "label": "Gửi danh sách tin nhắn tới một mô hình được triển khai và trả về choices[0].message.content",
+  "label": "Với tên deployment và một mảng tin nhắn gồm system và user, trả về câu trả lời mà sau đó bạn đọc ra từ choices[0].message.content",
   "why": "chat.completions.create(model=DEPLOYMENT_NAME, messages=[…]) là cuộc gọi trò chuyện — và model= lấy tên triển khai, không phải tên mô hình cơ sở (histack bẫy #5)."
  },
  "sw-003": {
@@ -40,8 +40,8 @@
   "why": "Quickstart ghép az login với đối tượng thông tin đăng nhập này; get_openai_client chỉ trả về khách hàng trò chuyện và không có liên quan gì đến xác thực."
  },
  "sw-011": {
-  "label": "Gói pip bạn cài đặt trước khi viết bất kỳ mã khách hàng dự án Foundry, mỗi theo lệnh thiết lập quickstart đầu tiên",
-  "why": "\"Bạn nên cài đặt gói nào cho khách hàng dự án?\" là thân cây bài thi cổ điển — câu trả lời là azure-ai-projects, không phải các SDK tìm kiếm hoặc ngôn ngữ."
+  "label": "Lệnh đầu tiên trong một môi trường ảo mới, trước khi bất kỳ đoạn mã nào có thể mở kết nối tới một dự án Foundry",
+  "why": "Client của dự án Foundry nằm trong azure-ai-projects — một tên gói thường được kiểm tra; các SDK search và language là những phương án gây nhiễu quen thuộc."
  },
  "sw-012": {
   "label": "Được liệt kê cạnh az login trong các bước thiết lập quickstart, ghim vào phiên bản tối thiểu (>=2.0.0) trước khi bất kỳ mã khách hàng nào chạy",
@@ -56,7 +56,7 @@
   "why": "Phân tích cảm tính và trích xuất cụm từ khóa là các phương thức phân tích văn bản Ngôn ngữ AI trên khách hàng này; hai khách hàng khác hoạt động trên các tài liệu đa phương thức hoặc âm thanh trực tiếp, không phải văn bản thuần túy."
  },
  "sw-015": {
-  "label": "Đặt để nghe từ micrô mặc định của máy tính thay vì một tệp đã lưu, sau đó được trao cho công nhân nhận dạng làm nguồn âm thanh của nó",
+  "label": "Được khởi tạo với use_default_microphone=True để một kiosk thu giọng nói trực tiếp, rồi được truyền vào hàm khởi tạo của recognizer làm đầu vào của nó",
   "why": "AudioConfig(use_default_microphone=True) chọn thiết bị đầu vào; SpeechConfig thay vào đó giữ khóa đăng ký/vùng, và SpeechRecognizer là lớp đối tượng này được chuyển vào, không phải bộ chọn thiết bị."
  },
  "sw-016": {
@@ -88,8 +88,8 @@
   "why": "Phương thức phân tích theo URL của khách hàng Vision này trả về các tính năng được xây dựng sẵn cố định như chú thích và đọc; nó không có bước bình chọn và không liên quan gì đến chụp giọng nói."
  },
  "sw-023": {
-  "label": "Khách hàng mà một ứng dụng tạo trước tiên khi nó sẽ gửi URL tài liệu để trích xuất và đọc các kết quả có cấu trúc trở lại",
-  "why": "\"Khách hàng nào ứng dụng nên tạo trước tiên?\" đối với ứng dụng Content Understanding là lớp này — hai khách hàng khác là các dịch vụ riêng biệt có các điểm cuối riêng biệt cho văn bản thuần túy và hình ảnh chung tương ứng."
+  "label": "Một ứng dụng xử lý yêu cầu bồi thường sẽ chuyển các PDF hợp đồng bảo hiểm đã quét cho một analyzer tùy chỉnh và đọc lại giá trị các trường — đây là đối tượng nó khởi tạo trước mọi thứ khác",
+  "why": "Công việc với Content Understanding bắt đầu từ lớp này — hai lớp kia là các dịch vụ riêng biệt với endpoint riêng, lần lượt dành cho văn bản thuần và hình ảnh thông thường."
  },
  "sw-024": {
   "label": "Cuộc gọi phân tích chạy lâu dài của nó trả về một poller; gọi.result() trên poller đó là cách ứng dụng chờ đầu ra được trích xuất cuối cùng",
@@ -100,7 +100,7 @@
   "why": "Triển khai GPT-image-1 trả về các byte hình ảnh được tạo trong response.data[0].b64_json; cuộc gọi hoàn thành trả về các lựa chọn văn bản, và khách hàng Vision chỉ phân tích một hình ảnh đã tồn tại."
  },
  "sw-026": {
-  "label": "Đặt nền thành trong suốt và yêu cầu đầu ra PNG trên yêu cầu text-to-image này để nhận được nền xuyên thấu",
+  "label": "Một công cụ tạo hình cho cửa hàng sticker cần ảnh cắt rời không có gì phía sau, nên lệnh gọi này truyền background=transparent cùng output_format=png",
   "why": "Nền trong suốt cộng với đầu ra PNG là các tham số tạo series GPT-image-1; không có gì trong phân tích hình ảnh hoặc cuộc gọi hoàn thành nhận chúng."
  }
 }

@@ -3,7 +3,7 @@
   "a.text": "Un sistema di visione mantiene la classificazione corretta su immagini perturbate avversarialmente.",
   "a.why": "Il resistere all'input ostile o nuovo mentre si mantiene l'accuratezza e la funzionalità è il lavoro intero di questo lato — il modello non lascia mai mai la sua banda di prestazioni normale.",
   "b.text": "Dopo gli input dei sensori degradati, il sistema ritorna ai suoi limiti di prestazioni specificati.",
-  "b.why": "Mantenere le prestazioni entro i limiti accettabili definiti nonostante le condizioni del mondo reale o avversariali, e recuperare ad essi, è l'altra metà — un sistema può essere resiliente senza mai affrontare un attacco deliberato."
+  "b.why": "Questo lato descrive la capacità di tornare al proprio intervallo operativo previsto dopo una perturbazione — che derivi da condizioni reali difficili o da un attacco; un sistema può essere resiliente senza mai subire un attacco deliberato."
  },
  "i-vp-02": {
   "a.text": "Una clip audio sintetica di un funzionario pubblico viene fabbricata e diffusa con l'obiettivo deliberato di causare danni.",
@@ -14,7 +14,7 @@
  "i-vp-03": {
   "a.text": "Grandi numeri di falsi, ride a basso costo vengono iniettati nel dataset di addestramento del modello di previsione delle tariffe da una fonte.",
   "a.why": "Corrompere ciò da cui il modello impara, prima di essere mai distribuito, è un attacco in tempo di addestramento — l'altro lato accade dopo che il modello è già in diretta.",
-  "b.text": "Un utente malvagio crea dati di input che ingannano un modello di triage già distribuito nel segnalare i casi urgenti come non urgenti.",
+  "b.text": "Settimane dopo la messa in esercizio di un filtro antispam, un attaccante infarcisce le email di phishing di caratteri invisibili così che il filtro le valuti come sicure.",
   "b.why": "Ingannare i risultati di un modello live con input realizzati al tempo di inferenza è l'altra metà della coppia — i dati di addestramento del modello non sono mai stati toccati."
  },
  "i-vp-04": {
@@ -37,7 +37,7 @@
  },
  "i-vp-07": {
   "a.text": "Un radiologo smette di doppio-controllo delle basse-rischio chiama di uno strumento di triage di scansione dopo mesi di flag accurati, e inizia a firmare tutto ciò che etichetta benigno.",
-  "a.why": "L'over-affidamento sugli output di IA senza revisione critica umana è il meccanismo di questo lato — un fallimento umano di continuare a controllare, non un difetto incorporato nei dati.",
+  "a.why": "Il meccanismo qui è una persona che si fida così tanto delle risposte dello strumento da smettere di esaminarle con attenzione — una mancanza umana nel continuare a verificare, non un difetto insito nei dati.",
   "b.text": "Uno strumento di assunzione addestrato sui passati record di assunzione rifiuta più candidati da gruppi di minoranza, perché quei record già riflettevano chi è stato assunto prima.",
   "b.why": "Il difetto è ereditato dai dati di addestramento stesso, portando avanti modelli da un passato discriminatorio — distinto dall'over-trusting di uno strumento output una volta che è già distribuito."
  },

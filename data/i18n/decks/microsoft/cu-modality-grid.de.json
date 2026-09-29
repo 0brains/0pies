@@ -30,7 +30,7 @@
   "why": "Layout extrahiert Text, Tabellen, Auswahlmarken und Struktur; Read-artiges OCR ist nur Text — Histack's CU Read-vs-Layout Unterscheidung."
  },
  "cu-007": {
-  "label": "Eine gemischte Charge von Vendor-Formularen muss ihre lose Key-Value-Paare extrahiert bekommen, ohne aus einem vordefinierten Feldschema zu starten",
+  "label": "Ein Versicherer erhält Schadenunterlagen von Dutzenden Maklern, jeweils anders aufgebaut, und will alle beschrifteten Felder erfassen, die darin vorkommen — ohne vorab eine Feldliste zu entwerfen",
   "sub": "prebuilt-documentFields",
   "why": "prebuilt-documentFields extrahiert allgemeine Key-Value-Paare aus Dokumenten ohne domain-spezifisches Schema erforderlich — anders als prebuilt-invoice's fixe Invoice-Felder."
  },
@@ -50,7 +50,7 @@
   "why": "Custom Image Analyzer setzen base_analyzer_id auf prebuilt-image, bevor sie ein Feldschema überlagern — das dokumentierte Muster für Chart- und Screenshot-Extraktion."
  },
  "cu-011": {
-  "label": "Analysiere Regalbrett-Fotos aus einem Einzelhandels-Audit und gib strukturierte Felder für Produktanzahl, Marken-Präsenz und Ausverkauft-Indikatoren zurück",
+  "label": "Fotos von Ladenregalen aus einem Einzelhandels-Audit in strukturierte Felder umwandeln: wie viele Produkte sichtbar sind, welche Marken vorkommen und ob Regalplätze leer sind",
   "sub": "prebuilt-image",
   "why": "Content Understanding's Image Analyzer geben schema-definierte strukturierte Felder direkt aus Fotos zurück — das Einzelhandels-Regalbrett-Szenario, das die Prüfung direkt testet."
  },
@@ -60,7 +60,7 @@
   "why": "Das begin_analyze(analyzer_id=..., inputs=[AnalysisInput(url=...)])-Aufrufsformat ist über Modalitäten hinweg identisch — nur die Analyzer-ID ändert sich, und prebuilt-image ist der direkte (nicht-Search) Image-Analyzer."
  },
  "cu-013": {
-  "label": "Verkabele einen leichtgewichtigen Python-Client, der begin_analyze mit einer Call-Recording-URL aufruft, um ein Transkript und eine Zusammenfassung auszuziehen, die für einen Retrieval Index bereit sind",
+  "label": "Ein Podcast-Netzwerk übermittelt Episodenlinks über das SDK und möchte den gesprochenen Text plus eine Zusammenfassung zurückbekommen, bereits passend aufbereitet für einen RAG-Suchindex",
   "sub": "prebuilt-audioSearch",
   "why": "prebuilt-audioSearch ist die dokumentierte Analyzer-ID im SDK's Quickstart-Snippet — das *Search-Suffix kennzeichnet Ausgabe, vorbereitet für Indizierung/RAG-Retrieval, anders als prebuilt-audio's direkte Extraktion ohne Retrieval-Vorbereitung."
  },

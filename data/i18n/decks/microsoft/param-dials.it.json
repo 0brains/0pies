@@ -4,7 +4,7 @@
   "why": "L'indizio esatto dell'esame di histack: 'output coerente e ripetibile' → bassa temperatura. Ridimensiona l'intera distribuzione di probabilità; metti a punto la temperatura o top_p, non entrambi."
  },
  "pd-002": {
-  "label": "Limita il campionamento al più piccolo set di token la cui probabilità cumulativa raggiunge una soglia fissa",
+  "label": "Campionare solo tra i token in cima alla classifica finché la loro probabilità cumulata non raggiunge una soglia scelta",
   "why": "Nucleus sampling — top_p tronca il set di candidati, mentre la temperatura ridimensiona l'intera distribuzione (coppia confusa del corpus #5)."
  },
  "pd-003": {
@@ -64,8 +64,8 @@
   "why": "PTU è il modello di distribuzione a capacità riservata; la distribuzione standard condivide la capacità e fattura per token con throughput variabile, mentre la capacità (TPM) semplicemente imposta la quota su qualunque tipo di distribuzione sia scelto."
  },
  "pd-017": {
-  "label": "Il traffico verso l'app di supporto clienti è imprevedibile e a raffica, e il team vuole fatturazione pay-per-token invece di capacità oraria riservata",
-  "why": "La fatturazione pay-per-token sotto carico variabile è la distribuzione standard (lo scenario esatto dell'esame); PTU invece fattura orariamente per capacità riservata indipendentemente dall'uso effettivo."
+  "label": "Un assistente per la biglietteria di un festival resta inattivo per settimane e poi riceve picchi improvvisi, e l’amministrazione vuole pagare solo i token consumati, mai una capacità di throughput riservata 24 ore su 24",
+  "why": "Il pagamento a token con carico variabile corrisponde al deployment Standard; PTU invece fattura a ore la capacità riservata indipendentemente dall’uso effettivo."
  },
  "pd-018": {
   "label": "Fattura per token consumato piuttosto che per ora di calcolo riservato, con throughput che può variare sotto carico condiviso",

@@ -28,9 +28,9 @@
   "why": "Cloud is the right call for scale without infrastructure ownership — but \"the provider owns security now\" is the trap: under the shared-responsibility model, the deploying organization still answers for its own data, and a single misconfiguration on the customer's side can still cause a breach."
  },
  "iv-dm-06": {
-  "label": "Multilingual chat kiosks at border checkpoints have limited connectivity and limited power, and responses must stay near-instant.",
+  "label": "Handheld translators carried by mountain rescue teams run on batteries, rarely find a signal, and have to answer on the spot.",
   "sub": "No Server, No Wait",
-  "why": "Running the model on the device itself removes the dependency on an external connection these checkpoints can't reliably guarantee. What that choice costs you: pushing inference to the edge trades away centralized drift-detection tooling, so a fleet of devices can quietly drift out of spec with no single dashboard to catch it."
+  "why": "Running the model on the device itself removes the dependency on an external connection these rescue teams can't reliably guarantee. What that choice costs you: pushing inference to the edge trades away centralized drift-detection tooling, so a fleet of devices can quietly drift out of spec with no single dashboard to catch it."
  },
  "iv-dm-07": {
   "label": "A small proprietary model retrains continuously on a live content stream and must keep scoring photos locally across thousands of storefronts, with no network round-trip.",

@@ -4,7 +4,7 @@
   "why": "AIProjectClient(endpoint, credential)는 프로젝트 진입점이며, get_openai_client()는 그것에 달려 있어요. 인증을 제거하면 이 줄이 망가져요."
  },
  "sw-002": {
-  "label": "메시지 목록을 배포된 모델로 보내고 choices[0].message.content를 반환해요.",
+  "label": "배포 이름과 시스템 메시지와 사용자 메시지로 이루어진 배열을 받아 응답을 반환하며, 그 응답은 choices[0].message.content에서 읽어요",
   "why": "chat.completions.create(model=DEPLOYMENT_NAME, messages=[…])는 chat call이며, model=는 기본 모델 이름이 아닌 배포 이름을 사용해요(histack trap #5)."
  },
  "sw-003": {
@@ -40,8 +40,8 @@
   "why": "quickstart가 az login을 이 자격증명 객체와 쌍을 이루며. get_openai_client는 chat 클라이언트만 반환하며 인증과 아무 관계가 없어요."
  },
  "sw-011": {
-  "label": "quickstart의 매우 첫 설정 명령어에 따라 모든 Foundry 프로젝트 클라이언트 코드를 작성하기 전에 설치하는 pip 패키지예요.",
-  "why": "\"Which package should you install for the project client?\"은 고전적인 시험 stem이며, 답변은 azure-ai-projects이지 search 또는 language SDK가 아니에요."
+  "label": "새 가상 환경에서 실행하는 첫 번째 명령으로, 어떤 코드든 Foundry 프로젝트에 연결을 열기 전에 실행해요",
+  "why": "Foundry 프로젝트 클라이언트는 azure-ai-projects에 있어요. 자주 출제되는 패키지 이름이며, 검색 및 언어 SDK가 흔한 오답 선택지예요."
  },
  "sw-012": {
   "label": "quickstart 설정 단계에서 az login과 함께 나열되며, 모든 클라이언트 코드가 실행되기 전에 최소 버전(>=2.0.0)으로 고정되어요.",
@@ -56,7 +56,7 @@
   "why": "Sentiment 및 key-phrase 추출은 이 클라이언트의 AI Language text-analytics 메서드예요. 다른 두 개는 multimodal 문서나 live audio에서 작동하며, plain text가 아니에요."
  },
  "sw-015": {
-  "label": "저장된 파일 대신 컴퓨터의 기본 마이크에서 listen하도록 설정한 후, 그것을 recognizer에 audio 원본으로 전달해요.",
+  "label": "use_default_microphone=True로 생성해 키오스크가 실시간 음성을 받아들이게 한 다음, 인식기 생성자에 입력으로 전달돼요",
   "why": "AudioConfig(use_default_microphone=True)는 input device를 선택해요. SpeechConfig는 subscription key/region을 보유하며, SpeechRecognizer는 이 객체가 전달되는 클래스이지 device selector 자체가 아니에요."
  },
  "sw-016": {
@@ -88,8 +88,8 @@
   "why": "이 Vision 클라이언트의 by-URL 분석 메서드는 caption 및 read와 같은 고정된 prebuilt features를 반환해요. 이것은 polling step이 없으며 speech 캡처와 전혀 무관해요."
  },
  "sw-023": {
-  "label": "앱이 document URL을 추출을 위해 보낼 때, 그리고 구조화된 결과를 back으로 읽을 때 처음 생성하는 클라이언트예요.",
-  "why": "\"Which client should the app create first?\"는 Content Understanding 앱의 경우 이 클래스이며. 다른 두 개는 plain text와 general images를 위해 별도의 서비스이고 별도의 엔드포인트를 가져요."
+  "label": "보험 청구 앱이 스캔한 보험 증권 PDF를 사용자 지정 분석기에 넘기고 필드 값을 다시 읽어 와요. 그 앱이 가장 먼저 생성하는 객체",
+  "why": "Content Understanding 작업은 이 클래스에서 시작해요. 나머지 두 개는 각각 일반 텍스트와 일반 이미지를 위한 별도 엔드포인트를 가진 별개의 서비스예요."
  },
  "sw-024": {
   "label": "long-running analyze call은 poller를 반환해요. 그 poller에 .result()를 호출하는 것이 앱이 최종 추출된 output을 대기하는 방법이에요.",
@@ -100,7 +100,7 @@
   "why": "GPT-image-1 deployment는 response.data[0].b64_json에 생성된 image bytes를 반환해요. completions call은 text choices를 반환하며, Vision 클라이언트는 이미 존재하는 image만 분석해요."
  },
  "sw-026": {
-  "label": "transparent background를 설정하고 이 text-to-image request에 PNG output을 요청해 see-through background를 얻어요.",
+  "label": "스티커 숍 생성기가 배경이 없는 컷아웃 아트를 필요로 해서, 이 호출은 background=transparent와 output_format=png를 전달해요",
   "why": "Transparent background plus PNG output은 GPT-image-1-series generation 파라미터예요. Vision analysis 또는 chat-completion call에서는 아무 것도 이를 허용하지 않아요."
  }
 }

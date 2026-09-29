@@ -1,0 +1,656 @@
+{
+ "sc-role-ai": {
+  "definition": "You work the newest and least settled surface: agents with their own identities, copilots with reach into everything their user can see, models behind gateways. Your nights tilt toward blast radius — what an agent could touch, not what it did."
+ },
+ "sc-role-data": {
+  "definition": "You work where the data sits and how it travels: account keys and signatures, public endpoints, firewall rules, the private link somebody never finished. Your nights tilt toward exposure that was configured, not breached."
+ },
+ "sc-role-detection": {
+  "definition": "You work the telemetry: what is collected, what it costs, what fires and what stays quiet. Your nights tilt toward the gap between an event happening and anyone finding out."
+ },
+ "sc-role-identity": {
+  "definition": "You work the sign-in plane: tokens, factors, eligible assignments, the quiet accumulation of standing rights nobody reviews. Nights on your watch tilt toward stolen credentials and privilege that outlived its reason, because that is the traffic you can actually read."
+ },
+ "watch-floor": {
+  "prompt": "Twelve desks, one fifteen-hour watch. Pick your specialty and rack two tools — every desk shows its price before you touch it, and every miss becomes a live incident you have to contain.",
+  "legend[0].label": "Tier 1 — single-service desks",
+  "legend[1].label": "Tier 2 — cross-service desks",
+  "legend[2].label": "Tier 3 — the desks that page you"
+ },
+ "wf-11-01": {
+  "why": "PIM gives delegated approvers 24 hours to act; after that the eligible user has to submit a fresh request, and the 24-hour window is not a configurable setting, so the only real fix is more approvers on the rota. The nearest wrong answer, raising the maximum activation duration, controls how long the role stays usable once it is activated, not how long the approval request survives, so the request would still lapse unanswered."
+ },
+ "wf-11-02": {
+  "why": "PIM keeps audit data for 30 days and no longer; retaining it beyond that means shipping the Microsoft Entra logs into Azure storage using Azure Monitor before the evidence ages out. Access reviews are the closest tempting answer because they do generate a decision record, but they attest to whether an assignment is still needed rather than logging each individual activation, so they cannot reconstruct a year of role elevations."
+ },
+ "wf-11-03": {
+  "why": "Require multifactor authentication and Require authentication strength are unsupported together in the same policy, since the built-in Multifactor authentication strength is the exact equivalent of the MFA grant control. Choosing Require one of the selected controls is the nearest miss and is actively harmful reasoning: the restriction is on the pairing itself, not on the and/or combination logic, and an or would in any case let a weak password-plus-SMS sign-in through the door you were trying to harden."
+ },
+ "wf-11-04": {
+  "why": "The legacy authentication client types are Exchange ActiveSync clients and Other clients, and Other clients is the bucket holding SMTP, IMAP4, POP3, MAPI over HTTP, EWS, Autodiscover and Offline Address Book. Leaving the condition unconfigured is the trap: it is true that a new policy covers all client app types by default, but paired with Block access that would take out browsers and modern desktop clients too and shut the retailer out of its own mailboxes."
+ },
+ "wf-11-05": {
+  "why": "Report-only mode evaluates the policy against genuine sign-in traffic and records what would have happened without denying anyone, and Microsoft's guidance is to run each policy that way for at least a week before enforcing it. The What If tool is the closest wrong answer and is a fine companion, but it simulates a sign-in you describe by hand, so it only ever tells you about the scenarios you thought to type in, which is exactly the blind spot with unknown kiosks."
+ },
+ "wf-11-06": {
+  "why": "Settings are not synchronised between the Authentication methods policy, the legacy MFA policy and the legacy SSPR policy, and Microsoft Entra ID honours all three, so a method has to be disabled everywhere to be gone. That also explains the voice calls: the legacy SSPR Mobile phone option turns on text message and voice together. The 20 KB answer is a real limit and therefore tempting, but it blocks the save outright when a policy targets too many groups rather than quietly discarding one method."
+ },
+ "wf-11-07": {
+  "why": "Registering a passwordless method after signing in with a one-time pass has to be completed within 10 minutes, and that ten-minute clock is an MFA-during-registration rule, not something the pass lifetime governs. A multi-use pass sidesteps it because the timer effectively restarts when the user begins registering the new method. Extending the maximum lifetime is the near miss: it keeps the pass valid for longer but does nothing to the 10-minute registration limit that is actually failing."
+ },
+ "wf-11-08": {
+  "why": "Deleting an application object also deletes the service principal in its home tenant, and restoring the application through the App registrations experience brings back only the application object, so the local identity the tenant actually authenticates and authorises against is missing. Reissuing the client secret is the closest wrong answer and a natural reflex, but a fresh credential on an application object with no service principal still has nothing to sign in as. For a planned pause, deactivating the application preserves both objects instead."
+ },
+ "wf-11-09": {
+  "why": "The microsoft-user-default-low policy lets staff consent only where the app comes from a verified publisher or is registered in your own tenant, and only to delegated permissions you have classified as low impact, which is precisely the narrowed-but-not-closed posture asked for. The legacy built-in policy is the trap because its name suggests restriction: in fact it lets any user consent to whatever permission does not need an administrator, in any application, which is the setting they already have."
+ },
+ "wf-11-10": {
+  "why": "A user-assigned identity has a lifecycle independent of the compute, so its role assignment can be made ahead of deployment and the deployers only need permission to attach it; it also avoids the Microsoft Entra object creation rate limit that rapid system-assigned identity churn can trip, which surfaces as HTTP 429. The security-group variant is the closest wrong answer and fails for a subtler reason: group and role membership travels as claims in a token, and managed identity tokens are cached by the back-end for around 24 hours, so membership changes take hours to bite."
+ },
+ "wf-11-11": {
+  "why": "A Global Administrator or Privileged Role Administrator can remove the active assignment of a user who should not be active, which is the only one of these that ends privilege that is already in use; revoking sessions stops the token in the attacker's hand being replayed. Requiring approval is the closest wrong answer and is the right hardening later, but role settings govern the next activation, not the live one, and the attacker keeps working while you save the policy. Deleting the eligible assignment has the same flaw and can be refused outright, since an assignment cannot be removed within five minutes of being made."
+ },
+ "wf-11-12": {
+  "why": "Building an allowed-countries named location and blocking everything else is the documented pattern for organisations with a small geographic footprint, and it collapses the attack surface in one policy rather than chasing IP ranges. Excluding the emergency access accounts is not optional; they must sit outside every policy or you can lock yourself out mid-incident. Marking the attacker ranges as trusted is the nearest wrong answer and inverts the control: trusted locations relax requirements rather than deny, so it would help the attacker."
+ },
+ "wf-11-13": {
+  "why": "Grants shown on the User consent tab cannot be revoked from the portal at all; removing them means deleting the oAuth2PermissionGrant objects through Microsoft Graph or the equivalent PowerShell cmdlets, and disabling user sign-in to the app stops it acquiring anything new. The Admin consent tab is the closest wrong answer and is the one place the portal does let you revoke, but it only covers grants an administrator made for the whole organisation, which is not what happened here. Tightening the consent setting is worth doing afterwards and changes nothing today, because it affects only future consent operations."
+ },
+ "wf-11-14": {
+  "why": "Group and role membership arrives as claims inside the access token, and the back-end services for managed identities keep a per-resource cache for roughly 24 hours with no way to force a refresh, so a group removal can take hours to take effect. Acting on the role assignment held directly by the identity, and pulling the identity off the Logic App, cuts the path now. The one-hour token answer is the near miss: that is human user token behaviour, not the managed identity caching that applies here. Deleting the identity is also wrong on its own terms, since role assignments are not removed automatically when a managed identity is deleted."
+ },
+ "wf-11-15": {
+  "why": "Microsoft's deployment guidance is zero permanently active assignments for every role except the emergency access accounts, with Global Administrator protected by MFA, justification, approval and a short activation window. Putting the emergency accounts behind PIM as well is the closest wrong answer and is the classic self-inflicted outage, since those accounts exist precisely for when activation, approval or MFA is what has failed. Time-bound active assignments are also wrong here: the privilege still stands for three months, the only thing that expires is the assignment."
+ },
+ "wf-11-16": {
+  "why": "Tenant-wide admin consent lets every user in the organisation reach the app unless you restrict it, and the documented restriction is to require user assignment on the application and then assign the users or groups that should have it. Hiding the app from My Apps is the closest wrong answer because it looks like it limits reach, but visibility is cosmetic: anyone with a direct link or the client itself can still sign in, so the exposure is unchanged."
+ },
+ "wf-12-01": {
+  "why": "Only the Premium tier offers HSM-protected keys backed by FIPS 140-3 Level 3 validated hardware; the Standard tier encrypts using software cryptographic modules validated to FIPS 140 Level 1. The closest wrong answer is the Standard tier with an imported key: importing key material from your own HSM does not change the tier's protection level, and the key still lands in a software-protected slot. Purge protection and disk encryption are unrelated controls and speak to recoverability and workload encryption, not to where key material lives."
+ },
+ "wf-12-02": {
+  "why": "The soft-delete retention interval is chosen only at vault creation, may be set anywhere from 7 to 90 days, and cannot be altered afterwards, so a new vault is the only route to a different figure. The tempting wrong answer is the Update cmdlet, which happily changes many vault properties but not this one. Soft delete itself cannot be disabled once on, and Azure Policy can audit or require a setting on new vaults but cannot rewrite an immutable property on an existing one."
+ },
+ "wf-12-03": {
+  "why": "Key Vault Secrets User reads secret contents and nothing more, which is exactly the app's need under least privilege. Key Vault Reader is the nearest trap: it reads metadata about the vault and its objects but deliberately cannot read sensitive values, so the app would enumerate the secret and still fail on retrieval. Secrets Officer adds set and delete rights the app must not have, and Key Vault Contributor is a control-plane role that grants no data access at all."
+ },
+ "wf-12-04": {
+  "why": "Under the access policy model a holder of control-plane Contributor can simply write themselves an access policy and reach the data plane, which is precisely the escalation the audit found; moving the vault to Azure RBAC and trimming the assignment closes it. The near miss is Key Vault Contributor: that role does block data access on its own, but it still carries vault write permission, and while access policies remain the authorization system the escalation path is only narrowed, not removed. Deleting one policy entry leaves the engineer free to recreate it, and logging records the abuse rather than preventing it."
+ },
+ "wf-12-05": {
+  "why": "Virtual network rules exist for exactly this case, where the client's public address is dynamic; the service endpoint on the subnet is the prerequisite, and Deny closes everything else. The most seductive wrong option is listing the private addresses: Key Vault IP rules accept public addresses only and explicitly reject RFC 1918 ranges such as 10., 172.16 to 172.31 and 192.168. Trusted-services bypass is a list of Microsoft first-party services, not your own virtual machines, and a network security group filters traffic leaving the subnet without constraining who else may reach the vault."
+ },
+ "wf-12-06": {
+  "why": "Azure DevOps is not on the trusted services list, because customers write the code that runs there, so the bypass never admits it and the hosted agent's shifting addresses cannot be allow-listed reliably; a self-hosted agent inside an admitted network solves it, as would a private endpoint. The closest wrong answer is re-checking the bypass, which is the natural assumption but simply does not cover this service. Widening the role misreads a network denial as a permissions denial, and disabling public access tightens the vault further, leaving only trusted services and private endpoints."
+ },
+ "wf-12-07": {
+  "why": "Zero-touch rotation depends on the target service holding a versionless key URI so it picks up the newest version by itself, and the old version must remain enabled while the service re-wraps its data encryption keys, which can take from an hour to a day or more. The nearest wrong answer, a versioned reference plus a runbook, is a real pattern for services that lack automatic pickup but defeats the point here and reintroduces the manual step. Rotation re-wraps data encryption keys rather than re-encrypting the archives themselves, so disabling the old version early breaks reads."
+ },
+ "wf-12-08": {
+  "why": "Automatic renewal of a publicly trusted certificate needs an issuer object for a partnered certificate authority referenced from the certificate policy, plus an autoRenew lifetime action; certificate contacts are vault-wide and carry the lifecycle notifications. The closest wrong option stores the certificate as a secret, which is expressly discouraged and gets no lifecycle management at all, and key rotation policies apply to keys rather than certificates. Defender for Key Vault raises alerts on anomalous access, not on expiry, and a self-signed certificate cannot be promoted to a CA-issued one by renewal."
+ },
+ "wf-12-09": {
+  "why": "Machine secrets scanning is available under either the Defender CSPM plan or under Servers Plan 2, but scanning of cloud deployment resources sits under Defender CSPM alone, so only that plan meets both halves of the requirement, and attack path analysis is a CSPM capability. The near miss is Servers Plan 2, which genuinely delivers the virtual machine half and stops there. Defender for Key Vault watches vault access rather than hunting exposed secrets, and Defender for Storage addresses a different asset entirely."
+ },
+ "wf-12-10": {
+  "why": "Defender for Key Vault is a Defender for Cloud plan enabled per subscription from Environment settings, and once on it produces behavioural alerts without agents or hand-written detections. The closest wrong answer is the vault's Security page: that is where the resulting alerts are displayed, which makes it feel like the enablement point, but the toggle is not there. Diagnostic logging plus a query rule is the do-it-yourself alternative the plan exists to replace, and Defender CSPM handles posture and exposed secrets, not vault access anomalies."
+ },
+ "wf-12-11": {
+  "why": "The documented response is to restrict or remove the suspicious security principal and then immediately rotate every key, secret and certificate the alert shows as accessed, since a recognisable identity is exactly what stolen credentials look like. Suppression is the dangerous near miss: it is a legitimate tool for known noise, but the guidance is explicit that you must not dismiss an alert merely because you recognise the caller. Purge protection guards against destruction rather than exfiltration, and deleting the vault causes an outage while doing nothing about the copied material."
+ },
+ "wf-12-12": {
+  "why": "For traffic from an unrecognised address the documented containment is to switch on the Key Vault firewall and then configure it with the trusted resources and virtual networks, which shuts the door without stopping the business. The plausible-looking alternative is Secure by perimeter, but associating the vault with a perimeter running in enforced mode overrides the trusted services bypass, so first-party dependencies break unless explicit perimeter rules already admit them, which is not a change to make mid-incident. Disabling everything takes the charity's applications down, and the tier has no bearing on who can reach the endpoint."
+ },
+ "wf-12-13": {
+  "why": "A deleted object stays recoverable throughout the retention window and recovery undoes the deletion in place, so the existing key identifier and the dependent service both come back without reconfiguration. Restoring the backup elsewhere is the closest wrong answer and would eventually work, but it produces a fully independent copy under a different vault and demands that the storage account be repointed, which is slower and riskier while an outage runs. A same-name key cannot be created while the deleted object occupies that name, and purging destroys the material irrecoverably."
+ },
+ "wf-12-14": {
+  "why": "Disabling or deleting a key takes every dependent service offline at once, so transparent data encryption databases become inaccessible and the storage account starts returning errors; the documented compromise response is to rotate and migrate dependants before removing the old key. Disabling first is the instinctive wrong move and converts a suspected exposure into a certain outage. Deleting is that same outage with extra steps, and purging backups neither contains the exposure nor helps the migration, since a restored copy is independent of the original anyway."
+ },
+ "wf-12-15": {
+  "why": "Purge protection is not on by default, requires soft delete, and once enabled it blocks purging of a deleted vault or object until the retention period elapses, which is the only setting that makes destruction genuinely impossible for that window; Azure Policy is the documented way to prove it across an estate. Soft delete alone is the closest wrong answer, and it is exactly what failed to reassure the review, because a privileged caller can still purge inside the window. Constraining the Purge Operator role and taking backups are worthwhile companions but both remain reversible by a sufficiently privileged identity."
+ },
+ "wf-12-16": {
+  "why": "The recommended posture is just-in-time privileged access: Privileged Identity Management makes the roles eligible rather than permanent, and requiring an approver plus multifactor authentication at activation removes the always-on blast radius the review found. Reverting to access policies is the trap, because it looks like tightening but the legacy model has known weaknesses and no Privileged Identity Management support, which is one of the reasons Azure RBAC is recommended. Raising the scope to a management group widens the standing grant rather than shrinking it, and alerting only tells you afterwards that the rights were used."
+ },
+ "wf-13-01": {
+  "why": "Modify adds, updates or removes properties and tags during create or update, and non-compliant resources that already exist can be brought into line with a remediation task that runs under the assignment identity. The nearest wrong answer is append: it also alters a request, but it only acts on the incoming create or update call and there is no remediation-task path for it, so the 900 existing resources stay untagged forever."
+ },
+ "wf-13-02": {
+  "why": "DoNotEnforce evaluates the assignment and reports compliance while withholding the effect, and it also keeps deny entries out of the Azure Activity log, which is exactly the dry run being asked for. The closest wrong option is the disabled override: disabled stops the policy producing a compliance result at all, so after two weeks the team would have learned nothing about how many storage accounts would have been blocked."
+ },
+ "wf-13-03": {
+  "why": "Regulatory standards in Defender for Cloud are delivered as Azure Policy initiatives that you assign to a scope, and Microsoft's guidance is to pick the highest applicable scope so compliance data aggregates across every nested subscription. The nearest wrong option is MCSB v2: it is a benchmark of Microsoft's own cloud security principles with broader policy mappings, not the card-scheme standard, so it will never produce the control-by-control evidence the assessor asked for."
+ },
+ "wf-13-04": {
+  "why": "Custom recommendations let you define your own assessment logic in KQL, they are created within a custom standard, and once created they appear with the built-in recommendations and contribute to the posture assessment. The nearest wrong option is bolting a custom definition onto MCSB: MCSB is a built-in benchmark whose control set you do not extend, so a custom check has to live in a custom standard, not inside the benchmark."
+ },
+ "wf-13-05": {
+  "why": "Deny prevents deployment of resources that do not comply with the benchmark control, which is the only option that stops the resource existing. The nearest wrong option is Enforce: it uses the DeployIfNotExists effect to automatically remediate non-compliant resources after they are created, so the wide-open account still gets created and only then gets fixed. Both actions apply to Azure recommendations and only to a subset of them."
+ },
+ "wf-13-06": {
+  "why": "A CanNotDelete lock lets authorized users read and modify the resource but not delete it, and unlike RBAC a management lock applies across all users and roles, which is the do-not-trust-the-Owner requirement here. The nearest wrong option is the ReadOnly lock: it blocks updates as well as deletion, so the network team could no longer change the vault firewall, and it behaves roughly like restricting everyone to Reader."
+ },
+ "wf-13-07": {
+  "why": "Where you assign a role that carries permission to create role assignments, Microsoft's guidance is to add a condition that constrains the delegation, and that is what turns unbounded role granting into two named roles. The nearest wrong option is User Access Administrator: it is a privileged administrator role, and unconditioned it lets the service desk grant anything at all, which recreates the audit finding. Assigning to the group rather than to individuals is also the recommended pattern."
+ },
+ "wf-13-08": {
+  "why": "Entra custom roles are built from a preset permission list and can be assigned at the directory scope or at an app registration resource scope, and each user holding a custom role assignment needs an Entra ID P1 license. The nearest wrong option is the Azure custom role at root: Azure RBAC governs Azure resources rather than directory objects, and in any case AssignableScopes cannot be set to the root scope. The DataActions option fails too, because a custom role with DataActions cannot be assigned at management group scope."
+ },
+ "wf-13-09": {
+  "why": "The guidance is to avoid a privileged administrator role where a job function role will do, and where a privileged role is unavoidable to use a narrow scope such as a resource group rather than a subscription. The nearest wrong option is the PIM conversion, and it is wrong on a hard mechanical point: an eligible role assignment can be created for a user but never for an application, a service principal or a managed identity, since a non-human principal has no way to run the activation step."
+ },
+ "wf-13-10": {
+  "why": "A deployment stack creates a deny assignment over the resources it manages, the deny settings mode chooses between none, deny delete and deny write and delete, and up to five Entra principal IDs can be excluded from the lock so the pipeline keeps working. Holding the stack at the parent scope keeps the teams from editing the stack itself. The nearest wrong option is the read-only locks: locks can be removed by anyone holding the authorization lock actions, and a pipeline that strips its own locks each release protects nothing between runs."
+ },
+ "wf-13-11": {
+  "why": "Soft delete is on by default and holds deleted backup data for a retention window before permanent deletion, and the portal offers Undelete on the red items. The nearest wrong option is the one that assumes backups resume by themselves: undeleting reinstates the item into stop-backup-with-retain-data and does not restart the schedule, so without an explicit Resume backup the trust recovers its old recovery points but takes no new ones. Disabling soft delete would move in exactly the wrong direction."
+ },
+ "wf-13-12": {
+  "why": "Multi-user authorization works by requiring permission on a separate Resource Guard resource, and disabling soft delete and removing MUA protection are mandatory protected operations that cannot be excluded. Pulling the temporarily granted Backup MUA Operator role is the switch that keeps the attempts failing. The nearest wrong option is removing Contributor on the vault: MUA evaluates permissions on the Resource Guard, not on the vault, so vault-side role changes do not close this path. The lock option is actively harmful, because a cannot-delete lock on the Backup-created resource group makes backups fail once restore points cannot be cleaned up."
+ },
+ "wf-13-13": {
+  "why": "Starting or restarting a VM and scaling an App Service plan are POST operations, and a read-only lock on the containing resource group blocks them for all users, while a cannot-delete lock still allows read and modify. The nearest wrong option is granting Owner: management locks apply across all users and roles and override permissions, so no role assignment gets past them. Adding a child lock does not help either, because an inherited parent lock still wins wherever it is the stricter of the two, and a read-only lock at resource group level also stops you relocating existing resources out of that group."
+ },
+ "wf-13-14": {
+  "why": "A deployIfNotExists assignment always deploys under the assignment identity, so an authorization failure on the remediation task points straight at that identity's missing role, and re-discovery with ReEvaluateCompliance forces a fresh scan before remediating. Granting the identity its permissions needs User Access Administrator. The nearest wrong option is the enforcementMode change: remediation tasks for deployIfNotExists policies can be started even when enforcementMode is DoNotEnforce, so that would burn time and fix nothing. The last option is invalid outright, since an assignment identity's location cannot be global."
+ },
+ "wf-13-15": {
+  "why": "PIM lowers the exposure time of privilege by making access just-in-time and time-bound so it is revoked automatically, and access reviews over Azure resources, which require Owner or User Access Administrator to create, give the recurring attestation the board is asking for. The nearest wrong option is the assignment-count chart: the four thousand per-subscription limit is a capacity guardrail and says nothing about whether any given assignment is still justified. The wildcard custom role is the opposite of the guidance, which is to specify actions explicitly."
+ },
+ "wf-13-16": {
+  "why": "Policy as code puts exported definitions under source control, validates the updated definition before it is enforced, then moves to enforced assignments and enables remediation tasks, and a definition has to be located at either a subscription or a management group, and only the management group choice gives the assignable reach a whole estate needs. The nearest wrong option is pinning the definition location to each subscription: it does limit blast radius, but a definition can only be assigned within the hierarchy of its definition location, so the team would be maintaining duplicate definitions per subscription, which is the sprawl that caused the outage. Deployment stacks protect deployed resources, they do not evaluate compliance."
+ },
+ "wf-21-01": {
+  "why": "Both the account SAS and the service SAS take their signature from the storage account key, so Azure Storage denies them for every service once AllowSharedKeyAccess is false; only a user delegation SAS, signed with Microsoft Entra credentials, keeps working. The nearest wrong answer is the one that treats SAS as its own authorisation type: the metrics blade lumps all SAS together, but the underlying signing key is what decides, and only Entra-signed tokens survive. Nothing about the change waits for an existing token to expire."
+ },
+ "wf-21-02": {
+  "why": "A stored access policy is defined on the container and supplies the start time, expiry and permissions to any service SAS that references it, so deleting the policy, renaming it, or pushing its expiry into the past revokes every SAS bound to it without touching the account keys. The closest wrong option, an ad hoc SAS with a signed IP range, narrows who can use the token but gives you no revocation lever short of key regeneration. The RBAC option is sound practice generally but the requirement was explicitly to deliver a SAS."
+ },
+ "wf-21-03": {
+  "why": "Network rules do nothing while the default action remains Allow: the portal switch or the Deny value on default-action is what closes the public endpoint, and only then do the allow-list entries matter. The nearest wrong answer, the missing service endpoint, is a real requirement for the subnet to reach the account privately, and the portal creates it for you when you pick the subnet, but it would never have explained office traffic still getting through. The trusted services exception admits named Azure services, not an employee laptop."
+ },
+ "wf-21-04": {
+  "why": "The plain Microsoft.Storage endpoint only reaches accounts sitting in whichever region hosts the virtual network; Microsoft.Storage.Global reaches accounts in any region, and a subnet can carry only one of the two, so the existing endpoint must be removed first. The nearest wrong option, adding an IP rule, fails because once a service endpoint is enabled the traffic leaves with a private source address and IP rules for that subnet stop having any effect. Resource instance rules are for Azure services that cannot be isolated by subnet or IP at all."
+ },
+ "wf-21-05": {
+  "why": "A key vault or managed HSM holding a customer-managed key for Azure Storage must have soft delete and purge protection turned on, so an accidental key deletion cannot orphan the data permanently. The nearest wrong option, forcing a Managed HSM, confuses an assurance choice with a requirement, since a standard vault is fully supported and the two share the same configuration APIs. Region, subscription and tenant may all differ from the storage account, and RSA 2048, 3072 and 4096 are all accepted."
+ },
+ "wf-21-06": {
+  "why": "Infrastructure encryption adds a second 256-bit AES layer beneath service-side encryption, always using a separate Microsoft-managed key, and it is a create-time property of the storage account rather than something you switch on afterwards. The nearest wrong option gets the feature right but both the timing and the key ownership wrong: the infrastructure layer never uses your customer-managed key. Encryption scopes change the scope of the service-level key, they do not stack a second layer, and client-side encryption is an application-side control the assurance team did not ask for."
+ },
+ "wf-21-07": {
+  "why": "Azure Monitor and Azure SQL both operate outside any subnet you control, so the supported route is the trusted Azure services exception, which lets those resource providers reach the account using strong authentication while the firewall stays closed to everything else. The nearest wrong option, chasing service IP ranges, is unmaintainable and is not how these services are admitted. A Log Analytics workspace is not a subnet you can add a rule for, and routing preference changes the path traffic takes, not who is authorised to arrive."
+ },
+ "wf-21-08": {
+  "why": "Malware scanning is billed per gigabyte scanned and carries a per-account monthly cap that defaults to 10,000 GB of uploaded blobs, with an alert at 75 percent and a second alert when scanning pauses for the rest of the month. The nearest wrong option, the 50 GB blob size limit, is real but produces a Not Scanned result for that single oversized blob with a SAM error code, not a halt across the account. The classic plan does not spontaneously return, and hash reputation analysis is a separate capability rather than a fallback the service switches into."
+ },
+ "wf-21-09": {
+  "why": "Conditional Access policies only bite on requests carried by Microsoft Entra identities, so the account must stop accepting key-based authorisation before those policies can protect it; that means setting AllowSharedKeyAccess to false. The nearest wrong option, secure transfer and a TLS floor, is genuinely recommended hardening but neither of those settings has anything to do with which authorisation path a request takes. Disabling anonymous access closes a different hole entirely, and stored access policies belong to service SAS revocation."
+ },
+ "wf-21-10": {
+  "why": "By default the account encryption key covers the whole account, and encryption scopes exist precisely to draw a key boundary at container or blob level so data belonging to different customers in one account is protected under different keys, backed by Microsoft-managed or customer-managed keys. The nearest wrong option, account-level customer-managed keys, gives one key for everyone, so either client revoking would take down the whole bureau. Customer-provided keys push key handling into every request from the client application, which is not what a per-container boundary requires, and a managed identity is an authorisation principal, not an encryption boundary."
+ },
+ "wf-21-11": {
+  "why": "An ad hoc service SAS carries its own start time, expiry and permissions in the token and is not revocable on its own, so the only lever that kills it immediately is regenerating the account key that signed it, accepting the collateral breakage of anything else using that key. The nearest wrong option is the stored access policy: a policy only governs tokens that were issued with a reference to it, and creating one after the fact does not retrofit constraints onto a live ad hoc token. Firewall rules may slow the exfiltration if you know the source, but the token stays valid from anywhere you have not blocked, and RBAC assignments never governed this SAS at all."
+ },
+ "wf-21-12": {
+  "why": "Scanning runs in near real time but not instantly, so the gap between upload and result has to be closed on the read side; an ABAC condition keyed to the scan result index tag makes unscanned and malicious blobs unreadable to the consuming application. The nearest wrong option, extending soft delete retention, helps forensics on blobs already caught but does nothing about the race the function is winning. On-demand scanning does not run at upload at all, so it widens the gap, and a firewall rule controls where callers come from, not what they are allowed to read."
+ },
+ "wf-21-13": {
+  "why": "Disabling the key in the vault is exactly how you revoke a storage account, and the symptom is textbook: data operations that need the account encryption key unwrapped fail with 403 for all users while the account object itself stays visible. Restoring access means restoring the key. The nearest wrong option, flipping back to Microsoft-managed keys, treats a revocation as a configuration preference and does not conjure back the wrapped account key while the vault key is unavailable; the correct sequence is to restore the key first. The storage identity needs wrapkey, unwrapkey and get rather than a broader crypto administration role, and nothing was deleted, so soft delete is irrelevant."
+ },
+ "wf-21-14": {
+  "why": "Disallowing Shared Key makes the storage service reject every request authorised with the account keys, so the stolen key becomes worthless whatever the attacker does next, and only Microsoft Entra requests get through. The nearest wrong option, regenerating the keys, is the reflex answer but it only helps if the attacker has lost the ability to list keys again, and here they still hold a role carrying the list keys action. Removing the role assignment is the right follow-up but does not invalidate a key already exfiltrated, and turning on Defender improves detection rather than stopping the reads in flight."
+ },
+ "wf-21-15": {
+  "why": "A SAS expiration policy sets a recommended upper bound for service and account SAS; exceeding it surfaces a warning to the issuer and, with Azure Monitor logging enabled, records an entry, which is exactly the warn-and-trace behaviour wanted. The nearest wrong option, an Azure Policy in Deny mode, sounds stronger but SAS tokens are generated client side and are not resource operations that Azure Policy can intercept. Generation of a SAS cannot be audited at all, so a diagnostic setting will not capture it, and stored access policies are inherited only by tokens deliberately issued against them."
+ },
+ "wf-21-16": {
+  "why": "The documented sequence is detect, then remediate, then audit and govern: audit mode inventories which accounts still permit Shared Key, the Transactions metric filtered by authentication tells you how much key and SAS traffic there is, and resource logs queried on AuthenticationType name the caller IPs and user agents you must migrate first. The nearest wrong option flips the policy straight to Deny, which stops anyone allowing Shared Key on new accounts but tells you nothing about which applications will break, so it repeats the 3am rollback. Regenerating keys as a discovery technique deliberately causes the outage you are trying to avoid, and Defender for Storage raises alerts on suspicious behaviour rather than producing a per-client authorisation inventory."
+ },
+ "wf-22-01": {
+  "why": "Server-level rules are stored in master and grant a passing address access to every database the server manages, so they cannot isolate tenants; database-level rules live inside each database and are checked first, which is exactly the isolation requirement. Narrowing the server-level list is the nearest wrong answer because the ranges get more precise but any allowed address still reaches all forty databases. Note the operational catch: database-level rules can only be created and managed through Transact-SQL, and only after a server-level rule has been configured by someone with Azure-level permissions."
+ },
+ "wf-22-02": {
+  "why": "Switching the setting on writes a server-level rule named AllowAllWindowsAzureIps with start and end address 0.0.0.0, and it admits communications from everything inside the Azure boundary regardless of subscription or resource group. The tempting wrong answer is the subscription-scoped reading: it feels like an Azure-internal permission, but nothing about the rule is tied to your tenant, which is why the docs point at virtual network service endpoint rules or Private Link instead. The setting also does not touch authentication, so credentials and database principals remain the only other control."
+ },
+ "wf-22-03": {
+  "why": "Customer-managed TDE, also called bring your own key, replaces the built-in server certificate with a customer-held asymmetric key that wraps each database encryption key and never leaves the vault, and for Azure SQL Database the protector is a server-level property inherited by every database beneath it. Always Encrypted is the closest wrong option and it does give the bank key custody, but it protects designated columns from privileged users rather than satisfying an at-rest requirement across whole databases, and it does not replace the TDE protector. Worth knowing the failure mode: if the server's permissions on the key vault are revoked, the databases become inaccessible while the data stays encrypted."
+ },
+ "wf-22-04": {
+  "why": "The Microsoft Entra admin is a prerequisite: with no admin set the Microsoft Entra authentication only setting stays inactive, and API calls to enable it fail as well. Enabling it disables SQL authentication at the server or instance level, but it does not remove the existing logins and users, it only stops them connecting. The nearest wrong option flips the role split: SQL Security Manager is precisely the role that can set the Entra-only flag, while SQL Server Contributor can set or remove the Entra admin but cannot toggle Entra-only, which is the separation of duties the platform is enforcing."
+ },
+ "wf-22-05": {
+  "why": "Microsoft's guidance for workloads on unknown or unmaintained drivers is to not set a minimum until you know what clients negotiate, and the two supported discovery routes are the portal metric for successful connections filtered by TLS version and the client_tls_version_name column returned from the audit file. Jumping straight to a minimum of 1.3 is the nearest wrong answer and it does produce login failures, but it takes production down to gather the data and drivers plus operating systems vary in TLS 1.3 support. Remember also that once a minimum is enforced you cannot revert to the default of allowing all supported versions."
+ },
+ "wf-22-06": {
+  "why": "Managed Instance uses SQL Server Audit, so auditing to blob storage is built in Transact-SQL: a credential holding the SAS secret, a server audit targeting the container URL with an optional retention in days, then a server or database audit specification, then ALTER SERVER AUDIT with state on. The diagnostic setting answer is the closest miss, because that route is real but it is how you send Managed Instance audit events to Event Hubs or a Log Analytics workspace, and it still requires a server audit created to EXTERNAL_MONITOR alongside it. The portal Auditing blade with storage authentication types belongs to Azure SQL Database and its logical server, not to Managed Instance."
+ },
+ "wf-22-07": {
+  "why": "With Microsoft Entra logins the gateway validates credentials before the requested database is opened, so a failure never touches the database and nothing is audited; with SQL logins the credentials are checked at the requested database, which is why those failures do appear. Successful sign-ins are audited in both cases. The truncation option is the nearest trap because the 4,000 character limit on the statement field is real, but it clips long statements rather than suppressing whole login records, and it would not explain missing rows."
+ },
+ "wf-22-08": {
+  "why": "Audit logs are written to append blobs, so an immutable container has to permit protected append writes; the None option is explicitly unsupported, which is what makes the second choice the sharpest distractor. For time-based policies the storage account's retention period must expire sooner than the SQL auditing retention value, and a configuration where a storage policy exists while SQL auditing retention remains 0 is not supported. Also worth remembering that changing retention from 0 to a finite value applies only to logs written after the change."
+ },
+ "wf-22-09": {
+  "why": "Defender for Databases is an umbrella over four separately priced offerings, and enabling the plan on the subscription activates all of them across supported resources, including flexible server PostgreSQL and MySQL at all pricing tiers under the open-source relational databases plan and the Cosmos DB account under its own plan. The last option is the closest miss: the open-source plan genuinely covers the two flexible servers, but Cosmos DB is a distinct plan and is not swept in by enabling a sibling. Defender for Azure SQL Databases protects Azure SQL, managed instances and Synapse dedicated pools, not open-source engines, and Defender for SQL Servers on Machines targets SQL Server on VMs and Arc-enabled SQL Server."
+ },
+ "wf-22-10": {
+  "why": "Express configuration is the recommended mode: Defender for Cloud holds the results, no customer storage account is involved, results stay in the logical server's region, and the migration notice is explicit that baselines and scan history do not migrate. The policy scope option is the nearest wrong answer because per-database scope is a genuine capability, but it belongs to the classic model; express supports subscription and server scope only. Express configuration is also generally available on Azure SQL Managed Instance and Synapse workspaces, not just Azure SQL Database, so the estate does not have to stay split."
+ },
+ "wf-22-11": {
+  "why": "Advanced Threat Protection alerts are action-oriented: for SQL injection the alert carries the vulnerable statement that was exploited, plus the tactic and recommended investigation and mitigation steps, and auditing exists precisely to give the full investigation trail alongside it. Enabling dynamic data masking mid-incident is the nearest plausible wrong move, because masking is a real Azure SQL control, but it obscures results for non-privileged callers rather than stopping an injected statement running under the application's own principal, and it changes application behaviour under load. Disabling auditing during an incident destroys the evidence you are about to need."
+ },
+ "wf-22-12": {
+  "why": "When auditing targets an external monitor such as Log Analytics or Event Hubs, a diagnostic settings resource named for SQLSecurityAuditEvents is created and is critical to the pipeline; if it is deleted, intentionally or not, auditing fails silently and no logs reach the target, which matches an ON toggle with no events and no error. The server-versus-database option is the closest wrong answer, because server and database audits genuinely coexist and the redesigned server audit does consolidate into a master folder, but that is a storage destination behaviour and would not stop workspace ingestion. Retention never removes only the newest logs, and a change from unlimited retention applies forward, not backward."
+ },
+ "wf-22-13": {
+  "why": "With public network access disabled, only private endpoint connections are allowed and public attempts fail with the not-accessible error, and any attempt to add, remove or edit firewall rules is refused as well, so the containment is decisive but it also freezes your firewall administration until you set the server back to selected networks. The precedence answer is the seductive one: firewall rules do not survive the deny setting, they are simply unreachable. And clients must keep using the ordinary server FQDN even over Private Link, because logins made to the private IP or to the privatelink FQDN fail by design."
+ },
+ "wf-22-14": {
+  "why": "Managed Instance auditing to blob storage authenticates through a credential holding a SAS token with an explicit end date, and the guidance is blunt that the token must be renewed on expiry to avoid audit failures, which fits an audit that simply stops writing a year after go-live. The managed identity answer is the closest wrong option because that mechanism is real, but it belongs to the logical server auditing path for Azure SQL Database writing to storage that sits behind a virtual network or firewall, not to the Managed Instance credential and URL path. Private is the correct public access level for an audit container, and a missing action group would leave no events collected at all rather than an abrupt stop."
+ },
+ "wf-22-15": {
+  "why": "Azure SQL splits these deliberately: SQL Server Contributor can set or remove the Microsoft Entra admin but cannot toggle Microsoft Entra-only authentication, while SQL Security Manager can set the security flag but not the admin, and the auditing guidance adds that access to the audit storage account should be restricted so that DBAs are separated from auditors. Consolidating both under one role is the nearest wrong answer and it is exactly the anti-pattern the split exists to prevent. Read-only access to audit blobs is not harmless either, since audit records can expose the sensitive values that were queried, which is why the guidance pairs restricted audit access with encryption of sensitive data."
+ },
+ "wf-22-16": {
+  "why": "Subscription-level enablement is the recommended pattern precisely because future resources on that subscription are protected as they are created, and the coverage workbook exists to show which plans are on across subscriptions and resources. SQL Server on an Azure VM is covered by the SQL Servers on Machines plan, selected under Select types within the Databases plan, not by Defender for Azure SQL Databases, which makes the second option the closest miss. Resource-level enablement for machines is possible but the docs frame it as the exception, and it requires disabling the plan on the subscription first, reintroducing the very gap the review is trying to close."
+ },
+ "wf-23-01": {
+  "why": "Application security groups let NSG rules name a group of network interfaces rather than addresses, so membership follows the VM through any scaling event and the rule text never changes. The closest wrong answer is the VirtualNetwork service tag: that tag covers the whole address space, so it would readmit the web tier and anything else in the network, which is the opposite of the tier isolation being asked for. Azure Firewall IP groups are a firewall construct and cannot be selected as an NSG source or destination."
+ },
+ "wf-23-02": {
+  "why": "Azure default security rules cannot be deleted or reprioritised in any tooling; they sit at the highest numbers so custom rules always win, and rules are processed lowest number first with processing stopping on the first match. The nearest wrong option is renumbering AllowVNetInBound, which is impossible for the same reason deletion is, and would in any case still leave the flow allowed. Deleting through PowerShell fails identically because the restriction is in the platform, not the portal."
+ },
+ "wf-23-03": {
+  "why": "Security admin rules use 1 to 4096 with the lower number winning, so an exception must carry a smaller priority number than the blanket deny, and it is delivered as another rule collection aimed at a narrower network group. The closest wrong option is the NSG allow rule: security admin rules are evaluated before NSG rules, and a Deny action ends evaluation without ever reaching the NSG, so the faculty rule would never be consulted. Priority 4096 is the weakest priority, not a bypass."
+ },
+ "wf-23-04": {
+  "why": "Routing intent has two independent policies, and the private traffic policy is what forces branch to branch, branch to virtual network and inter-hub flows through the next hop security solution, including inside a single hub. The nearest wrong answer is user defined routes: a secured hub provides automated routing, and hand-written UDRs on spokes are exactly what routing intent removes the need for. The Basic type is a distractor about gateway scale, not inspection."
+ },
+ "wf-23-05": {
+  "why": "Point-to-site requires a route-based gateway, Microsoft Entra ID authentication is supported only over the OpenVPN protocol with the Azure VPN Client, and the Basic SKU plus policy-based types are explicitly incompatible. The closest wrong option adds IKEv2: if you select both tunnel types, Entra ID sign-in still binds only to the OpenVPN tunnel, so IKEv2 clients would fall back to another method. A policy-based gateway also cannot be converted in place; it must be deleted and recreated."
+ },
+ "wf-23-06": {
+  "why": "An overlapping segment on an enterprise application takes priority over Quick Access, but access assignments do not carry across, so users who worked through Quick Access are blocked until they are assigned to the new app, and nested groups are not honoured. Microsoft also advises removing the moved segment from Quick Access, which means breaking the wide subnet into smaller ranges. The closest wrong answer claims automatic inheritance, which is precisely the trap that locks users out."
+ },
+ "wf-23-07": {
+  "why": "A private endpoint maps to a single target subresource, so storage needs separate endpoints for blob, file, queue and the rest, each with its own DNS zone; Microsoft warns against putting records for different services in one zone. The nearest wrong option is editing the existing endpoint, which cannot hold multiple subresources. A service endpoint would work over the backbone but keeps the public address and the public front door, which is exactly what the bank is trying to remove."
+ },
+ "wf-23-08": {
+  "why": "Visibility controls who is even exposed to the service, while auto-approval controls which of those exposed subscriptions connect without manual action; the requirement names both, so both must be set. The closest wrong option leaves visibility open to anyone with the alias, which still lets strangers create pending requests and leaks the existence of the service. TCP proxy v2 only surfaces consumer connection details to the backend; it is not an access control."
+ },
+ "wf-23-09": {
+  "why": "Azure Firewall processes DNAT, then network, then application rules regardless of collection or group priority, and rules are terminating, so a wide network allow on 443 short-circuits every FQDN decision behind it. The nearest wrong option is reordering priorities, which cannot override the fixed rule-type ordering. Application rule support with FQDN filtering based on SNI exists even in the Basic SKU, so a SKU change is not the issue."
+ },
+ "wf-23-10": {
+  "why": "Effective security rules is the aggregated inbound and outbound view for a network interface, and it explicitly includes security admin rules delivered by Azure Virtual Network Manager alongside both NSGs, with a CSV download for audit evidence. The closest wrong answer is Traffic analytics, which reports what already happened in flow logs rather than the current rule set, so it cannot prove which rule is winning right now. Next hop diagnoses routing, not filtering."
+ },
+ "wf-23-11": {
+  "why": "In alert mode the IDPS engine runs in parallel with rule processing and only records; in alert and deny it works inline after the rules engine and blocks matching flows, which is the surgical stop for signature-confirmed traffic. The nearest wrong option is the blanket outbound deny, which halts card processing entirely and is a bigger outage than the incident. The bypass list is the exact opposite of containment, since it excludes those addresses from filtering."
+ },
+ "wf-23-12": {
+  "why": "Security admin rules outrank NSGs and a Deny action terminates evaluation, so the traffic never reaches the teams conflicting allow rules; deployment to the target regions is what makes the configuration take effect. The closest wrong option is the Allow rule, which is evaluated first but then hands the flow onward to NSG rules, so the permissive team rules would still let SMB through. Azure Policy only governs future resource configuration and does nothing to traffic in flight."
+ },
+ "wf-23-13": {
+  "why": "A private endpoint adds a private path but does not by itself close the public front door; the service keeps accepting internet connections until public network access is turned off, or until the service firewall itself refuses that caller. The nearest wrong answer attacks DNS, but the public CNAME chain is deliberately resolvable from anywhere and removing the private zone would break the clinical VMs while leaving the attacker unaffected. Outbound deny rules on a private endpoint are not a valid scenario, since the service provider never originates traffic."
+ },
+ "wf-23-14": {
+  "why": "Only approved connections can carry traffic, so rejecting that connection cuts the data path immediately, and fixing auto-approval and visibility stops the same subscription reconnecting. The closest wrong option deletes the service, which severs every legitimate customer at once and is a self-inflicted outage. An NSG on the NAT IP subnet is the wrong lever because consumer traffic is network address translated on arrival, so the original consumer address is not what the rule would see."
+ },
+ "wf-23-15": {
+  "why": "Azure VPN gateways support per-connection custom IPsec and IKE policy precisely so one tunnel can meet a compliance bar without disturbing the default proposals used by the others; the default sets exist for broad interoperability and lean on weaker groups. The nearest wrong answer is the SKU change, which affects throughput and tunnel counts rather than the cryptographic proposals on offer. Rebuilding as policy-based would strip route-based capabilities and is not how algorithm selection is controlled."
+ },
+ "wf-23-16": {
+  "why": "Microsoft positions Quick Access as a transition state for VPN replacement, with application segmentation and granular per-app controls delivered by Global Secure Access enterprise applications, each carrying its own assignments and policies. The closest wrong option leans on Conditional Access alone, but a policy on the single Quick Access app applies to the whole tunnelled range and cannot express which server a given account may reach. Connector groups steer traffic and provide resilience; they are not an authorisation boundary."
+ },
+ "wf-31-01": {
+  "why": "The default Microsoft 365 assessment needs no scoping decisions and already covers the busiest hundred sites on a weekly cadence, so it is the fastest route to a baseline of items found, sensitive data detected, and links shared with anyone. A custom assessment is the nearest wrong answer: it is the right tool when you need particular users or sites, but you must define the scope yourself and then wait for results to settle before the numbers mean anything. Activity explorer reports on interactions that already happened rather than on standing exposure."
+ },
+ "wf-31-02": {
+  "why": "Discover then Apps and agents deliberately excludes Agent 365 agents; AI observability is the page that covers them, with per-agent activity from the last 30 days and the policies governing each one. Asset explorer is the tempting miss because it also has an Agent tab, but that tab is for the Data Security Posture Agent, not an inventory of your organisation's AI agents. Posture and Remediation actions surface metrics and policies rather than an agent inventory."
+ },
+ "wf-31-03": {
+  "why": "Copilot Studio coverage is a two-portal handshake: the security admin enables real-time protection under Settings, Security for AI, and passes a URL to a Power Platform administrator, who completes the external threat provider setup using the same App ID that is then pasted back into Defender. The Work IQ MCP answer is the closest trap because that dependency is real for Agent 365 tool invocations, but Copilot Studio coverage explicitly does not rely on it. Defender for Endpoint onboarding covers local agents running on endpoints, a separate path."
+ },
+ "wf-31-04": {
+  "why": "The blueprint is the governing template for a class of agents, and classifying agents this way is precisely what lets an administrator apply Conditional Access, revoke permissions, or audit across every identity of that kind at once. Targeting each agent identity individually is the nearest wrong answer: those service principals are the runtime actors and do carry RBAC assignments, but policy applied one by one does not survive the next agent being created. The project managed identity only authenticates the blueprint to Entra ID and is not the principal you govern."
+ },
+ "wf-31-05": {
+  "why": "Agent 365 observability data, meaning the agent's actions, tool invocations, and data access events, lands in CloudAppEvents, which is what root-cause and scope work queries. AgentsInfo is the closest wrong choice and is genuinely useful, but it is an inventory and configuration snapshot table, telling you what the agent is rather than what it did. BehaviorInfo records real-time protection audit and block events specifically, and AlertEvidence lists entities attached to an alert."
+ },
+ "wf-31-06": {
+  "why": "Unpublished agents authenticate as the shared project identity; publishing mints a new identity with its own identifier, and role assignments do not carry across, so every permission the agent relied on must be granted again to the new principal. The audience answer is the nearest miss because a wrong audience really does cause authentication failures even with correct roles, but the failure here appeared exactly at publish time with no connection change, which points at the identity swap. Guardrails moderate content and do not revoke storage access."
+ },
+ "wf-31-07": {
+  "why": "Eligibility for reuse requires the instance to be in the same tenant and subscription as the Foundry resource, be reachable from the portal, carry at least API Management Service Contributor, and be created on a v2 tier; with Owner already held, the tier is the remaining candidate. Not having added projects is the plausible distractor, but that only leaves a project's gateway status disabled after the gateway exists, it does not hide the instance from the picker. Diagnostic settings and token validation policies matter for logging and managed identity auth, not for listing."
+ },
+ "wf-31-08": {
+  "why": "With the plan on but prompt evidence off, Defender keeps analysing prompts and responses for detection while masking the content in alerts, and the fix is the plan component toggle reached from Environment settings, subscription, AI services, Settings. Enabling data security for AI interactions is the closest wrong option: it is a genuine toggle in the same pane, but it hands prompts to Purview for classification and compliance under a separate Purview licence, and it does not unmask alert evidence. UserSecurityContext adds end-user and application identity to alerts, a different gap."
+ },
+ "wf-31-09": {
+  "why": "Tool response is the intervention point that scans the payload a tool sends back before it enters the agent's memory or reaches the user, and indirect attack is the risk that covers instructions smuggled inside retrieved content. The user input option is the near miss: prompt attack detection at user input catches jailbreak text the human typed, which is not where this payload arrives. Groundedness and spotlighting are both preview risks that are not applicable to agents, so controls built on them simply do not take effect there."
+ },
+ "wf-31-10": {
+  "why": "Full dashboard content depends on Defender CSPM together with the sensitive data discovery extension, alongside the Storage, Databases, and AI threat protection plans, and without CSPM the discovery and sensitive-data views have nothing to draw on. Resource provider registration is the closest wrong answer and is genuinely required, but a missing registration tends to break the dashboard wholesale rather than leave the AI section thin while the plan reports as on. A missing role would block reading assessments entirely rather than selectively."
+ },
+ "wf-31-11": {
+  "why": "The Default rule audits everything and never stops an action; blocking comes only from custom rules, which you create for high-confidence threats and scope to specific agents, exactly the shape of this incident. Editing the Default rule is the closest wrong move: the built-in rule exists to give visibility before enforcement, and blocking is expressed by creating custom rules rather than by flipping the default's action globally. Turning off prompt evidence hides the evidence rather than the leak, and a custom detection rule from BehaviorInfo is after-the-fact hunting, not containment."
+ },
+ "wf-31-12": {
+  "why": "For an active security threat the guidance is to act first and notify afterwards, and stopping is the reversible infrastructure action for an agent application: it deallocates the compute and the application rejects requests across every channel, while the application and its deployments survive for later restart. Deleting is the closest wrong answer and the most tempting under pressure, but it is permanent, it removes deployments, and it hits every consumer of a multitenant agent with no way back. A Block action in the admin center only affects projection into Teams and Microsoft 365 Copilot, leaving the agent fully functional through its own endpoint and APIs."
+ },
+ "wf-31-13": {
+  "why": "AI Gateway sits between clients and model deployments with limits applied at project level, which is exactly the multi-team token containment case: cap the runaway project and the others regain capacity. Removing the project from the gateway is the nearest wrong answer and is actively harmful, because disabling a project stops its traffic routing through the gateway and therefore removes the only place the limits could be enforced. Deleting the gateway punishes every project, and buying a larger tier funds the attack rather than containing it."
+ },
+ "wf-31-14": {
+  "why": "Risk indicators are security conditions derived from configuration, tools, access, runtime activity, and active alerts, and indicators like privileged business-system access or an agent that runs without human approval are exactly what tells you the blast radius before you act. Security recommendations are the closest wrong answer: they are calculated separately from the risk level, so a high-risk agent may carry none at all, and reading them alone understates exposure. The incident graph shows relationships between entities but does not compute agent posture, and the rules page only shows what a rule covers."
+ },
+ "wf-31-15": {
+  "why": "Restricted Content Discovery is the interim guardrail for precisely this window: it exempts sites from Copilot while access and permissions are being fixed, and it is removed once remediation lands. Auto-labeling is the closest wrong option and belongs in the same protect flyout, but labels only reduce exposure once a matching restrict-by-label policy exists, and applying labels does not itself take the site out of Copilot's reach. Retention deals with stale content, and stripping sharing links is called out as an action to use sparingly because it blocks legitimate access and forces owners to rebuild it."
+ },
+ "wf-31-16": {
+  "why": "Block and Unblock in the Microsoft 365 and Teams admin centers affect agent visibility to users in those specific channels and touch no Azure resource, which is why they are a poor containment action on their own. Equating Block with Disable is the nearest wrong statement and the exact confusion that caused the messy week: disabling a Foundry agent takes the endpoint offline so it rejects requests across Teams, Microsoft 365 Copilot, Foundry, and APIs. Deallocating compute describes Stop on an agent application, and nothing about Block touches RBAC."
+ },
+ "wf-32-01": {
+  "why": "Encryption at host extends server-side encryption so that the temporary disk, the ephemeral OS disk and the caches on OS and data disks are encrypted on the Azure host and travel encrypted to the storage service, and it consumes no VM CPU. Azure Disk Encryption is the nearest wrong answer: it does cover temp disk and caches, but it runs BitLocker or DM-Crypt inside the guest and therefore does use the VM CPU, which is exactly the constraint given. Plain server-side encryption with a customer-managed key never reaches temp disks or caches, and double encryption at rest adds a second infrastructure layer to persisted disks without solving the cache or temp-disk gap."
+ },
+ "wf-32-02": {
+  "why": "Session recording and private-only deployment, which removes the requirement for a public IP on the bastion host, are both Premium-only features. Standard is the closest wrong choice because it carries the advanced connectivity features such as native client, custom ports and shareable links, but it records nothing and still requires a public IP address. Basic cannot do either, and stripping inbound 443 from a Basic host simply breaks it; Developer needs no public IP but is a shared, non-production offering with no recording, no peering and one VM at a time."
+ },
+ "wf-32-03": {
+  "why": "Bastion at Basic SKU and above requires a dedicated subnet named exactly AzureBastionSubnet, sized /26 or larger for host scaling, holding no other resources, in the same virtual network as the host, plus a Standard static public IP. The nearest wrong option keeps the /27 and adds routing: a /27 deployed today is rejected, and forced tunnelling all egress through a firewall does not fix a naming or sizing fault. GatewaySubnet belongs to virtual network gateways, not Bastion, and while hub deployment with peering is a legitimate topology it does not repair the malformed subnet she has built."
+ },
+ "wf-32-04": {
+  "why": "Just-in-time can program network security groups and Azure Firewall rules, but the firewall must be using Rules (Classic); firewalls controlled by Azure Firewall Manager policies are explicitly out of scope, which is why only those twelve VMs are unsupported. The plan-tier option is the nearest trap: Plan 2 genuinely is a prerequisite for just-in-time, but if the plan were wrong every VM in the subscription would be affected, not only the ones behind that firewall. Just-in-time works over private addressing and needs no public IP per VM, and a missing provider registration would break the whole feature rather than a subset."
+ },
+ "wf-32-05": {
+  "why": "Connecting the golden image baked the Azure resource identity into the image, so every clone heartbeats against the same resource and gets throttled with 429 responses; the supported fix is a local forced disconnect on each clone followed by a fresh connect with an appropriate credential. The resource-limit answer is the plausible trap: Arc-enabled servers and their extensions have no per-resource-group instance cap, and the 800 limit applies to Azure Arc Private Link Scope resources, not machines. The Azure Monitor Agent does not carry Arc registration heartbeats, and deleting the Azure object leaves the duplicated identity on all two hundred disks."
+ },
+ "wf-32-06": {
+  "why": "Arc gives each on-premises server an Azure resource identity, which is what the Plan 2 features that depend on Arc need: file integrity monitoring, MCSB operating system baseline assessment and periodic OS update reporting are all tied to machines onboarded through Arc. Direct onboarding via Defender for Endpoint is the nearest wrong answer because it genuinely works and delivers the Plan 1 EDR-centred capabilities, but most Plan 2 functionality is unavailable on directly onboarded machines. The Log Analytics agent and Azure Monitor Agent path is no longer how Defender for Servers collects machine data, and cloud connectors cover AWS and GCP estates, not a private datacentre."
+ },
+ "wf-32-07": {
+  "why": "Agentless scanning is what Defender for Cloud uses to assess EDR settings, which is why the checks for stale full and quick scans, outdated signatures and disabled or partial antivirus appeared without any new agent being pushed. The Defender for Endpoint sensor is the nearest wrong answer: it certainly exists on those machines and supplies alerts and vulnerability data, but the EDR configuration recommendations in Defender for Cloud come from the agentless assessment, not from the sensor. Machine Configuration evaluates guest baselines rather than EDR posture, and file integrity monitoring is opt-in and reports file change events, not scan age."
+ },
+ "wf-32-08": {
+  "why": "Agentless scanning supports CMK-encrypted Azure disks, but the scanner needs key permissions to make a secure copy: on an RBAC-enabled vault that means the Key Vault Crypto Service Encryption User role for the Defender for Cloud Servers Scanner Resource Provider, and on a policy-based vault the equivalent get, wrap and unwrap permissions. The access-policy option is the closest miss because it names the right three operations but assigns them to the wrong principal, the VMs' own identities, which already have what they need to boot. Reverting to platform-managed keys is unnecessary and destroys the control the broadcaster wanted, and vault placement or purge protection has no bearing on scanner access."
+ },
+ "wf-32-09": {
+  "why": "Trusted launch is a Generation 2 capability, Generation 1 VMs have a supported upgrade path to Generation 2 with Trusted launch, and a VM protected by a Standard backup policy cannot take the Trusted launch security type until its backup is migrated to the Enhanced policy. The last option is the nearest trap because changing the security type in Configuration is the right portal gesture for an existing Generation 2 VM, but the VM must first be stopped and deallocated, and these are Generation 1 in any case. Confidential VMs are a different, more restrictive family aimed at in-use protection, and the Guest Attestation extension reports on Secure Boot and vTPM rather than providing them."
+ },
+ "wf-32-10": {
+  "why": "Azure VMs need the machine configuration extension to pull guest assignments and a system-assigned managed identity to authenticate to the machine configuration service; Arc-enabled servers already carry that capability inside the Connected Machine agent, which is exactly why the depot servers reported and the Azure VMs did not. Installing the Connected Machine agent is the nearest wrong option and is actively unsupported, because the agent refuses to install on an Azure VM. Machine configuration results flow to the machine configuration resource provider and on to Azure Resource Graph rather than to a workspace, and the provider registers itself when policy is assigned through the portal or when the subscription is onboarded to Defender for Cloud."
+ },
+ "wf-32-11": {
+  "why": "When the customer-managed key behind a disk encryption set is disabled, deleted or expired, the dependent VMs shut down automatically and disk I/O starts failing, and they will not boot again until the key is re-enabled or a replacement key is assigned, so restoring key availability is the containment move. Rotating to a new key version is the nearest wrong answer because rotation is the correct hygiene control in peacetime, but re-wrapping data encryption keys does nothing while the referenced key is still disabled, and it does not restart the stopped VMs. Detaching disks to platform-managed keys is not a live operation on encrypted disks, and restoring from restore points rebuilds machines that still point at the same disabled key."
+ },
+ "wf-32-12": {
+  "why": "Just-in-time opens a temporary allow rule and restores the network security group when the window closes, but connections that are already established are not interrupted, so waiting is not containment. Letting the window expire is the nearest wrong answer precisely because it feels like the designed behaviour: it closes the door for new connections in two hours while leaving the intruder inside. Editing the policy and disabling the account are both correct follow-up hardening and identity moves, but neither cuts the live session or the rule that is admitting traffic right now."
+ },
+ "wf-32-13": {
+  "why": "A boot log that deviates from the trusted baseline can mean untrusted modules were loaded and the operating system is compromised, which is exactly the bootkit and rootkit case Trusted launch exists to surface, so isolation and rebuild from known-good state is the response. Reinstalling the extension is the nearest wrong option because it looks like a benign repair, but rebaselining against a possibly tampered boot chain destroys the very signal that fired. Disabling Secure Boot makes attestation fail legitimately and blinds you further, and file integrity monitoring is a useful control to have had in place beforehand rather than a containment action once the boot chain is already suspect."
+ },
+ "wf-32-14": {
+  "why": "The Connected Machine agent carries local security controls that take precedence over cloud-side restrictions, which is the designed answer to a legitimately privileged Azure account being abused: an extension allowlist or a disabled extension manager cannot be overridden from the portal. The management-group deny policy is the nearest wrong choice and is good practice, but it is another cloud-based restriction the same over-privileged identity path is already defeating, and policy changes take effect on evaluation rather than instantly. Deleting the Arc resources destroys your visibility and management path mid-incident, and rotating the onboarding secret does not touch an attacker who is acting through Azure, not through the onboarding credential."
+ },
+ "wf-32-15": {
+  "why": "Agentless scanning has real boundaries: VMs on Ultra Disk or Premium SSD v2, machines that are powered off at scan time, and machines matching an exclusion tag are simply skipped, so coverage for those has to come from the agent-based path that the Defender for Endpoint integration already provides, alongside a review of who set the tags. Changing the schedule is the nearest wrong answer because it sounds operational, but the agentless scan runs on a fixed, non-configurable twenty-four hour cycle. Individual agentless capabilities cannot be turned off one by one, and re-platforming production storage to suit a scanner is a disproportionate response when a supported second scanning path exists."
+ },
+ "wf-32-16": {
+  "why": "Continuous remediation is exactly the ApplyAndAutoCorrect assignment type: when the machine drifts, the agent inside the machine corrects it at the next evaluation rather than waiting for a human. ApplyAndMonitor is the nearest wrong answer and is the default behaviour they already have: it applies once, then reports NonCompliant on drift and leaves it there, which is precisely the pattern the review found. Azure Policy enforcement mode governs whether the policy effect is applied to resources at all, not whether guest settings are self-healing, and a deny policy operates on Azure resource operations and cannot stop an installer running inside the guest."
+ },
+ "wf-33-01": {
+  "why": "Defender for Containers splits its capabilities: posture, image vulnerability assessment and control-plane threat detection are agentless, while runtime threat detection inside the workload needs in-cluster components, specifically the Defender sensor DaemonSet that collects process and network telemetry with eBPF. Binary drift detection and antimalware are named sensor-based capabilities. The nearest wrong option is the Azure Policy add-on, which is real and is deployed alongside Defender, but it is an admission controller extending Gatekeeper that evaluates API requests before they are persisted, so it would block a privileged pod at creation time rather than alert on an unexpected process in a container that is already running."
+ },
+ "wf-33-02": {
+  "why": "Registry vulnerability assessment rescans daily only images pushed in the last 30 days, pulled in the last 30 days, or currently running in a monitored Kubernetes cluster. An image outside all three sets simply stops receiving updated findings, and Microsoft's stated remedy is to pull it, which reactivates scanning. Re-tagging is the closest wrong answer because tags do feel like a registry change, but Defender tracks the image manifest and tag operations are not the documented trigger; deleting a tag does not even necessarily delete the manifest."
+ },
+ "wf-33-03": {
+  "why": "Only pods carrying the azure.workload.identity/use label get mutated by the workload identity admission webhook, which is what injects the Azure environment variables plus the service account token volume that is projected into the containers. Microsoft documents the exact symptom in the question: without the label, AKS moves workload identity to a fail-close behaviour and pods fail after they restart. The nearest wrong option is adding federated identity credentials, which is a real limit worth knowing, but that limit is 20 credentials per managed identity and credentials are not consumed per restart."
+ },
+ "wf-33-04": {
+  "why": "On an AKS Standard cluster the safeguards are opt-in and you choose Warn or Enforce, and Pod Security Standards start at Privileged, which enforces nothing. Denial and mutation only happen at Enforce, and the PSS level has to be raised explicitly with the pss-level setting; namespace exclusions are supported at both levels. Switching to AKS Automatic is the nearest wrong option because Automatic really does ship safeguards in Enforce mode by default, but its PSS default is Baseline rather than Restricted, and rebuilding the cluster mode to change an admission setting is not the control being asked for."
+ },
+ "wf-33-05": {
+  "why": "Managed identity is the documented unattended path for Azure-hosted CI/CD to reach a registry: no stored credential, per-identity attribution, and Microsoft Entra RBAC roles for pull-only or push. The admin account is explicitly described as a single account per registry with full permissions, designed for one user and not for sharing, and its two passwords exist to allow rotation without downtime, not to make sharing acceptable. Repository-scoped tokens are the nearest wrong option and would improve attribution, but Microsoft states that token-based repository permissions do not support Microsoft Entra RBAC role assignments, which is exactly the governance the auditor wants."
+ },
+ "wf-33-06": {
+  "why": "Microsoft calls this out directly: an AKS cluster does not have a fixed outbound address by default, so a registry restricted to specific IPs may reject it, and the fix is to control egress traffic for the Standard load balancer or to move to Private Link, where IP rules do not apply at all. Disabling public network access is the nearest wrong option and sounds like more security, but it overrides all firewall configuration and would break the build servers too; and it would also cut virtual network access if the registry uses a service endpoint. A registry supports up to 200 IP access rules, so the limit answer is simply wrong."
+ },
+ "wf-33-07": {
+  "why": "Functions access keys come in scopes: a function key authorizes only one function endpoint, a host key authorizes every function endpoint in the app, and the master key additionally grants administrative access to the runtime REST APIs. Handing over the host key shown on App keys is the nearest wrong option, and it is exactly the trap here, because that page is where the engineer was already looking, but it would grant the partner every other endpoint in the app. System keys are real but are created only by specific extensions for internal callers such as an Event Grid subscription, and their values cannot be set by you."
+ },
+ "wf-33-08": {
+  "why": "For Consumption workflows, a request-based trigger endpoint accepts exactly one inbound authorization scheme, Microsoft Entra OAuth 2.0 or SAS. Enabling one does not switch the other off, and using both at once produces an error because the service cannot choose, so the correct completion is to disable SAS and restrict authorization to Entra. The nearest wrong option is leaving SAS as a fallback: there is no documented precedence between the two schemes, and leaving the SAS keys live keeps the callable-URL secret in circulation, which was the compliance objection. Standard workflows behave differently and may combine other authentication types with SAS still enabled."
+ },
+ "wf-33-09": {
+  "why": "Service tag rules filter inbound traffic to well-known Azure service ranges, and App Service supports HTTP header filtering on any rule, with X-Azure-FDID documented for identifying a specific reverse proxy instance. Combining them is the named use case, because the service tag alone would still admit any customer's Front Door profile. The nearest wrong option is an IP-based rule: Microsoft states that these rules cover virtual network ranges only when the app runs in an App Service Environment, and Front Door does not present a stable customer-owned range in the multitenant service. Enabling authentication protects the application session but does not stop the origin from being reached around the WAF."
+ },
+ "wf-33-10": {
+  "why": "Container Apps documents managed identity image pull as the pattern that avoids registry administrative credentials and gives fine-grained access through the AcrPull role, and its secrets guidance is to avoid holding production secrets in Container Apps directly and to use Key Vault references instead. The nearest wrong option is the token store, which is a genuine Container Apps feature but stores end-user authentication tokens in Blob Storage for the built-in auth flow; it has nothing to do with registry or database credentials. Moving secrets into plain environment variables makes the exposure worse, not better."
+ },
+ "wf-33-11": {
+  "why": "Anomaly scoring blocks at a total of 5, so a Warning at 3 plus an Error at 4 crosses the threshold even though neither would alone; the surgical containment is an exclusion narrowed to the offending request attribute and rule, which Microsoft explicitly recommends over broader exclusions. The nearest wrong option is the custom rule with an Allow action, which would work and is tempting under pressure, but an Allow short-circuits all lower-priority evaluation so the entire notes endpoint stops being inspected for SQL injection and cross-site scripting. Switching the policy to detection mode disarms the WAF for every site behind it, and the anomaly threshold of 5 is not a customer-tunable dial."
+ },
+ "wf-33-12": {
+  "why": "Binary drift is the sensor-based capability aimed exactly at processes that were not in the image, and it has both a detection mode and a blocking mode where you define drift policies specifying the conditions under which processes are blocked. That is the only option that stops the running process. The nearest wrong option is the network policy: cutting egress is a reasonable parallel action and would degrade the miner's usefulness, but the process keeps consuming the nodes and the pod stays compromised. The allowed-images recommendation is admission control, so its Deny effect governs the next scheduling decision rather than the container already running."
+ },
+ "wf-33-13": {
+  "why": "Microsoft's OWASP API guidance names rate limiting as the mitigation that blunts brute-force and credential-stuffing pressure, and recommends stricter limits on sensitive endpoints such as sign-in and password reset; rate-limit-by-key throttles per key over a sliding window of up to 300 seconds and returns 429 to callers who exceed it. The nearest wrong option is quota-by-key, which is a real and related policy but is designed for long time frames and total consumption budgeting, so it neither reacts within the hour nor protects the backend from a burst. An allow-action ip-filter would lock out every legitimate retail customer, and validate-jwt cannot help on an endpoint whose whole job is to issue credentials to anonymous callers."
+ },
+ "wf-33-14": {
+  "why": "The master key is a host key with administrative reach over the runtime REST APIs under the admin path, so renewal is the only thing that revokes the attacker's access, and Functions supports disabling administrative endpoints through the functionsRuntimeAdminIsolationEnabled site property, which removes the attack surface rather than just the credential. The nearest wrong option is rotating function keys: precedence between function and host keys only decides which key is used when two share a name, and it does nothing to invalidate _master. Blocking one address defers the rotation while the key is still valid and published, and changing the secret storage location moves where keys live without revoking their values."
+ },
+ "wf-33-15": {
+  "why": "Microsoft's API Management guidance is explicit that for defence in depth a WAF should be deployed upstream of the instance, using Application Gateway or Front Door, and its resource-consumption recommendations point at bot protection with the Microsoft bot manager rule set in front of the gateway for layer 7 pressure. The nearest wrong option is private endpoints, which is genuinely recommended for hiding internal API endpoints from the internet, but these are public consumer APIs that must stay reachable, so Private Link solves a different problem. Client certificates strengthen caller identity yet do nothing about volumetric floods, and a second region adds capacity rather than inspection."
+ },
+ "wf-33-16": {
+  "why": "AKS registry-security guidance names image signing and verification with the Notary Project as the way to prove provenance, and Kubernetes data plane hardening includes a recommendation that container images be deployed from trusted registries only, which is one of the recommendations requiring you to configure the registry list as a policy parameter and can be moved from audit to Deny. Docker Content Trust is the nearest wrong option precisely because it is already on: Microsoft has closed it to new registries as of May 2026 and is removing it entirely in March 2028, with a documented transition to Notary. The Defender vulnerability findings artifact is signed by Microsoft for the integrity of the findings themselves and is not an image provenance control, and image cleaner removes unused vulnerable images rather than enforcing origin."
+ },
+ "wf-41-01": {
+  "why": "Risk prioritization, attack path analysis and governance are capabilities of the paid Defender CSPM plan; without it those columns render blurred in the recommendations experience. Defender for Servers Plan 2 is the nearest miss because it does bring agentless machine scanning and vulnerability findings, but it is a workload protection plan and does not unlock risk-based ranking of recommendations. MCSB is already applied by default the moment Defender for Cloud is enabled, so assigning it changes nothing."
+ },
+ "wf-41-02": {
+  "why": "Cloud security explorer lets you run your own path-finding queries over the cloud security graph, correlating exposure, identity permissions, and data sensitivity in one question. Attack path analysis is the closest wrong answer: it surfaces only the exploitable paths the proprietary algorithm has already computed and ranked, so it cannot be steered at an arbitrary ad hoc correlation. Resource Graph reaches asset and assessment records but not the graph relationships between identity, exposure and data."
+ },
+ "wf-41-03": {
+  "why": "Standards beyond the defaults can only be added once at least one paid plan is on for the scope, and they are assigned from Manage compliance policies against the account or management account; Microsoft advises picking the highest applicable scope so nested resources aggregate. Assigning the Azure Policy initiative is the tempting near miss, because Azure standards do ride on policy initiatives, but that path assesses Azure resources and will not evaluate AWS resources reached through the connector. Compliance Manager consumes the resulting data rather than producing it."
+ },
+ "wf-41-04": {
+  "why": "Standards mix automated and manual assessments; manual ones are cleared by selecting the assessment, choosing the subscriptions, selecting Attest and attaching evidence, which is exactly the audit artefact wanted. An exemption is the plausible wrong turn, since it also removes a red mark, but it records that a requirement is being skipped rather than demonstrating it is met. Waiting achieves nothing because a control with no automatable signal never resolves itself, and disable rules belong to vulnerability findings, not compliance controls."
+ },
+ "wf-41-05": {
+  "why": "Plan 1 is the entry-level tier built around the Defender for Endpoint integration and it is the only Servers plan that can be enabled at resource level, which the Security Center granular pricing policy definitions do by tag. Plan 2 at resource level is the trap: Plan 2 can only be disabled per resource, never enabled per resource, so that assignment cannot exist. Exclusion tags on agentless scanning only skip scanning, they do not stop the subscription from being billed or protected, and CSPM alone brings posture scanning rather than endpoint detection and response."
+ },
+ "wf-41-06": {
+  "why": "Microsoft recommends policy-based enablement precisely for this case: it applies one consistent configuration across every current and future storage account inside the scope, including whole management groups. Toggling each subscription in the portal is the near miss, because it does protect accounts that exist now, but nothing carries the setting to subscriptions or accounts created later. Workflow automation reacts after the fact and Defender CSPM gives posture and data discovery, not the storage threat detection and malware scanning of the workload plan."
+ },
+ "wf-41-07": {
+  "why": "Management account onboarding auto-provisions connectors for discovered member accounts and for accounts created later, and when onboarding a management account the CloudFormation template must be run as a Stack and as a StackSet, with AWS Organizations trusted access enabled. Using the delegated administrator account is the seductive wrong answer because it matches normal AWS practice, but Defender for Cloud explicitly does not support delegated administrator accounts for this. An account already wired to Microsoft Sentinel needs the separate documented procedure rather than inheriting anything."
+ },
+ "wf-41-08": {
+  "why": "Defender for Cloud reaches Google Cloud through federated trust, using a workload identity pool plus impersonation of purpose-built service accounts, so no long-lived secret is stored anywhere; the script provisions the pool, per-plan providers, service accounts and project-level bindings, and APIs such as the IAM, STS, resource manager, IAM credentials and compute services must be enabled, on the management project for organization onboarding. The JSON key answer is the trap because that is how many third-party tools still work. Azure Arc matters for Defender for Servers coverage of GCP virtual machines, but it is not the connector authentication mechanism."
+ },
+ "wf-41-09": {
+  "why": "Agentless machine scanning skips virtual machines whose disks use unsupported types, and ultra disk is on that unsupported list along with premium v2 and AKS ephemeral OS disks, so the only route to findings for those hosts is agent-based scanning through the Defender for Endpoint sensor, which Plan 1 and Plan 2 both provide. Exclusion tags are the plausible first guess, and worth checking, but they would not correlate so neatly with a single storage choice. Scan frequency is not adjustable: agentless scanning runs on a fixed daily cycle."
+ },
+ "wf-41-10": {
+  "why": "Monitor Only is defined for assets that are relevant to your attack surface but are neither directly controlled by you nor a technical dependency, and Microsoft gives independent franchisees and related companies as the example, which is exactly this relationship. Dependency is the closest wrong option and is reserved for third-party infrastructure that directly supports the operation of your own assets, such as a hosting provider carrying your web content. Requires Investigation is a triage state pending a decision, not the decision itself."
+ },
+ "wf-41-11": {
+  "why": "Attack paths start at an external entry point and run through lateral movement to a critical target, and the remediation tab separates recommendations that mitigate the path from additional ones that only reduce exploitation risk, so removing the external reachability severs the chain immediately even before patching completes. Chasing the highest scoring control is the plausible misfire because it optimises secure score rather than this live chain, and secure score weighting is unrelated to the path in front of you. An exemption hides the finding while the route stays open, and note the path itself can take up to 24 hours to disappear after real remediation."
+ },
+ "wf-41-12": {
+  "why": "Malware scanning is capped per storage account per month for cost control, defaulting to ten thousand gigabytes, and the plan supports overriding subscription-level settings for a specific account, which is exactly the lever that restores scanning without touching every other account. Enabling sensitive data threat detection is the nearest wrong answer because it is a genuine Defender for Storage feature and sounds like more inspection, but it detects exposure of sensitive data rather than scanning uploads for malware. Agentless machine scanning covers virtual machine disks, not blob uploads."
+ },
+ "wf-41-13": {
+  "why": "Enabling a new Defender plan or changing plan configuration such as regions is exactly the documented trigger for refreshing the CloudFormation template, and the fix is to generate the current template and update the existing stack, keeping the stack parameters and acknowledging the IAM changes. Deleting and recreating the connector is the panic option: it discards history and configuration for a problem that a stack update solves. There is no long-lived access key to rotate, because authentication is federated with short-lived credentials, and the gcloud script belongs to GCP onboarding."
+ },
+ "wf-41-14": {
+  "why": "Discovery works by recursing outward from known assets through Whois records, DNS records, shared certificates and address block or ASN relationships, so an already indexed compromised host is itself a lead into the rest of the unmanaged estate that was built alongside it. Adding an exclusion is the actively harmful option: exclusions keep entities out of inventory, which is the opposite of what an investigation needs. Seeding a one-off group with a single host narrows the aperture, and waiting for the weekly cadence spends the hour you do not have."
+ },
+ "wf-41-15": {
+  "why": "Disabled findings are invisible and do not affect secure score, which is precisely how a CVE hides for months; Microsoft is deprecating disable rules as part of the move to individual recommendations and directs teams to exemptions, which carry the exception explicitly. Raising the minimum severity is the tempting half-measure because it narrows the blast radius, but it leaves the same silent suppression mechanism in place. Exclusion tags stop machines being scanned at all, which is a wider hole, not a narrower one."
+ },
+ "wf-41-16": {
+  "why": "Governance is the Defender CSPM capability built for exactly this failure mode: it drives remediation at scale by assigning owners and due dates and tracking whether the estate is converging on the security policy. Enforce and deny is the strong nearby answer and belongs in the hardening plan, but it prevents future noncompliant resources rather than closing the twelve findings already sitting there with no owner. Workflow automation and continuous export move information around; neither creates accountability or a deadline."
+ },
+ "wf-42-01": {
+  "why": "The Defender portal supports one primary workspace plus any number of secondary ones, and the Defender XDR connector attaches to the primary workspace alone. Incident creation and alert correlation stay separated per workspace. The nearest wrong answer is enabling a second XDR connector: any standalone Microsoft connectors on secondary workspaces are deliberately disconnected at onboarding precisely to stop tenant-based alerts being counted twice, so that path is blocked by design rather than merely inadvisable."
+ },
+ "wf-42-02": {
+  "why": "Installing, updating, and removing content hub items requires Microsoft Sentinel Contributor at resource group level, and that role also carries the create and edit rights for analytics rules she needs. The closest wrong choice is Playbook Operator: it only lets someone list, view, and manually run playbooks, and it grants nothing at all in the content hub. Responder alone stops at managing incidents."
+ },
+ "wf-42-03": {
+  "why": "Vendor solutions that ride on the unified Azure Monitor Agent connectors for CEF, Syslog, or custom logs declare dependencies, and Install with dependencies pulls in the solution that actually carries the connector. The tempting wrong answer is the pre-created table: that requirement belongs to Custom Logs via AMA, where you build the table ending in _CL yourself, not to CEF collection, which lands in the built-in CommonSecurityLog table."
+ },
+ "wf-42-04": {
+  "why": "A policy assignment governs resources created from that point on; a remediation task is what reaches back and applies the diagnostic setting to resources that already exist. The nearest wrong option, clearing the parameter filter, is a real step in the same wizard but only exposes the workspace and log-type parameters, and does nothing about existing scope. Retention changes never backfill data that was never ingested."
+ },
+ "wf-42-05": {
+  "why": "When the source cannot be moved to a different facility, the documented remedy is a KQL transformation on the DCR that filters CEF messages out of the syslog stream, checking both the process name and the message body because some vendors do not honour the RFC header format. The closest wrong answer, a second forwarder, splits the machines but not the facility, so the same facility still feeds both streams and the duplication survives. Repointing CEF at Microsoft-Syslog would simply destroy the CommonSecurityLog parsing."
+ },
+ "wf-42-06": {
+  "why": "Minimal is defined as the small breach-indicative set: it keeps successful and failed logons and process creation while deliberately omitting sign-out, which is high volume and of little detection value. The nearest wrong choice is Common, which exists to keep a full audit trail including 4634, so it holds precisely the records the lead agreed to give up. Custom XPath would reach the same place but is unnecessary work when a prebuilt set already expresses the requirement."
+ },
+ "wf-42-07": {
+  "why": "Windows Event Forwarding concentrates events on a collector, so the agent belongs on the collector, and the connector prerequisite is exactly that: WEC enabled and running with the agent on that machine. Installing the agent on every source, the closest wrong option, defeats the whole reason the estate was designed this way and is not what the connector expects. The forwarder script and the _CL table belong to Linux syslog and text-file collection respectively."
+ },
+ "wf-42-08": {
+  "why": "The destination table must carry the _CL suffix and just two columns, a datetime and the whole log line. The line column is called RawData when collection happens on the machine hosting the application, and Message when a log forwarder sits in between, which is the case here and is why the paired transformation renames the field. The RawData variant is the near miss: correct shape, wrong field name for this topology. The _SRCH suffix belongs to tables produced by search jobs."
+ },
+ "wf-42-09": {
+  "why": "Automation rules run playbooks under a dedicated Sentinel service account, not under the author, and that account must be granted rights on the resource group where the playbook lives; the Manage playbook permissions link does this and asks for Owner on the group. The nearest wrong answer, Playbook Operator for the engineer, only enables that person to run a playbook by hand, which does nothing for unattended execution. Trigger type is irrelevant here; both trigger families can call playbooks of the matching type."
+ },
+ "wf-42-10": {
+  "why": "Analytics retention is the expensive hot window and 90 days covers the hunters, while total retention carries the same table onward in the lake for up to twelve years at low cost, which satisfies the regulator. Moving the whole table to the Data Lake tier is the tempting alternative but it stops real-time analytics rules, alerting, and hunting on that table entirely, so the three-month working window disappears. Leaving 180 days hot simply pays twice as much for a window nobody uses."
+ },
+ "wf-42-11": {
+  "why": "Events not selected by the rule were never sent, so the only way forward is to widen what the agent collects, and editing the rule in place applies to every associated machine without a second association to manage. Standing up a second rule with All events is the close alternative: it works, but it floods the workspace with the full unfiltered Security and AppLocker channels mid-incident and leaves a rule to unpick afterwards. Retention and search jobs only reach data that was already ingested, and these records never were."
+ },
+ "wf-42-12": {
+  "why": "Non-playbook actions such as tagging and assignment run natively, so a rule that performs those but silently skips the playbook points squarely at the Sentinel service account lacking rights on the playbook resource group. Reordering, the nearest wrong answer, changes which rule runs first but never grants the missing permission, so the action would still be skipped. Both Logic Apps plans are supported from automation rules, and switching to the alert trigger would abandon the incident-shaped conditions the rule depends on."
+ },
+ "wf-42-13": {
+  "why": "Data Lake tier data is deliberately outside real-time features, so alerting, analytics rules, and hunting stop the moment a table is moved there, and the tier must be changed back for detections to resume on incoming data. The lake is still readable through KQL jobs and notebooks, which is how the overnight window gets examined without waiting. Rewriting the rules against the lake, the nearest wrong answer, is not possible in the way it sounds because scheduled analytics rules are among the features the lake tier does not support."
+ },
+ "wf-42-14": {
+  "why": "Defender XDR administrative actions, including creating or editing custom detection rules and creating or removing indicators of compromise, are audited automatically into Microsoft Purview Audit and are searchable from the Audit page in the Defender portal by activity, date, and user. CloudAuditEvents is the closest-looking distractor but it holds cloud platform control-plane records surfaced by Defender for Cloud, not portal administration of Defender XDR, and it returns nothing at all if Defender for Cloud is not in play. SentinelHealth reports connector health, not who changed what."
+ },
+ "wf-42-15": {
+  "why": "SentinelHealth only exists once health monitoring is enabled, and Microsoft's guidance is to alert on health drift with Azure Monitor alert rules rather than analytics rules, which is what turns a silent feed into a page. Table insights is the seductive wrong answer because its Last data received and fluctuation cards do surface exactly this symptom, but the documentation is explicit that it is a visualization surface, not an alerting one, and tables below a megabyte a day are not even evaluated. Automation rules react to incidents, so they cannot fire on the absence of data."
+ },
+ "wf-42-16": {
+  "why": "Syslog and CEF records are not Azure resources, so they inherit the resource ID of the forwarding VM, which means one shared forwarder makes every team's events indistinguishable for access purposes; separate forwarders per team, each with a resource ID, is the documented way to make resource-context RBAC work here. Sentinel Reader is the closest wrong answer and fails the requirement in the opposite direction, since it opens the whole workspace and the Sentinel experience rather than a slice of it. A second workspace would solve the permission problem but is heavy, and cross-workspace querying would reintroduce the exposure."
+ },
+ "wf-43-01": {
+  "why": "A non-E5 and non-E7 tenant follows manual onboarding: it names a workspace, then provisions SCU capacity against an Azure subscription and resource group, which needs Azure Contributor or Owner on that resource group and Security Administrator or higher in the tenant. The nearest wrong answer is the E5 upgrade, which is a real path to inclusion capacity but not a prerequisite, since manual provisioning exists precisely so lower-licensed tenants can buy SCUs starting at one unit."
+ },
+ "wf-43-02": {
+  "why": "Provisioned capacity grants the full unit count each clock hour, for example 02:00 to 03:00, and anything unused simply lapses when that hour ends. The rolling-window option is the trap because it sounds like the same idea, but a rolling sixty minutes from session start would let a heavy user shift capacity around, and Microsoft explicitly documents fixed hour blocks rather than rolling ones."
+ },
+ "wf-43-03": {
+  "why": "Provisioned capacity bills in whole hourly blocks with a one hour minimum, so two separate provisions inside the 09:00 hour are two billed units, and the documented advice is to change unit counts at the top of the hour. The overage answer is the closest miss: overage really is consumption-based and billed to one decimal place, but it does not exempt anything from hourly provisioned billing, and it is added on top of provisioned units rather than replacing them."
+ },
+ "wf-43-04": {
+  "why": "Copilot owner and contributor are platform roles that grant no access to security data on their own; Copilot uses on-behalf-of authentication, so it never exceeds the user's own service permissions. The plugin option is the strongest distractor because a restricted plugin genuinely can block a workload, but here she reaches other plugins fine, and turning a plugin on for the tenant would still leave her without any Azure role on the Sentinel workspace."
+ },
+ "wf-43-05": {
+  "why": "The recommended bundle gives platform access to people who already hold Microsoft security roles, and the documented catch is that removing Everyone is one-way, so the replacement must be planned before the removal. The Security Administrator option is the tempting one because that role does inherit Copilot owner, but Microsoft explicitly warns against handing out a highly privileged Entra role purely to obtain Copilot access; use a security group added to a Copilot role instead."
+ },
+ "wf-43-06": {
+  "why": "Lighthouse is the outlier of the three partner models: the analyst works from the partner tenant against delegated Azure resources, so the partner's SCUs are drawn down, while GDAP and B2B guest sign-in both bill the customer's capacity. The mirror-image option is the natural guess because data residency intuition says the data owner pays, but Microsoft's comparison table puts Lighthouse consumption in the partner tenant. Lighthouse also supports only the Sentinel and NL2KQL Sentinel plugins."
+ },
+ "wf-43-07": {
+  "why": "Restricting preinstalled plugin availability is an immediate tenant-wide change covering the embedded Copilot surfaces such as Defender XDR, which is why Microsoft warns owners to notify users first, and once restriction is on, subsequent preinstalled plugins arrive Owners only. The standalone-only option is the seductive one because the setting lives in the standalone portal's plugin settings page, but the blast radius is explicitly both experiences."
+ },
+ "wf-43-08": {
+  "why": "The two settings are layered: the first governs user-scope plugins and must be opened to contributors before the tenant-scope question is even active, and leaving the second at Owners only keeps publishing under owner control. The both-open option fails because although the upload dialog does offer a private choice, the contributors would then also be permitted to choose organisation-wide scope, which is exactly the sign-off gate the chain wants to keep."
+ },
+ "wf-43-09": {
+  "why": "When a partner-built agent reaches a Microsoft tool and Microsoft product data such as Intune, Entra, Sentinel or Defender, a Global Administrator has to grant that consent, and the owner's own flow offers a Copy link to hand to them. The Agent ID option is the closest miss and is backwards: creating a dedicated agent identity is currently offered for Microsoft-built agents, while partner-built agent setup assigns an existing user account."
+ },
+ "wf-43-10": {
+  "why": "Security Store keeps purchasing and billing deliberately separate from operational management in Security Copilot, so uninstalling the agent stops it running but leaves the subscription alive until cancelled in the Store. The owner settings answer is the plausible trap because capacity management does live there, but that page governs SCU association and units, not partner subscription billing."
+ },
+ "wf-43-11": {
+  "why": "The full-capacity error is only shown at one hundred percent consumption, and the documented response is to ask whoever holds owner or contributor rights on the Azure capacity resource to raise units, with adjustments landing within roughly thirty minutes. Closing the sidecar is the seductive wrong move because it feels like throttling demand, but hiding the panel does not change SCU consumption, and deleting capacity is worse still since deletion is permanent and irreversible."
+ },
+ "wf-43-12": {
+  "why": "Sharing is creator-controlled and non-transitive, so a forwarded link does not extend access, yet for those who do have access the session is a static read-only view of the entire session including content drawn from plugins they could not query themselves. The data-access option is the dangerous misconception: underlying service permissions are evaluated when the response is generated, not when the shared session is viewed."
+ },
+ "wf-43-13": {
+  "why": "Owners control custom plugin lifecycle and the two scope permissions, so removing the published plugin and closing the tenant-scope permission both contains the incident and prevents another contributor doing the same. Removing the contributor's role is the plausible-looking move but it does not withdraw a plugin already published to the organisation, and a per-user toggle only affects that one analyst's sessions while everyone else keeps the plugin available."
+ },
+ "wf-43-14": {
+  "why": "Agents are designed to be run or paused from the agent page, and feedback the team gave earlier is stored in agent memory where it can be reviewed and rejected, which is the proportionate fix for a bad recommendation. Tearing out the Entra plugin tenant-wide is the tempting sledgehammer, but it also blindfolds every analyst prompt and every other identity agent; note too that Entra agent permissions are fixed and cannot simply be edited away."
+ },
+ "wf-43-15": {
+  "why": "Microsoft's guidance is group-based assignment using Entra role-assignable groups, least privilege instead of blanket Security Administrator, and Purview audit logging enabled from owner settings so administrator actions, user actions and system responses are captured. The two-owner point is a real rule but it is a floor that prevents accidental removal of the last owners, not a ceiling, and the usage dashboard reports SCU consumption by session, not configuration changes."
+ },
+ "wf-43-16": {
+  "why": "Copilot writes administrator actions, user actions and system responses to Purview when the owner enables it, logs surface within about twenty-four hours, and the default one hundred and eighty day retention can be lengthened with audit log retention policies. The usage dashboard answer is the natural confusion: it does exist and does cover ninety days, but it reports units consumed, initiator, category and plugin, not an evidential record of what was asked, and its window is not configurable in owner settings."
+ },
+ "wf-any-01": {
+  "why": "Disabling the application object stops new token issuance immediately and revocation cuts the refresh chain, which is the only move here that acts on the credential itself. Stripping role assignments is slower and leaves the caller authenticated with a cached access token that may still satisfy other scopes, and a country block does not help against a token already issued."
+ },
+ "wf-any-02": {
+  "why": "A simultaneous multi-subscription drift is a deployment, and the Activity log is the record of who wrote what and when. The score history tells you the drop happened but not its cause, and walking each resource blade finds the end state without the actor or the change that produced it."
+ },
+ "wf-any-03": {
+  "why": "This is multifactor fatigue: the attacker already holds valid passwords and is spamming approvals until someone taps accept. Number matching breaks the attack outright, because approving now requires a digit only the real sign-in screen shows. Password resets are the right follow-up but take hours at this scale, and blocking one network simply moves the source."
+ },
+ "wf-any-04": {
+  "why": "An agent inherits the reach of whoever invokes it, so unchanged agent permissions plus newly visible data points at oversharing in the underlying site rather than at the agent. Poisoning would not produce accurate current figures, and a label bypass would show as a labelling failure on the files rather than as access following the user."
+ },
+ "wf-ev-01": {
+  "text": "A finance analyst forwards you a mail she already clicked: a document add-in that asked, in the real Microsoft consent dialog, for Mail.Read and offline_access. She granted it, because user consent for unverified publishers was never restricted in your tenant. The app now holds a refresh token that survives her password reset, and it is quietly paging her mailbox through Graph from an ASN you do not recognise. You go looking for every other identity that consented to the same app registration."
+ },
+ "wf-ev-02": {
+  "text": "A researcher mails an abuse address with a URL to one of your blob containers: public read access at container level, anonymous listing enabled, and inside it two years of exported invoices. The account was created by a project team before you set 'allow blob anonymous access' to false at the account level, so nothing blocked it. Defender for Storage had never been enabled on that subscription, so no alert ever fired. The clock on the disclosure starts now."
+ },
+ "wf-ev-03": {
+  "text": "Network Watcher's effective security rules show what the portal blade hid: a subnet NSG with an inbound allow from Any on 3389, sitting above your deny rule by priority. It was added for a vendor demo eleven months ago and never removed. Brute-force attempts against the jump host in that subnet have been running at a steady, patient rate all week, slow enough not to lock anything out. You need to know whether one of them ever succeeded."
+ },
+ "wf-ev-04": {
+  "text": "CSPM secrets scanning flags a plaintext Key Vault connection string committed to a build repo, and the vault it opens is still on legacy access policies rather than RBAC. The policy granted the service principal Get, List and Set on secrets, which means whoever holds that string can also write. Purge protection is off, so a determined attacker could delete the vault's contents outright. You start reconciling every principal on that access policy against who actually still works here."
+ },
+ "wf-ev-05": {
+  "text": "A logical SQL server carries a server-level firewall rule spanning 0.0.0.0 to 255.255.255.255, labelled 'temp-migration'. Defender for SQL raises a brute-force alert and, twenty minutes later, a suspected SQL injection probe against a reporting database. Auditing was configured to a storage account nobody reads, so the only trail is the one you are about to pull. The database still authenticates with a SQL login rather than a Microsoft Entra admin, which means no Conditional Access ever touched it."
+ },
+ "wf-ev-06": {
+  "text": "Someone enabled a Security Copilot plugin against a workspace where every analyst holds the contributor role, and the plugin authenticates as the invoking user. That means a junior on shift can now ask natural-language questions that return data their console role was never scoped to surface. The prompt history shows a series of queries about executive mailboxes, framed as a training exercise. You have to decide whether that was curiosity or reconnaissance, and tighten owner settings either way."
+ },
+ "wf-ev-07": {
+  "text": "An adversary-in-the-middle page harvested a session cookie after the user completed MFA, so the token in play is fully authenticated and the sign-in log shows the interactive success as clean. Minutes later the same token is replayed from a residential proxy in another country, and it works, because the policy that governs that app has no sign-in frequency and no token protection. The account then registers a new authentication method to make the foothold durable. Revoking the password will not help; revoking the sessions might."
+ },
+ "wf-ev-08": {
+  "text": "A web app running on a compromised VM is coaxed into fetching the instance metadata endpoint, and it hands back a bearer token for the machine's system-assigned managed identity. That identity was given Contributor at subscription scope during a deployment sprint and never trimmed, so the token opens storage accounts across three resource groups. There is no password to steal and no credential to rotate; the entitlement itself is the vulnerability. You go and read what that identity has actually been touching."
+ },
+ "wf-ev-09": {
+  "text": "A grounding document uploaded to an internal AI assistant carries hidden text instructing the model to summarise and forward anything labelled confidential. The assistant runs on an Azure OpenAI deployment whose managed identity was granted broad read across the SharePoint estate so retrieval would 'just work', and it obeys, because the injected text arrives inside the same context window as its system prompt. Defender for AI services raises a prompt-injection alert, but only after four documents have been paraphrased into a chat the attacker can read. The blast radius is the identity's reach, not the model's."
+ },
+ "wf-ev-10": {
+  "text": "A verbose new data connector triples daily ingestion overnight and the workspace hits its commitment tier hard. To stop the bleeding, someone moved several tables to the auxiliary log plan and switched two analytics rules to disabled rather than tuning them. Nothing alerted, because a disabled rule generates no health signal and an unqueried table looks exactly like a quiet one. Three days of edge telemetry are now effectively unwatched, and the rota never noticed the gap."
+ },
+ "wf-ev-11": {
+  "text": "A build job pulls a base image straight from a public registry, bakes it, and pushes to your container registry, where an unauthenticated pull is allowed from inside the cluster subnet. Defender for Containers flags the running workload: a crypto-miner process, plus an outbound connection from a pod whose service account is bound to a cluster role with secrets read. The registry has no content trust and the cluster admits unsigned images, so nothing along that chain ever asked where the layers came from. You start with which nodes ran it and what those secrets protect."
+ },
+ "wf-ev-12": {
+  "text": "Defender for Key Vault alerts on an unusual burst of key operations from a principal that normally touches one certificate a month, followed by a delete attempt against the customer-managed key wrapping a storage account. Soft delete saves you; purge protection, which was only turned on last quarter, saves you again. Had both been off, the key would be gone and every blob encrypted with it unreadable within minutes. You trace how that principal got Key Vault Crypto Officer in the first place."
+ },
+ "wf-ev-13": {
+  "text": "Secure score drops eleven points in a night and the cause is not an attack. A deployment pipeline applied a policy assignment change that flipped a deny effect to audit across a management group, and a stack of resource-scoped exemptions with no expiry date were merged alongside it. Non-compliant public endpoints started appearing within the hour because nothing was stopping them any more. The regulatory compliance view still looks green, because exempted resources are simply not counted."
+ },
+ "wf-ev-14": {
+  "text": "An unpatched VM missing a months-old remote-code-execution fix is compromised, and because just-in-time access was never applied and the subnet is flat, the attacker moves sideways to an app server on the same virtual network. That server holds a private endpoint route to the SQL database, so the traffic never crosses the public firewall you spent a week tightening. Transparent data encryption protects the files at rest but does nothing against an authenticated query. The attack path was visible in the cloud security explorer before any of it happened."
+ },
+ "wf-ev-15": {
+  "text": "Bulk reads appear against a container from an address range you have never served, authorised by an account-key SAS with a twelve-month expiry and no stored access policy behind it. Because it was signed with the account key rather than a user delegation key, you cannot revoke it individually; the only lever is rotating the key and breaking every other consumer at the same time. Shared key authorisation was still permitted on the account, which is what made the token possible. Egress continues while you decide."
+ },
+ "wf-ev-16": {
+  "text": "A security agent wired into your incident queue is running with a delegated identity that carries standing Security Administrator, because nobody made it eligible through PIM and it needed the role to act. Tonight it is triaging a poisoned incident whose evidence fields contain instructions rather than facts, and it starts drafting changes it should never have had the rights to make. The audit trail attributes every action to the agent's owner, not to the person who last edited it. You pull the agent, then go looking for what it already touched."
+ }
+}

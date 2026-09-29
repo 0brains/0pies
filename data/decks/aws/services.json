@@ -517,7 +517,7 @@
       "id": "svc-073",
       "label": "Control who can access AWS resources and what actions they can perform",
       "answer": "AWS Identity and Access Management (IAM)",
-      "why": "AWS Identity and Access Management (IAM) is the AWS offering designed to control who can access AWS resources and what actions they can perform.",
+      "why": "IAM is where you define identities (users, groups, roles) and attach policies that decide which AWS actions each one may take on which resources.",
       "citation": "AWS docs · AWS IAM"
     },
     {
@@ -536,9 +536,9 @@
     },
     {
       "id": "svc-076",
-      "label": "Discover and protect sensitive data stored in Amazon S3",
+      "label": "Find and flag sensitive data such as PII sitting in S3 buckets",
       "answer": "Amazon Macie",
-      "why": "Amazon Macie is the AWS offering designed to discover and protect sensitive data stored in Amazon S3.",
+      "why": "Macie uses machine learning and pattern matching to scan S3 buckets for sensitive data like PII, and reports findings about exposure and bucket security.",
       "citation": "AWS docs · Amazon Macie"
     },
     {

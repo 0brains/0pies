@@ -1,7 +1,7 @@
 {
  "feat-000-00": {
   "label": "Pull machine-readable text out of a photo of a whiteboard or street sign.",
-  "why": "Azure AI Vision's Read API applies OCR to extract printed and handwritten text from images, unlike Image Analysis's captioning and tagging."
+  "why": "Azure AI Vision's Read API is the OCR feature: it pulls both typed and handwritten text out of an image, whereas Image Analysis captions and tags what the picture shows."
  },
  "feat-000-01": {
   "label": "Identify and place bounding boxes around individual objects in a photo.",
@@ -176,8 +176,8 @@
   "why": "Microsoft Foundry Agent Service's function calling lets an agent invoke your own external APIs or functions as part of its reasoning."
  },
  "feat-015-00": {
-  "label": "Automatically try multiple algorithms and hyperparameters to find the best-performing model for your dataset.",
-  "why": "Azure Machine Learning's Automated ML tries multiple algorithms and hyperparameters to find the best-performing model for your dataset."
+  "label": "Let the service run many candidate algorithms and hyperparameter settings against your data and pick the strongest model for you.",
+  "why": "Automated ML in Azure Machine Learning trains and compares many algorithm and hyperparameter combinations on your data, then surfaces the model that scores best."
  },
  "feat-015-01": {
   "label": "Build a training pipeline visually by dragging and connecting modules, with no code required.",

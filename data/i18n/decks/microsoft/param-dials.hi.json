@@ -4,7 +4,7 @@
   "why": "histack का exact exam cue: 'consistent, repeatable output' → low temperature। यह whole probability distribution को rescale करता है; tune करो इसे या top_p, दोनों नहीं।"
  },
  "pd-002": {
-  "label": "Sampling को सबसे छोटे set of tokens में restrict करो जिनकी cumulative probability एक set threshold तक reach करती है",
+  "label": "सिर्फ़ सबसे ऊँची rank वाले tokens में से sample करो, जब तक उनकी कुल probability एक चुने हुए cutoff तक न पहुँच जाए",
   "why": "Nucleus sampling — top_p candidate set को truncate करता है, जबकि temperature whole distribution को reshape करता है (corpus confused-pair #5)।"
  },
  "pd-003": {
@@ -64,8 +64,8 @@
   "why": "PTU है reserved-capacity deployment model; Standard share करता है capacity और bills per token variable throughput के साथ, जबकि Capacity (TPM) सिर्फ quota को set करता है जो भी deployment type chosen है।"
  },
  "pd-017": {
-  "label": "Customer-support app को unpredictable और bursty है, और team hourly reserved capacity की जगह pay-per-token billing चाहता है",
-  "why": "Pay-per-token pricing variable load के under है Standard deployment (exam का exact scenario); PTU instead reserved capacity के लिए hourly bills करता है regardless actual usage की।"
+  "label": "एक festival ticketing assistant हफ़्तों खाली बैठा रहता है और फिर अचानक भीड़ आ जाती है, और finance चाहता है कि charge सिर्फ़ खपत हुए tokens का हो, चौबीसों घंटे रोके गए throughput का कभी नहीं",
+  "why": "बदलते load में pay-per-token pricing, Standard deployment है; इसके उलट PTU असल उपयोग की परवाह किए बिना reserved capacity का hourly bill बनाता है।"
  },
  "pd-018": {
   "label": "Bills per token consumed rather than per hour of reserved compute, throughput के साथ जो shared load के under vary कर सकता है",

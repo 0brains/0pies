@@ -19,7 +19,7 @@
   "why": "CU ekstrahuje; AI Search indeksuje i pobiera downstream (indexer, skillset, knowledge store) — ekstrakcja i pobieranie to różne usługi (para #22)."
  },
  "ss-005": {
-  "label": "Przeszukaj opisy produktów przez podobieństwo semantyczne zamiast dokładnego dopasowania słów kluczowych",
+  "label": "Znajdź pozycje katalogu, których opisy znaczą to samo co zapytanie, nawet jeśli są inaczej sformułowane",
   "why": "Osadzenia konwertują tekst na wektory do porównania semantycznego (text-embedding-3-large) — pobierają i porównują, nigdy nie tworzą treści (para #18)."
  },
  "ss-006": {
@@ -103,7 +103,7 @@
   "why": "Fine-tuning to przejście treningowe, które piecze zademonstrowane zachowanie do nowych wag, aby utrwalało się przez wezwania; wdrożenie magazynowania czatu/uzupełniania tylko odzwierciedla to, co zostaje resent w podpowiedzi tego wezwania, a model multimodalny zmienia, jakie typy wejścia są akceptowane, nie czy styl się utrwala bez ponownego żądania."
  },
  "ss-026": {
-  "label": "Testuj mówione podpowiedzi wobec wdrożonego modelu obsługującego audio bezpośrednio na placu zabaw Foundry chat, bez pisania jakiegokolwiek kodu SDK",
+  "label": "Wypróbuj wejście głosowe na wdrożeniu modelu obsługującego audio w chat playground Foundry, bez pisania kodu",
   "why": "Wdrożenie multimodalne obsługujące audio może być wykonywane prosto na placu zabaw czatu; Voice Live/gpt-realtime to dedykowany niskowybierowy API sesji realtime, osobna ścieżka wdrażania zbudowana dla ciągłych rozmów głosowych."
  }
 }

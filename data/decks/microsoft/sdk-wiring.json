@@ -28,7 +28,7 @@
   },
   {
    "id": "sw-002",
-   "label": "Sends the messages list to a deployed model and returns choices[0].message.content",
+   "label": "Given the deployment name and a system-plus-user message array, returns the reply you then read out of choices[0].message.content",
    "answer": "chat.completions.create",
    "options": [
     "chat.completions.create",
@@ -136,14 +136,14 @@
   },
   {
    "id": "sw-011",
-   "label": "The pip package you install before writing any Foundry project client code, per the quickstart's very first setup command",
-   "answer": "azure-ai-projects",
+   "label": "First command in a fresh virtual environment, before any code can open a connection to a Foundry project",
+   "answer": "pip install azure-ai-projects",
    "options": [
-    "azure-ai-projects",
-    "azure-ai-search",
-    "azure-ai-language"
+    "pip install azure-ai-projects",
+    "pip install azure-ai-search",
+    "pip install azure-ai-language"
    ],
-   "why": "\"Which package should you install for the project client?\" is a classic exam stem — the answer is azure-ai-projects, not the search or language SDKs.",
+   "why": "The Foundry project client lives in azure-ai-projects — a frequently tested package name; the search and language SDKs are the usual distractors.",
    "citation": "Microsoft Learn · Azure AI Foundry SDK quickstart (azure-ai-projects)"
   },
   {
@@ -184,7 +184,7 @@
   },
   {
    "id": "sw-015",
-   "label": "Set to listen from the computer's default microphone instead of a saved file, then handed to the recognizer as its audio source",
+   "label": "Constructed with use_default_microphone=True so a kiosk captures live voice, then passed into the recognizer's constructor as its input",
    "answer": "AudioConfig",
    "options": [
     "AudioConfig",
@@ -280,14 +280,14 @@
   },
   {
    "id": "sw-023",
-   "label": "The client an app creates first when it will send document URLs off for extraction and read structured results back",
+   "label": "A claims app will hand scanned policy PDFs to a custom analyzer and read field values back — the object it constructs before anything else",
    "answer": "ContentUnderstandingClient",
    "options": [
     "ContentUnderstandingClient",
     "TextAnalyticsClient",
     "ImageAnalysisClient"
    ],
-   "why": "\"Which client should the app create first?\" for a Content Understanding app is this class — the other two are separate services with separate endpoints for plain text and general images respectively.",
+   "why": "Content Understanding work starts from this class — the other two are separate services with separate endpoints for plain text and general images respectively.",
    "citation": "Microsoft Learn · Azure AI Content Understanding SDK quickstart"
   },
   {
@@ -316,7 +316,7 @@
   },
   {
    "id": "sw-026",
-   "label": "Set background to transparent and request PNG output on this text-to-image request to get a see-through background",
+   "label": "A sticker-shop generator needs cut-out art with nothing behind it, so this call passes background=transparent with output_format=png",
    "answer": "gpt-image-1 call",
    "options": [
     "gpt-image-1 call",

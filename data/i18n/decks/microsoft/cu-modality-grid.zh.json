@@ -30,7 +30,7 @@
     "why": "布局提取文本、表格、选择标记和结构；Read 风格 OCR 仅为文本—— histack 的 CU Read vs Layout 区别。"
   },
   "cu-007": {
-    "label": "混合批次的供应商表单需要其松散的键值对被提取，而不从预定义字段架构开始",
+    "label": "一家保险公司从几十家经纪人那里收到理赔文件，每家的版式都不同，它希望抓取出现的任何带标签字段——无需预先拟定字段清单",
     "sub": "prebuilt-documentFields",
     "why": "prebuilt-documentFields 从文件中提取通用键值对，无需特定领域架构—— 不像 prebuilt-invoice 的固定发票字段。"
   },
@@ -50,7 +50,7 @@
     "why": "自定义图像分析器设置 base_analyzer_id 为 prebuilt-image，然后分层字段架构—— 记录的图表和截图提取模式。"
   },
   "cu-011": {
-    "label": "分析零售审计的货架照片，并返回产品数量、品牌存在和缺货指示符的结构化字段",
+    "label": "将零售巡检中拍摄的货架照片转换为结构化字段：可见多少件商品、出现了哪些品牌，以及是否有空位",
     "sub": "prebuilt-image",
     "why": "Content Understanding 的图像分析器直接从照片中返回架构定义的结构化字段—— 考试直接测试的零售货架审计场景。"
   },
@@ -60,7 +60,7 @@
     "why": "begin_analyze(analyzer_id=..., inputs=[AnalysisInput(url=...)]) 调用模式在模态中相同—— 只有分析器 id 改变，prebuilt-image 是直接(非搜索)图像分析器。"
   },
   "cu-013": {
-    "label": "接线轻量级 Python 客户端，调用 begin_analyze with 呼叫录音 URL 以拉回准备好供检索索引的成绩单和摘要",
+    "label": "一家播客网络通过 SDK 提交节目链接，希望返回的口述文字和内容摘要已经整理成适合 RAG 搜索索引的形式",
     "sub": "prebuilt-audioSearch",
     "why": "prebuilt-audioSearch 是 SDK 快速开始代码片段中记录的分析器 id—— *Search 后缀标记为索引/RAG 检索准备的输出，与没有检索准备的 prebuilt-audio 的直接提取不同。"
   },

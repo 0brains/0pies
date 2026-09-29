@@ -30,7 +30,7 @@
   "why": "Layout trích xuất văn bản, bảng, dấu lựa chọn và cấu trúc; OCR kiểu Read chỉ là văn bản — phân biệt Read-vs-Layout của histack CU."
  },
  "cu-007": {
-  "label": "Một lô hỗn hợp các biểu mẫu nhà cung cấp cần các cặp khóa-giá trị lỏng lẻo của chúng được kéo ra mà không bắt đầu từ lược đồ trường được xác định trước",
+  "label": "Một công ty bảo hiểm nhận hồ sơ yêu cầu bồi thường từ hàng chục đơn vị môi giới, mỗi nơi trình bày một kiểu, và muốn thu thập mọi trường có nhãn xuất hiện trong đó — không soạn trước danh sách trường",
   "sub": "prebuilt-documentFields",
   "why": "prebuilt-documentFields trích xuất các cặp khóa-giá trị chung từ tài liệu không yêu cầu lược đồ cụ thể cho miền — không giống như các trường hóa đơn cố định của prebuilt-invoice."
  },
@@ -50,7 +50,7 @@
   "why": "Các bộ phân tích hình ảnh tùy chỉnh đặt base_analyzer_id thành prebuilt-image trước khi xếp lớp lược đồ trường — mô hình được ghi chép để trích xuất biểu đồ và ảnh chụp màn hình."
  },
  "cu-011": {
-  "label": "Phân tích ảnh kệ từ kiểm tra bán lẻ và trả lại các trường được cấu trúc cho số lượng sản phẩm, sự hiện diện của thương hiệu và các chỉ báo hết hàng",
+  "label": "Biến ảnh chụp kệ hàng trong một đợt kiểm tra bán lẻ thành các trường có cấu trúc: có bao nhiêu sản phẩm nhìn thấy được, những thương hiệu nào xuất hiện, và có ô trống nào không",
   "sub": "prebuilt-image",
   "why": "Bộ phân tích hình ảnh của Content Understanding trả lại các trường được cấu trúc theo lược đồ trực tiếp từ ảnh — kịch bản kiểm tra kệ bán lẻ mà kỳ thi kiểm tra trực tiếp."
  },
@@ -60,7 +60,7 @@
   "why": "Mô hình cuộc gọi begin_analyze(analyzer_id=..., inputs=[AnalysisInput(url=...)]) giống nhau trên các phương thức — chỉ id bộ phân tích thay đổi, và prebuilt-image là bộ phân tích hình ảnh trực tiếp (không tìm kiếm)."
  },
  "cu-013": {
-  "label": "Dây chuyền máy khách Python nhẹ gọi begin_analyze với URL ghi âm cuộc gọi để kéo lại bản ghi âm và bản tóm tắt sẵn sàng cho chỉ mục truy xuất",
+  "label": "Một mạng lưới podcast gửi liên kết các tập qua SDK và muốn nhận lại lời nói kèm một bản tóm tắt đã được định dạng sẵn cho chỉ mục tìm kiếm RAG",
   "sub": "prebuilt-audioSearch",
   "why": "prebuilt-audioSearch là id bộ phân tích được ghi chép trong đoạn khởi động nhanh SDK — hậu tố *Search đánh dấu đầu ra được chuẩn bị cho lập chỉ mục/truy xuất RAG, không giống như prebuilt-audio's trích xuất trực tiếp không chuẩn bị truy xuất."
  },

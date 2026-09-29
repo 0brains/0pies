@@ -292,7 +292,7 @@
   },
   "svc-073": {
     "label": "AWS kaynaklarına kimler erişebilir ve hangi işlemleri yapabileceğini kontrol et",
-    "why": "AWS Identity and Access Management (IAM), AWS kaynaklarına kimler erişebilir ve hangi işlemleri yapabileceğini kontrol etmek için tasarlanan AWS sunumudur."
+    "why": "IAM, kimlikleri (kullanıcılar, gruplar, roller) tanımladığın ve her birinin hangi kaynaklar üzerinde hangi AWS eylemlerini yapabileceğine karar veren politikaları eklediğin yerdir."
   },
   "svc-074": {
     "label": "İşlem iş yüklerini güvenlik açıkları ve maruz kalması için sürekli tara",
@@ -303,8 +303,8 @@
     "why": "AWS Key Management Service (AWS KMS), AWS verileri için şifreleme anahtarları oluşturmak ve kontrol etmek için tasarlanan AWS sunumudur."
   },
   "svc-076": {
-    "label": "Amazon S3 içinde depolanmış hassas verileri keşfet ve koru",
-    "why": "Amazon Macie, Amazon S3 içinde depolanmış hassas verileri keşfetmek ve korumak için tasarlanan AWS sunumudur."
+    "label": "S3 bucket'larında duran PII gibi hassas verileri bul ve işaretle",
+    "why": "Macie, S3 bucket'larını PII gibi hassas veriler için taramak üzere makine öğrenimi ve örüntü eşleştirme kullanır ve açığa çıkma ile bucket güvenliğine ilişkin bulguları raporlar."
   },
   "svc-077": {
     "label": "Uygulama kimlik bilgilerini güvenli bir şekilde depola, al ve döndür",

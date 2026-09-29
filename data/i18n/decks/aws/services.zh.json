@@ -292,7 +292,7 @@
   },
   "svc-073": {
     "label": "控制谁可以访问 AWS 资源以及他们可以执行什么操作",
-    "why": "AWS Identity and Access Management (IAM) 是 AWS 提供的设计用于控制谁可以访问 AWS 资源以及他们可以执行什么操作的产品。"
+    "why": "IAM 是你定义身份（用户、组、角色）并附加策略的地方，这些策略决定每个身份可以对哪些资源执行哪些 AWS 操作。"
   },
   "svc-074": {
     "label": "持续扫描计算工作负载以查找漏洞和暴露",
@@ -303,8 +303,8 @@
     "why": "AWS Key Management Service (AWS KMS) 是 AWS 提供的设计用于创建和控制 AWS 数据的加密密钥的产品。"
   },
   "svc-076": {
-    "label": "发现和保护存储在 Amazon S3 中的敏感数据",
-    "why": "Amazon Macie 是 AWS 提供的设计用于发现和保护存储在 Amazon S3 中的敏感数据的产品。"
+    "label": "查找并标记存放在 S3 存储桶中的敏感数据，例如 PII",
+    "why": "Macie 使用机器学习和模式匹配扫描 S3 存储桶中的敏感数据（如 PII），并报告有关数据暴露和存储桶安全性的发现。"
   },
   "svc-077": {
     "label": "安全地存储、检索和轮换应用程序凭证",

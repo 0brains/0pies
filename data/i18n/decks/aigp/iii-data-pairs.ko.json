@@ -12,13 +12,13 @@
   "b.why": "이게 birth certificate예요 — origin과 custody — subsequent에 뭐가 done된 것의 record가 아니예요. 그 record는 pair의 다른 side에 belong해요."
  },
  "iii-dp-03": {
-  "a.text": "Calibrated mathematical noise가 add돼요 training 중에 그래서 no single training record가 show하려고 할 수 없어요. Model의 output에 더 이상 negligible effect를 가지려고요.",
+  "a.text": "훈련 중에 세심하게 보정된 노이즈를 주입해서, 특정 한 사람의 기록이 포함되었는지 여부가 모델 출력에 거의 영향을 주지 않도록 해요.",
   "a.why": "이거는 mathematical guarantee about influence예요. Not about where data physically travel — whether data가 ever leave its source해도 apply돼요.",
   "b.text": "Each hospital이 train해요 locally on its own patient record에서. Only resulting update만 — never raw record — travel해요 central server에 말이예요. Aggregation을 위해서요.",
   "b.why": "Protected된 거는 which data leave the site예요. How much any single record을 infer할 수 있는지가 아니라 output에서 말이예요. Raw record은 절대 travel하지 않아요. Full stop이예요."
  },
  "iii-dp-04": {
-  "a.text": "Standardized document가 lay out해요. Dataset의 motivation, composition, collection process, recommended use를 말이예요. Any model이 train되기 전에 데이터에 대해서요.",
+  "a.text": "어떤 모델도 훈련하기 전에, 데이터셋을 왜 만들었는지, 무엇이 들어 있는지, 어떻게 수집했는지, 어떤 용도로 써야 하는지를 구조화된 문서에 기록해요.",
   "a.why": "이거는 raw material itself를 document해요. Independent해요 any model이 later이 train될 것의 말이예요.",
   "b.text": "Single version의 purpose, its training/validation/test data, performance metric, known limitation이 summarize돼요. Whoever가 deploy하려고 decide해요.",
   "b.why": "이거는 one specific version에 scoped돼요. Not dataset behind it — trained artifact를 위한 nutrition label예요. Distinct해요 dataset-level scope of other side로부터요."
@@ -55,7 +55,7 @@
  },
  "iii-dp-10": {
   "a.text": "Weight value inside network이 updated돼요 backpropagation을 통해 training이 prediction error를 reduce할 때요.",
-  "a.why": "These는 learned value예요 input data를 transform하려고 결정하는 output로 — exist하지 않아요 final form in until training happen해요.",
+  "a.why": "이 값들은 네트워크가 스스로 학습해서 알아내며, 각 입력이 어떻게 출력이 되는지를 결정해요. 훈련이 이루어지기 전에는 최종 형태로 존재하지 않아요.",
   "b.text": "Learning rate이 fixed돼요 team by before training ever start. Stay untouched돼요 while network learn해요.",
   "b.why": "These는 set된 advance in to control how learning happen — input to training, not output예요."
  },

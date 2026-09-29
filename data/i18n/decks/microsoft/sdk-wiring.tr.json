@@ -4,7 +4,7 @@
   "why": "AIProjectClient(endpoint, credential), proje giriş noktasıdır; get_openai_client() ondan asılıdır — kimlik doğrulamayı kaldır ve bu, kırılan satır."
  },
  "sw-002": {
-  "label": "İletileri listesini dağıtılan bir modele gönder ve choices[0].message.content döndür",
+  "label": "Dağıtım adı ile sistem artı kullanıcı mesaj dizisi verildiğinde, ardından choices[0].message.content içinden okuduğun yanıtı döndürür",
   "why": "chat.completions.create(model=DEPLOYMENT_NAME, messages=[…]), sohbet çağrısıdır — ve model=, temel model adını değil dağıtım adını alır (histack tuzağı #5)."
  },
  "sw-003": {
@@ -40,8 +40,8 @@
   "why": "Hızlı başlangıç az login'i bu kimlik bilgisi nesnesiyle eşleştirir; get_openai_client yalnızca sohbet istemcisi döndürür ve kimlik doğrulamayla hiçbir ilgisi yoktur."
  },
  "sw-011": {
-  "label": "Herhangi bir Foundry proje istemci kodu yazmadan önce, hızlı başlangıç'ın ilk kurulum komutunda yüklediğin pip paketi",
-  "why": "\"Proje istemci için hangi paketi yüklemelisin?\" klasik bir sınav sorusudur — cevap azure-ai-projects, arama veya dil SDK'leri değil."
+  "label": "Herhangi bir kodun bir Foundry projesine bağlantı açabilmesinden önce, yeni bir sanal ortamda çalıştırılan ilk komut",
+  "why": "Foundry proje istemcisi azure-ai-projects içinde bulunur — sıkça sorulan bir paket adı; search ve language SDK'ları ise alışıldık çeldiricilerdir."
  },
  "sw-012": {
   "label": "Hızlı başlangıçta az login'in yanı sıra listelenen kurulum adımları, herhangi bir istemci kodu çalışmadan önce minimum bir sürüme (>=2.0.0) sabitlenmiş",
@@ -56,7 +56,7 @@
   "why": "Duygu ve anahtar cümle çıkarılması, bu istemci üzerinde AI Dil metin analitikleri yöntemleridir; diğer iki çok modlu belgeler veya canlı sese çalışır, düz metin değil."
  },
  "sw-015": {
-  "label": "Bilgisayarın varsayılan mikrofonundan dinlemek için ayarla, böylece tanıyıcıya ses kaynağı olarak iletilir",
+  "label": "Bir kioskun canlı sesi yakalaması için use_default_microphone=True ile oluşturulur, ardından girdi olarak tanıyıcının yapıcısına (constructor) iletilir",
   "why": "AudioConfig(use_default_microphone=True), giriş cihazını seçer; SpeechConfig yerine abonelik anahtarını/bölgeyi tutar ve SpeechRecognizer, cihaz seçici değil bu nesnenin iletildiği sınıftır."
  },
  "sw-016": {
@@ -88,8 +88,8 @@
   "why": "Bu Vision istemcisinin URL tarafından analiz yöntemi, başlık ve okuma gibi sabit önceden oluşturulmuş özellikler döndürür; hiçbir yoklama adımı ve konuşma yakalamayla ilgisi yoktur."
  },
  "sw-023": {
-  "label": "Belge URL'lerini çıkarılması için çıkaran ve yapılandırılmış sonuçları geri okur, bir uygulama ilk oluşturduğunda istemci",
-  "why": "\"İçerik Anlama uygulaması ilk oluşturması gereken istemci nedir?\" bu sınıftır — diğer iki düz metin ve genel görüntüler için ayrı uç noktalarla ayrı hizmetlerdir."
+  "label": "Bir hasar uygulaması taranmış poliçe PDF'lerini özel bir analizöre verip alan değerlerini geri okuyacak — her şeyden önce oluşturduğu nesne",
+  "why": "Content Understanding çalışması bu sınıftan başlar — diğer ikisi, sırasıyla düz metin ve genel görüntüler için ayrı uç noktalara sahip ayrı hizmetlerdir."
  },
  "sw-024": {
   "label": "Uzun süreli analiz çağrısı bir yoklayıcı döndürür; o yoklayıcı üzerinde .result() çağrı, son çıkartılmış çıktıyı beklemenin uygulaması nasıl bekler",
@@ -100,7 +100,7 @@
   "why": "GPT görüntüsü-1 dağıtımı, response.data[0].b64_json'de oluşturulan görüntü baytları döndürür; tamamlama çağrısı metin seçenekleri döndürür ve Vision istemcisi yalnızca zaten var olan bir görüntüyü analiz eder."
  },
  "sw-026": {
-  "label": "Arkaplanı şeffaf ayarla ve bu metin-görüntü isteğinde PNG çıktısı iste, böylece şeffaf bir arkaplan elde et",
+  "label": "Bir çıkartma dükkânı üreticisinin arkasında hiçbir şey olmayan kesme görsellere ihtiyacı var, bu yüzden bu çağrı output_format=png ile birlikte background=transparent iletir",
   "why": "Şeffaf arkaplan artı PNG çıktısı, GPT görüntüsü-1 serisi oluşturma parametreleridir; Vision analizi veya sohbet tamamlama çağrılarında hiçbir şey bunları kabul etmez."
  }
 }

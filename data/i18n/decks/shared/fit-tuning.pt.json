@@ -7,8 +7,8 @@
     "why": "O modelo captura padrões úteis e tem desempenho similar em dados de treino e dados não vistos."
   },
   "fit-tuning-02": {
-    "label": "O modelo tem desempenho muito bom em dados de treino mas desempenho fraco em dados não vistos.",
-    "why": "O modelo tem desempenho muito bom em dados de treino mas desempenho fraco em dados não vistos."
+    "label": "A precisão no treino é excelente, mas a precisão cai acentuadamente com dados novos que o modelo nunca viu.",
+    "why": "O modelo memorizou o conjunto de treino, incluindo o ruído, em vez de aprender padrões que generalizam, por isso pontua bem no treino e mal com dados novos."
   },
   "fit-tuning-03": {
     "label": "O modelo é demasiado simples ou insuficientemente treinado e tem desempenho fraco até em dados de treino.",

@@ -28,9 +28,9 @@
     "why": "Cloud infrastructure ownership के बिना scale के लिए सही call है — लेकिन 'provider security अब own करता है' trap है: shared-responsibility model के तहत, deploying organization अभी भी अपने data के लिए answer देता है, और customer side पर एक single misconfiguration अभी भी एक breach cause कर सकता है।"
   },
   "iv-dm-06": {
-    "label": "Border checkpoints पर Multilingual chat kiosks limited connectivity और limited power हैं, और responses को near-instant रहना चाहिए।",
+    "label": "पहाड़ी बचाव दलों के पास रहने वाले handheld translators बैटरी पर चलते हैं, उन्हें शायद ही कभी signal मिलता है, और उन्हें मौके पर ही जवाब देना होता है।",
     "sub": "No Server, No Wait",
-    "why": "Model को device पर ही चलाना एक external connection की dependency को remove करता है ये checkpoints reliably guarantee नहीं कर सकते। जो यह choice तुम्हें cost करता है: inference को edge पर push करना centralized drift-detection tooling को trade away करता है, तो एक devices की fleet quietly specification से drift कर सकते हैं इसे catch करने के लिए कोई single dashboard के साथ।"
+    "why": "Model को device पर ही चलाने से उस बाहरी connection पर निर्भरता खत्म हो जाती है जिसकी गारंटी ये बचाव दल भरोसे से नहीं दे सकते। इस choice की कीमत: inference को edge पर ले जाने से केंद्रीकृत drift-detection tooling हाथ से निकल जाती है, इसलिए devices का एक पूरा बेड़ा चुपचाप spec से बाहर drift कर सकता है और उसे पकड़ने के लिए कोई एक dashboard नहीं होता।"
   },
   "iv-dm-07": {
     "label": "एक small proprietary model continuously एक live content stream पर retrain करता है और thousands storefronts में locally photos score करना चाहिए, network round-trip के बिना।",

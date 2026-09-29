@@ -1,0 +1,116 @@
+{
+ "security-foundations": {
+  "hint": "First decide the family: is this scene about what happens to data (CIA), about a person's access lifecycle (AAA), about planning vs doing (due care/diligence), or about layered controls (defense in depth)? Then pick the specific member.",
+  "note": "Confidentiality, Integrity and Availability describe what happens to an object. Identification, Authentication, Authorization and Accountability describe stages a subject passes through to reach that object. Neither family is a proxy for the other.",
+  "zones[0].def": "Confidentiality means only authorized subjects can view or disclose an object — the concern is unwanted exposure, whether from a hostile outsider or from an authorized insider whose role gives them no need to know. Don't confuse this with Integrity: a control that only stops eavesdropping does nothing to stop someone who can see the data from later corrupting it.",
+  "zones[1].def": "Integrity means an object stays accurate and is changed only by authorized subjects through authorized means — the concern is unwanted or unauthorized modification, not who can see the data. A control that proves nothing was altered, like a version history or a checksum, is an integrity control even if the object itself was never hidden from anyone.",
+  "zones[2].def": "Availability means authorized subjects get timely, uninterrupted access to the object when they need it — the concern is denial of legitimate use, whether from an attack, a failure, or a bad operational choice, not whether the data was ever seen or changed. Don't route outage stories to Confidentiality or Integrity just because an attacker or a bug is in the story — ask only whether access was denied.",
+  "zones[3].def": "Identification is the unverified claim of who a subject is — presenting a username, badge number, or account name before any proof is offered. It is a bare assertion; nothing has yet been checked, so it must not be confused with the proof step that follows it.",
+  "zones[4].def": "Authentication is proving that an identity claim is true, using one or more factors — something you know, have, or are. A strong authentication method proves who someone is and says nothing yet about what they're allowed to touch; that decision belongs to a later stage.",
+  "zones[5].def": "Authorization determines what an already-verified identity is permitted to do — which resources, at what permission level — once authentication has already succeeded. A correct password with a wrong permission grant is an authorization defect, not an authentication one, because the identity was never in doubt.",
+  "zones[6].def": "Accountability is holding a subject responsible for their actions after the fact, made possible only by a recorded, reviewable trail tying identification, authentication and authorization events to a specific actor. Correct identity checks and correct permissions can still leave no way to prove afterward who did what — logging and audit review are what close that gap.",
+  "zones[7].def": "Due care is doing the reasonable, prudent thing in the moment — an individual acting on an existing policy, applying a known fix, following the documented procedure. It's the execution, not the plan: someone who never wrote a policy but faithfully follows one someone else wrote is still exercising due care.",
+  "zones[8].def": "Due diligence is the upfront and ongoing work of researching, planning and documenting what should be done — risk assessments, written policies, vendor investigations — before anyone acts on the results. It's what lets an organization later prove it knew what it was doing; due care without due diligence behind it is improvisation that happened to go well, not a defensible program.",
+  "zones[9].def": "Defense in depth layers administrative, technical and physical controls so that no single failed control leaves an asset exposed — a beaten perimeter control still meets a host-level control, which still meets a physical control. The point is redundancy spread across different control categories, not how strong any one layer is on its own."
+ },
+ "sf-01": {
+  "label": "A payroll clerk emails a full spreadsheet of every employee's salary to a personal address to 'get ahead on it this weekend.'",
+  "sub": "Which concept is at stake?",
+  "why": "The data leaves the organization's control and reaches an audience with no need to know, which is disclosure risk. Accountability is the tempting neighbour because the clerk's identity is known, but this item tests which pillar the act threatens, not whether it can later be traced."
+ },
+ "sf-02": {
+  "label": "A support engineer resolving a billing ticket pulls up a customer's full card number instead of the last four digits the ticket required.",
+  "sub": "Which concept is at stake?",
+  "why": "Viewing more than the role's need-to-know is exposure, not modification. Integrity is the tempting neighbour because the engineer touched the record, but nothing about the card number was changed — only over-exposed."
+ },
+ "sf-03": {
+  "label": "An untested nightly script silently rounds decimal values in the general ledger before month-end close, and the batch job itself completes without error.",
+  "sub": "Which concept is at stake?",
+  "why": "The job ran and finished on time, so nothing about access was denied; the harm is that the figures are now wrong. Availability is the tempting neighbour because a batch-job story sounds like an uptime issue, but the job succeeded — the data it produced didn't."
+ },
+ "sf-04": {
+  "label": "A field technician's offline app caches yesterday's work order, then a delayed sync overwrites today's completed status back to 'open.'",
+  "sub": "Which concept is at stake?",
+  "why": "The system stayed reachable throughout; the stale sync corrupted the record's accuracy, not its availability. Availability is the tempting neighbour because 'sync failure' sounds like an outage, but no one was ever denied access — the value they read was simply wrong."
+ },
+ "sf-05": {
+  "label": "A regional ISP outage during a snowstorm cuts a hospital's e-prescribing system off from its cloud backend for six hours.",
+  "sub": "Which concept is at stake?",
+  "why": "Authorized clinicians who need the system cannot reach it, which is the defining harm here. Confidentiality is the tempting neighbour because an external network event sounds like exposure, but no data was read or disclosed to anyone unauthorized — access was simply denied."
+ },
+ "sf-06": {
+  "label": "A flood of junk traffic pins a retailer's checkout service at 100% CPU, and paying customers can't complete purchases during a flash sale.",
+  "sub": "Which concept is at stake?",
+  "why": "Legitimate users are denied timely service, which is the availability harm. Integrity is the tempting neighbour because an attack is in the story, but no order or account data was altered — the system just couldn't respond."
+ },
+ "sf-07": {
+  "label": "A new contractor types 'j.alvarez' into a login screen's username field for the very first time, before any password prompt appears.",
+  "sub": "Which concept is at stake?",
+  "why": "Typing the username is only a claim about who is at the keyboard — nothing has been checked yet. Authentication is the tempting neighbour because it comes next in the same flow, but the password prompt that proves the claim hasn't fired yet."
+ },
+ "sf-08": {
+  "label": "A turnstile reader logs the badge number printed on a visitor's card the moment it's tapped, before the PIN pad asks for anything.",
+  "sub": "Which concept is at stake?",
+  "why": "The badge number is a presented claim of identity, captured before any proof step runs. Authentication is the tempting neighbour because a PIN check is about to happen, but this scene freezes on the tap itself, which is the unverified claim."
+ },
+ "sf-09": {
+  "label": "A VPN login requires a password plus a one-time code from a hardware token before the session is allowed to open.",
+  "sub": "Which concept is at stake?",
+  "why": "Two factors are used to prove the claimed identity is genuine. Authorization is the tempting neighbour because a session is about to open, but opening the session only proves who the user is, not yet what that user may reach inside it."
+ },
+ "sf-10": {
+  "label": "A fingerprint scanner at a data center door matches the print against an enrolled template before the electric strike releases.",
+  "sub": "Which concept is at stake?",
+  "why": "Matching a characteristic factor against a stored template is the proof step itself. Accountability is the tempting neighbour because the door event will be logged, but this item is about the match that decides the door opens, not the later review of who came through."
+ },
+ "sf-11": {
+  "label": "A finance analyst's login succeeds normally, but the system correctly blocks their attempt to approve an invoice they themselves submitted.",
+  "sub": "Which concept is at stake?",
+  "why": "The identity was never in question — the block is a permission decision on an already-authenticated user. Authentication is the tempting neighbour because a login is in the story, but the login worked fine; what failed was an entitlement check."
+ },
+ "sf-12": {
+  "label": "A manager promoted last week still can't approve purchase orders over $5,000 because their role entitlement was never updated to match the new title.",
+  "sub": "Which concept is at stake?",
+  "why": "The gap is a stale permission level tied to role, not a problem with proving who the manager is. Identification is the tempting neighbour because a title change is in the story, but the manager's identity was never disputed — only what it's entitled to do."
+ },
+ "sf-13": {
+  "label": "Months after a data leak, auditors correlate login records and access logs to pin down exactly which service account touched the export file, and when.",
+  "sub": "Which concept is at stake?",
+  "why": "This is the after-the-fact, log-based work of tying a specific action to a specific actor. Authorization is the tempting neighbour because access rights are part of the story, but this item tests the review of what actually happened, not the rule that decided what was allowed."
+ },
+ "sf-14": {
+  "label": "A hospital's EHR requires clinicians to log a reason code before opening a celebrity patient's chart, and a compliance review later flags one access with no valid reason attached.",
+  "sub": "Which concept is at stake?",
+  "why": "A recorded trail that gets reviewed and traced back to a person is accountability's job. Authentication is the tempting neighbour because the clinician's login worked fine, but the failure that surfaced lives in the review of the trail, not in the identity check."
+ },
+ "sf-15": {
+  "label": "Before signing with a new payroll SaaS vendor, a CISO commissions a SOC 2 review, a data-residency questionnaire, and a written risk assessment.",
+  "sub": "Which concept is at stake?",
+  "why": "This is the upfront research and planning that precedes any commitment. Due care is the tempting neighbour because it sounds like responsible behavior, but due care is the ongoing act of operating under the resulting contract, not the investigation that produced it."
+ },
+ "sf-16": {
+  "label": "A security team drafts a written incident-response policy and a data-classification standard before either is ever rolled out to a business unit.",
+  "sub": "Which concept is at stake?",
+  "why": "Writing the policy and standard is the planning and documentation phase that proves the organization knew what should be done. Due care is the tempting neighbour because a policy is involved, but following that policy once it exists is a later, separate act."
+ },
+ "sf-17": {
+  "label": "A systems administrator applies a critical patch within the 48-hour window the organization's own patch policy requires, the same week it was published.",
+  "sub": "Which concept is at stake?",
+  "why": "This is an individual acting responsibly on a policy that already exists. Due diligence is the tempting neighbour because a policy is in the story, but writing that patch policy in the first place would be due diligence — this item is the admin executing it."
+ },
+ "sf-18": {
+  "label": "An employee, trained on the acceptable-use policy at onboarding, refuses to plug an unknown USB drive found in the parking lot into their laptop.",
+  "sub": "Which concept is at stake?",
+  "why": "This is the reasonable, prudent action the policy already called for, taken in the moment. Due diligence is the tempting neighbour because a training program sits behind this behavior, but building that program is due diligence — declining the drive is the individual doing the right thing now."
+ },
+ "sf-19": {
+  "label": "An attacker who beats a perimeter firewall still faces host-based antivirus, application allow-listing, and a locked, badge-controlled server room before reaching the database.",
+  "sub": "Which concept is at stake?",
+  "why": "Controls from administrative, technical and physical categories are stacked so a single beaten layer doesn't equal a full breach. A single strong control is the tempting frame here, but the point being tested is redundancy across layers, not the strength of any one of them."
+ },
+ "sf-20": {
+  "label": "An organization protects its customer database with encryption, role-based access control, network segmentation and a guarded data center, rather than relying on strong encryption alone.",
+  "sub": "Which concept is at stake?",
+  "why": "Multiple independent layers spanning administrative, technical and physical categories are combined so no one control has to carry the whole burden. Relying on encryption alone would be the tempting single-control answer, but this scene is built around stacking several different kinds of control."
+ }
+}

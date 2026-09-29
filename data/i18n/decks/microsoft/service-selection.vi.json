@@ -19,7 +19,7 @@
   "why": "CU trích xuất; AI Search lập chỉ mục và truy xuất hạ lưu (indexer, skillset, knowledge store) — trích xuất và truy xuất là các dịch vụ khác nhau (pair #22)."
  },
  "ss-005": {
-  "label": "Tìm kiếm mô tả sản phẩm bằng sự tương đồng ngữ nghĩa thay vì so khớp từ khóa chính xác",
+  "label": "Tìm các mặt hàng trong danh mục có mô tả mang cùng ý nghĩa với truy vấn, ngay cả khi cách diễn đạt khác nhau",
   "why": "Nhúng chuyển đổi văn bản thành vectơ để so sánh ngữ nghĩa (text-embedding-3-large) — họ truy xuất và so sánh, họ không bao giờ tạo nội dung (pair #18)."
  },
  "ss-006": {
@@ -103,7 +103,7 @@
   "why": "Điều chỉnh tốt là vượt qua đào tạo nướng hành vi được trình diễn vào trọng số mới để nó vẫn còn trên các cuộc gọi; triển khai trò chuyện/hoàn thành cổ phiếu chỉ phản ánh những gì được gửi lại trong lời nhắc của cuộc gọi đó, và một mô hình đa phương thức thay đổi những loại đầu vào được chấp nhận, không phải liệu phong cách kiên trì mà không re-prompting."
  },
  "ss-026": {
-  "label": "Thử các lời nhắc được nói chống một mô hình được triển khai có khả năng âm thanh trực tiếp trong sân chơi trò chuyện Foundry, mà không viết bất kỳ mã SDK nào",
+  "label": "Thử đầu vào giọng nói trên một deployment mô hình hỗ trợ âm thanh ngay từ chat playground của Foundry, không cần viết mã",
   "why": "Triển khai đa phương thức có khả năng âm thanh có thể được tập thể dục thẳng trong sân chơi trò chuyện; Voice Live/gpt-realtime là API phiên thời gian thực chuyên dụng, một con đường triển khai riêng biệt được xây dựng cho trò chuyện giọng nói liên tục."
  }
 }

@@ -1,0 +1,91 @@
+{
+ "cryf-01": {
+  "label": "A hospital's overnight batch job must encrypt several terabytes of imaging files before they hit archival storage, and the archive server already holds the same secret the imaging system does.",
+  "why": "The key is already shared and the driver is bulk throughput, exactly what symmetric is built for; Asymmetric is the tempting neighbour only because 'archival trust' sounds identity-related, but no stranger and no new key exchange is involved here."
+ },
+ "cryf-02": {
+  "label": "Two branch offices exchanged a secret over courier years ago and now need to protect daily site-to-site VPN traffic without burning CPU cycles on every packet.",
+  "why": "A pre-shared key plus a per-packet speed requirement is the textbook symmetric case; Asymmetric would be the wrong call precisely because the courier exchange already solved the hard part symmetric can't — getting the key there in the first place."
+ },
+ "cryf-03": {
+  "label": "A battery-powered soil sensor with almost no spare processing headroom must encrypt a one-line telemetry reading every second to the base station it was paired with at the factory.",
+  "why": "Low compute budget plus an already-paired key rules out anything asymmetric, which is computationally heavier per operation; the factory pairing is what removes the key-distribution problem asymmetric would otherwise be needed for."
+ },
+ "cryf-04": {
+  "label": "A records-management team needs last quarter's ten-thousand contract PDFs re-encrypted under a new key before the old one is retired, with no new parties involved anywhere in the process.",
+  "why": "Re-keying data at rest for parties who already trust each other is a bulk-confidentiality job, not a stranger-trust problem, so Asymmetric's key-exchange strength is wasted effort here; Hashing is also a non-starter since it cannot be reversed to recover the plaintext being re-protected."
+ },
+ "cryf-05": {
+  "label": "Two researchers at rival labs, who have never exchanged so much as an email, need to agree on a secret key while their only channel is a mailing list every subscriber can read.",
+  "why": "No prior shared secret and a fully public channel is exactly the problem asymmetric key pairs solve; Symmetric cannot even start here because it needs a secret in both hands before the scene begins, and this scene has none."
+ },
+ "cryf-06": {
+  "label": "A retailer's checkout page must let any one of several million anonymous shoppers establish a protected session, without the retailer pre-provisioning a separate secret for each shopper in advance.",
+  "why": "Scaling to strangers without a per-pair pre-shared secret is asymmetric's specific advantage over symmetric, whose key-count problem grows unmanageably with every new party; nothing here yet requires the identity-binding that PKI-certificates would add."
+ },
+ "cryf-07": {
+  "label": "A journalist wants to send an encrypted tip to a newsroom's published public key, with no prior relationship with anyone currently on staff.",
+  "why": "Encrypting to a published public key when there has never been a shared secret is the core asymmetric use case; this scene never asks the journalist to verify whose key it really is, which is the separate job PKI-certificates would handle if that trust question were raised."
+ },
+ "cryf-08": {
+  "label": "A new SaaS vendor needs its API gateway to let any customer's integration establish a private channel on first contact, without either side having exchanged anything beforehand.",
+  "why": "First-contact key establishment between parties with zero shared history is the defining asymmetric requirement; Symmetric is the tempting-but-wrong pick only because 'private channel' sounds like ordinary encryption, yet nothing here has given the two sides a secret to encrypt with yet."
+ },
+ "cryf-09": {
+  "label": "A software distributor publishes a fixed-length code alongside its installer so anyone can confirm the download wasn't corrupted in transit, with no claim made about who built it.",
+  "why": "Detecting corruption via a fixed-length digest, with identity explicitly out of scope, is plain hashing; Digital signature is the tempting neighbour because it also uses a digest, but the scene deliberately withholds any private-key signing step or authorship claim."
+ },
+ "cryf-10": {
+  "label": "A login system must verify a submitted password against what's on file without ever storing, or even briefly holding, the plaintext password anywhere.",
+  "why": "One-way, irreversible comparison without ever recovering the original value is hashing's defining property; Symmetric is wrong here because encryption is reversible by design, and reversibility is exactly what this scene must avoid."
+ },
+ "cryf-11": {
+  "label": "A forensic examiner needs a short fingerprint of a seized hard-drive image so any single altered bit in the evidence becomes immediately obvious, with no need to identify who might have altered it.",
+  "why": "Change-detection alone, with authorship explicitly not required, is hashing without signing; Digital signature would be the wrong reach because this scene needs no private key and makes no claim about who touched the evidence, only whether it changed."
+ },
+ "cryf-12": {
+  "label": "A file-sharing service wants to spot duplicate uploads by generating the same fixed value for identical file content, even when two users who've never met upload it through unrelated accounts.",
+  "why": "Deterministic fingerprinting of content for deduplication needs no key and no identity at all, which is what separates it from Asymmetric — the 'never met' framing is a distractor, since no trust or key exchange between the two uploaders is actually required."
+ },
+ "cryf-13": {
+  "label": "A finance director needs recipients of a wired-transfer authorization to later prove in an audit that she, specifically, approved it, and that no one altered the amount afterward.",
+  "why": "Non-repudiation plus tamper-evidence together is exactly what signing a hash with a private key provides; Hashing alone is the tempting neighbour because it would still catch the alteration, but it cannot bind the approval to her identity the way a signature does."
+ },
+ "cryf-14": {
+  "label": "A vendor wants users of a patch to confirm both that it truly came from the vendor's build pipeline and that not a single byte changed after it left that pipeline.",
+  "why": "Origin verification combined with integrity checking is the signature's dual job; Hashing published alongside the file would only catch corruption, not prove the vendor actually produced it, since anyone could recompute and publish a matching hash for a tampered file."
+ },
+ "cryf-15": {
+  "label": "An email client needs to let the recipient confirm the sender's identity and catch any in-transit tampering, while the message body itself stays readable to anyone who intercepts it.",
+  "why": "Identity plus integrity with confidentiality explicitly not required is signing without encrypting; Asymmetric encryption is the wrong reach because encrypting with the recipient's public key would hide the content instead of leaving it readable, which this scene forbids."
+ },
+ "cryf-16": {
+  "label": "A contract-management platform needs a legally defensible record proving which named executive clicked 'approve' on a specific document version, one that can't be plausibly denied later.",
+  "why": "A record that can't later be plausibly denied is the non-repudiation property that only signing provides; PKI-certificates is the tempting neighbour since it is what earlier established whose key the executive holds, but the act of proving this specific approval is the signature itself."
+ },
+ "cryf-17": {
+  "label": "A browser connecting to 'yourbank.com' for the first time needs a way to be sure the public key it just received really belongs to the bank, and not to someone sitting in the middle of the connection.",
+  "why": "Confirming whose key it actually is, on first contact, is a trust-in-identity problem that asymmetric math alone cannot answer; Asymmetric would only get you an encrypted channel to whoever presented that key, attacker included, without the certificate chain vouching for the bank."
+ },
+ "cryf-18": {
+  "label": "An enterprise wants a central authority able to instantly invalidate an employee's ability to sign documents the moment their employment ends, so any signature made afterward is automatically rejected.",
+  "why": "Revocation of a bound identity-to-key relationship on demand is a certificate-authority function; Digital signature itself has no built-in concept of 'this key is no longer trusted' — that status lives in the certificate infrastructure checking revocation lists, not in the signing act."
+ },
+ "cryf-19": {
+  "label": "A new hire's laptop must be issued a credential that binds their verified real-world identity to a public key before any colleague will trust email the laptop signs.",
+  "why": "Verifying identity and formally binding it to a key before anyone extends trust is the registration-and-issuance function; Digital signature is the tempting neighbour because signing is what the laptop will do afterward, but nothing can be trusted as genuinely theirs until this binding step happens first."
+ },
+ "cryf-20": {
+  "label": "Two merging companies need a documented policy for how each firm's certificate authority verifies requestor identities and how long issued certificates remain valid before renewal is required.",
+  "why": "Governance of issuance rules and certificate lifetime is infrastructure-level policy, not a single cryptographic operation; Asymmetric only supplies the underlying math the certificates rely on, not the identity-verification and expiry rules this scene is actually asking about."
+ },
+ "crypto-foundations": {
+  "hint": "Ask what problem the scene actually needs solved: bulk speed with a key both sides already hold (Symmetric), a key or trust established between people who never met (Asymmetric), only proving nothing changed (Hashing), proving who sent it and that it's unchanged (Digital signature), or proving whose key it even is (PKI-certificates).",
+  "note": "Most real systems combine several of these (TLS is asymmetric key exchange + symmetric bulk transfer + hashing + certificates). Each scene below is written to need exactly one, so sort on the single problem the scene names, not on every tool a real deployment would eventually add.",
+  "zones[0].def": "One shared key both encrypts and decrypts, which makes it fast enough for bulk confidentiality but requires that key to already be in both parties' hands before the scene starts. It is the wrong pick whenever the scene's problem is getting that first key to a stranger, or proving who sent something — it only protects data once a secret is already shared.",
+  "zones[1].def": "A mathematically linked public/private key pair lets parties who have never met establish trust or a shared secret over a channel anyone can read, and scales without a separate pre-shared key per pair. It is far slower than symmetric per byte, so real systems use it to set up a session key or prove identity, not to bulk-encrypt the data itself.",
+  "zones[2].def": "A one-way function that turns any input into a fixed-length digest that changes unpredictably if even one bit of the input changes, letting a comparison reveal tampering. It has no key and cannot be reversed, so it proves data is unchanged, never who sent it or that it was kept secret — those require pairing it with a key, which hashing alone never does.",
+  "zones[3].def": "A hash of the message encrypted with the sender's private key, so the recipient can confirm both who sent it and that it was not altered in transit — integrity plus non-repudiation together. A hash alone catches tampering but proves no identity, and asymmetric encryption alone (with the recipient's public key) hides content but proves no sender; only signing binds the two.",
+  "zones[4].def": "The trust infrastructure — certificate authorities, registration authorities, digital certificates and revocation — that binds a verified real-world identity to a public key, so a stranger's public key can be trusted rather than merely used. Without it, asymmetric crypto and signatures still work mathematically, but nothing stops an attacker substituting their own key pair and impersonating the other party."
+ }
+}

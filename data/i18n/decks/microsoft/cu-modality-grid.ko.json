@@ -30,7 +30,7 @@
   "why": "레이아웃은 텍스트, 테이블, 선택 표시, 구조를 추출해요; Read 스타일 OCR은 텍스트만이에요 — histack의 CU Read-vs-Layout 구분이에요"
  },
  "cu-007": {
-  "label": "미리 정의된 필드 스키마로 시작하지 않고 느슨한 키-값 쌍을 다양한 공급업체 형식에서 추출해야 해요",
+  "label": "보험사가 수십 곳의 중개인으로부터 각기 다른 양식의 청구 서류를 받는데, 나타나는 라벨 필드는 무엇이든 추출하고 싶어 해요. 필드 목록은 미리 작성하지 않아요",
   "sub": "prebuilt-documentFields",
   "why": "prebuilt-documentFields는 도메인 특정 스키마 없이 문서에서 일반 키-값 쌍을 추출해요 — 사전 구축 인보이스의 고정된 인보이스 필드와 달라요"
  },
@@ -50,7 +50,7 @@
   "why": "커스텀 이미지 분석기는 base_analyzer_id를 prebuilt-image로 설정한 다음 필드 스키마를 계층화해요 — 차트와 스크린샷 추출의 문서화된 패턴이에요"
  },
  "cu-011": {
-  "label": "소매 감사에서 선반 사진을 분석하고 제품 수, 브랜드 존재, 품절 지표 같은 구조화된 필드를 반환해요",
+  "label": "소매 점검 중에 찍은 매장 진열대 사진을 구조화된 필드로 변환하기: 보이는 상품 수, 등장하는 브랜드, 빈 칸이 있는지 여부",
   "sub": "prebuilt-image",
   "why": "Content Understanding의 이미지 분석기는 사진에서 스키마 정의 구조화된 필드를 직접 반환해요 — 시험이 직접 테스트하는 소매 선반 감사 시나리오예요"
  },
@@ -60,7 +60,7 @@
   "why": "begin_analyze(analyzer_id=..., inputs=[AnalysisInput(url=...)])은 모달리티 전체에 걸쳐 동일한 호출 패턴이에요 — 분석기 아이디만 변하고, prebuilt-image는 검색이 아닌 직접 이미지 분석기예요"
  },
  "cu-013": {
-  "label": "호출 녹음 URL에 대해 analyzer_id=\"prebuilt-audioSearch\"로 begin_analyze를 호출하는 경량 Python 클라이언트를 연결해서 검색 인덱싱을 준비하는 전사본과 요약을 다시 가져와요",
+  "label": "팟캐스트 네트워크가 SDK를 통해 에피소드 링크를 제출하고, 발화 내용과 요약이 RAG 검색 인덱스에 맞게 이미 정리된 형태로 반환되기를 원해요",
   "sub": "prebuilt-audioSearch",
   "why": "prebuilt-audioSearch는 SDK 빠른 시작 코드 조각의 문서화된 분석기 아이디예요 — *Search 접미사는 RAG 검색 준비 없이 직접 추출을 하는 prebuilt-audio와 달리 검색/RAG 검색을 위해 준비된 출력을 표시해요"
  },

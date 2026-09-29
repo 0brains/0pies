@@ -4,7 +4,7 @@
   "why": "AIProjectClient(endpoint, credential) ist der Projekt-Einstiegspunkt; get_openai_client() hängt daran — entferne die Authentifizierung und dies ist die Zeile, die bricht."
  },
  "sw-002": {
-  "label": "Sende die Nachrichtenliste an ein bereitgestelltes Modell und gib choices[0].message.content zurück",
+  "label": "Erhält den Deployment-Namen und ein Nachrichten-Array aus System- und Benutzernachricht und gibt die Antwort zurück, die du dann aus choices[0].message.content ausliest",
   "why": "chat.completions.create(model=DEPLOYMENT_NAME, messages=[…]) ist der Chat-Aufruf — und model= nimmt den Bereitstellungsnamen, nicht den Basis-Modellnamen (Histack-Falle #5)."
  },
  "sw-003": {
@@ -40,8 +40,8 @@
   "why": "Die Schnellstart-Paare az login mit diesem Anmeldedaten-Objekt; get_openai_client gibt nur einen Chat-Client zurück und hat nichts mit Authentifizierung zu tun."
  },
  "sw-011": {
-  "label": "Das pip-Paket, das du installierst, bevor du einen Foundry-Projekt-Client-Code schreibst, pro Schnellstart's erster Setup-Befehl",
-  "why": "‚Welches Paket solltest du für den Projekt-Client installieren?' ist ein klassisches Prüfungs-Anliegen — die Antwort ist azure-ai-projects, nicht die Such- oder Sprach-SDKs."
+  "label": "Erster Befehl in einer frischen virtuellen Umgebung, bevor irgendein Code eine Verbindung zu einem Foundry-Projekt öffnen kann",
+  "why": "Der Foundry-Projektclient steckt in azure-ai-projects — ein häufig abgefragter Paketname; die Search- und Language-SDKs sind die üblichen Ablenker."
  },
  "sw-012": {
   "label": "Aufgelistet neben az login in den Schnellstart-Setup-Schritten, festgesteckt auf eine minimale Version (>=2.0.0), bevor ein Client-Code läuft",
@@ -56,7 +56,7 @@
   "why": "Sentiment- und Stichwort-Extraktion sind AI Language Text-Analytics Methoden auf diesem Client; die anderen zwei sind Multimodal-Dokumente oder Live-Audio, nicht Klartext."
  },
  "sw-015": {
-  "label": "Eingestellt auf, von der Standard-Mikrofon des Computers zu hörer, statt einer gespeicherten Datei, dann zum Recognizer als sein Audio-Quelle übergeben",
+  "label": "Mit use_default_microphone=True konstruiert, damit ein Kiosk Live-Sprache erfasst, und dann dem Konstruktor des Recognizers als Eingabe übergeben",
   "why": "AudioConfig(use_default_microphone=True) wählt das Eingabegerät; SpeechConfig hält stattdessen Subscription-Schlüssel/Region, und SpeechRecognizer ist die Klasse, dieses Objekt wird übergeben, nicht das Geräte-Wähler selbst."
  },
  "sw-016": {
@@ -88,8 +88,8 @@
   "why": "Dieser Vision-Clients nach-URL Analyse-Methode gibt fest vorbereitete Eigenschaft wie Untertext und Lesen zurück; es hat keinen Polling-Schritt und keine Beziehung zu Sprach-Erfassung."
  },
  "sw-023": {
-  "label": "Der Client, den eine App zuerst erschafft, wenn sie Dokument-URLs für Extraktion absenden wird und strukturierte Ergebnisse zurück lesen",
-  "why": "‚Welcher Client sollte die App zuerst erschaffen?' für eine Content Understanding App ist diese Klasse — die anderen zwei sind getrennte Dienste mit getrennten Endpunkten für Klartext und allgemeine Bilder respektiv."
+  "label": "Eine Schaden-App übergibt gescannte Policen-PDFs an einen benutzerdefinierten Analyzer und liest Feldwerte zurück — das Objekt, das sie vor allem anderen konstruiert",
+  "why": "Die Arbeit mit Content Understanding beginnt bei dieser Klasse — die anderen beiden sind separate Dienste mit eigenen Endpunkten, für reinen Text bzw. für allgemeine Bilder."
  },
  "sw-024": {
   "label": "Sein lang-laufender Analyze-Aufruf gibt einen Poller zurück; aufruf .result() auf diesem Poller ist, wie die App auf die endgültige extrahierte Ausgabe wartet",
@@ -100,7 +100,7 @@
   "why": "Eine GPT-Image-1 Bereitstellung gibt erzeugtes Bild-Byte in response.data[0].b64_json zurück; ein Completions-Aufruf gibt Text-Wahlen zurück, und der Vision-Client analysiert nur ein Bild, das bereits existiert."
  },
  "sw-026": {
-  "label": "Setze Hintergrund zu transparent und fordere PNG-Ausgabe auf dieser Text-zu-Bild Anfrage an, um einen durchsichtigen Hintergrund zu bekommen",
+  "label": "Ein Generator für einen Sticker-Shop braucht freigestellte Motive ohne Hintergrund, daher übergibt dieser Aufruf background=transparent mit output_format=png",
   "why": "Transparenter Hintergrund plus PNG-Ausgabe sind GPT-Image-1-Serie Generierungs-Parameter; nichts in der Vision Analyse oder Chat-Completion Aufrufen nimmt sie an."
  }
 }

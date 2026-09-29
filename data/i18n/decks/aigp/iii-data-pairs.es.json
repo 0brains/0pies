@@ -12,13 +12,13 @@
   "b.why": "Esto es el certificado de nacimiento, origen y custodia, no el registro de lo que posteriormente fue hecho a los datos; ese registro pertenece al otro lado de este par."
  },
  "iii-dp-03": {
-  "a.text": "Ruido matemático calibrado se agrega durante el entrenamiento para que ningún registro de entrenamiento único pueda demostrarse que tenga más de un efecto negligible en la salida del modelo.",
+  "a.text": "Durante el entrenamiento se inyecta ruido cuidadosamente calibrado, de modo que el hecho de que se incluyera o no el registro de una persona concreta apenas cambia lo que produce el modelo.",
   "a.why": "Esta es una garantía matemática sobre influencia, no sobre dónde viajan los datos físicamente, se aplica si los datos nunca dejan su origen o no.",
   "b.text": "Cada hospital entrena localmente en sus propios registros de pacientes, y solo las actualizaciones resultantes, nunca los registros sin procesar, viajan a un servidor central para agregación.",
   "b.why": "Lo que se protege aquí es qué datos dejan el sitio, no cuánto de cualquier registro único puede ser inferido de una salida, los registros sin procesar nunca viajan, punto."
  },
  "iii-dp-04": {
-  "a.text": "Un documento estandarizado establece la motivación, composición, proceso de recopilación y usos recomendados de un conjunto de datos, antes de que cualquier modelo sea entrenado en él.",
+  "a.text": "Un documento estructurado recoge por qué se creó un conjunto de datos, qué contiene, cómo se recopiló y para qué debe usarse, antes de entrenar ningún modelo con él.",
   "a.why": "Esto documenta la materia prima en sí, independiente de cualquier modelo que posteriormente será entrenado en él.",
   "b.text": "La propósito de una versión única, sus datos de entrenamiento/validación/prueba, sus métricas de desempeño y sus limitaciones conocidas se resumen para quienquiera que decida si desplegarlo.",
   "b.why": "Esto es alcance a una versión específica, no el conjunto de datos detrás de ella, una etiqueta de nutrición para el artefacto entrenado, distinto del alcance de nivel de conjunto de datos del otro lado."
@@ -55,7 +55,7 @@
  },
  "iii-dp-10": {
   "a.text": "Los valores de peso dentro de la red se actualizan a través de retropropagación conforme el entrenamiento reduce error de predicción.",
-  "a.why": "Estos son valores aprendidos que determinan cómo los datos de entrada se transforman en salida, no existen en forma final hasta que ocurre el entrenamiento.",
+  "a.why": "La red calcula estos valores por sí misma, y determinan cómo cada entrada se convierte en una salida — no existen en su forma final hasta que se produce el entrenamiento.",
   "b.text": "La velocidad de aprendizaje es fijada por el equipo antes de que el entrenamiento jamás comience, y permanece intacta mientras la red aprende.",
   "b.why": "Estos se establecen por adelantado para controlar cómo ocurre el aprendizaje, entradas a entrenamiento, no salidas de él."
  },

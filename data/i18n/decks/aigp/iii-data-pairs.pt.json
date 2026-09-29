@@ -12,13 +12,13 @@
   "b.why": "Isto é a certidão de nascimento — origem e custódia — não o registo do que subsequentemente foi feito aos dados; aquele registo pertence ao outro lado deste par."
  },
  "iii-dp-03": {
-  "a.text": "Ruído matemático calibrado é adicionado durante treino para que nenhum registo de treino único possa ser mostrado ter mais que um efeito negligenciável na saída do modelo.",
+  "a.text": "Durante o treino é injetado ruído cuidadosamente calibrado, de modo que o facto de o registo de uma pessoa ter sido incluído ou não quase não altera o que o modelo produz.",
   "a.why": "Isto é uma garantia matemática sobre influência, não sobre onde dados fisicamente viajam — aplica se dados nunca deixam sua fonte.",
   "b.text": "Cada hospital treina localmente nos seus próprios registos de paciente, e apenas as atualizações resultantes — nunca os registos brutos — viajam para um servidor central para agregação.",
   "b.why": "O que está protegido aqui é que dados deixa a site, não quanto qualquer registo único pode ser inferido de uma saída — os registos brutos nunca viajam, ponto final."
  },
  "iii-dp-04": {
-  "a.text": "Um documento normalizado estabelece motivação, composição, processo de coleta e usos recomendados de um conjunto de dados, antes de qualquer modelo ser treinado nele.",
+  "a.text": "Um documento estruturado regista porque foi criado um conjunto de dados, o que contém, como foi recolhido e para que deve ser usado, antes de qualquer modelo ser treinado com ele.",
   "a.why": "Isto documenta a matéria-prima em si, independente de qualquer modelo que mais tarde será treinado nele.",
   "b.text": "Um único propósito da versão, seu treino/validação/dados de teste, suas métricas de desempenho e suas limitações conhecidas são resumidas para quem quer que decidir se o implementa.",
   "b.why": "Isto é scoped para uma única versão, não o conjunto de dados por trás — uma etiqueta de nutrição para o artefato treinado, distinto do escopo nível-de-conjunto de dados do outro lado."
@@ -55,7 +55,7 @@
  },
  "iii-dp-10": {
   "a.text": "Valores de peso dentro da rede são atualizados através de backpropagation conforme treino reduz erro de previsão.",
-  "a.why": "Estes são valores aprendidos que determinam como dados de entrada são transformados em saída — não existem em forma final até treino acontecer.",
+  "a.why": "A rede calcula estes valores por si própria, e eles determinam como cada entrada se transforma numa saída — não existem na forma final até o treino acontecer.",
   "b.text": "A taxa de aprendizagem é fixada pela equipa antes de treino alguma vez começar, e fica intocada enquanto a rede aprende.",
   "b.why": "Estas são escolhas que uma pessoa faz em antecedência para controlar como a aprendizagem acontece — entradas para treino, não saídas dele."
  },

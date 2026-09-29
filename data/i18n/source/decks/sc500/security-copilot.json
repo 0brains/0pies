@@ -1,0 +1,131 @@
+{
+ "sec-01": {
+  "label": "A pharmaceutical SOC runs three Microsoft Sentinel workspaces. Each tier-one analyst wants Copilot to default to the workspace their own shift covers, and the owner has discovered she cannot set that centrally for the whole team.",
+  "sub": "Where does this get settled?",
+  "why": "Preinstalled plugins that show a gear or a Set up button, Microsoft Sentinel among them, are configured per user, so every analyst personalises their own default workspace from the sources pane. Roles is the tempting neighbour, but no Copilot role assignment carries a per-user plugin preference, and an owner cannot push one out on an analyst's behalf."
+ },
+ "sec-02": {
+  "label": "A challenger bank's fraud analysts want to upload their own YAML manifests to try a scoring service during sessions, but the security architect insists nothing they build appears for the rest of the tenant until she has reviewed it.",
+  "sub": "Which setting delivers exactly that split?",
+  "why": "The Owner plugin settings page carries two separate controls, one for who may add custom plugins for their own sessions and one for who may publish them organisation wide, so setting the first to owners and contributors while leaving the second at owners only produces this arrangement. It is not a roles answer because the analysts already hold contributor and the architect already holds owner; no Copilot role on its own unlocks custom plugin authoring, since the default leaves that to owners until an owner changes the plugin setting."
+ },
+ "sec-03": {
+  "label": "A logistics operator locks the Defender XDR and the natural language to KQL connectors down to owners only on a Friday. By Monday the tier-one analysts complain that the Copilot panel beside their Defender incidents has gone almost empty.",
+  "sub": "What did the change touch?",
+  "why": "Restricting a preinstalled plugin takes effect immediately and reaches the embedded surfaces as well as the portal, which is exactly why the Defender sidecar thinned out for everyone below owner. Experience is the near miss, because the symptom shows up in the sidecar, yet nothing about the sidecar was configured and reversing the plugin restriction is the fix."
+ },
+ "sec-04": {
+  "label": "A university CSIRT wants Copilot answers about inbound scanning addresses to carry reputation scoring from a third-party abuse database that the team already trusts.",
+  "sub": "Where is this switched on?",
+  "why": "Third-party reputation services appear in the non-Microsoft category of the sources pane, where the analyst turns the connector on and supplies whatever authentication that provider demands rather than relying on the on-behalf-of flow used by Microsoft plugins. Agents is the neighbour to reject, because nothing here runs on a schedule; the team simply wants richer context in ordinary prompts."
+ },
+ "sec-05": {
+  "label": "An insurer's night shift runs the same six steps every time a macro-laden invoice lands: decode the script, check the sender, pull the device timeline, and so on. The shift lead wants that sequence stored once so any analyst in the tenant can fire it as a unit.",
+  "sub": "What should she build?",
+  "why": "A promptbook stores a chain of prompts under one name and can be published either just for its author or for the whole tenant at the moment it is created, which is precisely this reuse pattern. Agents is the seductive neighbour, but an agent would run itself on a trigger under a configured identity, whereas here a human still decides when the sequence starts."
+ },
+ "sec-06": {
+  "label": "A retail analyst finishes a two-hour investigation that leaned heavily on Intune device data and wants the incident manager, who has no Intune permissions at all, to read the whole reasoning trail before the morning call.",
+  "sub": "How does she hand it over?",
+  "why": "Sharing a session link produces a read-only rendering of the entire session, and the recipient does not need access to the underlying service that generated the answers, only Copilot contributor in the same tenant. Roles is the wrong pick because no extra Intune assignment is required; the access check happened when the response was generated, not when it is viewed."
+ },
+ "sec-07": {
+  "label": "Halfway through chasing a ransomware precursor, a junior analyst marks four of Copilot's responses as the ones that mattered so the handover note at shift change writes itself from the summary.",
+  "sub": "Which feature is she using?",
+  "why": "The pin board collects chosen prompt and response pairs inside a session and generates a summary with tags the moment the first item is pinned, which is the session-artefact family this zone covers. Experience is the neighbour to discard, because pinning behaves the same wherever the session was started and says nothing about standalone versus embedded."
+ },
+ "sec-08": {
+  "label": "A contributor on a utilities SOC drafts a phishing triage sequence and wants it available to every colleague, then hears from a peer that only owners are allowed to publish anything to the tenant.",
+  "sub": "Is the peer right, and about what?",
+  "why": "The peer is wrong on this object: promptbook creation, including publishing for the tenant, is open to all Copilot roles and the scope is chosen at creation time. The confusion comes from plugins, where publishing organisation wide really is gated by an owner-controlled setting, so keeping the two artefact types apart is the whole lesson here."
+ },
+ "sec-09": {
+  "label": "A car manufacturer's small intel function spends two days a week assembling a threat report. The CISO wants a dated briefing to appear weekly, correlating external attack surface findings with Microsoft threat intelligence, with nobody typing a prompt.",
+  "sub": "What gets stood up?",
+  "why": "The threat intelligence briefing agent runs on a seven-day cadence or on demand, pulling from external attack surface management and Microsoft threat intelligence, and it is set up from the agents library rather than the prompt bar. Promptbooks is the near miss, because a promptbook could ask the same questions but only when a person launches it and it would never schedule itself."
+ },
+ "sec-10": {
+  "label": "A hospital's security architect starts configuring a vendor triage agent that reads Defender data. The setup button is greyed out and a banner tells her someone else has to act first.",
+  "sub": "What unblocks it?",
+  "why": "Partner-built agents that reach into Microsoft product data need a Global Administrator to review and grant the requested permissions, so the architect copies the approval link, has it approved, then returns to finish identity and trigger. Roles is close but wrong as a destination, because nothing is fixed by changing her Copilot role assignment; the consent belongs to the agent's own setup flow and is best granted just in time."
+ },
+ "sec-11": {
+  "label": "Six weeks ago an analyst told a triage agent to treat printer alerts as escalation-worthy. The team has since moved printers to a separate queue and the agent still keeps raising them.",
+  "sub": "Where do you go to undo that?",
+  "why": "Feedback given to an agent lands in its memory and keeps shaping every later run until it is reviewed and rejected from the manage memory pane on the agent page. Promptbooks is the wrong neighbour because nothing was saved as a prompt sequence; the stale instruction lives inside the agent, not in a reusable prompt artefact."
+ },
+ "sec-12": {
+  "label": "A payments firm's audit team objects that the Microsoft-built agent in production runs under the platform lead's own account, so its actions are indistinguishable from hers in the logs.",
+  "sub": "What should be changed at setup?",
+  "why": "During agent setup you choose between borrowing an existing user account and creating a dedicated agent identity backed by Entra Agent ID, and the dedicated identity is the recommended option precisely because it keeps the agent's access scoped and separately attributable. Roles is the tempting alternative, but reassigning Copilot roles to the platform lead does nothing about attribution; the identity choice sits inside the agent's own configuration."
+ },
+ "sec-13": {
+  "label": "An analyst at a managed service provider signs in with her own employer's credentials, but the customer's security data lives in a different tenant and she needs to prompt against it today.",
+  "sub": "What gets her there?",
+  "why": "Tenant switching is built into the standalone portal and works for external member or guest accounts that hold the right role in the target tenant, so she signs in and switches rather than getting a second account. Roles is a plausible-sounding neighbour and her target-tenant role assignment is a prerequisite, but the thing being chosen here is the surface and the tenant context it is pointed at."
+ },
+ "sec-14": {
+  "label": "A Defender analyst on a cramped laptop closes the Copilot side panel to get her incident queue back, then worries aloud that the incident summary is still quietly costing the team money.",
+  "sub": "What is actually going on?",
+  "why": "Hiding or showing the sidecar is a per-experience display preference that Copilot remembers, and the summary continues to generate in the background, so closing the panel changes nothing about consumption. Capacity is the neighbour to reject: her concern is about SCU spend, but the panel state is not a capacity control and the spend is unaffected either way."
+ },
+ "sec-15": {
+  "label": "A conglomerate keeps a SOC workspace and an EU compliance workspace. Data governance interactions started from the Purview portal keep landing in the SOC workspace, which was simply the first one anyone created.",
+  "sub": "Which setting corrects the destination?",
+  "why": "The workspaces for Microsoft Security Copilot agents setting maps each integrated product to a designated workspace, and without an explicit mapping embedded traffic defaults to the oldest workspace in the tenant. Agents is the closest miss, because the fix does not touch any individual agent's identity or trigger, only where that product's embedded interactions are received."
+ },
+ "sec-16": {
+  "label": "A newly provisioned tenant opens Security Copilot and the analysts report there is no prompt box anywhere on the first page, only a gallery of things that run by themselves. They want an ordinary chat with a free-form question.",
+  "sub": "What do you tell them?",
+  "why": "In the agents-first landing experience the homepage has no general prompt bar, and a chat is started from all history by opening a new session, which is a rollout difference rather than a fault. Agents is the wrong destination because nothing needs configuring in the agent library; the analysts simply need to be told where the chat entry point moved to."
+ },
+ "sec-17": {
+  "label": "A games studio without a Microsoft 365 E5 or E7 agreement wants a four-week Copilot pilot. Nobody can submit a single prompt yet, and the finance lead wants a modest starting commitment with room to absorb spikes.",
+  "sub": "What has to happen first?",
+  "why": "Organisations outside the E5 and E7 inclusion must provision Security Compute Units before Copilot will answer anything, with a floor of one unit, a ceiling of one hundred, and roughly three units plus unlimited overage suggested for an exploratory run. Roles is the wrong first move, since assigning owners and contributors to a tenant with no provisioned capacity still leaves every prompt unanswered."
+ },
+ "sec-18": {
+  "label": "Mid-morning during a live extortion incident, every analyst in a retailer's SOC starts seeing a message that requests cannot be served because organisational usage is at its ceiling, and they are told to wait for the next hour.",
+  "sub": "What has run out, and where is it raised?",
+  "why": "Provisioned units refresh on fixed clock hours and do not roll over, so once provisioned and overage units are both exhausted the service stops responding until the next hourly block, and the capacity owner or contributor raises the units from owner settings or the usage dashboard with changes landing inside about thirty minutes. Roles is the wrong read: nobody lost a permission, the compute allowance for that hour was simply consumed."
+ },
+ "sec-19": {
+  "label": "A German asset manager's regulator insists that both the stored session content and the processing of the prompts themselves stay inside Europe, and the team is about to create a dedicated workspace for that group.",
+  "sub": "Which decision must be right at creation?",
+  "why": "Data storage location and prompt evaluation location are both chosen while the workspace and its capacity are created, and the storage geography cannot be changed afterwards, so getting Europe into both fields is a one-shot decision. Experience is the neighbour to reject, because the analysts will use the same portal and sidecars either way; only the provisioning choices differ."
+ },
+ "sec-20": {
+  "label": "A CFO asks which teams drove last quarter's Copilot bill, which connectors their sessions leaned on, and how much of it was automated rather than typed by a person. The security lead needs a spreadsheet by Friday.",
+  "sub": "Where does the evidence come from?",
+  "why": "The usage monitoring dashboard holds up to ninety days of sessions with columns for units used, who started the session, the plugin involved, manual versus automated invocation and the experience it came from, and it exports to Excel. Roles matters only as a gate here, since viewing the dashboard needs owner, but the artefact being asked for is the capacity usage record."
+ },
+ "sec-21": {
+  "label": "A new hire on a telecoms SOC signs in to Copilot without trouble and can start sessions, but every question about incidents in the company's Sentinel workspace comes back empty, while her colleague at the next desk gets full answers.",
+  "sub": "What is she missing?",
+  "why": "The Copilot contributor role grants platform access and nothing else, so an Azure role such as Microsoft Sentinel Reader is still required before the Sentinel plugin will return incidents on her behalf. Plugins is the trap: the connector is already enabled and working for her colleague, and toggling it again changes nothing because Copilot never exceeds the access the signed-in person already holds."
+ },
+ "sec-22": {
+  "label": "After a reorganisation, an administrator tries to strip Copilot ownership from the last two people who hold it so the incoming platform team can start from a clean slate, and the portal refuses.",
+  "sub": "Why will it not let him?",
+  "why": "Copilot enforces a floor of two owners at all times to stop an organisation locking itself out, and several Entra and Purview roles such as Global Administrator, Security Administrator and Purview Organization Management inherit owner precisely to keep that floor populated. Capacity is unrelated here: nothing about the SCU resource is blocking the removal, the platform's own ownership guarantee is."
+ },
+ "sec-23": {
+  "label": "An energy company has been handing out Security Administrator in Entra to anyone who needs Copilot, and an internal audit has flagged the practice as wildly over-privileged for the outcome being sought.",
+  "sub": "What is the cleaner pattern?",
+  "why": "Rather than granting a broad Entra role for platform access alone, create a role-assignable security group and add that group to Copilot owner or contributor, which is also the recommended way to keep assignment administration manageable. Plugins is the wrong direction because restricting connectors would not reduce the Entra privilege the audit objected to; the excessive grant is an identity assignment, not a data source setting."
+ },
+ "sec-24": {
+  "label": "A long-standing tenant still has the whole directory carrying contributor access, and staff with no security data at all keep opening Copilot, getting hollow answers and raising tickets. The owner wants to narrow it to people who already work with security data.",
+  "sub": "What is the move, and what is irreversible about it?",
+  "why": "Swapping the broad everyone assignment for the recommended Microsoft security roles group gives platform access to people who already hold security permissions, and once the everyone group is removed it cannot be assigned again, so the switch is one-way. Experience is the wrong reading of the symptom: the hollow answers come from users having no underlying data access, not from them landing on the wrong Copilot surface."
+ },
+ "security-copilot": {
+  "hint": "Ask what object the fix actually edits. If it is a data connector that Copilot reads from, or who may upload and publish one, drop it in plugins. If it is a saved sequence of prompts, a pinned response, or a session handed to a colleague, it belongs in promptbooks, the zone holding every human-run prompt artefact. If something runs on a trigger under its own identity, remembers feedback, or was acquired from a storefront, it is agents. If the scene is only about which window the analyst is looking at, or which workspace embedded traffic lands in, it is experience. If money, hours, SCU headroom, the geography of the compute, or the usage dashboard is involved, it is capacity. If a person or group needs to be granted or denied something, it is roles. The classic trap is confusing roles with plugins: the Copilot roles decide what you may do to the platform, while the underlying Entra, Azure and service roles decide what data a plugin can return once you are already on the platform.",
+  "zones[0].def": "Data connectors Copilot draws on and the governance around them: toggling Microsoft, non-Microsoft, website and custom plugins, per-user setup of plugins such as Microsoft Sentinel and Azure AI Search, and the Owner plugin settings that decide who may add or publish a custom manifest. Differs from roles because a plugin toggle changes what Copilot may consult, not who may sign in; differs from agents because a plugin is a capability an agent or a prompt calls, not a scheduled worker with its own identity.",
+  "zones[1].def": "Reusable prompt artefacts and the session objects around them: saving a repeated sequence as a promptbook, publishing it to yourself or the tenant, pinning responses to the pin board, and sharing a read-only session link. Differs from agents because a promptbook waits for a human to run it and has no trigger, identity or memory; differs from experience because it is the artefact being reused, not the window it is reused in.",
+  "zones[2].def": "Setting up and running Microsoft-built and partner-built agents: identity choice, trigger schedule, required plugin dependencies, Global Administrator consent for partner agents that touch Microsoft product data, agent memory and feedback, and acquiring agents through Security Store. Differs from promptbooks because an agent runs itself on a trigger and keeps memory; differs from capacity because setting an agent up is configuration, while what the agent burns each run is SCU spend.",
+  "zones[3].def": "Which Copilot surface the work happens on: the standalone portal at securitycopilot.microsoft.com versus the embedded sidecar inside Defender, Entra, Purview, Intune, Sentinel and Azure Firewall, plus tenant switching, the agents-first versus chat-first landing page, and which workspace embedded traffic routes to. Differs from plugins because nothing about the data sources changes; differs from roles because the analyst already has the access and only the surface is in question.",
+  "zones[4].def": "Security Compute Units and the resources that carry them: provisioned versus overage units, hourly refresh and billing, the geography chosen for data storage and prompt evaluation at workspace creation, the usage monitoring dashboard, and raising or deleting capacity. Differs from roles because the shortage is compute rather than permission; differs from agents because the agent may be perfectly configured and still stopped by an exhausted hour.",
+  "zones[5].def": "Who is allowed to do what: the Copilot owner and contributor roles, the Entra and Purview roles that inherit owner, the enforced floor of two owners, replacing the broad Everyone assignment, workspace-scoped role assignment, and the separate service roles a plugin still demands before it returns data. Differs from plugins because the plugin may already be switched on and still return nothing; differs from capacity because there is plenty of SCU headroom and the block is authorisation."
+ }
+}

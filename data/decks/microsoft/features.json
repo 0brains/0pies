@@ -14,7 +14,7 @@
       "id": "feat-000-00",
       "label": "Pull machine-readable text out of a photo of a whiteboard or street sign.",
       "answer": "OCR / Read API",
-      "why": "Azure AI Vision's Read API applies OCR to extract printed and handwritten text from images, unlike Image Analysis's captioning and tagging.",
+      "why": "Azure AI Vision's Read API is the OCR feature: it pulls both typed and handwritten text out of an image, whereas Image Analysis captions and tags what the picture shows.",
       "citation": "AI-901 skills-measured guide · Microsoft Learn: Azure AI Vision documentation",
       "service": "Azure AI Vision"
     },
@@ -364,9 +364,9 @@
     },
     {
       "id": "feat-015-00",
-      "label": "Automatically try multiple algorithms and hyperparameters to find the best-performing model for your dataset.",
+      "label": "Let the service run many candidate algorithms and hyperparameter settings against your data and pick the strongest model for you.",
       "answer": "Automated ML (AutoML)",
-      "why": "Azure Machine Learning's Automated ML tries multiple algorithms and hyperparameters to find the best-performing model for your dataset.",
+      "why": "Automated ML in Azure Machine Learning trains and compares many algorithm and hyperparameter combinations on your data, then surfaces the model that scores best.",
       "citation": "AI-901 skills-measured guide · Microsoft Learn: Azure Machine Learning documentation",
       "service": "Azure Machine Learning"
     },

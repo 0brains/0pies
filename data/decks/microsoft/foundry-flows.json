@@ -42,7 +42,7 @@
    "steps": [
     {
      "label": "Install azure-ai-projects",
-     "detail": "'Which package should you install for the project client?' is a classic exam stem — the answer is azure-ai-projects."
+     "detail": "The Foundry project client ships in the azure-ai-projects package — expect questions that ask you to name it."
     },
     {
      "label": "Create AIProjectClient(endpoint, DefaultAzureCredential())",
@@ -81,7 +81,7 @@
      "detail": "The playground configures persona, tools, and attached knowledge side by side and lets you try multi-turn behavior before any client code calls the agent."
     },
     {
-     "label": "Save it: project.agents.create_version(agent_name=AGENT_NAME, definition=...)",
+     "label": "Save it: project.agents.create_version(...) — pass the agent_name plus the definition",
      "detail": "Unsaved playground edits are lost on leaving the portal — create_version is what actually persists a definition, whether you built it in the portal or in code."
     },
     {
@@ -117,7 +117,7 @@
      "detail": "Built independently of the voice-name property, but quickstart snippets construct it only after config setup is finished, immediately before the recognizer/synthesizer that will consume both objects."
     },
     {
-     "label": "Create the Recognizer or Synthesizer: SpeechRecognizer(speech_config, audio_config) / SpeechSynthesizer(speech_config)",
+     "label": "Build the worker object — a SpeechRecognizer takes both config objects, a SpeechSynthesizer only the speech one",
      "detail": "Both constructors take the already-built speech_config (the recognizer also takes audio_config) — nothing after this point can still inject the config."
     },
     {
@@ -161,12 +161,12 @@
      "detail": "Provisions the analyzer definition as a long-running operation before it can be called against any content — a one-time setup step, not a per-document one."
     },
     {
-     "label": "Submit content: client.begin_analyze(analyzer_id=..., inputs=[AnalysisInput(url=file_url)])",
+     "label": "Submit each file: call begin_analyze on the client, naming the analyzer's id and wrapping the file URL in an AnalysisInput",
      "detail": "Each document/image/audio/video file gets its own begin_analyze call against the already-registered analyzer — the per-document step, unlike step 2."
     },
     {
      "label": "Poll the operation: poller.result()",
-     "detail": "begin_analyze returns a poller; call its.result() method to wait for the final analysis output — analysis is asynchronous, not a synchronous return (the exam calls it 'call the poller's ________ method')."
+     "detail": "begin_analyze hands back a poller rather than the finished result; calling .result() on it blocks until the long-running analysis completes — the work is asynchronous, so expect to be asked which poller method retrieves the outcome."
     },
     {
      "label": "Read the structured JSON fields from the result",

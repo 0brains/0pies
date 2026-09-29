@@ -4,7 +4,7 @@
   "why": "AIProjectClient(endpoint, credential) is the project entry point; get_openai_client() hangs off it — remove auth and this is the line that breaks."
  },
  "sw-002": {
-  "label": "Sends the messages list to a deployed model and returns choices[0].message.content",
+  "label": "Given the deployment name and a system-plus-user message array, returns the reply you then read out of choices[0].message.content",
   "why": "chat.completions.create(model=DEPLOYMENT_NAME, messages=[…]) is the chat call — and model= takes the deployment name, not the base model name (histack trap #5)."
  },
  "sw-003": {
@@ -40,8 +40,8 @@
   "why": "The quickstart pairs az login with this credential object; get_openai_client only returns a chat client and has nothing to do with authentication."
  },
  "sw-011": {
-  "label": "The pip package you install before writing any Foundry project client code, per the quickstart's very first setup command",
-  "why": "\"Which package should you install for the project client?\" is a classic exam stem — the answer is azure-ai-projects, not the search or language SDKs."
+  "label": "First command in a fresh virtual environment, before any code can open a connection to a Foundry project",
+  "why": "The Foundry project client lives in azure-ai-projects — a frequently tested package name; the search and language SDKs are the usual distractors."
  },
  "sw-012": {
   "label": "Listed alongside az login in the quickstart setup steps, pinned to a minimum version (>=2.0.0) before any client code runs",
@@ -56,7 +56,7 @@
   "why": "Sentiment and key-phrase extraction are AI Language text-analytics methods on this client; the other two operate on multimodal documents or live audio, not plain text."
  },
  "sw-015": {
-  "label": "Set to listen from the computer's default microphone instead of a saved file, then handed to the recognizer as its audio source",
+  "label": "Constructed with use_default_microphone=True so a kiosk captures live voice, then passed into the recognizer's constructor as its input",
   "why": "AudioConfig(use_default_microphone=True) picks the input device; SpeechConfig instead holds the subscription key/region, and SpeechRecognizer is the class this object gets passed into, not the device selector itself."
  },
  "sw-016": {
@@ -88,8 +88,8 @@
   "why": "This Vision client's by-URL analysis method returns fixed prebuilt features like caption and read; it has no polling step and no relation to speech capture at all."
  },
  "sw-023": {
-  "label": "The client an app creates first when it will send document URLs off for extraction and read structured results back",
-  "why": "\"Which client should the app create first?\" for a Content Understanding app is this class — the other two are separate services with separate endpoints for plain text and general images respectively."
+  "label": "A claims app will hand scanned policy PDFs to a custom analyzer and read field values back — the object it constructs before anything else",
+  "why": "Content Understanding work starts from this class — the other two are separate services with separate endpoints for plain text and general images respectively."
  },
  "sw-024": {
   "label": "Its long-running analyze call returns a poller; calling.result() on that poller is how the app waits for the final extracted output",
@@ -100,7 +100,7 @@
   "why": "A GPT-image-1 deployment returns generated image bytes in response.data[0].b64_json; a completions call returns text choices, and the Vision client only analyzes an image that already exists."
  },
  "sw-026": {
-  "label": "Set background to transparent and request PNG output on this text-to-image request to get a see-through background",
+  "label": "A sticker-shop generator needs cut-out art with nothing behind it, so this call passes background=transparent with output_format=png",
   "why": "Transparent background plus PNG output are GPT-image-1-series generation parameters; nothing in the Vision analysis or chat-completion calls accepts them."
  }
 }

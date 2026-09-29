@@ -292,7 +292,7 @@
  },
  "svc-073": {
   "label": "Kontrolliere, wer auf AWS-Ressourcen zugreifen kann und welche Aktionen sie ausführen können",
-  "why": "AWS Identity and Access Management (IAM) ist das AWS-Angebot, das zur Kontrolle von, wer auf AWS-Ressourcen zugreifen kann und welche Aktionen sie ausführen können, konzipiert ist."
+  "why": "In IAM definierst du Identitäten (Benutzer, Gruppen, Rollen) und hängst Richtlinien an, die festlegen, welche AWS-Aktionen jede davon auf welchen Ressourcen ausführen darf."
  },
  "svc-074": {
   "label": "Scanne kontinuierlich Compute-Workloads auf Schwachstellen und Exposition",
@@ -303,8 +303,8 @@
   "why": "AWS Key Management Service (AWS KMS) ist das AWS-Angebot, das zum Erstellen und Kontrollieren von Verschlüsselungsschlüssel für AWS-Daten konzipiert ist."
  },
  "svc-076": {
-  "label": "Entdecke und schütze sensitive Daten in Amazon S3",
-  "why": "Amazon Macie ist das AWS-Angebot, das zum Entdecken und Schützen von sensitive Daten in Amazon S3 konzipiert ist."
+  "label": "Sensible Daten wie PII in S3-Buckets finden und markieren",
+  "why": "Macie nutzt maschinelles Lernen und Musterabgleich, um S3-Buckets nach sensiblen Daten wie PII zu durchsuchen, und meldet Befunde zu Exposition und Bucket-Sicherheit."
  },
  "svc-077": {
   "label": "Speichere, hole ab und rotiere Application-Credentials sicher",

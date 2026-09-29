@@ -1,0 +1,41 @@
+{
+ "bdl-ca-state": {
+  "tell": "A single US state reaching past its border through revenue and volume thresholds — the strongest evidence that the US answer to privacy is a patchwork, not an omnibus law."
+ },
+ "bdl-can": {
+  "tell": "The commercial-activity statute where accountability is sticky: outsourcing the processing never outsources the responsibility, wherever the processor sits."
+ },
+ "bdl-cn": {
+  "tell": "GDPR-shaped on consent and rights, but its transfer chapter points inward — the state gates the exit, which is localization pressure rather than an adequacy bridge."
+ },
+ "bdl-coe": {
+  "tell": "A treaty about prosecutions rather than privacy — it moves offences and evidence across borders by obligating governments to cooperate, and never binds a company directly."
+ },
+ "bdl-dpf": {
+  "tell": "The corridor that keeps dying in court — Safe Harbor fell, Privacy Shield fell to Schrems II, and this framework is the current adequacy bridge holding EU-to-US flows open."
+ },
+ "bdl-eu": {
+  "tell": "The regime that exports its own rulebook: lawful transfer runs through an adequacy finding or contract-grade safeguards, and the obligation follows the person the data describes, not the server it sits on."
+ },
+ "bdl-map-transfers": {
+  "prompt": "Match each instrument to the regime that enforces it — then read what it really does to data crossing that border.",
+  "note": "Markers sit at the real coordinates of each regime's seat or geographic center, projected onto a Miller-style world map; labels in dense regions are nudged clear of their marker. Instruments, transfer rules and effective dates are authored from Chapple CISSP SG 10ed ch.4 and the Moore Domain 1 objective notes.",
+  "legend[0].label": "Omnibus privacy law with transfer restrictions",
+  "legend[1].label": "Sector-by-sector or state-level rules",
+  "legend[2].label": "Voluntary principles or export-control arrangement",
+  "legend[3].label": "Adequacy corridor or multilateral agreement",
+  "projection.note": "x/y are derived at build time from lat/lon by the knowledge module's prepare() step; the board renders on the shared tools/templates/world-map-paths.svg asset that build_lab.py inlines for any lab with an aigpMap game."
+ },
+ "bdl-oecd": {
+  "tell": "Principles, not penalties: the eight-point vocabulary most national privacy laws later borrowed, paired with an explicit plea to keep data moving across borders."
+ },
+ "bdl-us": {
+  "tell": "A patchwork keyed to industry rather than to the individual — and its law-enforcement reach statute follows the provider across borders, which is the opposite direction from a data-localization rule."
+ },
+ "bdl-wassenaar": {
+  "tell": "Not a privacy instrument at all: it controls what crosses the border when the export is the technology — and only as strongly as each member writes it into national law."
+ },
+ "bdl-za": {
+  "tell": "Eight enumerated conditions and a dedicated regulator — its border test asks whether the destination's law looks like its own, a similar-protection rule rather than a contract mechanism."
+ }
+}

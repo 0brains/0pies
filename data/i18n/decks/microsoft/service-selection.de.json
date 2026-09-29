@@ -19,7 +19,7 @@
   "why": "CU extrahiert; AI Search indiziert und ruft nachgelagert ab (Indizieren, Geschicklichkeit, Wissens-Store) — Extraktion und Abruf sind verschiedene Services (Paar #22)."
  },
  "ss-005": {
-  "label": "Suche Produktbeschreibungen durch semantische Ähnlichkeit statt genauen Stichwort-Abgleich",
+  "label": "Katalogartikel finden, deren Beschreibungen dasselbe bedeuten wie eine Suchanfrage, auch wenn die Formulierung abweicht",
   "why": "Einbettungen konvertieren Text zu Vektoren für semantischen Vergleich (text-embedding-3-large) — sie rufen ab und vergleichen, sie erstellen nie Inhalte (Paar #18)."
  },
  "ss-006": {
@@ -103,7 +103,7 @@
   "why": "Feinabstimmung ist der Training Pass, das demonstriert Verhalten in neu Gewichte bäckt, damit es über Aufrufe bestehen bleibt; ein Stock Chat/Completions Bereitstellung nur widerspiegelt das, das in dieser Aufruf's Aufforderung resend, und ein Multimodal Modell ändert, welche Eingabe Typen akzept, nicht ob Stil halten ohne Re-Aufforderung."
  },
  "ss-026": {
-  "label": "Prüfe gesprochene Aufforderungen gegen ein bereitgestellt Audio-fähig Modell direkt im Foundry Chat Spielplatz, ohne schreiben jemand SDK Code",
+  "label": "Spracheingabe bei einem audiofähigen Modell-Deployment im Foundry-Chat-Playground ausprobieren, ganz ohne Code",
   "why": "Ein Audio-fähig Multimodal Bereitstellung kann direkt im Chat Spielplatz ausgeübt werden; Voice Live/gpt-realtime ist der gewährte niedrig-Latenz Echtzeit Sitzung API, ein getrennt Bereitstellung Weg gebaut für kontinuierlich Unterhaltung Stimme."
  }
 }

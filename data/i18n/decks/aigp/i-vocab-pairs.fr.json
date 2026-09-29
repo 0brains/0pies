@@ -3,7 +3,7 @@
   "a.text": "Un système de vision continue à classer correctement sur les images perturbées de manière adversariale.",
   "a.why": "Résister aux entrées hostiles ou nouvelles tout en maintenant la précision et la fonctionnalité est le travail entier de ce côté — le modèle ne quitte jamais sa bande de performance normale.",
   "b.text": "Après dégradation des entrées des capteurs, le système revient à ses limites de performance spécifiées.",
-  "b.why": "Maintenir les performances dans les limites acceptables définies malgré les conditions du monde réel ou adversariales, et s'y rétablir, est l'autre moitié — un système peut être résilient sans jamais faire face à une attaque délibérée."
+  "b.why": "Revenir à sa plage de fonctionnement spécifiée après une perturbation — qu’elle vienne de conditions réelles difficiles ou d’une attaque — c’est ce que décrit ce côté ; un système peut être résilient sans jamais subir d’attaque délibérée."
  },
  "i-vp-02": {
   "a.text": "Un clip audio synthétique d'un personnage public est fabriqué et propagé avec l'intention délibérée de causer du tort.",
@@ -14,7 +14,7 @@
  "i-vp-03": {
   "a.text": "Un grand nombre de faux trajets à bas prix sont injectés dans l'ensemble de données d'entraînement d'un modèle de prédiction de tarif à partir d'une source.",
   "a.why": "Corrompre ce que le modèle apprend, avant qu'il ne soit jamais déployé, est une attaque au moment de l'entraînement — l'autre côté se produit après que le modèle est déjà en direct.",
-  "b.text": "Un utilisateur malveillant fabrique des données d'entrée qui trompent un modèle de tri déjà déployé pour étiqueter les cas urgents comme non urgents.",
+  "b.text": "Quelques semaines après la mise en service d’un filtre antispam, un attaquant truffe des e-mails d’hameçonnage de caractères invisibles pour que le filtre les juge sûrs.",
   "b.why": "Tromper les résultats d'un modèle en direct avec des entrées fabriquées au moment de l'inférence est l'autre moitié de la paire — les données d'entraînement du modèle n'ont jamais été touchées."
  },
  "i-vp-04": {
@@ -37,7 +37,7 @@
  },
  "i-vp-07": {
   "a.text": "Un radiologue cesse de vérifier les appels à faible risque d'un outil de tri de scans après des mois de drapeaux précis, et commence à approuver tout ce qu'il marque bénin.",
-  "a.why": "La dépendance excessive à la sortie d'IA sans surveillance critique humaine est le mécanisme de ce côté — une défaillance humaine à continuer de vérifier, pas un défaut cuit dans les données.",
+  "a.why": "Le mécanisme ici, c’est une personne qui fait tellement confiance aux réponses de l’outil qu’elle cesse de les examiner — une défaillance humaine de vigilance, pas un défaut inscrit dans les données.",
   "b.text": "Un outil d'embauche entraîné sur les dossiers d'embauche passés rejette plus de candidats de groupes minoritaires, parce que ces dossiers reflétaient déjà qui était embauché avant.",
   "b.why": "Le défaut est hérité des données d'entraînement elles-mêmes, perpétuer les motifs d'un passé discriminatoire — distinct de faire trop confiance à la sortie d'un outil une fois qu'il est déjà déployé."
  },

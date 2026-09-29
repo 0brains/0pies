@@ -1,0 +1,95 @@
+{
+ "clk-01": {
+  "label": "A hospital's imaging archive holds terabytes of scanned studies that must be encrypted at rest, with encryption and decryption fast enough not to slow a radiologist pulling up a scan.",
+  "sub": "Which cryptographic solution fits this requirement?",
+  "why": "AES is the symmetric workhorse for bulk data because a symmetric cipher processes large payloads far faster than an asymmetric one; RSA and ECC are reserved for key exchange or signing and would be impractically slow encrypting terabytes directly, and TLS secures a session in transit — it isn't a cipher for data already sitting on disk."
+ },
+ "clk-02": {
+  "label": "A field laptop's entire disk must be protected against physical theft, with one key the device generates and holds locally doing both the encrypting and the later decrypting — no other party ever needs that key.",
+  "sub": "Which cryptographic solution fits this requirement?",
+  "why": "Full-disk encryption used by a single device with no key-distribution need is the textbook symmetric case, where one key does both directions cheaply; HMAC and digital signature protect a message's integrity or origin in transit, not the confidentiality a sealed local disk calls for."
+ },
+ "clk-03": {
+  "label": "A stadium's surveillance system must encrypt a continuous, high-volume video feed the moment each frame is captured, without introducing lag a security team would notice on the live wall.",
+  "sub": "Which cryptographic solution fits this requirement?",
+  "why": "Continuous high-volume data again calls for a fast symmetric cipher; ECC is asymmetric and its per-operation cost doesn't scale to encrypting an unbroken frame stream directly, HMAC only authenticates rather than hiding the frames, and TLS would secure the hop to a viewer's screen but isn't itself the cipher protecting the recorded stream."
+ },
+ "clk-04": {
+  "label": "An aging hardware security module must wrap a freshly generated symmetric session key before sending it to a partner's HSM that was certified a decade ago and has no elliptic-curve support at all.",
+  "sub": "Which cryptographic solution fits this requirement?",
+  "why": "RSA is the classic asymmetric key-wrap that works when the partner's hardware can't do elliptic-curve math; ECC would be the smaller-key modern choice, but it's unusable against equipment that never implemented it, AES needs a shared key that doesn't exist yet — asymmetric wrapping is how one gets exchanged in the first place — and HMAC has no encryption capability to wrap a key with at all."
+ },
+ "clk-05": {
+  "label": "A public certificate authority is asked to issue a key pair built on the specific hard-math problem of factoring the product of two large primes, for compatibility with client software fielded over a decade ago.",
+  "sub": "Which cryptographic solution fits this requirement?",
+  "why": "Factoring the product of two large primes is RSA's named hard problem, where ECC instead relies on the elliptic-curve discrete-logarithm problem; digital signature names the broader process this key pair will later be used for, not the underlying primitive being chosen here, and SHA-2 is a keyless hash function with no key pair to issue."
+ },
+ "clk-06": {
+  "label": "A fleet of battery-powered soil sensors must authenticate to a farm gateway using public-key cryptography, but their microcontrollers can't spare the compute cycles or battery draw that a full-size RSA key would demand.",
+  "sub": "Which cryptographic solution fits this requirement?",
+  "why": "ECC reaches equivalent asymmetric strength at a far smaller key size, which is exactly why constrained microcontrollers favor it over RSA, which would need a much larger key for the same security margin and burn compute this device doesn't have; AES is symmetric and can't establish public-key trust between fleet and gateway on its own, and HMAC only checks a message already exchanged over a channel that has to be established first."
+ },
+ "clk-07": {
+  "label": "A mobile banking app's public-key handshake must match the strength of a 3072-bit RSA key while keeping the exchanged key material small enough not to blow the round-trip budget on a weak cellular link.",
+  "sub": "Which cryptographic solution fits this requirement?",
+  "why": "This is the classic small-key-for-equivalent-strength framing that favors ECC over RSA, which would need a materially larger key to match that same strength and add handshake overhead the connection can't absorb; AES is symmetric and doesn't perform a public-key handshake at all, and digital signature names what the handshake's certificate does elsewhere in the flow, not the key-sizing decision itself."
+ },
+ "clk-08": {
+  "label": "A firmware-signing pipeline needs verification keys small enough to be permanently baked into read-only boot ROM, while still resisting the factoring-based attacks that specifically threaten larger asymmetric schemes.",
+  "sub": "Which cryptographic solution fits this requirement?",
+  "why": "ECC's small key footprint suits a ROM budget that can never be resized, and its security doesn't rest on the factoring problem that RSA's does; RSA could technically do the job but only with a key far too large for permanent ROM storage, AES has no public/private key pair to embed for verification at all, and SHA-2 alone can confirm the firmware wasn't altered but can't verify who signed it."
+ },
+ "clk-09": {
+  "label": "A software repository publishes a fixed-length digest beside each release archive so anyone can confirm the file they downloaded matches byte-for-byte what was uploaded — with no claim made about who did the uploading.",
+  "sub": "Which cryptographic solution fits this requirement?",
+  "why": "A published digest that involves no secret key and makes no identity claim is a bare hash function's job, proving only that bits weren't altered in transfer; HMAC would need a shared secret neither party here holds, digital signature would additionally prove who published the release — which this scenario explicitly disclaims — and AES encrypts rather than producing a fixed-length integrity check."
+ },
+ "clk-10": {
+  "label": "A forensic analyst must prove that a disk image copied years ago is bit-for-bit identical to the image on file today, when no secret key was ever involved in making either copy.",
+  "sub": "Which cryptographic solution fits this requirement?",
+  "why": "Comparing two independently computed digests of the same data is exactly what a keyless one-way hash function is for; HMAC and digital signature both require a key that the original imaging process never used, so introducing one now wouldn't match the original evidence chain, and AES would need a key too, encrypting rather than fingerprinting the data."
+ },
+ "clk-11": {
+  "label": "A webhook receiver must reject any payload that wasn't sent by a partner holding the pre-shared integration secret, even though the payload itself already travels over an encrypted channel.",
+  "sub": "Which cryptographic solution fits this requirement?",
+  "why": "A tag computed from the payload plus a shared secret proves both integrity and that the sender holds that secret; SHA-2 alone only catches accidental corruption, since anyone can compute a plain hash without needing any secret, digital signature would also prove origin but needs a private/public key pair heavier than this shared-secret integration, and TLS already secures the channel — which is exactly why the payload still needs its own tamper check underneath it."
+ },
+ "clk-12": {
+  "label": "An internal microservice mesh tags every API call with a short code derived from the request body and a key both services already share from a prior handshake, letting the receiver cheaply detect a tampered or forged request.",
+  "sub": "Which cryptographic solution fits this requirement?",
+  "why": "Combining a shared secret with the message to produce a short verification code is HMAC's exact mechanism, matching a key both sides already hold; SHA-2 alone gives no forgery resistance because it needs no secret to compute, and digital signature or RSA both assume an asymmetric key pair, adding cost this already-paired mesh has no need for."
+ },
+ "clk-13": {
+  "label": "Two banks exchanging a nightly settlement file append a keyed check computed from the file and a long-lived shared secret set up during onboarding, so a modified file is rejected even if the transport it rode in on is later found untrustworthy.",
+  "sub": "Which cryptographic solution fits this requirement?",
+  "why": "A keyed check built from a pre-established shared secret catches tampering independent of whatever transport carried the file, exactly matching HMAC's design; SHA-2 alone needs no secret, so an attacker could simply recompute it after altering the file, digital signature would work too but implies a public/private key pair this onboarding process never issued, and TLS protects the pipe only in the moment, not a file that might be resent or sit unread later."
+ },
+ "clk-14": {
+  "label": "A retail checkout page needs the browser and server to agree on a fresh, one-time symmetric key for this session alone, negotiated using each side's public-key material, before any card data starts flowing under that agreed key.",
+  "sub": "Which cryptographic solution fits this requirement?",
+  "why": "Negotiating a fresh session key through an asymmetric handshake and then switching to that key for the bulk exchange is TLS's defining hybrid behavior, and no single primitive in isolation performs both steps; RSA or ECC might carry out the handshake's key exchange, but by itself neither one arranges the subsequent switch to a symmetric session key, and AES is only the cipher the session ends up using once TLS has already negotiated it."
+ },
+ "clk-15": {
+  "label": "An API gateway needs confidentiality and integrity for every request to an external partner over the open internet, with the session key established fresh per connection — no symmetric key is ever pre-shared out of band.",
+  "sub": "Which cryptographic solution fits this requirement?",
+  "why": "Needing both confidentiality and a per-connection key negotiated with no out-of-band pre-shared key is the protocol-level job TLS exists to solve; AES alone assumes a key that already exists, RSA alone would only handle the key-exchange step and not the ongoing encrypted session, and HMAC secures the integrity of individual messages, not the whole channel's confidentiality."
+ },
+ "clk-16": {
+  "label": "A firmware-update channel must guarantee a downloaded patch was authored by the vendor specifically — not merely approved by some holder of a shared secret on the vendor's network — so that even a compromised internal service account can't produce a valid update.",
+  "sub": "Which cryptographic solution fits this requirement?",
+  "why": "Only a private-key signature ties an update to one specific holder of that private key, giving non-repudiation a compromised shared-secret holder can't fake; HMAC's shared-secret model is weaker here precisely because any service holding that one shared key could forge a valid tag, which is the exact risk the scenario rules out, SHA-2 alone proves nothing about authorship, and AES only provides confidentiality."
+ },
+ "clk-17": {
+  "label": "A legal-contract platform must let a court later prove that one specific, named signer — and no one else — approved a document, even if the platform's own servers are compromised after the fact.",
+  "sub": "Which cryptographic solution fits this requirement?",
+  "why": "Non-repudiation tied to one identifiable private-key holder is exactly what a digital signature provides, since only the signer's own private key could have produced it, and HMAC can't offer the same guarantee because its shared secret could implicate more than one holder on the platform side; TLS secures the platform's network session rather than producing proof that persists with the document afterward, and AES only keeps the contract secret, which says nothing about who approved it and would survive nobody's scrutiny in court."
+ },
+ "clk-18": {
+  "label": "A grants office publishes each awarded proposal on its open website with a verification block attached: the document is digested, that digest is transformed with the awarding officer's private key, and any reader holding her public certificate can check the block — while the proposal text itself is meant to stay readable by anyone who visits.",
+  "sub": "Which cryptographic solution fits this requirement?",
+  "why": "The trap is hearing a private-key operation and reading it as confidentiality — it isn't: a private-key transform over a digest yields a mark that anyone with the matching public key can verify, proving integrity and authorship while leaving the text public, which is precisely what this office wants; TLS would protect the proposal only while it travelled to a reader's browser and leaves nothing attached to the file once it is saved or forwarded, SHA-2 produces the digest but on its own ties it to no particular signer, and AES would make the proposal unreadable to the public it is being published for."
+ },
+ "crypto-locksmith": {
+  "hint": "Ask three questions in order: does this need secrecy, or just proof the data hasn't changed and who sent it? If secrecy — bulk data or a key exchange? If proof — is there a shared secret, or does it need to hold up to someone who never had one?"
+ }
+}

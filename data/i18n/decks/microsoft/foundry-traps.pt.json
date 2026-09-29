@@ -24,7 +24,7 @@
   "b.why": "Um chat.completions.create simples é um pedido único sem estado — nenhuma instrução, ferramentas ou identidade persistidas sobrevivem entre chamadas."
  },
  "ft-05": {
-  "a.text": "'Devolve sempre detalhes de cliente numa forma JSON fixa e apenas responde a perguntas de política de RH' — uma regra persistente para cada volta.",
+  "a.text": "«Responde apenas sobre a política de RH e formata cada registo de colaborador como JSON com os mesmos campos» — uma regra permanente que se aplica em todos os turnos.",
   "a.why": "Persona, tom, regras e guardrails pertencem ao prompt de sistema — a distinção 'mais testada' do histack; a resposta errada plantada coloca comportamento no prompt de utilizador ou nas configurações de implementação.",
   "b.text": "'Resumir o relatório de ausência deste trimestre para mim' — um pedido, apenas esta volta.",
   "b.why": "O prompt de utilizador carrega o pedido desta volta; respostas anteriores de modelo repetidas para memória são mensagens de assistente."

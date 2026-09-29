@@ -12,7 +12,7 @@
   "why": "Diarisation은 audio 내에서 speakers를 separate해요. speech capability예요. Trap: 이것은 nothing을 generate하므로, 절대 synthesis가 아니에요."
  },
  "wl-004": {
-  "label": "voice agent를 위해 low-latency, high-quality speech-to-speech interactions를 해요.",
+  "label": "지연을 최소화하면서 자연스러운 음성으로 주고받는 대화를 이어가야 하는 음성 에이전트",
   "why": "Verbatim Voice Live / gpt-realtime phrasing from the corpus. real-time audio in, audio out예요."
  },
  "wl-005": {
@@ -25,7 +25,7 @@
  },
  "wl-007": {
   "label": "item의 two-sentence text description에서 product page를 위해 photorealistic hero image를 create해요.",
-  "why": "text prompt에서 brand-new image를 producing하는 것은 generative AI의 image side예요. analyzed existing image는 없으며, 이것이 computer vision을 make할 것이에요."
+  "why": "글로 된 설명에서 독창적인 그림을 만드는 것은 생성형 AI의 이미지 측면이에요. 분석되는 기존 이미지가 없으며, 기존 이미지를 분석한다면 컴퓨터 비전이 돼요."
  },
  "wl-008": {
   "label": "talking points의 bullet-point outline에서 product FAQ page의 first draft를 produce해요.",
@@ -41,7 +41,7 @@
  },
  "wl-011": {
   "label": "IT-support assistant가 incoming ticket을 triage하고, affected server에 대해 diagnostic script을 run하고, automated fix이 fail하면 human에게만 escalate해요.",
-  "why": "Tool use plus conditional next action은 시험의 'tool use means the agent can call external capabilities' definition이에요. single generated response과 구별되어요."
+  "why": "외부 도구를 호출하고 그 결과에 따라 다음 단계를 선택하는 것이 바로 이를 에이전트적으로 만드는 요소예요. 단일 생성 응답과는 달라요."
  },
  "wl-012": {
   "label": "research assistant가 broad question을 sub-questions로 break하고, 각각을 위해 multiple sources를 search하고, findings을 하나의 final report로 stitch해요.",
@@ -52,8 +52,8 @@
   "why": "PII detection은 unstructured text 내에서 sensitive spans를 flags해요. text-analysis 기능이며, information extraction의 fixed fields가 forms 및 documents에서 pulled되는 것과 구별되어요."
  },
  "wl-014": {
-  "label": "thousands of support tickets 전체에서 언급된 main topics의 short ranked list를 return해요. rewritten paragraph를 produce하지 않고요.",
-  "why": "Keyword extraction은 salient terms을 list해요. 시험의 심어진 trap은 summarization을 offering하는 것이며, 이것은 list가 아닌 prose를 produce해요."
+  "label": "호텔 체인이 투숙객 리뷰에서 반복되는 주제를 요약된 산문이 아니라 짧은 순위별 용어 목록으로 뽑아내고 싶어 해요",
+  "why": "키워드 추출은 핵심 용어를 나열해요. 전형적인 함정은 대신 요약을 고르는 것인데, 요약은 주제 목록이 아니라 산문을 만들어 내요."
  },
  "wl-015": {
   "label": "news articles의 batch 전체에서 언급된 모든 person name, organization, 그리고 location을 identify해요.",

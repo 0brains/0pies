@@ -1,0 +1,121 @@
+{
+ "stp": {
+  "prompt": "One network, three attack waves, one budget for the whole night. Every control in the shop lists what it can actually do — attacks resolve against those properties, not against the control's name.",
+  "hint": "The full-coverage build exists and costs exactly par. Cheap now can be expensive later: the wave-2 traffic remembers what the wave-1 bargain could not see."
+ },
+ "stp-c-anomips": {
+  "label": "Anomaly-based NIPS",
+  "definition": "Inline prevention that learns a baseline of normal traffic and blocks significant deviations — no signature required, more tuning required.",
+  "why": "Anomaly detection is the counter to novel attacks: it flags behavior that departs from the baseline instead of looking up a pattern, which is exactly what a zero-day never has."
+ },
+ "stp-c-harden": {
+  "label": "Hardened server baseline",
+  "definition": "The unglamorous control: unnecessary services removed, default credentials gone, patches current, configuration locked to a documented baseline.",
+  "why": "Hardening shrinks the attack surface itself, so an exploit aimed at a service that is disabled, patched, or locked down has nothing to land on — protection that does not depend on recognizing the attack."
+ },
+ "stp-c-mailgw": {
+  "label": "Mail security gateway",
+  "definition": "Scrubs inbound mail before the relay accepts it: attachment detonation, link rewriting, spoofing checks, and sender authentication.",
+  "why": "Mail rides its own protocol path into the DMZ, so web- and port-focused controls never inspect it; a dedicated gateway on the mail seat is what stands between a lure and an inbox."
+ },
+ "stp-c-ngfw": {
+  "label": "Next-generation firewall",
+  "definition": "Deep-packet appliance: everything the stateful firewall does, plus application awareness and outbound traffic control in a single (expensive) box.",
+  "why": "An NGFW identifies the application inside the flow rather than trusting the port number, and can police egress — breadth in one seat, at a price that forces a budget decision."
+ },
+ "stp-c-pktfilter": {
+  "label": "Packet-filter firewall",
+  "definition": "First-generation rule list: permits or drops each packet by source, destination, and port, one packet at a time, with no memory of any conversation.",
+  "why": "A static packet filter is the cheapest gate at a choke point, but because it inspects packets in isolation it cannot tell a legitimate reply from an unsolicited flood — state-based attacks walk past it."
+ },
+ "stp-c-proxy": {
+  "label": "Forward proxy",
+  "definition": "Terminates outbound connections on behalf of internal hosts: nothing inside talks to the internet directly, and the proxy logs, filters, and can refuse every request.",
+  "why": "Mediating egress is the control that catches traffic leaving — beaconing malware included. Inbound-facing defenses never see an outbound channel; a proxy exists on exactly that path."
+ },
+ "stp-c-signips": {
+  "label": "Signature NIPS",
+  "definition": "Inline network intrusion prevention matching traffic against a database of known attack patterns. Blocks what it recognizes — and only what it recognizes.",
+  "why": "Signature detection is precise and cheap against published attacks, and an inline placement can block rather than merely alert. Its blind spot is definitional: an attack with no signature yet does not match anything."
+ },
+ "stp-c-stateful": {
+  "label": "Stateful inspection firewall",
+  "definition": "Third-generation firewall: tracks every conversation in a state table, so a packet is judged by the connection it belongs to, not just its header fields.",
+  "why": "Keeping a state table is what lets a firewall drop half-open floods and unsolicited traffic that a stateless rule list would wave through — the classic upgrade at the perimeter choke point."
+ },
+ "stp-c-switchsec": {
+  "label": "Switch security bundle",
+  "definition": "VLAN segmentation plus 802.1X port authentication on the switch fabric: traffic is fenced into segments, and a device must authenticate before its wall port carries anything.",
+  "why": "Segmentation decides how far one compromised host can reach, and port-based network access control decides whether an unknown device gets a link at all — both live in the switch, not at the perimeter."
+ },
+ "stp-c-waf": {
+  "label": "Web application firewall",
+  "definition": "Sits in front of a web server and reads the HTTP payload itself — queries, parameters, headers — blocking requests whose content attacks the application.",
+  "why": "Port 443 is legitimately open, so packet, stateful, and even application-identifying firewalls pass a well-formed HTTPS request; only payload inspection sees the injection inside it. That is the WAF's whole job."
+ },
+ "stp-fb-sqli": {
+  "why": "Application-layer attacks arrive inside allowed traffic; only payload inspection on the web seat answers them."
+ },
+ "stp-fb-sweep": {
+  "why": "A deny-by-default filter at the choke point makes closed ports invisible to scanning."
+ },
+ "stp-t-core": {
+  "label": "Core switch",
+  "sub": "every LAN segment meets here"
+ },
+ "stp-t-edge": {
+  "label": "Edge router",
+  "sub": "last hop before the internet"
+ },
+ "stp-t-endpoints": {
+  "label": "Endpoints",
+  "sub": "user workstations"
+ },
+ "stp-t-fw-inner": {
+  "label": "Inner FW slot",
+  "sub": "choke point: DMZ to LAN"
+ },
+ "stp-t-fw-perimeter": {
+  "label": "Perimeter FW slot",
+  "sub": "choke point: internet to DMZ"
+ },
+ "stp-t-mail": {
+  "label": "Mail relay",
+  "sub": "inbound mail, in the DMZ"
+ },
+ "stp-t-rack": {
+  "label": "Server rack",
+  "sub": "databases and file servers"
+ },
+ "stp-t-web": {
+  "label": "Web server",
+  "sub": "public HTTPS, in the DMZ"
+ },
+ "stp-w1-phish": {
+  "why": "Mail enters on its own protocol path, so firewalls tuned for web traffic never read it; a mail security gateway on that path is the control that stops the lure before a human can click it."
+ },
+ "stp-w1-sqli": {
+  "why": "An application-layer attack arrives inside allowed traffic; only a control that inspects the HTTP payload itself — a WAF — can tell a malicious request from a legitimate one on the same port."
+ },
+ "stp-w1-sweep": {
+  "why": "A firewall at the perimeter choke point is the control that answers scanning: any deny-by-default filter makes closed ports invisible instead of chatty."
+ },
+ "stp-w2-lateral": {
+  "why": "Segmentation is the control that decides blast radius — perimeter devices never see east-west traffic, so the fence has to live in the switch fabric itself."
+ },
+ "stp-w2-synflood": {
+  "why": "A SYN flood is invisible to per-packet rules because every packet is individually well-formed; only connection-state tracking notices that the handshakes never finish."
+ },
+ "stp-w2-worm": {
+  "why": "A published, fingerprinted attack is signature detection's home game: cheap, precise, and low-noise — the economical pick when the threat is known."
+ },
+ "stp-w3-beacon": {
+  "why": "Inbound-facing controls never inspect the outbound path; egress mediation is the distinct control that catches command-and-control traffic leaving the network."
+ },
+ "stp-w3-rogue": {
+  "why": "Port-based network access control (802.1X) authenticates the device before the port passes traffic; without it, physical access to a socket is network access."
+ },
+ "stp-w3-zeroday": {
+  "why": "A zero-day defeats signature databases by definition; what answers it is reducing the surface it needs (hardening) or flagging the deviation it causes (anomaly detection) — recognition of the attack is never available."
+ }
+}

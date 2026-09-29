@@ -3,7 +3,7 @@
   "a.text": "Un sistema de visión continúa clasificando correctamente en imágenes perturbadas adversarialmente.",
   "a.why": "Resistir entrada hostil o novedosa mientras se mantiene precisión y funcionalidad es el trabajo completo de este lado, el modelo nunca sale de su banda de desempeño normal.",
   "b.text": "Después de entradas de sensor degradadas, el sistema vuelve a sus límites de desempeño especificados.",
-  "b.why": "Mantener desempeño dentro de límites aceptables definidos a pesar de condiciones reales o adversariales, y recuperarse a ellos, es la otra mitad, un sistema puede ser resiliente sin jamás enfrentar un ataque deliberado."
+  "b.why": "Este lado describe volver al rango de funcionamiento especificado tras una perturbación — ya se deba a condiciones reales adversas o a un ataque —; un sistema puede ser resiliente sin enfrentarse nunca a un ataque deliberado."
  },
  "i-vp-02": {
   "a.text": "Un clip de audio sintético de un oficial público es fabricado y propagado con el objetivo deliberado de causar daño.",
@@ -14,7 +14,7 @@
  "i-vp-03": {
   "a.text": "Grandes números de viajes falsos de tarifa baja son inyectados en el conjunto de datos de entrenamiento del modelo de predicción de tarifa de una sola fuente.",
   "a.why": "Corromper lo que el modelo aprende, antes de que sea siquiera desplegado, es un ataque en tiempo de entrenamiento, el otro lado ocurre después de que el modelo ya está en vivo.",
-  "b.text": "Un usuario malicioso elabora datos de entrada que engañan a un modelo de triaje ya desplegado para etiquetar casos urgentes como no urgentes.",
+  "b.text": "Semanas después de que un filtro de spam entre en producción, un atacante salpica correos de phishing con caracteres invisibles para que el filtro los puntúe como seguros.",
   "b.why": "Engañar las salidas de un modelo en vivo con entradas elaboradas en tiempo de inferencia es la otra mitad del par: los datos de entrenamiento del modelo nunca fueron tocados."
  },
  "i-vp-04": {
@@ -37,7 +37,7 @@
  },
  "i-vp-07": {
   "a.text": "Un radiólogo deja de verificar doble las llamadas de bajo riesgo de una herramienta de triaje de escaneo después de meses de señales precisas, y comienza a firmar lo que sea que etiquete como benigno.",
-  "a.why": "Dependencia excesiva en salidas de IA sin supervisión humana crítica es el mecanismo de este lado, un fallo humano de mantener la verificación, no un defecto cocido en los datos.",
+  "a.why": "El mecanismo aquí es una persona que confía tanto en las respuestas de la herramienta que deja de examinarlas — un fallo humano al dejar de comprobar, no un defecto incrustado en los datos.",
   "b.text": "Una herramienta de contratación entrenada en registros de contratación pasados rechaza más candidatos de grupos minoritarios, porque esos registros ya reflejaban quién fue contratado antes.",
   "b.why": "El defecto es heredado de los datos de entrenamiento en sí, llevando adelante patrones de un pasado discriminatorio, distinto de confiar excesivamente en la salida de una herramienta una vez que ya está desplegada."
  },

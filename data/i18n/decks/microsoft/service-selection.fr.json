@@ -19,7 +19,7 @@
   "why": "CU extrait ; AI Search indexe et récupère en aval (indexeur, ensemble de compétences, magasin de connaissances) — l'extraction et la récupération sont des services différents (paire #22)."
  },
  "ss-005": {
-  "label": "Recherchez les descriptions de produits par similarité sémantique au lieu d'une correspondance par mot clé exact",
+  "label": "Trouver les articles du catalogue dont les descriptions veulent dire la même chose qu’une requête, même quand la formulation diffère",
   "why": "Les intégrations convertissent le texte en vecteurs pour la comparaison sémantique (text-embedding-3-large) — elles récupèrent et comparent, elles ne créent jamais de contenu (paire #18)."
  },
  "ss-006": {
@@ -103,7 +103,7 @@
   "why": "L'ajustement fin est la transmission d'entraînement qui cuit le comportement démontré dans de nouveaux poids afin qu'il persiste entre les appels ; un déploiement de chat/complétion de stock ne reflète que ce qui est renvoyé dans l'invite de cet appel, et un modèle multimodal change les types d'entrée acceptés, pas si le style persiste sans relance."
  },
  "ss-026": {
-  "label": "Testez les invites parlées contre un modèle compatible audio déployé directement dans le terrain de jeu de chat Foundry, sans écrire aucun code SDK",
+  "label": "Tester l’entrée vocale sur un déploiement de modèle compatible audio depuis le playground de chat de Foundry, sans aucun code",
   "why": "Un déploiement multimodal compatible audio peut être exercé directement dans le terrain de jeu de chat ; Voice Live/gpt-realtime est l'API de session en temps réel dédiée à latence faible, un chemin de déploiement séparé construit pour la conversation vocale continue."
  }
 }

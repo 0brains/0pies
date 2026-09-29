@@ -12,13 +12,13 @@
   "b.why": "This is the birth certificate — origin and custody — not the record of what was subsequently done to the data; that record belongs to the other side of this pair."
  },
  "iii-dp-03": {
-  "a.text": "Calibrated mathematical noise is added during training so no single training record can be shown to have more than a negligible effect on the model's output.",
+  "a.text": "Carefully calibrated noise is injected during training, so that whether any one person's record was included barely changes what the model outputs.",
   "a.why": "This is a mathematical guarantee about influence, not about where data physically travels — it applies whether or not data ever leaves its source.",
   "b.text": "Each hospital trains locally on its own patient records, and only the resulting updates — never the raw records — travel to a central server for aggregation.",
   "b.why": "What's protected here is which data leaves the site, not how much any single record can be inferred from an output — the raw records never travel, full stop."
  },
  "iii-dp-04": {
-  "a.text": "A standardized document lays out a dataset's motivation, composition, collection process and recommended uses, before any model is trained on it.",
+  "a.text": "A structured write-up records why a dataset was built, what it contains, how it was gathered and what it should be used for, before any model is trained on it.",
   "a.why": "This documents the raw material itself, independent of any model that will later be trained on it.",
   "b.text": "A single version's purpose, its training/validation/test data, its performance metrics and its known limitations are summarized for whoever decides whether to deploy it.",
   "b.why": "This is scoped to one specific version, not the dataset behind it — a nutrition label for the trained artifact, distinct from the dataset-level scope of the other side."
@@ -55,7 +55,7 @@
  },
  "iii-dp-10": {
   "a.text": "Weight values inside the network are updated through backpropagation as training reduces prediction error.",
-  "a.why": "These are learned values that determine how input data is transformed into output — they don't exist in final form until training happens.",
+  "a.why": "The network works these values out for itself, and they govern how each input becomes an output — they don't exist in final form until training happens.",
   "b.text": "The learning rate is fixed by the team before training ever starts, and stays untouched while the network learns.",
   "b.why": "These are set in advance to control how learning happens — inputs to training, not outputs of it."
  },

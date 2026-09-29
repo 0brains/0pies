@@ -9,7 +9,7 @@
   "a.text": "Fetches the current policy documents to ground a single answer, which a human then reads and acts on.",
   "a.why": "The system's job stops at producing a well-grounded answer; every consequential action downstream is still a human's to take.",
   "b.text": "Plans a multi-step task on its own and executes actions across booking and payment tools, with minimal human review at each step.",
-  "b.why": "Autonomy of action, not just autonomy of answer, is the new governance surface here: when a deployer lets a system act rather than merely inform, direct accountability for harmful or deceptive agent behavior falls on the deployer — this calls for action scoping, human-in-the-loop thresholds, and full action logs, none of which a purely retrieval-grounded assistant needs."
+  "b.why": "Autonomy of action, not just autonomy of answer, is the new governance surface here: when a deployer lets a system act rather than merely inform, the deployer answers directly if the agent causes harm or misleads anyone — this calls for action scoping, human-in-the-loop thresholds, and full action logs, none of which a purely retrieval-grounded assistant needs."
  },
  "iv-ap-03": {
   "a.text": "The organization can read, modify and redistribute the model's own weights and code, and run it entirely on infrastructure it controls.",

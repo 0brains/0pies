@@ -41,5 +41,61 @@
  "training-data-10": {
   "label": "One target class appears much more often than another, making accuracy potentially misleading.",
   "why": "One target class appears much more often than another, making accuracy potentially misleading."
+ },
+ "training-data-11": {
+  "label": "Attaching ground-truth tags to raw examples so a supervised model has answers to learn from.",
+  "why": "Label quality caps model quality: noisy or inconsistent tags teach the model the wrong mapping no matter how much data there is."
+ },
+ "training-data-12": {
+  "label": "The verified correct answer that a model's prediction is compared against during training and evaluation.",
+  "why": "Without a trusted reference answer, neither training loss nor evaluation metrics mean anything — both are measured against it."
+ },
+ "training-data-13": {
+  "label": "Creating extra training examples by transforming existing ones, such as flipping images or paraphrasing text.",
+  "why": "It stretches a small dataset and teaches invariance to harmless variation, reducing overfitting without collecting new data."
+ },
+ "training-data-14": {
+  "label": "Artificially generated examples used when real data is scarce, sensitive, or missing rare cases.",
+  "why": "It fills gaps real collection cannot — rare events, privacy-restricted records — but inherits the assumptions of its generator."
+ },
+ "training-data-15": {
+  "label": "Rebalancing a skewed dataset by duplicating or generating additional minority-class examples.",
+  "why": "It gives the rare class enough weight to be learned, at the risk of overfitting to repeated or synthetic minority examples."
+ },
+ "training-data-16": {
+  "label": "Rebalancing a skewed dataset by discarding some majority-class examples.",
+  "why": "It equalises class influence cheaply, but throws away real signal from the majority class in the process."
+ },
+ "training-data-17": {
+  "label": "An individual measurable input attribute, such as age, pixel value, or transaction amount, that the model learns from.",
+  "why": "Models only see the features they are given; what is included, and how it is encoded, bounds what can be learned."
+ },
+ "training-data-18": {
+  "label": "Transforming raw inputs into more informative attributes, such as ratios, buckets, or encodings, before training.",
+  "why": "Good derived features let simpler models capture the pattern; poor ones force complex models to rediscover it from noise."
+ },
+ "training-data-19": {
+  "label": "Rotating which slice of data is held out so every example is used for both training and evaluation.",
+  "why": "Averaging over several held-out folds gives a steadier estimate of generalisation than a single split, especially on small datasets."
+ },
+ "training-data-20": {
+  "label": "Checks on completeness, accuracy, consistency, and freshness applied before data is used to train.",
+  "why": "Defects flow downstream: a model trained on incomplete or inconsistent records encodes those defects as behaviour."
+ },
+ "training-data-21": {
+  "label": "Systematic skew introduced when the collection method favours some people or cases over others.",
+  "why": "A model can only be fair to cases it has seen; skewed collection produces skewed predictions however good the algorithm."
+ },
+ "training-data-22": {
+  "label": "An extreme or anomalous example that sits far outside the pattern of the rest of the data.",
+  "why": "A handful of extreme points can drag parameters and scaling; deciding whether they are errors or real cases changes the model."
+ },
+ "training-data-23": {
+  "label": "An ordering-aware split where the model trains on earlier periods and is evaluated on later ones.",
+  "why": "Shuffling time series lets the model peek at the future, inflating scores; honest evaluation must respect arrival order."
+ },
+ "training-data-24": {
+  "label": "A split that keeps each subset's class proportions the same as the full dataset's.",
+  "why": "Random splits of imbalanced data can starve a fold of the rare class entirely; stratifying keeps every evaluation representative."
  }
 }

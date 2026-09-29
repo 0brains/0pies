@@ -1,0 +1,74 @@
+{
+ "bpl-001": {
+  "snippet": "Protecting client information is a strategic obligation of this organization. Issued under the authority of the executive board, this document states which assets deserve protection and how far our program must go to protect them. It names no tools and no settings.",
+  "tell": "Executive authority plus strategic scope plus a deliberate absence of implementation detail is the top tier of the document hierarchy. A policy says what must be protected and why it matters; everything below it says how."
+ },
+ "bpl-002": {
+  "snippet": "Company systems exist for the work of your role. Personal use that interferes with duties, or any attempt to sidestep a security control, can bring warnings, penalties, or dismissal.",
+  "tell": "Expected behavior tied to job consequences is the acceptable use policy — a policy-tier document aimed at every user, not advice they may decline and not a step list they follow."
+ },
+ "bpl-003": {
+  "snippet": "Every company-issued laptop will run the corporate build of full-disk encryption using AES-256. No exception exists for any business unit, region, or seniority level.",
+  "tell": "A compulsory, uniform technology requirement stated for the whole organization is a standard: it names the exact mechanism and permits no local variation, which is more specific than policy and more absolute than a guideline."
+ },
+ "bpl-004": {
+  "snippet": "No server of this class enters production below the minimum hardening floor: unused services off, current patch set applied, the required logging configuration in place. Teams may build above the floor, never beneath it.",
+  "tell": "A minimum security level that every system of a type must meet — exceed freely, never fall below — is a baseline. It is system-class-specific where a standard is organization-wide, and it sets a floor rather than steps."
+ },
+ "bpl-005": {
+  "snippet": "Teams handling sensitive records are encouraged to adopt a password manager and, where it fits the workflow, hardware tokens. Adapt these suggestions to your own systems and constraints.",
+  "tell": "Encouraged, where it fits, adapt to your workflow — every verb is optional. Recommendations that flex to local conditions and compel nothing are a guideline, the only non-mandatory rung of the stack."
+ },
+ "bpl-006": {
+  "snippet": "Step 1: open a change ticket. Step 2: snapshot the volume. Step 3: run the patch job. Step 4: confirm services restart cleanly. Step 5: close the ticket with evidence attached.",
+  "tell": "Numbered, ordered, exact actions for one task is a procedure — the SOP rung. Nothing else in the hierarchy tells you what to do next; everything else tells you what must be true."
+ },
+ "bpl-007": {
+  "snippet": "As a condition of continued card processing, the Merchant agrees to remain compliant with the current PCI DSS and to submit to the acquiring bank's compliance validation on request.",
+  "tell": "PCI DSS reads like a standard, but the duty here flows from the merchant agreement with the bank — breach it and you lose card processing, not your liberty. Industry rules bind by contract, not statute."
+ },
+ "bpl-008": {
+  "snippet": "The Vendor, as business associate, undertakes in writing to safeguard the protected health information it receives on behalf of the Covered Entity, in support of both parties' obligations under health-privacy law.",
+  "tell": "Two named parties, capitalized defined terms, a written undertaking: this is the business associate agreement that HIPAA-covered entities must put in place with their handlers — a contract instrument carrying a regulatory duty."
+ },
+ "bpl-009": {
+  "snippet": "Privileged-account passwords are required to be at least sixteen characters and must be replaced immediately on any suspicion of compromise. The requirement applies identically on every platform we operate.",
+  "tell": "Required and applies identically everywhere: compulsory and uniform is the signature of a standard. A guideline would say should; a baseline would attach to one system class; a procedure would give you the steps."
+ },
+ "bpl-010": {
+  "snippet": "Each workstation image ships with the same minimum security floor for its class. A business unit may harden further; no machine may ever sit below the floor.",
+  "tell": "A per-class minimum with exceed-but-never-undercut language is a baseline. The floor metaphor is the tell: baselines set the least a system may be, not the one way everything must be done."
+ },
+ "bpl-011": {
+  "snippet": "When picking among the approved encryption mechanisms, prefer the one your team can operate with confidence. This document suggests practice; it does not mandate it.",
+  "tell": "It says so itself: suggests, does not mandate. Advice on how to apply mandatory requirements well, flexing to team circumstances, is exactly the guideline's job in the hierarchy."
+ },
+ "bpl-012": {
+  "snippet": "1. Receive the termination notice from HR. 2. Disable every account before the exit interview ends. 3. Collect badge and laptop. 4. Record each hand-off on the departure checklist.",
+  "tell": "An ordered checklist for one recurring task — offboarding a leaver — is a procedure. The subject matter is personnel security, but the document type is decided by its shape: sequential, exact, repeatable."
+ },
+ "bpl-013": {
+  "snippet": "Ultimate accountability for protecting information assets rests with executive leadership, who approve this document and the risk appetite it expresses. Daily duties are delegated; accountability is not.",
+  "tell": "Senior management owning the document and the risk appetite is governance speaking — the policy tier. Delegating tasks while retaining accountability is the accountability principle of area 1.3 written into the top-tier document."
+ },
+ "bpl-014": {
+  "snippet": "The Supplier will provide the Customer with its most recent independent security assessment each year, and failure to remedy critical findings within ninety days constitutes a material breach of this Agreement.",
+  "tell": "Material breach of this Agreement is the giveaway: obligations created between two named parties and enforced through contract remedies. No internal document, however strict, threatens breach — it threatens noncompliance."
+ },
+ "bpl-015": {
+  "snippet": "Remote access to internal systems must go through the corporate VPN profile with multi-factor authentication enabled. No alternative access path is permitted for any user population.",
+  "tell": "Must, one named mechanism, no permitted alternative, every user population: a compulsory uniform conformance requirement. Policies state goals; this states the required technology, which is what standards do."
+ },
+ "bpl-016": {
+  "snippet": "Administrators should review authentication logs after unusual sign-in activity, and may widen the review window in seasons when travel inflates false alarms.",
+  "tell": "Should and may, with room to widen the window by judgment — modal verbs that permit rather than compel mark a guideline. A procedure would number the steps; a standard would strike the word should."
+ },
+ "bpl-017": {
+  "snippet": "First, isolate the affected host from the network. Second, preserve a memory capture before power changes. Third, page the on-call lead. Fourth, log every action taken, each with a timestamp.",
+  "tell": "First, second, third, fourth: an exact action sequence for one situation. Incident subject matter does not make it an incident policy — ordered concrete actions make it a procedure."
+ },
+ "bpl-018": {
+  "snippet": "This document commits the organization to protecting personal data wherever we operate and directs each division to publish supporting requirements. It names outcomes, never technologies.",
+  "tell": "Outcomes without technologies, plus an instruction that subordinate documents be created beneath it — a policy sits at the top of the stack and spawns the standards, baselines and procedures that implement it."
+ }
+}

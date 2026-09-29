@@ -19,7 +19,7 @@
   "why": "CU estrae; AI Search indicizza e recupera a valle (indicizzatore, skillset, knowledge store) — l'estrazione e il recupero sono servizi diversi (coppia #22)."
  },
  "ss-005": {
-  "label": "Cerca descrizioni di prodotti per somiglianza semantica invece di corrispondenza esatta di parole chiave",
+  "label": "Trovare articoli del catalogo le cui descrizioni hanno lo stesso significato di una query, anche quando la formulazione è diversa",
   "why": "I modelli di incorporamento convertono il testo in vettori per il confronto semantico (text-embedding-3-large) — recuperano e confrontano, non creano mai contenuto (coppia #18)."
  },
  "ss-006": {
@@ -103,7 +103,7 @@
   "why": "L'adattamento fine è il passaggio di addestramento che inforna il comportamento dimostrato in nuovi pesi in modo che persista attraverso le chiamate; una distribuzione di completamento/chat stock solo riflette quello che viene rinviato nel prompt di quella chiamata, e un modello multimodale cambia quali tipi di input sono accettati, non se lo stile persiste senza ri-prompt."
  },
  "ss-026": {
-  "label": "Testa prompt parlati rispetto a un modello distribuito audio-capace direttamente nel playground di chat Foundry, senza scrivere alcun codice SDK",
+  "label": "Provare l’input vocale su un deployment di modello abilitato all’audio dal chat playground di Foundry, senza scrivere codice",
   "why": "Una distribuzione multimodale audio-capace può essere esercitata dritto nel playground di chat; Voice Live/gpt-realtime è l'API di sessione realtime a bassa latenza dedicata, un percorso di distribuzione separato costruito per la conversazione vocale continua."
  }
 }

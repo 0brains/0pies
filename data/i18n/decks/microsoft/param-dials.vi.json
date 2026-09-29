@@ -4,7 +4,7 @@
   "why": "Gợi ý kỳ thi chính xác của histack: 'đầu ra nhất quán, có thể lặp lại' → nhiệt độ thấp. Nó cân nhắc lại toàn bộ phân bố xác suất; điều chỉnh nó hoặc top_p, không phải cả hai."
  },
  "pd-002": {
-  "label": "Hạn chế lấy mẫu để tập hợp mã nhỏ nhất có xác suất tích lũy đạt được ngưỡng đặt",
+  "label": "Chỉ lấy mẫu từ các token xếp hạng cao nhất cho đến khi tổng xác suất của chúng đạt một ngưỡng đã chọn",
   "why": "Lấy mẫu inti — top_p cắt ngắn bộ ứng cử, trong khi nhiệt độ làm hình lại toàn bộ phân bố (cặp bối rối kho tàng #5)."
  },
  "pd-003": {
@@ -63,8 +63,8 @@
   "why": "PTU là mô hình triển khai dung lượng dự trữ; tiêu chuẩn chia sẻ dung lượng và hóa đơn cho mỗi mã với thông lượng có thể thay đổi, trong khi dung lượng (TPM) chỉ đặt hạng mục trên loại triển khai nào được chọn."
  },
  "pd-017": {
-  "label": "Lưu lượng truy cập ứng dụng hỗ trợ khách hàng không thể dự đoán được và bừng bừa, và nhóm muốn hóa đơn theo mã thay vì dung lượng dự trữ hàng giờ",
-  "why": "Giá theo mã dưới tải có thể thay đổi là triển khai tiêu chuẩn (kịch bản chính xác của kỳ thi); PTU thay vào đó hóa đơn hàng giờ cho dung lượng dự trữ bất kể sử dụng thực tế."
+  "label": "Một trợ lý bán vé lễ hội nhàn rỗi hàng tuần rồi đột ngột đông khách, và bộ phận tài chính muốn chỉ trả tiền cho số token đã dùng, không bao giờ trả cho thông lượng được giữ sẵn suốt ngày đêm",
+  "why": "Tính giá theo token khi tải biến động là triển khai Standard; PTU thì ngược lại, tính phí theo giờ cho dung lượng dành riêng bất kể mức sử dụng thực tế."
  },
  "pd-018": {
   "label": "Hóa đơn cho mỗi mã được tiêu thụ thay vì mỗi giờ tính toán dự trữ, với thông lượng có thể thay đổi dưới tải chia sẻ",

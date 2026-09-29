@@ -12,7 +12,7 @@
   "why": "Diarization tách những người nói trong âm thanh — khả năng giọng nói. Bẫy: nó không tạo ra bất cứ điều gì, vì vậy nó không bao giờ tổng hợp."
  },
  "wl-004": {
-  "label": "Tương tác độ trễ thấp, chất lượng cao giọng nói với giọng nói cho một tác nhân giọng nói",
+  "label": "Một agent giọng nói phải duy trì các cuộc hội thoại nói qua lại tự nhiên với độ trễ tối thiểu",
   "why": "Cụm từ Verbatim Voice Live / gpt-realtime từ corpus — âm thanh thực tế, âm thanh ra ngoài."
  },
  "wl-005": {
@@ -25,7 +25,7 @@
  },
  "wl-007": {
   "label": "Tạo hình ảnh anh hùng chân thực cho một trang sản phẩm từ mô tả văn bản hai câu của mục và cài đặt của nó",
-  "why": "Tạo một hình ảnh mới từ một lời nhắc văn bản là phía hình ảnh AI sinh ra — không có hình ảnh hiện có nào được phân tích, đó là những gì sẽ làm cho nó tầm nhìn máy tính."
+  "why": "Tạo một bức ảnh nguyên bản từ mô tả bằng chữ là mảng hình ảnh của AI tạo sinh — không có hình ảnh sẵn có nào được phân tích, điều vốn sẽ khiến nó thuộc về thị giác máy tính."
  },
  "wl-008": {
   "label": "Tạo bản nháp đầu tiên của trang FAQ sản phẩm từ phác thảo đạn của các điểm nói chuyện",
@@ -41,7 +41,7 @@
  },
  "wl-011": {
   "label": "Một trợ lý hỗ trợ IT triage một vé đến, chạy một tập lệnh chẩn đoán chống máy chủ bị ảnh hưởng và chia tay cho một người chỉ khi sửa chữa tự động không thành công",
-  "why": "Sử dụng công cụ cộng với một hành động tiếp theo có điều kiện là định nghĩa 'sử dụng công cụ có nghĩa là tác nhân có thể gọi các khả năng bên ngoài' của bài thi — khác biệt với một phản hồi được tạo duy nhất."
+  "why": "Gọi các công cụ bên ngoài rồi chọn bước tiếp theo dựa trên kết quả là điều khiến việc này mang tính agentic — khác với một câu trả lời được tạo ra một lần."
  },
  "wl-012": {
   "label": "Một trợ lý nghiên cứu chia một câu hỏi rộng lớn thành các câu hỏi phụ, tìm kiếm nhiều nguồn cho mỗi câu hỏi và khâu các phát hiện vào một báo cáo cuối cùng",
@@ -52,8 +52,8 @@
   "why": "Phát hiện PII cờ khoảng nhạy cảm bên trong văn bản không có cấu trúc — một tính năng phân tích văn bản, khác biệt với trích xuất thông tin của các trường cố định được kéo từ biểu mẫu và tài liệu."
  },
  "wl-014": {
-  "label": "Trả về một danh sách xếp hạng ngắn các chủ đề chính được đề cập trên hàng nghìn vé hỗ trợ, không tạo ra một đoạn được viết lại",
-  "why": "Trích xuất từ khóa liệt kê các điều khoản nổi bật; bẫy được trồng bài thi là cung cấp tóm tắt thay vào đó, điều này sẽ tạo ra văn bản thay vì danh sách chủ đề."
+  "label": "Một chuỗi khách sạn muốn các chủ đề lặp lại trong đánh giá của khách được trình bày thành một tập thuật ngữ ngắn có xếp hạng, không phải một bản tóm tắt văn xuôi rút gọn",
+  "why": "Trích xuất từ khóa liệt kê các thuật ngữ nổi bật; cái bẫy kinh điển là chọn tóm tắt văn bản thay vào đó, vốn sẽ tạo ra văn xuôi thay vì danh sách chủ đề."
  },
  "wl-015": {
   "label": "Xác định mọi tên người, tổ chức và vị trí được đề cập trên một loạt bài báo tin tức",

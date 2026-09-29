@@ -4,7 +4,7 @@
     "why": "L'indice exact de l'examen de histack : « sortie cohérente, reproductible » → température basse. Il redimensionne toute la distribution de probabilité ; règle-la ou top_p, pas les deux."
   },
   "pd-002": {
-    "label": "Limite l'échantillonnage au plus petit ensemble de jetons dont la probabilité cumulée atteint un seuil défini",
+    "label": "N’échantillonner que parmi les tokens les mieux classés jusqu’à ce que leur probabilité cumulée atteigne un seuil choisi",
     "why": "Échantillonnage noyau — top_p tronque l'ensemble de candidats, tandis que la température remodèle toute la distribution (paire confuse de corpus n°5)."
   },
   "pd-003": {
@@ -64,8 +64,8 @@
     "why": "PTU est le modèle de déploiement à capacité réservée ; Standard partage la capacité et facture par jeton avec débit variable, tandis que la capacité (TPM) définit simplement le quota sur le type de déploiement choisi."
   },
   "pd-017": {
-    "label": "Le trafic vers l'application de support client est imprévisible et en rafales, et l'équipe veut la facturation à la carte au lieu de la capacité horaire réservée",
-    "why": "La tarification à la carte sous charge variable est le déploiement standard (le scénario exact de l'examen) ; PTU facture plutôt à l'heure pour la capacité réservée quel que soit l'usage réel."
+    "label": "Un assistant de billetterie de festival reste inactif pendant des semaines puis subit des pics soudains, et la finance veut payer uniquement les tokens consommés, jamais un débit réservé en permanence",
+    "why": "La tarification au token sous charge variable, c’est le déploiement Standard ; le PTU facture plutôt à l’heure une capacité réservée, quel que soit l’usage réel."
   },
   "pd-018": {
     "label": "Les factures par jeton consommé plutôt que par heure de calcul réservé, avec un débit qui peut varier sous charge partagée",

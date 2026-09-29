@@ -12,7 +12,7 @@
   "why": "Diaryzacja oddziela mówców w audio — możliwość mowy. Pułapka: nic nie generuje, więc nigdy nie jest syntezą."
  },
  "wl-004": {
-  "label": "Interakcje zamiany mowy na mowę o niskiej latencji i wysokiej jakości dla agenta głosowego",
+  "label": "Agent głosowy, który musi prowadzić naturalne rozmowy głosowe w obie strony z minimalnym opóźnieniem",
   "why": "Fraza Voice Live / gpt-realtime dosłownie z korpusu — audio w czasie rzeczywistym, audio wyjście."
  },
  "wl-005": {
@@ -25,7 +25,7 @@
  },
  "wl-007": {
   "label": "Stwórz fotorealistyczny bohater obraz dla strony produktu z dwuznacznego opisu tekstu artykułu i jego ustawienia",
-  "why": "Produkcja zupełnie nowego obrazu z podpowiedzi tekstowej to strona obrazu generatywnej AI — nie ma istniejącego obrazu analizowanego, co by go uczyniło widzeniem komputerowym."
+  "why": "Tworzenie oryginalnego obrazu na podstawie opisu tekstowego to obrazowa strona generatywnej AI — nie analizuje się tu żadnego istniejącego obrazu, co czyniłoby to wizją komputerową."
  },
  "wl-008": {
   "label": "Sporządź pierwszą wersję strony FAQ produktu ze spisu wypunktowanego punktów rozmowy",
@@ -41,7 +41,7 @@
  },
  "wl-011": {
   "label": "Asystent wsparcia informatycznego triażuje przychodzący bilet, uruchamia skrypt diagnostyczny na dotkniętym serwerze i eskaluje do człowieka tylko wtedy, gdy automatyczna naprawa się nie powiedzie",
-  "why": "Użycie narzędzia plus warunkowa następna akcja to definicja egzaminu 'użycie narzędzia oznacza, że agent może wywoływać zewnętrzne możliwości' — odrębne od jednej wygenerowanej odpowiedzi."
+  "why": "Wywoływanie zewnętrznych narzędzi, a następnie wybieranie kolejnego kroku na podstawie wyniku sprawia, że jest to rozwiązanie agentowe — w odróżnieniu od pojedynczej wygenerowanej odpowiedzi."
  },
  "wl-012": {
   "label": "Asystent badawczy dzieli szerokie pytanie na podzadania, przeszukuje wiele źródeł dla każdego i zszyywa wyniki w jeden ostateczny raport",
@@ -52,8 +52,8 @@
   "why": "PII detection oflagowuje wrażliwe rozprzestrzenianie się wewnątrz nieustrukturyzowanego tekstu — funkcja analityki tekstu, odrębna od ekstrakcji informacji o stałych polach wyciągnięte z formularzy i dokumentów."
  },
  "wl-014": {
-  "label": "Zwróć krótko uszeregowaną listę głównych tematów wymienionej w tysiącach biletów wsparcia bez produkowania przepisanego paragrafu",
-  "why": "Ekstrakcja słów kluczowych wymienia warunki sól; pułapka egzaminu zasiął zastępuje podsumowaniem, które byłoby produkować prozę zamiast listy tematów."
+  "label": "Sieć hoteli chce, aby powtarzające się tematy w opiniach gości zostały wydobyte jako krótka uszeregowana lista terminów, a nie zwięzłe podsumowanie prozą",
+  "why": "Wyodrębnianie słów kluczowych wypisuje najistotniejsze terminy; klasyczną pułapką jest sięgnięcie zamiast tego po streszczanie, które dałoby prozę zamiast listy tematów."
  },
  "wl-015": {
   "label": "Zidentyfikuj każdą nazwę osoby, organizację i lokalizację wymienione w partii artykułów wiadomości",

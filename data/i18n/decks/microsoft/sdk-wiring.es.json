@@ -4,7 +4,7 @@
   "why": "AIProjectClient(endpoint, credential) es el punto de entrada del proyecto; get_openai_client() se une a él — elimina la autenticación y esta es la línea que se rompe."
  },
  "sw-002": {
-  "label": "Envía la lista de mensajes a un modelo implementado y devuelve choices[0].message.content",
+  "label": "Dado el nombre de la implementación y un array de mensajes de sistema y de usuario, devuelve la respuesta, que luego lees en choices[0].message.content",
   "why": "chat.completions.create(model=DEPLOYMENT_NAME, messages=[…]) es la llamada de chat — y model= toma el nombre de implementación, no el nombre del modelo base (trampa histack #5)."
  },
  "sw-003": {
@@ -40,8 +40,8 @@
   "why": "El inicio rápido empareja az login con este objeto de credencial; get_openai_client solo devuelve un cliente de chat y no tiene nada que ver con la autenticación."
  },
  "sw-011": {
-  "label": "El paquete pip que instalas antes de escribir cualquier código de cliente del proyecto Foundry, según el primer comando de configuración del inicio rápido",
-  "why": "'¿Qué paquete debes instalar para el cliente del proyecto?' es una pregunta de examen clásica — la respuesta es azure-ai-projects, no los SDKs de búsqueda o idioma."
+  "label": "Primer comando en un entorno virtual nuevo, antes de que ningún código pueda abrir una conexión a un proyecto de Foundry",
+  "why": "El cliente de proyecto de Foundry está en azure-ai-projects — un nombre de paquete que se pregunta con frecuencia; los SDK de búsqueda y de lenguaje son los distractores habituales."
  },
  "sw-012": {
   "label": "Listado junto a az login en los pasos de configuración del inicio rápido, fijado a una versión mínima (>=2.0.0) antes de que cualquier código de cliente se ejecute",
@@ -56,7 +56,7 @@
   "why": "La extracción de sentimiento y frases clave son métodos de análisis de texto de AI Language en este cliente; los otros dos operan en documentos multimodales o audio en vivo, no en texto plano."
  },
  "sw-015": {
-  "label": "Establecido para escuchar del micrófono predeterminado de la computadora en lugar de un archivo guardado, luego entregado al reconocedor como su fuente de audio",
+  "label": "Se construye con use_default_microphone=True para que un quiosco capture voz en directo y luego se pasa al constructor del reconocedor como su entrada",
   "why": "AudioConfig(use_default_microphone=True) elige el dispositivo de entrada; SpeechConfig en su lugar contiene la clave de suscripción/región, y SpeechRecognizer es la clase a la que se pasa este objeto, no el selector de dispositivo en sí."
  },
  "sw-016": {
@@ -88,8 +88,8 @@
   "why": "El método de análisis por URL de este cliente de Vision devuelve características precompiladas fijas como pie de foto y lectura; no tiene paso de sondeo ni relación con la captura de voz en absoluto."
  },
  "sw-023": {
-  "label": "El cliente que una aplicación crea primero cuando enviará URLs de documentos para extracción y leerá resultados estructurados de vuelta",
-  "why": "\"¿Qué cliente debe crear primero la aplicación?\" para una aplicación de Content Understanding es esta clase — los otros dos son servicios separados con endpoints separados para texto plano e imágenes generales respectivamente."
+  "label": "Una app de siniestros va a entregar PDF escaneados de pólizas a un analizador personalizado y leer los valores de los campos — el objeto que construye antes que nada",
+  "why": "El trabajo con Content Understanding empieza por esta clase — las otras dos son servicios independientes, con endpoints propios, para texto plano e imágenes generales respectivamente."
  },
  "sw-024": {
   "label": "Su llamada de análisis de larga duración devuelve un sondeo; llamar.result() en ese sondeo es cómo la aplicación espera la salida extraída final",
@@ -100,7 +100,7 @@
   "why": "Una implementación GPT-image-1 devuelve bytes de imagen generada en response.data[0].b64_json; una llamada de completados devuelve opciones de texto, y el cliente de Vision solo analiza una imagen que ya existe."
  },
  "sw-026": {
-  "label": "Establece fondo transparente y solicita salida PNG en esta solicitud de texto a imagen para obtener un fondo transparente",
+  "label": "Un generador para una tienda de pegatinas necesita ilustraciones recortadas sin nada detrás, así que esta llamada pasa background=transparent con output_format=png",
   "why": "El fondo transparente más la salida PNG son parámetros de generación de la serie GPT-image-1; nada en el análisis de Vision o las llamadas de finalización de chat los acepta."
  }
 }

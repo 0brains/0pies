@@ -4,7 +4,7 @@
   "why": "histack'ın tam sınav işareti: 'tutarlı, tekrar edilebilir çıktı' → düşük sıcaklık. Tüm olasılık dağılımını yeniden ölçeklendirir; top_p'yi değil, ikisini ayarla."
  },
  "pd-002": {
-  "label": "Örneklemeyi, kümülatif olasılığı belirlenmiş bir eşiğe ulaşan en küçük token setine sınırla",
+  "label": "Yalnızca en üst sıradaki token'lardan, toplam olasılıkları seçilen bir eşiğe ulaşana kadar örnekleme yap",
   "why": "Çekirdek örnekleme — top_p aday setini keserken, sıcaklık tüm dağılımı yeniden şekillendirir (corpus kafa karıştırıcı çift #5)."
  },
  "pd-003": {
@@ -64,8 +64,8 @@
   "why": "PTU ayrılmış kapasite dağıtım modeli'dir; Standart kapasiteyi paylaşır ve token başına değişken iş başı ile fatura keser, Kapasite (TPM) bunun yerine hangi dağıtım tipine karar verirse seçilen tüm hangisi üzerine kota ayarlar."
  },
  "pd-017": {
-  "label": "Müşteri destek uygulamasına trafik tahmin edilemez ve patlamış, ve takım saatlik ayrılmış kapasite yerine token başına faturamayı istiyor",
-  "why": "Token başına faturalama değişken yük altında Standart dağıtım (sınavın tam senaryosu); PTU bunun yerine ayrılmış kapasite için gerçek kullanımdan bağımsız olarak saatlik fatura."
+  "label": "Bir festival biletleme asistanı haftalarca boşta kalıp ani yoğunluklar yaşıyor ve finans ekibi yalnızca tüketilen token'lar için ücretlendirilmek, asla gece gündüz ayrılmış kapasite (throughput) için ödeme yapmamak istiyor",
+  "why": "Değişken yük altında token başına ödeme fiyatlandırması Standard dağıtımdır; PTU ise gerçek kullanımdan bağımsız olarak ayrılmış kapasite için saatlik ücretlendirir."
  },
  "pd-018": {
   "label": "Tüketilen token başına fatura, saatlik ayrılmış hesaplama değil, kota paylaşılan yük altında değişiklik gösterebilir",

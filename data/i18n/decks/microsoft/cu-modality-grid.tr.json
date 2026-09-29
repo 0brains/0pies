@@ -30,7 +30,7 @@
   "why": "Layout, metni, tabloları, seçim işaretlerini ve yapıyı çıkarır; Read tarzı OCR, yalnızca metindir — histack'ın CU Read vs Layout ayrımı."
  },
  "cu-007": {
-  "label": "Karışık bir satıcı form'ları grubu, önceden tanımlanmış bir alan şemasından başlamadan gevşek anahtar-değer çiftleri çekilir",
+  "label": "Bir sigorta şirketi, her biri farklı düzenlenmiş hasar belgelerini onlarca aracıdan alıyor ve hangi etiketli alanlar görünüyorsa yakalanmasını istiyor — önceden hazırlanmış bir alan listesi olmadan",
   "sub": "prebuilt-documentFields",
   "why": "prebuilt-documentFields, etki alanına özgü bir şema gerektirmeden belgelerdeki genel anahtar-değer çiftlerini çıkarır — prebuilt-invoice'ın sabit fatura alanlarından farklıdır."
  },
@@ -50,7 +50,7 @@
   "why": "Özel görüntü analizleyicileri, bir alan şemasını katmanlaştırmadan önce base_analyzer_id'yi prebuilt-image'a ayarlar — grafik ve ekran görüntüsü çıkarması için belgelenen desen."
  },
  "cu-011": {
-  "label": "Perakende denetiminden raf fotoğraflarını analiz et ve ürün sayısı, marka varlığı ve stok dışı göstergeleri için yapılandırılmış alanları döndür",
+  "label": "Bir perakende denetimi sırasında çekilen mağaza rafı fotoğraflarını yapılandırılmış alanlara dönüştür: kaç ürün görünüyor, hangi markalar yer alıyor ve boş yer var mı",
   "sub": "prebuilt-image",
   "why": "Content Understanding'in görüntü analizleyicisi, fotoğraflardan şema tarafından tanımlanmış yapılandırılmış alanları döndürür — sınavın doğrudan test ettiği perakende raf denetimi senaryosu."
  },
@@ -60,7 +60,7 @@
   "why": "begin_analyze(analyzer_id=..., inputs=[AnalysisInput(url=...)]) çağrı deseni modaliteler arasında aynıdır — yalnızca analizleyici id'si değişir ve prebuilt-image doğrudan (arama dışı) görüntü analizleyicisidir."
  },
  "cu-013": {
-  "label": "Bir çağrı kayıt URL'sine karşı begin_analyze'ı çağıran hafif bir Python istemci yağla, bir transkript ve özetini alım dizini için hazır durumdayken geri çek",
+  "label": "Bir podcast ağı bölüm bağlantılarını SDK üzerinden gönderiyor ve konuşulan sözlerin, bir RAG arama dizini için hazır biçimlendirilmiş bir özetle birlikte döndürülmesini istiyor",
   "sub": "prebuilt-audioSearch",
   "why": "prebuilt-audioSearch, SDK'ın hızlı başlatma snippet'inde belgelenmiş analizleyici id'sidir — *Search soneki çıktıyı prebuilt-audio'nun alım için hazırlık olmayan doğrudan çıkarmasından ayıran işareti."
  },

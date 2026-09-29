@@ -21,7 +21,7 @@
     "b.why": "Qualitätssicherung des Verdienstes, für den die Daten gesammelt wurden, ist ein kompatibler weiterer Zweck."
   },
   "II.A-tell-010": {
-    "snippet": "Wenn Verarbeitung wahrscheinlich zu einem hohen Risiko für die Rechte und Freiheiten natürlicher Personen führt, muss der Verantwortliche vor der Verarbeitung eine Auswirkungsbewertung durchführen.",
+    "snippet": "Hat eine Form der Verarbeitung … voraussichtlich ein hohes Risiko für die Rechte und Freiheiten natürlicher Personen zur Folge, so führt der Verantwortliche vorab eine Abschätzung der Folgen der vorgesehenen Verarbeitungsvorgänge für den Schutz personenbezogener Daten durch.",
     "tell": "'Rechte und Freiheiten natürlicher Personen' plus 'vor der Verarbeitung' ist die DSGVO DPIA. Unterscheide von der KI-Verordnung's Bewertung der Auswirkungen auf Grundrechte und von ISO 42005-Leitlinien."
   },
   "II.B-pair-013": {
@@ -344,7 +344,7 @@
   "ii-tp-05": {
     "a.text": "Eine veröffentlichte Zusammenfassung von Model-Datenquellen, bekannten Risiken und Mitigationen, geschrieben in Sprache, die ein Nicht-Experte versteht.",
     "a.why": "Ein Model Card dokumentiert, was das Modell bereits ist und tut – Transparenz über ein fertig Artefakt.",
-    "b.text": "Eine strukturierte Übung, durchgeführt vor Deployment, um potenzielle Risiken und Schadensfälle zu antizipieren und zu managen, die ein AI-System verursachen könnte.",
+    "b.text": "Eine vorausschauende Prüfung vor dem Launch, welche Schäden ein KI-System verursachen könnte und wie jeder davon kontrolliert wird.",
     "b.why": "Eine Impact-Bewertung schaut voraus auf Konsequenzen für Personen und Gesellschaft, nicht rückwärts auf das, was die Model Card über das Artefakt bereits offenbart."
   },
   "ii-tp-08": {
@@ -572,7 +572,7 @@
   },
   "II.D-tell-005": {
     "snippet": "KI-Akteure sollten die Herrschaft des Rechts, Menschenrechte und demokratische Werte während des gesamten KI-System-Lebenszyklus respektieren, einschließlich inklusiven Wachstums und nachhaltiger Entwicklung.",
-    "tell": "‚KI-Akteure' plus ‚inklusives Wachstum, nachhaltige Entwicklung und Wohlbefinden' ist OECD-Sprache. Es erklärt Werte, erzwingt nichts und ist an Regierungen ebenso adressiert wie an Firmen."
+    "tell": "OECD-Sprache erkennst du an der Wendung „KI-Akteure“ (AI actors) in Verbindung mit Rede von Wohlergehen und von inklusivem und nachhaltigem Wachstum. Der Text formuliert Werte statt Pflichten und richtet sich ebenso an Regierungen wie an Unternehmen."
   },
   "II.D-tell-008": {
     "snippet": "Eine Begleitressource mit vorgeschlagenen Maßnahmen, Referenzen und Dokumentation für jede Unterkategorie, die Organisationen ganz oder teilweise nutzen können.",
@@ -702,7 +702,7 @@
     "text": "Ein Denver-Klient hat gelesen, dass Colorado ein KI-Gesetz verabschiedete, und fragt, ob er Compliance jetzt aufbauen sollte. Unterzeichnungsdaten sind nicht Gültigkeitsdaten — überprüfe, was tatsächlich heute bindet, bevor du antwortest."
   },
   "ii-rr-il-n02": {
-    "why": "Der nächstgelegene Weg ist HB 3773‚ Route — Beschäftigungs-KI-Anklagen dort gehen durch den IDHR Verwaltungsprozess, während BIPA Klägern ermöglicht, direkt für gesetzliche Schadensersatz von $1.000 pro fahrlässig und $5.000 pro absichtlich oder leichtfertig Verstoß zu klagen, ohne Beweis tatsächlicher Verletzung erforderlich (Rosenbach v. Six Flags) — multipliziert über eine Klasse von Tausenden Arbeitern. Weder strafrechtliche Haftung (b) noch Lizenzverlust (c) ist BIPAs Mechanismus."
+    "why": "Verwechsle das nicht mit HB 3773, bei dem Beschwerden zu KI im Beschäftigungskontext über das Verwaltungsverfahren des IDHR laufen. BIPA erlaubt Einzelpersonen, direkt vor Gericht zu ziehen und gesetzlichen Schadensersatz von 1.000 $ je fahrlässigem und 5.000 $ je vorsätzlichem oder leichtfertigem Verstoß zu verlangen, und Rosenbach v. Six Flags hat bestätigt, dass kein tatsächlicher Schaden nachgewiesen werden muss. Bei einer Sammelklage mit Tausenden Beschäftigten summiert sich das schnell. Strafrechtliche Haftung für Führungskräfte (b) und Lizenzentzug (c) sind nicht die Mechanik von BIPA."
   },
   "ii-rr-in-c01": {
     "why": "Die nächstgelegene Verwirrung ist (c), die alte ‚keine' Klassifizierung — veraltet seit MeitYs offizielles Rahmenwerk von November 2025. Indien ist ein geschichtetes Regime, kein Gesetzregime: Was bindet sind allgemeine Gesetze (DPDP) und branchenspezifische Regeln (IT Amendment Rules), während die KI-breite Schicht freiwillig bleibt."
@@ -854,7 +854,7 @@
     "items[3].why": "KI-Verordnung Grundrechts-Wirkungsbewertung für bestimmte Nutzer; DSGVO Artikel 35 DPIA für Hochrisiko-Verarbeitung. Unterschiedliche Auslöser, unterschiedliche Scopes, und sie können zusammen laufen.",
     "items[4].text": "Gibt einer Einzelperson das Recht, nicht einer allein automatisierten Entscheidung mit bedeutsamen Wirkungen unterworfen zu sein",
     "items[4].why": "Article 22 ist ein Datensubjekt-Recht. Die KI-Verordnung erzwingt Aufsichtsverpflichtungen auf Organisationen, aber erstellt dieses Recht nicht.",
-    "items[5].text": "Erfordert, dass Menschen gesagt werden, wenn sie mit einem KI-System interagieren",
+    "items[5].text": "Verpflichtet Anbieter und Betreiber, Menschen mitzuteilen, dass das System, mit dem sie es zu tun haben, eine KI ist",
     "items[5].why": "Article 50 Transparenz. DSGVO Benachrichtigungsverpflichtungen sind um Verarbeitung personenbezogener Daten, das ist eine verschiedene Materie.",
     "items[6].text": "Gilt auf Organisationen außerhalb der EU auf Grundlage von Auswirkungen innerhalb davon",
     "items[6].why": "Beides reicht extraterritorial, aber auf verschiedene Auslöser: Marktplatzierung oder Output benutzt in der EU, gegen Etablierung, Angebot Waren und Services, oder Überwachung Verhalten.",

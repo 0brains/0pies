@@ -24,7 +24,7 @@
   "b.why": "Una chat.completions.create semplice è una singola richiesta stateless — nessuna istruzione persistente, tool o identità sopravvivono tra le chiamate."
  },
  "ft-05": {
-  "a.text": "'Restituisci sempre i dettagli del cliente in una forma JSON fissa e rispondi solo a domande sulla politica HR' — una regola persistente per ogni turno.",
+  "a.text": "“Rispondi solo su temi di politica HR e formatta ogni scheda del personale come JSON con gli stessi campi” — una regola permanente che vale a ogni turno.",
   "a.why": "Persona, tono, regole e guardrail appartengono al system prompt — la distinzione 'più testata' di histack; la risposta sbagliata piantata mette il comportamento nel user prompt o nelle impostazioni di distribuzione.",
   "b.text": "'Riassumi il rapporto di assenza di questo trimestre per me' — una richiesta, solo questo turno.",
   "b.why": "Il user prompt porta la richiesta di questo turno; le risposte del modello precedente riproiettate per la memoria sono messaggi di assistente."

@@ -12,13 +12,13 @@
   "b.why": "यह है birth certificate — origin और custody — नहीं record क्या subsequently हुआ data को; वह record belong करता है pair के दूसरे side को।"
  },
  "iii-dp-03": {
-  "a.text": "Calibrated mathematical noise add किया जाता है training के दौरान तो कोई भी single training record नहीं दिखाया जा सकता है कि more than एक negligible effect है model output पर।",
+  "a.text": "Training के दौरान सावधानी से calibrate किया गया noise डाला जाता है, ताकि किसी एक व्यक्ति का record शामिल हुआ या नहीं, इससे model के output में मुश्किल से ही कोई फ़र्क पड़े।",
   "a.why": "यह है mathematical guarantee influence के बारे में, नहीं कहां data physically travel करता है — यह apply करता है चाहे या नहीं data कभी छोड़ता है अपनी source को।",
   "b.text": "हर hospital trains locally अपने own patient records पर, और केवल resulting updates — कभी नहीं raw records — travel एक central server को aggregation के लिए।",
   "b.why": "क्या protected है यहां जो data leave करता है site, नहीं कितना हर single record inferred हो सकता है एक output से — raw records कभी नहीं travel, full stop।"
  },
  "iii-dp-04": {
-  "a.text": "एक standardized document lay करता है एक dataset motivation, composition, collection process और recommended uses, किसी भी model train होने से पहले।",
+  "a.text": "एक structured दस्तावेज़ दर्ज करता है कि dataset क्यों बनाया गया, उसमें क्या है, उसे कैसे इकट्ठा किया गया और उसका उपयोग किस लिए होना चाहिए — इससे पहले कि उस पर कोई model train हो।",
   "a.why": "यह document करता है raw material itself, independent किसी भी model से जो later train होगा यह पर।",
   "b.text": "एक single version purpose, अपनी training/validation/test data, अपनी performance metrics और अपनी known limitations को summarize किया जाता है whoever के लिए decide करता है deploy करने के लिए।",
   "b.why": "यह है scoped एक specific version को, नहीं dataset इसके पीछे — एक nutrition label trained artifact के लिए, distinct dataset-level scope से other side।"
@@ -55,7 +55,7 @@
  },
  "iii-dp-10": {
   "a.text": "Weight values network के अंदर update होते हैं backpropagation के through जैसे training reduce करता है prediction error।",
-  "a.why": "ये हैं learned values जो determine करते हैं कैसे input data transform होता है output में — वह exist नहीं करते final form में जब तक training नहीं होता है।",
+  "a.why": "Network इन values को खुद निकालता है, और यही तय करती हैं कि हर input output में कैसे बदलता है — training होने से पहले ये अपने अंतिम रूप में मौजूद नहीं होतीं।",
   "b.text": "Learning rate fixed होता है team द्वारा training ever start होने से पहले, और stay करता है untouched जबकि network learn करता है।",
   "b.why": "ये set हैं advance में control करने के लिए कैसे learning होता है — inputs training को, नहीं outputs।"
  },

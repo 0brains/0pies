@@ -1,0 +1,85 @@
+{
+ "patch-before-ship": {
+  "hint": "Ask two questions in order: what actually failed (a permission check, a setting, a dependency, a cipher, an interpreter, an architecture, a login, an artifact's integrity, a missing log, or an error path), then which 2025 category owns that failure — not which one sounds closest."
+ },
+ "pbs-01": {
+  "label": "A parcel-tracking API lets any signed-in courier fetch a delivery record just by incrementing the order number in the URL — order 48812 becomes 48813 — and read a stranger's address and phone number with no ownership check on the request.",
+  "sub": "Missing per-record authorization check (insecure direct object reference)",
+  "why": "Held the #1 spot from 2021 to 2025 — every request here executes fine and no interpreter is tricked into running anything, so it isn't Injection; the courier is simply never checked against the record they're pulling, which is a policy-enforcement gap, the definition of this category."
+ },
+ "pbs-02": {
+  "label": "A fitness app's profile-update endpoint accepts a member id inside the request body and silently updates whichever profile that id names, so one member can rewrite another member's goals just by changing a number in a form post.",
+  "sub": "Client-supplied ownership field, never re-checked server-side",
+  "why": "The member already proved who they are and passed login cleanly — this is not Authentication Failures, which covers tricking a system into recognizing an invalid identity. The server just never re-checks that the identity making the call owns the record the call names."
+ },
+ "pbs-03": {
+  "label": "A newly provisioned analytics dashboard goes live in production still carrying the vendor's out-of-the-box admin login, because the deployment script that stood it up never rotated it before opening the service to the internet.",
+  "sub": "Unchanged default account left enabled",
+  "why": "Ranked #5 in 2021 and #2 in 2025, climbing as configurable software has spread. This is a hardening step the deployment process skipped, not Authentication Failures — no login mechanism was ever attacked or bypassed, the weak credential was simply never replaced at setup."
+ },
+ "pbs-04": {
+  "label": "A debug flag meant only for staging gets left on in the production build, so every unhandled request now returns a full stack trace listing internal file paths and the database connection string.",
+  "sub": "Verbose diagnostics enabled in a live environment",
+  "why": "The deployment setting itself is the defect — flipping the flag off fixes it. That's different from Mishandling of Exceptional Conditions, which is about how code is written to respond to an unusual runtime state; here the code's error handling is untouched, only a hardening toggle was left in the wrong position."
+ },
+ "pbs-05": {
+  "label": "A logistics app's build pipeline pulls a package literally named \"reqeusts-http\" — an attacker-uploaded, deliberately misspelled clone of the library the developer meant to type — and it exfiltrates every environment secret on the build host during install.",
+  "sub": "Typosquatted dependency entering the build itself",
+  "why": "Descends from 2013's 'Using Components with Known Vulnerabilities' lineage but now covers the whole build/distribute/update pipeline, not just outdated components. The compromise happens at the moment of choosing what enters the build — a step earlier than Software or Data Integrity Failures, which covers failing to verify an artifact you already decided to trust."
+ },
+ "pbs-06": {
+  "label": "A nightly release job always fetches whatever version of a CI runner plugin is currently newest on a public registry, with no version pin and no checksum comparison, so a compromised maintainer account on that registry pushes malicious code straight into every build that runs after it.",
+  "sub": "Unpinned build tooling sourced from a compromised registry",
+  "why": "The failure is in how the pipeline sources its own tooling — no pin, no vetting, trusting 'whatever is newest' from a third party. That's the pipeline-compromise pattern this category names, distinct from Software or Data Integrity Failures, which is about skipping a signature or hash check on an artifact already selected for use."
+ },
+ "pbs-07": {
+  "label": "A password-reset service stores every user's password with a fast, general-purpose hash and no per-user salt, so a leaked credentials table lets an attacker precompute matches across millions of accounts in minutes on ordinary hardware.",
+  "sub": "Weak, unsalted protection for a secret at rest",
+  "why": "Ranked #2 in 2021 and #4 in 2025 — down two spots, still serious, just no longer the runner-up. The defect is how the secret is protected once stored, not how login itself verifies identity, so it stays out of Authentication Failures, which covers weaknesses in the verification step, not the storage of what gets verified against."
+ },
+ "pbs-08": {
+  "label": "A telehealth portal's video-consult API answers over both HTTP and HTTPS, and a network engineer on the same coffee-shop Wi-Fi as a patient can read that patient's session token in plaintext off the wire.",
+  "sub": "Data in transit left unencrypted",
+  "why": "Allowing an unencrypted transport for session data is inadequate cryptography protecting confidentiality — the category's core definition — not Security Misconfiguration, whose scope is hardening settings and defaults rather than the presence or strength of encryption itself."
+ },
+ "pbs-09": {
+  "label": "A ticket-booking service builds its SQL query by pasting the customer's typed name straight into the WHERE clause, so a customer who types \"O'Brien'; DROP TABLE bookings;--\" as their name deletes the bookings table on submit.",
+  "sub": "Untrusted input executed by the SQL interpreter",
+  "why": "Ranked #3 in 2021 and #5 in 2025 — down two places, but the mechanism is unchanged: an interpreter runs part of the attacker's input as a command. That's a different failure from Broken Access Control, which never involves tricking an interpreter — it's about who is allowed to ask for what."
+ },
+ "pbs-10": {
+  "label": "A file-conversion utility passes the uploaded file's name straight into a shell command that invokes an image tool, so a file named \"photo.jpg; rm -rf /data\" wipes the server's data directory the moment it's converted.",
+  "sub": "Unsanitized input reaches a command-line interpreter",
+  "why": "Same interpreter-executes-attacker-input mechanism as SQL injection, just against a shell instead of a database. It isn't Mishandling of Exceptional Conditions — nothing here is an unusual runtime state being handled badly; ordinary, expected input was simply never validated before reaching the interpreter."
+ },
+ "pbs-11": {
+  "label": "A gift-shop checkout flow places no limit anywhere in its architecture on how many times a discount code can be applied to one cart, so a shopper who is simply fast at clicking applies the same 10%-off code hundreds of times on a single order and pays nothing — no bug fires, the flow was just never designed to bound reuse.",
+  "sub": "A missing control in the architecture, not a coding defect",
+  "why": "Ranked #4 in 2021 and #6 in 2025 — down two places, as threat modeling and secure-design practice improved industry-wide. This is a business-logic flaw — a control that should have been designed in and wasn't — different from Broken Access Control, which assumes the missing check is about who may act, not how many times a permitted action may legitimately repeat."
+ },
+ "pbs-12": {
+  "label": "A retail loyalty site sets no cap on failed login attempts and offers no multi-factor option at all, so a botnet quietly runs a leaked password list against thousands of accounts overnight and logs into several hundred of them.",
+  "sub": "Weak login-verification controls let a forged identity through",
+  "why": "Shortened from 'Identification and Authentication Failures', this category spans 36 CWEs and sits at #7 in both the 2021 and 2025 lists. Credential stuffing works because the login check itself accepts an attacker holding someone else's password — the break happens while identity is being proven, upstream of Broken Access Control, which governs what an already-proven identity is then allowed to do."
+ },
+ "pbs-13": {
+  "label": "A smart-thermostat fleet's update service installs whatever firmware file it is handed, with no signature check at all, so a spoofed update server on the same network pushes a modified firmware image that every thermostat installs without complaint.",
+  "sub": "No integrity check on an artifact before trusting it",
+  "why": "The rank is unchanged at #8; only the conjunction in the title was tightened, 'and' becoming 'or'. The defect is a missing signature/checksum check on a firmware artifact already reaching the device — one step later than Software Supply Chain Failures, which covers how a malicious artifact enters the build or distribution pipeline in the first place."
+ },
+ "pbs-14": {
+  "label": "A web app deserializes a session object straight out of a cookie the browser sent, with no validation of its contents, letting an attacker hand-craft a cookie that reconstructs into an object granting itself admin rights.",
+  "sub": "Untrusted data deserialized across a trust boundary",
+  "why": "Deserializing untrusted data without verifying it is the textbook example this category names — a trust-boundary/integrity failure on a data artifact, not Injection: no interpreter is being handed a command string, an object graph is being rebuilt from bytes the app never should have trusted."
+ },
+ "pbs-15": {
+  "label": "A boutique hotel chain's booking platform quietly leaked guest card numbers for four months before its payment processor flagged the pattern from the outside — the platform's own logs never recorded the anomalous export volume, and no alert had ever been configured to fire on it.",
+  "sub": "No detection or alerting pipeline for the anomaly",
+  "why": "Formerly 'Insufficient Logging and Monitoring', renamed so that alerting sits alongside logging; practitioners have now put it on the list by survey three editions running, and it ranks #9. Here the export was neither recorded nor alerted on by anyone inside the business, which is a different failure from Security Misconfiguration's weak hardening settings."
+ },
+ "pbs-16": {
+  "label": "A payments microservice hits an out-of-memory condition mid-transaction; instead of failing closed, its cleanup path silently rolls the transaction back to a state where the authorization check never re-runs, and the charge posts as approved anyway.",
+  "sub": "A failure path that leaves the system in an insecure state",
+  "why": "New for 2025, consolidating 24 CWEs previously scattered elsewhere into one category for error-handling weaknesses. The architecture had the right control — an authorization check — so this isn't Insecure Design; it's the code's response to an unusual runtime condition that dropped the check, an implementation defect in the failure path itself."
+ }
+}

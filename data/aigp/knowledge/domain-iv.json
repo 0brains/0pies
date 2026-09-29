@@ -7,19 +7,19 @@
    ],
    "asOf": "2026-08",
    "status": "stable",
-   "brief": "A mid-sized regional bank is procuring an AI-powered fraud-detection system from a U.S. SaaS vendor to screen real-time card transactions. The draft agreement gives the vendor sole ownership of the model's IP, bars the bank from modifying or retraining it, promises periodic performance reports, and excludes vendor liability for false positives and false negatives. Procurement has asked governance to red-line the contract before signature and confirm the deal gives the bank the oversight, IP protection, and open-source risk visibility it needs.",
+   "brief": "Harrowby Savings Bank, a regional lender, is buying a cloud-hosted AI service from an American software vendor to flag suspicious card payments as they happen. The vendor's draft contract keeps all model IP with the vendor, forbids the bank from changing or retraining the model, offers performance reporting at intervals, and disclaims liability for both missed fraud and wrongly blocked payments. Before anything is signed, procurement wants governance to mark up the agreement and confirm that Harrowby will have adequate oversight, IP protection and visibility into open-source risk.",
    "citation": "Ch12 §Assess AI Models — Vendor Contract Risk; SG §Account for Third-Party AI Component Risks — Vendor-Provided AI Systems, Open-Source AI Components",
    "steps": [
     {
-     "q": "Which clause in the draft agreement presents the highest governance risk for the bank?",
+     "q": "Of the vendor's proposed terms, which one exposes Harrowby to the greatest governance risk?",
      "options": [
-      "Liability exclusion for fraud-detection errors",
-      "Vendor IP ownership of the model",
-      "Prohibition on the bank modifying or retraining the model",
-      "Vendor-provided periodic performance reports"
+      "The vendor disclaiming liability for missed fraud and wrongly blocked payments",
+      "The vendor keeping full ownership of the model's intellectual property",
+      "The ban on Harrowby altering or retraining the model on its own data",
+      "The vendor's promise to send performance reports at regular intervals"
      ],
-     "answer": "Liability exclusion for fraud-detection errors",
-     "why": "Fraud-detection errors hit customers' money directly — a false negative lets a fraudulent charge through, a false positive blocks a legitimate one — so if the vendor carries no liability, the bank absorbs the full financial, regulatory and reputational exposure with no contractual recourse. IP ownership and the no-retrain clause limit flexibility but don't create that direct exposure, and performance reports are a transparency plus, not a risk."
+     "answer": "The vendor disclaiming liability for missed fraud and wrongly blocked payments",
+     "why": "Errors in fraud screening land on customers directly: missed fraud lets money leave an account, and a wrongly blocked payment stops a genuine purchase. If the vendor accepts no liability for either, Harrowby carries every financial, regulatory and reputational consequence alone and has nothing in the contract to fall back on. Vendor IP ownership and the retraining ban restrict flexibility without creating that exposure, and periodic performance reports add transparency rather than risk."
     },
     {
      "q": "Governance wants to add a clause that specifically protects the bank's ability to audit and oversee the system once it's live. What should that clause guarantee?",
@@ -141,30 +141,30 @@
    ],
    "asOf": "2026-08",
    "status": "stable",
-   "brief": "A city police department is procuring a predictive risk-scoring tool and has brought in an outside consultant to run the bidder evaluation. Two vendors reach the final round. Each supplies its accuracy rates, a description of its training-data diversity, and an explanation of how its model works; the consultant recommends the vendor with the higher accuracy rate, and the department signs. Before the contract is finalized, governance is asked to check the evaluation itself: what those three categories of questions actually covered, what they left open, and what else still needs to be settled before deployment.",
+   "brief": "A national tax authority is buying a tool that scores returns for audit selection, and it has hired an advisory firm to run the tender. Two bidders make the shortlist. The firm's questionnaire asks each for its error rates on past audits, a breakdown of which taxpayer populations its training records span, and a walkthrough of how scores are produced; the firm recommends the bidder with the lowest error rate, and the authority prepares to sign. Before signature, governance is asked to audit the tender itself: what the questionnaire covered, what it left open, and what still has to be settled before go-live.",
    "citation": "Ch12 §Assess AI Models — Vendor/Procurement Risk Assessment; AIGP BoK §Ethical AI and Fairness",
    "steps": [
     {
-     "q": "Reviewing what the consultant actually asked for — accuracy rates, training-data diversity, and how the system works — which risk category would this evaluation NOT have surfaced?",
+     "q": "The advisory firm's questionnaire covered error rates on past audits, which taxpayer populations the training records span, and a walkthrough of scoring. Which exposure did it leave entirely unexamined?",
      "options": [
-      "Security",
-      "Accuracy",
-      "Explainability",
-      "Discrimination"
+      "Whether the tool holds up against attack and unauthorized access (security)",
+      "Whether its scores are right often enough to rely on (accuracy)",
+      "Whether its scoring logic can be followed by a human (explainability)",
+      "Whether it flags some taxpayer groups more harshly than others (discrimination)"
      ],
-     "answer": "Security",
-     "why": "None of the three requested categories touches cybersecurity, resilience or vulnerability to attack — accuracy rates cover validity, 'how it works' covers explainability, and training-data diversity covers fairness/discrimination, but nothing in the request asks about the system's technical robustness or its exposure to unauthorized access, which matters even more given the sensitivity of the data involved."
+     "answer": "Whether the tool holds up against attack and unauthorized access (security)",
+     "why": "None of the three questionnaire items touches cybersecurity, resilience or vulnerability to attack — error rates cover validity, the scoring walkthrough covers explainability, and population coverage covers fairness/discrimination, but nothing in the request asks about the system's technical robustness or its exposure to unauthorized access, which matters even more given the sensitivity of the data involved."
     },
     {
-     "q": "Why did the consultant specifically ask each vendor about the diversity of its training data?",
+     "q": "What was the advisory firm really testing when it asked which taxpayer populations each bidder's training records covered?",
      "options": [
-      "To assist the fairness of the AI system",
-      "To comply with a specific applicable law",
-      "To evaluate the system's overall reliability",
-      "To determine the system's explainability"
+      "Checking whether the system is likely to treat different groups fairly",
+      "Meeting a particular legal requirement that applies to the authority",
+      "Measuring how reliable the system's outputs are in general",
+      "Establishing how well the system's decisions can be explained"
      ],
-     "answer": "To assist the fairness of the AI system",
-     "why": "Diverse training data is the standard governance lever for catching disparate performance across demographic groups before deployment, which is a fairness question — not a stand-alone legal mandate, a reliability metric (that's what accuracy rates cover), or an explainability question (that's what 'how it works' covers)."
+     "answer": "Checking whether the system is likely to treat different groups fairly",
+     "why": "Asking how representative the training data is serves to catch models that perform unevenly across demographic groups before they are deployed, which makes it a fairness check. It is not tied to a single legal mandate, reliability is what the error-rate figures address, and explainability is what the scoring walkthrough was for."
     },
     {
      "q": "Before go-live, governance wants one vendor-provided document that best tells them what the tool can and can't be used for on an ongoing basis. Which document is that?",
@@ -175,10 +175,10 @@
       "The vendor's code of conduct policy"
      ],
      "answer": "The vendor's acceptable use policy",
-     "why": "The AUP is the document that actually sets the terms of use — permitted purposes, prohibited uses, operational limits — which is exactly what's needed to police ongoing operations. The privacy, security and code-of-conduct policies each cover a narrower slice (data handling, technical safeguards, internal ethics) but none defines what the tool may and may not be used for."
+     "why": "The AUP is the document that actually sets the terms of use — permitted purposes, prohibited uses, operational limits — which is exactly what's needed to govern ongoing operations. The privacy, security and code-of-conduct policies each cover a narrower slice (data handling, technical safeguards, internal ethics) but none defines what the tool may and may not be used for."
     },
     {
-     "q": "Before the department finalizes the contract, which pre-deployment check matters more: assessing the tool's effects on the people it will be used against, or assessing the likelihood and severity of the tool's technical failures?",
+     "q": "Before the authority signs, which pre-deployment check matters more: assessing what the tool will do to the taxpayers it flags, or assessing the likelihood and severity of the tool's technical failures?",
      "options": [
       "The effects on people and society matter more — that's the impact assessment, and it should come first",
       "The likelihood and severity of failure matters more — that's the risk assessment, and it should come first",
@@ -186,18 +186,18 @@
       "Whichever is legally mandated matters more; the other is only best practice"
      ],
      "answer": "The effects on people and society matter more — that's the impact assessment, and it should come first",
-     "why": "An impact assessment asks whether deploying the tool at all is defensible for the people it affects — for a public risk-scoring tool, that's the threshold question, and it has to be settled before a purely technical risk assessment (probability and severity of failure) can even be meaningful. They are genuinely different assessments, not two names for the same thing, and neither is 'only best practice' — both are expected, but impact comes first."
+     "why": "An impact assessment asks whether deploying the tool at all is defensible for the people it affects — for a public audit-selection tool, that's the threshold question, and it has to be settled before a purely technical risk assessment (probability and severity of failure) can even be meaningful. They are genuinely different assessments, not two names for the same thing, and neither is 'only best practice' — both are expected, but impact comes first."
     },
     {
-     "q": "One of the two finalists is a proprietary, closed-source model that outperforms the open alternative on every benchmark. If the department picks it purely for that performance edge, what's the most significant strategic risk it's taking on?",
+     "q": "One of the two finalists is a proprietary, closed-source model that outperforms the open alternative on every benchmark. If the authority picks it purely for that performance edge, what's the most significant strategic risk it's taking on?",
      "options": [
-      "Vendor lock-in that limits the department's ability to switch providers or adapt later",
+      "Vendor lock-in that limits the authority's ability to switch providers or adapt later",
       "The ethical risk that the model produces biased or inappropriate output",
       "The operational risk that the model fails to integrate with existing case-management systems",
       "The financial risk that subscription costs outpace the value the tool delivers"
      ],
-     "answer": "Vendor lock-in that limits the department's ability to switch providers or adapt later",
-     "why": "A closed, proprietary system creates a long-term dependency — pricing, roadmap and portability are all in the vendor's hands, and switching later gets harder the longer the department stays. Biased output is a real risk but applies just as much to the open alternative, integration problems are a near-term engineering fix rather than a strategic one, and subscription cost is a budgeting question, not what limits future choices."
+     "answer": "Vendor lock-in that limits the authority's ability to switch providers or adapt later",
+     "why": "A closed, proprietary system creates a long-term dependency — pricing, roadmap and portability are all in the vendor's hands, and switching later gets harder the longer the authority stays. Biased output is a real risk but applies just as much to the open alternative, integration problems are a near-term engineering fix rather than a strategic one, and subscription cost is a budgeting question, not what limits future choices."
     }
    ]
   }

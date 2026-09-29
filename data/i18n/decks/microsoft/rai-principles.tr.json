@@ -24,24 +24,24 @@
   "why": "Veri koruma, KBV yönetişimi ve erişim kontrolleri, gizlilik ve güvenlikle eşleşir — yönetilen kimlikleri ve özel uç noktaları, eşleştirilen Azure özellikleridir."
  },
  "rai-007": {
-  "label": "Bir işe alım modeli, nitelikler karşılaştırılabilir olsa bile, bir yaş grubundaki adayları tutarlı olarak diğerlerinden daha düşük puanlandırıyor",
-  "why": "Eşit nitelikler olmasına rağmen korumalı bir özellik tarafından eşit olmayan puanlama, erişim sorunu değil farklı sonuç sorunu — bunu kapsayıcılık değil adillik yapar."
+  "label": "Bir kredi kartı modeli, aynı gelire ve geri ödeme geçmişine sahip erkeklere kıyasla kadınlara belirgin biçimde daha düşük harcama limitleri sunuyor",
+  "why": "Eşdeğer finansal profillere rağmen korunan bir özelliğe göre eşit olmayan muamele, bir erişim sorunu değil, farklı sonuç sorunudur — bu da onu kapsayıcılık değil, adillik konusu yapar."
  },
  "rai-008": {
-  "label": "Yüz tanıma modeli, bir etnik gruptan çok daha az görüntü içeren bir veri seti üzerinde eğitilmiş, o grup için çok daha yüksek hata oranı üretiyor",
+  "label": "Sesle giriş özelliği, belirgin bölgesel aksanı olan konuşmacıları diğerlerine göre birkaç kat daha sık reddediyor, çünkü sistem geliştirilirken bu aksanlara ait kayıtlar azdı",
   "why": "Eğitim verilerinde temsil eksikliği, gruplar arasında sistematik doğruluk farkına yol açıyor — adillik sorunu demektir; hiçbir veri açığa çıkmadığından gizlilik ve güvenlik değil."
  },
  "rai-009": {
-  "label": "İşe alım aracı, belirli üniversitelerden adayları, gerçek niteliklerine bakılmaksızın tutarlı olarak daha düşük sıralandırıyor, sistematik olarak bir aday grubunu dezavantajlandırıyor",
-  "why": "Bir vekil değişkeni (üniversite), bir grup başvuru sahibi için tutarlı dezavantaj üretiyor — adillik demektir, demografik özellik doğrudan kullanılmasa bile."
+  "label": "Bir özgeçmiş tarama modeli, iş geçmişinde boşluk olan herkesin puanını düşürüyor; bu da pratikte çoğunlukla bakım sorumluluğundan dönen ebeveynleri cezalandırıyor",
+  "why": "Bir vekil özelliğin (istihdam boşlukları) bir başvuru sahibi grubu için tutarlı bir dezavantaj yaratması, hiçbir demografik özellik doğrudan kullanılmasa bile adillik konusudur."
  },
  "rai-010": {
   "label": "Modeli gümrük veri ayırımı yapmadan önce demografik gruplar arasında yan yana hata oranını ve onay oranını karşılaştır",
   "why": "Adillik değerlendirmeleri, adillik için Azure-lever kartıdır — içerik filtrelerinden (güvenilirlik ve emniyet) veya denetim günlüklerinden (hesap verebilirlik) farklıdır."
  },
  "rai-011": {
-  "label": "Bir denetim hattı bazen zararlı içeriği kaçırıyor ve bazen aslında güvenli olan içeriği engellemeyi aşırı tutuyor",
-  "why": "Normal çalışma koşulları altında tutarsız tespit kalitesi, bir veri açığa çıkma veya açıklama — güvenilirlik ve emniyet sorunu demektir."
+  "label": "Bir fatura çıkarma modeli temiz taramalarda toplamları doğru okuyor, ancak sayfa hafifçe eğik olduğunda her seferinde yanlış tutarlar döndürüyor",
+  "why": "Olağan çalışma koşullarında tutarsız çıktı kalitesi, bir veri ifşası ya da açıklama sorunu değil, bir performans sorunudur — bu da güvenilirlik ve güvenliktir."
  },
  "rai-012": {
   "label": "Klinik kararlar buna bağlı olduğundan, tıbbi notları özetleyen bir AI aracı, beklenmedik veya uç durum girişi altında bile tahmin edilebilir şekilde davranmalı",
@@ -60,11 +60,11 @@
   "why": "İstemler üzerinden akan kişisel veri, düzeltme ve erişim kontrolleriyle azaltılan veri açığa çıkma riskidir — gizlilik ve güvenliğin tanımlayıcı endişesi."
  },
  "rai-016": {
-  "label": "Bir AI yardımcısı çalışan İK belgelerini işler ve takım, bu verilerin yetkisiz taraflara sızma riskini azaltmalı",
+  "label": "Bir bordro sohbet botu maaş bordrolarını ve banka bilgilerini okuyor ve geliştiriciler bu kayıtları yalnızca yetkili personelin görebilmesini sağlamak zorunda",
   "why": "Depolanan hassas veriye kimin erişebileceğini kısıtlamak, gizlilik ve güvenlik demektir, hesap verebilirlik değil — hesap verebilirlik karar sahipliğiyle ilgilidir, erişim kontrollü değil."
  },
  "rai-017": {
-  "label": "Bir okul, geniş dağıtımdan önce öğrenci özel konuşmalarını işleyen bir AI öğretmen yayınlamayı planlıyor ve veri nasıl depolandığını ve korunduğunu incelemeli",
+  "label": "Bir fitness uygulaması, üyelerin sağlık kayıtlarını okuyan bir yapay zekâ koçu ekliyor ve ekip, lansmandan önce bu kayıtların nasıl şifrelendiğini ve kimlerin açabildiğini doğrulamak zorunda",
   "why": "Yayın öncesi kişisel konuşma verilerinin depolama ve korumasını gözden geçirmek, açıklanan yetenekleri gözden geçirmekten farklı bir gizlilik ve güvenlik gözdengeçirmedir."
  },
  "rai-018": {
@@ -76,7 +76,7 @@
   "why": "Bir dizi dili ve cihazı tasarlamak, herkesin sistemi kullanabilmesi için kapsayıcılık demektir — endişe, kimin sisteme erişebileceğidir, sistem kimi farklı puanlayıp puanladığı değil."
  },
  "rai-020": {
-  "label": "Bir çeviri yardımcısı, tüm kullanıcıların ses yanıtlarını açıkça duyabileceğini varsayıyor, işitme engellileri göz ardı ediyor",
+  "label": "Bir bankacılık sohbet botu yalnızca fareyle kullanılabiliyor ve ekran okuyuculara ya da yalnızca klavyeyle gezinmeye dayanan müşterileri dışarıda bırakıyor",
   "why": "Engelli bir kullanıcıyı kapatan erişilebilir tasarım farkı kapsayıcılık demektir, adillik değil — adillik gruplar arasında model sonuçlarıyla ilgilidir, kullanılabilir tasarım değil."
  },
  "rai-021": {
@@ -84,8 +84,8 @@
   "why": "Değişen fiziksel ortamları ve etkileşim ihtiyaçlarını desteklemek, kioskun herkese uygun kalması için kapsayıcılık demektir."
  },
  "rai-022": {
-  "label": "Ses özellikli bir AI uygulaması, farklı aksanları, fiziksel yetenekleri ve etkileşim ihtiyaçları olan insanlar için daha iyi çalışacak şekilde iyileştirilir",
-  "why": "Sistemin hizmet verdiği kişi yelpazesini, aksanlar ve yetenek boyunca genişletmek, kapsayıcılığın doğrudan tanımıdır."
+  "label": "Bir müzenin sesli rehber asistanı bölgesel lehçelerle yeniden eğitiliyor ve daha fazla ziyaretçinin rahatça kullanabilmesi için büyük yazı tipli, dokun-ve-konuş moduna kavuşuyor",
+  "why": "Sistemin lehçeler ve yetenekler genelinde iyi hizmet verdiği kişilerin kapsamını genişletmek, kapsayıcılığın doğrudan tanımıdır."
  },
  "rai-023": {
   "label": "Kullanıcılara, sohbet başlamadan önce bir insan değil bir AI yardımcısıyla konuştuklarını belirt",

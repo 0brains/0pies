@@ -21,7 +21,7 @@
     "b.why": "L'assicurazione della qualità dello stesso servizio per cui i dati sono stati raccolti è uno scopo ulteriore compatibile."
   },
   "II.A-tell-010": {
-    "snippet": "Ove il trattamento rischia di provocare un rischio elevato per i diritti e le libertà delle persone fisiche, il titolare del trattamento effettua, prima del trattamento, una valutazione dell'impatto.",
+    "snippet": "Quando un tipo di trattamento … può presentare un rischio elevato per i diritti e le libertà delle persone fisiche, il titolare del trattamento effettua, prima di procedere al trattamento, una valutazione dell’impatto dei trattamenti previsti sulla protezione dei dati personali.",
     "tell": "'diritti e libertà delle persone fisiche' più 'prima del trattamento' è il GDPR DPIA. Distingui dalla valutazione dell'impatto sui diritti fondamentali dell'AI Act e dalla guida ISO 42005."
   },
   "II.B-pair-013": {
@@ -344,7 +344,7 @@
   "ii-tp-05": {
     "a.text": "Un riassunto pubblicato delle fonti di dati, dei rischi noti e delle mitigazioni di un modello, scritto in linguaggio comprensibile per un non esperto.",
     "a.why": "Una model card documenta ciò che il modello già è e fa — trasparenza su un artefatto finito.",
-    "b.text": "Un esercizio strutturato, eseguito prima della distribuzione, per anticipare e gestire i potenziali rischi e danni che un sistema AI potrebbe causare.",
+    "b.text": "Una revisione prospettica, svolta prima del lancio, dei danni che un sistema di IA potrebbe causare e di come ciascuno verrà controllato.",
     "b.why": "Una valutazione dell'impatto guarda avanti alle conseguenze per le persone e la società, non indietro a ciò che la model card ha già divulgato sull'artefatto."
   },
   "ii-tp-08": {
@@ -572,7 +572,7 @@
   },
   "II.D-tell-005": {
     "snippet": "Gli attori dell'IA dovrebbero rispettare lo stato di diritto, i diritti umani e i valori democratici durante l'intero ciclo di vita del sistema di IA, inclusa la crescita inclusiva e lo sviluppo sostenibile.",
-    "tell": "\"Attori dell'IA\" più \"crescita inclusiva, sviluppo sostenibile e benessere\" è linguaggio OECD. Esprime valori, non impone nulla, ed è rivolto ai governi tanto quanto alle aziende."
+    "tell": "Il linguaggio dell’OECD si riconosce nell’espressione “attori dell’IA” unita a riferimenti al benessere e a una crescita inclusiva e sostenibile. Il testo enuncia valori anziché obblighi, e si rivolge ai governi tanto quanto alle aziende."
   },
   "II.D-tell-008": {
     "snippet": "Una risorsa complementare che offre azioni suggerite, riferimenti e documentazione per ogni sottocategoria, che le organizzazioni possono utilizzare in tutto o in parte.",
@@ -702,7 +702,7 @@
     "text": "Un cliente di Denver ha letto che il Colorado ha approvato una legge sull'IA e chiede se mettersi in conformità adesso. Le date di firma non sono date effettive — controlla cosa effettivamente vincola oggi prima di rispondere."
   },
   "ii-rr-il-n02": {
-    "why": "Il percorso confusabile più vicino è quello di HB 3773 — gli addebiti dell'IA occupazionale lì passano attraverso il processo amministrativo dell'IDHR, mentre BIPA lascia ai ricorrenti di citare direttamente i danni statutari di $1.000 per negligenza e $5.000 per violazione intenzionale o consapevole, senza necessità di provare danno effettivo (Rosenbach v. Six Flags) — moltiplicato in una classe di migliaia di lavoratori. Né la responsabilità penale (b) né la perdita di licenza (c) è il meccanismo BIPA."
+    "why": "Non confonderlo con HB 3773, dove i reclami sull’IA in ambito lavorativo passano per la procedura amministrativa dell’IDHR. Il BIPA consente ai singoli di rivolgersi direttamente al tribunale per un risarcimento legale di 1.000 $ per ogni violazione colposa e di 5.000 $ per ogni violazione intenzionale o sconsiderata, e Rosenbach v. Six Flags ha confermato che non occorre dimostrare alcun danno effettivo. Su una class action di migliaia di lavoratori, la cifra cresce in fretta. La responsabilità penale per i manager (b) e la perdita di una licenza (c) non sono il modo in cui funziona il BIPA."
   },
   "ii-rr-in-c01": {
     "why": "Il confusabile più vicino è (c), la classificazione vecchia \"nessuno\" — obsoleta dal framework ufficiale dell'MeitY di novembre 2025. L'India è un regime stratificato, non un regime statutario: cosa vincola è la legge generale (DPDP) e le norme settoriali (Regole di modifica IT), mentre lo strato ampio dell'IA rimane volontario."
@@ -854,7 +854,7 @@
     "items[3].why": "Valutazione dell'impatto sui diritti fondamentali dell'AI Act per certi distributori; GDPR Articolo 35 DPIA per il trattamento ad alto rischio. Trigger diversi, ambiti diversi, e possono essere gestiti insieme.",
     "items[4].text": "Dà a un individuo il diritto di non essere sottoposto a una decisione unicamente automatizzata con effetti significativi",
     "items[4].why": "L'Articolo 22 è un diritto del soggetto dei dati. L'AI Act impone doveri di vigilanza alle organizzazioni ma non crea questo diritto.",
-    "items[5].text": "Richiede che alle persone sia detto quando stanno interagendo con un sistema di IA",
+    "items[5].text": "Obbliga fornitori e deployer a informare le persone che il sistema con cui interagiscono è un’IA",
     "items[5].why": "Trasparenza dell'Articolo 50. Gli obblighi di avviso GDPR riguardano l'elaborazione dei dati personali, che è una materia oggetto diversa.",
     "items[6].text": "Si applica alle organizzazioni al di fuori dell'UE sulla base degli effetti all'interno di essa",
     "items[6].why": "Entrambi raggiungono extraterritorialmente, ma su trigger diversi: immissione sul mercato o output utilizzato nell'UE, rispetto a stabilimento, offerta di beni e servizi o monitoraggio del comportamento.",

@@ -26,7 +26,7 @@
   },
   {
    "id": "pd-002",
-   "label": "Restrict sampling to the smallest set of tokens whose cumulative probability reaches a set threshold",
+   "label": "Only sample from the top-ranked tokens until their combined probability adds up to a chosen cutoff",
    "answer": "top_p",
    "options": [
     "top_p",
@@ -206,14 +206,14 @@
   },
   {
    "id": "pd-017",
-   "label": "Traffic to the customer-support app is unpredictable and bursty, and the team wants pay-per-token billing instead of hourly reserved capacity",
+   "label": "A festival ticketing assistant idles for weeks then gets sudden rushes, and finance wants to be charged only for tokens consumed, never for throughput held around the clock",
    "answer": "Standard deployment",
    "options": [
     "Standard deployment",
     "PTU deployment",
     "Capacity (TPM)"
    ],
-   "why": "Pay-per-token pricing under variable load is Standard deployment (the exam's exact scenario); PTU instead bills hourly for reserved capacity regardless of actual usage.",
+   "why": "Pay-per-token pricing under variable load is Standard deployment; PTU instead bills hourly for reserved capacity regardless of actual usage.",
    "citation": "Microsoft Learn · Azure OpenAI provisioned throughput (PTU) and standard deployment types"
   },
   {

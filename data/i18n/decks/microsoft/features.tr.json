@@ -1,7 +1,7 @@
 {
  "feat-000-00": {
   "label": "Bir beyaz tahta veya sokak işaretinin fotoğrafından makine tarafından okunabilir metni çek.",
-  "why": "Azure AI Vision'ın Read API'si, Görüntü Analizi'nin başlık yazma ve etiketlemesinden farklı olarak görüntülerden yazdırılmış ve el yazısı metni çıkarmak için OCR uygular."
+  "why": "Azure AI Vision'ın Read API'si OCR özelliğidir: bir görüntüden hem daktilo edilmiş hem de el yazısı metni çıkarır; Image Analysis ise resmin ne gösterdiğine başlık ve etiket ekler."
  },
  "feat-000-01": {
   "label": "Bir fotoğraftaki bireysel nesneleri tanımla ve sınırlayıcı kutular çiz.",
@@ -176,8 +176,8 @@
   "why": "Microsoft Foundry Agent Service'in function calling, bir ajana kendi harici API'larını veya işlevlerini akıl yürütmesinin bir parçası olarak çağırmasına izin verir."
  },
  "feat-015-00": {
-  "label": "Veri setine en iyi performans gösteren modeli bulmak için otomatik olarak birden çok algoritma ve hiperparametreyi dene.",
-  "why": "Azure Machine Learning'in Otomatik ML, veri setine en iyi performans gösteren modeli bulmak için birden çok algoritma ve hiperparametreyi dener."
+  "label": "Hizmetin verin üzerinde çok sayıda aday algoritmayı ve hiperparametre ayarını denemesine ve senin için en güçlü modeli seçmesine izin ver.",
+  "why": "Azure Machine Learning'deki Automated ML, verin üzerinde birçok algoritma ve hiperparametre kombinasyonunu eğitip karşılaştırır, ardından en iyi puanı alan modeli öne çıkarır."
  },
  "feat-015-01": {
   "label": "Modülleri sürükleyip bağlayarak kod gerektirmeksizin bir eğitim ardışık hattını görsel olarak oluştur.",

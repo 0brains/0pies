@@ -3,7 +3,7 @@
   "a.text": "Vision system이 adversarially perturbed image에서 계속 정확하게 classify해요.",
   "a.why": "Hostile 또는 novel input을 withstand하면서 accuracy와 functionality를 유지하는 게 이 side의 온 job이예요. Model이 절대 normal performance band를 떠나지 않아요.",
   "b.text": "Degraded sensor input 후에 system이 specified performance limit로 return해요.",
-  "b.why": "Real-world나 adversarial condition에도 defined acceptable limit 안의 performance를 maintain하고, 거기에 recover하는 게 다른 절반이예요. System이 deliberate attack을 절대 face한 적이 없더라도 resilient할 수 있어요."
+  "b.why": "이쪽이 설명하는 것은 가혹한 현실 환경이든 공격이든 교란을 겪은 뒤 정해진 운영 범위로 되돌아오는 능력이에요. 시스템은 의도적인 공격을 한 번도 겪지 않고도 복원력을 갖출 수 있어요."
  },
  "i-vp-02": {
   "a.text": "Public official의 synthetic audio clip이 fabricate되고 harm을 cause할 deliberate goal로 spread돼요.",
@@ -14,7 +14,7 @@
  "i-vp-03": {
   "a.text": "Large number의 fake, low-fare ride가 한 source에서 fare-prediction model의 training dataset으로 inject돼요.",
   "a.why": "Model이 ever deployed되기 전에 뭐를 배울 것에서 corrupt하는 게 training-time attack이예요. 다른 side는 model이 이미 live인 후에 일어나요.",
-  "b.text": "Malicious user가 input data를 craft해서 already-deployed triage model을 fool해요. Urgent case를 non-urgent로 label하게 해요.",
+  "b.text": "스팸 필터가 가동된 지 몇 주 뒤, 공격자가 피싱 이메일에 보이지 않는 문자를 섞어 넣어 필터가 이를 안전하다고 판정하게 만들어요.",
   "b.why": "Live model의 output을 inference time의 crafted input으로 fool하는 게 pair의 다른 절반이예요. Model의 training data는 touched되지 않았어요."
  },
  "i-vp-04": {
@@ -37,7 +37,7 @@
  },
  "i-vp-07": {
   "a.text": "Radiologist이 month의 accurate flag 후에 scan-triage tool의 low-risk call을 double-check하는 걸 멈춰요. 그리고는 그게 label하는 모든 걸 sign off하기 시작해요.",
-  "a.why": "AI output에 over-reliance without critical human oversight가 이 side의 mechanism이예요. Baked into data의 flaw가 아니라 human failure예요.",
+  "a.why": "여기서의 메커니즘은 사람이 도구의 답을 너무 신뢰해서 더는 꼼꼼히 살피지 않게 되는 거예요. 데이터에 내재된 결함이 아니라, 사람이 계속 확인하지 않은 실패예요.",
   "b.text": "Hiring tool이 past hiring record에서 train돼요. Minority group에서 더 많은 candidate를 reject해요. 그 record가 이미 누가 hired되었는지를 reflect했기 때문이예요.",
   "b.why": "Flaw는 training data에서 inherit돼요. Discriminatory past로부터 pattern을 carry forward해요. Once tool이 already deployed인 output을 over-trust하는 것과는 distinct해요."
  },

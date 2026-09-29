@@ -12,13 +12,13 @@
   "b.why": "Questo è il certificato di nascita — origine e custodia — non il record di ciò che è stato successivamente fatto ai dati; quel record appartiene all'altro lato di questa coppia."
  },
  "iii-dp-03": {
-  "a.text": "Il rumore matematico calibrato viene aggiunto durante l'addestramento in modo che nessun singolo record di addestramento possa essere dimostrato di avere più di un effetto trascurabile sull'output del modello.",
+  "a.text": "Durante l’addestramento viene iniettato un rumore calibrato con cura, in modo che l’inclusione o meno del record di una singola persona modifichi appena ciò che il modello produce.",
   "a.why": "Questa è una garanzia matematica sull'influenza, non su dove i dati viaggiano fisicamente — si applica indipendentemente dal fatto che i dati lascino mai la loro fonte.",
   "b.text": "Ogni ospedale addestra localmente su i propri record di pazienti, e solo gli aggiornamenti risultanti — mai i record grezzi — viaggiano a un server centrale per l'aggregazione.",
   "b.why": "Ciò che è protetto qui è quali dati lasciano il sito, non quanto un singolo record possa essere inferito da un output — i record grezzi non viaggiano mai, stop."
  },
  "iii-dp-04": {
-  "a.text": "Un documento standardizzato delinea la motivazione, la composizione, il processo di raccolta e gli usi consigliati di un dataset, prima che qualsiasi modello venga addestrato su di esso.",
+  "a.text": "Un documento strutturato registra perché un dataset è stato creato, cosa contiene, come è stato raccolto e per cosa dovrebbe essere usato, prima che qualsiasi modello venga addestrato su di esso.",
   "a.why": "Questo documenta la materia prima stessa, indipendentemente da qualsiasi modello che verrà successivamente addestrato su di esso.",
   "b.text": "Lo scopo di una singola versione, i suoi dati di addestramento/validazione/test, le sue metriche di prestazione e i suoi limiti noti sono riepilogati per chiunque decida se distribuirlo.",
   "b.why": "Questo è circoscritto a una versione specifica, non il dataset dietro di esso — un'etichetta di nutrizione per l'artefatto addestrato, distinto dall'ambito a livello di dataset dell'altro lato."
@@ -55,7 +55,7 @@
  },
  "iii-dp-10": {
   "a.text": "I valori di peso all'interno della rete vengono aggiornati attraverso la back-propagazione mentre l'addestramento riduce l'errore di predizione.",
-  "a.why": "Questi sono valori imparati che determinano come i dati di input vengono trasformati in output — non esistono in forma finale fino a quando l'addestramento accade.",
+  "a.why": "La rete ricava questi valori da sola, e sono loro a determinare come ogni input diventa un output — non esistono nella forma finale finché non avviene l’addestramento.",
   "b.text": "Il tasso di apprendimento è fisso dal team prima che l'addestramento inizi mai, e rimane intoccato mentre la rete impara.",
   "b.why": "Questi sono scelte che una persona fa in anticipo per controllare come l'addestramento accade — input all'addestramento, non output di esso."
  },

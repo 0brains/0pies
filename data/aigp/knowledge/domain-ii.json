@@ -135,7 +135,7 @@
     "NIST AI RMF",
     "ISO/IEC 42001"
    ],
-   "tell": "\"AI actors\" plus \"inclusive growth, sustainable development and well-being\" is OECD language. It states values, imposes nothing, and is addressed to governments as much as firms.",
+   "tell": "OECD wording shows in the phrase \"AI actors\" combined with talk of well-being and of growth that is inclusive and sustainable. The text sets out values rather than duties, and it speaks to governments as much as to companies.",
    "citation": "Ch7 §OECD Principles"
   },
   {
@@ -207,7 +207,7 @@
    "area": "II.A",
    "asOf": "2026-07-26",
    "status": "stable",
-   "snippet": "Where processing is likely to result in a high risk to the rights and freedoms of natural persons, the controller shall, prior to processing, carry out an assessment of the impact.",
+   "snippet": "Where a type of processing … is likely to result in a high risk to the rights and freedoms of natural persons, the controller shall, prior to the processing, carry out an assessment of the impact of the envisaged processing operations on the protection of personal data.",
    "answer": "GDPR Article 35 (DPIA)",
    "options": [
     "GDPR Article 35 (DPIA)",
@@ -969,7 +969,7 @@
     "why": "A model card documents what the model already is and does — transparency about a finished artefact."
    },
    "b": {
-    "text": "A structured exercise, run before deployment, to anticipate and manage the potential risks and harms an AI system could cause.",
+    "text": "A forward-looking review, carried out before launch, of the harms an AI system might cause and how each will be controlled.",
     "answer": "Impact assessment",
     "why": "An impact assessment looks forward at consequences for people and society, not backward at what the model card already discloses about the artefact."
    },
@@ -3936,14 +3936,14 @@
     ],
     "area": "II.B",
     "fact": "il-bipa-private-right-of-action",
-    "q": "A demand letter arrives on behalf of thousands of workers over years of un-consented voiceprint collection in Illinois. What makes this statute uniquely dangerous to defendants?",
+    "q": "Lawyers for several thousand former warehouse staff write to say the employer scanned their fingerprints at clock-in for years without written consent, all in Illinois. Why is this statute so costly for defendants?",
     "options": [
-     "A private right of action with statutory damages per violation, no proof of actual harm needed",
-     "Criminal liability for company executives",
-     "Automatic revocation of the company's business license"
+     "Anyone aggrieved can sue for set damages per violation without having to show actual harm",
+     "It exposes senior managers to personal criminal prosecution",
+     "It lets the state strip the employer of its licence to operate"
     ],
-    "answer": "A private right of action with statutory damages per violation, no proof of actual harm needed",
-    "why": "The nearest confusable is HB 3773's route — employment-AI charges there go through the IDHR administrative process, whereas BIPA lets plaintiffs sue directly for statutory damages of $1,000 per negligent and $5,000 per intentional or reckless violation, with no proof of actual harm required (Rosenbach v. Six Flags) — multiplied across a class of thousands of workers. Neither criminal liability (b) nor license loss (c) is BIPA's mechanism.",
+    "answer": "Anyone aggrieved can sue for set damages per violation without having to show actual harm",
+    "why": "Don't confuse this with HB 3773, where employment-AI complaints run through the IDHR administrative process. BIPA lets individuals go straight to court for statutory damages of $1,000 for each negligent and $5,000 for each intentional or reckless violation, and Rosenbach v. Six Flags confirmed that no actual injury has to be proved. Across a class of thousands of workers, that adds up quickly. Criminal exposure for managers (b) and loss of a licence (c) are not how BIPA works.",
     "citation": "740 ILCS 14 (BIPA)",
     "asOf": "2026-08-02",
     "externalSource": true
@@ -5164,12 +5164,12 @@
     "fact": "cn-interim-measures-baseline",
     "q": "You want to launch a public-facing chatbot built on a large model in mainland China. Which instrument sets the baseline duties — training-data governance, content safety — for the service?",
     "options": [
-     "The Interim Measures for the Management of Generative AI Services (CAC and six agencies)",
+     "The Interim Measures for the Management of Generative Artificial Intelligence Services (CAC and six agencies)",
      "The comprehensive AI law China enacted in 2026",
      "The amended Cybersecurity Law on its own",
      "The Model AI Governance Framework"
     ],
-    "answer": "The Interim Measures for the Management of Generative AI Services (CAC and six agencies)",
+    "answer": "The Interim Measures for the Management of Generative Artificial Intelligence Services (CAC and six agencies)",
     "why": "The nearest confusable is (b): no unified AI statute exists in China as of August 2026 — comprehensive-law drafting has only been accelerated on the 2026 legislative agenda. (c) adds AI safe-development language but is not the operative service-level rulebook; (d) is Singapore's voluntary framework. The Interim Measures have been in force since 2023-08-15.",
     "citation": "Interim Measures for Generative AI Services (CAC); White & Case — AI Watch China",
     "asOf": "2026-08-02",
@@ -7242,7 +7242,7 @@
       "why": "Article 22 is a data subject right. The AI Act imposes oversight duties on organisations but does not create this right."
      },
      {
-      "text": "Requires that people be told when they are interacting with an AI system",
+      "text": "Obliges providers and deployers to tell people that the system they are dealing with is an AI",
       "answer": "EU AI Act",
       "why": "Article 50 transparency. GDPR notice obligations are about processing of personal data, which is a different subject matter."
      },
@@ -7739,7 +7739,7 @@
     },
     {
      "criterion": "Separates provider duties from GPAI duties",
-     "expected": "NordBank owes the high-risk set (risk management, data governance, technical documentation, conformity assessment, CE marking, registration, human oversight, logging, quality management). The developer owes GPAI plus systemic-risk duties and must appoint an EU authorised representative.",
+     "expected": "NordBank owes the full high-risk provider package: data governance, a risk-management system, logging, human oversight, technical documentation, a quality-management system, conformity assessment, CE marking and registration. The developer owes GPAI plus systemic-risk duties and must appoint an EU authorised representative.",
      "citation": "Ch6 §Classification Requirements; §Requirements for General-purpose AI"
     },
     {

@@ -23,7 +23,7 @@
    "b": {
     "text": "After degraded sensor inputs, the system returns to its specified performance limits.",
     "answer": "Resilient",
-    "why": "Maintaining performance within defined acceptable limits despite real-world or adversarial conditions, and recovering to them, is the other half — a system can be resilient without ever facing a deliberate attack.",
+    "why": "Bouncing back to its specified operating range after disruption — whether from harsh real-world conditions or an attack — is what this side describes; a system can be resilient without ever facing a deliberate attack.",
     "citation": "AIGP Body of Knowledge v2.1"
    },
    "citation": "AIGP Body of Knowledge v2.1"
@@ -63,7 +63,7 @@
     "citation": "AIGP Body of Knowledge v2.1"
    },
    "b": {
-    "text": "A malicious user crafts input data that tricks an already-deployed triage model into labeling urgent cases as non-urgent.",
+    "text": "Weeks after a spam filter goes live, an attacker salts phishing emails with invisible characters so the filter scores them as safe.",
     "answer": "Adversarial attack",
     "why": "Fooling a live model's outputs with crafted inputs at inference time is the other half of the pair — the model's training data was never touched.",
     "citation": "AIGP Body of Knowledge v2.1"
@@ -143,7 +143,7 @@
    "a": {
     "text": "A radiologist stops double-checking a scan-triage tool's low-risk calls after months of accurate flags, and starts signing off on whatever it labels benign.",
     "answer": "Automation bias",
-    "why": "Over-reliance on AI outputs without critical human oversight is this side's mechanism — a human failure to keep checking, not a flaw baked into the data.",
+    "why": "The mechanism here is a person trusting the tool's answers so much that they stop scrutinising them — a human failure to keep checking, not a flaw baked into the data.",
     "citation": "AIGP Body of Knowledge v2.1"
    },
    "b": {

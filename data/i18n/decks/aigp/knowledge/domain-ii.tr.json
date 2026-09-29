@@ -21,7 +21,7 @@
     "b.why": "Verinin toplandığı hizmetin kalite güvencesi, uyumlu bir ileri amaçtır."
   },
   "II.A-tell-010": {
-    "snippet": "Bir işlemin doğal kişilerin hakları ve özgürlüklerine yüksek risk oluşturması muhtemel olduğunda, denetim, işlemden önce bir etki değerlendirmesi yapacak.",
+    "snippet": "Bir işleme türünün … gerçek kişilerin hak ve özgürlükleri açısından yüksek risk doğurma ihtimalinin bulunduğu durumlarda, veri sorumlusu, işlemeden önce, öngörülen işleme faaliyetlerinin kişisel verilerin korunması üzerindeki etkisine ilişkin bir değerlendirme yapar.",
     "tell": "'Doğal kişilerin hakları ve özgürlükleri' artı 'işlemden önce' GDPR DPIA'dır. AI Act'ın temel hakları etki değerlendirmesinden ve ISO 42005 rehberliğinden ayırt edin."
   },
   "II.B-pair-013": {
@@ -344,7 +344,7 @@
   "ii-tp-05": {
     "a.text": "Bir modelin veri kaynaklarının, bilinen risklerin ve hafifletmelerin yayınlanan özeti, bir uzman olmayan kişi anlayabileceği dilde yazılmış.",
     "a.why": "Model kartı modelin zaten ne olduğunu ve yaptığını belgeler — tamamlanmış bir artefakt hakkında şeffaflık.",
-    "b.text": "Dağıtımdan önce yürütülen yapılandırılmış bir egzersiz, bir AI sisteminin neden olabilecek potansiyel riskleri ve hasarları önceden görmek ve yönetmek için.",
+    "b.text": "Lansmandan önce yürütülen, bir yapay zekâ sisteminin neden olabileceği zararlara ve her birinin nasıl kontrol altına alınacağına yönelik ileriye dönük bir inceleme.",
     "b.why": "Etki değerlendirmesi, insanlar ve toplum için sonuçları ileride bakar, model kartının artefakt hakkında zaten açıkladıklarına geriye değil."
   },
   "ii-tp-08": {
@@ -572,7 +572,7 @@
   },
   "II.D-tell-005": {
     "snippet": "AI aktörleri, hukuk devleti, insan hakları ve demokratik değerleri, kapsayıcı büyüme ve sürdürülebilir kalkınmayı da içine alacak şekilde, AI sistemi yaşam döngüsü boyunca saygı göstermelidir.",
-    "tell": "\"AI aktörleri\" artı \"kapsayıcı büyüme, sürdürülebilir kalkınma ve refahı\" OECD dilidir. Değerleri belirtir, hiçbir şey empoze etmez ve hükümetlere kadar şirketlere de hitap eder."
+    "tell": "OECD üslubu, “AI actors” (yapay zekâ aktörleri) ifadesinin refah ile kapsayıcı ve sürdürülebilir büyümeden söz edilmesiyle birleşmesinde kendini gösterir. Metin yükümlülükler değil değerler ortaya koyar ve şirketler kadar hükümetlere de seslenir."
   },
   "II.D-tell-008": {
     "snippet": "Her alt kategori için önerilen eylemler, referanslar ve belgeler sunan ve kuruluşların bütün veya kısmen kullanabileceği bir eşlik kaynağı.",
@@ -702,7 +702,7 @@
     "text": "Bir Denver istemcisi, Colorado'nun bir AI yasası geçtiğini okudu ve uyumu şimdi kurup kuramazını soruyor. İmza tarihleri etkili tarihler değildir — sen cevap vermeden önce bugün neyin gerçekten bağlı olduğunu kontrol et."
   },
   "ii-rr-il-n02": {
-    "why": "En yakın karıştırılabilir olan HB 3773'ün rotasıdır — istihdam AI suçlamaları orada IDHR yönetim süreci aracılığıyla gider; BIPA, davacılara ihmal başına $1.000 ve kasıtlı veya pervasız ihlal başına $5.000'lik kanuni tazminat için doğrudan dava açmasına izin verir, gerçek zarar kanıtı gerekli değildir (Rosenbach v. Six Flags) — binlerce işçi sınıfında çarpılır. Ne ceza sorumluluğu (b) ne de lisans kaybı (c), BIPA'nın mekanizmasıdır."
+    "why": "Bunu, istihdamla ilgili yapay zekâ şikâyetlerinin IDHR idari sürecinden geçtiği HB 3773 ile karıştırma. BIPA, bireylerin her ihmali ihlal için 1.000 $, her kasıtlı ya da pervasız ihlal için 5.000 $ yasal tazminat talebiyle doğrudan mahkemeye gitmesine olanak tanır ve Rosenbach v. Six Flags kararı fiili bir zararın kanıtlanması gerekmediğini teyit etmiştir. Binlerce çalışandan oluşan bir grup davasında bu hızla büyür. Yöneticiler için cezai sorumluluk (b) ve lisans kaybı (c), BIPA'nın işleyişi değildir."
   },
   "ii-rr-in-c01": {
     "why": "En yakın karıştırılabilir olan (c), eski 'hiçbiri' sınıflandırması — MeitY'nin Kasım 2025 resmi çerçevesinden beri geçerliliğini yitirmiş. Hindistan, bir yasa rejimi değil, katmanlı rejimdir: neyin bağlı olduğu genel hukuk (DPDP) ve sektörel kurallar (IT Amendment Rules), AI geniş katmanı gönüllü kalırken."
@@ -854,7 +854,7 @@
     "items[3].why": "Belirli konuşlandırıcılar için AI Act temel haklar etki değerlendirmesi; yüksek riskli işleme için GDPR Article 35 DPIA. Farklı tetikleyiciler, farklı kapsamlar ve birlikte çalışabilirler.",
     "items[4].text": "Bireye, önemli etkileri olan yalnızca otomatik karar tabi olmama hakkı verir",
     "items[4].why": "Article 22, veri öznesi hakkıdır. AI Act, kuruluşlara gözetim görevleri empoze eder ancak bu hakkı oluşturmaz.",
-    "items[5].text": "İnsanlara AI sistemi ile etkileşim halinde olduklarında söylendiğini gerektirir",
+    "items[5].text": "Sağlayıcıları ve dağıtıcıları, insanlara etkileşimde oldukları sistemin bir yapay zekâ olduğunu söylemekle yükümlü kılar",
     "items[5].why": "Article 50 şeffaflığı. GDPR bildirim yükümlülükleri, farklı bir konu olan kişisel verilerin işlenmesi hakkında.",
     "items[6].text": "AB dışındaki kuruluşlara, içeridekilerin etkilerine göre uygulanır",
     "items[6].why": "Her ikisi de extraterritoryal olarak ulaşır, ancak farklı tetikleyicilerde: pazar yerinde konuşlandırma veya AB'de kullanılan çıktı, kuruluma, mal ve hizmet sunumu veya davranış izlenmesine karşı.",

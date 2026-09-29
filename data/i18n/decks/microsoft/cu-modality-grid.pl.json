@@ -30,7 +30,7 @@
   "why": "Layout wyodrębnia tekst, tabele, znaczniki zaznaczenia i strukturę; OCR w stylu Read to tylko tekst — rozróżnienie Read vs Layout histack w Content Understanding."
  },
  "cu-007": {
-  "label": "Mieszana partia formularzy dostawców musi mieć wyodrębnione luźne pary klucz-wartość bez początkowania od predefiniowanego schematu pól",
+  "label": "Ubezpieczyciel otrzymuje dokumenty szkodowe od dziesiątek brokerów, każdy w innym układzie, i chce przechwycić wszystkie opisane pola, jakie się pojawią — bez listy pól przygotowanej z góry",
   "sub": "prebuilt-documentFields",
   "why": "prebuilt-documentFields wyodrębnia ogólne pary klucz-wartość z dokumentów bez wymaganego schematu specjalnego dla domeny — w przeciwieństwie do stałych pól faktur prebuilt-invoice."
  },
@@ -50,7 +50,7 @@
   "why": "Niestandardowe analizatory obrazów ustawią base_analyzer_id na prebuilt-image przed stratyfikowaniem schematu pól — udokumentowany wzorzec ekstrakcji wykresów i zrzutów ekranu."
  },
  "cu-011": {
-  "label": "Analizuj zdjęcia półek z audytu detalicznego i zwróć pola strukturalne zdefiniowane przez własny schemat: nazwa produktu, cena i ilość",
+  "label": "Zamień zdjęcia półek sklepowych zrobione podczas audytu detalicznego na ustrukturyzowane pola: ile produktów widać, jakie marki się pojawiają i czy są puste miejsca",
   "sub": "prebuilt-image",
   "why": "Analizator obrazów Content Understanding zwraca pola strukturalne zdefiniowane schematem bezpośrednio ze zdjęć — scenariusz audytu półki detalicznej, który egzamin testuje bezpośrednio."
  },
@@ -60,7 +60,7 @@
   "why": "Wzorzec wywołania begin_analyze(analyzer_id=..., inputs=[AnalysisInput(url=...)]) jest identyczny dla modalności — zmienia się tylko identyfikator analizatora, a prebuilt-image to bezpośredni (bez wyszukiwania) analizator obrazów."
  },
  "cu-013": {
-  "label": "Okabluj lekki klient Python, który wywoła begin_analyze z adresem URL nagrania rozmowy, aby ściągnąć transkrypcję i streszczenie gotowe dla indeksu wyszukiwania",
+  "label": "Sieć podcastów przesyła linki do odcinków przez SDK i chce otrzymać wypowiadane słowa wraz z podsumowaniem, od razu przygotowane pod indeks wyszukiwania RAG",
   "sub": "prebuilt-audioSearch",
   "why": "prebuilt-audioSearch to identyfikator analizatora udokumentowany w wyprzedzeniu SDK — sufiks *Search oznacza wyjście przygotowane do indeksowania/RAG wyszukiwania, w przeciwieństwie do ekstrakcji bezpośredniej prebuilt-audio bez przygotowania wyszukiwania."
  },

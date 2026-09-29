@@ -24,7 +24,7 @@
     "b.why": "Un simple chat.completions.create est une seule demande sans état — aucune instruction persistée, aucun outil ou identité ne survit entre les appels."
   },
   "ft-05": {
-    "a.text": "« Retourne toujours les détails des clients dans une forme JSON fixe et réponds uniquement aux questions de politique RH » — une règle persistante pour chaque tour.",
+    "a.text": "« Réponds uniquement sur la politique RH, et formate chaque fiche d’employé en JSON avec les mêmes champs » — une règle permanente qui s’applique à chaque tour.",
     "a.why": "La persona, le ton, les règles et les garde-fous appartiennent au message système — la distinction « la plus testée » de histack ; la mauvaise réponse plantée met le comportement dans le message de l'utilisateur ou les paramètres de déploiement.",
     "b.text": "« Résume mon rapport d'absence de ce trimestre pour moi » — une seule demande, ce tour uniquement.",
     "b.why": "Le message de l'utilisateur porte la demande de ce tour ; les réponses du modèle antérieur rejouées pour la mémoire sont des messages de l'assistant."

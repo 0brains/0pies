@@ -30,7 +30,7 @@
   "why": "Layout извлекает текст, таблицы, флажки выделения и структуру; Read-style OCR — только текст — histack's CU Read-vs-Layout distinction."
  },
  "cu-007": {
-  "label": "Смешанный пакет форм поставщиков нуждается в извлечении их слабых пар ключ-значение без начинания с предопределенной схемы полей",
+  "label": "Страховая компания получает документы по страховым случаям от десятков брокеров, каждый со своей разметкой, и хочет извлекать любые подписанные поля, какие встретятся, — без заранее составленного списка полей",
   "sub": "prebuilt-documentFields",
   "why": "prebuilt-documentFields извлекает общие пары ключ-значение из документов без требуемой domain-specific схемы — в отличие от fixed полей счета-фактуры prebuilt-invoice."
  },
@@ -50,7 +50,7 @@
   "why": "Custom image analyzers устанавливают base_analyzer_id в prebuilt-image перед наложением схемы полей — задокументированный паттерн для extraction диаграмм и скриншотов."
  },
  "cu-011": {
-  "label": "Анализируй фотографии полок из audit розничной торговли и верни структурированные поля для count продуктов, presence марки и out-of-stock indicators",
+  "label": "Преврати фотографии магазинных полок, сделанные во время аудита розничной торговли, в структурированные поля: сколько товаров видно, какие бренды присутствуют и есть ли пустые места",
   "sub": "prebuilt-image",
   "why": "Image analyzer Content Understanding возвращает schema-defined структурированные поля прямо из фотографий — scenario audit полок розничной торговли, который экзамен тестирует напрямую."
  },
@@ -60,7 +60,7 @@
   "why": "Паттерн вызова begin_analyze(analyzer_id=..., inputs=[AnalysisInput(url=...)]) идентичен across модальностям — меняется только analyzer id, и prebuilt-image — это direct (non-search) image analyzer."
  },
  "cu-013": {
-  "label": "Подключи легковесный Python client, который вызывает begin_analyze с URL записи звонка для extraction транскрипции и сводки, готовой к retrieval index",
+  "label": "Сеть подкастов отправляет ссылки на выпуски через SDK и хочет получать произнесённый текст и краткое содержание, уже подготовленные для поискового индекса RAG",
   "sub": "prebuilt-audioSearch",
   "why": "prebuilt-audioSearch — это задокументированный analyzer id в SDK's quickstart snippet — суффикс *Search отмечает output, подготовленный для indexing/RAG retrieval, в отличие от prebuilt-audio's direct extraction без подготовки retrieval."
  },

@@ -3,7 +3,7 @@
   "a.text": "System wizji utrzymuje poprawną klasyfikację na zaburzonego obrazach.",
   "a.why": "Wytrzymywanie wrogiego lub nowego wkładu przy zachowaniu dokładności i funkcjonalności to cała praca tej strony — model nigdy nie opuszcza normalnego pasma wydajności.",
   "b.text": "Po zdegradowanych wkładach czujnika system wraca do określonych limitów wydajności.",
-  "b.why": "Utrzymywanie wydajności w zdefiniowanych akceptowalnych limitach pomimo rzeczywistych lub wrogich warunków, i powrót do nich, to druga połowa — system może być odporny bez kiedykolwiek bycia oblicze sztucznego ataku."
+  "b.why": "Ta strona opisuje powrót do określonego zakresu działania po zakłóceniu — czy to wywołanym trudnymi warunkami rzeczywistymi, czy atakiem; system może być odporny, nawet jeśli nigdy nie zetknie się z celowym atakiem."
  },
  "i-vp-02": {
   "a.text": "Syntetyczny klip audio publicznego urzędnika jest fabrykatorem i rozprzestrzeniany z wyraźnym celem wyrządzenia szkód.",
@@ -14,7 +14,7 @@
  "i-vp-03": {
   "a.text": "Duże liczby fałszywych, niskotaryfowych przejazdów są wstrzykiwane do danych treningowych modelu przewidywania tarifyfy z jednego źródła.",
   "a.why": "Kłopotliwe to, czego model się nauczy, zanim zostanie wdrożony, to atak w czasie szkolenia — druga strona dzieje się po tym, jak model jest już na żywo.",
-  "b.text": "Złośliwy użytkownik opracowuje dane wejściowe, które oszukują już wdrażany model triażu w etykietowaniu pilnych przypadków jako nie-pilne.",
+  "b.text": "Kilka tygodni po uruchomieniu filtra antyspamowego atakujący wplata w e-maile phishingowe niewidoczne znaki, tak że filtr ocenia je jako bezpieczne.",
   "b.why": "Oszukiwanie żywe wyniki modelu za pomocą sporządzonego wkładu w czasie wnioskowania to druga połowa pary — dane treningowe modelu nigdy nie były dotknięte."
  },
  "i-vp-04": {
@@ -37,7 +37,7 @@
  },
  "i-vp-07": {
   "a.text": "Radiolog przestaje przeglądać podwójnie nisko-ryzyka wezwań narzędzia do triażu skanów po miesiącach dokładnych flag i zaczyna podpisywać cokolwiek etykietuje benignę.",
-  "a.why": "Nadmierne poleganie na wynikach AI bez krytycznego nadzoru człowieka to mechanizm tej strony — ludzkie niepowodzenie w utrzymywaniu sprawdzenia, a nie wada wbita w dane.",
+  "a.why": "Mechanizm polega tu na tym, że człowiek ufa odpowiedziom narzędzia tak bardzo, że przestaje je weryfikować — to ludzkie zaniechanie kontroli, a nie wada wbudowana w dane.",
   "b.text": "Narzędzie do zatrudniania szkolone na przeszłych zapisach zatrudniania odrzuca więcej kandydatów z grup mniejszościowych, ponieważ te rekordy już odzwierciedlały, kto dostał pracę wcześniej.",
   "b.why": "Wada jest odziedziczona z samych danych treningowych, przenoszących wzory z dyskryminacyjnej przeszłości — odrębne od nad-zaufania narzędziu wyjście, gdy już się wdrożyło."
  },

@@ -1,0 +1,38 @@
+{
+ "rp-01": {
+  "a.text": "Before any safeguards are designed, the assessment team scores the warehouse's exposure to fire exactly as the building stands today, with no sprinklers and no controls assumed.",
+  "a.why": "Scoring the environment as it exists prior to any risk management effort is the starting-point measurement — the same fire exposure, once controls are in place, gets a different name.",
+  "b.text": "After sprinklers, fire doors, and a suppression contract are installed, the team scores what fire exposure the warehouse still carries.",
+  "b.why": "What remains once safeguards have already been applied — the gap management is left to accept or treat further — is measured after the fact, never before controls exist."
+ },
+ "rp-02": {
+  "a.text": "A ransomware crew has publicly stated it is actively targeting hospitals that run unpatched imaging servers this quarter.",
+  "a.why": "A potential source of harm to an asset — the actor or event capable of causing damage — is what this side names, independent of whether the target has any weakness to exploit.",
+  "b.text": "The hospital's imaging server has been running an unpatched OS build for eleven months, with the vendor's fix sitting unapplied.",
+  "b.why": "The flaw or absence of a safeguard in the asset itself, which a threat could exploit, is the other half — a weakness can exist even with no attacker currently pursuing it."
+ },
+ "rp-03": {
+  "a.text": "A disgruntled former administrator whose credentials were never revoked is a known danger to the payroll database.",
+  "a.why": "Naming the potential source of harm on its own, before it is combined with how exploitable the target is or what damage would follow, keys this side.",
+  "b.text": "Given that the same administrator's credentials are still active on an unmonitored VPN account, the payroll database's likelihood and impact of unauthorized access this quarter is assessed as high.",
+  "b.why": "Combining a threat with the vulnerability it can exploit into a measured likelihood and severity of harm is the calculation this side performs — a threat alone is only one input to it."
+ },
+ "rp-04": {
+  "a.text": "Senior management publishes a one-page document stating that all customer data must be encrypted, without naming any algorithm or key length.",
+  "a.why": "A high-level, management-issued statement of intent and scope — mandatory, but silent on implementation detail — is what this side captures; the specifics live one level down.",
+  "b.text": "A companion document mandates AES-256 with a 90-day key rotation for every system that stores customer data.",
+  "b.why": "A specific, compulsory requirement that makes an upstream policy's intent uniformly enforceable across the organization is this side's role — it says exactly what, where the policy only said that."
+ },
+ "rp-05": {
+  "a.text": "Every laptop in the fleet must have full-disk encryption switched on before IT hands it to its user, and no team may opt out.",
+  "a.why": "The same control, stated as a compulsory requirement applied uniformly with no discretion left to the implementer, is what defines this side.",
+  "b.text": "A companion document advises switching full-disk encryption on before a laptop is handed over, while noting a team may substitute an equivalent protection where that suits its workflow better.",
+  "b.why": "The identical control, offered as advice with substitution permitted, is the other half — a recommendation that can be adapted locally, never an enforced rule."
+ },
+ "rp-06": {
+  "a.text": "The team calculates that a server outage has a single loss expectancy of $40,000 and an annualized rate of occurrence of 0.5, giving an annualized loss expectancy of $20,000.",
+  "a.why": "Assigning real dollar figures derived from mathematical calculation, such as SLE and ARO feeding an ALE, is this side's method.",
+  "b.text": "Unable to price the outage precisely, the same team instead has stakeholders rank it 'high' impact and 'likely' frequency on a workshop scorecard, based on their judgment and experience.",
+  "b.why": "Subjective, scenario-driven ranking using judgment and intuition rather than dollar calculations is the other half of the pair, used when the figures aren't available or precise."
+ }
+}

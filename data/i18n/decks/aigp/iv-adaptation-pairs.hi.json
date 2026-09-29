@@ -9,7 +9,7 @@
     "a.text": "एक single answer ground करने के लिए current policy documents को fetch किया जाता है, जिसे एक human फिर पढ़ता है और act करता है।",
     "a.why": "सिस्टम की job एक well-grounded answer produce करने पर बंद होती है; हर consequential action downstream अभी भी एक human का है।",
     "b.text": "Multi-step task को अपने आप plan किया जाता है और booking और payment tools में actions execute किए जाते हैं, हर step में minimal human review के साथ।",
-    "b.why": "Action की autonomy, सिर्फ answer की autonomy नहीं, governance surface को यहाँ new बनाती है: जब एक deployer system को act करने देता है बजाय inform करने के, harmful या deceptive agent behavior के लिए direct accountability deployer पर आती है — इसके लिए action scoping, human-in-the-loop thresholds, और full action logs की जरूरत होती है, जिसकी एक purely retrieval-grounded assistant को कभी जरूरत नहीं है।"
+    "b.why": "यहाँ नई governance surface है action की autonomy, सिर्फ़ जवाब की autonomy नहीं: जब कोई deployer system को केवल जानकारी देने के बजाय action लेने देता है, तो agent के नुकसान पहुँचाने या किसी को गुमराह करने पर जवाबदेही सीधे deployer की होती है — इसके लिए action scoping, human-in-the-loop thresholds और पूरे action logs चाहिए, जिनमें से किसी की भी ज़रूरत सिर्फ़ retrieval पर आधारित assistant को नहीं होती।"
   },
   "iv-ap-03": {
     "a.text": "संगठन model के अपने weights और code को read, modify और redistribute कर सकता है, और इसे completely infrastructure पर चला सकता है जिसे यह control करता है।",

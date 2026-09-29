@@ -12,7 +12,7 @@
     "why": "Diarisation ऑडियो के भीतर speakers को अलग करता है — एक भाषण क्षमता। Trap: यह कुछ भी उत्पादन नहीं करता, इसलिए यह कभी synthesize नहीं है।"
   },
   "wl-004": {
-    "label": "एक voice agent के लिए कम-latency, high-quality भाषण-से-भाषण interactions",
+    "label": "एक voice agent जिसे बहुत कम देरी के साथ स्वाभाविक, बोलचाल वाली आमने-सामने की बातचीत करनी है",
     "why": "Verbatim Voice Live / gpt-realtime corpus से phrasing — real-time ऑडियो में, ऑडियो बाहर।"
   },
   "wl-005": {
@@ -25,7 +25,7 @@
   },
   "wl-007": {
     "label": "एक उत्पाद पृष्ठ के लिए एक item और इसकी सेटिंग के two-sentence पाठ विवरण से एक photorealistic hero छवि बनाएं",
-    "why": "एक पाठ prompt से एक brand-नई छवि को produce करना generative AI की छवि पक्ष है — कोई मौजूदा छवि analyzed नहीं है, जो इसे computer vision बनाएगी।"
+    "why": "लिखे हुए वर्णन से एक original तस्वीर बनाना generative AI का image पक्ष है — यहाँ किसी मौजूदा image का analysis नहीं हो रहा, जो इसे computer vision बनाता।"
   },
   "wl-008": {
     "label": "बात points के एक bullet-point outline से एक उत्पाद FAQ पृष्ठ का प्रथम draft तैयार करें",
@@ -41,7 +41,7 @@
   },
   "wl-011": {
     "label": "एक IT-support सहायक एक आने वाली ticket को triage करता है, affected server के विरुद्ध एक diagnostic script चलाता है, और केवल अगर automated fix failed तो मानव के लिए escalates",
-    "why": "Tool use plus एक conditional next action परीक्षा's 'tool use मतलब agent बाहरी capabilities कॉल कर सकता है' परिभाषा है — एक single generated response से अलग।"
+    "why": "बाहरी tools को call करना और फिर नतीजे के आधार पर अगला कदम चुनना ही इसे agentic बनाता है — यह एक अकेले generated response से अलग है।"
   },
   "wl-012": {
     "label": "एक research सहायक एक broad सवाल को sub-questions में breaks करता है, प्रत्येक के लिए multiple sources खोजता है, और निष्कर्षों को एक final report में stitches करता है",
@@ -52,8 +52,8 @@
     "why": "PII detection unstructured पाठ के भीतर sensitive spans को flags करता है — एक पाठ-विश्लेषण सुविधा, information extraction नहीं जो fixed fields प्राप्त करता है प्रपत्रों और दस्तावेजों से।"
   },
   "wl-014": {
-    "label": "हजारों support tickets भर से मुख्य topics की एक short ranked सूची return करें, बिना एक rewritten paragraph produce के",
-    "why": "Keyword extraction salient terms को list करता है; परीक्षा का planted trap है summarization की offer करना इसके बजाय, जो prose produce करेगी एक topic list के बजाय।"
+    "label": "एक hotel chain चाहती है कि guest reviews में बार-बार आने वाले विषय शब्दों के एक छोटे, ranked set के रूप में सामने आएँ, किसी संक्षिप्त गद्य recap के रूप में नहीं",
+    "why": "Keyword extraction मुख्य terms की सूची देता है; क्लासिक जाल है इसके बजाय summarization चुन लेना, जो topic list की जगह गद्य देगा।"
   },
   "wl-015": {
     "label": "समाचार लेख के एक batch भर में mentioned हर व्यक्ति नाम, organization, और स्थान को पहचानें",

@@ -1,0 +1,129 @@
+{
+ "cgy-2des-mitm": {
+  "milestone": "Dead on arrival: meet-in-the-middle analysis shows encrypting twice barely helps",
+  "note": "Killed by: meet-in-the-middle — attack both ends at once and two DES passes cost an attacker only about twice one pass, not the square. Replaced by: triple application with two or three keys (3DES).",
+  "why": "Meet-in-the-middle is a known-plaintext attack that brute-forces forward from the plaintext and backward from the ciphertext simultaneously, meeting at the intermediate value; that collapses 2DES's apparent 112-bit strength to roughly 57 bits of work. This is why the industry jumped straight from DES to TRIPLE DES — the middle rung of the ladder was structurally rotten before anyone deployed it."
+ },
+ "cgy-3des-disallowed": {
+  "milestone": "NIST fully disallows 3DES: the 64-bit block, not the key, dug this grave",
+  "note": "Killed by: birthday-bound collection attacks on its 64-bit block (Sweet32 showed CBC collisions become useful after roughly 2 to the 32nd blocks — gigabytes, not exabytes) plus meet-in-the-middle shaving its effective key strength. Replaced by: AES everywhere, with payment systems the last mourners.",
+  "why": "3DES's obituary is subtle and exam-relevant: its keying was never brute-forced in practice — the fatal parameter was BLOCK SIZE, because on a 64-bit block the birthday bound arrives within a single long HTTPS or VPN session, letting attackers find colliding ciphertext blocks that leak plaintext relationships. Ciphers age on two independent clocks, key length and block width, and 3DES ran out the second one."
+ },
+ "cgy-aes-succession": {
+  "milestone": "The successor arrives: FIPS 197 crowns Rijndael as the Advanced Encryption Standard",
+  "note": "Not a death — the inheritance. An open, public five-year competition produced a cipher with 128-bit blocks and 128/192/256-bit keys, closing both graves DES dug: short keys and short blocks.",
+  "why": "AES belongs in the graveyard as the headstone-maker: its open selection process (public candidates, public cryptanalysis, public winner) is the exam-favorite contrast with DES's closed design, and its parameters were chosen specifically against the two attack classes that killed its ancestors — a 2-to-the-128th minimum keyspace against brute force and a 128-bit block against birthday-bound collection attacks."
+ },
+ "cgy-des-bruteforce": {
+  "milestone": "EFF's Deep Crack machine brute-forces a DES key in 56 hours",
+  "note": "Killed by: exhaustive key search — a 56-bit keyspace fell to roughly 250,000 dollars of purpose-built 1998 hardware. Replaced by: 3DES as the stopgap, AES as the successor.",
+  "why": "DES's algorithm design held up for two decades; its KEY LENGTH did not, because keyspace is the one security parameter that Moore's law erodes on a schedule. Deep Crack made the abstract complaint concrete and public: any secret protected by 56 bits was readable by a well-funded adversary, so NIST had already opened the AES competition the year before. Exam takeaway: brute force is defeated by work factor, and work factor is set by key length."
+ },
+ "cgy-des-keysize-warning": {
+  "milestone": "Standardized with an obituary attached: the 56-bit key is publicly costed as searchable the year it becomes the national standard",
+  "note": "Killed by (on a delay): plain exhaustive key search — academics priced a machine to walk all 2 to the 56 keys while the ink on the standard was still wet. The warning sat unpaid until dedicated cracking hardware collected in 1998.",
+  "why": "Key length is a pure work-factor dial. A 56-bit keyspace sat within reach of a determined, well-funded search on the day DES was adopted, and falling hardware costs only move that same attack from state budgets toward hobbyist budgets. The exam lesson: brute force never gets weaker, so every fixed key length carries a countdown clock — the 1998 DES headstone in this graveyard was carved two decades in advance."
+ },
+ "cgy-dualec-withdrawn": {
+  "milestone": "NIST withdraws Dual_EC_DRBG after backdoor evidence surfaces",
+  "note": "Killed by: kleptography — the standard's fixed elliptic-curve constants could have been generated with a trapdoor letting whoever chose them predict all future output. Replaced by: the remaining SP 800-90A generators (hash, HMAC, and counter-mode DRBGs).",
+  "why": "A DRBG that an adversary can predict silently unravels every key derived from it, and Dual_EC's constants were unexplained, its output biased, and its design suspiciously slow — warning signs raised in 2007 and confirmed as a practical concern by the 2013 disclosures. The graveyard lesson is upstream trust: cryptography inherits the integrity of its parameters and its randomness, and 'nothing-up-my-sleeve' provenance for constants is a real security requirement, not ceremony."
+ },
+ "cgy-flame-forgery": {
+  "milestone": "Flame malware forges a Microsoft code-signing certificate via chosen-prefix MD5 collision",
+  "note": "Killed by: chosen-prefix collision in the wild — a nation-state actor built a rogue CA certificate whose MD5 digest matched a legitimate one and used it to sign malware as Microsoft. Replaced by: emergency industry purge of MD5 from certificate chains.",
+  "why": "Flame is the proof that an 'academic' break becomes an operational weapon on someone else's schedule: eight years after Wang, a chosen-prefix collision — harder than a plain collision because both prefixes are fixed in advance — was executed against live PKI to make Windows Update itself an infection vector. It is the standard exam illustration of why deprecated hashes must be evicted from trust chains, not merely avoided in new code."
+ },
+ "cgy-freak-logjam": {
+  "milestone": "FREAK and Logjam resurrect export-grade crypto via downgrade, twenty years after the policy ended",
+  "note": "Killed by (this time for real): active downgrade to deliberately weakened 512-bit export suites that servers still accepted, followed by feasible factoring or precomputed discrete-log breaks. Replaced by: mass removal of export suites and minimum 2048-bit groups.",
+  "why": "The 1990s US export regime capped exportable key sizes at strengths that were already marginal then and trivial by 2015 — yet millions of servers still offered those suites, so a man-in-the-middle could force a modern browser onto 512-bit keys and break them. This grave teaches the exam's most policy-flavored crypto lesson: a mandated weakness never stays in its intended box, because deployed protocol options outlive the policies that created them."
+ },
+ "cgy-hndl": {
+  "milestone": "Adversaries stockpile today's encrypted traffic against tomorrow's quantum decryption",
+  "note": "The attack that makes the quantum timeline YOUR timeline: recorded TLS sessions and exfiltrated ciphertext lose nothing by waiting. Any secret whose confidentiality must outlive the arrival of a cryptanalytically relevant quantum computer is already exposed.",
+  "why": "Harvest-now-decrypt-later converts a future capability into a present risk: the attacker needs no quantum computer today, only storage and patience, so the deciding variable is the required secrecy LIFETIME of the data versus the estimated arrival of the machine. This is the reasoning that justifies migrating long-lived secrets (state, health, genetic, key-escrow material) to post-quantum protection years before any quantum break is demonstrated."
+ },
+ "cgy-krack-wpa2": {
+  "milestone": "KRACK: key-reinstallation attack tricks WPA2 clients into reusing nonces",
+  "note": "Killed by (wounded, not buried): replaying handshake message 3 makes a client reinstall an already-used key and reset its nonce counter — and nonce reuse under a stream-style mode lets attackers decrypt or forge traffic. Replaced by: patched handshakes short-term, WPA3 as the successor.",
+  "why": "KRACK broke the PROTOCOL STATE MACHINE, not AES: the standard ambiguously allowed key reinstallation on a retransmitted handshake message, and cryptographic modes that are secure under unique nonces fail catastrophically when a nonce repeats. It is the cleanest exam example that formal-looking protocols can hide fatal state-handling flaws, and it supplied the shove that made WPA3 adoption urgent rather than optional."
+ },
+ "cgy-md5-wang": {
+  "milestone": "Wang's team demonstrates practical MD5 collisions on commodity hardware",
+  "note": "Killed by: differential cryptanalysis producing full collisions in hours — two different inputs, one digest, collision resistance gone. Replaced by: SHA-2 family for new designs.",
+  "why": "A hash lives or dies on collision resistance, and Wang's 2004 result showed MD5's compression function had exploitable differential paths, so an attacker could mint two documents sharing a digest — fatal for signatures and certificates, where the digest stands in for the document. MD5 remained everywhere for years afterward, which is the second lesson: cryptographic death and operational burial can be a decade apart."
+ },
+ "cgy-poodle-ssl3": {
+  "milestone": "POODLE's padding-oracle attack finally buries SSL 3.0, eighteen years on",
+  "note": "Killed by: a CBC padding oracle combined with protocol downgrade — attackers forced browsers to fall back to SSL 3.0, then decrypted cookies byte by byte from padding-validity leaks. Replaced by: TLS with downgrade protection (TLS_FALLBACK_SCSV), and ultimately TLS 1.2+.",
+  "why": "POODLE weaponized two sins at once: SSL 3.0's unauthenticated CBC padding leaks one bit per probe (a padding oracle), and the fallback dance meant even modern clients could be shoved onto the old protocol. That is why the fix was not a patch but a burial — disable SSL 3.0 entirely — and why the exam treats downgrade resistance as a first-class protocol property rather than a nicety."
+ },
+ "cgy-pqc-fips": {
+  "milestone": "NIST publishes the first post-quantum standards — the replacements arrive before the funeral",
+  "note": "The succession plan for the Shor-era grave: lattice-based key encapsulation (ML-KEM) and signatures (ML-DSA), plus a hash-based signature backup (SLH-DSA), standardized while RSA and ECC still work. Migration is expected to run for a decade.",
+  "why": "This is the graveyard's only pre-need arrangement: because quantum-vulnerable ciphertext can be harvested today and decrypted later, the replacement had to be standardized, implemented, and deployed BEFORE the attack exists — inverting the usual break-then-migrate pattern of every earlier headstone. Lattice problems (per the Moore notes) resist known quantum algorithms, and the hash-based fallback hedges against the lattice family failing the way the MD lineage did."
+ },
+ "cgy-rc4-banned": {
+  "milestone": "Keystream-bias attacks mature and RFC 7465 prohibits RC4 in TLS",
+  "note": "Killed by: statistical bias — RC4's keystream is measurably non-random, and with enough repeated encryptions of a fixed secret (a cookie, a password) the biases reveal the plaintext. Replaced by: AEAD suites, principally AES-GCM and ChaCha20-Poly1305.",
+  "why": "RC4 died the slow statistical death: no single dramatic break, but bias attacks kept getting cheaper until recovering repeated secrets became practical, and a cipher that leaks under repetition is unusable for exactly the web's traffic pattern. Its formal prohibition in TLS is the exam's clean example of standards bodies performing the burial — interoperability rules are how the ecosystem actually retires a dead cipher."
+ },
+ "cgy-rsa2048-watch": {
+  "milestone": "Government migration deadlines cluster around 2030-2035 for retiring quantum-vulnerable public-key crypto",
+  "note": "The graveyard's pre-dug plots: today's workhorse public-key algorithms remain safe against classical attack, but national migration roadmaps already schedule their retirement, with deprecation guidance pointing at 2030 and disallowance at 2035.",
+  "why": "Security architects plan against Mosca's inequality: if data secrecy lifetime plus migration time exceeds the time until a cryptanalytically relevant quantum computer, you are already late. The scheduled dates are planning targets rather than predictions of a break — which is exactly why this entry sits on the horizon shelf: professionally essential, but not settled history the exam can date-stamp."
+ },
+ "cgy-sha1-shattered": {
+  "milestone": "SHAttered: Google and CWI publish the first real SHA-1 collision — two working PDFs, one digest",
+  "note": "Killed by: an optimized differential collision attack costing thousands of GPU-years but well inside nation-state and cloud budgets. Replaced by: SHA-256 and the wider SHA-2 family; browsers had already begun distrusting SHA-1 certificates.",
+  "why": "SHAttered ended the argument that SHA-1's weakness was theoretical: two visibly different documents with an identical digest defeat any control that uses the digest as the document's identity — signatures, certificate issuance, file integrity, evidence hashing. The chain-of-custody angle matters beyond Domain 3: a collision-broken hash undermines forensic integrity claims too, which is why migration deadlines predated the demonstrated break."
+ },
+ "cgy-sha3-spare": {
+  "milestone": "The structurally different spare: FIPS 202 standardizes sponge-based SHA-3",
+  "note": "Not a death — insurance against one. Chosen by open competition, SHA-3's sponge construction shares no design DNA with the Merkle-Damgård lineage (MD5, SHA-1, SHA-2), so a single cryptanalytic advance cannot empty both branches.",
+  "why": "After watching MD5 and SHA-1 — structural siblings — fall to the same family of differential techniques, NIST wanted a successor that would NOT die of the same disease that might someday weaken SHA-2. SHA-3 is therefore the graveyard's diversification lesson: algorithm agility means keeping a standardized, structurally independent alternative warm before the incumbent shows symptoms."
+ },
+ "cgy-shor-notice": {
+  "milestone": "Death announced in advance: Shor's algorithm shows a quantum computer would factor and take discrete logs in polynomial time",
+  "note": "Killed by (eventually): quantum period-finding, which dissolves the factoring and discrete-log problems every mainstream public-key scheme rests on. Replaced by: post-quantum algorithms standardized three decades later.",
+  "why": "The unusual thing about this grave is that it was dug before the occupants died: Shor published in 1994, and no machine big enough exists yet, but the math is settled — a sufficiently large quantum computer ends RSA, classic Diffie-Hellman, and ECC together, because all three rest on problems quantum period-finding solves efficiently. Exam framing: this is why post-quantum migration is a today problem for long-lived secrets, not a someday problem."
+ },
+ "cgy-ssl2-fall": {
+  "milestone": "Abandoned within a year: broken MAC construction and no handshake protection force a redesign",
+  "note": "Killed by: protocol-design flaws — a weak MD5-based MAC, no protection for the handshake itself, and ciphersuite rollback letting an active attacker force the weakest suite. Replaced by: SSL 3.0, the redesign that became the template for TLS.",
+  "why": "SSL 2.0 is the lesson that a secure cipher inside an insecure protocol is still insecure: the primitives were not the problem, the unauthenticated handshake was, because an attacker who can tamper with negotiation chooses what protection you end up with. Every later downgrade attack (POODLE, FREAK, Logjam) is a variation on the flaw SSL 2.0 exhibited first."
+ },
+ "cgy-timeline": {
+  "prompt": "Place each burial notice in its era, then answer: which of the algorithms you rely on today is already scheduled for this graveyard?",
+  "note": "Entries marked scope \"horizon\" are the quantum-era forward watch — professional currency rather than settled history — and are excluded from mastery scoring. Dates are the public break or formal retirement, not the first academic whisper."
+ },
+ "cgy-tkip-interim": {
+  "milestone": "The tourniquet frays: chopchop-style attacks begin decrypting TKIP packets",
+  "note": "Killed by: its own design constraint — TKIP kept RC4 so old hardware could upgrade, and packet-injection attacks (Beck-Tews and successors) started prying it open. Replaced by: WPA2's CCMP, built on AES.",
+  "why": "TKIP was explicitly a bridge: per-packet key mixing and sequence counters bolted around RC4 to rescue WEP-era hardware. It bought years, not decades — because it inherited RC4, researchers kept finding cracks, and the Wi-Fi Alliance eventually deprecated it outright. The exam pattern to recognize: an interim standard that preserves a broken primitive for compatibility carries that primitive's expiry date."
+ },
+ "cgy-tls10-retired": {
+  "milestone": "RFC 8996 formally deprecates TLS 1.0 and 1.1 after browsers pull support",
+  "note": "Killed by: accumulated frailty — dependence on MD5/SHA-1 in the handshake, BEAST-era CBC constructions, and no modern AEAD support — rather than one dramatic break. Replaced by: TLS 1.2 as the floor, TLS 1.3 as the target.",
+  "why": "TLS 1.0 shows the other way protocols die: not one shattering paper but an accumulation of weakened components and superseded constructions until standards bodies, browsers, and compliance regimes (PCI DSS moved first) coordinate the pull. For assessments, 'deprecated by RFC and disallowed by compliance baseline' is the strongest evidence class when flagging a legacy endpoint — stronger than citing any single vulnerability."
+ },
+ "cgy-tls13-redesign": {
+  "milestone": "TLS 1.3 ships by subtraction: static RSA exchange, CBC modes, RC4, and renegotiation all removed",
+  "note": "Not a death — a mass burial performed by the successor. TLS 1.3 deleted every mechanism behind a decade of named attacks, mandates ephemeral key exchange (forward secrecy) and AEAD-only ciphers, and encrypts more of the handshake itself.",
+  "why": "The design insight of TLS 1.3 is that most TLS breaks (BEAST, POODLE-family padding oracles, RC4 biases, downgrade dances) exploited OPTIONS, so the redesign removed the options rather than patching them one by one — shrinking the negotiable surface an attacker can steer a session onto. Mandatory ephemeral Diffie-Hellman also means a stolen server key no longer decrypts recorded history, which is forward secrecy as the exam defines it."
+ },
+ "cgy-wep-fms": {
+  "milestone": "FMS attack turns WEP's RC4 initialization vectors into a key-recovery oracle",
+  "note": "Killed by: weak-IV statistical attack — WEP's 24-bit IVs repeat quickly and feed RC4 in a way that leaks key bytes; passive listening plus statistics recovers the key. Replaced by: WPA with TKIP as a firmware-upgradable tourniquet.",
+  "why": "WEP is the canonical implementation-failure grave: RC4 itself was not yet broken, but WEP's tiny IV space and the way it concatenated IV and key gave attackers millions of related-key samples, which the Fluhrer-Mantin-Shamir analysis converted into key recovery. Later tools cut the attack to minutes. The exam lesson is that a cipher used outside its design assumptions fails even while the cipher stands."
+ },
+ "cgy-wpa3-sae": {
+  "milestone": "WPA3 replaces the pre-shared-key handshake with Simultaneous Authentication of Equals",
+  "note": "Not a death — the current heir of the WEP-WPA-WPA2 lineage. SAE (a dragonfly password-authenticated key exchange) resists offline dictionary attacks and gives forward secrecy; a captured handshake no longer becomes a crackable file.",
+  "why": "WPA2-PSK's enduring wound was that one sniffed handshake let attackers grind passwords offline forever; SAE forces an active, per-guess exchange with the network, so the password cannot be attacked from a recording, and forward secrecy means a later password compromise does not decrypt past captures. For the exam, WPA3 vs WPA2 is the standard illustration of designing against the ATTACK WORKFLOW (capture-then-crack) rather than just strengthening the primitive."
+ },
+ "crypto-graveyard": {
+  "hint": "Read the mechanism on each headstone, not just the name. Brute force killed short keys, birthday collisions killed short blocks and weak hashes, downgrade attacks resurrected crypto everyone thought was buried, and the quantum horizon is a death announced decades in advance. Knowing WHICH attack dug the grave tells you which era it belongs to."
+ }
+}

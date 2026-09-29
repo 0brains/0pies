@@ -1,0 +1,106 @@
+{
+ "controller": {
+  "definition": "The party that decides WHY personal data is processed and HOW — which data, for what purpose, by what means. Keeps that accountability even when it hires someone else to do the processing."
+ },
+ "custodian": {
+  "definition": "Delegated the daily care of data by its owner: storing it properly, backing it up and archiving it, applying prescribed labels and controls, and recovering it when something goes wrong. Executes decisions; makes none of them."
+ },
+ "dataowner": {
+  "definition": "The person accountable for a body of data — typically a department head or executive who knows its business value. Sets its classification, decides who gets access, and stays answerable for its protection while others do the work."
+ },
+ "itk-01": {
+  "text": "TICKET: A newly acquired customer contact set has no sensitivity level yet, so no handling rule can attach to it. Whose call is the level?",
+  "why": "Classifying data is the owner's signature duty — the owner knows the data's importance to the business and sets the level everything else keys off."
+ },
+ "itk-02": {
+  "text": "TICKET: An analyst wants read access to the sales history archive. The grant needs a yes from whoever answers for that archive.",
+  "why": "Permitting access to a dataset is an owner decision; administrators only execute grants the owner has approved."
+ },
+ "itk-03": {
+  "text": "TICKET: Legal asks who remains accountable for the HR records now that every storage and backup task has been handed to the infrastructure team.",
+  "why": "Delegation moves tasks to custodians but never moves accountability — the owner still answers for the data's protection."
+ },
+ "itk-04": {
+  "text": "TICKET: The payroll platform now hosts data classified two levels higher than before; its documented controls must be re-selected to match.",
+  "why": "Ensuring the platform carries controls appropriate to the classification of the data it processes is the system owner's duty, tracked in the system security plan."
+ },
+ "itk-05": {
+  "text": "TICKET: The security plan for the document server is a year stale and no longer describes the controls actually running. Someone owns that document.",
+  "why": "Maintaining an up-to-date system security plan is a defining system-owner responsibility."
+ },
+ "itk-06": {
+  "text": "TICKET: New operators are joining the records platform and must be trained on its secure operation before they touch it.",
+  "why": "The system owner ensures the people operating the system receive appropriate security training — the platform's safe running is their charge."
+ },
+ "itk-07": {
+  "text": "TICKET: Two departments dispute whether an expensive encryption upgrade for the ordering pipeline is worth the disruption to order fulfilment. Someone owns that trade-off.",
+  "why": "Balancing security against business impact for a process is the business/mission owner's call — they answer for the process, so they weigh its trade-offs."
+ },
+ "itk-08": {
+  "text": "TICKET: A program review asks whether the fleet of systems behind the claims process is actually advancing the business goal it exists for.",
+  "why": "Ensuring systems serve the mission is precisely what distinguishes the mission owner from the owners of the individual systems."
+ },
+ "itk-09": {
+  "text": "TICKET: Funding priorities across the retail process must be set so security spending lands where the business value is. Not a per-system decision.",
+  "why": "The mission owner allocates attention and resources at the level of the business process, above any single system or dataset."
+ },
+ "itk-10": {
+  "text": "TICKET: The overnight backup of the research share failed twice this week; the job must be fixed and a restore proven.",
+  "why": "Backing up data and verifying it can be recovered is core custodial work — daily protection tasks delegated by the owner."
+ },
+ "itk-11": {
+  "text": "TICKET: A crate of drives holding restricted material arrived unmarked; the prescribed sensitivity labels must go on before storage.",
+  "why": "Applying the labels the classification scheme prescribes is the custodian's task — the level itself was already decided by the owner."
+ },
+ "itk-12": {
+  "text": "TICKET: A shared folder was corrupted this morning and yesterday's version must be brought back from the archive.",
+  "why": "Recovering lost or corrupted data is squarely custodial: the hands-on care of data through its stored life."
+ },
+ "itk-13": {
+  "text": "TICKET: The company is launching a loyalty scheme and must decide which member data to collect, for what purpose, and by what means.",
+  "why": "Deciding what personal data is processed, why and how is the controller's defining act — purpose and means sit with the controller."
+ },
+ "itk-14": {
+  "text": "TICKET: Employee payroll data is being handed to an outside bureau to run. One party in this arrangement still directs the processing.",
+  "why": "Hiring a processor changes who performs the work, not who directs it — the company collecting its employees' data for payroll remains the controller."
+ },
+ "itk-15": {
+  "text": "TICKET: The outside payroll bureau receives this month's employee file and must run it exactly as instructed — no more, no less.",
+  "why": "A processor acts on behalf of the controller and only on its instructions; the bureau processing another company's employee data fits exactly."
+ },
+ "itk-16": {
+  "text": "TICKET: A vendor handling client records on instruction proposes mining them for its own marketing. The role's answer must be no.",
+  "why": "A processor may not use the controller's data for its own purposes — the mandate is the controller's instructions and nothing beyond."
+ },
+ "itk-17": {
+  "text": "TICKET: A hosting firm processes personal data purely at another company's direction and must show its safeguards for custody, transport and storage of that data.",
+  "why": "Protecting the data while processing on the controller's behalf is the processor's own duty — acting under instruction does not lift the obligation to keep it safe."
+ },
+ "itk-18": {
+  "text": "TICKET: An employee with legitimate access to the case system has been browsing records unrelated to any assigned case. The role's rules were broken.",
+  "why": "Users must access only the data their tasks require; need-to-know binds even people whose credentials technically open the door."
+ },
+ "itk-19": {
+  "text": "TICKET: A staff member wants to move a sensitive extract onto a personal drive to work from home, against the handling rules for that level.",
+  "why": "Complying with handling requirements for classified data in daily work is a user obligation — convenience never overrides the rules the label carries."
+ },
+ "itk-20": {
+  "text": "TICKET: A new hire needs to be told what the labels on documents mean for how they may copy, store and share them at their desk.",
+  "why": "Working with labeled data according to policy is the user's share of asset security — classification labels guide proper use by the people who touch the data."
+ },
+ "itk-matrix": {
+  "prompt": "Tickets arrive; roles answer. Route each item to the role whose duty it names. Watch the near-misses: owners decide, custodians do, controllers direct, processors obey."
+ },
+ "missionowner": {
+  "definition": "Owns the business process the systems serve. Weighs security cost against business value, ensures IT actually supports the mission, and answers for the process succeeding — not for any one system or dataset."
+ },
+ "processor": {
+  "definition": "Handles personal data strictly on the controller's instructions, commonly as a hired third party. Must protect the data and may not reuse it for its own purposes — the mandate comes entirely from the controller."
+ },
+ "systemowner": {
+  "definition": "Owns the platform the data lives on: keeps the system security plan current, ensures controls matching the data's classification are selected and in place, and makes sure operators are trained to run the system securely."
+ },
+ "user": {
+  "definition": "Any person accessing data on a system to get work done. Obliged to touch only what the job requires, follow handling rules for each classification, and comply with policy — access always tracks role and need."
+ }
+}

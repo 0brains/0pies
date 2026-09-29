@@ -4,7 +4,7 @@
   "why": "Dokładna wskazówka egzaminacyjna histack: 'spójne, powtarzalne wyjście' → niska temperatura. Zmienia skalę całego rozkładu prawdopodobieństwa; dostosuj ją lub top_p, nie oba."
  },
  "pd-002": {
-  "label": "Ograniczaj próbkowanie do najmniejszego zestawu tokenów, których skumulowane prawdopodobieństwo osiąga ustalony próg",
+  "label": "Próbkuj tylko spośród najwyżej ocenionych tokenów, dopóki ich łączne prawdopodobieństwo nie osiągnie wybranego progu",
   "why": "Nucleus sampling — top_p skraca zestaw kandydatów, podczas gdy temperatura zmienia skalę całego rozkładu (para pomieszana korpusu #5)."
  },
  "pd-003": {
@@ -64,8 +64,8 @@
   "why": "PTU to model wdrożenia zarezerwowanej pojemności; Standard dzieli pojemność i liczy na token ze zmienną przepustowością, podczas gdy Capacity (TPM) tylko ustawia limit na wybrany typ wdrożenia."
  },
  "pd-017": {
-  "label": "Ruch do aplikacji obsługi klienta jest nieprzewidywalny i porywisty, i zespół chce rozliczania za token zamiast rezerwowanej pojemności godzinowej",
-  "why": "Rozliczanie za token pod zmiennym obciążeniem to wdrożenie standardowe (dokładny scenariusz egzaminu); PTU zamiast tego liczy godzinę za rezerwowaną pojemność niezależnie od faktycznego użycia."
+  "label": "Asystent sprzedaży biletów na festiwal przez tygodnie jest bezczynny, a potem dostaje nagłe szczyty ruchu, a dział finansów chce płacić tylko za zużyte tokeny, nigdy za przepustowość utrzymywaną przez całą dobę",
+  "why": "Rozliczanie za token przy zmiennym obciążeniu to wdrożenie Standard; PTU natomiast nalicza opłaty godzinowe za zarezerwowaną pojemność niezależnie od faktycznego użycia."
  },
  "pd-018": {
   "label": "Rachunki za zużyty token zamiast za godzinę zarezerwowanego zasobu obliczeniowego, ze przepustowością, która może zmieniać się pod wspólnym obciążeniem",

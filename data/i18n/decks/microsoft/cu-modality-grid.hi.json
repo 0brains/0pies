@@ -30,7 +30,7 @@
   "why": "Layout text, tables, selection marks और structure निकालता है; Read-style OCR सिर्फ text है — histack का CU Read-vs-Layout distinction।"
  },
  "cu-007": {
-  "label": "A mixed batch of vendor forms को उनके loose key-value pairs को pull out करने के लिए बिना predefined field schema से शुरू किए",
+  "label": "एक insurer को दर्जनों brokers से claim के कागज़ात मिलते हैं, हर एक का layout अलग है, और वह जो भी labelled fields दिखें उन्हें capture करना चाहता है — पहले से कोई field list तैयार किए बिना",
   "sub": "prebuilt-documentFields",
   "why": "prebuilt-documentFields documents से general key-value pairs निकालता है बिना domain-specific schema के — prebuilt-invoice के fixed invoice fields के विपरीत।"
  },
@@ -50,7 +50,7 @@
   "why": "Custom image analyzers base_analyzer_id को prebuilt-image पर सेट करते हैं फिर एक field schema layer करते हैं — chart और screenshot extraction के लिए documented pattern।"
  },
  "cu-011": {
-  "label": "Retail audit से shelf photos को analyze करें और structured fields को return करें जैसे product count, brand presence, और out-of-stock indicators",
+  "label": "Retail audit के दौरान ली गई दुकान की shelves की photos को structured fields में बदलो: कितने products दिख रहे हैं, कौन से brands मौजूद हैं, और क्या कोई slot खाली है",
   "sub": "prebuilt-image",
   "why": "Content Understanding का image analyzer schema-defined structured fields को photos से directly return करता है — retail shelf-audit scenario जो exam directly test करता है।"
  },
@@ -60,7 +60,7 @@
   "why": "begin_analyze(analyzer_id=..., inputs=[AnalysisInput(url=...)]) कॉल pattern सभी modalities में identical है — सिर्फ analyzer id बदलता है, और prebuilt-image direct (non-search) image analyzer है।"
  },
  "cu-013": {
-  "label": "एक lightweight Python client wire करें जो begin_analyze को call-recording URL के साथ कॉल करता है एक transcript और summary pull करने के लिए एक retrieval index के लिए ready",
+  "label": "एक podcast network SDK के ज़रिए episode links भेजता है और चाहता है कि बोले गए शब्द और एक recap, RAG search index के लिए पहले से तैयार रूप में वापस मिलें",
   "sub": "prebuilt-audioSearch",
   "why": "prebuilt-audioSearch SDK के quickstart snippet में documented analyzer id है — *Search suffix output को indexing/RAG retrieval के लिए prepped marks करता है, prebuilt-audio के direct extraction के विपरीत retrieval prep के साथ।"
  },

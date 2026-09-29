@@ -30,7 +30,7 @@
   "why": "Layout estrae testo, tabelle, marchi di selezione e struttura; OCR stile Read è solo testo — la distinzione Read-vs-Layout di CU di histack."
  },
  "cu-007": {
-  "label": "Un lotto misto di moduli del fornitore ha bisogno che i loro sciolti coppie chiave-valore siano estratte senza iniziare da uno schema di campi predefinito",
+  "label": "Un assicuratore riceve documentazione sui sinistri da decine di broker, ognuna impaginata in modo diverso, e vuole acquisire qualsiasi campo etichettato compaia — senza un elenco di campi preparato in anticipo",
   "sub": "prebuilt-documentFields",
   "why": "prebuilt-documentFields estrae coppie generali chiave-valore da documenti senza schema specifico del dominio richiesto — diverso dai campi di fattura fissi di prebuilt-invoice."
  },
@@ -50,7 +50,7 @@
   "why": "Gli analizzatori di immagini personalizzati impostano base_analyzer_id su prebuilt-image prima di stratificare uno schema di campi — il pattern documentato per estrazione di grafici e screenshot."
  },
  "cu-011": {
-  "label": "Analizza le foto degli scaffali da un audit al dettaglio e restituisci campi strutturati per il conteggio dei prodotti, la presenza del marchio e gli indicatori di esaurimento delle scorte",
+  "label": "Trasformare le foto degli scaffali scattate durante un audit nei negozi in campi strutturati: quanti prodotti sono visibili, quali marchi compaiono e se ci sono spazi vuoti",
   "sub": "prebuilt-image",
   "why": "L'analizzatore di immagini di Content Understanding restituisce campi strutturati definiti da schema direttamente da foto — lo scenario di audit dello scaffale al dettaglio che l'esame testa direttamente."
  },
@@ -60,7 +60,7 @@
   "why": "Il pattern di chiamata begin_analyze(analyzer_id=..., inputs=[AnalysisInput(url=...)]) è identico tra le modalità — solo l'id dell'analizzatore cambia, e prebuilt-image è l'analizzatore di immagini diretto (non di ricerca)."
  },
  "cu-013": {
-  "label": "Cablare un client Python leggero che chiama begin_analyze con un URL di registrazione delle chiamate per estrarre una trascrizione e sommario pronti per un indice di recupero",
+  "label": "Un network di podcast invia i link degli episodi tramite l’SDK e vuole ricevere il parlato trascritto più un riepilogo, già strutturati per un indice di ricerca RAG",
   "sub": "prebuilt-audioSearch",
   "why": "prebuilt-audioSearch è l'id dell'analizzatore documentato nello snippet del quickstart dell'SDK — il suffisso *Search contrassegna output preparato per indexing/RAG retrieval, diverso dalla estrazione diretta di prebuilt-audio senza preparazione per il recupero."
  },

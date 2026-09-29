@@ -7,52 +7,52 @@
    ],
    "asOf": "2026-08",
    "status": "stable",
-   "brief": "Solvix Underwriting is a small predictive-analytics startup that scores agricultural-lending risk for regional banks. Governance so far has been whatever the two founders agreed over coffee. A large reinsurance partner is about to sign a multi-year data-sharing deal but its diligence team wants to see 'a real governance program' before ink hits paper. You are brought in to build it — and, eighteen months later, to keep it working after Solvix's underwriting engine gets licensed to credit-risk teams at banks across the EU, North America and Southeast Asia.",
+   "brief": "Ferncastle Labs is a twelve-person startup whose AI models forecast prescription demand for independent pharmacies. Its only governance so far is an informal understanding among the three co-founders. A national pharmaceutical wholesaler wants to build Ferncastle's forecasts into its ordering platform, but its procurement team will not sign until it sees a documented AI governance program. You are hired to create one — and, later on, to adapt it after Ferncastle licenses its models to pharmacy chains in the EU, Canada and Japan.",
    "citation": "SG Ch2 §Establishing and Communicating Organizational Expectations for AI Governance (I.B) — Program Foundations, Governance Structures, Training and Awareness",
    "steps": [
     {
-     "q": "Before anything else gets written down, what is the most critical first step for building a program that will actually be effective and aligned with Solvix's risk tolerance?",
+     "q": "Ferncastle has no governance paperwork at all. Where should the build-out start if the resulting program is to fit the company's real risk appetite?",
      "options": [
-      "Hire a Chief AI Officer to lead the initiative and assign roles across the company",
-      "Conduct a thorough inventory of existing and planned AI systems, categorized by risk level, business function and data source",
-      "Launch a company-wide training program on AI literacy and ethical principles",
-      "Immediately draft a comprehensive governance policy covering privacy, ethics and security"
+      "Appoint a senior AI executive first and let them hand out governance duties across the team",
+      "Catalogue every AI system in use or in development, noting its purpose, data inputs and risk tier",
+      "Roll out AI-awareness and responsible-use sessions for all twelve employees",
+      "Write a full AI policy up front addressing privacy, security and ethical use"
      ],
-     "answer": "Conduct a thorough inventory of existing and planned AI systems, categorized by risk level, business function and data source",
-     "why": "You cannot govern what you have not counted: an AI inventory is the factual baseline that tells you what needs governing before you can decide who governs it, train anyone on it, or write a policy about it. Hiring a CAIO or training staff without that baseline puts people in motion with nothing concrete to act on, and drafting a policy first produces a document tailored to guesswork rather than Solvix's actual AI footprint."
+     "answer": "Catalogue every AI system in use or in development, noting its purpose, data inputs and risk tier",
+     "why": "An inventory establishes what actually exists, and every later decision — who owns governance, what people need to learn, what the policy must say — depends on that picture. Appointing an executive or running awareness sessions first sets people to work without a defined scope, and a policy written before the inventory is shaped by assumptions rather than by the models Ferncastle really runs."
     },
     {
-     "q": "The reinsurer's diligence team doesn't want verbal founder commitments — they want a documented structure. What's the most suitable, scalable way for a company this size to formalize governance without smothering the speed that got it this far?",
+     "q": "The wholesaler's procurement team wants governance written down, not promised in meetings. What approach suits a twelve-person company that still needs to ship quickly?",
      "options": [
-      "Hire a full-time, dedicated Chief AI Governance Officer",
-      "Codify the founders' existing values into a simple, principle-based charter with a clear risk-assessment step for new projects",
-      "Outsource all governance responsibilities to a third-party audit firm",
-      "Adopt a full-fledged, multi-layered framework matching the reinsurer's own enterprise program"
+      "Recruit a senior executive whose only job is to run AI governance full-time",
+      "Write the co-founders' principles into a short charter with a risk check for each new project",
+      "Hand all governance to an external consultancy that reviews the models once a year",
+      "Copy the wholesaler's multi-tier enterprise governance framework in its entirety"
      ],
-     "answer": "Codify the founders' existing values into a simple, principle-based charter with a clear risk-assessment step for new projects",
-     "why": "A lightweight, principle-based charter is proportional governance in action — it turns what the founders already believe into something documented and repeatable without adding a layer of bureaucracy Solvix doesn't yet need. A full CAGO hire is premature spend, outsourcing surrenders institutional knowledge the founders should be building, and copying the reinsurer's enterprise-scale ERM framework would bury a small team in process built for a company ten times its size."
+     "answer": "Write the co-founders' principles into a short charter with a risk check for each new project",
+     "why": "Governance should be proportionate to the organisation. A brief principles charter captures values the founders already hold, makes them reviewable, and adds a single gate for new work without slowing the team down. A dedicated governance executive is an expense Ferncastle can't yet justify, handing the whole function to outsiders leaves the company without in-house ownership, and a framework designed for a large enterprise would overwhelm a team of twelve."
     },
     {
-     "q": "Two years later, Solvix's credit-risk model is licensed to banks across the EU, North America and Southeast Asia, each facing different regulatory expectations. What governance structure is now the most effective and defensible?",
+     "q": "Later, Ferncastle's forecasting models are licensed by pharmacy chains in the EU, Canada and Japan, each under its own regulatory regime. Which governance structure fits best now?",
      "options": [
-      "A matrix approach where technical teams and business units co-own governance, with each project owner ultimately accountable",
-      "A centralized AI governance office with global authority enforcing one uniform policy everywhere",
-      "A federated model where a central committee sets core principles and regional subcommittees adapt them into local policies",
-      "A fully decentralized model where each regional office builds and manages its own governance framework independently"
+      "Engineering and commercial teams share ownership, with each product lead answerable for their own model",
+      "One head-office governance unit applies an identical policy in every country where the models are used",
+      "A central body sets common principles, and regional groups turn them into locally compliant policies",
+      "Each country office designs and runs its own governance program, independent of the others"
      ],
-     "answer": "A federated model where a central committee sets core principles and regional subcommittees adapt them into local policies",
-     "why": "Federation is the structure built for exactly this tension: one consistent set of principles from the center, with room for each region to adapt specifics to its own regulatory and cultural landscape. A single global policy is too rigid to flex for local law, full regional autonomy loses the central oversight that keeps the whole program coherent, and a matrix of shared project ownership blurs exactly the accountability a credit-risk model needs when a regulator comes asking who signed off."
+     "answer": "A central body sets common principles, and regional groups turn them into locally compliant policies",
+     "why": "A federated structure resolves the pull between consistency and local fit: principles are set once at the centre, while regional groups tailor how they are applied to each jurisdiction's law and expectations. A single uniform policy can't bend to different legal regimes, fully independent country programs lose central oversight and coherence, and spreading ownership across teams and product leads leaves it unclear who is accountable when a regulator asks who signed off."
     },
     {
-     "q": "The training committee drafts four ways to build AI literacy across legal, engineering, marketing and customer-support staff as headcount grows. Which one should governance reject as impractical?",
+     "q": "As Ferncastle grows past a hundred staff, the people team proposes four elements for an AI literacy program covering legal, engineering, sales and support. Which element should governance reject as unrealistic?",
      "options": [
-      "Retooling every engineer into a full AI/ML developer so all technical staff can participate in building models",
-      "Role-specific training scoped to how each function actually touches AI, aligned to Solvix's federated governance model",
-      "Ethics and responsible-AI training calibrated to how strongly Solvix wants to promote a responsible-AI culture",
-      "Plain-language education for the banks' loan officers so they understand what the underwriting model can and can't do"
+      "Retraining every engineer as a machine-learning specialist so all technical staff can build models",
+      "Training tailored to how each function actually interacts with AI, consistent with the federated model",
+      "A responsible-AI ethics track sized to how strongly Ferncastle wants to embed that culture",
+      "Plain-language guidance for pharmacists on what the forecasting models can and cannot tell them"
      ],
-     "answer": "Retooling every engineer into a full AI/ML developer so all technical staff can participate in building models",
-     "why": "Expecting every technical employee to retool as a model builder is not role-specific training, it's a headcount fantasy — most technical staff touch the AI system without ever needing to build one, and training should match that reality. The other three are legitimate, complementary pieces of a real program: training scoped to actual role and governance structure, a culture-building ethics track, and end-user education for the people relying on the model's outputs."
+     "answer": "Retraining every engineer as a machine-learning specialist so all technical staff can build models",
+     "why": "Most technical staff work alongside AI systems without ever needing to build them, so converting every engineer into a model developer is neither role-based nor achievable. The other three belong in a sound program: training matched to each role and the governance structure, an ethics track that builds culture, and education for the end users who rely on the model's outputs."
     }
    ]
   },
@@ -100,14 +100,14 @@
      "why": "Every minute clinicians paste patient notes into a public tool, that text can leave Verdant's control entirely — used for the vendor's own training, logged, or exposed — which is the concrete harm a prohibition is actually preventing. Monetization strategy and hiring costs aren't privacy risks at all, and 'no time to train yet' describes a temporary resourcing gap, not a reason a leak of PHI is dangerous enough to justify blocking the tool outright."
     },
     {
-     "q": "Verdant's risk officer wants the new AI rules folded into the existing privacy, security and ethics policies; the head of engineering wants a single, separate AI policy document instead. Which position is more defensible?",
+     "q": "Two camps have formed over where the documentation assistant's rules should live: Verdant's compliance lead wants them written into the rulebooks it already enforces for patient data, information protection and conduct, while the product VP wants a freestanding AI charter of its own. Whose approach holds up better?",
      "options": [
-      "A separate AI policy is better because it lets AI's unique risks be addressed in full detail without cluttering the existing policies",
-      "Integration is better because it keeps governance consistent across the organization and prevents policy fragmentation",
-      "Integration is better mainly because it signals to regulators that AI isn't treated as a siloed function",
-      "A separate policy is better because it can be updated quickly without triggering a full review of broader corporate policy"
+      "The VP's — a freestanding charter can go deep on generative-AI hazards without crowding the rulebooks already in force",
+      "The compliance lead's — one set of rulebooks keeps governance coherent and stops the AI rules drifting apart from everything else",
+      "The compliance lead's, chiefly because it shows supervisors that AI is not being run as an isolated function",
+      "The VP's — a standalone charter can be revised fast without reopening every enterprise-wide rulebook"
      ],
-     "answer": "Integration is better because it keeps governance consistent across the organization and prevents policy fragmentation",
+     "answer": "The compliance lead's — one set of rulebooks keeps governance coherent and stops the AI rules drifting apart from everything else",
      "why": "Folding AI rules into the existing privacy, security and ethics policies keeps governance unified and prevents the organization from running two sets of standards that can quietly drift apart — regulators and auditors expect AI to sit under the same accountability structure as everything else. The regulator-signaling argument is true but too narrow to carry the case on its own, and both the detail and speed arguments for a standalone document trade long-term cohesion for short-term convenience, which is exactly what creates the silos integration is meant to avoid."
     }
    ]
@@ -134,14 +134,14 @@
      "why": "Third-party AI risk management works the same way internal risk management does: effort proportional to risk, checked on an ongoing basis rather than once at signing. A blanket biannual audit for every vendor is excessive and not scalable, financial stability alone ignores the actual harm an AI system can cause, and splitting technical risk from ethical risk (leaving the latter to contract text) treats two halves of the same evaluation as if they were unrelated."
     },
     {
-     "q": "The claims-triage finalist refuses to disclose its model's full architecture, citing IP protection — but Bramwell's policy mandates a pre-procurement risk assessment. What should the policy require Bramwell to do?",
+     "q": "Bramwell's rulebook says no AI vendor contract is signed until a risk review is finished. The claims-triage finalist will share benchmark scores but won't reveal how its model is built, calling that a trade secret. Where does Bramwell's own rule point?",
      "options": [
-      "Reject the vendor, because the refusal prevents completing the risk assessment the policy itself requires",
-      "Proceed with the vendor but add strict internal monitoring to compensate for the missing architectural detail",
-      "Amend the policy to carve out an exception for proprietary models that supply performance and fairness reports instead",
-      "Require a legal indemnification clause that shifts compliance risk back onto the vendor"
+      "Walk away from this finalist, since its secrecy makes the mandatory review impossible to finish",
+      "Sign anyway and lean on heavier in-house monitoring to make up for the hidden design details",
+      "Rewrite the rule so proprietary models may hand over published performance and fairness reports in place of the review",
+      "Continue once an indemnity clause pushes compliance liability back onto the vendor"
      ],
-     "answer": "Reject the vendor, because the refusal prevents completing the risk assessment the policy itself requires",
+     "answer": "Walk away from this finalist, since its secrecy makes the mandatory review impossible to finish",
      "why": "If the policy says a risk assessment must happen before procurement and the vendor's refusal makes that assessment impossible, proceeding anyway breaks the organization's own governance framework — the defensible move is to walk away. Internal monitoring is a weak substitute for the assessment that never happened, carving out a policy exception undermines the policy for every future vendor, and an indemnification clause can shift financial liability but does nothing to fill the operational and ethical blind spot Bramwell is left with."
     },
     {
@@ -156,15 +156,15 @@
      "why": "A sandbox is the compensating control built for precisely this situation — it lets Bramwell capture the model's performance while containing the exposure created by a vendor that can't meet the security bar directly. Waiving the requirement or writing a standing exception for 'reputable' vendors both erode the security standard for everyone else, while an outright block treats a workable containment problem as an unworkable one and may cost Bramwell a genuinely superior model for no defensible reason."
     },
     {
-     "q": "Governance drafts a template clause to add to every AI vendor contract going forward — including the HR team's upcoming resume-screening tool. What's the single most crucial addition given how AI risk actually behaves over time?",
+     "q": "Before the HR résumé-screening pilot goes live, governance is writing a standard clause for all future AI vendor agreements. Which addition best reflects the fact that an AI system's risk keeps changing after deployment?",
      "options": [
-      "A list of every open-source library and pre-trained model the vendor used, for IP-risk purposes",
-      "A clause granting Bramwell the vendor's full source code and training data for independent audits",
-      "A service-level agreement defining accuracy and latency targets, with penalties for missing them",
-      "Ongoing documentation of the model's performance, drift and fairness metrics, plus a contractual retirement plan"
+      "A schedule of the third-party libraries and pretrained components in the vendor's product, for licensing review",
+      "A right for Bramwell to obtain the vendor's complete source code and training datasets for its own audits",
+      "Guaranteed accuracy and response-time thresholds, with service credits payable whenever they are missed",
+      "A continuing duty to report on the model's accuracy, drift and fairness, and an agreed plan for decommissioning it"
      ],
-     "answer": "Ongoing documentation of the model's performance, drift and fairness metrics, plus a contractual retirement plan",
-     "why": "AI risk doesn't sit still the way a one-time IP audit or a static SLA assumes — a resume-screening model can drift into biased outcomes months after signing, so the contract needs a standing obligation to keep documenting performance and a plan for winding the system down when it's no longer fit for purpose. The open-source inventory is a useful one-time IP check, source-code-and-training-data access is often a non-starter with vendors and unnecessary if monitoring is solid, and an SLA on accuracy and latency captures a snapshot, not the ongoing drift and fairness risk that actually accumulates over the life of the contract."
+     "answer": "A continuing duty to report on the model's accuracy, drift and fairness, and an agreed plan for decommissioning it",
+     "why": "Risk in an AI system accumulates over its operating life: a screening model can start disadvantaging certain applicants well after the contract is signed, so the agreement needs a continuing reporting obligation and an agreed way to retire the system when it stops being fit for purpose. A component schedule is a one-off licensing check, full access to code and training data is something vendors rarely grant and adds little when monitoring is robust, and fixed service thresholds measure a point in time rather than the drift and fairness problems that develop later."
     }
    ]
   }

@@ -61,7 +61,7 @@
   },
   {
    "id": "cu-007",
-   "label": "A mixed batch of vendor forms needs their loose key-value pairs pulled out without starting from a predefined field schema",
+   "label": "An insurer gets claim paperwork from dozens of brokers, each laid out differently, and wants whatever labelled fields appear captured — no field list drafted up front",
    "sub": "prebuilt-documentFields",
    "answer": "Documents & forms",
    "why": "prebuilt-documentFields extracts general key-value pairs from documents with no domain-specific schema required — unlike prebuilt-invoice's fixed invoice fields.",
@@ -101,7 +101,7 @@
   },
   {
    "id": "cu-011",
-   "label": "Analyze shelf photos from a retail audit and return structured fields for product count, brand presence, and out-of-stock indicators",
+   "label": "Turn photos of store shelves taken during a retail audit into structured fields: how many products are visible, which brands appear, and whether any slots are empty",
    "sub": "prebuilt-image",
    "answer": "Images",
    "why": "Content Understanding's image analyzer returns schema-defined structured fields straight from photos — the retail shelf-audit scenario the exam tests directly.",
@@ -125,7 +125,7 @@
   },
   {
    "id": "cu-013",
-   "label": "Wire a lightweight Python client that calls begin_analyze with a call-recording URL to pull back a transcript and summary ready for a retrieval index",
+   "label": "A podcast network submits episode links through the SDK and wants the spoken words plus a recap returned already shaped for a RAG search index",
    "sub": "prebuilt-audioSearch",
    "answer": "Audio",
    "why": "prebuilt-audioSearch is the documented analyzer id in the SDK's quickstart snippet — the *Search suffix marks output prepped for indexing/RAG retrieval, unlike prebuilt-audio's direct extraction with no retrieval prep.",

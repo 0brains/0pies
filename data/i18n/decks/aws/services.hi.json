@@ -292,7 +292,7 @@
  },
  "svc-073": {
   "label": "नियंत्रित करें कि कौन AWS संसाधन तक पहुंच सकता है और वे कौन सी कार्रवाई कर सकते हैं",
-  "why": "AWS Identity and Access Management (IAM) AWS को control who can access AWS resources and what actions they can perform के लिए डिज़ाइन किया गया यह offering है।"
+  "why": "IAM वह जगह है जहाँ तुम identities (users, groups, roles) परिभाषित करते हो और policies जोड़ते हो जो तय करती हैं कि हर identity किन resources पर कौन से AWS actions ले सकती है।"
  },
  "svc-074": {
   "label": "कमजोरियों और जोखिम के लिए कंप्यूट वर्कलोड को निरंतर स्कैन करें",
@@ -303,8 +303,8 @@
   "why": "AWS Key Management Service (AWS KMS) AWS को create and control encryption keys for AWS data के लिए डिज़ाइन किया गया यह offering है।"
  },
  "svc-076": {
-  "label": "Amazon S3 में संग्रहीत संवेदनशील डेटा की खोज करें और सुरक्षा करें",
-  "why": "Amazon Macie AWS को discover and protect sensitive data stored in Amazon S3 के लिए डिज़ाइन किया गया यह offering है।"
+  "label": "S3 buckets में पड़े PII जैसे संवेदनशील data को खोजो और flag करो",
+  "why": "Macie machine learning और pattern matching से S3 buckets में PII जैसे संवेदनशील data को scan करता है, और exposure तथा bucket security के बारे में findings report करता है।"
  },
  "svc-077": {
   "label": "सुरक्षित रूप से एप्लिकेशन क्रेडेंशियल संग्रहीत करें, पुनः प्राप्त करें और घुमाएं",

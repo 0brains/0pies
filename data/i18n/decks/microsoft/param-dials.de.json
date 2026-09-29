@@ -4,7 +4,7 @@
   "why": "Histack's exakte Prüfungs-Hinweis: 'konsistente, wiederholbare Ausgabe' → niedrige Temperatur. Es reskaliert die ganze Wahrscheinlichkeits-Verteilung; tune sie oder top_p, nicht beide."
  },
  "pd-002": {
-  "label": "Beschränke Sampling auf die kleinste Menge von Token, deren kumulative Wahrscheinlichkeit einen gesetzten Schwellwert erreicht",
+  "label": "Nur aus den am höchsten eingestuften Tokens samplen, bis ihre kumulierte Wahrscheinlichkeit einen gewählten Schwellenwert erreicht",
   "why": "Nucleus Sampling — top_p schneidet den Kandidaten-Satz ab, während Temperatur die ganze Verteilung umformt (Corpus verwirrtes-Paar #5)."
  },
  "pd-003": {
@@ -64,8 +64,8 @@
   "why": "PTU ist das reservierte-Kapazität Bereitstellungs-Modell; Standard teilt Kapazität und fakturiert pro Token mit variablem Durchsatz, während Capacity (TPM) nur das Quota auf welchem Bereitstellungstyp gesetzt, der gewählt wird."
  },
  "pd-017": {
-  "label": "Traffic zu der Kundenservice-App ist unvorhersagbar und stoßweise, und das Team möchte Pay-Per-Token-Billing anstelle von Stunden-reservierter Kapazität",
-  "why": "Pay-Per-Token-Preise unter variablem Load ist Standard-Bereitstellung (das exakte Prüfungs-Szenario); PTU fakturiert stattdessen stündlich für reservierte Kapazität, egal ob tatsächliche Nutzung."
+  "label": "Ein Festival-Ticketing-Assistent ist wochenlang kaum ausgelastet und bekommt dann plötzlichen Ansturm, und die Finanzabteilung will nur für verbrauchte Tokens zahlen, nie für rund um die Uhr vorgehaltenen Durchsatz",
+  "why": "Abrechnung pro Token bei schwankender Last ist das Standard-Deployment; PTU rechnet dagegen stündlich für reservierte Kapazität ab, unabhängig von der tatsächlichen Nutzung."
  },
  "pd-018": {
   "label": "Fakturiert pro Token verbraucht anstelle von pro Stunde reservierter Compute, mit Durchsatz, der unter gemeinsam genutzter Last variieren kann",

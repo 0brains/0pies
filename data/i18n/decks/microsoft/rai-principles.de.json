@@ -24,24 +24,24 @@
   "why": "Datenschutz, PII-Governance und Zugriffskontrolle entsprechen Datenschutz & Sicherheit — verwaltete Identitäten und private Endpunkte sind die zugeordneten Azure-Features."
  },
  "rai-007": {
-  "label": "Ein Einstellungsmodell stuft kontinuierlich Kandidaten aus einer Altersgruppe niedriger ein, auch wenn ihre Qualifikationen vergleichbar sind",
-  "why": "Ungleiches Scoring durch ein geschütztes Merkmal trotz gleicher Qualifikationen ist ein Problem differenzieller Ergebnisse, nicht ein Zugriffsproblem — das macht es zu Fairness, nicht Inklusivität."
+  "label": "Ein Kreditkartenmodell gewährt Frauen deutlich niedrigere Ausgabelimits als Männern mit gleichem Einkommen und gleicher Rückzahlungshistorie",
+  "why": "Ungleichbehandlung nach einem geschützten Merkmal trotz gleichwertiger Finanzprofile ist ein Problem unterschiedlicher Ergebnisse, kein Zugangsproblem — damit geht es um Fairness, nicht um Inklusivität."
  },
  "rai-008": {
-  "label": "Ein Gesichtserkennungsmodell, trainiert auf einem Datensatz mit viel weniger Bildern einer ethnischen Gruppe, erzeugt eine viel höhere Fehlerrate für diese Gruppe",
+  "label": "Eine Sprach-Anmeldefunktion weist Sprecher mit starkem regionalem Akzent um ein Vielfaches häufiger ab als andere, weil es bei der Entwicklung kaum Aufnahmen dieser Akzente gab",
   "why": "Unterrepräsentation in Trainingsdaten führt zu einer systematischen Genauigkeitslücke zwischen Gruppen — das ist ein Fairness-Problem — es werden keine Daten offengelegt, daher ist es nicht Datenschutz & Sicherheit."
  },
  "rai-009": {
-  "label": "Ein Einstellungswerkzeug stuft Kandidaten aus bestimmten Universitäten niedriger ein, unabhängig von ihren tatsächlichen Qualifikationen, und benachteiligt systematisch einen Bewerber-Pool",
-  "why": "Eine Proxy-Variable (Universität), die konsistenten Nachteil für eine Bewerbergruppe erzeugt, ist Fairness, auch wenn kein demografisches Attribut direkt verwendet wird."
+  "label": "Ein Modell zur Vorauswahl von Lebensläufen wertet jeden ab, der eine Lücke im beruflichen Werdegang hat, was in der Praxis vor allem Eltern benachteiligt, die nach einer Betreuungszeit zurückkehren",
+  "why": "Ein Proxy-Merkmal (Beschäftigungslücken), das eine Bewerbergruppe durchgängig benachteiligt, ist ein Fairness-Problem, obwohl kein demografisches Merkmal direkt verwendet wird."
  },
  "rai-010": {
   "label": "Vergleiche die Fehlerquote und Genehmigungsquote des Modells nebeneinander über demografische Gruppen, bevor es eingeführt wird",
   "why": "Fairness-Bewertungen sind die Azure-Hebel-Karte für Fairness — unterschiedlich von Content-Filtern (Zuverlässigkeit & Sicherheit) oder Audit-Protokollen (Rechenschaftspflicht)."
  },
  "rai-011": {
-  "label": "Ein Moderationspipeline übersieht manchmal schädliche Inhalte und blockiert gelegentlich tatsächlich sichere Inhalte",
-  "why": "Inkonsistente Erkennungsqualität unter normalen Betriebsbedingungen ist ein Leistungsproblem, nicht ein Datenofenlegungs- oder Offenlegungsproblem — das ist Zuverlässigkeit & Sicherheit."
+  "label": "Ein Modell zur Rechnungsextraktion liest Gesamtbeträge bei sauberen Scans korrekt, gibt aber falsche Beträge aus, sobald eine Seite leicht schief liegt",
+  "why": "Inkonsistente Ausgabequalität unter gewöhnlichen Betriebsbedingungen ist ein Leistungsproblem, kein Problem der Datenpreisgabe oder Offenlegung — das ist Zuverlässigkeit & Sicherheit."
  },
  "rai-012": {
   "label": "Ein KI-Tool, das medizinische Notizen für Kliniker zusammenfasst, muss vorhersehbar verhalten, auch bei unerwarteter oder grenzwertiger Eingabe, da klinische Entscheidungen davon abhängen",
@@ -60,11 +60,11 @@
   "why": "Persönliche Daten, die durch Prompts fließen, ist ein Datenbelastungsrisiko, gemindert durch Redaktion und Zugriffskontrolle — das definierende Anliegen von Datenschutz & Sicherheit."
  },
  "rai-016": {
-  "label": "Eine KI-Assistent verarbeitet Mitarbeiter-HR-Dokumente, und das Team muss das Risiko verringern, dass diese Daten zu nicht autorisierten Parteien lecken",
+  "label": "Ein Chatbot für die Gehaltsabrechnung liest Gehaltszettel und Bankdaten, und die Entwickler müssen sicherstellen, dass nur befugte Mitarbeitende diese Daten jemals sehen können",
   "why": "Beschränkung, wer auf sensible gespeicherte Daten zugreifen kann, ist Datenschutz & Sicherheit, nicht Rechenschaftspflicht — Rechenschaftspflicht dreht sich um Verantwortung für Entscheidungen, nicht Zugriffskontrolle."
  },
  "rai-017": {
-  "label": "Eine Schule plant, einen KI-Tutor einzuführen, der private Studentenunterhaltungen verarbeitet, und muss überprüfen, wie diese Daten gespeichert und geschützt werden, bevor breite Einführung",
+  "label": "Eine Fitness-App bekommt einen KI-Coach, der die Gesundheitsprotokolle der Mitglieder liest, und das Team muss vor dem Launch klären, wie diese Protokolle verschlüsselt sind und wer sie öffnen kann",
   "why": "Überprüfung von Speicherung und Schutz persönlicher Gesprächsdaten vor Einführung ist eine Datenschutz- & Sicherheitsüberprüfung, unterschiedlich von einer Transparenz-Überprüfung offenbarter Fähigkeiten."
  },
  "rai-018": {
@@ -76,7 +76,7 @@
   "why": "Auslegung für eine Reihe von Sprachen und Geräten, damit jeder das System nutzen kann, ist Inklusivität — das Anliegen ist, wer das System aufrufen kann, nicht wer wird anders bewertet."
  },
  "rai-020": {
-  "label": "Ein Übersetzungsassistent geht davon aus, dass alle Nutzer Audio-Antworten klar hören können, ignoriert Menschen mit Hörstörungen",
+  "label": "Ein Banking-Chatbot lässt sich nur mit der Maus bedienen und schließt damit Kunden aus, die auf Screenreader oder reine Tastaturnavigation angewiesen sind",
   "why": "Eine Zugänglichkeits-Designlücke, die Nutzer mit einer Behinderung ausschließt, ist Inklusivität, nicht Fairness — Fairness dreht sich um differentielle Modell-Ergebnisse über Gruppen, nicht nutzbares Design."
  },
  "rai-021": {
@@ -84,8 +84,8 @@
   "why": "Unterstützung unterschiedlicher physikalischer Umgebungen und Interaktionsbedürfnisse, damit der Kiosk für jeden nutzbar bleibt, ist Inklusivität."
  },
  "rai-022": {
-  "label": "Eine sprachgesteuerte KI-App wird verbessert, damit sie besser für Menschen mit unterschiedlichen Akzenten, körperlichen Fähigkeiten und Interaktionsbedürfnissen funktioniert",
-  "why": "Erweiterung, wem das System gut dient, über Akzente und Fähigkeiten, ist die direkte Definition von Inklusivität."
+  "label": "Der Audioguide-Assistent eines Museums wird auf regionale Dialekte nachtrainiert und erhält einen Modus mit großer Schrift und Tippen-zum-Sprechen, damit mehr Besucher ihn bequem nutzen können",
+  "why": "Den Kreis derer zu erweitern, denen das System gut dient — über Dialekte und Fähigkeiten hinweg —, ist die direkte Definition von Inklusivität."
  },
  "rai-023": {
   "label": "Den Nutzern wird im Voraus mitgeteilt, dass sie mit einem KI-Assistenten sprechen, nicht mit einem Menschen, bevor das Gespräch beginnt",

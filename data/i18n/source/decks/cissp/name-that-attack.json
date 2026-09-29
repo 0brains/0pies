@@ -1,0 +1,95 @@
+{
+ "name-that-attack": {
+  "hint": "Ask what the attacker is trying to achieve in this exact moment of the scene, not what tool or protocol they're using — the same tool can serve different tactics at different points in an intrusion."
+ },
+ "nta-01": {
+  "label": "A logistics firm's incident team finds that, weeks before the breach, someone had been quietly scraping employee names, titles and email-address formats off the careers page and LinkedIn — no packet ever touched the corporate network.",
+  "sub": "What is the attacker doing at this stage?",
+  "why": "This is Reconnaissance (TA0043) — gathering information to plan future operations, e.g. Gather Victim Identity Information (T1589). Discovery is the tempting wrong pick because it also sounds like information-gathering, but Discovery happens only after a foothold already exists inside the target's own environment; here nothing has been touched yet."
+ },
+ "nta-02": {
+  "label": "Weeks before any email lands, a crew registers a domain one character off Anchorbridge Health's real domain and buys a matching TLS certificate for it, so the site will look legitimate when it's finally used.",
+  "sub": "What has the attacker built at this point?",
+  "why": "Building attacker-controlled infrastructure ahead of a campaign — a lookalike domain plus a certificate to make it look trustworthy — is Resource Development (TA0042), e.g. Acquire Infrastructure (T1583). Reconnaissance is the trap: it's about learning the target, not building the tools and infrastructure that will later be used against it."
+ },
+ "nta-03": {
+  "label": "Marcus, a payroll clerk at Solstice Freight, opens an invoice attachment that looks like it came from a regular vendor; the macro inside is what got the intruder's first line of code onto his machine.",
+  "sub": "How did the intruder first get in?",
+  "why": "Getting the first foothold into the network via a crafted attachment is Initial Access (TA0001), classically Phishing (T1566). Execution is the trap — the macro does run code, but the tactic tested here is how the adversary got in, not what that code does once it fires."
+ },
+ "nta-04": {
+  "label": "Once inside a Vantry Robotics workstation, the attacker's macro spawns a hidden PowerShell process that runs a base64-encoded script to fetch the next stage of the intrusion.",
+  "sub": "What is the attacker's goal at this exact step?",
+  "why": "Running malicious code on the already-compromised host — Command and Scripting Interpreter (T1059) is the representative technique — is Execution (TA0002). Initial Access is already behind them at this point; that tactic covers the entry vector, not what the code does once it's inside."
+ },
+ "nta-05": {
+  "label": "After the first foothold, the intruder creates a scheduled task on the finance server that silently relaunches their backdoor every time the machine reboots.",
+  "sub": "What is this scheduled task really buying the attacker?",
+  "why": "Maintaining a foothold across reboots and logoffs is Persistence (TA0003) — Scheduled Task/Job (T1053) is a textbook example. Execution is the trap: the task does run code, but the goal being tested here is durability of access, not the one-time act of running something."
+ },
+ "nta-06": {
+  "label": "A standard-user account on a Nordholm Utilities server exploits an unpatched kernel driver to spawn a shell running with full SYSTEM rights.",
+  "sub": "What did the attacker just gain?",
+  "why": "Exploiting a vulnerability to jump from standard-user to SYSTEM rights is Privilege Escalation (TA0004) — Exploitation for Privilege Escalation (T1068). Credential Access is the trap: no password or hash was stolen here — the attacker escalated through a software flaw, not a stolen secret."
+ },
+ "nta-07": {
+  "label": "A backdoor process on Anchorbridge Health's server is renamed svchost.exe and only ever runs during business hours, so it blends into the normal flow of Windows activity rather than standing out.",
+  "sub": "What is the attacker trying to accomplish by renaming and timing the process this way?",
+  "why": "Hiding actions and appearing as normal behavior is Stealth (TA0005) — Masquerading (T1036) is the representative technique. Defense Impairment is the trap: that tactic covers actively degrading or disabling a defensive tool, but this scene never touches a control — it only tries to look ordinary."
+ },
+ "nta-08": {
+  "label": "Before moving further, the intruder disables Solstice Freight's endpoint-detection agent outright and purges three days of Windows Security event logs.",
+  "sub": "What is the attacker's target in this move?",
+  "why": "Directly disabling a security tool and destroying the evidence trail it produced is Defense Impairment (TA0112) — Impair Defenses (T1562) fits. Stealth is the trap: Stealth is about not being noticed while defenses keep running normally; here the attacker is actively neutralizing the tools that would have noticed."
+ },
+ "nta-09": {
+  "label": "An attacker on the same unencrypted guest Wi-Fi as Vantry Robotics staff captures plaintext session cookies and a helpdesk password off the wire, then sits on them for later use.",
+  "sub": "What has the attacker obtained here?",
+  "why": "Stealing account names, passwords and session material — here via Network Sniffing (T1040) — is Credential Access (TA0006). Collection is the trap: Collection covers gathering data of interest toward the adversary's broader goal, not the specific act of harvesting logon secrets."
+ },
+ "nta-10": {
+  "label": "Once inside, the intruder runs a string of built-in commands to list logged-on users, mapped drives and every other host reachable on the subnet.",
+  "sub": "What is the attacker mapping here, and from where?",
+  "why": "Mapping the internal environment from inside an already-compromised host is Discovery (TA0007) — Remote System Discovery (T1018) is typical. Reconnaissance is the trap: Reconnaissance is pre-compromise information-gathering aimed at the outside; this happens after a foothold already exists, using the target's own tools against it."
+ },
+ "nta-11": {
+  "label": "Using an admin password harvested earlier, the intruder opens a remote-desktop session from the compromised workstation straight into Nordholm Utilities' domain controller.",
+  "sub": "What is the attacker doing with the stolen password right now?",
+  "why": "Pivoting from one compromised host to another inside the environment is Lateral Movement (TA0008) — Remote Services (T1021) covers RDP-based moves. Credential Access is the trap: the password was already stolen earlier; the tactic in play now is using it to move, not obtaining it."
+ },
+ "nta-12": {
+  "label": "Before sending anything out, the intruder gathers finance spreadsheets from three shared drives and bundles them into a single password-protected archive.",
+  "sub": "What stage of the intrusion is this archive-building step?",
+  "why": "Gathering and staging data of interest before it ever leaves the network is Collection (TA0009) — Archive Collected Data (T1560). Exfiltration is the trap: nothing has left the environment yet; packaging the data is the staging step that precedes exfiltration, not the exfiltration itself."
+ },
+ "nta-13": {
+  "label": "The implant on Vantry Robotics' server checks in every few minutes over ordinary HTTPS to a server that looks like a CDN, waiting to receive its next instructions.",
+  "sub": "What is this recurring check-in actually doing?",
+  "why": "Communicating with compromised systems to issue instructions is Command and Control (TA0011) — Application Layer Protocol (T1071) covers blending C2 traffic into normal web protocols. Exfiltration is the trap: no data is leaving in this beacon traffic, only tasking — moving stolen data out is a separate, later tactic."
+ },
+ "nta-14": {
+  "label": "The password-protected archive of finance files is uploaded to a free personal cloud-storage account the intruder controls.",
+  "sub": "What has just happened to the staged data?",
+  "why": "Moving the staged data out of the target's environment is Exfiltration (TA0010) — Exfiltration Over Web Service (T1567) fits a cloud-storage upload exactly. Collection is the trap: Collection already happened when the files were bundled; this step is the hand-off out of the network, one move later."
+ },
+ "nta-15": {
+  "label": "Every file share at Anchorbridge Health is suddenly encrypted, and a note demands payment before the hospital's records will be usable again.",
+  "sub": "What is the attacker's objective at this final step?",
+  "why": "Manipulating, interrupting or destroying systems and data — here, encrypting file shares for ransom — is Impact (TA0040), via Data Encrypted for Impact (T1486). Exfiltration is the trap: nothing indicates data left the network; the damage is to the availability and integrity of what's still there, which is Impact's territory."
+ },
+ "nta-16": {
+  "label": "A post-incident retro finds the earliest sign of the intrusion was a slow, low-and-slow port scan against Solstice Freight's public IP range, run from a residential proxy over several weeks before anything else happened.",
+  "sub": "What is the attacker doing before any breach has occurred?",
+  "why": "Scanning a target's exposed infrastructure to learn what's reachable, before ever touching it, is Reconnaissance (TA0043) — Active Scanning (T1595). Discovery is the trap again: Discovery maps the inside of a network the attacker has already breached; this scan never got past the public perimeter."
+ },
+ "nta-17": {
+  "label": "Automated login attempts hammer Nordholm Utilities' VPN portal with thousands of common passwords against a list of known usernames, hour after hour.",
+  "sub": "What is this repeated guessing trying to obtain?",
+  "why": "Systematically guessing account passwords is Credential Access (TA0006) — Brute Force (T1110). Initial Access is the trap: a successful login would eventually grant Initial Access, but the tactic this repeated guessing represents is obtaining the credential itself, not yet having used it to get in."
+ },
+ "nta-18": {
+  "label": "Investigators later find the intruder had quietly added a second, legitimate-looking administrator account to Active Directory weeks before the breach was ever noticed — one nobody thought to disable.",
+  "sub": "What was this extra admin account really for?",
+  "why": "Creating a durable, legitimate-looking way back in — Create Account (T1136) alongside Valid Accounts (T1078) — is Persistence (TA0003). Privilege Escalation is the trap: the new account already had admin rights from creation, so no escalation step occurs here; what's tested is durability of access across the response, not gaining higher rights."
+ }
+}

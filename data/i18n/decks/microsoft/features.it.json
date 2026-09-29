@@ -1,7 +1,7 @@
 {
  "feat-000-00": {
   "label": "Estrai testo leggibile dalla macchina da una foto di una lavagna o di un cartello stradale.",
-  "why": "Azure AI Vision Read API applica OCR per estrarre testo stampato e scritto a mano dalle immagini, diverso dall'Image Analysis della didascalia e del tagging."
+  "why": "La Read API di Azure AI Vision è la funzionalità OCR: estrae da un’immagine sia il testo stampato sia quello scritto a mano, mentre Image Analysis genera didascalie e tag su ciò che mostra l’immagine."
  },
  "feat-000-01": {
   "label": "Identifica e posiziona riquadri di delimitazione intorno agli oggetti individuali in una foto.",
@@ -176,8 +176,8 @@
   "why": "La function calling del Microsoft Foundry Agent Service consente a un agente di invocare le tue API o funzioni esterne come parte del suo ragionamento."
  },
  "feat-015-00": {
-  "label": "Prova automaticamente più algoritmi e iperparametri per trovare il modello con le migliori prestazioni per il tuo set di dati.",
-  "why": "Automated ML di Azure Machine Learning prova più algoritmi e iperparametri per trovare il modello con le migliori prestazioni per il tuo set di dati."
+  "label": "Lascia che il servizio provi molti algoritmi candidati e impostazioni di iperparametri sui tuoi dati e scelga per te il modello migliore.",
+  "why": "Automated ML in Azure Machine Learning addestra e confronta molte combinazioni di algoritmi e iperparametri sui tuoi dati, poi mette in evidenza il modello con il punteggio migliore."
  },
  "feat-015-01": {
   "label": "Costruisci una pipeline di training visivamente trascinando e collegando moduli, senza codice richiesto.",

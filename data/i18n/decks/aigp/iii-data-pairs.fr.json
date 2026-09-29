@@ -12,13 +12,13 @@
   "b.why": "C'est le certificat de naissance — origine et garde — pas le dossier de ce qui s'est ensuite passé avec les données ; ce dossier appartient à l'autre côté de cette paire."
  },
  "iii-dp-03": {
-  "a.text": "Le bruit mathématique calibré est ajouté pendant l'entraînement de sorte qu'aucun seul dossier d'entraînement ne puisse pas avoir d'effet plus qu'une influence négligeable sur la sortie du modèle.",
+  "a.text": "Un bruit soigneusement calibré est injecté pendant l’entraînement, de sorte que l’inclusion ou non de l’enregistrement d’une personne donnée ne change presque rien aux sorties du modèle.",
   "a.why": "C'est une garantie mathématique d'influence, pas où les données voyagent physiquement — cela s'applique que les données quittent ou non leur source.",
   "b.text": "Chaque hôpital s'entraîne localement sur ses propres dossiers patients, et seules les mises à jour résultantes — jamais les dossiers bruts — se déplacent vers un serveur central pour agrégation.",
   "b.why": "Ce qui est protégé ici sont les données qui quittent le site, pas combien un seul dossier peut être déduit d'une sortie — les dossiers bruts ne voyagent jamais, point final."
  },
  "iii-dp-04": {
-  "a.text": "Un document standardisé expose la motivation, la composition, le processus de collecte et les usages recommandés d'un ensemble de données, avant l'entraînement d'un modèle sur celui-ci.",
+  "a.text": "Un document structuré consigne pourquoi un jeu de données a été constitué, ce qu’il contient, comment il a été collecté et à quoi il doit servir, avant qu’un modèle ne soit entraîné dessus.",
   "a.why": "Cela documente la matière première elle-même, indépendamment de tout modèle qui sera formé plus tard sur elle.",
   "b.text": "L'objectif d'une seule version, ses données d'entraînement/validation/test, ses mesures de performance et ses limitations connues sont résumés pour qui décide si la déployer.",
   "b.why": "C'est limité à une version spécifique, pas l'ensemble de données qui la sous-tend — une étiquette de nutrition pour l'artefact entraîné, distinct de la portée au niveau de l'ensemble de données de l'autre côté."
@@ -55,7 +55,7 @@
  },
  "iii-dp-10": {
   "a.text": "Les valeurs de poids à l'intérieur du réseau sont mises à jour par rétropropagation à mesure que l'entraînement réduit l'erreur de prédiction.",
-  "a.why": "Ce sont des valeurs apprises qui déterminent comment les données d'entrée sont transformées en sortie — elles n'existent pas en forme finale jusqu'à ce que l'entraînement se produise.",
+  "a.why": "Le réseau détermine lui-même ces valeurs, et elles régissent la façon dont chaque entrée devient une sortie — elles n’existent sous leur forme finale qu’une fois l’entraînement effectué.",
   "b.text": "Le taux d'apprentissage est fixé par l'équipe avant l'entraînement ne commence jamais, et reste intouché tandis que le réseau apprend.",
   "b.why": "Ce sont définis à l'avance pour contrôler comment l'apprentissage se produit — entrées d'entraînement, pas résultats."
  },

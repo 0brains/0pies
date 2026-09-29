@@ -1,0 +1,121 @@
+{
+ "net-01": {
+  "label": "A card-tokenisation platform in Leeds runs its workloads in spokes off a single hub virtual network. The PCI assessor will not sign off while outbound HTTPS leaves Azure unopened, and wants malware and command-and-control signatures caught inside the encrypted sessions.",
+  "sub": "Which control closes this?",
+  "why": "Only the Premium SKU terminates the outbound TLS session, presents a certificate minted from a customer-supplied CA, inspects the cleartext and re-encrypts on the way out, with the managed signature engine running against the decrypted stream. NSG and ASG is the tempting neighbour because the traffic is outbound from a subnet, but a network security group matches address, port, protocol and direction only and never sees a byte of the payload. Basic and Standard firewalls do not offer outbound TLS termination either, so the SKU choice is part of the answer."
+ },
+ "net-02": {
+  "label": "A logistics operator connects ninety depots to Virtual WAN hubs in West Europe and UK South over site-to-site tunnels. Depot internet traffic currently breaks out locally with nobody screening it, and the network team wants every branch and spoke to egress through one inspected chokepoint per hub.",
+  "sub": "Which control closes this?",
+  "why": "Installing the firewall in the hub turns it into a secured virtual hub, and an internet traffic routing intent policy then advertises a default route so branch and virtual network connections send their internet-bound traffic to it without hand-written user-defined routes. Network Manager is the near miss: security admin rules can deny ports across many virtual networks, but they cannot pull branch traffic through an inspection point or filter it by destination hostname. Note that private and inter-hub flows need their own routing intent policy, they are not covered by the internet one."
+ },
+ "net-03": {
+  "label": "A games studio's build agents pull from hundreds of package mirrors whose addresses shift weekly. Engineering wants the agents to reach only an approved list of hostnames plus a couple of permitted site categories, with everything else refused.",
+  "sub": "Which control closes this?",
+  "why": "Application rules match on fully qualified domain names, and web category filtering on the Standard and Premium SKUs lets you allow or refuse whole classes of site, so the policy survives the mirrors changing their addresses. NSG and ASG cannot express this at all: a network security group rule takes address prefixes or service tags, and no service tag exists for a third-party package mirror. Basic does offer name-based filtering for HTTPS and SQL through the handshake name, but the category list arrives with Standard."
+ },
+ "net-04": {
+  "label": "A hospital trust lets an equipment vendor connect to one management server during scheduled windows. The vendor connects to a public address on the hub firewall, and the session has to arrive at the server's private address in a spoke without that server ever holding a public address of its own.",
+  "sub": "Which control closes this?",
+  "why": "Destination network address translation is a firewall rule type: the published public address and port are rewritten to the private address of the backend, so the workload stays entirely on private addressing. NSG and ASG is the neighbour people reach for because the vendor's source range does need permitting, but a network security group can only permit or refuse a flow, it performs no address translation and so cannot be the front door. All three SKUs, Basic included, do the translation, so the choice here is about capability rather than tier."
+ },
+ "net-05": {
+  "label": "A grocery retailer scales its web tier from four to forty machines every evening and back again overnight. The rule permitting the web tier to reach the SQL tier keeps failing because the address list in it goes stale each time the scale set churns.",
+  "sub": "Which control closes this?",
+  "why": "Application security groups let the rule name a logical tier as its source and destination, so interfaces joining or leaving the group inherit the policy with no address maintenance at all. Network Manager is the plausible-looking neighbour because this is a repeated pattern, but security admin rules take addresses, prefixes and service tags and are aimed at global baselines, not at tracking a churning application tier. Remember every interface in a given application security group has to sit in the same virtual network."
+ },
+ "net-06": {
+  "label": "A university adds a rule at priority 200 refusing SSH to a research subnet, then finds that a lab technician on a known address can still open a session. An older rule at priority 100 permits SSH from that lab range.",
+  "sub": "Which control closes this?",
+  "why": "Network security group rules are read in priority order and the first match wins, so the lower number at 100 settles the flow before the refusal at 200 is ever considered; fixing this means renumbering or narrowing the permissive rule. Network Watcher is close, and it would be the answer if the scene were nobody can tell which rule decided, but here the rule set is already understood and the change needed is an enforcement change. Network Manager would be the answer only if the trust boundary had to be taken away from the subnet owner entirely."
+ },
+ "net-07": {
+  "label": "A private clinic's application subnet should accept nothing from the internet, keep accepting load balancer health probes, and keep talking to the rest of its own virtual network. The team wants to write this without pasting Microsoft address ranges into rules that will age.",
+  "sub": "Which control closes this?",
+  "why": "Service tags such as the load balancer tag and the virtual network tag stand in for the underlying prefixes and are maintained by the platform, so the rules survive address changes; combining several ports and prefixes into one augmented rule keeps the set small. Azure Firewall is the neighbour that tempts here because it also understands service tags, but nothing in this scene calls for hostname filtering, translation or inspection, and routing subnet traffic through an appliance to express three simple rules is the wrong instrument. The default rules already permit intra-virtual-network traffic and refuse inbound internet, so the work is mostly in what you add on top."
+ },
+ "net-08": {
+  "label": "A media company's rendering subnet needs to reach Azure Storage endpoints and nothing else outbound. The platform engineer refuses to maintain a hand-written prefix list because the storage ranges change without notice.",
+  "sub": "Which control closes this?",
+  "why": "An outbound rule that names the storage service tag as its destination, sitting above a refusal for the internet tag, expresses this exactly and is updated by the platform as the ranges move. Private Link is the neighbour worth naming: a private endpoint would also be a defensible design, but it changes where the storage account is reachable rather than filtering an existing outbound path, and the scene asks only to constrain egress. Choose the private endpoint when the requirement is that the account must not be reachable publicly at all."
+ },
+ "net-09": {
+  "label": "A retail bank's central network governance team is answering an audit finding: remote desktop must be unreachable from the internet in roughly three hundred virtual networks spread across forty subscriptions, and it must stay that way even when a product team writes an over-generous rule on its own subnet.",
+  "sub": "Which control closes this?",
+  "why": "A deny security admin rule in a rule collection, applied to a network group and deployed to the relevant regions, is evaluated before any network security group and terminates the flow there, so a permissive rule written downstream never gets to see the packet. NSG and ASG is precisely the wrong answer here even though it can express the same refusal, because the app team owns those objects and can edit them, which is the failure the audit is describing. Remember the configuration does nothing until it is deployed to the regions holding those virtual networks."
+ },
+ "net-10": {
+  "label": "A pharmaceutical group's monitoring agents keep going dark in a handful of production virtual networks because individual teams have written broad outbound refusals. The platform team wants that management traffic delivered regardless of what any team writes locally.",
+  "sub": "Which control closes this?",
+  "why": "An always allow security admin rule ends evaluation as soon as it matches and hands the traffic straight to the resource, deliberately bypassing conflicting network security group rules underneath. A plain allow admin rule would be the trap: it passes evaluation on to the network security groups, which is exactly where the traffic is being lost. NSG and ASG cannot solve it at all, since fixing every team's rules by hand is the problem being escaped."
+ },
+ "net-11": {
+  "label": "A public sector body creates a new spoke virtual network for every service it onboards, tagging each one as production. The security architect wants the port baseline to attach itself to those networks as they appear, with no ticket and no manual step.",
+  "sub": "Which control closes this?",
+  "why": "Network group membership can be driven by Azure Policy conditions, so a virtual network carrying the right tag falls into the group and inherits the deployed security admin configuration without anyone touching it. NSG and ASG cannot do this because a network security group has to be created and associated per subnet or interface by whoever builds the network. One caveat worth carrying into the exam: security admin rules currently do not apply to private endpoints inside a managed virtual network."
+ },
+ "net-12": {
+  "label": "The same public sector baseline refuses secure shell everywhere, but one jump host virtual network legitimately needs it for a maintenance contract that runs until March. The architect does not want to weaken the baseline for the other networks to accommodate it.",
+  "sub": "Which control closes this?",
+  "why": "The published pattern is to keep the high-risk port refusal and carve an exception with an allow admin rule scoped to the network group that needs it, given a lower priority number than the refusal so it is evaluated first, which leaves the baseline standing everywhere else. Azure Firewall is a reasonable-sounding neighbour since it could also permit that flow, but it filters only traffic routed through it and would not lift the refusal that a higher-priority admin rule is already applying to the virtual network. Keep in mind a region takes one security admin configuration, so extra needs are expressed as extra rule collections rather than extra configurations."
+ },
+ "net-13": {
+  "label": "An insurer has switched off public network access on the storage account holding claim documents. The claims application in the virtual network now fails to connect, and a lookup on the account name still returns a public address.",
+  "sub": "Which control closes this?",
+  "why": "A private endpoint gives the account an interface with a private address in your subnet, and the name only resolves to that address once the matching private DNS zone is in place, which is the missing half of this deployment. NSG and ASG is the neighbour to reject clearly: a network security group cannot make a name resolve differently, and effective rules are not even shown for a private endpoint interface in the portal. Note also that the endpoint attaches per subresource, so blob and file reachability are separate endpoints."
+ },
+ "net-14": {
+  "label": "A Dublin software vendor sells a claims-scoring application that runs behind a Standard Load Balancer in its own virtual network. Three customer tenants want to consume it without it ever holding a public listener, and the vendor wants to vet each customer before traffic flows.",
+  "sub": "Which control closes this?",
+  "why": "The provider side of this is a Private Link service referencing that load balancer frontend, which Azure names with a globally unique alias the vendor shares offline; customers then raise a private endpoint and the connection sits pending until the vendor approves it. The visibility setting controls who may even ask, while the auto-approval list controls which subscriptions skip the manual step, and confusing those two is the classic error. A private endpoint alone is the consumer half of the pattern and does not publish anything, which is why the provider scene lands here on the service side. Azure Firewall is the rival zone to reject: translating a public address to the backend would publish the application, but it would put a public listener in front of exactly the workload the vendor wants unreachable from the internet."
+ },
+ "net-15": {
+  "label": "A data science team working in a separate subscription needs to read blob data held by the platform team's account. Neither team will accept the account being reachable from the public internet, and the two virtual networks are peered.",
+  "sub": "Which control closes this?",
+  "why": "A private endpoint for the blob subresource in the consuming virtual network carries traffic over private addressing, and it works across subscriptions and across peered or globally peered networks as well as over gateway connections from on-premises. Network Manager is the wrong instinct here even though the scene crosses a subscription boundary: security admin rules restrict traffic between virtual networks, they do not create a private path to a platform service. Do check that both subscriptions are registered with the network resource provider before the endpoint will build."
+ },
+ "net-16": {
+  "label": "A contractor building an integration created a private endpoint against a partner's service using the alias they were given. Traffic never flows and the connection has sat in a pending state for two days.",
+  "sub": "Which control closes this?",
+  "why": "Connecting by alias uses the manual request path, so the endpoint stays pending until the service owner approves it, and only an approved connection is permitted to carry traffic. The instinct to blame NSG and ASG or to open ports is wasted effort, because nothing is being filtered: the platform simply has not enabled the connection yet. Automatic approval is available instead when the requester holds the endpoint-approval permission on the target resource, or when the provider has preapproved that subscription."
+ },
+ "net-17": {
+  "label": "A consultancy has four hundred field staff who need one internal expenses site and a single administrative port on a datacentre host. Security has refused to keep issuing full network tunnels, and wants the access decision to weigh device compliance and sign-in risk each time.",
+  "sub": "Which control closes this?",
+  "why": "Per-app access publishes only the specific hostnames, addresses and ports required, reached through the Global Secure Access client and a private network connector, with Conditional Access evaluated on every session so device state and risk actually gate the connection. A point-to-site gateway would authenticate the user and then hand them a route into the network, which is the broad grant security has already rejected. Private Link is the other near miss and is about workloads reaching a service privately, not about a person on a laptop."
+ },
+ "net-18": {
+  "label": "A manufacturer is standing up its first identity-aware access deployment and lists the internal name suffixes and address ranges that every remote employee should always reach through the service. Connectors will run on servers in the Coventry datacentre.",
+  "sub": "Which control closes this?",
+  "why": "Quick Access is the primary application segment holding the hostnames, addresses and ranges you always want tunnelled, bound to a connector group that brokers the connection from inside the network, with private name suffixes added so internal resolution works. A separate Global Secure Access application is the right shape only when a subset of resources needs different Conditional Access policies or a time-limited scope, which is the discrimination examiners like. Nothing here is Azure Firewall work, because no traffic is being routed through an appliance and no packet is being inspected."
+ },
+ "net-19": {
+  "label": "The same manufacturer takes on an external audit firm for a ten-week engagement. The auditors need two internal reporting hosts and nothing else, under a stricter sign-in policy than employees face, and the access should be easy to withdraw when the engagement ends.",
+  "sub": "Which control closes this?",
+  "why": "A dedicated Global Secure Access application holding just those two segments, with its own assignment and its own Conditional Access policy, is exactly the per-app case, and removing the application removes the access cleanly. Folding these hosts into Quick Access would be the error, because Quick Access is the everyone-always set and cannot carry a different policy for one audience. Network Manager is the unrelated neighbour some reach for: it governs traffic between virtual networks and knows nothing about who is signing in."
+ },
+ "net-20": {
+  "label": "An operations engineer at a utility cannot explain why a reporting server refuses connections on the SQL port. There is a network security group on the subnet, another on the interface, and a central governance team that also programmes rules, and nobody can say which one is deciding.",
+  "sub": "Which control closes this?",
+  "why": "Effective security rules shows the rules that actually apply to that interface, the ones inherited from its subnet and the combined result, which is the only quick way to see the whole stack at once. Reaching for NSG and ASG here means editing rules while still guessing, and the scene is explicitly about the missing explanation rather than a missing control. Bear in mind this view is not offered for a private endpoint interface, so a private endpoint problem needs a different line of enquiry."
+ },
+ "net-21": {
+  "label": "Ahead of a change window, a security analyst has to produce evidence that a specific source address on a given port would be refused reaching a production machine, and to name the rule that makes the decision, without generating any traffic on the day.",
+  "sub": "Which control closes this?",
+  "why": "IP flow verify tests a described flow against the rules in force and reports whether it is permitted or refused together with the deciding rule, and the network security group diagnostics tool answers the same question for prefixes and service tags at machine, scale set and application gateway level. Network Manager is the neighbour to name and reject: it can impose the refusal, but it produces no per-flow evidence of what would happen. Connection troubleshoot is the sibling to keep straight, since it tests a live connection at a point in time rather than evaluating rules on paper."
+ },
+ "net-22": {
+  "label": "A payments team sees connections between two machines in the same subnet stalling for a few seconds several times an hour. Logs on both hosts show nothing, and the pattern has survived a rebuild of one of the machines.",
+  "sub": "Which control closes this?",
+  "why": "Packet capture creates a remote capture session on the machine's interface so the actual frames can be examined, which is the only tool here that surfaces an intermittent transport fault rather than a policy decision. Azure Firewall logs would tell you nothing, because traffic between two machines on the same subnet never reaches a hub appliance unless routing has been arranged to send it there. Use connection monitor instead when the requirement is continuous reachability tracking over time rather than a one-off look at the wire."
+ },
+ "network-perimeter": {
+  "hint": "Ask three questions in order. First, who owns the decision: a central governance team programming many virtual networks at once means Virtual Network Manager security admin rules, while a single app team filtering its own subnet or NIC means NSG and ASG. Second, what has to be understood about the packet: an address, a port and a direction is NSG work, but a hostname, a URL, a web category, a decrypted TLS session or an intrusion signature needs Azure Firewall. Third, what is the shape of the access: pulling a PaaS service or an ISV service onto a private IP inside your virtual network is Private Link, while giving a named human on a laptop per-app reach into internal resources under Conditional Access is Entra Private Access. If the scene is nobody can prove what is happening to the traffic, no enforcement product is the answer at all and Network Watcher diagnostics is.",
+  "zones[0].def": "The managed stateful firewall that inspects north-south and east-west flows for a whole hub. Every SKU does stateful five-tuple rules, name-based application rules and address translation in both directions; web categories and network-level name filtering start at Standard; decrypting outbound TLS, full URL filtering and the managed intrusion signatures are Premium only. Unlike NSG and ASG it reads above the address and port; unlike Network Manager it is a data-path appliance traffic is routed through rather than a rule set programmed into virtual networks.",
+  "zones[1].def": "Rules an application team attaches to its own subnets and network interfaces, matching source, destination, port, protocol and direction in priority order, with application security groups standing in for machine addresses and service tags standing in for Azure address prefixes. Unlike Azure Firewall it cannot filter by hostname or inspect payload; unlike Network Manager its rules are local and an owner can edit or delete them.",
+  "zones[2].def": "Azure Virtual Network Manager: network groups plus security admin rules that a central governance team deploys across virtual networks in many subscriptions, evaluated ahead of NSG rules, with allow, always allow and deny actions. Unlike NSG and ASG the app team cannot override it, and unlike Azure Firewall it programmes rules into virtual networks rather than steering packets through an appliance.",
+  "zones[3].def": "Private endpoints that place a PaaS service or a partner service on a private address inside your subnet, plus the Private Link service that lets a provider publish an application behind a Standard Load Balancer under an alias with approval control. Unlike NSG and ASG it changes where the service lives on the network rather than filtering an existing path, and unlike Azure Firewall it is about reachability of a service, not inspection of traffic.",
+  "zones[4].def": "The identity-aware Zero Trust access tier of Global Secure Access, giving signed-in users per-app reach to internal hosts, ports and hostnames through the Global Secure Access client and private network connectors, governed by Conditional Access instead of a full network tunnel. Unlike Private Link it serves people on devices rather than workloads calling a service, and unlike Azure Firewall it decides on the identity and device rather than on the packet.",
+  "zones[5].def": "The diagnostics suite that explains what the network is actually doing: effective security rules, IP flow verify, NSG diagnostics, next hop, connection troubleshoot, connection monitor and packet capture. It enforces nothing at all, which is exactly what separates it from every other zone here; reach for it when the problem is a missing explanation rather than a missing control."
+ }
+}

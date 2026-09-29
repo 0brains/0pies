@@ -818,15 +818,15 @@
     "territory": "sc-t-12",
     "area": "1.2",
     "fact": "area 1.2",
-    "q": "A university's timetabling function runs under a system-assigned managed identity and needs to read one database connection string from a vault that uses the Azure RBAC permission model. The identity must never be able to write, delete or roll a secret. Which role assignment at vault scope is correct?",
+    "q": "A shipping firm's route-planner container app authenticates with its own managed identity and must fetch one partner API token kept in a vault on the Azure RBAC model. Auditors insist it can fetch that value and nothing else — no changing, removing or rotating. What do you grant?",
     "options": [
-     "Key Vault Secrets User",
-     "Key Vault Reader",
-     "Key Vault Secrets Officer",
-     "Key Vault Contributor"
+     "Key Vault Secrets User on that vault, so the identity can get secret values and do nothing more",
+     "Key Vault Reader on that vault, so the identity can list the token and view its properties",
+     "Key Vault Secrets Officer on that vault, so the identity can also refresh the token when it expires",
+     "Key Vault Contributor on that vault, so the identity can manage the vault that holds the token"
     ],
-    "answer": "Key Vault Secrets User",
-    "why": "Key Vault Secrets User reads secret contents and nothing more, which is exactly the function's need under least privilege. Key Vault Reader is the nearest trap: it reads metadata about the vault and its objects but deliberately cannot read sensitive values, so the function would enumerate the secret and still fail on retrieval. Secrets Officer adds set and delete rights the function must not have, and Key Vault Contributor is a control-plane role that grants no data access at all.",
+    "answer": "Key Vault Secrets User on that vault, so the identity can get secret values and do nothing more",
+    "why": "Key Vault Secrets User reads secret contents and nothing more, which is exactly the app's need under least privilege. Key Vault Reader is the nearest trap: it reads metadata about the vault and its objects but deliberately cannot read sensitive values, so the app would enumerate the secret and still fail on retrieval. Secrets Officer adds set and delete rights the app must not have, and Key Vault Contributor is a control-plane role that grants no data access at all.",
     "citation": "Key Vault RBAC built-in roles for keys, certificates and secrets · outline 1.2",
     "asOf": "2026-08",
     "roles": [

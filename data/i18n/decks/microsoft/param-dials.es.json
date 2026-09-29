@@ -4,7 +4,7 @@
   "why": "La pista de examen exacta de histack: 'salida consistente y repetible' → temperatura baja. Reescala toda la distribución de probabilidad; ajústala o top_p, no ambas."
  },
  "pd-002": {
-  "label": "Restringe el muestreo al conjunto más pequeño de tokens cuya probabilidad acumulativa alcanza un umbral establecido",
+  "label": "Muestrear solo entre los tokens mejor clasificados hasta que su probabilidad acumulada alcance un umbral elegido",
   "why": "Muestreo de núcleo — top_p trunca el conjunto candidato, mientras que la temperatura remodela toda la distribución (par confundido de corpus #5)."
  },
  "pd-003": {
@@ -64,8 +64,8 @@
   "why": "PTU es el modelo de implementación de capacidad reservada; Standard comparte capacidad y factura por token con rendimiento variable, mientras que Capacidad (TPM) simplemente establece la cuota en cualquier tipo de implementación elegida."
  },
  "pd-017": {
-  "label": "El tráfico a la aplicación de soporte al cliente es impredecible y con ráfagas, y el equipo desea facturación de pago por token en lugar de capacidad horaria reservada",
-  "why": "La facturación de pago por token bajo carga variable es implementación estándar (el escenario exacto del examen); PTU en lugar factura por hora de capacidad reservada sin importar el uso real."
+  "label": "Un asistente de venta de entradas para festivales pasa semanas inactivo y luego recibe avalanchas repentinas, y finanzas quiere pagar solo por los tokens consumidos, nunca por capacidad reservada las 24 horas",
+  "why": "El pago por token con carga variable es la implementación Standard; PTU, en cambio, factura por horas la capacidad reservada con independencia del uso real."
  },
  "pd-018": {
   "label": "Factura por token consumido en lugar de por hora de cómputo reservado, con rendimiento que puede variar bajo carga compartida",

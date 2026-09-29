@@ -292,7 +292,7 @@
  },
  "svc-073": {
   "label": "Kontroluj, kto może uzyskać dostęp do zasobów AWS i jakie działania mogą wykonać",
-  "why": "AWS Identity and Access Management (IAM) to usługa AWS zaprojektowana do kontrolowania, kto może uzyskać dostęp do zasobów AWS i jakie działania mogą wykonać."
+  "why": "IAM to miejsce, w którym definiujesz tożsamości (użytkowników, grupy, role) i przypisujesz im zasady (policies) określające, które akcje AWS każda z nich może wykonywać na jakich zasobach."
  },
  "svc-074": {
   "label": "Ciągle skanuj obciążenia obliczeniowe pod kątem luk w zabezpieczeniach i ekspozycji",
@@ -303,8 +303,8 @@
   "why": "AWS Key Management Service (AWS KMS) to usługa AWS zaprojektowana do tworzenia i kontrolowania kluczy szyfrowania dla danych AWS."
  },
  "svc-076": {
-  "label": "Odkrywaj i chroń wrażliwe dane przechowywane w Amazon S3",
-  "why": "Amazon Macie to usługa AWS zaprojektowana do odkrywania i ochrony wrażliwych danych przechowywanych w Amazon S3."
+  "label": "Znajdź i oznacz dane wrażliwe, takie jak PII, przechowywane w bucketach S3",
+  "why": "Macie wykorzystuje uczenie maszynowe i dopasowywanie wzorców, aby skanować buckety S3 w poszukiwaniu danych wrażliwych, takich jak PII, i raportuje ustalenia dotyczące ich ekspozycji oraz bezpieczeństwa bucketów."
  },
  "svc-077": {
   "label": "Przechowuj, pobieraj i obracaj bezpiecznie poświadczenia aplikacji",
