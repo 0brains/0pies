@@ -1330,6 +1330,11 @@ def build(lab_id: str, template: str, adapters: set[str], langs: list[dict] = No
     if dupe_games:
         errors.append(f"duplicate game ids: {dupe_games}")
 
+    # A solo lab opens straight into one game; naming a game it doesn't have
+    # would leave the page on an empty hub it promised never to show.
+    if manifest.get("solo") and manifest["solo"] not in game_ids:
+        errors.append(f"manifest: solo game '{manifest['solo']}' is not one of the lab's games")
+
     tabs = {t["id"] for t in manifest.get("tabs", [])}
     for g in manifest["games"]:
         if tabs and g.get("tab") and g["tab"] not in tabs:

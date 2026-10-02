@@ -328,3 +328,29 @@ def test_paraphrased_stem_is_flagged(tmp_path):
                             "nurse with general clearance is blocked from the detailed diagnosis records. Why?",
             "options": ["w", "x", "y", "z"], "answer": "w"}
     assert check_verbatim.check_derivation({"cards": [card]}, "d", dindex)
+
+
+# ---- solo labs (a game with a page of its own) ------------------------------
+
+def _build_risk_with(monkeypatch, tmp_path, **override):
+    manifest = json.loads((build_lab.LABS / "risk.json").read_text(encoding="utf-8"))
+    manifest.update(override)
+    labs = tmp_path / "labs"
+    labs.mkdir()
+    (labs / "risk.json").write_text(json.dumps(manifest), encoding="utf-8")
+    monkeypatch.setattr(build_lab, "LABS", labs)
+    monkeypatch.setattr(build_lab, "OUT", tmp_path / "out")
+    monkeypatch.setenv("SKIP_VERBATIM", "1")
+    template = build_lab.TEMPLATE.read_text(encoding="utf-8")
+    return build_lab.build("risk", template, build_lab.registry_keys(template), quiet=True)
+
+
+def test_a_solo_game_the_lab_does_not_have_fails(monkeypatch, tmp_path, capsys):
+    assert _build_risk_with(monkeypatch, tmp_path, solo="no-such-game") == 1
+    assert "solo game 'no-such-game'" in capsys.readouterr().err
+
+
+def test_the_regulatory_risk_page_builds_as_a_solo_lab(monkeypatch, tmp_path):
+    assert _build_risk_with(monkeypatch, tmp_path) == 0
+    page = (tmp_path / "out" / "Regulatory Risk.html").read_text(encoding="utf-8")
+    assert '"solo":"risk"' in page.replace(" ", "")
