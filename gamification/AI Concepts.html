@@ -1106,6 +1106,11 @@ const GAMES = LAB.games.map(g => {
   const boardish = runner==="board" || runner==="timeline";
   return {...g, runner, payload, board: boardish ? payload : null};
 });
+// A solo lab (manifest "solo": "<game id>") is one game with a page of its own:
+// it opens straight into that game, never shows the games hub, and its back
+// button leaves for the site home instead.
+const SOLO = LAB.solo ? GAMES.find(g => g.id === LAB.solo) || null : null;
+if(SOLO) document.body.classList.add("solo");
 
 const ROUND = 6;
 const state = {domain:(LAB.tabs && LAB.tabs.find(t=>t.enabled!==false) || {id:"all"}).id,
@@ -1152,6 +1157,7 @@ function render(){
       <p>${esc(tab.soon || "Not built yet.")}</p></div>`;
     return;
   }
+  if(!state.game && SOLO) return start(SOLO.id);
   syncHash();
   if(!state.game) return renderHome();
   return RENDERERS[state.game.runner]();
@@ -1170,9 +1176,9 @@ function syncHash(){
 }
 function gameFromHash(){
   const m = /^#g\/(.+)$/.exec(location.hash);
-  if(!m) return null;
-  let id; try{ id = decodeURIComponent(m[1]); }catch{ return null; }
-  return GAMES.find(g => g.id === id) || null;
+  if(!m) return SOLO;
+  let id; try{ id = decodeURIComponent(m[1]); }catch{ return SOLO; }
+  return GAMES.find(g => g.id === id) || SOLO;
 }
 function openFromHash(){
   const g = gameFromHash();
@@ -1190,14 +1196,19 @@ window.addEventListener("hashchange", () => {
   else if(state.game){ state.game = null; render(); }
 });
 function backBar(title){
+  // A solo page's header already carries the home link and the game's title.
+  if(SOLO) return `<div class="row" style="margin:0 0 14px">
+    <button class="btn ghost share-btn" id="share-game" style="margin-left:auto"
+      title="${esc(t("share.title"))}">${esc(t("header.share"))}</button></div>`;
   return `<div class="row" style="margin:0 0 14px">
-    <button class="btn ghost" id="back">${esc(t("header.allGames"))}</button>
+    <button class="btn ghost" id="back">${esc(t(SOLO ? "header.home" : "header.allGames"))}</button>
     <strong style="margin-left:4px">${esc(tGame(state.game.id, "title", title))}</strong>
     <button class="btn ghost share-btn" id="share-game" style="margin-left:auto"
       title="${esc(t("share.title"))}">${esc(t("header.share"))}</button></div>`;
 }
 function wireBack(){
-  const b=document.getElementById("back"); if(b) b.onclick=()=>{state.game=null;render();};
+  const b=document.getElementById("back");
+  if(b) b.onclick = SOLO ? () => { location.href = "index.html"; } : () => { state.game=null; render(); };
   const s=document.getElementById("share-game"); if(s) s.onclick=openShare;
 }
 
