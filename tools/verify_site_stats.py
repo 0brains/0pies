@@ -40,6 +40,9 @@ CARD_HREF = re.compile(r'href="([^"]+\.html)"')
 CARD_STAT = re.compile(r'<span class="stat">([\d,]+) (GAMES|CARDS)</span>')
 # llms.txt: "> 160 games." and "- [Title](url): 52 games — …"
 LLMS_TOTAL = re.compile(r'^>\s*([\d,]+) games', re.M)
+SITE_VERSION = re.compile(r'<span id="site-version">([^<]+)</span>')
+CHANGELOG = REPO / "CHANGELOG.md"
+CHANGELOG_TOP = re.compile(r"^## (\d{4}\.\d{2}\.\d{2})\s*$", re.M)
 RISK_CHECKED = re.compile(r'<time id="risk-checked" datetime="([^"]+)">([^<]+)</time>')
 RISK_DATA = REPO / "data" / "aigp" / "knowledge" / "domain-ii.json"
 LLMS_LAB = re.compile(r'^- \[([^\]]+)\]\((https?://[^)]+)\): ([\d,]+) games', re.M)
@@ -81,6 +84,18 @@ def check_index(path: Path, stats: dict, totals: dict) -> list[str]:
         if claimed != derived:
             problems.append(f"index.html: '{lab['title']}' card says {fmt(claimed)} {kind}, "
                             f"manifest has {fmt(derived)}")
+
+    # The footer's release number is the newest CHANGELOG entry, so the page
+    # and the release notes it links to can't disagree.
+    shown = SITE_VERSION.search(html)
+    top = CHANGELOG_TOP.search(CHANGELOG.read_text(encoding="utf-8")) if CHANGELOG.is_file() else None
+    if not shown:
+        problems.append("index.html: no footer release number (<span id=\"site-version\">)")
+    elif not top:
+        problems.append("CHANGELOG.md: no '## YYYY.MM.DD' release heading found")
+    elif shown.group(1) != top.group(1):
+        problems.append(f"index.html: footer says release {shown.group(1)}, "
+                        f"CHANGELOG.md's newest is {top.group(1)}")
 
     # The featured Regulatory Risk banner promises when its laws were checked;
     # that date belongs to the campaign data, not to whoever last edited the page.

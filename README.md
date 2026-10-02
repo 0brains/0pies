@@ -11,7 +11,7 @@ without running out of compliance capital.
 
 Browser games for studying AI-governance and cloud-AI certifications — AIGP,
 CISSP, AWS AI Practitioner, Microsoft AI-901, EU and global AI legislation,
-and vendor-neutral AI/ML concepts. **154 games, 3,335 scored cards.**
+and vendor-neutral AI/ML concepts. **177 games, 4,014 scored cards.**
 
 No cookies. No tracking. No pies.
 
