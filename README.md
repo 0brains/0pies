@@ -51,6 +51,9 @@ the next build.
   `python3 tools/build_meta.py` refreshes short links, sitemap and `llms.txt`
 - `python3 tools/golden_master.py --check` — proves a tooling change left every
   page byte-identical; `python3 -m pytest tools/ -q` runs the build tests
+- `node tools/verify_noleaks.mjs --port <port>` — release gate: every page must
+  make zero requests to another site and trip no Content Security Policy rule
+  (serve `gamification/` first, e.g. `python3 -m http.server <port>`)
 
 The build refuses any card that shares an 8-word run with the material it was
 written from. For two labs (CISSP, SC-500) that material is licensed and is not

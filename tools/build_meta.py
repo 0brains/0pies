@@ -50,6 +50,7 @@ def redirect_page(target: str, title: str) -> str:
 <html lang="en">
 <head>
 <meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: file:; font-src 'self' data: file:; connect-src 'self' file:; media-src 'self' file:; object-src 'none'; frame-src 'none'; worker-src 'none'; base-uri 'none'; form-action 'none'">
 <title>{html.escape(title)} · 0pi.es</title>
 <meta name="robots" content="noindex">
 <link rel="canonical" href="{t}">
@@ -99,6 +100,7 @@ def build():
 <html lang="en">
 <head>
 <meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: file:; font-src 'self' data: file:; connect-src 'self' file:; media-src 'self' file:; object-src 'none'; frame-src 'none'; worker-src 'none'; base-uri 'none'; form-action 'none'">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Short links · 0pi.es</title>
 <link rel="stylesheet" href="/assets/fonts/fonts.css">

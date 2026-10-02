@@ -293,6 +293,7 @@ def render_share_stub(item: dict, page_url: str) -> str:
     origin = page_url.rsplit("/", 1)[0]
     return (
         '<!DOCTYPE html>\n<html lang="en">\n<head>\n<meta charset="utf-8">\n'
+        '<meta http-equiv="Content-Security-Policy" content="default-src \'self\'; script-src \'self\' \'unsafe-inline\'; style-src \'self\' \'unsafe-inline\'; img-src \'self\' data: file:; font-src \'self\' data: file:; connect-src \'self\' file:; media-src \'self\' file:; object-src \'none\'; frame-src \'none\'; worker-src \'none\'; base-uri \'none\'; form-action \'none\'">\n'
         f"<title>{title} — 0pi.es News</title>\n"
         f'<meta name="description" content="{desc}">\n'
         f'<link rel="canonical" href="{escape(target)}">\n'
