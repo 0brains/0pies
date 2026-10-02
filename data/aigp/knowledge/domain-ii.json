@@ -1213,13 +1213,24 @@
    {
     "id": "tl-us-ca-001",
     "jurisdiction": "California, US",
-    "instrument": "California AI transparency / training-data disclosure laws",
+    "instrument": "AB 2013 training-data disclosure + CCPA ADMT regulations",
     "milestone": "In force",
     "date": "1 Jan 2026",
     "bucket": "Already in force",
     "status": "stable",
     "scope": "horizon",
-    "note": "Public AI disclosures and training-data/governance evidence where the law applies."
+    "note": "Training-data documentation for generative AI, and ADMT notice, opt-out and access rules (significant-decision compliance by 1 Jan 2027). SB 53 frontier transparency and SB 243 companion-chatbot duties also apply from this date."
+   },
+   {
+    "id": "tl-us-ca-002",
+    "jurisdiction": "California, US",
+    "instrument": "SB 942 AI Transparency Act (amended by AB 853 and SB 1000)",
+    "milestone": "Operative after the AB 853 delay; rewritten by SB 1000 from 30 Sep 2026",
+    "date": "2 Aug 2026",
+    "bucket": "Already in force",
+    "status": "in-flux",
+    "scope": "horizon",
+    "note": "Latent provenance disclosures and a free disclosure-verification tool for any publicly accessible GenAI system — SB 1000 dropped the one-million-user threshold and the manifest option. Large platforms from 1 Jan 2027, capture devices from 1 Jan 2028 (AB 853)."
    },
    {
     "id": "tl-us-tx-001",
@@ -1231,6 +1242,17 @@
     "status": "stable",
     "scope": "horizon",
     "note": "Prohibited uses, government deployment controls, biometric/consumer and synthetic-media governance."
+   },
+   {
+    "id": "tl-us-il-001",
+    "jurisdiction": "Illinois, US",
+    "instrument": "HB 3773 (Human Rights Act amendments)",
+    "milestone": "AI in employment decisions brought under civil-rights law",
+    "date": "1 Jan 2026",
+    "bucket": "Already in force",
+    "status": "stable",
+    "scope": "horizon",
+    "note": "Notice duties and a ban on discriminatory AI use in employment decisions. SB 315 (signed 2026-07-06) adds frontier-AI safety audits from 2027."
    },
    {
     "id": "tl-uae-001",
@@ -1422,13 +1444,24 @@
    {
     "id": "tl-us-co-001",
     "jurisdiction": "Colorado, US",
-    "instrument": "Colorado automated decision-making technology law",
-    "milestone": "Scheduled, after 2026 replacement of the prior AI Act",
+    "instrument": "Colorado SB 26-189 (ADMT law; replaced SB 24-205)",
+    "milestone": "Applies to consequential decisions made on or after this date",
     "date": "1 Jan 2027",
     "bucket": "2027",
     "status": "stable",
     "scope": "horizon",
-    "note": "Impact/risk assessments, consumer notices, review/appeal process, vendor controls and discrimination testing."
+    "note": "Pre-use notice; plain-language explanation within 30 days of an adverse outcome; data access and correction; meaningful human review and reconsideration; developer documentation to deployers; 3-year records. AG rules proposed 2026-08-11 (comments to 2026-10-26). The xAI v. Weiser enforcement stay may affect the start."
+   },
+   {
+    "id": "tl-us-ny-001",
+    "jurisdiction": "New York, US",
+    "instrument": "RAISE Act (S6953-B, amended by S8828)",
+    "milestone": "Frontier-developer safety duties take effect",
+    "date": "1 Jan 2027",
+    "bucket": "2027",
+    "status": "stable",
+    "scope": "horizon",
+    "note": "Large frontier developers publish safety protocols and report incidents within 72 hours to a new oversight office in DFS. Separate from NYC's Local Law 144 on hiring tools."
    },
    {
     "id": "tl-eu-007",
@@ -1675,7 +1708,10 @@
      "Title VII",
      "ECOA",
      "Fair Housing Act",
-     "NIST AI RMF (voluntary)"
+     "NIST AI RMF (voluntary)",
+     "EO 14365 (2025-12-11): DOJ AI Litigation Task Force",
+     "EO 14409 (2026-06-02): voluntary pre-release framework (Treasury/NSA/CISA) — up to 30 days' government access to 'covered frontier models'; expressly no licensing or preclearance",
+     "FTC proposed policy statement on AI accuracy and state-law preemption (91 FR 41638, 2026-07-07; not final)"
     ],
     "effective": "existing law, applied to AI",
     "obligations": [
@@ -1694,15 +1730,17 @@
    {
     "id": "map-us-co",
     "name": "Colorado",
-    "coverage": "proposed",
+    "coverage": "sectoral",
     "scope": "horizon",
     "instruments": [
-     "SB 26-189 (ADMT law, replaces SB 24-205)"
+     "SB 26-189 (ADMT law, replaces SB 24-205)",
+     "SB 21-169 / Regulation 10-1-1 (insurers' algorithm governance)"
     ],
-    "effective": "2027-01-01",
+    "effective": "Reg. 10-1-1 in force (amended 2025-10-15); SB 26-189 from 2027-01-01",
     "obligations": [
-     "ADMT disclosure duties, mainly on deployers, substantially narrower than SB 24-205",
-     "SB 24-205 never took effect: 2026-02-01 delayed to 2026-06-30, enforcement stayed April 2026, repealed and replaced May 2026"
+     "From 2027-01-01: ADMT notices, adverse-outcome explanations, correction, human review and records, mainly on deployers — substantially narrower than SB 24-205",
+     "SB 24-205 never took effect: 2026-02-01 delayed to 2026-06-30, enforcement stayed April 2026, repealed and replaced May 2026",
+     "Insurance AI-governance rules (SB 21-169 / Reg. 10-1-1) already bind life, auto and health insurers"
     ],
     "tell": "Four moves in two years. The clearest proof that a compliance date is not a fact you memorise once.",
     "lat": 39.0,
@@ -1717,7 +1755,8 @@
     "coverage": "sectoral",
     "scope": "horizon",
     "instruments": [
-     "HB 3773"
+     "HB 3773",
+     "SB 315 frontier-AI safety audits (signed 2026-07-06; takes effect 2027-01-01)"
     ],
     "effective": "2026-01-01",
     "obligations": [
@@ -1780,13 +1819,17 @@
     "scope": "horizon",
     "instruments": [
      "CCPA/CPRA ADMT regulations",
-     "SB 942 AI Transparency Act",
-     "FEHA automated decision regulations"
+     "SB 942 AI Transparency Act (amended by AB 853 and SB 1000)",
+     "FEHA automated decision regulations",
+     "SB 53 TFAIA (2026-01-01)",
+     "AB 2013 (2026-01-01)",
+     "SB 243 companion chatbots (2026-01-01; SB 1119 child-safety duties 2027-07-01)",
+     "SB 947 workplace ADS (2027-07-01)"
     ],
-    "effective": "2025-2026 phased",
+    "effective": "2025-2028 phased",
     "obligations": [
      "Automated decision-making technology access and opt-out rights",
-     "Provenance disclosure for large generative systems",
+     "Latent provenance disclosures and a free disclosure-verification tool for any publicly accessible GenAI system (SB 942 as amended by SB 1000, 2026-09-30); hosting and large online platforms from 2027-01-01, capture devices from 2028-01-01 (AB 853)",
      "Employment automated-decision rules"
     ],
     "tell": "Closest US analogue to GDPR-style ADM rights.",
@@ -2290,7 +2333,7 @@
     },
     "roleSensitive": true,
     "opsHooks": [],
-    "teach": "Repeal-and-replace churn — SB 24-205 became SB 26-189; a compliance date is not a fact you memorise once."
+    "teach": "Repeal-and-replace churn — SB 24-205 became SB 26-189 (from 2027-01-01) while insurance AI rules already bind; a compliance date is not a fact you memorise once."
    },
    {
     "mapId": "map-us-il",
@@ -3662,14 +3705,14 @@
     "fact": "us-federal-preemption-push-2026",
     "q": "Which statement best captures the US federal posture toward state AI laws in mid-2026?",
     "options": [
-     "The executive is pushing preemption — a DOJ task force sues states, while Congress has enacted nothing",
-     "A federal preemption statute took effect in March 2026",
+     "The executive is pushing preemption — a DOJ task force challenges state laws in court, while Congress has enacted nothing",
+     "A federal preemption statute passed by Congress took effect in March 2026, voiding every conflicting state AI law nationwide",
      "Washington has endorsed the state laws as the model for national legislation"
     ],
-    "answer": "The executive is pushing preemption — a DOJ task force sues states, while Congress has enacted nothing",
-    "why": "The nearest confusable is (b): the White House sent legislative preemption recommendations to Congress on 2026-03-20, but recommendations are not enacted law. EO 14365 created the DOJ AI Litigation Task Force (established 2026-01-09) to challenge state laws in court — the opposite of endorsement (c).",
-    "citation": "EO 14365; White House AI legislative recommendations 2026-03-20",
-    "asOf": "2026-08-02",
+    "answer": "The executive is pushing preemption — a DOJ task force challenges state laws in court, while Congress has enacted nothing",
+    "why": "Nearest confusable is the preemption statute: the White House sent legislative preemption recommendations to Congress on 2026-03-20, but recommendations are not enacted law. EO 14365 created the DOJ AI Litigation Task Force (established 2026-01-09) to challenge state laws in court — the opposite of endorsement. The FTC has also proposed (91 FR 41638, 7 July 2026; not final) that state laws forcing AI output changes are impliedly preempted, naming Colorado.",
+    "citation": "EO 14365; White House AI legislative recommendations 2026-03-20; FTC proposed policy statement, 91 FR 41638",
+    "asOf": "2026-10-02",
     "externalSource": true
    },
    {
@@ -4179,13 +4222,13 @@
     "q": "Your client conflates the city hiring rule with New York State's new AI law signed in December 2025. Set them straight.",
     "options": [
      "The state law targets frontier-model safety — a separate regime that leaves the city ordinance untouched",
-     "The state law replaced the city ordinance on signing",
+     "The state law replaced the city ordinance the day it was signed, moving bias audits of hiring tools to state level",
      "They are the same statute at different procedural stages"
     ],
     "answer": "The state law targets frontier-model safety — a separate regime that leaves the city ordinance untouched",
-    "why": "The nearest confusable is (b), the preemption assumption — the RAISE Act (signed 2025-12-19) regulates frontier-model developers at state level and does not displace LL144's employer-side hiring duties. Different duty-bearers, different subject matter.",
-    "citation": "NY RAISE Act (signed 2025-12-19)",
-    "asOf": "2026-08-02",
+    "why": "Nearest confusable is replacement by the state law, the preemption assumption — the RAISE Act (signed 2025-12-19) regulates frontier-model developers at state level and does not displace LL144's employer-side hiring duties. Different duty-bearers, different subject matter. A chapter amendment (S8828, ch. 96, signed 2026-03-27) set the effective date to 1 January 2027, created an oversight office in DFS and 72-hour incident reporting.",
+    "citation": "NY RAISE Act (S6953-B, ch. 699, signed 2025-12-19; S8828, ch. 96, 2026)",
+    "asOf": "2026-10-02",
     "externalSource": true
    },
    {
@@ -4197,17 +4240,17 @@
     ],
     "area": "II.C",
     "fact": "usca-sb942-provenance-duties",
-    "q": "Your client runs a generative service with two million monthly California visitors. As of today, 2 August 2026, the state's AI transparency act requires it to offer:",
+    "q": "Your client runs a publicly accessible generative image service used in California. Under the AI Transparency Act as amended by SB 1000 (in force 30 September 2026), what must it provide?",
     "options": [
-     "A free public AI-detection tool plus manifest and latent disclosures in AI-generated content",
-     "Publication of a high-level training-data summary",
-     "An annual independent bias audit with a posted summary",
-     "Age verification before any content generation"
+     "A free disclosure-verification tool plus latent (embedded) provenance disclosures in AI-generated image, video and audio content",
+     "Publication of a high-level summary of the datasets used to train the service, updated with each new version",
+     "An annual independent bias audit of the service's outputs, with a summary posted on its public website",
+     "A free AI-detection tool, but only once it passes one million monthly users, plus a choice of visible (manifest) labels instead of latent ones"
     ],
-    "answer": "A free public AI-detection tool plus manifest and latent disclosures in AI-generated content",
-    "why": "The nearest confusable is (b) — the training-data summary is AB 2013's separate duty, not SB 942's. SB 942 became operative today (2026-08-02, after the AB 853 delay) for covered providers over one million monthly visitors or users; the bias audit (c) is NYC's mechanism.",
-    "citation": "California SB 942 (as amended by AB 853, 2025-10-13)",
-    "asOf": "2026-08-02",
+    "answer": "A free disclosure-verification tool plus latent (embedded) provenance disclosures in AI-generated image, video and audio content",
+    "why": "Nearest confusable is the one-million-user option, the law as it stood on 2 August 2026: SB 1000 (Ch. 861, urgency statute effective 2026-09-30) deleted the one-million-user threshold, renamed the AI detection tool a 'disclosure verification tool' (access may be reasonably limited for security or misuse), removed the manifest-disclosure option and added 'whether the system created or altered the content' to the latent disclosure. The training-data summary is AB 2013's duty; the bias audit is NYC's mechanism. Exam note: BoK-era materials describe the original SB 942 design.",
+    "citation": "Cal. Bus. & Prof. Code §§22757.1–22757.3 as amended by SB 1000 (Ch. 861, Stats. 2026)",
+    "asOf": "2026-10-02",
     "externalSource": true
    },
    {
@@ -4394,14 +4437,14 @@
     "fact": "usca-role-patchwork",
     "q": "Summarize how California allocates AI duties across the actors in a supply chain.",
     "options": [
-     "Statute by statute — training-data duties on developers, provenance on large generative providers, ADMT rights against businesses deploying the tools",
-     "Through a single provider-deployer-importer scheme like the EU's",
+     "Statute by statute — training-data duties on developers, provenance on generative AI providers, ADMT rights against businesses deploying the tools",
+     "Through one provider-deployer-importer scheme modelled on the EU AI Act, applied uniformly across every AI statute that California has passed since 2024",
      "By consolidating every duty on whoever deploys the system"
     ],
-    "answer": "Statute by statute — training-data duties on developers, provenance on large generative providers, ADMT rights against businesses deploying the tools",
-    "why": "The nearest confusable is (b): unlike the EU AI Act's single role taxonomy, California has no unified scheme — AB 2013 names developers, SB 942 covered providers, the CCPA regs businesses. Option (c) describes Colorado's deployer-weighted replacement law, not California.",
-    "citation": "California AB 2013; SB 942; CPPA ADMT regulations",
-    "asOf": "2026-08-02",
+    "answer": "Statute by statute — training-data duties on developers, provenance on generative AI providers, ADMT rights against businesses deploying the tools",
+    "why": "Nearest confusable is the single EU-style scheme: unlike the EU AI Act's role taxonomy, California has no unified scheme — AB 2013 names developers, SB 942 (as amended by SB 1000) covered providers, the CCPA regs businesses. Putting every duty on the deployer describes Colorado's deployer-weighted replacement law, not California.",
+    "citation": "California AB 2013; SB 942 as amended by SB 1000; CPPA ADMT regulations",
+    "asOf": "2026-10-02",
     "externalSource": true
    },
    {
@@ -4542,17 +4585,18 @@
      "*"
     ],
     "area": "II.C",
-    "fact": "co-nothing-in-force-today",
-    "q": "It is 2 August 2026 and your client operates decisioning tools in Colorado. Which AI-specific state obligations bind today?",
+    "fact": "co-build-window-before-2027",
+    "q": "It is October 2026. A Denver client using automated tools for consumer lending decisions asks whether to start Colorado compliance work now. Best advice?",
     "options": [
-     "None yet — the replacement law starts 1 January 2027, and its predecessor never operated",
-     "The original act's duty of care, pending the repeal taking effect",
-     "The replacement law's disclosure duties, in force since signing"
+     "Start now — the replacement ADMT law applies to decisions from 1 January 2027, so these months are the build window; insurers are already bound",
+     "Wait — nothing binds in Colorado until the attorney general brings a first enforcement action under the new act, so any early work wastes the budget",
+     "Start now, because the new act applies retroactively to every consequential decision made since the Governor signed it in May 2026",
+     "Wait — the old act was repealed, and Colorado cannot regulate AI again until Congress settles federal preemption"
     ],
-    "answer": "None yet — the replacement law starts 1 January 2027, and its predecessor never operated",
-    "why": "The nearest confusable is (c), the signing-date-equals-effective-date error — SB 26-189 was signed 2026-05-14 but operates from 2027-01-01. Option (b) treats a dead law as live. Colorado today is a gap: general consumer and privacy law apply, nothing AI-specific.",
-    "citation": "Colorado General Assembly — SB26-189",
-    "asOf": "2026-08-02",
+    "answer": "Start now — the replacement ADMT law applies to decisions from 1 January 2027, so these months are the build window; insurers are already bound",
+    "why": "Nearest confusable is 'wait for enforcement': signing is not applicability and applicability is not enforcement, but lead time is when compliance gets built. SB 26-189 (signed 2026-05-14) applies to consequential decisions made on or after 2027-01-01 — pre-use notices, explanations within 30 days of an adverse outcome, data correction, human review and reconsideration, 3-year records. It is not retroactive: earlier decisions are not violations. Colorado is not a blank slate either: Regulation 10-1-1 already requires life, auto and health insurers to govern and test their algorithms (amended version effective 2025-10-15). Repealing the old act does not bar new state law, and the FTC's preemption statement is only proposed. The xAI v. Weiser enforcement stay may affect timing.",
+    "citation": "SB 26-189 (Sess. Laws Ch. 131, §5); 3 CCR 702-10 Reg. 10-1-1",
+    "asOf": "2026-10-02",
     "externalSource": true
    },
    {
@@ -6412,7 +6456,7 @@
    {
     "id": "ii-rr-ev-13",
     "title": "SB 942 provenance spot-check",
-    "text": "California spot-checks covered generative providers for AI-detection tooling and content disclosures under the AI Transparency Act.",
+    "text": "California spot-checks generative AI providers for disclosure-verification tools and latent provenance disclosures under the AI Transparency Act (as amended by SB 1000).",
     "weight": {
      "holdings": [
       "map-us-ca"
@@ -6431,8 +6475,8 @@
      "type": "audit",
      "territory": "match"
     },
-    "citation": "California SB 942 (AI Transparency Act)",
-    "asOf": "2026-08-02",
+    "citation": "California SB 942 as amended by SB 1000 (Ch. 861, Stats. 2026)",
+    "asOf": "2026-10-02",
     "externalSource": true
    },
    {
@@ -6982,7 +7026,7 @@
    {
     "id": "ii-rr-ev-38",
     "title": "Denver client asks about Colorado",
-    "text": "A Denver client has read that Colorado passed an AI law and asks whether to stand up compliance now. Signing dates are not effective dates — check what actually binds today before you answer.",
+    "text": "A Denver client has read that Colorado replaced its AI law and asks whether to start compliance work now. Signing dates are not effective dates — but the gap between them is when compliance gets built.",
     "weight": {
      "holdings": [
       "map-us-co"
@@ -6999,8 +7043,8 @@
      "reward": 0,
      "penalty": 1
     },
-    "citation": "Colorado General Assembly — SB26-189",
-    "asOf": "2026-08-02",
+    "citation": "Colorado SB 26-189 (signed 2026-05-14; applies from 2027-01-01); Reg. 10-1-1",
+    "asOf": "2026-10-02",
     "externalSource": true
    }
   ]
