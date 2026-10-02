@@ -6,6 +6,9 @@
 
 Live at **[0pi.es](https://0pi.es)** · Chat at **[r/0pi](https://www.reddit.com/r/0pi/)**
 
+Featured: **[Regulatory Risk](https://0pi.es/risk/)** — take an AI company global
+without running out of compliance capital.
+
 Browser games for studying AI-governance and cloud-AI certifications — AIGP,
 CISSP, AWS AI Practitioner, Microsoft AI-901, EU and global AI legislation,
 and vendor-neutral AI/ML concepts. **154 games, 3,335 scored cards.**
