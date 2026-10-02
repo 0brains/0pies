@@ -1865,14 +1865,14 @@
     "instruments": [
      "Framework Convention on AI (CETS No. 225)"
     ],
-    "effective": "in force 2025-11-01; EU accession effective 2026-09-01",
+    "effective": "Open for signature since 2024-09-05; not in force (1 of 5 required ratifications: EU, 2026-05-15)",
     "obligations": [
-     "First binding international AI treaty, in force since 2025-11-01",
+     "First legally binding international AI treaty (adopted 2024-05-17); enters into force three months after five ratifications, at least three by CoE member states",
      "Binds States Parties, not companies directly",
-     "EU ratified 2026-05-15; Convention takes effect for the EU 2026-09-01",
+     "EU ratified 2026-05-15 (Council Decision (EU) 2026/1080), the first and so far only party; binds the EU once the Convention enters into force",
      "National implementation decides how far the private sector is reached"
     ],
-    "tell": "International instrument, not a national law — in force and binding, but on states: companies feel it only through national implementation.",
+    "tell": "International instrument, not a national law — binding on states once in force; companies feel it only through national implementation.",
     "lat": 48.6,
     "lon": 7.75,
     "short": "CoE",
@@ -2358,7 +2358,7 @@
     },
     "roleSensitive": false,
     "opsHooks": [],
-    "teach": "Binding treaty — binds states, not companies; you feel it only through national implementation."
+    "teach": "Binding treaty once in force — it is not yet (only the EU has ratified); it binds states, not companies, so you feel it only through national implementation."
    },
    {
     "mapId": "map-sg",
@@ -2867,15 +2867,15 @@
     "fact": "uk-coe-party-effect",
     "q": "How does the Council of Europe Framework Convention on AI reach your UK business?",
     "options": [
-     "Indirectly — the UK has been a party since November 2025, but the treaty binds the state, so you feel it only through domestic implementation",
-     "Directly — treaty obligations apply to companies operating in ratifying states",
-     "Not at all — the UK signed but never ratified",
-     "Through the EU, which enforces it in the UK"
+     "Not yet — the UK has signed but not ratified, and the treaty is not in force; even then it binds the state and reaches you via UK law",
+     "Directly — treaty obligations apply to every company operating in a state that has signed or ratified it, whatever its domestic law says",
+     "Directly, from the date the UK signed in September 2024, because signature commits the UK and its businesses",
+     "Through the EU, which ratified in May 2026 and enforces it in the UK"
     ],
-    "answer": "Indirectly — the UK has been a party since November 2025, but the treaty binds the state, so you feel it only through domestic implementation",
-    "why": "Nearest confusable is (b): CETS 225 binds States Parties, not firms. (c) describes SWITZERLAND'S position (signed 2025-03-27, not ratified) — the UK ratified, and the Convention has been in force for it since 2025-11-01. (d) is doubly wrong: the UK left the EU and the EU's own accession takes effect only from 2026-09-01.",
-    "citation": "CoE Framework Convention CETS 225 (in force 2025-11-01; UK a party)",
-    "asOf": "2026-08-02",
+    "answer": "Not yet — the UK has signed but not ratified, and the treaty is not in force; even then it binds the state and reaches you via UK law",
+    "why": "Nearest confusable is the signature date: signature binds no one — only ratification, once the treaty is in force, binds the state. The 'directly' reading misreads the instrument: CETS 225 binds States Parties, not firms. The EU route is doubly wrong: the UK has left the EU, and the EU's own ratification (15 May 2026) has no effect until the Convention enters into force.",
+    "citation": "CoE Treaty Office: UK signed 2024-09-05, no ratification (checked 2026-10-02)",
+    "asOf": "2026-10-02",
     "externalSource": true
    },
    {
@@ -2974,15 +2974,15 @@
     "fact": "coe-binds-states-not-companies",
     "q": "Your compliance lead asks whether the Council of Europe Framework Convention adds items to your company's obligations register. Correct answer:",
     "options": [
-     "Not directly — it binds States Parties, covering public authorities and private actors acting for them; each party chooses how to reach the wider private sector",
-     "Yes — it imposes conformity assessment duties on providers",
-     "Yes — any company in a ratifying state must register its AI systems with the Council of Europe",
-     "No, because the Convention is not yet in force"
+     "Not directly — it binds the states that ratify it (and those acting for them); each state decides how far it reaches other firms",
+     "Yes — it imposes conformity-assessment duties on AI providers in every state that has signed or ratified it",
+     "Yes — once your home state signs, its provisions apply directly to companies operating there",
+     "Yes — every company in a ratifying state must register its AI systems with the Council of Europe's treaty office before it deploys them"
     ],
-    "answer": "Not directly — it binds States Parties, covering public authorities and private actors acting for them; each party chooses how to reach the wider private sector",
-    "why": "Nearest confusable is (b): conformity assessment is EU AI Act machinery — the Convention contains no company-facing operative rules. (d) is the stale fact this game punishes: CETS 225 entered into force on 2025-11-01.",
-    "citation": "CoE Framework Convention CETS 225 (in force 2025-11-01)",
-    "asOf": "2026-08-02",
+    "answer": "Not directly — it binds the states that ratify it (and those acting for them); each state decides how far it reaches other firms",
+    "why": "Nearest confusable is the conformity-assessment option: conformity assessment is EU AI Act machinery — the Convention contains no company-facing operative rules. The signature option confuses signing with binding effect: signature binds no one, and even a ratified treaty binds the state, not you. CETS 225 is not yet in force — only the EU has ratified (15 May 2026) — but the answer is the same once it is.",
+    "citation": "CETS 225 Arts 3, 30; CoE Treaty Office chart (checked 2026-10-02)",
+    "asOf": "2026-10-02",
     "externalSource": true
    },
    {
@@ -2996,15 +2996,15 @@
     "fact": "coe-first-binding-treaty",
     "q": "What distinction does CETS No. 225 hold in the history of AI governance?",
     "options": [
-     "The first binding international AI treaty — in force since 1 November 2025 after its fifth ratification",
-     "The first national AI statute",
-     "A non-binding declaration, like the OECD AI Principles",
-     "An EU regulation with direct effect in member states"
+     "The first legally binding international AI treaty — open since September 2024, but not in force until five ratifications, three by CoE members",
+     "The world's first national AI statute, which every Council of Europe member state must enact word for word",
+     "A non-binding declaration of principles, like the OECD AI Principles or the G7 Hiroshima Process code",
+     "An EU regulation with direct effect in every member state, adopted alongside the AI Act and enforced by national market-surveillance authorities"
     ],
-    "answer": "The first binding international AI treaty — in force since 1 November 2025 after its fifth ratification",
-    "why": "Nearest confusable is (c): unlike the OECD Principles or the G7 Hiroshima Process, CETS 225 creates binding obligations for its parties. It is a Council of Europe treaty open to non-members — international, not national (b) — and not an EU act (d): the EU is acceding to it as a party.",
-    "citation": "CoE Framework Convention CETS 225 (in force 2025-11-01; ratifiers incl. UK, France, Norway)",
-    "asOf": "2026-08-02",
+    "answer": "The first legally binding international AI treaty — open since September 2024, but not in force until five ratifications, three by CoE members",
+    "why": "Nearest confusable is the non-binding declaration: unlike the OECD Principles or the G7 Hiroshima Process, CETS 225 creates binding obligations for its parties once in force. As of October 2026 only the EU has ratified (15 May 2026), so it is not yet in force. It is an international treaty, not a national or model law, and not an EU act: the EU is one of its parties-to-be.",
+    "citation": "CETS 225 Art. 30; CoE Treaty Office (21 signatures, 1 ratification — EU 2026-05-15; checked 2026-10-02)",
+    "asOf": "2026-10-02",
     "externalSource": true
    },
    {
@@ -3018,15 +3018,15 @@
     "fact": "coe-eu-accession-timing",
     "q": "When does the Framework Convention start applying to the EU itself?",
     "options": [
-     "1 September 2026 — the EU ratified on 15 May 2026 and the Convention takes effect for it from that later date",
-     "It already has, since the Convention entered into force in November 2025",
-     "Never — the EU cannot join a Council of Europe treaty",
-     "2 December 2027, aligned with the AI Act's high-risk regime"
+     "Not yet — the EU ratified in May 2026, but the treaty needs five ratifications, three by CoE member states, to enter into force",
+     "1 September 2026 — the first day of the month after three months had passed since the EU deposited its instrument of ratification",
+     "Never — the EU is not a Council of Europe member state, so it cannot become a party to a Council of Europe treaty",
+     "On 2 December 2027, the date chosen so that the treaty and the AI Act's high-risk regime start together"
     ],
-    "answer": "1 September 2026 — the EU ratified on 15 May 2026 and the Convention takes effect for it from that later date",
-    "why": "Nearest confusable is (b): the treaty's general entry into force (2025-11-01) bound the states that had ratified by then — for each new party, including the EU, the clock runs from its own ratification, with effect 2026-09-01. (d) borrows the Digital Omnibus deferral date from an entirely different instrument.",
-    "citation": "CoE — EU ratifies the Framework Convention on AI (2026-05-15; effective 2026-09-01)",
-    "asOf": "2026-08-02",
+    "answer": "Not yet — the EU ratified in May 2026, but the treaty needs five ratifications, three by CoE member states, to enter into force",
+    "why": "Nearest confusable is 1 September 2026: the three-months-after-deposit rule for a new party applies only once the Convention itself is in force, which has not happened — Art. 30 needs five ratifications including three CoE member states, and the EU (not a member state) is so far the only one. The EU can be a party: it signed in 2024 and concluded the Convention by Council Decision (EU) 2026/1080. December 2027 borrows the Digital Omnibus date from a different instrument.",
+    "citation": "Council Decision (EU) 2026/1080; CETS 225 Art. 30; CoE Treaty Office (checked 2026-10-02)",
+    "asOf": "2026-10-02",
     "externalSource": true
    },
    {
@@ -3062,15 +3062,15 @@
     "fact": "coe-signatory-vs-ratification",
     "q": "What does the Framework Convention's signature list tell you about its reach?",
     "options": [
-     "Around 46 signatories by May 2026 — including non-European states such as the US, Canada and Japan — but signature alone does not bind; ratification does",
-     "Only Council of Europe member states may sign",
-     "Every signatory is immediately bound from the moment of signature",
-     "The US has ratified and is fully bound"
+     "About twenty, including the US, Canada, Japan and the EU — but signing binds no one; only ratification does",
+     "Only Council of Europe member states may sign, so its reach stops at Europe's 46 member states",
+     "Every signatory is bound from the moment it signs, so all of them must already apply its rules",
+     "Around 46 — every Council of Europe member state has signed, and the US has ratified and is fully bound by it"
     ],
-    "answer": "Around 46 signatories by May 2026 — including non-European states such as the US, Canada and Japan — but signature alone does not bind; ratification does",
-    "why": "Nearest confusable is (c): signature signals intent — obligations attach only on ratification and entry into force for that party. The US and Japan have signed but not ratified (d), and the treaty is expressly open to non-members (b).",
-    "citation": "CoE Framework Convention CETS 225 — signature/ratification status (46 signatories, May 2026)",
-    "asOf": "2026-08-02",
+    "answer": "About twenty, including the US, Canada, Japan and the EU — but signing binds no one; only ratification does",
+    "why": "Nearest confusable is binding-on-signature: signature signals intent — obligations attach only on ratification and entry into force for that party. The US and Japan have signed but not ratified, and the treaty is expressly open to non-members. Counts of 46+ you may see add the 27 EU member states, which did not sign individually — the EU signed for them. As of October 2026 there are 21 signatures (20 states plus the EU) and one ratification (the EU).",
+    "citation": "CoE Treaty Office chart CETS 225 (21 signatures incl. EU at 2026-10-02)",
+    "asOf": "2026-10-02",
     "externalSource": true
    },
    {
@@ -3109,12 +3109,12 @@
      "Signed in March 2025, not yet ratified — the implementing bill is in drafting, with public consultation planned by end-2026",
      "Ratified — in force for Switzerland since November 2025",
      "Not signed — Switzerland stays outside all international AI instruments",
-     "Signed, and directly applicable without any implementing law"
+     "Signed, and directly applicable in Swiss courts from the date of signature, without any implementing law or parliamentary approval"
     ],
     "answer": "Signed in March 2025, not yet ratified — the implementing bill is in drafting, with public consultation planned by end-2026",
-    "why": "Nearest confusable is (b): that is the UNITED KINGDOM'S position — the UK ratified and the Convention has been in force for it since 2025-11-01. Switzerland is a signatory only, and a treaty of this kind needs ratification plus implementing legislation before it binds (contra d).",
-    "citation": "Swiss Federal Council — CoE Convention signed 2025-03-27, ratification planned; consultation due end-2026",
-    "asOf": "2026-08-02",
+    "why": "Nearest confusable is ratified-and-in-force: no state has ratified the Convention — only the EU has (15 May 2026) — and it is not yet in force for anyone. Switzerland is a signatory only, and a treaty of this kind needs ratification plus implementing legislation before it binds, so it is not directly applicable either.",
+    "citation": "Swiss Federal Council — CoE Convention signed 2025-03-27, ratification planned, consultation due end-2026; CoE Treaty Office (checked 2026-10-02)",
+    "asOf": "2026-10-02",
     "externalSource": true
    },
    {
@@ -6913,8 +6913,8 @@
    },
    {
     "id": "ii-rr-ev-37",
-    "title": "EU accedes to the Framework Convention",
-    "text": "The EU's accession to the Council of Europe Framework Convention on AI takes effect on 1 September 2026. Remember what kind of instrument this is: a binding treaty that binds states — obligations reach companies only through implementing law.",
+    "title": "EU ratifies the Framework Convention",
+    "text": "The EU became the first party to ratify the Council of Europe Framework Convention on AI (15 May 2026). The treaty still needs four more ratifications — at least three from CoE member states — before it enters into force. Remember what kind of instrument this is: a treaty that binds states — obligations reach companies only through implementing law.",
     "weight": {
      "holdings": [
       "map-coe"
@@ -6928,8 +6928,8 @@
     "effect": {
      "type": "info"
     },
-    "citation": "CoE Framework Convention (in force 2025-11-01); EU accession effective 2026-09-01",
-    "asOf": "2026-08-02",
+    "citation": "Council Decision (EU) 2026/1080; CoE Treaty Office chart CETS 225",
+    "asOf": "2026-10-02",
     "externalSource": true
    },
    {
