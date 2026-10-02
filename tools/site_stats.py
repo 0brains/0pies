@@ -60,6 +60,9 @@ def lab_stats() -> dict[str, dict]:
             "output": manifest["output"],
             "games": len(manifest["games"]),
             "cards": len(ids),
+            # A solo lab re-presents a game another lab already ships, so it
+            # has its own page but adds nothing to the site totals.
+            "solo": bool(manifest.get("solo")),
         }
     _CACHE = out
     return out
@@ -67,8 +70,9 @@ def lab_stats() -> dict[str, dict]:
 
 def totals(stats: dict[str, dict] | None = None) -> dict[str, int]:
     stats = stats if stats is not None else lab_stats()
-    return {"games": sum(s["games"] for s in stats.values()),
-            "cards": sum(s["cards"] for s in stats.values())}
+    counted = [s for s in stats.values() if not s.get("solo")]
+    return {"games": sum(s["games"] for s in counted),
+            "cards": sum(s["cards"] for s in counted)}
 
 
 def for_output(output: str, stats: dict[str, dict] | None = None) -> dict | None:

@@ -34,7 +34,7 @@ try {
   });
   await send("Network.enable"); await send("Runtime.enable"); await send("Page.enable");
 
-  const pages = ["index.html", "2026%20AIGP.html", "2026%20AIF-C01.html", "AI%20Concepts.html", "AI-901.html", "Legislation%20%26%20Regulatory.html", "AWS.html", "Microsoft.html"];
+  const pages = ["index.html", "2026%20AIGP.html", "2026%20AIF-C01.html", "AI%20Concepts.html", "AI-901.html", "Legislation%20%26%20Regulatory.html", "Regulatory%20Risk.html", "AWS.html", "Microsoft.html"];
   for (const p of pages) {
     await send("Page.navigate", { url: `${BASE}/${p}` });
     await sleep(2200);

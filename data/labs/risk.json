@@ -1,0 +1,59 @@
+{
+  "id": "risk",
+  "title": "Regulatory Risk",
+  "subtitle": "Take an AI company global without running out of compliance capital",
+  "output": "Regulatory Risk.html",
+  "storageKey": "risk.progress.v1",
+  "solo": "risk",
+  "allLabel": "Everything",
+  "studyContext": "I am playing a strategy game about taking an AI company into regulated markets worldwide, and want to understand the AI laws and obligations behind each decision.",
+  "citeInstruction": "Cite the instrument and provision (for example \"EU AI Act Art. 6, Annex III\", \"GDPR Art. 22\", \"NIST AI RMF 1.0 MANAGE 1\").",
+  "sources": [
+    "private:ai/aigp-bank",
+    "private:ai/aigp-bank-notes-1",
+    "private:ai/aigp-bank-notes-2",
+    "private:ai/aigp-study-guide",
+    "private:ai/aigp-study-guide-questions",
+    "private:ai/aigp-study-guide-harvest",
+    "private:ai/ai900-bank",
+    "private:ai/ai901-bank",
+    "private:ai/ai901-raw",
+    "private:ai/ai102-bank",
+    "private:ai/aws-aip-bank",
+    "private:ai/aws-aip-raw",
+    "private:ai/aifc01-bank",
+    "private:ai/gcp-genai-bank"
+  ],
+  "outline": null,
+  "outlineNote": "Single-game page for the Regulatory Risk campaign; the same game and data also ship in the AIGP and Legislation labs.",
+  "examinerRole": "You are an AI governance and regulatory-compliance reviewer.",
+  "filters": [
+    {
+      "id": "II.A",
+      "label": "Existing data privacy laws"
+    },
+    {
+      "id": "II.B",
+      "label": "Other existing laws"
+    },
+    {
+      "id": "II.C",
+      "label": "AI-specific laws"
+    },
+    {
+      "id": "II.D",
+      "label": "Industry standards and tools"
+    }
+  ],
+  "games": [
+    {
+      "id": "risk",
+      "rung": "Apply",
+      "runner": "risk",
+      "adapter": "aigpRisk",
+      "data": "aigp/knowledge/domain-ii.json",
+      "title": "Regulatory Risk",
+      "blurb": "Expand your AI company across 22 verified regimes without running out of compliance capital."
+    }
+  ]
+}

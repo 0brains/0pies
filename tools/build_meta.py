@@ -124,6 +124,15 @@ a{{color:inherit}}
 </html>
 """)
 
+    # ---- solo pages ------------------------------------------------------
+    # A solo lab (one game with a page of its own) also gets a top-level short
+    # link named after the lab: /risk/ → "Regulatory Risk.html".
+    for lab in labs:
+        if lab.get("solo"):
+            (OUT / lab["id"]).mkdir(parents=True, exist_ok=True)
+            (OUT / lab["id"] / "index.html").write_text(
+                redirect_page(f"{BASE}/{quote(lab['output'])}", lab["title"]))
+
     # ---- robots.txt ------------------------------------------------------
     (OUT / "robots.txt").write_text(f"""# 0pi.es — everyone is welcome, including your crawler.
 # We don't track you either. See /llms.txt if you are a language model.
@@ -149,7 +158,8 @@ Sitemap: {BASE}/sitemap.xml
     # ---- llms.txt --------------------------------------------------------
     lab_lines = "\n".join(
         f"- [{lab['title']}]({BASE}/{quote(lab['output'])}): "
-        f"{len(lab['games'])} games — {lab.get('subtitle', '')}".rstrip(" —")
+        + (f"the game on its own page — {lab.get('subtitle', '')}" if lab.get("solo") else
+           f"{len(lab['games'])} games — {lab.get('subtitle', '')}").rstrip(" —")
         for lab in labs)
     (OUT / "llms.txt").write_text(f"""# 0pi.es
 
@@ -157,7 +167,7 @@ Sitemap: {BASE}/sitemap.xml
 > certifications: AIGP (all four BOK v2.1 domains), CISSP (eight domains,
 > April-2024 outline), AWS AI Practitioner (AIF-C01), Microsoft AI-901, EU
 > and global AI legislation, and vendor-neutral AI/ML concepts.
-> {sum(len(lab['games']) for lab in labs)} games. No accounts, no tracking, no
+> {sum(len(lab['games']) for lab in labs if not lab.get('solo'))} games. No accounts, no tracking, no
 > external requests. Content carries asOf dates and citations; where the law
 > has moved past the textbooks, cards state what changed rather than silently
 > correcting the source.

@@ -40,6 +40,8 @@ CARD_HREF = re.compile(r'href="([^"]+\.html)"')
 CARD_STAT = re.compile(r'<span class="stat">([\d,]+) (GAMES|CARDS)</span>')
 # llms.txt: "> 160 games." and "- [Title](url): 52 games — …"
 LLMS_TOTAL = re.compile(r'^>\s*([\d,]+) games', re.M)
+RISK_CHECKED = re.compile(r'<time id="risk-checked" datetime="([^"]+)">([^<]+)</time>')
+RISK_DATA = REPO / "data" / "aigp" / "knowledge" / "domain-ii.json"
 LLMS_LAB = re.compile(r'^- \[([^\]]+)\]\((https?://[^)]+)\): ([\d,]+) games', re.M)
 
 
@@ -70,7 +72,8 @@ def check_index(path: Path, stats: dict, totals: dict) -> list[str]:
         if not prior:
             continue
         from urllib.parse import unquote
-        lab = by_output.get(unquote(prior[-1]))
+        import html as _html
+        lab = by_output.get(unquote(_html.unescape(prior[-1])))
         if not lab:
             continue   # a card pointing at a vendor hub or an external page
         claimed, kind = num(m.group(1)), m.group(2).lower()
@@ -78,6 +81,16 @@ def check_index(path: Path, stats: dict, totals: dict) -> list[str]:
         if claimed != derived:
             problems.append(f"index.html: '{lab['title']}' card says {fmt(claimed)} {kind}, "
                             f"manifest has {fmt(derived)}")
+
+    # The featured Regulatory Risk banner promises when its laws were checked;
+    # that date belongs to the campaign data, not to whoever last edited the page.
+    stamp = RISK_CHECKED.search(html)
+    if stamp:
+        import json
+        as_of = json.loads(RISK_DATA.read_text(encoding="utf-8"))["campaign"]["asOf"]
+        if stamp.group(1) != as_of or stamp.group(2) != as_of:
+            problems.append(f"index.html: Regulatory Risk banner says laws checked "
+                            f"{stamp.group(2)} (datetime {stamp.group(1)}), campaign asOf is {as_of}")
     return problems
 
 
