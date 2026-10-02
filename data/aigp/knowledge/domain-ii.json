@@ -651,7 +651,7 @@
   {
    "id": "II.C-pair-019",
    "area": "II.C",
-   "asOf": "2026-07-26",
+   "asOf": "2026-10-02",
    "status": "superseded",
    "dimension": "the Digital Omnibus deferral",
    "buckets": [
@@ -664,13 +664,13 @@
     "why": "The original two-year phase-in date, and what the study guide teaches."
    },
    "b": {
-    "text": "After the Digital Omnibus agreed in May 2026, when do those same obligations apply?",
+    "text": "After the Digital Omnibus (Regulation (EU) 2026/1744, in force 27 July 2026), when do those same obligations apply?",
     "answer": "2 December 2027",
     "why": "The Omnibus deferred standalone Annex III obligations by roughly 16 months. Annex I embedded systems moved to 2 August 2028."
    },
    "currency": {
     "book": "High-risk obligations apply from 2 August 2026.",
-    "changed": "The Digital Omnibus, agreed May 2026, deferred standalone Annex III to 2 December 2027 and Annex I embedded products to 2 August 2028. Most Article 50 transparency duties still apply from 2 August 2026.",
+    "changed": "The Digital Omnibus (Regulation (EU) 2026/1744, in force 27 July 2026) deferred standalone Annex III to 2 December 2027 and Annex I embedded products to 2 August 2028. Most Article 50 transparency duties still apply from 2 August 2026 (generative systems already on the market: 2 December 2026 for marking).",
     "exam": "BoK v2.1 was approved in September 2025 and predates this. Expect the original timeline unless IAPP has issued an update."
    },
    "citation": "Ch6 §EU AI Act Implementation"
@@ -857,6 +857,29 @@
     "why": "The Amendments Regulation reclassifies the Machinery Regulation into Annex I Section B, removing the direct high-risk trigger."
    },
    "citation": "EU AI Act Annex I, as amended by Regulation (EU) 2026/1744 Art. 1(41) — point 1 of Section A deleted, Regulation (EU) 2023/1230 added to Section B (the \"Digital Omnibus\") — verified against the consolidated text on eur-lex.europa.eu/eli/reg/2026/1744/oj/eng"
+  },
+  {
+   "id": "II.C-amend-008",
+   "area": "II.C",
+   "set": "eu-amendments",
+   "asOf": "2026-10-02",
+   "status": "stable",
+   "dimension": "AI regulatory sandbox deadline",
+   "buckets": [
+    "Original Act",
+    "Amended Act"
+   ],
+   "a": {
+    "text": "Each member state must have at least one AI regulatory sandbox operational by 2 August 2026.",
+    "answer": "Original Act",
+    "why": "The original Article 57(1) set the national sandbox deadline at the Act's general date of application."
+   },
+   "b": {
+    "text": "Each member state must have at least one AI regulatory sandbox at national level operational by 2 August 2027.",
+    "answer": "Amended Act",
+    "why": "The Amendments Regulation gives member states one more year to have a national sandbox running; some already operate one."
+   },
+   "citation": "EU AI Act Art. 57(1), as amended by Regulation (EU) 2026/1744 Art. 1(22) (the \"Digital Omnibus\") — checked against the OJ text (CELEX 32026R1744, OJ L 24.7.2026)"
   },
   {
    "id": "ii-tp-01",
@@ -1049,7 +1072,7 @@
   {
    "id": "II.C-ladder-penalties",
    "area": "II.C",
-   "asOf": "2026-07-26",
+   "asOf": "2026-10-02",
    "status": "stable",
    "title": "Penalty bands",
    "prompt": "Order these breaches from the highest maximum penalty to the lowest.",
@@ -1057,7 +1080,7 @@
    "steps": [
     {
      "label": "Breach of the Article 5 prohibitions",
-     "detail": "Up to €35 million or 7% of total worldwide annual turnover, whichever is higher."
+     "detail": "Up to €35 million or 7% of total worldwide annual turnover, whichever is higher (for SMEs and, since the Omnibus, small mid-caps: whichever is lower)."
     },
     {
      "label": "Non-compliance with other obligations",
@@ -1072,7 +1095,7 @@
   {
    "id": "II.C-ladder-phases",
    "area": "II.C",
-   "asOf": "2026-07-26",
+   "asOf": "2026-10-02",
    "status": "superseded",
    "title": "EU AI Act phase-in",
    "prompt": "Order the EU AI Act milestones from earliest to latest.",
@@ -1080,7 +1103,7 @@
    "citation": "Ch6 §EU AI Act Implementation",
    "currency": {
     "book": "High-risk obligations apply from 2 August 2026; Annex I embedded from 2 August 2027.",
-    "changed": "Digital Omnibus (May 2026): standalone Annex III deferred to 2 December 2027; Annex I embedded to 2 August 2028.",
+    "changed": "Digital Omnibus (Regulation (EU) 2026/1744, in force 27 July 2026): standalone Annex III deferred to 2 December 2027; Annex I embedded to 2 August 2028.",
     "exam": "BoK v2.1 predates the Omnibus. Learn the enacted track for the exam and the amended track for practice."
    },
    "steps": [
@@ -1094,7 +1117,7 @@
      "label": "Prohibitions and AI literacy",
      "date": "2025-02-02",
      "amended": "2025-02-02",
-     "detail": "Article 5 prohibited practices and Article 4 AI literacy duties apply."
+     "detail": "Article 5 prohibited practices and Article 4 AI literacy duties apply (the Omnibus later softened literacy to a duty to support it)."
     },
     {
      "label": "GPAI obligations and governance",
@@ -1106,7 +1129,7 @@
      "label": "Article 50 transparency",
      "date": "2026-08-02",
      "amended": "2026-08-02",
-     "detail": "Transparency duties for AI interaction, synthetic content, deepfakes and emotion recognition. Unchanged by the Omnibus."
+     "detail": "Transparency duties for AI interaction, synthetic content, deepfakes and emotion recognition. Date unchanged, except that the Omnibus gave generative systems already on the market until 2 December 2026 for Art. 50(2) marking."
     },
     {
      "label": "High-risk: standalone Annex III",
@@ -1152,7 +1175,7 @@
     "bucket": "Already in force",
     "status": "stable",
     "scope": "bok",
-    "note": "Article 5 bans and Article 4 AI-literacy duties; maintain screening and training evidence."
+    "note": "Article 5 bans and Article 4 AI-literacy duties (softened by the Omnibus to a duty to support staff literacy); maintain screening and training evidence."
    },
    {
     "id": "tl-eu-002",
@@ -1317,13 +1340,13 @@
     "bucket": "H2 2026",
     "status": "stable",
     "scope": "bok",
-    "note": "Chatbot disclosure, machine-readable provenance marking and deepfake/public-interest labelling."
+    "note": "Chatbot disclosure, machine-readable provenance marking and deepfake/public-interest labelling. Generative systems already on the market before this date have until 2 Dec 2026 for Art. 50(2) marking (Digital Omnibus)."
    },
    {
     "id": "tl-eu-004",
     "jurisdiction": "European Union",
     "instrument": "EU AI Act",
-    "milestone": "Becomes broadly applicable, subject to transition exceptions",
+    "milestone": "Broadly applicable, subject to transition exceptions (Annex III and Annex I deferred)",
     "date": "2 Aug 2026",
     "bucket": "H2 2026",
     "status": "stable",
@@ -1334,7 +1357,7 @@
     "id": "tl-eu-005",
     "jurisdiction": "European Union",
     "instrument": "Cyber Resilience Act",
-    "milestone": "Vulnerability and severe-incident reporting begins",
+    "milestone": "Vulnerability and severe-incident reporting applies",
     "date": "11 Sep 2026",
     "bucket": "H2 2026",
     "status": "stable",
@@ -1441,6 +1464,28 @@
     "note": "Risk-management system, data governance, logging, human oversight and post-market monitoring. Postponed from 2 Aug 2026 to this date by the Amendments Regulation (the \"Digital Omnibus\")."
    },
    {
+    "id": "tl-eu-011",
+    "jurisdiction": "European Union",
+    "instrument": "EU AI Act",
+    "milestone": "Member-state AI regulatory sandboxes due (Art. 57)",
+    "date": "2 Aug 2027",
+    "bucket": "2027",
+    "status": "stable",
+    "scope": "bok",
+    "note": "Every member state must have at least one national AI regulatory sandbox operational; some run one already. Moved from 2 Aug 2026 by the Amendments Regulation (the \"Digital Omnibus\")."
+   },
+   {
+    "id": "tl-eu-012",
+    "jurisdiction": "European Union",
+    "instrument": "EU AI Act",
+    "milestone": "GPAI models placed on the market before 2 Aug 2025 must comply",
+    "date": "2 Aug 2027",
+    "bucket": "2027",
+    "status": "stable",
+    "scope": "bok",
+    "note": "Legacy general-purpose models get two years to meet the Art. 53/55 duties (Art. 111(3)); new models have been bound since 2 Aug 2025."
+   },
+   {
     "id": "tl-us-multi-001",
     "jurisdiction": "United States (multiple states)",
     "instrument": "Rolling state laws",
@@ -1537,15 +1582,15 @@
     "scope": "bok",
     "instruments": [
      "EU AI Act",
-     "Digital Omnibus on AI (2026)",
+     "Digital Omnibus on AI (Reg. (EU) 2026/1744)",
      "GDPR",
      "Product Liability Directive (revised)"
     ],
     "effective": "2024-08-01 onward, phased; Annex III high-risk deferred to 2027-12-02 (Digital Omnibus)",
     "obligations": [
-     "Prohibitions and AI literacy since 2025-02-02; GPAI provider duties since 2025-08-02",
-     "Article 50 transparency (chatbot disclosure, synthetic-content marking, deepfake labelling) enforceable now",
-     "Commission/AI Office fining powers over GPAI providers and the member-state sandbox obligation apply from 2026-08-02",
+     "Prohibitions and AI literacy since 2025-02-02 (literacy softened to a duty to 'support' by the Omnibus); GPAI provider duties since 2025-08-02 (models placed before then: by 2027-08-02)",
+     "Article 50 transparency (chatbot disclosure, synthetic-content marking, deepfake labelling) enforceable since 2026-08-02; legacy GenAI marking by 2026-12-02",
+     "Commission fining powers over GPAI providers (Art. 101) apply from 2026-08-02; member-state AI regulatory sandboxes due by 2027-08-02 (Digital Omnibus)",
      "Annex III high-risk duties (conformity assessment, CE marking, registration) bind from 2027-12-02; Annex I embedded from 2028-08-02",
      "Extraterritorial where output is used in the EU"
     ],
@@ -2756,17 +2801,17 @@
     ],
     "area": "II.C",
     "fact": "eu-omnibus-binds-today",
-    "q": "Your board asks which EU AI Act duties bind the company today, 2 August 2026. The accurate briefing is:",
+    "q": "Your board asks which EU AI Act duties bind the company today, in October 2026. The accurate briefing is:",
     "options": [
-     "Prohibitions and AI literacy; GPAI duties, now backed by fining powers; Article 50 transparency; and every member state must have a sandbox — the high-risk regime is not among them",
-     "The full Act, including Annex III high-risk conformity assessment",
-     "Only the prohibitions — everything else was deferred",
-     "Nothing — the Act as a whole applies from December 2027"
+     "Prohibitions, a softened AI-literacy duty, GPAI duties now backed by Commission fines, and Article 50 transparency — but not the high-risk regime",
+     "The full Act, including Annex III high-risk conformity assessment, CE marking and EU database registration for every system you place on the market",
+     "Only the prohibitions — everything else, GPAI duties and transparency included, was deferred by the Omnibus",
+     "Nothing — the Act as a whole applies from December 2027, when the Omnibus start date for all duties arrives"
     ],
-    "answer": "Prohibitions and AI literacy; GPAI duties, now backed by fining powers; Article 50 transparency; and every member state must have a sandbox — the high-risk regime is not among them",
-    "why": "Nearest confusable is (b): the pre-Omnibus calendar would indeed have made high-risk duties bite today, but Regulation (EU) 2026/1744 moved Annex III to 2027-12-02. (c) over-corrects in the other direction — GPAI duties and Article 50 are live alongside the prohibitions.",
-    "citation": "Regulation (EU) 2026/1744 (Digital Omnibus); Council 2026-06-29 Omnibus adoption",
-    "asOf": "2026-08-02",
+    "answer": "Prohibitions, a softened AI-literacy duty, GPAI duties now backed by Commission fines, and Article 50 transparency — but not the high-risk regime",
+    "why": "Nearest confusable is the full Act: the pre-Omnibus calendar would indeed have made Annex III duties bite from August 2026, but Regulation (EU) 2026/1744 moved them to 2027-12-02. 'Only the prohibitions' over-corrects — GPAI duties and Article 50 are live alongside them. Member-state sandboxes were also due on 2 August 2026 under the original Act, but the Omnibus moved that deadline to 2 August 2027; it also softened AI literacy to a duty to 'support' it.",
+    "citation": "Regulation (EU) 2026/1744 (Digital Omnibus; in force 2026-07-27); EU AI Act Arts 4, 50, 101, 113",
+    "asOf": "2026-10-02",
     "externalSource": true
    },
    {
@@ -2780,14 +2825,14 @@
     "fact": "eu-sandbox-availability",
     "q": "You want to trial a novel EU offering with supervisory cover before the high-risk regime bites. What is actually available to you today?",
     "options": [
-     "A national AI regulatory sandbox — every member state must have at least one operational as of 2 August 2026",
-     "Nothing yet — sandboxes arrive with the high-risk regime in December 2027",
-     "The UK's proposed AI Growth Labs, which cover EU launches too"
+     "A national AI regulatory sandbox, if your member state already runs one — all must have one operating by 2 August 2027",
+     "Nothing — no AI regulatory sandbox may lawfully open anywhere in the EU until the high-risk regime applies in December 2027",
+     "The UK's planned cross-economy AI sandboxes, which also give regulatory cover for launches in the EU"
     ],
-    "answer": "A national AI regulatory sandbox — every member state must have at least one operational as of 2 August 2026",
-    "why": "Nearest confusable is (b): the Digital Omnibus moved the Annex III date but left the Article 57 sandbox deadline at 2026-08-02. (c) confuses the UK's Regulating for Growth Bill — a proposal before Parliament, and not EU law — with the EU member-state obligation.",
-    "citation": "EU AI Act Art. 57; Regulation (EU) 2026/1744 (Digital Omnibus)",
-    "asOf": "2026-08-02",
+    "answer": "A national AI regulatory sandbox, if your member state already runs one — all must have one operating by 2 August 2027",
+    "why": "Nearest confusable is 'nothing until December 2027': Art. 57 sandboxes are not tied to the high-risk start date, and member states may run them already. The Digital Omnibus (Reg. (EU) 2026/1744) moved the Art. 57(1) deadline for every member state from 2 August 2026 to 2 August 2027, so what is available today depends on the member state. The UK option confuses the UK's planned cross-economy sandbox powers (Regulating for Growth Bill, announced May 2026, not yet introduced) with EU law.",
+    "citation": "EU AI Act Art. 57(1) as amended by Reg. (EU) 2026/1744 Art. 1(22)",
+    "asOf": "2026-10-02",
     "externalSource": true
    },
    {
@@ -6148,7 +6193,7 @@
    {
     "id": "ii-rr-ev-01",
     "title": "Coordinated GPAI inquiry",
-    "text": "The AI Office opens a coordinated inquiry into general-purpose model providers — and since the Digital Omnibus it wields real fining powers over GPAI providers (up to 3% of global turnover or EUR 15M). Your model documentation is requested.",
+    "text": "The AI Office opens a coordinated inquiry into general-purpose model providers — and since 2 August 2026 the Commission can fine GPAI providers (Art. 101: up to 3% of global turnover or EUR 15M). Your model documentation is requested.",
     "weight": {
      "holdings": [
       "map-eu"
@@ -6167,8 +6212,8 @@
      "type": "audit",
      "territory": "match"
     },
-    "citation": "Ch6 §GPAI; Digital Omnibus (Council adoption 2026-06-29)",
-    "asOf": "2026-08-02",
+    "citation": "Ch6 §GPAI; AI Act Arts 101, 113",
+    "asOf": "2026-10-02",
     "externalSource": true
    },
    {
@@ -6197,7 +6242,7 @@
    {
     "id": "ii-rr-ev-03",
     "title": "Incident-readiness sweep",
-    "text": "A hospital customer reports a malfunction. The AI Office runs a readiness sweep: your post-market monitoring and serious-incident process will be duties when the deferred high-risk regime binds from 2 December 2027 — regulators are checking preparedness now.",
+    "text": "A hospital customer reports a malfunction. A national market-surveillance authority runs a readiness sweep: post-market monitoring and serious-incident duties bind from 2 December 2027 for Annex III systems and 2 August 2028 for AI in Annex I products such as medical devices — regulators are checking preparedness now.",
     "weight": {
      "holdings": [
       "map-eu"
@@ -6214,8 +6259,8 @@
      "type": "audit",
      "territory": "match"
     },
-    "citation": "Ch6 §Post-Market Monitoring; Digital Omnibus deferral to 2027-12-02",
-    "asOf": "2026-08-02",
+    "citation": "Ch6 §Post-Market Monitoring; AI Act Art. 113 as amended by Reg. (EU) 2026/1744 (Annex III 2027-12-02; Annex I 2028-08-02)",
+    "asOf": "2026-10-02",
     "externalSource": true
    },
    {
@@ -6679,7 +6724,7 @@
    {
     "id": "ii-rr-ev-25",
     "title": "EU regulatory-sandbox admission",
-    "text": "A member-state sandbox — every member state must now have at least one operational — offers your novel system supervised testing with regulatory cover.",
+    "text": "A member-state AI regulatory sandbox — some states run one already; all must by 2 August 2027 — offers your novel system supervised testing with regulatory cover.",
     "weight": {
      "holdings": [
       "map-eu"
@@ -6696,8 +6741,8 @@
      "reward": 1,
      "penalty": 0
     },
-    "citation": "Ch6 §Sandboxes; EU AI Act Art. 57",
-    "asOf": "2026-08-02"
+    "citation": "Ch6 §Sandboxes; EU AI Act Art. 57(1) as amended by Reg. (EU) 2026/1744",
+    "asOf": "2026-10-02"
    },
    {
     "id": "ii-rr-ev-26",
@@ -6893,7 +6938,7 @@
    {
     "id": "ii-rr-ev-36",
     "title": "Digital Omnibus reshuffles the deadlines",
-    "text": "The June 2026 Digital Omnibus rewrote the EU AI Act timeline: Annex III high-risk duties now bind from 2 December 2027 (embedded systems 2028). Binding today: prohibitions and AI literacy, GPAI duties with fining powers, Article 50 transparency, and member-state sandboxes.",
+    "text": "The Digital Omnibus (Regulation (EU) 2026/1744, in force 27 July 2026) rewrote the EU AI Act timeline: Annex III high-risk duties now bind from 2 December 2027 (Annex I embedded systems 2 August 2028) and the member-state sandbox deadline moved to 2 August 2027. Binding today: prohibitions, the softened AI-literacy duty, GPAI duties with fining powers, and Article 50 transparency.",
     "weight": {
      "holdings": [
       "map-eu"
@@ -6907,8 +6952,8 @@
     "effect": {
      "type": "info"
     },
-    "citation": "Digital Omnibus (Parliament 2026-06-16, Council 2026-06-29)",
-    "asOf": "2026-08-02",
+    "citation": "Regulation (EU) 2026/1744 (adopted 8 July 2026; OJ 24 July 2026; in force 27 July 2026)",
+    "asOf": "2026-10-02",
     "externalSource": true
    },
    {
