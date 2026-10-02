@@ -15,31 +15,31 @@
    "asOf": "2026-08",
    "steps": [
     {
-     "label": "Physical (1) — bits on the wire",
+     "label": "Physical — bits on the wire",
      "detail": "Converts data into electrical, optical, or radio signal and puts it on the medium. Every other layer's work is meaningless until something is actually carrying signal, which is why this is the layer nothing else can precede."
     },
     {
-     "label": "Data Link (2) — frames + MAC addressing",
+     "label": "Data Link — frames + MAC addressing",
      "detail": "Wraps bits into frames and adds hardware (MAC) addressing so devices sharing one physical medium can tell who a frame is meant for. This only becomes necessary once more than one device shares that medium — a point-to-point link barely needs it, a shared segment can't function without it."
     },
     {
-     "label": "Network (3) — packets + logical addressing",
+     "label": "Network — packets + logical addressing",
      "detail": "Adds IP addressing and routing so traffic can be forwarded beyond the local segment. MAC addressing alone doesn't scale past one segment — a router has to make a forwarding decision using an address that means something across the whole path, not just the next hop."
     },
     {
-     "label": "Transport (4) — segments/datagrams + ports",
+     "label": "Transport — segments/datagrams + ports",
      "detail": "Adds port numbers and, for TCP, sequencing and acknowledgment, so multiple applications on one host can be told apart and (optionally) guaranteed delivery. This only matters once a single IP address is shared by many running processes at once."
     },
     {
-     "label": "Session (5) — dialogue management",
+     "label": "Session — dialogue management",
      "detail": "Establishes, maintains, and tears down a conversation between two hosts across possibly many transport-layer exchanges. This is a distinct job from Transport because a session can span reconnects and multiple segments — the dialogue's identity has to outlive any one segment."
     },
     {
-     "label": "Presentation (6) — common format",
+     "label": "Presentation — common format",
      "detail": "Translates data into a representation both ends agree on — character encoding, compression, encryption — before the receiving application ever sees it. This has to happen after a session exists but before an application can make sense of the bytes."
     },
     {
-     "label": "Application (7) — the user-facing service",
+     "label": "Application — the user-facing service",
      "detail": "The actual protocol the requesting program speaks — HTTP, DNS, SMTP. It sits last because it has no housekeeping left to hand off; every layer below exists purely to get its data there intact."
     }
    ]
@@ -106,19 +106,19 @@
    "asOf": "2026-08",
    "steps": [
     {
-     "label": "ARP spoofing — Data Link (2)",
+     "label": "ARP spoofing",
      "detail": "Forges ARP replies binding the attacker's MAC address to a trusted IP, such as the default gateway, hijacking address-resolution trust that only exists within one local segment. It sits at Layer 2 because ARP itself is a Data Link broadcast mechanism — the attack corrupts an address mapping, not a transport handshake, a session token, or rendered content, which is what would move it to a higher layer."
     },
     {
-     "label": "SYN flood — Transport (4)",
+     "label": "SYN flood",
      "detail": "Sends a flood of spoofed, unreachable SYNs that never complete TCP's three-way handshake, exhausting the target's table of half-open connections. It sits at Transport because the resource being exhausted is TCP's own per-connection state — not an address mapping (that would be Layer 2) and not an already-established, authenticated session (that would be Layer 5)."
     },
     {
-     "label": "Session hijacking — Session (5)",
+     "label": "Session hijacking",
      "detail": "Steals or predicts a session identifier to take over a conversation that already completed its handshake and authentication, rather than exhausting connection-table resources like a SYN flood or forging an address mapping like ARP spoofing. It sits at the Session layer because the target is the continuity of one specific ongoing dialogue, not the connection's setup or a rendered page."
     },
     {
-     "label": "Cross-site scripting (XSS) — Application (7)",
+     "label": "Cross-site scripting (XSS)",
      "detail": "Injects malicious script into a page or response so a victim's browser executes it as trusted content from a site the victim already trusts. It sits at Application because it exploits how a web application renders and trusts input — nothing about it touches address resolution, handshake state, or session-token continuity, which is what the three lower-layer attacks abuse instead."
     }
    ]

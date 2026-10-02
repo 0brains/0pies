@@ -3,6 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Anonymous by design (ADR 0004): this policy blocks every request to another site. -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: file:; font-src 'self' data: file:; connect-src 'self' file:; media-src 'self' file:; object-src 'none'; frame-src 'none'; worker-src 'none'; base-uri 'none'; form-action 'none'">
 <title>__LAB_TITLE__</title>
 <link rel="stylesheet" href="assets/fonts/fonts.css">
 <link rel="icon" type="image/svg+xml" href="assets/misc/favicon.svg">
@@ -1502,6 +1504,14 @@ function dealBoard(){
   };
   state.placed={}; state.sel=null; state.checked=false; state.scored=false;
 }
+// Display order for pick-one choices must carry no information: the agent
+// playtest baseline (2026-10-02) found pair cards always listed with their
+// answer first and desk options with the answer first, so "always pick the
+// first" scored 95-100%. Order is seeded per page load (stable while a card is
+// on screen, different on the next visit) and per item.
+const ORDER_SALT = (Math.random() * 0x7fffffff) | 0;
+function strSeed(s){ let h = 2166136261; for(const c of String(s)){ h ^= c.charCodeAt(0); h = Math.imul(h, 16777619); } return h >>> 0; }
+function displayOrder(arr, key){ return shuffle(arr, (strSeed(key) ^ ORDER_SALT) >>> 0); }
 function shuffle(arr, seed){
   let h = 2166136261 ^ seed;
   return arr.map((v,i)=>{ h = (h*16777619) ^ (i+1); return [v,(h>>>0)]; })
@@ -1876,7 +1886,7 @@ function renderPairs(){
   const side = k => {
     const v = p[k];
     return `<div class="variant"><p>${esc(v.text)}</p><div class="pick">` +
-      p.buckets.map(o => {
+      displayOrder(p.buckets, p.id + ":buckets").map(o => {
         let cls="";
         if(state.checked) cls = o===v.answer ? "correct" : (state.pairPick[k]===o ? "wrong":"");
         return `<button class="${cls}" data-side="${k}" data-opt="${esc(o)}"
@@ -1887,7 +1897,7 @@ function renderPairs(){
   };
 
   let body = `<p class="hint">${esc(t("pairs.hint"))}</p>
-    <div class="flip">${side("a")}${side("b")}</div>`;
+    <div class="flip">${displayOrder(["a","b"], p.id + ":sides").map(side).join("")}</div>`;
 
   if(!state.checked){
     const both = state.pairPick.a!==undefined && state.pairPick.b!==undefined;
@@ -4130,7 +4140,7 @@ function renderDesk(){
   let body = `<div class="scenario">${esc(c.brief)}</div>`;
   if(c.currency) body += currencyHtml(c.currency);
   body += c.steps.map(s => `<div class="field"><label>${esc(s.q)}</label><div class="pick">` +
-    s.options.map(o => {
+    displayOrder(s.options, s.id + ":options").map(o => {
       let cls="";
       if(state.checked) cls = o===s.answer ? "correct" : (state.deskPick[s.id]===o ? "wrong":"");
       return `<button class="${cls}" data-step="${s.id}" data-opt="${esc(o)}"
