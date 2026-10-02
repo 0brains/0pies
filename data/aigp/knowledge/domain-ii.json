@@ -1155,9 +1155,9 @@
  "timeline": {
   "id": "II-timeline-global",
   "title": "Global Obligations Timeline",
-  "asOf": "2026-07-29",
+  "asOf": "2026-10-02",
   "prompt": "Place each milestone on the timeline, then answer: on a given date, which obligations actually bind you?",
-  "note": "Jurisdictions marked scope \"horizon\" are professional currency rather than blueprint content; they are excluded from mastery scoring. \"Ongoing / uncertain\" covers proposed bills and rolling state/regional developments with no confirmed date.",
+  "note": "Jurisdictions marked scope \"horizon\" are professional currency rather than blueprint content; they are excluded from mastery scoring. \"Ongoing / uncertain\" covers proposed bills and rolling state/regional developments with no confirmed date. Buckets are set as of 2 October 2026: anything dated on or before that day is \"Already in force\".",
   "buckets": [
    "Already in force",
    "H2 2026",
@@ -1392,7 +1392,7 @@
     "instrument": "EU AI Act",
     "milestone": "Transparency obligations apply (AI-interaction disclosure, marked synthetic content)",
     "date": "2 Aug 2026",
-    "bucket": "H2 2026",
+    "bucket": "Already in force",
     "status": "stable",
     "scope": "bok",
     "note": "Chatbot disclosure, machine-readable provenance marking and deepfake/public-interest labelling. Generative systems already on the market before this date have until 2 Dec 2026 for Art. 50(2) marking (Digital Omnibus)."
@@ -1403,7 +1403,7 @@
     "instrument": "EU AI Act",
     "milestone": "Broadly applicable, subject to transition exceptions (Annex III and Annex I deferred)",
     "date": "2 Aug 2026",
-    "bucket": "H2 2026",
+    "bucket": "Already in force",
     "status": "stable",
     "scope": "bok",
     "note": "Complete AI inventory/classification and assign provider/deployer/importer/distributor roles."
@@ -1414,7 +1414,7 @@
     "instrument": "Cyber Resilience Act",
     "milestone": "Vulnerability and severe-incident reporting applies",
     "date": "11 Sep 2026",
-    "bucket": "H2 2026",
+    "bucket": "Already in force",
     "status": "stable",
     "scope": "bok",
     "note": "For AI-enabled products with digital elements: vulnerability handling, coordinated disclosure, SBOM and reporting."
@@ -1644,7 +1644,7 @@
  "map": {
   "id": "II-map-jurisdictions",
   "title": "Jurisdiction Map",
-  "asOf": "2026-08-02",
+  "asOf": "2026-10-02",
   "prompt": "Match each instrument to its jurisdiction, then answer what actually binds you there.",
   "note": "Positions are the real coordinates of each jurisdiction, projected onto a Miller-style world map. Labels for dense regions are nudged clear of their marker; the marker itself is always at the true location.",
   "legend": [
