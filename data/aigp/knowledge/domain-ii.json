@@ -1246,7 +1246,7 @@
    {
     "id": "tl-uk-001",
     "jurisdiction": "United Kingdom",
-    "instrument": "Regulator-led regime (ICO, FCA, PRA, CMA, Ofcom, AI Safety Institute)",
+    "instrument": "Regulator-led regime (ICO, FCA, PRA, CMA, Ofcom; AI Security Institute advises)",
     "milestone": "No omnibus AI Act",
     "date": "current",
     "bucket": "Already in force",
@@ -1868,13 +1868,15 @@
     "instruments": [
      "Pro-innovation framework",
      "UK GDPR",
+     "Data (Use and Access) Act 2025",
      "existing regulators"
     ],
     "effective": "framework guidance",
     "obligations": [
      "No comprehensive AI statute",
      "Cross-sector principles delivered through existing regulators",
-     "UK GDPR continues to apply"
+     "UK GDPR continues to apply; DUAA automated-decision rules in force since 2026-02-05",
+     "AI policy moved in July 2026: BIST (AI policy) and the Cabinet Office (AI strategy, AI Security Institute)"
     ],
     "tell": "Principles delegated to existing regulators rather than a new statute.",
     "lat": 54.0,
@@ -2847,14 +2849,14 @@
     "q": "Your firm expands into the UK. Who will actually apply the five cross-sector AI principles to your business?",
     "options": [
      "Existing sectoral regulators — the ICO, FCA, Ofcom and peers — each within its own statutory remit",
-     "A dedicated central AI regulator created for the purpose",
-     "DSIT, which enforces the principles directly against firms",
+     "A dedicated central AI regulator created by statute to supervise every AI system placed on the UK market",
+     "The central government department for AI, which enforces the principles directly against firms",
      "No one — the principles have no supervisory owner"
     ],
     "answer": "Existing sectoral regulators — the ICO, FCA, Ofcom and peers — each within its own statutory remit",
-    "why": "Nearest confusable is (b): the UK deliberately created no central AI regulator — the principles route through existing sectoral remits, so one AI system can face the ICO on data, the FCA on financial services and Ofcom on content. DSIT (c) coordinates policy and steers the framework; it does not enforce against firms. (d) understates: regulators apply the principles through their existing statutory powers.",
-    "citation": "AIGP Study Guide §II.C UK pro-innovation approach; DSIT Blueprint for AI regulation (Oct 2025)",
-    "asOf": "2026-08-02",
+    "why": "Nearest confusable is a central AI regulator: the UK deliberately created none — the principles route through existing sectoral remits, so one AI system can face the ICO on data, the FCA on financial services and Ofcom on content. No department enforces the principles against firms either — policy ownership itself moved in July 2026, when DSIT's functions were redistributed (AI policy to BIST; AI strategy and the AI Security Institute to the Cabinet Office). 'No one' understates: regulators apply the principles through their existing statutory powers.",
+    "citation": "AIGP Study Guide §II.C UK pro-innovation approach; DSIT Blueprint for AI regulation (Oct 2025); gov.uk Machinery of Government changes: Fact Sheet (2026-07-22)",
+    "asOf": "2026-10-02",
     "externalSource": true
    },
    {
@@ -2934,15 +2936,15 @@
     "fact": "uk-growth-bill-status",
     "q": "The Regulating for Growth Bill announced in the May 2026 King's Speech would give the UK…",
     "options": [
-     "Cross-economy AI sandbox powers ('AI Growth Labs') and statutory backing for AISI — but it is still a proposal before Parliament",
-     "An EU-style AI Act with risk tiers",
-     "Binding duties already in force since May 2026",
-     "A statutory duty on the ICO to write an AI code"
+     "Cross-economy sandbox powers, including AI sandboxes, and a stronger growth duty on regulators — but no Bill has been introduced",
+     "An EU-style AI Act with risk tiers, conformity assessment and a new central AI regulator for high-risk systems",
+     "Binding AI duties for every regulated firm, already in force since the King's Speech set out the government's programme in May 2026",
+     "A statutory duty on the ICO to produce an AI code of practice for automated decision-making"
     ],
-    "answer": "Cross-economy AI sandbox powers ('AI Growth Labs') and statutory backing for AISI — but it is still a proposal before Parliament",
-    "why": "Nearest confusable is (c): a King's Speech announcement is not law — the Bill remains before Parliament. (d) is the SEPARATE SI 2026/425, which IS in force; (b) is what the Bill deliberately is not — the UK is legislating for sandboxes, not for an AI Act.",
-    "citation": "King's Speech 2026-05-13 — Regulating for Growth Bill (proposed)",
-    "asOf": "2026-08-02",
+    "answer": "Cross-economy sandbox powers, including AI sandboxes, and a stronger growth duty on regulators — but no Bill has been introduced",
+    "why": "Nearest confusable is 'already in force': a King's Speech announcement is not law — as of October 2026 no Regulating for Growth Bill has been introduced. The ICO code duty is the SEPARATE SI 2026/425, in force since 2026-05-12; an EU-style AI Act is what the Bill deliberately is not — the UK is legislating for sandboxes, not an AI Act. The briefing does not propose putting the AI Security Institute on a statutory footing.",
+    "citation": "King's Speech 2026 background briefing notes (2026-05-13); UK Parliament Bills API (checked 2026-10-02)",
+    "asOf": "2026-10-02",
     "externalSource": true
    },
    {
@@ -2978,13 +2980,13 @@
     "q": "A client asks: 'Surely the UK has its own AI Act by now?' The correct answer is:",
     "options": [
      "No — the October 2025 Blueprint confirmed the regulator-led route, and the anticipated AI Bill never materialised",
-     "Yes — the Data (Use and Access) Act 2025 is the UK's AI Act",
-     "Yes — the Regulating for Growth Bill became law in May 2026"
+     "Yes — the Data (Use and Access) Act 2025 is the UK's AI Act, with its automated-decision rules in force",
+     "Yes — the Regulating for Growth Bill, announced in the May 2026 King's Speech, became the UK's AI Act that same month"
     ],
     "answer": "No — the October 2025 Blueprint confirmed the regulator-led route, and the anticipated AI Bill never materialised",
-    "why": "Nearest confusable is (b): the DUAA is data-protection law that happens to reshape automated-decision rules — it is not an AI statute. (c) fails on status: the Regulating for Growth Bill was only ANNOUNCED in the King's Speech and remains before Parliament.",
-    "citation": "DSIT Blueprint for AI regulation (Oct 2025); House of Commons Library — AI regulation in the UK",
-    "asOf": "2026-08-02",
+    "why": "Nearest confusable is the Data (Use and Access) Act: it is data-protection law that reshapes automated-decision rules (in force since 2026-02-05) — it is not an AI statute. The Regulating for Growth Bill fails on status: it was only ANNOUNCED in the King's Speech and, as of October 2026, has not been introduced.",
+    "citation": "DSIT Blueprint for AI regulation (Oct 2025); UK Parliament Bills API (checked 2026-10-02)",
+    "asOf": "2026-10-02",
     "externalSource": true
    },
    {
