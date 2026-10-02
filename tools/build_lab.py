@@ -383,6 +383,18 @@ def extract_translatables(data) -> dict:
     return out
 
 
+def untranslated_paths(fields: dict, got: dict, snapshot: dict) -> set[str]:
+    """Paths an overlay is missing that the build must reject.
+
+    fields: {path: current English}; got: the overlay's {path: text} for the
+    same id; snapshot: {path: English the overlay was translated from}. A path
+    whose English changed since the snapshot (or is new) is pending
+    re-translation, so its absence is allowed and the page falls back to
+    English; a path whose English is unchanged must be translated.
+    """
+    return {p for p in set(fields) - set(got) if snapshot.get(p) == fields[p]}
+
+
 def registry_keys(template: str) -> set[str]:
     """The adapter names the engine actually implements.
 
@@ -1409,6 +1421,14 @@ def build(lab_id: str, template: str, adapters: set[str], langs: list[dict] = No
     # does not carry the flag keeps the full check; the runtime already falls
     # back to English cards when an overlay is absent (lab.html's overlay fetch
     # swallows the miss), so the page degrades exactly as it does on file://.
+    #
+    # Pending re-translation: data/i18n/source/<ref> is the English snapshot the
+    # overlays were translated from (written by --extract-i18n). When an English
+    # string is corrected, its stale translations are deleted rather than left
+    # teaching the old fact; a path may then be missing from an overlay only
+    # while its English differs from (or is absent in) that snapshot. The page
+    # shows English for it until the overlay is re-translated and the snapshot
+    # re-extracted. Unchanged English must still be fully translated.
     overlays: dict[str, dict] = {}
     for l in ([] if manifest.get("untranslated") else (langs or [])):
         if not l.get("cards") or l["code"] == "en":
@@ -1416,6 +1436,8 @@ def build(lab_id: str, template: str, adapters: set[str], langs: list[dict] = No
         code, bundle = l["code"], {}
         for ref, deck in decks.items():
             src = extract_translatables(deck)
+            snap_path = I18N_DIR / "source" / ref
+            snap = load_json(snap_path) if snap_path.exists() else {}
             rel = Path(ref)
             rel2 = rel.relative_to("decks") if rel.parts[0] == "decks" else rel
             tp = I18N_DIR / "decks" / rel2.parent / f"{rel2.stem}.{code}.json"
@@ -1425,7 +1447,7 @@ def build(lab_id: str, template: str, adapters: set[str], langs: list[dict] = No
             tr = load_json(tp)
             for iid, fields in src.items():
                 got = tr.get(iid, {})
-                miss = set(fields) - set(got)
+                miss = untranslated_paths(fields, got, snap.get(iid, {}))
                 if miss:
                     errors.append(f"i18n[{code}] {ref}#{iid}: untranslated {sorted(miss)[:4]}")
                 unknown = set(got) - set(fields)

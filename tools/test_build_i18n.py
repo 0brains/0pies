@@ -181,3 +181,25 @@ if __name__ == "__main__":
         fn()
         print(f"ok {fn.__name__}")
     print("ALL OK")
+
+
+# --- card-overlay gate: pending re-translation -------------------------------
+
+def test_untranslated_path_with_unchanged_english_is_blocking():
+    fields = {"why": "same English"}
+    assert build_lab.untranslated_paths(fields, {}, {"why": "same English"}) == {"why"}
+
+
+def test_corrected_english_may_drop_its_stale_translation():
+    fields = {"why": "corrected English"}
+    assert build_lab.untranslated_paths(fields, {}, {"why": "old English"}) == set()
+
+
+def test_new_string_absent_from_snapshot_is_pending_not_blocking():
+    assert build_lab.untranslated_paths({"note": "new"}, {}, {}) == set()
+
+
+def test_translated_path_is_never_reported():
+    fields = {"why": "x", "text": "y"}
+    got = {"why": "traduit", "text": "traduit"}
+    assert build_lab.untranslated_paths(fields, got, {"why": "x", "text": "y"}) == set()
