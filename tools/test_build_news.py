@@ -283,23 +283,73 @@ def main():
     assert "filter-chip" in fpage
     print("ok tag-filter")
 
-    from urllib.parse import quote
-    first = GOOD["items"][0]
+    # Explore/share buttons are built once in the browser from a template and
+    # each story's data attributes — not pre-encoded twelve times per story,
+    # which is what pushed the page past the 32 MiB serving limit.
     for host in ("https://chatgpt.com/?q=", "https://claude.ai/new?q=",
-                 "https://www.perplexity.ai/search?q=", "https://www.google.com/search?udm=50&amp;q="):
-        assert host in fpage, f"missing explore link {host}"
-    assert quote(first["sourceUrl"], safe="") in fpage  # prompt carries the source URL
-    assert fpage.count("explore-row") >= len([i for i in GOOD["items"] if i.get("section") != "trending"])
+                 "https://www.perplexity.ai/search?q=", "https://www.google.com/search?udm=50&q="):
+        assert fpage.count(host) == 1, f"explore endpoint {host} should appear once, in the script"
+    stories = [i for i in GOOD["items"] if i.get("section") != "trending"]
+    assert fpage.count('<div class="explore-row" hidden></div>') == len(stories)
+    assert fpage.count('<div class="share-row" hidden></div>') == len(stories)
+    first = stories[0]
+    assert f'data-src="{escape(first["sourceName"])}"' in fpage and f'data-date="{first["date"]}"' in fpage
     for svc in ("ChatGPT", "Claude", "Perplexity", "Gemini"):
         assert f'aria-label="Explore with {svc}"' in fpage  # logo-only links stay labelled
-    assert 'class="ai-gemini"' in fpage and fpage.count("<svg viewBox=\"0 0 24 24\"") >= 4
+    assert 'class="ai-gemini"' in fpage and "Explore this AI news story" in fpage
     print("ok explore-ai")
+
+    check_page_budget(index_html)
 
     for rule in ('--cat:var(--legislation)', '--cat:var(--secondary)',
                  '--cat:var(--microsoft)', '--cat:var(--aigp)'):
         assert rule in fpage, f"missing category colour mapping {rule}"
     assert ".news-item .news-tag{background:var(--cat, var(--primary))}" in fpage
     print("ok category-colours")
+
+def _synthetic(n_per_month: dict) -> dict:
+    items = []
+    for month, n in n_per_month.items():
+        for k in range(n):
+            items.append({"id": f"s-{month}-{k}", "date": f"{month}-{1 + k % 28:02d}", "asOf": f"{month}-28",
+                          "tag": "AI news", "title": f"Synthetic AI story {month} {k} " + "x" * 80,
+                          "summary": "A summary of an AI story. " * 12, "sourceName": "Example News",
+                          "sourceUrl": f"https://example.org/{month}/{k}"})
+    items.sort(key=lambda i: (i["date"], i["id"]), reverse=True)
+    return {"feed": GOOD["feed"], "items": items}
+
+
+def check_page_budget(index_html: str) -> None:
+    """The live archive had 2,962 stories when news.html hit 52.9 MB and the
+    function started returning 500. The page must stay small at any size."""
+    data = _synthetic({"2026-07": 900, "2026-08": 1100, "2026-09": 1500, "2026-10": 60})
+    page = build_news.render_page(data, index_html)
+    assert len(page.encode()) < 2_000_000, f"news.html is {len(page.encode()):,} bytes for 3,560 stories"
+    assert page.count('<article class="news-item') == build_news.PAGE_LIMIT
+    newest = data["items"][0]["id"]
+    assert f'id="{newest}"' in page
+    # History stays reachable: one archive link per month, newest first, with counts.
+    for month, n in (("2026-10", 60), ("2026-09", 1500), ("2026-08", 1100), ("2026-07", 900)):
+        assert f'href="news.html?m={month}"' in page, month
+    assert page.index("?m=2026-10") < page.index("?m=2026-07")
+    print("ok page-budget")
+
+    arch = build_news.render_archive(data, index_html, "2026-08")
+    assert arch.count('<article class="news-item') == 1100
+    assert 'id="s-2026-08-0"' in arch and 's-2026-09-' not in arch
+    assert len(arch.encode()) < 4_000_000
+    assert '<a class="active" href="news.html?m=2026-08"' in arch or 'aria-current="page"' in arch
+    try:
+        build_news.render_archive(data, index_html, "2019-01")
+        raise AssertionError("an empty month must not render")
+    except ValueError:
+        pass
+    print("ok month-archive")
+
+    stub = build_news.render_share_stub(data["items"][-1], GOOD["feed"]["pageUrl"])
+    assert "news.html?m=2026-07#s-2026-07-" in stub  # share links land on the story's month
+    print("ok share-stub-month")
+
 
 if __name__ == "__main__":
     main()

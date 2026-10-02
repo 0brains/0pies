@@ -212,6 +212,14 @@ NEWS_STYLES = """<style id="news-styles">
 .share-row a svg{width:15px;height:15px;display:block}
 .share-row a:hover{transform:translate(2px,2px);box-shadow:0 0 0 0 var(--edge);
   background:var(--primary);color:#1a1c1c}
+.explore-row[hidden],.share-row[hidden]{display:none}
+.archive-nav{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:28px;font-size:12px}
+.archive-nav .lbl{font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--dim)}
+.archive-nav a{border:2px solid var(--edge);background:var(--panel2);color:var(--ink);font-weight:700;
+  text-decoration:none;padding:6px 10px;min-height:32px;display:inline-flex;gap:6px;align-items:center}
+.archive-nav a[aria-current="page"]{background:var(--primary);color:#1a1c1c}
+.archive-nav a .n{color:var(--dim);font-weight:400}
+.archive-note{font-size:13px;color:var(--dim);margin:14px 0 0}
 </style>
 """
 
@@ -232,25 +240,25 @@ _LOGO_PATHS = (REPO / "tools" / "templates" / "ai-logos.json",
 AI_LOGOS = json.loads(next(p for p in _LOGO_PATHS if p.exists()).read_text(encoding="utf-8"))
 
 
-def _explore_html(item: dict) -> str:
-    from urllib.parse import quote
-    prompt = (
-        "Explore this AI news story and go deeper.\n\n"
-        f"Title: {item['title']}\n"
-        f"Source: {item['sourceName']}, {item['date']} — {item['sourceUrl']}\n"
-        f"Summary: {item['summary']}\n\n"
-        "Please: 1) summarise what actually happened, 2) explain why it matters "
-        "for AI governance, security and compliance, 3) note what to watch next. "
-        "Cite your sources."
-    )
-    q = quote(prompt, safe="")
+EXPLORE_PROMPT = (
+    "Explore this AI news story and go deeper.\n\n"
+    "Title: {title}\n"
+    "Source: {source}, {date} — {url}\n"
+    "Summary: {summary}\n\n"
+    "Please: 1) summarise what actually happened, 2) explain why it matters "
+    "for AI governance, security and compliance, 3) note what to watch next. "
+    "Cite your sources."
+)
+
+
+def _explore_template() -> str:
     links = "".join(
-        f'<a href="{escape(base)}{q}" target="_blank" rel="noopener noreferrer" '
+        f'<a target="_blank" rel="noopener noreferrer" data-ai="{slug}" '
         f'aria-label="Explore with {name}" title="Explore with {name}" class="ai-{slug}">'
         f'<svg viewBox="0 0 24 24" fill="{AI_LOGOS[slug]["fill"]}" aria-hidden="true" '
         f'focusable="false">{AI_LOGOS[slug]["inner"]}</svg></a>'
-        for slug, name, base in EXPLORE_AI)
-    return f'      <div class="explore-row"><span class="lbl">Explore with AI</span>{links}</div>\n'
+        for slug, name, _ in EXPLORE_AI)
+    return f'<template id="explore-tpl"><span class="lbl">Explore with AI</span>{links}</template>\n'
 
 
 # Same networks and endpoints as the page-level share modal in index.html.
@@ -286,8 +294,9 @@ def share_url(item: dict, page_url: str) -> str:
 
 def render_share_stub(item: dict, page_url: str) -> str:
     """Tiny page served at /n/<id>: Open Graph card for crawlers, instant
-    redirect to the anchored story for people."""
-    target = f"{page_url}#{item['id']}"
+    redirect to the anchored story for people — on its month's archive page,
+    which always holds it (the main page only shows the newest stories)."""
+    target = f"{page_url}?m={item['date'][:7]}#{item['id']}"
     title = escape(item["title"])
     desc = escape(f"{item['summary']} (Source: {item['sourceName']}, as of {item['asOf']}.)")
     origin = page_url.rsplit("/", 1)[0]
@@ -315,17 +324,45 @@ def render_share_stub(item: dict, page_url: str) -> str:
     )
 
 
-def _share_html(item: dict, page_url: str) -> str:
-    from urllib.parse import quote
-    u = quote(share_url(item, page_url), safe="")
-    t = quote(item["title"], safe="")
+def _share_template() -> str:
     links = "".join(
-        f'<a href="{escape(tpl.format(t=t, u=u))}" target="_blank" rel="noopener noreferrer" '
+        f'<a target="_blank" rel="noopener noreferrer" data-net="{n}" '
         f'aria-label="Share on {name}" title="Share on {name}">'
         f'<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">'
         f'<path d="{path}"/></svg></a>'
-        for name, tpl, path in SHARE_NETS)
-    return f'      <div class="share-row"><span class="lbl">Share</span>{links}</div>\n'
+        for n, (name, _, path) in enumerate(SHARE_NETS))
+    return f'<template id="share-tpl"><span class="lbl">Share</span>{links}</template>\n'
+
+
+def _buttons_script(page_url: str) -> str:
+    """Explore/share links for every story, built in the browser from one
+    template and each story's own text. Pre-encoding twelve links per story
+    made each story ~18 KB of markup; at 2,962 stories news.html reached
+    52.9 MB, past the 32 MiB serving limit, and the page returned 500.
+    The CSP allows inline scripts; without JS the rows simply stay hidden."""
+    bases = json.dumps({slug: base for slug, _, base in EXPLORE_AI})
+    nets = json.dumps([tpl for _, tpl, _ in SHARE_NETS])
+    origin = json.dumps(page_url.rsplit("/", 1)[0])
+    prompt = json.dumps(EXPLORE_PROMPT, ensure_ascii=False)
+    return (
+        _explore_template() + _share_template() +
+        "<script>\n(() => {\n"
+        f"  const AI = {bases}, NETS = {nets}, ORIGIN = {origin}, PROMPT = {prompt};\n"
+        '  const ex = document.getElementById("explore-tpl"), sh = document.getElementById("share-tpl");\n'
+        '  const fill = (s, v) => s.replace(/\\{(\\w+)\\}/g, (m, k) => k in v ? v[k] : m);\n'
+        '  document.querySelectorAll("article.news-item").forEach(a => {\n'
+        '    const link = a.querySelector(".news-src a");\n'
+        '    const v = {title: a.querySelector("h3").textContent, summary: (a.querySelector("h3 + p") || {}).textContent || "",\n'
+        '               source: a.dataset.src, date: a.dataset.date, url: link ? link.href : ""};\n'
+        '    const q = encodeURIComponent(fill(PROMPT, v));\n'
+        '    const er = a.querySelector(".explore-row"), sr = a.querySelector(".share-row");\n'
+        '    er.append(ex.content.cloneNode(true));\n'
+        '    er.querySelectorAll("a[data-ai]").forEach(l => { l.href = AI[l.dataset.ai] + q; });\n'
+        '    const sv = {t: encodeURIComponent(v.title), u: encodeURIComponent(ORIGIN + "/n/" + a.id)};\n'
+        '    sr.append(sh.content.cloneNode(true));\n'
+        '    sr.querySelectorAll("a[data-net]").forEach(l => { l.href = fill(NETS[+l.dataset.net], sv); });\n'
+        "    er.hidden = sr.hidden = false;\n"
+        "  });\n})();\n</script>\n")
 
 
 def _news_item_html(item: dict, page_url: str) -> str:
@@ -333,7 +370,8 @@ def _news_item_html(item: dict, page_url: str) -> str:
     if item.get("status"):
         status = f'      <p class="news-status">⚠ {escape(item["status"])}</p>\n'
     return (
-        f'    <article class="news-item brutal brutal-shadow" id="{escape(item["id"])}" data-cat="{category_of(item)}">\n'
+        f'    <article class="news-item brutal brutal-shadow" id="{escape(item["id"])}" data-cat="{category_of(item)}"'
+        f' data-src="{escape(item["sourceName"])}" data-date="{item["date"]}">\n'
         '      <div class="tagline">\n'
         f'        <span class="news-tag">{escape(item["tag"])}</span>\n'
         f'        <span class="news-dates">{item["date"]} · as of {item["asOf"]}</span>\n'
@@ -343,8 +381,8 @@ def _news_item_html(item: dict, page_url: str) -> str:
         + status +
         f'      <p class="news-src">{escape(item["sourceName"])} — '
         f'<a href="{escape(item["sourceUrl"])}" target="_blank" rel="noopener noreferrer">Open source ↗</a></p>\n'
-        + _explore_html(item)
-        + _share_html(item, page_url) +
+        + '      <div class="explore-row" hidden></div>\n'
+        + '      <div class="share-row" hidden></div>\n' +
         "    </article>\n"
     )
 
@@ -388,11 +426,52 @@ def _filter_bar_html(stories: list[dict]) -> str:
         "    </script>\n")
 
 
-def _middle_html(data: dict) -> str:
+# news.html shows the newest stories only; every story stays on its month's
+# archive page (news.html?m=YYYY-MM), so the history is complete and no single
+# page grows with the archive.
+PAGE_LIMIT = 200
+MONTH_RE = re.compile(r"^\d{4}-\d{2}$")
+
+
+def _stories(data: dict) -> list[dict]:
+    return [i for i in data["items"] if i.get("section") != "trending"]
+
+
+def months(data: dict) -> list[tuple[str, int]]:
+    """[(YYYY-MM, story count)], newest month first."""
+    counts: dict[str, int] = {}
+    for i in _stories(data):
+        counts[i["date"][:7]] = counts.get(i["date"][:7], 0) + 1
+    return sorted(counts.items(), reverse=True)
+
+
+def month_label(month: str) -> str:
+    from datetime import date as _date
+    return _date(int(month[:4]), int(month[5:]), 1).strftime("%B %Y")
+
+
+def _archive_nav_html(data: dict, current: str | None) -> str:
+    links = "".join(
+        f'<a href="news.html?m={m}"{" aria-current=\"page\"" if m == current else ""}>'
+        f'{month_label(m)} <span class="n">{n}</span></a>'
+        for m, n in months(data))
+    latest = '<a href="news.html">Latest</a>' if current else ""
+    return (f'  <nav class="archive-nav" aria-label="News archive by month">'
+            f'<span class="lbl">Archive</span>{latest}{links}</nav>\n')
+
+
+def _middle_html(data: dict, shown: list[dict], month: str | None = None) -> str:
     feed = data["feed"]
-    trending = [i for i in data["items"] if i.get("section") == "trending"]
-    stories = [i for i in data["items"] if i.get("section") != "trending"]
-    items_html = "".join(_news_item_html(i, feed["pageUrl"]) for i in stories)
+    trending = [] if month else [i for i in data["items"] if i.get("section") == "trending"]
+    items_html = "".join(_news_item_html(i, feed["pageUrl"]) for i in shown)
+    total = len(_stories(data))
+    if month:
+        note = f'{len(shown)} stories from {month_label(month)}.'
+    elif total > len(shown):
+        note = f'The newest {len(shown)} of {total} stories. Older stories are in the monthly archive.'
+    else:
+        note = ""
+    note_html = f'  <p class="archive-note">{escape(note)}</p>\n' if note else ""
     return f"""<div class="wrap">
   <header class="hero">
     <div class="hero-row">
@@ -413,11 +492,12 @@ def _middle_html(data: dict) -> str:
     </div>
   </header>
 
-{_trending_html(trending)}  <section id="news" aria-label="News items">
-{_filter_bar_html(stories)}    <div class="news-list">
+{_trending_html(trending)}{_archive_nav_html(data, month)}{note_html}  <section id="news" aria-label="News items">
+{_filter_bar_html(shown)}    <div class="news-list">
 {items_html}    </div>
   </section>
-
+{_archive_nav_html(data, month)}
+{_buttons_script(feed["pageUrl"])}
   <script>
   (() => {{
     const btn = document.getElementById("copy-feed");
@@ -438,6 +518,24 @@ def _swap(html: str, old: str, new: str, what: str) -> str:
 
 
 def render_page(data: dict, index_html: str) -> str:
+    """news.html: the newest PAGE_LIMIT stories plus the month archive links."""
+    return _compose(data, index_html, _middle_html(data, _stories(data)[:PAGE_LIMIT]))
+
+
+def render_archive(data: dict, index_html: str, month: str) -> str:
+    """news.html?m=YYYY-MM: every story from one month."""
+    if not MONTH_RE.match(month):
+        raise ValueError(f"not a month: {month!r}")
+    shown = [i for i in _stories(data) if i["date"][:7] == month]
+    if not shown:
+        raise ValueError(f"no stories in {month}")
+    page = _compose(data, index_html, _middle_html(data, shown, month))
+    url = f"{data['feed']['pageUrl']}?m={month}"
+    page = page.replace('href="https://0pi.es/news.html"', f'href="{url}"', 1)  # canonical
+    return re.sub(r"<title>(.*?) — ", rf"<title>\g<1> — {month_label(month)} — ", page, count=1, flags=re.S)
+
+
+def _compose(data: dict, index_html: str, middle: str) -> str:
     feed = data["feed"]
     html = index_html
     # Head metadata (title/description/canonical/social) — News page identity.
@@ -468,7 +566,7 @@ def render_page(data: dict, index_html: str) -> str:
     foot = html.find("<footer>", start)
     if start == -1 or foot == -1:
         sys.exit("index.html chrome drifted: wrap/footer anchors not found")
-    return html[:start] + _middle_html(data) + "\n  " + html[foot:]
+    return html[:start] + middle + "\n  " + html[foot:]
 
 
 def main() -> None:
