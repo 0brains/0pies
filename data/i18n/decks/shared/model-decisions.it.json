@@ -23,7 +23,7 @@
     "why": "Il pretraining continuato adatta le rappresentazioni del linguaggio del modello utilizzando grandi quantità di testo di dominio. Compromesso: RAG rimane preferibile quando il bisogno è l'accesso ai fatti che cambiano piuttosto che l'adattamento più profondo del linguaggio di dominio."
   },
   "model-decisions-05": {
-    "label": "Il sistema deve ispezionare un ordine, richiedere approvazione, chiamare un'API di rimborso e segnalare il risultato.",
+    "label": "I clienti descrivono i problemi di rimborso in testo libero; il sistema deve capire quali ordini e controlli servono a ciascun caso, richiedere l'approvazione, chiamare un'API di rimborso e segnalare il risultato.",
     "sub": "Assistente che agisce",
     "why": "Un agente che usa gli strumenti può orchestrare i passaggi, ma ogni strumento ha bisogno di permessi ristretti, convalida e gate di approvazione. Compromesso: un flusso di lavoro deterministico è più sicuro quando la sequenza è fissa e non richiede pianificazione diretta dal modello."
   },

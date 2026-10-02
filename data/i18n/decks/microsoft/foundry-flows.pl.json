@@ -53,9 +53,9 @@
   "steps[2].label": "Transformer uwagi",
   "steps[2].detail": "Warstwy self-attention ważą każdy token względem każdego innego tokenu w sekwencji — mechanika, która 'napędza większość nowoczesnych modeli fundamentalnych', i potrzebuje wektorów osadzania, aby już istnieć.",
   "steps[3].label": "Przewidywanie następnego tokenu",
-  "steps[3].detail": "Model wyświetla rozkład prawdopodobieństwa całego słownika dla pojedynczego następnego tokenu; temperatura i top-p zmieniają ten rozkład zanim jeden token jest próbkowany.",
+  "steps[3].detail": "Model zwraca rozkład prawdopodobieństwa po całym słowniku dla pojedynczego następnego tokenu; temperatura i top-p przekształcają ten rozkład, zanim zostanie wylosowany jeden token. Perpleksja ocenia właśnie ten krok: ile prawdopodobieństwa model przypisał prawdziwym kolejnym tokenom odłożonego tekstu.",
   "steps[4].label": "Detokenizowane wyjście",
-  "steps[4].detail": "Przewidywany identyfikator tokenu jest dekodowany z powrotem na tekst i pętla powtarza się jeden token naraz, dopóki warunek zatrzymania — zakontowanie mierzy, jak dobrze przewidywania tego kroku pasowały do wstrzymywanego tekstu."
+  "steps[4].detail": "Przewidziany identyfikator tokenu jest dekodowany z powrotem na tekst, a pętla powtarza się po jednym tokenie aż do warunku zatrzymania."
  },
  "lad-speech": {
   "prompt": "Ułóż wywołania Speech SDK w kolejności, w jakiej muszą się to uruchamiać.",

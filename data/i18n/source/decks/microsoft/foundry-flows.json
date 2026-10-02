@@ -53,9 +53,9 @@
   "steps[2].label": "Transformer attention",
   "steps[2].detail": "Self-attention layers weigh every token against every other token in the sequence — the mechanic that 'powers most modern foundation models,' and it needs the embedding vectors to already exist.",
   "steps[3].label": "Next-token prediction",
-  "steps[3].detail": "The model outputs a probability distribution over the whole vocabulary for the single next token; temperature and top-p reshape this distribution before one token is sampled.",
+  "steps[3].detail": "The model outputs a probability distribution over the whole vocabulary for the single next token; temperature and top-p reshape this distribution before one token is sampled. Perplexity scores this step: how much probability the model gave the true next tokens of held-out text.",
   "steps[4].label": "Detokenized output",
-  "steps[4].detail": "The predicted token id is decoded back to text and the loop repeats one token at a time until a stop condition — perplexity measures how well this step's predictions matched held-out text."
+  "steps[4].detail": "The predicted token id is decoded back to text and the loop repeats one token at a time until a stop condition."
  },
  "lad-speech": {
   "prompt": "Put the Speech SDK calls in the order they must run.",

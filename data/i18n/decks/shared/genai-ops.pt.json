@@ -8,8 +8,8 @@
     "why": "Primeiro determina se as afirmações estão apoiadas, depois aperta o uso de evidência, comportamento de recusa e validação de citação. Compromisso: Um modelo maior pode melhorar fluência sem resolver evidência perdida ou ignorada."
   },
   "genai-ops-02": {
-    "label": "O gerador de resposta não pode utilizar o facto correcto porque a passagem relevante está ausente do conjunto recuperado.",
-    "sub": "Evidência Correcta Nunca Aparece",
+    "label": "As respostas são fluentes e citam documentos de política reais, mas continuam a falhar a única cláusula que realmente rege a pergunta.",
+    "sub": "A Cláusula Decisiva Desaparece",
     "why": "O recall de recuperação isola se o chunking, embeddings, filtros, reescrita de query, ou contagem de candidatos falta evidência necessária. Compromisso: As mudanças de geração não podem recuperar evidência que nunca entra no contexto."
   },
   "genai-ops-03": {

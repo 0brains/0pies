@@ -4,7 +4,7 @@
   "title": "Regulatory Risk Tiers",
   "blurb": "The EU AI Act's pyramid, plus the GPAI systemic-risk threshold. Sort each system into its tier.",
   "source": "Regulation (EU) 2024/1689 (EU AI Act) Arts. 5, 6, 50, 51 and Annex III",
-  "asOf": "2026-07",
+  "asOf": "2026-10",
   "area": "risk",
   "hint": "Drag each system onto its risk tier. Tier follows purpose and context, not how sophisticated the model is.",
   "note": "The tiers attach to the use, not the technology. The same model can be prohibited in one deployment, high-risk in another and minimal in a third.",
@@ -16,7 +16,7 @@
     {"key": "GPAI systemic", "name": "GPAI with systemic risk", "def": "General-purpose models meeting the Art. 51 threshold, with model-level obligations distinct from the use-based pyramid."}
   ],
   "items": [
-    {"id": "rt2-01", "label": "A government scheme scoring citizens' trustworthiness from unrelated social behaviour and using it to deny access to public services.", "answer": "Unacceptable", "why": "Social scoring by or on behalf of public authorities leading to detrimental treatment in unrelated contexts is prohibited outright under Art. 5.", "citation": "EU AI Act · Art. 5 (prohibited AI practices)"},
+    {"id": "rt2-01", "label": "A government scheme scoring citizens' trustworthiness from unrelated social behaviour and using it to deny access to public services.", "answer": "Unacceptable", "why": "Social scoring that leads to detrimental treatment in unrelated contexts, or treatment out of proportion to the behaviour, is prohibited outright under Art. 5, whether the scorer is a public authority or a private company. The public-authority limit was only in the 2021 proposal.", "citation": "EU AI Act · Art. 5 (prohibited AI practices)"},
     {"id": "rt2-02", "label": "A system inferring employees' emotions from facial expressions during their working day, outside any medical or safety purpose.", "answer": "Unacceptable", "why": "Emotion inference in the workplace and in education is prohibited, with narrow medical and safety exceptions. This is why the ban catches HR analytics products.", "citation": "EU AI Act · Art. 5 (prohibited AI practices)"},
     {"id": "rt2-03", "label": "A tool that scrapes facial images from the internet and CCTV indiscriminately to build a facial recognition database.", "answer": "Unacceptable", "why": "Untargeted scraping to build facial recognition databases is expressly prohibited, regardless of the operator's purpose.", "citation": "EU AI Act · Art. 5 (prohibited AI practices)"},
     {"id": "rt2-04", "label": "A system using subliminal techniques beyond a person's awareness to materially distort behaviour and cause significant harm.", "answer": "Unacceptable", "why": "Manipulative and exploitative techniques causing significant harm are prohibited. The test is material distortion of behaviour, not the technique's sophistication.", "citation": "EU AI Act · Art. 5 (prohibited AI practices)"},

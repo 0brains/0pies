@@ -5,7 +5,7 @@
    "areas": [
     "IV.B"
    ],
-   "asOf": "2026-08",
+   "asOf": "2026-10",
    "status": "stable",
    "brief": "Harrowby Savings Bank, a regional lender, is buying a cloud-hosted AI service from an American software vendor to flag suspicious card payments as they happen. The vendor's draft contract keeps all model IP with the vendor, forbids the bank from changing or retraining the model, offers performance reporting at intervals, and disclaims liability for both missed fraud and wrongly blocked payments. Before anything is signed, procurement wants governance to mark up the agreement and confirm that Harrowby will have adequate oversight, IP protection and visibility into open-source risk.",
    "citation": "Ch12 §Assess AI Models — Vendor Contract Risk; SG §Account for Third-Party AI Component Risks — Vendor-Provided AI Systems, Open-Source AI Components",
@@ -44,7 +44,7 @@
      "why": "Indemnification is the mechanism that shifts an infringement claim's legal costs and damages onto the vendor. Insurance only pays out if the vendor's carrier honors the policy — it doesn't obligate the vendor to defend the bank; a performance warranty covers whether the tool works, not who owns the underlying IP; and a privacy notice governs personal-data use, not infringement risk."
     },
     {
-     "q": "Eighteen months later the bank expands the fraud-detection deployment into a country the original contract never mentioned. What happens to the vendor's indemnification protection?",
+     "q": "The signed contract limits the vendor's indemnity to deployments in the territories it lists. Eighteen months later the bank expands the fraud-detection deployment into a country that list does not include. What happens to the vendor's indemnification protection?",
      "options": [
       "It no longer applies, because the deployment is outside the jurisdiction the agreement covers",
       "It still applies in full, because indemnification isn't jurisdiction-limited",
@@ -52,18 +52,18 @@
       "It transfers automatically to the new jurisdiction's local regulator"
      ],
      "answer": "It no longer applies, because the deployment is outside the jurisdiction the agreement covers",
-     "why": "Jurisdictional scope is one of the most common carve-outs in SaaS indemnification: the vendor never assessed or priced its exposure in a country it didn't agree to cover, so deploying there voids the protection precisely when the bank needs it most. Indemnification isn't unlimited, doesn't scale with exposure, and it's a contract term — not something a regulator inherits."
+     "why": "The indemnity is scoped by its territory clause, so a deployment outside the listed territories falls outside the protection — the vendor never assessed or priced its exposure there, and the gap opens precisely when the bank needs cover most. Territorial limits like this are common in SaaS indemnities, which is why an expansion should trigger a contract amendment first. Indemnification doesn't scale with exposure, and it's a contract term — not something a regulator inherits."
     },
     {
      "q": "A security review of the vendor's stack turns up a component licensed under AGPL, embedded in the hosted service the bank connects to. Reviewed too late, what's the exposure?",
      "options": [
-      "The bank could be required to disclose proprietary source code that touches the AGPL component",
+      "If it has modified the component, the vendor may have to release that source or rip the component out, putting the service the bank depends on at risk",
       "The model could fall short of its advertised accuracy benchmarks",
       "Employees could reach the model through unauthorized APIs",
       "The AGPL license would automatically convert to public domain"
      ],
-     "answer": "The bank could be required to disclose proprietary source code that touches the AGPL component",
-     "why": "AGPL is the copyleft license that reaches even network-accessible use: anyone interacting with the service over a network can demand the corresponding source, which pulls in whatever proprietary code the bank wrapped around it. Missed accuracy benchmarks, API misuse and a slide into the public domain are all real vendor risks, but none is what an unreviewed AGPL dependency actually triggers."
+     "answer": "If it has modified the component, the vendor may have to release that source or rip the component out, putting the service the bank depends on at risk",
+     "why": "AGPL extends copyleft to network use: whoever modifies an AGPL program and lets users interact with it remotely must offer those users the corresponding source of that modified version. Here that duty sits with the vendor, which runs the hosted service; the bank, as a remote user of the service, is not obliged to disclose its own code. Its exposure is indirect — a vendor forced to publish or re-engineer part of its service is a continuity and IP risk, which is why the contract should require disclosure of open-source components. Missed accuracy benchmarks and unauthorized API access are real risks but not what an AGPL dependency triggers, and no open-source license ever lapses into the public domain."
     }
    ]
   },
@@ -207,7 +207,7 @@
    "id": "d4-brief-silent-update",
    "area": "IV.C",
    "capstone": true,
-   "asOf": "2026-08",
+   "asOf": "2026-10",
    "status": "stable",
    "title": "The Silent Update",
    "scenario": "Larkspur Talent licenses ScreenWise, a hiring copilot built by vendor Aptivus AI, to score resumes and shortlist candidates for its client Marlowe Foods. The contract with Aptivus is silent on advance notice for model changes and gives Marlowe no audit rights over training data or evaluation reports. Three weeks ago, Aptivus pushed a model update, v4.2, to all customers with no notification and no changelog. On Monday, Marlowe's People Analytics lead, Priya Shah, ran the quarterly fairness check and found that the passthrough rate for female-coded resumes in engineering roles had fallen from 34% to 27.6% since the update landed — a gap under the company's 2% flat escalation trigger for average score drift, but one that lands squarely on a protected class. ScreenWise is still live and still screening today's applicants. General counsel has not yet been briefed, no public statement exists, and a labor-rights nonprofit has already emailed asking whether Marlowe is aware of \"reports of bias\" in its hiring tools. You are the governance lead. Priya wants a decision before end of day.",
@@ -243,7 +243,7 @@
      "citation": "AIGP Body of Knowledge v2.1"
     },
     {
-     "criterion": "Scopes the external disclosure to purpose, capabilities and limitations — not Aptivus's proprietary model methodology",
+     "criterion": "Clears the reply to the nonprofit with general counsel first, keeps it truthful — acknowledges the inquiry and the review under way without denying the disparity — and holds back unvalidated figures, any admission of fault, and Aptivus's confidential detail, while committing to a follow-up",
      "citation": "AIGP Body of Knowledge v2.1"
     },
     {

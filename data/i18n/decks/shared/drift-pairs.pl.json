@@ -1,7 +1,7 @@
 {
  "dp-01": {
   "a.text": "Model kredytowy widzi falę kandydatów z nowego regionu. Dla każdego danego profilu dochodów, zatrudnienia i historii, wskaźniki niespłacenia dokładnie to, czego model oczekuje.",
-  "a.why": "Wejścia przesunęły się do nowych terenów, ale reguła jest nienaruszona. Bardziej reprezentatywne dane treningowe to naprawiają; nowa reguła nie jest potrzebna.",
+  "a.why": "Wejścia przesunęły się na nowy teren, ale reguła jest nienaruszona, więc predykcje się sprawdzają wszędzie tam, gdzie dane treningowe obejmowały te profile. Obserwować trzeba słabo pokryte obszary, w których model ekstrapoluje; nowa reguła nie jest potrzebna.",
   "b.text": "Model kredytowy widzi tę samą falę kandydatów z nowego regionu. Dla identycznego profilu dochodów, zatrudnienia i historii, wskaźniki niespłacenia tam to dwa razy to, czego model oczekuje.",
   "b.why": "Identyczne wejścia produkują teraz różne wyniki, więc P(Y|X) zmieniła. Żadna ilość przeważania mieszaniny wejścia nie naprawi relacji, która już się nie utrzymuje."
  },

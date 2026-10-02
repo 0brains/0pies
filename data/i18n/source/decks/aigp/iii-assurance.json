@@ -52,7 +52,7 @@
   "why": "This is the technical cadence-and-dashboard side of the monitoring plan; the standing legal duty to run it at all, once the system is live, belongs to a different board entirely."
  },
  "iii-ab-14": {
-  "label": "The product team's own dashboard tracks calibration and latency against a validated baseline on a running weekly cadence, with fairness disparity ratios refreshing automatically alongside them.",
+  "label": "During the pre-release soak period, the product team's own dashboard tracks calibration and latency against a validated baseline on a weekly cadence, with fairness disparity ratios refreshing automatically alongside them, ready to carry on unchanged after launch.",
   "why": "A continuous, automated feed owned by the team that built the system is this zone's texture — the moment that same check is instead run by a reviewer organizationally separate from that team, on a scheduled visit rather than a live feed, it's an audit."
  },
  "iii-ab-15": {
@@ -78,7 +78,7 @@
   "zones[1].def": "Specialists simulate a realistic adversary or misuse scenario end-to-end — jailbreaks, prompt injection, social engineering, edge-case abuse — to see how the whole system holds up under pressure, then feed what they found back into a remediation plan that gets re-tested.",
   "zones[2].def": "A structured, paper-based exercise, done at design time before any test runs, that catalogs what needs protecting, who might attack it, and which abuse cases matter most — producing a list of risks and named mitigations, not a live attempt to exploit anything.",
   "zones[3].def": "Hands-on probing of specific, already-identified components — the serving API, dependencies, the pipeline's code — to confirm a defense is actually present and correctly configured, distinct from a full-system adversarial simulation or a paper catalog of what could go wrong.",
-  "zones[4].def": "The technical cadence of checks — scheduled evaluations, tracked metrics, automated alerts — that gets built and rehearsed as the monitoring plan comes together. The dashboards and detectors themselves, not the standing legal duty to run them once the system is live.",
+  "zones[4].def": "Post-market monitoring itself is the provider's ongoing watch over a system for its whole life after release. On this pre-release board, the zone is the build-out of that watch: the scheduled evaluations, tracked metrics and automated alerts that are designed and rehearsed before launch so they are ready to run from day one. The dashboards and detectors themselves, not the standing duty to operate them once the system is live.",
   "zones[5].def": "The formal, time-boxed machinery — containment first, then root-cause analysis, then corrective action — that activates the moment a scene involves confirmed real-world harm, not a routine finding still being logged and watched."
  }
 }

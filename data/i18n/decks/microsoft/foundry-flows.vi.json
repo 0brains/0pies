@@ -53,9 +53,9 @@
   "steps[2].label": "Sự chú ý của transformer",
   "steps[2].detail": "Các lớp tự chú ý cân nhắc mọi mã so với mọi mã khác trong chuỗi — cơ khí \"sức mạnh hầu hết các mô hình nền tảng hiện đại,\" và nó cần các vectơ nhúng đã tồn tại.",
   "steps[3].label": "Dự đoán mã tiếp theo",
-  "steps[3].detail": "Mô hình xuất ra phân bố xác suất trên toàn bộ bộ từ vựng cho một mã tiếp theo duy nhất; nhiệt độ và top-p làm hình lại phân bố này trước khi một mã được lấy mẫu.",
+  "steps[3].detail": "Mô hình xuất ra một phân phối xác suất trên toàn bộ từ vựng cho đúng một token tiếp theo; nhiệt độ và top-p định hình lại phân phối này trước khi một token được lấy mẫu. Độ bối rối (perplexity) chấm điểm chính bước này: mô hình đã gán bao nhiêu xác suất cho các token tiếp theo thực sự của văn bản được giữ lại.",
   "steps[4].label": "Đầu ra được giải mã",
-  "steps[4].detail": "Id mã dự đoán được giải mã trở lại văn bản và vòng lặp lặp lại từng mã một cho đến khi điều kiện dừng — perplexity đo mức độ tốt của dự đoán bước này khớp với văn bản được giữ lại."
+  "steps[4].detail": "ID token dự đoán được giải mã trở lại thành văn bản và vòng lặp lặp lại từng token một cho đến khi gặp điều kiện dừng."
  },
  "lad-speech": {
   "prompt": "Đặt các cuộc gọi Speech SDK theo thứ tự nó phải chạy.",

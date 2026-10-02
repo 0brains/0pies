@@ -1,7 +1,7 @@
 {
  "rp-01": {
   "a.text": "A avaliação classifica a exposição de um modelo de decisão automatizada como se nenhum dos mecanismos de revisão, limiar ou apelação existisse.",
-  "a.why": "O risco inerente é a posição bruta antes de controlos. Existe para dimensionar o esforço de controlo, e nunca é o que é aceite.",
+  "a.why": "O risco inerente é a posição bruta antes de controlos. Existe para dimensionar o esforço de controlo. A aceitação é avaliada face ao risco residual; os dois valores só coincidem quando a organização retém conscientemente o risco sem qualquer tratamento.",
   "b.text": "A avaliação classifica o mesmo modelo com revisão, limiares e apelação operando conforme concebido, e relata o que permanece.",
   "b.why": "O risco residual é o que a aprovação é realmente contra. Aceitar contra a figura inerente sobreestima o que a organização concordou em suportar."
  },
@@ -9,11 +9,11 @@
   "a.text": "O conselho declara que a organização não seguirá aplicações de IA que tomam decisões consequentes sobre indivíduos sem revisão humana.",
   "a.why": "Apetite é a declaração ampla e prospetiva do risco que a organização está disposta a aceitar na prossecução dos seus objetivos.",
   "b.text": "A política declara que um modelo pode ir em produção apenas se a disparidade de exatidão por subgrupo estiver abaixo de quatro pontos percentuais.",
-  "b.why": "Tolerância é o limite mensurável que operacionaliza apetite. Apetite sem tolerância não pode ser testado; tolerância sem apetite é arbitrária."
+  "b.why": "Tolerância é o limite mensurável que operacionaliza o apetite. Essa leitura de fixação de limites segue o uso do COSO, cujo quadro de 2017 fala de variação aceitável no desempenho; o ISO Guide 73 enquadra a tolerância como a disponibilidade para suportar um risco após o tratamento. Apetite sem tolerância não pode ser testado; tolerância sem apetite é arbitrária."
  },
  "rp-03": {
   "a.text": "O modelo pode produzir texto fluente e confiante que é factualmente incorreto.",
-  "a.why": "Um risco é o potencial intrínseco de causar dano. É uma propriedade da coisa e não depende da implementação.",
+  "a.why": "Um perigo é uma fonte potencial de dano. Pertence à própria coisa e existe antes de perguntares quem está exposto ou como é usada, embora a frequência com que se manifesta ainda possa variar com a recuperação, os prompts e o domínio.",
   "b.text": "Porque o modelo redige instruções de alta hospitalar lidas por não-especialistas, erros confiantes podem conduzir a uso incorreto de medicação.",
   "b.why": "O risco combina o risco com exposição e consequência num contexto. O mesmo risco é um risco diferente numa implementação diferente — o que é por que os níveis se prendem ao uso."
  },

@@ -23,7 +23,7 @@
   "why": "Continued Pretraining passt die Sprachdarstellungen des Modells mit großen Datenmengen an. Kompromiss: RAG bleibt bevorzugt, wenn das Bedürfnis der Zugang zu ändernden Tatsachen statt tieferer Domänensprach-Anpassung ist."
  },
  "model-decisions-05": {
-  "label": "Das System muss eine Bestellung überprüfen, Genehmigung anfordern, eine Rückerstattungs-API aufrufen und das Ergebnis melden.",
+  "label": "Kunden beschreiben Erstattungsprobleme in Freitext; das System muss herausfinden, welche Bestellungen und Prüfungen jeder Fall braucht, eine Genehmigung anfordern, eine Erstattungs-API aufrufen und das Ergebnis melden.",
   "sub": "Aktions-nehmender Assistent",
   "why": "Ein Tool-nutzender Agent kann Schritte orchestrieren, aber jedes Werkzeug braucht enge Berechtigungen, Validierung und Genehmigungstore. Kompromiss: Ein deterministischer Workflow ist sicherer, wenn die Sequenz fest ist und nicht modell-geleitete Planung erfordert."
  },

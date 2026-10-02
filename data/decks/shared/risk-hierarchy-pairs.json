@@ -4,22 +4,22 @@
   "title": "One Fact Changes Everything — Treatment vs Control",
   "blurb": "The two hierarchies answer different questions. These pairs are where people conflate them.",
   "source": "ISO 31000:2018 §6.5 · Hierarchy of controls (NIOSH), applied to AI systems",
-  "asOf": "2026-07",
+  "asOf": "2026-10",
   "area": "risk",
   "pairs": [
     {
       "id": "rhp-01",
       "dimension": "whether the measure changes the hazard or only who pays for it",
       "buckets": ["Reduce", "Transfer"],
-      "a": {"text": "The firm adds output validation and human review to a claims model, cutting the rate of wrong denials.", "answer": "Reduce", "why": "The probability of the harm actually falls. Reduction is the only treatment that makes the affected person better off."},
-      "b": {"text": "The firm buys an insurance policy covering the cost of wrongly denied claims, leaving the model unchanged.", "answer": "Transfer", "why": "The claimant is denied at exactly the same rate; only the firm's balance sheet is protected. Insurance is never a control."},
+      "a": {"text": "The firm adds output validation and human review to a claims model, cutting the rate of wrong denials.", "answer": "Reduce", "why": "The probability of the harm actually falls, so the claimant is better off. Transfer, by contrast, leaves the claimant's outcome untouched."},
+      "b": {"text": "The firm buys an insurance policy covering the cost of wrongly denied claims, leaving the model unchanged.", "answer": "Transfer", "why": "The claimant is denied at exactly the same rate; only the firm's balance sheet is protected. Insurance shifts who pays, not how often the harm occurs."},
       "citation": "ISO 31000:2018 §6.5 (risk treatment options: reduction vs sharing)"
     },
     {
       "id": "rhp-02",
       "dimension": "whether the activity continues at all",
       "buckets": ["Avoid", "Reduce"],
-      "a": {"text": "After assessment, the emotion-inference feature is cancelled and removed from the roadmap.", "answer": "Avoid", "why": "The activity stops, so the exposure goes to zero. Avoidance is the only treatment with no residual risk to record."},
+      "a": {"text": "After assessment, the emotion-inference feature is cancelled and removed from the roadmap.", "answer": "Avoid", "why": "The activity stops, so this exposure is removed rather than lowered. Still check whether the need it served moves somewhere that carries its own risk."},
       "b": {"text": "After assessment, the emotion-inference feature ships with confidence thresholds, subgroup evaluation and human review of low-confidence cases.", "answer": "Reduce", "why": "The activity continues at lower likelihood of harm. Substantial mitigation is still reduction, and residual risk still needs an owner."},
       "citation": "ISO 31000:2018 §6.5 (risk treatment options: avoidance vs reduction)"
     },
@@ -35,17 +35,17 @@
       "id": "rhp-04",
       "dimension": "whether the hazardous capability still exists",
       "buckets": ["Eliminate", "Engineering"],
-      "a": {"text": "The agent's ability to issue refunds is removed from its tool set entirely.", "answer": "Eliminate", "why": "No capability, no failure mode, and nothing left to monitor. Elimination is the top tier because it retires the whole branch of the risk tree."},
+      "a": {"text": "The agent's ability to issue refunds is removed from its tool set entirely.", "answer": "Eliminate", "why": "With the capability gone, this failure mode is retired; check where refund requests now go instead. Elimination is the top tier because it removes the hazard rather than guarding it."},
       "b": {"text": "The agent keeps its refund tool, with a hard limit of one refund per session and an amount cap enforced by the tool.", "answer": "Engineering", "why": "A strong technical constraint that still leaves a bounded exposure — and leaves the cap itself as something that can be misconfigured."},
       "citation": "NIOSH hierarchy of controls (elimination vs engineering controls)"
     },
     {
       "id": "rhp-05",
       "dimension": "who bears the residual burden of getting it right",
-      "buckets": ["Engineering", "Transparency"],
+      "buckets": ["Engineering", "Administrative"],
       "a": {"text": "The assistant detects and blocks confidential-looking input before it is sent to the model.", "answer": "Engineering", "why": "The system prevents the disclosure regardless of what the user does. The burden sits with the party able to carry it."},
-      "b": {"text": "The assistant displays a notice asking users not to paste confidential information.", "answer": "Transparency", "why": "The same risk, with the burden moved to the user. Weakest tier, and frequently the only one implemented."},
-      "citation": "NIOSH hierarchy of controls (engineering controls vs warnings/transparency)"
+      "b": {"text": "The assistant displays a notice asking users not to paste confidential information.", "answer": "Administrative", "why": "A warning notice is an administrative control: the same risk, with the burden moved to the user. It ranks below engineering controls, and is frequently the only one implemented."},
+      "citation": "NIOSH hierarchy of controls (engineering vs administrative controls; warnings are administrative)"
     },
     {
       "id": "rhp-06",

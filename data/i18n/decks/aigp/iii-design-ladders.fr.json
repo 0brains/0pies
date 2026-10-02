@@ -12,9 +12,9 @@
   "steps[4].label": "Benchmark par rapport aux experts humains dans le même contexte de décision",
   "steps[4].detail": "Avant tout pilote, mesure les performances du système face à des personnes compétentes prenant exactement les mêmes décisions — cette comparaison en apprend bien plus à la gouvernance qu’un objectif abstrait de précision.",
   "steps[5].label": "Pilote — valider l'équité + la précision à l'échelle contrôlée",
-  "steps[5].detail": "Exécuter un pilote de pré-déploiement dont l'objectif principal est de valider l'équité et la précision sur les données du monde réel à une échelle limitée et contrôlée avant le déploiement complet.",
+  "steps[5].detail": "Exécuter un pilote de pré-déploiement avec un groupe limité d'utilisateurs internes et volontaires pour valider l'équité et la précision sur des entrées réalistes, et corriger ce qu'il fait ressortir avant que le système soit connecté à un processus métier en production.",
   "steps[6].label": "Exécution en mode ombre comme preuve documentée de disponibilité",
-  "steps[6].detail": "Exécuter le système en parallèle avec le processus en direct (mode ombre) et documenter les résultats. Cette preuve documentée — pas une approbation verbale — est ce qui démontre la disponibilité du déploiement (SG)."
+  "steps[6].detail": "Une fois les corrections du pilote appliquées, exécuter le système en parallèle avec le processus en production (mode ombre) : ses sorties sont comparées aux décisions réelles mais jamais appliquées, et les résultats sont documentés. Cette preuve documentée — pas une approbation verbale — est ce qui démontre que le déploiement est prêt (SG)."
  },
  "iii-dl-02": {
   "prompt": "Ordonne la hiérarchie d'atténuation des risques de la correction la plus durable au dernier recours.",

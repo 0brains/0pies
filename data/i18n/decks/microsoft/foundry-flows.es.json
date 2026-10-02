@@ -53,9 +53,9 @@
   "steps[2].label": "Atención de transformador",
   "steps[2].detail": "Las capas de autoatención pesan cada token contra cada otro token en la secuencia — la mecánica que 'alimenta la mayoría de los modelos fundamentales modernos', y necesita que los vectores de incrustación ya existan.",
   "steps[3].label": "Predicción del siguiente token",
-  "steps[3].detail": "El modelo genera una distribución de probabilidad sobre todo el vocabulario para el siguiente token único; la temperatura y top-p remodelan esta distribución antes de que se muestree un token.",
+  "steps[3].detail": "El modelo genera una distribución de probabilidad sobre todo el vocabulario para el siguiente token único; la temperatura y top-p remodelan esta distribución antes de que se muestree un token. La perplejidad puntúa este paso: cuánta probabilidad dio el modelo a los verdaderos tokens siguientes de un texto retenido.",
   "steps[4].label": "Salida decodificada",
-  "steps[4].detail": "El id de token predicho se decodifica de nuevo en texto y el bucle se repite un token a la vez hasta que se cumple una condición de parada — la perplejidad mide cuán bien las predicciones de este paso coincidieron con el texto retenido."
+  "steps[4].detail": "El id de token predicho se decodifica de nuevo en texto y el bucle se repite un token a la vez hasta que se cumple una condición de parada."
  },
  "lad-speech": {
   "prompt": "Pon las llamadas del SDK de Speech en el orden en que deben ejecutarse.",

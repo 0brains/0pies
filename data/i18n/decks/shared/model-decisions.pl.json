@@ -23,7 +23,7 @@
   "why": "Kontynuowane pretraining dostosowuje reprezentacje języka modelu przy użyciu dużych ilości tekstu domeny. Kompromis: RAG pozostaje lepszy, gdy potrzeba to dostęp do zmieniających się faktów, a nie głębsze dostosowanie domeny."
  },
  "model-decisions-05": {
-  "label": "System musi sprawdzić zamówienie, poprosić o zatwierdzenie, wywołać interfejs API zwrotu i zgłosić wynik.",
+  "label": "Klienci opisują problemy ze zwrotami dowolnym tekstem; system musi ustalić, jakich zamówień i kontroli wymaga każdy przypadek, poprosić o zatwierdzenie, wywołać API zwrotów i zgłosić wynik.",
   "sub": "Action-Taking Assistant",
   "why": "Agent używający narzędzi może zorganizować kroki, ale każde narzędzie potrzebuje wąskich uprawnień, walidacji i bramek zatwierdzenia. Kompromis: Przepływ pracy deterministyczny jest bezpieczniejszy, gdy sekwencja jest naprawiona i nie wymaga kierowanego planowania modelu."
  },

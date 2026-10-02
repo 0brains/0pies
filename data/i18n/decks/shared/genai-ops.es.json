@@ -8,8 +8,8 @@
     "why": "Primero determina si las afirmaciones están respaldadas, luego refuerza el uso de evidencia, el comportamiento de rechazo y la validación de citas. Compensación: Un modelo más grande puede mejorar la fluidez sin resolver la evidencia faltante o ignorada."
   },
   "genai-ops-02": {
-    "label": "El generador de respuestas no puede usar el hecho correcto porque el pasaje relevante está ausente del conjunto recuperado.",
-    "sub": "La Evidencia Correcta Nunca Aparece",
+    "label": "Las respuestas son fluidas y citan documentos de política reales, pero siguen omitiendo la única cláusula que realmente rige la pregunta.",
+    "sub": "La Cláusula Que Rige Desaparece",
     "why": "La recuperación de recall aísla si chunking, embeddings, filtros, reescritura de consultas, o el recuento de candidatos pierde evidencia necesaria. Compensación: Los cambios de generación no pueden recuperar evidencia que nunca entra en el contexto."
   },
   "genai-ops-03": {

@@ -99,7 +99,7 @@
   },
   "cu-modality-grid": {
     "hint": "询问源文件实际是什么，然后检查 sub 行以获得确切的 prebuilt-* 分析器 id—— id 本身命名其模态(document/image/audio/video)，Search 后缀 id 为索引准备输出，而不是改变模态。",
-    "note": "Content Understanding 总是提取—— 它永远不会生成或索引。提取到 Azure AI Search 是下游步骤，而不是 CU 做的东西。",
+    "note": "Content Understanding 将内容转换为结构化输出 — 包括它提取的字段，以及它生成或分类得出的值，例如摘要和描述 — 但它不会创建新媒体，也不会构建搜索索引。索引到 Azure AI Search 是下游步骤，不是 CU 自己完成的。",
     "zones[0].def": "PDF、发票、合同和自由形式的文书 Content Understanding 转换为结构化字段、表格和文本。",
     "zones[1].def": "照片、截图和图表 Content Understanding 转换为结构化字段、描述和检测到的对象。",
     "zones[2].def": "录制的语音—— 电话、播客和语音邮件—— Content Understanding 转换为成绩单、摘要和扬声器标签。",

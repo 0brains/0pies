@@ -99,7 +99,7 @@
  },
  "cu-modality-grid": {
   "hint": "Pytaj, czym faktycznie jest plik źródłowy, a następnie sprawdź linię sub dla dokładnego identyfikatora analizatora prebuilt-* — identyfikator sam nazwie swoją modalność (dokument/obraz/audio/wideo), a identyfikatory z sufiksem Search przygotowują wyjście do indeksowania zamiast zmieniać modalność.",
-  "note": "Content Understanding zawsze ekstraktuje — nigdy nie generuje ani nie indeksuje. Ekstrakcja do Azure AI Search to krok następny, a nie coś, co robi samo Content Understanding.",
+  "note": "Content Understanding zamienia treści w ustrukturyzowany wynik — pola, które wyodrębnia, plus wartości, które generuje lub klasyfikuje, np. podsumowania i opisy — ale nie tworzy nowych mediów ani nie buduje indeksu wyszukiwania. Indeksowanie do Azure AI Search to krok następczy, a nie coś, co CU robi samo.",
   "zones[0].def": "Pliki PDF, faktury, umowy i luźne papierkowe dokumenty, które Content Understanding zamienia w pola strukturalne, tabele i tekst.",
   "zones[1].def": "Zdjęcia, zrzuty ekranu i wykresy, które Content Understanding zamienia w pola strukturalne, opisy i wykryte obiekty.",
   "zones[2].def": "Zarejestrowana mowa — rozmowy, podcasty i wiadomości głosowe — które Content Understanding zamienia w transkrypcje, streszczenia i etykiety mówców.",

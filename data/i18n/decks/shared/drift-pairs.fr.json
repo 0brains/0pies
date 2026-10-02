@@ -1,7 +1,7 @@
 {
  "dp-01": {
   "a.text": "Un modèle de crédit voit une vague de candidats d'une nouvelle région. Pour tout profil de revenus, emploi et antécédents donnés, les taux de défaut sont exactement ce que le modèle attend.",
-  "a.why": "Les entrées se sont déplacées dans un nouveau territoire mais la règle est intacte. Plus de données d'entraînement représentatives la fixent ; une nouvelle règle n'est pas nécessaire.",
+  "a.why": "Les entrées se sont déplacées vers un nouveau territoire mais la règle est intacte, donc les prédictions tiennent partout où les données d'entraînement couvraient ces profils. Ce qu'il faut surveiller, ce sont les régions peu couvertes, où le modèle extrapole ; une nouvelle règle n'est pas nécessaire.",
   "b.text": "Un modèle de crédit voit la même vague de candidats d'une nouvelle région. Pour un profil de revenus, emploi et antécédents identique, les taux de défaut y sont le double de ce que le modèle attend.",
   "b.why": "Les entrées identiques produisent maintenant des résultats différents, donc P(Y|X) a changé. Aucune quantité de rééquilibrage du mélange d'entrées ne fixera une relation qui ne tient plus."
  },

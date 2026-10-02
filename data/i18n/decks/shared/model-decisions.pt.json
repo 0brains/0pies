@@ -23,7 +23,7 @@
     "why": "Pré-treino continuado adapta representações de linguagem do modelo utilizando grandes quantidades de texto de domínio. Compromisso: RAG permanece preferível quando a necessidade é acesso a factos mudando em vez de adaptação de linguagem de domínio mais profunda."
   },
   "model-decisions-05": {
-    "label": "O sistema deve inspecionar uma encomenda, requisitar aprovação, chamar uma API de reembolso e relatar o resultado.",
+    "label": "Os clientes descrevem problemas de reembolso em texto livre; o sistema tem de perceber que encomendas e verificações cada caso precisa, pedir aprovação, chamar uma API de reembolso e relatar o resultado.",
     "sub": "Assistente Tomador de Acção",
     "why": "Um agente utilizador de tool pode orquestrar passos, mas cada tool precisa de permissões estreitas, validação e portões de aprovação. Compromisso: Um fluxo de trabalho determinístico é mais seguro quando a sequência é fixa e não requer planeamento direcionado por modelo."
   },

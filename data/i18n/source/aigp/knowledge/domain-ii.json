@@ -12,10 +12,10 @@
   "prompt": "Expand your AI company worldwide without running out of compliance capital."
  },
  "II-case-001": {
-  "brief": "A Dutch insurer licenses a third-party model to price motor policies, retrains it on its own claims history, and markets it to customers under its own brand. Pricing decisions are issued automatically.",
-  "steps[0].why": "It rebranded the system and substantially modified it by retraining — either alone transfers provider obligations.",
+  "brief": "A Dutch insurer licenses a third-party model to price individual health insurance policies, retrains it on its own claims history, and puts the pricing system into service under its own brand. Pricing decisions are issued automatically.",
+  "steps[0].why": "Pricing health insurance for individuals is Annex III high-risk (point 5(c)), so Art. 25 applies: putting its own brand on the system is enough on its own to make it the provider, and retraining that changes how the system performs can also be a substantial modification.",
   "steps[1].why": "Automatic pricing decisions with significant effects are solely automated decision-making.",
-  "steps[2].why": "Provider duties for a high-risk system, alongside the DPIA required on the privacy side."
+  "steps[2].why": "Provider duties for a high-risk system (life and health insurance pricing is listed in Annex III; motor pricing would not be), alongside the DPIA required on the privacy side."
  },
  "II-case-002": {
   "brief": "A US retailer's AI screening tool for warehouse roles rejects applicants at a much higher rate from one postal-code cluster that correlates strongly with race. There was no intent to discriminate.",
@@ -97,7 +97,7 @@
   "b.why": "Behavioural data alone is personal but not special category, unless it is used to infer a protected attribute."
  },
  "II.A-tell-009": {
-  "snippet": "The data subject shall have the right not to be subject to a decision based solely on automated processing, including profiling, which produces legal effects concerning them.",
+  "snippet": "The data subject shall have the right not to be subject to a decision based solely on automated processing, including profiling, which produces legal effects concerning him or her or similarly significantly affects him or her.",
   "tell": "\"solely on automated processing\" plus \"legal effects or similarly significantly affects\" is Art. 22. It is a data-protection right, not an AI Act obligation — a favourite exam trap."
  },
  "II.A-tell-010": {
@@ -226,7 +226,7 @@
   "a.text": "An AI system screens job applicants and produces a ranked shortlist that recruiters hire from.",
   "a.why": "Annex III employment use — the system materially influences who gets hired.",
   "b.text": "The same system only sorts applicants alphabetically for a recruiter who reads every CV and decides independently.",
-  "b.why": "Art. 6(3): a narrow procedural task that does not materially influence the outcome falls outside high-risk."
+  "b.why": "Art. 6(3): a narrow procedural task that does not materially influence the outcome falls outside high-risk. Adding a human reviewer to a ranking system would not have this effect; human oversight is a duty of high-risk systems, not an exit from the class."
  },
  "II.C-pair-002": {
   "a.text": "A bank licenses a third-party high-risk model and uses it internally under the vendor's brand.",
@@ -237,14 +237,14 @@
  "II.C-pair-003": {
   "a.text": "Police run real-time remote biometric identification across a public square to find suspects generally.",
   "a.why": "Art. 5 bans real-time remote biometric identification in publicly accessible spaces for law enforcement, save narrow authorised exceptions.",
-  "b.text": "Police run the same biometric matching after the fact, on stored footage, under judicial authorisation.",
+  "b.text": "Police run the same biometric matching after the fact, on stored footage.",
   "b.why": "Post-remote biometric identification is not banned but is Annex III high-risk with authorisation requirements."
  },
  "II.C-pair-004": {
   "a.text": "An employer deploys emotion recognition to monitor staff attentiveness at their desks.",
   "a.why": "Art. 5 bans emotion inference in the workplace and in education, outside medical and safety uses.",
   "b.text": "A games studio uses emotion recognition in a consumer entertainment app, disclosed to the user.",
-  "b.why": "Outside workplace and education the ban does not bite; Art. 50 transparency duties apply instead."
+  "b.why": "Outside workplace and education the ban does not bite, but emotion recognition is listed as high-risk in Annex III point 1(c). Telling users about it is the Art. 50(3) duty, which applies on top of high-risk status, not in place of it."
  },
  "II.C-pair-005": {
   "a.text": "A provider releases a general-purpose model trained well below the systemic-risk compute threshold.",
@@ -328,8 +328,8 @@
   "tell": "OECD wording shows in the phrase \"AI actors\" combined with talk of well-being and of growth that is inclusive and sustainable. The text sets out values rather than duties, and it speaks to governments as much as to companies."
  },
  "II.D-tell-006": {
-  "snippet": "An evaluation programme that assesses model performance in laboratory, in controlled field testing, and in real-world use, in three layers.",
-  "tell": "Layered evaluation moving from lab to field to real world is ARIA (Assessing Risks and Impacts of AI). The AI RMF is a framework; ARIA is a testing programme that feeds it."
+  "snippet": "An evaluation programme that studies the risks and impacts of AI in realistic use, across three levels: model testing, red-teaming, and field testing.",
+  "tell": "Three named evaluation levels, model testing then red-teaming then field testing, mark ARIA (Assessing Risks and Impacts of AI). The AI RMF is a framework; ARIA is a testing programme that feeds it."
  },
  "II.D-tell-008": {
   "snippet": "A companion resource offering suggested actions, references and documentation for each subcategory, which organisations may use in whole or in part.",
@@ -1150,7 +1150,7 @@
   "obligations[10].text": "Ensure input data is relevant and sufficiently representative for the intended purpose",
   "obligations[11].text": "Inform workers and their representatives before putting a high-risk system into use in the workplace",
   "obligations[12].text": "Inform individuals that they are subject to a high-risk system's decision",
-  "obligations[13].text": "Retain automatically generated logs for the required period",
+  "obligations[13].text": "Keep the logs the system generates while you use it in your own operations, for at least six months",
   "obligations[14].text": "Carry out a fundamental rights impact assessment where required",
   "obligations[15].text": "Verify the provider has completed the conformity assessment before placing on the market",
   "obligations[16].text": "Verify the third-country provider has appointed an authorised representative",
@@ -1177,8 +1177,8 @@
   "obligations[13].text": "Assist the controller in responding to data subject requests",
   "obligations[14].text": "Delete or return the data at the end of the engagement",
   "obligations[15].text": "Inform and advise on obligations, and monitor compliance, without receiving instructions on how to perform the task",
-  "obligations[16].text": "Act as the contact point for the supervisory authority and for data subjects",
-  "obligations[17].text": "Maintain the record of processing activities and make it available to the authority on request"
+  "obligations[16].text": "Act as the contact point for the supervisory authority and for data subjects, reporting directly to the highest level of management",
+  "obligations[17].text": "Hold the record of processing inside the EU on behalf of a controller with no EU establishment, and produce it to the authority on request"
  },
  "roles-overlap": {
   "prompt": "For each statement, decide whether it belongs to the EU AI Act, the GDPR, or both.",

@@ -4,32 +4,32 @@
   "title": "One Fact Changes Everything — Risk",
   "blurb": "Eight vocabulary distinctions that decide who signs, what is measured, and whether the answer is defensible.",
   "source": "ISO 31000:2018 · IIA Three Lines Model (2020) · NIST AI RMF 1.0",
-  "asOf": "2026-07",
+  "asOf": "2026-10",
   "area": "risk",
   "pairs": [
     {
       "id": "rp-01",
       "dimension": "whether controls are assumed to be operating",
       "buckets": ["Inherent risk", "Residual risk"],
-      "a": {"text": "The assessment rates the exposure from an automated decisioning model as if none of the review, threshold or appeal mechanisms existed.", "answer": "Inherent risk", "why": "Inherent risk is the gross position before controls. It exists to size the control effort, and it is never what gets accepted."},
+      "a": {"text": "The assessment rates the exposure from an automated decisioning model as if none of the review, threshold or appeal mechanisms existed.", "answer": "Inherent risk", "why": "Inherent risk is the gross position before controls. It exists to size the control effort. Acceptance is judged against residual risk; the two figures only coincide when the organisation knowingly retains the risk with no treatment at all."},
       "b": {"text": "The assessment rates the same model with review, thresholds and appeal operating as designed, and reports what remains.", "answer": "Residual risk", "why": "Residual risk is what sign-off is actually against. Accepting against the inherent figure over-states what the organisation has agreed to carry."},
-      "citation": "ISO 31000:2018 (inherent vs residual risk; risk remaining after treatment)"
+      "citation": "ISO Guide 73:2009 §3.8.1.6 (residual risk: risk remaining after treatment) · COSO ERM and IIA usage (inherent risk) · ISO 31000:2018 §6.5 (retaining a risk by informed decision)"
     },
     {
       "id": "rp-02",
       "dimension": "whether the statement sets a strategic level or an operational limit",
       "buckets": ["Risk appetite", "Risk tolerance"],
       "a": {"text": "The board states that the organisation will not pursue AI applications that make consequential decisions about individuals without human review.", "answer": "Risk appetite", "why": "Appetite is the broad, forward-looking statement of what risk the organisation is willing to take in pursuit of its objectives."},
-      "b": {"text": "The policy states that a model may go live only if subgroup accuracy disparity is below four percentage points.", "answer": "Risk tolerance", "why": "Tolerance is the measurable boundary that operationalises appetite. Appetite without tolerance cannot be tested; tolerance without appetite is arbitrary."},
-      "citation": "ISO 31000:2018 · COSO ERM (risk appetite vs risk tolerance)"
+      "b": {"text": "The policy states that a model may go live only if subgroup accuracy disparity is below four percentage points.", "answer": "Risk tolerance", "why": "Tolerance is the measurable boundary that operationalises appetite. That limit-setting reading follows COSO usage, where the 2017 framework speaks of acceptable variation in performance; ISO Guide 73 frames tolerance as readiness to bear a risk after treatment. Appetite without tolerance cannot be tested; tolerance without appetite is arbitrary."},
+      "citation": "ISO Guide 73:2009 §3.7.1.2 (risk appetite), §3.7.1.3 (risk tolerance) · COSO ERM 2017 (appetite; tolerance as acceptable variation in performance)"
     },
     {
       "id": "rp-03",
       "dimension": "whether the thing named is the source or the effect",
       "buckets": ["Hazard", "Risk"],
-      "a": {"text": "The model can produce fluent, confident text that is factually wrong.", "answer": "Hazard", "why": "A hazard is the intrinsic potential to cause harm. It is a property of the thing and does not depend on deployment."},
+      "a": {"text": "The model can produce fluent, confident text that is factually wrong.", "answer": "Hazard", "why": "A hazard is a potential source of harm. It belongs to the thing itself and exists before you ask who is exposed or how it is used, even though how often it shows up can still vary with retrieval, prompting and domain."},
       "b": {"text": "Because the model drafts patient discharge instructions read by non-specialists, confident errors may lead to incorrect medication use.", "answer": "Risk", "why": "Risk combines the hazard with exposure and consequence in a context. The same hazard is a different risk in a different deployment — which is why tiers attach to use."},
-      "citation": "ISO 31000:2018 §3 (risk source vs risk definitions)"
+      "citation": "ISO/IEC Guide 51:2014 §3.2 (hazard) · ISO 31000:2018 §3 (risk; risk source)"
     },
     {
       "id": "rp-04",

@@ -52,7 +52,7 @@
   "why": "Este é o lado de cadência técnica-e-dashboard do plano de monitorização; o dever legal de estar a correr-o, uma vez que o sistema está vivo, pertence a uma placa de nível diferente inteiramente."
  },
  "iii-ab-14": {
-  "label": "O dashboard próprio da equipa de produto rastreia calibração e latência contra uma baseline validada numa cadência de semana a correr, com proporções de disparidade de equidade refrescando automaticamente ao lado delas.",
+  "label": "Durante o período de rodagem pré-lançamento, o dashboard próprio da equipa de produto rastreia calibração e latência contra uma baseline validada numa cadência semanal, com proporções de disparidade de equidade a atualizarem-se automaticamente ao lado delas, pronto a continuar sem alterações após o lançamento.",
   "why": "Um feed contínuo, automatizado own pela equipa que construiu o sistema é a textura desta zona — o momento que a mesma verificação é em vez correr por um reviewer organizacionalmente separado daquela equipa, numa visita agendada em vez de um feed vivo, é uma auditoria."
  },
  "iii-ab-15": {
@@ -78,7 +78,7 @@
   "zones[1].def": "Especialistas simulam um cenário adversário realista ou misuse end-to-end — jailbreaks, injeção de prompt, engenharia social, abuso de edge-case — para ver como o sistema inteiro aguenta sob pressão, então alimentam o que descobriram de volta para um plano de remediação que fica re-testado.",
   "zones[2].def": "Um exercício estruturado, baseado-em-papel, feito no tempo de design antes de qualquer teste correr, que cataloga o que precisa proteger, quem pode atacá-lo, e que casos de abuso importam — produzindo uma lista de riscos e mitigações nomeadas, não uma tentativa live de explorar qualquer coisa.",
   "zones[3].def": "Probing hands-on de componentes específicos, já-identificados — a API de serving, dependências, o código do pipeline — para confirmar que uma defesa está realmente presente e corretamente configurada, distinto de uma simulação adversarial full-system ou um catálogo de papel do que poderia correr mal.",
-  "zones[4].def": "A cadência técnica de verificações — avaliações agendadas, métricas rastreadas, alertas automatizados — que fica construído e ensaiado à medida que o plano de monitorização vem junto. Os dashboards e detectores em si, não o dever legal de estar a correr-os uma vez que o sistema está vivo.",
+  "zones[4].def": "A monitorização pós-mercado em si é a vigilância contínua que o fornecedor mantém sobre um sistema durante toda a sua vida após o lançamento. Neste quadro pré-lançamento, a zona é a construção dessa vigilância: as avaliações agendadas, as métricas rastreadas e os alertas automatizados que são concebidos e ensaiados antes do lançamento para estarem prontos a funcionar desde o primeiro dia. Os dashboards e detetores em si, não o dever permanente de os operar uma vez que o sistema está em direto.",
   "zones[5].def": "A maquinaria formal, time-boxed — contenção primeiro, depois análise de causa-raiz, depois ação corretiva — que ativa o momento que uma cena envolve dano real-mundo confirmado, não um achado de rotina ainda a ser logged e vigilância."
  }
 }

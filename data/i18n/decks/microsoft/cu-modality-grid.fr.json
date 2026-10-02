@@ -99,7 +99,7 @@
   },
   "cu-modality-grid": {
     "hint": "Demande ce que le fichier source est réellement, puis consulte la ligne sub pour l'identifiant d'analyseur exact prebuilt-* — l'identifiant lui-même nomme sa modalité (document/image/audio/vidéo), et les identifiants avec suffixe Search préparent la sortie pour l'indexation plutôt que de changer la modalité.",
-    "note": "Content Understanding extrait toujours — il ne génère ni n'indexe jamais. L'extraction dans Azure AI Search est une étape en aval, pas quelque chose que CU fait elle-même.",
+    "note": "Content Understanding transforme du contenu en sortie structurée — des champs qu'il extrait, plus des valeurs qu'il génère ou classe, comme des résumés et des descriptions — mais il ne crée pas de nouveaux médias et ne construit pas d'index de recherche. L'indexation dans Azure AI Search est une étape en aval, pas quelque chose que CU fait lui-même.",
     "zones[0].def": "Les PDF, factures, contrats et documents en vrac que Content Understanding transforme en champs structurés, tableaux et texte.",
     "zones[1].def": "Les photos, captures d'écran et graphiques que Content Understanding transforme en champs structurés, descriptions et objets détectés.",
     "zones[2].def": "La parole enregistrée — appels, podcasts et messagerie vocale — que Content Understanding transforme en transcriptions, résumés et étiquettes d'orateurs.",

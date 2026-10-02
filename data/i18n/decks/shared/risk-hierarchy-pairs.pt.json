@@ -1,13 +1,13 @@
 {
  "rhp-01": {
   "a.text": "A empresa adiciona validação de resultados e revisão humana a um modelo de sinistros, reduzindo a taxa de negações incorretas.",
-  "a.why": "A probabilidade do dano efetivamente diminui. A redução é o único tratamento que melhora a situação da pessoa afetada.",
+  "a.why": "A probabilidade do dano diminui efetivamente, por isso o requerente fica a ganhar. A transferência, pelo contrário, deixa o resultado do requerente intocado.",
   "b.text": "A empresa compra uma apólice de seguro que cobre o custo de sinistros negados incorretamente, mantendo o modelo inalterado.",
-  "b.why": "O requerente é negado à mesma taxa; apenas a folha de balanço da empresa é protegida. O seguro nunca é um controlo."
+  "b.why": "O requerente é recusado exatamente à mesma taxa; apenas o balanço da empresa é protegido. O seguro muda quem paga, não a frequência com que o dano ocorre."
  },
  "rhp-02": {
   "a.text": "Após avaliação, a funcionalidade de inferência emocional é cancelada e removida do roadmap.",
-  "a.why": "A atividade para, então a exposição vai para zero. A prevenção é o único tratamento sem risco residual para registar.",
+  "a.why": "A atividade para, por isso esta exposição é removida em vez de reduzida. Ainda assim, verifica se a necessidade que ela servia se desloca para outro sítio com o seu próprio risco.",
   "b.text": "Após avaliação, a funcionalidade de inferência emocional é lançada com limiares de confiança, avaliação por subgrupo e revisão humana dos casos com baixa confiança.",
   "b.why": "A atividade continua com menor probabilidade de dano. A mitigação substancial continua sendo redução, e o risco residual ainda precisa de um responsável."
  },
@@ -19,7 +19,7 @@
  },
  "rhp-04": {
   "a.text": "A capacidade do agente de emitir reembolsos é completamente removida do seu conjunto de ferramentas.",
-  "a.why": "Sem capacidade, sem modo de falha, e nada deixado para monitorizar. A eliminação é o nível superior porque retira todo o ramo da árvore de riscos.",
+  "a.why": "Sem a capacidade, este modo de falha fica retirado; verifica para onde vão agora os pedidos de reembolso. A eliminação é o nível superior porque remove o perigo em vez de se proteger dele.",
   "b.text": "O agente mantém a sua ferramenta de reembolso, com um limite rígido de um reembolso por sessão e um limite de valor aplicado pela ferramenta.",
   "b.why": "Uma restrição técnica forte que ainda deixa uma exposição delimitada — e deixa o próprio limite como algo que pode ser configurado incorretamente."
  },
@@ -27,7 +27,7 @@
   "a.text": "O assistente deteta e bloqueia entradas com aparência confidencial antes de serem enviadas para o modelo.",
   "a.why": "O sistema evita a divulgação independentemente do que o utilizador faz. O ónus está na parte capaz de o suportar.",
   "b.text": "O assistente exibe um aviso pedindo aos utilizadores que não colem informações confidenciais.",
-  "b.why": "O mesmo risco, com o ónus transferido para o utilizador. Nível mais fraco, e frequentemente o único implementado."
+  "b.why": "Um aviso é um controlo administrativo: o mesmo risco, com o ónus transferido para o utilizador. Fica abaixo dos controlos de engenharia, e é frequentemente o único implementado."
  },
  "rhp-06": {
   "a.text": "O comité de risco regista o risco residual, confirma que está dentro do apetite, designa um responsável e define uma data de revisão.",

@@ -8,8 +8,8 @@
   "why": "Bestimme zuerst, ob Aussagen gestützt sind, dann straffe Beweisnutzung, Verweigerungsverhalten und Zitiervalidierung. Kompromiss: Ein größeres Modell kann die Flüssigkeit verbessern, ohne die fehlenden oder ignorierten Beweise zu lösen."
  },
  "genai-ops-02": {
-  "label": "Der Antworrgenerator kann die richtige Tatsache nicht verwenden, weil die relevante Passage im abgerufenen Set fehlt.",
-  "sub": "Korrekter Beweis Taucht Nie Auf",
+  "label": "Die Antworten sind flüssig und zitieren echte Richtliniendokumente, verfehlen aber immer wieder genau die eine Klausel, die die Frage tatsächlich regelt.",
+  "sub": "Die maßgebliche Klausel fehlt",
   "why": "Retrieval Recall isoliert, ob Chunking, Embeddings, Filter, Abfrage-Rewrite oder Kandidaten-Zahl den benötigten Beweis verfehlt. Kompromiss: Änderungen bei der Generierung können nicht Beweis wiederherstellen, der niemals in den Kontext eintritt."
  },
  "genai-ops-03": {

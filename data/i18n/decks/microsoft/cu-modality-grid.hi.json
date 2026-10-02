@@ -99,7 +99,7 @@
  },
  "cu-modality-grid": {
   "hint": "पूछें कि source file actually क्या है, फिर sub line में exact prebuilt-* analyzer id को check करें — id स्वयं उसकी modality name करता है (document/image/audio/video), और Search-suffixed ids output को indexing के लिए prep करते हैं बजाय modality change करें।",
-  "note": "Content Understanding हमेशा extract करता है — यह कभी generate या index नहीं करता। Extraction into Azure AI Search एक downstream step है, कोई भी CU स्वयं करता है।",
+  "note": "Content Understanding सामग्री को संरचित आउटपुट में बदलता है — वह जो फ़ील्ड निकालता है, साथ में वे मान जिन्हें वह जनरेट या वर्गीकृत करता है, जैसे सारांश और विवरण — लेकिन वह नया मीडिया नहीं बनाता और न ही सर्च इंडेक्स बनाता है। Azure AI Search में इंडेक्स करना आगे का (डाउनस्ट्रीम) चरण है, CU ख़ुद ऐसा नहीं करता।",
   "zones[0].def": "PDFs, invoices, contracts और freeform paperwork जिसे Content Understanding structured fields, tables और text में turn करता है।",
   "zones[1].def": "Photos, screenshots और charts जिसे Content Understanding structured fields, descriptions और detected objects में turn करता है।",
   "zones[2].def": "Recorded speech — calls, podcasts और voicemails — जिसे Content Understanding transcripts, summaries और speaker labels में turn करता है।",

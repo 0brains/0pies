@@ -4,7 +4,7 @@
  "title": "Access Model & Factor Sort",
  "blurb": "Four access control models, three authentication factor types. Sort each scene into the model or factor it exercises.",
  "source": "Chapple CISSP SG 10ed ch.13 (Managing Identity and Authentication) & ch.14 (Controlling and Monitoring Access) · CISSP April-2024 outline 5.2, 5.4",
- "asOf": "2026-08",
+ "asOf": "2026-10",
  "area": "5.2 / 5.4",
  "hint": "First decide: is this a static access-control model (MAC/DAC/RBAC/ABAC) or an authentication-factor scene (know/have/are)? Then ask who or what actually makes the access decision, and what kind of proof is being offered.",
  "note": "MAC, DAC, RBAC and ABAC answer 'who may reach this object and on what basis.' Know/have/are answer a different question — 'what is this person proving to establish identity in the first place.' Don't let a scene about proving identity get sorted into an access-model zone, or vice versa.",
@@ -27,7 +27,7 @@
   {
    "key": "ABAC",
    "name": "Attribute-Based Access Control",
-   "def": "Access is computed at request time by evaluating a policy against multiple attributes at once — who the subject is, what the resource is, what action is requested, and the surrounding environment (time, device, location). The tell against RBAC is that no single fixed role bucket explains the decision; two or more independent attribute types must combine before the policy resolves, which is also what separates it from a flat rule applied identically to everyone."
+   "def": "Access is computed at request time by evaluating a policy against attributes — of the subject, the resource, the requested action, and the surrounding environment (time, device, location). The tell against RBAC is that no single fixed role bucket explains the decision. In practice the policy usually weighs several independent attribute types together, and on this board that combination is the strongest sign, but attribute count is not the definition: what makes it ABAC is a policy evaluated over attributes at request time rather than a static role or label assignment."
   },
   {
    "key": "Something you know",

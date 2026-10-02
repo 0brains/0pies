@@ -1,121 +1,121 @@
 {
  "ser-01": {
   "label": "A Rotterdam logistics operator leaves RDP on port 3389 reachable all week on twenty Windows VMs because on-call staff occasionally need to sign in at two in the morning.",
-  "sub": "Which control closes this?",
+  "sub": "Which control area owns this?",
   "why": "Just-in-time access keeps deny-all-inbound rules for the chosen ports in the network security group and Azure Firewall, then opens them only for an approved requester, a stated source address and a bounded window before restoring the previous rules. Bastion is the near miss: it also removes the need for exposed management ports, but it does not touch the allow rules that are already sitting in the network security group, so the open 3389 would remain open beside it."
  },
  "ser-02": {
   "label": "A pharmaceutical firm's change board insists that any opening of SSH to the Linux batch servers must expire by itself within three hours and be tied to the address the requester is coming from.",
-  "sub": "Which control closes this?",
+  "sub": "Which control area owns this?",
   "why": "A just-in-time policy is defined per port with a protocol, an allowed source address prefix and a maximum request duration, and a Linux VM enabled from its own Configuration page starts with port 22 and a ceiling of three hours; the expiry is enforced by the platform, not by an operator remembering to tidy up. Plan coverage is the nearby trap: Plan 2 is what makes the feature available, but the requirement here is the timed policy itself, not the licensing."
  },
  "ser-03": {
   "label": "An internal auditor at a retail bank wants to know which administrators opened management ports on the production VMs during the last week, from which addresses, and for how long.",
-  "sub": "Which control closes this?",
+  "sub": "Which control area owns this?",
   "why": "The Configured tab of the just-in-time page counts the requests approved in the last seven days and shows the last access time, the last user and the ports that can be reached, and the per-machine activity log opened from that row gives the filtered history of the actual operations and can be downloaded as a comma separated file for the auditor. Change monitoring is the tempting neighbour, but it records edits to files and registry keys inside the guest, and a request to open a port is a control-plane action, not a file change."
  },
  "ser-04": {
   "label": "A media analytics company runs its rendering fleet on EC2 instances in an AWS account that is already connected to Defender for Cloud, and wants the same request-first discipline on those management ports as on its Azure VMs.",
-  "sub": "Which control closes this?",
+  "sub": "Which control area owns this?",
   "why": "For AWS machines the feature withdraws the matching rules from the attached EC2 security groups so the ports are blocked, and on an approved request it creates a new security group permitting the traffic for the requested period. Plan coverage is the near miss worth naming: the AWS account must be connected and Plan 2 enabled first, but the control being asked for is the timed access policy."
  },
  "ser-05": {
   "label": "A county council's service desk must reach thirty back-office VMs that carry only private addresses, using nothing but a browser and the Azure portal, with no jump box to patch and no client software to distribute.",
-  "sub": "Which control closes this?",
+  "sub": "Which control area owns this?",
   "why": "Bastion is a managed service deployed into the virtual network that gives RDP and SSH sessions through an HTML5 client in the portal over TLS, reaching VMs by private address with no public IP, agent or special client on the target. Just-in-time access is the nearest wrong answer because it still assumes the machine has a reachable management port that gets opened for a window, whereas here the requirement is that the port is never exposed to the internet in the first place."
  },
  "ser-06": {
   "label": "An insurer's compliance function has to keep a replayable record of every interactive administrative session against the claims servers in order to satisfy an audit trail obligation.",
-  "sub": "Which control closes this?",
+  "sub": "Which control area owns this?",
   "why": "Session recording is a Premium SKU capability of Bastion, which also allows a private-only deployment with no public IP; Standard and below cannot record sessions, so the SKU choice is the whole answer here. Change monitoring is the neighbour to reject: it captures file and registry alterations, which is evidence of what changed but not a record of the session in which an administrator changed it."
  },
  "ser-07": {
   "label": "A four-person startup wants occasional console access to a single test VM in a supported region at no hourly cost, with no dedicated subnet to carve out and no peered networks to reach.",
-  "sub": "Which control closes this?",
+  "sub": "Which control area owns this?",
   "why": "The Developer SKU runs on shared infrastructure, is free, needs no AzureBastionSubnet or public IP, and serves one VM at a time, which fits a test environment but is explicitly unsuitable for production because it offers no peering and no concurrency. Plan coverage is the near miss: nothing about Defender for Servers tiers is at stake, this is a Bastion resource sizing decision."
  },
  "ser-08": {
   "label": "An engineering team at an energy utility connects to hardened Linux hosts with the SSH client on their own laptops and needs to move a diagnostic bundle off the host during an incident.",
-  "sub": "Which control closes this?",
+  "sub": "Which control area owns this?",
   "why": "Native client connections and file upload or download are Standard and Premium features of Bastion, alongside shareable links, custom inbound ports and connecting by IP address, none of which the Basic or Developer tiers provide. Just-in-time access is the wrong neighbour because opening port 22 for a window would give the session but would put the host back on the internet, which is exactly what the design here avoids."
  },
  "ser-09": {
   "label": "A manufacturer in Ohio has three hundred Windows servers in its own data centre and wants them assessed and protected alongside its Azure VMs, with the full feature set rather than a reduced one.",
-  "sub": "Which control closes this?",
+  "sub": "Which control area owns this?",
   "why": "Non-Azure machines are onboarded through Azure Arc with the Connected Machine agent so they become Azure resources and can use the whole Defender for Servers feature set; onboarding straight through the Defender for Endpoint agent works but leaves only Plan 1 behaviour plus the premium vulnerability management extras. Agentless scanning is the tempting pick, yet a server that has never been registered as a resource cannot be enumerated for scanning at all."
  },
  "ser-10": {
   "label": "A fintech scale-up switched on Defender for Servers Plan 1 last quarter and is puzzled that no plaintext credentials, malware findings or file change records ever appear for its machines.",
-  "sub": "Which control closes this?",
+  "sub": "Which control area owns this?",
   "why": "Plan 1 is the entry tier built around the Defender for Endpoint integration; secrets scanning, malware scanning, file integrity monitoring, just-in-time access and agentless vulnerability scanning all belong to Plan 2, so the gap is a tier decision rather than a configuration mistake. Agentless scanning is the closest wrong zone, because the missing findings are its output, but no amount of tuning produces them until the subscription is on the higher tier."
  },
  "ser-11": {
   "label": "A games studio wants its subscription to stay on the richer tier while a tagged group of short-lived build agents runs on the cheaper one to keep the bill down.",
-  "sub": "Which control closes this?",
+  "sub": "Which control area owns this?",
   "why": "The lower tier can be turned on for individual machines through the pricings API, a script or a tagged policy assignment, while the higher tier can only be enabled for a whole subscription and merely disabled per resource, so the mixed estate is expressed through scope settings. Agentless scanning is the neighbour to reject: excluding individual machines from scanning is a separate exclusion mechanism and does not change which tier a machine is billed and featured at."
  },
  "ser-12": {
   "label": "A hospital trust's patching team cannot see missing operating system updates for the ward-side servers in Defender for Cloud, although those servers are reporting other findings.",
-  "sub": "Which control closes this?",
+  "sub": "Which control area owns this?",
   "why": "Update assessment is a Plan 2 feature that leans on the Azure Update Manager extension, and it only applies to machines that were onboarded through Azure Arc, so both the tier and the onboarding path have to be right before the data appears. Change monitoring is the near miss: it also depends on Plan 2 and on Arc for non-Azure machines, but it reports alterations to watched files rather than the patch level of the operating system."
  },
  "ser-13": {
   "label": "An energy trading firm with four thousand virtual machines refuses to add another agent to its gold image but still wants CVE findings and an inventory of installed software for the whole estate.",
-  "sub": "Which control closes this?",
+  "sub": "Which control area owns this?",
   "why": "Agentless machine scanning takes a snapshot of the root and data disks, analyses it out of band in an isolated regional environment and deletes the copy, so no software is installed, no network path is needed and machine performance is untouched. Plan coverage is the closest wrong zone: Plan 2 or the posture management plan does have to be on, but the requirement stated here is about how the evidence is collected, not about which tier pays for it."
  },
  "ser-14": {
   "label": "A private SSH key was left in a developer's home directory on a shared build host, and the security team wants to know where else in the estate that kind of thing is sitting on disk.",
-  "sub": "Which control closes this?",
+  "sub": "Which control area owns this?",
   "why": "Locating plaintext secrets across compute is one of the capabilities carried by agentless machine scanning, which also covers software inventory, vulnerabilities and malware, and the capabilities cannot be switched on individually. Change monitoring is the near miss: it would tell you the moment such a file was created or edited on a watched path, but it does not go looking through the whole file system for credentials that are already there."
  },
  "ser-15": {
   "label": "On a subsidiary's virtual machines the antivirus component is only half configured and its signatures are three weeks stale, and nobody noticed until it surfaced as a recommendation in Defender for Cloud.",
-  "sub": "Which control closes this?",
+  "sub": "Which control area owns this?",
   "why": "Defender for Cloud evaluates endpoint protection posture agentlessly, checking for a missing endpoint detection product and for issues such as disabled antivirus, outdated signatures and scans that have not run in a week, raising recommendations to resolve endpoint detection configuration issues. Plan coverage is the tempting neighbour because the checks need Plan 2 or the posture plan, but the mechanism the question is describing is the agentless assessment of the endpoint agent, not a licensing gap."
  },
  "ser-16": {
   "label": "A university shuts its research virtual machines down every night to save money, and those machines never appear in the vulnerability results, unlike the always-on ones beside them.",
-  "sub": "Which control closes this?",
+  "sub": "Which control area owns this?",
   "why": "The snapshot-based scan runs on a fixed daily cadence and only covers machines that are running at the time, so a VM that is deallocated during the scan window is simply skipped, in the same way that a machine holding an unsupported disk type is passed over entirely and a machine whose disks add up to more than four terabytes has only its operating system disk read. Plan coverage is the nearest wrong zone: nothing about the tier is wrong here, the machine was just powered off when the scan came round."
  },
  "ser-17": {
   "label": "A payment processor under card industry rules must be able to show that edits to the scheduling files on its Linux hosts and to the Windows startup registry keys are recorded with the account and the process responsible.",
-  "sub": "Which control closes this?",
+  "sub": "Which control area owns this?",
   "why": "File integrity monitoring in Plan 2 watches operating system files, application files, Linux system paths and registry keys for creation, deletion and modification, and the change record includes the account, the initiating process and the source of the change, which is precisely what those compliance regimes ask for. Agentless scanning is the closest wrong zone: it can read the same files from a snapshot, but it reports state on a daily rhythm rather than a stream of attributed change events."
  },
  "ser-18": {
   "label": "A retailer turned the feature on and finds that changes to watched paths only show up in the workspace once a day, which is too slow for its incident response team.",
-  "sub": "Which control closes this?",
+  "sub": "Which control area owns this?",
   "why": "Collection method decides the latency: events gathered by the Defender for Endpoint sensor reach the chosen workspace in close to real time, while events derived from agentless collection arrive on a daily cycle, so the fix is to get the endpoint sensor onto the machines rather than to reconfigure the rules. Agentless scanning is the neighbour to reject, since choosing it is exactly what produced the delay the retailer is complaining about."
  },
  "ser-19": {
   "label": "A supermarket chain's remaining Windows Server 2016 machines stopped sending records of edits to their watched folders after a change in the endpoint sensor pipeline, while the Server 2022 machines beside them, on the same subscription and the same workspace, carry on reporting normally.",
-  "sub": "Which control closes this?",
+  "sub": "Which control area owns this?",
   "why": "The sensor-based collection path carries a minimum client version, and a downlevel Windows machine below build 10.8799 quietly stops delivering change data; Server 2019 and later pick the sensor up with ordinary operating system updates, but Server 2016 and 2012 R2 have to be raised deliberately, by patching them to the current agent. Plan coverage is the near miss and it looks identical from the console, since a machine on the wrong tier also shows nothing, but here Plan 2 already covers these servers and only the sensor build is behind."
  },
  "ser-20": {
   "label": "A broadcaster's editing workstations in Azure hold working footage on the temporary disk and in the disk caches, and the security architect wants that data encrypted end to end without spending guest processor cycles on it.",
-  "sub": "Which control closes this?",
+  "sub": "Which control area owns this?",
   "why": "Encryption at host performs the encryption on the Azure server hosting the VM, so temporary disks, ephemeral OS disks and the OS and data disk caches are protected at rest and travel encrypted to storage, and it costs the VM no processor time. Agentless scanning is the wrong zone to reach for, because it reads a copy of these disks to report what is weak on them and never changes how any of them are encrypted. The tempting siblings inside this same zone are guest-based disk encryption using BitLocker or dm-crypt, which does consume guest processor cycles, and platform server-side encryption alone, which covers managed disks but leaves temporary disks and caches out."
  },
  "ser-21": {
   "label": "A regulator tells a bank that it must be able to revoke, at any moment, the key material protecting the operating system disks of its core banking virtual machines.",
-  "sub": "Which control closes this?",
+  "sub": "Which control area owns this?",
   "why": "Customer-managed keys held in Key Vault or a managed hardware security module and referenced through a disk encryption set give exactly that: the disk's data key is wrapped by the bank's own key, and disabling, deleting or expiring that key stops the platform unwrapping it, at which point every machine whose operating system or data disk depends on it shuts down automatically and refuses to start again until someone re-enables that key or points the disk encryption set at a fresh one. Plan coverage is the wrong neighbour because no Defender tier grants or withdraws custody of key material; this is a disk and key vault design decision."
  },
  "ser-22": {
   "label": "A defence contractor is worried about bootkits on its Generation 2 fleet and wants the platform to refuse to start any machine whose boot loader, kernel or drivers are not signed by a trusted publisher.",
-  "sub": "Which control closes this?",
+  "sub": "Which control area owns this?",
   "why": "Secure Boot is implemented in platform firmware as part of Trusted Launch and refuses to start a machine whose boot components are not signed by trusted publishers, establishing a root of trust, while the virtual TPM alongside it holds keys and measurements for later attestation. Change monitoring is the wrong neighbour: it can tell you a boot file was altered after the machine is running, but it cannot prevent the altered code from executing during boot."
  },
  "ser-23": {
   "label": "A biotech firm's machines already have Secure Boot and the virtual TPM turned on, and the security team now wants Defender for Cloud to confirm remotely, after every restart, that each machine really did boot in a healthy state.",
-  "sub": "Which control closes this?",
+  "sub": "Which control area owns this?",
   "why": "That confirmation comes from installing the guest attestation extension and enabling integrity monitoring on the machine's security type, after which Defender for Cloud attests the boot chain remotely and raises a medium severity alert if the boot log strays from the trusted baseline or the quote cannot be proved to come from that machine's virtual TPM. Change monitoring is the closest wrong zone because both watch for tampering, but attestation judges the boot sequence itself, whereas file integrity monitoring only observes changes once the operating system is up."
  },
  "server-hardening": {
-  "hint": "Work from the shape of the exposure, not from the product you like best. If the problem is a management port standing open and someone still needs to use it occasionally, that is just-in-time access: the port stays denied and is opened for one requester, one address range and one time window. If the problem is that admins need an interactive RDP or SSH session at all and you would rather the VM never carry a public IP or an inbound management rule, that is Bastion, which brokers the session over TLS on 443 from the portal or a native client. If the sentence is really about whether a capability is even available on those machines, which plan tier is on, or how non-Azure servers become visible in the first place, that is Plan coverage, and Azure Arc is usually the missing piece. If the finding was produced by reading a copy of the disk without touching the machine, such as CVEs, software inventory, plaintext secrets, malware or the state of the antivirus configuration, that is Agentless scanning. If somebody changed a file, a folder or a registry key and you need the record of who and with which process, that is Change monitoring. And if the answer lives below the operating system, in how the disk is encrypted or how the boot chain is proved trustworthy, that is Disk and boot integrity. When two zones both look plausible, ask which one stops the attacker rather than which one tells you about them.",
+  "hint": "Work from the shape of the exposure, not from the product you like best. If the problem is a management port standing open and someone still needs to use it occasionally, that is just-in-time access: the port stays denied and is opened for one requester, one address range and one time window. If the problem is that admins need an interactive RDP or SSH session at all and you would rather the VM never carry a public IP or an inbound management rule, that is Bastion, which brokers the session over TLS on 443 from the portal or a native client. If the sentence is really about whether a capability is even available on those machines, which plan tier is on, or how non-Azure servers become visible in the first place, that is Plan coverage, and Azure Arc is usually the missing piece. If the finding was produced by reading a copy of the disk without touching the machine, such as CVEs, software inventory, plaintext secrets, malware or the state of the antivirus configuration, that is Agentless scanning. If somebody changed a file, a folder or a registry key and you need the record of who and with which process, that is Change monitoring. And if the answer lives below the operating system, in how the disk is encrypted or how the boot chain is proved trustworthy, that is Disk and boot integrity. When two zones both look plausible, ask what the scenario actually turns on: an exposure being removed, evidence read from a disk copy, a change being recorded as it happens, or a feature not being available at all.",
   "zones[0].def": "Time-bound, request-and-approve opening of management ports on machines that otherwise keep those ports denied, with the deny rules restored when the window expires. Differs from bastion, which never opens an inbound management port on the VM at all and instead fronts the session itself, and from Plan coverage, which is about whether the Defender for Servers tier that carries this feature is switched on.",
   "zones[1].def": "A managed jump service inside the virtual network that hands administrators RDP and SSH sessions over TLS on port 443, so target VMs need no public IP, no agent and no inbound management rule. Differs from Just-in-time access, which still opens a real port for a real window on a machine you expose deliberately, and from Plan coverage, because Bastion is its own resource with its own SKU rather than a Defender plan feature.",
   "zones[2].def": "Whether a capability is available on the machine in question at all: Defender for Servers Plan 1 versus Plan 2, the scope the plan is turned on for, and onboarding non-Azure and multicloud servers through Azure Arc so they behave like Azure resources. Differs from Agentless scanning and Change monitoring, which are individual features you configure after the right plan is already on the subscription.",

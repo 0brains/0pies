@@ -99,7 +99,7 @@
  },
  "cu-modality-grid": {
   "hint": "Frage, welche Quelldatei es tatsächlich ist, dann prüfe die sub-Zeile auf die exakte prebuilt-* Analyzer-ID — die ID selbst benennt ihre Modalität (document/image/audio/video), und Search-suffixed IDs bereiten Ausgabe für Indizierung vor, anstatt die Modalität zu ändern.",
-  "note": "Content Understanding extrahiert immer — es generiert oder indiziert nie. Extraktion zu Azure AI Search ist ein downstream-Schritt, nicht etwas, das CU selbst tut.",
+  "note": "Content Understanding verwandelt Inhalte in strukturierte Ausgaben — Felder, die es extrahiert, plus Werte, die es generiert oder klassifiziert, etwa Zusammenfassungen und Beschreibungen —, erstellt aber keine neuen Medien und baut keinen Suchindex. Die Indizierung in Azure AI Search ist ein nachgelagerter Schritt, nichts, was CU selbst tut.",
   "zones[0].def": "PDFs, Invoices, Verträge und freiform Paperwork, die Content Understanding in strukturierte Felder, Tabellen und Text umwandelt.",
   "zones[1].def": "Fotos, Screenshots und Charts, die Content Understanding in strukturierte Felder, Beschreibungen und erkannte Objekte umwandelt.",
   "zones[2].def": "Aufgezeichnete Sprache — Anrufe, Podcasts und Voicemails — die Content Understanding in Transkripte, Zusammenfassungen und Sprecher-Kennzeichnung umwandelt.",

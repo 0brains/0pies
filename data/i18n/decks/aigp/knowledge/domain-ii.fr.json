@@ -87,7 +87,7 @@
     "a.text": "Un employeur déploie la reconnaissance émotionnelle pour surveiller l'attention du personnel à leurs bureaux.",
     "a.why": "L'Art. 5 interdit l'inférence émotionnelle au travail et à l'école, en dehors des usages médicaux et de sécurité.",
     "b.text": "Un studio de jeux utilise la reconnaissance émotionnelle dans une application de divertissement pour consommateurs, divulguée à l'utilisateur.",
-    "b.why": "En dehors du lieu de travail et de l'école, l'interdiction ne s'applique pas ; les responsabilités de transparence de l'Art. 50 s'appliquent plutôt."
+    "b.why": "En dehors du lieu de travail et de l'enseignement, l'interdiction ne s'applique pas, mais la reconnaissance des émotions est classée à haut risque à l'Annex III point 1(c). En informer les utilisateurs relève de l'obligation de l'Art. 50(3), qui s'ajoute au statut de haut risque, sans le remplacer."
   },
   "II.C-pair-008": {
     "a.text": "Une entreprise de Dublin apporte un système à haut risque construit aux États-Unis sur le marché de l'UE pour la première fois.",
@@ -397,8 +397,8 @@
     "obligations[13].text": "Aidez le responsable à répondre aux demandes de sujets de données",
     "obligations[14].text": "Supprimez ou renvoyez les données à la fin de l'engagement",
     "obligations[15].text": "Informez et conseillez sur les responsabilités, et supervisez la conformité, sans recevoir d'instructions sur la manière d'accomplir la tâche",
-    "obligations[16].text": "Agissez comme point de contact pour l'autorité de surveillance et pour les sujets de données",
-    "obligations[17].text": "Maintenez l'enregistrement des activités de traitement et mettez-le à disposition de l'autorité sur demande"
+    "obligations[16].text": "Agis comme point de contact pour l'autorité de contrôle et pour les personnes concernées, en rendant compte directement au plus haut niveau de la direction",
+    "obligations[17].text": "Tiens le registre des activités de traitement dans l'UE pour le compte d'un responsable du traitement sans établissement dans l'UE, et présente-le à l'autorité sur demande"
   },
   "tl-asean-001": {
     "milestone": "Attendu de diversifier",
@@ -507,7 +507,7 @@
     "b.why": "Les données comportementales seules sont personnelles mais non de catégorie spéciale, à moins qu'elles ne soient utilisées pour déduire un attribut protégé."
   },
   "II.A-tell-009": {
-    "snippet": "La personne concernée a le droit de ne pas être soumise à une décision fondée uniquement sur un traitement automatisé, y compris le profilage, qui produit des effets juridiques à son égard.",
+    "snippet": "La personne concernée a le droit de ne pas faire l'objet d'une décision fondée exclusivement sur un traitement automatisé, y compris le profilage, produisant des effets juridiques la concernant ou l'affectant de manière significative de façon similaire.",
     "tell": "« uniquement sur traitement automatisé » plus « effets juridiques ou affecte de manière significative » est l'article 22. C'est un droit de protection des données, pas une obligation de la Loi IA — un piège d'examen favori."
   },
   "II.B-brief-01": {
@@ -876,10 +876,10 @@
     "note": "Évaluations d'impact/risque, avis aux consommateurs, processus d'examen/appel, contrôles des fournisseurs et tests de discrimination."
   },
   "II-case-001": {
-    "brief": "Un assureur néerlandais autorise un modèle tiers et le réentraîne sur son propre historique de sinistres, puis le commercialise sous sa propre marque. Les décisions de tarification sont émises automatiquement.",
-    "steps[0].why": "Il a remis à la marque le système et l'a considérablement modifié en réentraînant — l'une ou l'autre opération transfère les obligations du prestataire.",
+    "brief": "Un assureur néerlandais prend sous licence un modèle tiers pour tarifer des polices individuelles d'assurance santé, le réentraîne sur son propre historique de sinistres et met le système de tarification en service sous sa propre marque. Les décisions de tarification sont émises automatiquement.",
+    "steps[0].why": "La tarification de l'assurance santé des particuliers est à haut risque au titre de l'Annex III (point 5(c)), donc l'Art. 25 s'applique : apposer sa propre marque sur le système suffit à lui seul à en faire le fournisseur, et un réentraînement qui modifie les performances du système peut aussi constituer une modification substantielle.",
     "steps[1].why": "Les décisions de tarification automatisées ayant des effets importants constituent une prise de décision purement automatisée.",
-    "steps[2].why": "Obligations du prestataire pour un système à haut risque, aux côtés du DPIA requis du côté de la protection des données."
+    "steps[2].why": "Obligations du fournisseur pour un système à haut risque (la tarification de l'assurance vie et santé figure à l'Annex III ; celle de l'assurance auto n'y figurerait pas), aux côtés du DPIA requis du côté de la protection des données."
   },
   "II-case-004": {
     "brief": "Une entreprise américaine entraîne un modèle à usage général au-delà du seuil de calcul du risque systémique. Elle n'a pas d'établissement dans l'UE, mais les entreprises de l'UE intègrent le modèle dans leurs produits.",
@@ -948,12 +948,12 @@
     "a.text": "Un système d'IA dépiste les candidats à un emploi et produit une liste classée que les recruteurs embauchent.",
     "a.why": "Utilisation à haut risque en vertu de l'Annex III pour l'emploi — le système influence matériellement qui est embauché.",
     "b.text": "Le même système trie simplement les candidats par ordre alphabétique pour un recruteur qui lit chaque CV et décide indépendamment.",
-    "b.why": "Art. 6(3) : une tâche procédurale étroite qui n'influence matériellement pas le résultat sort du haut risque."
+    "b.why": "Art. 6(3) : une tâche procédurale étroite qui n'influence pas matériellement le résultat sort du haut risque. Ajouter un évaluateur humain à un système de classement n'aurait pas cet effet ; la supervision humaine est une obligation des systèmes à haut risque, pas une sortie de la catégorie."
   },
   "II.C-pair-003": {
     "a.text": "La police effectue une identification biométrique télécommandée en temps réel sur une place publique pour trouver des suspects de façon générale.",
     "a.why": "L'Article 5 interdit l'identification biométrique télécommandée en temps réel dans les espaces accessibles au public pour l'application de la loi, sauf exceptions autorisées étroites.",
-    "b.text": "La police effectue le même appariement biométrique après coup, sur des images stockées, sous autorisation judiciaire.",
+    "b.text": "La police effectue le même appariement biométrique après coup, sur des images stockées.",
     "b.why": "L'identification biométrique post-télécommandée n'est pas interdite mais à haut risque en vertu de l'Annex III avec exigences d'autorisation."
   },
   "II.C-pair-005": {
@@ -989,8 +989,8 @@
     "tell": "Le vocabulaire et les concepts uniquement, sans rien à certifier, est 22989. Si une norme vous dit ce que les mots signifient plutôt que ce qu'il faut faire, c'est la norme terminologique."
   },
   "II.D-tell-006": {
-    "snippet": "Un programme d'évaluation qui évalue les performances du modèle en laboratoire, en test de terrain contrôlé et en utilisation réelle, en trois couches.",
-    "tell": "L'évaluation en couches passant du laboratoire au terrain au monde réel est ARIA (Assessing Risks and Impacts of AI). Le AI RMF est un cadre ; ARIA est un programme de test qui l'alimente."
+    "snippet": "Un programme d'évaluation qui étudie les risques et impacts de l'IA en usage réaliste, sur trois niveaux : tests du modèle, red-teaming et tests sur le terrain.",
+    "tell": "Trois niveaux d'évaluation nommés, tests du modèle puis red-teaming puis tests sur le terrain, signalent ARIA (Assessing Risks and Impacts of AI). Le AI RMF est un cadre ; ARIA est un programme de test qui l'alimente."
   },
   "controller": {
     "definition": "Détermine les objectifs et les moyens du traitement."
@@ -1267,7 +1267,7 @@
     "obligations[10].text": "Assurer que les données d'entrée sont pertinentes et suffisamment représentatives du but prévu",
     "obligations[11].text": "Informer les travailleurs et leurs représentants avant de mettre en service un système à haut risque sur le lieu de travail",
     "obligations[12].text": "Informer les personnes qu'elles sont soumises à la décision d'un système à haut risque",
-    "obligations[13].text": "Conserver les journaux générés automatiquement pour la période requise",
+    "obligations[13].text": "Conserver les journaux que le système génère pendant que tu l'utilises dans tes propres opérations, pendant au moins six mois",
     "obligations[14].text": "Effectuer une évaluation d'impact sur les droits fondamentaux si requis",
     "obligations[15].text": "Vérifier que le prestataire a complété l'évaluation de la conformité avant de mettre sur le marché",
     "obligations[16].text": "Vérifier que le prestataire tiers a nommé un représentant autorisé",

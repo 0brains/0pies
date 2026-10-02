@@ -1,7 +1,7 @@
 {
   "rp-01": {
     "a.text": "Ocena ocenia ekspozycję z modelu automatycznego podejmowania decyzji, jakby nie istniały żadne mechanizmy przeglądu, progów lub odwołań.",
-    "a.why": "Ryzyko nieodłączne to pozycja brutto przed kontrolami. Istnieje, aby zmierzyć wysiłek kontroli, i nigdy nie jest to, co się akceptuje.",
+    "a.why": "Ryzyko nieodłączne to pozycja brutto przed kontrolami. Służy do zwymiarowania wysiłku kontrolnego. Akceptację ocenia się względem ryzyka rezydualnego; obie wartości pokrywają się tylko wtedy, gdy organizacja świadomie zatrzymuje ryzyko bez żadnego postępowania z nim.",
     "b.text": "Ocena ocenia ten sam model z przeglądem, progami i odwołaniami działającymi zgodnie z projektem, i raportuje co pozostaje.",
     "b.why": "Pozostałe ryzyko to co w rzeczywistości zatwierdza się. Akceptacja przeciwko liczbie inherentnej przesadza, co organizacja zgodziła się ponieść."
   },
@@ -9,11 +9,11 @@
     "a.text": "Zarząd stwierdza, że organizacja nie będzie dążyć do aplikacji AI, które podejmują konsekwentne decyzje o osobach bez przeglądu człowieka.",
     "a.why": "Łaknienie to szerokie, skierowane w przyszłość stwierdzenie, ile ryzyka organizacja jest gotowa brać w dążeniu do swoich celów.",
     "b.text": "Polityka stwierdza, że model może pójść na żywo tylko, jeśli rozbieżność dokładności podgrupy poniżej czterech punktów procentowych.",
-    "b.why": "Tolerancja to mierzalna granica, która operacjonalizuje łaknienie. Łaknienie bez tolerancji nie można testować; tolerancja bez łaknienia jest arbitralna."
+    "b.why": "Tolerancja to mierzalna granica, która operacjonalizuje apetyt na ryzyko. Takie rozumienie jako wyznaczanie limitów wynika z użycia w COSO, gdzie framework z 2017 r. mówi o akceptowalnej zmienności wyników; ISO Guide 73 ujmuje tolerancję jako gotowość do poniesienia ryzyka po postępowaniu z nim. Apetytu bez tolerancji nie da się przetestować; tolerancja bez apetytu jest arbitralna."
   },
   "rp-03": {
     "a.text": "Model może produkować płynny, pewny tekst, który jest faktycznie błędny.",
-    "a.why": "Niebezpieczeństwo to wewnętrzny potencjał wyrządzenia szkody. To właściwość rzeczy i nie zależy od wdrażania.",
+    "a.why": "Zagrożenie to potencjalne źródło szkody. Należy do samej rzeczy i istnieje, zanim zapytasz, kto jest narażony albo jak jest ona używana, choć to, jak często się ujawnia, wciąż może zależeć od wyszukiwania (retrieval), promptowania i dziedziny.",
     "b.text": "Ponieważ model opracowuje instrukcje wypisu pacjenta czytane przez niespecjalistów, pewne błędy mogą prowadzić do nieprawidłowego stosowania leków.",
     "b.why": "Ryzyko łączy niebezpieczeństwo z ekspozycją i konsekwencją w kontekście. To samo niebezpieczeństwo to inne ryzyko w innym wdrażaniu — dlatego warstwy dołączają do użytku."
   },

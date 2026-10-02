@@ -4,7 +4,7 @@
  "title": "The Assurance Bench",
  "blurb": "Six pre-release assurance disciplines that stand between a finished model and a launch decision. Sort each scene into the discipline it's exercising.",
  "source": "AIGP BOK III.C · AIGP Study Guide (SG) §Domain III.C (Periodic Assurance; Incident/Issue/Risk Management)",
- "asOf": "2026-08",
+ "asOf": "2026-10",
  "area": "III.C",
  "hint": "These are pre-release, development-cycle checks. Ask what stage the scene is in: a paper catalog before any test runs is threat modeling; a live attempt to break the system is red teaming; an independent reviewer checking the evidence trail is an audit.",
  "note": "Everything on this board happens before or during the readiness decision. What a live system owes its operator after launch, on a recurring basis, is a different board.",
@@ -31,8 +31,8 @@
   },
   {
    "key": "Post-market monitoring",
-   "name": "Post-market monitoring",
-   "def": "The technical cadence of checks — scheduled evaluations, tracked metrics, automated alerts — that gets built and rehearsed as the monitoring plan comes together. The dashboards and detectors themselves, not the standing legal duty to run them once the system is live."
+   "name": "Post-market monitoring plan",
+   "def": "Post-market monitoring itself is the provider's ongoing watch over a system for its whole life after release. On this pre-release board, the zone is the build-out of that watch: the scheduled evaluations, tracked metrics and automated alerts that are designed and rehearsed before launch so they are ready to run from day one. The dashboards and detectors themselves, not the standing duty to operate them once the system is live."
   },
   {
    "key": "Incident response",
@@ -134,7 +134,7 @@
   },
   {
    "id": "iii-ab-14",
-   "label": "The product team's own dashboard tracks calibration and latency against a validated baseline on a running weekly cadence, with fairness disparity ratios refreshing automatically alongside them.",
+   "label": "During the pre-release soak period, the product team's own dashboard tracks calibration and latency against a validated baseline on a weekly cadence, with fairness disparity ratios refreshing automatically alongside them, ready to carry on unchanged after launch.",
    "answer": "Post-market monitoring",
    "why": "A continuous, automated feed owned by the team that built the system is this zone's texture — the moment that same check is instead run by a reviewer organizationally separate from that team, on a scheduled visit rather than a live feed, it's an audit.",
    "citation": "SG"

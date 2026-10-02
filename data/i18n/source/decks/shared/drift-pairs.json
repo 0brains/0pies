@@ -1,7 +1,7 @@
 {
  "dp-01": {
   "a.text": "A credit model sees a wave of applicants from a new region. For any given income, employment and history profile, default rates are exactly what the model expects.",
-  "a.why": "The inputs moved into new territory but the rule is intact. More representative training data fixes it; a new rule is not needed.",
+  "a.why": "The inputs moved into new territory but the rule is intact, so predictions hold wherever the training data covered these profiles. The thing to watch is thinly covered regions, where the model is extrapolating; a new rule is not needed.",
   "b.text": "A credit model sees the same wave of applicants from a new region. For an identical income, employment and history profile, default rates there are twice what the model expects.",
   "b.why": "Identical inputs now produce different outcomes, so P(Y|X) has changed. No amount of rebalancing the input mix will fix a relationship that no longer holds."
  },

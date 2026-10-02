@@ -32,7 +32,7 @@
  },
  "svc-008": {
   "label": "selfie를 ID photo에 대해 비교해 person의 identity를 verify해요.",
-  "why": "Azure AI Face는 identity scenarios를 위해 face detection, verification, 그리고 liveness-check 기능을 제공해요."
+  "why": "Azure AI Face는 신원 확인 시나리오를 위한 얼굴 감지, 검증, 라이브니스 검사를 제공해요. 검증, 식별, 라이브니스는 Limited Access(제한된 액세스) 기능이라서, 호출하려면 먼저 Microsoft가 신청 양식을 통해 사용 사례를 승인해야 해요."
  },
  "svc-009": {
   "label": "hateful 또는 violent text를 자동으로 block해 app users에 도달하기 전에 해요.",
@@ -40,7 +40,7 @@
  },
  "svc-010": {
   "label": "sensor의 time-series readings에서 unusual spike를 spot해요.",
-  "why": "Anomaly Detector는 time-series analysis를 적용해 expected patterns로부터 deviate하는 data points를 flag해요."
+  "why": "Fabric Real-Time Intelligence는 스트리밍 데이터나 시계열 데이터에서 예상 패턴을 벗어나는 지점을 표시해요. Azure AI Anomaly Detector가 2026년 10월 1일에 종료된 지금, 이 작업에 Microsoft가 권장하는 서비스예요."
  },
  "svc-011": {
   "label": "employees가 thousands of internal documents에 걸쳐 natural-language search를 실행하도록 해요.",

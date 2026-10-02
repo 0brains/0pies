@@ -53,9 +53,9 @@
   "steps[2].label": "Atenção de Transformer",
   "steps[2].detail": "Camadas de auto-atenção pesam cada token contra cada outro token na sequência — o mecanismo que 'alimenta a maioria dos modelos fundacionais modernos,' e precisa que os vectores de embedding já existam.",
   "steps[3].label": "Previsão de token seguinte",
-  "steps[3].detail": "O modelo produz uma distribuição de probabilidade sobre todo o vocabulário para o token seguinte único; temperatura e top-p remodelam esta distribuição antes de um token ser amostrado.",
+  "steps[3].detail": "O modelo produz uma distribuição de probabilidade sobre todo o vocabulário para o token seguinte único; temperatura e top-p remodelam esta distribuição antes de um token ser amostrado. A perplexidade avalia este passo: quanta probabilidade o modelo deu aos verdadeiros tokens seguintes de um texto retido.",
   "steps[4].label": "Saída detokenizada",
-  "steps[4].detail": "O id do token previsto é descodificado de volta para texto e o ciclo repete um token de cada vez até uma condição de paragem — perplexidade mede quão bem as previsões deste passo corresponderam ao texto retido."
+  "steps[4].detail": "O id do token previsto é descodificado de volta para texto e o ciclo repete-se um token de cada vez até uma condição de paragem."
  },
  "lad-speech": {
   "prompt": "Coloca as chamadas do SDK de Fala na ordem em que devem ser executadas.",

@@ -4,7 +4,7 @@
  "title": "Classify or Die",
  "blurb": "An asset's life from first label to final shred. Sort each scene into the stage of asset security it belongs to.",
  "source": "Chapple CISSP SG 10ed ch.5 (Protecting Security of Assets) · April-2024 outline 2.1-2.6",
- "asOf": "2026-08",
+ "asOf": "2026-10",
  "area": "2.1-2.6",
  "hint": "Ask what decision the scene is actually making: setting a sensitivity level, applying a day-to-day control, deciding how long to keep something, or retiring a medium. If it is a retirement, the tier is settled by one question — what recovery capability does the method have to beat? An ordinary person with ordinary tools, going through the medium's normal interface (Clearing); a well-funded laboratory with the medium in hand and that interface irrelevant (Purging); or nothing at all, because there is no longer a medium to recover from (Destroying).",
  "note": "End-of-life media has three separate tiers of assurance, and this board makes you pick between them rather than lumping them together. What separates clearing, purging and destroying is the strength of the adversary each is built to beat — an ordinary user, a well-funded laboratory, or no one at all because nothing is left to work on — and who may reuse the medium afterwards follows from that, rather than setting it.",
@@ -32,12 +32,12 @@
   {
    "key": "Purging",
    "name": "Purging",
-   "def": "The middle tier, set against a much stronger adversary: a well-funded laboratory holding the medium in hand, for which the normal interface is no obstacle at all. The method must beat that, while still leaving the medium physically whole and usable afterwards. This is the bar demanded once a medium passes out of the organization's custody or drops to a lower sensitivity. Distinct from Clearing, whose weaker adversary it far exceeds, and from Destroying, which surrenders the medium along with the data."
+   "def": "The middle tier, set against a much stronger adversary: a well-funded laboratory holding the medium in hand, for which the normal interface is no obstacle at all. The method must beat that while leaving the medium physically intact; whether it can be reused afterwards depends on the method (a cryptographic erase leaves a working drive, while degaussing usually leaves a tape or hard disk unusable). This is the bar demanded once a medium passes out of the organization's custody or drops to a lower sensitivity. Distinct from Clearing, whose weaker adversary it far exceeds, and from Destroying, which surrenders the medium along with the data."
   },
   {
    "key": "Destroying",
    "name": "Destroying",
-   "def": "The top tier, and the only one that beats every adversary by removing the thing they would work on: the medium stops existing as a medium at all. Chosen where the sensitivity leaves no residual-recovery risk acceptable and no one intends the medium to serve anyone again. Distinct from Purging, which is measured against a laboratory but deliberately leaves a working medium behind for someone else to use."
+   "def": "The top tier, and the only one that beats every adversary by removing the thing they would work on: the medium stops existing as a medium at all. Chosen where the sensitivity leaves no residual-recovery risk acceptable and no one intends the medium to serve anyone again. Distinct from Purging, which is measured against a laboratory but leaves the medium itself physically intact."
   }
  ],
  "items": [
@@ -190,7 +190,7 @@
    "label": "A bank's retiring magnetic backup tapes are run through an approved degausser on-site, collapsing the recorded flux across every reel, before a disposal contractor collects the pallet.",
    "sub": "Which end-of-life tier does this reach, and why that one?",
    "answer": "Purging",
-   "why": "Collapsing the flux across the whole reel beats a laboratory working on the medium directly, which is the bar the moment media passes to an outside contractor — and it does so while leaving the reels physically whole. A pass through the medium's normal write interface is built for a far weaker attacker and would not come close, which rules Clearing out; and this is not Destroying either, because the reels survive the process as usable media rather than ceasing to exist.",
+   "why": "Collapsing the flux across the whole reel beats a laboratory working on the medium directly, which is the bar the moment media passes to an outside contractor — and it does so while leaving the reels physically whole. A pass through the medium's normal write interface is built for a far weaker attacker and would not come close, which rules Clearing out; and this is not Destroying either, because the reels come through physically intact rather than ceasing to exist — even though degaussing also wipes the factory servo tracks a modern tape drive needs, so the cartridges will very likely never be reusable.",
    "citation": "SG ch.5 · outline 2.4"
   },
   {

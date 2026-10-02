@@ -53,9 +53,9 @@
   "steps[2].label": "Transformer attention",
   "steps[2].detail": "Self-attention layers взвешивают каждый token против каждого другого token в sequence — механика, которая 'powers most modern foundation models' и нуждается в embedding vectors для уже существования.",
   "steps[3].label": "Next-token prediction",
-  "steps[3].detail": "Model выводит probability distribution над whole vocabulary для единственного next token; temperature и top-p reshape этот distribution перед sampled один token.",
+  "steps[3].detail": "Модель выдаёт распределение вероятностей по всему словарю для одного следующего токена; температура и top-p перестраивают это распределение, прежде чем будет выбран один токен. Перплексия оценивает именно этот шаг: какую вероятность модель присвоила настоящим следующим токенам отложенного текста.",
   "steps[4].label": "Detokenized output",
-  "steps[4].detail": "Predicted token id декодирован обратно к text и loop повторяется one token за время до stop condition — perplexity измеряет, как хорошо этот step's predictions сопоставлены held-out text."
+  "steps[4].detail": "Предсказанный идентификатор токена декодируется обратно в текст, и цикл повторяется по одному токену до условия остановки."
  },
  "lad-speech": {
   "prompt": "Расположи Speech SDK calls в порядке, в котором они должны работать.",

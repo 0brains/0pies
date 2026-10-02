@@ -84,7 +84,7 @@
     "why": "Stessi input, diversi output significa che il cambio è nel modello, non nel mondo. La previsione di drift da versione a versione è il motivo per cui un nuovo rilascio viene confrontato su un campione di riferimento fisso."
   },
   "drift-22": {
-    "label": "La media di una feature di ricavo scende a un terzo del suo valore usuale durante la notte. Un team a monte ha cambiato il campo da centesimi a unità intere la stessa notte.",
+    "label": "La media di una feature di ricavo scende a circa un centesimo del suo valore usuale durante la notte. Un team a monte ha cambiato il campo da centesimi a unità intere la stessa notte.",
     "why": "Il mondo non è cambiato; l'unità sì. Il riaddestramento qui insegnerebbe al modello di trattare i valori corrotti come normali e farebbe apparire la correzione finale come una nuova regressione."
   },
   "drift-23": {

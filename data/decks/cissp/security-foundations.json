@@ -5,7 +5,7 @@
  "area": "1.2 / 1.3 / 3.1",
  "blurb": "Ten bedrock concepts every CISSP candidate must tell apart on sight: the CIA triad, the four AAA stages, due care vs due diligence, and defense in depth. Sort each one-line governance or ops scene into the concept it's really testing.",
  "source": "Chapple CISSP SG 10ed ch.1 (outline 1.2, 1.3, 3.1.3) · ISC2 CISSP April-2024 Outline domains 1.2, 1.3, 3.1",
- "asOf": "2026-08",
+ "asOf": "2026-10",
  "hint": "First decide the family: is this scene about what happens to data (CIA), about a person's access lifecycle (AAA), about planning vs doing (due care/diligence), or about layered controls (defense in depth)? Then pick the specific member.",
  "note": "Confidentiality, Integrity and Availability describe what happens to an object. Identification, Authentication, Authorization and Accountability describe stages a subject passes through to reach that object. Neither family is a proxy for the other.",
  "zones": [
@@ -167,10 +167,10 @@
   },
   {
    "id": "sf-14",
-   "label": "A hospital's EHR requires clinicians to log a reason code before opening a celebrity patient's chart, and a compliance review later flags one access with no valid reason attached.",
-   "sub": "Which concept is at stake?",
+   "label": "A hospital's EHR requires clinicians to log a reason code before opening a celebrity patient's chart, and a compliance review later ties one access with no valid reason to the named clinician who made it.",
+   "sub": "Which concept do the reason-code log and its review deliver?",
    "answer": "Accountability",
-   "why": "A recorded trail that gets reviewed and traced back to a person is accountability's job. Authentication is the tempting neighbour because the clinician's login worked fine, but the failure that surfaced lives in the review of the trail, not in the identity check.",
+   "why": "A recorded trail that gets reviewed and traced back to a person is accountability's job. Confidentiality is the tempting neighbour, since a needless look at a celebrity's chart is a privacy breach, but the log and review did not stop that look; what they provide is proof of who opened the chart and whether they had a reason.",
    "citation": "SG ch.1 · outline 1.2"
   },
   {

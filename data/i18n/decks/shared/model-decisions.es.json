@@ -23,7 +23,7 @@
     "why": "El preentrenamiento continuado adapta las representaciones de lenguaje del modelo utilizando grandes cantidades de texto de dominio. Compensación: RAG permanece preferible cuando la necesidad es acceso a hechos que cambian en lugar de adaptación más profunda del lenguaje de dominio."
   },
   "model-decisions-05": {
-    "label": "El sistema debe inspeccionar una orden, solicitar aprobación, llamar a un API de reembolso, e informar el resultado.",
+    "label": "Los clientes describen problemas de reembolso en texto libre; el sistema debe averiguar qué pedidos y comprobaciones necesita cada caso, solicitar aprobación, llamar a una API de reembolso e informar el resultado.",
     "sub": "Asistente que Toma Acciones",
     "why": "Un agente que usa herramientas puede orquestar pasos, pero cada herramienta necesita permisos estrechos, validación, y compuertas de aprobación. Compensación: Un flujo de trabajo determinista es más seguro cuando la secuencia es fija y no requiere planificación dirigida por el modelo."
   },

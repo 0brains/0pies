@@ -23,7 +23,7 @@
   "why": "Continued pretraining adapts the model's language representations using large quantities of domain text. Trade-off: RAG remains preferable when the need is access to changing facts rather than deeper domain-language adaptation."
  },
  "model-decisions-05": {
-  "label": "The system must inspect an order, request approval, call a refund API, and report the result.",
+  "label": "Customers describe refund problems in free text; the system must work out which orders and checks each case needs, request approval, call a refund API, and report the result.",
   "sub": "Action-Taking Assistant",
   "why": "A tool-using agent can orchestrate steps, but each tool needs narrow permissions, validation, and approval gates. Trade-off: A deterministic workflow is safer when the sequence is fixed and does not require model-directed planning."
  },

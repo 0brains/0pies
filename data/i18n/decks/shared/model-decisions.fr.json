@@ -23,7 +23,7 @@
   "why": "Le préentraînement continu adapte les représentations de langage du modèle en utilisant de grandes quantités de texte de domaine. Compromis : RAG reste préférable quand le besoin est l'accès aux faits changeants plutôt que une adaptation plus profonde du langage de domaine."
  },
  "model-decisions-05": {
-  "label": "Le système doit inspécter une commande, demander une approbation, appeler une API de remboursement et rapporter le résultat.",
+  "label": "Les clients décrivent leurs problèmes de remboursement en texte libre ; le système doit déterminer quelles commandes et vérifications chaque cas nécessite, demander une approbation, appeler une API de remboursement et rapporter le résultat.",
   "sub": "Assistant qui prend des actions",
   "why": "Un agent utilisant des outils peut orchestrer les étapes, mais chaque outil a besoin d'autorisations étroites, de validation et de portes d'approbation. Compromis : Un flux de travail déterministe est plus sûr quand la séquence est fixe et ne nécessite pas la planification dirigée par le modèle."
  },

@@ -105,11 +105,11 @@
  },
  "feat-009-00": {
   "label": "एक single sensor की reading में एक unusual spike को time के over flag करें।",
-  "why": "Azure AI Anomaly Detector की univariate detection एक single time-series stream में unexpected spikes या dips को flag करता है।"
+  "why": "Azure AI Anomaly Detector की एकचर (univariate) पहचान किसी एक टाइम-सीरीज़ स्ट्रीम में अप्रत्याशित उछाल या गिरावट को चिह्नित करती है। पुरानी सेवा पर नोट: Microsoft ने 20 सितंबर 2023 से नए Anomaly Detector संसाधन बनाना बंद कर दिया और 1 अक्टूबर 2026 को सेवा रिटायर कर दी, और AI-901 के मापे जाने वाले कौशलों (अप्रैल 2026) में यह अब शामिल नहीं है — एकचर/बहुचर के विचार को एक अवधारणा के रूप में याद रखो, मौजूदा सेवा के रूप में नहीं।"
  },
  "feat-009-01": {
   "label": "Detect करें एक unusual combined pattern दर्जनों correlated sensor streams के across एक साथ।",
-  "why": "Azure AI Anomaly Detector की multivariate detection एक साथ anomalous combined patterns को flag करता है many correlated time-series signals के across।"
+  "why": "Azure AI Anomaly Detector की बहुचर (multivariate) पहचान कई परस्पर संबंधित टाइम-सीरीज़ संकेतों में एक साथ असामान्य संयुक्त पैटर्न को चिह्नित करती है। पुरानी सेवा पर नोट: Microsoft ने 20 सितंबर 2023 से नए Anomaly Detector संसाधन बनाना बंद कर दिया और 1 अक्टूबर 2026 को सेवा रिटायर कर दी, और AI-901 के मापे जाने वाले कौशलों (अप्रैल 2026) में यह अब शामिल नहीं है — एकचर/बहुचर के विचार को एक अवधारणा के रूप में याद रखो, मौजूदा सेवा के रूप में नहीं।"
  },
  "feat-010-00": {
   "label": "Documents को retrieve करें exact keyword match की बजाय उनके meaning की closeness से।",

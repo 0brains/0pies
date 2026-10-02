@@ -84,7 +84,7 @@
   "why": "Same inputs, different outputs means the change is in the model, not the world. Version-to-version prediction drift is the reason a new release is compared on a fixed reference sample."
  },
  "drift-22": {
-  "label": "A revenue feature's mean drops to a third of its usual value overnight. An upstream team switched the field from cents to whole units the same night.",
+  "label": "A revenue feature's mean drops to about one-hundredth of its usual value overnight. An upstream team switched the field from cents to whole units the same night.",
   "why": "The world did not change; the unit did. Retraining here would teach the model to treat corrupted values as normal and make the eventual fix look like a new regression."
  },
  "drift-23": {

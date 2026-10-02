@@ -52,7 +52,7 @@
   "why": "Questo è il lato del technical cadence-and-dashboard del piano di monitoraggio; il dovere legale permanente di eseguirlo a tutti, una volta che il sistema è live, appartiene a un consiglio diverso."
  },
  "iii-ab-14": {
-  "label": "Il dashboard del team di prodotto traccia la calibrazione e la latenza rispetto a una baseline validata su un cadenza in esecuzione settimanale, con i rapporti di disparità di equità che si aggiornano automaticamente insieme ad essi.",
+  "label": "Durante il periodo di rodaggio pre-rilascio, il dashboard del team di prodotto traccia calibrazione e latenza rispetto a una baseline validata con cadenza settimanale, con i rapporti di disparità di equità che si aggiornano automaticamente accanto, pronto a proseguire invariato dopo il lancio.",
   "why": "Un feed continuo e automatizzato posseduto dal team che ha costruito il sistema è la texture di questa zona — nel momento in cui lo stesso controllo è invece eseguito da un revisore organizzativamente separato da quel team, su una visita programmata piuttosto che un feed live, è un audit."
  },
  "iii-ab-15": {
@@ -78,7 +78,7 @@
   "zones[1].def": "Specialisti simulano uno scenario avversariale o di uso scorretto realistico end-to-end — jailbreak, prompt injection, ingegneria sociale, abuso di caso limite — per vedere come l'intiero sistema tiene sotto pressione, quindi alimentano ciò che hanno scoperto in un piano di rimedio che viene ri-testato.",
   "zones[2].def": "Un esercizio strutturato, basato su carta, eseguito al tempo di progettazione prima che qualsiasi test corre, che cataloga ciò che ha bisogno di protezione, chi potrebbe attaccarlo, e quali abuse case importa più — producendo un elenco di rischi e mitigazioni denominate, non un tentativo live di sfruttare nulla.",
   "zones[3].def": "Prova pratica di componenti specifici già identificati — l'API di serving, le dipendenze, il codice della pipeline — per confermare che una difesa è effettivamente presente e correttamente configurata, distinto da una simulazione avversariale di sistema completo o un catalogo di carta di ciò che potrebbe andare storto.",
-  "zones[4].def": "Il technical cadence di controlli — valutazioni programmate, metriche tracciate, allerte automatizzate — che viene costruito e provato mentre il piano di monitoraggio si mette insieme. I dashboard e i rilevatori stessi, non il dovere legale permanente di eseguirli una volta che il sistema è live.",
+  "zones[4].def": "Il monitoraggio post-mercato in sé è la sorveglianza continua che il fornitore esercita su un sistema per tutta la sua vita dopo il rilascio. Su questa board pre-rilascio, la zona è la costruzione di quella sorveglianza: le valutazioni programmate, le metriche tracciate e gli alert automatizzati progettati e provati prima del lancio, così da essere pronti a funzionare dal primo giorno. I dashboard e i rilevatori stessi, non il dovere permanente di gestirli una volta che il sistema è live.",
   "zones[5].def": "La macchineria formale e time-boxed — contenimento primo, quindi analisi della causa radice, quindi azione correttiva — che si attiva nel momento in cui una scena coinvolge il danno del mondo reale confermato, non un risultato di routine ancora registrato e guardato."
  }
 }

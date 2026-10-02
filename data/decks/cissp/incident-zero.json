@@ -12,7 +12,7 @@
    "title": "Bracknell Freight: the response",
    "prompt": "A SOC analyst at Bracknell Freight confirms a server compromise. Order the incident response from first detection to closing the loop.",
    "citation": "SG ch.17 · outline 7.6",
-   "asOf": "2026-08",
+   "asOf": "2026-10",
    "steps": [
     {
      "label": "Detection",
@@ -20,11 +20,11 @@
     },
     {
      "label": "Response",
-     "detail": "Once confirmed, the IR team is activated and begins investigating and limiting scope — this is where system access gets shut down and evidence starts being protected; jumping straight to root-cause analysis or a press notice before scope is limited is the tested trap, not the correct next move (SG)."
+     "detail": "Once confirmed, the IR team is activated: it verifies what is affected, sizes up the damage and starts protecting evidence so the next step can act on facts; jumping straight to root-cause analysis or a press notice at this point is the tested trap, not the correct next move (SG)."
     },
     {
      "label": "Mitigation",
-     "detail": "With the team engaged, the goal narrows to reducing the incident's severity through containment — the team's job at this stage is not yet to fix the underlying problem, only to stop it from getting worse (SG)."
+     "detail": "With the scope known, the team contains it, for example by isolating the compromised server from the network and disabling the accounts in use; the job at this stage is not yet to fix the underlying problem, only to limit the scope and stop it from getting worse (SG)."
     },
     {
      "label": "Reporting",

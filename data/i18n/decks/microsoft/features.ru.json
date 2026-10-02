@@ -105,11 +105,11 @@
  },
  "feat-009-00": {
   "label": "Отметь unusual spike в reading одного датчика за время.",
-  "why": "Azure AI Anomaly Detector's univariate detection отмечает unexpected spikes или dips в single time-series stream."
+  "why": "Одномерное обнаружение в Azure AI Anomaly Detector отмечает неожиданные всплески или провалы в одном потоке временного ряда. Примечание об устаревшем сервисе: Microsoft прекратил создание новых ресурсов Anomaly Detector 20 сентября 2023 года и вывел сервис из эксплуатации 1 октября 2026 года, а перечень проверяемых навыков AI-901 (апрель 2026) его больше не упоминает — держи идею одномерного/многомерного обнаружения как концепцию, а не как актуальный сервис."
  },
  "feat-009-01": {
   "label": "Обнаружи unusual combined pattern across десятков correlated sensor streams одновременно.",
-  "why": "Azure AI Anomaly Detector's multivariate detection отмечает anomalous combined patterns across много correlated time-series signals одновременно."
+  "why": "Многомерное обнаружение в Azure AI Anomaly Detector отмечает аномальные совместные паттерны сразу во множестве коррелирующих сигналов временных рядов. Примечание об устаревшем сервисе: Microsoft прекратил создание новых ресурсов Anomaly Detector 20 сентября 2023 года и вывел сервис из эксплуатации 1 октября 2026 года, а перечень проверяемых навыков AI-901 (апрель 2026) его больше не упоминает — держи идею одномерного/многомерного обнаружения как концепцию, а не как актуальный сервис."
  },
  "feat-010-00": {
   "label": "Получи documents по closeness их meaning, а не exact keyword match.",

@@ -4,7 +4,7 @@
  "title": "Live-System Duty Roster",
  "blurb": "Seven standing duties a deployed AI system owes its operator, every day it stays live. Sort each scene into the duty it belongs to.",
  "source": "AIGP BOK IV.C · AIGP Study Guide (SG) §Domain IV.C · IAPP AIGP Foundational Study Guide (FSG, effective Feb 2026) p.6/8",
- "asOf": "2026-08",
+ "asOf": "2026-10",
  "area": "IV.C",
  "hint": "These are all deployment-time duties — the system is already live. Ask which standing obligation the scene is exercising, not whether something went wrong.",
  "note": "Pre-release assurance (readiness reviews, testing before a system ever ships) belongs to a different game. Everything on this board happens after go-live, on a recurring or triggered basis.",
@@ -27,7 +27,7 @@
   {
    "key": "Deactivation & localization",
    "name": "Deactivation & localization",
-   "def": "Pre-written authority, triggers and restart criteria for pulling a live system fully offline (deactivation) or restricting it to fewer regions or features (localization) — a stop-or-restrict decision with documented conditions to resume, not the technical fix that follows it."
+   "def": "Pre-written authority, triggers and restart criteria for pulling a live system fully offline (deactivation) or restricting it to fewer regions or features (localization) — a stop-or-restrict decision with documented conditions to resume, plus the decommissioning terms for retiring the system for good (wind-down steps, and which data, models and logs are kept). Not the technical fix that follows it."
   },
   {
    "key": "User training",
@@ -139,9 +139,9 @@
   },
   {
    "id": "iv-ops-23",
-   "label": "Once a system is fully retired, its data, models and decision logs are preserved rather than deleted, so a regulator or auditor can reconstruct what it did years later.",
+   "label": "A live system's pre-written decommissioning plan specifies that, when it is eventually retired, its data, models and decision logs will be preserved rather than deleted, so a regulator or auditor can reconstruct what it did years later.",
    "answer": "Deactivation & localization",
-   "why": "Preservation is part of the shutdown record itself, owned by the same authority that pulled the system offline — unlike Issue & incident management's CAPA log, which tracks fixes to a specific problem, and unlike Post-market monitoring, which only tracks a system while it is still live.",
+   "why": "Deciding in advance what survives a permanent shutdown is part of the decommissioning terms this zone owns alongside the stop-and-restart criteria — unlike Issue & incident management's CAPA log, which tracks fixes to a specific problem, and unlike Post-market monitoring, which tracks the system's performance while it runs rather than planning its retirement.",
    "citation": "SG"
   },
   {

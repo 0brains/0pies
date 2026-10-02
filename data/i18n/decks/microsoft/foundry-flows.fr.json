@@ -53,9 +53,9 @@
     "steps[2].label": "Attention du transformateur",
     "steps[2].detail": "Les couches d'auto-attention pèsent chaque jeton par rapport à chaque autre jeton de la séquence — le mécanisme qui « alimente la plupart des modèles de fondation modernes », et il a besoin que les vecteurs d'intégration existent déjà.",
     "steps[3].label": "Prédiction du prochain jeton",
-    "steps[3].detail": "Le modèle génère une distribution de probabilité sur tout le vocabulaire pour le seul jeton suivant ; la température et top-p remodèlent cette distribution avant qu'un jeton soit prélevé.",
+    "steps[3].detail": "Le modèle produit une distribution de probabilité sur tout le vocabulaire pour le seul jeton suivant ; la température et top-p remodèlent cette distribution avant qu'un jeton soit échantillonné. La perplexité note cette étape : quelle probabilité le modèle a attribuée aux vrais jetons suivants d'un texte réservé.",
     "steps[4].label": "Sortie détokenisée",
-    "steps[4].detail": "L'identifiant de jeton prédit est décodé en texte et la boucle se répète un jeton à la fois jusqu'à une condition d'arrêt — la perplexité mesure la qualité de ces prédictions d'étapes par rapport au texte retenu."
+    "steps[4].detail": "L'identifiant de jeton prédit est décodé en texte et la boucle se répète un jeton à la fois jusqu'à une condition d'arrêt."
   },
   "lad-speech": {
     "prompt": "Mets les appels Speech SDK dans l'ordre où ils doivent s'exécuter.",

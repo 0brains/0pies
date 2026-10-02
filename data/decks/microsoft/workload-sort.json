@@ -4,7 +4,7 @@
  "title": "The Intake Desk",
  "blurb": "Every request that hits the desk goes to one of six AI workloads — triage fast, triage right.",
  "source": "AI-901 study guide Task 1.3",
- "asOf": "2026-07",
+ "asOf": "2026-10",
  "area": "microsoft-workloads",
  "hint": "Ask what the deliverable actually is: brand-new content from a prompt (generative), autonomous multi-step action with tools (agentic), a judgment or summary about existing text (text analysis), anything that touches spoken audio (speech), a judgment about an image or video frame (computer vision), or a fixed set of structured fields/an index pulled out of documents or mixed content (information extraction).",
  "note": "Several requests could sound like two workloads. The tie-break is always the deliverable: new content vs. an autonomous action vs. an analysis of existing text vs. audio in/out vs. a judgment about pixels vs. a structured field set.",
@@ -174,9 +174,9 @@
   },
   {
    "id": "wl-020",
-   "label": "Detect scene changes and generate chapter markers by analyzing the visual frames of an uploaded training video",
+   "label": "Flag every frame of a building-site safety video in which a worker is not wearing a hard hat",
    "answer": "Computer vision",
-   "why": "Deriving chapter breaks from what the frames show is visual analysis of the video; the same footage shifts to speech only when the deliverable is the spoken transcript instead.",
+   "why": "The deliverable is a judgment about what each frame shows, which is visual analysis; the same footage would shift to speech if the deliverable were the spoken transcript, and to information extraction if it were a schema of segments or chapters pulled from the whole video.",
    "citation": "AI-901 study guide Task 1.3 (common AI workloads) — computer vision workloads · Microsoft Learn: Azure AI Vision"
   },
   {

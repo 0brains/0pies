@@ -99,7 +99,7 @@
  },
  "cu-modality-grid": {
   "hint": "Ask what the source file actually is, then check the sub line for the exact prebuilt-* analyzer id — the id itself names its modality (document/image/audio/video), and Search-suffixed ids prep output for indexing rather than change the modality.",
-  "note": "Content Understanding always extracts — it never generates or indexes. Extraction into Azure AI Search is a downstream step, not something CU does itself.",
+  "note": "Content Understanding turns content into structured output — fields it extracts, plus values it generates or classifies, such as summaries and descriptions — but it does not create new media or build a search index. Indexing into Azure AI Search is a downstream step, not something CU does itself.",
   "zones[0].def": "PDFs, invoices, contracts and freeform paperwork Content Understanding turns into structured fields, tables and text.",
   "zones[1].def": "Photos, screenshots and charts Content Understanding turns into structured fields, descriptions and detected objects.",
   "zones[2].def": "Recorded speech — calls, podcasts and voicemails — Content Understanding turns into transcripts, summaries and speaker labels.",

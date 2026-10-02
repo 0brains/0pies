@@ -1,13 +1,13 @@
 {
  "rhp-01": {
   "a.text": "La empresa añade validación de salida y revisión humana a un modelo de reclamaciones, reduciendo la tasa de denegaciones incorrectas.",
-  "a.why": "La probabilidad del daño efectivo disminuye. La reducción es el único tratamiento que mejora la situación de la persona afectada.",
+  "a.why": "La probabilidad del daño realmente disminuye, así que el solicitante sale ganando. La transferencia, en cambio, deja intacto el resultado para el solicitante.",
   "b.text": "La empresa compra una póliza de seguros que cubre el coste de las reclamaciones denegadas incorrectamente, dejando el modelo sin cambios.",
-  "b.why": "El solicitante es denegado exactamente con la misma tasa; solo se protege el balance de la empresa. Los seguros nunca son un control."
+  "b.why": "El solicitante es denegado exactamente con la misma tasa; solo se protege el balance de la empresa. El seguro cambia quién paga, no la frecuencia con la que ocurre el daño."
  },
  "rhp-02": {
   "a.text": "Después de la evaluación, la característica de inferencia de emociones se cancela y se elimina de la cartera de proyectos.",
-  "a.why": "La actividad se detiene, por lo que la exposición llega a cero. La evitación es el único tratamiento sin riesgo residual que registrar.",
+  "a.why": "La actividad se detiene, por lo que esta exposición se elimina en lugar de reducirse. Aun así, comprueba si la necesidad que cubría se traslada a otro lugar que conlleve su propio riesgo.",
   "b.text": "Después de la evaluación, la característica de inferencia de emociones se lanza con umbrales de confianza, evaluación de subgrupos y revisión humana de casos de baja confianza.",
   "b.why": "La actividad continúa con menor probabilidad de daño. La mitigación sustancial sigue siendo reducción, y el riesgo residual sigue necesitando un propietario."
  },
@@ -19,7 +19,7 @@
  },
  "rhp-04": {
   "a.text": "La capacidad del agente para emitir reembolsos se elimina completamente de su conjunto de herramientas.",
-  "a.why": "Sin capacidad, sin modo de fallo, y nada que monitorizar. La eliminación es el nivel superior porque retira la rama completa del árbol de riesgos.",
+  "a.why": "Sin la capacidad, este modo de fallo queda retirado; comprueba a dónde van ahora las solicitudes de reembolso. La eliminación es el nivel superior porque elimina el peligro en lugar de protegerse de él.",
   "b.text": "El agente mantiene su herramienta de reembolso, con un límite duro de un reembolso por sesión y un tope de cantidad aplicado por la herramienta.",
   "b.why": "Una restricción técnica fuerte que deja una exposición acotada — y deja el tope en sí mismo como algo que puede ser mal configurado."
  },
@@ -27,7 +27,7 @@
   "a.text": "El asistente detecta y bloquea la entrada que parece confidencial antes de que se envíe al modelo.",
   "a.why": "El sistema evita la divulgación independientemente de lo que haga el usuario. La carga recae sobre la parte capaz de soportarla.",
   "b.text": "El asistente muestra un aviso pidiendo a los usuarios que no peguen información confidencial.",
-  "b.why": "El mismo riesgo, con la carga trasladada al usuario. Nivel más débil, y frecuentemente el único implementado."
+  "b.why": "Un aviso de advertencia es un control administrativo: el mismo riesgo, con la carga trasladada al usuario. Se sitúa por debajo de los controles de ingeniería, y frecuentemente es el único implementado."
  },
  "rhp-06": {
   "a.text": "El comité de riesgos registra el riesgo residual, confirma que está dentro del apetito, nombra un propietario y establece una fecha de revisión.",

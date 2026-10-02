@@ -18,12 +18,12 @@
   "tell": "The regime that exports its own rulebook: lawful transfer runs through an adequacy finding or contract-grade safeguards, and the obligation follows the person the data describes, not the server it sits on."
  },
  "bdl-map-transfers": {
-  "prompt": "Match each instrument to the regime that enforces it — then read what it really does to data crossing that border.",
+  "prompt": "Match each instrument to the jurisdiction or arrangement where it originates or applies — then read what it really does to data crossing that border.",
   "note": "Markers sit at the real coordinates of each regime's seat or geographic center, projected onto a Miller-style world map; labels in dense regions are nudged clear of their marker. Instruments, transfer rules and effective dates are authored from Chapple CISSP SG 10ed ch.4 and the Moore Domain 1 objective notes.",
   "legend[0].label": "Omnibus privacy law with transfer restrictions",
-  "legend[1].label": "Sector-by-sector or state-level rules",
-  "legend[2].label": "Voluntary principles or export-control arrangement",
-  "legend[3].label": "Adequacy corridor or multilateral agreement",
+  "legend[1].label": "Sector-by-sector, state-level or government-access statutes",
+  "legend[2].label": "Non-binding principles or voluntary export-control arrangement",
+  "legend[3].label": "Adequacy-based transfer framework or binding multilateral treaty",
   "projection.note": "x/y are derived at build time from lat/lon by the knowledge module's prepare() step; the board renders on the shared tools/templates/world-map-paths.svg asset that build_lab.py inlines for any lab with an aigpMap game."
  },
  "bdl-oecd": {

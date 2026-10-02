@@ -141,9 +141,9 @@
   {
    "id": "II.D-tell-006",
    "area": "II.D",
-   "asOf": "2026-07-26",
+   "asOf": "2026-10",
    "status": "stable",
-   "snippet": "An evaluation programme that assesses model performance in laboratory, in controlled field testing, and in real-world use, in three layers.",
+   "snippet": "An evaluation programme that studies the risks and impacts of AI in realistic use, across three levels: model testing, red-teaming, and field testing.",
    "answer": "NIST ARIA",
    "options": [
     "NIST ARIA",
@@ -151,7 +151,7 @@
     "ISO/IEC 42005",
     "OECD AI Principles"
    ],
-   "tell": "Layered evaluation moving from lab to field to real world is ARIA (Assessing Risks and Impacts of AI). The AI RMF is a framework; ARIA is a testing programme that feeds it.",
+   "tell": "Three named evaluation levels, model testing then red-teaming then field testing, mark ARIA (Assessing Risks and Impacts of AI). The AI RMF is a framework; ARIA is a testing programme that feeds it.",
    "citation": "Ch7 §NIST ARIA: Layered AI Model Evaluation"
   },
   {
@@ -189,9 +189,9 @@
   {
    "id": "II.A-tell-009",
    "area": "II.A",
-   "asOf": "2026-07-26",
+   "asOf": "2026-10",
    "status": "stable",
-   "snippet": "The data subject shall have the right not to be subject to a decision based solely on automated processing, including profiling, which produces legal effects concerning them.",
+   "snippet": "The data subject shall have the right not to be subject to a decision based solely on automated processing, including profiling, which produces legal effects concerning him or her or similarly significantly affects him or her.",
    "answer": "GDPR Article 22",
    "options": [
     "GDPR Article 22",
@@ -255,9 +255,9 @@
   {
    "id": "II.C-pair-001",
    "area": "II.C",
-   "asOf": "2026-07-26",
+   "asOf": "2026-10",
    "status": "stable",
-   "dimension": "human oversight in the decision loop",
+   "dimension": "what the system's output does: ranking that shapes the decision vs a narrow procedural sort",
    "buckets": [
     "High-risk",
     "Not high-risk"
@@ -270,7 +270,7 @@
    "b": {
     "text": "The same system only sorts applicants alphabetically for a recruiter who reads every CV and decides independently.",
     "answer": "Not high-risk",
-    "why": "Art. 6(3): a narrow procedural task that does not materially influence the outcome falls outside high-risk."
+    "why": "Art. 6(3): a narrow procedural task that does not materially influence the outcome falls outside high-risk. Adding a human reviewer to a ranking system would not have this effect; human oversight is a duty of high-risk systems, not an exit from the class."
    },
    "citation": "Ch6 §High-risk AI Systems"
   },
@@ -299,9 +299,9 @@
   {
    "id": "II.C-pair-003",
    "area": "II.C",
-   "asOf": "2026-07-26",
+   "asOf": "2026-10",
    "status": "stable",
-   "dimension": "law-enforcement context and real-time vs retrospective",
+   "dimension": "real-time vs post-remote identification",
    "buckets": [
     "Prohibited",
     "High-risk"
@@ -312,7 +312,7 @@
     "why": "Art. 5 bans real-time remote biometric identification in publicly accessible spaces for law enforcement, save narrow authorised exceptions."
    },
    "b": {
-    "text": "Police run the same biometric matching after the fact, on stored footage, under judicial authorisation.",
+    "text": "Police run the same biometric matching after the fact, on stored footage.",
     "answer": "High-risk",
     "why": "Post-remote biometric identification is not banned but is Annex III high-risk with authorisation requirements."
    },
@@ -321,12 +321,12 @@
   {
    "id": "II.C-pair-004",
    "area": "II.C",
-   "asOf": "2026-07-26",
+   "asOf": "2026-10",
    "status": "stable",
    "dimension": "deployment context of emotion recognition",
    "buckets": [
     "Prohibited",
-    "Limited-risk"
+    "High-risk"
    ],
    "a": {
     "text": "An employer deploys emotion recognition to monitor staff attentiveness at their desks.",
@@ -335,8 +335,8 @@
    },
    "b": {
     "text": "A games studio uses emotion recognition in a consumer entertainment app, disclosed to the user.",
-    "answer": "Limited-risk",
-    "why": "Outside workplace and education the ban does not bite; Art. 50 transparency duties apply instead."
+    "answer": "High-risk",
+    "why": "Outside workplace and education the ban does not bite, but emotion recognition is listed as high-risk in Annex III point 1(c). Telling users about it is the Art. 50(3) duty, which applies on top of high-risk status, not in place of it."
    },
    "citation": "Ch6 §Prohibited AI Systems"
   },
@@ -6961,7 +6961,7 @@
  "roleMatrix": {
   "id": "II-roles",
   "title": "Role Matrix",
-  "asOf": "2026-07-26",
+  "asOf": "2026-10",
   "prompt": "Assign each obligation to the role it attaches to. Obligations follow actors, not systems.",
   "sets": [
    {
@@ -7050,7 +7050,7 @@
       "role": "deployer"
      },
      {
-      "text": "Retain automatically generated logs for the required period",
+      "text": "Keep the logs the system generates while you use it in your own operations, for at least six months",
       "role": "deployer"
      },
      {
@@ -7190,11 +7190,11 @@
       "role": "dpo"
      },
      {
-      "text": "Act as the contact point for the supervisory authority and for data subjects",
+      "text": "Act as the contact point for the supervisory authority and for data subjects, reporting directly to the highest level of management",
       "role": "dpo"
      },
      {
-      "text": "Maintain the record of processing activities and make it available to the authority on request",
+      "text": "Hold the record of processing inside the EU on behalf of a controller with no EU establishment, and produce it to the authority on request",
       "role": "gdpr-rep"
      }
     ],
@@ -7297,9 +7297,9 @@
     "II.C",
     "II.A"
    ],
-   "asOf": "2026-07-26",
+   "asOf": "2026-10",
    "status": "stable",
-   "brief": "A Dutch insurer licenses a third-party model to price motor policies, retrains it on its own claims history, and markets it to customers under its own brand. Pricing decisions are issued automatically.",
+   "brief": "A Dutch insurer licenses a third-party model to price individual health insurance policies, retrains it on its own claims history, and puts the pricing system into service under its own brand. Pricing decisions are issued automatically.",
    "citation": "Ch6 §When Deployers Become Providers; Ch4 §Data Controller Obligations",
    "steps": [
     {
@@ -7311,7 +7311,7 @@
       "Distributor"
      ],
      "answer": "Provider",
-     "why": "It rebranded the system and substantially modified it by retraining — either alone transfers provider obligations."
+     "why": "Pricing health insurance for individuals is Annex III high-risk (point 5(c)), so Art. 25 applies: putting its own brand on the system is enough on its own to make it the provider, and retraining that changes how the system performs can also be a substantial modification."
     },
     {
      "q": "Which additional regime is squarely engaged?",
@@ -7333,7 +7333,7 @@
       "A trade mark registration"
      ],
      "answer": "Conformity assessment and technical documentation",
-     "why": "Provider duties for a high-risk system, alongside the DPIA required on the privacy side."
+     "why": "Provider duties for a high-risk system (life and health insurance pricing is listed in Annex III; motor pricing would not be), alongside the DPIA required on the privacy side."
     }
    ]
   },
@@ -7543,7 +7543,7 @@
   {
    "id": "II.A-brief-01",
    "area": "II.A",
-   "asOf": "2026-07-26",
+   "asOf": "2026-10",
    "status": "stable",
    "title": "The support transcripts",
    "scenario": "Helio, a SaaS company headquartered in Berlin, has eleven years of customer support transcripts — roughly 40 million messages. Customers were told at collection that the data would be used to \"resolve your support request and improve our service\". Helio's new product team wants to fine-tune a language model on the full archive to build an automated support agent, and later to license that agent to other companies.\n\nThe archive is not clean. Customers routinely paste screenshots, order numbers, and occasionally health information when explaining why they missed a payment. About 12% of transcripts come from users who have since closed their accounts, and 3% from users who have made erasure requests that were actioned against the account record but not against the transcript store. The transcripts are stored in Frankfurt, but the fine-tuning would run on infrastructure in Oregon.\n\nThe product team's position is that the transcripts are Helio's own business records, that \"improve our service\" covers building a better support agent, and that because the model will not reproduce transcripts verbatim, no personal data leaves the training process. The general counsel is uneasy but cannot articulate why. You are asked for a written position before the sprint starts.",
@@ -7587,7 +7587,7 @@
     },
     {
      "criterion": "Treats erasure as extending to the training corpus",
-     "expected": "Actioning erasure against the account record but not the transcript store is an incomplete response; the transcripts must be removed before training, and model memorisation risk addressed.",
+     "expected": "Actioning erasure against the account record but not the transcript store is an incomplete response; the transcripts must be removed before training, and model memorisation risk addressed. Closing an account does not by itself trigger erasure, but storage limitation (Art. 5(1)(e)) asks whether any ground to keep those transcripts survives; where they are kept only to meet a legal retention duty, that purpose does not stretch to training.",
      "citation": "Ch4 §Data Controller Obligations in the AI Context"
     },
     {
@@ -7597,7 +7597,7 @@
     },
     {
      "criterion": "Addresses the transfer properly",
-     "expected": "Training in Oregon is a cross-border transfer requiring a Chapter V mechanism and a transfer risk assessment; storage location does not settle it.",
+     "expected": "Training in Oregon is a cross-border transfer requiring a Chapter V mechanism: the EU-US Data Privacy Framework adequacy decision if the US importer is certified, otherwise Art. 46 safeguards such as SCCs with a transfer risk assessment. Storage location does not settle it.",
      "citation": "Ch4 §Data Controller Obligations in the AI Context"
     },
     {

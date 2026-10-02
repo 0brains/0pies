@@ -4,7 +4,7 @@
  "title": "Left Open",
  "blurb": "Twenty-three storage accounts have a door propped open somewhere. Read each scene and drop it on the control that actually closes that door, not the one that merely sounds adjacent.",
  "source": "Microsoft Learn: Authorize access to data in Azure Storage, Grant limited access with shared access signatures, Prevent Shared Key authorization, Azure Storage firewall rules and network access, Trusted Azure services, Create a virtual network rule, Azure Storage encryption for data at rest, Customer-managed keys for account encryption, Security recommendations for Blob storage, What is Microsoft Defender for Storage, Malware scanning configuration · SC-500 outline 2.1",
- "asOf": "2026-08",
+ "asOf": "2026-10",
  "area": "2.1",
  "hint": "Ask what the exposed thing actually is. If a signed URL is doing the harm, look at the token itself: its permission set, its expiry, whether a stored access policy exists to revoke it. If no credential is involved at all and a stranger with the URL simply reads the blob, that is anonymous access. If the credential is fine but the request arrives from a network you never intended to serve, you are in network boundary territory. If the concern is who holds and can revoke the key that wraps the data at rest, that is encryption and key custody. If the argument is about which authorization model the account will even accept, or whether an identity rather than a shared secret is on the request, that is Entra authorization versus the account key. And if nothing is being blocked at all, only noticed after the fact, that is Defender for Storage.",
  "zones": [
@@ -98,7 +98,7 @@
   },
   {
    "id": "sto-08",
-   "label": "A fintech sets the storage account's public network access to deny and adds the app subnet under virtual networks. The API still returns 403 on every blob read. The subnet has no service endpoint configured for storage.",
+   "label": "A fintech switches the storage account to allow access only from selected virtual networks and IP addresses, with the firewall default action set to Deny, and adds the app subnet under virtual networks. The API still returns 403 on every blob read. The subnet has no service endpoint configured for storage.",
    "sub": "Which control closes this?",
    "answer": "Network boundary",
    "why": "A virtual network rule only carries traffic once the subnet has the Microsoft.Storage service endpoint enabled; the portal adds it for you when you pick the subnet, but PowerShell and the CLI expect you to create it yourself. Nothing about the app's credential is wrong here, so Entra authorization is the wrong shelf even though the symptom is a 403.",
@@ -146,10 +146,10 @@
   },
   {
    "id": "sto-14",
-   "label": "During a suspected compromise at a payments processor, the incident lead needs every read and write against one storage account to stop within minutes, while leaving the data itself in place for the forensics team.",
+   "label": "A payments processor's storage account is encrypted with a customer-managed key in its own Key Vault. During a suspected compromise, nobody yet knows which account keys, SAS tokens or identities the attacker holds, and the calls may be arriving through the account's own private endpoint. The incident lead needs one switch that makes every read and write fail for all callers, while leaving the data itself in place for the forensics team.",
    "sub": "Which control closes this?",
    "answer": "Encryption keys",
-   "why": "Disabling the customer-managed key in the vault revokes the account's ability to unwrap its encryption key, and calls that read or write a resource or its metadata then fail with 403 for every user until access is restored. Choosing Network boundary would only block one set of source networks and would not stop a caller you had already permitted.",
+   "why": "Disabling the customer-managed key in the vault revokes the account's ability to unwrap its encryption key, and calls that read or write a resource or its metadata then fail with 403 for every user until access is restored. Choosing Network boundary would only block source networks and would not stop a caller arriving through a path you had already permitted, and Entra authorization would mean chasing every unknown key, token and role holder one at a time.",
    "citation": "Learn: Customer-managed keys for Azure Storage encryption · outline 2.1"
   },
   {

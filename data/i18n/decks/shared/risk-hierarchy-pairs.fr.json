@@ -1,13 +1,13 @@
 {
  "rhp-01": {
   "a.text": "L'entreprise ajoute une validation des résultats et un examen humain à un modèle de sinistres, réduisant le taux de refus erronés.",
-  "a.why": "La probabilité du préjudice diminue réellement. La réduction est le seul traitement qui améliore la situation de la personne affectée.",
+  "a.why": "La probabilité du préjudice baisse réellement, donc le demandeur s'en trouve mieux. Le transfert, à l'inverse, laisse inchangé ce qui arrive au demandeur.",
   "b.text": "L'entreprise achète une police d'assurance couvrant le coût des sinistres refusés à tort, sans modifier le modèle.",
-  "b.why": "Le demandeur est refusé au même taux exactement ; seul le bilan de l'entreprise est protégé. L'assurance n'est jamais un contrôle."
+  "b.why": "Le demandeur est refusé exactement au même taux ; seul le bilan de l'entreprise est protégé. L'assurance change qui paie, pas la fréquence du préjudice."
  },
  "rhp-02": {
   "a.text": "Après l'évaluation, la fonction d'inférence émotionnelle est annulée et supprimée de la feuille de route.",
-  "a.why": "L'activité s'arrête, donc l'exposition devient nulle. L'évitement est le seul traitement sans risque résiduel à enregistrer.",
+  "a.why": "L'activité s'arrête, donc cette exposition est supprimée plutôt que réduite. Vérifie quand même si le besoin qu'elle servait se déplace vers un endroit qui comporte son propre risque.",
   "b.text": "Après l'évaluation, la fonction d'inférence émotionnelle est lancée avec des seuils de confiance, une évaluation par sous-groupe et un examen humain des cas à faible confiance.",
   "b.why": "L'activité continue avec une probabilité de préjudice réduite. L'atténuation substantielle est encore une réduction, et le risque résiduel a toujours besoin d'un responsable."
  },
@@ -19,7 +19,7 @@
  },
  "rhp-04": {
   "a.text": "La capacité de l'agent à émettre des remboursements est entièrement supprimée de son ensemble d'outils.",
-  "a.why": "Aucune capacité, aucun mode de défaillance, et rien à surveiller. L'élimination est le niveau supérieur car elle retire toute la branche de l'arbre des risques.",
+  "a.why": "Sans la capacité, ce mode de défaillance est retiré ; vérifie où vont désormais les demandes de remboursement. L'élimination est le niveau supérieur car elle supprime le danger au lieu de s'en protéger.",
   "b.text": "L'agent conserve son outil de remboursement, avec une limite stricte d'un remboursement par session et un plafond de montant appliqué par l'outil.",
   "b.why": "Une forte contrainte technique qui laisse toujours une exposition limitée — et laisse le plafond lui-même comme quelque chose qui peut être mal configuré."
  },
@@ -27,7 +27,7 @@
   "a.text": "L'assistant détecte et bloque les entrées ayant l'apparence confidentielle avant qu'elles ne soient envoyées au modèle.",
   "a.why": "Le système prévient la divulgation indépendamment de ce que fait l'utilisateur. Le fardeau repose sur la partie capable de le porter.",
   "b.text": "L'assistant affiche un avis demandant aux utilisateurs de ne pas coller d'informations confidentielles.",
-  "b.why": "Le même risque, avec le fardeau déplacé vers l'utilisateur. Niveau le plus faible, et souvent le seul implémenté."
+  "b.why": "Un avertissement est un contrôle administratif : le même risque, avec le fardeau déplacé vers l'utilisateur. Il se classe sous les contrôles techniques, et c'est souvent le seul implémenté."
  },
  "rhp-06": {
   "a.text": "Le comité des risques enregistre le risque résiduel, confirme qu'il est dans l'appétence, nomme un responsable et fixe une date d'examen.",

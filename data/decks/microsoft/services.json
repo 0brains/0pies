@@ -4,7 +4,7 @@
   "title": "Service to Purpose",
   "blurb": "Match each purpose to the Azure service built for it.",
   "source": "Microsoft AI-901 (Azure AI Fundamentals) skills-measured guide · in-scope Azure AI services",
-  "asOf": "2026-07",
+  "asOf": "2026-10",
   "area": "microsoft-services",
   "hint": "Drag each purpose onto the service that exists to do it.",
   "icons": "azure-service",
@@ -62,7 +62,7 @@
       "id": "svc-008",
       "label": "Verify a person's identity by comparing a selfie against their ID photo",
       "answer": "Azure AI Face",
-      "why": "Azure AI Face provides face detection, verification, and liveness-check capabilities for identity scenarios.",
+      "why": "Azure AI Face provides face detection, verification, and liveness checks for identity scenarios. Verification, identification and liveness are Limited Access features: Microsoft must approve your use case through its intake form before you can call them.",
       "citation": "Microsoft Learn · Azure AI Face service documentation"
     },
     {
@@ -75,9 +75,9 @@
     {
       "id": "svc-010",
       "label": "Spot an unusual spike in a sensor's time-series readings",
-      "answer": "Azure AI Anomaly Detector",
-      "why": "Anomaly Detector applies time-series analysis to flag data points that deviate from expected patterns.",
-      "citation": "Microsoft Learn · Azure AI Anomaly Detector documentation"
+      "answer": "Microsoft Fabric Real-Time Intelligence",
+      "why": "Fabric Real-Time Intelligence flags points in streaming or time-series data that deviate from expected patterns. It is Microsoft's recommended home for this job now that Azure AI Anomaly Detector was retired on 1 October 2026.",
+      "citation": "Microsoft Learn · Anomaly Detector retirement notice · Microsoft Fabric Real-Time Intelligence anomaly detection"
     },
     {
       "id": "svc-011",

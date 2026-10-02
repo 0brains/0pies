@@ -1,7 +1,7 @@
 {
  "rp-01": {
   "a.text": "The assessment rates the exposure from an automated decisioning model as if none of the review, threshold or appeal mechanisms existed.",
-  "a.why": "Inherent risk is the gross position before controls. It exists to size the control effort, and it is never what gets accepted.",
+  "a.why": "Inherent risk is the gross position before controls. It exists to size the control effort. Acceptance is judged against residual risk; the two figures only coincide when the organisation knowingly retains the risk with no treatment at all.",
   "b.text": "The assessment rates the same model with review, thresholds and appeal operating as designed, and reports what remains.",
   "b.why": "Residual risk is what sign-off is actually against. Accepting against the inherent figure over-states what the organisation has agreed to carry."
  },
@@ -9,11 +9,11 @@
   "a.text": "The board states that the organisation will not pursue AI applications that make consequential decisions about individuals without human review.",
   "a.why": "Appetite is the broad, forward-looking statement of what risk the organisation is willing to take in pursuit of its objectives.",
   "b.text": "The policy states that a model may go live only if subgroup accuracy disparity is below four percentage points.",
-  "b.why": "Tolerance is the measurable boundary that operationalises appetite. Appetite without tolerance cannot be tested; tolerance without appetite is arbitrary."
+  "b.why": "Tolerance is the measurable boundary that operationalises appetite. That limit-setting reading follows COSO usage, where the 2017 framework speaks of acceptable variation in performance; ISO Guide 73 frames tolerance as readiness to bear a risk after treatment. Appetite without tolerance cannot be tested; tolerance without appetite is arbitrary."
  },
  "rp-03": {
   "a.text": "The model can produce fluent, confident text that is factually wrong.",
-  "a.why": "A hazard is the intrinsic potential to cause harm. It is a property of the thing and does not depend on deployment.",
+  "a.why": "A hazard is a potential source of harm. It belongs to the thing itself and exists before you ask who is exposed or how it is used, even though how often it shows up can still vary with retrieval, prompting and domain.",
   "b.text": "Because the model drafts patient discharge instructions read by non-specialists, confident errors may lead to incorrect medication use.",
   "b.why": "Risk combines the hazard with exposure and consequence in a context. The same hazard is a different risk in a different deployment — which is why tiers attach to use."
  },

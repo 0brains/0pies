@@ -4,7 +4,7 @@
  "title": "Two Tables Apart",
  "blurb": "Two Sentinel deployments look identical until one detail moves, and that detail decides which table the data lands in, which role can act, and what the month costs. Read each pair, spot the moved variable, and place both sides.",
  "source": "Microsoft Learn Sentinel docs: automation rules, playbooks, data tiers and retention, Syslog and CEF via AMA, Windows security events and DCRs, custom logs via AMA, roles and permissions, workspaces in the Defender portal, content hub, Purview Audit in Defender XDR · SC-500 outline 4.2",
- "asOf": "2026-08",
+ "asOf": "2026-10",
  "area": "4.2",
  "pairs": [
   {
@@ -57,15 +57,15 @@
     "Data Lake tier"
    ],
    "a": {
-    "text": "A grocery chain feeds its edge firewall denies into Sentinel because two custom detections and a nightly hunting query both read that table every single day looking for beaconing to newly registered domains.",
+    "text": "A grocery chain feeds its edge firewall denies into their own Sentinel table because two custom detections and a nightly hunting query both read that table every single day looking for beaconing to newly registered domains.",
     "answer": "Analytics tier",
     "why": "Detection rules, hunting queries, workbooks and the rest of the real-time surface only operate on data held in the analytics tier, and query cost there is included rather than metered. The nearest wrong zone is the data lake tier: it holds the same rows far more cheaply, but moving the table there stops the analytics rules and hunting queries against it from working.",
     "citation": "Learn: Sentinel data tiers and retention · outline 4.2"
    },
    "b": {
-    "text": "The same grocery chain also feeds in its edge firewall allow records, which no rule reads, but which the audit committee insists be producible for several years whenever a card-data enquiry lands.",
+    "text": "The same grocery chain uses a data collection rule transformation to split its edge firewall allow records into a separate table of their own, which no rule reads, but which the audit committee insists be producible for several years whenever a card-data enquiry lands.",
     "answer": "Data Lake tier",
-    "why": "High-volume, low-signal records that only need to be retrievable belong in the lake, where ingestion is minimal cost and total retention stretches to twelve years, reachable through KQL and Spark jobs and search jobs. The nearest wrong zone is the analytics tier: keeping years of verbose allow traffic hot buys query performance nobody in this scene needs and charges long-term retention on top.",
+    "why": "Tiers are set per table, which is why the allow records were split out first. High-volume, low-signal records that only need to be retrievable belong in the lake, where ingestion is minimal cost and total retention stretches to twelve years, reachable through KQL and Spark jobs and search jobs. The nearest wrong zone is the analytics tier: keeping years of verbose allow traffic hot buys query performance nobody in this scene needs and charges long-term retention on top.",
     "citation": "Learn: Log retention tiers in Microsoft Sentinel · outline 4.2"
    },
    "citation": "Learn: Sentinel data tiers and retention · outline 4.2"

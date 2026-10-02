@@ -4,7 +4,7 @@
  "title": "Build Orders",
  "blurb": "Six workflows the exam expects you to replay from memory — click each step into the only order that ships.",
  "source": "AI-901 study guide Tasks 1.2/2.1/2.2/2.4",
- "asOf": "2026-07",
+ "asOf": "2026-10",
  "area": "microsoft-foundry",
  "ladders": [
   {
@@ -26,11 +26,11 @@
     },
     {
      "label": "Next-token prediction",
-     "detail": "The model outputs a probability distribution over the whole vocabulary for the single next token; temperature and top-p reshape this distribution before one token is sampled."
+     "detail": "The model outputs a probability distribution over the whole vocabulary for the single next token; temperature and top-p reshape this distribution before one token is sampled. Perplexity scores this step: how much probability the model gave the true next tokens of held-out text."
     },
     {
      "label": "Detokenized output",
-     "detail": "The predicted token id is decoded back to text and the loop repeats one token at a time until a stop condition — perplexity measures how well this step's predictions matched held-out text."
+     "detail": "The predicted token id is decoded back to text and the loop repeats one token at a time until a stop condition."
     }
    ],
    "citation": "AI-901 study guide Task 1.2 · Microsoft Learn: Fundamentals of generative AI (tokenization and text generation)"

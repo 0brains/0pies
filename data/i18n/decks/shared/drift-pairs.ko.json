@@ -1,7 +1,7 @@
 {
  "dp-01": {
   "a.text": "credit model이 new region에서 applicants의 wave를 sees해요. given income, employment, 그리고 history profile에 대해, default rates는 정확히 model이 expects하는 것이에요.",
-  "a.why": "inputs는 new territory로 moved되었지만 rule은 intact해요. More representative training data가 그것을 fixes해요. new rule은 필요하지 않아요.",
+  "a.why": "입력은 새로운 영역으로 이동했지만 규칙은 그대로라서, 학습 데이터가 이런 프로필을 다룬 범위에서는 예측이 유지돼요. 주의할 곳은 데이터가 드문 영역으로, 거기서는 모델이 외삽하고 있어요. 새 규칙은 필요 없어요.",
   "b.text": "credit model이 같은 new region에서 applicants의 wave를 sees해요. identical income, employment, 그리고 history profile에 대해, default rates는 거기에서 model이 expects하는 것의 two times예요.",
   "b.why": "Identical inputs는 이제 different outcomes을 produce하므로, P(Y|X)는 changed했어요. Input mix를 rebalancing하는 amount는 더 이상 hold되지 않는 relationship을 fix하지 않을 거예요."
  },

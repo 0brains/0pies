@@ -4,7 +4,7 @@
  "title": "Platform Rules",
  "blurb": "Twenty-four things that went wrong on Azure app platforms: registries, AKS clusters, function apps, container groups. Sort each one to the control that actually closes it, not the one that merely notices it.",
  "source": "Microsoft Learn on Defender for Containers, Azure Container Registry authentication and networking, AKS security concepts, Microsoft Entra Workload ID, Azure Policy and Deployment Safeguards for AKS, App Service access restrictions and managed identities, Azure Functions networking, Logic Apps inbound security, Container Apps networking · SC-500 outline 3.3",
- "asOf": "2026-08",
+ "asOf": "2026-10",
  "area": "3.3",
  "hint": "Ask two questions in order. First: when in the life of the workload does this bite? Before anything is deployed, the answer lives in the registry and the image itself. At the moment a manifest hits the Kubernetes API server, the answer is an admission gate. After the workload is already running and behaving oddly, the answer is a detection. Second: if the problem is about reaching things, ask which direction. Code inside the workload reaching out to an Azure resource without a stored secret is workload identity. Callers on the internet reaching into an app that keeps its public hostname is an inbound rule set. Removing the public entry point altogether, or stopping pods talking sideways to each other, is network isolation.",
  "zones": [
@@ -45,7 +45,7 @@
    "label": "A Dublin payments firm builds a settlement API image once a quarter and stores it in a Premium registry. The March build is still the one running in its production cluster. A serious OpenSSL flaw is disclosed on a Tuesday, and the platform lead wants to know today whether that stored artifact is affected.",
    "sub": "Which control surfaces this?",
    "answer": "Registry and supply chain",
-   "why": "Registry vulnerability assessment in Defender for Containers rescans stored images once a day, so a flaw disclosed months after the build still lands against the March artifact, with remediation guidance in the Defender for Cloud recommendations. The tempting neighbour is Runtime detection, but the Defender sensor reports on process and network behaviour inside live containers; it says nothing about a dormant package version in a stored artifact. Note what keeps an image in that daily refresh: pushed within the last thirty days, pulled within the last thirty days, or currently running in a cluster Defender for Cloud watches. This image qualifies on the third condition, and a registry copy meeting none of them goes stale until somebody pulls it again.",
+   "why": "Registry vulnerability assessment in Defender for Containers rescans stored images once a day, so a flaw disclosed months after the build still lands against the March artifact, with remediation guidance in the Defender for Cloud recommendations. The tempting neighbour is Runtime detection, but the Defender sensor reports on process and network behaviour inside live containers; it says nothing about a dormant package version in a stored artifact. Note what keeps an image in that daily refresh: pushed within the last ninety days, pulled within the last thirty days, or currently running in a cluster Defender for Cloud watches. This image qualifies on the third condition, and a registry copy meeting none of them goes stale until somebody pulls it again.",
    "citation": "Learn: Vulnerability management for containers · outline 3.3"
   },
   {

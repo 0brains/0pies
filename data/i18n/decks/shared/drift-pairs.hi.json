@@ -1,7 +1,7 @@
 {
   "dp-01": {
     "a.text": "एक credit मॉडल नए region से applicants की एक wave देखता है। किसी भी दिए गए income, employment और history profile के लिए, default rates बिल्कुल वह हैं जो मॉडल expects करता है।",
-    "a.why": "इनपुट नए territory में moved हैं लेकिन rule intact है। अधिक representative प्रशिक्षण data इसे ठीक करता है; एक नया rule आवश्यक नहीं है।",
+    "a.why": "इनपुट नए क्षेत्र में चले गए हैं पर नियम वही है, इसलिए जहाँ-जहाँ ट्रेनिंग डेटा ने इन प्रोफ़ाइलों को कवर किया है वहाँ भविष्यवाणियाँ टिकी रहती हैं। ध्यान उन क्षेत्रों पर रखना है जहाँ कवरेज कम है, क्योंकि वहाँ मॉडल बहिर्वेशन (extrapolation) कर रहा है; नए नियम की ज़रूरत नहीं है।",
     "b.text": "एक credit मॉडल नए region से applicants की एक ही wave देखता है। identical income, employment और history profile के लिए, वहां default rates मॉडल expects करता है उससे दो गुना हैं।",
     "b.why": "Identical inputs अब अलग परिणाम produce करते हैं, इसलिए P(Y|X) बदल गया है। इनपुट mix को rebalance करने की कोई मात्रा एक relationship को ठीक करेगी जो अब hold नहीं करता है।"
   },

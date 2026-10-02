@@ -87,7 +87,7 @@
     "a.text": "Un datore di lavoro implementa il riconoscimento delle emozioni per monitorare l'attenzione del personale alla loro scrivania.",
     "a.why": "L'Art. 5 vieta l'inferenza delle emozioni sul posto di lavoro e nell'istruzione, al di fuori degli usi medici e di sicurezza.",
     "b.text": "Uno studio di giochi utilizza il riconoscimento delle emozioni in un'app di intrattenimento per consumatori, divulgata all'utente.",
-    "b.why": "Al di fuori del posto di lavoro e dell'istruzione il divieto non si applica; i doveri di trasparenza dell'Art. 50 si applicano invece."
+    "b.why": "Al di fuori del posto di lavoro e dell'istruzione il divieto non morde, ma il riconoscimento delle emozioni è elencato come alto rischio nell'Allegato III punto 1(c). Informarne gli utenti è il dovere dell'Art. 50(3), che si applica in aggiunta allo status di alto rischio, non al suo posto."
   },
   "II.C-pair-008": {
     "a.text": "Un'azienda di Dublino introduce un sistema ad alto rischio costruito negli Stati Uniti nel mercato dell'UE per la prima volta.",
@@ -397,8 +397,8 @@
     "obligations[13].text": "Assisti il titolare del trattamento nel rispondere alle richieste degli interessati",
     "obligations[14].text": "Cancella o restituisci i dati alla fine dell'impegno",
     "obligations[15].text": "Informare e consigliare su obblighi, e monitorare la conformità, senza ricevere istruzioni su come eseguire l'attività",
-    "obligations[16].text": "Fai da punto di contatto per l'autorità di controllo e per gli interessati",
-    "obligations[17].text": "Mantieni il record delle attività di elaborazione e rendilo disponibile all'autorità su richiesta"
+    "obligations[16].text": "Fai da punto di contatto per l'autorità di controllo e per gli interessati, riferendo direttamente al massimo livello dirigenziale",
+    "obligations[17].text": "Tieni il registro delle attività di trattamento all'interno dell'UE per conto di un titolare senza stabilimento nell'UE, e presentalo all'autorità su richiesta"
   },
   "tl-asean-001": {
     "milestone": "Previsto di diversificarsi",
@@ -507,7 +507,7 @@
     "b.why": "I soli dati comportamentali sono personali ma non di categoria speciale, a meno che non siano utilizzati per dedurre un attributo protetto."
   },
   "II.A-tell-009": {
-    "snippet": "L'interessato ha il diritto di non essere sottoposto a una decisione basata unicamente sul trattamento automatizzato, inclusa la profilazione, che produca effetti giuridici nei suoi confronti.",
+    "snippet": "L'interessato ha il diritto di non essere sottoposto a una decisione basata unicamente sul trattamento automatizzato, compresa la profilazione, che produca effetti giuridici che lo riguardano o che incida in modo analogo significativamente sulla sua persona.",
     "tell": "\"unicamente su trattamento automatizzato\" più \"effetti giuridici o similmente incide significativamente\" è Art. 22. È un diritto dei dati personali, non un obbligo dell'AI Act — una trappola d'esame prediletta."
   },
   "II.B-brief-01": {
@@ -876,10 +876,10 @@
     "note": "Valutazioni di impatto/rischio, avvisi ai consumatori, processo di revisione/appello, controlli dei fornitori e test di discriminazione."
   },
   "II-case-001": {
-    "brief": "Un assicuratore olandese concede in licenza un modello di terze parti per la determinazione dei premi delle polizze auto, lo riaddestra sui propri dati di sinistri e lo commercializza ai clienti con il proprio marchio. Le decisioni sui prezzi sono emesse automaticamente.",
-    "steps[0].why": "Ha rinominato il sistema e lo ha sostanzialmente modificato mediante riaddestramento — uno solo di questi trasferisce gli obblighi del fornitore.",
+    "brief": "Un assicuratore olandese prende in licenza un modello di terze parti per determinare il prezzo di polizze sanitarie individuali, lo riaddestra sui propri dati di sinistri e mette in servizio il sistema di pricing con il proprio marchio. Le decisioni sui prezzi sono emesse automaticamente.",
+    "steps[0].why": "Il pricing delle assicurazioni sanitarie per le persone fisiche è ad alto rischio secondo l'Allegato III (punto 5(c)), quindi si applica l'Art. 25: apporre il proprio marchio sul sistema basta da solo a renderlo fornitore, e un riaddestramento che cambia le prestazioni del sistema può anche costituire una modifica sostanziale.",
     "steps[1].why": "Le decisioni sui prezzi automatiche con effetti significativi costituiscono esclusivamente processi decisionali automatizzati.",
-    "steps[2].why": "Obblighi del fornitore per un sistema ad alto rischio, insieme alla DPIA richiesta dal lato della privacy."
+    "steps[2].why": "Obblighi del fornitore per un sistema ad alto rischio (il pricing delle assicurazioni vita e sanitarie è elencato nell'Allegato III; quello delle polizze auto non lo sarebbe), insieme alla DPIA richiesta sul lato privacy."
   },
   "II-case-004": {
     "brief": "Un'azienda statunitense addestra un modello di uso generale al di sopra della soglia di calcolo del rischio sistemico. Non ha una sede nell'UE, ma le aziende dell'UE integrano il modello nei loro prodotti.",
@@ -948,12 +948,12 @@
     "a.text": "Un sistema di IA seleziona i candidati ai lavori e produce un'elenco ordinato da cui i selezionatori assumono.",
     "a.why": "Uso Annex III occupazionale — il sistema influenza materialmente chi viene assunto.",
     "b.text": "Lo stesso sistema ordina solo i candidati alfabeticamente per un selezionatore che legge ogni CV e decide in modo indipendente.",
-    "b.why": "Art. 6(3): un compito procedurale ristretto che non influenza materialmente l'esito cade al di fuori dell'alto rischio."
+    "b.why": "Art. 6(3): un compito procedurale ristretto che non influenza materialmente l'esito cade al di fuori dell'alto rischio. Aggiungere un revisore umano a un sistema di ranking non avrebbe questo effetto; la sorveglianza umana è un dovere dei sistemi ad alto rischio, non una via d'uscita dalla categoria."
   },
   "II.C-pair-003": {
     "a.text": "La polizia esegue l'identificazione biometrica remota in tempo reale attraverso una piazza pubblica per trovare sospetti in generale.",
     "a.why": "L'Art. 5 vieta l'identificazione biometrica remota in tempo reale negli spazi pubblicamente accessibili per le forze dell'ordine, salvo eccezioni autorizzate ristrette.",
-    "b.text": "La polizia esegue lo stesso abbinamento biometrico dopo il fatto, su filmati archiviati, secondo autorizzazione giudiziale.",
+    "b.text": "La polizia esegue lo stesso abbinamento biometrico a posteriori, su filmati archiviati.",
     "b.why": "L'identificazione biometrica post-remota non è vietata ma è ad alto rischio Annex III con requisiti di autorizzazione."
   },
   "II.C-pair-005": {
@@ -989,8 +989,8 @@
     "tell": "Vocabolario e concetti solo, senza nulla da certificare, è 22989. Se uno standard ti dice cosa significano le parole piuttosto che cosa fare, è lo standard di terminologia."
   },
   "II.D-tell-006": {
-    "snippet": "Un programma di valutazione che valuta le prestazioni del modello in laboratorio, in test sul campo controllati e nell'uso nel mondo reale, in tre strati.",
-    "tell": "La valutazione stratificata che si muove dal laboratorio al campo al mondo reale è ARIA (Assessing Risks and Impacts of AI). L'AI RMF è un framework; ARIA è un programma di test che lo alimenta."
+    "snippet": "Un programma di valutazione che studia i rischi e gli impatti dell'AI in un uso realistico, su tre livelli: test del modello, red-teaming e test sul campo.",
+    "tell": "Tre livelli di valutazione con nome, test del modello, poi red-teaming, poi test sul campo, indicano ARIA (Assessing Risks and Impacts of AI). L'AI RMF è un framework; ARIA è un programma di test che lo alimenta."
   },
   "controller": {
     "definition": "Determina gli scopi e i mezzi del trattamento."
@@ -1267,7 +1267,7 @@
     "obligations[10].text": "Garantire che i dati di input siano rilevanti e sufficientemente rappresentativi dello scopo previsto",
     "obligations[11].text": "Informare i lavoratori e i loro rappresentanti prima di mettere in uso un sistema ad alto rischio sul posto di lavoro",
     "obligations[12].text": "Informare gli individui che sono soggetti alla decisione di un sistema ad alto rischio",
-    "obligations[13].text": "Conservare i registri generati automaticamente per il periodo richiesto",
+    "obligations[13].text": "Conservare i log che il sistema genera mentre lo usi nelle tue operazioni, per almeno sei mesi",
     "obligations[14].text": "Eseguire una valutazione dell'impatto sui diritti fondamentali ove richiesto",
     "obligations[15].text": "Verificare che il fornitore abbia completato la valutazione di conformità prima di mettere sul mercato",
     "obligations[16].text": "Verificare che il fornitore di terze parti abbia nominato un rappresentante autorizzato",

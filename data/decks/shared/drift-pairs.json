@@ -4,14 +4,14 @@
   "title": "One Fact Changes Everything — Drift",
   "blurb": "Two near-identical incidents. One fact differs, and the diagnosis flips.",
   "source": "Gama et al. (2014), A survey on concept drift adaptation · Moreno-Torres et al. (2012), A unifying view on dataset shift",
-  "asOf": "2026-07",
+  "asOf": "2026-10",
   "area": "ops",
   "pairs": [
     {
       "id": "dp-01",
       "dimension": "whether the input-to-outcome relationship still holds",
       "buckets": ["Covariate drift", "Concept drift"],
-      "a": {"text": "A credit model sees a wave of applicants from a new region. For any given income, employment and history profile, default rates are exactly what the model expects.", "answer": "Covariate drift", "why": "The inputs moved into new territory but the rule is intact. More representative training data fixes it; a new rule is not needed."},
+      "a": {"text": "A credit model sees a wave of applicants from a new region. For any given income, employment and history profile, default rates are exactly what the model expects.", "answer": "Covariate drift", "why": "The inputs moved into new territory but the rule is intact, so predictions hold wherever the training data covered these profiles. The thing to watch is thinly covered regions, where the model is extrapolating; a new rule is not needed."},
       "b": {"text": "A credit model sees the same wave of applicants from a new region. For an identical income, employment and history profile, default rates there are twice what the model expects.", "answer": "Concept drift", "why": "Identical inputs now produce different outcomes, so P(Y|X) has changed. No amount of rebalancing the input mix will fix a relationship that no longer holds."},
       "citation": "Moreno-Torres et al. (2012) · A unifying view on dataset shift (covariate vs concept shift)"
     },

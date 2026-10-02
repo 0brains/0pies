@@ -4,13 +4,13 @@
   "title": "In Order",
   "blurb": "Seven Microsoft Sentinel build sequences, from onboarding a workspace to silencing a noisy rule. Each rung only works because the rung under it already happened, so reconstruct the dependency chain rather than the tidy-sounding story.",
   "source": "Microsoft Learn Sentinel documentation — workspace onboarding; Content hub solutions; Syslog and CEF via AMA; Windows Security Events via AMA plus data collection rules and Windows Event Forwarding; custom text-file log tables; automation rules and playbooks; data tiers and retention · SC-500 outline 4.2",
-  "asOf": "2026-08",
+  "asOf": "2026-10",
   "area": "4.2",
   "ladders": [
     {
       "id": "ord-01",
       "title": "Standing up a brand-new Sentinel workspace at a regional credit union",
-      "prompt": "A four-person security team at a regional credit union has an Azure subscription and nothing else. Put the build in the order that Azure actually permits: each rung creates the resource or the permission that the next rung needs before it can be selected in the portal.",
+      "prompt": "A four-person security team at a regional credit union has an Azure subscription and nothing else. Put the build in the order that Azure actually permits: each rung creates the resource or the permission that the next rung needs before it can be selected in the portal. The one pure setting change goes at the earliest point where it is both possible and free.",
       "citation": "Learn: Sentinel workspace onboarding quickstart · outline 4.2",
       "steps": [
         {
@@ -22,12 +22,12 @@
           "detail": "Sentinel is an add-on to a workspace, never a standalone resource, so the workspace has to exist before the service can be attached. Region matters permanently here because the workspace pins where the data lives, and once Sentinel is on it the workspace cannot be moved to a different resource group or subscription."
         },
         {
-          "label": "Raise retention from the legacy 30-day default toward 90 days",
-          "detail": "Older pricing tiers leave a workspace at a 30-day default, which quietly clips hunting and rule lookback windows. Doing it now, before analysts start relying on the data, avoids the situation where the gap is discovered during an investigation and the missing days cannot be recovered."
-        },
-        {
           "label": "Add Microsoft Sentinel to that workspace",
           "detail": "This is the step that turns a plain monitoring workspace into a SIEM instance, which is what makes the Content hub, Analytics and Automation pages appear at all. Default workspaces created by Defender for Cloud are excluded from the picker, so choosing the purpose-built workspace in the previous rung is what makes this one succeed."
+        },
+        {
+          "label": "Raise retention from the 30-day default toward 90 days",
+          "detail": "A new workspace still starts at a 30-day default, which quietly clips hunting and rule lookback windows. The first 90 days of retention only come at no extra charge once Sentinel is on the workspace, so the earliest point where the change is both possible and free is straight after the previous rung, before any data starts arriving and ageing out."
         },
         {
           "label": "Decide the portal experience and note whether the workspace was auto-onboarded to the Defender portal",

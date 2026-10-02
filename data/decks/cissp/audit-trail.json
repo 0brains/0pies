@@ -4,7 +4,7 @@
  "title": "Audit Trail",
  "blurb": "Five ways an organization checks its own security — a scan, a test, an audit, a review, and a log check. Sort each scene into the assessment that produced it, or the one that's still missing.",
  "source": "Chapple CISSP SG 10ed ch.15 (Security Assessment and Testing) · CISSP April-2024 outline 6.1, 6.2, 6.5",
- "asOf": "2026-08",
+ "asOf": "2026-10",
  "area": "6.1-6.2, 6.5",
  "hint": "Ask two questions: did anyone try to actually exploit anything, and is the output a technical finding or a formal opinion against a standard? That sorts most of the board.",
  "note": "Several scenes describe a report or a claim that already exists but is missing a specific piece of proof. Sort those to the assessment type that would have produced the missing proof, not the one that produced the claim in front of you.",
@@ -12,7 +12,7 @@
   {
    "key": "Vulnerability scan",
    "name": "Vulnerability scan",
-   "def": "An automated, repeatable probe of hosts, ports and configurations against known-weakness databases (missing patches, misconfigurations, exposed services) that stops at identification — it never attempts to exploit what it finds. A credentialed run, logged in with a read-only account, sees deeper than an unauthenticated one, but neither one proves a flaw is actually reachable by an attacker; that proof belongs to a penetration test."
+   "def": "An automated, repeatable probe of hosts, ports and configurations against known-weakness databases (missing patches, misconfigurations, exposed services) that stops at identification — it never attempts to exploit what it finds. A credentialed run, logged in with an authorized scanning account (usually one with administrative or root-level rights so it can read patch levels and local settings), sees deeper than an unauthenticated one, but neither one proves a flaw is actually reachable by an attacker; that proof belongs to a penetration test."
   },
   {
    "key": "Penetration test",
@@ -22,7 +22,7 @@
   {
    "key": "Audit",
    "name": "Audit",
-   "def": "A formal, independent review of controls against a named standard, regulation or baseline (ISO 27001, PCI DSS, SOC 1/2/3), producing a documented opinion rather than a list of technical flaws. An auditor evaluates and recommends but never decides or remediates on the organization's behalf, and a report's credibility depends on whether it only reviewed a description of controls (Type I) or actually confirmed the controls operated correctly over an extended period (Type II)."
+   "def": "A structured review of controls against a defined standard, regulation, internal policy or baseline, producing a documented opinion rather than a list of technical flaws. It may be internal (the organization's own staff checking adherence to its own policy), external, or third-party (for example an ISO 27001 certification audit, a PCI DSS assessment or a SOC attestation). An auditor evaluates and recommends but never decides or remediates on the organization's behalf. For SOC 1 and SOC 2 reports specifically, a Type I opinion covers the system description and the design of controls as of a single date, while a Type II also tests that those controls operated effectively across a period, typically six to twelve months."
   },
   {
    "key": "Code review",
@@ -45,7 +45,7 @@
   },
   {
    "id": "aud-02",
-   "label": "The same scanning tool is re-run against a finance server, this time logged in with a read-only local-admin account instead of anonymously, and the new report surfaces internal misconfigurations the earlier run never saw.",
+   "label": "The same scanning tool is re-run against a finance server, this time logged in with an authorized local-admin scanning account instead of anonymously, and the new report surfaces internal misconfigurations the earlier run never saw.",
    "answer": "Vulnerability scan",
    "why": "This is a credentialed scan going deeper because it can see past the front door — still identification, not exploitation, so it stays here rather than sliding into a penetration test just because a login was used.",
    "citation": "SG ch.15 · outline 6.2.1"

@@ -12,9 +12,9 @@
   "steps[4].label": "Benchmark vs especialistas humanos no mesmo contexto de decisão",
   "steps[4].detail": "Antes de qualquer piloto, mede o desempenho do sistema face a pessoas qualificadas que tomam exatamente as mesmas decisões — essa comparação diz muito mais à governação do que uma meta abstrata de precisão.",
   "steps[5].label": "Piloto — valida equidade + precisão em escala controlada",
-  "steps[5].detail": "Executa um piloto pré-lançamento cujo propósito primário é validar equidade e precisão em dados real-mundo em escala controlada, limitada antes de rollout total.",
+  "steps[5].detail": "Executa um piloto pré-lançamento com um grupo limitado de utilizadores internos e voluntários para validar equidade e precisão com entradas realistas, e corrige o que ele revelar antes de o sistema ser ligado a qualquer processo de negócio em direto.",
   "steps[6].label": "Shadow-mode corre como evidência de prontidão documentada",
-  "steps[6].detail": "Executa o sistema em paralelo com o processo vivo (shadow mode) e documenta os resultados. Esta evidência documentada — não uma aprovação verbal — é o que demonstra prontidão de lançamento."
+  "steps[6].detail": "Com as correções do piloto aplicadas, executa o sistema em paralelo com o processo em direto (shadow mode): as suas saídas são comparadas com as decisões reais mas nunca são postas em prática, e os resultados são documentados. Esta evidência documentada — não uma aprovação verbal — é o que demonstra prontidão de lançamento (SG)."
  },
  "iii-dl-02": {
   "prompt": "Ordena a hierarquia de mitigação de risco de a correção mais durável para o último recurso.",

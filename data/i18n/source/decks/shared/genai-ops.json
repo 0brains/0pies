@@ -8,8 +8,8 @@
   "why": "First determine whether claims are supported, then tighten evidence use, refusal behavior, and citation validation. Trade-off: A larger model may improve fluency without solving missing or ignored evidence."
  },
  "genai-ops-02": {
-  "label": "The answer generator cannot use the right fact because the relevant passage is absent from the retrieved set.",
-  "sub": "Correct Evidence Never Appears",
+  "label": "Answers are fluent and quote real policy documents, yet they keep missing the one clause that actually governs the question.",
+  "sub": "The Governing Clause Goes Missing",
   "why": "Retrieval recall isolates whether chunking, embeddings, filters, query rewriting, or candidate count misses needed evidence. Trade-off: Generation changes cannot recover evidence that never enters the context."
  },
  "genai-ops-03": {

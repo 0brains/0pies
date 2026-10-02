@@ -99,7 +99,7 @@
  },
  "cu-modality-grid": {
   "hint": "Hỏi tệp nguồn thực sự là gì, sau đó kiểm tra dòng sub cho id bộ phân tích prebuilt-* chính xác — id chính nó đặt tên phương thức của nó (document/image/audio/video), và các id có hậu tố Search chuẩn bị đầu ra cho lập chỉ mục thay vì thay đổi phương thức.",
-  "note": "Content Understanding luôn trích xuất — nó không bao giờ tạo hoặc lập chỉ mục. Trích xuất vào Azure AI Search là một bước hạ lưu, không phải thứ CU tự làm."
+  "note": "Content Understanding biến nội dung thành đầu ra có cấu trúc — các trường nó trích xuất, cộng với các giá trị nó tạo ra hoặc phân loại, chẳng hạn bản tóm tắt và mô tả — nhưng nó không tạo phương tiện mới cũng không xây dựng chỉ mục tìm kiếm. Lập chỉ mục vào Azure AI Search là một bước hạ nguồn, không phải việc CU tự làm."
   ,
   "zones[0].def": "PDF, hóa đơn, hợp đồng và giấy tờ tự do mà Content Understanding biến thành các trường được cấu trúc, bảng và văn bản.",
   "zones[1].def": "Ảnh, ảnh chụp màn hình và biểu đồ mà Content Understanding biến thành các trường được cấu trúc, mô tả và các đối tượng được phát hiện.",

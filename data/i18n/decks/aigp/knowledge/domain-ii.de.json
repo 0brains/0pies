@@ -87,7 +87,7 @@
     "a.text": "Ein Arbeitgeber deployt Gefühlserkennung, um Mitarbeiter-Aufmerksamkeit an ihren Schreibtischen zu überwachen.",
     "a.why": "Artikel 5 verbietet Gefühlsinferenz am Arbeitsplatz und in der Bildung, außer medizinischen und Sicherheitsanwendungen.",
     "b.text": "Ein Spielstudio nutzt Gefühlserkennung in einer Verbraucher-Entertainment-App, offengelegt dem Benutzer.",
-    "b.why": "Außerhalb von Arbeitsplatz und Bildung beißt das Verbot nicht; Artikel 50 Transparenz-Aufgaben gelten stattdessen."
+    "b.why": "Außerhalb von Arbeitsplatz und Bildung greift das Verbot nicht, aber Emotionserkennung ist in Annex III Nummer 1(c) als Hochrisiko gelistet. Die Nutzer darüber zu informieren ist die Pflicht aus Art. 50(3), die zusätzlich zum Hochrisiko-Status gilt, nicht an seiner Stelle."
   },
   "II.C-pair-008": {
     "a.text": "Ein Dublin-Unternehmen bringt ein in den USA gebautes hochrisiko-System zum ersten Mal auf den EU-Markt.",
@@ -397,8 +397,8 @@
     "obligations[13].text": "Helfe der Controller, auf Datenschutz-Anfragen zu antworten",
     "obligations[14].text": "Lösche oder gebe die Daten am Ende des Engagements zurück",
     "obligations[15].text": "Informiere und berate zu Aufgaben, und überwache Compliance, ohne Anweisungen zur Ausführung der Aufgabe zu erhalten",
-    "obligations[16].text": "Agiere als Kontaktpunkt für die Aufsichtsbehörde und für Datensubjekte",
-    "obligations[17].text": "Führe das Verarbeitungs-Aktivitäten-Buch und mache es der Behörde auf Anfrage verfügbar"
+    "obligations[16].text": "Agiere als Kontaktstelle für die Aufsichtsbehörde und für betroffene Personen und berichte direkt an die höchste Managementebene",
+    "obligations[17].text": "Führe das Verzeichnis der Verarbeitungstätigkeiten in der EU im Auftrag eines Verantwortlichen ohne Niederlassung in der EU und lege es der Behörde auf Anfrage vor"
   },
   "tl-asean-001": {
     "milestone": "Erwartet zu diversifizieren",
@@ -507,7 +507,7 @@
     "b.why": "Allein Verhaltensdaten sind personenbezogen, aber nicht besondere Kategorie, es sei denn, sie werden zur Schlussfolgerung eines geschützten Merkmals verwendet."
   },
   "II.A-tell-009": {
-    "snippet": "Die betroffene Person hat das Recht, nicht automatisiert verarbeiteten Entscheidungen unterworfen zu werden, einschließlich Profiling, die rechtliche Folgen für sie hat.",
+    "snippet": "Die betroffene Person hat das Recht, nicht einer ausschließlich auf einer automatisierten Verarbeitung — einschließlich Profiling — beruhenden Entscheidung unterworfen zu werden, die ihr gegenüber rechtliche Wirkung entfaltet oder sie in ähnlicher Weise erheblich beeinträchtigt.",
     "tell": "‚Allein automatisiert verarbeitet' plus ‚rechtliche Folgen oder ähnlich erheblich beeinflußt' ist Art. 22. Es ist ein Datenschutzrecht, nicht eine KI-Verordnung-Verpflichtung — eine beliebte Prüfungsfalle."
   },
   "II.B-brief-01": {
@@ -876,10 +876,10 @@
     "note": "Wirkung/Risiko-Bewertungen, Verbrauchermitteilungen, Überprüfungs-/Einspruchsverfahren, Anbieter-Kontrollen und Diskriminierungs-Testen."
   },
   "II-case-001": {
-    "brief": "Ein niederländischer Versicherer lizenziert ein Drittanbieter-Modell zur Versicherungsprämienberechnung, trainiert es auf seiner eigenen Schadenshistorie um und vermarktet es unter eigenem Namen an Kunden. Preisangebote werden automatisch ausgegeben.",
-    "steps[0].why": "Das Unternehmen hat das System ummarketiert und grundlegend modifiziert durch Umschulung — beides überträgt dem Anbieter Verpflichtungen allein.",
+    "brief": "Ein niederländischer Versicherer lizenziert ein Drittanbieter-Modell zur Preisberechnung individueller Krankenversicherungspolicen, trainiert es mit seiner eigenen Schadenshistorie nach und nimmt das Preissystem unter eigener Marke in Betrieb. Preisentscheidungen werden automatisch ausgegeben.",
+    "steps[0].why": "Die Preisgestaltung von Krankenversicherungen für Einzelpersonen ist Hochrisiko nach Annex III (Nummer 5(c)), also gilt Art. 25: Die eigene Marke auf das System zu setzen reicht allein schon, um den Versicherer zum Anbieter zu machen, und ein Nachtraining, das die Leistung des Systems verändert, kann zusätzlich eine wesentliche Änderung sein.",
     "steps[1].why": "Automatische Preisangebote mit erheblichen Auswirkungen sind automatisierte Entscheidungsfindung im Sinne des Gesetzes.",
-    "steps[2].why": "Anbieter-Pflichten für ein Hochrisiko-System, zusammen mit der datenschutzrechtlich erforderlichen DPIA."
+    "steps[2].why": "Anbieterpflichten für ein Hochrisiko-System (Preisgestaltung in der Lebens- und Krankenversicherung ist in Annex III gelistet; Kfz-Preisgestaltung wäre es nicht), zusammen mit der datenschutzrechtlich erforderlichen DPIA."
   },
   "II-case-004": {
     "brief": "Ein US-Unternehmen trainiert ein Allzweck-Modell oberhalb der Schwelle für systemisches Risiko-Compute. Es hat keine Betriebsstätte in der EU, aber Unternehmen der EU integrieren das Modell in ihre Produkte.",
@@ -948,12 +948,12 @@
     "a.text": "Ein KI-System screent Jobbewerber und erstellt eine Rangliste, die Recruiter beim Einstellen verwenden.",
     "a.why": "Anlage III Beschäftigungszweck — das System beeinflusst wesentlich, wer eingestellt wird.",
     "b.text": "Dasselbe System sortiert Bewerber nur alphabetisch für einen Recruiter, der jeden Lebenslauf liest und eigenständig entscheidet.",
-    "b.why": "Art. 6(3): eine enge verfahrensbezogene Aufgabe, die das Ergebnis nicht wesentlich beeinflusst, fällt außerhalb Hochrisiko."
+    "b.why": "Art. 6(3): Eine eng begrenzte Verfahrensaufgabe, die das Ergebnis nicht wesentlich beeinflusst, fällt aus dem Hochrisiko heraus. Einen menschlichen Prüfer zu einem Ranking-System hinzuzufügen hätte diese Wirkung nicht; menschliche Aufsicht ist eine Pflicht von Hochrisiko-Systemen, kein Ausweg aus der Klasse."
   },
   "II.C-pair-003": {
     "a.text": "Polizei führt in Echtzeit Fernbiometrie über einen öffentlichen Platz durch, um Verdächtige generell zu finden.",
     "a.why": "Art. 5 verbietet Echtzeit-Fernbiometrie in öffentlich zugänglichen Räumen zur Strafverfolgung, außer bei engen genehmigten Ausnahmen.",
-    "b.text": "Polizei führt denselben biometrischen Abgleich nachträglich auf gespeichertem Filmmaterial durch, unter gerichtlicher Genehmigung.",
+    "b.text": "Die Polizei führt denselben biometrischen Abgleich nachträglich auf gespeichertem Filmmaterial durch.",
     "b.why": "Nachträgliche Fernbiometrie ist nicht verboten, ist aber Anlage III Hochrisiko mit Genehmigungsanforderungen."
   },
   "II.C-pair-005": {
@@ -989,8 +989,8 @@
     "tell": "Vokabular und Konzepte allein, ohne etwas zu zertifizieren, ist 22989. Wenn ein Standard dir erklärt, was Wörter bedeuten statt was du tun sollst, ist es der Terminologie-Standard."
   },
   "II.D-tell-006": {
-    "snippet": "Ein Evaluierungsprogramm, das Modellleistung im Labor, in kontrollierten Feldtests und im Echteinsatz in drei Schichten bewertet.",
-    "tell": "Gestaffelte Bewertung vom Labor zum Feld zur realen Welt ist ARIA (Assessing Risks and Impacts of AI). Das AI RMF ist ein Framework; ARIA ist ein Testprogramm, das es speist."
+    "snippet": "Ein Evaluierungsprogramm, das die Risiken und Auswirkungen von KI im realistischen Einsatz auf drei Ebenen untersucht: Modelltests, Red-Teaming und Feldtests.",
+    "tell": "Drei benannte Evaluierungsebenen, erst Modelltests, dann Red-Teaming, dann Feldtests, kennzeichnen ARIA (Assessing Risks and Impacts of AI). Das AI RMF ist ein Framework; ARIA ist ein Testprogramm, das es speist."
   },
   "controller": {
     "definition": "Legt Zwecke und Mittel der Verarbeitung fest."
@@ -1267,7 +1267,7 @@
     "obligations[10].text": "Sicherstellen Input-Daten ist relevant und ausreichend repräsentativ für den vorgesehenen Zweck",
     "obligations[11].text": "Arbeiter und ihre Vertreter informieren, bevor ein Hochrisiko-System am Arbeitsplatz in Betrieb genommen wird",
     "obligations[12].text": "Personen informieren, dass sie einem Hochrisiko-System-Entscheidung unterworfen sind",
-    "obligations[13].text": "Automatisch erzeugte Protokolle für die erforderliche Zeitspanne beibehalten",
+    "obligations[13].text": "Die Logs, die das System erzeugt, während du es in deinem eigenen Betrieb nutzt, mindestens sechs Monate aufbewahren",
     "obligations[14].text": "Grundrechts-Auswirkungsbewertung durchführen, wo erforderlich",
     "obligations[15].text": "Überprüfe Anbieter hat die Konformitätsbewertung abgeschlossen, bevor Marktplatzierung",
     "obligations[16].text": "Überprüfe Drittland-Anbieter hat zugelassenen Vertreter beauftragt",

@@ -87,7 +87,7 @@
     "a.text": "Pracodawca wdraża rozpoznawanie emocji, aby monitorować czujność pracowników na biorkach.",
     "a.why": "Art. 5 zabrania wnioskowania emocji w miejscu pracy i edukacji, poza zastosowaniami medycznymi i bezpieczeństwa.",
     "b.text": "Studio gier używa rozpoznawania emocji w aplikacji rozrywkowej dla konsumentów, ujawnionej użytkownikowi.",
-    "b.why": "Poza miejscem pracy i edukacją zakaz się nie stosuje; obowiązki przezroczystości art. 50 stosują się zamiast."
+    "b.why": "Poza miejscem pracy i edukacją zakaz nie działa, ale rozpoznawanie emocji jest wymienione jako wysokie ryzyko w Annex III, pkt 1(c). Informowanie o nim użytkowników to obowiązek z Art. 50(3), który obowiązuje dodatkowo do statusu wysokiego ryzyka, a nie zamiast niego."
   },
   "II.C-pair-008": {
     "a.text": "Firma z Dublina przynosi system wysokiego ryzyka zbudowany w USA na rynek UE po raz pierwszy.",
@@ -397,8 +397,8 @@
     "obligations[13].text": "Assist kontroler w odpowiadaniu na żądania osób, których dane dotyczą",
     "obligations[14].text": "Usuń lub zwróć dane na koniec zaangażowania",
     "obligations[15].text": "Informuj i doradzaj w sprawie obowiązków i monitoruj zgodność bez otrzymywania instrukcji jak wykonywać zadanie",
-    "obligations[16].text": "Działaj jako punkt kontaktu dla organu nadzoru i dla osób, których dane dotyczą",
-    "obligations[17].text": "Utrzymuj zapis działań przetwarzania i udostępnij go organowi na żądanie"
+    "obligations[16].text": "Działaj jako punkt kontaktowy dla organu nadzorczego i dla osób, których dane dotyczą, podlegając bezpośrednio najwyższemu kierownictwu",
+    "obligations[17].text": "Przechowuj rejestr czynności przetwarzania na terenie UE w imieniu administratora bez jednostki organizacyjnej w UE i udostępniaj go organowi na żądanie"
   },
   "tl-asean-001": {
     "milestone": "Oczekiwany do dywersyfikacji",
@@ -507,7 +507,7 @@
     "b.why": "Same dane behawioralne są osobiste, ale nie kategorii szczególnej, chyba że są używane do wnioskowania chronionego atrybutu."
   },
   "II.A-tell-009": {
-    "snippet": "Osoba, której dane dotyczą, ma prawo, aby nie podlegać decyzji opartej wyłącznie na automatycznym przetwarzaniu, w tym profilowaniu, które ma skutki prawne ich dotyczące.",
+    "snippet": "Osoba, której dane dotyczą, ma prawo do tego, by nie podlegać decyzji, która opiera się wyłącznie na zautomatyzowanym przetwarzaniu, w tym profilowaniu, i wywołuje wobec tej osoby skutki prawne lub w podobny sposób istotnie na nią wpływa.",
     "tell": "\"wyłącznie na podstawie przetwarzania automatycznego\" plus \"skutki prawne lub podobnie znacznie wpływa\" to art. 22. To prawo ochrony danych, a nie zobowiązanie Ustawy o AI — ulubiona pułapka egzaminu."
   },
   "II.B-brief-01": {
@@ -876,10 +876,10 @@
     "note": "Oceny wpływu/ryzyka, powiadomienia konsumentów, proces przeglądu/odwołania, kontrole dostawcy i testowanie dyskryminacji."
   },
   "II-case-001": {
-    "brief": "Holenderski ubezpieczyciel licencjonuje model strony trzeciej do wyceny polis ubezpieczenia komunikacyjnego, retrainuje go na własnej historii szkód i wprowadza go na rynek pod własną marką. Decyzje cenowe wydawane są automatycznie.",
-    "steps[0].why": "Zmienił markę systemu i istotnie go zmodyfikował poprzez retraining — każdy z tych czynów przenosi obowiązki dostawcy.",
+    "brief": "Holenderski ubezpieczyciel licencjonuje model strony trzeciej do wyceny indywidualnych polis ubezpieczenia zdrowotnego, dotrenowuje go na własnej historii szkód i oddaje system wyceny do użytku pod własną marką. Decyzje cenowe są wydawane automatycznie.",
+    "steps[0].why": "Wycena ubezpieczeń zdrowotnych dla osób fizycznych to wysokie ryzyko z Annex III (pkt 5(c)), więc stosuje się Art. 25: samo opatrzenie systemu własną marką wystarcza, by ubezpieczyciel stał się dostawcą, a dotrenowanie, które zmienia działanie systemu, może też być istotną modyfikacją.",
     "steps[1].why": "Automatyczne decyzje cenowe o znaczących skutkach to samodzielne podejmowanie decyzji.",
-    "steps[2].why": "Obowiązki dostawcy dla systemu wysokiego ryzyka, razem z wymaganą oceną oddziaływania na prywatność."
+    "steps[2].why": "Obowiązki dostawcy dla systemu wysokiego ryzyka (wycena ubezpieczeń na życie i zdrowotnych jest wymieniona w Annex III; wycena ubezpieczeń komunikacyjnych by nie była), razem z wymaganą po stronie prywatności DPIA."
   },
   "II-case-004": {
     "brief": "Firma z USA trenuje model ogólnego przeznaczenia przekraczający próg mocy obliczeniowej dla ryzyka systemowego. Nie ma siedziby w UE, ale firmy europejskie integrują model w swoje produkty.",
@@ -948,12 +948,12 @@
     "a.text": "System AI przesiewu kandydatów do pracy i tworzy rankingową listę, z której rekruterzy zatrudniają.",
     "a.why": "Użycie zatrudnienia Załącznika III — system znacząco wpływa na to, kto zostaje zatrudniony.",
     "b.text": "Ten sam system tylko sortuje kandydatów alfabetycznie dla rekrutera, który czyta każde CV i decyduje niezależnie.",
-    "b.why": "Art. 6(3): wąskie zadanie proceduralne, które nie wpływa istotnie na wynik, spada poza wysokie ryzyko."
+    "b.why": "Art. 6(3): wąskie zadanie proceduralne, które nie wpływa istotnie na wynik, wypada poza kategorię wysokiego ryzyka. Dodanie ludzkiego recenzenta do systemu rankingowego nie dałoby tego efektu; nadzór człowieka to obowiązek systemów wysokiego ryzyka, a nie wyjście z tej klasy."
   },
   "II.C-pair-003": {
     "a.text": "Policja prowadzi identyfikację biometryczną zdalną w czasie rzeczywistym na publicznym placu, aby ogólnie znaleźć podejrzanych.",
     "a.why": "Art. 5 zakazuje identyfikacji biometrycznej zdalnej w czasie rzeczywistym w publicznie dostępnych miejscach dla organów ścigania, z wyjątkiem wąskich autoryzowanych wyjątków.",
-    "b.text": "Policja prowadzi to samo dopasowanie biometryczne post factum, na zarejestrowanym materiale, pod autoryzacją sądową.",
+    "b.text": "Policja przeprowadza to samo dopasowanie biometryczne po fakcie, na zapisanym nagraniu.",
     "b.why": "Identyfikacja biometryczna post-zdalna nie jest zakazana, ale to system wysokiego ryzyka Załącznika III z wymogami autoryzacji."
   },
   "II.C-pair-005": {
@@ -989,8 +989,8 @@
     "tell": "Tylko słownictwo i pojęcia, bez czegoś do certyfikacji, to 22989. Jeśli standard mówi ci, co oznaczają słowa, a nie co robić, to standard terminologiczny."
   },
   "II.D-tell-006": {
-    "snippet": "Program ewaluacji, który ocenia wydajność modelu w laboratorium, w kontrolowanym testowaniu w terenie i w rzeczywistym użytku, w trzech warstwach.",
-    "tell": "Warstwowa ewaluacja przesuwająca się z laboratorium do terenu do świata rzeczywistego to ARIA (Assessing Risks and Impacts of AI). Rama AI RMF to struktura; ARIA to program testowania, który ją wspiera."
+    "snippet": "Program ewaluacji, który bada ryzyka i wpływ AI w realistycznym użyciu na trzech poziomach: testowanie modelu, red-teaming i testy terenowe.",
+    "tell": "Trzy nazwane poziomy ewaluacji — najpierw testowanie modelu, potem red-teaming, potem testy terenowe — wskazują na ARIA (Assessing Risks and Impacts of AI). AI RMF to framework; ARIA to program testowania, który go zasila."
   },
   "controller": {
     "definition": "Określa cele i sposoby przetwarzania."
@@ -1267,7 +1267,7 @@
     "obligations[10].text": "Upewnij się, że dane wejściowe są istotne i wystarczająco reprezentacyjne dla zamierzonego celu",
     "obligations[11].text": "Poinformuj pracowników i ich przedstawicieli przed wdrożeniem systemu wysokiego ryzyka w miejscu pracy",
     "obligations[12].text": "Poinformuj osoby, że podlegają decyzji systemu wysokiego ryzyka",
-    "obligations[13].text": "Przechowuj automatycznie generowane dzienniki przez wymagany okres",
+    "obligations[13].text": "Przechowuj logi, które system generuje, gdy używasz go we własnej działalności, przez co najmniej sześć miesięcy",
     "obligations[14].text": "Przeprowadź ocenę oddziaływania na prawa fundamentalne, gdzie jest wymagane",
     "obligations[15].text": "Sprawdź, czy dostawca ukończył ocenę zgodności przed wprowadzeniem na rynek",
     "obligations[16].text": "Sprawdź, czy dostawca kraju trzeciego wyznaczył upoważnionego przedstawiciela",

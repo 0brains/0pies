@@ -1,13 +1,13 @@
 {
   "rhp-01": {
     "a.text": "Firma dodaje walidację wyników i przegląd człowieka do modelu roszczeń, zmniejszając odsetek błędnych odmów.",
-    "a.why": "Prawdopodobieństwo rzeczywistej szkody spada. Redukcja to jedyna terapia, która poprawia sytuację osoby, której dane dotyczą.",
+    "a.why": "Prawdopodobieństwo szkody faktycznie spada, więc wnioskodawca jest w lepszej sytuacji. Transfer natomiast pozostawia wynik dla wnioskodawcy bez zmian.",
     "b.text": "Firma kupuje polisę ubezpieczeniową pokrywającą koszty błędnie odrzuconych roszczeń, pozostawiając model bez zmian.",
-    "b.why": "Wnioskodawca jest odrzucany z dokładnie taką samą częstością; chroniony jest tylko bilans firmy. Ubezpieczenie nigdy nie jest kontrolą."
+    "b.why": "Wnioskodawca jest odrzucany z dokładnie taką samą częstością; chroniony jest tylko bilans firmy. Ubezpieczenie zmienia to, kto płaci, a nie to, jak często dochodzi do szkody."
   },
   "rhp-02": {
     "a.text": "Po ocenie cecha wnioskowania emocji zostaje anulowana i usunięta z mapy drogowej.",
-    "a.why": "Działanie się zatrzymuje, zatem ekspozycja spada do zera. Unikanie to jedyna terapia bez pozostałego ryzyka do rejestrowania.",
+    "a.why": "Działanie się zatrzymuje, więc ta ekspozycja zostaje usunięta, a nie obniżona. Sprawdź jednak, czy potrzeba, której służyło, nie przenosi się gdzieś, gdzie niesie własne ryzyko.",
     "b.text": "Po ocenie cecha wnioskowania emocji zostaje wprowadzona wraz z progami pewności, oceną podgrup i przeglądem człowieka dla przypadków niskiej pewności.",
     "b.why": "Działanie trwa przy niższym prawdopodobieństwie szkody. Znaczna mitigacja to nadal redukcja, a pozostałe ryzyko wciąż wymaga właściciela."
   },
@@ -19,7 +19,7 @@
   },
   "rhp-04": {
     "a.text": "Zdolność agenta do wydawania zwrotów zostaje całkowicie usunięta z jego zestawu narzędzi.",
-    "a.why": "Brak zdolności, brak trybu awarii i nic do monitorowania. Eliminacja to najwyższa warstwa, bo wycofuje całą gałąź drzewa ryzyka.",
+    "a.why": "Skoro zdolności już nie ma, ten tryb awarii przestaje istnieć; sprawdź, dokąd trafiają teraz prośby o zwrot. Eliminacja to najwyższy poziom, bo usuwa zagrożenie, zamiast je zabezpieczać.",
     "b.text": "Agent zachowuje narzędzie zwrotu z twardym limitem jednego zwrotu na sesję i limitami kwoty egzekwowanymi przez narzędzie.",
     "b.why": "Silne ograniczenie techniczne, które pozostawia ograniczoną ekspozycję — i pozostawia sam limit jako coś, co można błędnie skonfigurować."
   },
@@ -27,7 +27,7 @@
     "a.text": "Asystent wykrywa i blokuje dane wyglądające na poufne przed wysłaniem ich do modelu.",
     "a.why": "System zapobiega ujawnieniu niezależnie od działań użytkownika. Ciężar spoczywa na stronie zdolnej go ponieść.",
     "b.text": "Asystent wyświetla powiadomienie z prośbą do użytkowników, aby nie wklejali poufnych informacji.",
-    "b.why": "To samo ryzyko, ale ciężar przesunięty na użytkownika. Najsłabsza warstwa i najczęściej jedyna wdrażana."
+    "b.why": "Ostrzeżenie to kontrola administracyjna: to samo ryzyko, a ciężar przesunięty na użytkownika. Plasuje się poniżej kontroli inżynieryjnych i często jest jedyną wdrożoną."
   },
   "rhp-06": {
     "a.text": "Komitet ryzyka rejestruje pozostałe ryzyko, potwierdza, że mieści się w łaknieniu, wyznacza właściciela i ustala datę przeglądu.",

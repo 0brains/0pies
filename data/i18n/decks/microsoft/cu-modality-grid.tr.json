@@ -99,7 +99,7 @@
  },
  "cu-modality-grid": {
   "hint": "Kaynak dosyanın gerçekte ne olduğunu sor, sonra tam önceden oluşturulmuş-* analizleyici id'si için alt satırı kontrol et — id'si kendi modalitesini (belge/görüntü/ses/video) adlandırır ve Search soneki alanları modaliteyi değiştirmek yerine alım için hazırlar.",
-  "note": "Content Understanding her zaman çıkarır — asla üretmez veya dizinlemez. Çıkarılan içeriği Azure AI Search'e dökümü bir aşağı akış adımıdır, CU'nun kendisinin yapmadığı bir şeydir.",
+  "note": "Content Understanding içeriği yapılandırılmış çıktıya dönüştürür — çıkardığı alanlar ve ürettiği ya da sınıflandırdığı değerler, örneğin özetler ve açıklamalar — ama yeni medya oluşturmaz ya da arama dizini kurmaz. Azure AI Search’e dizinleme bir aşağı akış adımıdır, CU’nun kendisinin yaptığı bir şey değildir.",
   "zones[0].def": "PDF'ler, faturalar, sözleşmeler ve serbest form kâğıtlar Content Understanding yapılandırılmış alanlara, tablolara ve metne dönüştürür.",
   "zones[1].def": "Fotoğraflar, ekran görüntüleri ve grafikler Content Understanding yapılandırılmış alanlara, açıklamalara ve algılanan nesnelere dönüştürür.",
   "zones[2].def": "Kaydedilmiş konuşma — çağrılar, podcast'ler ve sesli postalar — Content Understanding transkriptlere, özetlere ve konuşmacı etiketlerine dönüştürür.",

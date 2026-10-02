@@ -1,7 +1,7 @@
 {
  "rp-01": {
   "a.text": "La evaluación califica la exposición de un modelo de decisión automatizada como si ninguno de los mecanismos de revisión, umbral o apelación existiera.",
-  "a.why": "El riesgo inherente es la posición bruta antes de controles. Existe para dimensionar el esfuerzo de control, y nunca es lo que se acepta.",
+  "a.why": "El riesgo inherente es la posición bruta antes de controles. Existe para dimensionar el esfuerzo de control. La aceptación se juzga frente al riesgo residual; las dos cifras solo coinciden cuando la organización retiene a sabiendas el riesgo sin ningún tratamiento.",
   "b.text": "La evaluación clasifica el mismo modelo con revisión, umbrales y apelación operando según lo diseñado, e informa sobre lo que queda.",
   "b.why": "El riesgo residual es lo que la firma efectivamente enfrenta. Aceptar contra la cifra inherente sobre-expresa lo que la organización ha acordado soportar."
  },
@@ -9,11 +9,11 @@
   "a.text": "El consejo declara que la organización no buscará aplicaciones de IA que tomen decisiones consecuentes sobre individuos sin revisión humana.",
   "a.why": "El apetito es la declaración amplia y prospectiva de qué riesgo está dispuesta a asumir la organización en busca de sus objetivos.",
   "b.text": "La política establece que un modelo puede ir en vivo solo si la dispersión de precisión de subgrupo está por debajo de cuatro puntos porcentuales.",
-  "b.why": "La tolerancia es el límite medible que operacionaliza el apetito. El apetito sin tolerancia no puede ser probado; la tolerancia sin apetito es arbitraria."
+  "b.why": "La tolerancia es el límite medible que operacionaliza el apetito. Esa lectura como fijación de límites sigue el uso de COSO, donde el marco de 2017 habla de variación aceptable en el desempeño; ISO Guide 73 enmarca la tolerancia como la disposición a soportar un riesgo tras el tratamiento. El apetito sin tolerancia no puede ser probado; la tolerancia sin apetito es arbitraria."
  },
  "rp-03": {
   "a.text": "El modelo puede producir texto fluido y confiado que es fácticamente incorrecto.",
-  "a.why": "Un peligro es el potencial intrínseco de causar daño. Es una propiedad de la cosa y no depende del despliegue.",
+  "a.why": "Un peligro es una fuente potencial de daño. Pertenece a la cosa en sí y existe antes de preguntar quién está expuesto o cómo se usa, aunque la frecuencia con que aparece aún puede variar según la recuperación, los prompts y el dominio.",
   "b.text": "Porque el modelo redacta instrucciones de alta hospitalaria que leen especialistas no, los errores confiados pueden llevar a uso de medicación incorrecto.",
   "b.why": "El riesgo combina el peligro con exposición y consecuencia en un contexto. El mismo peligro es un riesgo diferente en un despliegue diferente — por eso los tiers se unen al uso."
  },

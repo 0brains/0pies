@@ -8,8 +8,8 @@
   "why": "Détermine d'abord si les affirmations sont soutenues, puis renforce l'utilisation des preuves, le comportement de refus et la validation des citations. Compromis : Un modèle plus grand peut améliorer la fluidité sans résoudre les preuves manquantes ou ignorées."
  },
  "genai-ops-02": {
-  "label": "Le générateur de réponses ne peut pas utiliser le bon fait parce que le passage pertinent est absent de l'ensemble récupéré.",
-  "sub": "Les preuves correctes ne paraissent jamais",
+  "label": "Les réponses sont fluides et citent de vrais documents de politique, mais elles ratent toujours la seule clause qui régit réellement la question.",
+  "sub": "La clause décisive disparaît",
   "why": "Le rappel de récupération isole si le chunking, les embeddings, les filtres, la réécriture de requête ou le nombre de candidats manquent les preuves nécessaires. Compromis : Les changements de génération ne peuvent pas récupérer les preuves qui ne pénètrent jamais le contexte."
  },
  "genai-ops-03": {

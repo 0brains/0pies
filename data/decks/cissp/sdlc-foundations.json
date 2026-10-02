@@ -4,7 +4,7 @@
  "title": "SDLC, Maturity & Testing Sort",
  "blurb": "Development methodologies, process-maturity models, application-security testing techniques, and OWASP vulnerability vocabulary — sort each scene to the concept it exercises.",
  "source": "Chapple CISSP SG 10ed ch.15, ch.20-21 · April-2024 outline 8.1-8.5 · OWASP Top 10 (2025 edition), owasp.org/Top10/2025",
- "asOf": "2026-08",
+ "asOf": "2026-10",
  "area": "8.1-8.5",
  "hint": "First sort into a family — development philosophy, process-maturity rating, testing technique, or code-level vulnerability class — then land on the specific term inside that family.",
  "note": "This board covers Domain 8's process, maturity, testing, and vulnerability-vocabulary layer. Acquisition-risk questions (COTS, open source, third-party, managed/cloud services) and single-language secure-coding mechanics live in a different game.",
@@ -12,7 +12,7 @@
   {
    "key": "Waterfall",
    "name": "Waterfall",
-   "def": "A linear SDLC where each phase — requirements, design, build, test, operate — must fully close before the next opens, with no built-in path back once a gate is passed. Pick this when a scene stresses requirements frozen up front and sequential sign-off, not iterative re-planning (Agile) and not a score of how mature the org's process is (Maturity models)."
+   "def": "A linear SDLC where each phase — requirements, design, build, test, operate — must fully close before the next opens; stepping back is limited to the phase just before and is a costly, formal exception rather than part of the normal flow. Pick this when a scene stresses requirements frozen up front and sequential sign-off, not iterative re-planning (Agile) and not a score of how mature the org's process is (Maturity models)."
   },
   {
    "key": "Agile",
@@ -37,7 +37,7 @@
   {
    "key": "DAST",
    "name": "DAST",
-   "def": "Dynamic evaluation of a program while it is running, driving the live application to surface exploitable behavior — logic errors, memory leaks, session handling flaws — without needing source-code access. Pick this when the scene exercises the running app as a black box with realistic, well-formed traffic — the discriminator against Fuzzing is that Fuzzing narrows in on deliberately malformed or random input specifically."
+   "def": "Dynamic evaluation of a program while it is running, driving the live application to surface exploitable behavior — logic errors, memory leaks, session handling flaws — without needing source-code access. Pick this when the scene exercises the running app as a black box across its features, including known attack patterns such as injection strings and session tampering — the discriminator against Fuzzing is that Fuzzing pours high volumes of generated or mutated input at one interface to provoke crashes and unhandled states."
   },
   {
    "key": "Fuzzing",
@@ -151,7 +151,7 @@
    "label": "Testers drive a live checkout service with realistic HTTP requests, watching for exposed session tokens and memory leaks, with no access to its source code.",
    "sub": "Which testing technique is this?",
    "answer": "DAST",
-   "why": "Exercising a running application as a black box with well-formed traffic is dynamic testing; the lack of source access is exactly what separates it from SAST, and the traffic being realistic rather than deliberately corrupted separates it from Fuzzing.",
+   "why": "Exercising a running application as a black box and watching how it behaves is dynamic testing; the lack of source access is exactly what separates it from SAST, and a targeted look at application behaviour rather than a flood of mutated input aimed at one interface separates it from Fuzzing.",
    "citation": "SG ch.15 · outline 8.2.9"
   },
   {
@@ -167,7 +167,7 @@
    "label": "A harness feeds an image-parsing library thousands of randomly corrupted file headers overnight, looking for the crash that reveals a buffer overflow.",
    "sub": "Which testing technique is this?",
    "answer": "Fuzzing",
-   "why": "Deliberately malformed, randomly generated input aimed at one interface is fuzzing's narrow focus; a broader behavioral test with realistic, valid traffic against the whole running app would be DAST instead.",
+   "why": "Deliberately malformed, randomly generated input aimed at one interface is fuzzing's narrow focus; a broader sweep of the whole running app for exploitable behaviour would be DAST instead.",
    "citation": "SG ch.15 · outline 8.2.9"
   },
   {

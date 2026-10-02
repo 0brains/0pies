@@ -84,7 +84,7 @@
   "why": "Mêmes entrées, sorties différentes signifie que le changement est dans le modèle, pas le monde. La dérive de prédiction d'une version à l'autre est la raison pour laquelle une nouvelle version est comparée sur un échantillon de référence fixe."
  },
  "drift-22": {
-  "label": "La moyenne d'une caractéristique de revenu chute à un tiers de sa valeur habituelle du jour au lendemain. Une équipe amont a changé le champ de cents à unités entières la même nuit.",
+  "label": "La moyenne d'une caractéristique de revenu chute à environ un centième de sa valeur habituelle du jour au lendemain. Une équipe amont a changé le champ de centimes en unités entières la même nuit.",
   "why": "Le monde n'a pas changé ; l'unité l'a fait. Le réentraînement ici enseignerait au modèle de traiter les valeurs corrompues comme normales et faire que le correctif éventuel ressemble à une nouvelle régression."
  },
  "drift-23": {

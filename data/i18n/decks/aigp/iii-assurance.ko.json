@@ -52,7 +52,7 @@
   "why": "이게 monitoring plan의 technical cadence-and-dashboard side예요. Standing legal duty를 run하는 거 once system이 live이면 different board entirely에 belong해요."
  },
  "iii-ab-14": {
-  "label": "Product team의 own dashboard가 calibration과 latency를 track해요. Validated baseline에 대해 running weekly cadence에서 말이요. Fairness disparity ratio도 refresh돼요. Them과 함께 automatically말이요.",
+  "label": "출시 전 소크 테스트 기간 동안 제품 팀의 자체 대시보드가 검증된 기준선 대비 보정과 지연 시간을 매주 추적하고, 공정성 격차 비율도 함께 자동으로 갱신돼요. 출시 후에도 그대로 계속 운영할 수 있는 상태예요.",
   "why": "Continuous, automated feed owned by team that built system이 이 zone의 texture예요. Same check을 대신 organizationally separate reviewer가 run하면 scheduled visit에서 live feed보다는 그건 audit이예요."
  },
  "iii-ab-15": {
@@ -78,7 +78,7 @@
   "zones[1].def": "Specialist이 simulate해요. Realistic adversary나 misuse scenario end-to-end를 말이예요. Jailbreak, prompt injection, social engineering, edge-case abuse를 말이예요. See how whole system hold up under pressure를 말이예요. Feed back what they find을 remediation plan 안에 예요. Re-tested돼요.",
   "zones[2].def": "Structured, paper-based exercise at design time before any test run. Catalog what need protecting을 enumerate하고. Who might attack it을 말이예요. Which abuse case matter most를 말이예요. Produce해요. List of risk와 named mitigation. Live attempt to exploit이 아니예요.",
   "zones[3].def": "Hands-on probing of specific, already-identified component — serving API, dependency, pipeline's code — confirm defense가 actually present하고 correctly configured되어 있는지 말이예요. Distinct해요. Full-system adversarial simulation이나 paper catalog of what could go wrong보다요.",
-  "zones[4].def": "Technical cadence of check — scheduled evaluation, tracked metric, automated alert — get built하고 rehearse돼요. Monitoring plan이 come together할 때 말이예요. Dashboard와 detector자신이지 standing legal duty to run them이 아니예요. Once system이 live일 때.",
+  "zones[4].def": "시판 후 모니터링 자체는 시스템이 출시된 뒤 전체 수명 동안 제공자가 계속 지켜보는 활동이에요. 이 출시 전 보드에서 이 구역은 그 감시 체계를 구축하는 일이에요. 즉, 출시 전에 설계하고 리허설해서 첫날부터 바로 돌릴 수 있게 준비한 정기 평가, 추적 지표, 자동 알림이에요. 시스템이 가동된 뒤 이를 운영할 상시 의무가 아니라, 대시보드와 탐지기 자체를 말해요.",
   "zones[5].def": "Formal, time-boxed machinery — containment first, then root-cause analysis, then corrective action — activate돼요. Moment scene이 confirmed real-world harm involve할 때 말이예요. Routine finding still being logged와 watched가 아니고."
  }
 }

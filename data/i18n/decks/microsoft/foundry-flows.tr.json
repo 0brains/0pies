@@ -53,9 +53,9 @@
   "steps[2].label": "Transformer dikkat",
   "steps[2].detail": "Öz dikkat katmanları her tokeni sıradaki diğer tüm tokenlere karşı ağırlıklandırır — 'çoğu modern foundation modeli' güçlendiren mekanik ve gömme vektörleri zaten var olması gerekir.",
   "steps[3].label": "Sonraki token tahmini",
-  "steps[3].detail": "Model tek sonraki token için tüm sözlük üzerinde bir olasılık dağılımı çıkarır; sıcaklık ve top-p bu dağılımı bir token örneklenmeden önce yeniden şekillendirir.",
+  "steps[3].detail": "Model, tek bir sonraki token için tüm sözlük üzerinde bir olasılık dağılımı üretir; bir token örneklenmeden önce sıcaklık ve top-p bu dağılımı yeniden şekillendirir. Perplexity bu adımı puanlar: modelin, ayrılmış metnin gerçek sonraki token’larına ne kadar olasılık verdiğini.",
   "steps[4].label": "Çözümlenmemiş çıktı",
-  "steps[4].detail": "Tahmin edilen token id'si metne geri çözülür ve döngü bir duruş koşulu'na kadar bir seferinde bir token tekrarlanır — perplexity bu adımın tahminlerinin tutulmuş metinle ne kadar eşleştiğini ölçer."
+  "steps[4].detail": "Tahmin edilen token kimliği yeniden metne çözülür ve döngü, bir durma koşuluna kadar her seferinde bir token olacak şekilde tekrarlanır."
  },
  "lad-speech": {
   "prompt": "Konuşma SDK çağrılarını çalıştırması gereken sırada put.",

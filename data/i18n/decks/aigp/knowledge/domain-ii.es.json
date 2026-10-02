@@ -87,7 +87,7 @@
     "a.text": "Un empleador implementa reconocimiento de emociones para monitorear la atención del personal en sus escritorios.",
     "a.why": "Art. 5 prohíbe la inferencia de emociones en el lugar de trabajo y en la educación, fuera de usos médicos y de seguridad.",
     "b.text": "Un estudio de juegos usa reconocimiento de emociones en una aplicación de entretenimiento de consumo, divulgada al usuario.",
-    "b.why": "Fuera del lugar de trabajo y la educación la prohibición no muerde; los deberes de transparencia del Art. 50 se aplican en su lugar."
+    "b.why": "Fuera del lugar de trabajo y la educación la prohibición no muerde, pero el reconocimiento de emociones figura como alto riesgo en el Anexo III punto 1(c). Informar a los usuarios al respecto es el deber del Art. 50(3), que se aplica además del estatus de alto riesgo, no en su lugar."
   },
   "II.C-pair-008": {
     "a.text": "Una firma de Dublín trae un sistema de alto riesgo construido en EE.UU. al mercado de la UE por primera vez.",
@@ -397,8 +397,8 @@
     "obligations[13].text": "Asiste al responsable del tratamiento en responder a solicitudes de sujetos de datos",
     "obligations[14].text": "Borra o devuelve los datos al final del compromiso",
     "obligations[15].text": "Informa y asesora sobre obligaciones, y monitorea cumplimiento, sin recibir instrucciones sobre cómo realizar la tarea",
-    "obligations[16].text": "Actúa como el punto de contacto para la autoridad supervisora y para sujetos de datos",
-    "obligations[17].text": "Mantiene el registro de actividades de procesamiento y lo pone disponible a la autoridad a solicitud"
+    "obligations[16].text": "Actúa como punto de contacto para la autoridad de control y para los interesados, rindiendo cuentas directamente al más alto nivel de dirección",
+    "obligations[17].text": "Mantiene el registro de actividades de tratamiento dentro de la UE en nombre de un responsable sin establecimiento en la UE, y lo presenta a la autoridad a solicitud"
   },
   "tl-asean-001": {
     "milestone": "Se espera que se diversifique",
@@ -507,7 +507,7 @@
     "b.why": "Los datos de comportamiento por sí solos son datos personales pero no de categoría especial, a menos que se utilicen para deducir un atributo protegido."
   },
   "II.A-tell-009": {
-    "snippet": "El sujeto de datos tiene derecho a no ser objeto de una decisión basada únicamente en el procesamiento automatizado, incluida la elaboración de perfiles, que produzca efectos legales que le conciernan.",
+    "snippet": "Todo interesado tendrá derecho a no ser objeto de una decisión basada únicamente en el tratamiento automatizado, incluida la elaboración de perfiles, que produzca efectos jurídicos en él o le afecte significativamente de modo similar.",
     "tell": "'Únicamente en procesamiento automatizado' más 'efectos legales o afecta significativamente de manera similar' es Art. 22. Es un derecho de protección de datos, no una obligación de la EU AI Act — una trampa de examen favorita."
   },
   "II.B-brief-01": {
@@ -876,10 +876,10 @@
     "note": "Evaluaciones de impacto/riesgo, avisos a consumidores, proceso de revisión/apelación, controles de proveedor y pruebas de discriminación."
   },
   "II-case-001": {
-    "brief": "Una aseguradora holandesa licencia un modelo de terceros para fijar precios de pólizas de motor, lo reentrena con su propio histórico de reclamaciones y lo comercializa a clientes bajo su propia marca. Las decisiones de precios se emiten automáticamente.",
-    "steps[0].why": "Reemarcó el sistema y lo modificó sustancialmente reentrándolo — cualquiera de estos dos traslada las obligaciones del proveedor.",
+    "brief": "Una aseguradora holandesa licencia un modelo de terceros para fijar precios de pólizas individuales de seguro de salud, lo reentrena con su propio histórico de reclamaciones y pone el sistema de precios en servicio bajo su propia marca. Las decisiones de precios se emiten automáticamente.",
+    "steps[0].why": "Fijar precios de seguros de salud para personas físicas es alto riesgo del Anexo III (punto 5(c)), así que se aplica el Art. 25: poner su propia marca en el sistema basta por sí solo para convertirla en proveedor, y un reentrenamiento que cambie el desempeño del sistema también puede ser una modificación sustancial.",
     "steps[1].why": "Las decisiones de precios automáticas con efectos significativos son toma de decisiones puramente automatizada.",
-    "steps[2].why": "Obligaciones del proveedor para un sistema de alto riesgo, junto con la DPIA requerida en la vertiente de privacidad."
+    "steps[2].why": "Obligaciones del proveedor para un sistema de alto riesgo (la fijación de precios de seguros de vida y salud figura en el Anexo III; la de seguros de motor no), junto con la DPIA requerida en la vertiente de privacidad."
   },
   "II-case-004": {
     "brief": "Una empresa estadounidense entrena un modelo de propósito general por encima del umbral de computación de riesgo sistémico. No tiene establecimiento en la UE, pero empresas de la UE integran el modelo en sus productos.",
@@ -948,12 +948,12 @@
     "a.text": "Un sistema de IA examina solicitudes de empleo y produce una lista clasificada de la que los reclutadores contratan.",
     "a.why": "Uso de empleo del Anexo III — el sistema influye materialmente en quién obtiene la oferta.",
     "b.text": "El mismo sistema solo ordena los solicitantes alfabéticamente para un reclutador que lee cada CV y decide independientemente.",
-    "b.why": "Art. 6(3): una tarea procesal estrecha que no influye materialmente en el resultado está fuera de alto riesgo."
+    "b.why": "Art. 6(3): una tarea procesal estrecha que no influye materialmente en el resultado está fuera de alto riesgo. Añadir un revisor humano a un sistema de clasificación no tendría este efecto; la supervisión humana es un deber de los sistemas de alto riesgo, no una salida de la categoría."
   },
   "II.C-pair-003": {
     "a.text": "La policía ejecuta identificación biométrica remota en tiempo real en una plaza pública para encontrar sospechosos generalmente.",
     "a.why": "Art. 5 prohíbe identificación biométrica remota en tiempo real en espacios públicamente accesibles para cumplimiento de la ley, salvo excepciones autorizadas estrechas.",
-    "b.text": "La policía ejecuta la misma identificación biométrica después de los hechos, en video almacenado, bajo autorización judicial.",
+    "b.text": "La policía ejecuta la misma identificación biométrica después de los hechos, sobre video almacenado.",
     "b.why": "La identificación biométrica post-remota no está prohibida pero es alto riesgo del Anexo III con requisitos de autorización."
   },
   "II.C-pair-005": {
@@ -989,8 +989,8 @@
     "tell": "Vocabulario y conceptos solo, sin nada a certificar, es 22989. Si un estándar te dice qué significan las palabras en lugar de qué hacer, es el estándar de terminología."
   },
   "II.D-tell-006": {
-    "snippet": "Un programa de evaluación que evalúa el desempeño del modelo en laboratorio, en pruebas de campo controladas y en uso en el mundo real, en tres capas.",
-    "tell": "Evaluación estratificada que se mueve de laboratorio a campo a mundo real es ARIA (Evaluación de Riesgos e Impactos de IA). El AI RMF es un marco; ARIA es un programa de pruebas que lo alimenta."
+    "snippet": "Un programa de evaluación que estudia los riesgos e impactos de la IA en un uso realista, en tres niveles: pruebas del modelo, red-teaming y pruebas de campo.",
+    "tell": "Tres niveles de evaluación con nombre, pruebas del modelo, luego red-teaming, luego pruebas de campo, señalan ARIA (Evaluación de Riesgos e Impactos de IA). El AI RMF es un marco; ARIA es un programa de pruebas que lo alimenta."
   },
   "controller": {
     "definition": "Determina los fines y medios del tratamiento."
@@ -1267,7 +1267,7 @@
     "obligations[10].text": "Asegurar que los datos de entrada sean relevantes y suficientemente representativos para el propósito previsto",
     "obligations[11].text": "Informar a los trabajadores y sus representantes antes de poner un sistema de alto riesgo en uso en el lugar de trabajo",
     "obligations[12].text": "Informar a individuos que están sujetos a la decisión de un sistema de alto riesgo",
-    "obligations[13].text": "Retener registros generados automáticamente por el período requerido",
+    "obligations[13].text": "Conserva los registros que genera el sistema mientras lo usas en tus propias operaciones, durante al menos seis meses",
     "obligations[14].text": "Realizar una evaluación de impacto en derechos fundamentales cuando sea necesario",
     "obligations[15].text": "Verificar que el proveedor ha completado la evaluación de conformidad antes de colocar en el mercado",
     "obligations[16].text": "Verificar que el proveedor de terceros países ha designado un representante autorizado",

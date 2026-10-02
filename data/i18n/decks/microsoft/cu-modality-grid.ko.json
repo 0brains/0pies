@@ -99,7 +99,7 @@
  },
  "cu-modality-grid": {
   "hint": "소스 파일이 실제로 무엇인지 묻고, 정확한 사전 구축 분석기 아이디에 대해 sub 라인을 확인해요 — 아이디 자체가 모달리티(document/image/audio/video)의 이름을 지어요. Search 접미사가 있는 아이디는 모달리티를 바꾸기보다는 인덱싱을 위해 출력을 준비해요",
-  "note": "Content Understanding은 항상 추출해요 — 절대 생성하거나 인덱싱하지 않아요. Azure AI Search로 추출하는 것은 다운스트림 단계이고, CU 자체가 하는 게 아니에요",
+  "note": "Content Understanding은 콘텐츠를 구조화된 출력으로 바꿔요. 추출한 필드와 함께 요약이나 설명처럼 생성하거나 분류한 값도 포함하지만, 새 미디어를 만들거나 검색 인덱스를 구축하지는 않아요. Azure AI Search로 인덱싱하는 것은 다운스트림 단계이지 CU가 직접 하는 일이 아니에요.",
   "zones[0].def": "PDF, 인보이스, 계약, 자유 형식 서류로 Content Understanding이 구조화된 필드, 테이블, 텍스트로 바꿔요",
   "zones[1].def": "사진, 스크린샷, 차트로 Content Understanding이 구조화된 필드, 설명, 감지된 객체로 바꿔요",
   "zones[2].def": "기록된 음성 — 통화, 팟캐스트, 음성 사서함 — Content Understanding이 전사본, 요약, 스피커 라벨로 바꿔요",

@@ -4,7 +4,7 @@
   "title": "Industry ML Pipeline",
   "blurb": "The fuller lifecycle as it runs in practice.",
   "source": "Industry ML delivery practice",
-  "asOf": "2026-07",
+  "asOf": "2026-10",
   "area": "ops",
   "ladders": [
     {
@@ -37,12 +37,12 @@
           "detail": "Repair what can be repaired and label what needs labels, with the labelling guidance itself treated as a versioned artefact."
         },
         {
-          "label": "Engineer and Select Features",
-          "detail": "Build the representations the model will use, and drop the ones that leak the target or will not exist at inference time."
+          "label": "Create Training, Validation, and Test Splits",
+          "detail": "Split before anything learns from the data, respecting time and group boundaries. A scaler, encoder or feature selector fitted before the split has already seen the test rows."
         },
         {
-          "label": "Create Training, Validation, and Test Splits",
-          "detail": "Split before fitting anything, respecting time and group boundaries. A split made after preprocessing has already leaked."
+          "label": "Engineer and Select Features",
+          "detail": "Build the representations the model will use, fitting any learned transform or selection on the training split only, and drop features that leak the target or will not exist at inference time."
         },
         {
           "label": "Build a Reproducible Baseline",

@@ -2,20 +2,20 @@
   "id": "borderlines",
   "schemaVersion": 1,
   "title": "Borderlines",
-  "blurb": "Drop each legal instrument onto the regime that wields it, then read what actually restricts the data crossing that border.",
+  "blurb": "Drop each legal instrument onto the jurisdiction or arrangement it comes from, then read what actually restricts the data crossing that border.",
   "source": "Chapple CISSP SG 10ed ch.4 · outline 1.4 (legal, regulatory, and compliance issues; transborder data flow; privacy law)",
-  "asOf": "2026-08-11",
+  "asOf": "2026-10",
   "map": {
     "id": "bdl-map-transfers",
     "title": "Borderlines",
-    "asOf": "2026-08-11",
-    "prompt": "Match each instrument to the regime that enforces it — then read what it really does to data crossing that border.",
+    "asOf": "2026-10",
+    "prompt": "Match each instrument to the jurisdiction or arrangement where it originates or applies — then read what it really does to data crossing that border.",
     "note": "Markers sit at the real coordinates of each regime's seat or geographic center, projected onto a Miller-style world map; labels in dense regions are nudged clear of their marker. Instruments, transfer rules and effective dates are authored from Chapple CISSP SG 10ed ch.4 and the Moore Domain 1 objective notes.",
     "legend": [
       {"key": "comprehensive", "label": "Omnibus privacy law with transfer restrictions"},
-      {"key": "sectoral", "label": "Sector-by-sector or state-level rules"},
-      {"key": "voluntary", "label": "Voluntary principles or export-control arrangement"},
-      {"key": "treaty", "label": "Adequacy corridor or multilateral agreement"}
+      {"key": "sectoral", "label": "Sector-by-sector, state-level or government-access statutes"},
+      {"key": "voluntary", "label": "Non-binding principles or voluntary export-control arrangement"},
+      {"key": "treaty", "label": "Adequacy-based transfer framework or binding multilateral treaty"}
     ],
     "jurisdictions": [
       {

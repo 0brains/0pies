@@ -12,9 +12,9 @@
     "steps[4].label": "Benchmark vs human experts same decision context में",
     "steps[4].detail": "किसी भी pilot से पहले, मापो कि system उन्हीं फ़ैसलों को लेने वाले कुशल लोगों की तुलना में कैसा प्रदर्शन करता है — यह तुलना governance को किसी अमूर्त accuracy target से कहीं ज़्यादा बताती है।",
     "steps[5].label": "Pilot — validate करो fairness + accuracy controlled scale पर",
-    "steps[5].detail": "Run करो एक pre-deployment pilot जिसका primary purpose है validating fairness और accuracy real-world data पर एक controlled, limited scale पर full rollout से पहले।",
+    "steps[5].detail": "आंतरिक और स्वयंसेवी उपयोगकर्ताओं के एक सीमित समूह के साथ डिप्लॉयमेंट-पूर्व पायलट चलाओ, ताकि यथार्थवादी इनपुट पर निष्पक्षता और सटीकता की पुष्टि हो सके, और सिस्टम को किसी भी वास्तविक व्यावसायिक प्रक्रिया से जोड़ने से पहले जो कमियाँ सामने आएँ उन्हें ठीक करो।",
     "steps[6].label": "छाया-मोड रन तैयारी के प्रमाण के रूप में दस्तावेज़ित",
-    "steps[6].detail": "Run करो system को parallel में live process के साथ (shadow mode) और document करो outcomes। यह documented evidence — नहीं एक verbal sign-off — है कि क्या demonstrate करता है deployment readiness।"
+    "steps[6].detail": "पायलट के सुधार लागू करने के बाद, सिस्टम को वास्तविक प्रक्रिया के समानांतर चलाओ (शैडो मोड): उसके आउटपुट की तुलना असली फ़ैसलों से की जाती है, पर उन पर कभी अमल नहीं किया जाता, और नतीजे दस्तावेज़ में दर्ज किए जाते हैं। यही दर्ज सबूत — कोई मौखिक मंज़ूरी नहीं — डिप्लॉयमेंट की तैयारी साबित करता है (SG)।"
   },
   "iii-dl-02": {
     "prompt": "Risk-mitigation hierarchy को order करो most durable fix से last resort तक।",

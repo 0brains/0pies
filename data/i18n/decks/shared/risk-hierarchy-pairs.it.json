@@ -1,13 +1,13 @@
 {
   "rhp-01": {
     "a.text": "L'azienda aggiunge la convalida dell'output e la revisione umana a un modello di reclami, riducendo il tasso di dinieghi errati.",
-    "a.why": "La probabilità del danno effettivo diminuisce. La riduzione è l'unico trattamento che migliora la situazione della persona colpita.",
+    "a.why": "La probabilità del danno diminuisce davvero, quindi il richiedente ci guadagna. Il trasferimento, invece, lascia invariato l'esito per il richiedente.",
     "b.text": "L'azienda acquista una polizza assicurativa che copre il costo dei reclami erroneamente negati, lasciando il modello invariato.",
-    "b.why": "Il richiedente viene negato alla stessa velocità; solo il bilancio dell'azienda è protetto. L'assicurazione non è mai un controllo."
+    "b.why": "Il richiedente viene respinto esattamente con la stessa frequenza; solo il bilancio dell'azienda è protetto. L'assicurazione cambia chi paga, non quanto spesso si verifica il danno."
   },
   "rhp-02": {
     "a.text": "Dopo la valutazione, la funzione di riconoscimento emotivo viene cancellata e rimossa dalla roadmap.",
-    "a.why": "L'attività si ferma, quindi l'esposizione va a zero. L'evitamento è l'unico trattamento senza rischio residuo da registrare.",
+    "a.why": "L'attività si ferma, quindi questa esposizione viene rimossa anziché ridotta. Verifica comunque se il bisogno che soddisfaceva si sposta altrove, in un punto che comporta un proprio rischio.",
     "b.text": "Dopo la valutazione, la funzione di riconoscimento emotivo viene distribuita con soglie di confidenza, valutazione dei sottogruppi e revisione umana dei casi a bassa confidenza.",
     "b.why": "L'attività continua con minore probabilità di danno. La mitigazione sostanziale è ancora riduzione, e il rischio residuo ha ancora bisogno di un proprietario."
   },
@@ -19,7 +19,7 @@
   },
   "rhp-04": {
     "a.text": "La capacità dell'agente di emettere rimborsi viene rimossa interamente dal suo set di strumenti.",
-    "a.why": "Nessuna capacità, nessuna modalità di errore, e nulla da monitorare. L'eliminazione è il livello superiore perché ritira l'intero ramo dell'albero dei rischi.",
+    "a.why": "Senza la capacità, questa modalità di errore è archiviata; verifica dove finiscono ora le richieste di rimborso. L'eliminazione è il livello superiore perché rimuove il pericolo anziché proteggersi da esso.",
     "b.text": "L'agente mantiene il suo strumento di rimborso, con un limite rigido di un rimborso per sessione e un limite di importo applicato dallo strumento.",
     "b.why": "Un vincolo tecnico forte che lascia ancora un'esposizione limitata — e lascia il limite stesso come qualcosa che può essere non configurato correttamente."
   },
@@ -27,7 +27,7 @@
     "a.text": "L'assistente rileva e blocca l'input dall'aspetto confidenziale prima che venga inviato al modello.",
     "a.why": "Il sistema previene la divulgazione indipendentemente da ciò che fa l'utente. L'onere ricade sulla parte in grado di sostenerlo.",
     "b.text": "L'assistente visualizza un avviso che chiede agli utenti di non incollare informazioni confidenziali.",
-    "b.why": "Lo stesso rischio, con l'onere spostato all'utente. Livello più debole, e frequentemente l'unico implementato."
+    "b.why": "Un avviso è un controllo amministrativo: lo stesso rischio, con l'onere spostato sull'utente. Si colloca sotto i controlli ingegneristici, ed è spesso l'unico implementato."
   },
   "rhp-06": {
     "a.text": "Il comitato rischi registra il rischio residuo, conferma che rientra nell'appetito, nomina un proprietario e imposta una data di revisione.",

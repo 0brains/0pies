@@ -53,9 +53,9 @@
   "steps[2].label": "Transformer attention",
   "steps[2].detail": "Self-attention layers हर token को sequence में हर दूसरे token के विरुद्ध weigh करते हैं — वह mechanic जो 'most modern foundation models को power करता है,' और embedding vectors को पहले से exist करने की जरूरत है।",
   "steps[3].label": "Next-token prediction",
-  "steps[3].detail": "Model whole vocabulary के over एक probability distribution output करता है single next token के लिए; temperature और top-p इस distribution को reshape करते हैं एक token को sample करने से पहले।",
+  "steps[3].detail": "मॉडल अगले एक टोकन के लिए पूरी शब्दावली पर एक प्रायिकता वितरण देता है; तापमान (temperature) और top-p एक टोकन का सैंपल लिए जाने से पहले इस वितरण को नया आकार देते हैं। पर्प्लेक्सिटी इसी चरण को आँकती है: मॉडल ने अलग रखे गए (held-out) टेक्स्ट के असली अगले टोकनों को कितनी प्रायिकता दी।",
   "steps[4].label": "Detokenized output",
-  "steps[4].detail": "Predicted token id को text में decode किया जाता है और loop repeat होता है एक token at एक time until एक stop condition — perplexity मापता है कि कितनी अच्छी तरह इस step की predictions held-out text को match किया।"
+  "steps[4].detail": "अनुमानित टोकन id को वापस टेक्स्ट में डिकोड किया जाता है, और लूप एक बार में एक टोकन के हिसाब से तब तक दोहराता रहता है जब तक कोई रुकने की शर्त पूरी न हो।"
  },
  "lad-speech": {
   "prompt": "Speech SDK calls को order में put करें जिसमें वे run होना चाहिए।",

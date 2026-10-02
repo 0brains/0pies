@@ -4,10 +4,10 @@
  "title": "Right Analyzer, Right Modality",
  "blurb": "Documents, images, audio, video — drop each extraction job on the modality Content Understanding runs it against.",
  "source": "AI-901 study guide Task 2.4",
- "asOf": "2026-07",
+ "asOf": "2026-10",
  "area": "microsoft-foundry",
  "hint": "Ask what the source file actually is, then check the sub line for the exact prebuilt-* analyzer id — the id itself names its modality (document/image/audio/video), and Search-suffixed ids prep output for indexing rather than change the modality.",
- "note": "Content Understanding always extracts — it never generates or indexes. Extraction into Azure AI Search is a downstream step, not something CU does itself.",
+ "note": "Content Understanding turns content into structured output — fields it extracts, plus values it generates or classifies, such as summaries and descriptions — but it does not create new media or build a search index. Indexing into Azure AI Search is a downstream step, not something CU does itself.",
  "traps": [
   "Treating Content Understanding as another name for Document Intelligence is the classic trap — Document Intelligence is the older Forms Recognizer-lineage service; Content Understanding is the newer multimodal one spanning documents, images, audio and video.",
   "Content Understanding extracts structured content; it doesn't index it for search — that's Azure AI Search's job once CU's markdown and fields are the input."

@@ -53,9 +53,9 @@
   "steps[2].label": "Transformer Attention",
   "steps[2].detail": "Self-Attention-Schichten wiegen jeden Token gegen jeden anderen Token in der Sequenz — die Mechanik, die 'die meisten modernen Foundation Models antreibt', und sie braucht die Embedding-Vektoren, um bereits zu existieren.",
   "steps[3].label": "Next-Token Prediction",
-  "steps[3].detail": "Das Modell gibt eine Wahrscheinlichkeitsverteilung über das ganze Vokabular für den einzelnen nächsten Token aus; Temperatur und top-p umformen diese Verteilung, bevor ein Token gesampled wird.",
+  "steps[3].detail": "Das Modell gibt eine Wahrscheinlichkeitsverteilung über das gesamte Vokabular für das einzelne nächste Token aus; Temperatur und top-p formen diese Verteilung um, bevor ein Token gesampelt wird. Perplexität bewertet diesen Schritt: wie viel Wahrscheinlichkeit das Modell den tatsächlichen nächsten Tokens eines zurückgehaltenen Texts gegeben hat.",
   "steps[4].label": "Detokenized Output",
-  "steps[4].detail": "Die vorhergesagte Token-ID wird zurück zu Text dekodiert und die Schleife wiederholt sich ein Token nach dem anderen, bis eine Stop-Bedingung — Perplexität misst, wie gut diese Schritt's Vorhersagen gehaltenen Text passten."
+  "steps[4].detail": "Die vorhergesagte Token-ID wird zurück in Text dekodiert, und die Schleife wiederholt sich Token für Token bis zu einer Stoppbedingung."
  },
  "lad-speech": {
   "prompt": "Setze die Speech SDK-Aufrufe in die Reihenfolge, in der sie laufen müssen.",

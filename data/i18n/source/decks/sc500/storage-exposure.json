@@ -35,7 +35,7 @@
   "why": "Disallowing anonymous access at the account level is the switch that makes container-level public settings unreachable, which is why Microsoft recommends turning it off across all accounts rather than policing containers one at a time. The nearest wrong answer is Entra authorization, which constrains how authenticated callers prove themselves and leaves an unauthenticated public container just as readable."
  },
  "sto-08": {
-  "label": "A fintech sets the storage account's public network access to deny and adds the app subnet under virtual networks. The API still returns 403 on every blob read. The subnet has no service endpoint configured for storage.",
+  "label": "A fintech switches the storage account to allow access only from selected virtual networks and IP addresses, with the firewall default action set to Deny, and adds the app subnet under virtual networks. The API still returns 403 on every blob read. The subnet has no service endpoint configured for storage.",
   "sub": "Which control closes this?",
   "why": "A virtual network rule only carries traffic once the subnet has the Microsoft.Storage service endpoint enabled; the portal adds it for you when you pick the subnet, but PowerShell and the CLI expect you to create it yourself. Nothing about the app's credential is wrong here, so Entra authorization is the wrong shelf even though the symptom is a 403."
  },
@@ -65,9 +65,9 @@
   "why": "Customer-managed keys in Azure Key Vault or Managed HSM wrap the account's root encryption key, and if you leave the key version out of the configuration, Azure Storage checks the vault daily and picks up new versions on its own, so rotation never touches the application. Sas-scope is unrelated; rotating a SAS is not rotating an encryption key, and the auditors are asking about key custody."
  },
  "sto-14": {
-  "label": "During a suspected compromise at a payments processor, the incident lead needs every read and write against one storage account to stop within minutes, while leaving the data itself in place for the forensics team.",
+  "label": "A payments processor's storage account is encrypted with a customer-managed key in its own Key Vault. During a suspected compromise, nobody yet knows which account keys, SAS tokens or identities the attacker holds, and the calls may be arriving through the account's own private endpoint. The incident lead needs one switch that makes every read and write fail for all callers, while leaving the data itself in place for the forensics team.",
   "sub": "Which control closes this?",
-  "why": "Disabling the customer-managed key in the vault revokes the account's ability to unwrap its encryption key, and calls that read or write a resource or its metadata then fail with 403 for every user until access is restored. Choosing Network boundary would only block one set of source networks and would not stop a caller you had already permitted."
+  "why": "Disabling the customer-managed key in the vault revokes the account's ability to unwrap its encryption key, and calls that read or write a resource or its metadata then fail with 403 for every user until access is restored. Choosing Network boundary would only block source networks and would not stop a caller arriving through a path you had already permitted, and Entra authorization would mean chasing every unknown key, token and role holder one at a time."
  },
  "sto-15": {
   "label": "A national archive's risk register asks what happens if a single cipher implementation or a single key is ever broken. The team wants the stored objects protected twice over, with different algorithms and different keys at the service and platform layers.",

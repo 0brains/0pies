@@ -8,8 +8,8 @@
     "why": "Innanzitutto determina se le affermazioni sono supportate, quindi stringe l'uso delle prove, il comportamento di rifiuto e la convalida delle citazioni. Compromesso: un modello più grande può migliorare la fluidità senza risolvere prove mancanti o ignorate."
   },
   "genai-ops-02": {
-    "label": "Il generatore di risposte non può usare il fatto corretto perché il passaggio pertinente è assente dal set recuperato.",
-    "sub": "Le prove corrette non appaiono mai",
+    "label": "Le risposte sono scorrevoli e citano veri documenti di policy, eppure continuano a mancare l'unica clausola che regola davvero la domanda.",
+    "sub": "La clausola decisiva sparisce",
     "why": "Il richiamo del recupero isola se chunking, embeddings, filtri, riscrittura di query o numero di candidati perde prove necessarie. Compromesso: i cambiamenti di generazione non possono recuperare prove che non entrano mai nel contesto."
   },
   "genai-ops-03": {

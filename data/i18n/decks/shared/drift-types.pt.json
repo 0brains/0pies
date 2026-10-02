@@ -84,7 +84,7 @@
     "why": "Os mesmos inputs, diferentes outputs significa a mudança está no modelo, não no mundo. O drift de predição versão-a-versão é a razão por que um novo lançamento é comparado numa amostra de referência fixa."
   },
   "drift-22": {
-    "label": "A média de uma feature de receita cai para um terço do seu valor usual da noite para o dia. Uma equipa upstream comutou o campo de centavos para unidades completas na mesma noite.",
+    "label": "A média de uma feature de receita cai para cerca de um centésimo do seu valor habitual da noite para o dia. Uma equipa upstream mudou o campo de cêntimos para unidades inteiras na mesma noite.",
     "why": "O mundo não mudou; a unidade mudou. O retreinamento aqui ensinaria ao modelo a tratar valores corrompidos como normais e faria o eventual fix parecer uma nova regressão."
   },
   "drift-23": {

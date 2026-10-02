@@ -87,7 +87,7 @@
     "a.text": "Bir işveren, personelin masa başındaki dikkatini izlemek için duygusal tanımayı dağıtır.",
     "a.why": "Sanat. 5, tıbbi ve güvenlik kullanımları dışında çalışyerinde ve eğitimde duygusal çıkarım yasaklar.",
     "b.text": "Bir oyun stüdyosu, tüketiciye açıklanan tüketici eğlence uygulamasında duygusal tanımayı kullanır.",
-    "b.why": "Çalışyerinin dışında ve eğitim dışında yasak ısırmaçmaz; Sanat. 50 şeffaflık görevleri bunun yerine uygulanır."
+    "b.why": "İşyeri ve eğitim dışında yasak devreye girmez, ama duygu tanıma Annex III bent 1(c)’de yüksek riskli olarak listelenmiştir. Kullanıcıları bu konuda bilgilendirmek Art. 50(3) yükümlülüğüdür; yüksek risk statüsünün yerine değil, ona ek olarak uygulanır."
   },
   "II.C-pair-008": {
     "a.text": "Dublin firması, ABD'de inşa edilmiş yüksek riskli sistemi ilk kez AB pazarına getiriyor.",
@@ -397,8 +397,8 @@
     "obligations[13].text": "Denetleyiciye, veri sahiplerinin taleplerine yanıt verme konusunda yardımcı olmak",
     "obligations[14].text": "Görevin sonunda verileri silmek veya iade etmek",
     "obligations[15].text": "Görevin nasıl yerine getirileceğine dair talimat almadan yükümlülükler hakkında bilgilendirmek ve tavsiyede bulunmak, uyumu izlemek",
-    "obligations[16].text": "Denetim otoritesi ve veri sahipleri için iletişim noktası olarak görev yapmak",
-    "obligations[17].text": "İşleme faaliyetleri kaydını tutmak ve talep üzerine otoriteye sunmak"
+    "obligations[16].text": "Denetim otoritesi ve veri sahipleri için iletişim noktası olarak görev yapmak ve doğrudan en üst yönetim kademesine raporlamak",
+    "obligations[17].text": "AB’de yerleşik olmayan bir veri sorumlusu adına işleme kaydını AB içinde tutmak ve talep üzerine otoriteye sunmak"
   },
   "tl-asean-001": {
     "milestone": "Çeşitlendirilmesi bekleniyor",
@@ -507,7 +507,7 @@
     "b.why": "Davranışsal veriler tek başına kişiseldir ancak özel kategori değildir, korunan bir özellik çıkarsama için kullanılmadığı sürece."
   },
   "II.A-tell-009": {
-    "snippet": "Veri öznesi, tamamen otomatikleştirilmiş işlemeye, profil oluşturmayı da içine alacak şekilde, tabi olmama hakkına sahip olacaktır; bu onları ilgilendiren yasal etkileri üretir.",
+    "snippet": "İlgili kişi, kendisi hakkında hukuki sonuç doğuran veya kendisini benzer şekilde önemli ölçüde etkileyen, profilleme dahil yalnızca otomatik işlemeye dayalı bir karara tabi olmama hakkına sahiptir.",
     "tell": "\"tamamen otomatikleştirilmiş işlem\" artı \"yasal etkiler veya benzer şekilde önemli ölçüde etkiler\" Art. 22'dir. Bu, bir veri koruma hakkıdır, AI Act yükümlülüğü değildir — sevilen bir sınav tuzağıdır."
   },
   "II.B-brief-01": {
@@ -876,10 +876,10 @@
     "note": "Etki/risk değerlendirmesi, tüketici bildirimleri, inceleme/itiraz süreci, satıcı kontrolleri ve ayrımcılık testi."
   },
   "II-case-001": {
-    "brief": "Bir Hollandalı sigorta şirketi, üçüncü taraf modelini lisanslamış, kendi talep geçmişi üzerinde yeniden eğitmiş ve bunu müşterilerine kendi markası altında pazarlamıştır. Fiyatlandırma kararları otomatik olarak verilmektedir.",
-    "steps[0].why": "Sistem markalamayı değiştirmiş ve yeniden eğitim yoluyla önemli ölçüde değiştirmiştir — her ikisi de sağlayıcı yükümlülüklerini devretmek için yeterlidir.",
+    "brief": "Hollandalı bir sigortacı, bireysel sağlık sigortası poliçelerini fiyatlamak için üçüncü taraf bir modeli lisanslıyor, onu kendi hasar geçmişiyle yeniden eğitiyor ve fiyatlama sistemini kendi markası altında hizmete sunuyor. Fiyatlama kararları otomatik olarak veriliyor.",
+    "steps[0].why": "Bireyler için sağlık sigortası fiyatlaması Annex III kapsamında yüksek risklidir (bent 5(c)), dolayısıyla Art. 25 uygulanır: sisteme kendi markasını koyması, tek başına onu sağlayıcı yapmaya yeter; sistemin performansını değiştiren yeniden eğitim de ayrıca önemli bir değişiklik sayılabilir.",
     "steps[1].why": "Önemli etkiler taşıyan otomatik fiyatlandırma kararları, yalnızca otomatikleştirilmiş karar almadır.",
-    "steps[2].why": "Yüksek riskli sistem için sağlayıcı görevleri, gizlilik tarafında gerekli olan DPIA'nın yanında."
+    "steps[2].why": "Yüksek riskli bir sistem için sağlayıcı yükümlülükleri (hayat ve sağlık sigortası fiyatlaması Annex III’te listelidir; motorlu taşıt sigortası fiyatlaması listelenmezdi), buna ek olarak gizlilik tarafında gerekli DPIA."
   },
   "II-case-004": {
     "brief": "Bir ABD şirketi, sistem riski işlem eşiğinin üstünde genel amaçlı bir model eğitmiştir. AB'de kurulu değildir, ancak AB işletmeleri modeli ürünlerine entegre etmiştir.",
@@ -948,12 +948,12 @@
     "a.text": "Bir AI sistemi iş başvurularını tarar ve işe alınanlar tarafından işe alınan sıralanmış bir adaylar listesi oluşturur.",
     "a.why": "Ek III istihdam kullanımı — sistem maddi olarak kimin işe alınacağını etkiler.",
     "b.text": "Aynı sistem yalnızca adayları alfabetik olarak sıralar ve bir işe alım müdürü her CV'yi okur ve bağımsız olarak karar verir.",
-    "b.why": "Madde 6(3): sonucu maddi olarak etkilemeyen dar bir prosedürel görev, yüksek riskten dışarı kalır."
+    "b.why": "Art. 6(3): sonucu esaslı biçimde etkilemeyen dar bir usul görevi yüksek risk kapsamı dışında kalır. Bir sıralama sistemine insan gözden geçirici eklemek bu etkiyi yaratmaz; insan gözetimi yüksek riskli sistemlerin bir yükümlülüğüdür, sınıftan çıkış yolu değil."
   },
   "II.C-pair-003": {
     "a.text": "Polis, şüphelileri genel olarak bulmak için kamuya açık bir meydanda gerçek zamanlı uzaktan biyometrik tanıma çalıştırır.",
     "a.why": "Madde 5, dar yetkili istisnalar dışında, hukuk yönetimi için kamuya açık alanlarda gerçek zamanlı uzaktan biyometrik tanımlamayı yasaklar.",
-    "b.text": "Polis, saklı görüntüler üzerinde aynı biyometrik eşleştirmeyi, yargısal yetki altında, olaylı bir şekilde çalıştırır.",
+    "b.text": "Polis aynı biyometrik eşleştirmeyi olaydan sonra, kayıtlı görüntüler üzerinde yapıyor.",
     "b.why": "Uzaktan sonrası biyometrik tanımlama yasak değildir fakat yetki gereksinimleri ile Ek III yüksek risklidir."
   },
   "II.C-pair-005": {
@@ -989,8 +989,8 @@
     "tell": "Karşı yapılacak hiçbir şey olmadan yalnızca kelime dağarcığı ve kavramlar 22989'dur. Bir standart ne yapmanız gerektiği yerine ne anlama geldiğini söylüyorsa, bu terminoloji standardıdır."
   },
   "II.D-tell-006": {
-    "snippet": "Laboratuvarda, kontrollü alan testinde ve gerçek dünya kullanımında model performansını değerlendiren, üç katmanlı bir değerlendirme programı.",
-    "tell": "Laboratuvardan alana ve gerçek dünyaya hareket eden katmanlı değerlendirme ARIA'dır (AI'nin Riskleri ve Etkilerini Değerlendirmek). AI RMF bir çerçevedir; ARIA, bunu besleyen test programıdır."
+    "snippet": "Yapay zekânın risklerini ve etkilerini gerçekçi kullanımda üç düzeyde inceleyen bir değerlendirme programı: model testi, red-teaming ve saha testi.",
+    "tell": "Adı konmuş üç değerlendirme düzeyi — önce model testi, sonra red-teaming, sonra saha testi — ARIA’ya (Assessing Risks and Impacts of AI) işaret eder. AI RMF bir çerçevedir; ARIA onu besleyen bir test programıdır."
   },
   "controller": {
     "definition": "İşlemenin amaçlarını ve araçlarını belirler."
@@ -1267,7 +1267,7 @@
     "obligations[10].text": "Giriş verilerinin amaçlanan amaç için ilgili ve yeterince temsili olduğundan emin ol",
     "obligations[11].text": "İşyerinde yüksek riskli sistem kullanmaya başlamadan önce işçileri ve temsilcilerini bilgilendir",
     "obligations[12].text": "Kişilerin yüksek riskli sistemin kararına tabi olduklarını bilgilendir",
-    "obligations[13].text": "Otomatik olarak üretilmiş logları gerekli süre için tut",
+    "obligations[13].text": "Sistemi kendi operasyonlarında kullanırken ürettiği günlükleri en az altı ay saklamak",
     "obligations[14].text": "Gerekliyse temel haklar etki değerlendirmesi yap",
     "obligations[15].text": "Pazarı yerleştirmeden önce sağlayıcının uygunluk değerlendirmesini tamamladığını doğrula",
     "obligations[16].text": "Üçüncü ülke sağlayıcısının yetkili temsilci atadığını doğrula",

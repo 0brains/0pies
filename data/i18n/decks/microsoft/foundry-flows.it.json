@@ -53,9 +53,9 @@
   "steps[2].label": "Transformer attention",
   "steps[2].detail": "I livelli di auto-attenzione pesano ogni token rispetto a ogni altro token nella sequenza — la meccanica che 'alimenta la maggior parte dei modelli di fondazione moderni', e ha bisogno che i vettori di embedding esistano già.",
   "steps[3].label": "Next-token prediction",
-  "steps[3].detail": "Il modello genera una distribuzione di probabilità su tutto il vocabolario per il singolo token successivo; la temperatura e il top-p modellano questa distribuzione prima che un token sia campionato.",
+  "steps[3].detail": "Il modello genera una distribuzione di probabilità su tutto il vocabolario per il singolo token successivo; la temperatura e il top-p rimodellano questa distribuzione prima che un token venga campionato. La perplessità valuta questo passaggio: quanta probabilità il modello ha assegnato ai veri token successivi di un testo tenuto da parte.",
   "steps[4].label": "Detokenized output",
-  "steps[4].detail": "L'id token predetto viene decodificato di nuovo a testo e il ciclo si ripete un token alla volta fino a quando una condizione di stop — la perplessità misura quanto bene le previsioni di questo passaggio hanno corrisposto al testo tenuto fuori."
+  "steps[4].detail": "L'id del token predetto viene decodificato di nuovo in testo e il ciclo si ripete un token alla volta fino a una condizione di stop."
  },
  "lad-speech": {
   "prompt": "Metti le chiamate Speech SDK nell'ordine in cui devono essere eseguite.",

@@ -99,7 +99,7 @@
  },
  "cu-modality-grid": {
   "hint": "Спроси, что такое исходный файл на самом деле, затем проверь sub line для exact prebuilt-* analyzer id — сам id называет его modality (document/image/audio/video), и Search-suffixed ids подготавливают output для indexing, а не change модальность.",
-  "note": "Content Understanding всегда extract — никогда не generate или index. Extraction в Azure AI Search — это downstream шаг, а не что-то, что делает CU.",
+  "note": "Content Understanding превращает контент в структурированный результат — поля, которые он извлекает, плюс значения, которые он генерирует или классифицирует, например резюме и описания, — но не создаёт новые медиа и не строит поисковый индекс. Индексация в Azure AI Search — это последующий шаг, а не то, что CU делает сам.",
   "zones[0].def": "PDFs, счета-фактуры, контракты и freeform paperwork, которые Content Understanding превращает в структурированные поля, таблицы и текст.",
   "zones[1].def": "Фотографии, скриншоты и диаграммы, которые Content Understanding превращает в структурированные поля, описания и обнаруженные объекты.",
   "zones[2].def": "Записанная речь — звонки, подкасты и voicemails — Content Understanding превращает в транскрипции, сводки и labels спикеров.",

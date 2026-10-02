@@ -1,7 +1,7 @@
 {
  "dp-01": {
   "a.text": "Un modelo de crédito ve una ola de solicitantes de una nueva región. Para cualquier perfil dado de ingresos, empleo e historial, las tasas de incumplimiento son exactamente lo que el modelo espera.",
-  "a.why": "Las entradas se movieron a territorio nuevo pero la regla permanece intacta. Más datos de entrenamiento representativos lo arreglan; una nueva regla no es necesaria.",
+  "a.why": "Las entradas se movieron a territorio nuevo pero la regla permanece intacta, así que las predicciones se sostienen allí donde los datos de entrenamiento cubrían estos perfiles. Lo que hay que vigilar son las regiones poco cubiertas, donde el modelo está extrapolando; una nueva regla no es necesaria.",
   "b.text": "Un modelo de crédito ve la misma ola de solicitantes de una nueva región. Para un perfil idéntico de ingresos, empleo e historial, las tasas de incumplimiento allí son el doble de lo que el modelo espera.",
   "b.why": "Las entradas idénticas ahora producen resultados diferentes, así que P(Y|X) ha cambiado. Ningún rebalanceo de la mezcla de entrada lo arreglará si una relación ya no se mantiene."
  },

@@ -1,7 +1,7 @@
 {
  "rp-01": {
   "a.text": "L'évaluation évalue l'exposition d'un modèle de prise de décision automatisée comme si aucun des mécanismes d'examen, de seuil ou d'appel n'existait.",
-  "a.why": "Le risque inhérent est la position brute avant les contrôles. Il existe pour dimensionner l'effort de contrôle, et ce n'est jamais ce qui est accepté.",
+  "a.why": "Le risque inhérent est la position brute avant les contrôles. Il existe pour dimensionner l'effort de contrôle. L'acceptation se juge par rapport au risque résiduel ; les deux chiffres ne coïncident que lorsque l'organisation conserve sciemment le risque sans aucun traitement.",
   "b.text": "L'évaluation évalue le même modèle avec examen, seuils et appel fonctionnant comme prévu, et rapporte ce qui reste.",
   "b.why": "Le risque résiduel est ce par rapport à quoi l'approbation se fait réellement. L'acceptation contre le chiffre inhérent surestime ce que l'organisation a accepté."
  },
@@ -9,11 +9,11 @@
   "a.text": "Le conseil énonce que l'organisation ne poursuivra pas les applications d'IA qui prennent des décisions conséquentielles concernant les individus sans examen humain.",
   "a.why": "L'appétence est la déclaration large et prospective du risque que l'organisation est disposée à prendre dans la poursuite de ses objectifs.",
   "b.text": "La politique énonce qu'un modèle ne peut être lancé que si la disparité de précision par sous-groupe est inférieure à quatre points de pourcentage.",
-  "b.why": "La tolérance est la limite mesurable qui opérationnalise l'appétence. L'appétence sans tolérance ne peut pas être testée ; la tolérance sans appétence est arbitraire."
+  "b.why": "La tolérance est la limite mesurable qui opérationnalise l'appétence. Cette lecture en termes de limites suit l'usage du COSO, dont le référentiel de 2017 parle de variation acceptable de la performance ; ISO Guide 73 présente la tolérance comme la disposition à supporter un risque après traitement. L'appétence sans tolérance ne peut pas être testée ; la tolérance sans appétence est arbitraire."
  },
  "rp-03": {
   "a.text": "Le modèle peut produire du texte fluide et confiant qui est factuellement faux.",
-  "a.why": "Un danger est le potentiel intrinsèque de causer du préjudice. C'est une propriété de la chose et ne dépend pas du déploiement.",
+  "a.why": "Un danger est une source potentielle de préjudice. Il appartient à la chose elle-même et existe avant que tu demandes qui y est exposé ou comment elle est utilisée, même si sa fréquence d'apparition peut encore varier selon la récupération, les prompts et le domaine.",
   "b.text": "Parce que le modèle rédige des instructions de sortie d'hôpital lues par des non-spécialistes, les erreurs confiantes peuvent mener à une utilisation incorrecte des médicaments.",
   "b.why": "Le risque combine le danger avec l'exposition et la conséquence dans un contexte. Le même danger est un risque différent dans un déploiement différent — c'est pourquoi les niveaux s'attachent à l'usage."
  },
